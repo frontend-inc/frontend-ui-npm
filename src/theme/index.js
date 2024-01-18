@@ -1,22 +1,7 @@
-import breakpoints from './breakpoints'
-import components from './components'
-import palette from './palette'
-import shape from './shape'
-import typography from './typography'
-import spacing from '.theme/spacing'
-
-export const muiTheme = {
-	breakpoints,
-	components,
-	palette: {
-		...palette,
-		editor: {
-			dark: '#282C34',
-			main: '#343842',
-			light: '#343842',
-		},
-	},
-	typography,
-	shape,
-	spacing,
-}
+export { default as breakpoints } from './breakpoints'
+export { default as components } from './components'
+export { default as palette } from './palette'
+export { default as shape } from './shape'
+export { default as typography } from './typography'
+export { default as spacing } from '.theme/spacing'
+export { default as muiTheme } from './muiTheme'
