@@ -1,29 +1,29 @@
 export declare const CAROUSEL_RESPONSIVE: {
     superLargeDesktop: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
     desktop: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
     tablet: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
     mobile: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
@@ -31,29 +31,29 @@ export declare const CAROUSEL_RESPONSIVE: {
 export declare const IMAGE_CAROUSEL_RESPONSIVE: {
     superLargeDesktop: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
     desktop: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
     tablet: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
     mobile: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
@@ -61,29 +61,29 @@ export declare const IMAGE_CAROUSEL_RESPONSIVE: {
 export declare const PRODUCT_CAROUSEL_RESPONSIVE: {
     superLargeDesktop: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
     desktop: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
     tablet: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };
     mobile: {
         breakpoint: {
-            max: any;
-            min: any;
+            max: number;
+            min: number;
         };
         items: number;
     };

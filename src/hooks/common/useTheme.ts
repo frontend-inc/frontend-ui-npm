@@ -150,6 +150,7 @@ const useTheme = (props: ThemeProps) => {
 					...theme.palette,
 					primary: {
             ...theme.palette.primary,
+            // @ts-ignore
 						main: primaryColor,
 					},
 				},

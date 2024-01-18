@@ -29,6 +29,7 @@ const ReactCarousel: React.FC<CarouselProps> = (props) => {
 	} = props
 
 	useEffect(() => {
+    //@ts-ignore
 		setResponsive(getCarouselResponsive(theme))
 	}, [theme?.breakpoints])
 

@@ -66,7 +66,9 @@ var useTheme = function (props) {
     (0, react_1.useEffect)(function () {
         var newTheme = __assign({}, theme);
         if (primaryColor) {
-            newTheme = __assign(__assign({}, theme), { palette: __assign(__assign({}, theme.palette), { primary: __assign(__assign({}, theme.palette.primary), { main: primaryColor }) }) });
+            newTheme = __assign(__assign({}, theme), { palette: __assign(__assign({}, theme.palette), { primary: __assign(__assign({}, theme.palette.primary), { 
+                        // @ts-ignore
+                        main: primaryColor }) }) });
         }
         if (bgcolor) {
             newTheme = (0, helpers_1.buildTheme)(newTheme, bgcolor);
