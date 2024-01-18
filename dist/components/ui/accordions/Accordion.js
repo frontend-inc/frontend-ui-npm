@@ -37,7 +37,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var hooks_1 = require("hooks");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var __1 = require("..");
 var material_2 = require("@mui/material");
 var lucide_react_1 = require("lucide-react");
 var AccordionView = function (props) {
@@ -78,11 +78,11 @@ var AccordionView = function (props) {
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'space-between', spacing: 1 },
             react_1.default.createElement(material_2.Typography, { variant: "h6", color: "textPrimary" }, title),
-            react_1.default.createElement(material_1.Box, null, enableFilters && (react_1.default.createElement(components_1.ListFilterButton, { fields: fields, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters })))),
-        enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch })), resources === null || resources === void 0 ? void 0 :
-        resources.map(function (resource, i) { return (react_1.default.createElement(components_1.AccordionItem, { key: i, title: resource === null || resource === void 0 ? void 0 : resource.title, description: resource === null || resource === void 0 ? void 0 : resource.description, image: resource === null || resource === void 0 ? void 0 : resource.image })); }),
-        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(components_1.Placeholder, { icon: react_1.default.createElement(lucide_react_1.Search, { color: theme.palette.text.secondary }), title: "No results found", description: "Try adjusting your search or filters" })),
-        enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore, enableInfiniteLoad: enableInfiniteLoad }))));
+            react_1.default.createElement(material_1.Box, null, enableFilters && (react_1.default.createElement(__1.ListFilterButton, { fields: fields, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters })))),
+        enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch })), resources === null || resources === void 0 ? void 0 :
+        resources.map(function (resource, i) { return (react_1.default.createElement(__1.AccordionItem, { key: i, title: resource === null || resource === void 0 ? void 0 : resource.title, description: resource === null || resource === void 0 ? void 0 : resource.description, image: resource === null || resource === void 0 ? void 0 : resource.image })); }),
+        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: react_1.default.createElement(lucide_react_1.Search, { color: theme.palette.text.secondary }), title: "No results found", description: "Try adjusting your search or filters" })),
+        enableLoadMore && (react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore, enableInfiniteLoad: enableInfiniteLoad }))));
 };
 exports.default = AccordionView;
 var sx = {

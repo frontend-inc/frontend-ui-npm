@@ -63,16 +63,16 @@ export { default as UserMenu } from './UserMenu'
 export { default as VideoVert } from './video/VideoVert'
 export { default as VideoHoriz } from './video/VideoHoriz'
 
-/Query
+//Query
 export { default as Fetch } from './fetch/Fetch'
 export { default as FetchMany } from './fetch/FetchMany'
 
-/Profiles
+//Profiles
 export { default as ProfileDetails } from './profiles/ProfileDetails'
 export { default as ProfileInfo } from './profiles/ProfileInfo'
 export { default as ProfileImage } from './profiles/ProfileImage'
 
-/ Layouts
+// Layouts
 export { default as Footer } from './layouts/Footer'
 export { default as Header } from './layouts/Header'
 export { default as LayoutContainer } from './layouts/LayoutContainer'
@@ -81,13 +81,13 @@ export { default as LayoutLoader } from './layouts/LayoutLoader'
 export { default as LayoutPage } from './layouts/LayoutPage'
 export { default as LayoutScroll } from './layouts/LayoutScroll'
 
-/ Theme
+// Theme
 export { default as ModeTheme } from './theme/ModeTheme'
 
-/ Personalization
+// Personalization
 export { default as Favorites } from './favorites/Favorites'
 
-/ Collections
+// Collections
 export { default as Accordion } from './accordions/Accordion'
 export { default as AccordionHasMany } from './accordions/AccordionHasMany'
 export { default as Collection } from './lists/Collection'
@@ -107,11 +107,11 @@ export { default as TestimonialCard } from './testimonials/TestimonialCard'
 export { default as StyledList } from './lists/StyledList'
 export { default as Videos } from './video/Videos'
 
-/ Filter and sort
+// Filter and sort
 export { default as ListFilterButton } from './lists/filters/FilterButton'
 export { default as ListSortButton } from './lists/sorts/SortButton'
 
-/Filter components
+//Filter components
 export { default as FilterButton } from './filters/FilterButton'
 export { default as FilterDrawer } from './filters/FilterDrawer'
 export { default as FilterPopup } from './filters/FilterPopup'
@@ -121,7 +121,7 @@ export { default as FilterInputs } from './filters/FilterInputs'
 export { default as FilterKeywordsInput } from './filters/FilterKeywordsInput'
 export { default as FilterSortInput } from './filters/FilterSortInput'
 
-/Auth
+//Auth
 export { default as AuthAvatar } from './auth/AuthAvatar'
 export { default as AuthButton } from './auth/AuthButton'
 export { default as AuthIconButton } from './auth/AuthIconButton'
@@ -150,11 +150,11 @@ export { default as VerifyPin } from './auth/VerifyPin'
 export { default as VerifyPinForm } from './auth/VerifyPinForm'
 export { default as VerifySendPinForm } from './auth/VerifySendPinForm'
 
-/ Details
+// Details
 export { default as Details } from './details/Details'
 export { default as DetailHero } from './details/DetailHero'
 
-/ Inputs
+// Inputs
 export { default as ArrayInput } from './inputs/ArrayInput'
 export { default as ArrayListInput } from './inputs/ArrayListInput'
 export { default as CheckboxGroupInput } from './inputs/CheckboxGroupInput'
@@ -185,7 +185,7 @@ export { default as SwitchInput } from './inputs/SwitchInput'
 export { default as SearchInput } from './inputs/SearchInput'
 export { default as VideoInput } from './inputs/VideoInput'
 
-/ Table components
+// Table components
 export { default as Cell } from './tables/Cell'
 export { default as CellArray } from './tables/CellArray'
 export { default as CellBoolean } from './tables/CellBoolean'
@@ -223,7 +223,7 @@ export { default as SortedAscIcon } from './tables/SortedAscIcon'
 export { default as SortedDescIcon } from './tables/SortedDescIcon'
 export { default as Pagination } from './Pagination'
 
-/ Media
+// Media
 export { default as CoverImage } from './images/CoverImage'
 export { default as EmptyImage } from './images/EmptyImage'
 export { default as Image } from './images/Image'
@@ -235,7 +235,7 @@ export { default as VideoModal } from './video/VideoModal'
 export { default as VideoPlayer } from './video/VideoPlayer'
 export { default as TextModal } from './TextModal'
 
-/Field components
+//Field components
 export { default as Field } from './fields/Field'
 export { default as FieldArray } from './fields/FieldArray'
 export { default as FieldBoolean } from './fields/FieldBoolean'
