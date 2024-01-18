@@ -1,21 +1,33 @@
 import React from 'react'
-import { CellVideo } from '../../../components'
+import { CellVideo } from '../..'
 import { Box, Button } from '@mui/material'
-import { TextInput } from '../../../components'
+import { TextInput } from '../..'
 import { Search } from 'lucide-react'
 
-const VideoInput = ({
-	name,
-	label,
-	value,
-	handleChange,
-	handleBrowse,
-	placeholder,
-	errors,
-	...props
-}) => {
+type VideoInputProps = {
+  name: string
+  label: string
+  value: string
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleBrowse: (name: string) => void
+  placeholder?: string
+  errors?: string
+}
+
+const VideoInput: React.FC<VideoInputProps> = (props) => {
+
+  const {
+    name,
+    label,
+    value,
+    handleChange,
+    handleBrowse,
+    placeholder,
+    errors
+  } = props
+  
 	return (
-		<Box sx={sx.root}>
+		<Box>
 			<CellVideo value={value} />
 			<TextInput
 				name={name}
@@ -29,7 +41,7 @@ const VideoInput = ({
 				size="small"
 				variant="outlined"
 				onClick={() => handleBrowse(name)}
-				startIcon={<Search sx={sx.icon} />}
+				startIcon={<Search />}
 			>
 				Browse
 			</Button>
