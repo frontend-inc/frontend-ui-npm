@@ -1,11 +1,8 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PRODUCT_CAROUSEL_RESPONSIVE = exports.IMAGE_CAROUSEL_RESPONSIVE = exports.CAROUSEL_RESPONSIVE = void 0;
-var breakpoints_1 = __importDefault(require("../theme/breakpoints"));
-var _a = breakpoints_1.default.values, xs = _a.xs, sm = _a.sm, md = _a.md, lg = _a.lg, xl = _a.xl;
+var theme_1 = require("../theme");
+var _a = theme_1.breakpoints.values, xs = _a.xs, sm = _a.sm, md = _a.md, lg = _a.lg, xl = _a.xl;
 exports.CAROUSEL_RESPONSIVE = {
     superLargeDesktop: {
         breakpoint: { max: xl, min: lg },
