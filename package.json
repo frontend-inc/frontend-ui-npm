@@ -22,7 +22,8 @@
         "./constants": "./dist/constants/index.js",
         "./context": "./dist/context/index.js",
         "./helpers": "./dist/helpers/index.js",
-        "./hooks": "./dist/hooks/index.js"
+        "./hooks": "./dist/hooks/index.js",
+        "./theme": "./dist/theme/index.js"
     },
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
