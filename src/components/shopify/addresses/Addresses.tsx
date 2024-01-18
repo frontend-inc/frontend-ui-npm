@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { AuthScreen, AlertModal, LayoutLoader } from 'components'
+import { AuthScreen, AlertModal, LayoutLoader } from '../../../components'
 import { Plus } from 'lucide-react'
 import { Button } from '@mui/material'
 import { useAddresses } from '@webstudio/shopify'
-import { AddressList } from 'components/shopify'
-import { AppContext } from 'context'
+import { AddressList } from '../../../components/shopify'
+import { AppContext } from '../../../context'
 import { useRouter } from 'next/router'
 import { getShopifyIdFromGid } from '@webstudio/shopify'
 

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../hooks");
 var MenuButton = function (props) {
     var children = props.children, icon = props.icon, _a = props.selected, selected = _a === void 0 ? false : _a, _b = props.size, size = _b === void 0 ? 'small' : _b;
     var _c = (0, hooks_1.useMenu)(), open = _c.open, anchorEl = _c.anchorEl, closeMenu = _c.closeMenu, toggleMenu = _c.toggleMenu;

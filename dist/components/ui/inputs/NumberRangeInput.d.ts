@@ -1,5 +1,5 @@
 import React from 'react';
-import { SyntheticEvent } from 'types';
+import { SyntheticEvent } from '../../../types';
 type NumberRangeInputProps = {
     label?: string;
     name: string;

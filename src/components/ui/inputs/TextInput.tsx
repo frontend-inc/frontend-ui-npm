@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Stack, FormControl, InputBase, Typography } from '@mui/material'
-import { ErrorText } from 'components/ui'
+import { ErrorText } from '../../../components'
 import { sx } from './styles'
-import { useError } from 'hooks'
-import { TextInputProps } from 'types'
+import { useError } from '../../../hooks'
+import { TextInputProps } from '../../../types'
 import { useDebounce } from 'use-debounce'
 
 const TextInput: React.FC<TextInputProps> = (props) => {

@@ -1,11 +1,11 @@
 
 import React, { useContext } from 'react'
 import { Grid, Box } from '@mui/material'
-import { ProductCardVert } from 'components/shopify'
+import { ProductCardVert } from '../../../components/shopify'
 import { useRouter } from 'next/router'
-import { useSegment } from 'hooks/addons'
+import { useSegment } from '../../../hooks/addons'
 import { Product } from '@webstudio/shopify'
-import { AppContext } from 'context'
+import { AppContext } from '../../../context'
 
 type ProductGridProps = {
 	editing?: boolean

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@mui/material'
-import { LOGO_HEIGHT, LOGO_WIDTH } from 'constants/index'
-import { CardProps } from 'types'
+import { LOGO_HEIGHT, LOGO_WIDTH } from '../../../constants/index'
+import { CardProps } from '../../../types'
 import Image from 'next/image'
 
 const Logo: React.FC<CardProps> = (props) => {

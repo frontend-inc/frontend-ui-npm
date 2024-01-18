@@ -25,10 +25,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var hooks_1 = require("hooks");
-var components_1 = require("components");
+var hooks_1 = require("../../../hooks");
+var components_1 = require("../../../components");
 var router_1 = require("next/router");
-var context_1 = require("context");
+var context_1 = require("../../../context");
 var AuthButton = function () {
     var _a;
     var router = (0, router_1.useRouter)();

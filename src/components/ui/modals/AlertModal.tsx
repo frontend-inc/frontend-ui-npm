@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, useTheme } from '@mui/material'
-import { ButtonLoader, Placeholder, Modal } from 'components/ui'
+import { ButtonLoader, Placeholder, Modal } from '../../../components'
 import { AlertCircle } from 'lucide-react'
 
 type AlertModalProps = {

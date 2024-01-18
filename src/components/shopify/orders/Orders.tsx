@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { AuthScreen, LayoutLoader } from 'components'
+import { AuthScreen, LayoutLoader } from '../../../components'
 import { useOrders } from '@webstudio/shopify'
-import { OrderList } from 'components/shopify'
-import { AppContext } from 'context'
+import { OrderList } from '../../../components/shopify'
+import { AppContext } from '../../../context'
 import { useRouter } from 'next/router'
 import { getShopifyIdFromGid } from '@webstudio/shopify'
 

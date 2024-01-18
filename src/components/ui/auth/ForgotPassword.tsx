@@ -3,8 +3,8 @@ import {
 	ForgotPasswordForm,
 	AuthScreen,
 	LayoutLoader,
-} from 'components/ui'
-import { useAlerts, useAuth } from 'hooks'
+} from '../../../components'
+import { useAlerts, useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type ForgotPasswordProps = {

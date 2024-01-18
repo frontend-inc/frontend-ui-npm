@@ -1,5 +1,5 @@
 import React from 'react'
-import { Placeholder } from 'components/ui'
+import { Placeholder } from '../../../components'
 import { Box } from '@mui/material'
 
 type LayoutEmptyProps = {

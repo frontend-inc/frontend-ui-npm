@@ -3,8 +3,8 @@ import {
 	NewPasswordForm,
 	AuthScreen,
 	LayoutLoader,
-} from 'components/ui'
-import { useAuth } from 'hooks'
+} from '../../../components'
+import { useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type NewPasswordProps = {

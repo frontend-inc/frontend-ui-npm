@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, IconButton, Menu } from '@mui/material'
 import { MoreHoriz } from '@mui/icons-material'
-import { useMenu } from 'hooks'
+import { useMenu } from '../../hooks'
 
 type MenuButtonProps = {
 	children: React.ReactNode

@@ -60,10 +60,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
-var ui_1 = require("components/ui");
-var ui_2 = require("components/ui");
-var hooks_2 = require("hooks");
+var hooks_1 = require("../../hooks");
+var components_1 = require("../../components");
+var components_2 = require("../../components");
+var hooks_2 = require("../../hooks");
 var RemoteAutosuggest = function (props) {
     var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, displayField = props.displayField, handleChange = props.handleChange, _a = props.valueParam, valueParam = _a === void 0 ? 'id' : _a, _b = props.placeholder, placeholder = _b === void 0 ? 'Search' : _b, _c = props.defaultQuery, defaultQuery = _c === void 0 ? null : _c, _d = props.direction, direction = _d === void 0 ? "column" : _d;
     var _e = (0, hooks_2.useError)({
@@ -116,7 +116,7 @@ var RemoteAutosuggest = function (props) {
         }
     }, [url, defaultQuery]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(ui_1.Autosuggest, { direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange }),
-        react_1.default.createElement(ui_2.ErrorText, { error: error })));
+        react_1.default.createElement(components_1.Autosuggest, { direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange }),
+        react_1.default.createElement(components_2.ErrorText, { error: error })));
 };
 exports.default = RemoteAutosuggest;

@@ -13,7 +13,7 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildTheme = void 0;
 var material_1 = require("@mui/material");
-var index_1 = require("constants/index");
+var index_1 = require("../constants/index");
 var buildTheme = function (theme, bgcolor) {
     var paper = (0, material_1.lighten)(bgcolor, 0.2);
     var contrast = (0, material_1.getContrastRatio)(bgcolor, '#000000');

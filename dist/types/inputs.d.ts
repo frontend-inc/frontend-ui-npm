@@ -1,4 +1,4 @@
-import { Option, SyntheticEvent } from 'types';
+import { Option, SyntheticEvent } from '../types';
 export type AttachmentInputProps = {
     errors?: any;
     name: string;

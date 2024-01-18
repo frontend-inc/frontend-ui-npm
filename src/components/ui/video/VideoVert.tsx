@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { CoverVert, VideoModal } from 'components'
-import { CardProps } from 'types'
-import { VIDEO_VERT_HEIGHT, VIDEO_VERT_WIDTH } from 'constants/index'
-import VideoPlayer from './VideoPlayer'
+import { CoverVert, VideoModal } from '../../../components'
+import { CardProps } from '../../../types'
+import { VIDEO_VERT_HEIGHT, VIDEO_VERT_WIDTH } from '../../../constants/index'
 
 const VideoVert: React.FC<CardProps> = (props) => {
 	const {

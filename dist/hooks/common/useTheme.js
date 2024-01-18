@@ -12,8 +12,8 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-var theme_1 = require("theme");
-var helpers_1 = require("helpers");
+var theme_1 = require("../../theme");
+var helpers_1 = require("../../helpers");
 var useTheme = function (props) {
     var _a = props || {}, primaryColor = _a.primaryColor, bgcolor = _a.bgcolor, borderRadius = _a.borderRadius, bodyFont = _a.bodyFont, headerFont = _a.headerFont, _b = _a.offset, offset = _b === void 0 ? 0 : _b, _c = _a.mobile, mobile = _c === void 0 ? false : _c;
     var _d = (0, react_1.useState)(theme_1.muiTheme), theme = _d[0], setTheme = _d[1];

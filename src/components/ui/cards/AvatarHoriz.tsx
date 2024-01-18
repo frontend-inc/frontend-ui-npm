@@ -8,9 +8,9 @@ import {
 	ListItemText,
 	Typography,
 } from '@mui/material'
-import { truncate } from 'helpers'
-import { AVATAR_HORIZ_HEIGHT, AVATAR_HORIZ_WIDTH } from 'constants/index'
-import { CardProps } from 'types'
+import { truncate } from '../../../helpers'
+import { AVATAR_HORIZ_HEIGHT, AVATAR_HORIZ_WIDTH } from '../../../constants/index'
+import { CardProps } from '../../../types'
 
 const AvatarHoriz: React.FC<CardProps> = (props) => {
 	const {

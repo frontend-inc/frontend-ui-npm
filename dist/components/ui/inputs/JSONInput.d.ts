@@ -1,5 +1,5 @@
 import React from 'react';
-import { SyntheticEvent } from 'types';
+import { SyntheticEvent } from '../../../types';
 type JSONInputProps = {
     errors: Record<string, string>;
     value: any;

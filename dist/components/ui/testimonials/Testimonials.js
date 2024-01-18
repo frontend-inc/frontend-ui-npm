@@ -35,9 +35,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var material_2 = require("@mui/material");
 var Testimonials = function (props) {
     var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, url = props.url, _b = props.query, defaultQuery = _b === void 0 ? {} : _b, _c = props.perPage, perPage = _c === void 0 ? 20 : _c, editing = props.editing, _d = props.enableInfiniteLoad, enableInfiniteLoad = _d === void 0 ? false : _d, _e = props.enableLoadMore, enableLoadMore = _e === void 0 ? true : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f;

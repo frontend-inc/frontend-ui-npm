@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var shopify_1 = require("@webstudio/shopify");
 var material_1 = require("@mui/material");
-var shopify_2 = require("components/shopify");
+var shopify_2 = require("../../../components/shopify");
 var CartLines = function (props) {
     var _a;
     var cart = (0, shopify_1.useCart)().cart;

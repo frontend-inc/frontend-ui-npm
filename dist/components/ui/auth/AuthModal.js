@@ -71,11 +71,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("components");
-var hooks_1 = require("hooks");
+var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var material_1 = require("@mui/material");
-var context_1 = require("context");
+var context_1 = require("../../../context");
 var AuthModal = function (props) {
     var router = (0, router_1.useRouter)();
     var appId = router.query.app_id;

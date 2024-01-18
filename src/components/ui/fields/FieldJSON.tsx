@@ -1,5 +1,5 @@
 import React from 'react'
-import { FieldWrapper, FieldString } from 'components/ui'
+import { FieldWrapper, FieldString } from '../../../components'
 
 type FieldJSONProps = {
 	value?: any

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var shopify_1 = require("@webstudio/shopify");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var OrderLineItem = function (props) {
     var _a, _b, _c, _d, _e, _f, _g;
     var lineItem = props.lineItem;

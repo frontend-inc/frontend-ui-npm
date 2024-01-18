@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { useResource } from 'hooks'
-import { AppContext } from 'context'
+import { useResource } from '../../../hooks'
+import { AppContext } from '../../../context'
 import SwipeableViews from 'react-swipeable-views'
-import { CoverImage } from 'components'
+import { CoverImage } from '../../../components'
 import { useRouter } from 'next/router'
 import { autoPlay } from 'react-swipeable-views-utils'
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)

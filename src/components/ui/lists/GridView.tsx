@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Grid } from '@mui/material'
-import { CardVert } from 'components/ui'
+import { CardVert } from '../../../components'
 
 type GridViewProps = {
 	loading?: boolean

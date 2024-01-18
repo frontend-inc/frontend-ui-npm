@@ -25,11 +25,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var shopify_1 = require("@webstudio/shopify");
-var addons_1 = require("hooks/addons");
+var addons_1 = require("../../../hooks/addons");
 var material_1 = require("@mui/material");
 var shopify_2 = require("@webstudio/shopify");
-var components_1 = require("components");
-var shopify_3 = require("components/shopify");
+var components_1 = require("../../../components");
+var shopify_3 = require("../../../components/shopify");
 var Cart = function (props) {
     var _a, _b;
     var _c = props.title, title = _c === void 0 ? 'Your Cart' : _c;

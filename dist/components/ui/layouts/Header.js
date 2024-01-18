@@ -36,10 +36,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
-var shopify_1 = require("components/shopify");
-var context_1 = require("context");
-var index_1 = require("constants/index");
+var components_1 = require("../../../components");
+var shopify_1 = require("../../../components/shopify");
+var context_1 = require("../../../context");
+var index_1 = require("../../../constants/index");
 var DesktopTopNav = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var editing = props.editing, logo = props.logo, menuItems = props.menuItems, _a = props.logoWidth, logoWidth = _a === void 0 ? index_1.HEADER_LOGO_WIDTH : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? index_1.HEADER_LOGO_HEIGHT : _b, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableShopify, enableShopify = _d === void 0 ? false : _d, _e = props.enableNotifications, enableNotifications = _e === void 0 ? false : _e, _f = props.position, position = _f === void 0 ? 'absolute' : _f, _g = props.showIcons, showIcons = _g === void 0 ? true : _g;

@@ -39,12 +39,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var helpers_1 = require("helpers");
-var index_1 = require("constants/index");
+var helpers_1 = require("../../../helpers");
+var index_1 = require("../../../constants/index");
 var shopify_1 = require("@webstudio/shopify");
 var SwipeableProductImages_1 = __importDefault(require("./images/SwipeableProductImages"));
-var shopify_2 = require("components/shopify");
-var addons_1 = require("components/addons");
+var shopify_2 = require("../../../components/shopify");
+var addons_1 = require("../../../components/addons");
 var ProductCardVert = function (props) {
     var _a, _b, _c, _d;
     var _e = props || {}, product = _e.product, handleClick = _e.handleClick, _f = _e.height, height = _f === void 0 ? index_1.PRODUCT_CARD_VERT_HEIGHT : _f, _g = _e.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = _e.enableAddToCart, enableAddToCart = _h === void 0 ? false : _h, _j = _e.enableQuantity, enableQuantity = _j === void 0 ? false : _j, _k = _e.enableQuickShop, enableQuickShop = _k === void 0 ? false : _k, _l = _e.enableOkendoStarRating, enableOkendoStarRating = _l === void 0 ? false : _l, _m = _e.buttonVariant, buttonVariant = _m === void 0 ? 'contained' : _m, buttonText = _e.buttonText;

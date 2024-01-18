@@ -1,6 +1,6 @@
 import React from 'react'
 import { Chip } from '@mui/material'
-import { FieldWrapper } from 'components/ui'
+import { FieldWrapper } from '../../../components'
 
 type FieldArrayProps = {
 	value?: any[]

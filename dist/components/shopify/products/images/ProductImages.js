@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var shopify_1 = require("components/shopify");
-var index_1 = require("constants/index");
+var shopify_1 = require("../../../../components/shopify");
+var index_1 = require("../../../../constants/index");
 var ProductImages = function (props) {
     var product = props.product;
     return (react_1.default.createElement(react_1.default.Fragment, null,

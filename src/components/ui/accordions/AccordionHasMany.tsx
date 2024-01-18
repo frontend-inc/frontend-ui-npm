@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useResource } from 'hooks'
+import { useResource } from '../../../hooks'
 import { Box, useTheme } from '@mui/material'
-import { Icon, AccordionItem, Placeholder } from 'components'
-import { getDocumentValue } from 'helpers'
+import { Icon, AccordionItem, Placeholder } from '../../../components'
+import { getDocumentValue } from '../../../helpers'
 
 type AccordionHasManyProps = {
 	field: any

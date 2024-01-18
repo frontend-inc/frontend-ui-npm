@@ -36,9 +36,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var styles_1 = require("./styles");
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var use_debounce_1 = require("use-debounce");
 var TextInput = function (props) {
     var label = props.label, type = props.type, name = props.name, margin = props.margin, _a = props.value, value = _a === void 0 ? '' : _a, multiline = props.multiline, handleChange = props.handleChange, rows = props.rows, placeholder = props.placeholder, disabled = props.disabled, errors = props.errors, _b = props.direction, direction = _b === void 0 ? 'column' : _b, _c = props.styles, styles = _c === void 0 ? {} : _c;
@@ -73,6 +73,6 @@ var TextInput = function (props) {
         react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, styles_1.sx.stack), (direction == "row" && !multiline && styles_1.sx.stackVertical)), direction: direction, spacing: 1 },
             label && (react_1.default.createElement(material_1.Typography, { sx: styles_1.sx.label, variant: "caption", color: "textSecondary" }, label)),
             react_1.default.createElement(material_1.InputBase, { rows: rows, error: error ? true : false, sx: __assign(__assign(__assign({}, styles_1.sx.inputBase), ((error && styles_1.sx.inputError) || {})), styles), multiline: multiline, autoComplete: "off", fullWidth: true, type: type, name: name, margin: margin, disabled: disabled, placeholder: placeholder, onChange: debouncedChanged, value: text })),
-        react_1.default.createElement(ui_1.ErrorText, { error: error })));
+        react_1.default.createElement(components_1.ErrorText, { error: error })));
 };
 exports.default = TextInput;

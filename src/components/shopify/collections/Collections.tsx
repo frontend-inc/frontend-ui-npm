@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { useCollections } from '@webstudio/shopify'
-import { StyledList } from 'components'
+import { StyledList } from '../../../components'
 import { Stack, useTheme, Typography } from '@mui/material'
 import { ShopContext } from '@webstudio/shopify'
 import { useRouter } from 'next/router'

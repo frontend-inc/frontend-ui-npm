@@ -12,8 +12,8 @@ import {
 	FieldString,
 	FieldText,
 	FieldVideo,
-} from 'components'
-import { getDocumentValue } from 'helpers'
+} from '../../../components'
+import { getDocumentValue } from '../../../helpers'
 
 type FieldProps = {
 	field?: any

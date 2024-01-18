@@ -3,7 +3,7 @@ import {
 	CellExpand,
 	CellString,
 	CellStringExpanded,
-} from 'components/ui'
+} from '../../../components'
 
 type CellJSONProps = {
 	value: any

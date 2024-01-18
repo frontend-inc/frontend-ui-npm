@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { AvatarVert, VideoModal } from 'components'
-import { CardProps } from 'types'
-import { VIDEO_VERT_HEIGHT, VIDEO_VERT_WIDTH } from 'constants/index'
+import { AvatarVert, VideoModal } from '../../../components'
+import { CardProps } from '../../../types'
 
 const VideoVert: React.FC<CardProps> = (props) => {
 	const {

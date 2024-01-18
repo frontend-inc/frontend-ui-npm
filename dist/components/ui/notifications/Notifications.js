@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var react_swipeable_views_1 = __importDefault(require("react-swipeable-views"));
 var Notifications = function (props) {
     var notifications = props.notifications;

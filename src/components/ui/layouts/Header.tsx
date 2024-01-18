@@ -8,10 +8,10 @@ import {
 	Toolbar,
 	IconButton,
 } from '@mui/material'
-import { AuthButton, Logo, Icon, Drawer, MenuItem } from 'components'
-import { ShopifyAuth, SearchButton, CartButton } from 'components/shopify'
-import { AppContext } from 'context'
-import { HEADER_LOGO_HEIGHT, HEADER_LOGO_WIDTH } from 'constants/index'
+import { AuthButton, Logo, Icon, Drawer, MenuItem } from '../../../components'
+import { ShopifyAuth, SearchButton, CartButton } from '../../../components/shopify'
+import { AppContext } from '../../../context'
+import { HEADER_LOGO_HEIGHT, HEADER_LOGO_WIDTH } from '../../../constants/index'
 
 type MenuItem = {
 	label: string

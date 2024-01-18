@@ -7,8 +7,8 @@ var react_1 = __importDefault(require("react"));
 var shopify_1 = require("@webstudio/shopify");
 var material_1 = require("@mui/material");
 var shopify_2 = require("@webstudio/shopify");
-var shopify_3 = require("components/shopify");
-var addons_1 = require("components/addons");
+var shopify_3 = require("../../../components/shopify");
+var addons_1 = require("../../../components/addons");
 var ProductDetails = function (props) {
     var _a = props.disableCompareAtPrice, disableCompareAtPrice = _a === void 0 ? false : _a, _b = props.enableOkendoStarRating, enableOkendoStarRating = _b === void 0 ? false : _b;
     var _c = (0, shopify_1.useProductContext)(), price = _c.price, compareAtPrice = _c.compareAtPrice, product = _c.product;

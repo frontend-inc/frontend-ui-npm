@@ -8,8 +8,8 @@ import {
 	RatingInput,
 	SwitchInput,
 	TextInput,
-} from 'components/ui'
-import { SyntheticEvent } from 'types'
+} from '../../../components'
+import { SyntheticEvent } from '../../../types'
 
 type FormFieldProps = {
 	field: any

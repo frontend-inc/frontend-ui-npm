@@ -66,3 +66,4 @@ exports.sx = {
         alignItems: 'center',
     },
 };
+exports.default = exports.sx;

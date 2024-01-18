@@ -4,7 +4,7 @@ import { DeleteOutlined } from '@mui/icons-material'
 import Image from 'next/image'
 import DropZone from './DropZone'
 import { File } from 'lucide-react'
-import { AttachmentInputProps } from 'types'
+import { AttachmentInputProps } from '../../../types'
 const IMAGE_WIDTH = 140
 
 type RenderAttachmentProps = {

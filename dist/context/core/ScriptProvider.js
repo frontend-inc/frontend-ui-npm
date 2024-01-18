@@ -27,9 +27,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("context/core");
-var addons_1 = require("components/addons");
-var addons_2 = require("hooks/addons");
+var ScriptContext_1 = __importDefault(require("./ScriptContext"));
+var addons_1 = require("../../components/addons");
+var addons_2 = require("../../hooks/addons");
 var script_1 = __importDefault(require("next/script"));
 var analytics_next_1 = require("@segment/analytics-next");
 var ScriptProvider = function (props) {
@@ -54,7 +54,7 @@ var ScriptProvider = function (props) {
         redditPixelId: redditPixelId,
         segmentWriteKey: segmentWriteKey
     };
-    return (react_1.default.createElement(core_1.ScriptContext.Provider, { value: value },
+    return (react_1.default.createElement(ScriptContext_1.default.Provider, { value: value },
         !disableAnalytics && (react_1.default.createElement(react_1.default.Fragment, null,
             googleTagManagerId && (react_1.default.createElement(addons_1.GoogleTagManagerScript, { id: googleTagManagerId })),
             googleAnalyticsId && (react_1.default.createElement(addons_1.GoogleAnalyticsScript, { id: googleAnalyticsId })),

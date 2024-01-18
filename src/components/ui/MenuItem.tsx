@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, ListItem } from '@mui/material'
-import { Icon } from 'components'
+import { Icon } from '../../components'
 
 type MenuItemProps = {
 	label: string

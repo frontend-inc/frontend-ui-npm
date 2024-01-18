@@ -4,11 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var ui_1 = require("components/ui");
-var helpers_1 = require("helpers");
+var components_1 = require("../../../components");
+var helpers_1 = require("../../../helpers");
 var CellText = function (props) {
     var value = props.value;
-    return react_1.default.createElement(ui_1.CellString, { variant: "body2", value: (0, helpers_1.truncate)(value, 20) });
+    return react_1.default.createElement(components_1.CellString, { variant: "body2", value: (0, helpers_1.truncate)(value, 20) });
 };
 exports.default = CellText;
 var sx = {

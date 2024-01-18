@@ -1,5 +1,5 @@
 import React from 'react'
-import { CellButton } from 'components/ui'
+import { CellButton } from '../../../components'
 import { CompareArrows } from '@mui/icons-material'
 
 type CellHABTMProps = {

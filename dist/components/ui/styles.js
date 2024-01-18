@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.selectStyles = void 0;
-var theme_1 = require("theme");
+var theme_1 = require("../../theme");
 var styles_1 = require("@mui/material/styles");
 //@ts-ignore
 var theme = (0, styles_1.createTheme)(theme_1.muiTheme);

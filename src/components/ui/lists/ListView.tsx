@@ -1,6 +1,6 @@
 import React from 'react'
 import { Stack } from '@mui/material'
-import { CardHoriz } from 'components'
+import { CardHoriz } from '../../../components'
 
 type ListViewProps = {
 	loading?: boolean

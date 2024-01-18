@@ -36,9 +36,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var router_1 = require("next/router");
-var context_1 = require("context");
+var context_1 = require("../../../context");
 var CoverImage = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;

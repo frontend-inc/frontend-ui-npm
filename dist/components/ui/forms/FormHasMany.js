@@ -74,12 +74,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var lucide_react_1 = require("lucide-react");
 var FormField_1 = __importDefault(require("./FormField"));
-var index_1 = require("constants/index");
+var index_1 = require("../../../constants/index");
 var lodash_1 = require("lodash");
 var FormHasMany = function (props) {
     var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, _b = props.variant, variant = _b === void 0 ? 'contained' : _b, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl;

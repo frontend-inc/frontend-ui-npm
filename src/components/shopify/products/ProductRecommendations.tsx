@@ -5,7 +5,7 @@ import {
 	ProductGrid,
 	ProductList,
 	ProductCarousel,
-} from 'components/shopify'
+} from '../../../components/shopify'
 import { Box } from '@mui/material'
 
 type ProductRecommendationsProps = {

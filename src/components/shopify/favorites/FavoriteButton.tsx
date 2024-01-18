@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '@mui/material'
-import { Icon } from 'components'
+import { Icon } from '../../../components'
 import { useFavorites } from '@webstudio/shopify'
 import { Product } from '@webstudio/shopify'
 

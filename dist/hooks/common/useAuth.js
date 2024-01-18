@@ -37,8 +37,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-var context_1 = require("context");
-var hooks_1 = require("hooks");
+var context_1 = require("../../context");
+var hooks_1 = require("../../hooks");
 var cookies_next_1 = require("cookies-next");
 var useAuth = function () {
     var _a = (0, react_1.useContext)(context_1.ApiContext), api = _a.api, authCookie = _a.authCookie;

@@ -5,8 +5,8 @@ import {
   ModeTheme, 
   Header, 
   Notifications 
-} from 'components'
-import { Notification } from 'types'
+} from '../../../components'
+import { Notification } from '../../../types'
 
 type LayoutContainerProps = {
 	position?: 'fixed' | 'absolute' | 'relative'

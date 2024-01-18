@@ -1,6 +1,6 @@
 import React from 'react'
 import { Stack } from '@mui/material'
-import { TextInput } from 'components'
+import { TextInput } from '../../../components'
 
 type AddressFormProps = {
 	address: any

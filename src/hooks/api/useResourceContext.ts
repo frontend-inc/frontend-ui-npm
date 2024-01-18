@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
-import { ResourceContext } from 'context/core'
-import { useResource } from 'hooks'
+import { ResourceContext } from '../../context'
+import { useResource } from '../../hooks'
 
 type UseResourceContextProps = {
 	name?: string

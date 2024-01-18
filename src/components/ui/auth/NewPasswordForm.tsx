@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Stack } from '@mui/material'
-import { IconLoader, TextInput } from 'components/ui'
+import { IconLoader, TextInput } from '../../../components'
 
 type NewPasswordFormProps = {
 	loading: boolean

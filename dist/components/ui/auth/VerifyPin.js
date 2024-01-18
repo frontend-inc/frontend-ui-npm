@@ -72,8 +72,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var ui_1 = require("components/ui");
-var hooks_1 = require("hooks");
+var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var VerifyPin = function (props) {
     var _a = props || {}, logo = _a.logo, title = _a.title, subtitle = _a.subtitle, redirectUrl = _a.redirectUrl, loginUrl = _a.loginUrl, _b = _a.authConfig, authConfig = _b === void 0 ? {} : _b;
@@ -123,9 +123,9 @@ var VerifyPin = function (props) {
     var handleLogin = function () {
         router.push(loginUrl);
     };
-    return (react_1.default.createElement(ui_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(ui_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
-            !showVerifyPin ? (react_1.default.createElement(ui_1.VerifySendPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSendPin })) : (react_1.default.createElement(ui_1.VerifyPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPin })),
+    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+            !showVerifyPin ? (react_1.default.createElement(components_1.VerifySendPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSendPin })) : (react_1.default.createElement(components_1.VerifyPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPin })),
             loginUrl && (react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, onClick: handleLogin, color: "primary" }, "Back to login")))));
 };
 exports.default = VerifyPin;

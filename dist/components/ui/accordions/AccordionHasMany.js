@@ -35,10 +35,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
-var helpers_1 = require("helpers");
+var components_1 = require("../../../components");
+var helpers_1 = require("../../../helpers");
 var AccordionHasMany = function (props) {
     var field = props.field, url = props.url, foreignUrl = props.foreignUrl, handle = props.handle, _a = props.perPage, perPage = _a === void 0 ? 5 : _a, _b = props.query, defaultQuery = _b === void 0 ? null : _b;
     var theme = (0, material_1.useTheme)();

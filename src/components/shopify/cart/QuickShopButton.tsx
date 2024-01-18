@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ProductModal } from 'components/shopify'
+import { ProductModal } from '../../../components/shopify'
 import { Button } from '@mui/material'
 
 type QuickShopProps = {

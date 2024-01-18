@@ -1,5 +1,5 @@
 import React from 'react'
-import { useClickOrDrag } from 'hooks'
+import { useClickOrDrag } from '../../../hooks'
 import { CardActionArea } from '@mui/material'
 
 type TouchableOpacityProps = {

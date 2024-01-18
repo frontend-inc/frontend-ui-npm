@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Carousel from 'react-multi-carousel'
 import { Box } from '@mui/material'
-import { getCarouselResponsive } from 'helpers'
+import { getCarouselResponsive } from '../../../helpers'
 import { useTheme } from '@mui/material/styles'
 import CarouselDot from './CarouselDot'
 // Note: required global CSS import from _app or app/layout.tsx

@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var material_2 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var Drawer = function (props) {
     var open = props.open, title = props.title, _a = props.anchor, anchor = _a === void 0 ? 'right' : _a, handleClose = props.handleClose, children = props.children, actions = props.actions, _b = props.variant, variant = _b === void 0 ? 'temporary' : _b, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, _d = props.hideBackdrop, hideBackdrop = _d === void 0 ? false : _d, _e = props.closeIcon, closeIcon = _e === void 0 ? 'X' : _e, _f = props.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = props.styles, styles = _g === void 0 ? {} : _g;
     return (react_1.default.createElement(material_1.SwipeableDrawer, { open: open, variant: variant, anchor: anchor, onOpen: handleClose, onClose: handleClose, hideBackdrop: hideBackdrop, PaperProps: {

@@ -35,7 +35,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var shopify_1 = require("components/shopify");
+var shopify_1 = require("../../../components/shopify");
 var material_1 = require("@mui/material");
 var QuickShop = function (props) {
     var _a = props || {}, size = _a.size, product = _a.product, _b = _a.buttonVariant, buttonVariant = _b === void 0 ? 'text' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Add to Cart' : _c, _d = _a.quickShopButtonText, quickShopButtonText = _d === void 0 ? 'Quick Shop' : _d, _e = _a.enableQuantity, enableQuantity = _e === void 0 ? false : _e;

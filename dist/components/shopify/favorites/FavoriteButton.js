@@ -52,7 +52,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var shopify_1 = require("@webstudio/shopify");
 var FavoriteButton = function (props) {
     var product = props.product;

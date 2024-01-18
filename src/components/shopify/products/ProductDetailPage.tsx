@@ -6,9 +6,9 @@ import {
 	ProductInfo,
 	ProductImages,
 	ProductVariantSelector,
-} from 'components/shopify'
+} from '../../../components/shopify'
 import { useRecentlyViewed, useProductContext } from '@webstudio/shopify'
-import { useResourceContext } from 'hooks'
+import { useResourceContext } from '../../../hooks'
 
 type ProductDetailPageProps = {
 	handle: string | string[]

@@ -28,12 +28,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var shopify_1 = require("@webstudio/shopify");
-var addons_1 = require("hooks/addons");
+var addons_1 = require("../../../hooks/addons");
 var router_1 = require("next/router");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
-var shopify_2 = require("components/shopify");
-var LoadMore_1 = __importDefault(require("components/shopify/search/LoadMore"));
+var components_1 = require("../../../components");
+var shopify_2 = require("../../../components/shopify");
+var LoadMore_1 = __importDefault(require("../../../components/shopify/search/LoadMore"));
 var shopify_3 = require("@webstudio/shopify");
 var PER_PAGE = 48;
 var Search = function () {

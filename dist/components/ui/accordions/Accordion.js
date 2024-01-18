@@ -35,7 +35,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
 var __1 = require("..");
 var material_2 = require("@mui/material");

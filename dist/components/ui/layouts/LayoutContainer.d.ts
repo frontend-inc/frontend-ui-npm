@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Notification } from 'types';
+import { Notification } from '../../../types';
 type LayoutContainerProps = {
     position?: 'fixed' | 'absolute' | 'relative';
     mode?: 'accent' | 'light' | 'dark';

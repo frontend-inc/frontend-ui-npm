@@ -9,8 +9,8 @@ import {
 	Typography,
 	IconButton,
 } from '@mui/material'
-import { Icon, Loader } from 'components'
-import { useResponsive } from 'hooks'
+import { Icon, Loader } from '../../../components'
+import { useResponsive } from '../../../hooks'
 
 type ModalProps = {
 	open: boolean

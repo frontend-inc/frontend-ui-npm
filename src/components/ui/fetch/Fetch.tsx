@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
-import { Box, Backdrop } from '@mui/material'
-import { useResourceContext } from 'hooks'
-import { LayoutLoader } from 'components'
+import { useResourceContext } from '../../../hooks'
 
 type FetchProps = {
 	url: string

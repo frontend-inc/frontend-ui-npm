@@ -62,7 +62,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var shopify_1 = require("@webstudio/shopify");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var CartDiscountCodeInput = function () {
     var _a = (0, react_1.useState)(null), discountCode = _a[0], setDiscountCode = _a[1];
     var _b = (0, shopify_1.useCart)(), loading = _b.loading, cartApplyDiscountCode = _b.cartApplyDiscountCode;

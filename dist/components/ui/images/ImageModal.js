@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var hooks_1 = require("hooks");
-var ui_1 = require("components/ui");
+var hooks_1 = require("../../../hooks");
+var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
 var image_1 = __importDefault(require("next/image"));
@@ -19,7 +19,7 @@ var ImageModal = function (props) {
     var handleDownloadClick = function () {
         window.open(image === null || image === void 0 ? void 0 : image.url, '_blank');
     };
-    return (react_1.default.createElement(ui_1.Modal, { open: open, handleClose: handleClose, title: title, maxWidth: "md", p: 0, actions: react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement(components_1.Modal, { open: open, handleClose: handleClose, title: title, maxWidth: "md", p: 0, actions: react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(material_1.Button, { onClick: handleCopyUrlClick }, "Copy URL"),
             react_1.default.createElement(material_1.Button, { variant: "contained", onClick: handleDownloadClick }, "Download")) },
         react_1.default.createElement(material_1.Box, { sx: sx.root },

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Button, Box, Stack, Typography } from '@mui/material'
-import { truncate } from 'helpers'
-import { PRODUCT_CARD_VERT_HEIGHT } from 'constants/index'
+import { truncate } from '../../../helpers'
+import { PRODUCT_CARD_VERT_HEIGHT } from '../../../constants/index'
 import { Product } from '@webstudio/shopify'
 import { formatCurrency } from '@webstudio/shopify'
 import SwipeableProductImages from './images/SwipeableProductImages'
-import { ProductModal, AddToCartButton } from 'components/shopify'
-import { OkendoStarRating } from 'components/addons'
+import { ProductModal, AddToCartButton } from '../../../components/shopify'
+import { OkendoStarRating } from '../../../components/addons'
 
 type ProductCardProps = {
 	product: Product

@@ -40,8 +40,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("components");
-var hooks_1 = require("hooks");
+var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var Login = function (props) {
     var _a = props || {}, logo = _a.logo, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl;

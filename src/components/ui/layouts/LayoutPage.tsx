@@ -1,5 +1,5 @@
 import React from 'react'
-import { LayoutLoader } from 'components'
+import { LayoutLoader } from '../../../components'
 import { Box } from '@mui/material'
 
 type LayoutPageProps = {

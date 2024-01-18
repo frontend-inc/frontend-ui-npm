@@ -60,8 +60,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
-var ui_1 = require("components/ui");
+var hooks_1 = require("../../../hooks");
+var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var MyAccount = function (props) {
     var router = (0, router_1.useRouter)();
@@ -98,8 +98,8 @@ var MyAccount = function (props) {
             setUser(currentUser);
         }
     }, [currentUser]);
-    return (react_1.default.createElement(ui_1.LayoutLoader, { loading: loading }, currentUser && (react_1.default.createElement(ui_1.AuthScreen, { logo: logo, title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: 'Update account' },
-        react_1.default.createElement(ui_1.MyAccountForm, { user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleRedirect: handleRedirect })))));
+    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading }, currentUser && (react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: 'Update account' },
+        react_1.default.createElement(components_1.MyAccountForm, { user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleRedirect: handleRedirect })))));
 };
 exports.default = MyAccount;
 var sx = {

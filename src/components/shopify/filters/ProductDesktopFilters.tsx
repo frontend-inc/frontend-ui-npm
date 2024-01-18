@@ -11,7 +11,7 @@ import {
 	VendorFilters,
 	TagFilters,
 	InStockFilter,
-} from 'components/shopify'
+} from '../../../components/shopify'
 import {
 	findColorFilters,
 	findSizeFilters,

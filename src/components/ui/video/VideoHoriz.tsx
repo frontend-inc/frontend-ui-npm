@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { CoverHoriz, VideoModal } from 'components'
-import { CardProps } from 'types'
-import { VIDEO_HORIZ_HEIGHT, VIDEO_HORIZ_WIDTH } from 'constants/index'
+import { CoverHoriz, VideoModal } from '../../../components'
+import { CardProps } from '../../../types'
+import { VIDEO_HORIZ_HEIGHT, VIDEO_HORIZ_WIDTH } from '../../../constants/index'
 
 const VideoVert: React.FC<CardProps> = (props) => {
 	const {

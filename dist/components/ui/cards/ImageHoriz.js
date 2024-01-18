@@ -36,12 +36,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var core_1 = require("context/core");
-var components_1 = require("components");
+var context_1 = require("../../../context");
+var components_1 = require("../../../components");
 var router_1 = require("next/router");
-var index_1 = require("constants/index");
+var index_1 = require("../../../constants/index");
 var ImageHoriz = function (props) {
-    var clientUrl = (0, react_1.useContext)(core_1.AppContext).clientUrl;
+    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? index_1.IMAGE_HORIZ_HEIGHT : _c, handleClick = _a.handleClick, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {

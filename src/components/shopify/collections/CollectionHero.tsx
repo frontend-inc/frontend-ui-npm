@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import { Stack } from '@mui/material'
 import {
   CoverImage
-} from 'components'
+} from '../../../components'
 import { useCollections } from '@webstudio/shopify'
-import { TypographyVariants } from 'types'
+import { TypographyVariants } from '../../../types'
 
 type CollectionHeroProps = {
   handle: string

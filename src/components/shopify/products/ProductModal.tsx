@@ -1,6 +1,6 @@
 import React from 'react'
-import { Modal } from 'components'
-import { ProductDetailPage } from 'components/shopify'
+import { Modal } from '../../../components'
+import { ProductDetailPage } from '../../../components/shopify'
 import { ProductProvider } from '@webstudio/shopify'
 
 type ProductModalProps = {

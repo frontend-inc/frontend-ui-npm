@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { ProductModal, AddToCartButton } from 'components/shopify'
+import { ProductModal, AddToCartButton } from '../../../components/shopify'
 import { Button, Box, Stack, Typography } from '@mui/material'
-import { truncate } from 'helpers'
+import { truncate } from '../../../helpers'
 import {
 	PRODUCT_CARD_HORIZ_HEIGHT,
 	PRODUCT_CARD_HORIZ_WIDTH,
-} from 'constants/index'
+} from '../../../constants/index'
 import SwipeableProductImages from './images/SwipeableProductImages'
 import { formatCurrency } from '@webstudio/shopify'
 import { Product } from '@webstudio/shopify'

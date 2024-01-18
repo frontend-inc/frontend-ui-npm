@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box, Button } from '@mui/material'
-import Script from 'next/script'
 
 // https://help.klaviyo.com/hc/en-us/articles/4418052317339
 

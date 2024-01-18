@@ -76,10 +76,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var shopify_1 = require("@webstudio/shopify");
 var shopify_2 = require("@webstudio/shopify");
-var addons_1 = require("hooks/addons");
+var addons_1 = require("../../../hooks/addons");
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var shopify_3 = require("@webstudio/shopify");
 var router_1 = require("next/router");
 var CartQuantityInput = function (props) {

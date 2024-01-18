@@ -1,5 +1,5 @@
 import React from 'react'
-import { Drawer } from 'components'
+import { Drawer } from '../../../components'
 import FilterForm from './FilterForm'
 
 type FilterDrawerProps = {

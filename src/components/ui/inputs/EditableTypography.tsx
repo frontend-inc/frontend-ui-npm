@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography } from '@mui/material'
-import { SyntheticEvent } from 'types'
+import { SyntheticEvent } from '../../../types'
 
 type EditableTypographyProps = {
 	variant: any

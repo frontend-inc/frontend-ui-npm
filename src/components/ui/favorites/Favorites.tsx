@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react'
-import { AppContext } from 'context'
-import { useAuth, useResource } from 'hooks'
+import { AppContext } from '../../../context'
+import { useAuth, useResource } from '../../../hooks'
 import { useRouter } from 'next/router'
-import { StyledList } from 'components'
+import { StyledList } from '../../../components'
 
 type FavoritesProps = {
 	layout?: 'list' | 'grid' | 'carousel'

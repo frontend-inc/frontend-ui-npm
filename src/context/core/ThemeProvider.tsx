@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { ThemeContext } from 'context'
+import React from 'react'
+import ThemeContext from './ThemeContext'
 import {
 	createTheme,
 	ThemeProvider as MuiThemeProvider,
 } from '@mui/material/styles'
-import { useTheme } from 'hooks'
+import { useTheme } from '../../hooks'
 
 type ThemeProviderProps = {
 	children: React.ReactNode

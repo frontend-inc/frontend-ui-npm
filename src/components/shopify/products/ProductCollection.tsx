@@ -7,7 +7,7 @@ import {
 	ProductGrid,
 	ProductCarousel,
 	ProductSortButton,
-} from 'components/shopify'
+} from '../../../components/shopify'
 import { ProductCollectionSortKey } from '@webstudio/shopify'
 
 type ProductCollectionProps = {

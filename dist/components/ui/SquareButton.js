@@ -16,14 +16,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var ui_1 = require("components/ui");
+var components_1 = require("../../components");
 var SquareButton = function (props) {
     var icon = props.icon, label = props.label, title = props.title, handleClick = props.handleClick, _a = props.selected, selected = _a === void 0 ? false : _a;
     return (react_1.default.createElement(material_1.CardActionArea, { sx: sx.cardActionArea, onClick: handleClick ? handleClick : null },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.item), (selected && sx.selected)) },
             icon && react_1.default.createElement(material_1.Box, { sx: sx.icon }, icon),
             title && (react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.primary" }, title)),
-            label && react_1.default.createElement(ui_1.Label, { label: label }))));
+            label && react_1.default.createElement(components_1.Label, { label: label }))));
 };
 exports.default = SquareButton;
 var sx = {

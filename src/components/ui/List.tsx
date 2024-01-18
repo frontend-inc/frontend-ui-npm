@@ -11,7 +11,7 @@ import {
 	Collapse,
 } from '@mui/material'
 import { ChevronRight } from '@mui/icons-material'
-import { TypographyVariants } from 'types'
+import { TypographyVariants } from '../../types'
 
 type ListProps = {
 	expandable?: boolean

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
-import { useResource } from 'hooks'
+import { useResource } from '../../../hooks'
 import { Box, TypographyVariant } from '@mui/material'
 import {
 	CardVert,
 	ImageHoriz,
 	CoverHoriz,
 	AvatarVert,
-} from 'components'
+} from '../../../components'
 
 type DetailHeroProps = {
 	fields: any[]

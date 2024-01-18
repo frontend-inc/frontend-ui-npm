@@ -1,5 +1,5 @@
 import React from 'react'
-import { muiTheme } from 'theme'
+import { muiTheme } from '../../theme'
 import { createTheme } from '@mui/material/styles'
 //@ts-ignore
 const theme = createTheme(muiTheme)

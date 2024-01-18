@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
 import { Link2 } from 'lucide-react'
-import { FieldWrapper } from 'components/ui'
+import { FieldWrapper } from '../../../components'
 
 type FieldURLProps = {
 	value?: any

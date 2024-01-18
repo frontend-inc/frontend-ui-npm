@@ -1,5 +1,5 @@
 import React from 'react'
-import { CellButton } from 'components/ui'
+import { CellButton } from '../../../components'
 import { ForkRight } from '@mui/icons-material'
 
 type CellHasManyProps = {

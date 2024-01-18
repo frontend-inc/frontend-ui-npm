@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, IconButton } from '@mui/material'
 import { useShop } from '@webstudio/shopify'
-import { Icon } from 'components'
+import { Icon } from '../../../components'
 import { useRouter } from 'next/router'
 
 type ShopifyAuthProps = {

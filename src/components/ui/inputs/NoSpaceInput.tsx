@@ -1,6 +1,6 @@
 import React from 'react'
-import { TextInput } from 'components/ui'
-import { InputProps } from 'types'
+import { TextInput } from '../../../components'
+import { InputProps } from '../../../types'
 
 const NoSpaceInput: React.FC<InputProps> = (props) => {
 	const { errors, value, name, label, placeholder, handleChange, disabled } =

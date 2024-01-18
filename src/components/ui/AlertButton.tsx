@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { IconButton, Button } from '@mui/material'
-import { AlertModal } from 'components/ui'
+import { AlertModal } from '../../components'
 
 type AlertButtonProps = {
 	disable?: boolean

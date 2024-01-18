@@ -10,8 +10,8 @@ import {
 	Radio,
   Hidden
 } from '@mui/material'
-import { Icon, Popup, Drawer } from 'components'
-import { SORT_DIRECTIONS } from 'constants/index'
+import { Icon, Popup, Drawer } from '../..'
+import { SORT_DIRECTIONS } from '../../../../constants/index'
 import FilterInput from '../filters/FilterInput'
 
 type SortFieldsProps = {

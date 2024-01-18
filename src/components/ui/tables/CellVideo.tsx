@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
-import { Image, NoImage } from 'components/ui'
-import { imageFromVideoUrl } from 'helpers'
+import { Image, NoImage } from '../../../components'
+import { imageFromVideoUrl } from '../../../helpers'
 
 type CellVideoProps = {
 	value: string

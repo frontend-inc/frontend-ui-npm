@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var lucide_react_1 = require("lucide-react");
 var material_1 = require("@mui/material");
 var EditableTextInput = function (props) {
@@ -35,7 +35,7 @@ var EditableTextInput = function (props) {
         handleSubmit(name, value);
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(ui_1.TextInput, { disabled: !editing, value: value, label: label, name: name, handleChange: handleChange, placeholder: placeholder }),
+        react_1.default.createElement(components_1.TextInput, { disabled: !editing, value: value, label: label, name: name, handleChange: handleChange, placeholder: placeholder }),
         react_1.default.createElement(material_1.Box, { sx: sx.icons }, loading ? (react_1.default.createElement(material_1.CircularProgress, { disableShrink: true, size: 24, sx: sx.icon })) : (react_1.default.createElement(react_1.default.Fragment, null,
             editing ? (react_1.default.createElement(material_1.IconButton, { size: "small", onClick: function () { return setEditing(false); }, sx: sx.iconButton },
                 react_1.default.createElement(lucide_react_1.XCircle, null))) : (react_1.default.createElement(material_1.IconButton, { size: "small", onClick: function () { return setEditing(true); }, sx: sx.iconButton },

@@ -1,7 +1,7 @@
 import React from 'react'
-import { CellVideo } from 'components/ui'
+import { CellVideo } from '../../../components'
 import { Box, Button } from '@mui/material'
-import { TextInput } from 'components/ui'
+import { TextInput } from '../../../components'
 import { Search } from 'lucide-react'
 
 const VideoInput = ({

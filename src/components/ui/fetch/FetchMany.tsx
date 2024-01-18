@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useResourceContext } from 'hooks'
+import { useResourceContext } from '../../../hooks'
 
 type FetchManyProps = {
 	url: string

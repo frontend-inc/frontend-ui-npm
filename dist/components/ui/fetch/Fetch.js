@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var Fetch = function (props) {
     var children = props.children, url = props.url, handle = props.handle;
     var _a = (0, hooks_1.useResourceContext)({

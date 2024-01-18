@@ -5,7 +5,7 @@ import {
 	TableCell as MuiTableCell,
 	TableRow as MuiTableRow,
 } from '@mui/material'
-import { Cell, TableCell } from 'components/ui'
+import { Cell, TableCell } from '../../../components'
 import { Edit } from '@mui/icons-material'
 
 type TableRowProps = {

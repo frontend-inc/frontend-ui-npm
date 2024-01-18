@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var shopify_1 = require("@webstudio/shopify");
 var CollectionHero = function (props) {
     var _a;

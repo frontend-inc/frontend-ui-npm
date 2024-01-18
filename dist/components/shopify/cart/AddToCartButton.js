@@ -72,11 +72,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var shopify_1 = require("@webstudio/shopify");
-var addons_1 = require("hooks/addons");
-var hooks_1 = require("hooks");
+var addons_1 = require("../../../hooks/addons");
+var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
-var shopify_2 = require("components/shopify");
+var components_1 = require("../../../components");
+var shopify_2 = require("../../../components/shopify");
 var shopify_3 = require("@webstudio/shopify");
 var AddToCartButton = function (props) {
     var showAlertError = (0, hooks_1.useAlerts)().showAlertError;

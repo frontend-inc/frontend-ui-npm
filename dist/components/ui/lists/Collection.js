@@ -44,12 +44,12 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var material_2 = require("@mui/material");
-var context_1 = require("context");
-var index_1 = require("constants/index");
+var context_1 = require("../../../context");
+var index_1 = require("../../../constants/index");
 var router_1 = require("next/router");
 var Collection = function (props) {
     var router = (0, router_1.useRouter)();

@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var VideoVert = function (props) {
     var _a = props || {}, editing = _a.editing, label = _a.label, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, _c = _a.video, video = _c === void 0 ? '' : _c, buttonText = _a.buttonText, _d = _a.textVariant, textVariant = _d === void 0 ? 'subtitle1' : _d, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.height, height = _f === void 0 ? 80 : _f, _g = _a.width, width = _g === void 0 ? 80 : _g, _h = _a.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = _a.enableGradient, enableGradient = _j === void 0 ? false : _j, _k = _a.enableOverlay, enableOverlay = _k === void 0 ? false : _k;
     var _l = (0, react_1.useState)(false), open = _l[0], setOpen = _l[1];

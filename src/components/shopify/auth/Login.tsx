@@ -1,7 +1,7 @@
 import React from 'react'
-import { AuthScreen, LayoutLoader } from 'components'
+import { AuthScreen, LayoutLoader } from '../../../components'
 import { useAuth } from '@webstudio/shopify'
-import { LoginForm } from 'components/shopify'
+import { LoginForm } from '../../../components/shopify'
 import { useRouter } from 'next/router'
 
 type LoginProps = {

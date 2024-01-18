@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var LayoutLoader = function (props) {
     var _a = props.loading, loading = _a === void 0 ? true : _a, _b = props.delay, delay = _b === void 0 ? 500 : _b, children = props.children;
     var easeLoading = (0, hooks_1.useDelayedLoading)({

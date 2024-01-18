@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Hidden, Badge, ButtonGroup, Button, Stack } from '@mui/material'
-import { Popup, Drawer, ButtonLoader } from 'components'
-import { FilterList as FilterIcon, Clear } from '@mui/icons-material'
+import { Popup, Drawer, ButtonLoader } from '../../../../components'
+import { FilterList as FilterIcon } from '@mui/icons-material'
 import FilterField from './FilterField'
-import { FilterOption } from 'types'
+import { FilterOption } from '../../../../types'
 
 type FilterButtonProps = {
 	filters?: FilterOption[]

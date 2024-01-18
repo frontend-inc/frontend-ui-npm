@@ -1,5 +1,5 @@
 import React from 'react'
-import { FieldWrapper, UserAvatar } from 'components/ui'
+import { FieldWrapper, UserAvatar } from '../../../components'
 
 type FieldAvatarProps = {
 	value?: any

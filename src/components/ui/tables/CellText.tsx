@@ -1,6 +1,6 @@
 import React from 'react'
-import { CellString } from 'components/ui'
-import { truncate } from 'helpers'
+import { CellString } from '../../../components'
+import { truncate } from '../../../helpers'
 
 type CellTextProps = {
 	value?: string

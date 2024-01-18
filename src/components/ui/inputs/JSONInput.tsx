@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { TextInput } from 'components/ui'
-import { SyntheticEvent } from 'types'
+import { TextInput } from '../../../components'
+import { SyntheticEvent } from '../../../types'
 
 type JSONInputProps = {
 	errors: Record<string, string>

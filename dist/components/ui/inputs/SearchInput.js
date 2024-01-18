@@ -36,7 +36,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var styles_1 = require("components/ui/inputs/styles");
+var styles_1 = require("./styles");
 var use_debounce_1 = require("use-debounce");
 var SearchInput = function (props) {
     var _a = props.name, name = _a === void 0 ? 'keywords' : _a, label = props.label, value = props.value, _b = props.placeholder, placeholder = _b === void 0 ? 'Search...' : _b, handleChange = props.handleChange, handleSearch = props.handleSearch, _c = props.styles, styles = _c === void 0 ? {} : _c;

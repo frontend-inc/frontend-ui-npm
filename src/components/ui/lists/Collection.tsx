@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { useFilters, useResource } from 'hooks'
+import { useFilters, useResource } from '../../../hooks'
 import { Stack, Box } from '@mui/material'
 import {
 	ListFilterButton,
@@ -7,11 +7,11 @@ import {
 	SearchInput,
 	StyledList,
 	LoadMore,
-} from 'components'
+} from '../../../components'
 import { Typography } from '@mui/material'
-import { AppContext } from 'context'
-import { TITLE_SORT, PRICE_SORT } from 'constants/index'
-import { FilterOption } from 'types'
+import { AppContext } from '../../../context'
+import { TITLE_SORT, PRICE_SORT } from '../../../constants/index'
+import { FilterOption } from '../../../types'
 import { useRouter } from 'next/router'
 
 type CollectionProps = {

@@ -1,4 +1,4 @@
-import { muiTheme } from 'theme'
+import { muiTheme } from '../theme'
 
 export const getCarouselResponsive = (theme = muiTheme) => {
 	const {

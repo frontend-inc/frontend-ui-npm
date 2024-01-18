@@ -2,8 +2,8 @@ import React from 'react'
 import { useProductContext } from '@webstudio/shopify'
 import { Stack, Typography } from '@mui/material'
 import { formatCurrency } from '@webstudio/shopify'
-import { ProductDescription } from 'components/shopify'
-import { OkendoStarRating } from 'components/addons'
+import { ProductDescription } from '../../../components/shopify'
+import { OkendoStarRating } from '../../../components/addons'
 
 type ProductDetailsProps = {
 	disableCompareAtPrice?: boolean

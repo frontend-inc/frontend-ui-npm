@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { CheckboxFilterList } from 'components/shopify'
+import { CheckboxFilterList } from '../../../../components/shopify'
 import { ProductCollectionFilter } from '@webstudio/shopify'
 import { findProductTypeFilters } from '@webstudio/shopify'
 

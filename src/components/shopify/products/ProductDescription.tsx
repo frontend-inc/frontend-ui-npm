@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Stack, Typography } from '@mui/material'
-import { TypographyVariants } from 'types'
+import { TypographyVariants } from '../../../types'
 import { useProductContext } from '@webstudio/shopify'
 
 type ProductDescriptionProps = {

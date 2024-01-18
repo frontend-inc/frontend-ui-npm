@@ -1,5 +1,5 @@
 import React from 'react'
-import { Label } from 'components/ui'
+import { Label } from '../../../components'
 
 type CellBooleanProps = {
 	value: boolean

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Divider } from 'components'
-import { useAuth } from 'hooks'
+import { Divider } from '../../../components'
+import { useAuth } from '../../../hooks'
 import { Typography, ListItemText, Menu, MenuItem } from '@mui/material'
 
 type AuthMenuProps = {

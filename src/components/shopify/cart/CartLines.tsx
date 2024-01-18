@@ -1,7 +1,7 @@
 import React from 'react'
 import { useCart } from '@webstudio/shopify'
 import { List } from '@mui/material'
-import { CartLine } from 'components/shopify'
+import { CartLine } from '../../../components/shopify'
 
 const CartLines: React.FC = (props) => {
 	const { cart } = useCart()

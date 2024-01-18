@@ -1,6 +1,6 @@
 import React from 'react'
-import { useAlerts } from 'hooks'
-import { Modal } from 'components/ui'
+import { useAlerts } from '../../../hooks'
+import { Modal } from '../../../components'
 import { Box, Button } from '@mui/material'
 import copy from 'copy-to-clipboard'
 import Image from 'next/image'

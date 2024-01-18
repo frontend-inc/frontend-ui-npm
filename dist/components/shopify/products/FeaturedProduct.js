@@ -38,10 +38,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var shopify_1 = require("components/shopify");
+var shopify_1 = require("../../../components/shopify");
 var material_1 = require("@mui/material");
-var helpers_1 = require("helpers");
-var index_1 = require("constants/index");
+var helpers_1 = require("../../../helpers");
+var index_1 = require("../../../constants/index");
 var SwipeableProductImages_1 = __importDefault(require("./images/SwipeableProductImages"));
 var shopify_2 = require("@webstudio/shopify");
 var shopify_3 = require("@webstudio/shopify");

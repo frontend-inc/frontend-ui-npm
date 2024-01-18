@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material'
-import { Drawer } from 'components'
+import { Drawer } from '../../../components'
 import PriceRangeInput from './PriceRangeInput'
 
 type MobileFilterDrawerProps = {

@@ -1,4 +1,4 @@
-import { ImageContentType, VideoContentType } from 'types'
+import { ImageContentType, VideoContentType } from '../types'
 
 export const MAX_FILE_SIZE = 5000000
 

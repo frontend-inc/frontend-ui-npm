@@ -5,9 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var lucide_react_1 = require("lucide-react");
-var helpers_1 = require("helpers");
-var index_1 = require("constants/index");
-var ui_1 = require("components/ui");
+var helpers_1 = require("../../../helpers");
+var index_1 = require("../../../constants/index");
+var components_1 = require("../../../components");
 var CloudinaryImage = function (props) {
     var src = props.src, height = props.height, width = props.width;
     var fileExtension = src.split('.').pop();
@@ -26,7 +26,7 @@ var CloudinaryImage = function (props) {
     });
     //@ts-ignore
     var isImageOrVideo = index_1.IMAGE_OR_VIDEO_FORMATS.includes(fileExtension);
-    return isImageOrVideo ? (react_1.default.createElement(ui_1.Image, { src: resizedImageUrl, height: height, 
+    return isImageOrVideo ? (react_1.default.createElement(components_1.Image, { src: resizedImageUrl, height: height, 
         //@ts-ignore
         width: width })) : (react_1.default.createElement(lucide_react_1.File, { size: 20 }));
 };

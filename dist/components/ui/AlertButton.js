@@ -36,7 +36,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var ui_1 = require("components/ui");
+var components_1 = require("../../components");
 var AlertButton = function (props) {
     var _a = props.disable, disable = _a === void 0 ? false : _a, _b = props.iconButton, iconButton = _b === void 0 ? false : _b, onClick = props.onClick;
     var _c = (0, react_1.useState)(false), open = _c[0], setOpen = _c[1];
@@ -54,6 +54,6 @@ var AlertButton = function (props) {
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         iconButton ? (react_1.default.createElement(material_1.IconButton, __assign({}, props, { onClick: handleClick }))) : (react_1.default.createElement(material_1.Button, __assign({}, props, { onClick: handleClick }))),
-        react_1.default.createElement(ui_1.AlertModal, { open: open, handleClose: function () { return setOpen(false); }, handleConfirm: handleConfirm })));
+        react_1.default.createElement(components_1.AlertModal, { open: open, handleClose: function () { return setOpen(false); }, handleConfirm: handleConfirm })));
 };
 exports.default = AlertButton;

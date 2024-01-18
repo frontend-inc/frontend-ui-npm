@@ -15,7 +15,7 @@ import {
 	AvatarChip,
 	ImageVert,
 	ImageHoriz,
-} from 'components'
+} from '../../../components'
 
 type StyledListProps = {
 	loading?: boolean

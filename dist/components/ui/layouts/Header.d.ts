@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuItem } from 'components';
+import { MenuItem } from '../../../components';
 type MenuItem = {
     label: string;
     path: string;

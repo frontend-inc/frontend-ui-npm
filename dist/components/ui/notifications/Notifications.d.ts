@@ -1,5 +1,5 @@
 import React from 'react';
-import { Notification as NotificationType } from 'types';
+import { Notification as NotificationType } from '../../../types';
 type NotificationProps = {
     notifications: NotificationType[];
 };

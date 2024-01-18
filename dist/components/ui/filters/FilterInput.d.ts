@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterOption, SyntheticEvent } from 'types';
+import { FilterOption, SyntheticEvent } from '../../../types';
 type FieldOption = FilterOption & {
     db_type: string;
 };

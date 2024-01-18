@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var AuthScreen = function (props) {
     var title = props.title, subtitle = props.subtitle, children = props.children, logo = props.logo;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },

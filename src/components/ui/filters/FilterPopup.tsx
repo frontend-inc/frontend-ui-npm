@@ -1,5 +1,5 @@
 import React from 'react'
-import { Popup } from 'components'
+import { Popup } from '../../../components'
 import FilterForm from './FilterForm'
 
 type FilterPopupProps = {

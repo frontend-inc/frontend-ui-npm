@@ -35,12 +35,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("components");
-var shopify_1 = require("components/shopify");
+var components_1 = require("../../../components");
+var shopify_1 = require("../../../components/shopify");
 var material_1 = require("@mui/material");
 var shopify_2 = require("@webstudio/shopify");
 var shopify_3 = require("@webstudio/shopify");
-var addons_1 = require("hooks/addons");
+var addons_1 = require("../../../hooks/addons");
 var lucide_react_1 = require("lucide-react");
 var styles_1 = require("@mui/material/styles");
 var SearchModal = function () {

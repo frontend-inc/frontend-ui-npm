@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Box, Button } from '@mui/material'
-import { FILTERABLE_TYPES, SORTABLE_TYPES } from 'constants/index'
+import { FILTERABLE_TYPES, SORTABLE_TYPES } from '../../../constants/index'
 import { FilterList } from '@mui/icons-material'
 import { Plus, Search } from 'lucide-react'
 import {
 	FilterInputs,
 	FilterKeywordsInput,
 	FilterSortInput,
-} from 'components'
+} from '../../../components'
 
 type FilterFormProps = {
 	query: any

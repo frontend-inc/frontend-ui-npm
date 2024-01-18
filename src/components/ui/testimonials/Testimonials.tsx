@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { useResource } from 'hooks'
+import React, { useEffect } from 'react'
+import { useResource } from '../../../hooks'
 import { Stack } from '@mui/material'
 import {
 	Icon,
@@ -8,7 +8,7 @@ import {
 	Placeholder,
 	LoadMore,
 	TestimonialCard,
-} from 'components'
+} from '../../../components'
 import { Typography } from '@mui/material'
 
 type TestimonialsProps = {

@@ -6,7 +6,7 @@ import {
 	FilterWhere,
 	FilterOption,
 	Option,
-} from 'types'
+} from '../../../../types'
 
 type FilterListProps = {
 	name?: string

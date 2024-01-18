@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var AddressItem = function (props) {
     var address = props.address, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, _a = props.disableActions, disableActions = _a === void 0 ? false : _a;
     return (react_1.default.createElement(material_1.ListItem, { disableGutters: true, secondaryAction: !disableActions && (react_1.default.createElement(components_1.MenuButton, null,

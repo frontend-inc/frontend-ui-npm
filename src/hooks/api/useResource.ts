@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { useState } from 'react'
-import { ApiContext } from 'context/core'
+import { ApiContext } from '../../context'
 import { useRouter } from 'next/router'
-import { QueryParams, Resource, PageInfo } from 'types'
+import { QueryParams, Resource, PageInfo } from '../../types'
 
 type ResourceProps = {
 	url?: string

@@ -24,10 +24,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var shopify_1 = require("@webstudio/shopify");
-var shopify_2 = require("components/shopify");
-var context_1 = require("context");
+var shopify_2 = require("../../../components/shopify");
+var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var shopify_3 = require("@webstudio/shopify");
 var ShopifyCustomerOrders = function (props) {

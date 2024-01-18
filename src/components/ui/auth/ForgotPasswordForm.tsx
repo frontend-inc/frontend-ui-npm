@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Stack } from '@mui/material'
-import { IconLoader, TextInput } from 'components'
+import { IconLoader, TextInput } from '../../../components'
 
 type ForgotPasswordFormProps = {
 	errors: any

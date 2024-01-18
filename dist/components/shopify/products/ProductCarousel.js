@@ -24,12 +24,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var addons_1 = require("hooks/addons");
+var addons_1 = require("../../../hooks/addons");
 var material_1 = require("@mui/material");
-var shopify_1 = require("components/shopify");
+var shopify_1 = require("../../../components/shopify");
 var router_1 = require("next/router");
-var components_1 = require("components");
-var context_1 = require("context");
+var components_1 = require("../../../components");
+var context_1 = require("../../../context");
 var ProductCarousel = function (props) {
     var _a = props.editing, editing = _a === void 0 ? false : _a, products = props.products, _b = props.productComponent, ProductComponent = _b === void 0 ? shopify_1.ProductCardVert : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Add to cart' : _c, _d = props.autoPlay, autoPlay = _d === void 0 ? false : _d, _e = props.arrows, arrows = _e === void 0 ? false : _e, _f = props.showDots, showDots = _f === void 0 ? true : _f, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, enableAddToCart = props.enableAddToCart, enableQuickShop = props.enableQuickShop, _h = props.enableQuantity, enableQuantity = _h === void 0 ? false : _h, enableOkendoStarRating = props.enableOkendoStarRating;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;

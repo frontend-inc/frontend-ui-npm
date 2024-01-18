@@ -1,5 +1,5 @@
 import React from 'react'
-import { useResponsive } from 'hooks'
+import { useResponsive } from '../../hooks'
 import { Box, Typography } from '@mui/material'
 
 type SubheaderProps = {

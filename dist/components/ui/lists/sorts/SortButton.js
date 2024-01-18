@@ -28,8 +28,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
-var index_1 = require("constants/index");
+var __1 = require("../..");
+var index_1 = require("../../../../constants/index");
 var FilterInput_1 = __importDefault(require("../filters/FilterInput"));
 var SortFields = function (props) {
     var fields = props.fields, sortBy = props.sortBy, sortDirection = props.sortDirection, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection;
@@ -58,14 +58,14 @@ var SortButton = function (props) {
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.ButtonGroup, null,
-            react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "text", onClick: handleOpenModal, endIcon: sortDirection == 'asc' ? (react_1.default.createElement(components_1.Icon, { name: "ArrowUp", size: 20 })) : (react_1.default.createElement(components_1.Icon, { name: "ArrowDown", size: 20 })) },
+            react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "text", onClick: handleOpenModal, endIcon: sortDirection == 'asc' ? (react_1.default.createElement(__1.Icon, { name: "ArrowUp", size: 20 })) : (react_1.default.createElement(__1.Icon, { name: "ArrowDown", size: 20 })) },
                 "Sort ",
                 sortBy == 'id' ? 'by' : sortBy)),
         react_1.default.createElement(material_1.Hidden, { smDown: true },
-            react_1.default.createElement(components_1.Popup, { p: 1, anchorEl: anchorEl, open: showModal, handleClose: handleCloseModal },
+            react_1.default.createElement(__1.Popup, { p: 1, anchorEl: anchorEl, open: showModal, handleClose: handleCloseModal },
                 react_1.default.createElement(SortFields, { fields: fields, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection }))),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
-            react_1.default.createElement(components_1.Drawer, { title: "Sort", open: showModal, handleClose: handleCloseModal, anchor: 'right' },
+            react_1.default.createElement(__1.Drawer, { title: "Sort", open: showModal, handleClose: handleCloseModal, anchor: 'right' },
                 react_1.default.createElement(SortFields, { fields: fields, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))));
 };
 exports.default = SortButton;

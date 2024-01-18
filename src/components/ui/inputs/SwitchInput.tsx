@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Switch, Typography, FormControlLabel } from '@mui/material'
-import { InputProps } from 'types'
+import { InputProps } from '../../../types'
 
 type SwitchInputProps = InputProps & {
 	disableBorder?: boolean

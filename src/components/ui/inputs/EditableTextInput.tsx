@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TextInput } from 'components/ui'
+import { TextInput } from '../../../components'
 import { XCircle, Edit, CheckCircle } from 'lucide-react'
 import { Box, IconButton, CircularProgress } from '@mui/material'
 

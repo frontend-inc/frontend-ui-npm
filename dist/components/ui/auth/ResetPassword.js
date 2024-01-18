@@ -40,8 +40,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var ui_1 = require("components/ui");
-var hooks_1 = require("hooks");
+var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var ResetPassword = function (props) {
     var router = (0, router_1.useRouter)();
@@ -65,8 +65,8 @@ var ResetPassword = function (props) {
     var handleLogin = function () {
         router.push(loginUrl);
     };
-    return (react_1.default.createElement(ui_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(ui_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
-            react_1.default.createElement(ui_1.ResetPasswordForm, { loading: loading, errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
+    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+            react_1.default.createElement(components_1.ResetPasswordForm, { loading: loading, errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };
 exports.default = ResetPassword;

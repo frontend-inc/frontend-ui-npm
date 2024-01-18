@@ -2,8 +2,8 @@ import React from 'react'
 import {
   List,
 } from '@mui/material'
-import { Notification as NotificationType } from 'types'
-import { Notification } from 'components'
+import { Notification as NotificationType } from '../../../types'
+import { Notification } from '../../../components'
 import SwipeableViews from 'react-swipeable-views'
 
 type NotificationProps = {

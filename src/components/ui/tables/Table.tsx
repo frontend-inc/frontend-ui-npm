@@ -7,8 +7,8 @@ import {
 	TableRow,
 	Pagination,
 	FilterPopup,
-} from 'components'
-import { useSelected } from 'hooks'
+} from '../../../components'
+import { useSelected } from '../../../hooks'
 
 type TableProps = {
 	loading: boolean

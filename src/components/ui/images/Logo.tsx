@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { EmptyImage } from 'components'
+import { EmptyImage } from '../../../components'
 import { useTheme } from '@mui/material'
 
 type LogoProps = {

@@ -7,11 +7,11 @@ import {
 	VerifyPinForm,
 	VerifySendPinForm,
 	SquareLogo,
-} from 'components'
-import { useAuth } from 'hooks'
+} from '../../../components'
+import { useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 import { Tab, Tabs, Box, Typography } from '@mui/material'
-import { AppContext } from 'context'
+import { AppContext } from '../../../context'
 
 type AuthModalProps = {
 	logo: any

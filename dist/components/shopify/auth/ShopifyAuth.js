@@ -42,7 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var shopify_1 = require("@webstudio/shopify");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var ShopifyAuth = function (props) {
     var router = (0, router_1.useRouter)();

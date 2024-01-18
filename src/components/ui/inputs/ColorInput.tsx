@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Stack, Typography, Box, Slider } from '@mui/material'
 import * as COLORS from '@mui/material/colors'
-import { TextInput } from 'components'
-import { SyntheticEvent } from 'types'
-import { MUI_COLORS, HEX_COLORS } from 'constants/index'
+import { TextInput } from '../../../components'
+import { SyntheticEvent } from '../../../types'
+import { MUI_COLORS, HEX_COLORS } from '../../../constants/index'
 
 type ColorInputProps = {
 	errors?: any

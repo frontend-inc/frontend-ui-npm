@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
-import { useResource } from 'hooks'
+import { useResource } from '../../../hooks'
 import { Stack } from '@mui/material'
-import { Icon, GridView, ListView, Placeholder } from 'components'
+import { Icon, GridView, ListView, Placeholder } from '../../../components'
 import Logo from './Logo'
 import { Typography } from '@mui/material'
 

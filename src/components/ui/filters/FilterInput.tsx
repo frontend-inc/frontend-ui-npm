@@ -9,10 +9,10 @@ import {
 	NUMBER_FIELDS,
 	DATE_RANGE_OPTIONS,
 	FILTER_OPERATORS,
-} from 'constants/index'
+} from '../../../constants/index'
 import { Box, IconButton, Typography } from '@mui/material'
-import { TextInput, Autosuggest, ArrayInput } from 'components/ui'
-import { Option, FilterOption, SyntheticEvent } from 'types'
+import { TextInput, Autosuggest, ArrayInput } from '../../../components'
+import { Option, FilterOption, SyntheticEvent } from '../../../types'
 import { X } from 'lucide-react'
 
 type FieldOption = FilterOption & {

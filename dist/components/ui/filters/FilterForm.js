@@ -45,10 +45,10 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var index_1 = require("constants/index");
+var index_1 = require("../../../constants/index");
 var icons_material_1 = require("@mui/icons-material");
 var lucide_react_1 = require("lucide-react");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var FilterForm = function (props) {
     var query = props.query, fields = props.fields, handleChange = props.handleChange, handleSearch = props.handleSearch, handleClearFilters = props.handleClearFilters;
     var _a = (0, react_1.useState)([]), filterOptions = _a[0], setFilterOptions = _a[1];

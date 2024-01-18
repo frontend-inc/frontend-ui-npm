@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { NoImage } from 'components/ui'
+import { NoImage } from '../../../components'
 import { Box, useTheme } from '@mui/material'
 import NextImage from 'next/image'
 

@@ -26,9 +26,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var FieldVideo = function (props) {
     var value = props.value, label = props.label, handleClick = props.handleClick, rest = __rest(props, ["value", "label", "handleClick"]);
-    return (react_1.default.createElement(ui_1.FieldWrapper, __assign({ label: label }, rest), value ? react_1.default.createElement("video", { src: value, controls: true, muted: true, autoPlay: true }) : react_1.default.createElement(ui_1.NoImage, null)));
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest), value ? react_1.default.createElement("video", { src: value, controls: true, muted: true, autoPlay: true }) : react_1.default.createElement(components_1.NoImage, null)));
 };
 exports.default = FieldVideo;

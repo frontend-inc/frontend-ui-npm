@@ -1,15 +1,15 @@
 import React, { useEffect, useContext } from 'react'
 import { useCart } from '@webstudio/shopify'
-import { useSegment } from 'hooks/addons'
+import { useSegment } from '../../../hooks/addons'
 import { Box, Stack } from '@mui/material'
 import { ShopContext } from '@webstudio/shopify'
-import { Drawer, Placeholder } from 'components'
+import { Drawer, Placeholder } from '../../../components'
 import {
 	CartDiscounts,
 	CartLines,
 	CartTotals,
 	CheckoutButton,
-} from 'components/shopify'
+} from '../../../components/shopify'
 
 type CartProps = {
 	title?: string

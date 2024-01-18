@@ -1,6 +1,6 @@
 import React from 'react'
-import ApiContext from 'context/core/ApiContext'
-import { createClient } from 'api/rest'
+import ApiContext from './ApiContext'
+import { createClient } from '../../api/rest'
 import { getCookie } from 'cookies-next'
 
 type ApiProviderProps = {

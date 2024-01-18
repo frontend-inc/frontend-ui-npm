@@ -71,8 +71,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
-var ui_1 = require("components/ui");
+var hooks_1 = require("../../../hooks");
+var components_1 = require("../../../components");
 var TableView = function (props) {
     var _a = (0, react_1.useState)([]), rows = _a[0], setRows = _a[1];
     var url = props.url, fields = props.fields, handleClick = props.handleClick, handleEditClick = props.handleEditClick;
@@ -143,6 +143,6 @@ var TableView = function (props) {
             formatRows(resources);
         }
     }, [resources]);
-    return (react_1.default.createElement(ui_1.Table, { loading: resources && loading, fields: fields, rows: rows, handleClick: handleClick, handleEdit: handleEditClick, query: query, handleClearQuery: handleClearFilters, handleQueryChange: handleQueryChange, handleSearch: handleSearch, handleKeywordSearch: handleKeywordSearch, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate }));
+    return (react_1.default.createElement(components_1.Table, { loading: resources && loading, fields: fields, rows: rows, handleClick: handleClick, handleEdit: handleEditClick, query: query, handleClearQuery: handleClearFilters, handleQueryChange: handleQueryChange, handleSearch: handleSearch, handleKeywordSearch: handleKeywordSearch, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate }));
 };
 exports.default = TableView;

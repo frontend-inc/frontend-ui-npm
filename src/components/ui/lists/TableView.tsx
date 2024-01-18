@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { useResource } from 'hooks'
-import { Table } from 'components/ui'
+import { useResource } from '../../../hooks'
+import { Table } from '../../../components'
 
 type TableViewProps = any & {
 	fields: Array<any>

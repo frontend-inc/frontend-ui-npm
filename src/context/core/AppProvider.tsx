@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AppContext } from 'context'
+import AppContext from './AppContext'
 
 type AppProviderProps = {
 	clientUrl?: string

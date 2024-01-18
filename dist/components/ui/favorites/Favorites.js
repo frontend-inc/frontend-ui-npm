@@ -35,10 +35,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("context");
-var hooks_1 = require("hooks");
+var context_1 = require("../../../context");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var Favorites = function (props) {
     var currentUser = (0, hooks_1.useAuth)().currentUser;
     var _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, navigateUrl = props.navigateUrl, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, _d = props.editing, editing = _d === void 0 ? false : _d, buttonText = props.buttonText, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableOverlay, enableOverlay = _h === void 0 ? false : _h;

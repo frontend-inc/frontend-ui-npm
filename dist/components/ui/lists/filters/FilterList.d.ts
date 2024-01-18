@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterOperator, FilterWhere, FilterOption, Option } from 'types';
+import { FilterOperator, FilterWhere, FilterOption, Option } from '../../../../types';
 type FilterListProps = {
     name?: string;
     where?: FilterWhere;

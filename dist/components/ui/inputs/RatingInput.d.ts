@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputProps, SyntheticEvent } from 'types';
+import { InputProps, SyntheticEvent } from '../../../types';
 type RatingInputProps = InputProps & {
     readOnly?: boolean;
     disableBorder?: boolean;

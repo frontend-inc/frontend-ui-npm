@@ -1,8 +1,8 @@
 import React from 'react'
-import { Icon } from 'components'
+import { Icon } from '../../../components'
 import { IconButton, Button, Stack, Box, Typography } from '@mui/material'
 import { useCart } from '@webstudio/shopify'
-import { useLoaders } from 'hooks'
+import { useLoaders } from '../../../hooks'
 
 type CartDiscountCodeProps = {	
 	discountCode: {

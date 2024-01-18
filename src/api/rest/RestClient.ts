@@ -1,5 +1,5 @@
 import axios from './axios'
-import { ExecuteResponse } from 'types'
+import { ExecuteResponse } from '../../types'
 
 export class RestClient {
 	private method?: string

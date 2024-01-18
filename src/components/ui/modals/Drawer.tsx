@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, SwipeableDrawer, Typography } from '@mui/material'
 import { IconButton } from '@mui/material'
-import { Icon } from 'components'
+import { Icon } from '../../../components'
 
 type DrawerProps = {
 	open: boolean

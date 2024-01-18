@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useCart } from '@webstudio/shopify'
-import { useSegment } from 'hooks/addons'
+import { useSegment } from '../../../hooks/addons'
 import { Button } from '@mui/material'
-import { IconLoader } from 'components'
+import { IconLoader } from '../../../components'
 
 type CheckoutButtonProps = {
 	size?: 'small' | 'medium' | 'large'

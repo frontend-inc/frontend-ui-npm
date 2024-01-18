@@ -29,8 +29,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
-var hooks_1 = require("hooks");
-var context_1 = require("context");
+var hooks_1 = require("../../../hooks");
+var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var Notification = function (props) {
     var router = (0, router_1.useRouter)();

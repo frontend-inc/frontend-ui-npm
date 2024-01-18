@@ -6,7 +6,7 @@ import {
 	FormGroup,
 	Typography,
 } from '@mui/material'
-import { Option } from 'types'
+import { Option } from '../../../types'
 
 type CheckboxGroupInputProps = {
 	errors: any

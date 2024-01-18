@@ -1,8 +1,8 @@
 import React from 'react'
 import { File as FileIcon } from 'lucide-react'
-import { resize, imageFromVideoUrl } from 'helpers'
-import { VIDEO_FORMATS, IMAGE_OR_VIDEO_FORMATS } from 'constants/index'
-import { Image } from 'components/ui'
+import { resize, imageFromVideoUrl } from '../../../helpers'
+import { VIDEO_FORMATS, IMAGE_OR_VIDEO_FORMATS } from '../../../constants/index'
+import { Image } from '../../../components'
 
 type CloudinaryImageProps = {
 	src: string

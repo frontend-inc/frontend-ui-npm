@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import { IconButton } from '@mui/material'
-import { useMenu, useAuth } from 'hooks'
-import { UserAvatar, UserMenu } from 'components'
+import { useMenu, useAuth } from '../../../hooks'
+import { UserAvatar, UserMenu } from '../../../components'
 import { useRouter } from 'next/router'
-import { AppContext } from 'context'
+import { AppContext } from '../../../context'
 
 const AuthButton: React.FC = () => {
 	const router = useRouter()

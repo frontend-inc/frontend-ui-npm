@@ -38,10 +38,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
-var context_1 = require("context");
+var hooks_1 = require("../../../hooks");
+var context_1 = require("../../../context");
 var react_swipeable_views_1 = __importDefault(require("react-swipeable-views"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var react_swipeable_views_utils_1 = require("react-swipeable-views-utils");
 var AutoPlaySwipeableViews = (0, react_swipeable_views_utils_1.autoPlay)(react_swipeable_views_1.default);

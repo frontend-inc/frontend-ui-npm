@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { LightDarkContext } from 'context'
+import LightDarkContext from './LightDarkContext'
 import {
 	createTheme,
 	ThemeProvider as MuiThemeProvider,
 } from '@mui/material/styles'
-import { ThemeContext } from 'context'
-import { buildTheme } from 'helpers'
+import { ThemeContext } from '../../context'
+import { buildTheme } from '../../helpers'
 
 type LightDarkProviderProps = {
 	children: React.ReactNode

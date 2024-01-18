@@ -1,6 +1,6 @@
 import React from 'react'
-import { Label } from 'components/ui'
-import { truncate } from 'helpers'
+import { Label } from '../../../components'
+import { truncate } from '../../../helpers'
 
 type CellEnumProps = {
 	value: string

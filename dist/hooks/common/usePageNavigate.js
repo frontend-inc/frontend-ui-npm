@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var router_1 = require("next/router");
-var context_1 = require("context");
+var context_1 = require("../../context");
 var usePageNavigate = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var router = (0, router_1.useRouter)();

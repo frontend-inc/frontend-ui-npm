@@ -1,6 +1,6 @@
 import React from 'react'
-import { FieldString } from 'components/ui'
-import { FieldWrapper } from 'components/ui'
+import { FieldString } from '../../../components'
+import { FieldWrapper } from '../../../components'
 import moment from 'moment'
 
 type FieldDateProps = {

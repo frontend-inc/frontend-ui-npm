@@ -26,7 +26,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var FieldPrice = function (props) {
     var value = props.value, _a = props.currency, currency = _a === void 0 ? 'USD' : _a, _b = props.digits, digits = _b === void 0 ? 2 : _b, label = props.label, variant = props.variant, color = props.color, placeholder = props.placeholder, rest = __rest(props, ["value", "currency", "digits", "label", "variant", "color", "placeholder"]);
     var price = new Intl.NumberFormat('en-US', {

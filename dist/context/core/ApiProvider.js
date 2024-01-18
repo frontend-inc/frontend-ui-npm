@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var ApiContext_1 = __importDefault(require("context/core/ApiContext"));
-var rest_1 = require("api/rest");
+var ApiContext_1 = __importDefault(require("./ApiContext"));
+var rest_1 = require("../../api/rest");
 var cookies_next_1 = require("cookies-next");
 var ApiProvider = function (props) {
     var _a = props || {}, baseUrl = _a.url, clientUrl = _a.clientUrl, _b = _a.authCookie, authCookie = _b === void 0 ? 'authToken' : _b, apiKey = _a.apiKey, children = _a.children;

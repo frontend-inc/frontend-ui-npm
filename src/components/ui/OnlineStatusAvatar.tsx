@@ -1,5 +1,5 @@
 import React from 'react'
-import { OnlineStatusBadge, UserAvatar } from 'components/ui'
+import { OnlineStatusBadge, UserAvatar } from '../../components'
 
 type OnlineStatusAvatarProps = {
 	user: any

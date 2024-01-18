@@ -37,8 +37,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var COLORS = __importStar(require("@mui/material/colors"));
-var components_1 = require("components");
-var index_1 = require("constants/index");
+var components_1 = require("../../../components");
+var index_1 = require("../../../constants/index");
 var ColorInput = function (props) {
     var name = props.name, value = props.value, _a = props.disableTone, disableTone = _a === void 0 ? false : _a, handleChange = props.handleChange;
     var _b = (0, react_1.useState)(500), tone = _b[0], setTone = _b[1];

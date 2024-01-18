@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var react_multi_carousel_1 = __importDefault(require("react-multi-carousel"));
 var material_1 = require("@mui/material");
-var helpers_1 = require("helpers");
+var helpers_1 = require("../../../helpers");
 var styles_1 = require("@mui/material/styles");
 var CarouselDot_1 = __importDefault(require("./CarouselDot"));
 var ReactCarousel = function (props) {

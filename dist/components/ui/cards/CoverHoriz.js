@@ -24,14 +24,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("context/core");
+var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
-var helpers_1 = require("helpers");
+var components_1 = require("../../../components");
+var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
-var index_1 = require("constants/index");
+var index_1 = require("../../../constants/index");
 var CoverHoriz = function (props) {
-    var clientUrl = (0, react_1.useContext)(core_1.AppContext).clientUrl;
+    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, label = _a.label, icon = _a.icon, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? index_1.COVER_HORIZ_HEIGHT : _e, _f = _a.width, width = _f === void 0 ? index_1.COVER_HORIZ_WIDTH : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {

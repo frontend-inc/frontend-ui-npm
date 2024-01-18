@@ -1,9 +1,9 @@
-import breakpoints from 'theme/breakpoints'
-import components from 'theme/components'
-import palette from 'theme/palette'
-import shape from 'theme/shape'
-import typography from 'theme/typography'
-import spacing from 'theme/spacing'
+import breakpoints from './breakpoints'
+import components from './components'
+import palette from './palette'
+import shape from './shape'
+import typography from './typography'
+import spacing from '.theme/spacing'
 
 export const muiTheme = {
 	breakpoints,

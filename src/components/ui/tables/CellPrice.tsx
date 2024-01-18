@@ -1,5 +1,5 @@
 import React from 'react'
-import { CellString } from 'components/ui'
+import { CellString } from '../../../components'
 
 type CellPriceProps = {
 	value?: number

@@ -2,7 +2,7 @@ import React from 'react'
 import { useCart } from '@webstudio/shopify'
 import { Stack } from '@mui/material'
 import { formatCurrency } from '@webstudio/shopify'
-import { CartText, CartDiscountCode } from 'components/shopify'
+import { CartText, CartDiscountCode } from '../../../components/shopify'
 
 const CartTotals: React.FC = () => {
 	const { cart } = useCart()

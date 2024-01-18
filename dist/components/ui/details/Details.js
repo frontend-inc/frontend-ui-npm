@@ -24,10 +24,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
-var ui_1 = require("components/ui");
-var helpers_1 = require("helpers");
+var components_1 = require("../../../components");
+var helpers_1 = require("../../../helpers");
 var Details = function (props) {
     var fields = props.fields, url = props.url, handle = props.handle;
     var _a = (0, react_1.useState)(), document = _a[0], setDocument = _a[1];
@@ -45,7 +45,7 @@ var Details = function (props) {
         }
     }, [resource]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root }, document &&
-        fields.map(function (field, i) { return (react_1.default.createElement(ui_1.Field, { key: i, field: field, document: document })); })));
+        fields.map(function (field, i) { return (react_1.default.createElement(components_1.Field, { key: i, field: field, document: document })); })));
 };
 exports.default = Details;
 var sx = {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { AppContext } from 'context'
-import { useResource } from 'hooks'
+import { AppContext } from '../../../context'
+import { useResource } from '../../../hooks'
 import { useRouter } from 'next/router'
-import { StyledList } from 'components'
-import { getDocumentValue } from 'helpers'
+import { StyledList } from '../../../components'
+import { getDocumentValue } from '../../../helpers'
 
 type CollectionHasManyProps = {
 	layout?: 'list' | 'grid' | 'carousel'

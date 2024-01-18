@@ -7,7 +7,7 @@ import {
 	Typography,
 	Stack,
 } from '@mui/material'
-import { Image } from 'components'
+import { Image } from '../../../components'
 import { formatCurrency } from '@webstudio/shopify'
 import moment from 'moment'
 import { Order } from '@webstudio/shopify'

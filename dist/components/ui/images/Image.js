@@ -15,7 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
 var Image = function (props) {
@@ -29,7 +29,7 @@ var Image = function (props) {
             minHeight: "".concat(height, "px"),
             objectFit: objectFit,
             borderRadius: !disableBorderRadius && "".concat(theme.shape.borderRadius, "px"),
-        }, layout: 'responsive' })) : (react_1.default.createElement(ui_1.NoImage, { height: height }))));
+        }, layout: 'responsive' })) : (react_1.default.createElement(components_1.NoImage, { height: height }))));
 };
 exports.default = Image;
 var sx = {

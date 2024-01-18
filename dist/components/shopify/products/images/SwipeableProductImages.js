@@ -39,9 +39,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var react_swipeable_views_1 = __importDefault(require("react-swipeable-views"));
-var components_1 = require("components");
+var components_1 = require("../../../../components");
 var material_1 = require("@mui/material");
-var index_1 = require("constants/index");
+var index_1 = require("../../../../constants/index");
 var shopify_1 = require("@webstudio/shopify");
 var SwipeableProductImages = function (props) {
     var _a, _b;

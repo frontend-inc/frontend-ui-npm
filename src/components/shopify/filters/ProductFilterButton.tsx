@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ProductCollectionFilter } from '@webstudio/shopify'
-import { Drawer, Popup } from 'components'
+import { Drawer, Popup } from '../../../components'
 import {
 	FilterList,
 	ColorFilters,
@@ -11,7 +11,7 @@ import {
 	VendorFilters,
 	TagFilters,
 	InStockFilter,
-} from 'components/shopify'
+} from '../../../components/shopify'
 import {
 	findColorFilters,
 	findSizeFilters,

@@ -1,5 +1,5 @@
 import React from 'react'
-import { CellButton } from 'components/ui'
+import { CellButton } from '../../../components'
 import { RepeatOne } from '@mui/icons-material'
 
 type CellHasOneProps = {

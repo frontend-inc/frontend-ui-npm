@@ -11,8 +11,8 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var hooks_1 = require("hooks");
-var index_1 = require("constants/index");
+var hooks_1 = require("../../hooks");
+var index_1 = require("../../constants/index");
 var useForms = function () {
     var setResource = (0, hooks_1.useResourceContext)({}).setResource;
     var handleDataChange = function (ev) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useFilters, useResource } from 'hooks'
+import { useFilters, useResource } from '../../../hooks'
 import { Stack, Box } from '@mui/material'
 import {
 	AccordionItem,
@@ -9,7 +9,7 @@ import {
 	LoadMore,
 } from '..'
 import { Typography, useTheme } from '@mui/material'
-import { FilterOption } from 'types'
+import { FilterOption } from '../../../types'
 import { Search } from 'lucide-react'
 
 type AccordionProps = {

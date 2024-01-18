@@ -25,8 +25,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
-var hooks_1 = require("hooks");
+var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var Table = function (props) {
     var _a = (0, react_1.useState)(false), showFilters = _a[0], setShowFilters = _a[1];
     var loading = props.loading, _b = props.enableBorder, enableBorder = _b === void 0 ? true : _b, fields = props.fields, rows = props.rows, _c = props.enableSelect, enableSelect = _c === void 0 ? false : _c, _d = props.enableEdit, enableEdit = _d === void 0 ? false : _d, _e = props.enableDelete, enableDelete = _e === void 0 ? false : _e, handleClick = props.handleClick, handleEdit = props.handleEdit, handleEditSelected = props.handleEditSelected, handleDelete = props.handleDelete, handlePublish = props.handlePublish, handleUnpublish = props.handleUnpublish, secondaryActions = props.secondaryActions, query = props.query, handleClearQuery = props.handleClearQuery, handleQueryChange = props.handleQueryChange, handleSearch = props.handleSearch, handleKeywordSearch = props.handleKeywordSearch, handleSort = props.handleSort, _f = props.page, page = _f === void 0 ? 1 : _f, _g = props.numPages, numPages = _g === void 0 ? 1 : _g, _h = props.totalCount, totalCount = _h === void 0 ? 0 : _h, handlePaginate = props.handlePaginate, _j = props.styles, styles = _j === void 0 ? {} : _j;

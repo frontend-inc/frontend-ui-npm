@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useRouter } from 'next/router'
-import { AppContext } from 'context'
+import { AppContext } from '../../context'
 
 type PageNavigateProps = {
 	baseUrl?: string

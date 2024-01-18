@@ -7,8 +7,8 @@ import {
   Button 
 } from '@mui/material'
 import copy from 'copy-to-clipboard'
-import { useAlerts } from 'hooks'
-import { AppContext } from 'context'
+import { useAlerts } from '../../../hooks'
+import { AppContext } from '../../../context'
 import { useRouter } from 'next/router'
 
 type NotificationProps = {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FormControl, InputBase, Typography } from '@mui/material'
 import moment from 'moment'
-import { sx } from 'components/ui/inputs/styles'
+import { sx } from './styles'
 
 type DateInputProps = {
 	errors?: any

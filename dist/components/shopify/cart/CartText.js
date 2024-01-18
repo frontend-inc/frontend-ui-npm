@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var CartText = function (props) {
     var label = props.label, value = props.value, icon = props.icon;

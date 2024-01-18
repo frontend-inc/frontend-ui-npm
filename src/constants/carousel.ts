@@ -1,4 +1,4 @@
-import breakpoints from 'theme/breakpoints'
+import breakpoints from '../theme/breakpoints'
 
 const {
 	values: { xs, sm, md, lg, xl },

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react'
-import { ApiContext, AuthContext } from 'context'
-import { useResource } from 'hooks'
+import { ApiContext, AuthContext } from '../../context'
+import { useResource } from '../../hooks'
 import { deleteCookie, getCookie, setCookie } from 'cookies-next'
-import { User } from 'types'
+import { User } from '../../types'
 
 const useAuth = () => {
 	const { api, authCookie } = useContext(ApiContext)

@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var shopify_1 = require("@webstudio/shopify");
 var material_1 = require("@mui/material");
 var shopify_2 = require("@webstudio/shopify");
-var shopify_3 = require("components/shopify");
+var shopify_3 = require("../../../components/shopify");
 var CartTotals = function () {
     var _a, _b, _c, _d, _e, _f;
     var cart = (0, shopify_1.useCart)().cart;

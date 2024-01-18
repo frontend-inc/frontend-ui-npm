@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'components/ui'
+import { Modal } from '../../components'
 import { Typography } from '@mui/material'
 
 type TextModalProps = {

@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useAuth } from 'hooks'
+import { useAuth } from '../../../hooks'
 import { getCookie } from 'cookies-next'
 
 const AuthFromCookie: React.FC = () => {

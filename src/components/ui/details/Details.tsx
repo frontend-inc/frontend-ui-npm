@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useResource } from 'hooks'
+import { useResource } from '../../../hooks'
 import { Box } from '@mui/material'
-import { Field } from 'components/ui'
-import { flattenDocument } from 'helpers'
+import { Field } from '../../../components'
+import { flattenDocument } from '../../../helpers'
 
 type DetailsProps = {
 	fields: any[]

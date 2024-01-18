@@ -1,6 +1,6 @@
 import React from 'react'
 import { Checkbox, TableHead, TableRow } from '@mui/material'
-import { CellHeader, TableCell } from 'components'
+import { CellHeader, TableCell } from '../../../components'
 
 type TableHeaderProps = {
 	sortBy?: string

@@ -15,7 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var LayoutPage = function (props) {
     var children = props.children, _a = props.disableGutters, disableGutters = _a === void 0 ? false : _a, _b = props.loading, loading = _b === void 0 ? false : _b;

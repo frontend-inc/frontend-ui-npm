@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Stack } from '@mui/material'
-import { FieldString, FieldText } from 'components'
+import { FieldString, FieldText } from '../../../components'
 
 type ProfileInfoProps = {
 	title: string

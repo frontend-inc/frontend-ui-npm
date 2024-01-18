@@ -16,7 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var LayoutContainer = function (props) {
     var children = props.children, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.mode, mode = _b === void 0 ? 'accent' : _b, _c = props.showIcons, showIcons = _c === void 0 ? true : _c, _d = props.topNav, topNav = _d === void 0 ? false : _d, handleClick = props.handleClick, menuItems = props.menuItems, notifications = props.notifications, _e = props.enableAuth, enableAuth = _e === void 0 ? false : _e, _f = props.enableHeader, enableHeader = _f === void 0 ? false : _f, _g = props.enableShopify, enableShopify = _g === void 0 ? false : _g;
     var enableNotifications = (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0;

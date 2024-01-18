@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react'
 import { Button, Typography, Box, IconButton } from '@mui/material'
-import { useMenu,  useAuth } from 'hooks'
+import { useMenu,  useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
-import { Icon,  AuthAvatar, AuthMenu } from 'components'
+import { Icon,  AuthAvatar, AuthMenu } from '../../../components'
 import { useTheme } from '@mui/material'
-import { AppContext } from 'context'
+import { AppContext } from '../../../context'
 
 type AuthButtonProps = {
 	showLabel?: boolean

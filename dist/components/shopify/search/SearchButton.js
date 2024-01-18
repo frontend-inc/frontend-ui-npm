@@ -26,8 +26,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var shopify_1 = require("@webstudio/shopify");
-var context_1 = require("context");
-var components_1 = require("components");
+var context_1 = require("../../../context");
+var components_1 = require("../../../components");
 var SearchButton = function (props) {
     var _a = props.showLabel, showLabel = _a === void 0 ? false : _a, _b = props.showIcon, showIcon = _b === void 0 ? true : _b, _c = props.editing, editing = _c === void 0 ? false : _c;
     var toggleSearch = (0, react_1.useContext)(shopify_1.ShopContext).toggleSearch;

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ProductCollection } from 'components/shopify'
+import { ProductCollection } from '../../../components/shopify'
 import { useCollections } from '@webstudio/shopify'
 
 type ProductCollectionByHandleProps = {

@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var NoSpaceInput = function (props) {
     var errors = props.errors, value = props.value, name = props.name, label = props.label, placeholder = props.placeholder, handleChange = props.handleChange, disabled = props.disabled;
     var handleInputChange = function (ev) {
@@ -17,7 +17,7 @@ var NoSpaceInput = function (props) {
             },
         });
     };
-    return (react_1.default.createElement(ui_1.TextInput, { errors: errors, value: value, disabled: disabled, placeholder: placeholder, handleChange: handleInputChange, name: name, label: label }));
+    return (react_1.default.createElement(components_1.TextInput, { errors: errors, value: value, disabled: disabled, placeholder: placeholder, handleChange: handleInputChange, name: name, label: label }));
 };
 exports.default = NoSpaceInput;
 var sx = {

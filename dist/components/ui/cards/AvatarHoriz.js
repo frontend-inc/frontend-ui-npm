@@ -16,8 +16,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var helpers_1 = require("helpers");
-var index_1 = require("constants/index");
+var helpers_1 = require("../../../helpers");
+var index_1 = require("../../../constants/index");
 var AvatarHoriz = function (props) {
     var title = props.title, description = props.description, _a = props.textVariant, textVariant = _a === void 0 ? 'body1' : _a, image = props.image, _b = props.height, height = _b === void 0 ? index_1.AVATAR_HORIZ_HEIGHT : _b, _c = props.width, width = _c === void 0 ? index_1.AVATAR_HORIZ_WIDTH : _c, handleClick = props.handleClick, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f;
     return (react_1.default.createElement(material_1.List, { sx: __assign(__assign({}, sx.listItem), (enableBorder && sx.rootBorder)) },

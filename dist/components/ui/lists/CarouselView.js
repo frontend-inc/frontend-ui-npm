@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var CarouselView = function (props) {
     var items = props.items, editing = props.editing, buttonText = props.buttonText, handleClick = props.handleClick, _a = props.component, Component = _a === void 0 ? components_1.CardVert : _a, _b = props.autoPlay, autoPlay = _b === void 0 ? false : _b, _c = props.arrows, arrows = _c === void 0 ? false : _c, _d = props.showDots, showDots = _d === void 0 ? true : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g;
     return (react_1.default.createElement(components_1.Carousel, { autoPlay: autoPlay, arrows: arrows, showDots: showDots }, items === null || items === void 0 ? void 0 : items.map(function (item, index) {

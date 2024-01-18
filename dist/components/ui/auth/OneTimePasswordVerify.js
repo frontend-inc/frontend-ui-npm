@@ -60,8 +60,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var ui_1 = require("components/ui");
-var hooks_1 = require("hooks");
+var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var OneTimePasswordVerify = function (props) {
     var router = (0, router_1.useRouter)();
@@ -97,8 +97,8 @@ var OneTimePasswordVerify = function (props) {
             handleVerifyOTP();
         }
     }, [oneTimePassword]);
-    return (react_1.default.createElement(ui_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(ui_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
-            react_1.default.createElement(ui_1.OneTimePasswordVerifyMessage, { verified: verified, handleRedirect: handleRedirect, handleLogin: handleLogin }))));
+    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+            react_1.default.createElement(components_1.OneTimePasswordVerifyMessage, { verified: verified, handleRedirect: handleRedirect, handleLogin: handleLogin }))));
 };
 exports.default = OneTimePasswordVerify;

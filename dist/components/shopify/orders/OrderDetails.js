@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var shopify_1 = require("components/shopify");
+var shopify_1 = require("../../../components/shopify");
 var shopify_2 = require("@webstudio/shopify");
 var lucide_react_1 = require("lucide-react");
 var router_1 = require("next/router");

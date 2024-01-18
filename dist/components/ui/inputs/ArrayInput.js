@@ -16,9 +16,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sx = void 0;
 var react_1 = __importDefault(require("react"));
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var lucide_react_1 = require("lucide-react");
 var CustomPopper = function (props) {
     return react_1.default.createElement(material_1.Popper, __assign({}, props, { sx: exports.sx.popper, placement: "bottom" }));
@@ -46,7 +46,7 @@ var ArrayInput = function (props) {
                 return Array.isArray(tagValue) &&
                     tagValue.map(function (option, index) { return (react_1.default.createElement(material_1.Chip, __assign({ sx: exports.sx.chip, label: option, color: "secondary", deleteIcon: react_1.default.createElement(lucide_react_1.X, { size: 20 }) }, getTagProps({ index: index })))); });
             }, renderInput: function (params) { return (react_1.default.createElement(material_1.TextField, __assign({}, params, { color: "primary", sx: __assign(__assign({}, exports.sx.textField), ((error && exports.sx.inputError) || {})), placeholder: placeholder, margin: "dense", variant: "outlined" }))); } })),
-        react_1.default.createElement(ui_1.ErrorText, { error: error })));
+        react_1.default.createElement(components_1.ErrorText, { error: error })));
 };
 exports.default = ArrayInput;
 exports.sx = {

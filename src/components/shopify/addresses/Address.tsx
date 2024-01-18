@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { AuthScreen, AlertModal, LayoutLoader } from 'components'
+import { AuthScreen, AlertModal, LayoutLoader } from '../../../components'
 import { Button, Stack } from '@mui/material'
 import { useAddresses } from '@webstudio/shopify'
-import { AddressForm } from 'components/shopify'
-import { AppContext } from 'context'
+import { AddressForm } from '../../../components/shopify'
+import { AppContext } from '../../../context'
 import { useRouter } from 'next/router'
 
 type AddressProps = {

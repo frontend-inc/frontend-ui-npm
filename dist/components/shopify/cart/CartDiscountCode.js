@@ -51,10 +51,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var shopify_1 = require("@webstudio/shopify");
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var CartDiscountCode = function (props) {
     var discountCode = props.discountCode;
     var cartRemoveDiscountCode = (0, shopify_1.useCart)().cartRemoveDiscountCode;

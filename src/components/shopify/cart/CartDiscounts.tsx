@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useCart } from '@webstudio/shopify'
 import { Button, Stack } from '@mui/material'
-import { TextInput, IconLoader } from 'components'
+import { TextInput, IconLoader } from '../../../components'
 
 const CartDiscountCodeInput: React.FC = () => {
 	const [discountCode, setDiscountCode] = useState<string | null>(null)

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, CardActionArea, Grid, Typography } from '@mui/material'
-import { Label } from 'components/ui'
+import { Box, CardActionArea, Typography } from '@mui/material'
+import { Label } from '../../components'
 
 type SquareButtonProps = {
 	icon: React.ReactNode

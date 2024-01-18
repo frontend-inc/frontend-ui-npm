@@ -1,6 +1,6 @@
 import React from 'react'
 import { Backdrop, LinearProgress } from '@mui/material'
-import { useDelayedLoading } from 'hooks'
+import { useDelayedLoading } from '../../../hooks'
 
 type LayoutLoaderProps = {
 	loading?: boolean

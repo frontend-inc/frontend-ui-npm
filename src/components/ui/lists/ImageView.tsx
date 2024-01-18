@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid } from '@mui/material'
-import { CardVert } from 'components'
+import { CardVert } from '../../../components'
 
 type ImageViewProps = {
 	loading?: boolean

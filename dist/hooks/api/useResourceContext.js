@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-var core_1 = require("context/core");
-var hooks_1 = require("hooks");
+var context_1 = require("../../context");
+var hooks_1 = require("../../hooks");
 var useResourceContext = function (props) {
     var _a = props || {}, name = _a.name, _url = _a.url;
-    var _b = (0, react_1.useContext)(core_1.ResourceContext), loading = _b.loading, setLoading = _b.setLoading, errors = _b.errors, setErrors = _b.setErrors, url = _b.url, setUrl = _b.setUrl, query = _b.query, setQuery = _b.setQuery, resource = _b.resource, resources = _b.resources, setResource = _b.setResource, setResources = _b.setResources, showModal = _b.showModal, setShowModal = _b.setShowModal;
+    var _b = (0, react_1.useContext)(context_1.ResourceContext), loading = _b.loading, setLoading = _b.setLoading, errors = _b.errors, setErrors = _b.setErrors, url = _b.url, setUrl = _b.setUrl, query = _b.query, setQuery = _b.setQuery, resource = _b.resource, resources = _b.resources, setResource = _b.setResource, setResources = _b.setResources, showModal = _b.showModal, setShowModal = _b.setShowModal;
     var _c = (0, hooks_1.useResource)({
         name: name,
         url: url || _url,

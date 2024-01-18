@@ -63,3 +63,5 @@ export const sx = {
 		alignItems: 'center',
 	},
 }
+
+export default sx

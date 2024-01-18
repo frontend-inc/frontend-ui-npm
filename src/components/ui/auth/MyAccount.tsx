@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { useAuth } from 'hooks'
+import { useAuth } from '../../../hooks'
 import {
 	AuthScreen,
 	LayoutLoader,
 	MyAccountForm,
-} from 'components/ui'
+} from '../../../components'
 import { useRouter } from 'next/router'
 
 type MyAccountProps = {

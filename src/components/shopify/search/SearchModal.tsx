@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react'
-import { TextInput, Placeholder } from 'components'
-import { ProductGrid } from 'components/shopify'
+import { TextInput, Placeholder } from '../../../components'
+import { ProductGrid } from '../../../components/shopify'
 import {
 	AppBar,
 	Stack,
@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import { ShopContext } from '@webstudio/shopify'
 import { useProducts } from '@webstudio/shopify'
-import { useSegment } from 'hooks/addons'
+import { useSegment } from '../../../hooks/addons'
 import { X, Search } from 'lucide-react'
 import { useTheme } from '@mui/material/styles'
 

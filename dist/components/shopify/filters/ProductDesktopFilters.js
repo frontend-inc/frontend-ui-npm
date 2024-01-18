@@ -27,7 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var shopify_1 = require("components/shopify");
+var shopify_1 = require("../../../components/shopify");
 var shopify_2 = require("@webstudio/shopify");
 var DesktopFilters_1 = __importDefault(require("./DesktopFilters"));
 var MobileFilters_1 = __importDefault(require("./MobileFilters"));

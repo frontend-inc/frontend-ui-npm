@@ -1,6 +1,6 @@
 import React from 'react'
-import { NoImage } from 'components/ui'
-import { imageFromVideoUrl } from 'helpers'
+import { NoImage } from '../../../components'
+import { imageFromVideoUrl } from '../../../helpers'
 import Image from 'next/image'
 
 type CellImageProps = {

@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var hooks_1 = require("hooks");
-var components_1 = require("components");
-var context_1 = require("context");
+var hooks_1 = require("../../../hooks");
+var components_1 = require("../../../components");
+var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
 var lucide_react_1 = require("lucide-react");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));

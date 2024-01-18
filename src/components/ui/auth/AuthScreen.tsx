@@ -1,6 +1,6 @@
 import React from 'react'
 import { Paper, Box, Container, Typography } from '@mui/material'
-import { SquareLogo } from 'components'
+import { SquareLogo } from '../../../components'
 
 type AuthScreenProps = {
 	title: string

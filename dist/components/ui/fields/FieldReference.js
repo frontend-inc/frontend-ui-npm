@@ -28,10 +28,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var FieldReference = function (props) {
     var value = props.value, label = props.label, handleClick = props.handleClick, rest = __rest(props, ["value", "label", "handleClick"]);
-    return (react_1.default.createElement(ui_1.FieldWrapper, __assign({ label: label }, rest),
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
         react_1.default.createElement(material_1.Button, { color: "primary", variant: "outlined", sx: sx.button, endIcon: react_1.default.createElement(icons_material_1.Repeat, null), onClick: handleClick }, value)));
 };
 exports.default = FieldReference;

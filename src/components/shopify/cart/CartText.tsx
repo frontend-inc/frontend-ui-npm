@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon } from 'components'
+import { Icon } from '../../../components'
 import { Stack, Box, Typography } from '@mui/material'
 
 type CartTextProps = {

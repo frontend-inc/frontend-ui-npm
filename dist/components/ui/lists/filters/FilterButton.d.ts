@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterOption } from 'types';
+import { FilterOption } from '../../../../types';
 type FilterButtonProps = {
     filters?: FilterOption[];
     loading?: boolean;

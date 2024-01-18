@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
 import { Repeat } from '@mui/icons-material'
-import { FieldWrapper } from 'components/ui'
+import { FieldWrapper } from '../../../components'
 
 type FieldReferenceProps = {
 	value?: any

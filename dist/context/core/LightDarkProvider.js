@@ -33,16 +33,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("context");
+var LightDarkContext_1 = __importDefault(require("./LightDarkContext"));
 var styles_1 = require("@mui/material/styles");
-var context_2 = require("context");
-var helpers_1 = require("helpers");
+var context_1 = require("../../context");
+var helpers_1 = require("../../helpers");
 var LightDarkProvider = function (props) {
     var _a, _b;
     var _c = props || {}, children = _c.children, bgcolor = _c.bgcolor;
-    var theme = (0, react_1.useContext)(context_2.ThemeContext).theme;
+    var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
     var _d = (0, react_1.useState)(theme), localTheme = _d[0], setLocalTheme = _d[1];
     (0, react_1.useEffect)(function () {
         var _a, _b, _c, _d, _e, _f, _g, _h;
@@ -63,7 +66,7 @@ var LightDarkProvider = function (props) {
     var value = {
         theme: theme,
     };
-    return (react_1.default.createElement(context_1.LightDarkContext.Provider, { value: value },
+    return (react_1.default.createElement(LightDarkContext_1.default.Provider, { value: value },
         react_1.default.createElement(styles_1.ThemeProvider, { theme: (0, styles_1.createTheme)(localTheme) }, children)));
 };
 exports.default = LightDarkProvider;

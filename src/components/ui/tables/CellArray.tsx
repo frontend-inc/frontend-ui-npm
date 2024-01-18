@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Box } from '@mui/material'
-import { Label } from 'components/ui'
+import { Label } from '../../../components'
 
 type CellArrayProps = {
 	value: string[]

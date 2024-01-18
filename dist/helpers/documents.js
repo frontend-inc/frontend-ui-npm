@@ -23,7 +23,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.flattenDocument = exports.getDocumentValue = void 0;
-var index_1 = require("constants/index");
+var index_1 = require("../constants/index");
 var lodash_1 = require("lodash");
 var getDocumentValue = function (document, field) {
     var _a, _b, _c;

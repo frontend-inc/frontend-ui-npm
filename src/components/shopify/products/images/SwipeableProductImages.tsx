@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Product } from '@webstudio/shopify'
 import SwipeableViews from 'react-swipeable-views'
-import { TouchableOpacity } from 'components'
+import { TouchableOpacity } from '../../../../components'
 import { Box, Stack, MobileStepper } from '@mui/material'
 import { 
   PRODUCT_CARD_VERT_HEIGHT,
   PRODUCT_CARD_VERT_WIDTH,
-} from 'constants/index'
+} from '../../../../constants/index'
 import { shopifyResizeImage } from '@webstudio/shopify'
 
 type SwipeableProductImagesProps = {

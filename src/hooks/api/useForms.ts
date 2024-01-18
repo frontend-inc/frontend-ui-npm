@@ -1,6 +1,6 @@
 import React from 'react'
-import { useResourceContext } from 'hooks'
-import { SYSTEM_FIELDS } from 'constants/index'
+import { useResourceContext } from '../../hooks'
+import { SYSTEM_FIELDS } from '../../constants/index'
 
 const useForms = () => {
 	const { setResource } = useResourceContext({})

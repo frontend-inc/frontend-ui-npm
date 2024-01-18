@@ -27,10 +27,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var Rating_1 = __importDefault(require("@mui/material/Rating"));
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var FieldRating = function (props) {
     var value = props.value, label = props.label, rest = __rest(props, ["value", "label"]);
-    return (react_1.default.createElement(ui_1.FieldWrapper, __assign({ label: label }, rest),
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
         react_1.default.createElement(Rating_1.default, { readOnly: true, sx: sx.rating, value: value })));
 };
 exports.default = FieldRating;

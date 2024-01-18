@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Stack } from '@mui/material'
-import { TextInput, IconLoader } from 'components/ui'
+import { TextInput, IconLoader } from '../../../components'
 
 type LoginFormProps = {
 	errors?: any

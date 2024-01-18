@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ScriptContext } from 'context/core'
+import ScriptContext from './ScriptContext'
 import {
   GorgiasChat,
   GoogleAnalyticsScript,
@@ -9,11 +9,11 @@ import {
   OkendoScript,  
   RedditScript,
   VisualWebsiteOptimizerScript  
-} from 'components/addons'
+} from '../../components/addons'
 import { 
   useFacebookPixel,
   useTikTok 
-} from 'hooks/addons'
+} from '../../hooks/addons'
 import Script from 'next/script'
 import { AnalyticsBrowser } from '@segment/analytics-next'
 

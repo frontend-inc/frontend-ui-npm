@@ -26,7 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var shopify_1 = require("@webstudio/shopify");
 var material_1 = require("@mui/material");
-var shopify_2 = require("components/shopify");
+var shopify_2 = require("../../../components/shopify");
 var material_2 = require("@mui/material");
 var ProductRecommendations = function (props) {
     var _a = props || {}, handle = _a.handle, _b = _a.editing, editing = _b === void 0 ? false : _b, _c = _a.layout, layout = _c === void 0 ? 'grid' : _c, _d = _a.title, title = _d === void 0 ? 'Similar products' : _d, _e = _a.perPage, perPage = _e === void 0 ? 12 : _e, productComponent = _a.productComponent, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.buttonText, buttonText = _g === void 0 ? 'Add to cart' : _g, enableAddToCart = _a.enableAddToCart, enableQuantity = _a.enableQuantity, enableQuickShop = _a.enableQuickShop, enableOkendoStarRating = _a.enableOkendoStarRating;

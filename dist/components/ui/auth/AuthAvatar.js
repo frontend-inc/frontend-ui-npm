@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var lucide_react_1 = require("lucide-react");
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var styles_1 = require("@mui/material/styles");
 var AuthAvatar = function (props) {
     var _a;

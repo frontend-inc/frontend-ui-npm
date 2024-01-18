@@ -16,7 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var index_1 = require("constants/index");
+var index_1 = require("../../../constants/index");
 var image_1 = __importDefault(require("next/image"));
 var Logo = function (props) {
     var _a = props || {}, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, _c = _a.height, height = _c === void 0 ? index_1.LOGO_HEIGHT : _c, _d = _a.width, width = _d === void 0 ? index_1.LOGO_WIDTH : _d;

@@ -1,4 +1,4 @@
-import { ExecuteResponse } from 'types';
+import { ExecuteResponse } from '../../types';
 export declare class RestClient {
     private method?;
     private payload?;

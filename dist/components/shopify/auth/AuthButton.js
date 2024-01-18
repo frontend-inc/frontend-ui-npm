@@ -26,11 +26,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var shopify_1 = require("@webstudio/shopify");
-var hooks_1 = require("hooks");
-var components_1 = require("components");
+var hooks_1 = require("../../../hooks");
+var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var lucide_react_1 = require("lucide-react");
-var context_1 = require("context");
+var context_1 = require("../../../context");
 var AuthAvatarButton = function () {
     var router = (0, router_1.useRouter)();
     var _a = (0, shopify_1.useAuth)(), logout = _a.logout, customer = _a.customer;

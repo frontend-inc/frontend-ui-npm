@@ -6,7 +6,7 @@ import {
 	RadioGroup,
 	Typography,
 } from '@mui/material'
-import { SelectInputProps } from 'types'
+import { SelectInputProps } from '../../../types'
 
 const RadioInput: React.FC<SelectInputProps> = (props) => {
 	const { label, name, value, options, handleChange } = props

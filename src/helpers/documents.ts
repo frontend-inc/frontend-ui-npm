@@ -2,7 +2,7 @@ import {
 	ATTACHMENT_FIELDS,
 	REFERENCE_FIELDS,
 	SYSTEM_FIELDS,
-} from 'constants/index'
+} from '../constants/index'
 import { get } from 'lodash'
 
 export const getDocumentValue = (document, field) => {

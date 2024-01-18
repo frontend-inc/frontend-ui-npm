@@ -1,5 +1,5 @@
 import React from 'react';
-import { Option } from 'types';
+import { Option } from '../../../types';
 type CheckboxGroupInputProps = {
     errors: any;
     name: string;

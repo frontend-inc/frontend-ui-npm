@@ -16,7 +16,7 @@ import {
 	CellPrice,
 	CellRating,
 	CellVideo,
-} from 'components'
+} from '../../../components'
 
 type CellProps = {
 	field: any

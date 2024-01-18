@@ -7,7 +7,7 @@ import {
 	Typography,
 } from '@mui/material'
 import { formatCurrency } from '@webstudio/shopify'
-import { Image } from 'components'
+import { Image } from '../../../components'
 import { OrderLineItem } from '@webstudio/shopify'
 
 type OrderLineItemProps = {

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Image } from 'components/ui'
-import { IMAGE_HORIZ_HEIGHT, IMAGE_HORIZ_WIDTH } from 'constants/index'
+import { Image } from '../../../components'
+import { IMAGE_HORIZ_HEIGHT, IMAGE_HORIZ_WIDTH } from '../../../constants/index'
 
 type FieldImageProps = {
 	value?: any

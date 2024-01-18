@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Box } from '@mui/material'
-import { AppContext } from 'context/core'
-import { Image, TouchableOpacity } from 'components'
+import { AppContext } from '../../../context'
+import { Image, TouchableOpacity } from '../../../components'
 import { useRouter } from 'next/router'
-import { IMAGE_HORIZ_HEIGHT } from 'constants/index'
-import { CardProps } from 'types'
+import { IMAGE_HORIZ_HEIGHT } from '../../../constants/index'
+import { CardProps } from '../../../types'
 
 const ImageHoriz: React.FC<CardProps> = (props) => {
 	const { clientUrl } = useContext(AppContext)

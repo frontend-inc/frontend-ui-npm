@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { IconButton } from '@mui/material'
 import { useAuth } from '@webstudio/shopify'
-import { useMenu } from 'hooks'
-import { UserMenu } from 'components'
+import { useMenu } from '../../../hooks'
+import { UserMenu } from '../../../components'
 import { useRouter } from 'next/router'
 import { User } from 'lucide-react'
-import { AppContext } from 'context'
+import { AppContext } from '../../../context'
 
 const AuthAvatarButton: React.FC = () => {
 	const router = useRouter()

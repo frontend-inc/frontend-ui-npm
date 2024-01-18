@@ -1,20 +1,20 @@
 import React, { useContext } from 'react'
-import { AppContext } from 'context/core'
+import { AppContext } from '../../../context/core'
 import { Avatar, Box, Stack, Typography } from '@mui/material'
-import { TouchableOpacity } from 'components'
-import { truncate } from 'helpers'
+import { TouchableOpacity } from '../../../components'
+import { truncate } from '../../../helpers'
 import { useRouter } from 'next/router'
 import {
 	TESTIMONIAL_CARD_HEIGHT,
 	TESTIMONIAL_AVATAR_HEIGHT,
 	TESTIMONIAL_AVATAR_WIDTH,
   TESTIMONIAL_CARD_WIDTH,
-} from 'constants/index'
+} from '../../../constants/index'
 import { FormatQuote } from '@mui/icons-material'
-import { CardProps } from 'types'
+import { CardProps } from '../../../types'
 
 const TestimonialCard: React.FC<CardProps> = (props) => {
-	const { clientUrl } = useContext(AppContext)
+	const { clientUrl } = useContext(AppContext) as any
 	const {
 		label,
 		title,

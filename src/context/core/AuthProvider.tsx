@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AuthContext } from 'context'
+import AuthContext from './AuthContext'
 
 type AuthProviderProps = {
 	serverPath?: string

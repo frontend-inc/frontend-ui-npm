@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { Button, IconButton } from '@mui/material'
 import { ShopContext } from '@webstudio/shopify'
-import { AppContext } from 'context'
-import { Icon } from 'components'
+import { AppContext } from '../../../context'
+import { Icon } from '../../../components'
 
 type SearchButtonProps = {
 	editing?: boolean

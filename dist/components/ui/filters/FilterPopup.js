@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("components");
+var components_1 = require("../../../components");
 var FilterForm_1 = __importDefault(require("./FilterForm"));
 var FilterPopup = function (props) {
     var open = props.open, anchorEl = props.anchorEl, query = props.query, handleClose = props.handleClose, fields = props.fields, handleSearch = props.handleSearch, handleChange = props.handleChange, handleClearFilters = props.handleClearFilters;

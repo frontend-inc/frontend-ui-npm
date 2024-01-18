@@ -1,6 +1,6 @@
 import React from 'react'
-import { Carousel } from 'components/ui'
-import { IMAGE_CAROUSEL_RESPONSIVE } from 'constants/index'
+import { Carousel } from '../../../components'
+import { IMAGE_CAROUSEL_RESPONSIVE } from '../../../constants/index'
 
 type CarouselImageProps = {
 	children: React.ReactNode

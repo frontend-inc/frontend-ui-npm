@@ -3,8 +3,8 @@ import { Hidden } from '@mui/material'
 import {
 	ProductImageThumbnails,
 	SwipeableProductImages,
-} from 'components/shopify'
-import { PDP_IMAGE_HEIGHT } from 'constants/index'
+} from '../../../../components/shopify'
+import { PDP_IMAGE_HEIGHT } from '../../../../constants/index'
 import { Product } from '@webstudio/shopify'
 
 type ProductImagesProps = {

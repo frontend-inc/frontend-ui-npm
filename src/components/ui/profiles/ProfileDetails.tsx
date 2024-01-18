@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Stack } from '@mui/material'
-import { ProfileInfo, ProfileImage } from 'components'
+import { ProfileInfo, ProfileImage } from '../../../components'
 
 type ProfileDetailsProps = {
 	src: string

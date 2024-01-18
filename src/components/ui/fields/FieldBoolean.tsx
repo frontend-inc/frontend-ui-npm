@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '@mui/material'
-import { FieldWrapper } from 'components/ui'
+import { FieldWrapper } from '../../../components'
 
 type FieldBooleanProps = {
 	value?: boolean

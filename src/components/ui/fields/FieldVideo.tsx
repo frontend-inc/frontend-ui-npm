@@ -1,5 +1,5 @@
 import React from 'react'
-import { NoImage, FieldWrapper } from 'components/ui'
+import { NoImage, FieldWrapper } from '../../../components'
 
 type FieldVideoProps = {
 	value?: any

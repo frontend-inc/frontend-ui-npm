@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useResource } from 'hooks'
-import { Autosuggest } from 'components/ui'
-import { ErrorText } from 'components/ui'
-import { useError } from 'hooks'
+import { useResource } from '../../hooks'
+import { Autosuggest } from '../../components'
+import { ErrorText } from '../../components'
+import { useError } from '../../hooks'
 
 type RemoteAutosuggestProps = {
 	errors?: any

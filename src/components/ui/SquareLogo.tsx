@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useRouter } from 'next/router'
 import { Button } from '@mui/material'
 import Image from 'next/image'
-import { AppContext } from 'context'
+import { AppContext } from '../../context'
 
 type SquareLogoProps = {
 	src: string

@@ -35,12 +35,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("context/core");
+var core_1 = require("../../../context/core");
 var material_1 = require("@mui/material");
-var components_1 = require("components");
-var helpers_1 = require("helpers");
+var components_1 = require("../../../components");
+var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
-var index_1 = require("constants/index");
+var index_1 = require("../../../constants/index");
 var icons_material_1 = require("@mui/icons-material");
 var TestimonialCard = function (props) {
     var clientUrl = (0, react_1.useContext)(core_1.AppContext).clientUrl;

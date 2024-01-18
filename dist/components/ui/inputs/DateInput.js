@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var moment_1 = __importDefault(require("moment"));
-var styles_1 = require("components/ui/inputs/styles");
+var styles_1 = require("./styles");
 var DateInput = function (props) {
     var errors = props.errors, required = props.required, label = props.label, name = props.name, value = props.value, handleChange = props.handleChange, placeholder = props.placeholder;
     var _a = (0, react_1.useState)(false), error = _a[0], setError = _a[1];

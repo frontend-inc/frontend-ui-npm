@@ -24,11 +24,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var lucide_react_1 = require("lucide-react");
-var components_1 = require("components");
+var components_2 = require("../../../components");
 var TableToolbar = function (props) {
     var loading = props.loading, selected = props.selected, query = props.query, _a = props.enableDelete, enableDelete = _a === void 0 ? false : _a, _b = props.enableEdit, enableEdit = _b === void 0 ? false : _b, handleKeywordChange = props.handleKeywordChange, handleKeywordSearch = props.handleKeywordSearch, handleFilter = props.handleFilter, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handlePublish = props.handlePublish, handleUnpublish = props.handleUnpublish, handleClearQuery = props.handleClearQuery, secondaryActions = props.secondaryActions;
     var _c = (0, react_1.useState)(0), badgeCount = _c[0], setBadgeCount = _c[1];
@@ -44,10 +44,10 @@ var TableToolbar = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Box, { sx: sx.searchBar },
             react_1.default.createElement(material_1.Box, null,
-                react_1.default.createElement(ui_1.SearchInput, { value: query === null || query === void 0 ? void 0 : query.keywords, handleChange: handleKeywordChange, handleSearch: handleKeywordSearch })),
+                react_1.default.createElement(components_1.SearchInput, { value: query === null || query === void 0 ? void 0 : query.keywords, handleChange: handleKeywordChange, handleSearch: handleKeywordSearch })),
             react_1.default.createElement(material_1.Hidden, { mdDown: true },
                 react_1.default.createElement(material_1.Box, { sx: sx.toolbar },
-                    react_1.default.createElement(components_1.FilterButton, { loading: loading, query: query, handleClick: handleFilter, badgeCount: badgeCount, handleClearFilters: handleClearQuery })))),
+                    react_1.default.createElement(components_2.FilterButton, { loading: loading, query: query, handleClick: handleFilter, badgeCount: badgeCount, handleClearFilters: handleClearQuery })))),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
             react_1.default.createElement(material_1.Box, { sx: sx.toolbar },
                 react_1.default.createElement(material_1.Hidden, { mdDown: true },

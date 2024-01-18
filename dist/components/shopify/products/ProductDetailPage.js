@@ -25,9 +25,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var shopify_1 = require("components/shopify");
+var shopify_1 = require("../../../components/shopify");
 var shopify_2 = require("@webstudio/shopify");
-var hooks_1 = require("hooks");
+var hooks_1 = require("../../../hooks");
 var ProductDetailPage = function (props) {
     var handle = props.handle, buttonText = props.buttonText, _a = props.enableQuantity, enableQuantity = _a === void 0 ? true : _a, _b = props.enableSubscription, enableSubscription = _b === void 0 ? true : _b, enableLikes = props.enableLikes, enableShares = props.enableShares, enableFavorites = props.enableFavorites, enableOkendoStarRating = props.enableOkendoStarRating;
     var _c = (0, shopify_2.useProductContext)(), product = _c.product, variant = _c.variant;

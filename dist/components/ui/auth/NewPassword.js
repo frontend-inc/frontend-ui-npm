@@ -40,8 +40,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var ui_1 = require("components/ui");
-var hooks_1 = require("hooks");
+var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var NewPassword = function (props) {
     var _a = props || {}, logo = _a.logo, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'New Password' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Create a new password' : _c, loginUrl = _a.loginUrl;
@@ -64,8 +64,8 @@ var NewPassword = function (props) {
     var handleLogin = function () {
         router.push(loginUrl);
     };
-    return (react_1.default.createElement(ui_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(ui_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
-            react_1.default.createElement(ui_1.NewPasswordForm, { loading: loading, errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
+    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+            react_1.default.createElement(components_1.NewPasswordForm, { loading: loading, errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };
 exports.default = NewPassword;

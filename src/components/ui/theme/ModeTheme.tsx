@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { LightDarkProvider, ThemeContext } from 'context'
+import { LightDarkProvider, ThemeContext } from '../../../context'
 
 type ModeThemeProps = {
   mode?: 'light' | 'dark' | 'accent'

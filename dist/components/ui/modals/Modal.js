@@ -16,8 +16,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("components");
-var hooks_1 = require("hooks");
+var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var Modal = function (props) {
     var open = props.open, _a = props.loading, loading = _a === void 0 ? false : _a, handleClose = props.handleClose, title = props.title, subtitle = props.subtitle, actions = props.actions, children = props.children, maxWidth = props.maxWidth, secondaryActions = props.secondaryActions, _b = props.p, p = _b === void 0 ? 1 : _b, fullScreen = props.fullScreen, _c = props.enableCancel, enableCancel = _c === void 0 ? false : _c, _d = props.hideBackdrop, hideBackdrop = _d === void 0 ? false : _d;
     var isMobile = (0, hooks_1.useResponsive)().isMobile;

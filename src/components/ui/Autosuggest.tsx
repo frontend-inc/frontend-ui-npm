@@ -8,10 +8,10 @@ import {
 	Typography,
 	InputBase,
 } from '@mui/material'
-import { useError } from 'hooks'
-import { Icon, ErrorText } from 'components/ui'
+import { useError } from '../../hooks'
+import { Icon, ErrorText } from '../../components'
 import Autocomplete from '@mui/material/Autocomplete'
-import { SyntheticEvent } from 'types'
+import { SyntheticEvent } from '../../types'
 import Image from 'next/image'
 
 type AutocompleteOptionProps = {

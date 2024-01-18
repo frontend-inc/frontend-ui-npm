@@ -1,5 +1,5 @@
 import React from 'react'
-import { useError } from 'hooks'
+import { useError } from '../../../hooks'
 import {
 	FormControl,
 	Popper,
@@ -8,9 +8,9 @@ import {
 	Chip,
 	TextField,
 } from '@mui/material'
-import { ErrorText } from 'components/ui'
+import { ErrorText } from '../../../components'
 import { X } from 'lucide-react'
-import { SyntheticEvent } from 'types'
+import { SyntheticEvent } from '../../../types'
 
 const CustomPopper = function (props) {
 	return <Popper {...props} sx={sx.popper} placement="bottom" />

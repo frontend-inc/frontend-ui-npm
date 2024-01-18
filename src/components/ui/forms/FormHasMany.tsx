@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useResource } from 'hooks'
+import { useResource } from '../../../hooks'
 import { Stack, Button } from '@mui/material'
-import { ButtonLoader, Placeholder } from 'components'
+import { ButtonLoader, Placeholder } from '../../../components'
 import { Check } from 'lucide-react'
 import FormField from './FormField'
-import { SYSTEM_FIELDS } from 'constants/index'
+import { SYSTEM_FIELDS } from '../../../constants/index'
 import { get } from 'lodash'
 
 type FormProps = {

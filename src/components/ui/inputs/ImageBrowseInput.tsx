@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Button } from '@mui/material'
-import { TextInput, EmptyImage } from 'components/ui'
+import { TextInput, EmptyImage } from '../../../components'
 import { Search } from 'lucide-react'
 import Image from 'next/image'
 

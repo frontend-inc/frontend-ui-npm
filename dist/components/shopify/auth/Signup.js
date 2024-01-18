@@ -40,8 +40,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("components");
-var shopify_1 = require("components/shopify");
+var components_1 = require("../../../components");
+var shopify_1 = require("../../../components/shopify");
 var shopify_2 = require("@webstudio/shopify");
 var router_1 = require("next/router");
 var Signup = function (props) {

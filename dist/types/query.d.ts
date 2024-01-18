@@ -1,4 +1,4 @@
-import { Option } from 'types';
+import { Option } from '../types';
 export type Operator = 'asc' | 'desc' | 'true' | 'false' | 'eq' | 'neq' | 'like' | 'gt' | 'gte' | 'lt' | 'lte' | 'in' | 'nin' | 'include' | '1_day_ago' | '7_days_ago' | '14_days_ago' | '30_days_ago' | '60_days_ago' | '90_days_ago';
 export type Value = string | number | string[] | number[];
 export type Filter = {

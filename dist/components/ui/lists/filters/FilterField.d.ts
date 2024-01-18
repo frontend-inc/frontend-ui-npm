@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterOption } from 'types';
+import { FilterOption } from '../../../../types';
 type FilterButtonProps = {
     field?: any;
     filters?: FilterOption[];

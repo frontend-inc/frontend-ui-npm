@@ -1,6 +1,6 @@
 import React from 'react'
 import Rating from '@mui/material/Rating'
-import { FieldWrapper } from 'components/ui'
+import { FieldWrapper } from '../../../components'
 
 type FieldRatingProps = {
 	value?: any

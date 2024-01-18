@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { muiTheme } from 'theme'
-import { buildTheme } from 'helpers'
+import { muiTheme } from '../../theme'
+import { buildTheme } from '../../helpers'
 
 type ThemeProps = {
 	primaryColor?: string

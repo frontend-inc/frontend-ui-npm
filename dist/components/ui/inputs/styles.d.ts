@@ -62,3 +62,4 @@ export declare const sx: {
         alignItems: string;
     };
 };
+export default sx;

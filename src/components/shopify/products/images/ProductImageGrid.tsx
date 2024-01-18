@@ -1,6 +1,6 @@
 import React from 'react'
 import { CardActionArea, Grid } from '@mui/material'
-import { Image } from 'components'
+import { Image } from '../../../../components'
 
 type ImageGridProps = {
 	images: any

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Hidden, Stack } from '@mui/material'
-import { Drawer } from 'components'
+import { Drawer } from '../../../components'
 import { ListFilter } from 'lucide-react'
 
 type MobileFilterDrawerProps = {

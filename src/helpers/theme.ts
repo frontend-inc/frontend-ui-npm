@@ -1,5 +1,5 @@
 import { alpha, lighten, darken, getContrastRatio } from '@mui/material'
-import { SECONDARY_TEXT_ALPHA } from 'constants/index'
+import { SECONDARY_TEXT_ALPHA } from '../constants/index'
 
 export const buildTheme = (theme, bgcolor) => {
 	const paper = lighten(bgcolor, 0.2)

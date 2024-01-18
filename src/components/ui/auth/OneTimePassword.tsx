@@ -1,7 +1,7 @@
 import React from 'react'
-import { AuthScreen, LayoutLoader } from 'components/ui'
-import { useAuth } from 'hooks'
-import { OneTimePasswordForm } from 'components/ui'
+import { AuthScreen, LayoutLoader } from '../../../components'
+import { useAuth } from '../../../hooks'
+import { OneTimePasswordForm } from '../../../components'
 import { useRouter } from 'next/router'
 
 type OneTimePasswordProps = {

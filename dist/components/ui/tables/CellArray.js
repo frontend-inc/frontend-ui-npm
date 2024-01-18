@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var ui_1 = require("components/ui");
+var components_1 = require("../../../components");
 var CellArray = function (props) {
     var value = props.value;
     var values = (value === null || value === void 0 ? void 0 : value.length) > 0 ? value : null;
@@ -47,7 +47,7 @@ var CellArray = function (props) {
         }
     }, [values]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        visibleTags.map(function (value, index) { return (react_1.default.createElement(ui_1.Label, { key: index, label: value })); }),
+        visibleTags.map(function (value, index) { return (react_1.default.createElement(components_1.Label, { key: index, label: value })); }),
         !open && (react_1.default.createElement(material_1.Button, { sx: sx.button, size: "small", onClick: handleToggleSeeAll }, "..."))));
 };
 exports.default = CellArray;

@@ -24,12 +24,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("context/core");
+var context_1 = require("../../context");
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var Alert = function () {
     var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
-    var _b = (0, react_1.useContext)(core_1.AppContext), alert = _b.alert, setAlert = _b.setAlert;
+    var _b = (0, react_1.useContext)(context_1.AppContext), alert = _b.alert, setAlert = _b.setAlert;
     var handleClose = function () {
         setOpen(false);
         setAlert();

@@ -8,7 +8,7 @@ import {
 	ListItemButton,
 	MenuItem,
 } from '@mui/material'
-import { Label, MenuButton } from 'components/ui'
+import { Label, MenuButton } from '../../components'
 import { Trash, Edit } from 'lucide-react'
 
 type ListItemProps = {
