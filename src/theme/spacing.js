@@ -1,3 +1,1 @@
-const spacing = 10
-
-export default spacing
+export const spacing = 10

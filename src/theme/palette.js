@@ -1,6 +1,6 @@
 import * as COLORS from '@mui/material/colors'
 
-export default {
+export const palette = {
 	primary: {
 		main: COLORS.indigo[500],
 	},
