@@ -92,14 +92,14 @@ const useSegment = () => {
 		})
 
 		segment?.track('Checkout Started', {
-			order_id: line.id,
-			value: line?.totalPrice?.amount,
-			revenue: line?.totalPrice?.amount,
-			coupon: line.discountApplications.edges
+			order_id: cart.id,
+			value: cart?.totalAmount?.amount,
+			revenue: cart?.totalAmount?.amount,
+			coupon: cart.discountApplications.edges
 				?.map((e) => e?.node)
 				.map((node) => node?.code)
 				.join(', '),
-			currency: line?.cost?.totalAmount?.currencyCode,
+			currency: cart?.totalAmount?.currencyCode,
 			products: products,
 		})
 	}
