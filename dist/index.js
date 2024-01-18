@@ -20,3 +20,4 @@ __exportStar(require("./constants"), exports);
 __exportStar(require("./hooks"), exports);
 __exportStar(require("./types"), exports);
 __exportStar(require("./helpers"), exports);
+__exportStar(require("./theme"), exports);
