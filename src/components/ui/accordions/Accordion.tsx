@@ -7,7 +7,7 @@ import {
 	SearchInput,
 	Placeholder,
 	LoadMore,
-} from 'components'
+} from '..'
 import { Typography, useTheme } from '@mui/material'
 import { FilterOption } from 'types'
 import { Search } from 'lucide-react'
