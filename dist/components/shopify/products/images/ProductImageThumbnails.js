@@ -16,8 +16,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var react_medium_image_zoom_1 = __importDefault(require("react-medium-image-zoom"));
-var icons_material_1 = require("@mui/icons-material");
 var shopify_1 = require("@webstudio/shopify");
 var image_1 = __importDefault(require("next/image"));
 var Thumbnail = function (props) {
@@ -34,10 +32,9 @@ var ProductImageSlider = function (props) {
     var _a = (0, shopify_1.useProductContext)(), images = _a.images, image = _a.image, handleImageClick = _a.handleImageClick;
     var _b = props.height, height = _b === void 0 ? 520 : _b, _c = props.width, width = _c === void 0 ? 520 : _c, _d = props.thumbnailSize, thumbnailSize = _d === void 0 ? 80 : _d;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0, sx: sx.root },
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.image), { width: '100%' }) }, (image === null || image === void 0 ? void 0 : image.url) && (react_1.default.createElement(react_medium_image_zoom_1.default, { IconUnzoom: icons_material_1.Close },
-            react_1.default.createElement(image_1.default, { src: image === null || image === void 0 ? void 0 : image.url, alt: image === null || image === void 0 ? void 0 : image.altText, height: height, width: width, layout: "responsive", style: {
-                    objectFit: 'contain',
-                } })))),
+        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.image), { width: '100%' }) }, (image === null || image === void 0 ? void 0 : image.url) && (react_1.default.createElement(image_1.default, { src: image === null || image === void 0 ? void 0 : image.url, alt: image === null || image === void 0 ? void 0 : image.altText, height: height, width: width, layout: "responsive", style: {
+                objectFit: 'contain',
+            } }))),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.thumbnails }, images === null || images === void 0 ? void 0 : images.map(function (img) { return (react_1.default.createElement(Thumbnail, { key: img === null || img === void 0 ? void 0 : img.id, image: img, active: (img === null || img === void 0 ? void 0 : img.id) === (image === null || image === void 0 ? void 0 : image.id), handleClick: handleImageClick, size: thumbnailSize })); }))));
 };
 exports.default = ProductImageSlider;
