@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { Stack } from '@mui/material'
 import {
   CoverImage
 } from '../../../components'
