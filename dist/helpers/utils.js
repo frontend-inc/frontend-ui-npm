@@ -44,6 +44,8 @@ exports.getInitials = getInitials;
 var groupBy = function (arr, name) {
     var grouped = {};
     arr.forEach(function (item) {
+        if (!item || !item[name])
+            return;
         var groupBy = item[name];
         if (!grouped[groupBy]) {
             grouped[groupBy] = [];
