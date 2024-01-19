@@ -78,7 +78,6 @@
         "apollo-link-context": "^1.0.20",
         "apollo-link-http": "^1.5.17",
         "attr-accept": "^2.2.2",
-        "axios": "^0.21.4",
         "brace": "^0.11.1",
         "compression": "^1.7.4",
         "copy-to-clipboard": "^3.3.1",
@@ -117,6 +116,7 @@
         "yup": "^1.0.2"
     },
     "devDependencies": {
+        "axios": "^0.21.4",
         "next": "^14.0.4",
         "next-images": "^1.8.5",
         "@emotion/react": "^11.8.2",
@@ -138,6 +138,7 @@
         "typescript": "^5.3.3"
     },
     "peerDependencies": {
+        "axios": "^0.21.4",
         "@apollo/client": "^3.8.9",
         "@emotion/react": "^11.8.2",
         "@emotion/styled": "^11.8.1",
