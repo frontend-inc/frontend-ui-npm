@@ -83,8 +83,6 @@
         "lodash": "latest",
         "lucide-react": "^0.292.0",
         "moment": "^2.26.0",
-        "next": "^14.0.4",
-        "next-images": "^1.8.5",
         "prettier": "^2.4.1",
         "react": "^17.0.1 || ^18.0.0",
         "react-beautiful-dnd": "^13.1.1",
@@ -114,6 +112,8 @@
         "yup": "^1.0.2"
     },
     "devDependencies": {
+        "next": "^14.0.4",
+        "next-images": "^1.8.5",
         "@emotion/react": "^11.8.2",
         "@emotion/styled": "^11.8.1",
         "@mui/icons-material": "5.11.16",
