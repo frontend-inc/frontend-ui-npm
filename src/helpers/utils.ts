@@ -1,5 +1,3 @@
-import { get } from 'lodash'
-
 export const isEmptyObject = (object) => {
 	if (Object.values(object).every((x) => x === null || x === '')) {
 		return false
@@ -39,6 +37,7 @@ export const groupBy = (arr, name) => {
 	const grouped = {}
 
 	arr.forEach((item) => {
+    if(!item || !item[name]) return;
 		const groupBy = item[name]
 
 		if (!grouped[groupBy]) {
