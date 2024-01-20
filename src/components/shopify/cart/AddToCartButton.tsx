@@ -109,8 +109,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = (props) => {
           color="primary"
           onClick={handleAddToCart}
           variant={buttonVariant}
-          size={size}
-          disabled={!variant || !product?.availableForSale}
+          size={size}          
           startIcon={
             <IconLoader
               color={

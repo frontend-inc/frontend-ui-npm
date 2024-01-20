@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { Box, Stack } from '@mui/material'
 import {
-	ShopifyProduct,
 	AddToCartButton,
 	ProductInfo,
 	ProductImages,

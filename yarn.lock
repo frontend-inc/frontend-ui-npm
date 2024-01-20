@@ -14598,8 +14598,8 @@ websocket-extensions@>=0.1.1:
   integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
 
 "webstudio-shopify@git+https://github.com/webstudio-co/webstudio-shopify.git":
-  version "0.0.2"
-  resolved "git+https://github.com/webstudio-co/webstudio-shopify.git#032a37461f43c99f44640472e1c89410825e4ff1"
+  version "0.0.3"
+  resolved "git+https://github.com/webstudio-co/webstudio-shopify.git#f855f103c91761f0a424234ff5f108485ae54adb"
   dependencies:
     "@apollo/client" "^3.8.9"
     apollo-link-context "^1.0.20"

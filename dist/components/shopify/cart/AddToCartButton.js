@@ -136,7 +136,7 @@ var AddToCartButton = function (props) {
         enableSubscription && (react_1.default.createElement(shopify_1.SubscriptionSelector, { product: product, activeSellingPlanId: activeSellingPlanId, handleChange: handleSellingPlanChange })),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0.5 },
             enableQuantity && (react_1.default.createElement(shopify_1.QuantitySelector, { size: size, quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity })),
-            react_1.default.createElement(material_1.Button, { fullWidth: true, sx: __assign(__assign({}, sx.addToCartButton), (size == 'small' && sx.addToCartButtonSmall)), color: "primary", onClick: handleAddToCart, variant: buttonVariant, size: size, disabled: !variant || !(product === null || product === void 0 ? void 0 : product.availableForSale), startIcon: react_1.default.createElement(components_1.IconLoader, { color: buttonVariant == 'contained'
+            react_1.default.createElement(material_1.Button, { fullWidth: true, sx: __assign(__assign({}, sx.addToCartButton), (size == 'small' && sx.addToCartButtonSmall)), color: "primary", onClick: handleAddToCart, variant: buttonVariant, size: size, startIcon: react_1.default.createElement(components_1.IconLoader, { color: buttonVariant == 'contained'
                         ? 'primary.contrastText'
                         : 'primary.main', loading: loading }) }, label),
             enableFavorites && (react_1.default.createElement(shopify_1.FavoriteButton, { product: product })))));
