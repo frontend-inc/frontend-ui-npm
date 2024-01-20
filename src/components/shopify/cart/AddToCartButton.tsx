@@ -50,15 +50,20 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = (props) => {
 	}
 
 	const handleRemoveQuantity = () => {
-		if (quantity <= 1) return
+		if (quantity <= 1) return;
 		setQuantity(quantity - 1)
 	}
 
 	const handleAddToCart = async () => {
 		if (!product?.availableForSale) {      
 			showAlertError('Please select all options')
-			return
+			return;
 		}
+    if(quantity <= 0){
+      console.log("Quantity:", quantity)
+      showAlertError('Please select at least 1 quantity')
+			return;
+    }
 		if (product?.availableForSale && variant?.id) {
 			let line = {
 				merchandiseId: variant?.id,

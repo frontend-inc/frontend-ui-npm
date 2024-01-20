@@ -105,6 +105,11 @@ var AddToCartButton = function (props) {
                 showAlertError('Please select all options');
                 return [2 /*return*/];
             }
+            if (quantity <= 0) {
+                console.log("Quantity:", quantity);
+                showAlertError('Please select at least 1 quantity');
+                return [2 /*return*/];
+            }
             if ((product === null || product === void 0 ? void 0 : product.availableForSale) && (variant === null || variant === void 0 ? void 0 : variant.id)) {
                 line = {
                     merchandiseId: variant === null || variant === void 0 ? void 0 : variant.id,
