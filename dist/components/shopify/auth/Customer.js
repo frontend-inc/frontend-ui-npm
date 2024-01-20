@@ -61,12 +61,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
-var shopify_1 = require("@webstudio/shopify");
-var shopify_2 = require("../../../components/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
+var shopify_1 = require("../../../components/shopify");
 var Customer = function (props) {
     var _a = props || {}, logo = _a.logo, _b = _a.title, title = _b === void 0 ? 'Customer details' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Update your account' : _c;
-    var _d = (0, shopify_1.useCustomers)(), errors = _d.errors, loading = _d.loading, customer = _d.customer, fetchCustomer = _d.fetchCustomer, updateCustomer = _d.updateCustomer;
-    var _e = (0, shopify_1.useAuth)(), authCustomer = _e.customer, setAuthCustomer = _e.setCustomer, handleChange = _e.handleChange, accessToken = _e.accessToken;
+    var _d = (0, webstudio_shopify_1.useCustomers)(), errors = _d.errors, loading = _d.loading, customer = _d.customer, fetchCustomer = _d.fetchCustomer, updateCustomer = _d.updateCustomer;
+    var _e = (0, webstudio_shopify_1.useAuth)(), authCustomer = _e.customer, setAuthCustomer = _e.setCustomer, handleChange = _e.handleChange, accessToken = _e.accessToken;
     (0, react_1.useEffect)(function () {
         if (customer) {
             setAuthCustomer(customer);
@@ -95,6 +95,6 @@ var Customer = function (props) {
     }, [customer]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
         react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
-            react_1.default.createElement(shopify_2.CustomerForm, { loading: loading, customer: authCustomer, handleChange: handleChange, handleSubmit: handleSubmit }))));
+            react_1.default.createElement(shopify_1.CustomerForm, { loading: loading, customer: authCustomer, handleChange: handleChange, handleSubmit: handleSubmit }))));
 };
 exports.default = Customer;

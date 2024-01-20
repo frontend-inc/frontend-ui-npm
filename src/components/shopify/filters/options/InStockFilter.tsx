@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { CheckboxFilterList } from '../../../../components/shopify'
-import { ProductCollectionFilter } from '@webstudio/shopify'
-import { findAvailableFilter } from '@webstudio/shopify'
+import { ProductCollectionFilter } from 'webstudio-shopify'
+import { findAvailableFilter } from 'webstudio-shopify'
 
 type InStockFilterProps = {
 	filters: ProductCollectionFilter[]

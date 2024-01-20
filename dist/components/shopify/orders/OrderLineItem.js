@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var components_1 = require("../../../components");
 var OrderLineItem = function (props) {
     var _a, _b, _c, _d, _e, _f, _g;
@@ -19,7 +19,7 @@ var OrderLineItem = function (props) {
                     lineItem.quantity,
                     " x",
                     ' ',
-                    (0, shopify_1.formatCurrency)((_g = (_f = lineItem === null || lineItem === void 0 ? void 0 : lineItem.variant) === null || _f === void 0 ? void 0 : _f.price) === null || _g === void 0 ? void 0 : _g.amount))) })));
+                    (0, webstudio_shopify_1.formatCurrency)((_g = (_f = lineItem === null || lineItem === void 0 ? void 0 : lineItem.variant) === null || _f === void 0 ? void 0 : _f.price) === null || _g === void 0 ? void 0 : _g.amount))) })));
 };
 exports.default = OrderLineItem;
 var sx = {

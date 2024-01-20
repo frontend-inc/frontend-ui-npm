@@ -41,13 +41,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var shopify_1 = require("@webstudio/shopify");
-var shopify_2 = require("../../../components/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
+var shopify_1 = require("../../../components/shopify");
 var router_1 = require("next/router");
 var Login = function (props) {
     var _a = props || {}, logo = _a.logo, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl;
     var router = (0, router_1.useRouter)();
-    var _d = (0, shopify_1.useAuth)(), errors = _d.errors, loading = _d.loading, customer = _d.customer, handleChange = _d.handleChange, login = _d.login;
+    var _d = (0, webstudio_shopify_1.useAuth)(), errors = _d.errors, loading = _d.loading, customer = _d.customer, handleChange = _d.handleChange, login = _d.login;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -70,6 +70,6 @@ var Login = function (props) {
     };
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
         react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
-            react_1.default.createElement(shopify_2.LoginForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword }))));
+            react_1.default.createElement(shopify_1.LoginForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword }))));
 };
 exports.default = Login;

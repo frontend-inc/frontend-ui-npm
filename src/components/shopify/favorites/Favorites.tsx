@@ -9,7 +9,7 @@ import {
 	ProductCarousel,
 } from '../../../components/shopify'
 import { Box, Typography } from '@mui/material'
-import { useFavorites } from '@webstudio/shopify'
+import { useFavorites } from 'webstudio-shopify'
 
 type FavoritesProps = {
 	editing?: boolean

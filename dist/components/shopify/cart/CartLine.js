@@ -74,13 +74,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var shopify_1 = require("@webstudio/shopify");
-var shopify_2 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
+var webstudio_shopify_2 = require("webstudio-shopify");
 var addons_1 = require("../../../hooks/addons");
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
 var components_1 = require("../../../components");
-var shopify_3 = require("@webstudio/shopify");
+var webstudio_shopify_3 = require("webstudio-shopify");
 var router_1 = require("next/router");
 var CartQuantityInput = function (props) {
     var quantity = props.quantity, handleAddQuantity = props.handleAddQuantity, handleRemoveQuantity = props.handleRemoveQuantity;
@@ -96,8 +96,8 @@ var CartLine = function (props) {
     var line = props.line;
     var router = (0, router_1.useRouter)();
     var trackRemoveFromCart = (0, addons_1.useSegment)().trackRemoveFromCart;
-    var _j = (0, shopify_2.useCart)(), loading = _j.loading, cartLineRemove = _j.cartLineRemove, cartLineUpdate = _j.cartLineUpdate;
-    var _k = (0, react_1.useContext)(shopify_1.ShopContext), shopUrl = _k.shopUrl, setCartOpen = _k.setCartOpen;
+    var _j = (0, webstudio_shopify_2.useCart)(), loading = _j.loading, cartLineRemove = _j.cartLineRemove, cartLineUpdate = _j.cartLineUpdate;
+    var _k = (0, react_1.useContext)(webstudio_shopify_1.ShopContext), shopUrl = _k.shopUrl, setCartOpen = _k.setCartOpen;
     var _l = line || {}, id = _l.id, quantity = _l.quantity, merchandise = _l.merchandise, sellingPlanAllocation = _l.sellingPlanAllocation;
     var _m = (0, react_1.useState)(null), price = _m[0], setPrice = _m[1];
     var _o = (0, react_1.useState)(null), compareAtPrice = _o[0], setCompareAtPrice = _o[1];
@@ -174,7 +174,7 @@ var CartLine = function (props) {
                 (sellingPlanAllocation === null || sellingPlanAllocation === void 0 ? void 0 : sellingPlanAllocation.sellingPlan) && (react_1.default.createElement(material_1.Typography, { variant: "body2", sx: sx.subscription }, (_h = sellingPlanAllocation === null || sellingPlanAllocation === void 0 ? void 0 : sellingPlanAllocation.sellingPlan) === null || _h === void 0 ? void 0 : _h.name)),
                 react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
                     react_1.default.createElement(material_1.Typography, { variant: "body2" },
-                        price == 0 ? 'Free' : (0, shopify_3.formatCurrency)(price),
+                        price == 0 ? 'Free' : (0, webstudio_shopify_3.formatCurrency)(price),
                         ' ')),
                 react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(CartQuantityInput, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity }))) })));

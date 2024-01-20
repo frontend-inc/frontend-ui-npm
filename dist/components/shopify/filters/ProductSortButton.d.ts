@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductCollectionSortKey } from '@webstudio/shopify';
+import { ProductCollectionSortKey } from 'webstudio-shopify';
 type ProductSortButtonProps = {
     sortKey?: ProductCollectionSortKey;
     reverse?: boolean;

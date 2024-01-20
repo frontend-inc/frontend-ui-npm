@@ -41,13 +41,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var ShopifyAuth = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = props || {}, _b = _a.editing, editing = _b === void 0 ? false : _b, showLabel = _a.showLabel, customerUrl = _a.customerUrl;
-    var findShop = (0, shopify_1.useShop)().findShop;
+    var findShop = (0, webstudio_shopify_1.useShop)().findShop;
     var getLastPathOfUrl = function (urlString) {
         var url = new URL(urlString);
         var pathname = url.pathname;

@@ -7,7 +7,7 @@ import {
 	MenuItem,
 } from '@mui/material'
 import { MenuButton } from '../../../components'
-import { Address } from '@webstudio/shopify'
+import { Address } from 'webstudio-shopify'
 
 type AddressItemProps = {
 	address: Address

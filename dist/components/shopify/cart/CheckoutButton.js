@@ -24,14 +24,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var addons_1 = require("../../../hooks/addons");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var CheckoutButton = function (props) {
     var _a = props.size, size = _a === void 0 ? 'large' : _a;
     var _b = (0, react_1.useState)(false), loading = _b[0], setLoading = _b[1];
-    var cart = (0, shopify_1.useCart)().cart;
+    var cart = (0, webstudio_shopify_1.useCart)().cart;
     var trackCheckoutStarted = (0, addons_1.useSegment)().trackCheckoutStarted;
     var handleCheckoutClick = function () {
         setLoading(true);

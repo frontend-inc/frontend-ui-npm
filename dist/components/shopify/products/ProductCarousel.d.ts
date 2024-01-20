@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from '@webstudio/shopify';
+import { Product } from 'webstudio-shopify';
 type ProductCarouselProps = {
     editing?: boolean;
     loading?: boolean;

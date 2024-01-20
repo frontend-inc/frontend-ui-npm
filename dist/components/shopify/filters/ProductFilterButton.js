@@ -26,7 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var shopify_1 = require("../../../components/shopify");
-var shopify_2 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var material_1 = require("@mui/material");
 var lucide_react_1 = require("lucide-react");
 var ProductFilterButton = function (props) {
@@ -47,13 +47,13 @@ var ProductFilterButton = function (props) {
     var _k = props.filters, filters = _k === void 0 ? [] : _k, _l = props.enableInStockFilter, enableInStockFilter = _l === void 0 ? false : _l, _m = props.colorOptions, colorOptions = _m === void 0 ? [] : _m, _o = props.sizeOptions, sizeOptions = _o === void 0 ? [] : _o, _p = props.styleOptions, styleOptions = _p === void 0 ? [] : _p, _q = props.materialOptions, materialOptions = _q === void 0 ? [] : _q, _r = props.vendorOptions, vendorOptions = _r === void 0 ? [] : _r, _s = props.tagOptions, tagOptions = _s === void 0 ? [] : _s, _t = props.productTypeOptions, productTypeOptions = _t === void 0 ? [] : _t, handleFilterColor = props.handleFilterColor, handleFilterSize = props.handleFilterSize, handleFilterStyle = props.handleFilterStyle, handleFilterMaterial = props.handleFilterMaterial, handleFilterVendor = props.handleFilterVendor, handleFilterProductType = props.handleFilterProductType, handleFilterTag = props.handleFilterTag, handleFilterInStock = props.handleFilterInStock;
     (0, react_1.useEffect)(function () {
         if (filters) {
-            setColorsCount((0, shopify_2.findColorFilters)(filters).length);
-            setSizesCount((0, shopify_2.findSizeFilters)(filters).length);
-            setStylesCount((0, shopify_2.findStyleFilters)(filters).length);
-            setMaterialsCount((0, shopify_2.findMaterialFilters)(filters).length);
-            setVendorsCount((0, shopify_2.findVendorFilters)(filters).length);
-            setProductTypesCount((0, shopify_2.findProductTypeFilters)(filters).length);
-            setTagsCount((0, shopify_2.findTagFilters)(filters).length);
+            setColorsCount((0, webstudio_shopify_1.findColorFilters)(filters).length);
+            setSizesCount((0, webstudio_shopify_1.findSizeFilters)(filters).length);
+            setStylesCount((0, webstudio_shopify_1.findStyleFilters)(filters).length);
+            setMaterialsCount((0, webstudio_shopify_1.findMaterialFilters)(filters).length);
+            setVendorsCount((0, webstudio_shopify_1.findVendorFilters)(filters).length);
+            setProductTypesCount((0, webstudio_shopify_1.findProductTypeFilters)(filters).length);
+            setTagsCount((0, webstudio_shopify_1.findTagFilters)(filters).length);
         }
     }, [filters]);
     return (react_1.default.createElement(react_1.default.Fragment, null,

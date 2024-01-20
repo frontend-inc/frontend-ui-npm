@@ -7,7 +7,7 @@ An Apollo GraphQL client for the Shopify Storefront API.
 ## Installation
 
 ```shell
-yarn add @webstudio/shopify --save
+yarn add webstudio-shopify --save
 ```
 
 ## Requirements

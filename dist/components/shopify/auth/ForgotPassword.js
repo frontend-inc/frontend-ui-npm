@@ -42,13 +42,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var shopify_1 = require("../../../components/shopify");
-var shopify_2 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var ForgotPassword = function (props) {
     var _a = props || {}, logo = _a.logo, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _b = (0, shopify_2.useAuth)(), loading = _b.loading, errors = _b.errors, customer = _b.customer, setCustomer = _b.setCustomer, handleChange = _b.handleChange, forgotPassword = _b.forgotPassword;
+    var _b = (0, webstudio_shopify_1.useAuth)(), loading = _b.loading, errors = _b.errors, customer = _b.customer, setCustomer = _b.setCustomer, handleChange = _b.handleChange, forgotPassword = _b.forgotPassword;
     var router = (0, router_1.useRouter)();
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;

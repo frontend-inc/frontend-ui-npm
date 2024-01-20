@@ -63,27 +63,27 @@ var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var lucide_react_1 = require("lucide-react");
 var material_1 = require("@mui/material");
-var shopify_1 = require("@webstudio/shopify");
-var shopify_2 = require("../../../components/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
+var shopify_1 = require("../../../components/shopify");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
-var shopify_3 = require("@webstudio/shopify");
+var webstudio_shopify_2 = require("webstudio-shopify");
 var Addresses = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = (0, react_1.useState)(null), activeAddress = _a[0], setActiveAddress = _a[1];
     var _b = (0, react_1.useState)(false), showDeleteModal = _b[0], setShowDeleteModal = _b[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _c = props || {}, logo = _c.logo, _d = _c.title, title = _d === void 0 ? 'Customer Addresses' : _d, _e = _c.subtitle, subtitle = _e === void 0 ? 'Manage your addresses' : _e;
-    var _f = (0, shopify_1.useAddresses)(), loading = _f.loading, addresses = _f.addresses, deleteCustomerAddress = _f.deleteCustomerAddress, fetchCustomerAddresses = _f.fetchCustomerAddresses;
+    var _f = (0, webstudio_shopify_1.useAddresses)(), loading = _f.loading, addresses = _f.addresses, deleteCustomerAddress = _f.deleteCustomerAddress, fetchCustomerAddresses = _f.fetchCustomerAddresses;
     var handleClick = function (addressGid) {
-        var addressId = (0, shopify_3.getShopifyIdFromGid)(addressGid);
+        var addressId = (0, webstudio_shopify_2.getShopifyIdFromGid)(addressGid);
         router.push("".concat(clientUrl, "/shopify/addresses/").concat(addressId));
     };
     var handleAddAddress = function () {
         router.push("".concat(clientUrl, "/shopify/addresses/new"));
     };
     var handleEdit = function (addressGid) {
-        var addressId = (0, shopify_3.getShopifyIdFromGid)(addressGid);
+        var addressId = (0, webstudio_shopify_2.getShopifyIdFromGid)(addressGid);
         router.push("".concat(clientUrl, "/shopify/addresses/").concat(addressId));
     };
     var handleDeleteClick = function (address) {
@@ -108,7 +108,7 @@ var Addresses = function (props) {
     }, [addresses]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
         react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
-            react_1.default.createElement(shopify_2.AddressList, { addresses: addresses, handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
+            react_1.default.createElement(shopify_1.AddressList, { addresses: addresses, handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
             react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "outlined", onClick: handleAddAddress, startIcon: react_1.default.createElement(lucide_react_1.Plus, null) }, "Add Address"),
             react_1.default.createElement(components_1.AlertModal, { open: showDeleteModal, handleClose: function () { return setShowDeleteModal(false); }, handleConfirm: handleDelete }))));
 };

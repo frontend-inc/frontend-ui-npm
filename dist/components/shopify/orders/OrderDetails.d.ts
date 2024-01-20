@@ -1,5 +1,5 @@
 import React from 'react';
-import { Order } from '@webstudio/shopify';
+import { Order } from 'webstudio-shopify';
 type OrderDetailsProps = {
     styles?: object;
     order: Order;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { AuthScreen, LayoutLoader } from '../../../components'
 import { ForgotPasswordForm } from '../../../components/shopify'
-import { useAuth } from '@webstudio/shopify'
+import { useAuth } from 'webstudio-shopify'
 import { useAlerts } from '../../../hooks'
 import { useRouter } from 'next/router'
 

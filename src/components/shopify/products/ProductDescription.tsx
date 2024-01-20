@@ -1,19 +1,15 @@
 import React from 'react'
-import { Box, Stack, Typography } from '@mui/material'
-import { TypographyVariants } from '../../../types'
-import { useProductContext } from '@webstudio/shopify'
+import { Typography } from '@mui/material'
+import { Product } from 'webstudio-shopify'
 
 type ProductDescriptionProps = {
-	label?: string
-	variant?: TypographyVariants
+	product?: Product
 	color?: string
 }
 
 const ProductDescription: React.FC<ProductDescriptionProps> = (props) => {
-	const { color = 'text.secondary' } = props
-
-	const { product } = useProductContext()
-
+	const { product, color = 'text.secondary' } = props
+	
 	return (
 		<Typography variant="body2" color={color} sx={sx.description}>
 			{product?.description}

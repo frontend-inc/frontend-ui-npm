@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Stack, Box, Button, List, Typography } from '@mui/material'
 import { AddressItem, OrderLineItem } from '../../../components/shopify'
-import { formatCurrency } from '@webstudio/shopify'
-import { Order, OrderLineItem as OrderLineItemType } from '@webstudio/shopify'
+import { formatCurrency } from 'webstudio-shopify'
+import { Order, OrderLineItem as OrderLineItemType } from 'webstudio-shopify'
 import { ExternalLink } from 'lucide-react'
 import { useRouter } from 'next/router'
 

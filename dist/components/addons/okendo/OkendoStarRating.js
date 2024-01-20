@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var material_1 = require("@mui/material");
 var OkendoStarRating = function (props) {
     var _a;
@@ -50,6 +50,6 @@ var OkendoStarRating = function (props) {
     }, [product === null || product === void 0 ? void 0 : product.id]);
     if (!(product === null || product === void 0 ? void 0 : product.id))
         return null;
-    return (react_1.default.createElement("div", { style: { color: (_a = theme === null || theme === void 0 ? void 0 : theme.palette) === null || _a === void 0 ? void 0 : _a.text.secondary }, ref: widgetContainer, "data-oke-star-rating": true, "data-oke-reviews-product-id": "shopify-".concat((0, shopify_1.getShopifyIdFromGid)(product === null || product === void 0 ? void 0 : product.id)) }));
+    return (react_1.default.createElement("div", { style: { color: (_a = theme === null || theme === void 0 ? void 0 : theme.palette) === null || _a === void 0 ? void 0 : _a.text.secondary }, ref: widgetContainer, "data-oke-star-rating": true, "data-oke-reviews-product-id": "shopify-".concat((0, webstudio_shopify_1.getShopifyIdFromGid)(product === null || product === void 0 ? void 0 : product.id)) }));
 };
 exports.default = OkendoStarRating;

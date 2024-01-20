@@ -28,8 +28,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
-var shopify_1 = require("@webstudio/shopify");
-var shopify_2 = require("../../../components/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
+var shopify_1 = require("../../../components/shopify");
 var router_1 = require("next/router");
 var moment_1 = __importDefault(require("moment"));
 var ShopifyCustomerOrder = function (props) {
@@ -39,7 +39,7 @@ var ShopifyCustomerOrder = function (props) {
         orderId = null;
     }
     var logo = (props || {}).logo;
-    var _a = (0, shopify_1.useOrders)(), loading = _a.loading, order = _a.order, fetchCustomerOrder = _a.fetchCustomerOrder;
+    var _a = (0, webstudio_shopify_1.useOrders)(), loading = _a.loading, order = _a.order, fetchCustomerOrder = _a.fetchCustomerOrder;
     (0, react_1.useEffect)(function () {
         if (orderId) {
             fetchCustomerOrder(orderId);
@@ -47,6 +47,6 @@ var ShopifyCustomerOrder = function (props) {
     }, [orderId]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
         react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: "Order ".concat(order.name), subtitle: (0, moment_1.default)(order === null || order === void 0 ? void 0 : order.processedAt).format('MMMM Do, YYYY') },
-            react_1.default.createElement(shopify_2.OrderDetails, { order: order }))));
+            react_1.default.createElement(shopify_1.OrderDetails, { order: order }))));
 };
 exports.default = ShopifyCustomerOrder;

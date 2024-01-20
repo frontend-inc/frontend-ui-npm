@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react'
-import { useCart } from '@webstudio/shopify'
+import { useCart } from 'webstudio-shopify'
 import { useSegment } from '../../../hooks/addons'
 import { useAlerts } from '../../../hooks'
 import { Stack, Button } from '@mui/material'
 import { IconLoader } from '../../../components'
 import { FavoriteButton, QuantitySelector, SubscriptionSelector } from '../../../components/shopify'
-import { ShopContext } from '@webstudio/shopify'
-import { Product, ProductVariant } from '@webstudio/shopify'
+import { ShopContext } from 'webstudio-shopify'
+import { Product, ProductVariant } from 'webstudio-shopify'
 
 type AddToCartButtonProps = {
 	product: Product

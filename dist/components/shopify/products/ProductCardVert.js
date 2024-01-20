@@ -41,9 +41,9 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var helpers_1 = require("../../../helpers");
 var index_1 = require("../../../constants/index");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var SwipeableProductImages_1 = __importDefault(require("./images/SwipeableProductImages"));
-var shopify_2 = require("../../../components/shopify");
+var shopify_1 = require("../../../components/shopify");
 var addons_1 = require("../../../components/addons");
 var ProductCardVert = function (props) {
     var _a, _b, _c, _d;
@@ -63,13 +63,13 @@ var ProductCardVert = function (props) {
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.text), (enableOkendoStarRating && sx.textWithReviews)) },
                 react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "subtitle1" }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.title)),
                 enableOkendoStarRating && react_1.default.createElement(addons_1.OkendoStarRating, { product: product }),
-                react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2" }, (0, shopify_1.formatCurrency)((_b = (_a = product === null || product === void 0 ? void 0 : product.priceRange) === null || _a === void 0 ? void 0 : _a.minVariantPrice) === null || _b === void 0 ? void 0 : _b.amount))),
+                react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2" }, (0, webstudio_shopify_1.formatCurrency)((_b = (_a = product === null || product === void 0 ? void 0 : product.priceRange) === null || _a === void 0 ? void 0 : _a.minVariantPrice) === null || _b === void 0 ? void 0 : _b.amount))),
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: "column" },
-                enableAddToCart && (react_1.default.createElement(shopify_2.AddToCartButton, { product: product, variant: 
+                enableAddToCart && (react_1.default.createElement(shopify_1.AddToCartButton, { product: product, variant: 
                     //@ts-ignore
                     (_d = (_c = product === null || product === void 0 ? void 0 : product.variants) === null || _c === void 0 ? void 0 : _c.edges[0]) === null || _d === void 0 ? void 0 : _d.node, label: buttonText, enableQuantity: enableQuantity, buttonVariant: buttonVariant, size: "small" })),
                 enableQuickShop && (react_1.default.createElement(material_1.Button, { variant: enableAddToCart ? 'outlined' : 'contained', color: "secondary", onClick: handleQuickShop }, "Quick Shop")))),
-        react_1.default.createElement(shopify_2.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, handle: product === null || product === void 0 ? void 0 : product.handle, enableQuantity: enableQuantity, buttonText: buttonText })));
+        react_1.default.createElement(shopify_1.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, handle: product === null || product === void 0 ? void 0 : product.handle, enableQuantity: enableQuantity, buttonText: buttonText })));
 };
 exports.default = ProductCardVert;
 var sx = {

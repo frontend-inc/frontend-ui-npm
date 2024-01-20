@@ -25,10 +25,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var shopify_1 = require("../../../components/shopify");
-var shopify_2 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var ProductCollectionByHandle = function (props) {
     var handle = props.handle, _a = props.enableTitle, enableTitle = _a === void 0 ? false : _a, _b = props.layout, layout = _b === void 0 ? 'grid' : _b, _c = props.editing, editing = _c === void 0 ? false : _c, inStockFilter = props.inStockFilter, productComponent = props.productComponent, colorOptions = props.colorOptions, sizeOptions = props.sizeOptions, styleOptions = props.styleOptions, materialOptions = props.materialOptions, vendorOptions = props.vendorOptions, productTypeOptions = props.productTypeOptions, tagOptions = props.tagOptions, _d = props.enableFilters, enableFilters = _d === void 0 ? false : _d, _e = props.enableSort, enableSort = _e === void 0 ? false : _e, _f = props.autoPlay, autoPlay = _f === void 0 ? false : _f, _g = props.arrows, arrows = _g === void 0 ? false : _g, _h = props.showDots, showDots = _h === void 0 ? true : _h, _j = props.enableBorder, enableBorder = _j === void 0 ? false : _j, _k = props.enableAddToCart, enableAddToCart = _k === void 0 ? false : _k, _l = props.enableQuickShop, enableQuickShop = _l === void 0 ? false : _l, _m = props.enableQuantity, enableQuantity = _m === void 0 ? false : _m, _o = props.enableOkendoStarRating, enableOkendoStarRating = _o === void 0 ? false : _o;
-    var _p = (0, shopify_2.useCollections)(), loading = _p.loading, collection = _p.collection, fetchCollection = _p.fetchCollection;
+    var _p = (0, webstudio_shopify_1.useCollections)(), loading = _p.loading, collection = _p.collection, fetchCollection = _p.fetchCollection;
     (0, react_1.useEffect)(function () {
         if (handle) {
             fetchCollection(handle);

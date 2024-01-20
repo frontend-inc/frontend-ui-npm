@@ -25,12 +25,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var context_1 = require("../../../context");
 var components_1 = require("../../../components");
 var CartButton = function (props) {
     var _a = props.label, label = _a === void 0 ? 'Cart' : _a, _b = props.showLabel, showLabel = _b === void 0 ? false : _b, _c = props.showIcon, showIcon = _c === void 0 ? true : _c, _d = props.editing, editing = _d === void 0 ? false : _d, _e = props.icon, icon = _e === void 0 ? 'ShoppingCart' : _e;
-    var _f = (0, react_1.useContext)(shopify_1.ShopContext), cart = _f.cart, toggleCart = _f.toggleCart;
+    var _f = (0, react_1.useContext)(webstudio_shopify_1.ShopContext), cart = _f.cart, toggleCart = _f.toggleCart;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var handleCartClick = function () {
         setMenuOpen(false);

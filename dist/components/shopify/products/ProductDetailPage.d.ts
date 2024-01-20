@@ -3,8 +3,6 @@ type ProductDetailPageProps = {
     handle: string | string[];
     buttonText?: string;
     enableQuantity?: boolean;
-    enableLikes?: boolean;
-    enableShares?: boolean;
     enableFavorites?: boolean;
     enableSubscription?: boolean;
     enableOkendoStarRating?: boolean;

@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var hooks_1 = require("../../../hooks");
 var components_1 = require("../../../components");
 var router_1 = require("next/router");
@@ -33,7 +33,7 @@ var lucide_react_1 = require("lucide-react");
 var context_1 = require("../../../context");
 var AuthAvatarButton = function () {
     var router = (0, router_1.useRouter)();
-    var _a = (0, shopify_1.useAuth)(), logout = _a.logout, customer = _a.customer;
+    var _a = (0, webstudio_shopify_1.useAuth)(), logout = _a.logout, customer = _a.customer;
     var _b = (0, hooks_1.useMenu)({}), open = _b.open, anchorEl = _b.anchorEl, closeMenu = _b.closeMenu, toggleMenu = _b.toggleMenu;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var handleClick = function (path) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product } from '@webstudio/shopify';
+import { Product } from 'webstudio-shopify';
 type ProductGridProps = {
     editing?: boolean;
     loading?: boolean;

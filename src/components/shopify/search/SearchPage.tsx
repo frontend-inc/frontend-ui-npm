@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { useProducts } from '@webstudio/shopify'
+import { useProducts } from 'webstudio-shopify'
 import { useSegment } from '../../../hooks/addons'
 import { useRouter } from 'next/router'
 import { Box } from '@mui/material'
 import { SearchInput, Placeholder } from '../../../components'
 import { ProductGrid } from '../../../components/shopify'
 import LoadMore from '../../../components/shopify/search/LoadMore'
-import { ShopContext } from '@webstudio/shopify'
+import { ShopContext } from 'webstudio-shopify'
 
 const PER_PAGE = 48
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Stack } from '@mui/material'
 import { TextInput, IconLoader } from '../../../components'
-import { Customer } from '@webstudio/shopify'
+import { Customer } from 'webstudio-shopify'
 
 type LoginFormProps = {
 	errors?: any

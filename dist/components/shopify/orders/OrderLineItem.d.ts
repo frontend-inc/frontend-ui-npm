@@ -1,5 +1,5 @@
 import React from 'react';
-import { OrderLineItem } from '@webstudio/shopify';
+import { OrderLineItem } from 'webstudio-shopify';
 type OrderLineItemProps = {
     lineItem: OrderLineItem;
 };

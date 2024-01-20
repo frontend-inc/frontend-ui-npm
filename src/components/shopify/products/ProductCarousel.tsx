@@ -4,7 +4,7 @@ import { Box } from '@mui/material'
 import { ProductCardVert } from '../../../components/shopify'
 import { useRouter } from 'next/router'
 import { Carousel } from '../../../components'
-import { Product } from '@webstudio/shopify'
+import { Product } from 'webstudio-shopify'
 import { AppContext } from '../../../context'
 
 type ProductCarouselProps = {

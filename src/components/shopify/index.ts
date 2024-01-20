@@ -78,6 +78,7 @@ export { default as FavoriteButton } from './favorites/FavoriteButton'
 
 // Recently viewed
 export { default as RecentlyViewed } from './recently-viewed/RecentlyViewed'
+export { default as TrackRecentlyViewed } from './recently-viewed/TrackRecentlyViewed'
 
 // Shopify Auth
 export { default as Address } from './addresses/Address'

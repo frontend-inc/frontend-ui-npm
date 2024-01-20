@@ -2,7 +2,7 @@ import React from 'react'
 import { Stack, Box, CardActionArea } from '@mui/material'
 //import Zoom from 'react-medium-image-zoom'
 import { Close } from '@mui/icons-material'
-import { useProductContext } from '@webstudio/shopify'
+import { useProductContext } from 'webstudio-shopify'
 import Image from 'next/image'
 
 type ThumbnailProps = {

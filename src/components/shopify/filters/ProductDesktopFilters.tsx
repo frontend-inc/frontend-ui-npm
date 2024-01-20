@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ProductCollectionFilter } from '@webstudio/shopify'
+import { ProductCollectionFilter } from 'webstudio-shopify'
 import {
 	FilterButton,
 	FilterList,
@@ -20,7 +20,7 @@ import {
 	findProductTypeFilters,
 	findVendorFilters,
 	findTagFilters,
-} from '@webstudio/shopify'
+} from 'webstudio-shopify'
 import DesktopFilters from './DesktopFilters'
 import MobileFilters from './MobileFilters'
 

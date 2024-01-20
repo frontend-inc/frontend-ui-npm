@@ -27,12 +27,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var shopify_1 = require("@webstudio/shopify");
-var shopify_2 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
+var webstudio_shopify_2 = require("webstudio-shopify");
 var head_1 = __importDefault(require("next/head"));
 var OkendoReviews = function (props) {
     var _a = props || {}, handle = _a.handle, subscriberId = _a.subscriberId;
-    var _b = (0, shopify_2.useProducts)(), loading = _b.loading, product = _b.product, fetchProduct = _b.fetchProduct;
+    var _b = (0, webstudio_shopify_2.useProducts)(), loading = _b.loading, product = _b.product, fetchProduct = _b.fetchProduct;
     var widgetContainer = (0, react_1.useRef)(null);
     var initializeReviewsWidget = function () {
         // @ts-ignore
@@ -63,6 +63,6 @@ var OkendoReviews = function (props) {
         react_1.default.createElement(head_1.default, null,
             react_1.default.createElement("meta", { name: "oke:subscriber_id", content: subscriberId }),
             react_1.default.createElement("script", { src: "https://cdn-static.okendo.io/reviews-widget-plus/js/okendo-reviews.js" })),
-        react_1.default.createElement("div", { ref: widgetContainer, "data-oke-widget": true, "data-oke-reviews-product-id": "shopify-".concat((0, shopify_1.getShopifyIdFromGid)(product === null || product === void 0 ? void 0 : product.id)) })));
+        react_1.default.createElement("div", { ref: widgetContainer, "data-oke-widget": true, "data-oke-reviews-product-id": "shopify-".concat((0, webstudio_shopify_1.getShopifyIdFromGid)(product === null || product === void 0 ? void 0 : product.id)) })));
 };
 exports.default = OkendoReviews;

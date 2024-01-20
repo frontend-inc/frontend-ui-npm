@@ -1,5 +1,5 @@
 import React from 'react';
-import { Address } from '@webstudio/shopify';
+import { Address } from 'webstudio-shopify';
 type AddressListProps = {
     addresses: Address[];
     handleClick: (id: string) => void;

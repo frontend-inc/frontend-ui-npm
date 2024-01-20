@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useCart } from '@webstudio/shopify'
+import { useCart } from 'webstudio-shopify'
 import { Button, Stack } from '@mui/material'
 import { TextInput, IconLoader } from '../../../components'
 

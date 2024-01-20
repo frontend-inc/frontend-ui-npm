@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var moment_1 = __importDefault(require("moment"));
 var OrderItem = function (props) {
     var _a, _b, _c, _d, _e, _f;
@@ -23,7 +23,7 @@ var OrderItem = function (props) {
                     "Order ", order === null || order === void 0 ? void 0 :
                     order.name), secondary: react_1.default.createElement(material_1.Stack, { spacing: 0 },
                     react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" }, (0, moment_1.default)(order === null || order === void 0 ? void 0 : order.processedAt).format('MM/DD/YYYY')),
-                    react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" }, (0, shopify_1.formatCurrency)((_f = order === null || order === void 0 ? void 0 : order.totalPrice) === null || _f === void 0 ? void 0 : _f.amount))) }))));
+                    react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" }, (0, webstudio_shopify_1.formatCurrency)((_f = order === null || order === void 0 ? void 0 : order.totalPrice) === null || _f === void 0 ? void 0 : _f.amount))) }))));
 };
 exports.default = OrderItem;
 var sx = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CartLine } from '@webstudio/shopify';
+import { CartLine } from 'webstudio-shopify';
 type CartLineProps = {
     line: CartLine;
 };

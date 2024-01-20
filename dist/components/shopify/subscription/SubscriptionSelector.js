@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var SubscriptionSelector = function (props) {
     var product = props.product, _a = props.activeSellingPlanId, activeSellingPlanId = _a === void 0 ? '' : _a, handleChange = props.handleChange;
     var _b = (0, react_1.useState)(null), sellingPlans = _b[0], setSellingPlans = _b[1];
@@ -48,7 +48,7 @@ var SubscriptionSelector = function (props) {
             sellingPlans.map(function (sellingPlan) { return (react_1.default.createElement(material_1.MenuItem, { key: sellingPlan.id, value: sellingPlan.id }, sellingPlan === null || sellingPlan === void 0 ? void 0 :
                 sellingPlan.name,
                 " - ",
-                (0, shopify_1.getSellingPlanDescription)(sellingPlan))); }))));
+                (0, webstudio_shopify_1.getSellingPlanDescription)(sellingPlan))); }))));
 };
 exports.default = SubscriptionSelector;
 var sx = {

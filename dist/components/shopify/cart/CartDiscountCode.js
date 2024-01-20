@@ -53,11 +53,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var hooks_1 = require("../../../hooks");
 var CartDiscountCode = function (props) {
     var discountCode = props.discountCode;
-    var cartRemoveDiscountCode = (0, shopify_1.useCart)().cartRemoveDiscountCode;
+    var cartRemoveDiscountCode = (0, webstudio_shopify_1.useCart)().cartRemoveDiscountCode;
     var _a = (0, hooks_1.useLoaders)(), loading = _a.loading, loadingWrapper = _a.loadingWrapper;
     var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {

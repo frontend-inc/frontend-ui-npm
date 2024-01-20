@@ -1,7 +1,7 @@
 import React from 'react'
 import { Stack, Button } from '@mui/material'
 import { IconLoader, SwitchInput, TextInput } from '../../../components'
-import { Customer } from '@webstudio/shopify'
+import { Customer } from 'webstudio-shopify'
 
 type SignupFormProps = {
 	loading: boolean

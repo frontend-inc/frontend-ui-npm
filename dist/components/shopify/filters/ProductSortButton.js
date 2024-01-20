@@ -30,7 +30,7 @@ var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var SortList_1 = __importDefault(require("./SortList"));
 var material_1 = require("@mui/material");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var icons_material_1 = require("@mui/icons-material");
 var ProductSortButton = function (props) {
     var _a;
@@ -48,9 +48,9 @@ var ProductSortButton = function (props) {
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.ButtonGroup, null,
-            react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "text", color: "secondary", onClick: handleOpen, endIcon: reverse === true ? (react_1.default.createElement(icons_material_1.ArrowDownward, { sx: sx.icon })) : (react_1.default.createElement(icons_material_1.ArrowUpward, { sx: sx.icon })) }, (_a = shopify_1.COLLECTION_SORT_OPTIONS.find(function (option) { return option.value === sortKey; })) === null || _a === void 0 ? void 0 : _a.label)),
+            react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "text", color: "secondary", onClick: handleOpen, endIcon: reverse === true ? (react_1.default.createElement(icons_material_1.ArrowDownward, { sx: sx.icon })) : (react_1.default.createElement(icons_material_1.ArrowUpward, { sx: sx.icon })) }, (_a = webstudio_shopify_1.COLLECTION_SORT_OPTIONS.find(function (option) { return option.value === sortKey; })) === null || _a === void 0 ? void 0 : _a.label)),
         react_1.default.createElement(components_1.Popup, { anchorEl: anchorEl, open: open, handleClose: handleClose, p: 1 },
-            react_1.default.createElement(SortList_1.default, { enableIcons: true, value: sortKey, reverse: reverse, options: shopify_1.COLLECTION_SORT_OPTIONS, handleClick: handleSortClick }))));
+            react_1.default.createElement(SortList_1.default, { enableIcons: true, value: sortKey, reverse: reverse, options: webstudio_shopify_1.COLLECTION_SORT_OPTIONS, handleClick: handleSortClick }))));
 };
 exports.default = ProductSortButton;
 var sx = {

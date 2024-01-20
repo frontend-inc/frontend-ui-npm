@@ -6,16 +6,14 @@ import {
 	ProductInfo,
 	ProductImages,
 	ProductVariantSelector,
+  TrackRecentlyViewed,
 } from '../../../components/shopify'
-import { useRecentlyViewed, useProductContext } from '@webstudio/shopify'
-import { useResourceContext } from '../../../hooks'
+import { useProducts, useProductDetails } from 'webstudio-shopify'
 
 type ProductDetailPageProps = {
 	handle: string | string[]
 	buttonText?: string
 	enableQuantity?: boolean
-	enableLikes?: boolean
-	enableShares?: boolean
 	enableFavorites?: boolean
   enableSubscription?: boolean
   enableOkendoStarRating?: boolean
@@ -28,34 +26,49 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
 		buttonText,
 		enableQuantity = true,
     enableSubscription=true,
-		enableLikes,
-		enableShares,
 		enableFavorites,
     enableOkendoStarRating
 	} = props
 
-	const { product, variant } = useProductContext()
+  const { product, fetchProduct } = useProducts()
 
-  const { viewProduct } = useRecentlyViewed()
+  const {
+    price,
+    compareAtPrice,
+    variant,
+    selectedOptions,
+    handleOptionChange
+  } = useProductDetails({
+    product 
+  })  
 
   useEffect(() => {
-    if(product){
-      viewProduct(product)
+    if(handle){
+      fetchProduct(handle)
     }
-  }, [product?.handle])  
+  }, [handle])
 
 	return (
 		<ShopifyProduct handle={handle}>
 			<Stack spacing={0} direction="row" sx={sx.container}>
 				<Box sx={sx.left}>
-					<ProductImages product={product} />
+					<ProductImages 
+            product={product} 
+          />
 				</Box>
 				<Box sx={sx.right}>
 					<Stack spacing={2}>
 						<ProductInfo 
+              product={product}
+              price={price}
+              compareAtPrice={compareAtPrice}
               enableOkendoStarRating={enableOkendoStarRating}
             />
-						<ProductVariantSelector />
+						<ProductVariantSelector 
+              product={product}
+              selectedOptions={selectedOptions}
+              handleOptionChange={handleOptionChange}
+            />
             <AddToCartButton
               product={product}
               variant={variant}
@@ -63,7 +76,8 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
               enableSubscription={enableSubscription}
               enableFavorites={enableFavorites}
               label={buttonText}
-            />              
+            />             
+            <TrackRecentlyViewed product={product} /> 
 					</Stack>
 				</Box>
 			</Stack>

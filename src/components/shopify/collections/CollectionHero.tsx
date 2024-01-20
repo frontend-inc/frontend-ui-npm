@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import {
   CoverImage
 } from '../../../components'
-import { useCollections } from '@webstudio/shopify'
+import { useCollections } from 'webstudio-shopify'
 import { TypographyVariants } from '../../../types'
 
 type CollectionHeroProps = {

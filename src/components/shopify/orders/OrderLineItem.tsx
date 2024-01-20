@@ -6,9 +6,9 @@ import {
 	ListItemIcon,
 	Typography,
 } from '@mui/material'
-import { formatCurrency } from '@webstudio/shopify'
+import { formatCurrency } from 'webstudio-shopify'
 import { Image } from '../../../components'
-import { OrderLineItem } from '@webstudio/shopify'
+import { OrderLineItem } from 'webstudio-shopify'
 
 type OrderLineItemProps = {
 	lineItem: OrderLineItem

@@ -7,8 +7,8 @@ import {
 	PRODUCT_CARD_HORIZ_WIDTH,
 } from '../../../constants/index'
 import SwipeableProductImages from './images/SwipeableProductImages'
-import { formatCurrency } from '@webstudio/shopify'
-import { Product } from '@webstudio/shopify'
+import { formatCurrency } from 'webstudio-shopify'
+import { Product } from 'webstudio-shopify'
 
 type ProductCardProps = {
 	product: Product

@@ -17,9 +17,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../../components");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var ProductImageCarousel = function () {
-    var _a = (0, shopify_1.useProductContext)(), images = _a.images, handleImageClick = _a.handleImageClick;
+    var _a = (0, webstudio_shopify_1.useProductContext)(), images = _a.images, handleImageClick = _a.handleImageClick;
     return (react_1.default.createElement(components_1.CarouselImage, null, images === null || images === void 0 ? void 0 : images.map(function (image) { return (react_1.default.createElement(material_1.Box, { sx: sx.image, key: image.id },
         react_1.default.createElement(components_1.TouchableOpacity, { handleClick: function () { return handleImageClick(image); } },
             react_1.default.createElement(material_1.Box, { component: "img", src: (image === null || image === void 0 ? void 0 : image.url) || (image === null || image === void 0 ? void 0 : image.url), sx: __assign(__assign({}, sx.image), { height: '512px' }), alt: image === null || image === void 0 ? void 0 : image.altText })))); })));

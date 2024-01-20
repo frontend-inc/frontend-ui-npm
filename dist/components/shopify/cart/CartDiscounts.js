@@ -60,12 +60,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var CartDiscountCodeInput = function () {
     var _a = (0, react_1.useState)(null), discountCode = _a[0], setDiscountCode = _a[1];
-    var _b = (0, shopify_1.useCart)(), loading = _b.loading, cartApplyDiscountCode = _b.cartApplyDiscountCode;
+    var _b = (0, webstudio_shopify_1.useCart)(), loading = _b.loading, cartApplyDiscountCode = _b.cartApplyDiscountCode;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

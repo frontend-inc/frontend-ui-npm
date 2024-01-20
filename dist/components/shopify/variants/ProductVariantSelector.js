@@ -6,9 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var ProductVariantOptions_1 = __importDefault(require("./ProductVariantOptions"));
 var ColorVariantOptions_1 = __importDefault(require("./ColorVariantOptions"));
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var ProductVariantSelector = function () {
-    var _a = (0, shopify_1.useProductContext)(), product = _a.product, selectedOptions = _a.selectedOptions, handleOptionChange = _a.handleOptionChange;
+    var _a = (0, webstudio_shopify_1.useProductContext)(), product = _a.product, selectedOptions = _a.selectedOptions, handleOptionChange = _a.handleOptionChange;
     var productOption = function (optionName) {
         var _a;
         return (_a = product === null || product === void 0 ? void 0 : product.options) === null || _a === void 0 ? void 0 : _a.find(function (option) { return (option === null || option === void 0 ? void 0 : option.name) == optionName; });

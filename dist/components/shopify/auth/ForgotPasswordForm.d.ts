@@ -1,5 +1,5 @@
 import React from 'react';
-import { Customer } from '@webstudio/shopify';
+import { Customer } from 'webstudio-shopify';
 type ForgotPasswordFormProps = {
     errors: any;
     customer: Customer;

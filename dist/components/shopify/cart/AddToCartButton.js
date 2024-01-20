@@ -71,18 +71,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var addons_1 = require("../../../hooks/addons");
 var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
-var shopify_2 = require("../../../components/shopify");
-var shopify_3 = require("@webstudio/shopify");
+var shopify_1 = require("../../../components/shopify");
+var webstudio_shopify_2 = require("webstudio-shopify");
 var AddToCartButton = function (props) {
     var showAlertError = (0, hooks_1.useAlerts)().showAlertError;
     var trackAddToCart = (0, addons_1.useSegment)().trackAddToCart;
-    var toggleCart = (0, react_1.useContext)(shopify_3.ShopContext).toggleCart;
-    var _a = (0, shopify_1.useCart)(), loading = _a.loading, cartLineAdd = _a.cartLineAdd;
+    var toggleCart = (0, react_1.useContext)(webstudio_shopify_2.ShopContext).toggleCart;
+    var _a = (0, webstudio_shopify_1.useCart)(), loading = _a.loading, cartLineAdd = _a.cartLineAdd;
     var _b = props.size, size = _b === void 0 ? 'large' : _b, _c = props.label, label = _c === void 0 ? 'Add to Cart' : _c, product = props.product, variant = props.variant, _d = props.buttonVariant, buttonVariant = _d === void 0 ? 'contained' : _d, _e = props.enableQuantity, enableQuantity = _e === void 0 ? false : _e, _f = props.enableSubscription, enableSubscription = _f === void 0 ? false : _f, _g = props.enableFavorites, enableFavorites = _g === void 0 ? false : _g;
     var _h = (0, react_1.useState)(1), quantity = _h[0], setQuantity = _h[1];
     var _j = (0, react_1.useState)(null), activeSellingPlanId = _j[0], setActiveSellingPlanId = _j[1];
@@ -125,13 +125,13 @@ var AddToCartButton = function (props) {
     if (!product)
         return null;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-        enableSubscription && (react_1.default.createElement(shopify_2.SubscriptionSelector, { product: product, activeSellingPlanId: activeSellingPlanId, handleChange: handleSellingPlanChange })),
+        enableSubscription && (react_1.default.createElement(shopify_1.SubscriptionSelector, { product: product, activeSellingPlanId: activeSellingPlanId, handleChange: handleSellingPlanChange })),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0.5 },
-            enableQuantity && (react_1.default.createElement(shopify_2.QuantitySelector, { size: size, quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity })),
+            enableQuantity && (react_1.default.createElement(shopify_1.QuantitySelector, { size: size, quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity })),
             react_1.default.createElement(material_1.Button, { fullWidth: true, sx: __assign(__assign({}, sx.addToCartButton), (size == 'small' && sx.addToCartButtonSmall)), color: "primary", onClick: handleAddToCart, variant: buttonVariant, size: size, disabled: !variant || !(product === null || product === void 0 ? void 0 : product.availableForSale), startIcon: react_1.default.createElement(components_1.IconLoader, { color: buttonVariant == 'contained'
                         ? 'primary.contrastText'
                         : 'primary.main', loading: loading }) }, label),
-            enableFavorites && (react_1.default.createElement(shopify_2.FavoriteButton, { product: product })))));
+            enableFavorites && (react_1.default.createElement(shopify_1.FavoriteButton, { product: product })))));
 };
 exports.default = AddToCartButton;
 var sx = {

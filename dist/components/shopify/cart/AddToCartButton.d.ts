@@ -1,5 +1,5 @@
 import React from 'react';
-import { Product, ProductVariant } from '@webstudio/shopify';
+import { Product, ProductVariant } from 'webstudio-shopify';
 type AddToCartButtonProps = {
     product: Product;
     variant: ProductVariant;

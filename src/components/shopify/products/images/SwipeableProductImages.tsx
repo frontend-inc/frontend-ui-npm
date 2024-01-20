@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Product } from '@webstudio/shopify'
+import { Product } from 'webstudio-shopify'
 import SwipeableViews from 'react-swipeable-views'
 import { TouchableOpacity } from '../../../../components'
 import { Box, Stack, MobileStepper } from '@mui/material'
@@ -7,7 +7,7 @@ import {
   PRODUCT_CARD_VERT_HEIGHT,
   PRODUCT_CARD_VERT_WIDTH,
 } from '../../../../constants/index'
-import { shopifyResizeImage } from '@webstudio/shopify'
+import { shopifyResizeImage } from 'webstudio-shopify'
 
 type SwipeableProductImagesProps = {
 	product: Product

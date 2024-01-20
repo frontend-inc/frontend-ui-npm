@@ -26,7 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var shopify_1 = require("../../../components/shopify");
-var shopify_2 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var lucide_react_1 = require("lucide-react");
 var router_1 = require("next/router");
 var OrderDetails = function (props) {
@@ -53,10 +53,10 @@ var OrderDetails = function (props) {
         react_1.default.createElement(material_1.List, null, lineItems === null || lineItems === void 0 ? void 0 : lineItems.map(function (lineItem, i) { return (react_1.default.createElement(shopify_1.OrderLineItem, { key: i, lineItem: lineItem })); })),
         react_1.default.createElement(material_1.Box, { sx: sx.lineItem },
             react_1.default.createElement(material_1.Typography, { variant: "body1" }, "Shipping"),
-            react_1.default.createElement(material_1.Typography, { variant: "body1" }, (0, shopify_2.formatCurrency)((_a = order === null || order === void 0 ? void 0 : order.totalShippingPrice) === null || _a === void 0 ? void 0 : _a.amount, 2))),
+            react_1.default.createElement(material_1.Typography, { variant: "body1" }, (0, webstudio_shopify_1.formatCurrency)((_a = order === null || order === void 0 ? void 0 : order.totalShippingPrice) === null || _a === void 0 ? void 0 : _a.amount, 2))),
         react_1.default.createElement(material_1.Box, { sx: sx.lineItem },
             react_1.default.createElement(material_1.Typography, { variant: "body1" }, "Total"),
-            react_1.default.createElement(material_1.Typography, { variant: "body1" }, (0, shopify_2.formatCurrency)((_b = order === null || order === void 0 ? void 0 : order.totalPrice) === null || _b === void 0 ? void 0 : _b.amount, 2))),
+            react_1.default.createElement(material_1.Typography, { variant: "body1" }, (0, webstudio_shopify_1.formatCurrency)((_b = order === null || order === void 0 ? void 0 : order.totalPrice) === null || _b === void 0 ? void 0 : _b.amount, 2))),
         shippingAddress && (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(material_1.Typography, { gutterBottom: true, variant: "body1" }, "Shipping Details"),
             react_1.default.createElement(material_1.List, null,

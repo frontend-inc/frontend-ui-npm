@@ -1,22 +1,27 @@
 import React from 'react'
-import { useProductContext } from '@webstudio/shopify'
+import { Product } from 'webstudio-shopify'
 import { Stack, Typography } from '@mui/material'
-import { formatCurrency } from '@webstudio/shopify'
+import { formatCurrency } from 'webstudio-shopify'
 import { ProductDescription } from '../../../components/shopify'
 import { OkendoStarRating } from '../../../components/addons'
 
 type ProductDetailsProps = {
+  product?: Product
+  price?: number
+  compareAtPrice?: number
 	disableCompareAtPrice?: boolean
   enableOkendoStarRating?: boolean
 }
 
 const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
-	const { 
+	
+  const { 
+    product,
+    price,
+    compareAtPrice,
     disableCompareAtPrice = false,
     enableOkendoStarRating = false 
-  } = props
-
-	const { price, compareAtPrice, product } = useProductContext()
+  } = props	
 
 	if (!product) return null
 	return (
@@ -33,7 +38,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = (props) => {
 					<span>{formatCurrency(compareAtPrice)}</span>
 				)}
 			</Typography>
-			<ProductDescription />
+			<ProductDescription 
+        product={product}
+      />
 		</Stack>
 	)
 }

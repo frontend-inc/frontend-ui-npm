@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var context_1 = require("../../context");
 // Implementation of the Segment v2 eCommerce analytics events
 // https://segment?.com/docs/connections/spec/ecommerce/v2/
 var useSegment = function () {
     var segment = (0, react_1.useContext)(context_1.ScriptContext).segment;
-    var checkout = (0, shopify_1.useCheckout)().checkout;
+    var checkout = (0, webstudio_shopify_1.useCheckout)().checkout;
     var trackAddToCart = function (_a) {
         var _b, _c;
         var variant = _a.variant, quantity = _a.quantity, product = _a.product;

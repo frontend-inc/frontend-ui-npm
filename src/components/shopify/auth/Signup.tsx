@@ -1,7 +1,7 @@
 import React from 'react'
 import { AuthLayout, AuthScreen } from '../../../components'
 import { SignupForm } from '../../../components/shopify'
-import { useAuth } from '@webstudio/shopify'
+import { useAuth } from 'webstudio-shopify'
 import { useRouter } from 'next/router'
 
 type SignupProps = {

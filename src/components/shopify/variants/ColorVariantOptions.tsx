@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, Button } from '@mui/material'
-import { useProductContext } from '@webstudio/shopify'
+import { useProductContext } from 'webstudio-shopify'
 import Image from 'next/image'
-import { findVariantByColor } from '@webstudio/shopify'
+import { findVariantByColor } from 'webstudio-shopify'
 
 type ColorVariantsOptionsProps = {
 	name: string

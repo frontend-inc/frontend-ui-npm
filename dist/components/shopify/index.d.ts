@@ -58,6 +58,7 @@ export { default as ShopifyProduct } from './products/ShopifyProduct';
 export { default as Favorites } from './favorites/Favorites';
 export { default as FavoriteButton } from './favorites/FavoriteButton';
 export { default as RecentlyViewed } from './recently-viewed/RecentlyViewed';
+export { default as TrackRecentlyViewed } from './recently-viewed/TrackRecentlyViewed';
 export { default as Address } from './addresses/Address';
 export { default as Addresses } from './addresses/Addresses';
 export { default as AddressList } from './addresses/AddressList';

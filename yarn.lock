@@ -3486,15 +3486,6 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@webstudio/shopify@git+https://github.com/webstudio-co/webstudio-shopify.git":
-  version "1.0.2"
-  resolved "git+https://github.com/webstudio-co/webstudio-shopify.git#b78f40bd868ac7528f5b162402cce519071bbd81"
-  dependencies:
-    "@apollo/client" "^3.8.9"
-    apollo-link-context "^1.0.20"
-    apollo-link-http "^1.5.17"
-    cookies-next "^2.1.1"
-
 "@wry/caches@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@wry/caches/-/caches-1.0.1.tgz#8641fd3b6e09230b86ce8b93558d44cf1ece7e52"
@@ -14605,6 +14596,15 @@ websocket-extensions@>=0.1.1:
   version "0.1.4"
   resolved "https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.4.tgz"
   integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
+
+"webstudio-shopify@git+https://github.com/webstudio-co/webstudio-shopify.git":
+  version "0.0.2"
+  resolved "git+https://github.com/webstudio-co/webstudio-shopify.git#032a37461f43c99f44640472e1c89410825e4ff1"
+  dependencies:
+    "@apollo/client" "^3.8.9"
+    apollo-link-context "^1.0.20"
+    apollo-link-http "^1.5.17"
+    cookies-next "^2.1.1"
 
 whatwg-encoding@^1.0.5:
   version "1.0.5"

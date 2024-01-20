@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
-import { ShopContext } from '@webstudio/shopify'
-import { useCart } from '@webstudio/shopify'
+import { ShopContext } from 'webstudio-shopify'
+import { useCart } from 'webstudio-shopify'
 import { useSegment } from '../../../hooks/addons'
 import {
 	Badge,
@@ -16,9 +16,9 @@ import {
 } from '@mui/material'
 import Image from 'next/image'
 import { Icon, TouchableOpacity } from '../../../components'
-import { formatCurrency } from '@webstudio/shopify'
+import { formatCurrency } from 'webstudio-shopify'
 import { useRouter } from 'next/router'
-import { CartLine } from '@webstudio/shopify'
+import { CartLine } from 'webstudio-shopify'
 
 type CartQuantityInputProps = {
 	quantity: number

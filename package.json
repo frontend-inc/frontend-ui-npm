@@ -74,7 +74,6 @@
         "@mui/styles": "^5.12.3",
         "@mui/x-tree-view": "^6.0.0-alpha.3",
         "@segment/analytics-next": "^1.58.0",
-        "@webstudio/shopify": "git+https://github.com/webstudio-co/webstudio-shopify.git",
         "apollo-link-context": "^1.0.20",
         "apollo-link-http": "^1.5.17",
         "attr-accept": "^2.2.2",
@@ -113,12 +112,10 @@
         "use-debounce": "^10.0.0",
         "util": "^0.11.1",
         "uuid": "^8.3.2",
+        "webstudio-shopify": "git+https://github.com/webstudio-co/webstudio-shopify.git",
         "yup": "^1.0.2"
     },
     "devDependencies": {
-        "axios": "^0.21.4",
-        "next": "^14.0.4",
-        "next-images": "^1.8.5",
         "@emotion/react": "^11.8.2",
         "@emotion/styled": "^11.8.1",
         "@mui/icons-material": "5.11.16",
@@ -126,19 +123,21 @@
         "@mui/private-theming": "^5.12.3",
         "@mui/styles": "^5.12.3",
         "@mui/x-tree-view": "^6.0.0-alpha.3",
+        "axios": "^0.21.4",
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-2": "^6.24.1",
         "cookies-next": "^2.1.1",
         "gh-pages": "^2.2.0",
+        "next": "^14.0.4",
+        "next-images": "^1.8.5",
         "react": "^17.0.1 || ^18.0.0",
         "react-dom": "^17.0.2 || ^18.0.0",
         "react-scripts": "^4.0.3",
         "typescript": "^5.3.3"
     },
     "peerDependencies": {
-        "axios": "^0.21.4",
         "@apollo/client": "^3.8.9",
         "@emotion/react": "^11.8.2",
         "@emotion/styled": "^11.8.1",
@@ -149,10 +148,11 @@
         "@mui/x-tree-view": "^6.0.0-alpha.3",
         "apollo-link-context": "^1.0.20",
         "apollo-link-http": "^1.5.17",
+        "axios": "^0.21.4",
+        "cookies-next": "^2.1.1",
         "next": "^14.0.4",
         "next-images": "^1.8.5",
         "react": "^17.0.1 || ^18.0.0",
-        "react-dom": "^17.0.2 || ^18.0.0",
-        "cookies-next": "^2.1.1"
+        "react-dom": "^17.0.2 || ^18.0.0"
     }
 }

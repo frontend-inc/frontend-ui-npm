@@ -43,12 +43,12 @@ var material_1 = require("@mui/material");
 var helpers_1 = require("../../../helpers");
 var index_1 = require("../../../constants/index");
 var SwipeableProductImages_1 = __importDefault(require("./images/SwipeableProductImages"));
-var shopify_2 = require("@webstudio/shopify");
-var shopify_3 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
+var webstudio_shopify_2 = require("webstudio-shopify");
 var FeaturedProduct = function (props) {
     var _a, _b, _c, _d;
     var _e = props || {}, handle = _e.handle, _f = _e.flexDirection, flexDirection = _f === void 0 ? 'row' : _f, _g = _e.height, height = _g === void 0 ? index_1.FEATURED_CARD_HEIGHT : _g, _h = _e.width, width = _h === void 0 ? index_1.FEATURED_CARD_WIDTH : _h, _j = _e.buttonText, buttonText = _j === void 0 ? 'Add to Cart' : _j, _k = _e.quickShopButtonText, quickShopButtonText = _k === void 0 ? 'Quick Shop' : _k, handleClick = _e.handleClick, _l = _e.enableBorder, enableBorder = _l === void 0 ? false : _l, _m = _e.enableAddToCart, enableAddToCart = _m === void 0 ? false : _m, _o = _e.enableQuantity, enableQuantity = _o === void 0 ? false : _o, _p = _e.enableQuickShop, enableQuickShop = _p === void 0 ? false : _p;
-    var _q = (0, shopify_3.useProducts)(), loading = _q.loading, product = _q.product, fetchProduct = _q.fetchProduct;
+    var _q = (0, webstudio_shopify_2.useProducts)(), loading = _q.loading, product = _q.product, fetchProduct = _q.fetchProduct;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -69,7 +69,7 @@ var FeaturedProduct = function (props) {
                 react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "h3" }, product === null || product === void 0 ? void 0 : product.title),
                     react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.description, 60)),
-                    react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2" }, (0, shopify_2.formatCurrency)((_b = (_a = product === null || product === void 0 ? void 0 : product.priceRange) === null || _a === void 0 ? void 0 : _a.minVariantPrice) === null || _b === void 0 ? void 0 : _b.amount))),
+                    react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2" }, (0, webstudio_shopify_1.formatCurrency)((_b = (_a = product === null || product === void 0 ? void 0 : product.priceRange) === null || _a === void 0 ? void 0 : _a.minVariantPrice) === null || _b === void 0 ? void 0 : _b.amount))),
                 react_1.default.createElement(material_1.Stack, { direction: enableAddToCart && enableQuickShop && !enableQuantity
                         ? 'row'
                         : 'column', spacing: 1 },

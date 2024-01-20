@@ -53,10 +53,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var FavoriteButton = function (props) {
     var product = props.product;
-    var _a = (0, shopify_1.useFavorites)({
+    var _a = (0, webstudio_shopify_1.useFavorites)({
         product: product
     }), toggleFavorite = _a.toggleFavorite, isFavorite = _a.isFavorite;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Stack } from '@mui/material'
 import { TextInput } from '../../../components'
-import { Customer } from '@webstudio/shopify'
+import { Customer } from 'webstudio-shopify'
 
 type ForgotPasswordFormProps = {
 	errors: any

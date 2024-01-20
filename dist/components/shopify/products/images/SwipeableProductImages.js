@@ -42,7 +42,7 @@ var react_swipeable_views_1 = __importDefault(require("react-swipeable-views"));
 var components_1 = require("../../../../components");
 var material_1 = require("@mui/material");
 var index_1 = require("../../../../constants/index");
-var shopify_1 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var SwipeableProductImages = function (props) {
     var _a, _b;
     var product = props.product, _c = props.height, height = _c === void 0 ? index_1.PRODUCT_CARD_VERT_HEIGHT : _c, _d = props.width, width = _d === void 0 ? index_1.PRODUCT_CARD_VERT_WIDTH : _d, handleClick = props.handleClick, _e = props.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = props.responsiveHeight, responsiveHeight = _f === void 0 ? false : _f;
@@ -59,7 +59,7 @@ var SwipeableProductImages = function (props) {
             var image = _a.node;
             return (react_1.default.createElement(material_1.Box, { sx: __assign({}, sx.image) },
                 react_1.default.createElement(components_1.TouchableOpacity, { key: image.id, handleClick: handleClick },
-                    react_1.default.createElement("img", { src: (0, shopify_1.shopifyResizeImage)(image === null || image === void 0 ? void 0 : image.url, {
+                    react_1.default.createElement("img", { src: (0, webstudio_shopify_1.shopifyResizeImage)(image === null || image === void 0 ? void 0 : image.url, {
                             width: width * 2,
                             height: height * 2,
                         }), alt: product === null || product === void 0 ? void 0 : product.title, width: width, height: height, style: {

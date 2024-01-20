@@ -38,8 +38,8 @@ var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var shopify_1 = require("../../../components/shopify");
 var material_1 = require("@mui/material");
-var shopify_2 = require("@webstudio/shopify");
-var shopify_3 = require("@webstudio/shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
+var webstudio_shopify_2 = require("webstudio-shopify");
 var addons_1 = require("../../../hooks/addons");
 var lucide_react_1 = require("lucide-react");
 var styles_1 = require("@mui/material/styles");
@@ -48,10 +48,10 @@ var SearchModal = function () {
     var theme = (0, styles_1.useTheme)();
     var MIN_ANALYTICS_CHARS = 5;
     var trackProductsSearched = (0, addons_1.useSegment)().trackProductsSearched;
-    var _a = (0, react_1.useContext)(shopify_2.ShopContext), setMenuOpen = _a.setMenuOpen, searchOpen = _a.searchOpen, setSearchOpen = _a.setSearchOpen;
+    var _a = (0, react_1.useContext)(webstudio_shopify_1.ShopContext), setMenuOpen = _a.setMenuOpen, searchOpen = _a.searchOpen, setSearchOpen = _a.setSearchOpen;
     var _b = (0, react_1.useState)(false), expanded = _b[0], setExpanded = _b[1];
     var _c = (0, react_1.useState)(''), keywords = _c[0], setKeywords = _c[1];
-    var _d = (0, shopify_3.useProducts)(), loading = _d.loading, products = _d.products, setProducts = _d.setProducts, searchProducts = _d.searchProducts;
+    var _d = (0, webstudio_shopify_2.useProducts)(), loading = _d.loading, products = _d.products, setProducts = _d.setProducts, searchProducts = _d.searchProducts;
     var handleChange = function (ev) {
         setKeywords(ev.target.value);
     };
