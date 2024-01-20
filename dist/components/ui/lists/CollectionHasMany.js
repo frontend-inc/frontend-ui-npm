@@ -53,7 +53,7 @@ var CollectionHasMany = function (props) {
     }), loading = _o.loading, query = _o.query, resources = _o.resources, findMany = _o.findMany;
     var handleClick = function (item) {
         if (!editing && clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
-            router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle, "/show"));
+            router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
     (0, react_1.useEffect)(function () {

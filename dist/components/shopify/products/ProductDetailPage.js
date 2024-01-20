@@ -27,15 +27,12 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var shopify_1 = require("../../../components/shopify");
 var shopify_2 = require("@webstudio/shopify");
-var hooks_1 = require("../../../hooks");
 var ProductDetailPage = function (props) {
     var handle = props.handle, buttonText = props.buttonText, _a = props.enableQuantity, enableQuantity = _a === void 0 ? true : _a, _b = props.enableSubscription, enableSubscription = _b === void 0 ? true : _b, enableLikes = props.enableLikes, enableShares = props.enableShares, enableFavorites = props.enableFavorites, enableOkendoStarRating = props.enableOkendoStarRating;
     var _c = (0, shopify_2.useProductContext)(), product = _c.product, variant = _c.variant;
-    var resource = (0, hooks_1.useResourceContext)().resource;
     var viewProduct = (0, shopify_2.useRecentlyViewed)().viewProduct;
     (0, react_1.useEffect)(function () {
         if (product) {
-            console.log('viewProduct', product);
             viewProduct(product);
         }
     }, [product === null || product === void 0 ? void 0 : product.handle]);

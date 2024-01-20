@@ -63,7 +63,7 @@ var CoverImageCarousel = function (props) {
                 top: 0,
                 behavior: 'smooth',
             });
-            router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle, "/show"));
+            router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
     (0, react_1.useEffect)(function () {
