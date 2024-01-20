@@ -50,7 +50,7 @@
         "build:cjs": "tsc --module commonjs --outDir dist",
         "bump": "./bump-version.sh",
         "deploy": "git add . && git commit -m 'deploy' && git push",
-        "publish": "yarn bump && yarn build && yarn deploy"
+        "push": "yarn bump && yarn build && yarn deploy"
     },
     "eslintConfig": {
         "extends": "react-app"
