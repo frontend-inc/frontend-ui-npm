@@ -1,8 +1,7 @@
 import React from 'react'
 import { Stack, Box, CardActionArea } from '@mui/material'
 //import Zoom from 'react-medium-image-zoom'
-import { Close } from '@mui/icons-material'
-import { useProductContext } from 'webstudio-shopify'
+import { Image as ProductImage } from 'webstudio-shopify'
 import Image from 'next/image'
 
 type ThumbnailProps = {
@@ -14,7 +13,7 @@ type ThumbnailProps = {
 
 const Thumbnail: React.FC<ThumbnailProps> = (props) => {
   
-  const { image, active, size, handleClick } = props
+  const { image, active, handleClick } = props
   return(    
       <Box 
         sx={{
@@ -33,6 +32,7 @@ const Thumbnail: React.FC<ThumbnailProps> = (props) => {
           width={96}
           height={96}
           alt={image?.altText}
+          layout="respsonive"
           style={{
             objectFit: 'cover'
           }}
@@ -43,14 +43,23 @@ const Thumbnail: React.FC<ThumbnailProps> = (props) => {
 }
 
 type ProductImageSliderProps = {
+  image: ProductImage
+  images: ProductImage[]
+  handleClick: (img: ProductImage) => void
 	height?: number
 	width?: number
 	thumbnailSize?: number
 }
 
-const ProductImageSlider: React.FC<ProductImageSliderProps> = (props) => {
-	const { images, image, handleImageClick } = useProductContext()
-	const { height = 520, width = 520, thumbnailSize = 80 } = props
+const ProductImageSlider: React.FC<ProductImageSliderProps> = (props) => {	
+	const { 
+    image, 
+    images, 
+    handleClick, 
+    height = 520, 
+    width = 520, 
+    thumbnailSize = 80 
+  } = props
 
 	return (
 		<Stack direction="column" spacing={0} sx={sx.root}>
@@ -79,7 +88,7 @@ const ProductImageSlider: React.FC<ProductImageSliderProps> = (props) => {
             key={img?.id}
             image={img}
             active={img?.id === image?.id}
-            handleClick={handleImageClick}
+            handleClick={handleClick}
             size={thumbnailSize}
           />					
 				))}

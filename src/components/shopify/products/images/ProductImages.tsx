@@ -5,22 +5,29 @@ import {
 	SwipeableProductImages,
 } from '../../../../components/shopify'
 import { PDP_IMAGE_HEIGHT } from '../../../../constants/index'
-import { Product } from 'webstudio-shopify'
+import { Product, Image } from 'webstudio-shopify'
 
 type ProductImagesProps = {
 	product: Product
+  image: Image
+  images: Image[]
+  handleClick: (img: Image) => void
 }
 
 const ProductImages: React.FC<ProductImagesProps> = (props) => {
-	const { product } = props
+	const { product, image, images, handleClick } = props
 
 	return (
 		<>
 			<Hidden smDown>
-				<ProductImageThumbnails />
+				<ProductImageThumbnails           
+          image={image} 
+          images={images} 
+          handleClick={handleClick}
+        />
 			</Hidden>
 			<Hidden smUp>
-				<SwipeableProductImages 
+				<SwipeableProductImages           
           objectFit='contain'
           height={PDP_IMAGE_HEIGHT} 
           width={PDP_IMAGE_HEIGHT}

@@ -17,7 +17,7 @@ var ProductVariantSelector = function (props) {
         var option = productOption(optionName);
         if (!option)
             return null;
-        return optionName == 'Color' ? (react_1.default.createElement(ColorVariantOptions_1.default, { name: 'Color', values: option === null || option === void 0 ? void 0 : option.values, selected: selectedOptions['Color'], handleChange: handleOptionChange })) : (react_1.default.createElement(ProductVariantOptions_1.default, { name: option === null || option === void 0 ? void 0 : option.name, values: option === null || option === void 0 ? void 0 : option.values, selected: selectedOptions[option === null || option === void 0 ? void 0 : option.name], handleChange: handleOptionChange }));
+        return optionName == 'Color' ? (react_1.default.createElement(ColorVariantOptions_1.default, { key: optionName, product: product, name: 'Color', values: option === null || option === void 0 ? void 0 : option.values, selected: selectedOptions['Color'], handleChange: handleOptionChange })) : (react_1.default.createElement(ProductVariantOptions_1.default, { key: optionName, name: option === null || option === void 0 ? void 0 : option.name, values: option === null || option === void 0 ? void 0 : option.values, selected: selectedOptions[option === null || option === void 0 ? void 0 : option.name], handleChange: handleOptionChange }));
     })));
 };
 exports.default = ProductVariantSelector;

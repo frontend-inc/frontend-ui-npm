@@ -37,7 +37,10 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
     compareAtPrice,
     variant,
     selectedOptions,
-    handleOptionChange
+    handleOptionChange,
+    image,
+    images,
+    handleImageClick
   } = useProductDetails({
     product 
   })  
@@ -49,39 +52,40 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
   }, [handle])
 
 	return (
-		<ShopifyProduct handle={handle}>
-			<Stack spacing={0} direction="row" sx={sx.container}>
-				<Box sx={sx.left}>
-					<ProductImages 
-            product={product} 
+    <Stack spacing={0} direction="row" sx={sx.container}>
+      <Box sx={sx.left}>
+        <ProductImages 
+          product={product} 
+          image={image}
+          images={images}
+          handleClick={handleImageClick}
+        />
+      </Box>
+      <Box sx={sx.right}>
+        <Stack spacing={2}>
+          <ProductInfo 
+            product={product}
+            price={price}
+            compareAtPrice={compareAtPrice}
+            enableOkendoStarRating={enableOkendoStarRating}
           />
-				</Box>
-				<Box sx={sx.right}>
-					<Stack spacing={2}>
-						<ProductInfo 
-              product={product}
-              price={price}
-              compareAtPrice={compareAtPrice}
-              enableOkendoStarRating={enableOkendoStarRating}
-            />
-						<ProductVariantSelector 
-              product={product}
-              selectedOptions={selectedOptions}
-              handleOptionChange={handleOptionChange}
-            />
-            <AddToCartButton
-              product={product}
-              variant={variant}
-              enableQuantity={enableQuantity}
-              enableSubscription={enableSubscription}
-              enableFavorites={enableFavorites}
-              label={buttonText}
-            />             
-            <TrackRecentlyViewed product={product} /> 
-					</Stack>
-				</Box>
-			</Stack>
-		</ShopifyProduct>
+          <ProductVariantSelector 
+            product={product}
+            selectedOptions={selectedOptions}
+            handleOptionChange={handleOptionChange}
+          />
+          <AddToCartButton
+            product={product}
+            variant={variant}
+            enableQuantity={enableQuantity}
+            enableSubscription={enableSubscription}
+            enableFavorites={enableFavorites}
+            label={buttonText}
+          />             
+          <TrackRecentlyViewed product={product} /> 
+        </Stack>
+      </Box>
+    </Stack>
 	)
 }
 

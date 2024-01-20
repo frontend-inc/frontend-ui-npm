@@ -1,5 +1,7 @@
 import React from 'react';
+import { Product } from 'webstudio-shopify';
 type ColorVariantsOptionsProps = {
+    product: Product;
     name: string;
     values: any;
     selected: string;

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Box, Button } from '@mui/material'
-import { useProductContext } from 'webstudio-shopify'
+import { Product } from 'webstudio-shopify'
 import Image from 'next/image'
 import { findVariantByColor } from 'webstudio-shopify'
 
 type ColorVariantsOptionsProps = {
+  product: Product
 	name: string
 	values: any
 	selected: string
@@ -13,9 +14,7 @@ type ColorVariantsOptionsProps = {
 }
 
 const ColorVariantsOptions: React.FC<ColorVariantsOptionsProps> = (props) => {
-	const { name, values, selected, handleChange } = props
-
-	const { product } = useProductContext()
+	const { product, name, values, selected, handleChange } = props
 
 	return (
 		<Box sx={sx.root}>

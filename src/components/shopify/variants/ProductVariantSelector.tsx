@@ -26,6 +26,8 @@ const ProductVariantSelector: React.FC<ProductVariantSelectorProps> = (props) =>
 				if (!option) return null
 				return optionName == 'Color' ? (
 					<ColorVariantOptions
+            key={optionName}
+            product={product}
 						name={'Color'}
 						values={option?.values}
 						selected={selectedOptions['Color']}
@@ -33,6 +35,7 @@ const ProductVariantSelector: React.FC<ProductVariantSelectorProps> = (props) =>
 					/>
 				) : (
 					<ProductVariantOptions
+            key={optionName}
 						name={option?.name}
 						values={option?.values}
 						selected={selectedOptions[option?.name]}

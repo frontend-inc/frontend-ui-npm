@@ -16,16 +16,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var webstudio_shopify_1 = require("webstudio-shopify");
 var image_1 = __importDefault(require("next/image"));
-var webstudio_shopify_2 = require("webstudio-shopify");
+var webstudio_shopify_1 = require("webstudio-shopify");
 var ColorVariantsOptions = function (props) {
-    var name = props.name, values = props.values, selected = props.selected, handleChange = props.handleChange;
-    var product = (0, webstudio_shopify_1.useProductContext)().product;
+    var product = props.product, name = props.name, values = props.values, selected = props.selected, handleChange = props.handleChange;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Box, { sx: sx.options }, values === null || values === void 0 ? void 0 : values.map(function (value) {
             var _a, _b;
-            var variant = (0, webstudio_shopify_2.findVariantByColor)(product, value);
+            var variant = (0, webstudio_shopify_1.findVariantByColor)(product, value);
             return (react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), (selected === value && sx.activeButton)), onClick: function () { return handleChange(name, value); } },
                 react_1.default.createElement(image_1.default, { height: 64, width: 64, src: (_a = variant === null || variant === void 0 ? void 0 : variant.image) === null || _a === void 0 ? void 0 : _a.url, alt: (_b = variant === null || variant === void 0 ? void 0 : variant.image) === null || _b === void 0 ? void 0 : _b.altText, style: {
                         objectFit: 'contain',
