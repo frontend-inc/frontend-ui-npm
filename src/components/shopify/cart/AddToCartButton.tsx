@@ -59,25 +59,26 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = (props) => {
 			showAlertError('Please select all options')
 			return;
 		}
-    if(quantity <= 0){
-      console.log("Quantity:", quantity)
-      showAlertError('Please select at least 1 quantity')
-			return;
+		if (variant?.id) {
+      if(variant?.availableForSale){
+        let line = {
+          merchandiseId: variant?.id,
+          quantity,
+          sellingPlanId: activeSellingPlanId
+        }
+        cartLineAdd(line)
+        trackAddToCart({
+          quantity: quantity,
+          variant: variant,
+          product: product,
+        })
+        setTimeout(() => toggleCart(), 500)
+      }else{
+        showAlertError('This product is not available for sale')
+      }			
+		}else{
+      showAlertError('Please select all options')
     }
-		if (product?.availableForSale && variant?.id) {
-			let line = {
-				merchandiseId: variant?.id,
-				quantity,
-        sellingPlanId: activeSellingPlanId
-			}
-			cartLineAdd(line)
-			trackAddToCart({
-				quantity: quantity,
-				variant: variant,
-				product: product,
-			})
-			setTimeout(() => toggleCart(), 500)
-		}
 	}
 
 	if (!product) return null

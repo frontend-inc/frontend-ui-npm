@@ -105,24 +105,27 @@ var AddToCartButton = function (props) {
                 showAlertError('Please select all options');
                 return [2 /*return*/];
             }
-            if (quantity <= 0) {
-                console.log("Quantity:", quantity);
-                showAlertError('Please select at least 1 quantity');
-                return [2 /*return*/];
+            if (variant === null || variant === void 0 ? void 0 : variant.id) {
+                if (variant === null || variant === void 0 ? void 0 : variant.availableForSale) {
+                    line = {
+                        merchandiseId: variant === null || variant === void 0 ? void 0 : variant.id,
+                        quantity: quantity,
+                        sellingPlanId: activeSellingPlanId
+                    };
+                    cartLineAdd(line);
+                    trackAddToCart({
+                        quantity: quantity,
+                        variant: variant,
+                        product: product,
+                    });
+                    setTimeout(function () { return toggleCart(); }, 500);
+                }
+                else {
+                    showAlertError('This product is not available for sale');
+                }
             }
-            if ((product === null || product === void 0 ? void 0 : product.availableForSale) && (variant === null || variant === void 0 ? void 0 : variant.id)) {
-                line = {
-                    merchandiseId: variant === null || variant === void 0 ? void 0 : variant.id,
-                    quantity: quantity,
-                    sellingPlanId: activeSellingPlanId
-                };
-                cartLineAdd(line);
-                trackAddToCart({
-                    quantity: quantity,
-                    variant: variant,
-                    product: product,
-                });
-                setTimeout(function () { return toggleCart(); }, 500);
+            else {
+                showAlertError('Please select all options');
             }
             return [2 /*return*/];
         });
