@@ -59,7 +59,7 @@ const CollectionHasMany: React.FC<CollectionHasManyProps> = (props) => {
 
 	const handleClick = (item) => {
 		if (!editing && clientUrl && navigateUrl && item?.handle) {
-			router.push(`${clientUrl}${navigateUrl}/${item?.handle}/show`)
+			router.push(`${clientUrl}${navigateUrl}/${item?.handle}`)
 		}
 	}
 

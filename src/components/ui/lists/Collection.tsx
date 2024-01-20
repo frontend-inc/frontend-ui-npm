@@ -107,7 +107,7 @@ const Collection: React.FC<CollectionProps> = (props) => {
 				top: 0,
 				behavior: 'smooth',
 			})
-			router.push(`${clientUrl}${navigateUrl}/${item?.handle}/show`)
+			router.push(`${clientUrl}${navigateUrl}/${item?.handle}`)
 		}
 	}
 

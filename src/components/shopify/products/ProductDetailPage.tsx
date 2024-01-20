@@ -35,13 +35,11 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
 	} = props
 
 	const { product, variant } = useProductContext()
-  const { resource } = useResourceContext()
 
   const { viewProduct } = useRecentlyViewed()
 
   useEffect(() => {
     if(product){
-      console.log('viewProduct', product)
       viewProduct(product)
     }
   }, [product?.handle])  

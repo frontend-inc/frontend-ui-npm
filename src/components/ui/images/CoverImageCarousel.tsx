@@ -65,7 +65,7 @@ const CoverImageCarousel: React.FC<CoverImageCarouselProps> = (props) => {
 				top: 0,
 				behavior: 'smooth',
 			})
-			router.push(`${clientUrl}${navigateUrl}/${item?.handle}/show`)
+			router.push(`${clientUrl}${navigateUrl}/${item?.handle}`)
 		}
 	}
 
