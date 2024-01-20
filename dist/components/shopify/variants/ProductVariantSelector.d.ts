@@ -1,3 +1,9 @@
 import React from 'react';
-declare const ProductVariantSelector: React.FC;
+import { Product } from 'webstudio-shopify';
+type ProductVariantSelectorProps = {
+    product: Product;
+    selectedOptions: any;
+    handleOptionChange: any;
+};
+declare const ProductVariantSelector: React.FC<ProductVariantSelectorProps>;
 export default ProductVariantSelector;

@@ -29,9 +29,11 @@ var shopify_1 = require("../../../components/shopify");
 var webstudio_shopify_1 = require("webstudio-shopify");
 var ProductDetailPage = function (props) {
     var handle = props.handle, buttonText = props.buttonText, _a = props.enableQuantity, enableQuantity = _a === void 0 ? true : _a, _b = props.enableSubscription, enableSubscription = _b === void 0 ? true : _b, enableFavorites = props.enableFavorites, enableOkendoStarRating = props.enableOkendoStarRating;
-    var _c = (0, webstudio_shopify_1.useProducts)(), product = _c.product, setProduct = _c.setProduct, fetchProduct = _c.fetchProduct;
+    var _c = (0, webstudio_shopify_1.useProducts)(), product = _c.product, fetchProduct = _c.fetchProduct;
+    var _d = (0, webstudio_shopify_1.useProductDetails)({
+        product: product
+    }), price = _d.price, compareAtPrice = _d.compareAtPrice, variant = _d.variant, selectedOptions = _d.selectedOptions, handleOptionChange = _d.handleOptionChange;
     (0, react_1.useEffect)(function () {
-        setProduct(null);
         if (handle) {
             fetchProduct(handle);
         }
@@ -42,8 +44,8 @@ var ProductDetailPage = function (props) {
                 react_1.default.createElement(shopify_1.ProductImages, { product: product })),
             react_1.default.createElement(material_1.Box, { sx: sx.right },
                 react_1.default.createElement(material_1.Stack, { spacing: 2 },
-                    react_1.default.createElement(shopify_1.ProductInfo, { product: product, enableOkendoStarRating: enableOkendoStarRating }),
-                    react_1.default.createElement(shopify_1.ProductVariantSelector, null),
+                    react_1.default.createElement(shopify_1.ProductInfo, { product: product, price: price, compareAtPrice: compareAtPrice, enableOkendoStarRating: enableOkendoStarRating }),
+                    react_1.default.createElement(shopify_1.ProductVariantSelector, { product: product, selectedOptions: selectedOptions, handleOptionChange: handleOptionChange }),
                     react_1.default.createElement(shopify_1.AddToCartButton, { product: product, variant: variant, enableQuantity: enableQuantity, enableSubscription: enableSubscription, enableFavorites: enableFavorites, label: buttonText }),
                     react_1.default.createElement(shopify_1.TrackRecentlyViewed, { product: product }))))));
 };

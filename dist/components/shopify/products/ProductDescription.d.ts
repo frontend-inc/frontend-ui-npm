@@ -1,8 +1,7 @@
 import React from 'react';
-import { TypographyVariants } from '../../../types';
+import { Product } from 'webstudio-shopify';
 type ProductDescriptionProps = {
-    label?: string;
-    variant?: TypographyVariants;
+    product?: Product;
     color?: string;
 };
 declare const ProductDescription: React.FC<ProductDescriptionProps>;
