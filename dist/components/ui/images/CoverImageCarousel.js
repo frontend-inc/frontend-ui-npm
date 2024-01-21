@@ -42,11 +42,11 @@ var hooks_1 = require("../../../hooks");
 var context_1 = require("../../../context");
 var react_swipeable_views_1 = __importDefault(require("react-swipeable-views"));
 var components_1 = require("../../../components");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var react_swipeable_views_utils_1 = require("react-swipeable-views-utils");
 var AutoPlaySwipeableViews = (0, react_swipeable_views_utils_1.autoPlay)(react_swipeable_views_1.default);
 var CoverImageCarousel = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _a = props.editing, editing = _a === void 0 ? false : _a, url = props.url, navigateUrl = props.navigateUrl, _b = props.query, defaultQuery = _b === void 0 ? {} : _b, _c = props.perPage, perPage = _c === void 0 ? 20 : _c, buttonText = props.buttonText, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d, _e = props.opacity, opacity = _e === void 0 ? 0.5 : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.autoPlay, autoPlay = _g === void 0 ? false : _g, height = props.height, _h = props.bgcolor, bgcolor = _h === void 0 ? '#000000' : _h, _j = props.alignItems, alignItems = _j === void 0 ? 'center' : _j;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _k = (0, react_1.useState)(0), activeStep = _k[0], setActiveStep = _k[1];

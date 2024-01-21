@@ -39,12 +39,12 @@ var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var index_1 = require("../../../constants/index");
 var FeaturedCard = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, _b = _a.editing, editing = _b === void 0 ? false : _b, label = _a.label, title = _a.title, description = _a.description, _c = _a.image, image = _c === void 0 ? '' : _c, href = _a.href, _d = _a.height, height = _d === void 0 ? index_1.FEATURED_CARD_HEIGHT : _d, buttonText = _a.buttonText, _e = _a.flexDirection, flexDirection = _e === void 0 ? 'row' : _e, _f = _a.textVariant, textVariant = _f === void 0 ? 'h3' : _f, handleClick = _a.handleClick, _g = _a.objectFit, objectFit = _g === void 0 ? 'cover' : _g, _h = _a.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = _a.enableGradient, enableGradient = _j === void 0 ? false : _j;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();

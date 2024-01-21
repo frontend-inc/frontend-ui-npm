@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 type FacebookPixelProps = {
   facebookPixelId: string
@@ -9,7 +9,7 @@ const useFacebookPixel = (props: FacebookPixelProps) => {
 
   const { facebookPixelId } = props || {}
 
-  const router = useRouter()
+  const pathname = usePathname()
 
   const options = {
     autoConfig: true,
@@ -26,7 +26,7 @@ const useFacebookPixel = (props: FacebookPixelProps) => {
       trackFbPageView()
     }
     return () => {}
-  }, [facebookPixelId, router?.pathname])
+  }, [facebookPixelId, pathname])
 
 }
 

@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var context_1 = require("../../context");
 var usePageNavigate = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var navigate = function (item, page) {
         var _a = item || {}, handle = _a.handle, baseUrl = _a.baseUrl;
         var pageHandle = (page || {}).handle;

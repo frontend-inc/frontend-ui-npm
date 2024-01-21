@@ -39,13 +39,13 @@ var core_1 = require("../../../context/core");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var index_1 = require("../../../constants/index");
 var icons_material_1 = require("@mui/icons-material");
 var TestimonialCard = function (props) {
     var clientUrl = (0, react_1.useContext)(core_1.AppContext).clientUrl;
     var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? index_1.TESTIMONIAL_AVATAR_HEIGHT : _c, _d = _a.width, width = _d === void 0 ? index_1.TESTIMONIAL_AVATAR_WIDTH : _d, _e = _a.textVariant, textVariant = _e === void 0 ? 'subtitle2' : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
             handleClick();

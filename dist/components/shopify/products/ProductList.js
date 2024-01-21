@@ -26,13 +26,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var shopify_1 = require("../../../components/shopify");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var addons_1 = require("../../../hooks/addons");
 var context_1 = require("../../../context");
 var ProductList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props.editing, editing = _a === void 0 ? false : _a, products = props.products, _b = props.productComponent, ProductComponent = _b === void 0 ? shopify_1.ProductCardHoriz : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Add to cart' : _c, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, enableAddToCart = props.enableAddToCart, enableQuickShop = props.enableQuickShop, enableQuantity = props.enableQuantity, enableOkendoStarRating = props.enableOkendoStarRating;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var trackProductClicked = (0, addons_1.useSegment)().trackProductClicked;
     var handleClick = function (product) {
         if (!editing)

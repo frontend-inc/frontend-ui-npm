@@ -1,3 +1,6 @@
 import React from 'react';
-declare const Search: React.FC;
+type SearchProps = {
+    query: string;
+};
+declare const Search: React.FC<SearchProps>;
 export default Search;

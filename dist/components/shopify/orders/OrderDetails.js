@@ -28,10 +28,10 @@ var material_1 = require("@mui/material");
 var shopify_1 = require("../../../components/shopify");
 var webstudio_shopify_1 = require("webstudio-shopify");
 var lucide_react_1 = require("lucide-react");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var OrderDetails = function (props) {
     var _a, _b;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var order = props.order, supportUrl = props.supportUrl;
     var _c = (0, react_1.useState)(), lineItems = _c[0], setListItems = _c[1];
     var handleOrderStatusClick = function () {

@@ -81,7 +81,7 @@ var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
 var components_1 = require("../../../components");
 var webstudio_shopify_3 = require("webstudio-shopify");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var CartQuantityInput = function (props) {
     var quantity = props.quantity, handleAddQuantity = props.handleAddQuantity, handleRemoveQuantity = props.handleRemoveQuantity;
     return (react_1.default.createElement(material_1.ButtonGroup, { sx: sx.buttonGroup },
@@ -94,7 +94,7 @@ var CartQuantityInput = function (props) {
 var CartLine = function (props) {
     var _a, _b, _c, _d, _e, _f, _g, _h;
     var line = props.line;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var trackRemoveFromCart = (0, addons_1.useSegment)().trackRemoveFromCart;
     var _j = (0, webstudio_shopify_2.useCart)(), loading = _j.loading, cartLineRemove = _j.cartLineRemove, cartLineUpdate = _j.cartLineUpdate;
     var _k = (0, react_1.useContext)(webstudio_shopify_1.ShopContext), shopUrl = _k.shopUrl, setCartOpen = _k.setCartOpen;

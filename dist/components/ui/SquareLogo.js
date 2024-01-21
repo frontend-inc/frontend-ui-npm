@@ -27,14 +27,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
 var context_1 = require("../../context");
 var SquareLogo = function (props) {
     var src = props.src, _a = props.size, size = _a === void 0 ? 64 : _a;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleClick = function () {
         router.push(clientUrl);
     };

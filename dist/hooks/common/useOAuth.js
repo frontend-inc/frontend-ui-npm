@@ -37,11 +37,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var useOAuth = function (props) {
     var _a = props || {}, provider = _a.provider, onComplete = _a.onComplete;
-    var router = (0, router_1.useRouter)();
-    var queryParams = router.query;
+    var router = (0, navigation_1.useRouter)();
+    var queryParams = (0, navigation_1.useParams)();
     // Handle the login once the code is retrieved
     // Listen for messages from popup window
     (0, react_1.useEffect)(function () {

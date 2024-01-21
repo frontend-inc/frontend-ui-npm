@@ -30,11 +30,10 @@ var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var webstudio_shopify_1 = require("webstudio-shopify");
 var shopify_1 = require("../../../components/shopify");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var moment_1 = __importDefault(require("moment"));
 var ShopifyCustomerOrder = function (props) {
-    var router = (0, router_1.useRouter)();
-    var orderId = (router === null || router === void 0 ? void 0 : router.query).order_id;
+    var orderId = (0, navigation_1.useParams)().order_id;
     if (orderId == 'new') {
         orderId = null;
     }

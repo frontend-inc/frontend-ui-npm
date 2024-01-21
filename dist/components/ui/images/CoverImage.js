@@ -37,10 +37,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var context_1 = require("../../../context");
 var CoverImage = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props.editing, editing = _a === void 0 ? false : _a, title = props.title, _b = props.textVariant, textVariant = _b === void 0 ? 'h1' : _b, description = props.description, buttonText = props.buttonText, handleClick = props.handleClick, _c = props.image, image = _c === void 0 ? null : _c, _d = props.height, height = _d === void 0 ? 400 : _d, _e = props.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = props.alt, alt = _f === void 0 ? 'image' : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = props.opacity, opacity = _j === void 0 ? 0.5 : _j, _k = props.alignItems, alignItems = _k === void 0 ? 'center' : _k, _l = props.bgcolor, bgcolor = _l === void 0 ? '#FFFFFF' : _l, href = props.href;
     var handleItemClick = function () {

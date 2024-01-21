@@ -31,9 +31,9 @@ var material_1 = require("@mui/material");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
 var hooks_1 = require("../../../hooks");
 var context_1 = require("../../../context");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var Notification = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var text = props.text, _a = props.buttonText, buttonText = _a === void 0 ? 'View details' : _a, path = props.path, discountCode = props.discountCode, copyToClipboard = props.copyToClipboard;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;

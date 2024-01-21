@@ -2,12 +2,12 @@ type UseNavigationProps = {
     url: string;
 };
 declare const useNavigation: (props: UseNavigationProps) => {
-    handleClick: (resource: any) => Promise<boolean>;
-    handleShowClick: (resource: any) => Promise<boolean>;
-    handleEditClick: (resource: any) => Promise<boolean>;
-    handleAddClick: () => Promise<boolean>;
-    toShow: (resource: any) => Promise<boolean>;
-    toEdit: (resource: any) => Promise<boolean>;
-    toAdd: () => Promise<boolean>;
+    handleClick: (resource: any) => void;
+    handleShowClick: (resource: any) => void;
+    handleEditClick: (resource: any) => void;
+    handleAddClick: () => void;
+    toShow: (resource: any) => void;
+    toEdit: (resource: any) => void;
+    toAdd: () => void;
 };
 export default useNavigation;

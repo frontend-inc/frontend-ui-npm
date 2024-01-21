@@ -43,9 +43,9 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var webstudio_shopify_1 = require("webstudio-shopify");
 var components_1 = require("../../../components");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var ShopifyAuth = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _a = props || {}, _b = _a.editing, editing = _b === void 0 ? false : _b, showLabel = _a.showLabel, customerUrl = _a.customerUrl;
     var findShop = (0, webstudio_shopify_1.useShop)().findShop;
     var getLastPathOfUrl = function (urlString) {

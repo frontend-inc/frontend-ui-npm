@@ -28,10 +28,10 @@ var components_1 = require("../../../components");
 var webstudio_shopify_1 = require("webstudio-shopify");
 var shopify_1 = require("../../../components/shopify");
 var context_1 = require("../../../context");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var webstudio_shopify_2 = require("webstudio-shopify");
 var ShopifyCustomerOrders = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, _b = _a.title, title = _b === void 0 ? 'Customer Orders' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Manage your orders' : _c;
     var _d = (0, webstudio_shopify_1.useOrders)(), loading = _d.loading, orders = _d.orders, fetchCustomerOrders = _d.fetchCustomerOrders;

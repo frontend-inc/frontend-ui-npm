@@ -27,11 +27,11 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var components_1 = require("../../../components");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var context_1 = require("../../../context");
 var AuthButton = function () {
     var _a;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _b = (0, hooks_1.useAuth)(), logout = _b.logout, fetchMe = _b.fetchMe, currentUser = _b.currentUser;
     var _c = (0, hooks_1.useMenu)({}), open = _c.open, anchorEl = _c.anchorEl, closeMenu = _c.closeMenu, toggleMenu = _c.toggleMenu;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;

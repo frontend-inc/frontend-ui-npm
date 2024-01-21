@@ -2,7 +2,6 @@ import { ApiQuery } from './ApiQuery'
 import { RestClient } from './RestClient'
 import { User, QueryParams } from './types'
 import { ConfigParams, ExecuteResponse } from './types'
-import { NextRouter } from 'next/navigation'
 
 export class ApiClient {
 	private payload?: object
@@ -454,7 +453,7 @@ export class ApiClient {
 		return await this.post(this.endpoint, this.payload, this.headers)
 	}
 
-	parseURL(routerParams: NextRouter['query']) {
+	parseURL(routerParams: any) {
 		this.apiQuery.parseURL(routerParams)
 		return this
 	}

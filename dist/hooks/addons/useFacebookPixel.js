@@ -60,10 +60,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var useFacebookPixel = function (props) {
     var facebookPixelId = (props || {}).facebookPixelId;
-    var router = (0, router_1.useRouter)();
+    var pathname = (0, navigation_1.usePathname)();
     var options = {
         autoConfig: true,
         debug: false,
@@ -86,6 +86,6 @@ var useFacebookPixel = function (props) {
             trackFbPageView();
         }
         return function () { };
-    }, [facebookPixelId, router === null || router === void 0 ? void 0 : router.pathname]);
+    }, [facebookPixelId, pathname]);
 };
 exports.default = useFacebookPixel;

@@ -54,10 +54,10 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var components_2 = require("../../../components");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var OneTimePassword = function (props) {
     var _a = props || {}, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'One-Time Password' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Get a one-time password link' : _c, loginUrl = _a.loginUrl, _d = _a.authConfig, authConfig = _d === void 0 ? {} : _d;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _e = (0, hooks_1.useAuth)(), errors = _e.errors, loading = _e.loading, user = _e.user, handleChange = _e.handleChange, sendOneTimePassword = _e.sendOneTimePassword;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;

@@ -66,10 +66,10 @@ var material_1 = require("@mui/material");
 var webstudio_shopify_1 = require("webstudio-shopify");
 var shopify_1 = require("../../../components/shopify");
 var context_1 = require("../../../context");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var webstudio_shopify_2 = require("webstudio-shopify");
 var Addresses = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _a = (0, react_1.useState)(null), activeAddress = _a[0], setActiveAddress = _a[1];
     var _b = (0, react_1.useState)(false), showDeleteModal = _b[0], setShowDeleteModal = _b[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;

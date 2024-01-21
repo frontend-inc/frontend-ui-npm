@@ -26,12 +26,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var components_1 = require("../../../components");
 var context_1 = require("../../../context");
 var AuthButton = function (props) {
     var _a = props || {}, _b = _a.showLabel, showLabel = _b === void 0 ? false : _b, _c = _a.showIcon, showIcon = _c === void 0 ? true : _c, _d = _a.editing, editing = _d === void 0 ? false : _d, myAccountUrl = _a.myAccountUrl;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _e = (0, hooks_1.useAuth)(), logout = _e.logout, fetchMe = _e.fetchMe, currentUser = _e.currentUser;
     var _f = (0, hooks_1.useMenu)(), open = _f.open, anchorEl = _f.anchorEl, closeMenu = _f.closeMenu, toggleMenu = _f.toggleMenu;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;

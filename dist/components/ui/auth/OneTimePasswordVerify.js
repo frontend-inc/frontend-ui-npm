@@ -62,10 +62,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var OneTimePasswordVerify = function (props) {
-    var router = (0, router_1.useRouter)();
-    var oneTimePassword = router.query.token;
+    var router = (0, navigation_1.useRouter)();
+    var oneTimePassword = (0, navigation_1.useParams)().token;
     var _a = (0, react_1.useState)(false), verified = _a[0], setVerified = _a[1];
     var _b = props || {}, redirectUrl = _b.redirectUrl, _c = _b.title, title = _c === void 0 ? 'One-Time Password' : _c, _d = _b.subtitle, subtitle = _d === void 0 ? 'Get a one-time password link' : _d, loginUrl = _b.loginUrl;
     var _e = (0, hooks_1.useAuth)(), errors = _e.errors, loading = _e.loading, verifyOneTimePassword = _e.verifyOneTimePassword;

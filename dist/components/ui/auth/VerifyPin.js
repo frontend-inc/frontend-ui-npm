@@ -74,12 +74,12 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var VerifyPin = function (props) {
     var _a = props || {}, title = _a.title, subtitle = _a.subtitle, redirectUrl = _a.redirectUrl, loginUrl = _a.loginUrl, _b = _a.authConfig, authConfig = _b === void 0 ? {} : _b;
     var _c = (0, react_1.useState)(false), showVerifyPin = _c[0], setShowVerifyPin = _c[1];
     var _d = (0, hooks_1.useAuth)(), loading = _d.loading, errors = _d.errors, user = _d.user, setUser = _d.setUser, handleChange = _d.handleChange, sendPin = _d.sendPin, verifyPin = _d.verifyPin;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleSendPin = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {

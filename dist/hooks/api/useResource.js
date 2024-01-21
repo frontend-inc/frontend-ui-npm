@@ -59,10 +59,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var react_2 = require("react");
 var context_1 = require("../../context");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var useResource = function (props) {
     var _a = props || {}, url = _a.url, _b = _a.name, name = _b === void 0 ? 'resource' : _b;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var api = (0, react_1.useContext)(context_1.ApiContext).api;
     var _c = (0, react_2.useState)(false), loading = _c[0], setLoading = _c[1];
     var _d = (0, react_2.useState)(), errors = _d[0], setErrors = _d[1];

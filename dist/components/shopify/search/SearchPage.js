@@ -29,17 +29,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var webstudio_shopify_1 = require("webstudio-shopify");
 var addons_1 = require("../../../hooks/addons");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var shopify_1 = require("../../../components/shopify");
 var LoadMore_1 = __importDefault(require("../../../components/shopify/search/LoadMore"));
 var webstudio_shopify_2 = require("webstudio-shopify");
 var PER_PAGE = 48;
-var Search = function () {
-    var router = (0, router_1.useRouter)();
+var Search = function (props) {
+    var router = (0, navigation_1.useRouter)();
     var trackProductsSearched = (0, addons_1.useSegment)().trackProductsSearched;
-    var query = router.query.query;
+    var query = props.query;
     if (query == 'all')
         query = '';
     var _a = (0, react_1.useState)(String(query).toLowerCase()), keywords = _a[0], setKeywords = _a[1];

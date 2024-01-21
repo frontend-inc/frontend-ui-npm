@@ -1,6 +1,5 @@
 import { User, QueryParams } from './types';
 import { ConfigParams, ExecuteResponse } from './types';
-import { NextRouter } from 'next/router';
 export declare class ApiClient {
     private payload?;
     private _url?;
@@ -62,7 +61,7 @@ export declare class ApiClient {
     resetPassword(email: string, password: string, passwordConfirmation: string, changePasswordToken: string): Promise<ExecuteResponse>;
     sendOneTimePassword(user: User): Promise<ExecuteResponse>;
     verifyOneTimePassword(otp: string): Promise<ExecuteResponse>;
-    parseURL(routerParams: NextRouter['query']): this;
+    parseURL(routerParams: any): this;
     get(endpoint: string, params?: string): Promise<ExecuteResponse>;
     post(endpoint: string, payload?: object, headers?: any): Promise<ExecuteResponse>;
     put(endpoint: string, payload: object, headers: any): Promise<ExecuteResponse>;

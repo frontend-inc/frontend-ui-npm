@@ -27,7 +27,7 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var webstudio_shopify_1 = require("webstudio-shopify");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var lucide_react_1 = require("lucide-react");
 var context_1 = require("../../../context");
 var MenuItem = function (props) {
@@ -61,7 +61,7 @@ var MENU_ITEMS = [
 ];
 var MyAccount = function (props) {
     var _a = props || {}, loginUrl = _a.loginUrl, _b = _a.title, title = _b === void 0 ? 'My Account' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Manage your account' : _c;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var customer = (0, webstudio_shopify_1.useAuth)().customer;
     var handleLogin = function () {

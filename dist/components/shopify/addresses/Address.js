@@ -65,10 +65,11 @@ var material_1 = require("@mui/material");
 var webstudio_shopify_1 = require("webstudio-shopify");
 var shopify_1 = require("../../../components/shopify");
 var context_1 = require("../../../context");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
+var navigation_2 = require("next/navigation");
 var Address = function (props) {
-    var router = (0, router_1.useRouter)();
-    var addressId = (router === null || router === void 0 ? void 0 : router.query).address_id;
+    var router = (0, navigation_1.useRouter)();
+    var addressId = (0, navigation_2.useParams)().address_id;
     if (addressId == 'new') {
         addressId = null;
     }

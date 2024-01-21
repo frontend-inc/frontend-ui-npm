@@ -73,12 +73,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var material_1 = require("@mui/material");
 var context_1 = require("../../../context");
 var AuthModal = function (props) {
-    var router = (0, router_1.useRouter)();
-    var appId = router.query.app_id;
+    var router = (0, navigation_1.useRouter)();
+    var appId = (0, navigation_1.useParams)().app_id;
     var _a = (0, react_1.useContext)(context_1.AppContext), authOpen = _a.authOpen, setAuthOpen = _a.setAuthOpen;
     var _b = props || {}, logo = _b.logo, _c = _b.disableUsername, disableUsername = _c === void 0 ? false : _c;
     var _d = (0, hooks_1.useAuth)(), errors = _d.errors, loading = _d.loading, user = _d.user, handleChange = _d.handleChange, login = _d.login, signup = _d.signup, forgotPassword = _d.forgotPassword, verifyPin = _d.verifyPin, sendPin = _d.sendPin;
