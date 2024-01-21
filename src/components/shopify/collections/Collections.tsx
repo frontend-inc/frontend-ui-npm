@@ -8,7 +8,6 @@ import { useRouter } from 'next/router'
 type CollectionProps = {
 	title?: string
 	editing?: boolean
-	children: React.ReactNode
 	layout?: 'grid' | 'list' | 'carousel'
 	style?: 'card' | 'list' | 'avatar' | 'cover'
 	perPage?: number
