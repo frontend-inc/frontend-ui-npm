@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import { AppContext } from '../../../context'
 import { useAuth, useResource } from '../../../hooks'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { StyledList } from '../../../components'
 
 type FavoritesProps = {

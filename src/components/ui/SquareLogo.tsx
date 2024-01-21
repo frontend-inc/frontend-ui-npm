@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { Button } from '@mui/material'
 import Image from 'next/image'
 import { AppContext } from '../../context'

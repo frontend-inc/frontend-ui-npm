@@ -12,7 +12,7 @@ import { Typography } from '@mui/material'
 import { AppContext } from '../../../context'
 import { TITLE_SORT, PRICE_SORT } from '../../../constants/index'
 import { FilterOption } from '../../../types'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type CollectionProps = {
 	title?: string

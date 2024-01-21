@@ -9,18 +9,19 @@ import {
 	SquareLogo,
 } from '../../../components'
 import { useAuth } from '../../../hooks'
-import { useRouter } from 'next/router'
+import { useRouter, useParams } from 'next/navigation'
 import { Tab, Tabs, Box, Typography } from '@mui/material'
 import { AppContext } from '../../../context'
 
 type AuthModalProps = {
 	logo: any
 	disableUsername?: boolean
+  app_id: string
 }
 
 const AuthModal: React.FC<AuthModalProps> = (props) => {
 	const router = useRouter()
-	const { app_id: appId } = router.query
+	const { app_id: appId } = useParams()
 
 	const { authOpen, setAuthOpen } = useContext(AppContext)
 

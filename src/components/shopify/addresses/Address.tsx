@@ -4,7 +4,8 @@ import { Button, Stack } from '@mui/material'
 import { useAddresses } from 'webstudio-shopify'
 import { AddressForm } from '../../../components/shopify'
 import { AppContext } from '../../../context'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
+import { useParams } from 'next/navigation'
 
 type AddressProps = {
 	title?: string
@@ -13,7 +14,7 @@ type AddressProps = {
 
 const Address: React.FC<AddressProps> = (props) => {
 	const router = useRouter()
-	let { address_id: addressId } = router?.query
+	let { address_id: addressId } = useParams()
 	if (addressId == 'new') {
 		addressId = null
 	}

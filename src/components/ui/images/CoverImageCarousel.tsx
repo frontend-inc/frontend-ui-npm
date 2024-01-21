@@ -3,7 +3,7 @@ import { useResource } from '../../../hooks'
 import { AppContext } from '../../../context'
 import SwipeableViews from 'react-swipeable-views'
 import { CoverImage } from '../../../components'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { autoPlay } from 'react-swipeable-views-utils'
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 

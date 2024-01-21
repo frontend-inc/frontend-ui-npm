@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { useProducts } from 'webstudio-shopify'
 import { useSegment } from '../../../hooks/addons'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { Box } from '@mui/material'
 import { SearchInput, Placeholder } from '../../../components'
 import { ProductGrid } from '../../../components/shopify'
@@ -10,11 +10,15 @@ import { ShopContext } from 'webstudio-shopify'
 
 const PER_PAGE = 48
 
-const Search: React.FC = () => {
+type SearchProps = {
+  query: string
+}
+
+const Search: React.FC<SearchProps> = (props) => {
 	const router = useRouter()
 	const { trackProductsSearched } = useSegment()
 
-	let { query } = router.query
+	let { query } = props
 	if (query == 'all') query = '';
 	
 

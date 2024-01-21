@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type UseNavigationProps = {
 	url: string

@@ -9,7 +9,7 @@ import {
 import copy from 'copy-to-clipboard'
 import { useAlerts } from '../../../hooks'
 import { AppContext } from '../../../context'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type NotificationProps = {
   text: string

@@ -3,7 +3,7 @@ import { IconButton } from '@mui/material'
 import { useAuth } from 'webstudio-shopify'
 import { useMenu } from '../../../hooks'
 import { UserMenu } from '../../../components'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { User } from 'lucide-react'
 import { AppContext } from '../../../context'
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { AuthScreen, LayoutLoader } from '../../../components'
 import { useAuth } from '../../../hooks'
 import { OneTimePasswordForm } from '../../../components'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type OneTimePasswordProps = {
 	redirectUrl: string

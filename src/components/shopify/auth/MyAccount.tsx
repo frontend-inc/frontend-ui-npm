@@ -10,7 +10,7 @@ import {
 } from '@mui/material'
 import { AuthScreen, Placeholder } from '../../../components'
 import { useAuth } from 'webstudio-shopify'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { User, ShoppingCart, MapPin, LogOut } from 'lucide-react'
 import { AppContext } from '../../../context'
 

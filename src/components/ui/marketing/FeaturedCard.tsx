@@ -3,7 +3,7 @@ import { AppContext } from '../../../context'
 import { Box, Button, Stack, Typography } from '@mui/material'
 import { Image, TouchableOpacity } from '../../../components'
 import { truncate } from '../../../helpers'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { TypographyVariants } from '../../../types'
 import { FEATURED_CARD_HEIGHT } from '../../../constants/index'
 

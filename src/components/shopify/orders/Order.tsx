@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { AuthScreen, LayoutLoader } from '../../../components'
 import { useOrders } from 'webstudio-shopify'
 import { OrderDetails } from '../../../components/shopify'
-import { useRouter } from 'next/router'
+import { useParams } from 'next/navigation'
 import moment from 'moment'
 
 type ShopifyCustomerOrderProps = {
@@ -11,8 +11,7 @@ type ShopifyCustomerOrderProps = {
 }
 
 const ShopifyCustomerOrder: React.FC<ShopifyCustomerOrderProps> = (props) => {
-	const router = useRouter()
-	let { order_id: orderId } = router?.query
+	let { order_id: orderId } = useParams()
 	if (orderId == 'new') {
 		orderId = null
 	}

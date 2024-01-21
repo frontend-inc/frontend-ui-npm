@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useState } from 'react'
 import { ApiContext } from '../../context'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { QueryParams, Resource, PageInfo } from '../../types'
 
 type ResourceProps = {

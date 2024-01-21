@@ -5,7 +5,7 @@ import {
 	LayoutLoader,
 } from '../../../components'
 import { useAuth } from '../../../hooks'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type NewPasswordProps = {
 	redirectUrl: string

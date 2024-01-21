@@ -3,7 +3,7 @@ import { AppContext } from '../../../context/core'
 import { Avatar, Box, Stack, Typography } from '@mui/material'
 import { TouchableOpacity } from '../../../components'
 import { truncate } from '../../../helpers'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import {
 	TESTIMONIAL_CARD_HEIGHT,
 	TESTIMONIAL_AVATAR_HEIGHT,

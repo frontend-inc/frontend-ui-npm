@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { AppContext } from '../../../context'
 import { useResource } from '../../../hooks'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { StyledList } from '../../../components'
 import { getDocumentValue } from '../../../helpers'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { AuthLayout, AuthScreen, SignupForm } from '../../../components'
 import { useAuth } from '../../../hooks'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type SignupProps = {
 	redirectUrl: string

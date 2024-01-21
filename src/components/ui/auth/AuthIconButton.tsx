@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import { IconButton } from '@mui/material'
 import { useMenu, useAuth } from '../../../hooks'
 import { UserAvatar, UserMenu } from '../../../components'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { AppContext } from '../../../context'
 
 const AuthButton: React.FC = () => {

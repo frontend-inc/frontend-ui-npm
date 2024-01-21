@@ -5,7 +5,7 @@ import {
 	LayoutLoader,
 } from '../../../components'
 import { useAuth } from '../../../hooks'
-import { useRouter } from 'next/router'
+import { useRouter, useParams } from 'next/navigation'
 
 type ResetPasswordProps = {
 	title?: string
@@ -16,7 +16,7 @@ type ResetPasswordProps = {
 
 const ResetPassword: React.FC<ResetPasswordProps> = (props) => {
 	const router = useRouter()
-	const { token: resetPasswordToken } = router.query
+	const { token: resetPasswordToken } = useParams()
 
 	const {
 		title = 'Reset Password',

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Box } from '@mui/material'
 import { AppContext } from '../../../context'
 import { Image, TouchableOpacity } from '../../../components'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { IMAGE_HORIZ_HEIGHT } from '../../../constants/index'
 import { CardProps } from '../../../types'
 

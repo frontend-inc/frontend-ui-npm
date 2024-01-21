@@ -2,7 +2,7 @@ import { ApiQuery } from './ApiQuery'
 import { RestClient } from './RestClient'
 import { User, QueryParams } from './types'
 import { ConfigParams, ExecuteResponse } from './types'
-import { NextRouter } from 'next/router'
+import { NextRouter } from 'next/navigation'
 
 export class ApiClient {
 	private payload?: object

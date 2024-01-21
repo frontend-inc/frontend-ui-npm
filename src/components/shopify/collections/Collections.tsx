@@ -3,7 +3,7 @@ import { useCollections } from 'webstudio-shopify'
 import { StyledList } from '../../../components'
 import { Stack, Typography } from '@mui/material'
 import { ShopContext } from 'webstudio-shopify'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type CollectionProps = {
 	title?: string

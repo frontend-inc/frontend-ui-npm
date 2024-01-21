@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Box, Stack, Typography, Button } from '@mui/material'
 import { Image } from '../../../components'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { TypographyVariants } from '../../../types'
 import { AppContext } from '../../../context'
 

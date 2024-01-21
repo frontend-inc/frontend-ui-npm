@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Stack } from '@mui/material'
 import { ProductCardHoriz } from '../../../components/shopify'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useSegment } from '../../../hooks/addons'
 import { Product } from 'webstudio-shopify'
 import { AppContext } from '../../../context'

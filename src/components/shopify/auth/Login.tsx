@@ -2,7 +2,7 @@ import React from 'react'
 import { AuthScreen, LayoutLoader } from '../../../components'
 import { useAuth } from 'webstudio-shopify'
 import { LoginForm } from '../../../components/shopify'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type LoginProps = {
 	redirectUrl: string

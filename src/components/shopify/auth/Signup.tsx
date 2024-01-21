@@ -2,7 +2,7 @@ import React from 'react'
 import { AuthLayout, AuthScreen } from '../../../components'
 import { SignupForm } from '../../../components/shopify'
 import { useAuth } from 'webstudio-shopify'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type SignupProps = {
 	title?: string
