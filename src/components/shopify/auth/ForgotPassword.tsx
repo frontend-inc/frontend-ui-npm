@@ -6,14 +6,13 @@ import { useAlerts } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type ForgotPasswordProps = {
-	logo: any
 	title?: string
 	subtitle?: string
 	loginUrl?: string
 }
 
 const ForgotPassword: React.FC<ForgotPasswordProps> = (props) => {
-	const { logo, title, subtitle, loginUrl } = props || {}
+	const { title, subtitle, loginUrl } = props || {}
 
 	const { showAlertSuccess } = useAlerts()
 
@@ -42,7 +41,7 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<ForgotPasswordForm
 					errors={errors}
 					customer={customer}

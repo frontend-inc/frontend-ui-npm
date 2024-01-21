@@ -46,7 +46,7 @@ var router_1 = require("next/router");
 var ResetPassword = function (props) {
     var router = (0, router_1.useRouter)();
     var resetPasswordToken = router.query.token;
-    var _a = props || {}, logo = _a.logo, _b = _a.title, title = _b === void 0 ? 'Reset Password' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Enter your new password' : _c, _d = _a.redirectUrl, redirectUrl = _d === void 0 ? '/login' : _d, loginUrl = _a.loginUrl;
+    var _a = props || {}, _b = _a.title, title = _b === void 0 ? 'Reset Password' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Enter your new password' : _c, _d = _a.redirectUrl, redirectUrl = _d === void 0 ? '/login' : _d, loginUrl = _a.loginUrl;
     var _e = (0, hooks_1.useAuth)(), loading = _e.loading, errors = _e.errors, user = _e.user, handleChange = _e.handleChange, resetPassword = _e.resetPassword;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
@@ -66,7 +66,7 @@ var ResetPassword = function (props) {
         router.push(loginUrl);
     };
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(components_1.ResetPasswordForm, { loading: loading, errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };
 exports.default = ResetPassword;

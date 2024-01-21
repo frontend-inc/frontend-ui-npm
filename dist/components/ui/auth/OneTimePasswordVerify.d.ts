@@ -1,6 +1,5 @@
 import React from 'react';
 type OneTimePasswordVerifyProps = {
-    logo?: string;
     redirectUrl: string;
     title?: string;
     subtitle?: string;

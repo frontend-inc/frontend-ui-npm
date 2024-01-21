@@ -38,7 +38,6 @@ var ShopifyCustomerOrder = function (props) {
     if (orderId == 'new') {
         orderId = null;
     }
-    var logo = (props || {}).logo;
     var _a = (0, webstudio_shopify_1.useOrders)(), loading = _a.loading, order = _a.order, fetchCustomerOrder = _a.fetchCustomerOrder;
     (0, react_1.useEffect)(function () {
         if (orderId) {
@@ -46,7 +45,7 @@ var ShopifyCustomerOrder = function (props) {
         }
     }, [orderId]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: "Order ".concat(order.name), subtitle: (0, moment_1.default)(order === null || order === void 0 ? void 0 : order.processedAt).format('MMMM Do, YYYY') },
+        react_1.default.createElement(components_1.AuthScreen, { title: "Order ".concat(order.name), subtitle: (0, moment_1.default)(order === null || order === void 0 ? void 0 : order.processedAt).format('MMMM Do, YYYY') },
             react_1.default.createElement(shopify_1.OrderDetails, { order: order }))));
 };
 exports.default = ShopifyCustomerOrder;

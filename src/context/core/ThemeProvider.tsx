@@ -8,13 +8,13 @@ import { useTheme } from '../../hooks'
 
 type ThemeProviderProps = {
 	children: React.ReactNode
-	primaryColor: string
-	bgcolor: string
-	headerFont: string
-	bodyFont: string
-	borderRadius: number
-	mobile: boolean
-	offset: number
+	primaryColor?: string
+	bgcolor?: string
+	headerFont?: string
+	bodyFont?: string
+	borderRadius?: number
+	mobile?: boolean
+	offset?: number
 }
 
 const ThemeProvider = (props: ThemeProviderProps) => {

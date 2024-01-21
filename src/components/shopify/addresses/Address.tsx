@@ -7,7 +7,6 @@ import { AppContext } from '../../../context'
 import { useRouter } from 'next/router'
 
 type AddressProps = {
-	logo: string
 	title?: string
 	subtitle?: string
 }
@@ -22,8 +21,7 @@ const Address: React.FC<AddressProps> = (props) => {
 	const { clientUrl } = useContext(AppContext)
 	const [showDeleteModal, setShowDeleteModal] = useState(false)
 
-	const {
-		logo,
+	const {		
 		title = 'Customer Addresses',
 		subtitle = 'Manage your addresses',
 	} = props || {}
@@ -63,7 +61,7 @@ const Address: React.FC<AddressProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<Stack spacing={1}>
 					<AddressForm address={address} handleChange={handleChange} />
 					<Button

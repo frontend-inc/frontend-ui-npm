@@ -5,7 +5,6 @@ import { OneTimePasswordForm } from '../../../components'
 import { useRouter } from 'next/router'
 
 type OneTimePasswordProps = {
-	logo: string
 	redirectUrl: string
 	title?: string
 	subtitle?: string
@@ -15,7 +14,6 @@ type OneTimePasswordProps = {
 
 const OneTimePassword: React.FC<OneTimePasswordProps> = (props) => {
 	const {
-		logo,
 		redirectUrl,
 		title = 'One-Time Password',
 		subtitle = 'Get a one-time password link',
@@ -26,7 +24,7 @@ const OneTimePassword: React.FC<OneTimePasswordProps> = (props) => {
 	const router = useRouter()
 
 	const { errors, loading, user, handleChange, sendOneTimePassword } = useAuth()
-
+  
 	const handleSubmit = async () => {
 		let resp = await sendOneTimePassword({
 			...user,
@@ -43,7 +41,7 @@ const OneTimePassword: React.FC<OneTimePasswordProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<OneTimePasswordForm
 					loading={loading}
 					errors={errors}

@@ -1,6 +1,5 @@
 import React from 'react';
 type VerifyPinProps = {
-    logo: string;
     title?: string;
     subtitle?: string;
     redirectUrl: string;

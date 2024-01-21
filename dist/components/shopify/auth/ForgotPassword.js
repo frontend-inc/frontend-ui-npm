@@ -46,7 +46,7 @@ var webstudio_shopify_1 = require("webstudio-shopify");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var ForgotPassword = function (props) {
-    var _a = props || {}, logo = _a.logo, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl;
+    var _a = props || {}, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _b = (0, webstudio_shopify_1.useAuth)(), loading = _b.loading, errors = _b.errors, customer = _b.customer, setCustomer = _b.setCustomer, handleChange = _b.handleChange, forgotPassword = _b.forgotPassword;
     var router = (0, router_1.useRouter)();
@@ -69,7 +69,7 @@ var ForgotPassword = function (props) {
         router.push(loginUrl);
     };
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(shopify_1.ForgotPasswordForm, { errors: errors, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };
 exports.default = ForgotPassword;

@@ -67,7 +67,7 @@ var OneTimePasswordVerify = function (props) {
     var router = (0, router_1.useRouter)();
     var oneTimePassword = router.query.token;
     var _a = (0, react_1.useState)(false), verified = _a[0], setVerified = _a[1];
-    var _b = props || {}, logo = _b.logo, redirectUrl = _b.redirectUrl, _c = _b.title, title = _c === void 0 ? 'One-Time Password' : _c, _d = _b.subtitle, subtitle = _d === void 0 ? 'Get a one-time password link' : _d, loginUrl = _b.loginUrl;
+    var _b = props || {}, redirectUrl = _b.redirectUrl, _c = _b.title, title = _c === void 0 ? 'One-Time Password' : _c, _d = _b.subtitle, subtitle = _d === void 0 ? 'Get a one-time password link' : _d, loginUrl = _b.loginUrl;
     var _e = (0, hooks_1.useAuth)(), errors = _e.errors, loading = _e.loading, verifyOneTimePassword = _e.verifyOneTimePassword;
     var handleVerifyOTP = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
@@ -98,7 +98,7 @@ var OneTimePasswordVerify = function (props) {
         }
     }, [oneTimePassword]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(components_1.OneTimePasswordVerifyMessage, { verified: verified, handleRedirect: handleRedirect, handleLogin: handleLogin }))));
 };
 exports.default = OneTimePasswordVerify;

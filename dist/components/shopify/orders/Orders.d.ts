@@ -1,6 +1,5 @@
 import React from 'react';
 type ShopifyCustomerOrdersProps = {
-    logo: string;
     title?: string;
     subtitle?: string;
 };

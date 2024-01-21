@@ -5,7 +5,6 @@ import { useAuth } from 'webstudio-shopify'
 import { useRouter } from 'next/router'
 
 type SignupProps = {
-	logo: string
 	title?: string
 	subtitle?: string
 	redirectUrl: string
@@ -14,7 +13,6 @@ type SignupProps = {
 
 const Signup: React.FC<SignupProps> = (props) => {
 	const {
-		logo,
 		title = 'Sign up',
 		subtitle = 'Register your account',
 		redirectUrl,
@@ -38,7 +36,7 @@ const Signup: React.FC<SignupProps> = (props) => {
 
 	return (
 		<AuthLayout>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<SignupForm
 					errors={errors}
 					loading={loading}

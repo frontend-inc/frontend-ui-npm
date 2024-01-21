@@ -1,16 +1,19 @@
 import React from 'react'
 import { Paper, Box, Container, Typography } from '@mui/material'
 import { SquareLogo } from '../../../components'
+import { useApp } from '../../../hooks'
 
 type AuthScreenProps = {
 	title: string
 	subtitle?: string
-	logo?: string
 	children: React.ReactNode
 }
 
 const AuthScreen: React.FC<AuthScreenProps> = (props) => {
-	const { title, subtitle, children, logo } = props
+	const { title, subtitle, children } = props
+
+  const { logo } = useApp()
+  
 	return (
 		<Box sx={sx.root}>
 			<Container maxWidth="sm">

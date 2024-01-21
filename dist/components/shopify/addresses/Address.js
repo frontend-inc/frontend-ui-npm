@@ -74,7 +74,7 @@ var Address = function (props) {
     }
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = (0, react_1.useState)(false), showDeleteModal = _a[0], setShowDeleteModal = _a[1];
-    var _b = props || {}, logo = _b.logo, _c = _b.title, title = _c === void 0 ? 'Customer Addresses' : _c, _d = _b.subtitle, subtitle = _d === void 0 ? 'Manage your addresses' : _d;
+    var _b = props || {}, _c = _b.title, title = _c === void 0 ? 'Customer Addresses' : _c, _d = _b.subtitle, subtitle = _d === void 0 ? 'Manage your addresses' : _d;
     var _e = (0, webstudio_shopify_1.useAddresses)(), loading = _e.loading, address = _e.address, handleChange = _e.handleChange, updateCustomerAddress = _e.updateCustomerAddress, createCustomerAddress = _e.createCustomerAddress, deleteCustomerAddress = _e.deleteCustomerAddress, fetchCustomerAddress = _e.fetchCustomerAddress;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -113,7 +113,7 @@ var Address = function (props) {
         }
     }, [addressId]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(material_1.Stack, { spacing: 1 },
                 react_1.default.createElement(shopify_1.AddressForm, { address: address, handleChange: handleChange }),
                 react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit }, "Save Address"),

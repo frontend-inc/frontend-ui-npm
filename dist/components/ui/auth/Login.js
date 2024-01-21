@@ -44,7 +44,7 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var Login = function (props) {
-    var _a = props || {}, logo = _a.logo, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl;
+    var _a = props || {}, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl;
     var router = (0, router_1.useRouter)();
     var _d = (0, hooks_1.useAuth)(), errors = _d.errors, loading = _d.loading, user = _d.user, handleChange = _d.handleChange, login = _d.login;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -71,7 +71,7 @@ var Login = function (props) {
         router.push(oneTimePasswordUrl);
     };
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(components_1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleOneTimePassword: oneTimePasswordUrl && handleOneTimePassword, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword }))));
 };
 exports.default = Login;

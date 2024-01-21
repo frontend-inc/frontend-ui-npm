@@ -1,6 +1,5 @@
 import React from 'react';
 type AddressProps = {
-    logo: string;
     title?: string;
     subtitle?: string;
 };

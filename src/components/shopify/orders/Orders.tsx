@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 import { getShopifyIdFromGid } from 'webstudio-shopify'
 
 type ShopifyCustomerOrdersProps = {
-	logo: string
 	title?: string
 	subtitle?: string
 }
@@ -18,7 +17,6 @@ const ShopifyCustomerOrders: React.FC<ShopifyCustomerOrdersProps> = (props) => {
 	const { clientUrl } = useContext(AppContext)
 
 	const {
-		logo,
 		title = 'Customer Orders',
 		subtitle = 'Manage your orders',
 	} = props || {}
@@ -40,7 +38,7 @@ const ShopifyCustomerOrders: React.FC<ShopifyCustomerOrdersProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<OrderList orders={orders} handleClick={handleClick} />
 			</AuthScreen>
 		</LayoutLoader>

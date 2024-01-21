@@ -1,6 +1,5 @@
 import React from 'react';
 type AddressesProps = {
-    logo: string;
     title?: string;
     subtitle?: string;
 };

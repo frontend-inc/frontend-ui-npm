@@ -4,7 +4,6 @@ import { useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type LoginProps = {
-	logo: string
 	redirectUrl: string
 	title?: string
 	subtitle?: string
@@ -16,7 +15,6 @@ type LoginProps = {
 
 const Login: React.FC<LoginProps> = (props) => {
 	const {
-		logo,
 		redirectUrl,
 		title = 'Sign In',
 		subtitle = 'Log in to your account',
@@ -49,7 +47,7 @@ const Login: React.FC<LoginProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<LoginForm
 					errors={errors}
 					loading={loading}

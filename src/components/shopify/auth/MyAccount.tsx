@@ -67,7 +67,6 @@ const MENU_ITEMS = [
 
 const MyAccount: React.FC<MyAccountProps> = (props) => {
 	const {
-		logo,
 		loginUrl,
 		title = 'My Account',
 		subtitle = 'Manage your account',
@@ -87,7 +86,7 @@ const MyAccount: React.FC<MyAccountProps> = (props) => {
 	}
 
 	return (
-		<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+		<AuthScreen title={title} subtitle={subtitle}>
 			{customer ? (
 				<List disablePadding>
 					{MENU_ITEMS.map((item, i) => (

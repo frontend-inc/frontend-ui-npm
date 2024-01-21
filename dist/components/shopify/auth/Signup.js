@@ -45,7 +45,7 @@ var shopify_1 = require("../../../components/shopify");
 var webstudio_shopify_1 = require("webstudio-shopify");
 var router_1 = require("next/router");
 var Signup = function (props) {
-    var logo = props.logo, _a = props.title, title = _a === void 0 ? 'Sign up' : _a, _b = props.subtitle, subtitle = _b === void 0 ? 'Register your account' : _b, redirectUrl = props.redirectUrl, loginUrl = props.loginUrl;
+    var _a = props.title, title = _a === void 0 ? 'Sign up' : _a, _b = props.subtitle, subtitle = _b === void 0 ? 'Register your account' : _b, redirectUrl = props.redirectUrl, loginUrl = props.loginUrl;
     var _c = (0, webstudio_shopify_1.useAuth)(), loading = _c.loading, errors = _c.errors, customer = _c.customer, handleChange = _c.handleChange, signup = _c.signup;
     var router = (0, router_1.useRouter)();
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -66,7 +66,7 @@ var Signup = function (props) {
         router.push(loginUrl);
     };
     return (react_1.default.createElement(components_1.AuthLayout, null,
-        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(shopify_1.SignupForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };
 exports.default = Signup;

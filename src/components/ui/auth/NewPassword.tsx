@@ -8,7 +8,6 @@ import { useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type NewPasswordProps = {
-	logo: string
 	redirectUrl: string
 	title?: string
 	subtitle?: string
@@ -17,7 +16,6 @@ type NewPasswordProps = {
 
 const NewPassword: React.FC<NewPasswordProps> = (props) => {
 	const {
-		logo,
 		redirectUrl,
 		title = 'New Password',
 		subtitle = 'Create a new password',
@@ -28,7 +26,7 @@ const NewPassword: React.FC<NewPasswordProps> = (props) => {
 
 	const { errors, loading, user, handleChange, updateMe } = useAuth()
 
-	const handleSubmit = async () => {
+  const handleSubmit = async () => {
 		let resp = await updateMe(user)
 		if (resp?.id) {
 			router.push(redirectUrl)
@@ -41,7 +39,7 @@ const NewPassword: React.FC<NewPasswordProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<NewPasswordForm
 					loading={loading}
 					errors={errors}

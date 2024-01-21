@@ -55,7 +55,7 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var ForgotPassword = function (props) {
-    var _a = props || {}, logo = _a.logo, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl, authConfig = _a.authConfig;
+    var _a = props || {}, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl, authConfig = _a.authConfig;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _b = (0, hooks_1.useAuth)(), loading = _b.loading, errors = _b.errors, user = _b.user, handleChange = _b.handleChange, forgotPassword = _b.forgotPassword;
     var router = (0, router_1.useRouter)();
@@ -77,7 +77,7 @@ var ForgotPassword = function (props) {
         router.push(loginUrl);
     };
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(components_1.ForgotPasswordForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };
 exports.default = ForgotPassword;

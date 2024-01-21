@@ -8,7 +8,6 @@ import { useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type ResetPasswordProps = {
-	logo: string
 	title?: string
 	subtitle?: string
 	loginUrl?: string
@@ -20,7 +19,6 @@ const ResetPassword: React.FC<ResetPasswordProps> = (props) => {
 	const { token: resetPasswordToken } = router.query
 
 	const {
-		logo,
 		title = 'Reset Password',
 		subtitle = 'Enter your new password',
 		redirectUrl = '/login',
@@ -29,7 +27,7 @@ const ResetPassword: React.FC<ResetPasswordProps> = (props) => {
 
 	const { loading, errors, user, handleChange, resetPassword } = useAuth()
 
-	const handleSubmit = async () => {
+  const handleSubmit = async () => {
 		let resp = await resetPassword(
 			user?.email,
 			user?.password,
@@ -47,7 +45,7 @@ const ResetPassword: React.FC<ResetPasswordProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<ResetPasswordForm
 					loading={loading}
 					errors={errors}

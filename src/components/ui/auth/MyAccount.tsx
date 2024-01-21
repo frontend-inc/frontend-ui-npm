@@ -8,13 +8,12 @@ import {
 import { useRouter } from 'next/router'
 
 type MyAccountProps = {
-	logo: string
 	redirectUrl: string
 }
 
 const MyAccount: React.FC<MyAccountProps> = (props) => {
 	const router = useRouter()
-	const { redirectUrl, logo } = props || {}
+	const { redirectUrl } = props || {}
 
 	const {
 		loading,
@@ -51,7 +50,6 @@ const MyAccount: React.FC<MyAccountProps> = (props) => {
 		<LayoutLoader loading={loading}>
 			{currentUser && (
 				<AuthScreen
-					logo={logo}
 					title={`${currentUser?.first_name} ${currentUser?.last_name}`}
 					subtitle={'Update account'}
 				>

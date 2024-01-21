@@ -1,7 +1,7 @@
 import React from 'react';
 type SectionProps = {
     children: React.ReactNode;
-    bgColor?: string;
+    bgcolor?: string;
     p?: number;
     styles?: any;
 };

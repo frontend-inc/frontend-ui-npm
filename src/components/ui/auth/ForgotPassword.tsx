@@ -8,7 +8,6 @@ import { useAlerts, useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type ForgotPasswordProps = {
-	logo: string
 	title?: string
 	subtitle?: string
 	authConfig?: any
@@ -16,10 +15,9 @@ type ForgotPasswordProps = {
 }
 
 const ForgotPassword: React.FC<ForgotPasswordProps> = (props) => {
-	const { logo, title, subtitle, loginUrl, authConfig } = props || {}
+	const { title, subtitle, loginUrl, authConfig } = props || {}
 
 	const { showAlertSuccess } = useAlerts()
-
 	const { loading, errors, user, handleChange, forgotPassword } = useAuth()
 
 	const router = useRouter()
@@ -40,7 +38,7 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<ForgotPasswordForm
 					errors={errors}
 					user={user}

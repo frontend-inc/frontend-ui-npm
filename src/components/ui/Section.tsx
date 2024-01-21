@@ -3,18 +3,18 @@ import { Box } from '@mui/material'
 
 type SectionProps = {
 	children: React.ReactNode
-	bgColor?: string
+	bgcolor?: string
 	p?: number
 	styles?: any
 }
 
 const Section: React.FC<SectionProps> = (props) => {
-	const { children, bgColor = 'white', p = 4, styles = {} } = props
+	const { children, bgcolor, p = 4, styles = {} } = props
 
 	return (
 		<Box
 			sx={{
-				bgcolor: bgColor,
+				bgcolor,
 				p: p,
 				...styles,
 			}}

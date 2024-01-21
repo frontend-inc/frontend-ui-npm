@@ -40,9 +40,8 @@ var Search = function () {
     var router = (0, router_1.useRouter)();
     var trackProductsSearched = (0, addons_1.useSegment)().trackProductsSearched;
     var query = router.query.query;
-    if (query == 'all') {
+    if (query == 'all')
         query = '';
-    }
     var _a = (0, react_1.useState)(String(query).toLowerCase()), keywords = _a[0], setKeywords = _a[1];
     var first = PER_PAGE;
     var shopUrl = (0, react_1.useContext)(webstudio_shopify_2.ShopContext).shopUrl;
@@ -68,7 +67,7 @@ var Search = function () {
     };
     (0, react_1.useEffect)(function () {
         var _a;
-        if (query) {
+        if ((query === null || query === void 0 ? void 0 : query.length) > 0) {
             var searchKeywords = (_a = decodeURI(String(query)).split('-')) === null || _a === void 0 ? void 0 : _a.join(' ');
             setKeywords(searchKeywords);
             searchProducts({

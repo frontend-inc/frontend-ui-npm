@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Section = function (props) {
-    var children = props.children, _a = props.bgColor, bgColor = _a === void 0 ? 'white' : _a, _b = props.p, p = _b === void 0 ? 4 : _b, _c = props.styles, styles = _c === void 0 ? {} : _c;
-    return (react_1.default.createElement(material_1.Box, { sx: __assign({ bgcolor: bgColor, p: p }, styles) }, children));
+    var children = props.children, bgcolor = props.bgcolor, _a = props.p, p = _a === void 0 ? 4 : _a, _b = props.styles, styles = _b === void 0 ? {} : _b;
+    return (react_1.default.createElement(material_1.Box, { sx: __assign({ bgcolor: bgcolor, p: p }, styles) }, children));
 };
 exports.default = Section;

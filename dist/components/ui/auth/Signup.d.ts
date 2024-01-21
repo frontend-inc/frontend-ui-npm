@@ -1,6 +1,5 @@
 import React from 'react';
 type SignupProps = {
-    logo: string;
     redirectUrl: string;
     loginUrl: string;
     title?: string;

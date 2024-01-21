@@ -8,7 +8,7 @@ type ColumnProps = {
 }
 
 const Column: React.FC<ColumnProps> = (props) => {
-	const { children, bgcolor = 'white', maxWidth } = props
+	const { children, bgcolor, maxWidth } = props
 
 	return (
 		<Container

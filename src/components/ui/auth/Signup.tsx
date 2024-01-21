@@ -4,7 +4,6 @@ import { useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type SignupProps = {
-	logo: string
 	redirectUrl: string
 	loginUrl: string
 	title?: string
@@ -13,18 +12,18 @@ type SignupProps = {
 }
 
 const Signup: React.FC<SignupProps> = (props) => {
+  
 	const {
-		logo,
 		redirectUrl,
 		loginUrl,
 		title = 'Sign up',
 		subtitle = 'Register your account',
 		authConfig = {},
 	} = props
-
+  
+  const router = useRouter()
+  
 	const { loading, errors, user, handleChange, signup } = useAuth()
-
-	const router = useRouter()
 
 	const handleSubmit = async () => {
 		let resp = await signup({
@@ -42,7 +41,7 @@ const Signup: React.FC<SignupProps> = (props) => {
 
 	return (
 		<AuthLayout>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<SignupForm
 					errors={errors}
 					loading={loading}

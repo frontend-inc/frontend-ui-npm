@@ -65,8 +65,8 @@ var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var MyAccount = function (props) {
     var router = (0, router_1.useRouter)();
-    var _a = props || {}, redirectUrl = _a.redirectUrl, logo = _a.logo;
-    var _b = (0, hooks_1.useAuth)(), loading = _b.loading, user = _b.user, setUser = _b.setUser, currentUser = _b.currentUser, updateMe = _b.updateMe, handleChange = _b.handleChange, fetchMe = _b.fetchMe, deleteAvatar = _b.deleteAvatar;
+    var redirectUrl = (props || {}).redirectUrl;
+    var _a = (0, hooks_1.useAuth)(), loading = _a.loading, user = _a.user, setUser = _a.setUser, currentUser = _a.currentUser, updateMe = _a.updateMe, handleChange = _a.handleChange, fetchMe = _a.fetchMe, deleteAvatar = _a.deleteAvatar;
     var handleDeleteAvatar = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -98,7 +98,7 @@ var MyAccount = function (props) {
             setUser(currentUser);
         }
     }, [currentUser]);
-    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading }, currentUser && (react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: 'Update account' },
+    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading }, currentUser && (react_1.default.createElement(components_1.AuthScreen, { title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: 'Update account' },
         react_1.default.createElement(components_1.MyAccountForm, { user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleRedirect: handleRedirect })))));
 };
 exports.default = MyAccount;

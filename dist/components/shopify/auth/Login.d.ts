@@ -1,6 +1,5 @@
 import React from 'react';
 type LoginProps = {
-    logo: string;
     redirectUrl: string;
     title?: string;
     subtitle?: string;

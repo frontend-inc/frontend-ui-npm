@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Column = function (props) {
-    var children = props.children, _a = props.bgcolor, bgcolor = _a === void 0 ? 'white' : _a, maxWidth = props.maxWidth;
+    var children = props.children, bgcolor = props.bgcolor, maxWidth = props.maxWidth;
     return (react_1.default.createElement(material_1.Container, { sx: __assign(__assign({}, sx.root), { bgcolor: bgcolor }), maxWidth: maxWidth }, children));
 };
 exports.default = Column;

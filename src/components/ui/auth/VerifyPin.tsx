@@ -10,7 +10,6 @@ import { useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type VerifyPinProps = {
-	logo: string
 	title?: string
 	subtitle?: string
 	redirectUrl: string
@@ -20,7 +19,6 @@ type VerifyPinProps = {
 
 const VerifyPin: React.FC<VerifyPinProps> = (props) => {
 	const {
-		logo,
 		title,
 		subtitle,
 		redirectUrl,
@@ -69,7 +67,7 @@ const VerifyPin: React.FC<VerifyPinProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				{!showVerifyPin ? (
 					<VerifySendPinForm
 						errors={errors}

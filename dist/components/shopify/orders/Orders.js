@@ -33,7 +33,7 @@ var webstudio_shopify_2 = require("webstudio-shopify");
 var ShopifyCustomerOrders = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, logo = _a.logo, _b = _a.title, title = _b === void 0 ? 'Customer Orders' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Manage your orders' : _c;
+    var _a = props || {}, _b = _a.title, title = _b === void 0 ? 'Customer Orders' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Manage your orders' : _c;
     var _d = (0, webstudio_shopify_1.useOrders)(), loading = _d.loading, orders = _d.orders, fetchCustomerOrders = _d.fetchCustomerOrders;
     var handleClick = function (order) {
         var orderId = (0, webstudio_shopify_2.getShopifyIdFromGid)(order === null || order === void 0 ? void 0 : order.id);
@@ -47,7 +47,7 @@ var ShopifyCustomerOrders = function (props) {
         }
     }, [orders]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle },
+        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(shopify_1.OrderList, { orders: orders, handleClick: handleClick }))));
 };
 exports.default = ShopifyCustomerOrders;

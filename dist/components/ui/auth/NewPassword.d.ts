@@ -1,6 +1,5 @@
 import React from 'react';
 type NewPasswordProps = {
-    logo: string;
     redirectUrl: string;
     title?: string;
     subtitle?: string;

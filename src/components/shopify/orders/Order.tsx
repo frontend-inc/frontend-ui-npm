@@ -6,7 +6,6 @@ import { useRouter } from 'next/router'
 import moment from 'moment'
 
 type ShopifyCustomerOrderProps = {
-	logo: string
 	title?: string
 	subtitle?: string
 }
@@ -17,8 +16,6 @@ const ShopifyCustomerOrder: React.FC<ShopifyCustomerOrderProps> = (props) => {
 	if (orderId == 'new') {
 		orderId = null
 	}
-
-	const { logo } = props || {}
 
 	const { loading, order, fetchCustomerOrder } = useOrders()
 
@@ -31,7 +28,6 @@ const ShopifyCustomerOrder: React.FC<ShopifyCustomerOrderProps> = (props) => {
 	return (
 		<LayoutLoader loading={loading}>
 			<AuthScreen
-				logo={logo}
 				title={`Order ${order.name}`}
 				subtitle={moment(order?.processedAt).format('MMMM Do, YYYY')}
 			>

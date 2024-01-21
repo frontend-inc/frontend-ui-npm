@@ -4,14 +4,12 @@ import { useAuth, useCustomers } from 'webstudio-shopify'
 import { CustomerForm } from '../../../components/shopify'
 
 type CustomerProps = {
-	logo: string
 	title?: string
 	subtitle?: string
 }
 
 const Customer: React.FC<CustomerProps> = (props) => {
 	const {
-		logo,
 		title = 'Customer details',
 		subtitle = 'Update your account',
 	} = props || {}
@@ -55,7 +53,7 @@ const Customer: React.FC<CustomerProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<CustomerForm
 					loading={loading}
 					customer={authCustomer}

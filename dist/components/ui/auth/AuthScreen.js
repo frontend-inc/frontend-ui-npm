@@ -6,8 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var AuthScreen = function (props) {
-    var title = props.title, subtitle = props.subtitle, children = props.children, logo = props.logo;
+    var title = props.title, subtitle = props.subtitle, children = props.children;
+    var logo = (0, hooks_1.useApp)().logo;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Container, { maxWidth: "sm" },
             react_1.default.createElement(material_1.Paper, { elevation: 0, sx: sx.paper },

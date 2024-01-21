@@ -8,7 +8,6 @@ import { useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
 
 type OneTimePasswordVerifyProps = {
-	logo?: string
 	redirectUrl: string
 	title?: string
 	subtitle?: string
@@ -22,7 +21,6 @@ const OneTimePasswordVerify: React.FC<OneTimePasswordVerifyProps> = (props) => {
 	const [verified, setVerified] = useState(false)
 
 	const {
-		logo,
 		redirectUrl,
 		title = 'One-Time Password',
 		subtitle = 'Get a one-time password link',
@@ -56,7 +54,7 @@ const OneTimePasswordVerify: React.FC<OneTimePasswordVerifyProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<OneTimePasswordVerifyMessage
 					verified={verified}
 					handleRedirect={handleRedirect}

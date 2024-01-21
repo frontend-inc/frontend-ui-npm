@@ -15,9 +15,8 @@ const Search: React.FC = () => {
 	const { trackProductsSearched } = useSegment()
 
 	let { query } = router.query
-	if (query == 'all') {
-		query = ''
-	}
+	if (query == 'all') query = '';
+	
 
 	const [keywords, setKeywords] = useState(String(query).toLowerCase())
 	const first = PER_PAGE
@@ -57,7 +56,7 @@ const Search: React.FC = () => {
 	}
 
 	useEffect(() => {
-		if (query) {
+		if (query?.length > 0) {
 			let searchKeywords = decodeURI(String(query)).split('-')?.join(' ')
 			setKeywords(searchKeywords)
 			searchProducts({

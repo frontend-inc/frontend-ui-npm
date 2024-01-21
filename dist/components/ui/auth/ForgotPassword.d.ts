@@ -1,6 +1,5 @@
 import React from 'react';
 type ForgotPasswordProps = {
-    logo: string;
     title?: string;
     subtitle?: string;
     authConfig?: any;

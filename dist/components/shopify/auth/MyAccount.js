@@ -60,7 +60,7 @@ var MENU_ITEMS = [
     },
 ];
 var MyAccount = function (props) {
-    var _a = props || {}, logo = _a.logo, loginUrl = _a.loginUrl, _b = _a.title, title = _b === void 0 ? 'My Account' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Manage your account' : _c;
+    var _a = props || {}, loginUrl = _a.loginUrl, _b = _a.title, title = _b === void 0 ? 'My Account' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Manage your account' : _c;
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var customer = (0, webstudio_shopify_1.useAuth)().customer;
@@ -70,6 +70,6 @@ var MyAccount = function (props) {
     var handleClick = function (path) {
         router.push("".concat(clientUrl).concat(path));
     };
-    return (react_1.default.createElement(components_1.AuthScreen, { logo: logo, title: title, subtitle: subtitle }, customer ? (react_1.default.createElement(material_1.List, { disablePadding: true }, MENU_ITEMS.map(function (item, i) { return (react_1.default.createElement(MenuItem, { key: i, item: item, handleClick: handleClick })); }))) : (react_1.default.createElement(components_1.Placeholder, { title: "Please sign in.", description: "You must be signed in to manage your account.", actions: react_1.default.createElement(material_1.Button, { onClick: handleLogin }, "Sign In") }))));
+    return (react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle }, customer ? (react_1.default.createElement(material_1.List, { disablePadding: true }, MENU_ITEMS.map(function (item, i) { return (react_1.default.createElement(MenuItem, { key: i, item: item, handleClick: handleClick })); }))) : (react_1.default.createElement(components_1.Placeholder, { title: "Please sign in.", description: "You must be signed in to manage your account.", actions: react_1.default.createElement(material_1.Button, { onClick: handleLogin }, "Sign In") }))));
 };
 exports.default = MyAccount;

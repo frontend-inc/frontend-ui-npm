@@ -9,7 +9,6 @@ import { useRouter } from 'next/router'
 import { getShopifyIdFromGid } from 'webstudio-shopify'
 
 type AddressesProps = {
-	logo: string
 	title?: string
 	subtitle?: string
 }
@@ -23,7 +22,6 @@ const Addresses: React.FC<AddressesProps> = (props) => {
 	const { clientUrl } = useContext(AppContext)
 
 	const {
-		logo,
 		title = 'Customer Addresses',
 		subtitle = 'Manage your addresses',
 	} = props || {}
@@ -63,7 +61,7 @@ const Addresses: React.FC<AddressesProps> = (props) => {
 
 	return (
 		<LayoutLoader loading={loading}>
-			<AuthScreen logo={logo} title={title} subtitle={subtitle}>
+			<AuthScreen title={title} subtitle={subtitle}>
 				<AddressList
 					addresses={addresses}
 					handleClick={handleClick}
