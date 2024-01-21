@@ -1,12 +1,12 @@
 {
     "name": "webstudio-mui",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "license": "MIT",
     "description": "A MUI library designed for Webstudio",
-    "homepage": "https://github.com/webstudio-co/webstudio-mui-npm",
+    "homepage": "https://github.com/webstudio-co/webstudio-mui",
     "repository": {
         "type": "git",
-        "url": "https://github.com/webstudio-co/webstudio-mui-npm"
+        "url": "https://github.com/webstudio-co/webstudio-mui"
     },
     "keywords": [
         "react",
