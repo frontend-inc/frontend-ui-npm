@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { AuthScreen, LayoutLoader } from "../../../components";
 import { useOrders } from "webstudio-shopify";
 import { OrderDetails } from "../../../components/shopify";
