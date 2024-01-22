@@ -10,7 +10,7 @@ import {
 } from "../../../components";
 import { useAuth } from "../../../hooks";
 import { useRouter, useParams } from "next/navigation";
-import { Tab, Tabs, Box, Typography } from "@mui/material";
+import { Tab, Tabs, Box } from "@mui/material";
 import { AppContext } from "../../../context";
 
 type AuthModalProps = {
@@ -20,7 +20,6 @@ type AuthModalProps = {
 };
 
 const AuthModal: React.FC<AuthModalProps> = (props) => {
-  const router = useRouter();
   const { app_id: appId } = useParams();
 
   const { authOpen, setAuthOpen } = useContext(AppContext);
