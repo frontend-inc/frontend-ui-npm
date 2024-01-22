@@ -1,21 +1,21 @@
-import { useEffect } from 'react'
-import { useAuth } from '../../../hooks'
-import { getCookie } from 'cookies-next'
+import { useEffect } from "react";
+import { useAuth } from "../../../hooks";
+import { getCookie } from "cookies-next";
 
 const AuthFromCookie: React.FC = () => {
-	const { authCookie, fetchMe, currentUser, authenticateFromToken } = useAuth()
+  const { authCookie, fetchMe, currentUser, authenticateFromToken } = useAuth();
 
-	useEffect(() => {
-		let authToken = getCookie(authCookie)
-		if (authToken) {
-			authenticateFromToken(String(authToken))
-			if (!currentUser) {
-				fetchMe()
-			}
-		}
-	}, [])
+  useEffect(() => {
+    let authToken = getCookie(authCookie);
+    if (authToken) {
+      authenticateFromToken(String(authToken));
+      if (!currentUser) {
+        fetchMe();
+      }
+    }
+  }, []);
 
-	return null
-}
+  return null;
+};
 
-export default AuthFromCookie
+export default AuthFromCookie;

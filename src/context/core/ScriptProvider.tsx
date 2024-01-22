@@ -1,49 +1,45 @@
-import React, { useEffect, useState } from 'react'
-import ScriptContext from './ScriptContext'
+import React, { useEffect, useState } from "react";
+import ScriptContext from "./ScriptContext";
 import {
   GorgiasChat,
   GoogleAnalyticsScript,
   GoogleTagManagerScript,
   HotJarScript,
   KlaviyoScript,
-  OkendoScript,  
+  OkendoScript,
   RedditScript,
-  VisualWebsiteOptimizerScript  
-} from '../../components/addons'
-import { 
-  useFacebookPixel,
-  useTikTok 
-} from '../../hooks/addons'
-import Script from 'next/script'
-import { AnalyticsBrowser } from '@segment/analytics-next'
+  VisualWebsiteOptimizerScript,
+} from "../../components/addons";
+import { useFacebookPixel, useTikTok } from "../../hooks/addons";
+import Script from "next/script";
+import { AnalyticsBrowser } from "@segment/analytics-next";
 
 type ScriptProviderProps = {
-  disableAnalytics?: boolean
-  disableChat?: boolean
-	okendoSubscriberId?: string
-  googleTagManagerId?: string
-  googleAnalyticsId?: string
-  gorgiasChatId?: string
-  gorgiasContactFormSrc?: string
-  hotJarId?: string
-  redditPixelId?: string
-  segmentWriteKey?: string
-  tikTokPixelId?: string
-  facebookPixelId?: string
-  klaviyoCompanyId?: string
-  visualWebsiteOptimizerId?: string
-	children: React.ReactNode
-}
+  disableAnalytics?: boolean;
+  disableChat?: boolean;
+  okendoSubscriberId?: string;
+  googleTagManagerId?: string;
+  googleAnalyticsId?: string;
+  gorgiasChatId?: string;
+  gorgiasContactFormSrc?: string;
+  hotJarId?: string;
+  redditPixelId?: string;
+  segmentWriteKey?: string;
+  tikTokPixelId?: string;
+  facebookPixelId?: string;
+  klaviyoCompanyId?: string;
+  visualWebsiteOptimizerId?: string;
+  children: React.ReactNode;
+};
 
 const ScriptProvider = (props: ScriptProviderProps) => {
-	
   const {
-    disableAnalytics=false,    
-    disableChat=false,
-		okendoSubscriberId,
+    disableAnalytics = false,
+    disableChat = false,
+    okendoSubscriberId,
     googleTagManagerId,
     googleAnalyticsId,
-    gorgiasChatId,    
+    gorgiasChatId,
     gorgiasContactFormSrc,
     facebookPixelId,
     hotJarId,
@@ -52,23 +48,25 @@ const ScriptProvider = (props: ScriptProviderProps) => {
     tikTokPixelId,
     visualWebsiteOptimizerId,
     klaviyoCompanyId,
-		children,
-	} = props || {}
+    children,
+  } = props || {};
 
-  const [segment, setSegment] = useState(null)  
+  const [segment, setSegment] = useState(null);
 
-  useTikTok({ tikTokPixelId: !disableAnalytics && tikTokPixelId })
-  useFacebookPixel({ facebookPixelId: !disableAnalytics && facebookPixelId })
+  useTikTok({ tikTokPixelId: !disableAnalytics && tikTokPixelId });
+  useFacebookPixel({ facebookPixelId: !disableAnalytics && facebookPixelId });
 
   useEffect(() => {
-    if(!disableAnalytics && segmentWriteKey){
-      setSegment(AnalyticsBrowser.load({ 
-        writeKey: segmentWriteKey 
-      }))
+    if (!disableAnalytics && segmentWriteKey) {
+      setSegment(
+        AnalyticsBrowser.load({
+          writeKey: segmentWriteKey,
+        })
+      );
     }
-  }, [disableAnalytics, segmentWriteKey])
+  }, [disableAnalytics, segmentWriteKey]);
 
-	const value = {
+  const value = {
     segment,
     disableAnalytics,
     okendoSubscriberId,
@@ -76,49 +74,37 @@ const ScriptProvider = (props: ScriptProviderProps) => {
     googleAnalyticsId,
     gorgiasChatId,
     redditPixelId,
-    segmentWriteKey    
-	}
+    segmentWriteKey,
+  };
 
-	return(
+  return (
     <ScriptContext.Provider value={value}>
-      { !disableAnalytics && (
+      {!disableAnalytics && (
         <>
-          { googleTagManagerId && (
-            <GoogleTagManagerScript id={ googleTagManagerId } />
+          {googleTagManagerId && (
+            <GoogleTagManagerScript id={googleTagManagerId} />
           )}
-          { googleAnalyticsId && (
-            <GoogleAnalyticsScript id={googleAnalyticsId} />         
+          {googleAnalyticsId && (
+            <GoogleAnalyticsScript id={googleAnalyticsId} />
           )}
-          { redditPixelId && (
-            <RedditScript id={ redditPixelId } />
-          )}
-          { hotJarId && (
-            <HotJarScript id={ hotJarId } />
-          )}
-          { visualWebsiteOptimizerId && (
-            <VisualWebsiteOptimizerScript id={ visualWebsiteOptimizerId } /> 
+          {redditPixelId && <RedditScript id={redditPixelId} />}
+          {hotJarId && <HotJarScript id={hotJarId} />}
+          {visualWebsiteOptimizerId && (
+            <VisualWebsiteOptimizerScript id={visualWebsiteOptimizerId} />
           )}
         </>
       )}
-      { !disableChat && (
-        <>
-          { gorgiasChatId && (
-            <GorgiasChat id={ gorgiasChatId } />
-          )}
-        </>
+      {!disableChat && (
+        <>{gorgiasChatId && <GorgiasChat id={gorgiasChatId} />}</>
       )}
-      { klaviyoCompanyId && (
-        <KlaviyoScript id={ klaviyoCompanyId } /> 
+      {klaviyoCompanyId && <KlaviyoScript id={klaviyoCompanyId} />}
+      {gorgiasContactFormSrc && (
+        <Script strategy="beforeInteractive" src={gorgiasContactFormSrc} />
       )}
-      { gorgiasContactFormSrc && (
-       <Script strategy="beforeInteractive" src={ gorgiasContactFormSrc } /> 
-      )}
-      { okendoSubscriberId && (
-        <OkendoScript subscriberId={ okendoSubscriberId } />        
-      )}
+      {okendoSubscriberId && <OkendoScript subscriberId={okendoSubscriberId} />}
       {children}
     </ScriptContext.Provider>
-  )
-}
+  );
+};
 
-export default ScriptProvider
+export default ScriptProvider;

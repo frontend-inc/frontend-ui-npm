@@ -1,58 +1,59 @@
-import React from 'react'
-import { AuthScreen, LayoutLoader } from '../../../components'
-import { useAuth } from '../../../hooks'
-import { OneTimePasswordForm } from '../../../components'
-import { useRouter } from 'next/navigation'
+import React from "react";
+import { AuthScreen, LayoutLoader } from "../../../components";
+import { useAuth } from "../../../hooks";
+import { OneTimePasswordForm } from "../../../components";
+import { useRouter } from "next/navigation";
 
 type OneTimePasswordProps = {
-	redirectUrl: string
-	title?: string
-	subtitle?: string
-	loginUrl?: string
-	authConfig?: Record<any, string>
-}
+  redirectUrl: string;
+  title?: string;
+  subtitle?: string;
+  loginUrl?: string;
+  authConfig?: Record<any, string>;
+};
 
 const OneTimePassword: React.FC<OneTimePasswordProps> = (props) => {
-	const {
-		redirectUrl,
-		title = 'One-Time Password',
-		subtitle = 'Get a one-time password link',
-		loginUrl,
-		authConfig = {},
-	} = props || {}
+  const {
+    redirectUrl,
+    title = "One-Time Password",
+    subtitle = "Get a one-time password link",
+    loginUrl,
+    authConfig = {},
+  } = props || {};
 
-	const router = useRouter()
+  const router = useRouter();
 
-	const { errors, loading, user, handleChange, sendOneTimePassword } = useAuth()
-  
-	const handleSubmit = async () => {
-		let resp = await sendOneTimePassword({
-			...user,
-			...authConfig,
-		})
-		if (resp?.id) {
-			router.push(redirectUrl)
-		}
-	}
+  const { errors, loading, user, handleChange, sendOneTimePassword } =
+    useAuth();
 
-	const handleLogin = () => {
-		router.push(loginUrl)
-	}
+  const handleSubmit = async () => {
+    let resp = await sendOneTimePassword({
+      ...user,
+      ...authConfig,
+    });
+    if (resp?.id) {
+      router.push(redirectUrl);
+    }
+  };
 
-	return (
-		<LayoutLoader loading={loading}>
-			<AuthScreen title={title} subtitle={subtitle}>
-				<OneTimePasswordForm
-					loading={loading}
-					errors={errors}
-					user={user}
-					handleChange={handleChange}
-					handleSubmit={handleSubmit}
-					handleLogin={handleLogin}
-				/>
-			</AuthScreen>
-		</LayoutLoader>
-	)
-}
+  const handleLogin = () => {
+    router.push(loginUrl);
+  };
 
-export default OneTimePassword
+  return (
+    <LayoutLoader loading={loading}>
+      <AuthScreen title={title} subtitle={subtitle}>
+        <OneTimePasswordForm
+          loading={loading}
+          errors={errors}
+          user={user}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          handleLogin={handleLogin}
+        />
+      </AuthScreen>
+    </LayoutLoader>
+  );
+};
+
+export default OneTimePassword;

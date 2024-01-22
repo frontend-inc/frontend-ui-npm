@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 type VisualWebsiteOptimizerScriptProps = {
-    id?: string;
+  id?: string;
 };
 declare const VisualWebsiteOptimizerScript: React.FC<VisualWebsiteOptimizerScriptProps>;
 export default VisualWebsiteOptimizerScript;

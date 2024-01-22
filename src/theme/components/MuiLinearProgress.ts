@@ -1,8 +1,8 @@
 export default {
-	styleOverrides: {
-		root: {
-			overflow: 'hidden',
-		},
-		colorPrimary: {},
-	},
-}
+  styleOverrides: {
+    root: {
+      overflow: "hidden",
+    },
+    colorPrimary: {},
+  },
+};

@@ -1,5 +1,5 @@
 type UsePreviousProps = {
-    value: any;
+  value: any;
 };
 declare const usePrevious: (value: UsePreviousProps) => any;
 export default usePrevious;

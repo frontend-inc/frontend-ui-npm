@@ -1,7 +1,7 @@
-import { Option } from '../types';
+import { Option } from "../types";
 type SortDirectionOption = {
-    label: string;
-    value: 'asc' | 'desc';
+  label: string;
+  value: "asc" | "desc";
 };
 export declare const BOOLEAN_FIELDS: String[];
 export declare const STRING_FIELDS: String[];
@@ -24,16 +24,16 @@ export declare const FILTER_OPERATORS: Record<string, Option[]>;
 export declare const FILTERABLE_TYPES: String[];
 export declare const SORTABLE_TYPES: String[];
 export declare const TITLE_SORT: {
-    label: string;
-    name: string;
+  label: string;
+  name: string;
 };
 export declare const PRICE_SORT: {
-    label: string;
-    name: string;
+  label: string;
+  name: string;
 };
 export declare const START_DATE_SORT: {
-    label: string;
-    name: string;
+  label: string;
+  name: string;
 };
 export declare const SEARCH_FILTER_TYPES: String[];
 export {};

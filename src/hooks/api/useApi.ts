@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
-import { ApiContext } from '../../context'
+import React, { useContext } from "react";
+import { ApiContext } from "../../context";
 
 const useApi = () => {
-	const { api } = useContext(ApiContext)
-	return {
-		api,
-	}
-}
+  const { api } = useContext(ApiContext);
+  return {
+    api,
+  };
+};
 
-export default useApi
+export default useApi;

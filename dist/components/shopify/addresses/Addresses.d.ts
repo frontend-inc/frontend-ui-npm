@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 type AddressesProps = {
-    title?: string;
-    subtitle?: string;
+  title?: string;
+  subtitle?: string;
 };
 declare const Addresses: React.FC<AddressesProps>;
 export default Addresses;

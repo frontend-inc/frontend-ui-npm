@@ -1,53 +1,53 @@
-import React from 'react'
-import { AuthLayout, AuthScreen } from '../../../components'
-import { SignupForm } from '../../../components/shopify'
-import { useAuth } from 'webstudio-shopify'
-import { useRouter } from 'next/navigation'
+import React from "react";
+import { AuthLayout, AuthScreen } from "../../../components";
+import { SignupForm } from "../../../components/shopify";
+import { useAuth } from "webstudio-shopify";
+import { useRouter } from "next/navigation";
 
 type SignupProps = {
-	title?: string
-	subtitle?: string
-	redirectUrl: string
-	loginUrl: string
-}
+  title?: string;
+  subtitle?: string;
+  redirectUrl: string;
+  loginUrl: string;
+};
 
 const Signup: React.FC<SignupProps> = (props) => {
-	const {
-		title = 'Sign up',
-		subtitle = 'Register your account',
-		redirectUrl,
-		loginUrl,
-	} = props
+  const {
+    title = "Sign up",
+    subtitle = "Register your account",
+    redirectUrl,
+    loginUrl,
+  } = props;
 
-	const { loading, errors, customer, handleChange, signup } = useAuth()
+  const { loading, errors, customer, handleChange, signup } = useAuth();
 
-	const router = useRouter()
+  const router = useRouter();
 
-	const handleSubmit = async () => {
-		let resp = await signup(customer)
-		if (resp?.email) {
-			router.push(redirectUrl)
-		}
-	}
+  const handleSubmit = async () => {
+    let resp = await signup(customer);
+    if (resp?.email) {
+      router.push(redirectUrl);
+    }
+  };
 
-	const handleLogin = () => {
-		router.push(loginUrl)
-	}
+  const handleLogin = () => {
+    router.push(loginUrl);
+  };
 
-	return (
-		<AuthLayout>
-			<AuthScreen title={title} subtitle={subtitle}>
-				<SignupForm
-					errors={errors}
-					loading={loading}
-					customer={customer}
-					handleChange={handleChange}
-					handleSubmit={handleSubmit}
-					handleLogin={handleLogin}
-				/>
-			</AuthScreen>
-		</AuthLayout>
-	)
-}
+  return (
+    <AuthLayout>
+      <AuthScreen title={title} subtitle={subtitle}>
+        <SignupForm
+          errors={errors}
+          loading={loading}
+          customer={customer}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          handleLogin={handleLogin}
+        />
+      </AuthScreen>
+    </AuthLayout>
+  );
+};
 
-export default Signup
+export default Signup;

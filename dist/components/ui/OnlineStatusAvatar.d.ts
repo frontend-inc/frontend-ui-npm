@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 type OnlineStatusAvatarProps = {
-    user: any;
-    size: number;
+  user: any;
+  size: number;
 };
 declare const OnlineStatusAvatar: React.FC<OnlineStatusAvatarProps>;
 export default OnlineStatusAvatar;

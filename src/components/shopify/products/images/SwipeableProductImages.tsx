@@ -1,119 +1,118 @@
-import React, { useState } from 'react'
-import { Product } from 'webstudio-shopify'
-import SwipeableViews from 'react-swipeable-views'
-import { TouchableOpacity } from '../../../../components'
-import { Box, Stack, MobileStepper } from '@mui/material'
-import { 
+import React, { useState } from "react";
+import { Product } from "webstudio-shopify";
+import SwipeableViews from "react-swipeable-views";
+import { TouchableOpacity } from "../../../../components";
+import { Box, Stack, MobileStepper } from "@mui/material";
+import {
   PRODUCT_CARD_VERT_HEIGHT,
   PRODUCT_CARD_VERT_WIDTH,
-} from '../../../../constants/index'
-import { shopifyResizeImage } from 'webstudio-shopify'
+} from "../../../../constants/index";
+import { shopifyResizeImage } from "webstudio-shopify";
 
 type SwipeableProductImagesProps = {
-	product: Product
-	height?: number
-	width?: number
-	handleClick?: () => void
-  objectFit?: 'contain' | 'cover'
-  responsiveHeight?: boolean
-}
+  product: Product;
+  height?: number;
+  width?: number;
+  handleClick?: () => void;
+  objectFit?: "contain" | "cover";
+  responsiveHeight?: boolean;
+};
 
 const SwipeableProductImages: React.FC<SwipeableProductImagesProps> = (
-	props
+  props
 ) => {
-
-	const { 
-    product, 
-    height=PRODUCT_CARD_VERT_HEIGHT, 
-    width=PRODUCT_CARD_VERT_WIDTH, 
+  const {
+    product,
+    height = PRODUCT_CARD_VERT_HEIGHT,
+    width = PRODUCT_CARD_VERT_WIDTH,
     handleClick,
-    objectFit='cover', 
-    responsiveHeight=false,
-  } = props
+    objectFit = "cover",
+    responsiveHeight = false,
+  } = props;
 
-	const [activeStep, setActiveStep] = useState(0)
+  const [activeStep, setActiveStep] = useState(0);
   // @ts-ignore
-	const maxSteps = product?.images?.edges.length
+  const maxSteps = product?.images?.edges.length;
 
-	const handleStepChange = (step: number) => {
-		setActiveStep(step)
-	}
+  const handleStepChange = (step: number) => {
+    setActiveStep(step);
+  };
 
-	return (
-		<Stack
-			sx={{
-				...sx.root,
-        height: !responsiveHeight && `${height}px`,        
+  return (
+    <Stack
+      sx={{
+        ...sx.root,
+        height: !responsiveHeight && `${height}px`,
         minHeight: `${height}px`,
         minWidth: !responsiveHeight && `${width}px`,
-			}}
-			direction="column"
-		>
-			<SwipeableViews
-				axis={'x'}
-				index={activeStep}
-				onChangeIndex={handleStepChange}
-				enableMouseEvents
-			>
-        
-				{
-          // @ts-ignore 
+      }}
+      direction="column"
+    >
+      <SwipeableViews
+        axis={"x"}
+        index={activeStep}
+        onChangeIndex={handleStepChange}
+        enableMouseEvents
+      >
+        {
+          // @ts-ignore
           product?.images?.edges.map(({ node: image }) => (
-					<Box 
-            sx={{ 
-              ...sx.image,
-            }}
-          >
-						<TouchableOpacity key={image.id} handleClick={handleClick}>
-							<img
-								src={shopifyResizeImage(image?.url, {
-                  width: width * 2,
-                  height: height * 2,
-                })}
-								alt={product?.title}
-                width={width}
-                height={height}
-								style={{		
-									objectFit
-								}}
-							/>
-						</TouchableOpacity>
-					</Box>
-				))}
-			</SwipeableViews>
-			{maxSteps > 1 && (
+            <Box
+              sx={{
+                ...sx.image,
+              }}
+            >
+              <TouchableOpacity key={image.id} handleClick={handleClick}>
+                <img
+                  src={shopifyResizeImage(image?.url, {
+                    width: width * 2,
+                    height: height * 2,
+                  })}
+                  alt={product?.title}
+                  width={width}
+                  height={height}
+                  style={{
+                    objectFit,
+                  }}
+                />
+              </TouchableOpacity>
+            </Box>
+          ))
+        }
+      </SwipeableViews>
+      {maxSteps > 1 && (
         <MobileStepper
-          sx={ sx.stepper }
+          sx={sx.stepper}
           steps={maxSteps}
           position="static"
           activeStep={activeStep}
           backButton={<Box />}
           nextButton={<Box />}
         />
-			)}
-		</Stack>
-	)
-}
+      )}
+    </Stack>
+  );
+};
 
-export default SwipeableProductImages
+export default SwipeableProductImages;
 
 const sx = {
   root: {
-    width: '100%',
-    position: 'relative'
+    width: "100%",
+    position: "relative",
   },
   stepper: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 5,
-    bgcolor: 'transparent',
-    width: '100%',
-    alignItems: 'center'
+    bgcolor: "transparent",
+    width: "100%",
+    alignItems: "center",
   },
-	image: {
-    width: '100%',
-    overflow: 'hidden',    
-		'&::webkit-scrollbar': {
-			display: 'none',
-		},
+  image: {
+    width: "100%",
+    overflow: "hidden",
+    "&::webkit-scrollbar": {
+      display: "none",
+    },
   },
-}
+};

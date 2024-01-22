@@ -1,49 +1,49 @@
-import React, { useState } from 'react'
-import ResourceContext from './ResourceContext'
+import React, { useState } from "react";
+import ResourceContext from "./ResourceContext";
 
 type ResourceProviderProps = {
-	children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const ResourceProvider = (props: ResourceProviderProps) => {
-	const { children } = props
+  const { children } = props;
 
-	const [url, setUrl] = useState('')
-	const [loading, setLoading] = useState(false)
-	const [query, setQuery] = useState({})
-	const [errors, setErrors] = useState({})
-	const [resource, setResource] = useState()
-	const [resources, setResources] = useState()
-	const [showModal, setShowModal] = useState(false)
+  const [url, setUrl] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [query, setQuery] = useState({});
+  const [errors, setErrors] = useState({});
+  const [resource, setResource] = useState();
+  const [resources, setResources] = useState();
+  const [showModal, setShowModal] = useState(false);
 
-	const value = {
-		loading,
-		setLoading,
+  const value = {
+    loading,
+    setLoading,
 
-		errors,
-		setErrors,
+    errors,
+    setErrors,
 
-		url,
-		setUrl,
+    url,
+    setUrl,
 
-		query,
-		setQuery,
+    query,
+    setQuery,
 
-		resource,
-		setResource,
+    resource,
+    setResource,
 
-		resources,
-		setResources,
+    resources,
+    setResources,
 
-		showModal,
-		setShowModal,
-	}
+    showModal,
+    setShowModal,
+  };
 
-	return (
-		<ResourceContext.Provider value={value}>
-			{children}
-		</ResourceContext.Provider>
-	)
-}
+  return (
+    <ResourceContext.Provider value={value}>
+      {children}
+    </ResourceContext.Provider>
+  );
+};
 
-export default ResourceProvider
+export default ResourceProvider;

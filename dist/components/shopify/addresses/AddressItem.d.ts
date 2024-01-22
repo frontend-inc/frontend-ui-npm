@@ -1,11 +1,11 @@
-import React from 'react';
-import { Address } from 'webstudio-shopify';
+import React from "react";
+import { Address } from "webstudio-shopify";
 type AddressItemProps = {
-    address: Address;
-    handleClick?: (id: string) => void;
-    handleEdit?: (id: string) => void;
-    handleDelete?: (address: Address) => void;
-    disableActions?: boolean;
+  address: Address;
+  handleClick?: (id: string) => void;
+  handleEdit?: (id: string) => void;
+  handleDelete?: (address: Address) => void;
+  disableActions?: boolean;
 };
 declare const AddressItem: React.FC<AddressItemProps>;
 export default AddressItem;

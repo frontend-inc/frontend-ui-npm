@@ -1,5 +1,5 @@
-import React, { createContext } from 'react'
+import React, { createContext } from "react";
 
-const ResourceContext = createContext<any>({})
+const ResourceContext = createContext<any>({});
 
-export default ResourceContext
+export default ResourceContext;

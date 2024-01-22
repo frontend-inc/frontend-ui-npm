@@ -1,6 +1,6 @@
 declare const _default: {
-    styleOverrides: {
-        root: {};
-    };
+  styleOverrides: {
+    root: {};
+  };
 };
 export default _default;

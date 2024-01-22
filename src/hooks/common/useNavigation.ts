@@ -1,29 +1,29 @@
-import React from 'react'
-import { useRouter } from 'next/navigation'
+import React from "react";
+import { useRouter } from "next/navigation";
 
 type UseNavigationProps = {
-	url: string
-}
+  url: string;
+};
 
 const useNavigation = (props: UseNavigationProps) => {
-	const { url } = props
-	const router = useRouter()
+  const { url } = props;
+  const router = useRouter();
 
-	const handleShowClick = (resource) => router.push(`${url}/${resource.id}`)
-	const handleEditClick = (resource) =>
-		router.push(`${url}/${resource.id}/edit`)
-	const handleAddClick = () => router.push(`${url}/new`)
+  const handleShowClick = (resource) => router.push(`${url}/${resource.id}`);
+  const handleEditClick = (resource) =>
+    router.push(`${url}/${resource.id}/edit`);
+  const handleAddClick = () => router.push(`${url}/new`);
 
-	return {
-		handleClick: handleShowClick,
-		handleShowClick,
-		handleEditClick,
-		handleAddClick,
+  return {
+    handleClick: handleShowClick,
+    handleShowClick,
+    handleEditClick,
+    handleAddClick,
 
-		toShow: handleShowClick,
-		toEdit: handleEditClick,
-		toAdd: handleAddClick,
-	}
-}
+    toShow: handleShowClick,
+    toEdit: handleEditClick,
+    toAdd: handleAddClick,
+  };
+};
 
-export default useNavigation
+export default useNavigation;

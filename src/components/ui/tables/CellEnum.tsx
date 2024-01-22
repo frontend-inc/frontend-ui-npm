@@ -1,14 +1,14 @@
-import React from 'react'
-import { Label } from '../../../components'
-import { truncate } from '../../../helpers'
+import React from "react";
+import { Label } from "../../../components";
+import { truncate } from "../../../helpers";
 
 type CellEnumProps = {
-	value: string
-}
+  value: string;
+};
 
 const CellEnum: React.FC<CellEnumProps> = (props) => {
-	const { value } = props
-	return <Label label={truncate(value, 15)} />
-}
+  const { value } = props;
+  return <Label label={truncate(value, 15)} />;
+};
 
-export default CellEnum
+export default CellEnum;

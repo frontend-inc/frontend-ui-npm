@@ -1,38 +1,50 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
+var __assign =
+  (this && this.__assign) ||
+  function () {
+    __assign =
+      Object.assign ||
+      function (t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
+          s = arguments[i];
+          for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
         }
         return t;
-    };
+      };
     return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+  };
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Label = function (props) {
-    var label = props.label, styles = props.styles;
-    if (!label)
-        return null;
-    return (react_1.default.createElement(material_1.Chip, { label: label, sx: __assign(__assign({}, sx.chip), styles), size: "small" }));
+  var label = props.label,
+    styles = props.styles;
+  if (!label) return null;
+  return react_1.default.createElement(material_1.Chip, {
+    label: label,
+    sx: __assign(__assign({}, sx.chip), styles),
+    size: "small",
+  });
 };
 exports.default = Label;
 var sx = {
-    chip: {
-        color: 'text.primary',
-        textTransform: 'uppercase',
-        characterSpacing: '1em',
-        fontSize: 11,
-        fontWeight: 500,
-        fontFamily: function (theme) { return theme.typography.fontFamily.caption; },
-        letterSpacing: '0.05em',
-        bgcolor: 'background.paper',
-        cursor: 'pointer',
+  chip: {
+    color: "text.primary",
+    textTransform: "uppercase",
+    characterSpacing: "1em",
+    fontSize: 11,
+    fontWeight: 500,
+    fontFamily: function (theme) {
+      return theme.typography.fontFamily.caption;
     },
+    letterSpacing: "0.05em",
+    bgcolor: "background.paper",
+    cursor: "pointer",
+  },
 };

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 type EmptyImageProps = {
-    height: number;
-    width?: number;
+  height: number;
+  width?: number;
 };
 declare const EmptyImage: React.FC<EmptyImageProps>;
 export default EmptyImage;

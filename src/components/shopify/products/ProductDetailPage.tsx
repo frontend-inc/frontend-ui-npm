@@ -1,35 +1,34 @@
-import React, { useEffect } from 'react'
-import { Box, Stack } from '@mui/material'
+import React, { useEffect } from "react";
+import { Box, Stack } from "@mui/material";
 import {
-	AddToCartButton,
-	ProductInfo,
-	ProductImages,
-	ProductVariantSelector,
+  AddToCartButton,
+  ProductInfo,
+  ProductImages,
+  ProductVariantSelector,
   TrackRecentlyViewed,
-} from '../../../components/shopify'
-import { useProducts, useProductDetails } from 'webstudio-shopify'
+} from "../../../components/shopify";
+import { useProducts, useProductDetails } from "webstudio-shopify";
 
 type ProductDetailPageProps = {
-	handle: string | string[]
-	buttonText?: string
-	enableQuantity?: boolean
-	enableFavorites?: boolean
-  enableSubscription?: boolean
-  enableOkendoStarRating?: boolean
-}
+  handle: string | string[];
+  buttonText?: string;
+  enableQuantity?: boolean;
+  enableFavorites?: boolean;
+  enableSubscription?: boolean;
+  enableOkendoStarRating?: boolean;
+};
 
 const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
-	
   const {
-		handle,
-		buttonText,
-		enableQuantity = true,
-    enableSubscription=true,
-		enableFavorites,
-    enableOkendoStarRating
-	} = props
+    handle,
+    buttonText,
+    enableQuantity = true,
+    enableSubscription = true,
+    enableFavorites,
+    enableOkendoStarRating,
+  } = props;
 
-  const { product, fetchProduct } = useProducts()
+  const { product, fetchProduct } = useProducts();
 
   const {
     price,
@@ -39,22 +38,22 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
     handleOptionChange,
     image,
     images,
-    handleImageClick
+    handleImageClick,
   } = useProductDetails({
-    product 
-  })  
+    product,
+  });
 
   useEffect(() => {
-    if(handle){
-      fetchProduct(handle)
+    if (handle) {
+      fetchProduct(handle);
     }
-  }, [handle])
+  }, [handle]);
 
-	return (
+  return (
     <Stack spacing={0} direction="row" sx={sx.container}>
       <Box sx={sx.left}>
-        <ProductImages 
-          product={product} 
+        <ProductImages
+          product={product}
           image={image}
           images={images}
           handleClick={handleImageClick}
@@ -62,13 +61,13 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
       </Box>
       <Box sx={sx.right}>
         <Stack spacing={2}>
-          <ProductInfo 
+          <ProductInfo
             product={product}
             price={price}
             compareAtPrice={compareAtPrice}
             enableOkendoStarRating={enableOkendoStarRating}
           />
-          <ProductVariantSelector 
+          <ProductVariantSelector
             product={product}
             selectedOptions={selectedOptions}
             handleOptionChange={handleOptionChange}
@@ -80,48 +79,48 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
             enableSubscription={enableSubscription}
             enableFavorites={enableFavorites}
             label={buttonText}
-          />             
-          <TrackRecentlyViewed product={product} /> 
+          />
+          <TrackRecentlyViewed product={product} />
         </Stack>
       </Box>
     </Stack>
-	)
-}
+  );
+};
 
-export default ProductDetailPage
+export default ProductDetailPage;
 
 const sx = {
-	container: {
-		display: 'flex',
-		flexDirection: {
-			xs: 'column',
-			sm: 'row',
-		},
-	},
-	left: {
+  container: {
+    display: "flex",
+    flexDirection: {
+      xs: "column",
+      sm: "row",
+    },
+  },
+  left: {
     p: {
       sm: 1,
-      xs: 0
+      xs: 0,
     },
-		width: {
-			xs: '100%',
-			sm: '50%',
-		},
-	},
-	right: {
+    width: {
+      xs: "100%",
+      sm: "50%",
+    },
+  },
+  right: {
     p: {
       sm: 1,
-      xs: 0
+      xs: 0,
     },
-		width: {
-			xs: '100%',
-			sm: '50%',
-		},
-	},
-	root: {
-		px: 0,
-	},
+    width: {
+      xs: "100%",
+      sm: "50%",
+    },
+  },
+  root: {
+    px: 0,
+  },
   actions: {
-    alignItems: 'flex-end'
-  }
-}
+    alignItems: "flex-end",
+  },
+};

@@ -1,46 +1,46 @@
-import React from 'react'
-import { Box, Grid } from '@mui/material'
-import { CardVert } from '../../../components'
+import React from "react";
+import { Box, Grid } from "@mui/material";
+import { CardVert } from "../../../components";
 
 type GridViewProps = {
-	loading?: boolean
-	items: any[]
-	editing?: boolean
-	buttonText?: string
-	handleClick?: (item: any) => void
-	component?: any
-	xs?: number
-	sm?: number
-	md?: number
-	lg?: number
-	xl?: number
-	enableBorder?: boolean
-	enableGradient?: boolean
-	enableOverlay?: boolean
-}
+  loading?: boolean;
+  items: any[];
+  editing?: boolean;
+  buttonText?: string;
+  handleClick?: (item: any) => void;
+  component?: any;
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+  enableBorder?: boolean;
+  enableGradient?: boolean;
+  enableOverlay?: boolean;
+};
 
 const GridView: React.FC<GridViewProps> = (props) => {
-	const {
-		items,
-		editing,
-		buttonText,
-		handleClick,
-		xs = 12,
-		sm = 6,
-		md = 4,
-		lg = 4,
-		xl = 4,
-		component: Component = CardVert,
-		enableBorder = false,
-		enableGradient = false,
-		enableOverlay = false,
-	} = props
+  const {
+    items,
+    editing,
+    buttonText,
+    handleClick,
+    xs = 12,
+    sm = 6,
+    md = 4,
+    lg = 4,
+    xl = 4,
+    component: Component = CardVert,
+    enableBorder = false,
+    enableGradient = false,
+    enableOverlay = false,
+  } = props;
 
-	return (
-		<Grid container spacing={0}> 
-			{items?.map((item, index) => (
-				<Grid item xs={xs} sm={sm} md={md} lg={lg} xl={xl}>
-          <Box sx={ sx.item } key={item?.id}>
+  return (
+    <Grid container spacing={0}>
+      {items?.map((item, index) => (
+        <Grid item xs={xs} sm={sm} md={md} lg={lg} xl={xl}>
+          <Box sx={sx.item} key={item?.id}>
             <Component
               key={index}
               title={item?.title}
@@ -55,16 +55,16 @@ const GridView: React.FC<GridViewProps> = (props) => {
               enableOverlay={enableOverlay}
             />
           </Box>
-				</Grid>
-			))}
-		</Grid>
-	)
-}
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
 
-export default GridView
+export default GridView;
 
 const sx = {
   item: {
-    p: 0.5
-  }
-}
+    p: 0.5,
+  },
+};

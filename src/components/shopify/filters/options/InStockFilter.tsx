@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from 'react'
-import { CheckboxFilterList } from '../../../../components/shopify'
-import { ProductCollectionFilter } from 'webstudio-shopify'
-import { findAvailableFilter } from 'webstudio-shopify'
+import React, { useState, useEffect } from "react";
+import { CheckboxFilterList } from "../../../../components/shopify";
+import { ProductCollectionFilter } from "webstudio-shopify";
+import { findAvailableFilter } from "webstudio-shopify";
 
 type InStockFilterProps = {
-	filters: ProductCollectionFilter[]
-	handleClick: (value: string) => void
-}
+  filters: ProductCollectionFilter[];
+  handleClick: (value: string) => void;
+};
 
 const InStockFilter: React.FC<InStockFilterProps> = (props) => {
-	const { filters, handleClick } = props
+  const { filters, handleClick } = props;
 
-	const [values, setValues] = useState([])
+  const [values, setValues] = useState([]);
 
-	useEffect(() => {
-		if (filters) {
-			setValues([findAvailableFilter(filters)])
-		}
-	}, [filters])
+  useEffect(() => {
+    if (filters) {
+      setValues([findAvailableFilter(filters)]);
+    }
+  }, [filters]);
 
-	return (
-		<CheckboxFilterList
+  return (
+    <CheckboxFilterList
       // @ts-ignore
-			options={[{ label: 'In-stock', value: true }]}
-			values={values}
-			handleClick={handleClick}
-		/>
-	)
-}
+      options={[{ label: "In-stock", value: true }]}
+      values={values}
+      handleClick={handleClick}
+    />
+  );
+};
 
-export default InStockFilter
+export default InStockFilter;

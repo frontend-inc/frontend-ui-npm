@@ -1,7 +1,7 @@
 type UseLoadedProps = {
-    loading?: boolean;
+  loading?: boolean;
 };
 declare const useLoaded: (props: UseLoadedProps) => {
-    loaded: boolean;
+  loaded: boolean;
 };
 export default useLoaded;

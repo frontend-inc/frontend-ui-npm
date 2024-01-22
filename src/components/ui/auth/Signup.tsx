@@ -1,58 +1,57 @@
-import React from 'react'
-import { AuthLayout, AuthScreen, SignupForm } from '../../../components'
-import { useAuth } from '../../../hooks'
-import { useRouter } from 'next/navigation'
+import React from "react";
+import { AuthLayout, AuthScreen, SignupForm } from "../../../components";
+import { useAuth } from "../../../hooks";
+import { useRouter } from "next/navigation";
 
 type SignupProps = {
-	redirectUrl: string
-	loginUrl: string
-	title?: string
-	subtitle?: string
-	authConfig?: Record<string, any>
-}
+  redirectUrl: string;
+  loginUrl: string;
+  title?: string;
+  subtitle?: string;
+  authConfig?: Record<string, any>;
+};
 
 const Signup: React.FC<SignupProps> = (props) => {
-  
-	const {
-		redirectUrl,
-		loginUrl,
-		title = 'Sign up',
-		subtitle = 'Register your account',
-		authConfig = {},
-	} = props
-  
-  const router = useRouter()
-  
-	const { loading, errors, user, handleChange, signup } = useAuth()
+  const {
+    redirectUrl,
+    loginUrl,
+    title = "Sign up",
+    subtitle = "Register your account",
+    authConfig = {},
+  } = props;
 
-	const handleSubmit = async () => {
-		let resp = await signup({
-			...user,
-			...authConfig,
-		})
-		if (resp?.id) {
-			router.push(redirectUrl)
-		}
-	}
+  const router = useRouter();
 
-	const handleLogin = () => {
-		router.push(loginUrl)
-	}
+  const { loading, errors, user, handleChange, signup } = useAuth();
 
-	return (
-		<AuthLayout>
-			<AuthScreen title={title} subtitle={subtitle}>
-				<SignupForm
-					errors={errors}
-					loading={loading}
-					user={user}
-					handleChange={handleChange}
-					handleSubmit={handleSubmit}
-					handleLogin={handleLogin}
-				/>
-			</AuthScreen>
-		</AuthLayout>
-	)
-}
+  const handleSubmit = async () => {
+    let resp = await signup({
+      ...user,
+      ...authConfig,
+    });
+    if (resp?.id) {
+      router.push(redirectUrl);
+    }
+  };
 
-export default Signup
+  const handleLogin = () => {
+    router.push(loginUrl);
+  };
+
+  return (
+    <AuthLayout>
+      <AuthScreen title={title} subtitle={subtitle}>
+        <SignupForm
+          errors={errors}
+          loading={loading}
+          user={user}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          handleLogin={handleLogin}
+        />
+      </AuthScreen>
+    </AuthLayout>
+  );
+};
+
+export default Signup;

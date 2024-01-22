@@ -1,5 +1,5 @@
 export default {
-	styleOverrides: {
-		root: {},
-	},
-}
+  styleOverrides: {
+    root: {},
+  },
+};

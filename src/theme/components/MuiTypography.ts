@@ -1,7 +1,7 @@
 export default {
-	styleOverrides: {
-		gutterBottom: {
-			mb: 8,
-		},
-	},
-}
+  styleOverrides: {
+    gutterBottom: {
+      mb: 8,
+    },
+  },
+};

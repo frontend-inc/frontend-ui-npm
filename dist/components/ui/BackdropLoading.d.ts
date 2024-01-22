@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 type BackdropLoadingProps = {
-    loading?: boolean;
+  loading?: boolean;
 };
 declare const BackdropLoading: React.FC<BackdropLoadingProps>;
 export default BackdropLoading;

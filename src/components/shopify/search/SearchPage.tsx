@@ -1,116 +1,115 @@
-import React, { useState, useContext, useEffect } from 'react'
-import { useProducts } from 'webstudio-shopify'
-import { useSegment } from '../../../hooks/addons'
-import { useRouter } from 'next/navigation'
-import { Box } from '@mui/material'
-import { SearchInput, Placeholder } from '../../../components'
-import { ProductGrid } from '../../../components/shopify'
-import LoadMore from '../../../components/shopify/search/LoadMore'
-import { ShopContext } from 'webstudio-shopify'
+import React, { useState, useContext, useEffect } from "react";
+import { useProducts } from "webstudio-shopify";
+import { useSegment } from "../../../hooks/addons";
+import { useRouter } from "next/navigation";
+import { Box } from "@mui/material";
+import { SearchInput, Placeholder } from "../../../components";
+import { ProductGrid } from "../../../components/shopify";
+import LoadMore from "../../../components/shopify/search/LoadMore";
+import { ShopContext } from "webstudio-shopify";
 
-const PER_PAGE = 48
+const PER_PAGE = 48;
 
 type SearchProps = {
-  query: string
-}
+  query: string;
+};
 
 const Search: React.FC<SearchProps> = (props) => {
-	const router = useRouter()
-	const { trackProductsSearched } = useSegment()
+  const router = useRouter();
+  const { trackProductsSearched } = useSegment();
 
-	let { query } = props
-	if (query == 'all') query = '';
-	
+  let { query } = props;
+  if (query == "all") query = "";
 
-	const [keywords, setKeywords] = useState(String(query).toLowerCase())
-	const first = PER_PAGE
+  const [keywords, setKeywords] = useState(String(query).toLowerCase());
+  const first = PER_PAGE;
 
-	const { shopUrl } = useContext(ShopContext) as any
+  const { shopUrl } = useContext(ShopContext) as any;
 
-	const {
-		loading,
-		errors,
-		cursor,
-		hasNextPage,
-		products,
-		fetchProducts,
-		searchProducts,
-	} = useProducts()
+  const {
+    loading,
+    errors,
+    cursor,
+    hasNextPage,
+    products,
+    fetchProducts,
+    searchProducts,
+  } = useProducts();
 
-	const handleChange = (ev) => {
-		setKeywords(ev.target.value)
-		if (keywords?.length == 0) {
-			handleSearch('')
-		}
-	}
+  const handleChange = (ev) => {
+    setKeywords(ev.target.value);
+    if (keywords?.length == 0) {
+      handleSearch("");
+    }
+  };
 
-	const handleSearch = (keywords) => {
-		if (keywords?.length > 0) {
-			trackProductsSearched(keywords)
-		}
-		router.push(`${shopUrl}/search/${keywords.split(' ').join('-')}`)
-	}
+  const handleSearch = (keywords) => {
+    if (keywords?.length > 0) {
+      trackProductsSearched(keywords);
+    }
+    router.push(`${shopUrl}/search/${keywords.split(" ").join("-")}`);
+  };
 
-	const handleLoadMore = (after) => {
-		searchProducts({
-			query: `${keywords} tag_not:hidden`,
-			first: first,
-			after,
-		})
-	}
+  const handleLoadMore = (after) => {
+    searchProducts({
+      query: `${keywords} tag_not:hidden`,
+      first: first,
+      after,
+    });
+  };
 
-	useEffect(() => {
-		if (query?.length > 0) {
-			let searchKeywords = decodeURI(String(query)).split('-')?.join(' ')
-			setKeywords(searchKeywords)
-			searchProducts({
-				query: searchKeywords,
-			})
-		} else {
-			fetchProducts({
-				first: 20,
-			})
-		}
-	}, [query])
+  useEffect(() => {
+    if (query?.length > 0) {
+      let searchKeywords = decodeURI(String(query)).split("-")?.join(" ");
+      setKeywords(searchKeywords);
+      searchProducts({
+        query: searchKeywords,
+      });
+    } else {
+      fetchProducts({
+        first: 20,
+      });
+    }
+  }, [query]);
 
-	return (
-		<Box sx={sx.root}>
-			<Box sx={sx.searchInput}>
-				<SearchInput
-					value={keywords}
-					handleChange={handleChange}
-					handleSearch={handleSearch}
-					placeholder={'Search'}
-				/>
-			</Box>
+  return (
+    <Box sx={sx.root}>
+      <Box sx={sx.searchInput}>
+        <SearchInput
+          value={keywords}
+          handleChange={handleChange}
+          handleSearch={handleSearch}
+          placeholder={"Search"}
+        />
+      </Box>
 
-			{products?.length > 0 && (
-				<ProductGrid loading={loading} products={products} />
-			)}
+      {products?.length > 0 && (
+        <ProductGrid loading={loading} products={products} />
+      )}
 
-			{!loading && (!products || products?.length == 0) && (
-				<Placeholder
-					title="No search results"
-					description="Try another search term"
-				/>
-			)}
+      {!loading && (!products || products?.length == 0) && (
+        <Placeholder
+          title="No search results"
+          description="Try another search term"
+        />
+      )}
 
-			<LoadMore
-				loading={loading}
-				hasNextPage={hasNextPage}
-				handleSearch={() => handleLoadMore(cursor)}
-			/>
-		</Box>
-	)
-}
+      <LoadMore
+        loading={loading}
+        hasNextPage={hasNextPage}
+        handleSearch={() => handleLoadMore(cursor)}
+      />
+    </Box>
+  );
+};
 
-export default Search
+export default Search;
 
 const sx = {
-	root: {
-		pt: 2,
-	},
-	searchInput: {
-		mb: 2,
-	},
-}
+  root: {
+    pt: 2,
+  },
+  searchInput: {
+    mb: 2,
+  },
+};

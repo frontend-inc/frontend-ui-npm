@@ -1,11 +1,11 @@
-import { palette } from '../../theme'
+import { palette } from "../../theme";
 
 export default {
-	styleOverrides: {
-		root: {
-			width: '100%',
+  styleOverrides: {
+    root: {
+      width: "100%",
       // @ts-ignore
-			bgcolor: palette.primary.contrastText,
-		},
-	},
-}
+      bgcolor: palette.primary.contrastText,
+    },
+  },
+};

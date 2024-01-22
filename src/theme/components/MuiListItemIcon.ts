@@ -1,10 +1,10 @@
-import { palette } from '../palette'
+import { palette } from "../palette";
 
 export default {
-	styleOverrides: {
-		root: {
-			color: palette.text.primary,
-			minWidth: 48,
-		},
-	},
-}
+  styleOverrides: {
+    root: {
+      color: palette.text.primary,
+      minWidth: 48,
+    },
+  },
+};

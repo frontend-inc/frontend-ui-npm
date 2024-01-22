@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 type CellLabelProps = {
-    value: string;
+  value: string;
 };
 declare const CellLabel: React.FC<CellLabelProps>;
 export default CellLabel;

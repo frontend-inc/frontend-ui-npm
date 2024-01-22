@@ -1,8 +1,8 @@
 type TiktokPixelProps = {
-    tikTokPixelId: string;
+  tikTokPixelId: string;
 };
 declare const useTiktok: (props: TiktokPixelProps) => {
-    trackAddToCart: (data: any) => void;
-    trackCustomEvent: (custom: string) => void;
+  trackAddToCart: (data: any) => void;
+  trackCustomEvent: (custom: string) => void;
 };
 export default useTiktok;

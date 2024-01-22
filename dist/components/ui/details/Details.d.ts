@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 type DetailsProps = {
-    fields: any[];
-    url: string;
-    handle: string;
+  fields: any[];
+  url: string;
+  handle: string;
 };
 declare const Details: React.FC<DetailsProps>;
 export default Details;

@@ -1,60 +1,57 @@
-import React from 'react'
-import { Button } from '@mui/material'
-import { Icon } from '../../../components'
-import { useFavorites } from 'webstudio-shopify'
-import { Product } from 'webstudio-shopify'
+import React from "react";
+import { Button } from "@mui/material";
+import { Icon } from "../../../components";
+import { useFavorites } from "webstudio-shopify";
+import { Product } from "webstudio-shopify";
 
 type FavoriteButtonProps = {
-	product: Product
-}
+  product: Product;
+};
 
 const FavoriteButton: React.FC<FavoriteButtonProps> = (props) => {
-	const { product } = props
-	
-	const { 
-    toggleFavorite,
-    isFavorite,
-  } = useFavorites({
-    product
-  })
+  const { product } = props;
 
-	const handleClick = async () => {
-		toggleFavorite()
-	}
+  const { toggleFavorite, isFavorite } = useFavorites({
+    product,
+  });
 
-	return (
-		<Button
+  const handleClick = async () => {
+    toggleFavorite();
+  };
+
+  return (
+    <Button
       size="large"
-			onClick={handleClick}
-			sx={{
-				...sx.button,        
-				...(isFavorite && sx.favorited),
-			}}
-		>
-			<Icon
-				name="Heart"
-				color={isFavorite ? 'primary.contrastText' : 'text.primary'}
-			/>
-		</Button>
-	)
-}
+      onClick={handleClick}
+      sx={{
+        ...sx.button,
+        ...(isFavorite && sx.favorited),
+      }}
+    >
+      <Icon
+        name="Heart"
+        color={isFavorite ? "primary.contrastText" : "text.primary"}
+      />
+    </Button>
+  );
+};
 
-export default FavoriteButton
+export default FavoriteButton;
 
 const sx = {
-	button: {
-    minWidth: '44px',
+  button: {
+    minWidth: "44px",
     p: 0,
-    borderRadius: theme => `${theme.shape.borderRadius}px`,
-		bgcolor: 'tertiary.main',
-		'&:hover': {
-			bgcolor: 'tertiary.main',
-		},
-	},
-	favorited: {
-		bgcolor: 'primary.main',
-		'&:hover': {
-			bgcolor: 'primary.dark',
-		},
-	},
-}
+    borderRadius: (theme) => `${theme.shape.borderRadius}px`,
+    bgcolor: "tertiary.main",
+    "&:hover": {
+      bgcolor: "tertiary.main",
+    },
+  },
+  favorited: {
+    bgcolor: "primary.main",
+    "&:hover": {
+      bgcolor: "primary.dark",
+    },
+  },
+};

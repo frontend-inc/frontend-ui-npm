@@ -1,17 +1,17 @@
-import React from 'react'
-import Head from 'next/head'
-import Script from 'next/script'
+import React from "react";
+import Head from "next/head";
+import Script from "next/script";
 
 type RedditScriptProps = {
-  id?: string
-}
+  id?: string;
+};
 
 const RedditScript: React.FC<RedditScriptProps> = (props) => {
-  const { id } = props || {}
-  if(!id) return null;
-  return(
+  const { id } = props || {};
+  if (!id) return null;
+  return (
     <Head>
-      <Script id="google-analytics" strategy="lazyOnload"> 
+      <Script id="google-analytics" strategy="lazyOnload">
         {`!(function (w, d) {
             if (!w.rdt) {
               var p = (w.rdt = function () {
@@ -32,9 +32,9 @@ const RedditScript: React.FC<RedditScriptProps> = (props) => {
           })
           rdt('track', 'PageVisit')        
         `}
-      </Script> 
+      </Script>
     </Head>
-  )
-}
+  );
+};
 
-export default RedditScript
+export default RedditScript;

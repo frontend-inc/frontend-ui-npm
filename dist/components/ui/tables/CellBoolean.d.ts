@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 type CellBooleanProps = {
-    value: boolean;
+  value: boolean;
 };
 declare const CellBoolean: React.FC<CellBooleanProps>;
 export default CellBoolean;

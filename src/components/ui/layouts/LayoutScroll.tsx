@@ -1,37 +1,37 @@
-import React from 'react'
-import { Box } from '@mui/material'
+import React from "react";
+import { Box } from "@mui/material";
 
 type LayoutScrollProps = {
-	children: React.ReactNode
-	ref?: any
-	pb?: number
-}
+  children: React.ReactNode;
+  ref?: any;
+  pb?: number;
+};
 
 const LayoutScroll: React.FC<LayoutScrollProps> = (props) => {
-	const { children, ref, pb = 0 } = props || {}
+  const { children, ref, pb = 0 } = props || {};
 
-	return (
-		<Box
-			ref={ref && ref}
-			sx={{
-				...sx.root,
-				pb: pb,
-			}}
-			{...props}
-		>
-			{children}
-		</Box>
-	)
-}
+  return (
+    <Box
+      ref={ref && ref}
+      sx={{
+        ...sx.root,
+        pb: pb,
+      }}
+      {...props}
+    >
+      {children}
+    </Box>
+  );
+};
 
-export default LayoutScroll
+export default LayoutScroll;
 
 const sx = {
-	root: {
-		height: 'calc(100vh - 50px)',
-		overflowY: 'scroll',
-		'&::-webkit-scrollbar': {
-			display: 'none',
-		},
-	},
-}
+  root: {
+    height: "calc(100vh - 50px)",
+    overflowY: "scroll",
+    "&::-webkit-scrollbar": {
+      display: "none",
+    },
+  },
+};

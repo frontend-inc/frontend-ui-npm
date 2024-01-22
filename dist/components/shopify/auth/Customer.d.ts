@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 type CustomerProps = {
-    title?: string;
-    subtitle?: string;
+  title?: string;
+  subtitle?: string;
 };
 declare const Customer: React.FC<CustomerProps>;
 export default Customer;

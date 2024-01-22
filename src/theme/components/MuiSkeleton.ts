@@ -1,7 +1,7 @@
 export default {
-	styleOverrides: {
-		root: {
-			bgcolor: '#DDDDDD',
-		},
-	},
-}
+  styleOverrides: {
+    root: {
+      bgcolor: "#DDDDDD",
+    },
+  },
+};

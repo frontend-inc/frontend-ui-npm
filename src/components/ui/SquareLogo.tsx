@@ -1,36 +1,36 @@
-import React, { useContext } from 'react'
-import { useRouter } from 'next/navigation'
-import { Button } from '@mui/material'
-import Image from 'next/image'
-import { AppContext } from '../../context'
+import React, { useContext } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@mui/material";
+import Image from "next/image";
+import { AppContext } from "../../context";
 
 type SquareLogoProps = {
-	src: string
-	size?: number
-}
+  src: string;
+  size?: number;
+};
 
 const SquareLogo: React.FC<SquareLogoProps> = (props) => {
-	const { src, size = 64 } = props
-	const { clientUrl } = useContext(AppContext)
+  const { src, size = 64 } = props;
+  const { clientUrl } = useContext(AppContext);
 
-	const router = useRouter()
-	const handleClick = () => {
-		router.push(clientUrl)
-	}
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(clientUrl);
+  };
 
-	return (
-		<Button onClick={handleClick}>
-			<Image
-				src={src}
-				alt="Logo"
-				width={size}
-				height={size}
-				style={{
-					objectFit: 'contain',
-				}}
-			/>
-		</Button>
-	)
-}
+  return (
+    <Button onClick={handleClick}>
+      <Image
+        src={src}
+        alt="Logo"
+        width={size}
+        height={size}
+        style={{
+          objectFit: "contain",
+        }}
+      />
+    </Button>
+  );
+};
 
-export default SquareLogo
+export default SquareLogo;

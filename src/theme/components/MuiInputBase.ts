@@ -1,13 +1,13 @@
-import { palette } from '../palette'
+import { palette } from "../palette";
 
 export default {
-	styleOverrides: {
-		root: {},
-		input: {
-			'&::placeholder': {
-				opacity: 1,
-				color: palette.text.secondary,
-			},
-		},
-	},
-}
+  styleOverrides: {
+    root: {},
+    input: {
+      "&::placeholder": {
+        opacity: 1,
+        color: palette.text.secondary,
+      },
+    },
+  },
+};

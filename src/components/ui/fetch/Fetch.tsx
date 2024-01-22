@@ -1,26 +1,26 @@
-import React, { useEffect } from 'react'
-import { useResourceContext } from '../../../hooks'
+import React, { useEffect } from "react";
+import { useResourceContext } from "../../../hooks";
 
 type FetchProps = {
-	url: string
-	handle: string | string[]
-	children: any
-}
+  url: string;
+  handle: string | string[];
+  children: any;
+};
 
 const Fetch: React.FC<FetchProps> = (props) => {
-	const { children, url, handle } = props
+  const { children, url, handle } = props;
 
-	const { loading, findOne } = useResourceContext({
-		url,
-	})
+  const { loading, findOne } = useResourceContext({
+    url,
+  });
 
-	useEffect(() => {
-		if (url && handle) {
-			findOne(handle)
-		}
-	}, [url, handle])
+  useEffect(() => {
+    if (url && handle) {
+      findOne(handle);
+    }
+  }, [url, handle]);
 
-	return <>{children}</>
-}
+  return <>{children}</>;
+};
 
-export default Fetch
+export default Fetch;

@@ -1,41 +1,41 @@
-import React from 'react'
-import { Hidden } from '@mui/material'
+import React from "react";
+import { Hidden } from "@mui/material";
 import {
-	ProductImageThumbnails,
-	SwipeableProductImages,
-} from '../../../../components/shopify'
-import { PDP_IMAGE_HEIGHT } from '../../../../constants/index'
-import { Product, Image } from 'webstudio-shopify'
+  ProductImageThumbnails,
+  SwipeableProductImages,
+} from "../../../../components/shopify";
+import { PDP_IMAGE_HEIGHT } from "../../../../constants/index";
+import { Product, Image } from "webstudio-shopify";
 
 type ProductImagesProps = {
-	product: Product
-  image: Image
-  images: Image[]
-  handleClick: (img: Image) => void
-}
+  product: Product;
+  image: Image;
+  images: Image[];
+  handleClick: (img: Image) => void;
+};
 
 const ProductImages: React.FC<ProductImagesProps> = (props) => {
-	const { product, image, images, handleClick } = props
+  const { product, image, images, handleClick } = props;
 
-	return (
-		<>
-			<Hidden smDown>
-				<ProductImageThumbnails           
-          image={image} 
-          images={images} 
+  return (
+    <>
+      <Hidden smDown>
+        <ProductImageThumbnails
+          image={image}
+          images={images}
           handleClick={handleClick}
         />
-			</Hidden>
-			<Hidden smUp>
-				<SwipeableProductImages           
-          objectFit='contain'
-          height={PDP_IMAGE_HEIGHT} 
+      </Hidden>
+      <Hidden smUp>
+        <SwipeableProductImages
+          objectFit="contain"
+          height={PDP_IMAGE_HEIGHT}
           width={PDP_IMAGE_HEIGHT}
-          product={product} 
+          product={product}
         />
-			</Hidden>
-		</>
-	)
-}
+      </Hidden>
+    </>
+  );
+};
 
-export default ProductImages
+export default ProductImages;

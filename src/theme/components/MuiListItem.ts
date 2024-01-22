@@ -1,7 +1,7 @@
 export default {
-	styleOverrides: {
-		button: {
-			'&:hover': {},
-		},
-	},
-}
+  styleOverrides: {
+    button: {
+      "&:hover": {},
+    },
+  },
+};

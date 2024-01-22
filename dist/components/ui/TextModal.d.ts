@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 type TextModalProps = {
-    open: boolean;
-    text: string;
-    title?: string;
-    handleClose: () => void;
+  open: boolean;
+  text: string;
+  title?: string;
+  handleClose: () => void;
 };
 declare const TextModal: React.FC<TextModalProps>;
 export default TextModal;

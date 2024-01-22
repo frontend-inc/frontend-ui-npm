@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 type GorgiasChatProps = {
-    id?: string;
+  id?: string;
 };
 declare const GorgiasChat: React.FC<GorgiasChatProps>;
 export default GorgiasChat;

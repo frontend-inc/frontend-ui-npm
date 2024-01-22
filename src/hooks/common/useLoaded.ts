@@ -1,27 +1,27 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 // Helper hook designed to set loaded when a
 // supplied with one ore more loading props
 
 type UseLoadedProps = {
-	loading?: boolean
-}
+  loading?: boolean;
+};
 
 const useLoaded = (props: UseLoadedProps) => {
-	const { loading = false } = props
-	const [loaded, setLoaded] = useState(false)
+  const { loading = false } = props;
+  const [loaded, setLoaded] = useState(false);
 
-	useEffect(() => {
-		if (loading) {
-			setLoaded(false)
-		} else {
-			setLoaded(true)
-		}
-	}, [loading])
+  useEffect(() => {
+    if (loading) {
+      setLoaded(false);
+    } else {
+      setLoaded(true);
+    }
+  }, [loading]);
 
-	return {
-		loaded,
-	}
-}
+  return {
+    loaded,
+  };
+};
 
-export default useLoaded
+export default useLoaded;

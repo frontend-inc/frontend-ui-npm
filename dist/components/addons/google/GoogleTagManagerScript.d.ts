@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 type GoogleTagManagerProps = {
-    id?: string;
+  id?: string;
 };
 declare const GoogleTagManager: React.FC<GoogleTagManagerProps>;
 export default GoogleTagManager;

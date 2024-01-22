@@ -1,14 +1,16 @@
-import React from 'react'
-import Head from 'next/head'
+import React from "react";
+import Head from "next/head";
 
 type VisualWebsiteOptimizerScriptProps = {
-  id?: string
-}
+  id?: string;
+};
 
-const VisualWebsiteOptimizerScript: React.FC<VisualWebsiteOptimizerScriptProps> = (props) => {
-  const { id } = props || {}
-  if(!id) return null;
-  return(
+const VisualWebsiteOptimizerScript: React.FC<
+  VisualWebsiteOptimizerScriptProps
+> = (props) => {
+  const { id } = props || {};
+  if (!id) return null;
+  return (
     <Head>
       <script
         async
@@ -16,8 +18,8 @@ const VisualWebsiteOptimizerScript: React.FC<VisualWebsiteOptimizerScriptProps> 
         src={`https://dev.visualwebsiteoptimizer.com/lib/${id}.js`}
         id="vwoCode"
       ></script>
-    </Head>        
-  )
-}
+    </Head>
+  );
+};
 
-export default VisualWebsiteOptimizerScript
+export default VisualWebsiteOptimizerScript;

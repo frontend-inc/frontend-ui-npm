@@ -1,4 +1,4 @@
 declare const useApi: () => {
-    api: any;
+  api: any;
 };
 export default useApi;

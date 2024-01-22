@@ -1,28 +1,28 @@
-import React, { useState } from 'react'
-import AuthContext from './AuthContext'
+import React, { useState } from "react";
+import AuthContext from "./AuthContext";
 
 type AuthProviderProps = {
-	serverPath?: string
-	children: React.ReactNode
-}
+  serverPath?: string;
+  children: React.ReactNode;
+};
 
 const AuthProvider = (props: AuthProviderProps) => {
-	const { children, serverPath } = props || {}
-	const [authenticated, setAuthenticated] = useState()
-	const [currentUser, setCurrentUser] = useState()
-	const [token, setToken] = useState()
+  const { children, serverPath } = props || {};
+  const [authenticated, setAuthenticated] = useState();
+  const [currentUser, setCurrentUser] = useState();
+  const [token, setToken] = useState();
 
-	const value = {
-		serverPath,
-		authenticated,
-		setAuthenticated,
-		currentUser,
-		setCurrentUser,
-		token,
-		setToken,
-	}
+  const value = {
+    serverPath,
+    authenticated,
+    setAuthenticated,
+    currentUser,
+    setCurrentUser,
+    token,
+    setToken,
+  };
 
-	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
-}
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+};
 
-export default AuthProvider
+export default AuthProvider;

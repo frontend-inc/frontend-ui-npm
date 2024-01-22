@@ -1,36 +1,36 @@
-import React from 'react'
-import { Hidden, Button, IconButton } from '@mui/material'
+import React from "react";
+import { Hidden, Button, IconButton } from "@mui/material";
 
 type MobileButtonProps = {
-	startIcon: React.ReactNode
-	onClick: () => void
-	variant?: 'text' | 'outlined' | 'contained'
-	color?: 'primary' | 'secondary'
-	children: React.ReactNode
-}
+  startIcon: React.ReactNode;
+  onClick: () => void;
+  variant?: "text" | "outlined" | "contained";
+  color?: "primary" | "secondary";
+  children: React.ReactNode;
+};
 
 const MobileButton: React.FC<MobileButtonProps> = (props) => {
-	const { startIcon, onClick, color = 'primary', children, variant } = props
+  const { startIcon, onClick, color = "primary", children, variant } = props;
 
-	return (
-		<React.Fragment>
-			<Hidden smDown>
-				<Button
-					variant={variant}
-					color={color}
-					startIcon={startIcon}
-					onClick={onClick}
-				>
-					{children}
-				</Button>
-			</Hidden>
-			<Hidden smUp>
-				<IconButton color={color} onClick={onClick}>
-					{startIcon}
-				</IconButton>
-			</Hidden>
-		</React.Fragment>
-	)
-}
+  return (
+    <React.Fragment>
+      <Hidden smDown>
+        <Button
+          variant={variant}
+          color={color}
+          startIcon={startIcon}
+          onClick={onClick}
+        >
+          {children}
+        </Button>
+      </Hidden>
+      <Hidden smUp>
+        <IconButton color={color} onClick={onClick}>
+          {startIcon}
+        </IconButton>
+      </Hidden>
+    </React.Fragment>
+  );
+};
 
-export default MobileButton
+export default MobileButton;

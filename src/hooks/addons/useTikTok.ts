@@ -1,43 +1,43 @@
-import React, {  useEffect } from 'react'
-import { usePathname } from 'next/navigation'
-import TiktokPixel from 'tiktok-pixel'
+import React, { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import TiktokPixel from "tiktok-pixel";
 
 type TiktokPixelProps = {
-  tikTokPixelId: string
-}
+  tikTokPixelId: string;
+};
 
 // Implementation of the Tiktok Pixel
 // https://www.npmjs.com/package/tiktok-pixel
 const useTiktok = (props: TiktokPixelProps) => {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
-  const { tikTokPixelId } = props || {}
-  
+  const { tikTokPixelId } = props || {};
+
   useEffect(() => {
-    if(tikTokPixelId){
-      TiktokPixel.init(tikTokPixelId, {}, { debug: false })
+    if (tikTokPixelId) {
+      TiktokPixel.init(tikTokPixelId, {}, { debug: false });
     }
-  }, [tikTokPixelId])
+  }, [tikTokPixelId]);
 
   useEffect(() => {
-    if(tikTokPixelId){
+    if (tikTokPixelId) {
       TiktokPixel.pageView();
     }
-  }, [tikTokPixelId, pathname])
+  }, [tikTokPixelId, pathname]);
 
-  const trackAddToCart = data => {
-    TiktokPixel.track('AddToCart', data)
-  }
+  const trackAddToCart = (data) => {
+    TiktokPixel.track("AddToCart", data);
+  };
 
   const trackCustomEvent = (custom: string) => {
     //@ts-ignore
-    TiktokPixel.track(custom)
-  }
+    TiktokPixel.track(custom);
+  };
 
   return {
     trackAddToCart,
-    trackCustomEvent,    
-  }
-}
+    trackCustomEvent,
+  };
+};
 
-export default useTiktok
+export default useTiktok;

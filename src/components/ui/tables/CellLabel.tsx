@@ -1,13 +1,13 @@
-import React from 'react'
-import { Label } from '../../../components'
+import React from "react";
+import { Label } from "../../../components";
 
 type CellLabelProps = {
-	value: string
-}
+  value: string;
+};
 
 const CellLabel: React.FC<CellLabelProps> = (props) => {
-	const { value } = props
-	return <Label label={value} />
-}
+  const { value } = props;
+  return <Label label={value} />;
+};
 
-export default CellLabel
+export default CellLabel;

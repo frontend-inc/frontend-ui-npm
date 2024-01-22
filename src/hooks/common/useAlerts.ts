@@ -1,20 +1,20 @@
-import React, { useContext } from 'react'
-import { AppContext } from '../../context'
+import React, { useContext } from "react";
+import { AppContext } from "../../context";
 
 const useAlerts = () => {
-	const { setAlert } = useContext(AppContext)
+  const { setAlert } = useContext(AppContext);
 
-	const showAlertError = (message) => setAlert({ message, variant: 'error' })
-	const showAlertWarning = (message) =>
-		setAlert({ message, variant: 'warning' })
-	const showAlertSuccess = (message) =>
-		setAlert({ message, variant: 'success' })
+  const showAlertError = (message) => setAlert({ message, variant: "error" });
+  const showAlertWarning = (message) =>
+    setAlert({ message, variant: "warning" });
+  const showAlertSuccess = (message) =>
+    setAlert({ message, variant: "success" });
 
-	return {
-		showAlertError,
-		showAlertWarning,
-		showAlertSuccess,
-	}
-}
+  return {
+    showAlertError,
+    showAlertWarning,
+    showAlertSuccess,
+  };
+};
 
-export default useAlerts
+export default useAlerts;

@@ -1,77 +1,77 @@
-import React from 'react'
-import { Button, Stack } from '@mui/material'
-import { TextInput, IconLoader } from '../../../components'
-import { Customer } from 'webstudio-shopify'
+import React from "react";
+import { Button, Stack } from "@mui/material";
+import { TextInput, IconLoader } from "../../../components";
+import { Customer } from "webstudio-shopify";
 
 type LoginFormProps = {
-	errors?: any
-	loading?: boolean
-	customer: Customer
-	handleChange: (ev: any) => void
-	handleSubmit: () => void
-	handleForgotPassword: () => void
-	handleSignup: () => void
-}
+  errors?: any;
+  loading?: boolean;
+  customer: Customer;
+  handleChange: (ev: any) => void;
+  handleSubmit: () => void;
+  handleForgotPassword: () => void;
+  handleSignup: () => void;
+};
 
 const LoginForm: React.FC<LoginFormProps> = (props) => {
-	const {
-		errors,
-		loading = false,
-		customer,
-		handleChange,
-		handleSubmit,
-		handleForgotPassword,
-		handleSignup,
-	} = props
+  const {
+    errors,
+    loading = false,
+    customer,
+    handleChange,
+    handleSubmit,
+    handleForgotPassword,
+    handleSignup,
+  } = props;
 
-	return (
-		<Stack spacing={1}>
-			<TextInput
-				errors={errors}
-				name="email"
-				value={customer?.email}
-				placeholder="Email"
-				handleChange={handleChange}
-			/>
-			<TextInput
-				errors={errors}
-				name="password"
-				value={customer?.password}
-				type="password"
-				placeholder="Password"
-				handleChange={handleChange}
-			/>
-			<Button
-				fullWidth
-				color="primary"
-				onClick={handleSubmit}
-				variant="contained"
-				endIcon={<IconLoader loading={loading} />}
-			>
-				Sign In
-			</Button>
-			{handleSignup && (
-				<Button
-					fullWidth
-					color="primary"
-					variant="outlined"
-					onClick={handleSignup}
-				>
-					No account? Sign up
-				</Button>
-			)}
-			{handleForgotPassword && (
-				<Button
-					fullWidth
-					color="primary"
-					variant="outlined"
-					onClick={handleForgotPassword}
-				>
-					Forgot password?
-				</Button>
-			)}
-		</Stack>
-	)
-}
+  return (
+    <Stack spacing={1}>
+      <TextInput
+        errors={errors}
+        name="email"
+        value={customer?.email}
+        placeholder="Email"
+        handleChange={handleChange}
+      />
+      <TextInput
+        errors={errors}
+        name="password"
+        value={customer?.password}
+        type="password"
+        placeholder="Password"
+        handleChange={handleChange}
+      />
+      <Button
+        fullWidth
+        color="primary"
+        onClick={handleSubmit}
+        variant="contained"
+        endIcon={<IconLoader loading={loading} />}
+      >
+        Sign In
+      </Button>
+      {handleSignup && (
+        <Button
+          fullWidth
+          color="primary"
+          variant="outlined"
+          onClick={handleSignup}
+        >
+          No account? Sign up
+        </Button>
+      )}
+      {handleForgotPassword && (
+        <Button
+          fullWidth
+          color="primary"
+          variant="outlined"
+          onClick={handleForgotPassword}
+        >
+          Forgot password?
+        </Button>
+      )}
+    </Stack>
+  );
+};
 
-export default LoginForm
+export default LoginForm;

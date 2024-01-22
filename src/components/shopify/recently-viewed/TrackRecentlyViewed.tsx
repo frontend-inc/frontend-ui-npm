@@ -1,27 +1,23 @@
-import React, { useEffect } from 'react'
-import { useRecentlyViewed } from 'webstudio-shopify'
-import { Product } from 'webstudio-shopify'
+import React, { useEffect } from "react";
+import { useRecentlyViewed } from "webstudio-shopify";
+import { Product } from "webstudio-shopify";
 
 type TrackRecentlyViewedProps = {
-	product?: Product
-}
+  product?: Product;
+};
 
 const TrackRecentlyViewed: React.FC<TrackRecentlyViewedProps> = (props) => {
-	
-  const {
-		product
-	} = props
+  const { product } = props;
 
-  const { viewProduct } = useRecentlyViewed()
-  
+  const { viewProduct } = useRecentlyViewed();
+
   useEffect(() => {
-    if(product?.handle){
-      viewProduct(product)
+    if (product?.handle) {
+      viewProduct(product);
     }
-  }, [product?.handle])  
+  }, [product?.handle]);
 
-	return null
-}
+  return null;
+};
 
-export default TrackRecentlyViewed
-
+export default TrackRecentlyViewed;

@@ -1,49 +1,49 @@
-import React, { useState, useEffect } from 'react'
-import { useResource } from '../../../hooks'
-import { Box } from '@mui/material'
-import { Field } from '../../../components'
-import { flattenDocument } from '../../../helpers'
+import React, { useState, useEffect } from "react";
+import { useResource } from "../../../hooks";
+import { Box } from "@mui/material";
+import { Field } from "../../../components";
+import { flattenDocument } from "../../../helpers";
 
 type DetailsProps = {
-	fields: any[]
-	url: string
-	handle: string
-}
+  fields: any[];
+  url: string;
+  handle: string;
+};
 
 const Details: React.FC<DetailsProps> = (props) => {
-	const { fields, url, handle } = props
-	const [document, setDocument] = useState<any>()
+  const { fields, url, handle } = props;
+  const [document, setDocument] = useState<any>();
 
-	const { resource, findOne } = useResource({
-		url,
-	})
+  const { resource, findOne } = useResource({
+    url,
+  });
 
-	useEffect(() => {
-		if (handle) {
-			findOne(handle)
-		}
-	}, [handle])
+  useEffect(() => {
+    if (handle) {
+      findOne(handle);
+    }
+  }, [handle]);
 
-	useEffect(() => {
-		if (resource) {
-			setDocument(flattenDocument(resource))
-		}
-	}, [resource])
+  useEffect(() => {
+    if (resource) {
+      setDocument(flattenDocument(resource));
+    }
+  }, [resource]);
 
-	return (
-		<Box sx={sx.root}>
-			{document &&
-				fields.map((field, i) => (
-					<Field key={i} field={field} document={document} />
-				))}
-		</Box>
-	)
-}
+  return (
+    <Box sx={sx.root}>
+      {document &&
+        fields.map((field, i) => (
+          <Field key={i} field={field} document={document} />
+        ))}
+    </Box>
+  );
+};
 
-export default Details
+export default Details;
 
 const sx = {
-	root: {
-		width: '100%',
-	},
-}
+  root: {
+    width: "100%",
+  },
+};
