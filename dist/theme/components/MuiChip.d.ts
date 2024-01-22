@@ -1,12 +1,12 @@
 declare const _default: {
-  styleOverrides: {
-    root: {
-      bgcolor: string;
-      fontFamily: string;
+    styleOverrides: {
+        root: {
+            bgcolor: string;
+            fontFamily: string;
+        };
+        deletable: {
+            "&:focus": {};
+        };
     };
-    deletable: {
-      "&:focus": {};
-    };
-  };
 };
 export default _default;

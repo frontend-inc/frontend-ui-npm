@@ -1,6 +1,6 @@
 import React from "react";
 type CellTextProps = {
-  value?: string;
+    value?: string;
 };
 declare const CellText: React.FC<CellTextProps>;
 export default CellText;

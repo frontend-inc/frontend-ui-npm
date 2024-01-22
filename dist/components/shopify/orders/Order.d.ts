@@ -1,7 +1,8 @@
 import React from "react";
-type ShopifyCustomerOrderProps = {
-  title?: string;
-  subtitle?: string;
+type OrderProps = {
+    title?: string;
+    subtitle?: string;
+    orderId: string;
 };
-declare const ShopifyCustomerOrder: React.FC<ShopifyCustomerOrderProps>;
-export default ShopifyCustomerOrder;
+declare const Order: React.FC<OrderProps>;
+export default Order;

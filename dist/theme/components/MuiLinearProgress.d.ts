@@ -1,9 +1,9 @@
 declare const _default: {
-  styleOverrides: {
-    root: {
-      overflow: string;
+    styleOverrides: {
+        root: {
+            overflow: string;
+        };
+        colorPrimary: {};
     };
-    colorPrimary: {};
-  };
 };
 export default _default;

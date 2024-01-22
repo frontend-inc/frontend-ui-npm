@@ -1,6 +1,6 @@
 import React from "react";
 type AuthAvatarProps = {
-  size?: number;
+    size?: number;
 };
 declare const AuthAvatar: React.FC<AuthAvatarProps>;
 export default AuthAvatar;

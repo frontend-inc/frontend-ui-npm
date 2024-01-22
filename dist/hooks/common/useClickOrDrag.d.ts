@@ -1,9 +1,9 @@
 type ClickDragProps = {
-  onClick?: (ev: any) => void;
-  onDrag?: () => void;
+    onClick?: (ev: any) => void;
+    onDrag?: () => void;
 };
 export default function useClickOrDrag(props: ClickDragProps): {
-  onMouseDown: (e: any) => void;
-  onMouseUp: (e: any) => void;
+    onMouseDown: (e: any) => void;
+    onMouseUp: (e: any) => void;
 };
 export {};

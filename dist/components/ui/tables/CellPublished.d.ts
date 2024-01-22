@@ -1,6 +1,6 @@
 import React from "react";
 type CellPublishedProps = {
-  value: boolean;
+    value: boolean;
 };
 declare const CellPublished: React.FC<CellPublishedProps>;
 export default CellPublished;

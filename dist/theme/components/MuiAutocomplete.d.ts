@@ -1,11 +1,11 @@
 declare const _default: {
-  styleOverrides: {
-    root: {
-      fontFamily: string;
+    styleOverrides: {
+        root: {
+            fontFamily: string;
+        };
+        deletable: {
+            "&:focus": {};
+        };
     };
-    deletable: {
-      "&:focus": {};
-    };
-  };
 };
 export default _default;

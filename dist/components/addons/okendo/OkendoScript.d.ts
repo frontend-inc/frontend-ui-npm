@@ -1,6 +1,6 @@
 import React from "react";
 type OkendoScriptProps = {
-  subscriberId?: string;
+    subscriberId?: string;
 };
 declare const OkendoScript: React.FC<OkendoScriptProps>;
 export default OkendoScript;

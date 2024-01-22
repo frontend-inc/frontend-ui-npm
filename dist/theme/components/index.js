@@ -1,9 +1,7 @@
 "use strict";
-var __importDefault =
-  (this && this.__importDefault) ||
-  function (mod) {
-    return mod && mod.__esModule ? mod : { default: mod };
-  };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var MuiAccordian_1 = __importDefault(require("./MuiAccordian"));
 var MuiAutocomplete_1 = __importDefault(require("./MuiAutocomplete"));
@@ -30,28 +28,28 @@ var MuiTableRow_1 = __importDefault(require("./MuiTableRow"));
 var MuiToggleButton_1 = __importDefault(require("./MuiToggleButton"));
 var MuiTypography_1 = __importDefault(require("./MuiTypography"));
 exports.default = {
-  MuiAccordian: MuiAccordian_1.default,
-  MuiAutocomplete: MuiAutocomplete_1.default,
-  MuiButton: MuiButton_1.default,
-  MuiCardActions: MuiCardActions_1.default,
-  MuiCardContent: MuiCardContent_1.default,
-  MuiCardHeader: MuiCardHeader_1.default,
-  MuiChip: MuiChip_1.default,
-  MuiDataGrid: MuiDataGrid_1.default,
-  MuiDrawer: MuiDrawer_1.default,
-  MuiFormControlLabel: MuiFormControlLabel_1.default,
-  MuiIconButton: MuiIconButton_1.default,
-  MuiInputBase: MuiInputBase_1.default,
-  MuiLinearProgress: MuiLinearProgress_1.default,
-  MuiListItem: MuiListItem_1.default,
-  MuiListItemIcon: MuiListItemIcon_1.default,
-  MuiOutlinedInput: MuiOutlinedInput_1.default,
-  MuiPaper: MuiPaper_1.default,
-  MuiSkeleton: MuiSkeleton_1.default,
-  MuiRadio: MuiRadio_1.default,
-  MuiTableCell: MuiTableCell_1.default,
-  MuiTableHead: MuiTableHead_1.default,
-  MuiTableRow: MuiTableRow_1.default,
-  MuiToggleButton: MuiToggleButton_1.default,
-  MuiTypography: MuiTypography_1.default,
+    MuiAccordian: MuiAccordian_1.default,
+    MuiAutocomplete: MuiAutocomplete_1.default,
+    MuiButton: MuiButton_1.default,
+    MuiCardActions: MuiCardActions_1.default,
+    MuiCardContent: MuiCardContent_1.default,
+    MuiCardHeader: MuiCardHeader_1.default,
+    MuiChip: MuiChip_1.default,
+    MuiDataGrid: MuiDataGrid_1.default,
+    MuiDrawer: MuiDrawer_1.default,
+    MuiFormControlLabel: MuiFormControlLabel_1.default,
+    MuiIconButton: MuiIconButton_1.default,
+    MuiInputBase: MuiInputBase_1.default,
+    MuiLinearProgress: MuiLinearProgress_1.default,
+    MuiListItem: MuiListItem_1.default,
+    MuiListItemIcon: MuiListItemIcon_1.default,
+    MuiOutlinedInput: MuiOutlinedInput_1.default,
+    MuiPaper: MuiPaper_1.default,
+    MuiSkeleton: MuiSkeleton_1.default,
+    MuiRadio: MuiRadio_1.default,
+    MuiTableCell: MuiTableCell_1.default,
+    MuiTableHead: MuiTableHead_1.default,
+    MuiTableRow: MuiTableRow_1.default,
+    MuiToggleButton: MuiToggleButton_1.default,
+    MuiTypography: MuiTypography_1.default,
 };

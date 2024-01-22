@@ -1,4 +1,4 @@
 declare const useForms: () => {
-  handleDataChange: (ev: any) => void;
+    handleDataChange: (ev: any) => void;
 };
 export default useForms;
