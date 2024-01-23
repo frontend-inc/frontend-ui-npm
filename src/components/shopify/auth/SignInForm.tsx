@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button, Stack } from '@mui/material'
-import { TextInput, IconLoader } from '../../../components'
+import { TextInput, IconLoader } from '../..'
 import { Customer } from 'webstudio-shopify'
 
-type LoginFormProps = {
+type SignInFormProps = {
 	errors?: any
 	loading?: boolean
 	customer: Customer
@@ -13,7 +13,7 @@ type LoginFormProps = {
 	handleSignup: () => void
 }
 
-const LoginForm: React.FC<LoginFormProps> = (props) => {
+const SignInForm: React.FC<SignInFormProps> = (props) => {
 	const {
 		errors,
 		loading = false,
@@ -74,4 +74,4 @@ const LoginForm: React.FC<LoginFormProps> = (props) => {
 	)
 }
 
-export default LoginForm
+export default SignInForm

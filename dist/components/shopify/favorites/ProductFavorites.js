@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
-var shopify_1 = require("../../../components/shopify");
+var __1 = require("../..");
+var __2 = require("..");
 var material_1 = require("@mui/material");
 var webstudio_shopify_1 = require("webstudio-shopify");
 var Favorites = function (props) {
@@ -13,10 +13,10 @@ var Favorites = function (props) {
     var favorites = (0, webstudio_shopify_1.useFavorites)().favorites;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         title && (react_1.default.createElement(material_1.Typography, { mb: 1, color: "textPrimary", variant: "h6" }, title)),
-        layout == 'list' && (react_1.default.createElement(shopify_1.ProductList, { editing: editing, products: favorites, productComponent: productComponent, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, buttonText: buttonText })),
-        layout == 'grid' && (react_1.default.createElement(shopify_1.ProductGrid, { editing: editing, products: favorites, productComponent: productComponent, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, buttonText: buttonText })),
-        layout == 'carousel' && (react_1.default.createElement(shopify_1.ProductCarousel, { editing: editing, products: favorites, productComponent: productComponent, enableBorder: enableBorder, buttonText: buttonText })),
-        (favorites === null || favorites === void 0 ? void 0 : favorites.length) === 0 && (react_1.default.createElement(components_1.Placeholder, { icon: react_1.default.createElement(components_1.Icon, { name: emptyIcon }), title: emptyTitle, description: emptyDescription }))));
+        layout == 'list' && (react_1.default.createElement(__2.ProductList, { editing: editing, products: favorites, productComponent: productComponent, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, buttonText: buttonText })),
+        layout == 'grid' && (react_1.default.createElement(__2.ProductGrid, { editing: editing, products: favorites, productComponent: productComponent, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, buttonText: buttonText })),
+        layout == 'carousel' && (react_1.default.createElement(__2.ProductCarousel, { editing: editing, products: favorites, productComponent: productComponent, enableBorder: enableBorder, buttonText: buttonText })),
+        (favorites === null || favorites === void 0 ? void 0 : favorites.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: react_1.default.createElement(__1.Icon, { name: emptyIcon }), title: emptyTitle, description: emptyDescription }))));
 };
 exports.default = Favorites;
 var sx = {

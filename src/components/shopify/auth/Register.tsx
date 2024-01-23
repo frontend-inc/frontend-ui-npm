@@ -1,17 +1,17 @@
 import React from 'react'
-import { AuthLayout, AuthScreen } from '../../../components'
-import { SignupForm } from '../../../components/shopify'
+import { AuthLayout, AuthScreen } from '../..'
+import { RegisterForm } from '..'
 import { useAuth } from 'webstudio-shopify'
 import { useRouter } from 'next/router'
 
-type SignupProps = {
+type RegisterProps = {
 	title?: string
 	subtitle?: string
 	redirectUrl: string
 	loginUrl: string
 }
 
-const Signup: React.FC<SignupProps> = (props) => {
+const Register: React.FC<RegisterProps> = (props) => {
 	const {
 		title = 'Sign up',
 		subtitle = 'Register your account',
@@ -37,7 +37,7 @@ const Signup: React.FC<SignupProps> = (props) => {
 	return (
 		<AuthLayout>
 			<AuthScreen title={title} subtitle={subtitle}>
-				<SignupForm
+				<RegisterForm
 					errors={errors}
 					loading={loading}
 					customer={customer}
@@ -50,4 +50,4 @@ const Signup: React.FC<SignupProps> = (props) => {
 	)
 }
 
-export default Signup
+export default Register

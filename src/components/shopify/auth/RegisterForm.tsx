@@ -1,9 +1,9 @@
 import React from 'react'
 import { Stack, Button } from '@mui/material'
-import { IconLoader, SwitchInput, TextInput } from '../../../components'
+import { IconLoader, SwitchInput, TextInput } from '../..'
 import { Customer } from 'webstudio-shopify'
 
-type SignupFormProps = {
+type RegisterFormProps = {
 	loading: boolean
 	customer: Customer
 	errors: Record<string, any>
@@ -12,7 +12,7 @@ type SignupFormProps = {
 	handleLogin: () => void
 }
 
-const SignupForm: React.FC<SignupFormProps> = (props) => {
+const RegisterForm: React.FC<RegisterFormProps> = (props) => {
 	const { loading, errors, customer, handleChange, handleSubmit, handleLogin } =
 		props || {}
 
@@ -75,4 +75,4 @@ const SignupForm: React.FC<SignupFormProps> = (props) => {
 	)
 }
 
-export default SignupForm
+export default RegisterForm

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Customer } from 'webstudio-shopify';
-type LoginFormProps = {
+type SignInFormProps = {
     errors?: any;
     loading?: boolean;
     customer: Customer;
@@ -9,5 +9,5 @@ type LoginFormProps = {
     handleForgotPassword: () => void;
     handleSignup: () => void;
 };
-declare const LoginForm: React.FC<LoginFormProps>;
-export default LoginForm;
+declare const SignInForm: React.FC<SignInFormProps>;
+export default SignInForm;

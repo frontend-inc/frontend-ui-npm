@@ -1,9 +1,9 @@
 import React from 'react';
-type SignupProps = {
+type RegisterProps = {
     title?: string;
     subtitle?: string;
     redirectUrl: string;
     loginUrl: string;
 };
-declare const Signup: React.FC<SignupProps>;
-export default Signup;
+declare const Register: React.FC<RegisterProps>;
+export default Register;

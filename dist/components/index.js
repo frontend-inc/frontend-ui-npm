@@ -15,3 +15,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./ui"), exports);
+__exportStar(require("./addons"), exports);
+__exportStar(require("./shopify"), exports);

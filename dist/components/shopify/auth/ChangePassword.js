@@ -40,36 +40,36 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var __1 = require("../..");
+var __2 = require("..");
 var webstudio_shopify_1 = require("webstudio-shopify");
-var shopify_1 = require("../../../components/shopify");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
-var Login = function (props) {
-    var _a = props || {}, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl;
+var ChangePassword = function (props) {
+    var _a = props || {}, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl;
+    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
+    var _b = (0, webstudio_shopify_1.useAuth)(), loading = _b.loading, errors = _b.errors, customer = _b.customer, setCustomer = _b.setCustomer, handleChange = _b.handleChange, forgotPassword = _b.forgotPassword;
     var router = (0, router_1.useRouter)();
-    var _d = (0, webstudio_shopify_1.useAuth)(), errors = _d.errors, loading = _d.loading, customer = _d.customer, handleChange = _d.handleChange, login = _d.login;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, login(customer)];
+                case 0: return [4 /*yield*/, forgotPassword(customer === null || customer === void 0 ? void 0 : customer.email)];
                 case 1:
                     resp = _a.sent();
-                    if (resp === null || resp === void 0 ? void 0 : resp.accessToken) {
-                        router.push(redirectUrl);
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setCustomer({ emal: '' });
+                        showAlertSuccess('Password reset instructions sent');
                     }
                     return [2 /*return*/];
             }
         });
     }); };
-    var handleSignup = function () {
-        router.push(signupUrl);
+    var handleLogin = function () {
+        router.push(loginUrl);
     };
-    var handleForgotPassword = function () {
-        router.push(forgotPasswordUrl);
-    };
-    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
-            react_1.default.createElement(shopify_1.LoginForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword }))));
+    return (react_1.default.createElement(__1.LayoutLoader, { loading: loading },
+        react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
+            react_1.default.createElement(__2.ChangePasswordForm, { errors: errors, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };
-exports.default = Login;
+exports.default = ChangePassword;

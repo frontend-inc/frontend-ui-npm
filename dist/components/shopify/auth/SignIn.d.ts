@@ -1,5 +1,5 @@
 import React from 'react';
-type LoginProps = {
+type SignInProps = {
     redirectUrl: string;
     title?: string;
     subtitle?: string;
@@ -7,5 +7,5 @@ type LoginProps = {
     signupUrl?: string;
     oneTimePasswordUrl?: string;
 };
-declare const Login: React.FC<LoginProps>;
-export default Login;
+declare const SignIn: React.FC<SignInProps>;
+export default SignIn;

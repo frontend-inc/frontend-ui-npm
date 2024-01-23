@@ -1,17 +1,17 @@
 import React from 'react'
-import { AuthScreen, LayoutLoader } from '../../../components'
-import { ForgotPasswordForm } from '../../../components/shopify'
+import { AuthScreen, LayoutLoader } from '../..'
+import { ChangePasswordForm } from '..'
 import { useAuth } from 'webstudio-shopify'
 import { useAlerts } from '../../../hooks'
 import { useRouter } from 'next/router'
 
-type ForgotPasswordProps = {
+type ChangePasswordProps = {
 	title?: string
 	subtitle?: string
 	loginUrl?: string
 }
 
-const ForgotPassword: React.FC<ForgotPasswordProps> = (props) => {
+const ChangePassword: React.FC<ChangePasswordProps> = (props) => {
 	const { title, subtitle, loginUrl } = props || {}
 
 	const { showAlertSuccess } = useAlerts()
@@ -42,7 +42,7 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = (props) => {
 	return (
 		<LayoutLoader loading={loading}>
 			<AuthScreen title={title} subtitle={subtitle}>
-				<ForgotPasswordForm
+				<ChangePasswordForm
 					errors={errors}
 					customer={customer}
 					handleChange={handleChange}
@@ -54,4 +54,4 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = (props) => {
 	)
 }
 
-export default ForgotPassword
+export default ChangePassword

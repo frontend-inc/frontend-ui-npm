@@ -8,7 +8,7 @@ import {
 	ListItemButton,
 	ListItemText,
 } from '@mui/material'
-import { AuthScreen, Placeholder } from '../../../components'
+import { AuthScreen, Placeholder } from '../..'
 import { useAuth } from 'webstudio-shopify'
 import { useRouter } from 'next/router'
 import { User, ShoppingCart, MapPin, LogOut } from 'lucide-react'

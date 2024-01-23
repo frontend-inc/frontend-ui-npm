@@ -1,10 +1,10 @@
 import React from 'react'
-import { AuthScreen, LayoutLoader } from '../../../components'
+import { AuthScreen, LayoutLoader } from '../..'
 import { useAuth } from 'webstudio-shopify'
-import { LoginForm } from '../../../components/shopify'
+import { SignInForm } from '..'
 import { useRouter } from 'next/router'
 
-type LoginProps = {
+type SignInProps = {
 	redirectUrl: string
 	title?: string
 	subtitle?: string
@@ -13,7 +13,7 @@ type LoginProps = {
 	oneTimePasswordUrl?: string
 }
 
-const Login: React.FC<LoginProps> = (props) => {
+const SignIn: React.FC<SignInProps> = (props) => {
 	const {
 		redirectUrl,
 		title = 'Sign In',
@@ -43,7 +43,7 @@ const Login: React.FC<LoginProps> = (props) => {
 	return (
 		<LayoutLoader loading={loading}>
 			<AuthScreen title={title} subtitle={subtitle}>
-				<LoginForm
+				<SignInForm
 					errors={errors}
 					loading={loading}
 					customer={customer}
@@ -57,4 +57,4 @@ const Login: React.FC<LoginProps> = (props) => {
 	)
 }
 
-export default Login
+export default SignIn

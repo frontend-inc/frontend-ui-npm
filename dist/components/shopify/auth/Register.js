@@ -40,26 +40,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
-var shopify_1 = require("../../../components/shopify");
+var __1 = require("../..");
+var __2 = require("..");
 var webstudio_shopify_1 = require("webstudio-shopify");
-var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
-var ForgotPassword = function (props) {
-    var _a = props || {}, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl;
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _b = (0, webstudio_shopify_1.useAuth)(), loading = _b.loading, errors = _b.errors, customer = _b.customer, setCustomer = _b.setCustomer, handleChange = _b.handleChange, forgotPassword = _b.forgotPassword;
+var Register = function (props) {
+    var _a = props.title, title = _a === void 0 ? 'Sign up' : _a, _b = props.subtitle, subtitle = _b === void 0 ? 'Register your account' : _b, redirectUrl = props.redirectUrl, loginUrl = props.loginUrl;
+    var _c = (0, webstudio_shopify_1.useAuth)(), loading = _c.loading, errors = _c.errors, customer = _c.customer, handleChange = _c.handleChange, signup = _c.signup;
     var router = (0, router_1.useRouter)();
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, forgotPassword(customer === null || customer === void 0 ? void 0 : customer.email)];
+                case 0: return [4 /*yield*/, signup(customer)];
                 case 1:
                     resp = _a.sent();
-                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        setCustomer({ emal: '' });
-                        showAlertSuccess('Password reset instructions sent');
+                    if (resp === null || resp === void 0 ? void 0 : resp.email) {
+                        router.push(redirectUrl);
                     }
                     return [2 /*return*/];
             }
@@ -68,8 +65,8 @@ var ForgotPassword = function (props) {
     var handleLogin = function () {
         router.push(loginUrl);
     };
-    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
-        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
-            react_1.default.createElement(shopify_1.ForgotPasswordForm, { errors: errors, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
+    return (react_1.default.createElement(__1.AuthLayout, null,
+        react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
+            react_1.default.createElement(__2.RegisterForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };
-exports.default = ForgotPassword;
+exports.default = Register;

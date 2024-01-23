@@ -1,6 +1,6 @@
 import React from 'react';
 import { Customer } from 'webstudio-shopify';
-type SignupFormProps = {
+type RegisterFormProps = {
     loading: boolean;
     customer: Customer;
     errors: Record<string, any>;
@@ -8,5 +8,5 @@ type SignupFormProps = {
     handleSubmit: () => void;
     handleLogin: () => void;
 };
-declare const SignupForm: React.FC<SignupFormProps>;
-export default SignupForm;
+declare const RegisterForm: React.FC<RegisterFormProps>;
+export default RegisterForm;

@@ -2,12 +2,12 @@ import React from 'react'
 import { 
   Icon,
   Placeholder
-} from '../../../components'
+} from '../..'
 import {
 	ProductGrid,
 	ProductList,
 	ProductCarousel,
-} from '../../../components/shopify'
+} from '..'
 import { Box, Typography } from '@mui/material'
 import { useFavorites } from 'webstudio-shopify'
 

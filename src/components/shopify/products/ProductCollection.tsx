@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { Box, Typography, Stack } from '@mui/material'
 import { useCollections } from 'webstudio-shopify'
 import {
-	ProductFilterButton,
+	ProductFilters,
 	ProductList,
 	ProductGrid,
 	ProductCarousel,
-	ProductSortButton,
+	ProductSort,
 } from '../../../components/shopify'
 import { ProductCollectionSortKey } from 'webstudio-shopify'
 
@@ -142,7 +142,7 @@ const ProductCollection: React.FC<ProductCollectionProps> = (props) => {
 				</Typography>
 				<Box>
 					{enableFilters && (
-						<ProductFilterButton
+						<ProductFilters
 							filters={filters}
 							colorOptions={colorOptions}
 							sizeOptions={sizeOptions}
@@ -162,7 +162,7 @@ const ProductCollection: React.FC<ProductCollectionProps> = (props) => {
 						/>
 					)}
 					{enableSort && (
-						<ProductSortButton
+						<ProductSort
 							sortKey={sortKey}
 							reverse={reverse}
 							handleClick={handleSortClick}

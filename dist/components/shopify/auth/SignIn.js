@@ -40,33 +40,36 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
-var shopify_1 = require("../../../components/shopify");
+var __1 = require("../..");
 var webstudio_shopify_1 = require("webstudio-shopify");
+var __2 = require("..");
 var router_1 = require("next/router");
-var Signup = function (props) {
-    var _a = props.title, title = _a === void 0 ? 'Sign up' : _a, _b = props.subtitle, subtitle = _b === void 0 ? 'Register your account' : _b, redirectUrl = props.redirectUrl, loginUrl = props.loginUrl;
-    var _c = (0, webstudio_shopify_1.useAuth)(), loading = _c.loading, errors = _c.errors, customer = _c.customer, handleChange = _c.handleChange, signup = _c.signup;
+var SignIn = function (props) {
+    var _a = props || {}, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl;
     var router = (0, router_1.useRouter)();
+    var _d = (0, webstudio_shopify_1.useAuth)(), errors = _d.errors, loading = _d.loading, customer = _d.customer, handleChange = _d.handleChange, login = _d.login;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, signup(customer)];
+                case 0: return [4 /*yield*/, login(customer)];
                 case 1:
                     resp = _a.sent();
-                    if (resp === null || resp === void 0 ? void 0 : resp.email) {
+                    if (resp === null || resp === void 0 ? void 0 : resp.accessToken) {
                         router.push(redirectUrl);
                     }
                     return [2 /*return*/];
             }
         });
     }); };
-    var handleLogin = function () {
-        router.push(loginUrl);
+    var handleSignup = function () {
+        router.push(signupUrl);
     };
-    return (react_1.default.createElement(components_1.AuthLayout, null,
-        react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
-            react_1.default.createElement(shopify_1.SignupForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
+    var handleForgotPassword = function () {
+        router.push(forgotPasswordUrl);
+    };
+    return (react_1.default.createElement(__1.LayoutLoader, { loading: loading },
+        react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
+            react_1.default.createElement(__2.SignInForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword }))));
 };
-exports.default = Signup;
+exports.default = SignIn;

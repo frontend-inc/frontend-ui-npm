@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ProductCollectionFilter } from 'webstudio-shopify'
 import {
-	FilterButton,
+	ProductFilterButton,
 	FilterList,
 	ColorFilters,
 	SizeFilters,
@@ -90,75 +90,75 @@ const CollectionFilters: React.FC<CollectionFiltersProps> = (props) => {
 		<>
 			<DesktopFilters>
 				{colorOptions && (
-					<FilterButton label="Colors" count={colorsCount}>
+					<ProductFilterButton label="Colors" count={colorsCount}>
 						<ColorFilters
 							filters={filters}
 							options={colorOptions}
 							handleClick={handleFilterColor}
 						/>
-					</FilterButton>
+					</ProductFilterButton>
 				)}
 				{sizeOptions && (
-					<FilterButton label="Size" count={sizesCount}>
+					<ProductFilterButton label="Size" count={sizesCount}>
 						<SizeFilters
 							filters={filters}
 							options={sizeOptions}
 							handleClick={handleFilterSize}
 						/>
-					</FilterButton>
+					</ProductFilterButton>
 				)}
 				{styleOptions && (
-					<FilterButton label="Style" count={stylesCount}>
+					<ProductFilterButton label="Style" count={stylesCount}>
 						<StyleFilters
 							filters={filters}
 							options={styleOptions}
 							handleClick={handleFilterStyle}
 						/>
-					</FilterButton>
+					</ProductFilterButton>
 				)}
 				{materialOptions && (
-					<FilterButton label="Material" count={materialsCount}>
+					<ProductFilterButton label="Material" count={materialsCount}>
 						<MaterialFilters
 							filters={filters}
 							options={materialOptions}
 							handleClick={handleFilterMaterial}
 						/>
-					</FilterButton>
+					</ProductFilterButton>
 				)}
 				{vendorOptions && (
-					<FilterButton label="Tags" count={tagsCount}>
+					<ProductFilterButton label="Tags" count={tagsCount}>
 						<TagFilters
 							filters={filters}
 							options={tagOptions}
 							handleClick={handleFilterTag}
 						/>
-					</FilterButton>
+					</ProductFilterButton>
 				)}
 				{vendorOptions && (
-					<FilterButton label="Vendor" count={vendorsCount}>
+					<ProductFilterButton label="Vendor" count={vendorsCount}>
 						<VendorFilters
 							filters={filters}
 							options={vendorOptions}
 							handleClick={handleFilterVendor}
 						/>
-					</FilterButton>
+					</ProductFilterButton>
 				)}
 				{productTypeOptions && (
-					<FilterButton label="Product Type" count={productTypesCount}>
+					<ProductFilterButton label="Product Type" count={productTypesCount}>
 						<ProductTypeFilters
 							filters={filters}
 							options={productTypeOptions}
 							handleClick={handleFilterProductType}
 						/>
-					</FilterButton>
+					</ProductFilterButton>
 				)}
 				{enableInStockFilter && (
-					<FilterButton label="In-Stock">
+					<ProductFilterButton label="In-Stock">
 						<InStockFilter
 							filters={filters}
 							handleClick={handleFilterInStock}
 						/>
-					</FilterButton>
+					</ProductFilterButton>
 				)}
 			</DesktopFilters>
 			<MobileFilters>

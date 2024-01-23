@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Popup } from '../../../components'
+import { Popup } from '../..'
 import SortList from './SortList'
 import { ButtonGroup, Button } from '@mui/material'
 import { COLLECTION_SORT_OPTIONS } from 'webstudio-shopify'
