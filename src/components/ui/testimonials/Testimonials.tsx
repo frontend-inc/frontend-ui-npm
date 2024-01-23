@@ -49,13 +49,13 @@ const Testimonials: React.FC<TestimonialsProps> = (props) => {
 		})
 
 	useEffect(() => {
-		if (url && defaultQuery && perPage) {
+		if (url && perPage) {
 			findMany({
 				...defaultQuery,
 				per_page: perPage,
 			})
 		}
-	}, [url, defaultQuery, perPage])
+	}, [url, perPage])
 
 	return (
 		<Stack spacing={1} sx={sx.root}>

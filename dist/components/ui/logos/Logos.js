@@ -49,10 +49,10 @@ var Logos = function (props) {
         url: url,
     }), loading = _d.loading, findMany = _d.findMany, resources = _d.resources;
     (0, react_1.useEffect)(function () {
-        if (url && defaultQuery && perPage) {
+        if (url && perPage) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
-    }, [url, defaultQuery, perPage]);
+    }, [url, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_2.Typography, { variant: "caption", sx: sx.caption }, title),
         layout == 'grid' && (react_1.default.createElement(components_1.GridView, { editing: editing, loading: loading, items: resources, component: Logo_1.default })),

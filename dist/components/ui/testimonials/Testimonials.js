@@ -45,10 +45,10 @@ var Testimonials = function (props) {
         url: url,
     }), loading = _g.loading, findMany = _g.findMany, resources = _g.resources, page = _g.page, numPages = _g.numPages, loadMore = _g.loadMore;
     (0, react_1.useEffect)(function () {
-        if (url && defaultQuery && perPage) {
+        if (url && perPage) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
-    }, [url, defaultQuery, perPage]);
+    }, [url, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'space-between', spacing: 1 },
             react_1.default.createElement(material_2.Typography, { variant: "h6", color: "textPrimary" }, title)),
