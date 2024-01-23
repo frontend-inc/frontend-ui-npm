@@ -8,6 +8,7 @@ import { useTheme } from '../../hooks'
 
 type ThemeProviderProps = {
 	children: React.ReactNode
+  muiTheme?: any
 	primaryColor?: string
 	bgcolor?: string
 	headerFont?: string
@@ -20,6 +21,7 @@ type ThemeProviderProps = {
 const ThemeProvider = (props: ThemeProviderProps) => {
 	const {
 		children,
+    muiTheme,
 		primaryColor,
 		bgcolor,
 		headerFont = 'Inter',
@@ -30,6 +32,7 @@ const ThemeProvider = (props: ThemeProviderProps) => {
 	} = props || {}
 
 	const { theme, setTheme } = useTheme({
+    muiTheme,
 		primaryColor,
 		bgcolor,
 		headerFont,
@@ -46,10 +49,14 @@ const ThemeProvider = (props: ThemeProviderProps) => {
 
 	return (
 		<ThemeContext.Provider value={value}>
-			<MuiThemeProvider theme={
-        // @ts-ignore
-        createTheme(theme)
-      }>{children}</MuiThemeProvider>
+			<MuiThemeProvider 
+        theme={
+          // @ts-ignore
+          createTheme(theme)
+        }
+      >
+        {children}
+      </MuiThemeProvider>
 		</ThemeContext.Provider>
 	)
 }

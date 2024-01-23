@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { muiTheme } from '../../theme'
-import { buildTheme } from '../../helpers'
+import { muiTheme as defaultTheme } from '../../theme'
+import { buildMuiPalette } from '../../helpers'
 
 type ThemeProps = {
+  muiTheme?: any
 	primaryColor?: string
 	bgcolor?: string
 	borderRadius?: number
@@ -14,6 +15,7 @@ type ThemeProps = {
 
 const useTheme = (props: ThemeProps) => {
 	const {
+    muiTheme=defaultTheme,
 		primaryColor,
 		bgcolor,
 		borderRadius,
@@ -26,15 +28,11 @@ const useTheme = (props: ThemeProps) => {
 	const [theme, setTheme] = useState(muiTheme)
 
 	useEffect(() => {
-		let breakpoints = {
-			values: {
-				xs: 0,
-				sm: 600,
-				md: 960,
-				lg: 1280,
-				xl: 1920,
-			},
-		}
+    let breakpoints = { ...theme.breakpoints }
+    let palette = { ...theme.palette }
+    let typography = { ...theme.typography }
+    let shape = { ...theme.shape }
+
 		if (offset > 0) {
 			breakpoints = {
 				values: {
@@ -59,110 +57,109 @@ const useTheme = (props: ThemeProps) => {
 			}
 		} 
 
-		setTheme({
-			...theme,
-			breakpoints,
-		})
-	}, [offset, mobile])
+		if (primaryColor) {
+			palette = {
+        ...palette,
+        primary: {
+          ...palette.primary,
+          // @ts-ignore
+          main: primaryColor,
+        },
+      }        
+    }
 
+    if(bgcolor){
+      palette = buildMuiPalette(palette, bgcolor)
+    }
 
-	useEffect(() => {
-		if (headerFont && bodyFont) {
-			const typography = {
-				...muiTheme.typography,
+    if (headerFont) {
+			typography = {
+				...typography,
 				h1: {
-					...muiTheme.typography.h1,
-					fontFamily: headerFont ? headerFont : 'Inter',
+					...typography.h1,
+					fontFamily: headerFont,
 				},
 				h2: {
-					...muiTheme.typography.h2,
-					fontFamily: headerFont ? headerFont : 'Inter',
+					...typography.h2,
+					fontFamily: headerFont,
 				},
 				h3: {
-					...muiTheme.typography.h3,
-					fontFamily: headerFont ? headerFont : 'Inter',
+					...typography.h3,
+					fontFamily: headerFont,
 				},
 				h4: {
-					...muiTheme.typography.h4,
-					fontFamily: headerFont ? headerFont : 'Inter',
+					....typography.h4,
+					fontFamily: headerFont,
 				},
 				h5: {
-					...muiTheme.typography.h5,
-					fontFamily: headerFont ? headerFont : 'Inter',
+					...typography.h5,
+					fontFamily: headerFont,
 				},
 				h6: {
-					...muiTheme.typography.h6,
-					fontFamily: headerFont ? headerFont : 'Inter',
+					...typography.h6,
+					fontFamily: headerFont,
 				},
 				subtitle1: {
-					...muiTheme.typography.subtitle1,
-					fontFamily: bodyFont ? bodyFont : 'Inter',
+					...typography.subtitle1,
+					fontFamily: headerFont,
 				},
 				subtitle2: {
-					...muiTheme.typography.subtitle2,
-					fontFamily: bodyFont ? bodyFont : 'Inter',
-				},
-				body1: {
-					...muiTheme.typography.body1,
-					fontFamily: bodyFont ? bodyFont : 'Inter',
-				},
-				body2: {
-					...muiTheme.typography.body2,
-					fontFamily: bodyFont ? bodyFont : 'Inter',
-				},
-				button: {
-					...muiTheme.typography.button,
-					fontFamily: bodyFont ? bodyFont : 'Inter',
-				},
-				caption: {
-					...muiTheme.typography.caption,
-					fontFamily: bodyFont ? bodyFont : 'Inter',
-				},
-				overline: {
-					...muiTheme.typography.overline,
-					fontFamily: bodyFont ? bodyFont : 'Inter',
-				},
-			}
-
-			setTheme({
-				...theme,
-				typography,
-			})
-		}
-	}, [headerFont, bodyFont])
-
-	useEffect(() => {		
-    const shape = {
-      borderRadius: borderRadius || 0,
+					...typography.subtitle2,
+					fontFamily: headerFont,
+				},			
+      }
     }
-    setTheme({
-      ...theme,
-      shape,
-    })		
-	}, [borderRadius])
 
-	useEffect(() => {
-    let newTheme = { ...theme }
-		if (primaryColor) {
-			newTheme = {
-				...theme,
-				palette: {
-					...theme.palette,
-					primary: {
-            ...theme.palette.primary,
-            // @ts-ignore
-						main: primaryColor,
-					},
-				},
-			}
-		}
-    if(bgcolor){
-      newTheme = buildTheme(newTheme, bgcolor)
+    if(bodyFont){
+      typography = {
+        ...typography,
+        body1: {
+          ...typography.body1,
+          fontFamily: bodyFont,
+        },
+        body2: {
+          ...typography.body2,
+          fontFamily: bodyFont,
+        },
+        button: {
+          ...typography.button,
+          fontFamily: bodyFont,
+        },
+        caption: {
+          ...typography.caption,
+          fontFamily: bodyFont,
+        },
+        overline: {
+          ...typography.overline,
+          fontFamily: bodyFont,
+        },
+      }
     }
-    if(primaryColor || bgcolor){
-      setTheme(newTheme)
-    }    
-	}, [primaryColor, bgcolor])
+
+    if(borderRadius >= 0){
+      shape = {
+        ...shape,
+        borderRadius: borderRadius,
+      }
+    }
+
+		setTheme({
+			...theme,
+      palette,
+			breakpoints,
+      typography,
+      shape 
+		})
+
+	}, [
+    offset, 
+    mobile, 
+    primaryColor, 
+    bgcolor, 
+    headerFont, 
+    bodyFont,
+    borderRadius 
+  ])
 
 	return {
 		theme,
