@@ -28,10 +28,16 @@ const useTheme = (props: ThemeProps) => {
 	const [theme, setTheme] = useState(muiTheme)
 
 	useEffect(() => {
-    let breakpoints = { ...theme.breakpoints }
-    let palette = { ...theme.palette }
-    let typography = { ...theme.typography }
-    let shape = { ...theme.shape }
+
+    let newTheme = { ...theme }
+    if(muiTheme){
+      newTheme = muiTheme 
+    }
+
+    let breakpoints = { ...newTheme.breakpoints }
+    let palette = { ...newTheme.palette }
+    let typography = { ...newTheme.typography }
+    let shape = { ...newTheme.shape }
 
 		if (offset > 0) {
 			breakpoints = {
@@ -158,7 +164,8 @@ const useTheme = (props: ThemeProps) => {
     bgcolor, 
     headerFont, 
     bodyFont,
-    borderRadius 
+    borderRadius,
+    muiTheme 
   ])
 
 	return {
