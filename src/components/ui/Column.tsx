@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import { ThemeProvider, ThemeContext } from '../../context'
 
 type ColumnProps = {
@@ -19,30 +19,40 @@ const Column: React.FC<ColumnProps> = (props) => {
       muiTheme={ theme }
       bgcolor={ bgcolor }
     >
-      <Container
-        sx={{
-          ...sx.root,        
-          gridTemplateColumns: { 
-            sm: `repeat(${Number(cols)}, 1fr)`, 
-            xs: '1fr'
-          },
-          gap,
-          py,
-          px: py > 0 ? 2 : 0,
-          bgcolor,
-        }}
-        maxWidth={maxWidth}
-      >
-        {children}
-      </Container>
+      <Box
+				sx={{
+          ...sx.box,
+					bgcolor,
+				}}
+			>
+        <Container
+          sx={{
+            ...sx.root,        
+            gridTemplateColumns: { 
+              sm: `repeat(${Number(cols)}, 1fr)`, 
+              xs: '1fr'
+            },
+            gap,
+            py,
+            px: py > 0 ? 2 : 0,
+            bgcolor,
+          }}
+          maxWidth={maxWidth}
+        >
+          {children}
+        </Container>
+      </Box>
     </ThemeProvider>
 	)
 }
 
 export default Column
 
-const sx = {
+const sx = {  
 	root: {
 		py: 4,
 	},
+  box: {
+    width: "100%"
+  }
 }

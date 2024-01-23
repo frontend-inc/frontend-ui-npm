@@ -41,14 +41,18 @@ var Column = function (props) {
     var children = props.children, _a = props.cols, cols = _a === void 0 ? 1 : _a, _b = props.gap, gap = _b === void 0 ? 0 : _b, _c = props.py, py = _c === void 0 ? 4 : _c, bgcolor = props.bgcolor, maxWidth = props.maxWidth;
     var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
     return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme, bgcolor: bgcolor },
-        react_1.default.createElement(material_1.Container, { sx: __assign(__assign({}, sx.root), { gridTemplateColumns: {
-                    sm: "repeat(".concat(Number(cols), ", 1fr)"),
-                    xs: '1fr'
-                }, gap: gap, py: py, px: py > 0 ? 2 : 0, bgcolor: bgcolor }), maxWidth: maxWidth }, children)));
+        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.box), { bgcolor: bgcolor }) },
+            react_1.default.createElement(material_1.Container, { sx: __assign(__assign({}, sx.root), { gridTemplateColumns: {
+                        sm: "repeat(".concat(Number(cols), ", 1fr)"),
+                        xs: '1fr'
+                    }, gap: gap, py: py, px: py > 0 ? 2 : 0, bgcolor: bgcolor }), maxWidth: maxWidth }, children))));
 };
 exports.default = Column;
 var sx = {
     root: {
         py: 4,
     },
+    box: {
+        width: "100%"
+    }
 };
