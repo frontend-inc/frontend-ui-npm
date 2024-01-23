@@ -17,8 +17,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Column = function (props) {
-    var children = props.children, bgcolor = props.bgcolor, maxWidth = props.maxWidth;
-    return (react_1.default.createElement(material_1.Container, { sx: __assign(__assign({}, sx.root), { bgcolor: bgcolor }), maxWidth: maxWidth }, children));
+    var children = props.children, _a = props.cols, cols = _a === void 0 ? 1 : _a, _b = props.gap, gap = _b === void 0 ? 0 : _b, _c = props.py, py = _c === void 0 ? 4 : _c, bgcolor = props.bgcolor, maxWidth = props.maxWidth;
+    return (react_1.default.createElement(material_1.Container, { sx: __assign(__assign({}, sx.root), { gridTemplateColumns: {
+                sm: "repeat(".concat(Number(cols), ", 1fr)"),
+                xs: '1fr'
+            }, gap: gap, py: py, px: py > 0 ? 2 : 0, bgcolor: bgcolor }), maxWidth: maxWidth }, children));
 };
 exports.default = Column;
 var sx = {

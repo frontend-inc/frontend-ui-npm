@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScriptProvider = exports.ScriptContext = exports.LightDarkProvider = exports.LightDarkContext = exports.ThemeProvider = exports.ThemeContext = exports.ResourceProvider = exports.ResourceContext = exports.AuthProvider = exports.AuthContext = exports.AppProvider = exports.AppContext = exports.ApiProvider = exports.ApiContext = void 0;
+exports.ScriptProvider = exports.ScriptContext = exports.ThemeProvider = exports.ThemeContext = exports.ResourceProvider = exports.ResourceContext = exports.AuthProvider = exports.AuthContext = exports.AppProvider = exports.AppContext = exports.ApiProvider = exports.ApiContext = void 0;
 // Common
 var ApiContext_1 = require("./ApiContext");
 Object.defineProperty(exports, "ApiContext", { enumerable: true, get: function () { return __importDefault(ApiContext_1).default; } });
@@ -25,10 +25,6 @@ var ThemeContext_1 = require("./ThemeContext");
 Object.defineProperty(exports, "ThemeContext", { enumerable: true, get: function () { return __importDefault(ThemeContext_1).default; } });
 var ThemeProvider_1 = require("./ThemeProvider");
 Object.defineProperty(exports, "ThemeProvider", { enumerable: true, get: function () { return __importDefault(ThemeProvider_1).default; } });
-var LightDarkContext_1 = require("./LightDarkContext");
-Object.defineProperty(exports, "LightDarkContext", { enumerable: true, get: function () { return __importDefault(LightDarkContext_1).default; } });
-var LightDarkProvider_1 = require("./LightDarkProvider");
-Object.defineProperty(exports, "LightDarkProvider", { enumerable: true, get: function () { return __importDefault(LightDarkProvider_1).default; } });
 var ScriptContext_1 = require("./ScriptContext");
 Object.defineProperty(exports, "ScriptContext", { enumerable: true, get: function () { return __importDefault(ScriptContext_1).default; } });
 var ScriptProvider_1 = require("./ScriptProvider");

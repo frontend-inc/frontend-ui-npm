@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { LightDarkProvider, ThemeContext } from '../../../context'
+import { ThemeContext, ThemeProvider } from '../../../context'
 
 type ModeThemeProps = {
   mode?: 'light' | 'dark' | 'accent'
@@ -28,9 +28,12 @@ const ModeTheme: React.FC<ModeThemeProps> = (props) => {
 	}, [mode, theme])  
   
   return (
-    <LightDarkProvider bgcolor={bgcolor}>
+    <ThemeProvider 
+      muiTheme={theme}
+      bgcolor={bgcolor}
+    >
       {props.children}
-    </LightDarkProvider>
+    </ThemeProvider>
   )
 }
 

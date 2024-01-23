@@ -15,18 +15,13 @@ var react_1 = require("react");
 var theme_1 = require("../../theme");
 var helpers_1 = require("../../helpers");
 var useTheme = function (props) {
-    var _a = props || {}, primaryColor = _a.primaryColor, bgcolor = _a.bgcolor, borderRadius = _a.borderRadius, bodyFont = _a.bodyFont, headerFont = _a.headerFont, _b = _a.offset, offset = _b === void 0 ? 0 : _b, _c = _a.mobile, mobile = _c === void 0 ? false : _c;
-    var _d = (0, react_1.useState)(theme_1.muiTheme), theme = _d[0], setTheme = _d[1];
+    var _a = props || {}, _b = _a.muiTheme, muiTheme = _b === void 0 ? theme_1.muiTheme : _b, primaryColor = _a.primaryColor, bgcolor = _a.bgcolor, borderRadius = _a.borderRadius, bodyFont = _a.bodyFont, headerFont = _a.headerFont, _c = _a.offset, offset = _c === void 0 ? 0 : _c, _d = _a.mobile, mobile = _d === void 0 ? false : _d;
+    var _e = (0, react_1.useState)(muiTheme), theme = _e[0], setTheme = _e[1];
     (0, react_1.useEffect)(function () {
-        var breakpoints = {
-            values: {
-                xs: 0,
-                sm: 600,
-                md: 960,
-                lg: 1280,
-                xl: 1920,
-            },
-        };
+        var breakpoints = __assign({}, theme.breakpoints);
+        var palette = __assign({}, theme.palette);
+        var typography = __assign({}, theme.typography);
+        var shape = __assign({}, theme.shape);
         if (offset > 0) {
             breakpoints = {
                 values: {
@@ -49,34 +44,33 @@ var useTheme = function (props) {
                 },
             };
         }
-        setTheme(__assign(__assign({}, theme), { breakpoints: breakpoints }));
-    }, [offset, mobile]);
-    (0, react_1.useEffect)(function () {
-        if (headerFont && bodyFont) {
-            var typography = __assign(__assign({}, theme_1.muiTheme.typography), { h1: __assign(__assign({}, theme_1.muiTheme.typography.h1), { fontFamily: headerFont ? headerFont : 'Inter' }), h2: __assign(__assign({}, theme_1.muiTheme.typography.h2), { fontFamily: headerFont ? headerFont : 'Inter' }), h3: __assign(__assign({}, theme_1.muiTheme.typography.h3), { fontFamily: headerFont ? headerFont : 'Inter' }), h4: __assign(__assign({}, theme_1.muiTheme.typography.h4), { fontFamily: headerFont ? headerFont : 'Inter' }), h5: __assign(__assign({}, theme_1.muiTheme.typography.h5), { fontFamily: headerFont ? headerFont : 'Inter' }), h6: __assign(__assign({}, theme_1.muiTheme.typography.h6), { fontFamily: headerFont ? headerFont : 'Inter' }), subtitle1: __assign(__assign({}, theme_1.muiTheme.typography.subtitle1), { fontFamily: bodyFont ? bodyFont : 'Inter' }), subtitle2: __assign(__assign({}, theme_1.muiTheme.typography.subtitle2), { fontFamily: bodyFont ? bodyFont : 'Inter' }), body1: __assign(__assign({}, theme_1.muiTheme.typography.body1), { fontFamily: bodyFont ? bodyFont : 'Inter' }), body2: __assign(__assign({}, theme_1.muiTheme.typography.body2), { fontFamily: bodyFont ? bodyFont : 'Inter' }), button: __assign(__assign({}, theme_1.muiTheme.typography.button), { fontFamily: bodyFont ? bodyFont : 'Inter' }), caption: __assign(__assign({}, theme_1.muiTheme.typography.caption), { fontFamily: bodyFont ? bodyFont : 'Inter' }), overline: __assign(__assign({}, theme_1.muiTheme.typography.overline), { fontFamily: bodyFont ? bodyFont : 'Inter' }) });
-            setTheme(__assign(__assign({}, theme), { typography: typography }));
-        }
-    }, [headerFont, bodyFont]);
-    (0, react_1.useEffect)(function () {
-        var shape = {
-            borderRadius: borderRadius || 0,
-        };
-        setTheme(__assign(__assign({}, theme), { shape: shape }));
-    }, [borderRadius]);
-    (0, react_1.useEffect)(function () {
-        var newTheme = __assign({}, theme);
         if (primaryColor) {
-            newTheme = __assign(__assign({}, theme), { palette: __assign(__assign({}, theme.palette), { primary: __assign(__assign({}, theme.palette.primary), { 
-                        // @ts-ignore
-                        main: primaryColor }) }) });
+            palette = __assign(__assign({}, palette), { primary: __assign(__assign({}, palette.primary), { 
+                    // @ts-ignore
+                    main: primaryColor }) });
         }
         if (bgcolor) {
-            newTheme = (0, helpers_1.buildTheme)(newTheme, bgcolor);
+            palette = (0, helpers_1.buildMuiPalette)(palette, bgcolor);
         }
-        if (primaryColor || bgcolor) {
-            setTheme(newTheme);
+        if (headerFont) {
+            typography = __assign(__assign({}, typography), { h1: __assign(__assign({}, typography.h1), { fontFamily: headerFont }), h2: __assign(__assign({}, typography.h2), { fontFamily: headerFont }), h3: __assign(__assign({}, typography.h3), { fontFamily: headerFont }), h4: __assign(__assign({}, typography.h4), { fontFamily: headerFont }), h5: __assign(__assign({}, typography.h5), { fontFamily: headerFont }), h6: __assign(__assign({}, typography.h6), { fontFamily: headerFont }), subtitle1: __assign(__assign({}, typography.subtitle1), { fontFamily: headerFont }), subtitle2: __assign(__assign({}, typography.subtitle2), { fontFamily: headerFont }) });
         }
-    }, [primaryColor, bgcolor]);
+        if (bodyFont) {
+            typography = __assign(__assign({}, typography), { body1: __assign(__assign({}, typography.body1), { fontFamily: bodyFont }), body2: __assign(__assign({}, typography.body2), { fontFamily: bodyFont }), button: __assign(__assign({}, typography.button), { fontFamily: bodyFont }), caption: __assign(__assign({}, typography.caption), { fontFamily: bodyFont }), overline: __assign(__assign({}, typography.overline), { fontFamily: bodyFont }) });
+        }
+        if (borderRadius >= 0) {
+            shape = __assign(__assign({}, shape), { borderRadius: borderRadius });
+        }
+        setTheme(__assign(__assign({}, theme), { palette: palette, breakpoints: breakpoints, typography: typography, shape: shape }));
+    }, [
+        offset,
+        mobile,
+        primaryColor,
+        bgcolor,
+        headerFont,
+        bodyFont,
+        borderRadius
+    ]);
     return {
         theme: theme,
         setTheme: setTheme,

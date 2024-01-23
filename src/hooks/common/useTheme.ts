@@ -88,7 +88,7 @@ const useTheme = (props: ThemeProps) => {
 					fontFamily: headerFont,
 				},
 				h4: {
-					....typography.h4,
+					...typography.h4,
 					fontFamily: headerFont,
 				},
 				h5: {

@@ -1,1 +1,1 @@
-export declare const buildTheme: (theme: any, bgcolor: any) => any;
+export declare const buildMuiPalette: (palette: any, bgcolor: any) => any;

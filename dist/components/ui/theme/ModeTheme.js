@@ -45,6 +45,6 @@ var ModeTheme = function (props) {
             }
         }
     }, [mode, theme]);
-    return (react_1.default.createElement(context_1.LightDarkProvider, { bgcolor: bgcolor }, props.children));
+    return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme, bgcolor: bgcolor }, props.children));
 };
 exports.default = ModeTheme;

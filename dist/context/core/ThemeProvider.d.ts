@@ -1,6 +1,7 @@
 import React from 'react';
 type ThemeProviderProps = {
     children: React.ReactNode;
+    muiTheme?: any;
     primaryColor?: string;
     bgcolor?: string;
     headerFont?: string;

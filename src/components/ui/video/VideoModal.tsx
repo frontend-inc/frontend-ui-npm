@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useAlerts } from '../../../hooks'
 import { Modal } from '../../../components'
-import { LightDarkProvider } from '../../../context'
+import { ThemeContext, ThemeProvider } from '../../../context'
 import { Box, Button } from '@mui/material'
 import { Link, Download } from 'lucide-react'
 import copy from 'copy-to-clipboard'
@@ -25,6 +25,8 @@ const VideoModal: React.FC<VideoModalProps> = (props) => {
 		enableDownload = false,
 	} = props
 
+  const { theme } = useContext(ThemeContext)
+
 	const { showAlertSuccess } = useAlerts()
 
 	const handleCopyUrlClick = () => {
@@ -42,7 +44,10 @@ const VideoModal: React.FC<VideoModalProps> = (props) => {
 	}
 
 	return (
-		<LightDarkProvider bgcolor="#000000">
+		<ThemeProvider 
+      muiTheme={ theme }
+      bgcolor="#000000"
+    >
 			<Modal
 				fullScreen
 				open={open}
@@ -79,7 +84,7 @@ const VideoModal: React.FC<VideoModalProps> = (props) => {
 					<video src={src} controls muted autoPlay />
 				</Box>
 			</Modal>
-		</LightDarkProvider>
+		</ThemeProvider>
 	)
 }
 
