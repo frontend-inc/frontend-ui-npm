@@ -38,7 +38,7 @@ const Testimonials: React.FC<TestimonialsProps> = (props) => {
 		query: defaultQuery = {},
 		perPage = 20,
 		editing,
-		enableInfiniteLoad = false,
+		enableInfiniteLoad = false,    
 		enableLoadMore = true,
 		enableBorder = false,
 	} = props
