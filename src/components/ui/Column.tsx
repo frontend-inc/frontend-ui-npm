@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Container } from '@mui/material'
+import { ThemeProvider, ThemeContext } from '../../context'
 
 type ColumnProps = {
 	children: React.ReactNode
@@ -12,24 +13,29 @@ type ColumnProps = {
 
 const Column: React.FC<ColumnProps> = (props) => {
 	const { children, cols=1, gap=0, py=4, bgcolor, maxWidth } = props
-
+  const { theme } = useContext(ThemeContext)
 	return (
-		<Container
-			sx={{
-				...sx.root,        
-        gridTemplateColumns: { 
-          sm: `repeat(${Number(cols)}, 1fr)`, 
-          xs: '1fr'
-        },
-        gap,
-        py,
-        px: py > 0 ? 2 : 0,
-				bgcolor,
-			}}
-			maxWidth={maxWidth}
-		>
-			{children}
-		</Container>
+    <ThemeProvider 
+      muiTheme={ theme }
+      bgcolor={ bgcolor }
+    >
+      <Container
+        sx={{
+          ...sx.root,        
+          gridTemplateColumns: { 
+            sm: `repeat(${Number(cols)}, 1fr)`, 
+            xs: '1fr'
+          },
+          gap,
+          py,
+          px: py > 0 ? 2 : 0,
+          bgcolor,
+        }}
+        maxWidth={maxWidth}
+      >
+        {children}
+      </Container>
+    </ThemeProvider>
 	)
 }
 
