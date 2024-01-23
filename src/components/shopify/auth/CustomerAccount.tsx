@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import {
-	Avatar,
 	Button,
 	List,
 	ListItem,
@@ -35,8 +34,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
 	)
 }
 
-type MyAccountProps = {
-	logo: string
+type CustomerAccountProps = {
 	title?: string
 	subtitle?: string
 	loginUrl?: string
@@ -65,7 +63,7 @@ const MENU_ITEMS = [
 	},
 ]
 
-const MyAccount: React.FC<MyAccountProps> = (props) => {
+const CustomerAccount: React.FC<CustomerAccountProps> = (props) => {
 	const {
 		loginUrl,
 		title = 'My Account',
@@ -104,4 +102,4 @@ const MyAccount: React.FC<MyAccountProps> = (props) => {
 	)
 }
 
-export default MyAccount
+export default CustomerAccount
