@@ -1,0 +1,21 @@
+import React from 'react';
+import { Product } from 'frontend-shopify';
+type ProductGridProps = {
+    editing?: boolean;
+    loading?: boolean;
+    products: Product[];
+    xs?: number;
+    sm?: number;
+    md?: number;
+    lg?: number;
+    xl?: number;
+    productComponent?: React.FC<any>;
+    buttonText?: string;
+    enableBorder?: boolean;
+    enableAddToCart?: boolean;
+    enableQuickShop?: boolean;
+    enableQuantity?: boolean;
+    enableOkendoStarRating?: boolean;
+};
+declare const ProductGrid: React.FC<ProductGridProps>;
+export default ProductGrid;
