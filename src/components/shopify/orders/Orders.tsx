@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AuthScreen, LayoutLoader } from '../../../components'
-import { useOrders } from 'webstudio-shopify'
+import { useOrders } from 'frontend-shopify'
 import { OrderList } from '../../../components/shopify'
 import { AppContext } from '../../../context'
 import { useRouter } from 'next/router'
-import { getShopifyIdFromGid } from 'webstudio-shopify'
+import { getShopifyIdFromGid } from 'frontend-shopify'
 
 type ShopifyCustomerOrdersProps = {
 	title?: string

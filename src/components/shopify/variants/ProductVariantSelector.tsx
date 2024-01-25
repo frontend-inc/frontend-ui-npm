@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductVariantOptions from './ProductVariantOptions'
 import ColorVariantOptions from './ColorVariantOptions'
-import { Product } from 'webstudio-shopify'
+import { Product } from 'frontend-shopify'
 
 type ProductVariantSelectorProps = {
   product: Product

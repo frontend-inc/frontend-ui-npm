@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, IconButton } from '@mui/material'
-import { useShop } from 'webstudio-shopify'
+import { useShop } from 'frontend-shopify'
 import { Icon } from '../../../components'
 import { useRouter } from 'next/router'
 

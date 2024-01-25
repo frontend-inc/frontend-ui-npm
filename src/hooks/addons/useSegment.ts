@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useCheckout } from 'webstudio-shopify'
+import { useCheckout } from 'frontend-shopify'
 import { ScriptContext } from '../../context'
 
 // Implementation of the Segment v2 eCommerce analytics events

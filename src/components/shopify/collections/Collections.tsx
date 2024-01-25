@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react'
-import { useCollections } from 'webstudio-shopify'
+import { useCollections } from 'frontend-shopify'
 import { StyledList } from '../../../components'
 import { Stack, Typography } from '@mui/material'
-import { ShopContext } from 'webstudio-shopify'
+import { ShopContext } from 'frontend-shopify'
 import { useRouter } from 'next/router'
 
 type CollectionProps = {

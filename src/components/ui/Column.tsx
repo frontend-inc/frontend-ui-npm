@@ -5,10 +5,10 @@ import { ThemeProvider, ThemeContext } from '../../context'
 type ColumnProps = {
 	children: React.ReactNode
 	bgcolor?: string
-  py?: number
+  py?: number | string
   gap?: number 
   cols?: number
-	maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+	maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | null
 }
 
 const Column: React.FC<ColumnProps> = (props) => {
@@ -34,7 +34,7 @@ const Column: React.FC<ColumnProps> = (props) => {
             },
             gap,
             py,
-            px: py > 0 ? 2 : 0,
+            px: Number(py) > 0 ? 2 : 0,
             bgcolor,
           }}
           maxWidth={maxWidth}
@@ -49,10 +49,11 @@ const Column: React.FC<ColumnProps> = (props) => {
 export default Column
 
 const sx = {  
-	root: {
+	root: {    
 		py: 4,
 	},
   box: {
+    p: 0,
     width: "100%"
   }
 }

@@ -7554,6 +7554,15 @@ from2@^2.1.0:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
 
+"frontend-shopify@git+https://github.com/frontend-inc/frontend-shopify.git":
+  version "0.0.6"
+  resolved "git+https://github.com/frontend-inc/frontend-shopify.git#127e96588da3759f110e4a6e39ae58a1e1b6def3"
+  dependencies:
+    "@apollo/client" "^3.8.9"
+    apollo-link-context "^1.0.20"
+    apollo-link-http "^1.5.17"
+    cookies-next "^2.1.1"
+
 fs-extra@^7.0.0:
   version "7.0.1"
   resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-7.0.1.tgz"
@@ -14596,15 +14605,6 @@ websocket-extensions@>=0.1.1:
   version "0.1.4"
   resolved "https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.4.tgz"
   integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
-
-"webstudio-shopify@git+https://github.com/webstudio-co/webstudio-shopify.git":
-  version "0.0.5"
-  resolved "git+https://github.com/webstudio-co/webstudio-shopify.git#30009dca5769d0e19650053f73b056b638eefd67"
-  dependencies:
-    "@apollo/client" "^3.8.9"
-    apollo-link-context "^1.0.20"
-    apollo-link-http "^1.5.17"
-    cookies-next "^2.1.1"
 
 whatwg-encoding@^1.0.5:
   version "1.0.5"

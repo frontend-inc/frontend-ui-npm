@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Stack } from '@mui/material'
 import { TextInput, IconLoader } from '../..'
-import { Customer } from 'webstudio-shopify'
+import { Customer } from 'frontend-shopify'
 
 type SignInFormProps = {
 	errors?: any

@@ -1,6 +1,6 @@
 import React from 'react'
 import { List } from '@mui/material'
-import { Order } from 'webstudio-shopify'
+import { Order } from 'frontend-shopify'
 import OrderItem from './OrderItem'
 
 type OrderListProps = {

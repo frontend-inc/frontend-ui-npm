@@ -7,7 +7,7 @@ import {
 	ProductVariantSelector,
   TrackRecentlyViewed,
 } from '../../../components/shopify'
-import { useProducts, useProductDetails } from 'webstudio-shopify'
+import { useProducts, useProductDetails } from 'frontend-shopify'
 
 type ProductDetailPageProps = {
 	handle: string | string[]

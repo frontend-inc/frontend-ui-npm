@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Button, Badge, IconButton } from '@mui/material'
-import { ShopContext } from 'webstudio-shopify'
+import { ShopContext } from 'frontend-shopify'
 import { AppContext } from '../../../context'
 import { Icon } from '../../../components'
 

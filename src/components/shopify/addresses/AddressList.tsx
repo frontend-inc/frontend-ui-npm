@@ -1,6 +1,6 @@
 import React from 'react'
 import { List } from '@mui/material'
-import { Address } from 'webstudio-shopify'
+import { Address } from 'frontend-shopify'
 import AddressItem from './AddressItem'
 
 type AddressListProps = {

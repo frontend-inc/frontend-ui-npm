@@ -1,7 +1,7 @@
 import React from 'react'
 import { AuthLayout, AuthScreen } from '../..'
 import { RegisterForm } from '..'
-import { useAuth } from 'webstudio-shopify'
+import { useAuth } from 'frontend-shopify'
 import { useRouter } from 'next/router'
 
 type RegisterProps = {

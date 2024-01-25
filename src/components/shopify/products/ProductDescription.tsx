@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography } from '@mui/material'
-import { Product } from 'webstudio-shopify'
+import { Product } from 'frontend-shopify'
 
 type ProductDescriptionProps = {
 	product?: Product

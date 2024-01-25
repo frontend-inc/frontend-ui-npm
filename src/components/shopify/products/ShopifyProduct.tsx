@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react'
-import { ProductContext } from 'webstudio-shopify'
-import { useProducts } from 'webstudio-shopify'
-import { Product } from 'webstudio-shopify'
+import { ProductContext } from 'frontend-shopify'
+import { useProducts } from 'frontend-shopify'
+import { Product } from 'frontend-shopify'
 
 type ShopifyProductPageProps = {
 	handle?: string | string[]

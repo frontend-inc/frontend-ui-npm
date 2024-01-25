@@ -1,7 +1,7 @@
 import React from 'react'
 import { AuthScreen, LayoutLoader } from '../..'
 import { ChangePasswordForm } from '..'
-import { useAuth } from 'webstudio-shopify'
+import { useAuth } from 'frontend-shopify'
 import { useAlerts } from '../../../hooks'
 import { useRouter } from 'next/router'
 

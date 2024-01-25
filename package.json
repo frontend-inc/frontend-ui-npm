@@ -1,12 +1,12 @@
 {
-    "name": "webstudio-mui",
-    "version": "0.0.21",
+    "name": "frontend-mui",
+    "version": "0.0.22",
     "license": "MIT",
-    "description": "A MUI library designed for Webstudio",
-    "homepage": "https://github.com/webstudio-co/webstudio-mui",
+    "description": "A MUI library designed for Frontend.co",
+    "homepage": "https://github.com/frontend-inc/frontend-mui",
     "repository": {
         "type": "git",
-        "url": "https://github.com/webstudio-co/webstudio-mui"
+        "url": "https://github.com/frontend-inc/frontend-mui"
     },
     "keywords": [
         "react",
@@ -84,6 +84,7 @@
         "compression": "^1.7.4",
         "copy-to-clipboard": "^3.3.1",
         "framer-motion": "^10.16.15",
+        "frontend-shopify": "git+https://github.com/frontend-inc/frontend-shopify.git",
         "graphql": "^16.8.1",
         "history": "^4.10.1",
         "immutable": "^3.8.2",
@@ -115,7 +116,6 @@
         "use-debounce": "^10.0.0",
         "util": "^0.11.1",
         "uuid": "^8.3.2",
-        "webstudio-shopify": "git+https://github.com/webstudio-co/webstudio-shopify.git",
         "yup": "^1.0.2"
     },
     "devDependencies": {

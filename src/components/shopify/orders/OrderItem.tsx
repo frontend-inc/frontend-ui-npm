@@ -8,9 +8,9 @@ import {
 	Stack,
 } from '@mui/material'
 import { Image } from '../../../components'
-import { formatCurrency } from 'webstudio-shopify'
+import { formatCurrency } from 'frontend-shopify'
 import moment from 'moment'
-import { Order } from 'webstudio-shopify'
+import { Order } from 'frontend-shopify'
 
 type OrderItemProps = {
 	order: Order

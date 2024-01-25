@@ -1,7 +1,7 @@
 import React from 'react'
-import { Product } from 'webstudio-shopify'
+import { Product } from 'frontend-shopify'
 import { Stack, Typography } from '@mui/material'
-import { formatCurrency } from 'webstudio-shopify'
+import { formatCurrency } from 'frontend-shopify'
 import { ProductDescription } from '../../../components/shopify'
 import { OkendoStarRating } from '../../../components/addons'
 

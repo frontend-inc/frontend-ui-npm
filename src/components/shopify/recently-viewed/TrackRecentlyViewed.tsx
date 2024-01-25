@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { useRecentlyViewed } from 'webstudio-shopify'
-import { Product } from 'webstudio-shopify'
+import { useRecentlyViewed } from 'frontend-shopify'
+import { Product } from 'frontend-shopify'
 
 type TrackRecentlyViewedProps = {
 	product?: Product

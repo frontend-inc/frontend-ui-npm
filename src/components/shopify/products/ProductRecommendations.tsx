@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useProducts } from 'webstudio-shopify'
+import { useProducts } from 'frontend-shopify'
 import { Typography } from '@mui/material'
 import {
 	ProductGrid,

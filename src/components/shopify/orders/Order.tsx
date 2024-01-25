@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { AuthScreen, LayoutLoader } from '../../../components'
-import { useOrders } from 'webstudio-shopify'
+import { useOrders } from 'frontend-shopify'
 import { OrderDetails } from '../../../components/shopify'
 import { useRouter } from 'next/router'
 import moment from 'moment'
