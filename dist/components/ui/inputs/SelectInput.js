@@ -29,8 +29,10 @@ exports.default = SelectInput;
 var sx = {
     root: {
         minWidth: '165px',
-        height: "42px",
-        bgcolor: 'background.paper',
+        height: "40px",
+        border: "1px solid",
+        borderColor: 'divider',
+        bgcolor: 'background.default',
         width: "100%",
         '.MuiSvgIcon-root ': {
             fill: function (theme) { return theme.palette.text.secondary; },
