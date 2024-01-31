@@ -28,12 +28,22 @@ var SelectInput = function (props) {
 exports.default = SelectInput;
 var sx = {
     root: {
-        width: '100%',
-        '.MuiSelect-select': {
-            border: '1px solid',
-            borderColor: 'divider',
-            bgcolor: 'background.default',
+        minWidth: '165px',
+        height: "42px",
+        bgcolor: 'background.paper',
+        width: "100%",
+        '.MuiSvgIcon-root ': {
+            fill: function (theme) { return theme.palette.text.secondary; },
         },
+        boxShadow: "none",
+        ".MuiOutlinedInput-notchedOutline": { border: 0 },
+        "&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+            border: 0,
+        },
+        "&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: 0,
+        },
+        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
     },
     label: {
         mb: 0,
