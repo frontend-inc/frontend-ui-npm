@@ -28,7 +28,7 @@ const sx = {
 	table: {
 		width: {
 			sm: '100%',
-			xs: 'calc(100vw-40px)',
+			xs: '100vw',
 		},
 		bgcolor: 'background.main',
 		'&::-webkit-scrollbar': {

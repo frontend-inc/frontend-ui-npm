@@ -6,12 +6,12 @@ import {
 	ForgotPasswordForm,
 	VerifyPinForm,
 	VerifySendPinForm,
-	SquareLogo,
 } from '../../../components'
 import { useAuth } from '../../../hooks'
 import { useRouter } from 'next/router'
-import { Tab, Tabs, Box, Typography } from '@mui/material'
+import { Tab, Tabs, Box } from '@mui/material'
 import { AppContext } from '../../../context'
+import Image from 'next/image'
 
 type AuthModalProps = {
 	logo: any
@@ -104,7 +104,12 @@ const AuthModal: React.FC<AuthModalProps> = (props) => {
 	return (
 		<Modal open={authOpen} handleClose={() => setAuthOpen(false)} p={4}>
 			<Box sx={sx.logo}>
-				<SquareLogo src={logo} />
+        <Image 
+          src={logo} 
+          alt="Logo"
+          height={48}
+          width={48}
+        />
 			</Box>
 			<Tabs
 				variant="fullWidth"

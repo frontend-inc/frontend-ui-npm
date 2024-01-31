@@ -1,6 +1,6 @@
 import React from 'react';
 type ColumnProps = {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     bgcolor?: string;
     py?: number | string;
     gap?: number;

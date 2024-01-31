@@ -1,6 +1,6 @@
 {
     "name": "frontend-mui",
-    "version": "0.0.23",
+    "version": "0.0.27",
     "license": "MIT",
     "description": "A MUI library designed for Frontend.co",
     "homepage": "https://github.com/frontend-inc/frontend-mui",
@@ -30,7 +30,7 @@
         "./hooks": "./dist/hooks/index.js",
         "./hooks/api": "./dist/hooks/api/index.js",
         "./hooks/addons": "./dist/hooks/addons/index.js",
-        "./hooks/common": "./dist/hooks/common/index.js",
+        "./hooks/common": "./dist/hooks/common/index.js",        
         "./theme": "./dist/theme/index.js"
     },
     "module": "dist/index.js",

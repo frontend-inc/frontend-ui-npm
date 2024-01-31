@@ -1,6 +1,6 @@
 import React from 'react'
 import { Paper, Box, Container, Typography } from '@mui/material'
-import { SquareLogo } from '../../../components'
+import Image from 'next/image'
 import { useApp } from '../../../hooks'
 
 type AuthScreenProps = {
@@ -19,7 +19,12 @@ const AuthScreen: React.FC<AuthScreenProps> = (props) => {
 			<Container maxWidth="sm">
 				<Paper elevation={0} sx={sx.paper}>
 					<Box sx={sx.logo}>
-						<SquareLogo src={logo} />
+						<Image 
+              src={logo} 
+              alt="Logo"
+              height={48}
+              width={48}
+            />
 					</Box>
 					<Box sx={sx.titles}>
 						<Typography variant="h4" sx={sx.title}>

@@ -38,7 +38,7 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var context_1 = require("../../context");
 var Column = function (props) {
-    var children = props.children, _a = props.cols, cols = _a === void 0 ? 1 : _a, _b = props.gap, gap = _b === void 0 ? 0 : _b, _c = props.py, py = _c === void 0 ? 4 : _c, bgcolor = props.bgcolor, maxWidth = props.maxWidth;
+    var children = props.children, _a = props.cols, cols = _a === void 0 ? 1 : _a, _b = props.gap, gap = _b === void 0 ? 0 : _b, _c = props.py, py = _c === void 0 ? 4 : _c, bgcolor = props.bgcolor, _d = props.maxWidth, maxWidth = _d === void 0 ? false : _d;
     var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
     return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme, bgcolor: bgcolor },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.box), { bgcolor: bgcolor }) },

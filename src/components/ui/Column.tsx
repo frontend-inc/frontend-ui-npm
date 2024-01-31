@@ -3,7 +3,7 @@ import { Box, Container } from '@mui/material'
 import { ThemeProvider, ThemeContext } from '../../context'
 
 type ColumnProps = {
-	children: React.ReactNode
+	children?: React.ReactNode
 	bgcolor?: string
   py?: number | string
   gap?: number 
@@ -12,7 +12,7 @@ type ColumnProps = {
 }
 
 const Column: React.FC<ColumnProps> = (props) => {
-	const { children, cols=1, gap=0, py=4, bgcolor, maxWidth } = props
+	const { children, cols=1, gap=0, py=4, bgcolor, maxWidth=false } = props
   const { theme } = useContext(ThemeContext)
 	return (
     <ThemeProvider 

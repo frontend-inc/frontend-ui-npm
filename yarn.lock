@@ -7555,8 +7555,8 @@ from2@^2.1.0:
     readable-stream "^2.0.0"
 
 "frontend-shopify@git+https://github.com/frontend-inc/frontend-shopify.git":
-  version "0.0.6"
-  resolved "git+https://github.com/frontend-inc/frontend-shopify.git#127e96588da3759f110e4a6e39ae58a1e1b6def3"
+  version "0.0.7"
+  resolved "git+https://github.com/frontend-inc/frontend-shopify.git#9a89f63a9608cdcbacf653db85e6a5c5201d9405"
   dependencies:
     "@apollo/client" "^3.8.9"
     apollo-link-context "^1.0.20"

@@ -13,7 +13,7 @@ const MobileButton: React.FC<MobileButtonProps> = (props) => {
 	const { startIcon, onClick, color = 'primary', children, variant } = props
 
 	return (
-		<React.Fragment>
+		<>
 			<Hidden smDown>
 				<Button
 					variant={variant}
@@ -29,7 +29,7 @@ const MobileButton: React.FC<MobileButtonProps> = (props) => {
 					{startIcon}
 				</IconButton>
 			</Hidden>
-		</React.Fragment>
+		</>
 	)
 }
 

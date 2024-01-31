@@ -69,6 +69,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
@@ -76,6 +79,7 @@ var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var material_1 = require("@mui/material");
 var context_1 = require("../../../context");
+var image_1 = __importDefault(require("next/image"));
 var AuthModal = function (props) {
     var router = (0, router_1.useRouter)();
     var appId = router.query.app_id;
@@ -149,7 +153,7 @@ var AuthModal = function (props) {
     }, [authOpen]);
     return (react_1.default.createElement(components_1.Modal, { open: authOpen, handleClose: function () { return setAuthOpen(false); }, p: 4 },
         react_1.default.createElement(material_1.Box, { sx: sx.logo },
-            react_1.default.createElement(components_1.SquareLogo, { src: logo })),
+            react_1.default.createElement(image_1.default, { src: logo, alt: "Logo", height: 48, width: 48 })),
         react_1.default.createElement(material_1.Tabs, { variant: "fullWidth", value: tab, onChange: handleTabChange, sx: sx.tabs },
             react_1.default.createElement(material_1.Tab, { label: "Login" }),
             react_1.default.createElement(material_1.Tab, { label: "Sign Up" })),
