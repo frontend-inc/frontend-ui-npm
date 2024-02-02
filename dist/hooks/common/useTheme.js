@@ -62,8 +62,8 @@ var useTheme = function (props) {
         if (bodyFont) {
             typography = __assign(__assign({}, typography), { body1: __assign(__assign({}, typography.body1), { fontFamily: bodyFont }), body2: __assign(__assign({}, typography.body2), { fontFamily: bodyFont }), button: __assign(__assign({}, typography.button), { fontFamily: bodyFont }), caption: __assign(__assign({}, typography.caption), { fontFamily: bodyFont }), overline: __assign(__assign({}, typography.overline), { fontFamily: bodyFont }) });
         }
-        if (borderRadius >= 0) {
-            shape = __assign(__assign({}, shape), { borderRadius: borderRadius });
+        if (Number(borderRadius) >= 0) {
+            shape = __assign(__assign({}, shape), { borderRadius: Number(borderRadius) });
         }
         setTheme(__assign(__assign({}, theme), { palette: palette, breakpoints: breakpoints, typography: typography, shape: shape }));
     }, [

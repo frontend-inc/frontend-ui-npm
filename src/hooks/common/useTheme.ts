@@ -142,10 +142,10 @@ const useTheme = (props: ThemeProps) => {
       }
     }
 
-    if(borderRadius >= 0){
+    if(Number(borderRadius) >= 0){
       shape = {
         ...shape,
-        borderRadius: borderRadius,
+        borderRadius: Number(borderRadius),
       }
     }
 
