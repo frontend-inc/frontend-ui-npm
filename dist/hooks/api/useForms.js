@@ -11,10 +11,10 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var hooks_1 = require("../../hooks");
+var frontend_js_1 = require("frontend-js");
 var index_1 = require("../../constants/index");
 var useForms = function () {
-    var setResource = (0, hooks_1.useResourceContext)({}).setResource;
+    var setResource = (0, frontend_js_1.useResourceContext)({}).setResource;
     var handleDataChange = function (ev) {
         var name = ev.target.name;
         var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;

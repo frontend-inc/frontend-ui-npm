@@ -75,7 +75,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var material_1 = require("@mui/material");
 var context_1 = require("../../../context");
@@ -85,7 +85,7 @@ var AuthModal = function (props) {
     var appId = router.query.app_id;
     var _a = (0, react_1.useContext)(context_1.AppContext), authOpen = _a.authOpen, setAuthOpen = _a.setAuthOpen;
     var _b = props || {}, logo = _b.logo, _c = _b.disableUsername, disableUsername = _c === void 0 ? false : _c;
-    var _d = (0, hooks_1.useAuth)(), errors = _d.errors, loading = _d.loading, user = _d.user, handleChange = _d.handleChange, login = _d.login, signup = _d.signup, forgotPassword = _d.forgotPassword, verifyPin = _d.verifyPin, sendPin = _d.sendPin;
+    var _d = (0, frontend_js_1.useAuth)(), errors = _d.errors, loading = _d.loading, user = _d.user, handleChange = _d.handleChange, login = _d.login, signup = _d.signup, forgotPassword = _d.forgotPassword, verifyPin = _d.verifyPin, sendPin = _d.sendPin;
     var _e = (0, react_1.useState)(0), tab = _e[0], setTab = _e[1];
     var handleTabChange = function (ev, newValue) {
         setTab(newValue);

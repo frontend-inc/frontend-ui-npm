@@ -24,14 +24,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
 var Details = function (props) {
     var fields = props.fields, url = props.url, handle = props.handle;
     var _a = (0, react_1.useState)(), document = _a[0], setDocument = _a[1];
-    var _b = (0, hooks_1.useResource)({
+    var _b = (0, frontend_js_1.useResource)({
         url: url,
     }), resource = _b.resource, findOne = _b.findOne;
     (0, react_1.useEffect)(function () {

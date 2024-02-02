@@ -1,5 +1,5 @@
 import React from 'react'
-import { useResourceContext } from '../../hooks'
+import { useResourceContext } from 'frontend-js'
 import { SYSTEM_FIELDS } from '../../constants/index'
 
 const useForms = () => {

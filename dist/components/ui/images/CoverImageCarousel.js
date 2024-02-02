@@ -38,7 +38,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var context_1 = require("../../../context");
 var react_swipeable_views_1 = __importDefault(require("react-swipeable-views"));
 var components_1 = require("../../../components");
@@ -54,7 +54,7 @@ var CoverImageCarousel = function (props) {
     var handleStepChange = function (step) {
         setActiveStep(step);
     };
-    var _m = (0, hooks_1.useResource)({
+    var _m = (0, frontend_js_1.useResource)({
         url: url,
     }), findMany = _m.findMany, resources = _m.resources;
     var handleClick = function (item) {

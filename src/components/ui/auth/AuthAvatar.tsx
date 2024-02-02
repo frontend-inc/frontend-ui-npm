@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar } from '@mui/material'
 import { User } from 'lucide-react'
-import { useAuth } from '../../../hooks'
+import { useAuth } from 'frontend-js'
 import { useTheme } from '@mui/material/styles'
 
 type AuthAvatarProps = {

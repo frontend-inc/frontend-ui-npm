@@ -41,13 +41,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var ResetPassword = function (props) {
     var router = (0, router_1.useRouter)();
     var resetPasswordToken = router.query.token;
     var _a = props || {}, _b = _a.title, title = _b === void 0 ? 'Reset Password' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Enter your new password' : _c, _d = _a.redirectUrl, redirectUrl = _d === void 0 ? '/login' : _d, loginUrl = _a.loginUrl;
-    var _e = (0, hooks_1.useAuth)(), loading = _e.loading, errors = _e.errors, user = _e.user, handleChange = _e.handleChange, resetPassword = _e.resetPassword;
+    var _e = (0, frontend_js_1.useAuth)(), loading = _e.loading, errors = _e.errors, user = _e.user, handleChange = _e.handleChange, resetPassword = _e.resetPassword;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {

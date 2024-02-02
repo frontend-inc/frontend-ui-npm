@@ -60,17 +60,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../hooks");
+var frontend_js_1 = require("frontend-js");
 var components_1 = require("../../components");
 var components_2 = require("../../components");
-var hooks_2 = require("../../hooks");
+var hooks_1 = require("../../hooks");
 var RemoteAutosuggest = function (props) {
     var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, displayField = props.displayField, handleChange = props.handleChange, _a = props.valueParam, valueParam = _a === void 0 ? 'id' : _a, _b = props.placeholder, placeholder = _b === void 0 ? 'Search' : _b, _c = props.defaultQuery, defaultQuery = _c === void 0 ? null : _c, _d = props.direction, direction = _d === void 0 ? "column" : _d;
-    var _e = (0, hooks_2.useError)({
+    var _e = (0, hooks_1.useError)({
         errors: errors,
         name: name,
     }), error = _e.error, clearError = _e.clearError;
-    var _f = (0, hooks_1.useResource)({
+    var _f = (0, frontend_js_1.useResource)({
         url: url,
         name: name,
     }), resources = _f.resources, findMany = _f.findMany;

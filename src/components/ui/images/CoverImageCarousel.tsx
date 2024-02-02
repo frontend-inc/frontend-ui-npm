@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { useResource } from '../../../hooks'
+import { useResource } from 'frontend-js'
 import { AppContext } from '../../../context'
 import SwipeableViews from 'react-swipeable-views'
 import { CoverImage } from '../../../components'

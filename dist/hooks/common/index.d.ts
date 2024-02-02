@@ -1,4 +1,3 @@
-export { default as useAuth } from './useAuth';
 export { default as useAlerts } from './useAlerts';
 export { default as useApp } from './useApp';
 export { default as useClickOrDrag } from './useClickOrDrag';

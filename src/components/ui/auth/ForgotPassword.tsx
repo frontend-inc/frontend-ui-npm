@@ -4,7 +4,8 @@ import {
 	AuthScreen,
 	LayoutLoader,
 } from '../../../components'
-import { useAlerts, useAuth } from '../../../hooks'
+import { useAlerts } from '../../../hooks'
+import { useAuth } from 'frontend-js'
 import { useRouter } from 'next/router'
 
 type ForgotPasswordProps = {

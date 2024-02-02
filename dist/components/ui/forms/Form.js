@@ -74,7 +74,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var lucide_react_1 = require("lucide-react");
@@ -84,7 +84,7 @@ var lodash_1 = require("lodash");
 var Form = function (props) {
     var handle = props.handle, buttonText = props.buttonText, variant = props.variant, fields = props.fields, url = props.url;
     var _a = (0, react_1.useState)(false), submitted = _a[0], setSubmitted = _a[1];
-    var _b = (0, hooks_1.useResource)({
+    var _b = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
     }), loading = _b.loading, findOne = _b.findOne, resource = _b.resource, setResource = _b.setResource, update = _b.update, create = _b.create, handleChange = _b.handleChange, removeAttachment = _b.removeAttachment;

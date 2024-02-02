@@ -52,12 +52,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var Signup = function (props) {
     var redirectUrl = props.redirectUrl, loginUrl = props.loginUrl, _a = props.title, title = _a === void 0 ? 'Sign up' : _a, _b = props.subtitle, subtitle = _b === void 0 ? 'Register your account' : _b, _c = props.authConfig, authConfig = _c === void 0 ? {} : _c;
     var router = (0, router_1.useRouter)();
-    var _d = (0, hooks_1.useAuth)(), loading = _d.loading, errors = _d.errors, user = _d.user, handleChange = _d.handleChange, signup = _d.signup;
+    var _d = (0, frontend_js_1.useAuth)(), loading = _d.loading, errors = _d.errors, user = _d.user, handleChange = _d.handleChange, signup = _d.signup;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {

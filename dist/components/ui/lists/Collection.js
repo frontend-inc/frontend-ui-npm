@@ -45,6 +45,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var material_2 = require("@mui/material");
@@ -55,7 +56,7 @@ var Collection = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, fields = props.fields, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, editing = props.editing, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, _g = props.enableSortTitle, enableSortTitle = _g === void 0 ? false : _g, _h = props.enableSortPrice, enableSortPrice = _h === void 0 ? false : _h, _j = props.enableInfiniteLoad, enableInfiniteLoad = _j === void 0 ? false : _j, _k = props.enableLoadMore, enableLoadMore = _k === void 0 ? true : _k, navigateUrl = props.navigateUrl, buttonText = props.buttonText, _l = props.autoPlay, autoPlay = _l === void 0 ? false : _l, _m = props.arrows, arrows = _m === void 0 ? false : _m, _o = props.showDots, showDots = _o === void 0 ? true : _o, _p = props.enableBorder, enableBorder = _p === void 0 ? false : _p, _q = props.enableGradient, enableGradient = _q === void 0 ? false : _q;
-    var _r = (0, hooks_1.useResource)({
+    var _r = (0, frontend_js_1.useResource)({
         url: url,
     }), loading = _r.loading, query = _r.query, findMany = _r.findMany, resources = _r.resources, page = _r.page, numPages = _r.numPages, loadMore = _r.loadMore;
     var _s = (0, react_1.useState)(''), keywords = _s[0], setKeywords = _s[1];

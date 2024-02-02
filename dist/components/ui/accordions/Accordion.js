@@ -36,6 +36,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("..");
 var material_2 = require("@mui/material");
@@ -43,7 +44,7 @@ var lucide_react_1 = require("lucide-react");
 var AccordionView = function (props) {
     var theme = (0, material_2.useTheme)();
     var title = props.title, url = props.url, fields = props.fields, _a = props.query, defaultQuery = _a === void 0 ? {} : _a, _b = props.perPage, perPage = _b === void 0 ? 20 : _b, editing = props.editing, _c = props.enableSearch, enableSearch = _c === void 0 ? false : _c, _d = props.enableFilters, enableFilters = _d === void 0 ? false : _d, _e = props.enableInfiniteLoad, enableInfiniteLoad = _e === void 0 ? false : _e, _f = props.enableLoadMore, enableLoadMore = _f === void 0 ? true : _f;
-    var _g = (0, hooks_1.useResource)({
+    var _g = (0, frontend_js_1.useResource)({
         url: url,
     }), loading = _g.loading, query = _g.query, findMany = _g.findMany, resources = _g.resources, page = _g.page, numPages = _g.numPages, loadMore = _g.loadMore;
     var _h = (0, react_1.useState)(''), keywords = _h[0], setKeywords = _h[1];

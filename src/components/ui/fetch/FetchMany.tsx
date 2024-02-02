@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useResourceContext } from '../../../hooks'
+import { useResourceContext } from 'frontend-js'
 
 type FetchManyProps = {
 	url: string

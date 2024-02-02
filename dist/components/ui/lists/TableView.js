@@ -71,13 +71,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var components_1 = require("../../../components");
 var TableView = function (props) {
     var _a = (0, react_1.useState)([]), rows = _a[0], setRows = _a[1];
     var url = props.url, fields = props.fields, handleClick = props.handleClick, handleEditClick = props.handleEditClick;
     var _b = (0, react_1.useState)(), activeField = _b[0], setActiveField = _b[1];
-    var _c = (0, hooks_1.useResource)({
+    var _c = (0, frontend_js_1.useResource)({
         url: url,
     }), loading = _c.loading, findMany = _c.findMany, resources = _c.resources, paginate = _c.paginate, query = _c.query, setQuery = _c.setQuery, page = _c.page, perPage = _c.perPage, numPages = _c.numPages, totalCount = _c.totalCount, sortDirection = _c.sortDirection;
     var handleSearch = function () {

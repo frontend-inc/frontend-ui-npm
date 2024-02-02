@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useResource } from '../../../hooks'
+import { useResource } from 'frontend-js'
 import { Box, TypographyVariant } from '@mui/material'
 import {
 	CardVert,

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useResource } from '../../../hooks'
+import { useResource } from 'frontend-js'
 import { Table } from '../../../components'
 
 type TableViewProps = any & {

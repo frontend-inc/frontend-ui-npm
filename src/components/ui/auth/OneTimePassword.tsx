@@ -1,6 +1,7 @@
 import React from 'react'
 import { AuthScreen, LayoutLoader } from '../../../components'
-import { useAuth } from '../../../hooks'
+import { useAuth } from 'frontend-js'
+
 import { OneTimePasswordForm } from '../../../components'
 import { useRouter } from 'next/router'
 

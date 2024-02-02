@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { useFilters, useResource } from '../../../hooks'
+import { useFilters } from '../../../hooks'
+import { useResource } from 'frontend-js'
 import { Stack, Box } from '@mui/material'
 import {
 	ListFilterButton,

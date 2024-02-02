@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useAuth } from '../../../hooks'
+import { useAuth } from 'frontend-js'
 import {
 	AuthScreen,
 	LayoutLoader,

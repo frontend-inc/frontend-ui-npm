@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { IconButton } from '@mui/material'
-import { useMenu, useAuth } from '../../../hooks'
+import { useMenu } from '../../../hooks'
+import { useAuth } from 'frontend-js'
 import { UserAvatar, UserMenu } from '../../../components'
 import { useRouter } from 'next/router'
 import { AppContext } from '../../../context'

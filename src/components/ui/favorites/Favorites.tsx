@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import { AppContext } from '../../../context'
-import { useAuth, useResource } from '../../../hooks'
+import { useResource } from 'frontend-js'
+import { useAuth } from 'frontend-js'
 import { useRouter } from 'next/router'
 import { StyledList } from '../../../components'
 

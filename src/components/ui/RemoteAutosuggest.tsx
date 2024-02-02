@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useResource } from '../../hooks'
+import { useResource } from 'frontend-js'
 import { Autosuggest } from '../../components'
 import { ErrorText } from '../../components'
 import { useError } from '../../hooks'

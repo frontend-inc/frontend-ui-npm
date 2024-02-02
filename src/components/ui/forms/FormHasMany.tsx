@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useResource } from '../../../hooks'
+import { useResource } from 'frontend-js'
 import { Stack, Button } from '@mui/material'
 import { ButtonLoader, Placeholder } from '../../../components'
 import { Check } from 'lucide-react'

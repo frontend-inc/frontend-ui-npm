@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import { Button, Typography, Box, IconButton } from '@mui/material'
-import { useMenu,  useAuth } from '../../../hooks'
+import { useMenu} from '../../../hooks'
+import { useAuth } from 'frontend-js'
 import { useRouter } from 'next/router'
 import { Icon,  AuthAvatar, AuthMenu } from '../../../components'
-import { useTheme } from '@mui/material'
 import { AppContext } from '../../../context'
 
 type AuthButtonProps = {

@@ -38,14 +38,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var Logo_1 = __importDefault(require("./Logo"));
 var material_2 = require("@mui/material");
 var Logos = function (props) {
     var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, url = props.url, _b = props.query, defaultQuery = _b === void 0 ? {} : _b, _c = props.perPage, perPage = _c === void 0 ? 20 : _c, editing = props.editing;
-    var _d = (0, hooks_1.useResource)({
+    var _d = (0, frontend_js_1.useResource)({
         url: url,
     }), loading = _d.loading, findMany = _d.findMany, resources = _d.resources;
     (0, react_1.useEffect)(function () {

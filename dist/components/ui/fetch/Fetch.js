@@ -24,10 +24,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var Fetch = function (props) {
     var children = props.children, url = props.url, handle = props.handle;
-    var _a = (0, hooks_1.useResourceContext)({
+    var _a = (0, frontend_js_1.useResourceContext)({
         url: url,
     }), loading = _a.loading, findOne = _a.findOne;
     (0, react_1.useEffect)(function () {

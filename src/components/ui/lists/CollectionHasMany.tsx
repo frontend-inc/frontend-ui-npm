@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { AppContext } from '../../../context'
-import { useResource } from '../../../hooks'
+import { useResource } from 'frontend-js'
 import { useRouter } from 'next/router'
 import { StyledList } from '../../../components'
 import { getDocumentValue } from '../../../helpers'

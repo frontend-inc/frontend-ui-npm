@@ -35,7 +35,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
@@ -43,10 +43,10 @@ var AccordionHasMany = function (props) {
     var field = props.field, url = props.url, foreignUrl = props.foreignUrl, handle = props.handle, _a = props.perPage, perPage = _a === void 0 ? 5 : _a, _b = props.query, defaultQuery = _b === void 0 ? null : _b;
     var theme = (0, material_1.useTheme)();
     var _c = (0, react_1.useState)([]), documents = _c[0], setDocuments = _c[1];
-    var _d = (0, hooks_1.useResource)({
+    var _d = (0, frontend_js_1.useResource)({
         url: url,
     }), resource = _d.resource, findOne = _d.findOne;
-    var _e = (0, hooks_1.useResource)({
+    var _e = (0, frontend_js_1.useResource)({
         url: foreignUrl,
     }), loading = _e.loading, query = _e.query, resources = _e.resources, findMany = _e.findMany;
     (0, react_1.useEffect)(function () {

@@ -36,7 +36,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
-var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
@@ -45,10 +45,10 @@ var CollectionHasMany = function (props) {
     var router = (0, router_1.useRouter)();
     var _l = (0, react_1.useState)([]), documents = _l[0], setDocuments = _l[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _m = (0, hooks_1.useResource)({
+    var _m = (0, frontend_js_1.useResource)({
         url: url,
     }), resource = _m.resource, findOne = _m.findOne;
-    var _o = (0, hooks_1.useResource)({
+    var _o = (0, frontend_js_1.useResource)({
         url: foreignUrl,
     }), loading = _o.loading, query = _o.query, resources = _o.resources, findMany = _o.findMany;
     var handleClick = function (item) {

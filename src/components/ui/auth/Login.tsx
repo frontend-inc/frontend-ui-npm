@@ -1,6 +1,6 @@
 import React from 'react'
 import { LoginForm, AuthScreen, LayoutLoader } from '../../../components'
-import { useAuth } from '../../../hooks'
+import { useAuth } from 'frontend-js'
 import { useRouter } from 'next/router'
 
 type LoginProps = {
