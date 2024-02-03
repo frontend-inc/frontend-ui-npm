@@ -1,6 +1,6 @@
 {
     "name": "frontend-mui",
-    "version": "0.0.33",
+    "version": "0.0.34",
     "license": "MIT",
     "description": "A MUI library designed for Frontend.co",
     "homepage": "https://github.com/frontend-inc/frontend-mui",
@@ -132,7 +132,7 @@
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-2": "^6.24.1",
-        "cookies-next": "^2.1.1",        
+        "cookies-next": "^2.1.1",
         "next": "^14.0.4",
         "next-images": "^1.8.5",
         "react": "^17.0.1 || ^18.0.0",
@@ -156,6 +156,6 @@
         "next": "^14.0.4",
         "next-images": "^1.8.5",
         "react": "^17.0.1 || ^18.0.0",
-        "react-dom": "^17.0.2 || ^18.0.0"        
+        "react-dom": "^17.0.2 || ^18.0.0"
     }
 }
