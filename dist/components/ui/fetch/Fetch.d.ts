@@ -1,7 +1,7 @@
 import React from 'react';
 type FetchProps = {
     url: string;
-    handle: string | string[];
+    handle: number | string;
     children: any;
 };
 declare const Fetch: React.FC<FetchProps>;

@@ -95,7 +95,7 @@ const Collection: React.FC<CollectionProps> = (props) => {
 		})
 	}
 
-	const handleSortDirection = (sortDirection: string) => {
+	const handleSortDirection = (sortDirection:'asc' | 'desc') => {
 		findMany({
 			...query,
 			sort_direction: sortDirection,

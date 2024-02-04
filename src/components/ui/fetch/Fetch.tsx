@@ -3,7 +3,7 @@ import { useResourceContext } from 'frontend-js'
 
 type FetchProps = {
 	url: string
-	handle: string | string[]
+	handle: number | string
 	children: any
 }
 

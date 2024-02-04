@@ -79,7 +79,7 @@ var TableView = function (props) {
     var _b = (0, react_1.useState)(), activeField = _b[0], setActiveField = _b[1];
     var _c = (0, frontend_js_1.useResource)({
         url: url,
-    }), loading = _c.loading, findMany = _c.findMany, resources = _c.resources, paginate = _c.paginate, query = _c.query, setQuery = _c.setQuery, page = _c.page, perPage = _c.perPage, numPages = _c.numPages, totalCount = _c.totalCount, sortDirection = _c.sortDirection;
+    }), loading = _c.loading, findMany = _c.findMany, resources = _c.resources, paginate = _c.paginate, query = _c.query, setQuery = _c.setQuery, page = _c.page, perPage = _c.perPage, numPages = _c.numPages, totalCount = _c.totalCount;
     var handleSearch = function () {
         findMany(__assign(__assign({}, query), { page: 1 }));
     };
@@ -101,7 +101,9 @@ var TableView = function (props) {
                 sortDirection = 'asc';
             }
         }
-        findMany(__assign(__assign({}, query), { sort_by: field.name, sort_direction: sortDirection }));
+        findMany(__assign(__assign({}, query), { sort_by: field.name, 
+            //@ts-ignore
+            sort_direction: sortDirection }));
         setActiveField(field);
     };
     var handleKeywordSearch = function (keywords) {
