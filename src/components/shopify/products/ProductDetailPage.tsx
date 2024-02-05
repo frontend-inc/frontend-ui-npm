@@ -46,7 +46,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
 
   useEffect(() => {
     if(handle){
-      fetchProduct(handle)
+      fetchProduct(String(handle))
     }
   }, [handle])
 

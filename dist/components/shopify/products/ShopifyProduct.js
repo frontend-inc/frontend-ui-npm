@@ -9,7 +9,7 @@ var ShopifyProduct = function (props) {
     var setProduct = (0, react_1.useContext)(frontend_shopify_1.ProductContext).setProduct;
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchProduct(handle);
+            fetchProduct(String(handle));
         }
     }, [handle]);
     (0, react_1.useEffect)(function () {

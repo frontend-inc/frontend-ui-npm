@@ -18,7 +18,7 @@ const ShopifyProduct: React.FC<ShopifyProductPageProps> = (props) => {
 
 	useEffect(() => {
 		if (handle) {
-			fetchProduct(handle)
+			fetchProduct(String(handle))
 		}
 	}, [handle])
 

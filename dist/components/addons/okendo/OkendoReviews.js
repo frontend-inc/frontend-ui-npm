@@ -54,7 +54,7 @@ var OkendoReviews = function (props) {
     }, [product === null || product === void 0 ? void 0 : product.id, widgetContainer === null || widgetContainer === void 0 ? void 0 : widgetContainer.current]);
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchProduct(handle);
+            fetchProduct(String(handle));
         }
     }, [handle]);
     if (!(product === null || product === void 0 ? void 0 : product.id) || !subscriberId)

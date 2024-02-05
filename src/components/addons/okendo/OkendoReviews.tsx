@@ -37,7 +37,7 @@ const OkendoReviews: React.FC<OkendoReviewsProps> = (props) => {
 
   useEffect(() => {
     if(handle){
-      fetchProduct(handle)
+      fetchProduct(String(handle))
     }
   }, [handle])
 

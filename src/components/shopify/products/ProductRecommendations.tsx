@@ -71,7 +71,7 @@ const ProductRecommendations: React.FC<ProductRecommendationsProps> = (
 
 	useEffect(() => {
 		if (handle) {
-			fetchProduct(handle)
+			fetchProduct(String(handle))
 		}
 	}, [handle])
 

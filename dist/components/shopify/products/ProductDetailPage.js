@@ -35,7 +35,7 @@ var ProductDetailPage = function (props) {
     }), price = _d.price, compareAtPrice = _d.compareAtPrice, variant = _d.variant, selectedOptions = _d.selectedOptions, handleOptionChange = _d.handleOptionChange, image = _d.image, images = _d.images, handleImageClick = _d.handleImageClick;
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchProduct(handle);
+            fetchProduct(String(handle));
         }
     }, [handle]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 0, direction: "row", sx: sx.container },
