@@ -21,7 +21,7 @@ const ShopifyCustomerOrders: React.FC<ShopifyCustomerOrdersProps> = (props) => {
 		subtitle = 'Manage your orders',
 	} = props || {}
 
-	const { loading, orders, fetchCustomerOrders } = useOrders()
+	const { loading, orders, findCustomerOrders } = useOrders()
 
 	const handleClick = (order) => {
 		let orderId = getShopifyIdFromGid(order?.id)
@@ -30,7 +30,7 @@ const ShopifyCustomerOrders: React.FC<ShopifyCustomerOrdersProps> = (props) => {
 
 	useEffect(() => {
 		if (!orders) {
-			fetchCustomerOrders({
+			findCustomerOrders({
 				first: 20,
 			})
 		}

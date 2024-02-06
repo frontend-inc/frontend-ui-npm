@@ -17,11 +17,11 @@ const ShopifyCustomerOrder: React.FC<ShopifyCustomerOrderProps> = (props) => {
 		orderId = null
 	}
 
-	const { loading, order, fetchCustomerOrder } = useOrders()
+	const { loading, order, findCustomerOrder } = useOrders()
 
 	useEffect(() => {
 		if (orderId) {
-			fetchCustomerOrder(orderId)
+			findCustomerOrder(orderId)
 		}
 	}, [orderId])
 

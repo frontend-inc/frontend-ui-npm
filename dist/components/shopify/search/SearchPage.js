@@ -45,7 +45,7 @@ var Search = function () {
     var _a = (0, react_1.useState)(String(query).toLowerCase()), keywords = _a[0], setKeywords = _a[1];
     var first = PER_PAGE;
     var shopUrl = (0, react_1.useContext)(frontend_shopify_2.ShopContext).shopUrl;
-    var _b = (0, frontend_shopify_1.useProducts)(), loading = _b.loading, errors = _b.errors, cursor = _b.cursor, hasNextPage = _b.hasNextPage, products = _b.products, fetchProducts = _b.fetchProducts, searchProducts = _b.searchProducts;
+    var _b = (0, frontend_shopify_1.useProducts)(), loading = _b.loading, errors = _b.errors, cursor = _b.cursor, hasNextPage = _b.hasNextPage, products = _b.products, findProducts = _b.findProducts, searchProducts = _b.searchProducts;
     var handleChange = function (ev) {
         setKeywords(ev.target.value);
         if ((keywords === null || keywords === void 0 ? void 0 : keywords.length) == 0) {
@@ -75,7 +75,7 @@ var Search = function () {
             });
         }
         else {
-            fetchProducts({
+            findProducts({
                 first: 20,
             });
         }

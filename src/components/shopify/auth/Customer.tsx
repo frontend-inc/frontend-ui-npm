@@ -18,7 +18,7 @@ const Customer: React.FC<CustomerProps> = (props) => {
 		errors,
 		loading,    
 		customer,    
-		fetchCustomer,
+		findCustomer,
 		updateCustomer,
 	} = useCustomers()
 
@@ -47,7 +47,7 @@ const Customer: React.FC<CustomerProps> = (props) => {
 
 	useEffect(() => {
 		if (!customer?.email) {
-			fetchCustomer(accessToken)
+			findCustomer(accessToken)
 		}
 	}, [customer])
 

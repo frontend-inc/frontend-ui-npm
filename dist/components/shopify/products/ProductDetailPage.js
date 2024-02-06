@@ -29,13 +29,13 @@ var shopify_1 = require("../../../components/shopify");
 var frontend_shopify_1 = require("frontend-shopify");
 var ProductDetailPage = function (props) {
     var handle = props.handle, buttonText = props.buttonText, _a = props.enableQuantity, enableQuantity = _a === void 0 ? true : _a, _b = props.enableSubscription, enableSubscription = _b === void 0 ? true : _b, enableFavorites = props.enableFavorites, enableOkendoStarRating = props.enableOkendoStarRating;
-    var _c = (0, frontend_shopify_1.useProducts)(), product = _c.product, fetchProduct = _c.fetchProduct;
+    var _c = (0, frontend_shopify_1.useProducts)(), product = _c.product, findProduct = _c.findProduct;
     var _d = (0, frontend_shopify_1.useProductDetails)({
         product: product
     }), price = _d.price, compareAtPrice = _d.compareAtPrice, variant = _d.variant, selectedOptions = _d.selectedOptions, handleOptionChange = _d.handleOptionChange, image = _d.image, images = _d.images, handleImageClick = _d.handleImageClick;
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchProduct(String(handle));
+            findProduct(String(handle));
         }
     }, [handle]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 0, direction: "row", sx: sx.container },

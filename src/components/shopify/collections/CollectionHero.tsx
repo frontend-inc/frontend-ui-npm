@@ -39,11 +39,11 @@ const CollectionHero: React.FC<CollectionHeroProps> = (props) => {
 		href,
 	} = props
 
-	const { collection, fetchCollection } = useCollections()
+	const { collection, findCollection } = useCollections()
 
 	useEffect(() => {
 		if (handle) {
-			fetchCollection(handle)
+			findCollection(handle)
 		}
 	}, [handle])
 

@@ -45,15 +45,15 @@ const ProductRecommendations: React.FC<ProductRecommendationsProps> = (
 
 	const {
 		loading,
-		fetchProduct,
+		findProduct,
 		product,
 		products,
-		fetchProductRecommendations,
+		findProductRecommendations,
 	} = useProducts()
 
 	useEffect(() => {
 		if (product) {
-			fetchProductRecommendations(product?.id)
+			findProductRecommendations(product?.id)
 		}
 	}, [product])
 
@@ -71,7 +71,7 @@ const ProductRecommendations: React.FC<ProductRecommendationsProps> = (
 
 	useEffect(() => {
 		if (handle) {
-			fetchProduct(String(handle))
+			findProduct(String(handle))
 		}
 	}, [handle])
 

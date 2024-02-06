@@ -12,13 +12,13 @@ type ShopifyProductPageProps = {
 const ShopifyProduct: React.FC<ShopifyProductPageProps> = (props) => {
 	const { handle, product: initialProduct, children } = props
 
-	const { product, fetchProduct } = useProducts()
+	const { product, findProduct } = useProducts()
 
 	const { setProduct } = useContext(ProductContext) as any
 
 	useEffect(() => {
 		if (handle) {
-			fetchProduct(String(handle))
+			findProduct(String(handle))
 		}
 	}, [handle])
 

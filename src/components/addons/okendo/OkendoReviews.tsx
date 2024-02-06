@@ -12,7 +12,7 @@ const OkendoReviews: React.FC<OkendoReviewsProps> = (props) => {
 
   const { handle, subscriberId } = props || {}
 
-  const { loading, product, fetchProduct } = useProducts()
+  const { loading, product, findProduct } = useProducts()
 
   const widgetContainer = useRef(null)
 
@@ -37,7 +37,7 @@ const OkendoReviews: React.FC<OkendoReviewsProps> = (props) => {
 
   useEffect(() => {
     if(handle){
-      fetchProduct(String(handle))
+      findProduct(String(handle))
     }
   }, [handle])
 

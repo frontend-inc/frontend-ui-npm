@@ -33,7 +33,7 @@ const Collections: React.FC<CollectionProps> = (props) => {
 
 	const router = useRouter()
 
-	const { loading, collections, fetchCollections } = useCollections()
+	const { loading, collections, findCollections } = useCollections()
 
 	const { shopUrl } = useContext(ShopContext) as any
 
@@ -48,7 +48,7 @@ const Collections: React.FC<CollectionProps> = (props) => {
 	}
 
 	useEffect(() => {
-		fetchCollections()
+		findCollections()
 	}, [])
 
 	return (

@@ -36,7 +36,7 @@ const FeaturedProduct: React.FC<FeaturedProductProps> = (props) => {
 		enableQuickShop = false,
 	} = props || {}
 
-	const { loading, product, fetchProduct } = useProducts()
+	const { loading, product, findProduct } = useProducts()
 
 	const handleItemClick = () => {
 		if (handleClick) {
@@ -46,7 +46,7 @@ const FeaturedProduct: React.FC<FeaturedProductProps> = (props) => {
 
 	useEffect(() => {
 		if (handle) {
-			fetchProduct(handle)
+			findProduct(handle)
 		}
 	}, [handle])
 

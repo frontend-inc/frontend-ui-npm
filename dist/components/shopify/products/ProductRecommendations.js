@@ -31,10 +31,10 @@ var material_2 = require("@mui/material");
 var ProductRecommendations = function (props) {
     var _a = props || {}, handle = _a.handle, _b = _a.editing, editing = _b === void 0 ? false : _b, _c = _a.layout, layout = _c === void 0 ? 'grid' : _c, _d = _a.title, title = _d === void 0 ? 'Similar products' : _d, _e = _a.perPage, perPage = _e === void 0 ? 12 : _e, productComponent = _a.productComponent, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.buttonText, buttonText = _g === void 0 ? 'Add to cart' : _g, enableAddToCart = _a.enableAddToCart, enableQuantity = _a.enableQuantity, enableQuickShop = _a.enableQuickShop, enableOkendoStarRating = _a.enableOkendoStarRating;
     var _h = (0, react_1.useState)(), similarProducts = _h[0], setSimilarProducts = _h[1];
-    var _j = (0, frontend_shopify_1.useProducts)(), loading = _j.loading, fetchProduct = _j.fetchProduct, product = _j.product, products = _j.products, fetchProductRecommendations = _j.fetchProductRecommendations;
+    var _j = (0, frontend_shopify_1.useProducts)(), loading = _j.loading, findProduct = _j.findProduct, product = _j.product, products = _j.products, findProductRecommendations = _j.findProductRecommendations;
     (0, react_1.useEffect)(function () {
         if (product) {
-            fetchProductRecommendations(product === null || product === void 0 ? void 0 : product.id);
+            findProductRecommendations(product === null || product === void 0 ? void 0 : product.id);
         }
     }, [product]);
     // Hide the current product and any products marked hidden
@@ -48,7 +48,7 @@ var ProductRecommendations = function (props) {
     }, [product, products]);
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchProduct(String(handle));
+            findProduct(String(handle));
         }
     }, [handle]);
     return (react_1.default.createElement(material_2.Box, { sx: sx.root },

@@ -5,11 +5,11 @@ var frontend_shopify_1 = require("frontend-shopify");
 var frontend_shopify_2 = require("frontend-shopify");
 var ShopifyProduct = function (props) {
     var handle = props.handle, initialProduct = props.product, children = props.children;
-    var _a = (0, frontend_shopify_2.useProducts)(), product = _a.product, fetchProduct = _a.fetchProduct;
+    var _a = (0, frontend_shopify_2.useProducts)(), product = _a.product, findProduct = _a.findProduct;
     var setProduct = (0, react_1.useContext)(frontend_shopify_1.ProductContext).setProduct;
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchProduct(String(handle));
+            findProduct(String(handle));
         }
     }, [handle]);
     (0, react_1.useEffect)(function () {

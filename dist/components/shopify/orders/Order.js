@@ -38,10 +38,10 @@ var ShopifyCustomerOrder = function (props) {
     if (orderId == 'new') {
         orderId = null;
     }
-    var _a = (0, frontend_shopify_1.useOrders)(), loading = _a.loading, order = _a.order, fetchCustomerOrder = _a.fetchCustomerOrder;
+    var _a = (0, frontend_shopify_1.useOrders)(), loading = _a.loading, order = _a.order, findCustomerOrder = _a.findCustomerOrder;
     (0, react_1.useEffect)(function () {
         if (orderId) {
-            fetchCustomerOrder(orderId);
+            findCustomerOrder(orderId);
         }
     }, [orderId]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },

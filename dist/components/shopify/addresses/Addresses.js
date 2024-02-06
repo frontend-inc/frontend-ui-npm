@@ -74,7 +74,7 @@ var Addresses = function (props) {
     var _b = (0, react_1.useState)(false), showDeleteModal = _b[0], setShowDeleteModal = _b[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _c = props || {}, _d = _c.title, title = _d === void 0 ? 'Customer Addresses' : _d, _e = _c.subtitle, subtitle = _e === void 0 ? 'Manage your addresses' : _e;
-    var _f = (0, frontend_shopify_1.useAddresses)(), loading = _f.loading, addresses = _f.addresses, deleteCustomerAddress = _f.deleteCustomerAddress, fetchCustomerAddresses = _f.fetchCustomerAddresses;
+    var _f = (0, frontend_shopify_1.useAddresses)(), loading = _f.loading, addresses = _f.addresses, deleteCustomerAddress = _f.deleteCustomerAddress, findCustomerAddresses = _f.findCustomerAddresses;
     var handleClick = function (addressGid) {
         var addressId = (0, frontend_shopify_2.getShopifyIdFromGid)(addressGid);
         router.push("".concat(clientUrl, "/shopify/addresses/").concat(addressId));
@@ -103,7 +103,7 @@ var Addresses = function (props) {
     }); };
     (0, react_1.useEffect)(function () {
         if (!addresses) {
-            fetchCustomerAddresses();
+            findCustomerAddresses();
         }
     }, [addresses]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },

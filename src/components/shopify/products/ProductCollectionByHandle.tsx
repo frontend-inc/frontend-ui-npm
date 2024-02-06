@@ -57,11 +57,11 @@ const ProductCollectionByHandle: React.FC<ProductCollectionByHandleProps> = (
     enableOkendoStarRating = false
 	} = props
 
-	const { loading, collection, fetchCollection } = useCollections()
+	const { loading, collection, findCollection } = useCollections()
 
 	useEffect(() => {
 		if (handle) {
-			fetchCollection(handle)
+			findCollection(handle)
 		}
 	}, [handle])
 

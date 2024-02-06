@@ -29,10 +29,10 @@ var frontend_shopify_1 = require("frontend-shopify");
 var CollectionHero = function (props) {
     var _a;
     var handle = props.handle, _b = props.editing, editing = _b === void 0 ? false : _b, _c = props.textVariant, textVariant = _c === void 0 ? 'h3' : _c, handleClick = props.handleClick, _d = props.height, height = _d === void 0 ? 400 : _d, _e = props.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = props.alt, alt = _f === void 0 ? 'image' : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = props.opacity, opacity = _j === void 0 ? 0.5 : _j, _k = props.alignItems, alignItems = _k === void 0 ? 'center' : _k, _l = props.bgcolor, bgcolor = _l === void 0 ? '#FFFFFF' : _l, href = props.href;
-    var _m = (0, frontend_shopify_1.useCollections)(), collection = _m.collection, fetchCollection = _m.fetchCollection;
+    var _m = (0, frontend_shopify_1.useCollections)(), collection = _m.collection, findCollection = _m.findCollection;
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchCollection(handle);
+            findCollection(handle);
         }
     }, [handle]);
     if (!collection)

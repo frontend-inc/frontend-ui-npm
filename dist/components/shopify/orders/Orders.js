@@ -34,14 +34,14 @@ var ShopifyCustomerOrders = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, _b = _a.title, title = _b === void 0 ? 'Customer Orders' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Manage your orders' : _c;
-    var _d = (0, frontend_shopify_1.useOrders)(), loading = _d.loading, orders = _d.orders, fetchCustomerOrders = _d.fetchCustomerOrders;
+    var _d = (0, frontend_shopify_1.useOrders)(), loading = _d.loading, orders = _d.orders, findCustomerOrders = _d.findCustomerOrders;
     var handleClick = function (order) {
         var orderId = (0, frontend_shopify_2.getShopifyIdFromGid)(order === null || order === void 0 ? void 0 : order.id);
         router.push("".concat(clientUrl, "/shopify/orders/").concat(orderId));
     };
     (0, react_1.useEffect)(function () {
         if (!orders) {
-            fetchCustomerOrders({
+            findCustomerOrders({
                 first: 20,
             });
         }

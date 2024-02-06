@@ -48,7 +48,7 @@ var frontend_shopify_2 = require("frontend-shopify");
 var FeaturedProduct = function (props) {
     var _a, _b, _c, _d;
     var _e = props || {}, handle = _e.handle, _f = _e.flexDirection, flexDirection = _f === void 0 ? 'row' : _f, _g = _e.height, height = _g === void 0 ? index_1.FEATURED_CARD_HEIGHT : _g, _h = _e.width, width = _h === void 0 ? index_1.FEATURED_CARD_WIDTH : _h, _j = _e.buttonText, buttonText = _j === void 0 ? 'Add to Cart' : _j, _k = _e.quickShopButtonText, quickShopButtonText = _k === void 0 ? 'Quick Shop' : _k, handleClick = _e.handleClick, _l = _e.enableBorder, enableBorder = _l === void 0 ? false : _l, _m = _e.enableAddToCart, enableAddToCart = _m === void 0 ? false : _m, _o = _e.enableQuantity, enableQuantity = _o === void 0 ? false : _o, _p = _e.enableQuickShop, enableQuickShop = _p === void 0 ? false : _p;
-    var _q = (0, frontend_shopify_2.useProducts)(), loading = _q.loading, product = _q.product, fetchProduct = _q.fetchProduct;
+    var _q = (0, frontend_shopify_2.useProducts)(), loading = _q.loading, product = _q.product, findProduct = _q.findProduct;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -56,7 +56,7 @@ var FeaturedProduct = function (props) {
     };
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchProduct(handle);
+            findProduct(handle);
         }
     }, [handle]);
     if (!product)

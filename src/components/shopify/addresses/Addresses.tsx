@@ -26,7 +26,7 @@ const Addresses: React.FC<AddressesProps> = (props) => {
 		subtitle = 'Manage your addresses',
 	} = props || {}
 
-	const { loading, addresses, deleteCustomerAddress, fetchCustomerAddresses } =
+	const { loading, addresses, deleteCustomerAddress, findCustomerAddresses } =
 		useAddresses()
 
 	const handleClick = (addressGid) => {
@@ -55,7 +55,7 @@ const Addresses: React.FC<AddressesProps> = (props) => {
 
 	useEffect(() => {
 		if (!addresses) {
-			fetchCustomerAddresses()
+			findCustomerAddresses()
 		}
 	}, [addresses])
 

@@ -65,7 +65,7 @@ var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
 var Customer = function (props) {
     var _a = props || {}, _b = _a.title, title = _b === void 0 ? 'Customer details' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Update your account' : _c;
-    var _d = (0, frontend_shopify_1.useCustomers)(), errors = _d.errors, loading = _d.loading, customer = _d.customer, fetchCustomer = _d.fetchCustomer, updateCustomer = _d.updateCustomer;
+    var _d = (0, frontend_shopify_1.useCustomers)(), errors = _d.errors, loading = _d.loading, customer = _d.customer, findCustomer = _d.findCustomer, updateCustomer = _d.updateCustomer;
     var _e = (0, frontend_shopify_1.useAuth)(), authCustomer = _e.customer, setAuthCustomer = _e.setCustomer, handleChange = _e.handleChange, accessToken = _e.accessToken;
     (0, react_1.useEffect)(function () {
         if (customer) {
@@ -90,7 +90,7 @@ var Customer = function (props) {
     }); };
     (0, react_1.useEffect)(function () {
         if (!(customer === null || customer === void 0 ? void 0 : customer.email)) {
-            fetchCustomer(accessToken);
+            findCustomer(accessToken);
         }
     }, [customer]);
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },

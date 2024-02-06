@@ -71,7 +71,7 @@ const ProductCollection: React.FC<ProductCollectionProps> = (props) => {
 	const {
 		loading,
 		products,
-		fetchCollection,
+		findCollection,
 		filters,
 		filterVariantOption,
 		filterInStock,
@@ -119,13 +119,13 @@ const ProductCollection: React.FC<ProductCollectionProps> = (props) => {
 
 	useEffect(() => {
 		if (query) {
-			fetchCollection(handle, query)
+			findCollection(handle, query)
 		}
 	}, [query])
 
 	useEffect(() => {
 		if (handle) {
-			fetchCollection(handle, {
+			findCollection(handle, {
 				...query,
 				sortKey,
 				reverse,

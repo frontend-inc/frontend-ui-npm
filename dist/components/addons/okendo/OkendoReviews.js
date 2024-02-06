@@ -32,7 +32,7 @@ var frontend_shopify_2 = require("frontend-shopify");
 var head_1 = __importDefault(require("next/head"));
 var OkendoReviews = function (props) {
     var _a = props || {}, handle = _a.handle, subscriberId = _a.subscriberId;
-    var _b = (0, frontend_shopify_2.useProducts)(), loading = _b.loading, product = _b.product, fetchProduct = _b.fetchProduct;
+    var _b = (0, frontend_shopify_2.useProducts)(), loading = _b.loading, product = _b.product, findProduct = _b.findProduct;
     var widgetContainer = (0, react_1.useRef)(null);
     var initializeReviewsWidget = function () {
         // @ts-ignore
@@ -54,7 +54,7 @@ var OkendoReviews = function (props) {
     }, [product === null || product === void 0 ? void 0 : product.id, widgetContainer === null || widgetContainer === void 0 ? void 0 : widgetContainer.current]);
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchProduct(String(handle));
+            findProduct(String(handle));
         }
     }, [handle]);
     if (!(product === null || product === void 0 ? void 0 : product.id) || !subscriberId)

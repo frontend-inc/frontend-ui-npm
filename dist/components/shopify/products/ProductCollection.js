@@ -43,7 +43,7 @@ var ProductCollection = function (props) {
     var _o = (0, react_1.useState)({}), query = _o[0], setQuery = _o[1];
     var _p = (0, react_1.useState)('COLLECTION_DEFAULT'), sortKey = _p[0], setSortKey = _p[1];
     var _q = (0, react_1.useState)(false), reverse = _q[0], setReverse = _q[1];
-    var _r = (0, frontend_shopify_1.useCollections)(), loading = _r.loading, products = _r.products, fetchCollection = _r.fetchCollection, filters = _r.filters, filterVariantOption = _r.filterVariantOption, filterInStock = _r.filterInStock, filterVendor = _r.filterVendor, filterProductType = _r.filterProductType, filterTag = _r.filterTag;
+    var _r = (0, frontend_shopify_1.useCollections)(), loading = _r.loading, products = _r.products, findCollection = _r.findCollection, filters = _r.filters, filterVariantOption = _r.filterVariantOption, filterInStock = _r.filterInStock, filterVendor = _r.filterVendor, filterProductType = _r.filterProductType, filterTag = _r.filterTag;
     var handleSortClick = function (sortKey, reverse) {
         if (reverse === void 0) { reverse = false; }
         setSortKey(sortKey);
@@ -75,12 +75,12 @@ var ProductCollection = function (props) {
     };
     (0, react_1.useEffect)(function () {
         if (query) {
-            fetchCollection(handle, query);
+            findCollection(handle, query);
         }
     }, [query]);
     (0, react_1.useEffect)(function () {
         if (handle) {
-            fetchCollection(handle, __assign(__assign({}, query), { sortKey: sortKey, reverse: reverse, filters: filters }));
+            findCollection(handle, __assign(__assign({}, query), { sortKey: sortKey, reverse: reverse, filters: filters }));
         }
     }, [handle, filters, sortKey, reverse]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 2 },

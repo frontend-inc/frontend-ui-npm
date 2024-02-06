@@ -33,7 +33,7 @@ const Address: React.FC<AddressProps> = (props) => {
 		updateCustomerAddress,
 		createCustomerAddress,
 		deleteCustomerAddress,
-		fetchCustomerAddress,
+		findCustomerAddress,
 	} = useAddresses()
 
 	const handleSubmit = async () => {
@@ -55,7 +55,7 @@ const Address: React.FC<AddressProps> = (props) => {
 
 	useEffect(() => {
 		if (addressId) {
-			fetchCustomerAddress(addressId)
+			findCustomerAddress(addressId)
 		}
 	}, [addressId])
 

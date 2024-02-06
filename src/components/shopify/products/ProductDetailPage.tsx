@@ -29,7 +29,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
     enableOkendoStarRating
 	} = props
 
-  const { product, fetchProduct } = useProducts()
+  const { product, findProduct } = useProducts()
 
   const {
     price,
@@ -46,7 +46,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = (props) => {
 
   useEffect(() => {
     if(handle){
-      fetchProduct(String(handle))
+      findProduct(String(handle))
     }
   }, [handle])
 

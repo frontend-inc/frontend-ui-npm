@@ -29,7 +29,7 @@ const Search: React.FC = () => {
 		cursor,
 		hasNextPage,
 		products,
-		fetchProducts,
+		findProducts,
 		searchProducts,
 	} = useProducts()
 
@@ -63,7 +63,7 @@ const Search: React.FC = () => {
 				query: searchKeywords,
 			})
 		} else {
-			fetchProducts({
+			findProducts({
 				first: 20,
 			})
 		}

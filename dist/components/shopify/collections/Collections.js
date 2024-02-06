@@ -32,7 +32,7 @@ var router_1 = require("next/router");
 var Collections = function (props) {
     var title = props.title, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.perPage, perPage = _b === void 0 ? 20 : _b, _c = props.layout, layout = _c === void 0 ? 'grid' : _c, _d = props.style, style = _d === void 0 ? 'card' : _d, buttonText = props.buttonText, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f;
     var router = (0, router_1.useRouter)();
-    var _g = (0, frontend_shopify_1.useCollections)(), loading = _g.loading, collections = _g.collections, fetchCollections = _g.fetchCollections;
+    var _g = (0, frontend_shopify_1.useCollections)(), loading = _g.loading, collections = _g.collections, findCollections = _g.findCollections;
     var shopUrl = (0, react_1.useContext)(frontend_shopify_2.ShopContext).shopUrl;
     var handleClick = function (collection) {
         if (!editing && shopUrl) {
@@ -44,7 +44,7 @@ var Collections = function (props) {
         }
     };
     (0, react_1.useEffect)(function () {
-        fetchCollections();
+        findCollections();
     }, []);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Typography, { variant: "h6", color: "textPrimary" }, title),
