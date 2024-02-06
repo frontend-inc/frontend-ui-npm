@@ -40,6 +40,6 @@ var ProductList = function (props) {
         var url = "".concat(clientUrl, "/products/").concat(product === null || product === void 0 ? void 0 : product.handle);
         router.push(url);
     };
-    return (react_1.default.createElement(material_1.Stack, { spacing: 2 }, products === null || products === void 0 ? void 0 : products.map(function (product) { return (react_1.default.createElement(ProductComponent, { product: product, handleClick: function () { return handleClick(product); }, buttonText: buttonText, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating })); })));
+    return (react_1.default.createElement(material_1.Stack, { spacing: 2 }, products === null || products === void 0 ? void 0 : products.map(function (product) { return (react_1.default.createElement(ProductComponent, { key: product.id, product: product, handleClick: function () { return handleClick(product); }, buttonText: buttonText, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating })); })));
 };
 exports.default = ProductList;

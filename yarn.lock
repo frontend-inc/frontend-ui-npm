@@ -7534,8 +7534,8 @@ from2@^2.1.0:
     cookies-next "^2.1.1"
 
 "frontend-shopify@git+https://github.com/frontend-inc/frontend-shopify.git":
-  version "0.0.15"
-  resolved "git+https://github.com/frontend-inc/frontend-shopify.git#38ecbf3405c7a425594dee924690ca0d1d639d66"
+  version "0.0.17"
+  resolved "git+https://github.com/frontend-inc/frontend-shopify.git#46e6751e7a95d33ed7324714ec5c558d477c31eb"
   dependencies:
     "@apollo/client" "^3.8.9"
     apollo-link-context "^1.0.20"

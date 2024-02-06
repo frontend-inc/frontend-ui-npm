@@ -48,6 +48,7 @@ const ProductList: React.FC<ProductListProps> = (props) => {
 		<Stack spacing={2}>
 			{products?.map((product) => (
 				<ProductComponent
+          key={product.id}
 					product={product}
 					handleClick={() => handleClick(product)}
           buttonText={buttonText}

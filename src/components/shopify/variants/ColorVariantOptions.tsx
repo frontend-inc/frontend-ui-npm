@@ -23,6 +23,7 @@ const ColorVariantsOptions: React.FC<ColorVariantsOptionsProps> = (props) => {
 					let variant = findVariantByColor(product, value)
 					return (
 						<Button
+              key={value}
 							sx={{
 								...sx.button,
 								...(selected === value && sx.activeButton),

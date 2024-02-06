@@ -60,6 +60,7 @@ const SwipeableProductImages: React.FC<SwipeableProductImagesProps> = (
           // @ts-ignore 
           product?.images?.edges.map(({ node: image }) => (
 					<Box 
+            key={image.id}
             sx={{ 
               ...sx.image,
             }}

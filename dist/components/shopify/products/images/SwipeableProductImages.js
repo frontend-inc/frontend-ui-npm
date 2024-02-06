@@ -57,7 +57,7 @@ var SwipeableProductImages = function (props) {
         // @ts-ignore 
         (_b = product === null || product === void 0 ? void 0 : product.images) === null || _b === void 0 ? void 0 : _b.edges.map(function (_a) {
             var image = _a.node;
-            return (react_1.default.createElement(material_1.Box, { sx: __assign({}, sx.image) },
+            return (react_1.default.createElement(material_1.Box, { key: image.id, sx: __assign({}, sx.image) },
                 react_1.default.createElement(components_1.TouchableOpacity, { key: image.id, handleClick: handleClick },
                     react_1.default.createElement("img", { src: (0, frontend_shopify_1.shopifyResizeImage)(image === null || image === void 0 ? void 0 : image.url, {
                             width: width * 2,

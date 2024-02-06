@@ -24,7 +24,7 @@ var ColorVariantsOptions = function (props) {
         react_1.default.createElement(material_1.Box, { sx: sx.options }, values === null || values === void 0 ? void 0 : values.map(function (value) {
             var _a, _b;
             var variant = (0, frontend_shopify_1.findVariantByColor)(product, value);
-            return (react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), (selected === value && sx.activeButton)), onClick: function () { return handleChange(name, value); } },
+            return (react_1.default.createElement(material_1.Button, { key: value, sx: __assign(__assign({}, sx.button), (selected === value && sx.activeButton)), onClick: function () { return handleChange(name, value); } },
                 react_1.default.createElement(image_1.default, { height: 64, width: 64, src: (_a = variant === null || variant === void 0 ? void 0 : variant.image) === null || _a === void 0 ? void 0 : _a.url, alt: (_b = variant === null || variant === void 0 ? void 0 : variant.image) === null || _b === void 0 ? void 0 : _b.altText, style: {
                         objectFit: 'contain',
                     } })));
