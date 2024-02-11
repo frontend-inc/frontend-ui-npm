@@ -43,7 +43,7 @@ var index_1 = require("../../../constants/index");
 var DesktopTopNav = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var editing = props.editing, logo = props.logo, menuItems = props.menuItems, _a = props.logoWidth, logoWidth = _a === void 0 ? index_1.HEADER_LOGO_WIDTH : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? index_1.HEADER_LOGO_HEIGHT : _b, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableShopify, enableShopify = _d === void 0 ? false : _d, _e = props.enableNotifications, enableNotifications = _e === void 0 ? false : _e, _f = props.position, position = _f === void 0 ? 'absolute' : _f, _g = props.showIcons, showIcons = _g === void 0 ? true : _g;
-    return (react_1.default.createElement(material_1.Hidden, { smDown: true },
+    return (react_1.default.createElement(material_1.Hidden, { mdDown: true },
         react_1.default.createElement(material_1.AppBar, { sx: __assign(__assign({}, sx.appBar), (enableNotifications && sx.appBarNotifications)), position: position, elevation: 0 },
             react_1.default.createElement(material_1.Toolbar, null,
                 react_1.default.createElement(material_1.Box, { sx: sx.desktopTopNav },
@@ -60,7 +60,7 @@ var DesktopTopNav = function (props) {
 var DesktopSideNav = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var editing = props.editing, logo = props.logo, menuItems = props.menuItems, _a = props.logoWidth, logoWidth = _a === void 0 ? index_1.HEADER_LOGO_WIDTH : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? index_1.HEADER_LOGO_HEIGHT : _b, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableShopify, enableShopify = _d === void 0 ? false : _d, _e = props.enableNotifications, enableNotifications = _e === void 0 ? false : _e, _f = props.showIcons, showIcons = _f === void 0 ? true : _f;
-    return (react_1.default.createElement(material_1.Hidden, { smDown: true },
+    return (react_1.default.createElement(material_1.Hidden, { mdDown: true },
         react_1.default.createElement(material_1.Box, { sx: sx.sideNav },
             react_1.default.createElement(material_1.Stack, { sx: __assign(__assign(__assign(__assign({}, sx.desktopSideNav), (enableNotifications && sx.desktopSideNavNotifications)), (editing && sx.desktopSideNavEditor)), (editing && enableNotifications && sx.desktopSideNavEditorNotifications)), direction: "column", spacing: 2 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.desktopSideMenuItems, direction: "column", spacing: 2 },
@@ -77,7 +77,7 @@ var DesktopSideNav = function (props) {
 var MobileNav = function (props) {
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var editing = props.editing, logo = props.logo, _a = props.logoWidth, logoWidth = _a === void 0 ? 120 : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? 50 : _b, _c = props.enableShopify, enableShopify = _c === void 0 ? false : _c, _d = props.enableNotifications, enableNotifications = _d === void 0 ? false : _d;
-    return (react_1.default.createElement(material_1.Hidden, { smUp: true },
+    return (react_1.default.createElement(material_1.Hidden, { mdUp: true },
         react_1.default.createElement(material_1.AppBar, { sx: __assign(__assign({}, sx.appBar), (enableNotifications && sx.appBarNotifications)), position: 'absolute', elevation: 0 },
             react_1.default.createElement(material_1.Toolbar, { sx: sx.toolbar },
                 react_1.default.createElement(material_1.Box, { sx: sx.desktopTopNav },
