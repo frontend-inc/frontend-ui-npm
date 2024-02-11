@@ -55,7 +55,7 @@ const DesktopTopNav = (props: DesktopNavProps) => {
 	} = props
 
 	return (
-		<Hidden mdDown>
+		<Hidden smDown>
 			<AppBar 
         sx={{ 
           ...sx.appBar,
@@ -125,7 +125,7 @@ const DesktopSideNav = (props: DesktopNavProps) => {
 	} = props
 
 	return (
-		<Hidden mdDown>
+		<Hidden smDown>
 			<Box sx={sx.sideNav}>
         <Stack 
           sx={{ 
@@ -198,7 +198,7 @@ const MobileNav = (props: DesktopNavProps) => {
 	} = props
 
 	return (
-		<Hidden mdUp>
+		<Hidden smUp>
 			<AppBar 
         sx={{ 
           ...sx.appBar,
