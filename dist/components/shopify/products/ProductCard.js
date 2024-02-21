@@ -54,6 +54,7 @@ var ProductCard = function (props) {
     };
     var handleItemClick = function () {
         if (handleClick) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             handleClick();
         }
     };
@@ -83,10 +84,10 @@ var sx = {
         borderColor: 'divider',
     },
     text: {
-        height: '60px',
+        height: '80px',
     },
     textWithReviews: {
-        height: '90px',
+        height: '110px',
     },
     contentBorder: {
         p: 1,

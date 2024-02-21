@@ -47,6 +47,6 @@ var ProductGrid = function (props) {
 exports.default = ProductGrid;
 var sx = {
     item: {
-        p: 0.5
+        p: 1
     }
 };

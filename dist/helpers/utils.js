@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.imageFromVideoUrl = exports.resize = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
+exports.scrollTo = exports.imageFromVideoUrl = exports.resize = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
 var isEmptyObject = function (object) {
     if (Object.values(object).every(function (x) { return x === null || x === ''; })) {
         return false;
@@ -74,3 +74,8 @@ var imageFromVideoUrl = function (url) {
     return url === null || url === void 0 ? void 0 : url.replace(/mp4|mpeg|ogg|mkv|mov/i, 'jpg');
 };
 exports.imageFromVideoUrl = imageFromVideoUrl;
+var scrollTo = function (domId) {
+    var elem = document.getElementById(domId);
+    elem === null || elem === void 0 ? void 0 : elem.scrollIntoView({ behavior: 'smooth' });
+};
+exports.scrollTo = scrollTo;

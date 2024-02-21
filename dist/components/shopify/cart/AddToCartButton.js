@@ -134,7 +134,7 @@ var AddToCartButton = function (props) {
         return null;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
         enableSubscription && (react_1.default.createElement(shopify_1.SubscriptionSelector, { product: product, activeSellingPlanId: activeSellingPlanId, handleChange: handleSellingPlanChange })),
-        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0.5 },
+        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
             enableQuantity && (react_1.default.createElement(shopify_1.QuantitySelector, { size: size, quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity })),
             react_1.default.createElement(material_1.Button, { fullWidth: true, sx: __assign(__assign({}, sx.addToCartButton), (size == 'small' && sx.addToCartButtonSmall)), color: "primary", onClick: handleAddToCart, variant: buttonVariant, size: size, startIcon: react_1.default.createElement(components_1.IconLoader, { color: buttonVariant == 'contained'
                         ? 'primary.contrastText'

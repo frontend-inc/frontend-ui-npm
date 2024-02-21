@@ -22,18 +22,10 @@ var LayoutContainer = function (props) {
     var enableNotifications = (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0;
     return (react_1.default.createElement(material_1.Box, { sx: sx.layout },
         react_1.default.createElement(components_1.Notifications, { notifications: notifications }),
-        react_1.default.createElement(material_1.Box
-        //@ts-ignore
-        , { 
-            //@ts-ignore
-            sx: __assign(__assign({}, sx.root), (!topNav && sx.sideNav)) },
+        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (!topNav && sx.sideNav)) },
             enableHeader && (react_1.default.createElement(components_1.ModeTheme, { mode: mode },
                 react_1.default.createElement(components_1.Header, { editing: editing, topNav: topNav, showIcons: showIcons, menuItems: menuItems, enableNotifications: enableNotifications, handleClick: handleClick, enableAuth: enableAuth, enableShopify: enableShopify }))),
-            react_1.default.createElement(material_1.Box
-            //@ts-ignore
-            , { 
-                //@ts-ignore
-                sx: __assign(__assign(__assign({}, sx.content), (enableHeader && topNav && sx.contentHeader)), (topNav ? sx.contentTopNav : sx.contentSideNav)) },
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (enableHeader && topNav && sx.contentHeader)), (topNav ? sx.contentTopNav : sx.contentSideNav)) },
                 react_1.default.createElement(components_1.LayoutScroll, null, children)))));
 };
 exports.default = LayoutContainer;
@@ -60,7 +52,7 @@ var sx = {
         height: '100vh',
         pt: {
             sm: 0,
-            xs: '64px',
+            xs: '60px',
         }
     },
     content: {
@@ -68,10 +60,6 @@ var sx = {
         flexDirection: 'column',
         width: '100%',
         minHeight: '100%',
-        overflowY: 'scroll',
-        '&::-webkit-scrollbar': {
-            display: 'none',
-        },
     },
     contentHeader: {
         pt: '60px',
@@ -80,6 +68,10 @@ var sx = {
         width: {
             sm: 'calc(100% - 280px)',
             xs: '100%',
+        },
+        overflowY: 'scroll',
+        '&::-webkit-scrollbar': {
+            display: 'none',
         },
     },
     contentTopNav: {

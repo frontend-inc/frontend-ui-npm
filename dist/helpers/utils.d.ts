@@ -9,3 +9,4 @@ export declare const resize: (src: any, { width, height, transform }: {
     transform?: string;
 }) => string;
 export declare const imageFromVideoUrl: (url: any) => any;
+export declare const scrollTo: (domId: any) => void;
