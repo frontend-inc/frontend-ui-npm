@@ -45,7 +45,9 @@ var Column = function (props) {
             react_1.default.createElement(material_1.Container, { sx: __assign(__assign({}, sx.root), { gridTemplateColumns: {
                         sm: "repeat(".concat(Number(cols), ", 1fr)"),
                         xs: '1fr'
-                    }, gap: gap, py: py, px: Number(py) > 0 ? 2 : "0px !important", bgcolor: bgcolor }), maxWidth: maxWidth }, children))));
+                    }, gap: gap, py: py, px: Number(py) > 0 ? 2 : "0px !important", bgcolor: bgcolor }), 
+                //@ts-ignore
+                maxWidth: maxWidth }, children))));
 };
 exports.default = Column;
 var sx = {

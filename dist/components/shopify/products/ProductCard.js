@@ -42,6 +42,7 @@ var material_1 = require("@mui/material");
 var helpers_1 = require("../../../helpers");
 var index_1 = require("../../../constants/index");
 var frontend_shopify_1 = require("frontend-shopify");
+var frontend_shopify_2 = require("frontend-shopify");
 var SwipeableProductImages_1 = __importDefault(require("./images/SwipeableProductImages"));
 var __1 = require("..");
 var addons_1 = require("../../addons");
@@ -49,12 +50,14 @@ var ProductCard = function (props) {
     var _a, _b, _c, _d;
     var _e = props || {}, product = _e.product, handleClick = _e.handleClick, _f = _e.height, height = _f === void 0 ? index_1.PRODUCT_CARD_HEIGHT : _f, _g = _e.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = _e.enableAddToCart, enableAddToCart = _h === void 0 ? false : _h, _j = _e.enableQuantity, enableQuantity = _j === void 0 ? false : _j, _k = _e.enableQuickShop, enableQuickShop = _k === void 0 ? false : _k, _l = _e.enableOkendoStarRating, enableOkendoStarRating = _l === void 0 ? false : _l, _m = _e.buttonVariant, buttonVariant = _m === void 0 ? 'contained' : _m, buttonText = _e.buttonText;
     var _o = (0, react_1.useState)(false), open = _o[0], setOpen = _o[1];
+    var setSearchOpen = (0, react_1.useContext)(frontend_shopify_1.ShopContext).setSearchOpen;
     var handleQuickShop = function () {
         setOpen(true);
     };
     var handleItemClick = function () {
         if (handleClick) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            setSearchOpen(false);
             handleClick();
         }
     };
@@ -64,7 +67,7 @@ var ProductCard = function (props) {
             react_1.default.createElement(material_1.Stack, { spacing: 0.5, direction: "column", sx: __assign(__assign({}, sx.text), (enableOkendoStarRating && sx.textWithReviews)) },
                 react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "subtitle1" }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.title)),
                 enableOkendoStarRating && react_1.default.createElement(addons_1.OkendoStarRating, { product: product }),
-                react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2" }, (0, frontend_shopify_1.formatCurrency)((_b = (_a = product === null || product === void 0 ? void 0 : product.priceRange) === null || _a === void 0 ? void 0 : _a.minVariantPrice) === null || _b === void 0 ? void 0 : _b.amount))),
+                react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2" }, (0, frontend_shopify_2.formatCurrency)((_b = (_a = product === null || product === void 0 ? void 0 : product.priceRange) === null || _a === void 0 ? void 0 : _a.minVariantPrice) === null || _b === void 0 ? void 0 : _b.amount))),
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: "column" },
                 enableAddToCart && (react_1.default.createElement(__1.AddToCartButton, { product: product, variant: 
                     //@ts-ignore

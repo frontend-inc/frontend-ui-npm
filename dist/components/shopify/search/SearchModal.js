@@ -119,7 +119,6 @@ var sx = {
     },
     searchInput: {
         width: '100%',
-        maxWidth: '600px',
     },
     closeButton: {
         width: '100%',
