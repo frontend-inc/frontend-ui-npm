@@ -34,11 +34,10 @@ var ProductDetailPage = function (props) {
         product: product
     }), price = _d.price, compareAtPrice = _d.compareAtPrice, variant = _d.variant, selectedOptions = _d.selectedOptions, handleOptionChange = _d.handleOptionChange, image = _d.image, images = _d.images, handleImageClick = _d.handleImageClick;
     (0, react_1.useEffect)(function () {
-        console.log("Metafields", metafields);
         if (handle) {
-            findProduct(String(handle));
+            findProduct(String(handle), metafields);
         }
-    }, [handle, metafields]);
+    }, [handle]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 0, direction: "row", sx: sx.container },
         react_1.default.createElement(material_1.Box, { sx: sx.left },
             react_1.default.createElement(shopify_1.ProductImages, { product: product, image: image, images: images, handleClick: handleImageClick })),
@@ -47,6 +46,7 @@ var ProductDetailPage = function (props) {
                 react_1.default.createElement(shopify_1.ProductInfo, { product: product, price: price, compareAtPrice: compareAtPrice, enableOkendoStarRating: enableOkendoStarRating }),
                 react_1.default.createElement(shopify_1.ProductVariantSelector, { product: product, selectedOptions: selectedOptions, handleOptionChange: handleOptionChange }),
                 react_1.default.createElement(shopify_1.AddToCartButton, { product: product, variant: variant, enableQuantity: enableQuantity, enableSubscription: enableSubscription, enableFavorites: enableFavorites, label: buttonText }),
+                metafields && (react_1.default.createElement(shopify_1.ProductMetafields, { product: product, metafields: metafields })),
                 react_1.default.createElement(shopify_1.TrackRecentlyViewed, { product: product })))));
 };
 exports.default = ProductDetailPage;

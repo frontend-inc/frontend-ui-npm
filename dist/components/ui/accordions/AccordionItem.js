@@ -9,10 +9,17 @@ var material_2 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var AccordionItem = function (props) {
     var title = props.title, description = props.description, image = props.image;
-    return (react_1.default.createElement(material_2.Accordion, { elevation: 0 },
+    return (react_1.default.createElement(material_2.Accordion, { sx: sx.root, elevation: 0 },
         react_1.default.createElement(material_2.AccordionSummary, { expandIcon: react_1.default.createElement(icons_material_1.ExpandMore, null) },
             react_1.default.createElement(material_1.Typography, { variant: "subtitle1" }, title)),
         react_1.default.createElement(material_2.AccordionDetails, null,
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "textSecondary" }, description))));
 };
 exports.default = AccordionItem;
+var sx = {
+    root: {
+        borderTop: '1px solid',
+        borderColor: 'divider',
+        my: '0px !important'
+    }
+};

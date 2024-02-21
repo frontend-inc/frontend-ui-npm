@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductImageCarousel = exports.ProductImages = exports.SwipeableProductImages = exports.ProductGrid = exports.ProductDescription = exports.ProductDetailPage = exports.ProductInfo = exports.ProductCollectionByHandle = exports.ProductCollection = exports.ProductCarousel = exports.ProductCard = exports.CollectionHero = exports.Collections = exports.ProductVariantSelector = exports.ProductSearchInput = exports.SearchPage = exports.SearchModal = exports.SearchButton = exports.OrderDetails = exports.OrderItem = exports.OrderList = exports.QuantitySelector = exports.OrderLineItem = exports.ColorSelector = exports.CheckboxFilterButton = exports.CheckboxFilterList = exports.FilterList = exports.ProductFilterButton = exports.ProductFilters = exports.ProductSort = exports.InStockFilter = exports.ProductTypeFilters = exports.TagFilters = exports.VendorFilters = exports.MaterialFilters = exports.StyleFilters = exports.SizeFilters = exports.ColorFilters = exports.SubscriptionSelector = exports.QuickShopButton = exports.CheckoutButton = exports.CartText = exports.CartTotals = exports.CartLines = exports.CartLine = exports.CartDiscountCode = exports.CartDiscounts = exports.CartButton = exports.Cart = exports.AddToCartButton = void 0;
-exports.ShopifyAuth = exports.RegisterForm = exports.Register = exports.Orders = exports.Order = exports.CustomerAccount = exports.SignInForm = exports.SignIn = exports.ChangePasswordForm = exports.ChangePassword = exports.Customer = exports.CustomerForm = exports.AddressForm = exports.AddressItem = exports.AddressList = exports.Addresses = exports.Address = exports.TrackRecentlyViewed = exports.RecentlyViewed = exports.FavoriteButton = exports.ProductFavorites = exports.ShopifyProduct = exports.ShopifyStore = exports.ProductRecommendations = exports.ProductModal = exports.ProductImageThumbnails = void 0;
+exports.ShopifyAuth = exports.RegisterForm = exports.Register = exports.Orders = exports.Order = exports.CustomerAccount = exports.SignInForm = exports.SignIn = exports.ChangePasswordForm = exports.ChangePassword = exports.Customer = exports.CustomerForm = exports.AddressForm = exports.AddressItem = exports.AddressList = exports.Addresses = exports.Address = exports.TrackRecentlyViewed = exports.RecentlyViewed = exports.FavoriteButton = exports.ProductFavorites = exports.ShopifyProduct = exports.ShopifyStore = exports.RichText = exports.ProductRecommendations = exports.ProductModal = exports.ProductMetafields = exports.ProductImageThumbnails = void 0;
 // Cart and Checkout
 var AddToCartButton_1 = require("./cart/AddToCartButton");
 Object.defineProperty(exports, "AddToCartButton", { enumerable: true, get: function () { return __importDefault(AddToCartButton_1).default; } });
@@ -114,10 +114,15 @@ var ProductImageCarousel_1 = require("./products/images/ProductImageCarousel");
 Object.defineProperty(exports, "ProductImageCarousel", { enumerable: true, get: function () { return __importDefault(ProductImageCarousel_1).default; } });
 var ProductImageThumbnails_1 = require("./products/images/ProductImageThumbnails");
 Object.defineProperty(exports, "ProductImageThumbnails", { enumerable: true, get: function () { return __importDefault(ProductImageThumbnails_1).default; } });
+var ProductMetafields_1 = require("./products/ProductMetafields");
+Object.defineProperty(exports, "ProductMetafields", { enumerable: true, get: function () { return __importDefault(ProductMetafields_1).default; } });
 var ProductModal_1 = require("./products/ProductModal");
 Object.defineProperty(exports, "ProductModal", { enumerable: true, get: function () { return __importDefault(ProductModal_1).default; } });
 var ProductRecommendations_1 = require("./products/ProductRecommendations");
 Object.defineProperty(exports, "ProductRecommendations", { enumerable: true, get: function () { return __importDefault(ProductRecommendations_1).default; } });
+// Metafields 
+var RichText_1 = require("./metafields/RichText");
+Object.defineProperty(exports, "RichText", { enumerable: true, get: function () { return __importDefault(RichText_1).default; } });
 // Context
 var ShopifyStore_1 = require("./store/ShopifyStore");
 Object.defineProperty(exports, "ShopifyStore", { enumerable: true, get: function () { return __importDefault(ShopifyStore_1).default; } });
