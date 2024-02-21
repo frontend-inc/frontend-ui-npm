@@ -27,7 +27,7 @@ var sx = {
     content: {
         width: '100%',
         bgcolor: 'background.default',
-        minHeight: 'calc(100vh - 150px)',
+        minHeight: 'calc(100vh - 60px)',
     },
     disableGutters: {
         py: 0,

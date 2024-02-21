@@ -45,7 +45,7 @@ var index_1 = require("../../../../constants/index");
 var frontend_shopify_1 = require("frontend-shopify");
 var SwipeableProductImages = function (props) {
     var _a, _b;
-    var product = props.product, _c = props.height, height = _c === void 0 ? index_1.PRODUCT_CARD_VERT_HEIGHT : _c, _d = props.width, width = _d === void 0 ? index_1.PRODUCT_CARD_VERT_WIDTH : _d, handleClick = props.handleClick, _e = props.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = props.responsiveHeight, responsiveHeight = _f === void 0 ? false : _f;
+    var product = props.product, _c = props.height, height = _c === void 0 ? index_1.PRODUCT_CARD_HEIGHT : _c, _d = props.width, width = _d === void 0 ? index_1.PRODUCT_CARD_WIDTH : _d, handleClick = props.handleClick, _e = props.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = props.responsiveHeight, responsiveHeight = _f === void 0 ? false : _f;
     var _g = (0, react_1.useState)(0), activeStep = _g[0], setActiveStep = _g[1];
     // @ts-ignore
     var maxSteps = (_a = product === null || product === void 0 ? void 0 : product.images) === null || _a === void 0 ? void 0 : _a.edges.length;

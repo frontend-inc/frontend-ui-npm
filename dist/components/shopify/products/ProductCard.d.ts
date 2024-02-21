@@ -13,5 +13,5 @@ type ProductCardProps = {
     enableOkendoStarRating?: boolean;
     buttonVariant?: 'contained' | 'outlined' | 'text';
 };
-declare const ProductCardVert: React.FC<ProductCardProps>;
-export default ProductCardVert;
+declare const ProductCard: React.FC<ProductCardProps>;
+export default ProductCard;

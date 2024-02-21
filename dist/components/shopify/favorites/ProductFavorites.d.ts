@@ -1,7 +1,7 @@
 import React from 'react';
 type FavoritesProps = {
     editing?: boolean;
-    layout?: 'list' | 'grid' | 'carousel';
+    layout?: 'grid' | 'carousel';
     title?: string;
     perPage?: string;
     productComponent?: React.FC<any>;

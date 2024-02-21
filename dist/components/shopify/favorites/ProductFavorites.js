@@ -13,7 +13,6 @@ var Favorites = function (props) {
     var favorites = (0, frontend_shopify_1.useFavorites)().favorites;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         title && (react_1.default.createElement(material_1.Typography, { mb: 1, color: "textPrimary", variant: "h6" }, title)),
-        layout == 'list' && (react_1.default.createElement(__2.ProductList, { editing: editing, products: favorites, productComponent: productComponent, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, buttonText: buttonText })),
         layout == 'grid' && (react_1.default.createElement(__2.ProductGrid, { editing: editing, products: favorites, productComponent: productComponent, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, buttonText: buttonText })),
         layout == 'carousel' && (react_1.default.createElement(__2.ProductCarousel, { editing: editing, products: favorites, productComponent: productComponent, enableBorder: enableBorder, buttonText: buttonText })),
         (favorites === null || favorites === void 0 ? void 0 : favorites.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: react_1.default.createElement(__1.Icon, { name: emptyIcon }), title: emptyTitle, description: emptyDescription }))));

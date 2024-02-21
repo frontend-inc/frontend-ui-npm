@@ -67,6 +67,8 @@ var CoverImage = function (props) {
 exports.default = CoverImage;
 var sx = {
     root: {
+        p: 0,
+        width: '100%',
         position: 'relative',
     },
     stack: {

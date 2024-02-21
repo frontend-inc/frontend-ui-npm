@@ -2,7 +2,7 @@ import React from 'react';
 type ProductCollectionProps = {
     title?: string;
     editing?: boolean;
-    layout?: 'list' | 'grid' | 'carousel';
+    layout?: 'grid' | 'carousel';
     handle: string | string[];
     productComponent?: React.FC<any>;
     colorOptions?: string[];

@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SwipeableProductImages = exports.ProductList = exports.ProductGrid = exports.ProductDescription = exports.ProductDetailPage = exports.ProductInfo = exports.ProductCollectionByHandle = exports.ProductCollection = exports.ProductCarousel = exports.ProductCardHoriz = exports.ProductCardVert = exports.CollectionHero = exports.Collections = exports.ProductVariantSelector = exports.ProductSearchInput = exports.SearchPage = exports.SearchModal = exports.SearchButton = exports.OrderDetails = exports.OrderItem = exports.OrderList = exports.QuantitySelector = exports.OrderLineItem = exports.ColorSelector = exports.CheckboxFilterButton = exports.CheckboxFilterList = exports.FilterList = exports.ProductFilterButton = exports.ProductFilters = exports.ProductSort = exports.InStockFilter = exports.ProductTypeFilters = exports.TagFilters = exports.VendorFilters = exports.MaterialFilters = exports.StyleFilters = exports.SizeFilters = exports.ColorFilters = exports.SubscriptionSelector = exports.QuickShopButton = exports.CheckoutButton = exports.CartText = exports.CartTotals = exports.CartLines = exports.CartLine = exports.CartDiscountCode = exports.CartDiscounts = exports.CartButton = exports.Cart = exports.AddToCartButton = void 0;
-exports.ShopifyAuth = exports.RegisterForm = exports.Register = exports.Orders = exports.Order = exports.CustomerAccount = exports.SignInForm = exports.SignIn = exports.ChangePasswordForm = exports.ChangePassword = exports.Customer = exports.CustomerForm = exports.AddressForm = exports.AddressItem = exports.AddressList = exports.Addresses = exports.Address = exports.TrackRecentlyViewed = exports.RecentlyViewed = exports.FavoriteButton = exports.ProductFavorites = exports.ShopifyProduct = exports.ShopifyStore = exports.ProductRecommendations = exports.ProductModal = exports.ProductImageThumbnails = exports.ProductImageCarousel = exports.ProductImages = void 0;
+exports.ProductImageCarousel = exports.ProductImages = exports.SwipeableProductImages = exports.ProductGrid = exports.ProductDescription = exports.ProductDetailPage = exports.ProductInfo = exports.ProductCollectionByHandle = exports.ProductCollection = exports.ProductCarousel = exports.ProductCard = exports.CollectionHero = exports.Collections = exports.ProductVariantSelector = exports.ProductSearchInput = exports.SearchPage = exports.SearchModal = exports.SearchButton = exports.OrderDetails = exports.OrderItem = exports.OrderList = exports.QuantitySelector = exports.OrderLineItem = exports.ColorSelector = exports.CheckboxFilterButton = exports.CheckboxFilterList = exports.FilterList = exports.ProductFilterButton = exports.ProductFilters = exports.ProductSort = exports.InStockFilter = exports.ProductTypeFilters = exports.TagFilters = exports.VendorFilters = exports.MaterialFilters = exports.StyleFilters = exports.SizeFilters = exports.ColorFilters = exports.SubscriptionSelector = exports.QuickShopButton = exports.CheckoutButton = exports.CartText = exports.CartTotals = exports.CartLines = exports.CartLine = exports.CartDiscountCode = exports.CartDiscounts = exports.CartButton = exports.Cart = exports.AddToCartButton = void 0;
+exports.ShopifyAuth = exports.RegisterForm = exports.Register = exports.Orders = exports.Order = exports.CustomerAccount = exports.SignInForm = exports.SignIn = exports.ChangePasswordForm = exports.ChangePassword = exports.Customer = exports.CustomerForm = exports.AddressForm = exports.AddressItem = exports.AddressList = exports.Addresses = exports.Address = exports.TrackRecentlyViewed = exports.RecentlyViewed = exports.FavoriteButton = exports.ProductFavorites = exports.ShopifyProduct = exports.ShopifyStore = exports.ProductRecommendations = exports.ProductModal = exports.ProductImageThumbnails = void 0;
 // Cart and Checkout
 var AddToCartButton_1 = require("./cart/AddToCartButton");
 Object.defineProperty(exports, "AddToCartButton", { enumerable: true, get: function () { return __importDefault(AddToCartButton_1).default; } });
@@ -90,10 +90,8 @@ Object.defineProperty(exports, "Collections", { enumerable: true, get: function 
 var CollectionHero_1 = require("./collections/CollectionHero");
 Object.defineProperty(exports, "CollectionHero", { enumerable: true, get: function () { return __importDefault(CollectionHero_1).default; } });
 // Products
-var ProductCardVert_1 = require("./products/ProductCardVert");
-Object.defineProperty(exports, "ProductCardVert", { enumerable: true, get: function () { return __importDefault(ProductCardVert_1).default; } });
-var ProductCardHoriz_1 = require("./products/ProductCardHoriz");
-Object.defineProperty(exports, "ProductCardHoriz", { enumerable: true, get: function () { return __importDefault(ProductCardHoriz_1).default; } });
+var ProductCard_1 = require("./products/ProductCard");
+Object.defineProperty(exports, "ProductCard", { enumerable: true, get: function () { return __importDefault(ProductCard_1).default; } });
 var ProductCarousel_1 = require("./products/ProductCarousel");
 Object.defineProperty(exports, "ProductCarousel", { enumerable: true, get: function () { return __importDefault(ProductCarousel_1).default; } });
 var ProductCollection_1 = require("./products/ProductCollection");
@@ -108,8 +106,6 @@ var ProductDescription_1 = require("./products/ProductDescription");
 Object.defineProperty(exports, "ProductDescription", { enumerable: true, get: function () { return __importDefault(ProductDescription_1).default; } });
 var ProductGrid_1 = require("./products/ProductGrid");
 Object.defineProperty(exports, "ProductGrid", { enumerable: true, get: function () { return __importDefault(ProductGrid_1).default; } });
-var ProductList_1 = require("./products/ProductList");
-Object.defineProperty(exports, "ProductList", { enumerable: true, get: function () { return __importDefault(ProductList_1).default; } });
 var SwipeableProductImages_1 = require("./products/images/SwipeableProductImages");
 Object.defineProperty(exports, "SwipeableProductImages", { enumerable: true, get: function () { return __importDefault(SwipeableProductImages_1).default; } });
 var ProductImages_1 = require("./products/images/ProductImages");
