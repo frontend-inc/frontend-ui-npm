@@ -148,7 +148,9 @@ var sx = {
         flexDirection: 'row',
         gap: '10px',
     },
-    addToCartButton: {},
+    addToCartButton: {
+        minWidth: "60px"
+    },
     addToCartButtonSmall: {
         height: '40px',
     },

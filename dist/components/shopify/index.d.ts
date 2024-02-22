@@ -53,6 +53,7 @@ export { default as ProductMetafields } from './products/ProductMetafields';
 export { default as ProductModal } from './products/ProductModal';
 export { default as ProductRecommendations } from './products/ProductRecommendations';
 export { default as Metafields } from './products/metafields/Metafields';
+export { default as MetafieldImage } from './products/metafields/MetafieldImage';
 export { default as MetafieldRichText } from './products/metafields/MetafieldRichText';
 export { default as MetafieldProducts } from './products/metafields/MetafieldProducts';
 export { default as ShopifyStore } from './store/ShopifyStore';
