@@ -52,7 +52,9 @@ export { default as ProductImageThumbnails } from './products/images/ProductImag
 export { default as ProductMetafields } from './products/ProductMetafields';
 export { default as ProductModal } from './products/ProductModal';
 export { default as ProductRecommendations } from './products/ProductRecommendations';
-export { default as RichText } from './metafields/RichText';
+export { default as Metafields } from './products/metafields/Metafields';
+export { default as MetafieldRichText } from './products/metafields/MetafieldRichText';
+export { default as MetafieldProducts } from './products/metafields/MetafieldProducts';
 export { default as ShopifyStore } from './store/ShopifyStore';
 export { default as ShopifyProduct } from './products/ShopifyProduct';
 export { default as ProductFavorites } from './favorites/ProductFavorites';

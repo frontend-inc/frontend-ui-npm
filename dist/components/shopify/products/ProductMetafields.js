@@ -39,7 +39,7 @@ var ProductMetafields = function (props) {
                 react_1.default.createElement(material_1.Typography, { variant: "subtitle2" }, metafield.label)),
             react_1.default.createElement(material_1.AccordionDetails, null,
                 PLAIN_TEXT_TYPES.includes(type) && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "textSecondary" }, value)),
-                RICH_TEXT_TYPES.includes(type) && (react_1.default.createElement(shopify_1.RichText, { value: value })))));
+                RICH_TEXT_TYPES.includes(type) && (react_1.default.createElement(shopify_1.MetafieldRichText, { value: value })))));
     })));
 };
 exports.default = ProductMetafields;
