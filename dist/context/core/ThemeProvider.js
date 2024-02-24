@@ -8,8 +8,8 @@ var ThemeContext_1 = __importDefault(require("./ThemeContext"));
 var styles_1 = require("@mui/material/styles");
 var hooks_1 = require("../../hooks");
 var ThemeProvider = function (props) {
-    var _a = props || {}, children = _a.children, muiTheme = _a.muiTheme, primaryColor = _a.primaryColor, bgcolor = _a.bgcolor, _b = _a.headerFont, headerFont = _b === void 0 ? 'Inter' : _b, _c = _a.bodyFont, bodyFont = _c === void 0 ? 'Roboto' : _c, borderRadius = _a.borderRadius, mobile = _a.mobile, offset = _a.offset;
-    var _d = (0, hooks_1.useTheme)({
+    var _a = props || {}, children = _a.children, muiTheme = _a.muiTheme, primaryColor = _a.primaryColor, bgcolor = _a.bgcolor, headerFont = _a.headerFont, bodyFont = _a.bodyFont, borderRadius = _a.borderRadius, mobile = _a.mobile, offset = _a.offset;
+    var _b = (0, hooks_1.useTheme)({
         muiTheme: muiTheme,
         primaryColor: primaryColor,
         bgcolor: bgcolor,
@@ -18,7 +18,7 @@ var ThemeProvider = function (props) {
         borderRadius: borderRadius,
         mobile: mobile,
         offset: offset,
-    }), theme = _d.theme, setTheme = _d.setTheme;
+    }), theme = _b.theme, setTheme = _b.setTheme;
     var value = {
         theme: theme,
         setTheme: setTheme,

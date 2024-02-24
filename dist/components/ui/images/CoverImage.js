@@ -61,7 +61,7 @@ var CoverImage = function (props) {
                 description && (react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "text.primary", sx: {
                         textAlign: alignItems === 'center' ? 'center' : 'left',
                     } }, description)),
-                buttonText && (react_1.default.createElement(material_1.Box, null,
+                buttonText && (react_1.default.createElement(material_1.Box, { py: 2 },
                     react_1.default.createElement(material_1.Button, { size: "large", onClick: handleItemClick, variant: "contained" }, buttonText)))))));
 };
 exports.default = CoverImage;
