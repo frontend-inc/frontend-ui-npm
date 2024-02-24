@@ -111,16 +111,18 @@ exports.default = ColorInput;
 var sx = {
     root: {
         width: '100%',
-        mb: 2,
     },
     button: {
         py: 0,
         justifyContent: 'space-between',
+        border: '1px solid',
+        borderColor: 'divider',
+        bgcolor: 'background.paper',
     },
     grid: {
         display: 'grid',
         gridTemplateColumns: 'repeat(7, 1fr)',
-        gap: '5px',
+        gap: '4px',
     },
     slider: {
         width: '100%',

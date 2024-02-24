@@ -21,11 +21,18 @@ var Popup = function (props) {
     return (react_1.default.createElement(material_1.Popover, { open: open, anchorEl: anchorEl, onClose: handleClose, anchorOrigin: {
             vertical: 'bottom',
             horizontal: 'left',
-        } },
+        }, sx: sx.root },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), { p: p }), (disablePadding && sx.disablePadding)) }, children)));
 };
 exports.default = Popup;
 var sx = {
+    root: {
+        '& .MuiPopover-paper': {
+            border: '1px solid',
+            borderColor: 'divider',
+            borderRadius: function (theme) { return theme.shape.borderRadius; },
+        }
+    },
     content: {
         maxHeight: '520px',
         maxWidth: '520px',
