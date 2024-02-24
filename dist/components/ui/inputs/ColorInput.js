@@ -38,13 +38,19 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var COLORS = __importStar(require("@mui/material/colors"));
 var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var index_1 = require("../../../constants/index");
+var TransparentColor = function (props) {
+    var value = props.value, handleClick = props.handleClick;
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.color), sx.transparent), (value == '' && sx.selected)), { bgcolor: '#FFF' }), onClick: handleClick }));
+};
 var ColorInput = function (props) {
     var name = props.name, value = props.value, _a = props.disableTone, disableTone = _a === void 0 ? false : _a, handleChange = props.handleChange;
     var _b = (0, react_1.useState)(500), tone = _b[0], setTone = _b[1];
     var _c = (0, react_1.useState)(null), color = _c[0], setColor = _c[1];
     var _d = (0, react_1.useState)(value || ''), hex = _d[0], setHex = _d[1];
     var _e = (0, react_1.useState)(value || ''), text = _e[0], setText = _e[1];
+    var _f = (0, hooks_1.useMenu)(), open = _f.open, anchorEl = _f.anchorEl, openMenu = _f.openMenu, closeMenu = _f.closeMenu;
     var handleToneChange = function (event, newTone) {
         setTone(newTone);
     };
@@ -83,22 +89,33 @@ var ColorInput = function (props) {
             },
         });
     }, [hex]);
-    return (react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", sx: sx.root },
-        !disableTone && (react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.slider },
-            react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, "Tone"),
-            react_1.default.createElement(material_1.Slider, { "aria-label": "Tone", defaultValue: [100, 900], valueLabelDisplay: "auto", onChange: handleToneChange, step: 100, min: 100, max: 900, value: tone }))),
-        react_1.default.createElement(material_1.Box, { sx: sx.grid },
-            index_1.MUI_COLORS.map(function (color) { return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.color), (hex == COLORS[color][tone] && sx.selected)), { bgcolor: COLORS[color][tone] }), onClick: function () { return handleColorChange(color); } })); }),
-            index_1.HEX_COLORS.map(function (hexColor) { return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.color), (hex == hexColor && sx.selected)), { bgcolor: hexColor }), onClick: function () { return handleHexColorChange(hexColor); } })); }),
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.color), sx.transparent), (hex == '' && sx.selected)), { bgcolor: '#FFF' }), onClick: function () { return handleHexColorChange(''); } })),
-        react_1.default.createElement(material_1.Box, { sx: sx.input },
-            react_1.default.createElement(components_1.TextInput, { name: name, value: text, handleChange: handleTextChange }))));
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, variant: "outlined", color: "secondary", endIcon: react_1.default.createElement(material_1.Stack, { direction: 'row', spacing: 0 },
+                react_1.default.createElement(material_1.Tooltip, { title: value },
+                    react_1.default.createElement(material_1.IconButton, null, value ? (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.color), { bgcolor: value }) })) : (react_1.default.createElement(TransparentColor, { value: value, handleClick: openMenu })))),
+                react_1.default.createElement(material_1.IconButton, { size: "small" },
+                    react_1.default.createElement(components_1.Icon, { name: "ChevronDown", size: 20 }))), onClick: openMenu }, "Choose color"),
+        react_1.default.createElement(components_1.Popup, { open: open, anchorEl: anchorEl, handleClose: closeMenu },
+            react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", sx: sx.root },
+                react_1.default.createElement(material_1.Box, { sx: sx.grid },
+                    index_1.MUI_COLORS.map(function (color) { return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.color), (hex == COLORS[color][tone] && sx.selected)), { bgcolor: COLORS[color][tone] }), onClick: function () { return handleColorChange(color); } })); }),
+                    index_1.HEX_COLORS.map(function (hexColor) { return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.color), (hex == hexColor && sx.selected)), { bgcolor: hexColor }), onClick: function () { return handleHexColorChange(hexColor); } })); }),
+                    react_1.default.createElement(TransparentColor, { value: hex, handleClick: function () { return handleHexColorChange(''); } })),
+                !disableTone && (react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.slider },
+                    react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, "Color tone"),
+                    react_1.default.createElement(material_1.Slider, { "aria-label": "Tone", defaultValue: [100, 900], valueLabelDisplay: "auto", onChange: handleToneChange, step: 100, min: 100, max: 900, value: tone }))),
+                react_1.default.createElement(material_1.Box, { sx: sx.input },
+                    react_1.default.createElement(components_1.TextInput, { name: name, value: text, handleChange: handleTextChange }))))));
 };
 exports.default = ColorInput;
 var sx = {
     root: {
         width: '100%',
         mb: 2,
+    },
+    button: {
+        py: 0,
+        justifyContent: 'space-between',
     },
     grid: {
         display: 'grid',
