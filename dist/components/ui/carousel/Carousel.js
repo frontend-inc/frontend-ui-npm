@@ -43,15 +43,41 @@ var material_1 = require("@mui/material");
 var helpers_1 = require("../../../helpers");
 var styles_1 = require("@mui/material/styles");
 var CarouselDot_1 = __importDefault(require("./CarouselDot"));
+var hooks_1 = require("../../../hooks");
+var theme_1 = require("../../../theme");
 var ReactCarousel = function (props) {
     var theme = (0, styles_1.useTheme)();
     var _a = (0, react_1.useState)(null), responsive = _a[0], setResponsive = _a[1];
-    var children = props.children, _b = props.autoPlay, autoPlay = _b === void 0 ? false : _b, _c = props.arrows, arrows = _c === void 0 ? false : _c, _d = props.showDots, showDots = _d === void 0 ? true : _d, _e = props.styles, styles = _e === void 0 ? {} : _e;
+    var _b = props.editing, editing = _b === void 0 ? false : _b, children = props.children, _c = props.autoPlay, autoPlay = _c === void 0 ? false : _c, _d = props.arrows, arrows = _d === void 0 ? false : _d, _e = props.showDots, showDots = _e === void 0 ? true : _e, _f = props.styles, styles = _f === void 0 ? {} : _f;
+    var breakpoint = (0, hooks_1.useResponsive)().breakpoint;
+    var _g = (0, react_1.useState)(960), width = _g[0], setWidth = _g[1];
     (0, react_1.useEffect)(function () {
         //@ts-ignore
         setResponsive((0, helpers_1.getCarouselResponsive)(theme));
     }, [theme === null || theme === void 0 ? void 0 : theme.breakpoints]);
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (styles && styles)) }, responsive && children && (react_1.default.createElement(react_multi_carousel_1.default, { responsive: responsive, swipeable: true, draggable: true, infinite: true, autoPlay: autoPlay, arrows: arrows, showDots: showDots, customDot: react_1.default.createElement(CarouselDot_1.default, null) }, children))));
+    (0, react_1.useEffect)(function () {
+        switch (breakpoint) {
+            case 'sm':
+                setWidth(theme_1.muiTheme === null || theme_1.muiTheme === void 0 ? void 0 : theme_1.muiTheme.breakpoints.values.sm);
+                break;
+            case 'md':
+                setWidth(theme_1.muiTheme === null || theme_1.muiTheme === void 0 ? void 0 : theme_1.muiTheme.breakpoints.values.md);
+                break;
+            case 'lg':
+                setWidth(theme_1.muiTheme === null || theme_1.muiTheme === void 0 ? void 0 : theme_1.muiTheme.breakpoints.values.lg);
+                break;
+            case 'xl':
+                setWidth(theme_1.muiTheme === null || theme_1.muiTheme === void 0 ? void 0 : theme_1.muiTheme.breakpoints.values.xl);
+                break;
+            case null:
+                setWidth(theme_1.muiTheme === null || theme_1.muiTheme === void 0 ? void 0 : theme_1.muiTheme.breakpoints.values.xl);
+                break;
+            default:
+                setWidth(theme_1.muiTheme === null || theme_1.muiTheme === void 0 ? void 0 : theme_1.muiTheme.breakpoints.values.md);
+                break;
+        }
+    }, [breakpoint]);
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.root), { maxWidth: editing ? (width - 320) : width }), (styles && styles)) }, responsive && children && (react_1.default.createElement(react_multi_carousel_1.default, { responsive: responsive, swipeable: true, draggable: true, infinite: true, autoPlay: autoPlay, arrows: arrows, showDots: showDots, customDot: react_1.default.createElement(CarouselDot_1.default, null) }, children))));
 };
 exports.default = ReactCarousel;
 var sx = {

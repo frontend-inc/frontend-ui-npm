@@ -1,6 +1,7 @@
 import React from 'react';
 import { SyntheticEvent } from '../../../types';
 type ColorInputProps = {
+    label?: string;
     name: string;
     value: string;
     handleChange: (e: SyntheticEvent) => void;

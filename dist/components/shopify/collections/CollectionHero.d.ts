@@ -13,7 +13,7 @@ type CollectionHeroProps = {
     enableGradient?: boolean;
     enableOverlay?: boolean;
     opacity?: number;
-    bgcolor?: string;
+    overlayColor?: string;
     href?: string;
 };
 declare const CollectionHero: React.FC<CollectionHeroProps>;

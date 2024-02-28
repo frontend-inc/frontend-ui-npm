@@ -16,7 +16,7 @@ type CoverImageProps = {
     enableGradient?: boolean;
     enableOverlay?: boolean;
     opacity?: number;
-    bgcolor?: string;
+    overlayColor?: string;
     href?: string;
 };
 declare const CoverImage: React.FC<CoverImageProps>;

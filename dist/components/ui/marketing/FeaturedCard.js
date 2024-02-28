@@ -44,6 +44,9 @@ var index_1 = require("../../../constants/index");
 var FeaturedCard = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, _b = _a.editing, editing = _b === void 0 ? false : _b, label = _a.label, title = _a.title, description = _a.description, _c = _a.image, image = _c === void 0 ? '' : _c, href = _a.href, _d = _a.height, height = _d === void 0 ? index_1.FEATURED_CARD_HEIGHT : _d, buttonText = _a.buttonText, _e = _a.flexDirection, flexDirection = _e === void 0 ? 'row' : _e, _f = _a.textVariant, textVariant = _f === void 0 ? 'h3' : _f, handleClick = _a.handleClick, _g = _a.objectFit, objectFit = _g === void 0 ? 'cover' : _g, _h = _a.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = _a.enableGradient, enableGradient = _j === void 0 ? false : _j;
+    var _k = (0, react_1.useState)('center'), textAlign = _k[0], setTextAlign = _k[1];
+    var _l = (0, react_1.useState)('center'), justifyContent = _l[0], setJustifyContent = _l[1];
+    var _m = (0, react_1.useState)('row'), direction = _m[0], setDirection = _m[1];
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -53,7 +56,18 @@ var FeaturedCard = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    var direction = flexDirection == 'row' || flexDirection == 'row-reverse' ? 'row' : 'column';
+    (0, react_1.useEffect)(function () {
+        if (flexDirection == 'row' || flexDirection == 'row-reverse') {
+            setTextAlign('left');
+            setDirection('row');
+            setJustifyContent('center');
+        }
+        else {
+            setTextAlign('center');
+            setDirection('column');
+            setJustifyContent('flex-start');
+        }
+    }, [flexDirection]);
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.imageContainer), { flexDirection: {
                     sm: flexDirection,
@@ -69,17 +83,29 @@ var FeaturedCard = function (props) {
                         sm: direction == 'row' ? '50%' : '100%',
                         xs: '100%',
                     } }) },
-                react_1.default.createElement(material_1.Stack, { sx: sx.textContent, spacing: 2 },
-                    react_1.default.createElement(material_1.Box, null,
-                        label && (react_1.default.createElement(material_1.Typography, { color: "primary", sx: sx.label, variant: "caption" }, label)),
-                        react_1.default.createElement(material_1.Typography, { sx: __assign(__assign({}, sx.title), { textAlign: direction == 'row' ? 'left' : 'center' }), variant: textVariant }, title),
-                        react_1.default.createElement(material_1.Typography, { variant: "body2", sx: __assign(__assign({}, sx.description), { textAlign: direction == 'row' ? 'left' : 'center' }) }, (0, helpers_1.truncate)(description, 160)),
-                        buttonText && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.actions), { justifyContent: direction == 'row' ? 'flex-start' : 'center' }) },
-                            react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText)))))))));
+                react_1.default.createElement(material_1.Stack, { spacing: 0, sx: __assign(__assign({}, sx.textContent), { justifyContent: {
+                            sm: justifyContent,
+                            xs: 'center'
+                        } }) },
+                    label && (react_1.default.createElement(material_1.Typography, { color: "primary", sx: __assign(__assign({}, sx.label), { textAlign: {
+                                sm: textAlign,
+                                xs: 'center'
+                            } }), variant: "caption" }, label)),
+                    react_1.default.createElement(material_1.Typography, { sx: __assign(__assign({}, sx.title), { textAlign: {
+                                sm: textAlign,
+                                xs: 'center'
+                            } }), variant: textVariant }, title),
+                    react_1.default.createElement(material_1.Typography, { variant: "body2", sx: __assign(__assign({}, sx.description), { textAlign: {
+                                sm: textAlign,
+                                xs: 'center'
+                            } }) }, (0, helpers_1.truncate)(description, 160)),
+                    buttonText && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.actions), { justifyContent: direction == 'row' ? 'flex-start' : 'center' }) },
+                        react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))))));
 };
 exports.default = FeaturedCard;
 var sx = {
     root: {
+        width: "100%",
         display: 'flex',
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
     },
@@ -117,20 +143,20 @@ var sx = {
     textContent: {
         p: 2,
         display: 'flex',
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
         height: '100%',
         width: '100%',
     },
     label: {
+        width: '100%',
         color: 'primary.main'
     },
     title: {
+        width: '100%',
         color: 'text.primary',
         my: 1
     },
     description: {
+        width: '100%',
         color: 'text.secondary',
-        maxWidth: '480px',
     },
 };

@@ -14,7 +14,7 @@ type CoverImageCarouselProps = {
     enableOverlay?: boolean;
     enableGradient?: boolean;
     enableBorder?: boolean;
-    bgcolor?: string;
+    overlayColor?: string;
     opacity?: number;
     alignItems?: 'flex-start' | 'center' | 'flex-end';
 };

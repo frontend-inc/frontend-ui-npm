@@ -17,7 +17,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Section = function (props) {
-    var children = props.children, bgcolor = props.bgcolor, _a = props.p, p = _a === void 0 ? 4 : _a, _b = props.styles, styles = _b === void 0 ? {} : _b;
-    return (react_1.default.createElement(material_1.Box, { sx: __assign({ bgcolor: bgcolor, p: p }, styles) }, children));
+    var children = props.children, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _a = props.py, py = _a === void 0 ? 4 : _a;
+    return (react_1.default.createElement(material_1.Box, { sx: __assign({ bgcolor: bgcolor }, sx.root) },
+        react_1.default.createElement(material_1.Container, { disableGutters: !maxWidth, maxWidth: maxWidth || false, sx: {
+                py: py,
+                px: py > 0 ? 2 : 0,
+            } }, children)));
 };
 exports.default = Section;
+var sx = {
+    root: {
+        width: '100%',
+        overflowX: 'scroll',
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
+    },
+};

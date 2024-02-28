@@ -42,7 +42,7 @@ var context_1 = require("../../../context");
 var CoverImage = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props.editing, editing = _a === void 0 ? false : _a, title = props.title, _b = props.textVariant, textVariant = _b === void 0 ? 'h3' : _b, description = props.description, buttonText = props.buttonText, handleClick = props.handleClick, image = props.image, _c = props.height, height = _c === void 0 ? 400 : _c, _d = props.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = props.alt, alt = _e === void 0 ? 'image' : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.opacity, opacity = _h === void 0 ? 0.65 : _h, _j = props.alignItems, alignItems = _j === void 0 ? 'center' : _j, _k = props.bgcolor, bgcolor = _k === void 0 ? '#FFFFFF' : _k, href = props.href;
+    var _a = props.editing, editing = _a === void 0 ? false : _a, title = props.title, _b = props.textVariant, textVariant = _b === void 0 ? 'h3' : _b, description = props.description, buttonText = props.buttonText, handleClick = props.handleClick, image = props.image, _c = props.height, height = _c === void 0 ? 400 : _c, _d = props.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = props.alt, alt = _e === void 0 ? 'image' : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.opacity, opacity = _h === void 0 ? 0.65 : _h, _j = props.alignItems, alignItems = _j === void 0 ? 'center' : _j, _k = props.overlayColor, overlayColor = _k === void 0 ? '#FFFFFF' : _k, href = props.href;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -52,7 +52,7 @@ var CoverImage = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.Image, { src: image, alt: alt, height: height, objectFit: objectFit, disableBorderRadius: true, bgcolor: bgcolor, enableGradient: enableGradient, enableOverlay: enableOverlay, opacity: opacity }),
+        react_1.default.createElement(components_1.Image, { src: image, alt: alt, height: height, objectFit: objectFit, disableBorderRadius: true, bgcolor: overlayColor, enableGradient: enableGradient, enableOverlay: enableOverlay, opacity: opacity }),
         react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), { height: "".concat(height, "px") }) },
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, alignItems: alignItems, sx: sx.content },
                 title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", sx: {

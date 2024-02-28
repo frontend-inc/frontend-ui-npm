@@ -9,6 +9,7 @@ type ProductCarouselProps = {
     autoPlay?: boolean;
     arrows?: boolean;
     showDots?: boolean;
+    maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | false;
     enableBorder?: boolean;
     enableAddToCart?: boolean;
     enableQuickShop?: boolean;

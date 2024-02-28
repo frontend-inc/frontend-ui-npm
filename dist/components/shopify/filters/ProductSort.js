@@ -48,13 +48,14 @@ var ProductSortButton = function (props) {
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.ButtonGroup, null,
-            react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "text", color: "secondary", onClick: handleOpen, endIcon: reverse === true ? (react_1.default.createElement(icons_material_1.ArrowDownward, { sx: sx.icon })) : (react_1.default.createElement(icons_material_1.ArrowUpward, { sx: sx.icon })) }, (_a = frontend_shopify_1.COLLECTION_SORT_OPTIONS.find(function (option) { return option.value === sortKey; })) === null || _a === void 0 ? void 0 : _a.label)),
+            react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "text", onClick: handleOpen, endIcon: reverse === true ? (react_1.default.createElement(icons_material_1.ArrowDownward, { sx: sx.icon })) : (react_1.default.createElement(icons_material_1.ArrowUpward, { sx: sx.icon })) }, (_a = frontend_shopify_1.COLLECTION_SORT_OPTIONS.find(function (option) { return option.value === sortKey; })) === null || _a === void 0 ? void 0 : _a.label)),
         react_1.default.createElement(__1.Popup, { anchorEl: anchorEl, open: open, handleClose: handleClose, p: 1 },
             react_1.default.createElement(SortList_1.default, { enableIcons: true, value: sortKey, reverse: reverse, options: frontend_shopify_1.COLLECTION_SORT_OPTIONS, handleClick: handleSortClick }))));
 };
 exports.default = ProductSortButton;
 var sx = {
     button: {
+        color: 'text.secondary',
         borderRight: 'none',
         '&:hover': {
             borderRight: 'none',

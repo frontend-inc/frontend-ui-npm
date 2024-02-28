@@ -1,5 +1,6 @@
 import React from 'react';
 type CarouselProps = {
+    editing?: boolean;
     children: React.ReactNode;
     autoPlay?: boolean;
     arrows?: boolean;

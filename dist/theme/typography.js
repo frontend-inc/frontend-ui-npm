@@ -86,7 +86,7 @@ exports.typography = {
     },
     caption: {
         fontFamily: 'Inter',
-        fontWeight: 500,
+        fontWeight: 600,
         fontSize: 14,
         letterSpacing: 'auto',
     },

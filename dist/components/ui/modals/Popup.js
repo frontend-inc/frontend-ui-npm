@@ -30,7 +30,7 @@ var sx = {
         '& .MuiPopover-paper': {
             border: '1px solid',
             borderColor: 'divider',
-            borderRadius: function (theme) { return theme.shape.borderRadius; },
+            borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
         }
     },
     content: {

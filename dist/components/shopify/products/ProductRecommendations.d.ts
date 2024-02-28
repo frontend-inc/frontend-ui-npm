@@ -12,6 +12,7 @@ type ProductRecommendationsProps = {
     enableQuickShop?: boolean;
     enableOkendoStarRating?: boolean;
     buttonText?: string;
+    maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | false;
 };
 declare const ProductRecommendations: React.FC<ProductRecommendationsProps>;
 export default ProductRecommendations;

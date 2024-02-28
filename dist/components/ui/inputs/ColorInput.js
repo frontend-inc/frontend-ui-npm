@@ -45,13 +45,13 @@ var TransparentColor = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.color), sx.transparent), (value == '' && sx.selected)), { bgcolor: '#FFF' }), onClick: handleClick }));
 };
 var ColorInput = function (props) {
-    var name = props.name, value = props.value, _a = props.disableTone, disableTone = _a === void 0 ? false : _a, handleChange = props.handleChange;
+    var label = props.label, name = props.name, value = props.value, _a = props.disableTone, disableTone = _a === void 0 ? false : _a, handleChange = props.handleChange;
     var _b = (0, react_1.useState)(500), tone = _b[0], setTone = _b[1];
     var _c = (0, react_1.useState)(null), color = _c[0], setColor = _c[1];
     var _d = (0, react_1.useState)(value || ''), hex = _d[0], setHex = _d[1];
     var _e = (0, react_1.useState)(value || ''), text = _e[0], setText = _e[1];
     var _f = (0, hooks_1.useMenu)(), open = _f.open, anchorEl = _f.anchorEl, openMenu = _f.openMenu, closeMenu = _f.closeMenu;
-    var handleToneChange = function (event, newTone) {
+    var handleToneChange = function (ev, newTone) {
         setTone(newTone);
     };
     var handleColorChange = function (color) {
@@ -59,6 +59,7 @@ var ColorInput = function (props) {
     };
     var handleHexColorChange = function (hexColor) {
         setHex(hexColor);
+        closeMenu();
     };
     var handleTextChange = function (ev) {
         var value = ev.target.value;
@@ -90,6 +91,7 @@ var ColorInput = function (props) {
         });
     }, [hex]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label)),
         react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, variant: "outlined", color: "secondary", endIcon: react_1.default.createElement(material_1.Stack, { direction: 'row', spacing: 0 },
                 react_1.default.createElement(material_1.Tooltip, { title: value },
                     react_1.default.createElement(material_1.IconButton, null, value ? (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.color), { bgcolor: value }) })) : (react_1.default.createElement(TransparentColor, { value: value, handleClick: openMenu })))),

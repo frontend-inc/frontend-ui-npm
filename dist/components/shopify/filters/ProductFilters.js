@@ -57,7 +57,7 @@ var ProductFilterButton = function (props) {
         }
     }, [filters]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Button, { onClick: handleClick, variant: "text", color: "secondary", startIcon: react_1.default.createElement(lucide_react_1.ListFilter, null) }, "Filter"),
+        react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: handleClick, variant: "text", color: "secondary", startIcon: react_1.default.createElement(lucide_react_1.ListFilter, null) }, "Filter"),
         react_1.default.createElement(__1.Popup, { anchorEl: anchorEl, open: open, handleClose: handleClose, p: 1 },
             react_1.default.createElement(material_1.Stack, { spacing: 2 },
                 (colorOptions === null || colorOptions === void 0 ? void 0 : colorOptions.length) > 0 && (react_1.default.createElement(__2.FilterList, { label: "Colors", count: colorsCount },
@@ -78,3 +78,8 @@ var ProductFilterButton = function (props) {
                     react_1.default.createElement(__2.InStockFilter, { filters: filters, handleClick: handleFilterInStock })))))));
 };
 exports.default = ProductFilterButton;
+var sx = {
+    button: {
+        color: 'text.secondary'
+    }
+};
