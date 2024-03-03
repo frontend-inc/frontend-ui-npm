@@ -99,7 +99,10 @@ var FeaturedCard = function (props) {
                                 sm: textAlign,
                                 xs: 'center'
                             } }) }, (0, helpers_1.truncate)(description, 160)),
-                    buttonText && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.actions), { justifyContent: direction == 'row' ? 'flex-start' : 'center' }) },
+                    buttonText && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.actions), { justifyContent: {
+                                sm: direction == 'row' ? 'flex-start' : 'center',
+                                xs: 'center'
+                            } }) },
                         react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))))));
 };
 exports.default = FeaturedCard;
