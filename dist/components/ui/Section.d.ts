@@ -1,6 +1,8 @@
 import React from 'react';
 type SectionProps = {
     children: React.ReactNode;
+    title?: string;
+    textAlign?: 'left' | 'center';
     bgcolor?: string;
     maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | false;
     py?: number;

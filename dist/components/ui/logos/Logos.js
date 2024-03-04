@@ -23,7 +23,7 @@ var Logos = function (props) {
     var title = props.title, _a = props.images, images = _a === void 0 ? [] : _a, editing = props.editing, rest = __rest(props, ["title", "images", "editing"]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_2.Typography, { variant: "caption", sx: sx.caption }, title),
-        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 }, images === null || images === void 0 ? void 0 : images.map(function (image, index) { return (react_1.default.createElement(Logo_1.default, { key: index, title: "Logo", image: image === null || image === void 0 ? void 0 : image.src, height: 50, width: 120 })); })),
+        react_1.default.createElement(material_1.Stack, { sx: sx.logos, direction: "row", spacing: 1 }, images === null || images === void 0 ? void 0 : images.map(function (image, index) { return (react_1.default.createElement(Logo_1.default, { key: index, title: "Logo", image: image === null || image === void 0 ? void 0 : image.src, height: 50, width: 120 })); })),
         (images === null || images === void 0 ? void 0 : images.length) === 0 && (react_1.default.createElement(components_1.Placeholder, { icon: react_1.default.createElement(components_1.Icon, { name: "Camera" }), title: "No images found", description: "Images will appear here" }))));
 };
 exports.default = Logos;
@@ -37,4 +37,14 @@ var sx = {
         color: 'text.primary',
         textAlign: 'center',
     },
+    logos: {
+        overflowX: 'scroll',
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
+        justifyContent: {
+            sm: 'center',
+            xs: 'flex-start'
+        }
+    }
 };

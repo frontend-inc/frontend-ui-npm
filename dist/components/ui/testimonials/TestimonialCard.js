@@ -14,22 +14,27 @@ var TestimonialCard = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.content },
             react_1.default.createElement(material_1.Box, { sx: sx.testimonial },
-                rating && (react_1.default.createElement(Rating_1.default, { readOnly: true, value: rating, icon: react_1.default.createElement(icons_material_2.Star, { sx: sx.rating }), emptyIcon: react_1.default.createElement(icons_material_2.StarBorderOutlined, { sx: sx.emptyRating }) })),
+                react_1.default.createElement(material_1.Box, { sx: sx.ratingContainer }, rating && (react_1.default.createElement(Rating_1.default, { readOnly: true, value: rating, icon: react_1.default.createElement(icons_material_2.Star, { sx: sx.rating }), emptyIcon: react_1.default.createElement(icons_material_2.StarBorderOutlined, { sx: sx.emptyRating }) }))),
                 text && (react_1.default.createElement(material_1.Typography, { sx: sx.text, variant: 'subtitle2', color: "text.primary" },
                     react_1.default.createElement(icons_material_1.FormatQuote, { sx: sx.quote }),
                     (0, helpers_1.truncate)(text, 240)))),
-            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 2, sx: sx.author },
-                react_1.default.createElement(material_1.Avatar, { src: image, sx: sx.avatar }),
-                react_1.default.createElement(material_1.Typography, { sx: sx.author, variant: "caption", color: "textSecondary" }, (0, helpers_1.truncate)(author))))));
+            react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.author },
+                author && (react_1.default.createElement(material_1.Typography, { sx: sx.author, variant: "caption", color: "textSecondary" },
+                    "\u2014 ",
+                    author)),
+                react_1.default.createElement(material_1.Avatar, { src: image, sx: sx.avatar })))));
 };
 exports.default = TestimonialCard;
 var sx = {
     root: {
-        width: '300px',
+        width: {
+            sm: '300px',
+            xs: '100%'
+        },
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         justifyContent: 'flex-end',
     },
     gradient: {
@@ -49,12 +54,6 @@ var sx = {
         borderColor: 'grey.300',
         p: 1,
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
-    },
-    title: {
-        textAlign: 'center',
-    },
-    label: {
-        textAlign: 'center',
     },
     content: {
         justifyContent: {
@@ -87,6 +86,9 @@ var sx = {
     },
     rating: {
         color: 'primary.main',
+    },
+    ratingContainer: {
+        height: 26
     },
     emptyRating: {
         color: 'text.secondary',

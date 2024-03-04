@@ -17,12 +17,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Section = function (props) {
-    var children = props.children, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _a = props.py, py = _a === void 0 ? 4 : _a;
+    var children = props.children, title = props.title, _a = props.textAlign, textAlign = _a === void 0 ? 'left' : _a, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _b = props.py, py = _b === void 0 ? 4 : _b;
     return (react_1.default.createElement(material_1.Box, { sx: __assign({ bgcolor: bgcolor }, sx.root) },
         react_1.default.createElement(material_1.Container, { disableGutters: !maxWidth, maxWidth: maxWidth || false, sx: {
                 py: py,
                 px: py > 0 ? 2 : 0,
-            } }, children)));
+            } },
+            title && (react_1.default.createElement(material_1.Typography, { sx: __assign(__assign({}, sx.title), { textAlign: textAlign }), variant: "h6", color: "textPrimary" }, title)),
+            children)));
 };
 exports.default = Section;
 var sx = {
@@ -33,4 +35,7 @@ var sx = {
             display: 'none',
         },
     },
+    title: {
+        width: "100%"
+    }
 };

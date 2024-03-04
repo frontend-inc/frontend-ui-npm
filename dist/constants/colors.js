@@ -54,4 +54,7 @@ exports.MUI_COLOR_VARIANTS = [
     { label: 'Shade 4', variant: 'shade4' },
     { label: 'Shade 5', variant: 'shade5' },
 ];
-exports.HEX_COLORS = ['#FFFFFF', '#000000'];
+exports.HEX_COLORS = [
+    { label: 'White', value: '#FFFFFF' },
+    { label: 'Black', value: '#000000' }
+];
