@@ -1,19 +1,20 @@
 import React from 'react';
 type CoverImageCarouselProps = {
-    url: string;
-    fields?: any;
+    items: {
+        title?: string;
+        description?: string;
+        image?: string;
+        buttonText?: string;
+        url?: string;
+    }[];
     editing?: boolean;
-    height?: number;
-    perPage?: number;
-    query?: any;
-    buttonText?: string;
-    navigateUrl: any;
     autoPlay?: boolean;
     arrows?: boolean;
     showDots?: boolean;
     enableOverlay?: boolean;
     enableGradient?: boolean;
     enableBorder?: boolean;
+    enableArrows?: boolean;
     overlayColor?: string;
     opacity?: number;
     alignItems?: 'flex-start' | 'center' | 'flex-end';
