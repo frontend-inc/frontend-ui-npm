@@ -1,6 +1,7 @@
 import React from 'react';
 import { InputProps, SyntheticEvent } from '../../../types';
 type RatingInputProps = InputProps & {
+    name?: string;
     readOnly?: boolean;
     disableBorder?: boolean;
     size?: 'small' | 'medium' | 'large';

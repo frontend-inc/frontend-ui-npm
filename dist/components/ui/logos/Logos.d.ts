@@ -1,11 +1,8 @@
 import React from 'react';
 type LogosProps = {
     title?: string;
-    url: string;
-    layout: 'grid' | 'carousel';
+    images?: Record<string, any>[];
     editing?: boolean;
-    perPage?: number;
-    query?: any;
     buttonText?: string;
     autoPlay?: boolean;
     arrows?: boolean;

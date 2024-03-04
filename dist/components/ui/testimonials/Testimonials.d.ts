@@ -1,21 +1,10 @@
 import React from 'react';
 type TestimonialsProps = {
     title?: string;
-    url: string;
-    layout: 'list' | 'grid' | 'carousel';
-    style: 'card' | 'avatar' | 'image' | 'cover';
-    fields?: any;
-    editing?: boolean;
-    enableInfiniteLoad?: boolean;
-    enableLoadMore?: boolean;
-    navigateUrl: any;
-    perPage?: number;
-    query?: any;
-    buttonText?: string;
+    testimonials: Record<string, any>[];
     autoPlay?: boolean;
     arrows?: boolean;
     showDots?: boolean;
-    enableBorder?: boolean;
 };
 declare const Testimonials: React.FC<TestimonialsProps>;
 export default Testimonials;
