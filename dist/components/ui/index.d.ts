@@ -203,6 +203,7 @@ export { default as Logo } from './images/Logo';
 export { default as VideoModal } from './video/VideoModal';
 export { default as VideoPlayer } from './video/VideoPlayer';
 export { default as TextModal } from './TextModal';
+export { default as Swipeable } from './swipeable/Swipeable';
 export { default as Field } from './fields/Field';
 export { default as FieldArray } from './fields/FieldArray';
 export { default as FieldBoolean } from './fields/FieldBoolean';

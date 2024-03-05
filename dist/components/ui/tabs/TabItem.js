@@ -13,7 +13,7 @@ var TabItem = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: {
             sm: 'row',
             xs: 'column-reverse'
-        }, spacing: 2 },
+        }, spacing: 2, sx: sx.root },
         image && (react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
             react_1.default.createElement("img", { alt: title, src: image, height: 256, width: 256, style: {
                     width: '100%',
@@ -25,14 +25,15 @@ var TabItem = function (props) {
 };
 exports.default = TabItem;
 var sx = {
-    root: {},
+    root: {
+        px: 2
+    },
     imageContainer: {
         width: 256,
         height: 256,
         overflow: 'hidden'
     },
     content: {
-        p: 1,
         width: '100%'
     }
 };
