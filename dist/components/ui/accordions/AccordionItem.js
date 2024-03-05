@@ -22,7 +22,7 @@ var AccordionItem = function (props) {
                             width: '100%',
                             objectFit: 'contain'
                         } }))),
-                react_1.default.createElement(material_1.Typography, { variant: "body1", color: "textSecondary" }, description)))));
+                react_1.default.createElement(components_1.Text, { variant: "body1", color: "textSecondary" }, description)))));
 };
 exports.default = AccordionItem;
 var sx = {
