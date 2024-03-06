@@ -68,6 +68,7 @@ var sx = {
         '&:hover': {
             opacity: 0.8,
         },
+        overflow: 'hidden'
     },
     activeThumbnail: {
         border: '2px solid',

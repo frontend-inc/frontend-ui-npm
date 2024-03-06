@@ -49,8 +49,8 @@ var Tabs = function (props) {
         setCurrentTab(newValue);
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, direction: orientation === 'vertical' ? 'row' : 'column', sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'space-between', spacing: 1 },
-            react_1.default.createElement(material_2.Typography, { variant: "h6", sx: sx.title, color: "textPrimary" }, title)),
+        title && (react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'space-between', spacing: 1 },
+            react_1.default.createElement(material_2.Typography, { variant: "h6", sx: sx.title, color: "textPrimary" }, title))),
         react_1.default.createElement(material_2.Tabs, { centered: true, orientation: orientation, variant: fullWidth ? "fullWidth" : "standard", value: currentTab, onChange: handleChange, color: "secondary", sx: __assign({}, (orientation === 'vertical' && sx.verticalTabs)) }, items === null || items === void 0 ? void 0 : items.map(function (item, i) { return (react_1.default.createElement(material_2.Tab, { label: item.label, value: i, icon: item.icon ?
                 react_1.default.createElement(material_1.Box, { sx: sx.tabIcon },
                     react_1.default.createElement(components_1.Icon, { name: item.icon, size: 20, color: currentTab === i ? 'primary.main' : 'text.primary' })) :

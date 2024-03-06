@@ -1,9 +1,7 @@
 import React from 'react';
 type SwipeableProps = {
     children: React.ReactNode[];
-    editing?: boolean;
-    autoPlay?: boolean;
-    enableGradient?: boolean;
+    enableAutoPlay?: boolean;
     enableArrows?: boolean;
 };
 declare const Swipeable: React.FC<SwipeableProps>;

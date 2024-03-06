@@ -8,8 +8,7 @@ type CoverImageCarouselProps = {
         url?: string;
     }[];
     editing?: boolean;
-    autoPlay?: boolean;
-    arrows?: boolean;
+    enableAutoPlay?: boolean;
     showDots?: boolean;
     enableOverlay?: boolean;
     enableGradient?: boolean;

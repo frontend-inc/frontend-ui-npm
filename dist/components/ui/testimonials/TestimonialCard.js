@@ -10,16 +10,16 @@ var icons_material_1 = require("@mui/icons-material");
 var icons_material_2 = require("@mui/icons-material");
 var Rating_1 = __importDefault(require("@mui/material/Rating"));
 var TestimonialCard = function (props) {
-    var _a = props || {}, author = _a.author, text = _a.text, _b = _a.rating, rating = _b === void 0 ? 5 : _b, _c = _a.image, image = _c === void 0 ? '' : _c;
+    var _a = props || {}, author = _a.author, text = _a.text, _b = _a.rating, rating = _b === void 0 ? 5 : _b, _c = _a.image, image = _c === void 0 ? '' : _c, _d = _a.size, size = _d === void 0 ? 'small' : _d;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.content },
             react_1.default.createElement(material_1.Box, { sx: sx.testimonial },
                 react_1.default.createElement(material_1.Box, { sx: sx.ratingContainer }, rating && (react_1.default.createElement(Rating_1.default, { readOnly: true, value: rating, icon: react_1.default.createElement(icons_material_2.Star, { sx: sx.rating }), emptyIcon: react_1.default.createElement(icons_material_2.StarBorderOutlined, { sx: sx.emptyRating }) }))),
-                text && (react_1.default.createElement(material_1.Typography, { sx: sx.text, variant: 'subtitle2', color: "text.primary" },
+                text && (react_1.default.createElement(material_1.Typography, { sx: sx.text, variant: size == 'small' ? 'subtitle2' : 'h6', color: "text.primary" },
                     react_1.default.createElement(icons_material_1.FormatQuote, { sx: sx.quote }),
                     (0, helpers_1.truncate)(text, 240)))),
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.author },
-                author && (react_1.default.createElement(material_1.Typography, { sx: sx.author, variant: "caption", color: "textSecondary" },
+                author && (react_1.default.createElement(material_1.Typography, { sx: sx.author, variant: size == 'small' ? 'caption' : 'body1', color: "text.secondary" },
                     "\u2014 ",
                     author)),
                 react_1.default.createElement(material_1.Avatar, { src: image, sx: sx.avatar })))));
@@ -27,10 +27,6 @@ var TestimonialCard = function (props) {
 exports.default = TestimonialCard;
 var sx = {
     root: {
-        width: {
-            sm: '300px',
-            xs: '100%'
-        },
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
@@ -56,6 +52,11 @@ var sx = {
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
     },
     content: {
+        width: '100%',
+        maxWidth: {
+            sm: '600px',
+            xs: '100%'
+        },
         justifyContent: {
             sm: 'space-between',
             xs: 'space-around'

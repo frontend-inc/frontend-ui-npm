@@ -32,6 +32,9 @@ exports.palette = {
     secondary: {
         main: COLORS.grey[900],
     },
+    tertiary: {
+        main: COLORS.grey[200]
+    },
     accent: {
         main: COLORS.grey[900],
         light: COLORS.grey[800],

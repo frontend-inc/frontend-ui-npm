@@ -4,8 +4,7 @@ type TestimonialProps = {
     text: string;
     rating: number;
     image: string;
-    height?: number;
-    width?: number;
+    size: 'small' | 'large';
 };
 declare const TestimonialCard: React.FC<TestimonialProps>;
 export default TestimonialCard;

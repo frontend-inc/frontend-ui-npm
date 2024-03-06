@@ -278,6 +278,9 @@ export declare const muiTheme: {
         secondary: {
             main: "#212121";
         };
+        tertiary: {
+            main: "#eeeeee";
+        };
         accent: {
             main: "#212121";
             light: "#424242";

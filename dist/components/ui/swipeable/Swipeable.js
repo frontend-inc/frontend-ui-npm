@@ -33,7 +33,7 @@ var react_swipeable_views_utils_1 = require("react-swipeable-views-utils");
 var material_1 = require("@mui/material");
 var AutoPlaySwipeableViews = (0, react_swipeable_views_utils_1.autoPlay)(react_swipeable_views_1.default);
 var Swipeable = function (props) {
-    var _a = props.children, children = _a === void 0 ? [] : _a, _b = props.enableArrows, enableArrows = _b === void 0 ? false : _b, _c = props.autoPlay, autoPlay = _c === void 0 ? false : _c;
+    var _a = props.children, children = _a === void 0 ? [] : _a, _b = props.enableArrows, enableArrows = _b === void 0 ? false : _b, _c = props.enableAutoPlay, enableAutoPlay = _c === void 0 ? false : _c;
     var _d = (0, react_1.useState)(0), activeStep = _d[0], setActiveStep = _d[1];
     var handleStepChange = function (step) {
         setActiveStep(step);
@@ -54,7 +54,9 @@ var Swipeable = function (props) {
             setActiveStep(function (prevActiveStep) { return prevActiveStep + 1; });
         }
     };
-    var SwipeableComponent = autoPlay ? AutoPlaySwipeableViews : react_swipeable_views_1.default;
+    var SwipeableComponent = enableAutoPlay ?
+        AutoPlaySwipeableViews :
+        react_swipeable_views_1.default;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(SwipeableComponent, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true }, children),
         enableArrows && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
