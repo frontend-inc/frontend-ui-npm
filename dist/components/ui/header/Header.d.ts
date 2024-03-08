@@ -9,7 +9,7 @@ type HeaderProps = {
     enableShopify?: boolean;
     enableNotifications?: boolean;
     bgcolor?: string;
-    MenuLinks?: MenuLink[];
+    menuItems: MenuLink[];
     handleClick: (path: string) => void;
 };
 declare const Header: React.FC<HeaderProps>;
