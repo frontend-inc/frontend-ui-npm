@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-var useMenu = function (props) {
-    var anchorRef = (props || {}).anchorRef;
+var useMenu = function (anchorRef) {
     var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
     var _b = (0, react_1.useState)(null), anchorEl = _b[0], setAnchorEl = _b[1];
     var toggleMenu = function (e) {

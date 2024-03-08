@@ -29,8 +29,8 @@ var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
 var components_1 = require("../../../components");
 var CartButton = function (props) {
-    var _a = props.label, label = _a === void 0 ? 'Cart' : _a, _b = props.showLabel, showLabel = _b === void 0 ? false : _b, _c = props.showIcon, showIcon = _c === void 0 ? true : _c, _d = props.editing, editing = _d === void 0 ? false : _d, _e = props.icon, icon = _e === void 0 ? 'ShoppingCart' : _e;
-    var _f = (0, react_1.useContext)(frontend_shopify_1.ShopContext), cart = _f.cart, toggleCart = _f.toggleCart;
+    var _a = props.label, label = _a === void 0 ? 'Cart' : _a, _b = props.editing, editing = _b === void 0 ? false : _b, _c = props.icon, icon = _c === void 0 ? 'ShoppingCart' : _c;
+    var _d = (0, react_1.useContext)(frontend_shopify_1.ShopContext), cart = _d.cart, toggleCart = _d.toggleCart;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var handleCartClick = function () {
         setMenuOpen(false);
@@ -38,10 +38,9 @@ var CartButton = function (props) {
             toggleCart();
         }
     };
-    return (react_1.default.createElement(react_1.default.Fragment, null, !showLabel ? (react_1.default.createElement(material_1.IconButton, { onClick: handleCartClick, sx: sx.root },
+    return (react_1.default.createElement(material_1.IconButton, { onClick: handleCartClick, sx: sx.root },
         react_1.default.createElement(material_1.Badge, { color: "primary", badgeContent: cart === null || cart === void 0 ? void 0 : cart.totalQuantity },
-            react_1.default.createElement(components_1.Icon, { name: icon, size: 24, color: "text.primary" })))) : (react_1.default.createElement(material_1.Button, { fullWidth: true, sx: sx.button, onClick: handleCartClick, startIcon: showIcon && (react_1.default.createElement(material_1.Badge, { badgeContent: cart === null || cart === void 0 ? void 0 : cart.totalQuantity, color: "primary" },
-            react_1.default.createElement(components_1.Icon, { name: icon, size: 24 }))) }, label))));
+            react_1.default.createElement(components_1.Icon, { name: icon, size: 24, color: "text.primary" }))));
 };
 exports.default = CartButton;
 var sx = {

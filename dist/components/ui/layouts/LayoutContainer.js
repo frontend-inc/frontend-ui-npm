@@ -18,13 +18,13 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var LayoutContainer = function (props) {
-    var children = props.children, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.mode, mode = _b === void 0 ? 'accent' : _b, _c = props.showIcons, showIcons = _c === void 0 ? true : _c, _d = props.topNav, topNav = _d === void 0 ? false : _d, handleClick = props.handleClick, menuItems = props.menuItems, notifications = props.notifications, _e = props.enableAuth, enableAuth = _e === void 0 ? false : _e, _f = props.enableHeader, enableHeader = _f === void 0 ? false : _f, _g = props.enableShopify, enableShopify = _g === void 0 ? false : _g;
+    var children = props.children, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.mode, mode = _b === void 0 ? 'accent' : _b, _c = props.topNav, topNav = _c === void 0 ? false : _c, handleClick = props.handleClick, menuItems = props.menuItems, notifications = props.notifications, _d = props.enableAuth, enableAuth = _d === void 0 ? false : _d, _e = props.enableHeader, enableHeader = _e === void 0 ? false : _e, _f = props.enableShopify, enableShopify = _f === void 0 ? false : _f;
     var enableNotifications = (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0;
     return (react_1.default.createElement(material_1.Box, { sx: sx.layout },
         react_1.default.createElement(components_1.Notifications, { notifications: notifications }),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (!topNav && sx.sideNav)) },
             enableHeader && (react_1.default.createElement(components_1.ModeTheme, { mode: mode },
-                react_1.default.createElement(components_1.Header, { editing: editing, topNav: topNav, showIcons: showIcons, menuItems: menuItems, enableNotifications: enableNotifications, handleClick: handleClick, enableAuth: enableAuth, enableShopify: enableShopify }))),
+                react_1.default.createElement(components_1.Header, { editing: editing, topNav: topNav, menuItems: menuItems, enableNotifications: enableNotifications, handleClick: handleClick, enableAuth: enableAuth, enableShopify: enableShopify }))),
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (enableHeader && topNav && sx.contentHeader)), (topNav ? sx.contentTopNav : sx.contentSideNav)) },
                 react_1.default.createElement(components_1.LayoutScroll, null, children)))));
 };

@@ -27,9 +27,8 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
-var components_1 = require("../../../components");
-var SearchButton = function (props) {
-    var _a = props.editing, editing = _a === void 0 ? false : _a;
+var SearchListItemButton = function (props) {
+    var _a = props.showIcon, showIcon = _a === void 0 ? true : _a, _b = props.editing, editing = _b === void 0 ? false : _b;
     var toggleSearch = (0, react_1.useContext)(frontend_shopify_1.ShopContext).toggleSearch;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var handleToggleSearch = function () {
@@ -38,16 +37,8 @@ var SearchButton = function (props) {
             toggleSearch();
         }
     };
-    return (react_1.default.createElement(material_1.IconButton, { sx: sx.root, onClick: handleToggleSearch },
-        react_1.default.createElement(components_1.Icon, { name: "Search", size: 24 })));
+    return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true },
+        react_1.default.createElement(material_1.ListItemButton, { onClick: handleToggleSearch },
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, "Search") }))));
 };
-exports.default = SearchButton;
-var sx = {
-    root: {
-        px: 1,
-    },
-    button: {
-        color: 'text.primary',
-        justifyContent: 'flex-start',
-    },
-};
+exports.default = SearchListItemButton;

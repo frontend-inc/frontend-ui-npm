@@ -1,8 +1,5 @@
 import React from 'react';
-type UseMenuProps = {
-    anchorRef?: React.RefObject<any>;
-};
-declare const useMenu: (props?: UseMenuProps) => {
+declare const useMenu: (anchorRef?: React.RefObject<any>) => {
     open: boolean;
     anchorEl: any;
     closeMenu: () => void;

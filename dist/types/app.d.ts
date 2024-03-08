@@ -1,8 +1,11 @@
-export type Link = {
+export type MenuLink = {
     name: string;
     path: string;
+    url?: string;
+    icon?: string;
     position: number;
-    sublinks: Link[];
+    parent_id?: number | null;
+    children: MenuLink[] | [];
 };
 export type Notification = {
     text: string;

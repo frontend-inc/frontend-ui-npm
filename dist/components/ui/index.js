@@ -157,7 +157,7 @@ Object.defineProperty(exports, "ProfileImage", { enumerable: true, get: function
 // Layouts
 var Footer_1 = require("./layouts/Footer");
 Object.defineProperty(exports, "Footer", { enumerable: true, get: function () { return __importDefault(Footer_1).default; } });
-var Header_1 = require("./layouts/Header");
+var Header_1 = require("./header/Header");
 Object.defineProperty(exports, "Header", { enumerable: true, get: function () { return __importDefault(Header_1).default; } });
 var LayoutContainer_1 = require("./layouts/LayoutContainer");
 Object.defineProperty(exports, "LayoutContainer", { enumerable: true, get: function () { return __importDefault(LayoutContainer_1).default; } });

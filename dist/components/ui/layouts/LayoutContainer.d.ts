@@ -1,17 +1,19 @@
 import React, { ReactNode } from 'react';
 import { Notification } from '../../../types';
+type MenuItem = {
+    name: string;
+    path: string;
+    url?: string;
+    icon?: string;
+    position: number;
+    children?: MenuItem[];
+};
 type LayoutContainerProps = {
     position?: 'fixed' | 'absolute' | 'relative';
     mode?: 'accent' | 'light' | 'dark';
-    showIcons?: boolean;
-    showLabels?: boolean;
     topNav?: boolean;
     handleClick: (item: any) => void;
-    menuItems: {
-        label: string;
-        path: string;
-        icon?: string;
-    }[];
+    menuItems: MenuItem[];
     notifications: Notification[];
     children: ReactNode;
     editing?: boolean;

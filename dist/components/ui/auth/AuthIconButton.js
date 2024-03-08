@@ -34,7 +34,7 @@ var AuthButton = function () {
     var _a;
     var router = (0, router_1.useRouter)();
     var _b = (0, frontend_js_1.useAuth)(), logout = _b.logout, fetchMe = _b.fetchMe, currentUser = _b.currentUser;
-    var _c = (0, hooks_1.useMenu)({}), open = _c.open, anchorEl = _c.anchorEl, closeMenu = _c.closeMenu, toggleMenu = _c.toggleMenu;
+    var _c = (0, hooks_1.useMenu)(), open = _c.open, anchorEl = _c.anchorEl, closeMenu = _c.closeMenu, toggleMenu = _c.toggleMenu;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var handleMenuClick = function (ev) {
         toggleMenu(ev);

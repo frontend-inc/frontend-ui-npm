@@ -42,11 +42,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
-var components_1 = require("../../../components");
+var __1 = require("../..");
 var router_1 = require("next/router");
-var ShopifyAuth = function (props) {
+var ShopifyListItemAuth = function (props) {
     var router = (0, router_1.useRouter)();
-    var customerUrl = (props || {}).customerUrl;
+    var _a = props || {}, _b = _a.editing, editing = _b === void 0 ? false : _b, customerUrl = _a.customerUrl;
     var findShop = (0, frontend_shopify_1.useShop)().findShop;
     var getLastPathOfUrl = function (urlString) {
         var url = new URL(urlString);
@@ -72,14 +72,10 @@ var ShopifyAuth = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
-        react_1.default.createElement(components_1.Icon, { name: "User", size: 24 })));
+    return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true },
+        react_1.default.createElement(material_1.ListItemButton, { onClick: handleClick },
+            react_1.default.createElement(material_1.ListItemIcon, null,
+                react_1.default.createElement(__1.Icon, { name: "User", size: 24 })),
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, "My Account") }))));
 };
-exports.default = ShopifyAuth;
-var sx = {
-    button: {
-        width: '100%',
-        color: 'text.primary',
-        justifyContent: 'flex-start',
-    }
-};
+exports.default = ShopifyListItemAuth;
