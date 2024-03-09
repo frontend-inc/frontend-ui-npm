@@ -1,7 +1,7 @@
 export declare const LOGO_HEIGHT = 60;
 export declare const LOGO_WIDTH = 120;
-export declare const HEADER_LOGO_HEIGHT = 32;
-export declare const HEADER_LOGO_WIDTH = 120;
+export declare const HEADER_LOGO_HEIGHT = 40;
+export declare const HEADER_LOGO_WIDTH = 80;
 export declare const CARD_VERT_HEIGHT = 240;
 export declare const CARD_VERT_WIDTH = 240;
 export declare const CARD_HORIZ_HEIGHT = 120;
