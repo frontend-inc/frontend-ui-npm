@@ -56,7 +56,8 @@ var MobileMenuItem = function (props) {
         }
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: (children === null || children === void 0 ? void 0 : children.length) > 0 && (react_1.default.createElement(icons_material_1.Add, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) })) },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: (children === null || children === void 0 ? void 0 : children.length) > 0 && (react_1.default.createElement(material_1.IconButton, { onClick: function () { return handleMenuClick(menuItem); } },
+                react_1.default.createElement(icons_material_1.ExpandMore, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) }))) },
             react_1.default.createElement(material_1.ListItemButton, { onClick: function () { return handleMenuClick(menuItem); } },
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, menuItem.name) }))),
         react_1.default.createElement(material_1.Collapse, { in: open },
@@ -65,10 +66,10 @@ var MobileMenuItem = function (props) {
 exports.default = MobileMenuItem;
 var sx = {
     icon: {
-        transition: 'transform 0.3s ease-in-out',
+        transition: 'transform 0.2s ease-in-out',
     },
     rotateIcon: {
-        transform: 'rotate(90deg)',
+        transform: 'rotate(-180deg)',
     },
     subLink: {
         pl: 3,

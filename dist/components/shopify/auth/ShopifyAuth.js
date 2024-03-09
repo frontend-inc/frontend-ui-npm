@@ -41,12 +41,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var material_2 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var components_1 = require("../../../components");
 var router_1 = require("next/router");
+var DesktopShopifyAuthButton = function (props) {
+    var handleClick = props.handleClick;
+    return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
+        react_1.default.createElement(components_1.Icon, { name: "User", size: 24 })));
+};
+var MobileShopifyAuthButton = function (props) {
+    var handleClick = props.handleClick;
+    return (react_1.default.createElement(material_2.ListItem, { disablePadding: true, disableGutters: true },
+        react_1.default.createElement(material_2.ListItemButton, { onClick: handleClick },
+            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, "My Account") }))));
+};
 var ShopifyAuth = function (props) {
     var router = (0, router_1.useRouter)();
-    var customerUrl = (props || {}).customerUrl;
+    var _a = props || {}, _b = _a.variant, variant = _b === void 0 ? 'desktop' : _b, customerUrl = _a.customerUrl;
     var findShop = (0, frontend_shopify_1.useShop)().findShop;
     var getLastPathOfUrl = function (urlString) {
         var url = new URL(urlString);
@@ -72,14 +84,8 @@ var ShopifyAuth = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
-        react_1.default.createElement(components_1.Icon, { name: "User", size: 24 })));
+    return (variant == 'desktop' ?
+        react_1.default.createElement(DesktopShopifyAuthButton, { handleClick: handleClick }) :
+        react_1.default.createElement(MobileShopifyAuthButton, { handleClick: handleClick }));
 };
 exports.default = ShopifyAuth;
-var sx = {
-    button: {
-        width: '100%',
-        color: 'text.primary',
-        justifyContent: 'flex-start',
-    }
-};

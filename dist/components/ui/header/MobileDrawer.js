@@ -47,10 +47,10 @@ var MobileDrawer = function (props) {
             react_1.default.createElement(material_1.List, { sx: sx.mobileMenuItems }, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 :
                 _a.map(function (menuItem, index) { return (react_1.default.createElement(MobileMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); }),
                 enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(shopify_1.SearchListItemButton, { editing: editing }),
-                    react_1.default.createElement(shopify_1.CartListItemButton, { editing: editing })))),
+                    react_1.default.createElement(shopify_1.SearchButton, { variant: "mobile", editing: editing }),
+                    react_1.default.createElement(shopify_1.CartButton, { variant: 'mobile', editing: editing })))),
             (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
-                enableShopify && (react_1.default.createElement(shopify_1.ShopifyListItemAuth, { editing: editing })),
+                enableShopify && (react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "mobile" })),
                 enableAuth && (react_1.default.createElement(__1.AuthButton, { editing: editing, myAccountUrl: "".concat(clientUrl, "/my-account") })))))));
 };
 exports.default = MobileDrawer;
