@@ -28,16 +28,17 @@ var RichText = function (props) {
     var renderElement = function (el, key, inList) {
         switch (el.type) {
             case 'paragraph':
-                return react_1.default.createElement(material_1.Typography, { my: 1, key: key, variant: "body1" }, rendervalue(el.children, inList));
+                return (react_1.default.createElement(material_1.Typography, { my: 1, key: key, variant: "body1" }, rendervalue(el.children, inList)));
             case 'heading':
+                return (
                 // @ts-ignore
-                return react_1.default.createElement(material_1.Typography, { key: key, variant: "h".concat(el.level) }, rendervalue(el.children, inList));
+                react_1.default.createElement(material_1.Typography, { key: key, variant: "h".concat(el.level) }, rendervalue(el.children, inList)));
             case 'list':
                 return (react_1.default.createElement(material_1.List, { key: key, component: el.listType === 'ordered' ? 'ol' : 'ul' }, rendervalue(el.children, true)));
             case 'list-item':
                 return react_1.default.createElement(material_1.ListItem, { key: key }, rendervalue(el.children, true));
             case 'link':
-                return react_1.default.createElement(material_1.Link, { key: key, href: el.url, title: el.title, target: el.target }, rendervalue(el.children, inList));
+                return (react_1.default.createElement(material_1.Link, { key: key, href: el.url, title: el.title, target: el.target }, rendervalue(el.children, inList)));
             case 'text':
                 return renderText(el, key, inList);
             default:

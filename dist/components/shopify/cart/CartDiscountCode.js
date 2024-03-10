@@ -94,16 +94,16 @@ var sx = {
     codeContent: {
         display: 'flex',
         justifyContent: 'flex-end',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     discountCode: {
         cursor: 'pointer',
         color: 'text.secondary',
     },
     disabled: {
-        opacity: 0.5
+        opacity: 0.5,
     },
     loading: {
-        opacity: 0.5
-    }
+        opacity: 0.5,
+    },
 };

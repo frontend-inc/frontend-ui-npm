@@ -77,7 +77,7 @@ var sx = {
         overflow: 'hidden',
     },
     imageContainer: {
-        width: "100%",
+        width: '100%',
         position: 'relative',
         flexDirection: 'column',
         overflow: 'hidden',

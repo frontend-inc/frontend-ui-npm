@@ -12,14 +12,14 @@ var Feature = function (props) {
         icon && (react_1.default.createElement(material_1.Avatar, { sx: sx.avatar },
             react_1.default.createElement(components_1.Icon, { name: icon, color: "primary.contrastText", size: 24 }))),
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0 },
-            react_1.default.createElement(material_1.Typography, { sx: sx.text, color: 'text.primary', variant: "subtitle1" }, title),
-            react_1.default.createElement(material_1.Typography, { sx: sx.text, color: 'text.secondary', variant: "body1" }, description))));
+            react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.primary", variant: "subtitle1" }, title),
+            react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.secondary", variant: "body1" }, description))));
 };
 exports.default = Feature;
 var sx = {
     root: {
         p: 2,
-        width: "100%",
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -32,14 +32,14 @@ var sx = {
         textAlign: 'center',
         color: 'grey.900',
         '& span': {
-            color: 'primary.main'
-        }
+            color: 'primary.main',
+        },
     },
     text: {
         maxWidth: '280px',
         textAlign: 'center',
         '& span': {
-            color: 'primary.main'
-        }
+            color: 'primary.main',
+        },
     },
 };

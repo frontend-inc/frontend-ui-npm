@@ -101,5 +101,5 @@ var sx = {
         alignItems: 'center',
         justifyContent: 'flex-end',
         height: '60px',
-    }
+    },
 };

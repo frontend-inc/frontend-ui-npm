@@ -73,5 +73,5 @@ var sx = {
         mt: 2,
         textAlign: 'center',
         width: '100%',
-    }
+    },
 };

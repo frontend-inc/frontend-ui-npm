@@ -25,5 +25,5 @@ exports.FONTS = [
     { label: 'Space Grotesk', value: 'Space Grotesk' },
     { label: 'Space Mono', value: 'Space Mono' },
     { label: 'Syne', value: 'Syne' },
-    { label: 'Work Sans', value: 'Work Sans' }
+    { label: 'Work Sans', value: 'Work Sans' },
 ];

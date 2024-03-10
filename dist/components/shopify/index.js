@@ -120,7 +120,7 @@ var ProductModal_1 = require("./products/ProductModal");
 Object.defineProperty(exports, "ProductModal", { enumerable: true, get: function () { return __importDefault(ProductModal_1).default; } });
 var ProductRecommendations_1 = require("./products/ProductRecommendations");
 Object.defineProperty(exports, "ProductRecommendations", { enumerable: true, get: function () { return __importDefault(ProductRecommendations_1).default; } });
-// Metafields 
+// Metafields
 var Metafields_1 = require("./products/metafields/Metafields");
 Object.defineProperty(exports, "Metafields", { enumerable: true, get: function () { return __importDefault(Metafields_1).default; } });
 var MetafieldImage_1 = require("./products/metafields/MetafieldImage");
@@ -136,7 +136,7 @@ var ShopifyStore_1 = require("./store/ShopifyStore");
 Object.defineProperty(exports, "ShopifyStore", { enumerable: true, get: function () { return __importDefault(ShopifyStore_1).default; } });
 var ShopifyProduct_1 = require("./products/ShopifyProduct");
 Object.defineProperty(exports, "ShopifyProduct", { enumerable: true, get: function () { return __importDefault(ShopifyProduct_1).default; } });
-// Favorites 
+// Favorites
 var ProductFavorites_1 = require("./favorites/ProductFavorites");
 Object.defineProperty(exports, "ProductFavorites", { enumerable: true, get: function () { return __importDefault(ProductFavorites_1).default; } });
 var FavoriteButton_1 = require("./favorites/FavoriteButton");

@@ -68,7 +68,7 @@ var FilterButton = function (props) {
 exports.default = FilterButton;
 var sx = {
     button: {
-        color: 'text.secondary'
+        color: 'text.secondary',
     },
     hideBorder: {
         borderRight: 'none',
@@ -92,5 +92,5 @@ var sx = {
             xs: '270px',
             sm: '360px',
         },
-    }
+    },
 };

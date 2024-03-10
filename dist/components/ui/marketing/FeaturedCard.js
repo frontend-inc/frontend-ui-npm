@@ -85,30 +85,30 @@ var FeaturedCard = function (props) {
                     } }) },
                 react_1.default.createElement(material_1.Stack, { spacing: 0, sx: __assign(__assign({}, sx.textContent), { justifyContent: {
                             sm: justifyContent,
-                            xs: 'center'
+                            xs: 'center',
                         } }) },
                     label && (react_1.default.createElement(material_1.Typography, { color: "primary", sx: __assign(__assign({}, sx.label), { textAlign: {
                                 sm: textAlign,
-                                xs: 'center'
+                                xs: 'center',
                             } }), variant: "caption" }, label)),
                     react_1.default.createElement(material_1.Typography, { sx: __assign(__assign({}, sx.title), { textAlign: {
                                 sm: textAlign,
-                                xs: 'center'
+                                xs: 'center',
                             } }), variant: textVariant }, title),
                     react_1.default.createElement(material_1.Typography, { variant: "body2", sx: __assign(__assign({}, sx.description), { textAlign: {
                                 sm: textAlign,
-                                xs: 'center'
+                                xs: 'center',
                             } }) }, (0, helpers_1.truncate)(description, 160)),
                     buttonText && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.actions), { justifyContent: {
                                 sm: direction == 'row' ? 'flex-start' : 'center',
-                                xs: 'center'
+                                xs: 'center',
                             } }) },
                         react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))))));
 };
 exports.default = FeaturedCard;
 var sx = {
     root: {
-        width: "100%",
+        width: '100%',
         display: 'flex',
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
     },
@@ -151,12 +151,12 @@ var sx = {
     },
     label: {
         width: '100%',
-        color: 'primary.main'
+        color: 'primary.main',
     },
     title: {
         width: '100%',
         color: 'text.primary',
-        my: 1
+        my: 1,
     },
     description: {
         width: '100%',

@@ -57,6 +57,7 @@ var ColorInput = function (props) {
     };
     var handleColorChange = function (color) {
         setColor(color);
+        closeMenu();
     };
     var handleHexColorChange = function (hexColor) {
         setHex(hexColor);
@@ -93,7 +94,7 @@ var ColorInput = function (props) {
     }, [hex]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label)),
-        react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, variant: "outlined", color: "secondary", endIcon: react_1.default.createElement(material_1.Stack, { direction: 'row', spacing: 0 },
+        react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, variant: "outlined", color: "secondary", endIcon: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },
                 react_1.default.createElement(material_1.Tooltip, { title: value },
                     react_1.default.createElement(material_1.IconButton, null, value ? (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.color), { bgcolor: value }) })) : (react_1.default.createElement(TransparentColor, { value: value, handleClick: openMenu })))),
                 react_1.default.createElement(material_1.IconButton, { size: "small" },
@@ -147,9 +148,9 @@ var sx = {
         borderColor: 'common.white',
     },
     input: {
-        width: '100%'
+        width: '100%',
     },
     transparent: {
-        background: 'linear-gradient(to top left,rgba(0,0,0,0) 0%,rgba(0,0,0,0) calc(50% - 0.8px),rgba(0,0,0,0.4) 50%,rgba(0,0,0,0) calc(50% + 0.8px),rgba(0,0,0,0) 100%)'
-    }
+        background: 'linear-gradient(to top left,rgba(0,0,0,0) 0%,rgba(0,0,0,0) calc(50% - 0.8px),rgba(0,0,0,0.4) 50%,rgba(0,0,0,0) calc(50% + 0.8px),rgba(0,0,0,0) 100%)',
+    },
 };

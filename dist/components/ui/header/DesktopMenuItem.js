@@ -10,30 +10,70 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(require("react"));
+var react_1 = __importStar(require("react"));
+var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var icons_material_1 = require("@mui/icons-material");
+var frontend_shopify_1 = require("frontend-shopify");
+var router_1 = require("next/router");
 var DesktopSubmenuItem = function (props) {
     var menuItem = props.menuItem, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.MenuItem
-    // @ts-ignore 
+    // @ts-ignore
     , { 
-        // @ts-ignore 
+        // @ts-ignore
         onClick: function () { return handleClick(menuItem.path); } },
         react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, menuItem.name)));
 };
 var DesktopMenuItem = function (props) {
+    var _a;
+    var router = (0, router_1.useRouter)();
+    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var menuItem = props.menuItem, handleClick = props.handleClick;
-    var children = menuItem.children;
-    var _a = (0, hooks_1.useMenu)(), open = _a.open, openMenu = _a.openMenu, closeMenu = _a.closeMenu, anchorEl = _a.anchorEl;
+    var children = menuItem.children, shopify_collection = menuItem.shopify_collection;
+    var _b = (0, frontend_shopify_1.useCollections)(), loading = _b.loading, products = _b.products, findCollection = _b.findCollection;
+    var _c = (0, hooks_1.useMenu)(), open = _c.open, openMenu = _c.openMenu, closeMenu = _c.closeMenu, anchorEl = _c.anchorEl;
+    var handleCollectionClick = function () {
+        router.push("".concat(clientUrl, "/collections/").concat(shopify_collection));
+    };
+    var handleProductClick = function (product) {
+        router.push("".concat(clientUrl, "/products/").concat(product.handle));
+    };
     var handleMenuClick = function (ev) {
         if ((children === null || children === void 0 ? void 0 : children.length) > 0) {
             openMenu(ev);
+            if (menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_collection) {
+                findCollection(menuItem.shopify_collection);
+            }
+        }
+        else if (shopify_collection) {
+            openMenu(ev);
+            findCollection(shopify_collection);
         }
         else {
             //@ts-ignore
@@ -44,27 +84,41 @@ var DesktopMenuItem = function (props) {
         closeMenu();
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: handleMenuClick, endIcon: (children === null || children === void 0 ? void 0 : children.length) > 0 && (react_1.default.createElement(icons_material_1.ExpandMore, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) })) }, menuItem.name),
+        react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: handleMenuClick, endIcon: ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) && (react_1.default.createElement(icons_material_1.ExpandMore, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) })) }, menuItem.name),
         react_1.default.createElement(material_1.Menu, { open: open, anchorEl: anchorEl, onClose: closeMenu, MenuListProps: {
                 onMouseLeave: handleMouseLeave,
-            } }, children === null || children === void 0 ? void 0 : children.map(function (child, index) { return (react_1.default.createElement(DesktopSubmenuItem, { key: index, menuItem: child, handleClick: handleClick })); }))));
+            } }, children === null || children === void 0 ? void 0 :
+            children.map(function (child, index) { return (react_1.default.createElement(material_1.MenuItem
+            //@ts-ignore
+            , { 
+                //@ts-ignore
+                onClick: function () { return handleClick(child.path); } },
+                react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, child.name))); }),
+            loading && (react_1.default.createElement(material_1.Box, { sx: sx.loading },
+                react_1.default.createElement(material_1.CircularProgress, { size: 30 }))), (_a = products === null || products === void 0 ? void 0 : products.slice(0, 5)) === null || _a === void 0 ? void 0 :
+            _a.map(function (product, i) { return (react_1.default.createElement(material_1.MenuItem, { key: i, onClick: function () { return handleProductClick(product); } },
+                react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, product.title))); }),
+            (products === null || products === void 0 ? void 0 : products.length) > 5 && (react_1.default.createElement(react_1.default.Fragment, null,
+                react_1.default.createElement(material_1.Divider, null),
+                react_1.default.createElement(material_1.MenuItem, { onClick: handleCollectionClick },
+                    react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, "See All")))))));
 };
 exports.default = DesktopMenuItem;
 var sx = {
     buttonGroup: {
-        borderRight: 'none !important'
+        borderRight: 'none !important',
     },
     menuButton: {
         cursor: 'pointer',
         justifyContent: 'flex-start',
         bgcolor: 'background.default',
         color: 'text.primary',
-        borderRight: 'none !important'
+        borderRight: 'none !important',
     },
     iconButton: {
         '&:hover': {
-            bgcolor: 'transparent'
-        }
+            bgcolor: 'transparent',
+        },
     },
     icon: {
         transition: 'transform 0.2s ease-in-out',
@@ -72,4 +126,10 @@ var sx = {
     rotateIcon: {
         transform: 'rotate(-180deg)',
     },
+    loading: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        p: 2
+    }
 };

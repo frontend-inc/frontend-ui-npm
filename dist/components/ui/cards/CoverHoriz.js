@@ -58,7 +58,7 @@ var CoverHoriz = function (props) {
 exports.default = CoverHoriz;
 var sx = {
     root: {
-        width: "100%",
+        width: '100%',
         position: 'relative',
         flexDirection: 'column',
         overflow: 'hidden',

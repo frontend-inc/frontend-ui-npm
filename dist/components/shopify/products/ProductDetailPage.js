@@ -31,7 +31,7 @@ var ProductDetailPage = function (props) {
     var handle = props.handle, buttonText = props.buttonText, metafields = props.metafields, _a = props.enableQuantity, enableQuantity = _a === void 0 ? true : _a, _b = props.enableSubscription, enableSubscription = _b === void 0 ? true : _b, enableFavorites = props.enableFavorites, enableOkendoStarRating = props.enableOkendoStarRating;
     var _c = (0, frontend_shopify_1.useProducts)(), product = _c.product, findProduct = _c.findProduct;
     var _d = (0, frontend_shopify_1.useProductDetails)({
-        product: product
+        product: product,
     }), price = _d.price, compareAtPrice = _d.compareAtPrice, variant = _d.variant, selectedOptions = _d.selectedOptions, handleOptionChange = _d.handleOptionChange, image = _d.image, images = _d.images, handleImageClick = _d.handleImageClick;
     (0, react_1.useEffect)(function () {
         if (handle) {
@@ -61,7 +61,7 @@ var sx = {
     left: {
         p: {
             sm: 1,
-            xs: 0
+            xs: 0,
         },
         width: {
             xs: '100%',
@@ -71,7 +71,7 @@ var sx = {
     right: {
         p: {
             sm: 1,
-            xs: 0
+            xs: 0,
         },
         width: {
             xs: '100%',
@@ -82,6 +82,6 @@ var sx = {
         px: 0,
     },
     actions: {
-        alignItems: 'flex-end'
-    }
+        alignItems: 'flex-end',
+    },
 };

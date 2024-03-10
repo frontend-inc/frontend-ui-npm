@@ -18,7 +18,7 @@ var useApp = function () {
         loading: loading,
         loaded: loaded,
         setLoaded: setLoaded,
-        setLoading: setLoading
+        setLoading: setLoading,
     };
 };
 exports.default = useApp;

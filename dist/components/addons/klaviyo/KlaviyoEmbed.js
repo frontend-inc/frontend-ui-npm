@@ -16,5 +16,5 @@ exports.default = KlaviyoEmbed;
 var sx = {
     root: {
         py: 2,
-    }
+    },
 };

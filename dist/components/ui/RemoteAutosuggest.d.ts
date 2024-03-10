@@ -3,8 +3,8 @@ type RemoteAutosuggestProps = {
     errors?: any;
     value?: any;
     label?: string;
-    name?: string;
-    url?: string;
+    name: string;
+    url: string;
     displayField?: string;
     handleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     valueParam?: string;

@@ -21,10 +21,10 @@ var Thumbnail = function (props) {
     var image = props.image, active = props.active, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.thumbnail), (active && sx.activeThumbnail)) },
         react_1.default.createElement(material_1.CardActionArea, { sx: {
-                p: 0
+                p: 0,
             }, onClick: function () { return handleClick(image); } },
             react_1.default.createElement(image_1.default, { src: image.url, width: 96, height: 96, alt: image === null || image === void 0 ? void 0 : image.altText, layout: "respsonive", style: {
-                    objectFit: 'cover'
+                    objectFit: 'cover',
                 } }))));
 };
 var ProductImageSlider = function (props) {
@@ -44,7 +44,7 @@ var sx = {
         alignItems: 'flex-start',
         width: '100%',
         maxWidth: '100vw',
-        height: '100%'
+        height: '100%',
     },
     thumbnails: {
         mt: 1,
@@ -68,7 +68,7 @@ var sx = {
         '&:hover': {
             opacity: 0.8,
         },
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
     activeThumbnail: {
         border: '2px solid',

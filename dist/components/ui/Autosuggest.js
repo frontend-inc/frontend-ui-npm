@@ -58,7 +58,7 @@ var AutocompletePaper = function (props) {
     return react_1.default.createElement(material_1.Paper, __assign({}, props, { elevation: 10, sx: sx.paper }));
 };
 var Autosuggest = function (props) {
-    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? "column" : _a, options = props.options, label = props.label, name = props.name, _b = props.placeholder, placeholder = _b === void 0 ? 'Select' : _b, _c = props.multiselect, multiselect = _c === void 0 ? false : _c, handleChange = props.handleChange, handleInputChange = props.handleInputChange, _d = props.freeSolo, freeSolo = _d === void 0 ? false : _d;
+    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? 'column' : _a, options = props.options, label = props.label, name = props.name, _b = props.placeholder, placeholder = _b === void 0 ? 'Select' : _b, _c = props.multiselect, multiselect = _c === void 0 ? false : _c, handleChange = props.handleChange, handleInputChange = props.handleInputChange, _d = props.freeSolo, freeSolo = _d === void 0 ? false : _d;
     var _e = (0, react_1.useState)({
         label: '',
         value: null,

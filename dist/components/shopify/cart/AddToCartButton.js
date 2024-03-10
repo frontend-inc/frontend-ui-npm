@@ -110,7 +110,7 @@ var AddToCartButton = function (props) {
                     line = {
                         merchandiseId: variant === null || variant === void 0 ? void 0 : variant.id,
                         quantity: quantity,
-                        sellingPlanId: activeSellingPlanId
+                        sellingPlanId: activeSellingPlanId,
                     };
                     cartLineAdd(line);
                     trackAddToCart({
@@ -139,7 +139,7 @@ var AddToCartButton = function (props) {
             react_1.default.createElement(material_1.Button, { fullWidth: true, sx: __assign(__assign({}, sx.addToCartButton), (size == 'small' && sx.addToCartButtonSmall)), color: "primary", onClick: handleAddToCart, variant: buttonVariant, size: size, startIcon: react_1.default.createElement(components_1.IconLoader, { color: buttonVariant == 'contained'
                         ? 'primary.contrastText'
                         : 'primary.main', loading: loading }) }, label),
-            enableFavorites && (react_1.default.createElement(shopify_1.FavoriteButton, { product: product })))));
+            enableFavorites && react_1.default.createElement(shopify_1.FavoriteButton, { product: product }))));
 };
 exports.default = AddToCartButton;
 var sx = {
@@ -149,7 +149,7 @@ var sx = {
         gap: '10px',
     },
     addToCartButton: {
-        minWidth: "60px"
+        minWidth: '60px',
     },
     addToCartButtonSmall: {
         height: '40px',

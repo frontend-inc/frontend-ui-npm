@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var KlaviyoButton = function (props) {
-    var _a = props || {}, formId = _a.formId, _b = _a.justifyContent, justifyContent = _b === void 0 ? "center" : _b, _c = _a.variant, variant = _c === void 0 ? "contained" : _c, _d = _a.buttonText, buttonText = _d === void 0 ? "Subscribe" : _d;
+    var _a = props || {}, formId = _a.formId, _b = _a.justifyContent, justifyContent = _b === void 0 ? 'center' : _b, _c = _a.variant, variant = _c === void 0 ? 'contained' : _c, _d = _a.buttonText, buttonText = _d === void 0 ? 'Subscribe' : _d;
     var handleClick = function () {
         // @ts-ignore
         window._klOnsite = window._klOnsite || [];
@@ -34,6 +34,6 @@ var sx = {
     root: {
         display: 'flex',
         flexDirection: 'row',
-        width: '100%'
-    }
+        width: '100%',
+    },
 };

@@ -41,7 +41,7 @@ var MobileSearchButton = function (props) {
             react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, "Search") }))));
 };
 var SearchButton = function (props) {
-    var _a = props.variant, variant = _a === void 0 ? "desktop" : _a, _b = props.editing, editing = _b === void 0 ? false : _b;
+    var _a = props.variant, variant = _a === void 0 ? 'desktop' : _a, _b = props.editing, editing = _b === void 0 ? false : _b;
     var toggleSearch = (0, react_1.useContext)(frontend_shopify_1.ShopContext).toggleSearch;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var handleToggleSearch = function () {
@@ -50,9 +50,7 @@ var SearchButton = function (props) {
             toggleSearch();
         }
     };
-    return (variant == 'desktop' ?
-        react_1.default.createElement(DesktopSearchButton, { handleClick: handleToggleSearch }) :
-        react_1.default.createElement(MobileSearchButton, { handleClick: handleToggleSearch }));
+    return variant == 'desktop' ? (react_1.default.createElement(DesktopSearchButton, { handleClick: handleToggleSearch })) : (react_1.default.createElement(MobileSearchButton, { handleClick: handleToggleSearch }));
 };
 exports.default = SearchButton;
 var sx = {

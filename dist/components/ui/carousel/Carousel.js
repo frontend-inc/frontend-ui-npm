@@ -77,7 +77,7 @@ var ReactCarousel = function (props) {
                 break;
         }
     }, [breakpoint]);
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.root), { maxWidth: editing ? (width - 320) : width }), (styles && styles)) }, responsive && children && (react_1.default.createElement(react_multi_carousel_1.default, { responsive: responsive, swipeable: true, draggable: true, infinite: true, autoPlay: autoPlay, arrows: arrows, showDots: showDots, customDot: react_1.default.createElement(CarouselDot_1.default, null) }, children))));
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.root), { maxWidth: editing ? width - 320 : width }), (styles && styles)) }, responsive && children && (react_1.default.createElement(react_multi_carousel_1.default, { responsive: responsive, swipeable: true, draggable: true, infinite: true, autoPlay: autoPlay, arrows: arrows, showDots: showDots, customDot: react_1.default.createElement(CarouselDot_1.default, null) }, children))));
 };
 exports.default = ReactCarousel;
 var sx = {

@@ -40,7 +40,7 @@ var Notification = function (props) {
     var handleClick = function () {
         if (copyToClipboard) {
             (0, copy_to_clipboard_1.default)(discountCode);
-            showAlertSuccess("Discount code copied to clipboard");
+            showAlertSuccess('Discount code copied to clipboard');
         }
         else if (path) {
             router.push("".concat(clientUrl, "/").concat(path));
@@ -66,5 +66,5 @@ var sx = {
     text: {
         textAlign: 'center',
     },
-    listItemButton: {}
+    listItemButton: {},
 };

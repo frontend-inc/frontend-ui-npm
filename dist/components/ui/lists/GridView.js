@@ -18,6 +18,6 @@ var GridView = function (props) {
 exports.default = GridView;
 var sx = {
     item: {
-        p: 0.5
-    }
+        p: 0.5,
+    },
 };

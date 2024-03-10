@@ -51,7 +51,7 @@ var CartButton = function (props) {
             toggleCart();
         }
     };
-    return (variant == 'desktop' ? (react_1.default.createElement(DesktopCartButton, { icon: icon, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity })) : (react_1.default.createElement(MobileCartButton, { label: label, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity })));
+    return variant == 'desktop' ? (react_1.default.createElement(DesktopCartButton, { icon: icon, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity })) : (react_1.default.createElement(MobileCartButton, { label: label, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity }));
 };
 exports.default = CartButton;
 var sx = {
@@ -64,6 +64,6 @@ var sx = {
         justifyContent: 'flex-start',
     },
     badge: {
-        mr: 1
-    }
+        mr: 1,
+    },
 };

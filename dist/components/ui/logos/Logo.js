@@ -29,6 +29,6 @@ var Logo = function (props) {
 exports.default = Logo;
 var sx = {
     root: {
-        p: 0.5
-    }
+        p: 0.5,
+    },
 };

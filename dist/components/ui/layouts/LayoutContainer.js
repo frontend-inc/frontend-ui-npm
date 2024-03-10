@@ -53,7 +53,7 @@ var sx = {
         pt: {
             sm: 0,
             xs: '60px',
-        }
+        },
     },
     content: {
         display: 'flex',

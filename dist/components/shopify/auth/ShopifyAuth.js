@@ -63,7 +63,9 @@ var ShopifyAuth = function (props) {
     var getLastPathOfUrl = function (urlString) {
         var url = new URL(urlString);
         var pathname = url.pathname;
-        var pathSegments = pathname.split('/').filter(function (segment) { return segment.length > 0; });
+        var pathSegments = pathname
+            .split('/')
+            .filter(function (segment) { return segment.length > 0; });
         return pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : '';
     };
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -84,8 +86,6 @@ var ShopifyAuth = function (props) {
             }
         });
     }); };
-    return (variant == 'desktop' ?
-        react_1.default.createElement(DesktopShopifyAuthButton, { handleClick: handleClick }) :
-        react_1.default.createElement(MobileShopifyAuthButton, { handleClick: handleClick }));
+    return variant == 'desktop' ? (react_1.default.createElement(DesktopShopifyAuthButton, { handleClick: handleClick })) : (react_1.default.createElement(MobileShopifyAuthButton, { handleClick: handleClick }));
 };
 exports.default = ShopifyAuth;

@@ -18,5 +18,5 @@ var sx = {
         minHeight: '1100px',
         width: '100%',
         border: 'none',
-    }
+    },
 };

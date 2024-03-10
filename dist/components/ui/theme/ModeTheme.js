@@ -26,7 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var ModeTheme = function (props) {
-    var _a = (props || {}).mode, mode = _a === void 0 ? "light" : _a;
+    var _a = (props || {}).mode, mode = _a === void 0 ? 'light' : _a;
     var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
     var _b = (0, react_1.useState)('#ffffff'), bgcolor = _b[0], setBgcolor = _b[1];
     (0, react_1.useEffect)(function () {

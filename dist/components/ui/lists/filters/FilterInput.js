@@ -77,7 +77,7 @@ var sx = {
         lineHeight: '1em',
     },
     icon: {
-        color: "text.secondary",
+        color: 'text.secondary',
         transition: 'transform 0.3s ease-in-out',
     },
     expandMore: {

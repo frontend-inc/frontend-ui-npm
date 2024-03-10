@@ -47,7 +47,7 @@ var MobileNav = function (props) {
             react_1.default.createElement(material_1.Toolbar, null,
                 react_1.default.createElement(material_1.Box, { sx: sx.desktopTopNav },
                     react_1.default.createElement(material_1.Box, { sx: sx.leftMenu },
-                        react_1.default.createElement(material_1.IconButton, { onClick: function () { return (setMenuOpen(true)); } },
+                        react_1.default.createElement(material_1.IconButton, { onClick: function () { return setMenuOpen(true); } },
                             react_1.default.createElement(__1.Icon, { name: "Menu", size: 24 }))),
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu },
                         react_1.default.createElement(__1.Logo, { src: logo, width: logoWidth, height: logoHeight - 20 })),
@@ -67,7 +67,7 @@ var sx = {
         top: 40,
     },
     notifications: {
-        top: '50px'
+        top: '50px',
     },
     sideNav: {
         height: '100%',

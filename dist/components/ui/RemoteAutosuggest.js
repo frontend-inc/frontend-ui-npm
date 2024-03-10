@@ -65,17 +65,17 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var hooks_1 = require("../../hooks");
 var RemoteAutosuggest = function (props) {
-    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, displayField = props.displayField, handleChange = props.handleChange, _a = props.valueParam, valueParam = _a === void 0 ? 'id' : _a, _b = props.placeholder, placeholder = _b === void 0 ? 'Search' : _b, _c = props.defaultQuery, defaultQuery = _c === void 0 ? null : _c, _d = props.direction, direction = _d === void 0 ? "column" : _d;
-    var _e = (0, hooks_1.useError)({
+    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, handleChange = props.handleChange, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? null : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e;
+    var _f = (0, hooks_1.useError)({
         errors: errors,
         name: name,
-    }), error = _e.error, clearError = _e.clearError;
-    var _f = (0, frontend_js_1.useResource)({
+    }), error = _f.error, clearError = _f.clearError;
+    var _g = (0, frontend_js_1.useResource)({
         url: url,
         name: name,
-    }), resources = _f.resources, findMany = _f.findMany;
-    var _g = (0, react_1.useState)({}), option = _g[0], setOption = _g[1];
-    var _h = (0, react_1.useState)([]), options = _h[0], setOptions = _h[1];
+    }), resources = _g.resources, findMany = _g.findMany;
+    var _h = (0, react_1.useState)({}), option = _h[0], setOption = _h[1];
+    var _j = (0, react_1.useState)([]), options = _j[0], setOptions = _j[1];
     var handleInputChange = function (newValue) {
         if (error)
             clearError();
@@ -90,7 +90,7 @@ var RemoteAutosuggest = function (props) {
             if (resource) {
                 setOption({
                     label: resource[displayField],
-                    value: resource[valueParam]
+                    value: resource[valueParam],
                 });
             }
             return [2 /*return*/];

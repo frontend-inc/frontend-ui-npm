@@ -48,9 +48,9 @@ var MobileDrawer = function (props) {
                 _a.map(function (menuItem, index) { return (react_1.default.createElement(MobileMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); }),
                 enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(shopify_1.SearchButton, { variant: "mobile", editing: editing }),
-                    react_1.default.createElement(shopify_1.CartButton, { variant: 'mobile', editing: editing })))),
+                    react_1.default.createElement(shopify_1.CartButton, { variant: "mobile", editing: editing })))),
             (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
-                enableShopify && (react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "mobile" })),
+                enableShopify && react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "mobile" }),
                 enableAuth && (react_1.default.createElement(__1.AuthButton, { editing: editing, myAccountUrl: "".concat(clientUrl, "/my-account") })))))));
 };
 exports.default = MobileDrawer;
@@ -75,12 +75,12 @@ var sx = {
         },
     },
     mobileMenuItems: {
-        width: '100%'
+        width: '100%',
     },
     divider: {
-        width: "100%",
+        width: '100%',
         borderTop: '1px solid',
         borderColor: 'divider',
-        pt: 1.5
-    }
+        pt: 1.5,
+    },
 };

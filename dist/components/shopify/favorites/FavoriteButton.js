@@ -57,7 +57,7 @@ var frontend_shopify_1 = require("frontend-shopify");
 var FavoriteButton = function (props) {
     var product = props.product;
     var _a = (0, frontend_shopify_1.useFavorites)({
-        product: product
+        product: product,
     }), toggleFavorite = _a.toggleFavorite, isFavorite = _a.isFavorite;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {

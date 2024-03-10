@@ -211,11 +211,11 @@ var sx = {
         textDecoration: 'line-through',
         color: 'text.secondary',
         opacity: 0.6,
-        fontSize: 12
+        fontSize: 12,
     },
     secondaryAction: {
         height: '100%',
         alignItems: 'flex-end',
         justifyContent: 'space-between',
-    }
+    },
 };

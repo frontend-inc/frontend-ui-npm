@@ -80,6 +80,6 @@ var ProductFilterButton = function (props) {
 exports.default = ProductFilterButton;
 var sx = {
     button: {
-        color: 'text.secondary'
-    }
+        color: 'text.secondary',
+    },
 };

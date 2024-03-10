@@ -73,5 +73,5 @@ var sx = {
     },
     subLink: {
         pl: 3,
-    }
+    },
 };

@@ -17,13 +17,8 @@ var frontend_shopify_1 = require("frontend-shopify");
 var material_1 = require("@mui/material");
 var shopify_1 = require("../../shopify");
 var ui_1 = require("../../ui");
-var PLAIN_TEXT_TYPES = [
-    'single_line_text_field',
-    'multi_line_text_field'
-];
-var RICH_TEXT_TYPES = [
-    'rich_text_field'
-];
+var PLAIN_TEXT_TYPES = ['single_line_text_field', 'multi_line_text_field'];
+var RICH_TEXT_TYPES = ['rich_text_field'];
 var SUPPORTED_METAFIELD_TYPES = __spreadArray(__spreadArray([], PLAIN_TEXT_TYPES, true), RICH_TEXT_TYPES, true);
 var ProductMetafields = function (props) {
     var product = props.product, metafields = props.metafields;
@@ -45,11 +40,11 @@ var ProductMetafields = function (props) {
 exports.default = ProductMetafields;
 var sx = {
     root: {
-        my: 2
+        my: 2,
     },
     accordion: {
         borderTop: '1px solid',
         borderColor: 'divider',
-        my: '0px !important'
-    }
+        my: '0px !important',
+    },
 };

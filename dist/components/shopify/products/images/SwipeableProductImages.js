@@ -54,7 +54,7 @@ var SwipeableProductImages = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), { height: !responsiveHeight && "".concat(height, "px"), minHeight: "".concat(height, "px"), minWidth: !responsiveHeight && "".concat(width, "px") }), direction: "column" },
         react_1.default.createElement(react_swipeable_views_1.default, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true }, 
-        // @ts-ignore 
+        // @ts-ignore
         (_b = product === null || product === void 0 ? void 0 : product.images) === null || _b === void 0 ? void 0 : _b.edges.map(function (_a) {
             var image = _a.node;
             return (react_1.default.createElement(material_1.Box, { key: image.id, sx: __assign({}, sx.image) },
@@ -63,7 +63,7 @@ var SwipeableProductImages = function (props) {
                             width: width * 2,
                             height: height * 2,
                         }), alt: product === null || product === void 0 ? void 0 : product.title, width: width, height: height, style: {
-                            objectFit: objectFit
+                            objectFit: objectFit,
                         } }))));
         })),
         maxSteps > 1 && (react_1.default.createElement(material_1.MobileStepper, { sx: sx.stepper, steps: maxSteps, position: "static", activeStep: activeStep, backButton: react_1.default.createElement(material_1.Box, null), nextButton: react_1.default.createElement(material_1.Box, null) }))));
@@ -72,14 +72,14 @@ exports.default = SwipeableProductImages;
 var sx = {
     root: {
         width: '100%',
-        position: 'relative'
+        position: 'relative',
     },
     stepper: {
         position: 'absolute',
         bottom: 5,
         bgcolor: 'transparent',
         width: '100%',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     image: {
         width: '100%',

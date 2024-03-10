@@ -27,7 +27,7 @@ exports.default = Section;
 var sx = {
     root: {
         width: '100%',
-        minHeight: '60px'
+        minHeight: '60px',
     },
     container: {
         width: '100%',
@@ -37,6 +37,6 @@ var sx = {
         },
     },
     title: {
-        width: "100%"
-    }
+        width: '100%',
+    },
 };

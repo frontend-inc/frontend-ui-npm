@@ -33,7 +33,7 @@ exports.palette = {
         main: COLORS.grey[900],
     },
     tertiary: {
-        main: COLORS.grey[200]
+        main: COLORS.grey[200],
     },
     accent: {
         main: COLORS.grey[900],

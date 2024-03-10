@@ -24,5 +24,5 @@ exports.default = Text;
 var sx = {
     root: {
         whiteSpace: 'pre-wrap',
-    }
+    },
 };

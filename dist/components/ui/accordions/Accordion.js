@@ -23,7 +23,7 @@ var sx = {
     title: {
         width: '100%',
         textAlign: 'center',
-        mb: 2
+        mb: 2,
     },
     accordionSummary: {},
 };

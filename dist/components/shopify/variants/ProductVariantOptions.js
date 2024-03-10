@@ -29,6 +29,6 @@ var sx = {
         gap: '10px',
     },
     title: {
-        mb: 1
-    }
+        mb: 1,
+    },
 };

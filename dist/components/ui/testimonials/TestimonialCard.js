@@ -55,11 +55,11 @@ var sx = {
         width: '100%',
         maxWidth: {
             sm: '600px',
-            xs: '100%'
+            xs: '100%',
         },
         justifyContent: {
             sm: 'space-between',
-            xs: 'space-around'
+            xs: 'space-around',
         },
         alignItems: 'center',
         height: '100%',
@@ -74,13 +74,13 @@ var sx = {
         minHeight: '44px',
     },
     text: {
-        textAlign: 'center'
+        textAlign: 'center',
     },
     testimonial: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        my: 2
+        my: 2,
     },
     quote: {
         transform: 'rotateY(180deg)',
@@ -89,7 +89,7 @@ var sx = {
         color: 'primary.main',
     },
     ratingContainer: {
-        height: 26
+        height: 26,
     },
     emptyRating: {
         color: 'text.secondary',

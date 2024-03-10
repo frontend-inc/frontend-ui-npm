@@ -15,12 +15,12 @@ var AccordionItem = function (props) {
         react_1.default.createElement(material_2.AccordionDetails, { sx: sx.accordionDetails },
             react_1.default.createElement(material_1.Stack, { direction: {
                     sm: 'row',
-                    xs: 'column'
+                    xs: 'column',
                 }, spacing: 2 },
                 image && (react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
                     react_1.default.createElement("img", { alt: title, src: image, height: 256, width: 256, style: {
                             width: '100%',
-                            objectFit: 'contain'
+                            objectFit: 'contain',
                         } }))),
                 react_1.default.createElement(components_1.Text, { variant: "body1", color: "textSecondary" }, description)))));
 };
@@ -30,14 +30,14 @@ var sx = {
         bgcolor: 'background.default',
         borderTop: '1px solid',
         borderColor: 'divider',
-        my: '0px !important'
+        my: '0px !important',
     },
     imageContainer: {
         width: 256,
         height: 256,
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
     accordionDetails: {
         bgcolor: 'background.default',
-    }
+    },
 };

@@ -14,7 +14,7 @@ var ProductDetails = function (props) {
         return null;
     return (react_1.default.createElement(material_1.Stack, { spacing: 1 },
         react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, product.title),
-        enableOkendoStarRating && (react_1.default.createElement(addons_1.OkendoStarRating, { product: product })),
+        enableOkendoStarRating && react_1.default.createElement(addons_1.OkendoStarRating, { product: product }),
         react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "body2", sx: sx.price },
             price && (0, frontend_shopify_1.formatCurrency)(price),
             !disableCompareAtPrice && compareAtPrice && (react_1.default.createElement("span", null, (0, frontend_shopify_1.formatCurrency)(compareAtPrice)))),

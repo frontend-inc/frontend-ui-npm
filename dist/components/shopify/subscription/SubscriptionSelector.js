@@ -32,7 +32,9 @@ var SubscriptionSelector = function (props) {
     (0, react_1.useEffect)(function () {
         var _a, _b, _c, _d, _e;
         if (product) {
-            var subscriptions = (_e = (_d = (_c = (_b = (_a = product === null || product === void 0 ? void 0 : product.sellingPlanGroups) === null || _a === void 0 ? void 0 : _a.edges[0]) === null || _b === void 0 ? void 0 : _b.node) === null || _c === void 0 ? void 0 : _c.sellingPlans) === null || _d === void 0 ? void 0 : _d.edges) === null || _e === void 0 ? void 0 : _e.map(function (_a) {
+            //@ts-ignore
+            var subscriptions = (_e = (_d = (_c = (_b = (_a = product === null || product === void 0 ? void 0 : product.sellingPlanGroups) === null || _a === void 0 ? void 0 : _a.edges[0]) === null || _b === void 0 ? void 0 : _b.node) === null || _c === void 0 ? void 0 : _c.sellingPlans) === null || _d === void 0 ? void 0 : _d.edges //@ts-ignore
+            ) === null || _e === void 0 ? void 0 : _e.map(function (_a) {
                 var node = _a.node;
                 return node;
             });
@@ -53,10 +55,10 @@ var SubscriptionSelector = function (props) {
 exports.default = SubscriptionSelector;
 var sx = {
     root: {
-        width: "100%"
+        width: '100%',
     },
     emptySelect: {
-        color: "text.secondary",
-        fontStyle: "italic"
-    }
+        color: 'text.secondary',
+        fontStyle: 'italic',
+    },
 };

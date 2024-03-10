@@ -17,9 +17,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var SelectInput = function (props) {
-    var label = props.label, _a = props.direction, direction = _a === void 0 ? "column" : _a, name = props.name, value = props.value, options = props.options, handleChange = props.handleChange;
+    var label = props.label, _a = props.direction, direction = _a === void 0 ? 'column' : _a, name = props.name, value = props.value, options = props.options, handleChange = props.handleChange;
     return (react_1.default.createElement(material_1.FormControl, { size: "small", fullWidth: true, variant: "outlined" },
-        react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == "row" && sx.stackVertical)), direction: direction, spacing: 1 },
+        react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 1 },
             react_1.default.createElement(material_1.Typography, { variant: "caption", sx: sx.label, gutterBottom: true }, label),
             react_1.default.createElement(material_1.Select, { sx: sx.root, value: value, name: name, onChange: function (e) { return handleChange(e); } }, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (
             // @ts-ignore
@@ -29,20 +29,20 @@ exports.default = SelectInput;
 var sx = {
     root: {
         minWidth: '165px',
-        height: "40px",
-        border: "1px solid",
+        height: '40px',
+        border: '1px solid',
         borderColor: 'divider',
         bgcolor: 'background.default',
-        width: "100%",
+        width: '100%',
         '.MuiSvgIcon-root ': {
             fill: function (theme) { return theme.palette.text.secondary; },
         },
-        boxShadow: "none",
-        ".MuiOutlinedInput-notchedOutline": { border: 0 },
-        "&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+        boxShadow: 'none',
+        '.MuiOutlinedInput-notchedOutline': { border: 0 },
+        '&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
             border: 0,
         },
-        "&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        '&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
             border: 0,
         },
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },

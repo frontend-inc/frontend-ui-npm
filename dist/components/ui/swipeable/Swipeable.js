@@ -54,9 +54,9 @@ var Swipeable = function (props) {
             setActiveStep(function (prevActiveStep) { return prevActiveStep + 1; });
         }
     };
-    var SwipeableComponent = enableAutoPlay ?
-        AutoPlaySwipeableViews :
-        react_swipeable_views_1.default;
+    var SwipeableComponent = enableAutoPlay
+        ? AutoPlaySwipeableViews
+        : react_swipeable_views_1.default;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(SwipeableComponent, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true }, children),
         enableArrows && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
@@ -69,7 +69,7 @@ exports.default = Swipeable;
 var sx = {
     root: {
         width: '100%',
-        position: 'relative'
+        position: 'relative',
     },
     actions: {
         position: 'absolute',
@@ -78,6 +78,6 @@ var sx = {
         display: 'flex',
         justifyContent: 'space-between',
         width: '100%',
-        zIndex: 1
-    }
+        zIndex: 1,
+    },
 };

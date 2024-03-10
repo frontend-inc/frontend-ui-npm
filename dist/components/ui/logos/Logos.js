@@ -44,7 +44,7 @@ var sx = {
         },
         justifyContent: {
             sm: 'center',
-            xs: 'flex-start'
-        }
-    }
+            xs: 'flex-start',
+        },
+    },
 };

@@ -69,7 +69,7 @@ var AuthButton = function (props) {
             react_1.default.createElement(components_1.AuthAvatar, null))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleLogin },
             react_1.default.createElement(components_1.Icon, { name: "User", size: 24 }))))) : (react_1.default.createElement(react_1.default.Fragment, null, currentUser ? (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: toggleMenu, startIcon: showIcon && react_1.default.createElement(components_1.AuthAvatar, null), endIcon: react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(components_1.Icon, { name: "MoreVertical", size: 20 })) },
-            react_1.default.createElement(material_1.Typography, { variant: "button", sx: sx.username }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.username))) : (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: handleLogin, startIcon: showIcon && (react_1.default.createElement(components_1.Icon, { name: "User", size: 24 })) }, "Login")))),
+            react_1.default.createElement(material_1.Typography, { variant: "button", sx: sx.username }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.username))) : (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: handleLogin, startIcon: showIcon && react_1.default.createElement(components_1.Icon, { name: "User", size: 24 }) }, "Login")))),
         currentUser && (react_1.default.createElement(components_1.AuthMenu, { open: open, anchorEl: anchorEl, toggleMenu: toggleMenu, handleLogin: handleLogin, handleSignup: handleSignup, handleMyAccount: handleMyAccount, handleLogout: handleLogout, handleClick: handleClick }))));
 };
 exports.default = AuthButton;
@@ -88,5 +88,5 @@ var sx = {
     username: {
         width: '100%',
         textAlign: 'left',
-    }
+    },
 };

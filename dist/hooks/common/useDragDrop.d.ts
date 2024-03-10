@@ -1,7 +1,7 @@
 import React from 'react';
 type UseDragDropProps = {
     columns: any[];
-    children: any[];
+    children?: any[];
 };
 declare const useDragDrop: (props: UseDragDropProps) => {
     columns: any[];

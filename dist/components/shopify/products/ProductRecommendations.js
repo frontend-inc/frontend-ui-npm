@@ -59,6 +59,6 @@ var ProductRecommendations = function (props) {
 exports.default = ProductRecommendations;
 var sx = {
     root: {
-        width: '100%'
+        width: '100%',
     },
 };

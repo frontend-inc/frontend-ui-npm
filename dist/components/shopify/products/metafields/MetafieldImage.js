@@ -43,7 +43,7 @@ var MetafieldImage = function (props) {
     if (!src)
         return null;
     return (react_1.default.createElement("img", { src: src, alt: product === null || product === void 0 ? void 0 : product.title, height: "".concat(height, "px"), width: '100%', style: {
-            objectFit: 'contain'
+            objectFit: 'contain',
         } }));
 };
 exports.default = MetafieldImage;

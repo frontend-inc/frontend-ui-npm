@@ -40,7 +40,7 @@ var ScriptProvider = function (props) {
     (0, react_1.useEffect)(function () {
         if (!disableAnalytics && segmentWriteKey) {
             setSegment(analytics_next_1.AnalyticsBrowser.load({
-                writeKey: segmentWriteKey
+                writeKey: segmentWriteKey,
             }));
         }
     }, [disableAnalytics, segmentWriteKey]);
@@ -52,19 +52,19 @@ var ScriptProvider = function (props) {
         googleAnalyticsId: googleAnalyticsId,
         gorgiasChatId: gorgiasChatId,
         redditPixelId: redditPixelId,
-        segmentWriteKey: segmentWriteKey
+        segmentWriteKey: segmentWriteKey,
     };
     return (react_1.default.createElement(ScriptContext_1.default.Provider, { value: value },
         !disableAnalytics && (react_1.default.createElement(react_1.default.Fragment, null,
             googleTagManagerId && (react_1.default.createElement(addons_1.GoogleTagManagerScript, { id: googleTagManagerId })),
             googleAnalyticsId && (react_1.default.createElement(addons_1.GoogleAnalyticsScript, { id: googleAnalyticsId })),
-            redditPixelId && (react_1.default.createElement(addons_1.RedditScript, { id: redditPixelId })),
-            hotJarId && (react_1.default.createElement(addons_1.HotJarScript, { id: hotJarId })),
+            redditPixelId && react_1.default.createElement(addons_1.RedditScript, { id: redditPixelId }),
+            hotJarId && react_1.default.createElement(addons_1.HotJarScript, { id: hotJarId }),
             visualWebsiteOptimizerId && (react_1.default.createElement(addons_1.VisualWebsiteOptimizerScript, { id: visualWebsiteOptimizerId })))),
-        !disableChat && (react_1.default.createElement(react_1.default.Fragment, null, gorgiasChatId && (react_1.default.createElement(addons_1.GorgiasChat, { id: gorgiasChatId })))),
-        klaviyoCompanyId && (react_1.default.createElement(addons_1.KlaviyoScript, { id: klaviyoCompanyId })),
+        !disableChat && (react_1.default.createElement(react_1.default.Fragment, null, gorgiasChatId && react_1.default.createElement(addons_1.GorgiasChat, { id: gorgiasChatId }))),
+        klaviyoCompanyId && react_1.default.createElement(addons_1.KlaviyoScript, { id: klaviyoCompanyId }),
         gorgiasContactFormSrc && (react_1.default.createElement(script_1.default, { strategy: "beforeInteractive", src: gorgiasContactFormSrc })),
-        okendoSubscriberId && (react_1.default.createElement(addons_1.OkendoScript, { subscriberId: okendoSubscriberId })),
+        okendoSubscriberId && react_1.default.createElement(addons_1.OkendoScript, { subscriberId: okendoSubscriberId }),
         children));
 };
 exports.default = ScriptProvider;

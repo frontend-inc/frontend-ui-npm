@@ -13,7 +13,8 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var useDragDrop = function (props) {
-    var _a = (0, react_1.useState)(props.children), columns = _a[0], setColumns = _a[1];
+    var children = props.children;
+    var _a = (0, react_1.useState)(children), columns = _a[0], setColumns = _a[1];
     var reorder = function (items, startIndex, endIndex) {
         var removed = items.splice(startIndex, 1)[0];
         items.splice(endIndex, 0, removed);

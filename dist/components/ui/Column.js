@@ -44,7 +44,7 @@ var Column = function (props) {
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.box), { bgcolor: bgcolor }) },
             react_1.default.createElement(material_1.Container, { sx: __assign(__assign({}, sx.root), { gridTemplateColumns: {
                         sm: "repeat(".concat(Number(cols), ", 1fr)"),
-                        xs: '1fr'
+                        xs: '1fr',
                     }, gap: gap, py: py, px: Number(py) > 0 ? 2 : "0px !important", bgcolor: bgcolor }), 
                 //@ts-ignore
                 maxWidth: maxWidth }, children))));
@@ -56,6 +56,6 @@ var sx = {
     },
     box: {
         p: 0,
-        width: "100%"
-    }
+        width: '100%',
+    },
 };
