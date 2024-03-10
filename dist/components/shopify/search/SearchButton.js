@@ -29,12 +29,12 @@ var material_2 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
 var components_1 = require("../../../components");
-var DesktopSearchButton = function (props) {
+var TopNavSearchButton = function (props) {
     var handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.IconButton, { sx: sx.root, onClick: handleClick },
         react_1.default.createElement(components_1.Icon, { name: "Search", size: 24 })));
 };
-var MobileSearchButton = function (props) {
+var SideNavSearchButton = function (props) {
     var handleClick = props.handleClick;
     return (react_1.default.createElement(material_2.ListItem, { disablePadding: true, disableGutters: true },
         react_1.default.createElement(material_2.ListItemButton, { onClick: handleClick },
@@ -50,7 +50,7 @@ var SearchButton = function (props) {
             toggleSearch();
         }
     };
-    return variant == 'desktop' ? (react_1.default.createElement(DesktopSearchButton, { handleClick: handleToggleSearch })) : (react_1.default.createElement(MobileSearchButton, { handleClick: handleToggleSearch }));
+    return variant == 'topNav' ? (react_1.default.createElement(TopNavSearchButton, { handleClick: handleToggleSearch })) : (react_1.default.createElement(SideNavSearchButton, { handleClick: handleToggleSearch }));
 };
 exports.default = SearchButton;
 var sx = {

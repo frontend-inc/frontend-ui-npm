@@ -41,7 +41,7 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var context_1 = require("../../../context");
 var MobileDrawer_1 = __importDefault(require("./MobileDrawer"));
-var MobileNav_1 = __importDefault(require("./MobileNav"));
+var MobileTopNav_1 = __importDefault(require("./MobileTopNav"));
 var DesktopTopNav_1 = __importDefault(require("./DesktopTopNav"));
 var DesktopSideNav_1 = __importDefault(require("./DesktopSideNav"));
 var Header = function (props) {
@@ -49,7 +49,7 @@ var Header = function (props) {
     var _a = props.topNav, topNav = _a === void 0 ? false : _a, _b = props.editing, editing = _b === void 0 ? false : _b, menuItems = props.menuItems, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableShopify, enableShopify = _d === void 0 ? false : _d, _e = props.enableNotifications, enableNotifications = _e === void 0 ? false : _e;
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (!topNav && sx.rootSideNav)) },
         topNav ? (react_1.default.createElement(DesktopTopNav_1.default, { editing: editing, logo: logo, enableAuth: enableAuth, enableShopify: enableShopify, enableNotifications: enableNotifications, menuItems: menuItems, handleClick: handleClick })) : (react_1.default.createElement(DesktopSideNav_1.default, { editing: editing, logo: logo, enableAuth: enableAuth, enableShopify: enableShopify, enableNotifications: enableNotifications, menuItems: menuItems, handleClick: handleClick })),
-        react_1.default.createElement(MobileNav_1.default, { editing: editing, logo: logo, enableShopify: enableShopify, enableNotifications: enableNotifications, menuItems: menuItems, handleClick: handleClick }),
+        react_1.default.createElement(MobileTopNav_1.default, { editing: editing, logo: logo, enableShopify: enableShopify, enableNotifications: enableNotifications, menuItems: menuItems, handleClick: handleClick }),
         react_1.default.createElement(MobileDrawer_1.default, { editing: editing, enableAuth: enableAuth, enableShopify: enableShopify, menuItems: menuItems, handleClick: handleClick })));
 };
 exports.default = Header;

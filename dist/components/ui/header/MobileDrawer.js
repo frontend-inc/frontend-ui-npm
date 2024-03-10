@@ -31,26 +31,24 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
-var MobileMenuItem_1 = __importDefault(require("./MobileMenuItem"));
+var SideNavMenuItem_1 = __importDefault(require("./SideNavMenuItem"));
 var MobileDrawer = function (props) {
     var _a;
     var _b = (0, react_1.useContext)(context_1.AppContext), clientUrl = _b.clientUrl, menuOpen = _b.menuOpen, setMenuOpen = _b.setMenuOpen;
     var editing = props.editing, menuItems = props.menuItems, handleClick = props.handleClick, enableAuth = props.enableAuth, enableShopify = props.enableShopify;
     var handleMenuClick = function (path) {
-        if (!editing) {
-            setMenuOpen(false);
-            handleClick(path);
-        }
+        setMenuOpen(false);
+        handleClick(path);
     };
     return (react_1.default.createElement(__1.Drawer, { open: menuOpen, handleClose: function () { return setMenuOpen(false); }, anchor: "left", styles: sx.drawer },
-        react_1.default.createElement(material_1.Box, { sx: sx.mobileMenu },
-            react_1.default.createElement(material_1.List, { sx: sx.mobileMenuItems }, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 :
-                _a.map(function (menuItem, index) { return (react_1.default.createElement(MobileMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); }),
+        react_1.default.createElement(material_1.Box, { sx: sx.sideNavMenu },
+            react_1.default.createElement(material_1.List, { sx: sx.sideNavMenuItems }, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 :
+                _a.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); }),
                 enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
-                    react_1.default.createElement(shopify_1.SearchButton, { variant: "mobile", editing: editing }),
-                    react_1.default.createElement(shopify_1.CartButton, { variant: "mobile", editing: editing })))),
+                    react_1.default.createElement(shopify_1.SearchButton, { variant: "sideNav", editing: editing }),
+                    react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav", editing: editing })))),
             (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
-                enableShopify && react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "mobile" }),
+                enableShopify && react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }),
                 enableAuth && (react_1.default.createElement(__1.AuthButton, { editing: editing, myAccountUrl: "".concat(clientUrl, "/my-account") })))))));
 };
 exports.default = MobileDrawer;
@@ -63,7 +61,7 @@ var sx = {
         bgcolor: 'background.default',
         color: 'text.primary',
     },
-    mobileMenu: {
+    sideNavMenu: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -74,7 +72,7 @@ var sx = {
             sm: '320px',
         },
     },
-    mobileMenuItems: {
+    sideNavMenuItems: {
         width: '100%',
     },
     divider: {

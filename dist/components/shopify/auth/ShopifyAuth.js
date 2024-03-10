@@ -45,12 +45,12 @@ var material_2 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var components_1 = require("../../../components");
 var router_1 = require("next/router");
-var DesktopShopifyAuthButton = function (props) {
+var TopNavShopifyAuthButton = function (props) {
     var handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
         react_1.default.createElement(components_1.Icon, { name: "User", size: 24 })));
 };
-var MobileShopifyAuthButton = function (props) {
+var SideNavShopifyAuthButton = function (props) {
     var handleClick = props.handleClick;
     return (react_1.default.createElement(material_2.ListItem, { disablePadding: true, disableGutters: true },
         react_1.default.createElement(material_2.ListItemButton, { onClick: handleClick },
@@ -86,6 +86,6 @@ var ShopifyAuth = function (props) {
             }
         });
     }); };
-    return variant == 'desktop' ? (react_1.default.createElement(DesktopShopifyAuthButton, { handleClick: handleClick })) : (react_1.default.createElement(MobileShopifyAuthButton, { handleClick: handleClick }));
+    return variant == 'topNav' ? (react_1.default.createElement(TopNavShopifyAuthButton, { handleClick: handleClick })) : (react_1.default.createElement(SideNavShopifyAuthButton, { handleClick: handleClick }));
 };
 exports.default = ShopifyAuth;

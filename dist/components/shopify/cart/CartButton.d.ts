@@ -1,7 +1,7 @@
 import React from 'react';
 type CartButtonProps = {
     icon?: string;
-    variant?: 'desktop' | 'mobile';
+    variant?: 'topNav' | 'sideNav';
     editing?: boolean;
     label?: string;
 };

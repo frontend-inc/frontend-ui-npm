@@ -33,6 +33,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
@@ -40,9 +43,11 @@ var __1 = require("../..");
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
 var index_1 = require("../../../constants/index");
+var SideNavMenuItem_1 = __importDefault(require("./SideNavMenuItem"));
 var DesktopSideNav = function (props) {
+    var _a;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var editing = props.editing, logo = props.logo, menuItems = props.menuItems, _a = props.logoWidth, logoWidth = _a === void 0 ? index_1.HEADER_LOGO_WIDTH : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? index_1.HEADER_LOGO_HEIGHT : _b, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableShopify, enableShopify = _d === void 0 ? false : _d, _e = props.enableNotifications, enableNotifications = _e === void 0 ? false : _e;
+    var editing = props.editing, logo = props.logo, menuItems = props.menuItems, _b = props.logoWidth, logoWidth = _b === void 0 ? index_1.HEADER_LOGO_WIDTH : _b, _c = props.logoHeight, logoHeight = _c === void 0 ? index_1.HEADER_LOGO_HEIGHT : _c, handleClick = props.handleClick, _d = props.enableAuth, enableAuth = _d === void 0 ? false : _d, _e = props.enableShopify, enableShopify = _e === void 0 ? false : _e, _f = props.enableNotifications, enableNotifications = _f === void 0 ? false : _f;
     return (react_1.default.createElement(material_1.Hidden, { smDown: true },
         react_1.default.createElement(material_1.Box, { sx: sx.sideNav },
             react_1.default.createElement(material_1.Stack, { sx: __assign(__assign(__assign(__assign({}, sx.desktopSideNav), (enableNotifications && sx.desktopSideNavNotifications)), (editing && sx.desktopSideNavEditor)), (editing &&
@@ -50,13 +55,15 @@ var DesktopSideNav = function (props) {
                     sx.desktopSideNavEditorNotifications)), direction: "column", spacing: 2 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.desktopSideMenuItems, direction: "column", spacing: 2 },
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu },
-                        react_1.default.createElement(__1.Logo, { src: logo, width: logoWidth, height: logoHeight })), menuItems === null || menuItems === void 0 ? void 0 :
-                    menuItems.map(function (menuItem, index) { return (react_1.default.createElement(material_1.Button, { sx: sx.menuButton, key: index, onClick: function () { return handleClick(menuItem.path); } }, menuItem.name)); }),
-                    enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement(shopify_1.SearchButton, { editing: editing }),
-                        react_1.default.createElement(shopify_1.CartButton, { editing: editing })))),
+                        react_1.default.createElement(__1.Logo, { src: logo, width: logoWidth, height: logoHeight })),
+                    react_1.default.createElement(material_1.List, null, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 :
+                        _a.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); }),
+                        enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
+                            react_1.default.createElement(shopify_1.SearchButton, { variant: "sideNav", editing: editing }),
+                            react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav", editing: editing }))))),
                 (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
-                    enableShopify && react_1.default.createElement(shopify_1.ShopifyAuth, null),
+                    enableShopify &&
+                        react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }),
                     enableAuth && (react_1.default.createElement(__1.AuthButton, { showLabel: true, editing: editing, myAccountUrl: "".concat(clientUrl, "/my-account") }))))))));
 };
 exports.default = DesktopSideNav;

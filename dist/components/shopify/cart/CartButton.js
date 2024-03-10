@@ -29,13 +29,13 @@ var material_2 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
 var components_1 = require("../../../components");
-var MobileCartButton = function (props) {
+var SideNavCartButton = function (props) {
     var _a = props.label, label = _a === void 0 ? 'Cart' : _a, totalQuantity = props.totalQuantity, handleClick = props.handleClick;
     return (react_1.default.createElement(material_2.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Badge, { badgeContent: totalQuantity, color: "primary", sx: sx.badge }) },
         react_1.default.createElement(material_2.ListItemButton, { onClick: handleClick },
             react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, label) }))));
 };
-var DesktopCartButton = function (props) {
+var TopNavCartButton = function (props) {
     var _a = props.icon, icon = _a === void 0 ? 'ShoppingCart' : _a, totalQuantity = props.totalQuantity, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: sx.root },
         react_1.default.createElement(material_1.Badge, { color: "primary", badgeContent: totalQuantity },
@@ -51,7 +51,7 @@ var CartButton = function (props) {
             toggleCart();
         }
     };
-    return variant == 'desktop' ? (react_1.default.createElement(DesktopCartButton, { icon: icon, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity })) : (react_1.default.createElement(MobileCartButton, { label: label, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity }));
+    return variant == 'topNav' ? (react_1.default.createElement(TopNavCartButton, { icon: icon, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity })) : (react_1.default.createElement(SideNavCartButton, { label: label, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity }));
 };
 exports.default = CartButton;
 var sx = {

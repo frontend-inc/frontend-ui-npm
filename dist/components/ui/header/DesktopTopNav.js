@@ -43,7 +43,7 @@ var __1 = require("../..");
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
 var index_1 = require("../../../constants/index");
-var DesktopMenuItem_1 = __importDefault(require("./DesktopMenuItem"));
+var TopNavMenuItem_1 = __importDefault(require("./TopNavMenuItem"));
 var DesktopTopNav = function (props) {
     var _a;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
@@ -54,7 +54,7 @@ var DesktopTopNav = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.desktopTopNav },
                     react_1.default.createElement(material_1.Box, { sx: sx.leftMenu },
                         react_1.default.createElement(__1.Logo, { src: logo, width: logoWidth, height: logoHeight })),
-                    react_1.default.createElement(material_1.Box, { sx: sx.centerMenu }, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.map(function (menuItem, index) { return (react_1.default.createElement(DesktopMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: function () { return handleClick(menuItem.path); } })); })),
+                    react_1.default.createElement(material_1.Box, { sx: sx.centerMenu }, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.map(function (menuItem, index) { return (react_1.default.createElement(TopNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: function () { return handleClick(menuItem.path); } })); })),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu },
                         enableAuth && (react_1.default.createElement(__1.AuthButton, { editing: editing, myAccountUrl: "".concat(clientUrl, "/my-account") })),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,

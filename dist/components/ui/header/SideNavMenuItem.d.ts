@@ -1,8 +1,8 @@
 import React from 'react';
 import { MenuLink } from '../../..';
-type MobileMenuItemProps = {
+type SideNavMenuItemProps = {
     menuItem: MenuLink;
     handleClick: (path: string) => void;
 };
-declare const MobileMenuItem: React.FC<MobileMenuItemProps>;
-export default MobileMenuItem;
+declare const SideNavMenuItem: React.FC<SideNavMenuItemProps>;
+export default SideNavMenuItem;

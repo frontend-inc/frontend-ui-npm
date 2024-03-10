@@ -41,7 +41,7 @@ var hooks_1 = require("../../../hooks");
 var icons_material_1 = require("@mui/icons-material");
 var frontend_shopify_1 = require("frontend-shopify");
 var router_1 = require("next/router");
-var DesktopSubmenuItem = function (props) {
+var TopNavSubmenuItem = function (props) {
     var menuItem = props.menuItem, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.MenuItem
     // @ts-ignore
@@ -50,7 +50,7 @@ var DesktopSubmenuItem = function (props) {
         onClick: function () { return handleClick(menuItem.path); } },
         react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, menuItem.name)));
 };
-var DesktopMenuItem = function (props) {
+var TopNavMenuItem = function (props) {
     var _a;
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
@@ -60,24 +60,22 @@ var DesktopMenuItem = function (props) {
     var _c = (0, hooks_1.useMenu)(), open = _c.open, openMenu = _c.openMenu, closeMenu = _c.closeMenu, anchorEl = _c.anchorEl;
     var handleCollectionClick = function () {
         router.push("".concat(clientUrl, "/collections/").concat(shopify_collection));
+        closeMenu();
     };
     var handleProductClick = function (product) {
         router.push("".concat(clientUrl, "/products/").concat(product.handle));
+        closeMenu();
     };
     var handleMenuClick = function (ev) {
-        if ((children === null || children === void 0 ? void 0 : children.length) > 0) {
+        if ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) {
             openMenu(ev);
-            if (menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_collection) {
-                findCollection(menuItem.shopify_collection);
-            }
-        }
-        else if (shopify_collection) {
-            openMenu(ev);
-            findCollection(shopify_collection);
         }
         else {
-            //@ts-ignore
+            closeMenu();
             handleClick(menuItem.path);
+        }
+        if (shopify_collection && !products) {
+            findCollection(shopify_collection);
         }
     };
     var handleMouseLeave = function () {
@@ -87,6 +85,12 @@ var DesktopMenuItem = function (props) {
         react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: handleMenuClick, endIcon: ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) && (react_1.default.createElement(icons_material_1.ExpandMore, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) })) }, menuItem.name),
         react_1.default.createElement(material_1.Menu, { open: open, anchorEl: anchorEl, onClose: closeMenu, MenuListProps: {
                 onMouseLeave: handleMouseLeave,
+            }, anchorOrigin: {
+                vertical: 'bottom',
+                horizontal: 'center'
+            }, transformOrigin: {
+                vertical: 'top',
+                horizontal: 'center'
             } }, children === null || children === void 0 ? void 0 :
             children.map(function (child, index) { return (react_1.default.createElement(material_1.MenuItem
             //@ts-ignore
@@ -103,7 +107,7 @@ var DesktopMenuItem = function (props) {
                 react_1.default.createElement(material_1.MenuItem, { onClick: handleCollectionClick },
                     react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, "See All")))))));
 };
-exports.default = DesktopMenuItem;
+exports.default = TopNavMenuItem;
 var sx = {
     buttonGroup: {
         borderRight: 'none !important',

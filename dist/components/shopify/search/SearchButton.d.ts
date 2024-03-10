@@ -1,7 +1,7 @@
 import React from 'react';
 type SearchButtonProps = {
     editing?: boolean;
-    variant?: 'desktop' | 'mobile';
+    variant?: 'topNav' | 'sideNav';
 };
 declare const SearchButton: React.FC<SearchButtonProps>;
 export default SearchButton;
