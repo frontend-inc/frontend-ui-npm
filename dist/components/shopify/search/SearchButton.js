@@ -29,6 +29,7 @@ var material_2 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
 var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var TopNavSearchButton = function (props) {
     var handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.IconButton, { sx: sx.root, onClick: handleClick },
@@ -41,13 +42,17 @@ var SideNavSearchButton = function (props) {
             react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, "Search") }))));
 };
 var SearchButton = function (props) {
-    var _a = props.variant, variant = _a === void 0 ? 'desktop' : _a, _b = props.editing, editing = _b === void 0 ? false : _b;
+    var _a = props.variant, variant = _a === void 0 ? 'topNav' : _a, _b = props.editing, editing = _b === void 0 ? false : _b;
+    var showAlertError = (0, hooks_1.useAlerts)().showAlertError;
     var toggleSearch = (0, react_1.useContext)(frontend_shopify_1.ShopContext).toggleSearch;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var handleToggleSearch = function () {
         if (!editing) {
             setMenuOpen(false);
             toggleSearch();
+        }
+        else {
+            showAlertError("Search is disabled while editing.");
         }
     };
     return variant == 'topNav' ? (react_1.default.createElement(TopNavSearchButton, { handleClick: handleToggleSearch })) : (react_1.default.createElement(SideNavSearchButton, { handleClick: handleToggleSearch }));

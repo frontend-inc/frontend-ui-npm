@@ -1,5 +1,5 @@
 import React from 'react';
-import { TypographyVariants } from '../../types';
+import { TypographyVariantsType } from '../../types';
 type ListExpandableProps = {
     expandable?: boolean;
     title?: string;
@@ -7,7 +7,7 @@ type ListExpandableProps = {
     children: any;
     enableBorder?: boolean;
     closed?: boolean;
-    variant?: TypographyVariants;
+    variant?: TypographyVariantsType;
 };
 declare const ListExpandable: React.FC<ListExpandableProps>;
 export default ListExpandable;

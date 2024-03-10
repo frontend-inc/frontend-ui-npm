@@ -1,4 +1,4 @@
-import { Option } from '../types';
+import { OptionType } from '../types';
 type SortDirectionOption = {
     label: string;
     value: 'asc' | 'desc';
@@ -11,16 +11,16 @@ export declare const DATE_FIELDS: String[];
 export declare const JSON_FIELDS: String[];
 export declare const ARRAY_FIELDS: String[];
 export declare const NUMBER_AND_STRING_FIELDS: String[];
-export declare const WHERE_OPTIONS: Option[];
+export declare const WHERE_OPTIONS: OptionType[];
 export declare const SORT_DIRECTIONS: SortDirectionOption[];
-export declare const BOOLEAN_OPTIONS: Option[];
-export declare const EQUAL_OPERATOR: Option[];
-export declare const TEXT_FILTER_OPERATORS: Option[];
-export declare const NUMBER_FILTER_OPERATORS: Option[];
-export declare const DATE_FILTER_OPERATORS: Option[];
-export declare const BOOLEAN_FILTER_OPERATORS: Option[];
-export declare const DATE_RANGE_OPTIONS: Option[];
-export declare const FILTER_OPERATORS: Record<string, Option[]>;
+export declare const BOOLEAN_OPTIONS: OptionType[];
+export declare const EQUAL_OPERATOR: OptionType[];
+export declare const TEXT_FILTER_OPERATORS: OptionType[];
+export declare const NUMBER_FILTER_OPERATORS: OptionType[];
+export declare const DATE_FILTER_OPERATORS: OptionType[];
+export declare const BOOLEAN_FILTER_OPERATORS: OptionType[];
+export declare const DATE_RANGE_OPTIONS: OptionType[];
+export declare const FILTER_OPERATORS: Record<string, OptionType[]>;
 export declare const FILTERABLE_TYPES: String[];
 export declare const SORTABLE_TYPES: String[];
 export declare const TITLE_SORT: {

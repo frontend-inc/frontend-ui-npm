@@ -1,8 +1,8 @@
 import React from 'react';
-import { Option } from '../../../types';
+import { OptionType } from '../../../types';
 type FilterSortProps = {
     label: string;
-    fieldOptions: Option[];
+    fieldOptions: OptionType[];
     sortBy?: string;
     sortDirection?: 'asc' | 'desc';
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

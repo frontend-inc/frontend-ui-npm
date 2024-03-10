@@ -1,10 +1,10 @@
 import React from 'react';
-import { TypographyVariants } from '../../../types';
+import { TypographyVariantsType } from '../../../types';
 type CellExpandProps = {
     cell: React.ReactNode;
     cellExpanded: React.ReactNode;
     width?: number;
-    variant?: TypographyVariants;
+    variant?: TypographyVariantsType;
 };
 declare const CellExpand: React.FC<CellExpandProps>;
 export default CellExpand;

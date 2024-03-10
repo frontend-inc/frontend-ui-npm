@@ -42,14 +42,12 @@ var TopNavCartButton = function (props) {
             react_1.default.createElement(components_1.Icon, { name: icon, size: 24, color: "text.primary" }))));
 };
 var CartButton = function (props) {
-    var _a = props.variant, variant = _a === void 0 ? 'desktop' : _a, _b = props.label, label = _b === void 0 ? 'Cart' : _b, _c = props.icon, icon = _c === void 0 ? 'ShoppingCart' : _c, _d = props.editing, editing = _d === void 0 ? false : _d;
-    var _e = (0, react_1.useContext)(frontend_shopify_1.ShopContext), cart = _e.cart, toggleCart = _e.toggleCart;
+    var _a = props.variant, variant = _a === void 0 ? 'topNav' : _a, _b = props.label, label = _b === void 0 ? 'Cart' : _b, _c = props.icon, icon = _c === void 0 ? 'ShoppingCart' : _c;
+    var _d = (0, react_1.useContext)(frontend_shopify_1.ShopContext), cart = _d.cart, toggleCart = _d.toggleCart;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var handleCartClick = function () {
         setMenuOpen(false);
-        if (!editing) {
-            toggleCart();
-        }
+        toggleCart();
     };
     return variant == 'topNav' ? (react_1.default.createElement(TopNavCartButton, { icon: icon, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity })) : (react_1.default.createElement(SideNavCartButton, { label: label, handleClick: handleCartClick, totalQuantity: cart === null || cart === void 0 ? void 0 : cart.totalQuantity }));
 };

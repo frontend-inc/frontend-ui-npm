@@ -1,5 +1,5 @@
 import React from 'react';
-import { SyntheticEvent } from '../../types';
+import { SyntheticEventType } from '../../types';
 type AutosuggestProps = {
     errors?: any;
     value?: any;
@@ -9,7 +9,7 @@ type AutosuggestProps = {
     name: string;
     placeholder?: string;
     multiselect?: boolean;
-    handleChange: (e: SyntheticEvent) => void;
+    handleChange: (e: SyntheticEventType) => void;
     handleInputChange?: (value: string) => void;
     freeSolo?: boolean;
 };

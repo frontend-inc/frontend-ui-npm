@@ -20,3 +20,11 @@ export type CardProps = {
     enableOverlay?: boolean;
     icon?: string;
 };
+export type PriceType = {
+    title: string;
+    price: number;
+    features: string;
+    disabledFeatures: string;
+    buttonText: string;
+    url: string;
+};

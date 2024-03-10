@@ -1,9 +1,9 @@
 import React from 'react';
-import { FilterOption } from '../../../../types';
+import { FilterOptionType } from '../../../../types';
 type FilterButtonProps = {
     field?: any;
-    filters?: FilterOption[];
-    handleFilter: (filter: FilterOption) => void;
+    filters?: FilterOptionType[];
+    handleFilter: (filter: FilterOptionType) => void;
 };
 declare const FilterField: React.FC<FilterButtonProps>;
 export default FilterField;

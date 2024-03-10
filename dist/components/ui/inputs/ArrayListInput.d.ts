@@ -1,4 +1,4 @@
 import React from 'react';
-import { InputProps } from '../../../types';
-declare const ArrayListInput: React.FC<InputProps>;
+import { InputPropsType } from '../../../types';
+declare const ArrayListInput: React.FC<InputPropsType>;
 export default ArrayListInput;

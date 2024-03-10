@@ -1,13 +1,13 @@
 import React from 'react';
-import { FilterOption, SyntheticEvent } from '../../../types';
-type FieldOption = FilterOption & {
+import { FilterOptionType, SyntheticEventType } from '../../../types';
+type FieldOption = FilterOptionType & {
     db_type: string;
 };
 type FilterFieldProps = {
     index: number;
-    filter: FilterOption;
+    filter: FilterOptionType;
     fieldOptions: FieldOption[];
-    handleChange: (e: SyntheticEvent, index: number) => void;
+    handleChange: (e: SyntheticEventType, index: number) => void;
     handleRemove: (index: number) => void;
 };
 declare const FilterFieldWrapper: React.FC<FilterFieldProps>;

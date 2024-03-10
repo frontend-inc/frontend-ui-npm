@@ -1,7 +1,7 @@
 import React from 'react';
-import { TypographyVariants } from '../../../types';
+import { TypographyVariantsType } from '../../../types';
 type FieldWrapperProps = {
-    variant?: TypographyVariants;
+    variant?: TypographyVariantsType;
     flexDirection?: 'row' | 'column';
     label?: string;
     color?: string;

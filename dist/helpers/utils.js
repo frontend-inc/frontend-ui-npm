@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.scrollTo = exports.imageFromVideoUrl = exports.resize = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
+exports.formatCurrency = exports.scrollTo = exports.imageFromVideoUrl = exports.resize = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
 var isEmptyObject = function (object) {
     if (Object.values(object).every(function (x) { return x === null || x === ''; })) {
         return false;
@@ -79,3 +79,11 @@ var scrollTo = function (domId) {
     elem === null || elem === void 0 ? void 0 : elem.scrollIntoView({ behavior: 'smooth' });
 };
 exports.scrollTo = scrollTo;
+var formatCurrency = function (amount, currency) {
+    if (currency === void 0) { currency = 'USD'; }
+    return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: currency,
+    }).format(amount);
+};
+exports.formatCurrency = formatCurrency;

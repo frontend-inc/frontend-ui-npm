@@ -58,7 +58,7 @@ var SideNavShopifyAuthButton = function (props) {
 };
 var ShopifyAuth = function (props) {
     var router = (0, router_1.useRouter)();
-    var _a = props || {}, _b = _a.variant, variant = _b === void 0 ? 'desktop' : _b, customerUrl = _a.customerUrl;
+    var _a = props || {}, _b = _a.variant, variant = _b === void 0 ? 'topNav' : _b, customerUrl = _a.customerUrl;
     var findShop = (0, frontend_shopify_1.useShop)().findShop;
     var getLastPathOfUrl = function (urlString) {
         var url = new URL(urlString);

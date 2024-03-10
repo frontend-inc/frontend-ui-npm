@@ -1,10 +1,10 @@
 import React from 'react';
-import { TypographyVariants } from '../../../types';
+import { TypographyVariantsType } from '../../../types';
 type FieldPriceProps = {
     value?: any;
     label?: string;
     placeholder?: string;
-    variant?: TypographyVariants;
+    variant?: TypographyVariantsType;
     color?: string;
     rest?: any;
     currency?: string;

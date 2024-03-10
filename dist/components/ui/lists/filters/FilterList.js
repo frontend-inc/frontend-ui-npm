@@ -45,39 +45,3 @@ var FilterList = function (props) {
         } })); })));
 };
 exports.default = FilterList;
-var sx = {
-    root: {
-        width: '100%',
-        minWidth: '280px',
-    },
-    padding: {
-        px: 1,
-    },
-    listItem: {
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
-        height: '40px',
-    },
-    listItemButton: {
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
-        height: '40px',
-    },
-    listItemIcon: {
-        minWidth: '40px',
-        width: '40px',
-    },
-    label: {
-        py: 0,
-        color: 'text.secondary',
-        lineHeight: '1em',
-    },
-    icon: {
-        transition: 'transform 0.3s ease-in-out',
-    },
-    expandMore: {
-        transform: 'rotate(90deg)',
-    },
-    borderTop: {
-        borderTop: '1px solid',
-        borderColor: 'divider',
-    },
-};

@@ -1,7 +1,7 @@
 import React from 'react';
-import { MenuLink } from '../../..';
+import { MenuLinkType } from '../../..';
 type TopNavMenuItemProps = {
-    menuItem: MenuLink;
+    menuItem: MenuLinkType;
     handleClick: (path: string) => void;
 };
 declare const TopNavMenuItem: React.FC<TopNavMenuItemProps>;

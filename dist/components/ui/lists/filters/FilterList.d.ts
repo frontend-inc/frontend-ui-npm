@@ -1,12 +1,12 @@
 import React from 'react';
-import { FilterOperator, FilterWhere, FilterOption, Option } from '../../../../types';
+import { FilterOperatorType, FilterWhereType, FilterOptionType, OptionType } from '../../../../types';
 type FilterListProps = {
-    name?: string;
-    where?: FilterWhere;
-    operator?: FilterOperator;
-    options?: Option[];
+    name: string;
+    where?: FilterWhereType;
+    operator?: FilterOperatorType;
+    options?: OptionType[];
     values?: any;
-    handleClick: (filter: FilterOption) => void;
+    handleClick: (filter: FilterOptionType) => void;
     label?: string;
     icon?: React.ReactNode;
     enableBorder?: boolean;

@@ -1,11 +1,11 @@
 import React from 'react';
-import { TypographyVariants } from '../../../types';
+import { TypographyVariantsType } from '../../../types';
 type CallToActionProps = {
     label?: string;
     title: string;
     description: string;
     buttonText?: string;
-    textVariant?: TypographyVariants;
+    textVariant?: TypographyVariantsType;
     href?: string;
     handleClick?: () => void;
     direction?: string;

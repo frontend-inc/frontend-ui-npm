@@ -1,5 +1,5 @@
 import React from 'react';
-import { SyntheticEvent } from '../../../types';
+import { SyntheticEventType } from '../../../types';
 type FormInputProps = {
     variant: any;
     name: string;
@@ -7,7 +7,7 @@ type FormInputProps = {
     errors?: any;
     value?: any | any[];
     placeholder?: string;
-    handleChange?: (e: SyntheticEvent) => void;
+    handleChange?: (e: SyntheticEventType) => void;
     handleRemove?: (name: string) => void;
 };
 declare const FormInput: React.FC<FormInputProps>;

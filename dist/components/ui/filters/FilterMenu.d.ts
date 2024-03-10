@@ -1,11 +1,11 @@
 import React from 'react';
-import { SyntheticEvent } from '../../../types';
+import { SyntheticEventType } from '../../../types';
 type FilterMenuProps = {
     open: boolean;
     anchorEl: HTMLElement | null;
     fields: any;
     query: any;
-    handleChange: (ev: SyntheticEvent) => void;
+    handleChange: (ev: SyntheticEventType) => void;
     handleClearFilters: () => void;
     handleSearch: () => void;
 };

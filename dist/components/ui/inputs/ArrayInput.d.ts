@@ -1,5 +1,5 @@
 import React from 'react';
-import { SyntheticEvent } from '../../../types';
+import { SyntheticEventType } from '../../../types';
 type ArrayInputProps = {
     errors?: any;
     value?: any;
@@ -7,7 +7,7 @@ type ArrayInputProps = {
     name: string;
     options?: any[];
     placeholder?: string;
-    handleChange: (e: SyntheticEvent) => void;
+    handleChange: (e: SyntheticEventType) => void;
     freeSolo?: boolean;
 };
 declare const ArrayInput: React.FC<ArrayInputProps>;

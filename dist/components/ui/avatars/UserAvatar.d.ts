@@ -1,13 +1,12 @@
 import React from 'react';
-import { User } from 'lucide-react';
-type User = {
+type UserAvatarType = {
     name: string;
     avatar: {
         url: string;
     };
 };
 type UserAvatarProps = {
-    user: User;
+    user: UserAvatarType;
     label?: string;
     handleClick?: () => void;
 };

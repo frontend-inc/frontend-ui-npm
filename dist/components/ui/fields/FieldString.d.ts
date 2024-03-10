@@ -1,8 +1,8 @@
 import React from 'react';
-import { TypographyVariants } from '../../../types';
+import { TypographyVariantsType } from '../../../types';
 type FieldStringProps = {
     value: string;
-    variant?: TypographyVariants;
+    variant?: TypographyVariantsType;
     label?: string;
     color?: string;
     placeholder?: string;

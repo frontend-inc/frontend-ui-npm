@@ -1,11 +1,11 @@
 import React from 'react';
-import { SyntheticEvent } from '../../../types';
+import { SyntheticEventType } from '../../../types';
 type SearchInputProps = {
     name?: string;
     label?: string;
     value?: string;
     placeholder?: string;
-    handleChange?: (e: SyntheticEvent) => void;
+    handleChange?: (e: SyntheticEventType) => void;
     handleSearch?: (keywords: string) => void;
     styles?: any;
 };

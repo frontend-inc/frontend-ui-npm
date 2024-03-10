@@ -1,4 +1,4 @@
 import React from 'react';
-import { InputProps } from '../../../types';
-declare const NoSpaceInput: React.FC<InputProps>;
+import { InputPropsType } from '../../../types';
+declare const NoSpaceInput: React.FC<InputPropsType>;
 export default NoSpaceInput;

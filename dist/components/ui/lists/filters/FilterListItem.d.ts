@@ -1,8 +1,8 @@
 import React from 'react';
-import { Option } from '../../../../types';
+import { OptionType } from '../../../../types';
 type FilterListItemProps = {
     label?: string;
-    option: Option;
+    option: OptionType;
     values?: any;
     handleClick: () => void;
 };

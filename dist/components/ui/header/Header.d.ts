@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuLink } from '../../..';
+import { MenuLinkType } from '../../..';
 type HeaderProps = {
     editing?: boolean;
     topNav?: boolean;
@@ -9,7 +9,7 @@ type HeaderProps = {
     enableShopify?: boolean;
     enableNotifications?: boolean;
     bgcolor?: string;
-    menuItems: MenuLink[];
+    menuItems: MenuLinkType[];
     handleClick: (path: string) => void;
 };
 declare const Header: React.FC<HeaderProps>;

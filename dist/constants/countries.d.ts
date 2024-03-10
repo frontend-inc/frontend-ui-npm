@@ -1,2 +1,2 @@
-import { Option } from '../types';
-export declare const COUNTRIES: Option[];
+import { OptionType } from '../types';
+export declare const COUNTRIES: OptionType[];

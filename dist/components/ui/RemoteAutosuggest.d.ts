@@ -1,4 +1,5 @@
 import React from 'react';
+import { SyntheticEventType } from '../../types';
 type RemoteAutosuggestProps = {
     errors?: any;
     value?: any;
@@ -6,7 +7,7 @@ type RemoteAutosuggestProps = {
     name: string;
     url: string;
     displayField?: string;
-    handleChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChange?: (event: SyntheticEventType) => void;
     valueParam?: string;
     placeholder?: string;
     imageField?: string;

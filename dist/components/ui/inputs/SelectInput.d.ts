@@ -1,4 +1,4 @@
 import React from 'react';
-import { SelectInputProps } from '../../../types';
-declare const SelectInput: React.FC<SelectInputProps>;
+import { SelectInputPropsType } from '../../..';
+declare const SelectInput: React.FC<SelectInputPropsType>;
 export default SelectInput;

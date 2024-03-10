@@ -1,11 +1,11 @@
 import React from 'react';
-import { MenuLink } from '../../..';
+import { MenuLinkType } from '../../..';
 type MobileNavProps = {
     editing?: boolean;
     logo?: string;
     logoWidth?: number;
     logoHeight?: number;
-    menuItems?: MenuLink[];
+    menuItems?: MenuLinkType[];
     enableAuth?: boolean;
     enableShopify?: boolean;
     enableNotifications?: boolean;

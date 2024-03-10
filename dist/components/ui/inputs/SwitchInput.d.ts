@@ -1,6 +1,6 @@
 import React from 'react';
-import { InputProps } from '../../../types';
-type SwitchInputProps = InputProps & {
+import { InputPropsType } from '../../../types';
+type SwitchInputProps = InputPropsType & {
     disableBorder?: boolean;
 };
 declare const SwitchInput: React.FC<SwitchInputProps>;

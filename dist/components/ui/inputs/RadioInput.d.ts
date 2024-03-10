@@ -1,4 +1,4 @@
 import React from 'react';
-import { SelectInputProps } from '../../../types';
-declare const RadioInput: React.FC<SelectInputProps>;
+import { SelectInputPropsType } from '../../../types';
+declare const RadioInput: React.FC<SelectInputPropsType>;
 export default RadioInput;

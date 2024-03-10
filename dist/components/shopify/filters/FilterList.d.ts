@@ -1,5 +1,5 @@
 import React from 'react';
-import { TypographyVariants } from '../../../types';
+import { TypographyVariantsType } from '../../../types';
 type FilterListProps = {
     expandable?: boolean;
     label?: string;
@@ -9,7 +9,7 @@ type FilterListProps = {
     enableBorder?: boolean;
     disablePadding?: boolean;
     closed?: boolean;
-    variant?: TypographyVariants;
+    variant?: TypographyVariantsType;
 };
 declare const FilterList: React.FC<FilterListProps>;
 export default FilterList;

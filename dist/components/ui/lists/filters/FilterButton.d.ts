@@ -1,10 +1,10 @@
 import React from 'react';
-import { FilterOption } from '../../../../types';
+import { FilterOptionType } from '../../../..';
 type FilterButtonProps = {
-    filters?: FilterOption[];
+    filters?: FilterOptionType[];
     loading?: boolean;
     fields?: any;
-    handleFilter: (filter: FilterOption) => void;
+    handleFilter: (filter: FilterOptionType) => void;
     handleClear: () => void;
 };
 declare const FilterButton: React.FC<FilterButtonProps>;

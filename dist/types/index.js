@@ -15,15 +15,11 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // Common types
-__exportStar(require("./sx"), exports);
+__exportStar(require("./styles"), exports);
 __exportStar(require("./colors"), exports);
-__exportStar(require("./components"), exports);
+__exportStar(require("./web"), exports);
 __exportStar(require("./client"), exports);
 __exportStar(require("./users"), exports);
-__exportStar(require("./option"), exports);
-__exportStar(require("./typography"), exports);
-__exportStar(require("./events"), exports);
 __exportStar(require("./inputs"), exports);
-__exportStar(require("./query"), exports);
 __exportStar(require("./storage"), exports);
 __exportStar(require("./app"), exports);

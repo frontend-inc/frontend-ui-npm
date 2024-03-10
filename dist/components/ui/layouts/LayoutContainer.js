@@ -21,6 +21,7 @@ var LayoutContainer = function (props) {
     var children = props.children, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.mode, mode = _b === void 0 ? 'accent' : _b, _c = props.topNav, topNav = _c === void 0 ? false : _c, handleClick = props.handleClick, menuItems = props.menuItems, notifications = props.notifications, _d = props.enableAuth, enableAuth = _d === void 0 ? false : _d, _e = props.enableHeader, enableHeader = _e === void 0 ? false : _e, _f = props.enableShopify, enableShopify = _f === void 0 ? false : _f;
     var enableNotifications = (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0;
     return (react_1.default.createElement(material_1.Box, { sx: sx.layout },
+        react_1.default.createElement(components_1.Alert, null),
         react_1.default.createElement(components_1.Notifications, { notifications: notifications }),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (!topNav && sx.sideNav)) },
             enableHeader && (react_1.default.createElement(components_1.ModeTheme, { mode: mode },
