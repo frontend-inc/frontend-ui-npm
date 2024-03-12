@@ -37,7 +37,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
-var icons_material_1 = require("@mui/icons-material");
+var __1 = require("../..");
 var frontend_shopify_1 = require("frontend-shopify");
 var router_1 = require("next/router");
 var SublinkMenuItem = function (props) {
@@ -79,8 +79,8 @@ var SideNavMenuItem = function (props) {
         }
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) && (react_1.default.createElement(material_1.IconButton, { onClick: function () { return handleMenuClick(menuItem); } },
-                react_1.default.createElement(icons_material_1.ExpandMore, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) }))) },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) && (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)), onClick: function () { return handleMenuClick(menuItem); } },
+                react_1.default.createElement(__1.Icon, { name: "ChevronDown" }))) },
             react_1.default.createElement(material_1.ListItemButton, { onClick: function () { return handleMenuClick(menuItem); } },
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, menuItem.name) }))),
         react_1.default.createElement(material_1.Collapse, { in: open },

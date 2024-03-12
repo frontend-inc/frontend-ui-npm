@@ -59,7 +59,7 @@ var DesktopSideNav = function (props) {
                     react_1.default.createElement(material_1.List, null, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 :
                         _a.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); }),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
-                            react_1.default.createElement(shopify_1.SearchButton, { variant: "sideNav", editing: editing }),
+                            react_1.default.createElement(shopify_1.SearchButton, { variant: "sideNav" }),
                             react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav", editing: editing }))))),
                 (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
                     enableShopify &&

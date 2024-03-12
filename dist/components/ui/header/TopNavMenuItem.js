@@ -38,7 +38,7 @@ var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
-var icons_material_1 = require("@mui/icons-material");
+var __1 = require("../..");
 var frontend_shopify_1 = require("frontend-shopify");
 var router_1 = require("next/router");
 var TopNavSubmenuItem = function (props) {
@@ -82,7 +82,8 @@ var TopNavMenuItem = function (props) {
         closeMenu();
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: handleMenuClick, endIcon: ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) && (react_1.default.createElement(icons_material_1.ExpandMore, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) })) }, menuItem.name),
+        react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: handleMenuClick, endIcon: ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) },
+                react_1.default.createElement(__1.Icon, { name: "ChevronDown" }))) }, menuItem.name),
         react_1.default.createElement(material_1.Menu, { open: open, anchorEl: anchorEl, onClose: closeMenu, MenuListProps: {
                 onMouseLeave: handleMouseLeave,
             }, anchorOrigin: {
@@ -125,6 +126,10 @@ var sx = {
         },
     },
     icon: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: 'text.primary',
         transition: 'transform 0.2s ease-in-out',
     },
     rotateIcon: {

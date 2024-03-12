@@ -54,7 +54,7 @@ var ProductRecommendations = function (props) {
     return (react_1.default.createElement(material_2.Box, { sx: sx.root },
         title && (react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "h6" }, title)),
         layout == 'grid' && (react_1.default.createElement(shopify_1.ProductGrid, { editing: editing, loading: loading, products: similarProducts, productComponent: productComponent, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText })),
-        layout == 'carousel' && (react_1.default.createElement(shopify_1.ProductCarousel, { editing: editing, loading: loading, products: similarProducts, productComponent: productComponent, enableBorder: enableBorder, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText }))));
+        layout == 'carousel' && (react_1.default.createElement(shopify_1.ProductCarousel, { editing: editing, loading: loading, products: similarProducts, productComponent: productComponent, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText }))));
 };
 exports.default = ProductRecommendations;
 var sx = {

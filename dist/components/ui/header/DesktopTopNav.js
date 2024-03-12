@@ -59,8 +59,8 @@ var DesktopTopNav = function (props) {
                         enableAuth && (react_1.default.createElement(__1.AuthButton, { editing: editing, myAccountUrl: "".concat(clientUrl, "/my-account") })),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement(shopify_1.ShopifyAuth, null),
-                            react_1.default.createElement(shopify_1.SearchButton, { editing: editing }),
-                            react_1.default.createElement(shopify_1.CartButton, { editing: editing })))))))));
+                            react_1.default.createElement(shopify_1.SearchButton, null),
+                            react_1.default.createElement(shopify_1.CartButton, null)))))))));
 };
 exports.default = DesktopTopNav;
 var sx = {

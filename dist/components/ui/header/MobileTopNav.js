@@ -52,8 +52,8 @@ var MobileNav = function (props) {
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu },
                         react_1.default.createElement(__1.Logo, { src: logo, width: logoWidth, height: logoHeight - 20 })),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu }, enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement(shopify_1.SearchButton, { editing: editing }),
-                        react_1.default.createElement(shopify_1.CartButton, { editing: editing })))))))));
+                        react_1.default.createElement(shopify_1.SearchButton, null),
+                        react_1.default.createElement(shopify_1.CartButton, null)))))))));
 };
 exports.default = MobileNav;
 var sx = {

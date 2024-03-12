@@ -29,7 +29,9 @@ var buildMuiPalette = function (palette, bgcolor) {
             primary: primaryText,
             secondary: secondaryText,
         }, tertiary: {
+            light: (0, material_1.lighten)(neutral, 0.2),
             main: neutral,
+            dark: (0, material_1.darken)(neutral, 0.2)
         } });
     return muiPalette;
 };

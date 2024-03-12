@@ -72,7 +72,7 @@ var ProductCard = function (props) {
                 enableAddToCart && (react_1.default.createElement(__1.AddToCartButton, { product: product, variant: 
                     //@ts-ignore
                     (_d = (_c = product === null || product === void 0 ? void 0 : product.variants) === null || _c === void 0 ? void 0 : _c.edges[0]) === null || _d === void 0 ? void 0 : _d.node, label: buttonText, enableQuantity: enableQuantity, buttonVariant: buttonVariant, size: "small" })),
-                enableQuickShop && (react_1.default.createElement(material_1.Button, { variant: enableAddToCart ? 'outlined' : 'contained', color: "secondary", onClick: handleQuickShop }, "Quick Shop")))),
+                enableQuickShop && (react_1.default.createElement(material_1.Button, { sx: sx.quickShopButton, variant: enableAddToCart ? 'text' : 'contained', color: "secondary", onClick: handleQuickShop }, "Quick Shop")))),
         react_1.default.createElement(__1.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, handle: product === null || product === void 0 ? void 0 : product.handle, enableQuantity: enableQuantity, buttonText: buttonText })));
 };
 exports.default = ProductCard;
@@ -102,4 +102,8 @@ var sx = {
     description: {
         maxWidth: '320px',
     },
+    quickShopButton: {
+        bgcolor: 'tertiary.main',
+        color: 'text.primary',
+    }
 };
