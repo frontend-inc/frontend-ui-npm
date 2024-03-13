@@ -122,7 +122,7 @@ declare const _default: {
             input: {
                 '&::placeholder': {
                     opacity: number;
-                    color: "#212121";
+                    color: "#424242";
                 };
             };
         };
@@ -181,7 +181,7 @@ declare const _default: {
             input: {
                 '&::placeholder': {
                     opacity: number;
-                    color: "#212121";
+                    color: "#424242";
                 };
             };
         };

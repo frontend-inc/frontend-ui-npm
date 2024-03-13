@@ -1,9 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HEX_COLORS = exports.MUI_COLOR_VARIANTS = exports.MUI_TONES = exports.MUI_COLORS = exports.SECONDARY_TEXT_ALPHA = exports.DIVIDER_ALPHA = exports.PAPER_ALPHA = void 0;
-exports.PAPER_ALPHA = 0.9;
-exports.DIVIDER_ALPHA = 0.25;
-exports.SECONDARY_TEXT_ALPHA = 0.9;
+exports.HEX_COLORS = exports.MUI_COLOR_VARIANTS = exports.MUI_TONES = exports.MUI_COLORS = void 0;
 exports.MUI_COLORS = [
     'red',
     'pink',

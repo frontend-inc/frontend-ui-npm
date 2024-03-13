@@ -132,7 +132,7 @@ export declare const muiTheme: {
                 input: {
                     '&::placeholder': {
                         opacity: number;
-                        color: "#212121";
+                        color: "#424242";
                     };
                 };
             };
@@ -191,7 +191,7 @@ export declare const muiTheme: {
                 input: {
                     '&::placeholder': {
                         opacity: number;
-                        color: "#212121";
+                        color: "#424242";
                     };
                 };
             };
@@ -297,7 +297,7 @@ export declare const muiTheme: {
         };
         text: {
             primary: string;
-            secondary: "#212121";
+            secondary: "#424242";
         };
         background: {
             default: string;

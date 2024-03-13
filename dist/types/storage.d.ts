@@ -6,7 +6,7 @@ export type StorageType = {
     width?: number;
     content_type?: string;
 };
-export type Attachment = {
+export type AttachmentType = {
     id: number;
     filename?: string;
     url: string;
@@ -19,9 +19,9 @@ export type Attachment = {
     byte_size?: number;
     created_at?: string;
 };
-export type Image = Attachment & {
+export type ImageType = AttachmentType & {
     content_type: ImageContentType;
 };
-export type Video = Attachment & {
+export type VideoType = AttachmentType & {
     content_type: VideoContentType;
 };

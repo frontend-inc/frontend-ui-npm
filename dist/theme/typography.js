@@ -21,7 +21,7 @@ exports.typography = {
     },
     h3: {
         fontFamily: 'Inter',
-        fontWeight: 500,
+        fontWeight: 700,
         textIndent: 0,
         fontSize: 40,
         '@media (max-width:600px)': {

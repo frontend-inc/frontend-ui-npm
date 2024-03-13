@@ -24,7 +24,7 @@ export declare const palette: {
     };
     text: {
         primary: string;
-        secondary: "#212121";
+        secondary: "#424242";
     };
     background: {
         default: string;

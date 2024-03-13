@@ -7589,8 +7589,8 @@ from2@^2.1.0:
     readable-stream "^2.0.0"
 
 "frontend-js@git+https://github.com/frontend-inc/frontend-js.git":
-  version "0.0.11"
-  resolved "git+https://github.com/frontend-inc/frontend-js.git#2c7875205504db948408bdd6223e71a1e0392b43"
+  version "0.0.16"
+  resolved "git+https://github.com/frontend-inc/frontend-js.git#af465f5e4b01204dac532a64151e8ca6a3417e0c"
   dependencies:
     cookies-next "^2.1.1"
 
