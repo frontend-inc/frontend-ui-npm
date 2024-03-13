@@ -42,20 +42,16 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var material_2 = require("@mui/material");
 var context_1 = require("../../../context");
 var index_1 = require("../../../constants/index");
 var router_1 = require("next/router");
-var CollectionCard_1 = __importDefault(require("./CollectionCard"));
+var components_1 = require("../../../components");
 var Collection = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
@@ -109,15 +105,12 @@ var Collection = function (props) {
     }, [url, defaultQuery, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'space-between', spacing: 1 },
-            react_1.default.createElement(material_2.Typography, { variant: "h5", color: "textPrimary" }, title),
+            react_1.default.createElement(__1.Heading, { title: title }),
             react_1.default.createElement(material_1.Box, null,
                 enableFilters && (react_1.default.createElement(__1.ListFilterButton, { fields: fields, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters })),
                 (enableSortTitle || enableSortPrice) && (react_1.default.createElement(__1.ListSortButton, { sortBy: query === null || query === void 0 ? void 0 : query.sort_by, sortDirection: query === null || query === void 0 ? void 0 : query.sort_direction, fields: __spreadArray(__spreadArray([], ((enableSortTitle && [index_1.TITLE_SORT]) || []), true), ((enableSortPrice && [index_1.PRICE_SORT]) || []), true), handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
         enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch })),
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (layout == 'grid' ? sx.grid : sx.list)) }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) {
-            var _a, _b;
-            return (react_1.default.createElement(CollectionCard_1.default, { key: index, layout: layout, style: style, title: resource === null || resource === void 0 ? void 0 : resource.title, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, video: (_b = resource === null || resource === void 0 ? void 0 : resource.video) === null || _b === void 0 ? void 0 : _b.url, description: resource === null || resource === void 0 ? void 0 : resource.description, buttonText: buttonText, handleClick: function () { return handleClick(resource); }, enableBorder: enableBorder, enableGradient: enableGradient }));
-        })),
+        react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient }),
         enableLoadMore && (react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore, enableInfiniteLoad: enableInfiniteLoad }))));
 };
 exports.default = Collection;

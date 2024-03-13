@@ -81,7 +81,7 @@ var lucide_react_1 = require("lucide-react");
 var FormField_1 = __importDefault(require("./FormField"));
 var index_1 = require("../../../constants/index");
 var lodash_1 = require("lodash");
-var FormHasMany = function (props) {
+var ForeignForm = function (props) {
     var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, _b = props.variant, variant = _b === void 0 ? 'contained' : _b, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl;
     var _c = (0, react_1.useState)(false), submitted = _c[0], setSubmitted = _c[1];
     var _d = (0, frontend_js_1.useResource)({
@@ -151,7 +151,7 @@ var FormHasMany = function (props) {
         }),
         react_1.default.createElement(material_1.Button, { variant: variant, onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: foreignLoading }) }, buttonText))) : (react_1.default.createElement(__1.Placeholder, { enableBorder: true, icon: react_1.default.createElement(lucide_react_1.Check, { size: 32 }), title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { color: "secondary", variant: "outlined", onClick: function () { return setSubmitted(false); } }, "Done") }));
 };
-exports.default = FormHasMany;
+exports.default = ForeignForm;
 var sx = {
     root: {
         width: '100%',

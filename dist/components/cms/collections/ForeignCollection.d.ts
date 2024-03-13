@@ -1,15 +1,16 @@
 import React from 'react';
-type CollectionHasManyProps = {
-    layout?: 'list' | 'grid' | 'carousel';
-    style?: 'card' | 'avatar' | 'image' | 'cover' | 'chip';
+type ForeignCollectionProps = {
+    title: string;
+    layout?: 'list' | 'grid';
+    style?: 'card' | 'avatar' | 'cover';
     field: any;
+    resource: any;
     url: string;
     handle: string;
     navigateUrl?: any;
     foreignUrl?: string;
     perPage?: number;
     query?: any;
-    editing?: boolean;
     buttonText?: string;
     autoPlay?: boolean;
     arrows?: boolean;
@@ -17,5 +18,5 @@ type CollectionHasManyProps = {
     enableBorder?: boolean;
     enableGradient?: boolean;
 };
-declare const CollectionHasMany: React.FC<CollectionHasManyProps>;
-export default CollectionHasMany;
+declare const ForeignCollection: React.FC<ForeignCollectionProps>;
+export default ForeignCollection;

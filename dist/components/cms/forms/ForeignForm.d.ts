@@ -1,5 +1,5 @@
 import React from 'react';
-type FormProps = {
+type ForeignFormProps = {
     handle: string;
     url: string;
     foreignUrl?: string;
@@ -8,5 +8,5 @@ type FormProps = {
     fields: any[];
     children?: React.ReactElement[];
 };
-declare const FormHasMany: React.FC<FormProps>;
-export default FormHasMany;
+declare const ForeignForm: React.FC<ForeignFormProps>;
+export default ForeignForm;

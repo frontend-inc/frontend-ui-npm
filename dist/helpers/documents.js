@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.flattenDocument = exports.getDocumentValue = void 0;
+exports.filterDocumentLinks = exports.flattenDocument = exports.getDocumentValue = void 0;
 var index_1 = require("../constants/index");
 var lodash_1 = require("lodash");
 var getDocumentValue = function (document, field) {
@@ -47,3 +47,9 @@ var flattenDocument = function (resource) {
     return __assign(__assign({}, rest), data);
 };
 exports.flattenDocument = flattenDocument;
+var filterDocumentLinks = function (document, contentType) {
+    var _a, _b;
+    var documents = (_b = (_a = document === null || document === void 0 ? void 0 : document.document_links) === null || _a === void 0 ? void 0 : _a.filter(function (d) { var _a; return ((_a = d === null || d === void 0 ? void 0 : d.target) === null || _a === void 0 ? void 0 : _a.content_type) === contentType; })) === null || _b === void 0 ? void 0 : _b.map(function (d) { return d.target; });
+    return documents;
+};
+exports.filterDocumentLinks = filterDocumentLinks;

@@ -20,13 +20,14 @@ var Heading = function (props) {
     var _a = props || {}, label = _a.label, title = _a.title, subtitle = _a.subtitle, textAlign = _a.textAlign;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.stack, direction: 'column', spacing: 1 },
         label && (react_1.default.createElement(material_1.Typography, { color: "primary", sx: sx.label, variant: "caption" }, label)),
-        title && (react_1.default.createElement(material_1.Typography, { variant: "h5", color: "text.primary", style: __assign(__assign({}, sx.text), { textAlign: textAlign }) }, title)),
+        title && (react_1.default.createElement(material_1.Typography, { variant: "h6", color: "text.primary", style: __assign(__assign({}, sx.text), { textAlign: textAlign }) }, title)),
         subtitle && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", style: __assign(__assign({}, sx.text), { textAlign: textAlign }) }, subtitle))));
 };
 exports.default = Heading;
 var sx = {
     stack: {
         width: '100%',
+        mb: 2
     },
     label: {
         color: 'primary.main',

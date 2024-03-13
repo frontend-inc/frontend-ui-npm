@@ -38,36 +38,25 @@ var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
-var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
-var CollectionHasMany = function (props) {
-    var _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, field = props.field, url = props.url, foreignUrl = props.foreignUrl, navigateUrl = props.navigateUrl, handle = props.handle, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, _d = props.editing, editing = _d === void 0 ? false : _d, buttonText = props.buttonText, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.autoPlay, autoPlay = _f === void 0 ? false : _f, _g = props.arrows, arrows = _g === void 0 ? false : _g, _h = props.showDots, showDots = _h === void 0 ? true : _h, _j = props.enableBorder, enableBorder = _j === void 0 ? false : _j, _k = props.enableGradient, enableGradient = _k === void 0 ? false : _k;
+var __1 = require("../..");
+var __2 = require("../..");
+var material_1 = require("@mui/material");
+var ForeignCollection = function (props) {
+    var title = props.title, field = props.field, resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, foreignUrl = props.foreignUrl, navigateUrl = props.navigateUrl, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, buttonText = props.buttonText, _d = props.query, defaultQuery = _d === void 0 ? null : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f;
     var router = (0, router_1.useRouter)();
-    var _l = (0, react_1.useState)([]), documents = _l[0], setDocuments = _l[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _m = (0, frontend_js_1.useResource)({
-        url: url,
-    }), resource = _m.resource, findOne = _m.findOne;
-    var _o = (0, frontend_js_1.useResource)({
+    var _g = (0, frontend_js_1.useResource)({
         url: foreignUrl,
-    }), loading = _o.loading, query = _o.query, resources = _o.resources, findMany = _o.findMany;
+    }), query = _g.query, resources = _g.resources, findMany = _g.findMany;
     var handleClick = function (item) {
-        if (!editing && clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
+        if (clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
             router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
     (0, react_1.useEffect)(function () {
-        if (handle) {
-            findOne(handle);
-        }
-    }, [handle]);
-    (0, react_1.useEffect)(function () {
-        if (resource && field) {
-            setDocuments((0, helpers_1.getDocumentValue)(resource, field));
-        }
-    }, [resource, field]);
-    (0, react_1.useEffect)(function () {
-        if (foreignUrl && documents) {
+        if (resource && field && foreignUrl) {
+            var documents = (0, helpers_1.filterDocumentLinks)(resource, field === null || field === void 0 ? void 0 : field.foreign_content_type);
             var documentIds = documents.map(function (document) { return document.id; });
             findMany(__assign(__assign(__assign({}, query), defaultQuery), { filters: {
                     AND: [
@@ -79,14 +68,33 @@ var CollectionHasMany = function (props) {
                     ],
                 }, per_page: perPage, page: 1 }));
         }
-    }, [documents, foreignUrl, defaultQuery]);
-    return (react_1.default.createElement(__1.StyledList, { resources: resources, layout: layout, style: style, editing: editing, loading: loading, buttonText: buttonText, handleClick: handleClick, 
-        //@ts-ignore
-        autoPlay: autoPlay, arrows: arrows, showDots: showDots, enableBorder: enableBorder, enableGradient: enableGradient }));
+    }, [resource, field, foreignUrl]);
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        react_1.default.createElement(__2.Heading, { title: title }),
+        react_1.default.createElement(__1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient })));
 };
-exports.default = CollectionHasMany;
+exports.default = ForeignCollection;
 var sx = {
     root: {
         width: '100%',
     },
+    content: {
+        width: '100%'
+    },
+    list: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px'
+    },
+    grid: {
+        display: 'grid',
+        gridTemplateColumns: {
+            md: '1fr 1fr 1fr',
+            xs: '1fr',
+        },
+        gap: '16px'
+    },
+    item: {
+        p: 2
+    }
 };
