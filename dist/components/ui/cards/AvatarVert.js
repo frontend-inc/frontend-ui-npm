@@ -102,7 +102,7 @@ var sx = {
     },
     rootBorder: {
         border: '1px solid',
-        borderColor: 'grey.300',
+        borderColor: 'divider',
         p: 1,
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
     },

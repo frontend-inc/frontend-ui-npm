@@ -25,7 +25,8 @@ var AvatarHoriz = function (props) {
                     minHeight: height + 44,
                 }, onClick: handleClick && handleClick },
                 react_1.default.createElement(material_1.ListItemIcon, null,
-                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: "".concat(height, "px"), width: "".concat(width, "px") }), src: image, alt: title })),
+                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: "".concat(height, "px"), width: "".concat(width, "px") }), src: image, alt: title },
+                        react_1.default.createElement(material_1.Box, null))),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: sx.description }, (0, helpers_1.truncate)(description, 80)) })))));
 };
 exports.default = AvatarHoriz;
@@ -60,7 +61,7 @@ var sx = {
     },
     rootBorder: {
         border: '1px solid',
-        borderColor: 'grey.300',
+        borderColor: 'divider',
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
     },
     avatar: {

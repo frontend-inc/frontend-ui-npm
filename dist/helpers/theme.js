@@ -19,11 +19,13 @@ var buildMuiPalette = function (palette, bgcolor) {
     var primaryText = contrast > 4.5 ? '#000000' : '#FFFFFF';
     var secondaryText = (0, material_1.alpha)(primaryText, 0.7);
     var neutral = contrast > 4.5 ? '#EEEEEE' : '#222222';
+    var fill = contrast > 4.5 ? '#fcfcfc' : '#111111';
     var divider = contrast > 4.5 ? (0, material_1.darken)(bgcolor, 0.1) : (0, material_1.lighten)(bgcolor, 0.2);
     var muiPalette = __assign(__assign({}, palette), { background: {
             default: bgcolor,
             main: bgcolor,
             paper: paper,
+            fill: fill
         }, divider: divider, text: {
             primary: primaryText,
             secondary: secondaryText,

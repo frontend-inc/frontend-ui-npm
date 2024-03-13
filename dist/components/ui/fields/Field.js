@@ -5,11 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var helpers_1 = require("../../../helpers");
 var Field = function (props) {
     var field = props.field, document = props.document;
     var variant = field.variant, label = field.label;
-    var value = (0, helpers_1.getDocumentValue)(document, field);
+    var value = document[field === null || field === void 0 ? void 0 : field.name];
     if (!value)
         return null;
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -22,6 +21,7 @@ var Field = function (props) {
         variant === 'url' && react_1.default.createElement(components_1.FieldURL, { label: label, value: value }),
         variant === 'rating' && react_1.default.createElement(components_1.FieldRating, { label: label, value: value }),
         variant === 'text' && react_1.default.createElement(components_1.FieldText, { label: label, value: value }),
+        variant === 'number' && react_1.default.createElement(components_1.FieldText, { label: label, value: value }),
         variant === 'array' && react_1.default.createElement(components_1.FieldArray, { label: label, value: value }),
         variant === 'string' && react_1.default.createElement(components_1.FieldString, { label: label, value: value }),
         variant === 'price' && react_1.default.createElement(components_1.FieldPrice, { label: label, value: value })));

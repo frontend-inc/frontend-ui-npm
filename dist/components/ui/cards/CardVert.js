@@ -68,7 +68,6 @@ exports.default = CardVert;
 var sx = {
     root: {
         width: '100%',
-        bgcolor: 'background.main',
     },
     rootBorder: {
         border: '1px solid',

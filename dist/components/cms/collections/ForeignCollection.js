@@ -57,7 +57,7 @@ var ForeignCollection = function (props) {
     (0, react_1.useEffect)(function () {
         if (resource && field && foreignUrl) {
             var documents = (0, helpers_1.filterDocumentLinks)(resource, field === null || field === void 0 ? void 0 : field.foreign_content_type);
-            var documentIds = documents.map(function (document) { return document.id; });
+            var documentIds = documents === null || documents === void 0 ? void 0 : documents.map(function (document) { return document.id; });
             findMany(__assign(__assign(__assign({}, query), defaultQuery), { filters: {
                     AND: [
                         {

@@ -37,7 +37,7 @@ var Hero = function (props) {
         react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { md: "row", xs: "column" }, spacing: 4 },
             react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 256 }),
             react_1.default.createElement(material_1.Stack, { spacing: 2, sx: sx.content },
-                react_1.default.createElement(material_1.Typography, { color: 'text.primary', variant: "h6" }, title),
+                react_1.default.createElement(material_1.Typography, { color: 'text.primary', variant: "h4" }, title),
                 react_1.default.createElement(material_1.Box, null,
                     open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.primary', sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.primary', sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
                     (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all')))))));
@@ -51,7 +51,6 @@ var sx = {
         alignItems: 'center',
     },
     container: {
-        maxWidth: 800,
         justifyContent: 'flex-start',
         alignItems: {
             md: 'flex-start',

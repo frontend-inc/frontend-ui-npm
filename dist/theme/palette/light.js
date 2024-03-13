@@ -30,8 +30,7 @@ exports.default = {
     background: {
         default: '#FFFFFF',
         paper: '#343842',
-        light: '#343842',
-        dark: '#21252C',
+        fill: '#fcfcfc'
     },
     active: {
         hover: '#FAFBFF',

@@ -28,8 +28,7 @@ declare const _default: {
     background: {
         default: string;
         paper: string;
-        light: string;
-        dark: string;
+        fill: string;
     };
     active: {
         hover: string;
