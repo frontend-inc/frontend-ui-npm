@@ -33,15 +33,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
+var Logo_1 = __importDefault(require("./Logo"));
 var MobileNav = function (props) {
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
-    var editing = props.editing, logo = props.logo, _a = props.logoWidth, logoWidth = _a === void 0 ? 120 : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? 50 : _b, _c = props.enableShopify, enableShopify = _c === void 0 ? false : _c, _d = props.enableNotifications, enableNotifications = _d === void 0 ? false : _d;
+    var editing = props.editing, logo = props.logo, _a = props.logoWidth, logoWidth = _a === void 0 ? 120 : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? 50 : _b, handleClick = props.handleClick, _c = props.enableShopify, enableShopify = _c === void 0 ? false : _c, _d = props.enableNotifications, enableNotifications = _d === void 0 ? false : _d;
     return (react_1.default.createElement(material_1.Hidden, { smUp: true },
         react_1.default.createElement(material_1.AppBar, { sx: __assign(__assign({}, sx.appBar), (enableNotifications && sx.appBarNotifications)), position: 'absolute', elevation: 0 },
             react_1.default.createElement(material_1.Toolbar, null,
@@ -50,7 +54,7 @@ var MobileNav = function (props) {
                         react_1.default.createElement(material_1.IconButton, { onClick: function () { return setMenuOpen(true); } },
                             react_1.default.createElement(__1.Icon, { name: "Menu", size: 24 }))),
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu },
-                        react_1.default.createElement(__1.Logo, { src: logo, width: logoWidth, height: logoHeight - 20 })),
+                        react_1.default.createElement(Logo_1.default, { handleClick: function () { return handleClick('/'); }, src: logo, width: logoWidth, height: logoHeight - 20 })),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu }, enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement(shopify_1.SearchButton, null),
                         react_1.default.createElement(shopify_1.CartButton, null)))))))));

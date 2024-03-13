@@ -1,5 +1,4 @@
 import React from 'react';
-import { TypographyVariantsType } from '../../../types';
 export type FeaturedCardProps = {
     editing?: boolean;
     label?: string;
@@ -7,7 +6,6 @@ export type FeaturedCardProps = {
     description?: string;
     image?: string;
     buttonText?: string;
-    textVariant?: TypographyVariantsType;
     size?: number;
     href?: string;
     height?: number;

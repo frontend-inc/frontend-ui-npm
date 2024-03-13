@@ -9,7 +9,7 @@ var PriceCard_1 = __importDefault(require("./PriceCard"));
 var Prices = function (props) {
     var title = props.title, prices = props.prices;
     return (react_1.default.createElement(material_1.Box, null,
-        title && (react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: "h6", color: "textPrimary" }, title)),
+        title && (react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: "h5", color: "textPrimary" }, title)),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 }, prices.map(function (price, index) { return (react_1.default.createElement(PriceCard_1.default, { key: index, price: price })); }))));
 };
 exports.default = Prices;

@@ -67,7 +67,7 @@ var MetafieldProducts = function (props) {
     if (!products)
         return null;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        title && (react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "h6" }, title)),
+        title && (react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "h5" }, title)),
         products && (react_1.default.createElement(react_1.default.Fragment, null,
             layout == 'grid' && react_1.default.createElement(shopify_1.ProductGrid, __assign({ products: products }, rest)),
             layout == 'carousel' && (react_1.default.createElement(shopify_1.ProductCarousel, __assign({ products: products }, rest)))))));

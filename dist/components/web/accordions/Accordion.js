@@ -11,7 +11,7 @@ var Accordion = function (props) {
     var title = props.title, _a = props.items, items = _a === void 0 ? [] : _a;
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'space-between', spacing: 1 },
-            react_1.default.createElement(material_2.Typography, { variant: "h6", sx: sx.title, color: "textPrimary" }, title)), items === null || items === void 0 ? void 0 :
+            react_1.default.createElement(material_2.Typography, { variant: "h5", sx: sx.title, color: "textPrimary" }, title)), items === null || items === void 0 ? void 0 :
         items.map(function (item, i) { return (react_1.default.createElement(__1.AccordionItem, { key: i, title: item === null || item === void 0 ? void 0 : item.title, description: item === null || item === void 0 ? void 0 : item.description, image: item === null || item === void 0 ? void 0 : item.image })); }),
         (items === null || items === void 0 ? void 0 : items.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: react_1.default.createElement(__1.Icon, { name: "Search" }), title: "No content", description: "Your content will appear here." }))));
 };

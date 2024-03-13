@@ -47,7 +47,7 @@ var Collections = function (props) {
         findCollections();
     }, []);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(material_1.Typography, { variant: "h6", color: "textPrimary" }, title),
+        react_1.default.createElement(material_1.Typography, { variant: "h5", color: "textPrimary" }, title),
         react_1.default.createElement(components_1.StyledList, { layout: layout, 
             //@ts-ignore
             style: style, resources: collections, editing: editing, loading: loading, items: collections, buttonText: buttonText, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient })));

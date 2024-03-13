@@ -2,8 +2,8 @@ import React from 'react';
 type CollectionProps = {
     title?: string;
     url: string;
-    layout: 'list' | 'grid' | 'carousel';
-    style: 'card' | 'avatar' | 'image' | 'cover';
+    layout: 'list' | 'grid';
+    style: 'avatar' | 'card' | 'cover';
     fields?: any;
     editing?: boolean;
     enableInfiniteLoad?: boolean;
@@ -17,9 +17,6 @@ type CollectionProps = {
     enableSortPrice?: boolean;
     secondaryActions?: React.ReactNode;
     buttonText?: string;
-    autoPlay?: boolean;
-    arrows?: boolean;
-    showDots?: boolean;
     enableBorder?: boolean;
     enableGradient?: boolean;
 };

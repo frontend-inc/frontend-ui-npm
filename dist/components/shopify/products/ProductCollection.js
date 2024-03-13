@@ -85,7 +85,7 @@ var ProductCollection = function (props) {
     }, [handle, filters, sortKey, reverse]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 2 },
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, justifyContent: 'space-between' },
-            react_1.default.createElement(material_1.Typography, { variant: "h6", color: "text.primary" }, title),
+            react_1.default.createElement(material_1.Typography, { variant: "h5", color: "text.primary" }, title),
             react_1.default.createElement(material_1.Box, null,
                 enableFilters && (react_1.default.createElement(shopify_1.ProductFilters, { filters: filters, colorOptions: colorOptions, sizeOptions: sizeOptions, styleOptions: styleOptions, materialOptions: materialOptions, vendorOptions: vendorOptions, tagOptions: tagOptions, productTypeOptions: productTypeOptions, handleFilterColor: handleFilterColor, handleFilterSize: handleFilterSize, handleFilterStyle: handleFilterStyle, handleFilterMaterial: handleFilterMaterial, handleFilterInStock: handleFilterInStock, handleFilterVendor: handleFilterVendor, handleFilterProductType: handleFilterProductType, handleFilterTag: handleFilterTag })),
                 enableSort && (react_1.default.createElement(shopify_1.ProductSort, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick })))),

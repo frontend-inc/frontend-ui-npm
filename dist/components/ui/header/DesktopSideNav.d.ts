@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuLinkType } from '../../..';
 type DesktopNavProps = {
     editing?: boolean;
-    logo?: string;
+    logo: string;
     logoWidth?: number;
     logoHeight?: number;
     menuItems?: MenuLinkType[];

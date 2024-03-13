@@ -62,7 +62,7 @@ var CardVert = function (props) {
                 react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
                 label && (react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2" }, label))),
             buttonText && (react_1.default.createElement(material_1.Box, null,
-                react_1.default.createElement(material_1.Button, { variant: "outlined", color: "secondary", onClick: handleItemClick }, buttonText))))));
+                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", onClick: handleItemClick }, buttonText))))));
 };
 exports.default = CardVert;
 var sx = {
@@ -106,4 +106,11 @@ var sx = {
     description: {
         maxWidth: '320px',
     },
+    button: {
+        color: 'text.primary',
+        bgcolor: 'tertiary.main',
+        '&:hover': {
+            bgcolor: 'tertiary.dark'
+        }
+    }
 };

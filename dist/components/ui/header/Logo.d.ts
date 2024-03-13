@@ -1,9 +1,9 @@
 import React from 'react';
 type LogoProps = {
-    src?: string;
+    src: string;
     width?: number;
     height?: number;
-    handleClick: () => void;
+    handleClick: (path: string) => void;
 };
 declare const Logo: React.FC<LogoProps>;
 export default Logo;

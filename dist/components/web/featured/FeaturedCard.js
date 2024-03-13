@@ -40,13 +40,12 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
-var index_1 = require("../../../constants/index");
 var FeaturedCard = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, _b = _a.editing, editing = _b === void 0 ? false : _b, label = _a.label, title = _a.title, description = _a.description, _c = _a.image, image = _c === void 0 ? '' : _c, href = _a.href, _d = _a.height, height = _d === void 0 ? index_1.FEATURED_CARD_HEIGHT : _d, buttonText = _a.buttonText, _e = _a.flexDirection, flexDirection = _e === void 0 ? 'row' : _e, _f = _a.textVariant, textVariant = _f === void 0 ? 'h3' : _f, handleClick = _a.handleClick, _g = _a.objectFit, objectFit = _g === void 0 ? 'cover' : _g, _h = _a.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = _a.enableGradient, enableGradient = _j === void 0 ? false : _j;
-    var _k = (0, react_1.useState)('center'), textAlign = _k[0], setTextAlign = _k[1];
-    var _l = (0, react_1.useState)('center'), justifyContent = _l[0], setJustifyContent = _l[1];
-    var _m = (0, react_1.useState)('row'), direction = _m[0], setDirection = _m[1];
+    var _a = props || {}, _b = _a.editing, editing = _b === void 0 ? false : _b, label = _a.label, title = _a.title, description = _a.description, _c = _a.image, image = _c === void 0 ? '' : _c, href = _a.href, buttonText = _a.buttonText, _d = _a.flexDirection, flexDirection = _d === void 0 ? 'row' : _d, handleClick = _a.handleClick, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g;
+    var _h = (0, react_1.useState)('center'), textAlign = _h[0], setTextAlign = _h[1];
+    var _j = (0, react_1.useState)('center'), justifyContent = _j[0], setJustifyContent = _j[1];
+    var _k = (0, react_1.useState)('row'), direction = _k[0], setDirection = _k[1];
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -78,7 +77,7 @@ var FeaturedCard = function (props) {
                         sm: direction == 'row' ? '50%' : '100%',
                     } }) },
                 react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-                    react_1.default.createElement(__1.Image, { src: image, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, disableBorderRadius: enableBorder }))),
+                    react_1.default.createElement(__1.Image, { src: image, height: 320, objectFit: objectFit, alt: title, enableGradient: enableGradient, disableBorderRadius: enableBorder }))),
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), { justifyContent: direction == 'row' ? 'flex-start' : 'center', width: {
                         sm: direction == 'row' ? '50%' : '100%',
                         xs: '100%',
@@ -87,14 +86,10 @@ var FeaturedCard = function (props) {
                             sm: justifyContent,
                             xs: 'center',
                         } }) },
-                    label && (react_1.default.createElement(material_1.Typography, { color: "primary", sx: __assign(__assign({}, sx.label), { textAlign: {
-                                sm: textAlign,
-                                xs: 'center',
-                            } }), variant: "caption" }, label)),
                     react_1.default.createElement(material_1.Typography, { sx: __assign(__assign({}, sx.title), { textAlign: {
                                 sm: textAlign,
                                 xs: 'center',
-                            } }), variant: textVariant }, title),
+                            } }), variant: 'h4' }, title),
                     react_1.default.createElement(material_1.Typography, { variant: "body2", sx: __assign(__assign({}, sx.description), { textAlign: {
                                 sm: textAlign,
                                 xs: 'center',
@@ -148,10 +143,6 @@ var sx = {
         display: 'flex',
         height: '100%',
         width: '100%',
-    },
-    label: {
-        width: '100%',
-        color: 'primary.main',
     },
     title: {
         width: '100%',

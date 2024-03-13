@@ -1,6 +1,7 @@
 import React from 'react';
+import { DocumentType } from '../../../types';
 type CarouselViewProps = {
-    items: any;
+    items: DocumentType[];
     editing?: boolean;
     defaultQuery?: any;
     buttonText?: string;

@@ -12,23 +12,17 @@ var StyledList = function (props) {
         list: {
             card: __1.CardHoriz,
             avatar: __1.AvatarHoriz,
-            image: __1.ImageHoriz,
             cover: __1.CoverHoriz,
-            chip: __1.AvatarChip,
         },
         grid: {
             card: __1.CardVert,
             avatar: __1.AvatarVert,
-            image: __1.ImageVert,
             cover: __1.CoverVert,
-            chip: __1.AvatarChip,
         },
         carousel: {
             card: __1.CardVert,
             avatar: __1.AvatarVert,
-            image: __1.ImageVert,
             cover: __1.CoverVert,
-            chip: __1.AvatarChip,
         },
     };
     var component = COMPONENTS[layout][style] || __1.CardVert;
@@ -36,7 +30,7 @@ var StyledList = function (props) {
         resources && (react_1.default.createElement(react_1.default.Fragment, null,
             layout == 'list' && (react_1.default.createElement(__1.ListView, { editing: editing, items: resources, handleClick: handleClick, buttonText: buttonText, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             layout == 'grid' && (react_1.default.createElement(__1.GridView, { editing: editing, items: resources, handleClick: handleClick, buttonText: buttonText, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })),
-            layout == 'carousel' && (react_1.default.createElement(__1.ListView, { flexDirection: "row", editing: editing, items: resources, handleClick: handleClick, buttonText: buttonText, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
+            layout == 'carousel' && (react_1.default.createElement(__1.CarouselView, { editing: editing, items: resources, handleClick: handleClick, buttonText: buttonText, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
         !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: react_1.default.createElement(__1.Icon, { name: emptyIcon }), title: emptyTitle, description: emptyDescription }))));
 };
 exports.default = StyledList;

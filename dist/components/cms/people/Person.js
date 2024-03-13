@@ -30,6 +30,8 @@ var Person = function (props) {
     var resource = (props || {}).resource;
     var _a = resource || {}, title = _a.title, image = _a.image, description = _a.description;
     var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
+    if (!resource)
+        return null;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { md: "row", xs: "column" }, spacing: 4 },
             react_1.default.createElement(material_1.Avatar, { sx: sx.avatarContainer },

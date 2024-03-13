@@ -40,6 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
+var Logo_1 = __importDefault(require("./Logo"));
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
 var index_1 = require("../../../constants/index");
@@ -55,7 +56,7 @@ var DesktopSideNav = function (props) {
                     sx.desktopSideNavEditorNotifications)), direction: "column", spacing: 2 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.desktopSideMenuItems, direction: "column", spacing: 2 },
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu },
-                        react_1.default.createElement(__1.Logo, { src: logo, width: logoWidth, height: logoHeight })),
+                        react_1.default.createElement(Logo_1.default, { handleClick: function () { return handleClick('/'); }, src: logo, width: logoWidth, height: logoHeight })),
                     react_1.default.createElement(material_1.List, null, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 :
                         _a.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); }),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,

@@ -40,10 +40,9 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
-var index_1 = require("../../../constants/index");
 var CardHoriz = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, _b = _a.editing, editing = _b === void 0 ? false : _b, label = _a.label, title = _a.title, description = _a.description, _c = _a.image, image = _c === void 0 ? '' : _c, href = _a.href, _d = _a.height, height = _d === void 0 ? index_1.CARD_HORIZ_HEIGHT : _d, _e = _a.width, width = _e === void 0 ? index_1.CARD_HORIZ_WIDTH : _e, buttonText = _a.buttonText, _f = _a.textVariant, textVariant = _f === void 0 ? 'subtitle1' : _f, handleClick = _a.handleClick, _g = _a.objectFit, objectFit = _g === void 0 ? 'cover' : _g, _h = _a.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = _a.enableGradient, enableGradient = _j === void 0 ? false : _j, _k = _a.enableOverlay, enableOverlay = _k === void 0 ? false : _k;
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 180 : _c, buttonText = _a.buttonText, _d = _a.textVariant, textVariant = _d === void 0 ? 'subtitle1' : _d, handleClick = _a.handleClick, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -58,13 +57,13 @@ var CardHoriz = function (props) {
             react_1.default.createElement(material_1.Box, { sx: sx.image },
                 react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
                     react_1.default.createElement(components_1.Image, { src: image, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, disableBorderRadius: enableBorder }))),
-            react_1.default.createElement(material_1.Stack, { spacing: 2, sx: sx.content },
+            react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
                 react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
                     react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80)),
                     label && (react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "caption" }, label))),
                 buttonText && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Button, { variant: "outlined", color: "secondary", onClick: handleItemClick }, buttonText)))))));
+                    react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", onClick: handleItemClick }, buttonText)))))));
 };
 exports.default = CardHoriz;
 var sx = {
@@ -92,7 +91,7 @@ var sx = {
     },
     image: {
         mr: 2,
-        width: 120,
+        width: 180,
         height: '100%',
     },
     content: {
@@ -103,4 +102,11 @@ var sx = {
     description: {
         maxWidth: '320px',
     },
+    button: {
+        color: 'text.primary',
+        bgcolor: 'tertiary.main',
+        '&:hover': {
+            bgcolor: 'tertiary.dark',
+        }
+    }
 };
