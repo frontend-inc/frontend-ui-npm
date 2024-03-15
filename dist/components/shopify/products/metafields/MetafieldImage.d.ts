@@ -1,8 +1,8 @@
 import React from 'react';
-import { MetafieldIdentifier } from 'frontend-shopify';
+import { MetafieldIdentifierType } from 'frontend-shopify';
 type MetafieldImageProps = {
     handle: string;
-    metafield: MetafieldIdentifier;
+    metafield: MetafieldIdentifierType;
     height: number;
     objectFit?: 'cover' | 'contain';
     bgcolor?: string;

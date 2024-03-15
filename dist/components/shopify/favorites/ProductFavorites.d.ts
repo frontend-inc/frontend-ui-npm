@@ -1,10 +1,8 @@
 import React from 'react';
-type FavoritesProps = {
+type ProductFavoritesProps = {
     editing?: boolean;
-    layout?: 'grid' | 'carousel';
     title?: string;
     perPage?: string;
-    productComponent?: React.FC<any>;
     enableBorder?: boolean;
     enableAddToCart?: boolean;
     enableQuantity?: boolean;
@@ -14,5 +12,5 @@ type FavoritesProps = {
     emptyTitle?: string;
     emptyDescription?: string;
 };
-declare const Favorites: React.FC<FavoritesProps>;
-export default Favorites;
+declare const ProductFavorites: React.FC<ProductFavoritesProps>;
+export default ProductFavorites;

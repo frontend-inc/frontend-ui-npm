@@ -55,10 +55,11 @@ var ProductSortButton = function (props) {
 exports.default = ProductSortButton;
 var sx = {
     button: {
-        color: 'text.secondary',
+        color: 'text.primary',
         borderRight: 'none',
+        bgcolor: 'tertiary.main',
         '&:hover': {
-            borderRight: 'none',
+            bgcolor: 'tertiary.light'
         },
     },
     secondaryButton: {

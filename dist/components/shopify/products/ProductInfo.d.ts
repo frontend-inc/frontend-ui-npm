@@ -1,7 +1,7 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type ProductDetailsProps = {
-    product?: Product;
+    product?: ProductType;
     price?: number;
     compareAtPrice?: number;
     disableCompareAtPrice?: boolean;

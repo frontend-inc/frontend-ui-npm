@@ -1,8 +1,8 @@
 import React from 'react';
-import { Order } from 'frontend-shopify';
+import { OrderType } from 'frontend-shopify';
 type OrderDetailsProps = {
     styles?: object;
-    order: Order;
+    order: OrderType;
     supportUrl?: string;
 };
 declare const OrderDetails: React.FC<OrderDetailsProps>;

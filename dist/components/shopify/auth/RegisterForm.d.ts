@@ -1,8 +1,8 @@
 import React from 'react';
-import { Customer } from 'frontend-shopify';
+import { CustomerType } from 'frontend-shopify';
 type RegisterFormProps = {
     loading: boolean;
-    customer: Customer;
+    customer: CustomerType;
     errors: Record<string, any>;
     handleChange: (ev: any) => void;
     handleSubmit: () => void;

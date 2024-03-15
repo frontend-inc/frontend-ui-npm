@@ -1,10 +1,10 @@
 import React from 'react';
-import { Address } from 'frontend-shopify';
+import { AddressType } from 'frontend-shopify';
 type AddressListProps = {
-    addresses: Address[];
+    addresses: AddressType[];
     handleClick: (id: string) => void;
     handleEdit: (id: string) => void;
-    handleDelete: (address: Address) => void;
+    handleDelete: (address: AddressType) => void;
 };
 declare const AddressList: React.FC<AddressListProps>;
 export default AddressList;

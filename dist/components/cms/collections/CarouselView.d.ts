@@ -6,10 +6,10 @@ type CarouselViewProps = {
     defaultQuery?: any;
     buttonText?: string;
     handleClick?: (item: any) => void;
-    component?: any;
-    autoPlay?: boolean;
-    arrows?: boolean;
-    showDots?: boolean;
+    component?: React.FC<any>;
+    enableAutoPlay?: boolean;
+    enableArrows?: boolean;
+    enableDots?: boolean;
     enableBorder?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;

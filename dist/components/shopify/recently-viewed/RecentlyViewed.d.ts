@@ -4,7 +4,6 @@ type RecentlyViewedProps = {
     layout?: 'grid' | 'carousel';
     title?: string;
     perPage?: string;
-    productComponent?: React.FC<any>;
     enableBorder?: boolean;
     enableAddToCart?: boolean;
     enableQuantity?: boolean;

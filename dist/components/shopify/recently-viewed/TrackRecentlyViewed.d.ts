@@ -1,7 +1,7 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type TrackRecentlyViewedProps = {
-    product?: Product;
+    product?: ProductType;
 };
 declare const TrackRecentlyViewed: React.FC<TrackRecentlyViewedProps>;
 export default TrackRecentlyViewed;

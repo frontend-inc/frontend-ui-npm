@@ -1,9 +1,9 @@
 import React from 'react';
-import { Image as ProductImage } from 'frontend-shopify';
+import { ImageType } from 'frontend-shopify';
 type ProductImageSliderProps = {
-    image: ProductImage;
-    images: ProductImage[];
-    handleClick: (img: ProductImage) => void;
+    image: ImageType;
+    images: ImageType[];
+    handleClick: (img: ImageType) => void;
     height?: number;
     width?: number;
     thumbnailSize?: number;

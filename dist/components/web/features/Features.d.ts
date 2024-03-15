@@ -5,7 +5,6 @@ type FeaturesProps = {
         icon?: any;
         title?: string;
         description?: string;
-        filled?: boolean;
     }[];
 };
 declare const Features: React.FC<FeaturesProps>;

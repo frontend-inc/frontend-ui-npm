@@ -1,8 +1,8 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type ShopifyProductPageProps = {
     handle?: string | string[];
-    product?: Product;
+    product?: ProductType;
     children: any;
 };
 declare const ShopifyProduct: React.FC<ShopifyProductPageProps>;

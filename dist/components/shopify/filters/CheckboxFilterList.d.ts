@@ -1,8 +1,9 @@
 import React from 'react';
+import { SearchFilterType } from 'frontend-shopify';
 type CheckboxFilterListProps = {
-    options: string[];
-    values?: any;
-    handleClick: (value: string | number) => void;
+    filters: SearchFilterType[];
+    options: SearchFilterType[];
+    handleClick: (filter: SearchFilterType) => void;
 };
 declare const CheckboxFilterList: React.FC<CheckboxFilterListProps>;
 export default CheckboxFilterList;

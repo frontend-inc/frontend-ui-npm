@@ -1,14 +1,13 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type ProductCarouselProps = {
     editing?: boolean;
     loading?: boolean;
-    products: Product[];
-    productComponent?: React.FC<any>;
+    products: ProductType[];
     buttonText?: string;
-    autoPlay?: boolean;
-    arrows?: boolean;
-    showDots?: boolean;
+    enableAutoPlay?: boolean;
+    enableArrows?: boolean;
+    enableDots?: boolean;
     maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | false;
     enableBorder?: boolean;
     enableAddToCart?: boolean;

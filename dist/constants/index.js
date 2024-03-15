@@ -21,5 +21,6 @@ __exportStar(require("./documents"), exports);
 __exportStar(require("./fonts"), exports);
 __exportStar(require("./filters"), exports);
 __exportStar(require("./layout"), exports);
+__exportStar(require("./shopify"), exports);
 __exportStar(require("./states"), exports);
 __exportStar(require("./storage"), exports);

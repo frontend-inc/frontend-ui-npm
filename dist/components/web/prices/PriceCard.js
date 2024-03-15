@@ -16,8 +16,8 @@ var PriceCard = function (props) {
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 1 },
-            react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "text.primary" }, price.title),
-            react_1.default.createElement(material_1.Typography, { variant: "h6", color: "text.primary" }, price.price),
+            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, price.title),
+            react_1.default.createElement(material_1.Typography, { variant: "h5", color: "text.primary" }, price.price),
             react_1.default.createElement(material_1.Divider, null),
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.features }, price.features),
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: sx.nonFeatures }, price.disabledFeatures)),
@@ -34,10 +34,6 @@ var sx = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        transition: 'all 0.3s',
-        '&:hover': {
-            boxShadow: '0 0 10px 0 rgba(0,0,0,0.3)'
-        }
     },
     content: {
         minHeight: 300

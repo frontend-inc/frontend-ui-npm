@@ -1,8 +1,8 @@
 import React from 'react';
-import { Customer } from 'frontend-shopify';
+import { CustomerType } from 'frontend-shopify';
 type CustomerFormProps = {
     loading: boolean;
-    customer: Customer;
+    customer: CustomerType;
     handleChange: any;
     handleSubmit: any;
 };

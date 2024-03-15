@@ -1,8 +1,8 @@
 import React from 'react';
-import { MetafieldIdentifier } from 'frontend-shopify';
+import { MetafieldIdentifierType } from 'frontend-shopify';
 type ProductMetafieldsProps = {
     handle: string;
-    metafields: MetafieldIdentifier[];
+    metafields: MetafieldIdentifierType[];
 };
 declare const ProductMetafields: React.FC<ProductMetafieldsProps>;
 export default ProductMetafields;

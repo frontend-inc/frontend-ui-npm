@@ -1,9 +1,9 @@
 import React from 'react';
 type CarouselImageProps = {
     children: React.ReactNode;
-    autoPlay?: boolean;
-    arrows?: boolean;
-    showDots?: boolean;
+    enableAutoPlay?: boolean;
+    enableArrows?: boolean;
+    enableDots?: boolean;
     responsive?: any;
 };
 declare const CarouselImage: React.FC<CarouselImageProps>;

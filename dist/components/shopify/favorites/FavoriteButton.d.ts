@@ -1,7 +1,7 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type FavoriteButtonProps = {
-    product: Product;
+    product: ProductType;
 };
 declare const FavoriteButton: React.FC<FavoriteButtonProps>;
 export default FavoriteButton;

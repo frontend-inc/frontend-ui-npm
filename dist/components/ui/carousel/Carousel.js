@@ -47,14 +47,14 @@ var hooks_1 = require("../../../hooks");
 var ReactCarousel = function (props) {
     var theme = (0, styles_1.useTheme)();
     var _a = (0, react_1.useState)(null), responsive = _a[0], setResponsive = _a[1];
-    var _b = props.editing, editing = _b === void 0 ? false : _b, children = props.children, _c = props.autoPlay, autoPlay = _c === void 0 ? false : _c, _d = props.arrows, arrows = _d === void 0 ? false : _d, _e = props.showDots, showDots = _e === void 0 ? true : _e, _f = props.styles, styles = _f === void 0 ? {} : _f;
+    var _b = props.editing, editing = _b === void 0 ? false : _b, children = props.children, _c = props.enableAutoPlay, enableAutoPlay = _c === void 0 ? false : _c, _d = props.enableArrows, enableArrows = _d === void 0 ? false : _d, _e = props.enableDots, enableDots = _e === void 0 ? true : _e, _f = props.styles, styles = _f === void 0 ? {} : _f;
     var breakpoint = (0, hooks_1.useResponsive)().breakpoint;
     var _g = (0, react_1.useState)(960), width = _g[0], setWidth = _g[1];
     (0, react_1.useEffect)(function () {
         //@ts-ignore
         setResponsive((0, helpers_1.getCarouselResponsive)(theme));
     }, [theme === null || theme === void 0 ? void 0 : theme.breakpoints]);
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.root), (editing && sx.rootEditor)), (styles && styles)) }, responsive && children && (react_1.default.createElement(react_multi_carousel_1.default, { responsive: responsive, swipeable: true, draggable: true, infinite: true, autoPlay: autoPlay, arrows: arrows, showDots: showDots, customDot: react_1.default.createElement(CarouselDot_1.default, null) }, children))));
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.root), (editing && sx.rootEditor)), (styles && styles)) }, responsive && children && (react_1.default.createElement(react_multi_carousel_1.default, { responsive: responsive, swipeable: true, draggable: true, infinite: true, autoPlay: enableAutoPlay, arrows: enableArrows, showDots: enableDots, customDot: react_1.default.createElement(CarouselDot_1.default, null) }, children))));
 };
 exports.default = ReactCarousel;
 var sx = {

@@ -48,7 +48,7 @@ var FilterList = function (props) {
         label && (react_1.default.createElement(material_1.ListItem, { sx: sx.listItem, disablePadding: true, disableGutters: true, secondaryAction: expandable ? (react_1.default.createElement(material_1.IconButton, { onClick: handleToggleClick },
                 react_1.default.createElement(icons_material_1.ChevronRight, { sx: __assign(__assign({}, sx.icon), (open && sx.expandMore)) }))) : null },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: handleToggleClick },
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: variant },
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: variant, color: 'text.primary' },
                         label,
                         " ",
                         count > 0 && "(".concat(count, ")")) })))),
@@ -58,17 +58,16 @@ exports.default = FilterList;
 var sx = {
     root: {
         width: '100%',
-        minWidth: '280px',
     },
     padding: {
         px: 1,
     },
     listItem: {
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
+        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
         height: '40px',
     },
     listItemButton: {
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
+        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
         height: '40px',
     },
     listItemIcon: {

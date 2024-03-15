@@ -1,7 +1,7 @@
 import React from 'react';
-import { ProductCollectionSortKey } from 'frontend-shopify';
+import { ProductSortKeyType } from 'frontend-shopify';
 type ProductSortButtonProps = {
-    sortKey?: ProductCollectionSortKey;
+    sortKey?: ProductSortKeyType;
     reverse?: boolean;
     handleClick: any;
 };

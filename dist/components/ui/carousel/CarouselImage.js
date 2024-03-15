@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var index_1 = require("../../../constants/index");
 var CarouselImage = function (props) {
-    var children = props.children, _a = props.arrows, arrows = _a === void 0 ? false : _a, _b = props.showDots, showDots = _b === void 0 ? true : _b, _c = props.responsive, responsive = _c === void 0 ? index_1.IMAGE_CAROUSEL_RESPONSIVE : _c;
-    return (react_1.default.createElement(components_1.Carousel, { autoPlay: false, responsive: responsive, arrows: arrows, showDots: showDots }, children));
+    var children = props.children, _a = props.enableAutoPlay, enableAutoPlay = _a === void 0 ? false : _a, _b = props.enableArrows, enableArrows = _b === void 0 ? false : _b, _c = props.enableDots, enableDots = _c === void 0 ? true : _c, _d = props.responsive, responsive = _d === void 0 ? index_1.IMAGE_CAROUSEL_RESPONSIVE : _d;
+    return (react_1.default.createElement(components_1.Carousel, { enableAutoPlay: enableAutoPlay, responsive: responsive, enableArrows: enableArrows, enableDots: enableDots }, children));
 };
 exports.default = CarouselImage;

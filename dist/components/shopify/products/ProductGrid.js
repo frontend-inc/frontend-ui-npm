@@ -31,7 +31,7 @@ var addons_1 = require("../../../hooks/addons");
 var context_1 = require("../../../context");
 var ProductGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props.editing, editing = _a === void 0 ? false : _a, products = props.products, _b = props.xs, xs = _b === void 0 ? 12 : _b, _c = props.sm, sm = _c === void 0 ? 6 : _c, _d = props.md, md = _d === void 0 ? 4 : _d, _e = props.lg, lg = _e === void 0 ? 4 : _e, _f = props.xl, xl = _f === void 0 ? 4 : _f, _g = props.productComponent, ProductComponent = _g === void 0 ? shopify_1.ProductCard : _g, _h = props.buttonText, buttonText = _h === void 0 ? 'Add to cart' : _h, _j = props.enableBorder, enableBorder = _j === void 0 ? false : _j, enableAddToCart = props.enableAddToCart, enableQuickShop = props.enableQuickShop, enableQuantity = props.enableQuantity, enableOkendoStarRating = props.enableOkendoStarRating;
+    var _a = props.editing, editing = _a === void 0 ? false : _a, products = props.products, _b = props.xs, xs = _b === void 0 ? 12 : _b, _c = props.sm, sm = _c === void 0 ? 6 : _c, _d = props.md, md = _d === void 0 ? 4 : _d, _e = props.lg, lg = _e === void 0 ? 4 : _e, _f = props.xl, xl = _f === void 0 ? 3 : _f, _g = props.buttonText, buttonText = _g === void 0 ? 'Add to cart' : _g, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, enableAddToCart = props.enableAddToCart, enableQuickShop = props.enableQuickShop, enableQuantity = props.enableQuantity, enableOkendoStarRating = props.enableOkendoStarRating;
     var router = (0, router_1.useRouter)();
     var trackProductClicked = (0, addons_1.useSegment)().trackProductClicked;
     var handleClick = function (product) {
@@ -42,7 +42,7 @@ var ProductGrid = function (props) {
     };
     return (react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 }, products === null || products === void 0 ? void 0 : products.map(function (product) { return (react_1.default.createElement(material_1.Grid, { item: true, xs: xs, sm: sm, md: md, lg: lg, xl: xl, key: product === null || product === void 0 ? void 0 : product.id },
         react_1.default.createElement(material_1.Box, { sx: sx.item, key: product === null || product === void 0 ? void 0 : product.id },
-            react_1.default.createElement(ProductComponent, { product: product, handleClick: function () { return handleClick(product); }, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText })))); })));
+            react_1.default.createElement(shopify_1.ProductCard, { product: product, handleClick: function () { return handleClick(product); }, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText })))); })));
 };
 exports.default = ProductGrid;
 var sx = {

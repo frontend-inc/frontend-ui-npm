@@ -1,7 +1,7 @@
 import React from 'react';
-import { CartLine } from 'frontend-shopify';
+import { CartLineType } from 'frontend-shopify';
 type CartLineProps = {
-    line: CartLine;
+    line: CartLineType;
 };
 declare const CartLine: React.FC<CartLineProps>;
 export default CartLine;

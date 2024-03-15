@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SwipeableTestimonials = exports.TestimonialCard = exports.TestimonialsGrid = exports.Testimonials = exports.TabItem = exports.Tabs = exports.PriceCard = exports.Prices = exports.Logos = exports.FeaturedCard = exports.Features = exports.Feature = exports.CTA = exports.AccordionItem = exports.Accordion = void 0;
+exports.SwipeableTestimonials = exports.TestimonialCard = exports.TestimonialsGrid = exports.Testimonials = exports.TabItem = exports.Tabs = exports.PriceCard = exports.Prices = exports.Logos = exports.FeaturedCard = exports.Featured = exports.Features = exports.Feature = exports.CTA = exports.AccordionItem = exports.Accordion = void 0;
 // Web 
 var Accordion_1 = require("./accordions/Accordion");
 Object.defineProperty(exports, "Accordion", { enumerable: true, get: function () { return __importDefault(Accordion_1).default; } });
@@ -15,6 +15,8 @@ var Feature_1 = require("./features/Feature");
 Object.defineProperty(exports, "Feature", { enumerable: true, get: function () { return __importDefault(Feature_1).default; } });
 var Features_1 = require("./features/Features");
 Object.defineProperty(exports, "Features", { enumerable: true, get: function () { return __importDefault(Features_1).default; } });
+var Featured_1 = require("./featured/Featured");
+Object.defineProperty(exports, "Featured", { enumerable: true, get: function () { return __importDefault(Featured_1).default; } });
 var FeaturedCard_1 = require("../web/featured/FeaturedCard");
 Object.defineProperty(exports, "FeaturedCard", { enumerable: true, get: function () { return __importDefault(FeaturedCard_1).default; } });
 var Logos_1 = require("./logos/Logos");

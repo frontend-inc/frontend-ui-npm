@@ -1,7 +1,7 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type ProductCardProps = {
-    product: Product;
+    product: ProductType;
     handleClick?: () => void;
     buttonText?: string;
     height?: number;

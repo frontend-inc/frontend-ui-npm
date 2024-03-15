@@ -9,8 +9,9 @@ var Field = function (props) {
     var field = props.field, document = props.document;
     var variant = field.variant, label = field.label;
     var value = document[field === null || field === void 0 ? void 0 : field.name];
-    if (!value)
-        return null;
+    if (!value) {
+        value = '-';
+    }
     return (react_1.default.createElement(react_1.default.Fragment, null,
         variant === 'boolean' && react_1.default.createElement(components_1.FieldBoolean, { label: label, value: value }),
         variant === 'date' && react_1.default.createElement(components_1.FieldDate, { label: label, value: value }),

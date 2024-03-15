@@ -31,7 +31,7 @@ var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var context_1 = require("../../../context");
 var ProductCarousel = function (props) {
-    var _a = props.editing, editing = _a === void 0 ? false : _a, products = props.products, maxWidth = props.maxWidth, _b = props.productComponent, ProductComponent = _b === void 0 ? shopify_1.ProductCard : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Add to cart' : _c, _d = props.autoPlay, autoPlay = _d === void 0 ? false : _d, _e = props.arrows, arrows = _e === void 0 ? false : _e, _f = props.showDots, showDots = _f === void 0 ? true : _f, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, enableAddToCart = props.enableAddToCart, enableQuickShop = props.enableQuickShop, _h = props.enableQuantity, enableQuantity = _h === void 0 ? false : _h, enableOkendoStarRating = props.enableOkendoStarRating;
+    var _a = props.editing, editing = _a === void 0 ? false : _a, products = props.products, _b = props.buttonText, buttonText = _b === void 0 ? 'Add to cart' : _b, _c = props.enableAutoPlay, enableAutoPlay = _c === void 0 ? false : _c, _d = props.enableArrows, enableArrows = _d === void 0 ? false : _d, _e = props.enableDots, enableDots = _e === void 0 ? true : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, enableAddToCart = props.enableAddToCart, enableQuickShop = props.enableQuickShop, _g = props.enableQuantity, enableQuantity = _g === void 0 ? false : _g, enableOkendoStarRating = props.enableOkendoStarRating;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var router = (0, router_1.useRouter)();
     var trackProductClicked = (0, addons_1.useSegment)().trackProductClicked;
@@ -42,8 +42,8 @@ var ProductCarousel = function (props) {
         router.push(url);
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.Carousel, { editing: editing, autoPlay: autoPlay, arrows: arrows, showDots: showDots }, products === null || products === void 0 ? void 0 : products.map(function (product) { return (react_1.default.createElement(material_1.Box, { sx: sx.item, key: product.id },
-            react_1.default.createElement(ProductComponent, { product: product, handleClick: function () { return handleClick(product); }, buttonText: buttonText, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating }))); }))));
+        react_1.default.createElement(components_1.Carousel, { enableAutoPlay: enableAutoPlay, enableArrows: enableArrows, enableDots: enableDots }, products === null || products === void 0 ? void 0 : products.map(function (product) { return (react_1.default.createElement(material_1.Box, { sx: sx.item, key: product.id },
+            react_1.default.createElement(shopify_1.ProductCard, { product: product, handleClick: function () { return handleClick(product); }, buttonText: buttonText, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating }))); }))));
 };
 exports.default = ProductCarousel;
 var sx = {

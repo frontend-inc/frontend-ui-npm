@@ -1,7 +1,7 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type SubscriptionSelectorProps = {
-    product: Product;
+    product: ProductType;
     handleChange: any;
     activeSellingPlanId?: string;
 };

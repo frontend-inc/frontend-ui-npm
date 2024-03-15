@@ -1,19 +1,14 @@
 import React from 'react';
 export type FeaturedCardProps = {
-    editing?: boolean;
-    label?: string;
     title?: string;
     description?: string;
     image?: string;
     buttonText?: string;
-    size?: number;
     href?: string;
-    height?: number;
-    width?: number;
-    flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
+    flexDirection?: 'row' | 'row-reverse';
     handleClick?: () => void;
     objectFit?: 'cover' | 'contain';
-    responsive?: boolean;
+    enableOverlay?: boolean;
     enableBorder?: boolean;
     enableGradient?: boolean;
 };

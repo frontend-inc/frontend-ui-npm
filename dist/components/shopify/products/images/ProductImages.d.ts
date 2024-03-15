@@ -1,10 +1,10 @@
 import React from 'react';
-import { Product, Image } from 'frontend-shopify';
+import { ProductType, ImageType } from 'frontend-shopify';
 type ProductImagesProps = {
-    product: Product;
-    image: Image;
-    images: Image[];
-    handleClick: (img: Image) => void;
+    product: ProductType;
+    image: ImageType;
+    images: ImageType[];
+    handleClick: (img: ImageType) => void;
 };
 declare const ProductImages: React.FC<ProductImagesProps>;
 export default ProductImages;

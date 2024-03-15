@@ -2,9 +2,9 @@ import React from 'react';
 type CarouselProps = {
     editing?: boolean;
     children: React.ReactNode;
-    autoPlay?: boolean;
-    arrows?: boolean;
-    showDots?: boolean;
+    enableAutoPlay?: boolean;
+    enableArrows?: boolean;
+    enableDots?: boolean;
     responsive?: any;
     styles?: any;
 };

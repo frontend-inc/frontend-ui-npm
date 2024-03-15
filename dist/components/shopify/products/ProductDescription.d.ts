@@ -1,7 +1,7 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type ProductDescriptionProps = {
-    product?: Product;
+    product?: ProductType;
     color?: string;
 };
 declare const ProductDescription: React.FC<ProductDescriptionProps>;

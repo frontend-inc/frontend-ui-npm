@@ -1,15 +1,14 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type ProductGridProps = {
     editing?: boolean;
     loading?: boolean;
-    products: Product[];
+    products: ProductType[];
     xs?: number;
     sm?: number;
     md?: number;
     lg?: number;
     xl?: number;
-    productComponent?: React.FC<any>;
     buttonText?: string;
     enableBorder?: boolean;
     enableAddToCart?: boolean;

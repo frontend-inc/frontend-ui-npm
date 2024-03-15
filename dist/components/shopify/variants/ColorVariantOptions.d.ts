@@ -1,7 +1,7 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type ColorVariantsOptionsProps = {
-    product: Product;
+    product: ProductType;
     name: string;
     values: any;
     selected: string;

@@ -1,23 +1,12 @@
 import React from 'react';
+import { SearchFilterType } from 'frontend-shopify';
 type ProductCollectionProps = {
     title?: string;
     editing?: boolean;
-    layout?: 'grid' | 'carousel';
     handle: string | string[];
-    productComponent?: React.FC<any>;
-    colorOptions?: string[];
-    sizeOptions?: string[];
-    styleOptions?: string[];
-    materialOptions?: string[];
-    vendorOptions?: string[];
-    productTypeOptions?: string[];
-    tagOptions?: string[];
-    inStockFilter?: boolean;
+    options: SearchFilterType[];
     enableFilters?: boolean;
     enableSort?: boolean;
-    autoPlay?: boolean;
-    arrows?: boolean;
-    showDots?: boolean;
     enableBorder?: boolean;
     enableAddToCart?: boolean;
     enableQuickShop?: boolean;

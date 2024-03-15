@@ -1,7 +1,7 @@
 import React from 'react';
-import { Product } from 'frontend-shopify';
+import { ProductType } from 'frontend-shopify';
 type SwipeableProductImagesProps = {
-    product: Product;
+    product: ProductType;
     height?: number;
     width?: number;
     handleClick?: () => void;

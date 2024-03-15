@@ -12,7 +12,7 @@ type CollectionCarouselProps = {
     enableAutoPlay?: boolean;
     enableArrows?: boolean;
     enableBorder?: boolean;
-    enableShowDots?: boolean;
+    enableDots?: boolean;
     enableGradient?: boolean;
 };
 declare const CollectionCarousel: React.FC<CollectionCarouselProps>;

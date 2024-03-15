@@ -1,7 +1,7 @@
 import React from 'react';
-import { Order } from 'frontend-shopify';
+import { OrderType } from 'frontend-shopify';
 type OrderListProps = {
-    orders: Order[];
+    orders: OrderType[];
     handleClick: (id: string) => void;
 };
 declare const OrderList: React.FC<OrderListProps>;

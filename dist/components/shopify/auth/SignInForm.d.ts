@@ -1,9 +1,9 @@
 import React from 'react';
-import { Customer } from 'frontend-shopify';
+import { CustomerType } from 'frontend-shopify';
 type SignInFormProps = {
     errors?: any;
     loading?: boolean;
-    customer: Customer;
+    customer: CustomerType;
     handleChange: (ev: any) => void;
     handleSubmit: () => void;
     handleForgotPassword: () => void;
