@@ -63,7 +63,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var axios_1 = __importDefault(require("axios"));
 var react_lottie_player_1 = __importDefault(require("react-lottie-player"));
 var Lottie = function (props) {
     var src = props.src, _a = props.loop, loop = _a === void 0 ? true : _a;
@@ -71,14 +70,17 @@ var Lottie = function (props) {
     var _c = (0, react_1.useState)(true), loading = _c[0], setLoading = _c[1];
     var fetchLottie = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+        var _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0:
                     setLoading(true);
-                    return [4 /*yield*/, axios_1.default.get(src)];
+                    return [4 /*yield*/, ((_a = fetch(src)) === null || _a === void 0 ? void 0 : _a.json())];
                 case 1:
-                    resp = _a.sent();
-                    setData(resp.data);
+                    resp = _b.sent();
+                    if (resp) {
+                        setData(resp);
+                    }
                     setLoading(false);
                     return [2 /*return*/];
             }

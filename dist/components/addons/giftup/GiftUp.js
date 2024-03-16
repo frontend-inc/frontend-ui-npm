@@ -52,11 +52,13 @@ var GiftUp = function (props) {
             loadScript();
         }
         return function () {
+            var _a, _b;
             var allScripts = document.getElementsByTagName('script');
             for (var i = 0; i < allScripts.length; i++) {
-                if (allScripts[i].src.includes('gift-up.js')) {
+                var script = allScripts[i];
+                if ((_a = script === null || script === void 0 ? void 0 : script.src) === null || _a === void 0 ? void 0 : _a.includes('gift-up.js')) {
                     //@ts-ignore
-                    script.parentNode.removeChild(script);
+                    (_b = script === null || script === void 0 ? void 0 : script.parentNode) === null || _b === void 0 ? void 0 : _b.removeChild(script);
                 }
             }
         };

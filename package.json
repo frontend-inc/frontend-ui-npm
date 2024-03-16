@@ -1,6 +1,6 @@
 {
     "name": "frontend-mui",
-    "version": "0.0.28",
+    "version": "0.0.29",
     "license": "MIT",
     "description": "A MUI library designed for Frontend.co",
     "homepage": "https://github.com/frontend-inc/frontend-mui",
@@ -127,7 +127,6 @@
         "@mui/private-theming": "^5.12.3",
         "@mui/styles": "^5.12.3",
         "@mui/x-tree-view": "^6.0.0-alpha.3",
-        "axios": "^0.21.4",
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
@@ -150,7 +149,6 @@
         "@mui/x-tree-view": "^6.0.0-alpha.3",
         "apollo-link-context": "^1.0.20",
         "apollo-link-http": "^1.5.17",
-        "axios": "^0.21.4",
         "cookies-next": "^2.1.1",
         "next": "^14.0.4",
         "next-images": "^1.8.5",

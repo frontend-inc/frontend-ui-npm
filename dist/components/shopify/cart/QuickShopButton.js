@@ -45,7 +45,7 @@ var QuickShop = function (props) {
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Button, { sx: __assign({}, (buttonVariant == 'text' && sx.buttonText)), size: size, variant: buttonVariant, onClick: handleQuickShop }, quickShopButtonText),
-        react_1.default.createElement(shopify_1.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, handle: product === null || product === void 0 ? void 0 : product.handle, enableQuantity: enableQuantity, buttonText: buttonText })));
+        react_1.default.createElement(shopify_1.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, shopifyProduct: product, enableQuantity: enableQuantity, buttonText: buttonText })));
 };
 exports.default = QuickShop;
 var sx = {
