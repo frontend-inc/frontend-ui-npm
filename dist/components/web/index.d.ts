@@ -1,5 +1,6 @@
 export { default as Accordion } from './accordions/Accordion';
 export { default as AccordionItem } from './accordions/AccordionItem';
+export { default as Cards } from './cards/Cards';
 export { default as CTA } from './CTAs/CTA';
 export { default as Feature } from './features/Feature';
 export { default as Features } from './features/Features';

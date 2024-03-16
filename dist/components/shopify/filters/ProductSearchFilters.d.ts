@@ -1,8 +1,8 @@
 import React from 'react';
-import { SearchFilterType } from 'frontend-shopify';
+import { SearchFilterType, SearchFilterOptionType } from 'frontend-shopify';
 type ProductFilterButtonProps = {
     filters: SearchFilterType[];
-    options: SearchFilterType[];
+    options: SearchFilterOptionType[];
     handleFilter: (filter: SearchFilterType) => void;
     handleFilterArray: (filter: SearchFilterType) => void;
 };

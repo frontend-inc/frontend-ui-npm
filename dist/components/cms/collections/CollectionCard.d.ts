@@ -7,9 +7,11 @@ type CollectionCardProps = {
     video?: string;
     description: string;
     buttonText?: string;
+    href?: string;
     handleClick: () => void;
     enableBorder?: boolean;
     enableGradient?: boolean;
+    enableOverlay?: boolean;
 };
 declare const CollectionCard: React.FC<CollectionCardProps>;
 export default CollectionCard;

@@ -39,20 +39,3 @@ var MobileFilterDrawer = function (props) {
             react_1.default.createElement(material_1.Stack, { spacing: 2 }, children))));
 };
 exports.default = MobileFilterDrawer;
-var sx = {
-    root: {},
-    mobileDrawer: {
-        width: {
-            xs: '270px',
-            sm: '360px',
-        },
-    },
-    title: {
-        ml: 2,
-        mb: 0,
-        p: 0,
-    },
-    heading: {
-        mt: 4,
-    },
-};

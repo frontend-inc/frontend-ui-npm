@@ -96,8 +96,8 @@ var ProductCollection = function (props) {
     return (react_1.default.createElement(material_1.Stack, { spacing: 2 },
         react_1.default.createElement(components_1.Heading, { title: title }),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
-            enableFilters && (react_1.default.createElement(shopify_1.ProductFilters, { filters: filters, options: options, handleFilter: handleFilter, handleFilterArray: handleFilterArray })),
-            enableSort && (react_1.default.createElement(shopify_1.ProductSort, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick }))),
+            enableFilters && (react_1.default.createElement(shopify_1.ProductFilterButton, { filters: filters, options: options, handleFilter: handleFilter, handleFilterArray: handleFilterArray })),
+            enableSort && (react_1.default.createElement(shopify_1.ProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick }))),
         react_1.default.createElement(shopify_1.ProductGrid, { editing: editing, loading: loading, products: products, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating })));
 };
 exports.default = ProductCollection;

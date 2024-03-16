@@ -6,13 +6,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var CheckboxFilterList = function (props) {
-    var _a = props.filters, filters = _a === void 0 ? [] : _a, _b = props.options, options = _b === void 0 ? [] : _b, handleClick = props.handleClick;
+    var _a;
+    var _b = props.filters, filters = _b === void 0 ? [] : _b, option = props.option, handleClick = props.handleClick;
     var values = filters.map(function (f) { return f.value; });
-    return (react_1.default.createElement(material_1.List, { disablePadding: true }, options === null || options === void 0 ? void 0 : options.map(function (option, index) { return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, key: index },
-        react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleClick(option); } },
+    var handleFilterClick = function (value) {
+        handleClick({
+            name: option.name,
+            value: value
+        });
+    };
+    if (!option || !(typeof (option === null || option === void 0 ? void 0 : option.value) == 'object'))
+        return null;
+    return (react_1.default.createElement(material_1.List, { disablePadding: true }, (_a = option === null || option === void 0 ? void 0 : option.value) === null || _a === void 0 ? void 0 : _a.map(function (option, index) { return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, key: index },
+        react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleFilterClick(option); } },
             react_1.default.createElement(material_1.ListItemIcon, null,
-                react_1.default.createElement(material_1.Checkbox, { checked: values === null || values === void 0 ? void 0 : values.includes(option.value), color: "primary" })),
-            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: 'text.primary' }, option.value) })))); })));
+                react_1.default.createElement(material_1.Checkbox, { checked: values === null || values === void 0 ? void 0 : values.includes(option), color: "primary" })),
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: 'text.primary' }, option) })))); })));
 };
 exports.default = CheckboxFilterList;
 var sx = {

@@ -1,8 +1,6 @@
 import React from 'react';
-import { TypographyVariantsType } from '../../../types';
 type CoverImageProps = {
     editing?: boolean;
-    textVariant?: TypographyVariantsType;
     title?: string;
     description?: string;
     buttonText?: string;

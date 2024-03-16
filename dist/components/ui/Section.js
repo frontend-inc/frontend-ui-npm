@@ -56,10 +56,11 @@ var Section = function (props) {
                 break;
         }
     }, [maxWidth]);
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { bgcolor: bgcolor }) },
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.container), { py: py, px: px, maxWidth: width }) },
-            title && (react_1.default.createElement(material_1.Typography, { sx: __assign(__assign({}, sx.title), { textAlign: textAlign }), variant: "h5", color: "textPrimary" }, title)),
-            children)));
+    return (react_1.default.createElement(material_1.Fade, { in: true, timeout: 1000 },
+        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { bgcolor: bgcolor }) },
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.container), { py: py, px: px, maxWidth: width }) },
+                title && (react_1.default.createElement(material_1.Typography, { sx: __assign(__assign({}, sx.title), { textAlign: textAlign }), variant: "h5", color: "textPrimary" }, title)),
+                children))));
 };
 exports.default = Section;
 var sx = {

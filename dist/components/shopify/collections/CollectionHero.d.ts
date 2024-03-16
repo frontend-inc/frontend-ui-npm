@@ -1,9 +1,7 @@
 import React from 'react';
-import { TypographyVariantsType } from '../../../types';
 type CollectionHeroProps = {
     handle: string;
     editing?: boolean;
-    textVariant?: TypographyVariantsType;
     height?: number;
     width?: number;
     objectFit?: 'cover' | 'contain';

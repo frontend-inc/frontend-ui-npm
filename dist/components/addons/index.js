@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OkendoStarRating = exports.OkendoReviews = exports.Typeform = exports.GorgiasChat = exports.VisualWebsiteOptimizerScript = exports.RedditScript = exports.OkendoScript = exports.KlaviyoScript = exports.KlaviyoEmbed = exports.KlaviyoButton = exports.HotJarScript = exports.GorgiasContactForm = exports.GoogleTagManagerScript = exports.GoogleAnalyticsScript = void 0;
+exports.OkendoStarRating = exports.OkendoReviews = exports.Typeform = exports.GorgiasChat = exports.GiftUp = exports.VisualWebsiteOptimizerScript = exports.RedditScript = exports.OkendoScript = exports.KlaviyoScript = exports.KlaviyoEmbed = exports.KlaviyoButton = exports.HotJarScript = exports.GorgiasContactForm = exports.GoogleTagManagerScript = exports.GoogleAnalyticsScript = void 0;
 //Scripts
 var GoogleAnalyticsScript_1 = require("./google/GoogleAnalyticsScript");
 Object.defineProperty(exports, "GoogleAnalyticsScript", { enumerable: true, get: function () { return __importDefault(GoogleAnalyticsScript_1).default; } });
@@ -26,6 +26,8 @@ Object.defineProperty(exports, "RedditScript", { enumerable: true, get: function
 var VisualWebsiteOptimizerScript_1 = require("./visual-website-optimizer/VisualWebsiteOptimizerScript");
 Object.defineProperty(exports, "VisualWebsiteOptimizerScript", { enumerable: true, get: function () { return __importDefault(VisualWebsiteOptimizerScript_1).default; } });
 //Embeds
+var GiftUp_1 = require("./giftup/GiftUp");
+Object.defineProperty(exports, "GiftUp", { enumerable: true, get: function () { return __importDefault(GiftUp_1).default; } });
 var GorgiasChat_1 = require("./gorgias/GorgiasChat");
 Object.defineProperty(exports, "GorgiasChat", { enumerable: true, get: function () { return __importDefault(GorgiasChat_1).default; } });
 var Typeform_1 = require("./typeform/Typeform");

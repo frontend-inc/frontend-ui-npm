@@ -2,7 +2,7 @@ import React from 'react';
 type FeaturedProps = {
     title?: string;
     featured: {
-        icon?: any;
+        icon?: string;
         title?: string;
         description?: string;
         image?: string;

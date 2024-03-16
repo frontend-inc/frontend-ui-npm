@@ -58,6 +58,8 @@ exports.default = FilterList;
 var sx = {
     root: {
         width: '100%',
+        borderBottom: "1px solid",
+        borderColor: "divider",
     },
     padding: {
         px: 1,
