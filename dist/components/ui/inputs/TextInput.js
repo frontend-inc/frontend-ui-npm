@@ -53,7 +53,7 @@ var TextInput = function (props) {
             clearError();
         setText(e.target.value);
     };
-    var debouncedChanged = (0, use_debounce_1.useDebounce)(handleInputChange, 2000)[0];
+    var debouncedChanged = (0, use_debounce_1.useDebounce)(handleInputChange, 3000)[0];
     (0, react_1.useEffect)(function () {
         if (debouncedValue !== value) {
             handleChange({

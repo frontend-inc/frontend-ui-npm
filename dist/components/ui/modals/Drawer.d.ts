@@ -4,7 +4,7 @@ type DrawerProps = {
     loading?: boolean;
     title?: string;
     anchor?: 'left' | 'right' | 'top' | 'bottom';
-    handleClose?: () => void;
+    handleClose: () => void;
     actions?: any;
     children: React.ReactNode;
     closeIcon?: string;

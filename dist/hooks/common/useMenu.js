@@ -4,15 +4,19 @@ var react_1 = require("react");
 var useMenu = function (anchorRef) {
     var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
     var _b = (0, react_1.useState)(null), anchorEl = _b[0], setAnchorEl = _b[1];
-    var toggleMenu = function (e) {
-        setAnchorEl(e.currentTarget);
+    var toggleMenu = function (ev) {
+        if (ev) {
+            setAnchorEl(ev.currentTarget);
+        }
         setOpen(!open);
     };
     var closeMenu = function () {
         setOpen(false);
     };
-    var openMenu = function (e) {
-        setAnchorEl(anchorRef ? anchorRef.current : e.currentTarget);
+    var openMenu = function (ev) {
+        if (ev) {
+            setAnchorEl(anchorRef ? anchorRef.current : ev.currentTarget);
+        }
         setOpen(true);
     };
     return {

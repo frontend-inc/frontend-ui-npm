@@ -5,7 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var CheckboxFilter_1 = __importDefault(require("./CheckboxFilter"));
+var CheckboxBooleanFilter_1 = __importDefault(require("./CheckboxBooleanFilter"));
 var CheckboxNumberRangeFilter_1 = __importDefault(require("./CheckboxNumberRangeFilter"));
+var CheckboxRatingsFilter_1 = __importDefault(require("./CheckboxRatingsFilter"));
 var CollectionFilterListInput = function (props) {
     var _a, _b;
     var _c = props || {}, filterOption = _c.filterOption, _d = _c.filters, filters = _d === void 0 ? [] : _d, handleFilter = _c.handleFilter;
@@ -14,13 +16,15 @@ var CollectionFilterListInput = function (props) {
         return _filters.map(function (f) { return f.value; });
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        filterOption.variant == 'multi_select' && (react_1.default.createElement(CheckboxFilter_1.default, { name: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), options: (_a = filterOption.options) === null || _a === void 0 ? void 0 : _a.map(function (option) { return ({
+        filterOption.variant == 'boolean' && (react_1.default.createElement(CheckboxBooleanFilter_1.default, { name: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), handleClick: handleFilter })),
+        filterOption.variant == 'multiple_choice' && (react_1.default.createElement(CheckboxFilter_1.default, { name: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), options: (_a = filterOption.options) === null || _a === void 0 ? void 0 : _a.map(function (option) { return ({
                 label: option,
                 value: option,
             }); }), handleClick: handleFilter })),
         filterOption.variant == 'number_range' && (react_1.default.createElement(CheckboxNumberRangeFilter_1.default, { name: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), options: (_b = filterOption.options) === null || _b === void 0 ? void 0 : _b.map(function (option) { return ({
                 min: option.min,
                 max: option.max,
-            }); }), handleClick: handleFilter }))));
+            }); }), handleClick: handleFilter })),
+        filterOption.variant == 'ratings' && (react_1.default.createElement(CheckboxRatingsFilter_1.default, { name: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), handleClick: handleFilter }))));
 };
 exports.default = CollectionFilterListInput;

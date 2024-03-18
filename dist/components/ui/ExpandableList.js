@@ -37,39 +37,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var FilterList = function (props) {
-    var label = props.label, count = props.count, _a = props.variant, variant = _a === void 0 ? 'subtitle2' : _a, _b = props.expandable, expandable = _b === void 0 ? true : _b, enableBorder = props.enableBorder, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, children = props.children, _d = props.closed, closed = _d === void 0 ? false : _d;
-    var _e = (0, react_1.useState)(!closed), open = _e[0], setOpen = _e[1];
+var ExpandableList = function (props) {
+    var label = props.label, children = props.children, enableBorder = props.enableBorder, _a = props.closed, closed = _a === void 0 ? false : _a;
+    var _b = (0, react_1.useState)(!closed), open = _b[0], setOpen = _b[1];
     var handleToggleClick = function () {
-        if (expandable)
-            setOpen(!open);
+        setOpen(!open);
     };
-    return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign(__assign({}, sx.root), (!disablePadding && sx.padding)), (enableBorder && sx.borderTop)) },
-        label && (react_1.default.createElement(material_1.ListItem, { sx: sx.listItem, disablePadding: true, disableGutters: true, secondaryAction: expandable ? (react_1.default.createElement(material_1.IconButton, { onClick: handleToggleClick },
-                react_1.default.createElement(icons_material_1.ChevronRight, { sx: __assign(__assign({}, sx.icon), (open && sx.expandMore)) }))) : null },
+    return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.root), (enableBorder && sx.borderTop)) },
+        label && (react_1.default.createElement(material_1.ListItem, { sx: sx.listItem, disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleToggleClick },
+                react_1.default.createElement(icons_material_1.ChevronRight, { sx: __assign(__assign({}, sx.icon), (open && sx.expandMore)) })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: handleToggleClick },
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: variant, color: 'text.primary' },
-                        label,
-                        " ",
-                        count > 0 && "(".concat(count, ")")) })))),
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: 'caption' }, label) })))),
         react_1.default.createElement(material_1.Collapse, { in: open, timeout: "auto", unmountOnExit: true }, children)));
 };
-exports.default = FilterList;
+exports.default = ExpandableList;
 var sx = {
     root: {
-        minWidth: 90,
         width: '100%',
-        borderBottom: "1px solid",
-        borderColor: "divider",
-    },
-    padding: {
-        px: 1,
+        minWidth: 200,
+        my: 0,
     },
     listItem: {
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
         height: '40px',
     },
     listItemButton: {
+        py: 0,
+        px: 1,
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
         height: '40px',
     },
@@ -79,9 +73,11 @@ var sx = {
     },
     label: {
         py: 0,
+        color: 'text.secondary',
         lineHeight: '1em',
     },
     icon: {
+        color: 'text.secondary',
         transition: 'transform 0.3s ease-in-out',
     },
     expandMore: {

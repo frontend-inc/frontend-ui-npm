@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var icons_material_1 = require("@mui/icons-material");
-var RadioOption = function (props) {
+var RadioPriceRangeOption = function (props) {
     var priceOption = props.priceOption, values = props.values, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.ListItem, { disablePadding: true },
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleClick(priceOption); } },
@@ -30,9 +30,9 @@ var RadioPriceRangeInput = function (props) {
     };
     if ((options === null || options === void 0 ? void 0 : options.length) == 0)
         return null;
-    return (react_1.default.createElement(material_1.List, { disablePadding: true }, options === null || options === void 0 ? void 0 : options.map(function (priceOption, index) { return (react_1.default.createElement(RadioOption, { key: index, 
+    return (react_1.default.createElement(material_1.List, { disablePadding: true }, options === null || options === void 0 ? void 0 : options.map(function (priceOption, index) { return (react_1.default.createElement(RadioPriceRangeOption, { key: index, 
         // @ts-ignore
-        values: values, priceOption: priceOption, handleFilterClick: handleFilterClick })); })));
+        values: values, priceOption: priceOption, handleClick: handleFilterClick })); })));
 };
 exports.default = RadioPriceRangeInput;
 var sx = {

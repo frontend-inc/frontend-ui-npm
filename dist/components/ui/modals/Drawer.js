@@ -25,24 +25,23 @@ var Drawer = function (props) {
         } },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (fullWidth && sx.fullWidth)) },
             react_1.default.createElement(material_1.Box, { sx: sx.header },
-                react_1.default.createElement(material_1.Box, { sx: sx.actions }, anchor == 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
+                react_1.default.createElement(material_1.Box, { sx: sx.headerAction }, anchor == 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
                     react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon })))),
                 react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Typography, { variant: "subtitle1" }, title)),
-                react_1.default.createElement(material_1.Box, { sx: sx.actions },
-                    actions,
-                    anchor != 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
-                        react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon }))))),
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (!disablePadding && sx.contentPadding)) }, children))));
+                    react_1.default.createElement(material_1.Typography, { variant: "body1" }, title)),
+                react_1.default.createElement(material_1.Box, { sx: sx.headerAction }, anchor != 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
+                    react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon }))))),
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (!disablePadding && sx.contentPadding)) }, children),
+            actions && (react_1.default.createElement(material_1.Box, { sx: sx.actions }, actions)))));
 };
 exports.default = Drawer;
 var sx = {
     root: {
         width: {
             xs: '100vw',
-            md: '420px',
+            md: '320px',
         },
-        maxWidth: '420px',
+        maxWidth: '320px',
     },
     fullWidth: {
         width: '100vw',
@@ -57,6 +56,12 @@ var sx = {
         alignItems: 'center',
         justifyContent: 'space-between',
         height: 50,
+        borderBottom: '1px solid',
+        borderColor: 'divider',
+        mb: 2,
+    },
+    headerAction: {
+        minWidth: '40px'
     },
     button: {
         border: '1px solid',
@@ -64,13 +69,17 @@ var sx = {
         boxShadow: "rgb(0 0 0 / 5%) 0px 2px 4px !important",
     },
     actions: {
-        my: 2,
-        mr: 2,
-        minWidth: '40px',
+        bgcolor: 'background.paper',
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        width: '100%',
+        height: '60px',
+        borderTop: '1px solid',
+        borderColor: 'divider',
         display: 'flex',
-        flexDirecton: 'row',
-        alignItems: 'center',
-        gap: '0 10px',
+        flexDirection: 'row',
+        p: 1
     },
     paper: {
         zIndex: "9999 !important",
@@ -78,8 +87,14 @@ var sx = {
     },
     content: {
         width: '100%',
+        maxHeight: 'calc(100vh - 120px)',
+        overflowY: 'scroll',
+        '&::-webkit-scrollbar': {
+            display: 'none'
+        },
+        pb: 4,
     },
     contentPadding: {
-        px: 2,
+        px: 3,
     },
 };

@@ -5,17 +5,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var components_1 = require("../../../../components");
 var index_1 = require("../../../../constants/index");
-var FilterWrapper_1 = __importDefault(require("../filters/FilterWrapper"));
 var SortList = function (props) {
     var sortOptions = props.sortOptions, sortBy = props.sortBy, sortDirection = props.sortDirection, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(FilterWrapper_1.default, { label: "Sort by" }, sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.map(function (sortOption) { return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, sx: sx.listItem },
+        react_1.default.createElement(components_1.ExpandableList, { label: "Sort by" }, sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.map(function (sortOption) { return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, sx: sx.listItem },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: function () { return handleSortBy(sortOption); } },
                 react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(material_1.Radio, { checked: sortBy == (sortOption === null || sortOption === void 0 ? void 0 : sortOption.field), onChange: function () { return handleSortBy(sortOption === null || sortOption === void 0 ? void 0 : sortOption.field); } })),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button" }, sortOption === null || sortOption === void 0 ? void 0 : sortOption.label) })))); })),
-        react_1.default.createElement(FilterWrapper_1.default, { label: "Direction" }, index_1.SORT_DIRECTIONS.map(function (direction, i) { return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, key: i, sx: sx.listItem },
+        react_1.default.createElement(components_1.ExpandableList, { label: "Direction" }, index_1.SORT_DIRECTIONS.map(function (direction, i) { return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, key: i, sx: sx.listItem },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: function () { return handleSortDirection(direction === null || direction === void 0 ? void 0 : direction.value); } },
                 react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(material_1.Radio, { checked: sortDirection == (direction === null || direction === void 0 ? void 0 : direction.value), onChange: function () { return handleSortDirection(direction === null || direction === void 0 ? void 0 : direction.value); } })),

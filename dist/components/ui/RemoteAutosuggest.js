@@ -116,10 +116,10 @@ var RemoteAutosuggest = function (props) {
         }
     }, [resources, defaultOptions]);
     (0, react_1.useEffect)(function () {
-        if (value) {
+        if (value && resources && resources.length > 0) {
             findOption(value);
         }
-    }, [value]);
+    }, [value, resources, defaultOptions, url]);
     (0, react_1.useEffect)(function () {
         if (url) {
             findMany(defaultQuery);

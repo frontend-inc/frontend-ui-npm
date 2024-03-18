@@ -95,7 +95,7 @@ var sx = {
         height: '100%',
     },
     content: {
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'flex-start',
         height: '100%',
     },

@@ -1,4 +1,4 @@
-export type SearchFilterVariantType = 'select' | 'multi_select' | 'boolean' | 'number_range' | 'price_range';
+export type SearchFilterVariantType = 'single_choice' | 'multiple_choice' | 'boolean' | 'number_range' | 'price_range' | 'ratings';
 export type SearchFilterOptionType = {
     label: string;
     field: string;

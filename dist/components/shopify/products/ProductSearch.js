@@ -35,9 +35,10 @@ var __1 = require("../..");
 var __2 = require("..");
 var LoadMore_1 = __importDefault(require("../search/LoadMore"));
 var context_1 = require("../../../context");
+var __3 = require("../..");
 var PER_PAGE = 48;
 var ProductSearch = function (props) {
-    var title = props.title, _a = props.editing, editing = _a === void 0 ? false : _a, options = props.options, priceOptions = props.priceOptions, _b = props.enableFilters, enableFilters = _b === void 0 ? false : _b, _c = props.enableSort, enableSort = _c === void 0 ? false : _c, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableAddToCart, enableAddToCart = _e === void 0 ? false : _e, _f = props.enableQuickShop, enableQuickShop = _f === void 0 ? false : _f, _g = props.enableQuantity, enableQuantity = _g === void 0 ? false : _g, _h = props.enableOkendoStarRating, enableOkendoStarRating = _h === void 0 ? false : _h;
+    var title = props.title, _a = props.editing, editing = _a === void 0 ? false : _a, options = props.options, priceOptions = props.priceOptions, _b = props.enableFilters, enableFilters = _b === void 0 ? false : _b, _c = props.enableSorting, enableSorting = _c === void 0 ? false : _c, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableAddToCart, enableAddToCart = _e === void 0 ? false : _e, _f = props.enableQuickShop, enableQuickShop = _f === void 0 ? false : _f, _g = props.enableQuantity, enableQuantity = _g === void 0 ? false : _g, _h = props.enableOkendoStarRating, enableOkendoStarRating = _h === void 0 ? false : _h;
     var router = (0, router_1.useRouter)();
     var trackProductsSearched = (0, addons_1.useSegment)().trackProductsSearched;
     var _j = router.query, pageId = _j.page_id, handle = _j.handle;
@@ -95,8 +96,8 @@ var ProductSearch = function (props) {
     }, [handle]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.header, spacing: 1 },
-            react_1.default.createElement(material_1.Typography, { variant: "h6", color: "text.primary" }, title),
-            react_1.default.createElement(__2.ProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick })),
+            title && (react_1.default.createElement(__3.Heading, { title: title })),
+            enableSorting && (react_1.default.createElement(__2.ProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick }))),
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 },
             enableFilters && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 12, md: 3 },
                 react_1.default.createElement(__2.ProductSearchFilters, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray }))),
@@ -121,7 +122,7 @@ var sx = {
         alignItems: 'center',
         mb: 1,
         ml: {
-            sm: 2.5,
+            sm: 1,
             xs: 0
         }
     }

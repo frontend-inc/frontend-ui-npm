@@ -1,5 +1,5 @@
 import React from 'react';
-type FilterWrapperProps = {
+type ExpandableListProps = {
     children: React.ReactNode;
     label?: string;
     icon?: React.ReactNode;
@@ -7,5 +7,5 @@ type FilterWrapperProps = {
     disablePadding?: boolean;
     closed?: boolean;
 };
-declare const FilterWrapper: React.FC<FilterWrapperProps>;
-export default FilterWrapper;
+declare const ExpandableList: React.FC<ExpandableListProps>;
+export default ExpandableList;

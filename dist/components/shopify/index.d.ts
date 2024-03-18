@@ -14,7 +14,6 @@ export { default as ProductSortButton } from './filters/ProductSortButton';
 export { default as ProductFilterButton } from './filters/ProductFilterButton';
 export { default as ProductFiltersList } from './filters/ProductFiltersList';
 export { default as ProductSearchFilters } from './filters/ProductSearchFilters';
-export { default as FilterList } from './filters/FilterList';
 export { default as CheckboxFilterList } from './filters/CheckboxGroupInput';
 export { default as CheckboxFilterButton } from './filters/CheckboxFilterButton';
 export { default as ColorSelector } from './variants/ProductVariantOptions';
