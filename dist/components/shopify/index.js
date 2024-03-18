@@ -40,8 +40,8 @@ var ProductSearchFilters_1 = require("./filters/ProductSearchFilters");
 Object.defineProperty(exports, "ProductSearchFilters", { enumerable: true, get: function () { return __importDefault(ProductSearchFilters_1).default; } });
 var FilterList_1 = require("./filters/FilterList");
 Object.defineProperty(exports, "FilterList", { enumerable: true, get: function () { return __importDefault(FilterList_1).default; } });
-var CheckboxFilterList_1 = require("./filters/CheckboxFilterList");
-Object.defineProperty(exports, "CheckboxFilterList", { enumerable: true, get: function () { return __importDefault(CheckboxFilterList_1).default; } });
+var CheckboxGroupInput_1 = require("./filters/CheckboxGroupInput");
+Object.defineProperty(exports, "CheckboxFilterList", { enumerable: true, get: function () { return __importDefault(CheckboxGroupInput_1).default; } });
 var CheckboxFilterButton_1 = require("./filters/CheckboxFilterButton");
 Object.defineProperty(exports, "CheckboxFilterButton", { enumerable: true, get: function () { return __importDefault(CheckboxFilterButton_1).default; } });
 // Variant Selectors

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.Videos = exports.StyledList = exports.TableView = exports.Person = exports.ListSortButton = exports.ListFilterButton = exports.ListViewSkeleton = exports.ListView = exports.LoadMore = exports.GridViewSkeleton = exports.GridView = exports.Hero = exports.FetchMany = exports.Fetch = exports.FormInput = exports.ForeignCollection = exports.ForeignForm = exports.Form = exports.Favorites = exports.Details = exports.CarouselViewSkeleton = exports.CarouselView = exports.CollectionList = exports.CollectionCard = exports.CollectionCarousel = exports.Collection = exports.Article = void 0;
+exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.Videos = exports.StyledList = exports.SortButton = exports.TableView = exports.Person = exports.CollectionFilterButton = exports.ListViewSkeleton = exports.ListView = exports.LoadMore = exports.GridViewSkeleton = exports.GridView = exports.Hero = exports.FetchMany = exports.Fetch = exports.FormInput = exports.ForeignCollection = exports.ForeignForm = exports.Form = exports.Favorites = exports.Details = exports.CarouselViewSkeleton = exports.CarouselView = exports.CollectionList = exports.CollectionCard = exports.CollectionCarousel = exports.Collection = exports.Article = void 0;
 // CMS
 var Article_1 = require("./articles/Article");
 Object.defineProperty(exports, "Article", { enumerable: true, get: function () { return __importDefault(Article_1).default; } });
@@ -48,13 +48,13 @@ Object.defineProperty(exports, "ListView", { enumerable: true, get: function () 
 var ListViewSkeleton_1 = require("./collections/ListViewSkeleton");
 Object.defineProperty(exports, "ListViewSkeleton", { enumerable: true, get: function () { return __importDefault(ListViewSkeleton_1).default; } });
 var FilterButton_1 = require("./collections/filters/FilterButton");
-Object.defineProperty(exports, "ListFilterButton", { enumerable: true, get: function () { return __importDefault(FilterButton_1).default; } });
-var SortButton_1 = require("./collections/sorts/SortButton");
-Object.defineProperty(exports, "ListSortButton", { enumerable: true, get: function () { return __importDefault(SortButton_1).default; } });
+Object.defineProperty(exports, "CollectionFilterButton", { enumerable: true, get: function () { return __importDefault(FilterButton_1).default; } });
 var Person_1 = require("./people/Person");
 Object.defineProperty(exports, "Person", { enumerable: true, get: function () { return __importDefault(Person_1).default; } });
 var TableView_1 = require("./collections/TableView");
 Object.defineProperty(exports, "TableView", { enumerable: true, get: function () { return __importDefault(TableView_1).default; } });
+var SortButton_1 = require("./collections/sorts/SortButton");
+Object.defineProperty(exports, "SortButton", { enumerable: true, get: function () { return __importDefault(SortButton_1).default; } });
 var StyledList_1 = require("./collections/StyledList");
 Object.defineProperty(exports, "StyledList", { enumerable: true, get: function () { return __importDefault(StyledList_1).default; } });
 var Videos_1 = require("./video/Videos");

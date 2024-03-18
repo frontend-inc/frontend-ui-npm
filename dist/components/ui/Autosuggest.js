@@ -88,7 +88,7 @@ var Autosuggest = function (props) {
     }, [value, options]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.container },
         react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 1 },
-            label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary", sx: sx.label }, label)),
+            label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.label }, label)),
             react_1.default.createElement(Autocomplete_1.default, { freeSolo: freeSolo, multiple: multiselect, disableCloseOnSelect: multiselect, sx: __assign(__assign({}, sx.autocomplete), { paper: sx.paper, option: sx.option, popperDisablePortal: sx.popperDisablePortal }), value: selected, onChange: function (event, newValue) {
                     handleOnChange(event, newValue);
                 }, onInputChange: function (event, newInputValue) {
@@ -113,6 +113,7 @@ var sx = {
             appearance: 'none',
             p: 1,
             height: 20,
+            color: 'text.secondary',
             borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },

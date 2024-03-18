@@ -37,7 +37,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var FilterInput = function (props) {
+var FilterWrapper = function (props) {
     var label = props.label, children = props.children, enableBorder = props.enableBorder, _a = props.closed, closed = _a === void 0 ? false : _a;
     var _b = (0, react_1.useState)(!closed), open = _b[0], setOpen = _b[1];
     var handleToggleClick = function () {
@@ -50,11 +50,11 @@ var FilterInput = function (props) {
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: 'caption' }, label) })))),
         react_1.default.createElement(material_1.Collapse, { in: open, timeout: "auto", unmountOnExit: true }, children)));
 };
-exports.default = FilterInput;
+exports.default = FilterWrapper;
 var sx = {
     root: {
         width: '100%',
-        minWidth: '280px',
+        minWidth: 200,
         my: 0,
     },
     listItem: {

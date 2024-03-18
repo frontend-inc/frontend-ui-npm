@@ -8,6 +8,7 @@ type NumberRangeInputProps = {
         max: number;
     };
     handleChange: (value: SyntheticEventType) => void;
+    currency?: string;
 };
 declare const NumberRangeInput: React.FC<NumberRangeInputProps>;
 export default NumberRangeInput;

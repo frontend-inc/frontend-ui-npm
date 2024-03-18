@@ -1,5 +1,5 @@
 import React from 'react';
-type FilterInputProps = {
+type FilterWrapperProps = {
     children: React.ReactNode;
     label?: string;
     icon?: React.ReactNode;
@@ -7,5 +7,5 @@ type FilterInputProps = {
     disablePadding?: boolean;
     closed?: boolean;
 };
-declare const FilterInput: React.FC<FilterInputProps>;
-export default FilterInput;
+declare const FilterWrapper: React.FC<FilterWrapperProps>;
+export default FilterWrapper;

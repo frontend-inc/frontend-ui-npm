@@ -23,17 +23,5 @@ export declare const DATE_RANGE_OPTIONS: OptionType[];
 export declare const FILTER_OPERATORS: Record<string, OptionType[]>;
 export declare const FILTERABLE_TYPES: String[];
 export declare const SORTABLE_TYPES: String[];
-export declare const TITLE_SORT: {
-    label: string;
-    name: string;
-};
-export declare const PRICE_SORT: {
-    label: string;
-    name: string;
-};
-export declare const START_DATE_SORT: {
-    label: string;
-    name: string;
-};
 export declare const SEARCH_FILTER_TYPES: String[];
 export {};

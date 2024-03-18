@@ -4,8 +4,8 @@ exports.SHOPIFY_COLLECTION_FILTERS = exports.SHOPIFY_SEARCH_FILTERS = void 0;
 exports.SHOPIFY_SEARCH_FILTERS = [
     { label: 'Size', value: 'size', array: true },
     { label: 'Color', value: 'color', array: true },
-    { label: 'Color', value: 'material', array: true },
-    { label: 'Color', value: 'style', array: true },
+    { label: 'Material', value: 'material', array: true },
+    { label: 'Style', value: 'style', array: true },
     { label: 'Tag', value: 'tag', array: true },
     { label: 'Product Type', value: 'product_type', array: true },
     { label: 'Vendor', value: 'vendor', array: true },

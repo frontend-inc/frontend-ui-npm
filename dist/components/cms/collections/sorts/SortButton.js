@@ -29,26 +29,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var ui_1 = require("../../../ui");
-var index_1 = require("../../../../constants/index");
-var FilterInput_1 = __importDefault(require("../filters/FilterInput"));
-var SortFields = function (props) {
-    var fields = props.fields, sortBy = props.sortBy, sortDirection = props.sortDirection, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection;
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(FilterInput_1.default, { label: "Sort by" }, fields === null || fields === void 0 ? void 0 : fields.map(function (field) { return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, sx: sx.listItem },
-            react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: function () { return handleSortBy(field === null || field === void 0 ? void 0 : field.name); } },
-                react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                    react_1.default.createElement(material_1.Radio, { checked: sortBy == (field === null || field === void 0 ? void 0 : field.name), onChange: function () { return handleSortBy(field === null || field === void 0 ? void 0 : field.name); } })),
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button" }, field === null || field === void 0 ? void 0 : field.name) })))); })),
-        react_1.default.createElement(FilterInput_1.default, { label: "Direction" }, index_1.SORT_DIRECTIONS.map(function (direction, i) { return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, key: i, sx: sx.listItem },
-            react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: function () { return handleSortDirection(direction === null || direction === void 0 ? void 0 : direction.value); } },
-                react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                    react_1.default.createElement(material_1.Radio, { checked: sortDirection == (direction === null || direction === void 0 ? void 0 : direction.value), onChange: function () { return handleSortDirection(direction === null || direction === void 0 ? void 0 : direction.value); } })),
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button" }, direction === null || direction === void 0 ? void 0 : direction.label) })))); }))));
-};
+var SortList_1 = __importDefault(require("./SortList"));
 var SortButton = function (props) {
-    var fields = props.fields, sortBy = props.sortBy, sortDirection = props.sortDirection, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection;
-    var _a = (0, react_1.useState)(false), showModal = _a[0], setShowModal = _a[1];
-    var _b = (0, react_1.useState)(null), anchorEl = _b[0], setAnchorEl = _b[1];
+    var sortOptions = props.sortOptions, sortBy = props.sortBy, sortDirection = props.sortDirection, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection;
+    var _a = (0, react_1.useState)(null), selected = _a[0], setSelected = _a[1];
+    var _b = (0, react_1.useState)(false), showModal = _b[0], setShowModal = _b[1];
+    var _c = (0, react_1.useState)(null), anchorEl = _c[0], setAnchorEl = _c[1];
     var handleOpenModal = function (event) {
         setAnchorEl(event.currentTarget);
         setShowModal(true);
@@ -56,45 +42,32 @@ var SortButton = function (props) {
     var handleCloseModal = function () {
         setShowModal(false);
     };
+    (0, react_1.useEffect)(function () {
+        if ((sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.length) > 0 && sortBy) {
+            setSelected(sortOptions.find(function (option) { return option.field == sortBy; }));
+        }
+    }, [sortOptions, sortBy]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.ButtonGroup, null,
-            react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "text", onClick: handleOpenModal, endIcon: sortDirection == 'asc' ? (react_1.default.createElement(ui_1.Icon, { name: "ArrowUp", size: 20 })) : (react_1.default.createElement(ui_1.Icon, { name: "ArrowDown", size: 20 })) },
-                "Sort ",
-                sortBy == 'id' ? 'by' : sortBy)),
+        react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "text", onClick: handleOpenModal, endIcon: react_1.default.createElement(ui_1.Icon, { name: sortDirection == 'asc' ? "ArrowUp" : "ArrowDown", color: 'text.secondary', size: 20 }) }, (selected === null || selected === void 0 ? void 0 : selected.label) ? selected === null || selected === void 0 ? void 0 : selected.label : 'Sort'),
         react_1.default.createElement(material_1.Hidden, { smDown: true },
             react_1.default.createElement(ui_1.Popup, { p: 1, anchorEl: anchorEl, open: showModal, handleClose: handleCloseModal },
-                react_1.default.createElement(SortFields, { fields: fields, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection }))),
+                react_1.default.createElement(SortList_1.default, { sortOptions: sortOptions, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection }))),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
             react_1.default.createElement(ui_1.Drawer, { title: "Sort", open: showModal, handleClose: handleCloseModal, anchor: 'right' },
-                react_1.default.createElement(SortFields, { fields: fields, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))));
+                react_1.default.createElement(SortList_1.default, { sortOptions: sortOptions, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))));
 };
 exports.default = SortButton;
 var sx = {
     button: {
         color: 'text.secondary',
+        bgcolor: 'tertiary.main',
         borderRight: 'none',
         '&:hover': {
             borderRight: 'none',
         },
-    },
-    listItem: {
-        py: 0,
-    },
-    listItemButton: {
-        p: 0,
-    },
-    listItemIcon: {
-        minWidth: '32px',
-    },
-    sortDirectionButton: {
-        width: '32px',
-        borderLeft: 'none',
-        '&:hover': {
-            borderLeft: 'none',
-        },
-    },
-    icon: {
-        height: '20px',
-        width: '20px',
-    },
+        width: {
+            sm: 'auto',
+            xs: '100%'
+        }
+    }
 };

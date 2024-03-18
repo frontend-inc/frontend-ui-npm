@@ -57,6 +57,7 @@ var FilterList = function (props) {
 exports.default = FilterList;
 var sx = {
     root: {
+        minWidth: 90,
         width: '100%',
         borderBottom: "1px solid",
         borderColor: "divider",

@@ -40,48 +40,17 @@ var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
 var components_1 = require("../../../components");
 var ProductCollection = function (props) {
-    var title = props.title, handle = props.handle, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.options, options = _b === void 0 ? [] : _b, _c = props.enableFilters, enableFilters = _c === void 0 ? false : _c, _d = props.enableSort, enableSort = _d === void 0 ? false : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableAddToCart, enableAddToCart = _f === void 0 ? false : _f, _g = props.enableQuickShop, enableQuickShop = _g === void 0 ? false : _g, _h = props.enableQuantity, enableQuantity = _h === void 0 ? false : _h, _j = props.enableOkendoStarRating, enableOkendoStarRating = _j === void 0 ? false : _j;
-    var _k = (0, react_1.useState)({}), query = _k[0], setQuery = _k[1];
-    var _l = (0, react_1.useState)('COLLECTION_DEFAULT'), sortKey = _l[0], setSortKey = _l[1];
-    var _m = (0, react_1.useState)(false), reverse = _m[0], setReverse = _m[1];
-    var _o = (0, frontend_shopify_1.useCollections)(), loading = _o.loading, products = _o.products, findCollection = _o.findCollection;
-    var _p = (0, frontend_shopify_1.useSearchFilters)(), filters = _p.filters, handleFilter = _p.handleFilter, handleFilterArray = _p.handleFilterArray;
+    var title = props.title, handle = props.handle, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.options, options = _b === void 0 ? [] : _b, _c = props.priceOptions, priceOptions = _c === void 0 ? [] : _c, _d = props.enableFilters, enableFilters = _d === void 0 ? false : _d, _e = props.enableSort, enableSort = _e === void 0 ? false : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableAddToCart, enableAddToCart = _g === void 0 ? false : _g, _h = props.enableQuickShop, enableQuickShop = _h === void 0 ? false : _h, _j = props.enableQuantity, enableQuantity = _j === void 0 ? false : _j, _k = props.enableOkendoStarRating, enableOkendoStarRating = _k === void 0 ? false : _k;
+    var _l = (0, react_1.useState)({}), query = _l[0], setQuery = _l[1];
+    var _m = (0, react_1.useState)('COLLECTION_DEFAULT'), sortKey = _m[0], setSortKey = _m[1];
+    var _o = (0, react_1.useState)(false), reverse = _o[0], setReverse = _o[1];
+    var _p = (0, frontend_shopify_1.useCollections)(), loading = _p.loading, products = _p.products, findCollection = _p.findCollection;
+    var _q = (0, frontend_shopify_1.useSearchFilters)(), filters = _q.filters, handleFilter = _q.handleFilter, handleFilterArray = _q.handleFilterArray, formatProductFilters = _q.formatProductFilters;
     var handleSortClick = function (sortKey, reverse) {
         if (reverse === void 0) { reverse = false; }
         setSortKey(sortKey);
         setReverse(reverse);
     };
-    // Shopify Storefront API docs
-    // https://shopify.dev/docs/custom-storefronts/building-with-the-storefront-api/products-collections/filter-products
-    function formatFilters(filters) {
-        var query = [];
-        filters.forEach(function (filter) {
-            var queryFilter = {};
-            switch (filter.name) {
-                case 'tag':
-                    queryFilter['tag'] = filter.value;
-                    break;
-                case 'product_type':
-                    queryFilter['productType'] = filter.value;
-                    break;
-                case 'vendor':
-                    queryFilter['vendor'] = filter.value;
-                    break;
-                case 'available':
-                    queryFilter['vendor'] = filter.value === 'true';
-                    break;
-                default:
-                    queryFilter = {
-                        variantOption: {
-                            name: filter.name,
-                            value: filter.value
-                        }
-                    };
-            }
-            query.push(queryFilter);
-        });
-        return query;
-    }
     (0, react_1.useEffect)(function () {
         if (query) {
             findCollection(handle, query);
@@ -89,14 +58,14 @@ var ProductCollection = function (props) {
     }, [query]);
     (0, react_1.useEffect)(function () {
         if (handle) {
-            var searchFilters = formatFilters(filters);
-            findCollection(handle, __assign(__assign({}, query), { sortKey: sortKey, reverse: reverse, filters: searchFilters }));
+            var productFilters = formatProductFilters(filters);
+            findCollection(handle, __assign(__assign({}, query), { sortKey: sortKey, reverse: reverse, filters: productFilters }));
         }
     }, [handle, filters, sortKey, reverse]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 2 },
         react_1.default.createElement(components_1.Heading, { title: title }),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
-            enableFilters && (react_1.default.createElement(shopify_1.ProductFilterButton, { filters: filters, options: options, handleFilter: handleFilter, handleFilterArray: handleFilterArray })),
+            enableFilters && (react_1.default.createElement(shopify_1.ProductFilterButton, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray })),
             enableSort && (react_1.default.createElement(shopify_1.ProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick }))),
         react_1.default.createElement(shopify_1.ProductGrid, { editing: editing, loading: loading, products: products, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating })));
 };

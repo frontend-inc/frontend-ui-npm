@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterOperatorType, FilterWhereType, FilterOptionType, OptionType } from '../../../../types';
-type FilterListProps = {
+type CheckboxFilterProps = {
     name: string;
     where?: FilterWhereType;
     operator?: FilterOperatorType;
@@ -13,5 +13,5 @@ type FilterListProps = {
     disablePadding?: boolean;
     closed?: boolean;
 };
-declare const FilterList: React.FC<FilterListProps>;
-export default FilterList;
+declare const CheckboxFilter: React.FC<CheckboxFilterProps>;
+export default CheckboxFilter;

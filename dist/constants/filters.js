@@ -9,7 +9,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SEARCH_FILTER_TYPES = exports.START_DATE_SORT = exports.PRICE_SORT = exports.TITLE_SORT = exports.SORTABLE_TYPES = exports.FILTERABLE_TYPES = exports.FILTER_OPERATORS = exports.DATE_RANGE_OPTIONS = exports.BOOLEAN_FILTER_OPERATORS = exports.DATE_FILTER_OPERATORS = exports.NUMBER_FILTER_OPERATORS = exports.TEXT_FILTER_OPERATORS = exports.EQUAL_OPERATOR = exports.BOOLEAN_OPTIONS = exports.SORT_DIRECTIONS = exports.WHERE_OPTIONS = exports.NUMBER_AND_STRING_FIELDS = exports.ARRAY_FIELDS = exports.JSON_FIELDS = exports.DATE_FIELDS = exports.NUMBER_FIELDS = exports.SELECT_FIELDS = exports.STRING_FIELDS = exports.BOOLEAN_FIELDS = void 0;
+exports.SEARCH_FILTER_TYPES = exports.SORTABLE_TYPES = exports.FILTERABLE_TYPES = exports.FILTER_OPERATORS = exports.DATE_RANGE_OPTIONS = exports.BOOLEAN_FILTER_OPERATORS = exports.DATE_FILTER_OPERATORS = exports.NUMBER_FILTER_OPERATORS = exports.TEXT_FILTER_OPERATORS = exports.EQUAL_OPERATOR = exports.BOOLEAN_OPTIONS = exports.SORT_DIRECTIONS = exports.WHERE_OPTIONS = exports.NUMBER_AND_STRING_FIELDS = exports.ARRAY_FIELDS = exports.JSON_FIELDS = exports.DATE_FIELDS = exports.NUMBER_FIELDS = exports.SELECT_FIELDS = exports.STRING_FIELDS = exports.BOOLEAN_FIELDS = void 0;
 exports.BOOLEAN_FIELDS = ['boolean'];
 exports.STRING_FIELDS = ['string', 'text'];
 exports.SELECT_FIELDS = ['select'];
@@ -99,16 +99,4 @@ exports.SORTABLE_TYPES = [
     'price',
     'url',
 ];
-exports.TITLE_SORT = {
-    label: 'Title',
-    name: 'title',
-};
-exports.PRICE_SORT = {
-    label: 'Price',
-    name: 'price',
-};
-exports.START_DATE_SORT = {
-    label: 'Date',
-    name: 'start_date',
-};
 exports.SEARCH_FILTER_TYPES = ['boolean', 'rating', 'select'];

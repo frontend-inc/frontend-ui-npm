@@ -1,7 +1,6 @@
 import React from 'react';
 type UseFiltersProps = {
     query?: any;
-    handleSubmit?: any;
 };
 declare const useFilters: (props: UseFiltersProps) => {
     filter: undefined;
@@ -13,5 +12,8 @@ declare const useFilters: (props: UseFiltersProps) => {
     handleAddFilter: (filter: any) => void;
     activeFilters: any[];
     setActiveFilters: React.Dispatch<React.SetStateAction<any[]>>;
+    findDuplicateFilter: (filters: any, filter: any) => any;
+    findDuplicateFilterIndex: (filters: any, filter: any) => any;
+    buildQueryFilters: (activeFilters: any) => {};
 };
 export default useFilters;

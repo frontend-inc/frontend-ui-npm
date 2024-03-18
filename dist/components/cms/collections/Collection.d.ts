@@ -1,20 +1,23 @@
 import React from 'react';
+import { SearchFilterOptionType } from '../../../types';
+import { SortOptionType } from '../../../types';
 type CollectionProps = {
     title?: string;
     url: string;
     layout: 'list' | 'grid';
     style: 'avatar' | 'card' | 'cover';
-    fields?: any;
     editing?: boolean;
     enableInfiniteLoad?: boolean;
     enableLoadMore?: boolean;
     navigateUrl: any;
     perPage?: number;
     query?: any;
+    filterAnchor?: 'left' | 'top';
+    filterOptions?: SearchFilterOptionType[];
+    sortOptions?: SortOptionType[];
     enableSearch?: boolean;
     enableFilters?: boolean;
-    enableSortTitle?: boolean;
-    enableSortPrice?: boolean;
+    enableSorting?: boolean;
     secondaryActions?: React.ReactNode;
     buttonText?: string;
     enableBorder?: boolean;

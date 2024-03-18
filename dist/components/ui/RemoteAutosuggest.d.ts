@@ -1,5 +1,5 @@
 import React from 'react';
-import { SyntheticEventType } from '../../types';
+import { OptionType, QueryParamsType, SyntheticEventType } from '../../types';
 type RemoteAutosuggestProps = {
     errors?: any;
     value?: any;
@@ -7,12 +7,13 @@ type RemoteAutosuggestProps = {
     name: string;
     url: string;
     displayField?: string;
-    handleChange?: (event: SyntheticEventType) => void;
+    handleChange: (event: SyntheticEventType) => void;
     valueParam?: string;
     placeholder?: string;
     imageField?: string;
     direction?: 'row' | 'column';
-    defaultQuery?: Record<string, any>;
+    defaultQuery?: QueryParamsType;
+    defaultOptions?: OptionType[];
 };
 declare const RemoteAutosuggest: React.FC<RemoteAutosuggestProps>;
 export default RemoteAutosuggest;

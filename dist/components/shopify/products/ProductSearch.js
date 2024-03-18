@@ -37,7 +37,7 @@ var LoadMore_1 = __importDefault(require("../search/LoadMore"));
 var context_1 = require("../../../context");
 var PER_PAGE = 48;
 var ProductSearch = function (props) {
-    var title = props.title, _a = props.editing, editing = _a === void 0 ? false : _a, options = props.options, _b = props.enableFilters, enableFilters = _b === void 0 ? false : _b, _c = props.enableSort, enableSort = _c === void 0 ? false : _c, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableAddToCart, enableAddToCart = _e === void 0 ? false : _e, _f = props.enableQuickShop, enableQuickShop = _f === void 0 ? false : _f, _g = props.enableQuantity, enableQuantity = _g === void 0 ? false : _g, _h = props.enableOkendoStarRating, enableOkendoStarRating = _h === void 0 ? false : _h;
+    var title = props.title, _a = props.editing, editing = _a === void 0 ? false : _a, options = props.options, priceOptions = props.priceOptions, _b = props.enableFilters, enableFilters = _b === void 0 ? false : _b, _c = props.enableSort, enableSort = _c === void 0 ? false : _c, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableAddToCart, enableAddToCart = _e === void 0 ? false : _e, _f = props.enableQuickShop, enableQuickShop = _f === void 0 ? false : _f, _g = props.enableQuantity, enableQuantity = _g === void 0 ? false : _g, _h = props.enableOkendoStarRating, enableOkendoStarRating = _h === void 0 ? false : _h;
     var router = (0, router_1.useRouter)();
     var trackProductsSearched = (0, addons_1.useSegment)().trackProductsSearched;
     var _j = router.query, pageId = _j.page_id, handle = _j.handle;
@@ -50,7 +50,7 @@ var ProductSearch = function (props) {
     var _m = (0, frontend_shopify_1.useProducts)(), loading = _m.loading, errors = _m.errors, cursor = _m.cursor, hasNextPage = _m.hasNextPage, products = _m.products, findProducts = _m.findProducts, searchProducts = _m.searchProducts;
     var _o = (0, react_1.useState)('COLLECTION_DEFAULT'), sortKey = _o[0], setSortKey = _o[1];
     var _p = (0, react_1.useState)(false), reverse = _p[0], setReverse = _p[1];
-    var _q = (0, frontend_shopify_1.useSearchFilters)(), filters = _q.filters, handleFilter = _q.handleFilter, handleFilterArray = _q.handleFilterArray, buildFilterQuery = _q.buildFilterQuery;
+    var _q = (0, frontend_shopify_1.useSearchFilters)(), filters = _q.filters, handleFilter = _q.handleFilter, handleFilterArray = _q.handleFilterArray, formatProductFilters = _q.formatProductFilters, formatQueryFilters = _q.formatQueryFilters;
     var handleChange = function (ev) {
         setKeywords(ev.target.value);
         if ((keywords === null || keywords === void 0 ? void 0 : keywords.length) == 0) {
@@ -79,9 +79,9 @@ var ProductSearch = function (props) {
         var _a;
         if ((query === null || query === void 0 ? void 0 : query.length) > 0 || (filters === null || filters === void 0 ? void 0 : filters.length) > 0) {
             var searchKeywords = (_a = decodeURI(String(query)).split('-')) === null || _a === void 0 ? void 0 : _a.join(' ');
-            var filterQuery = buildFilterQuery(filters);
+            var filterQuery = formatQueryFilters(filters);
             searchProducts({
-                query: "".concat(searchKeywords, " ").concat(filterQuery),
+                query: "".concat(searchKeywords, " ").concat(filterQuery)
             });
         }
         else {
@@ -99,7 +99,7 @@ var ProductSearch = function (props) {
             react_1.default.createElement(__2.ProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick })),
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 },
             enableFilters && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 12, md: 3 },
-                react_1.default.createElement(__2.ProductSearchFilters, { filters: filters, options: options, handleFilter: handleFilter, handleFilterArray: handleFilterArray }))),
+                react_1.default.createElement(__2.ProductSearchFilters, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray }))),
             react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 12, md: enableFilters ? 9 : 12 },
                 react_1.default.createElement(material_1.Box, { sx: sx.searchInput },
                     react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch, placeholder: 'Search' })),

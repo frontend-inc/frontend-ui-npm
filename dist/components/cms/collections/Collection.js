@@ -33,14 +33,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
@@ -49,17 +43,17 @@ var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var context_1 = require("../../../context");
-var index_1 = require("../../../constants/index");
 var router_1 = require("next/router");
 var components_1 = require("../../../components");
+var CollectionSearchFilters_1 = __importDefault(require("./filters/CollectionSearchFilters"));
 var Collection = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, fields = props.fields, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, _g = props.enableSortTitle, enableSortTitle = _g === void 0 ? false : _g, _h = props.enableSortPrice, enableSortPrice = _h === void 0 ? false : _h, _j = props.enableInfiniteLoad, enableInfiniteLoad = _j === void 0 ? false : _j, _k = props.enableLoadMore, enableLoadMore = _k === void 0 ? true : _k, navigateUrl = props.navigateUrl, buttonText = props.buttonText, _l = props.enableBorder, enableBorder = _l === void 0 ? false : _l, _m = props.enableGradient, enableGradient = _m === void 0 ? false : _m;
-    var _o = (0, frontend_js_1.useResource)({
+    var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, _c = props.filterAnchor, filterAnchor = _c === void 0 ? 'left' : _c, _d = props.filterOptions, filterOptions = _d === void 0 ? [] : _d, _e = props.sortOptions, sortOptions = _e === void 0 ? [] : _e, _f = props.query, defaultQuery = _f === void 0 ? {} : _f, _g = props.perPage, perPage = _g === void 0 ? 20 : _g, _h = props.enableSearch, enableSearch = _h === void 0 ? false : _h, _j = props.enableFilters, enableFilters = _j === void 0 ? false : _j, _k = props.enableSorting, enableSorting = _k === void 0 ? false : _k, _l = props.enableInfiniteLoad, enableInfiniteLoad = _l === void 0 ? false : _l, _m = props.enableLoadMore, enableLoadMore = _m === void 0 ? true : _m, navigateUrl = props.navigateUrl, buttonText = props.buttonText, _o = props.enableBorder, enableBorder = _o === void 0 ? false : _o, _p = props.enableGradient, enableGradient = _p === void 0 ? false : _p;
+    var _q = (0, frontend_js_1.useResource)({
         url: url,
-    }), loading = _o.loading, query = _o.query, findMany = _o.findMany, resources = _o.resources, page = _o.page, numPages = _o.numPages, loadMore = _o.loadMore;
-    var _p = (0, react_1.useState)(''), keywords = _p[0], setKeywords = _p[1];
+    }), loading = _q.loading, query = _q.query, findMany = _q.findMany, resources = _q.resources, page = _q.page, numPages = _q.numPages, loadMore = _q.loadMore;
+    var _r = (0, react_1.useState)(''), keywords = _r[0], setKeywords = _r[1];
     var handleChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -72,10 +66,9 @@ var Collection = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _q = (0, hooks_1.useFilters)({
+    var _s = (0, hooks_1.useFilters)({
         query: query,
-        handleSubmit: findMany,
-    }), activeFilters = _q.activeFilters, setActiveFilters = _q.setActiveFilters, handleAddFilter = _q.handleAddFilter;
+    }), activeFilters = _s.activeFilters, setActiveFilters = _s.setActiveFilters, handleAddFilter = _s.handleAddFilter, buildQueryFilters = _s.buildQueryFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -103,14 +96,22 @@ var Collection = function (props) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
     }, [url, defaultQuery, perPage]);
+    (0, react_1.useEffect)(function () {
+        findMany(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters), page: 1, per_page: perPage }));
+    }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'space-between', spacing: 1 },
+        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
             react_1.default.createElement(__1.Heading, { title: title }),
-            react_1.default.createElement(material_1.Box, null,
-                enableFilters && (react_1.default.createElement(__1.ListFilterButton, { fields: fields, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters })),
-                (enableSortTitle || enableSortPrice) && (react_1.default.createElement(__1.ListSortButton, { sortBy: query === null || query === void 0 ? void 0 : query.sort_by, sortDirection: query === null || query === void 0 ? void 0 : query.sort_direction, fields: __spreadArray(__spreadArray([], ((enableSortTitle && [index_1.TITLE_SORT]) || []), true), ((enableSortPrice && [index_1.PRICE_SORT]) || []), true), handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
-        enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch })),
-        react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient }),
+            enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch })),
+            react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.sortFilterActions, spacing: 1 },
+                enableFilters && filterAnchor == 'top' && (react_1.default.createElement(__1.CollectionFilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions })),
+                enableSorting && (react_1.default.createElement(__1.SortButton, { sortBy: query === null || query === void 0 ? void 0 : query.sort_by, sortDirection: query === null || query === void 0 ? void 0 : query.sort_direction, sortOptions: sortOptions, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
+        react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 },
+            enableFilters && filterAnchor == 'left' && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, lg: 3 },
+                react_1.default.createElement(material_1.Box, { sx: sx.filtersContainer },
+                    react_1.default.createElement(CollectionSearchFilters_1.default, { filters: activeFilters, filterOptions: filterOptions, handleFilter: handleFilter })))),
+            react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: enableFilters && filterAnchor == 'left' ? 8 : 12, lg: enableFilters && filterAnchor == 'left' ? 9 : 12 },
+                react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient }))),
         enableLoadMore && (react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore, enableInfiniteLoad: enableInfiniteLoad }))));
 };
 exports.default = Collection;
@@ -136,5 +137,18 @@ var sx = {
     },
     item: {
         p: 2
+    },
+    filtersContainer: {
+        mr: {
+            sm: 2,
+            xs: 0
+        },
+        mb: {
+            sm: 0,
+            xs: 2
+        },
+    },
+    sortFilterActions: {
+        justifyContent: 'flex-end',
     }
 };

@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var CheckboxFilterList_1 = __importDefault(require("./CheckboxFilterList"));
+var CheckboxGroupInput_1 = __importDefault(require("./CheckboxGroupInput"));
 var CheckboxFilterButton = function (props) {
     var values = props.values, handleClick = props.handleClick, label = props.label, options = props.options;
     var _a = (0, react_1.useState)(null), anchorEl = _a[0], setAnchorEl = _a[1];
@@ -52,7 +52,7 @@ var CheckboxFilterButton = function (props) {
                 vertical: 'bottom',
                 horizontal: 'left',
             } },
-            react_1.default.createElement(CheckboxFilterList_1.default, { options: options, values: values, 
+            react_1.default.createElement(CheckboxGroupInput_1.default, { options: options, values: values, 
                 // @ts-ignore
                 handleClick: handleMenuItemClick }))));
 };

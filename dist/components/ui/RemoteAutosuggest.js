@@ -58,6 +58,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
@@ -65,51 +74,52 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var hooks_1 = require("../../hooks");
 var RemoteAutosuggest = function (props) {
-    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, handleChange = props.handleChange, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? null : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e;
-    var _f = (0, hooks_1.useError)({
+    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, handleChange = props.handleChange, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? null : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f;
+    var _g = (0, hooks_1.useError)({
         errors: errors,
         name: name,
-    }), error = _f.error, clearError = _f.clearError;
-    var _g = (0, frontend_js_1.useResource)({
+    }), error = _g.error, clearError = _g.clearError;
+    var _h = (0, frontend_js_1.useResource)({
         url: url,
         name: name,
-    }), resources = _g.resources, findMany = _g.findMany;
-    var _h = (0, react_1.useState)({}), option = _h[0], setOption = _h[1];
-    var _j = (0, react_1.useState)([]), options = _j[0], setOptions = _j[1];
+    }), resources = _h.resources, findMany = _h.findMany;
+    var _j = (0, react_1.useState)({}), option = _j[0], setOption = _j[1];
+    var _k = (0, react_1.useState)([]), options = _k[0], setOptions = _k[1];
     var handleInputChange = function (newValue) {
         if (error)
             clearError();
-        findOptions(newValue);
+        findOption(newValue);
     };
-    var findOptions = function (value) { return __awaiter(void 0, void 0, void 0, function () {
-        var resource;
+    var formatResources = function (resources) {
+        return resources.map(function (resource) { return ({
+            label: resource[displayField],
+            value: resource[valueParam]
+        }); });
+    };
+    var findOption = function (value) { return __awaiter(void 0, void 0, void 0, function () {
+        var matchOption;
         return __generator(this, function (_a) {
-            if (!value || (resources === null || resources === void 0 ? void 0 : resources.length) == 0)
+            if (!value)
                 return [2 /*return*/, null];
-            resource = resources.find(function (r) { return r[valueParam] == value; });
-            if (resource) {
-                setOption({
-                    label: resource[displayField],
-                    value: resource[valueParam],
-                });
+            if ((options === null || options === void 0 ? void 0 : options.length) > 0) {
+                matchOption = options.find(function (option) { return option.value == value; });
+                if (matchOption) {
+                    setOption(matchOption);
+                }
             }
             return [2 /*return*/];
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (resources) {
-            var _options = resources === null || resources === void 0 ? void 0 : resources.map(function (resource) { return ({
-                label: resource[displayField],
-                value: resource[valueParam],
-            }); });
-            setOptions(_options);
+        if (resources || defaultOptions) {
+            setOptions(__spreadArray(__spreadArray([], formatResources(resources), true), defaultOptions, true));
         }
-    }, [resources]);
+    }, [resources, defaultOptions]);
     (0, react_1.useEffect)(function () {
-        if (value && (resources === null || resources === void 0 ? void 0 : resources.length) > 0) {
-            findOptions(value);
+        if (value) {
+            findOption(value);
         }
-    }, [resources === null || resources === void 0 ? void 0 : resources.length, value]);
+    }, [value]);
     (0, react_1.useEffect)(function () {
         if (url) {
             findMany(defaultQuery);

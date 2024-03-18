@@ -1,9 +1,9 @@
 import React from 'react';
-import { FilterOptionType } from '../../../..';
+import { FilterOptionType, SearchFilterOptionType } from '../../../..';
 type FilterButtonProps = {
     filters?: FilterOptionType[];
     loading?: boolean;
-    fields?: any;
+    filterOptions?: SearchFilterOptionType[];
     handleFilter: (filter: FilterOptionType) => void;
     handleClear: () => void;
 };

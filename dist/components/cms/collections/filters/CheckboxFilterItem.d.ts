@@ -1,10 +1,10 @@
 import React from 'react';
 import { OptionType } from '../../../../types';
-type FilterListItemProps = {
+type CheckboxFilterItemProps = {
     label?: string;
     option: OptionType;
     values?: any;
     handleClick: () => void;
 };
-declare const FilterListItem: React.FC<FilterListItemProps>;
-export default FilterListItem;
+declare const CheckboxFilterItem: React.FC<CheckboxFilterItemProps>;
+export default CheckboxFilterItem;

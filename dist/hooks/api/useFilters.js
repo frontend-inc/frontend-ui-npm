@@ -22,10 +22,10 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var useFilters = function (props) {
-    var _a = props || {}, query = _a.query, handleSubmit = _a.handleSubmit;
-    var _b = (0, react_1.useState)(false), showFilterModal = _b[0], setShowFilterModal = _b[1];
-    var _c = (0, react_1.useState)(), filter = _c[0], setFilter = _c[1];
-    var _d = (0, react_1.useState)([]), activeFilters = _d[0], setActiveFilters = _d[1];
+    var query = (props || {}).query;
+    var _a = (0, react_1.useState)(false), showFilterModal = _a[0], setShowFilterModal = _a[1];
+    var _b = (0, react_1.useState)(), filter = _b[0], setFilter = _b[1];
+    var _c = (0, react_1.useState)([]), activeFilters = _c[0], setActiveFilters = _c[1];
     var handleOpenFilterModal = function () {
         setShowFilterModal(true);
     };
@@ -37,27 +37,34 @@ var useFilters = function (props) {
         setFilter(foundFilter);
         return foundFilter;
     };
+    var compareValues = function (a, b) {
+        if (Array.isArray(a) && Array.isArray(b)) {
+            return a.sort().join(',') === b.sort().join(',');
+        }
+        return a === b;
+    };
+    var findDuplicateFilterIndex = function (filters, filter) {
+        return filters.findIndex(function (f) { return (f.field === filter.field &&
+            f.operator === filter.operator &&
+            f.where === filter.where &&
+            compareValues(f.value, filter.value)); });
+    };
+    var findDuplicateFilter = function (filters, filter) {
+        return filters.find(function (f) { return (f.field === filter.field &&
+            f.operator === filter.operator &&
+            f.where === filter.where &&
+            compareValues(f.value, filter.value)); });
+    };
     var handleAddFilter = function (filter) {
-        var updatedFilters = [];
-        if (activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.find(function (_a) {
-            var field = _a.field, where = _a.where, operator = _a.operator, value = _a.value;
-            return field == (filter === null || filter === void 0 ? void 0 : filter.field) &&
-                where == (filter === null || filter === void 0 ? void 0 : filter.where) &&
-                operator == (filter === null || filter === void 0 ? void 0 : filter.operator) &&
-                value == (filter === null || filter === void 0 ? void 0 : filter.value);
-        })) {
-            updatedFilters = activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.filter(function (_a) {
-                var field = _a.field, where = _a.where, operator = _a.operator, value = _a.value;
-                return !(field == (filter === null || filter === void 0 ? void 0 : filter.field) &&
-                    where == (filter === null || filter === void 0 ? void 0 : filter.where) &&
-                    operator == (filter === null || filter === void 0 ? void 0 : filter.operator) &&
-                    value == (filter === null || filter === void 0 ? void 0 : filter.value));
-            });
+        var updatedFilters = __spreadArray([], activeFilters, true);
+        var duplicateIndex = findDuplicateFilterIndex(activeFilters, filter);
+        if (duplicateIndex > -1) {
+            updatedFilters = updatedFilters === null || updatedFilters === void 0 ? void 0 : updatedFilters.filter(function (f, index) { return index !== duplicateIndex; });
         }
         else {
-            updatedFilters = __spreadArray(__spreadArray([], activeFilters, true), [filter], false);
+            //@ts-ignore 
+            updatedFilters = __spreadArray(__spreadArray([], updatedFilters, true), [filter], false);
         }
-        handleFilterSearch(updatedFilters);
         setActiveFilters(updatedFilters);
     };
     var isBlank = function (value) {
@@ -66,8 +73,7 @@ var useFilters = function (props) {
             value == null ||
             (Array.isArray(value) && value.length === 0));
     };
-    var handleFilterSearch = function (activeFilters) {
-        // Convert the filter array into a searchable query object
+    var buildQueryFilters = function (activeFilters) {
         var filters = {};
         activeFilters
             .filter(function (filter) { return !isBlank(filter === null || filter === void 0 ? void 0 : filter.value); })
@@ -85,16 +91,7 @@ var useFilters = function (props) {
                     _b),
             ], false), _a));
         });
-        var searchQuery = {
-            page: 1,
-            keywords: (query === null || query === void 0 ? void 0 : query.keywords) || '',
-            per_page: (query === null || query === void 0 ? void 0 : query.per_page) || 20,
-            sort_by: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id',
-            sort_direction: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc',
-            filters: filters,
-        };
-        handleSubmit && handleSubmit(searchQuery);
-        setShowFilterModal(false);
+        return filters;
     };
     // Convert the query object into an array of filter options
     var formatFilterArray = function (filters) {
@@ -105,6 +102,7 @@ var useFilters = function (props) {
                     var field = Object.keys(filter)[0];
                     var operator = Object.keys(filter[field])[0];
                     var value = filter[field][operator];
+                    //@ts-ignore
                     formattedFilters.push({
                         where: where,
                         field: field,
@@ -132,6 +130,9 @@ var useFilters = function (props) {
         handleAddFilter: handleAddFilter,
         activeFilters: activeFilters,
         setActiveFilters: setActiveFilters,
+        findDuplicateFilter: findDuplicateFilter,
+        findDuplicateFilterIndex: findDuplicateFilterIndex,
+        buildQueryFilters: buildQueryFilters
     };
 };
 exports.default = useFilters;
