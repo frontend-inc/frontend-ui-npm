@@ -8,9 +8,6 @@ type ProductFavoritesProps = {
     enableQuantity?: boolean;
     enableQuickShop?: boolean;
     buttonText?: string;
-    emptyIcon?: string;
-    emptyTitle?: string;
-    emptyDescription?: string;
 };
 declare const ProductFavorites: React.FC<ProductFavoritesProps>;
 export default ProductFavorites;

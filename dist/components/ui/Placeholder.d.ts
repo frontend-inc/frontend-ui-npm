@@ -1,6 +1,6 @@
 import React from 'react';
 type PlaceholderProps = {
-    icon?: any;
+    icon?: string;
     title?: string;
     description?: string;
     actions?: any;

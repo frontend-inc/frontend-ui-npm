@@ -24,7 +24,7 @@ var Logos = function (props) {
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_2.Typography, { variant: "caption", sx: sx.caption }, title),
         react_1.default.createElement(material_1.Stack, { sx: sx.logos, direction: "row", spacing: 1 }, images === null || images === void 0 ? void 0 : images.map(function (image, index) { return (react_1.default.createElement(Logo_1.default, { key: index, title: "Logo", image: image === null || image === void 0 ? void 0 : image.src, height: 50, width: 120 })); })),
-        (images === null || images === void 0 ? void 0 : images.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: react_1.default.createElement(__1.Icon, { name: "Camera" }), title: "No images found", description: "Images will appear here" }))));
+        (images === null || images === void 0 ? void 0 : images.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Camera', title: "No images found", description: "Images will appear here" }))));
 };
 exports.default = Logos;
 var sx = {

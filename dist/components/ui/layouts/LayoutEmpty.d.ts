@@ -1,6 +1,6 @@
 import React from 'react';
 type LayoutEmptyProps = {
-    icon: React.ReactNode;
+    icon: string;
     title: string;
     description?: string;
 };

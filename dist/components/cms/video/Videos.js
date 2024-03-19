@@ -76,7 +76,7 @@ var Videos = function (props) {
         layout == 'grid' && (react_1.default.createElement(__1.GridView, { editing: editing, loading: loading, items: resources, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleClick })),
         layout == 'list' && (react_1.default.createElement(__1.ListView, { spacing: 2, editing: editing, items: resources, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleClick })),
         layout == 'carousel' && (react_1.default.createElement(__1.ListView, { flexDirection: "row", justifyContent: "center", spacing: 4, editing: editing, items: resources, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleClick })),
-        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: react_1.default.createElement(__1.Icon, { name: "Video" }), title: "No videos found", description: "Try adjusting your search or filters" }))));
+        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Video', title: "No videos found", description: "Try adjusting your search or filters" }))));
 };
 exports.default = Videos;
 var sx = {

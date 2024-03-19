@@ -46,6 +46,7 @@ var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var CollectionSearchFilters_1 = __importDefault(require("./filters/CollectionSearchFilters"));
+var hooks_2 = require("../../../hooks");
 var Collection = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
@@ -91,13 +92,19 @@ var Collection = function (props) {
             router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
+    var delayedLoading = (0, hooks_2.useDelayedLoading)({
+        loading: loading,
+        delay: 250
+    }).loading;
     (0, react_1.useEffect)(function () {
         if (url && defaultQuery && perPage) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
     }, [url, defaultQuery, perPage]);
     (0, react_1.useEffect)(function () {
-        findMany(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters), page: 1, per_page: perPage }));
+        if ((activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length) >= 0) {
+            findMany(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters), page: 1, per_page: perPage }));
+        }
     }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
@@ -111,7 +118,9 @@ var Collection = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.filtersContainer },
                     react_1.default.createElement(CollectionSearchFilters_1.default, { filters: activeFilters, filterOptions: filterOptions, handleFilter: handleFilter })))),
             react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: enableFilters && filterAnchor == 'left' ? 8 : 12, lg: enableFilters && filterAnchor == 'left' ? 9 : 12 },
-                react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient }))),
+                react_1.default.createElement(material_1.Box, { sx: __assign({}, (delayedLoading && sx.loading)) },
+                    react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient })),
+                !loading && resources.length == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: "Search", title: "No results found", description: "Try adjusting your search or filters" })))),
         enableLoadMore && (react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore, enableInfiniteLoad: enableInfiniteLoad }))));
 };
 exports.default = Collection;
@@ -150,5 +159,11 @@ var sx = {
     },
     sortFilterActions: {
         justifyContent: 'flex-end',
+    },
+    loading: {
+        opacity: 0.7
+    },
+    circularProgress: {
+        color: 'primary.main'
     }
 };

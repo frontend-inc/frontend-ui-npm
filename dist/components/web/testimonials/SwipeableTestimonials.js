@@ -12,7 +12,7 @@ var SwipeableTestimonials = function (props) {
     return (react_1.default.createElement(material_1.Box, null,
         react_1.default.createElement(__1.Swipeable, { enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, testimonials === null || testimonials === void 0 ? void 0 : testimonials.map(function (testimonial, i) { return (react_1.default.createElement(material_1.Box, { sx: sx.item, key: i },
             react_1.default.createElement(TestimonialCard_1.default, { size: "large", image: testimonial.avatar, author: testimonial.author, rating: testimonial.rating, text: testimonial.text }))); })),
-        (testimonials === null || testimonials === void 0 ? void 0 : testimonials.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: react_1.default.createElement(__1.Icon, { name: "Star" }), title: "No testimonials yet.", description: "Testimonials will appear here." }))));
+        (testimonials === null || testimonials === void 0 ? void 0 : testimonials.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Star', title: "No testimonials yet.", description: "Testimonials will appear here." }))));
 };
 exports.default = SwipeableTestimonials;
 var sx = {

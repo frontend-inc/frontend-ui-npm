@@ -91,7 +91,7 @@ var SearchModal = function () {
                             react_1.default.createElement(lucide_react_1.X, { size: 24, color: theme.palette.text.primary }))))),
             react_1.default.createElement(material_1.Container, { maxWidth: "md" },
                 react_1.default.createElement(shopify_1.ProductGrid, { loading: loading, products: products, xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }),
-                (keywords === null || keywords === void 0 ? void 0 : keywords.length) > 0 && !loading && (products === null || products === void 0 ? void 0 : products.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: react_1.default.createElement(lucide_react_1.Search, null), title: "No search results", description: "Try another search term" }))))));
+                (keywords === null || keywords === void 0 ? void 0 : keywords.length) > 0 && !loading && (products === null || products === void 0 ? void 0 : products.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Search', title: "No search results", description: "Try another search term" }))))));
 };
 exports.default = SearchModal;
 var sx = {

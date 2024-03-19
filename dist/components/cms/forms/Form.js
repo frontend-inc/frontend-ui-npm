@@ -77,7 +77,6 @@ var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var lucide_react_1 = require("lucide-react");
 var FormField_1 = __importDefault(require("./FormField"));
 var index_1 = require("../../../constants/index");
 var lodash_1 = require("lodash");
@@ -144,7 +143,7 @@ var Form = function (props) {
         fields.map(function (field, index) {
             return index_1.SYSTEM_FIELDS.includes(field.name) ? (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove })) : (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource === null || resource === void 0 ? void 0 : resource.data, field.name), handleChange: handleDataChange }));
         }),
-        react_1.default.createElement(material_1.Button, { variant: variant, onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: loading }) }, buttonText ? buttonText : 'Submit'))) : (react_1.default.createElement(__1.Placeholder, { enableBorder: true, icon: react_1.default.createElement(lucide_react_1.Check, { size: 32 }), title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { variant: "outlined", onClick: function () { return setSubmitted(false); } }, "Done") }));
+        react_1.default.createElement(material_1.Button, { variant: variant, onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: loading }) }, buttonText ? buttonText : 'Submit'))) : (react_1.default.createElement(__1.Placeholder, { enableBorder: true, icon: 'Check', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { variant: "outlined", onClick: function () { return setSubmitted(false); } }, "Done") }));
 };
 exports.default = Form;
 var sx = {

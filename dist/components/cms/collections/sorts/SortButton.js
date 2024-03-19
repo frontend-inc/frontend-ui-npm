@@ -50,7 +50,13 @@ var SortButton = function (props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "text", onClick: handleOpenModal, endIcon: react_1.default.createElement(ui_1.Icon, { name: sortDirection == 'asc' ? "ArrowUp" : "ArrowDown", color: 'text.secondary', size: 20 }) }, (selected === null || selected === void 0 ? void 0 : selected.label) ? selected === null || selected === void 0 ? void 0 : selected.label : 'Sort'),
         react_1.default.createElement(material_1.Hidden, { smDown: true },
-            react_1.default.createElement(ui_1.Popup, { p: 1, anchorEl: anchorEl, open: showModal, handleClose: handleCloseModal },
+            react_1.default.createElement(ui_1.Popup, { p: 1, anchorEl: anchorEl, open: showModal, handleClose: handleCloseModal, anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'right'
+                }, transformOrigin: {
+                    vertical: 'top',
+                    horizontal: 'right'
+                } },
                 react_1.default.createElement(SortList_1.default, { sortOptions: sortOptions, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection }))),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
             react_1.default.createElement(ui_1.Drawer, { title: "Sort", open: showModal, handleClose: handleCloseModal, anchor: 'right' },

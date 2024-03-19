@@ -16,10 +16,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var components_1 = require("../../components");
 var Placeholder = function (props) {
     var icon = props.icon, title = props.title, description = props.description, actions = props.actions, _a = props.enableAvatarBorder, enableAvatarBorder = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.root), (enableBorder && sx.border)) },
-        icon && (react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign({}, sx.avatar), (enableAvatarBorder && sx.avatarBorder)) }, icon)),
+        icon && (react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign({}, sx.avatar), (enableAvatarBorder && sx.avatarBorder)) },
+            react_1.default.createElement(components_1.Icon, { name: icon, size: 20, color: "text.secondary" }))),
         react_1.default.createElement(material_1.Stack, null,
             react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: "button" }, title),
             react_1.default.createElement(material_1.Typography, { sx: sx.description, variant: "body2", color: "textSecondary" }, description),
@@ -50,7 +52,7 @@ var sx = {
     avatar: {
         height: '50px',
         width: '50px',
-        bgcolor: 'background.paper',
+        bgcolor: 'tertiary.main',
     },
     avatarBorder: {
         border: '2px solid',

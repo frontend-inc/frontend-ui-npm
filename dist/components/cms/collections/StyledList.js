@@ -31,7 +31,7 @@ var StyledList = function (props) {
             layout == 'list' && (react_1.default.createElement(__1.ListView, { editing: editing, items: resources, handleClick: handleClick, buttonText: buttonText, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             layout == 'grid' && (react_1.default.createElement(__1.GridView, { editing: editing, items: resources, handleClick: handleClick, buttonText: buttonText, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             layout == 'carousel' && (react_1.default.createElement(__1.CarouselView, { editing: editing, items: resources, handleClick: handleClick, buttonText: buttonText, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
-        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: react_1.default.createElement(__1.Icon, { name: emptyIcon }), title: emptyTitle, description: emptyDescription }))));
+        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: emptyIcon, title: emptyTitle, description: emptyDescription }))));
 };
 exports.default = StyledList;
 var sx = {
