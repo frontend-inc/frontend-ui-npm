@@ -65,36 +65,47 @@ var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var KlaviyoSubscribe = function (props) {
     var _a = props || {}, listId = _a.listId, apiKey = _a.apiKey, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b, title = _a.title, description = _a.description;
-    var _c = (0, hooks_1.useKlaviyo)({
+    var _c = (0, hooks_1.useAlerts)(), showAlertError = _c.showAlertError, showAlertSuccess = _c.showAlertSuccess;
+    var _d = (0, hooks_1.useKlaviyo)({
         apiKey: apiKey
-    }), loading = _c.loading, handleSubmit = _c.handleSubmit;
-    var _d = (0, react_1.useState)(''), email = _d[0], setEmail = _d[1];
+    }), loading = _d.loading, handleSubmit = _d.handleSubmit;
+    var _e = (0, react_1.useState)(''), email = _e[0], setEmail = _e[1];
     var handleFormSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resp, e_1;
+        var e_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 2, , 3]);
+                    if (!email || !(email === null || email === void 0 ? void 0 : email.includes('@'))) {
+                        return [2 /*return*/, showAlertError("Please enter a valid email")];
+                    }
+                    if (!listId) {
+                        return [2 /*return*/, showAlertError("Please enter a klaviyo list ID")];
+                    }
+                    if (!apiKey) {
+                        return [2 /*return*/, showAlertError("Please enter your public klaviyo API key")];
+                    }
+                    _a.label = 1;
+                case 1:
+                    _a.trys.push([1, 3, , 4]);
                     return [4 /*yield*/, handleSubmit({
                             email: email,
                             listId: listId
                         })];
-                case 1:
-                    resp = _a.sent();
-                    return [3 /*break*/, 3];
                 case 2:
+                    _a.sent();
+                    showAlertSuccess("You have been subscribed to our newsletter!");
+                    return [3 /*break*/, 4];
+                case 3:
                     e_1 = _a.sent();
                     console.log("Error", e_1);
-                    return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
             }
         });
     }); };
     var handleChange = function (ev) {
         setEmail(ev.target.value);
     };
-    if (!listId || !apiKey)
-        return null;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
         (title || description) && (react_1.default.createElement(__1.Heading, { title: title, description: description, textAlign: 'center' })),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.form },

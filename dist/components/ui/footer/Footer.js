@@ -44,19 +44,20 @@ var Footer = function (props) {
                         react_1.default.createElement(image_1.default, { src: logo, width: 180, height: 60, alt: 'logo', layout: "responsive" })))),
             react_1.default.createElement(material_1.Grid, { xs: 12, sm: 9 },
                 react_1.default.createElement(material_1.Box, { sx: sx.grid }, menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (menuItem, i) { return (react_1.default.createElement(FooterLinks_1.default, { key: i, menuItem: menuItem, handleClick: handleClick })); })))),
-        react_1.default.createElement(material_1.Box, { sx: sx.socialUrls },
-            facebook && react_1.default.createElement(__1.SocialLink, { provider: "facebook", url: facebook }),
-            instagram && react_1.default.createElement(__1.SocialLink, { provider: "instagram", url: instagram }),
-            linkedin && react_1.default.createElement(__1.SocialLink, { provider: "linkedin", url: linkedin }),
-            twitter && react_1.default.createElement(__1.SocialLink, { provider: "twitter", url: twitter }),
-            youtube && react_1.default.createElement(__1.SocialLink, { provider: "youtube", url: youtube }),
-            tiktok && react_1.default.createElement(__1.SocialLink, { provider: "tiktok", url: tiktok })),
-        react_1.default.createElement(material_1.Box, { sx: sx.copyright },
-            react_1.default.createElement(material_1.Typography, { variant: 'body2', color: "text.secondary" },
-                "\u00A9 copyright ",
-                (0, moment_1.default)().format('YYYY'),
-                " ",
-                name))));
+        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.footerLinks },
+            react_1.default.createElement(material_1.Box, { sx: sx.socialUrls },
+                facebook && react_1.default.createElement(__1.SocialLink, { provider: "facebook", url: facebook }),
+                instagram && react_1.default.createElement(__1.SocialLink, { provider: "instagram", url: instagram }),
+                linkedin && react_1.default.createElement(__1.SocialLink, { provider: "linkedin", url: linkedin }),
+                twitter && react_1.default.createElement(__1.SocialLink, { provider: "twitter", url: twitter }),
+                youtube && react_1.default.createElement(__1.SocialLink, { provider: "youtube", url: youtube }),
+                tiktok && react_1.default.createElement(__1.SocialLink, { provider: "tiktok", url: tiktok })),
+            react_1.default.createElement(material_1.Box, { sx: sx.copyright },
+                react_1.default.createElement(material_1.Typography, { variant: 'body2', color: "text.secondary" },
+                    "\u00A9 copyright ",
+                    (0, moment_1.default)().format('YYYY'),
+                    " ",
+                    name)))));
 };
 exports.default = Footer;
 var sx = {
@@ -65,6 +66,8 @@ var sx = {
         justifyContent: 'center',
         alignItems: 'center',
         bgcolor: 'background.default',
+        borderTop: '1px solid',
+        borderColor: 'divider',
     },
     logo: {
         height: 120,
@@ -91,7 +94,6 @@ var sx = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        pb: 4
     },
     socialUrls: {
         width: '100%',
@@ -100,4 +102,17 @@ var sx = {
         alignItems: 'center',
         py: 1,
     },
+    divider: {
+        borderTop: '1px solid',
+        borderColor: 'divider',
+        width: '96%',
+    },
+    footerLinks: {
+        px: 4,
+        display: 'flex',
+        direction: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        pb: 4
+    }
 };

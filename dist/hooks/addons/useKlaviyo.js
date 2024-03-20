@@ -42,14 +42,14 @@ var useKlaviyo = function (params) {
     var _a = (0, react_1.useState)(false), loading = _a[0], setLoading = _a[1];
     // Subscribe to newsletter
     var handleSubmit = function (params) { return __awaiter(void 0, void 0, void 0, function () {
-        var _a, email, listId, body, resp, jsonResp, e_1;
+        var _a, email, listId, body, resp, e_1;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     _a = params || {}, email = _a.email, listId = _a.listId;
                     _b.label = 1;
                 case 1:
-                    _b.trys.push([1, 4, 5, 6]);
+                    _b.trys.push([1, 3, 4, 5]);
                     setLoading(true);
                     body = JSON.stringify({
                         email: email,
@@ -65,18 +65,15 @@ var useKlaviyo = function (params) {
                         })];
                 case 2:
                     resp = _b.sent();
-                    return [4 /*yield*/, resp.json()];
+                    return [2 /*return*/, resp === null || resp === void 0 ? void 0 : resp.json()];
                 case 3:
-                    jsonResp = _b.sent();
-                    return [2 /*return*/, jsonResp];
-                case 4:
                     e_1 = _b.sent();
                     console.log("Error", e_1);
-                    return [3 /*break*/, 6];
-                case 5:
+                    return [3 /*break*/, 5];
+                case 4:
                     setLoading(false);
                     return [7 /*endfinally*/];
-                case 6: return [2 /*return*/];
+                case 5: return [2 /*return*/];
             }
         });
     }); };

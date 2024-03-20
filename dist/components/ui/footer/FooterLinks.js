@@ -15,7 +15,7 @@ var FooterLinks = function (props) {
 exports.default = FooterLinks;
 var sx = {
     listSubheader: {
-        bgcolor: 'background.default',
+        bgcolor: 'transparent',
     },
     list: {
         mt: 3,
