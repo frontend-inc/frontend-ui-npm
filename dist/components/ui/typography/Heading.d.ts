@@ -3,7 +3,7 @@ import { TypographyVariantsType } from '../../../types';
 type HeadingProps = {
     label?: string;
     title?: string;
-    subtitle?: string;
+    description?: string;
     textAlign?: 'left' | 'center';
     textVariant?: TypographyVariantsType;
 };

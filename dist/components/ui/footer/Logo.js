@@ -20,9 +20,6 @@ var Logo = function (props) {
 exports.default = Logo;
 var sx = {
     root: {
-        width: '100%',
-        minHeight: 'auto',
-        minWidth: 'auto',
         '&:hover': {
             background: 'transparent',
         },

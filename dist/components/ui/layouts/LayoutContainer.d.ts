@@ -8,12 +8,17 @@ type LayoutContainerProps = {
     handleClick: (item: any) => void;
     headerLinks: MenuLinkType[];
     footerLinks: MenuLinkType[];
-    socialUrls: string[];
     notifications: NotificationType[];
     children: ReactNode;
     editing?: boolean;
     enableAuth?: boolean;
     enableShopify?: boolean;
+    facebook?: string;
+    instagram?: string;
+    linkedin?: string;
+    twitter?: string;
+    youtube?: string;
+    tiktok?: string;
 };
 declare const LayoutContainer: React.FC<LayoutContainerProps>;
 export default LayoutContainer;

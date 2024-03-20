@@ -30,28 +30,33 @@ var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
 var FooterLinks_1 = __importDefault(require("./FooterLinks"));
-var Logo_1 = __importDefault(require("./Logo"));
+var __1 = require("../..");
+var image_1 = __importDefault(require("next/image"));
 var moment_1 = __importDefault(require("moment"));
-var components_1 = require("../../../components");
 var Footer = function (props) {
-    var _a = props.enableEmail, enableEmail = _a === void 0 ? false : _a, emailProvider = props.emailProvider, klaviyoListId = props.klaviyoListId, klaviyoApiKey = props.klaviyoApiKey, mailchimpFormId = props.mailchimpFormId, handleClick = props.handleClick, menuItems = props.menuItems, socialUrls = props.socialUrls;
-    var _b = (0, react_1.useContext)(context_1.AppContext), logo = _b.logo, name = _b.name;
+    var handleClick = props.handleClick, menuItems = props.menuItems, facebook = props.facebook, instagram = props.instagram, linkedin = props.linkedin, twitter = props.twitter, youtube = props.youtube, tiktok = props.tiktok;
+    var _a = (0, react_1.useContext)(context_1.AppContext), logo = _a.logo, name = _a.name;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 1, direction: "column" },
-        react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 },
-            react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4 },
-                react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
-                    react_1.default.createElement(Logo_1.default, { src: logo, width: 180, height: 60, handleClick: function () { return handleClick('/'); } }),
-                    (enableEmail && mailchimpFormId && emailProvider == 'mailchimp') && (react_1.default.createElement(components_1.MailchimpSubscribe, { formId: mailchimpFormId, buttonText: 'Subscribe' })),
-                    (enableEmail && klaviyoListId && klaviyoApiKey && emailProvider == 'klaviyo') && (react_1.default.createElement(components_1.KlaviyoSubscribe, { listId: klaviyoListId, apiKey: klaviyoApiKey, buttonText: 'Subscribe' })))),
-            react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 8 },
+        react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 },
+            react_1.default.createElement(material_1.Grid, { xs: 12, sm: 3 },
+                react_1.default.createElement(material_1.Box, { sx: sx.logoContainer },
+                    react_1.default.createElement(material_1.Box, { sx: sx.logo },
+                        react_1.default.createElement(image_1.default, { src: logo, width: 180, height: 60, alt: 'logo', layout: "responsive" })))),
+            react_1.default.createElement(material_1.Grid, { xs: 12, sm: 9 },
                 react_1.default.createElement(material_1.Box, { sx: sx.grid }, menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (menuItem, i) { return (react_1.default.createElement(FooterLinks_1.default, { key: i, menuItem: menuItem, handleClick: handleClick })); })))),
-        react_1.default.createElement(material_1.Container, { maxWidth: "lg" },
-            react_1.default.createElement(material_1.Box, { sx: sx.copyright },
-                react_1.default.createElement(material_1.Typography, { sx: sx.link, variant: 'body2', color: "text.secondary" },
-                    "\u00A9 copyright ",
-                    (0, moment_1.default)().format('YYYY'),
-                    " ",
-                    name)))));
+        react_1.default.createElement(material_1.Box, { sx: sx.socialUrls },
+            facebook && react_1.default.createElement(__1.SocialLink, { provider: "facebook", url: facebook }),
+            instagram && react_1.default.createElement(__1.SocialLink, { provider: "instagram", url: instagram }),
+            linkedin && react_1.default.createElement(__1.SocialLink, { provider: "linkedin", url: linkedin }),
+            twitter && react_1.default.createElement(__1.SocialLink, { provider: "twitter", url: twitter }),
+            youtube && react_1.default.createElement(__1.SocialLink, { provider: "youtube", url: youtube }),
+            tiktok && react_1.default.createElement(__1.SocialLink, { provider: "tiktok", url: tiktok })),
+        react_1.default.createElement(material_1.Box, { sx: sx.copyright },
+            react_1.default.createElement(material_1.Typography, { variant: 'body2', color: "text.secondary" },
+                "\u00A9 copyright ",
+                (0, moment_1.default)().format('YYYY'),
+                " ",
+                name))));
 };
 exports.default = Footer;
 var sx = {
@@ -60,25 +65,39 @@ var sx = {
         justifyContent: 'center',
         alignItems: 'center',
         bgcolor: 'background.default',
-        py: 2
     },
-    link: {
-        cursor: 'pointer',
+    logo: {
+        height: 120,
+        width: 120
+    },
+    logoContainer: {
+        px: 4,
+        py: 2,
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
     },
     grid: {
         display: 'grid',
-        gap: 2,
-        gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
+        gridTemplateColumns: {
+            xs: 'repeat(2, 1fr)',
+            md: 'repeat(4, 1fr)',
+        },
         width: '100%',
-        padding: 2,
     },
     copyright: {
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        borderTop: '1px solid',
-        borderColor: 'divider',
-        pt: 1
-    }
+        pb: 4
+    },
+    socialUrls: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        py: 1,
+    },
 };
