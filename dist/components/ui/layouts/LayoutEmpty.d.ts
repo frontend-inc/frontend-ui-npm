@@ -1,6 +1,7 @@
 import React from 'react';
 type LayoutEmptyProps = {
-    icon: string;
+    icon?: string;
+    color?: string;
     title: string;
     description?: string;
 };

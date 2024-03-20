@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OkendoStarRating = exports.OkendoReviews = exports.Typeform = exports.GorgiasChat = exports.GiftUp = exports.VisualWebsiteOptimizerScript = exports.RedditScript = exports.OkendoScript = exports.KlaviyoScript = exports.KlaviyoEmbed = exports.KlaviyoButton = exports.HotJarScript = exports.GorgiasContactForm = exports.GoogleTagManagerScript = exports.GoogleAnalyticsScript = void 0;
+exports.OkendoStarRating = exports.OkendoReviews = exports.Typeform = exports.MailchimpSubscribe = exports.GorgiasChat = exports.GiftUp = exports.VisualWebsiteOptimizerScript = exports.RedditScript = exports.OkendoScript = exports.KlaviyoSubscribe = exports.KlaviyoScript = exports.KlaviyoEmbed = exports.KlaviyoButton = exports.HotJarScript = exports.GorgiasContactForm = exports.GoogleTagManagerScript = exports.GoogleAnalyticsScript = void 0;
 //Scripts
 var GoogleAnalyticsScript_1 = require("./google/GoogleAnalyticsScript");
 Object.defineProperty(exports, "GoogleAnalyticsScript", { enumerable: true, get: function () { return __importDefault(GoogleAnalyticsScript_1).default; } });
@@ -19,6 +19,8 @@ var KlaviyoEmbed_1 = require("./klaviyo/KlaviyoEmbed");
 Object.defineProperty(exports, "KlaviyoEmbed", { enumerable: true, get: function () { return __importDefault(KlaviyoEmbed_1).default; } });
 var KlaviyoScript_1 = require("./klaviyo/KlaviyoScript");
 Object.defineProperty(exports, "KlaviyoScript", { enumerable: true, get: function () { return __importDefault(KlaviyoScript_1).default; } });
+var KlaviyoSubscribe_1 = require("./klaviyo/KlaviyoSubscribe");
+Object.defineProperty(exports, "KlaviyoSubscribe", { enumerable: true, get: function () { return __importDefault(KlaviyoSubscribe_1).default; } });
 var OkendoScript_1 = require("./okendo/OkendoScript");
 Object.defineProperty(exports, "OkendoScript", { enumerable: true, get: function () { return __importDefault(OkendoScript_1).default; } });
 var RedditScript_1 = require("./reddit/RedditScript");
@@ -30,6 +32,8 @@ var GiftUp_1 = require("./giftup/GiftUp");
 Object.defineProperty(exports, "GiftUp", { enumerable: true, get: function () { return __importDefault(GiftUp_1).default; } });
 var GorgiasChat_1 = require("./gorgias/GorgiasChat");
 Object.defineProperty(exports, "GorgiasChat", { enumerable: true, get: function () { return __importDefault(GorgiasChat_1).default; } });
+var MailchimpSubscribe_1 = require("./mailchimp/MailchimpSubscribe");
+Object.defineProperty(exports, "MailchimpSubscribe", { enumerable: true, get: function () { return __importDefault(MailchimpSubscribe_1).default; } });
 var Typeform_1 = require("./typeform/Typeform");
 Object.defineProperty(exports, "Typeform", { enumerable: true, get: function () { return __importDefault(Typeform_1).default; } });
 var OkendoReviews_1 = require("./okendo/OkendoReviews");

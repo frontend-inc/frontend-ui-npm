@@ -6,12 +6,13 @@ type LayoutContainerProps = {
     mode?: 'accent' | 'light' | 'dark';
     topNav?: boolean;
     handleClick: (item: any) => void;
-    menuItems: MenuLinkType[];
+    headerLinks: MenuLinkType[];
+    footerLinks: MenuLinkType[];
+    socialUrls: string[];
     notifications: NotificationType[];
     children: ReactNode;
     editing?: boolean;
     enableAuth?: boolean;
-    enableHeader?: boolean;
     enableShopify?: boolean;
 };
 declare const LayoutContainer: React.FC<LayoutContainerProps>;

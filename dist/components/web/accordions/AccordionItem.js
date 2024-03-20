@@ -13,16 +13,7 @@ var AccordionItem = function (props) {
         react_1.default.createElement(material_2.AccordionSummary, { expandIcon: react_1.default.createElement(__1.Icon, { name: icon }) },
             react_1.default.createElement(material_1.Typography, { variant: "subtitle1" }, title)),
         react_1.default.createElement(material_2.AccordionDetails, { sx: sx.accordionDetails },
-            react_1.default.createElement(material_1.Stack, { direction: {
-                    sm: 'row',
-                    xs: 'column',
-                }, spacing: 2 },
-                image && (react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-                    react_1.default.createElement("img", { alt: title, src: image, height: 256, width: 256, style: {
-                            width: '100%',
-                            objectFit: 'contain',
-                        } }))),
-                react_1.default.createElement(__1.Text, { variant: "body1", color: "textSecondary" }, description)))));
+            react_1.default.createElement(__1.Text, { variant: "body1", color: "text.primary" }, description))));
 };
 exports.default = AccordionItem;
 var sx = {

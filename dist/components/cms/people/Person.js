@@ -40,7 +40,7 @@ var Person = function (props) {
                 react_1.default.createElement(material_1.Box, null)))),
             react_1.default.createElement(material_1.Stack, { spacing: 2, sx: sx.content },
                 react_1.default.createElement(material_1.Typography, { color: 'text.primary', variant: "h4" }, title),
-                react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.socialLinks },
+                react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.socialUrls },
                     ((_b = resource === null || resource === void 0 ? void 0 : resource.data) === null || _b === void 0 ? void 0 : _b.facebook) && react_1.default.createElement(__1.SocialLink, { provider: "facebook", url: (_c = resource === null || resource === void 0 ? void 0 : resource.data) === null || _c === void 0 ? void 0 : _c.facebook }),
                     ((_d = resource === null || resource === void 0 ? void 0 : resource.data) === null || _d === void 0 ? void 0 : _d.instagram) && react_1.default.createElement(__1.SocialLink, { provider: "instagram", url: (_e = resource === null || resource === void 0 ? void 0 : resource.data) === null || _e === void 0 ? void 0 : _e.instagram }),
                     ((_f = resource === null || resource === void 0 ? void 0 : resource.data) === null || _f === void 0 ? void 0 : _f.linked) && react_1.default.createElement(__1.SocialLink, { provider: "linkedin", url: (_g = resource === null || resource === void 0 ? void 0 : resource.data) === null || _g === void 0 ? void 0 : _g.linkedin }),
@@ -106,7 +106,7 @@ var sx = {
         cursor: 'pointer',
         color: 'text.secondary'
     },
-    socialLinks: {
+    socialUrls: {
         width: '100%',
         justifyContent: 'flex-start',
         alignItems: 'center',

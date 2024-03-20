@@ -1,8 +1,14 @@
 import React from 'react';
-type LayoutFooterProps = {
-    name?: string;
-    privacyUrl?: string;
-    termsUrl?: string;
+import { MenuLinkType } from '../../../types';
+type FooterProps = {
+    menuItems?: MenuLinkType[];
+    socialUrls?: string[];
+    handleClick: (path: string) => void;
+    enableEmail?: boolean;
+    emailProvider?: 'mailchimp' | 'klaviyo';
+    mailchimpFormId?: string;
+    klaviyoListId?: string;
+    klaviyoApiKey?: string;
 };
-declare const LayoutFooter: React.FC<LayoutFooterProps>;
-export default LayoutFooter;
+declare const Footer: React.FC<FooterProps>;
+export default Footer;

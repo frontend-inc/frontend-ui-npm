@@ -4,6 +4,7 @@ type PlaceholderProps = {
     title?: string;
     description?: string;
     actions?: any;
+    color?: string;
     enableBorder?: boolean;
     enableAvatarBorder?: boolean;
 };
