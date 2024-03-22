@@ -1,7 +1,7 @@
 import React from 'react';
 type FeaturesProps = {
     title?: string;
-    features: {
+    items: {
         icon?: any;
         title?: string;
         description?: string;

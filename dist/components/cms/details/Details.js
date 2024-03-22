@@ -64,12 +64,11 @@ var sx = {
         p: 2,
         width: '100%',
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
-        minHeight: 110
+        minHeight: 110,
     },
     itemBorder: {
         border: '1px solid',
         borderColor: 'divider',
-        bgcolor: 'primary.contrastText',
     },
     itemFullWidth: {
         gridColumn: 'span 3'

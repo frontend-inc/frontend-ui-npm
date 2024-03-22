@@ -9,7 +9,6 @@ type TabsProps = {
         description: string;
         image?: string;
     }[];
-    fullWidth?: boolean;
     editing?: boolean;
 };
 declare const Tabs: React.FC<TabsProps>;

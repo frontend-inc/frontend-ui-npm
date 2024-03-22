@@ -86,19 +86,18 @@ var Autosuggest = function (props) {
             setSelected(value);
         }
     }, [value, options]);
-    return (react_1.default.createElement(material_1.Box, { sx: sx.container },
-        react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 1 },
-            label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.label }, label)),
-            react_1.default.createElement(Autocomplete_1.default, { freeSolo: freeSolo, multiple: multiselect, disableCloseOnSelect: multiselect, sx: __assign(__assign({}, sx.autocomplete), { paper: sx.paper, option: sx.option, popperDisablePortal: sx.popperDisablePortal }), value: selected, onChange: function (event, newValue) {
-                    handleOnChange(event, newValue);
-                }, onInputChange: function (event, newInputValue) {
-                    handleInputChange && handleInputChange(newInputValue);
-                }, noOptionsText: "No options", clearOnBlur: true, handleHomeEndKeys: true, options: options, 
-                //@ts-ignore
-                getOptionLabel: function (option) { return (option === null || option === void 0 ? void 0 : option.label) || ''; }, 
-                //@ts-ignore
-                getOptionSelected: function (option, value) { return (option === null || option === void 0 ? void 0 : option.value) == (value === null || value === void 0 ? void 0 : value.value); }, renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)) })); } }),
-            react_1.default.createElement(components_1.ErrorText, { error: error }))));
+    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 1 },
+        label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.label }, label)),
+        react_1.default.createElement(Autocomplete_1.default, { freeSolo: freeSolo, multiple: multiselect, disableCloseOnSelect: multiselect, sx: __assign(__assign({}, sx.autocomplete), { paper: sx.paper, option: sx.option, popperDisablePortal: sx.popperDisablePortal }), value: selected, onChange: function (event, newValue) {
+                handleOnChange(event, newValue);
+            }, onInputChange: function (event, newInputValue) {
+                handleInputChange && handleInputChange(newInputValue);
+            }, noOptionsText: "No options", clearOnBlur: true, handleHomeEndKeys: true, options: options, 
+            //@ts-ignore
+            getOptionLabel: function (option) { return (option === null || option === void 0 ? void 0 : option.label) || ''; }, 
+            //@ts-ignore
+            getOptionSelected: function (option, value) { return (option === null || option === void 0 ? void 0 : option.value) == (value === null || value === void 0 ? void 0 : value.value); }, renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)) })); } }),
+        react_1.default.createElement(components_1.ErrorText, { error: error })));
 };
 exports.default = Autosuggest;
 var sx = {

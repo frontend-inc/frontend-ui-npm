@@ -13,7 +13,7 @@ var Accordion = function (props) {
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'space-between', spacing: 1 },
             react_1.default.createElement(material_2.Typography, { variant: "h5", sx: sx.title, color: "textPrimary" }, title)), items === null || items === void 0 ? void 0 :
         items.map(function (item, i) { return (react_1.default.createElement(__1.AccordionItem, { key: i, title: item === null || item === void 0 ? void 0 : item.title, description: item === null || item === void 0 ? void 0 : item.description, image: item === null || item === void 0 ? void 0 : item.image })); }),
-        (items === null || items === void 0 ? void 0 : items.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Search', title: "No content", description: "Your content will appear here." }))));
+        (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Search', title: "No content", description: "Your content will appear here." }))));
 };
 exports.default = Accordion;
 var sx = {

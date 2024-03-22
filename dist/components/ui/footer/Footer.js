@@ -37,15 +37,16 @@ var Footer = function (props) {
     var handleClick = props.handleClick, menuItems = props.menuItems, facebook = props.facebook, instagram = props.instagram, linkedin = props.linkedin, twitter = props.twitter, youtube = props.youtube, tiktok = props.tiktok;
     var _a = (0, react_1.useContext)(context_1.AppContext), logo = _a.logo, name = _a.name;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 1, direction: "column" },
-        react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 },
-            react_1.default.createElement(material_1.Grid, { xs: 12, sm: 3 },
-                react_1.default.createElement(material_1.Box, { sx: sx.logoContainer },
-                    react_1.default.createElement(material_1.Box, { sx: sx.logo },
-                        react_1.default.createElement(image_1.default, { src: logo, width: 180, height: 60, alt: 'logo', layout: "responsive" })))),
-            react_1.default.createElement(material_1.Grid, { xs: 12, sm: 9 },
-                react_1.default.createElement(material_1.Box, { sx: sx.grid }, menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (menuItem, i) { return (react_1.default.createElement(FooterLinks_1.default, { key: i, menuItem: menuItem, handleClick: handleClick })); })))),
+        react_1.default.createElement(material_1.Box, { sx: sx.container },
+            react_1.default.createElement(material_1.Box, { sx: sx.left },
+                react_1.default.createElement(material_1.Box, { sx: sx.logoContainer }, logo && (react_1.default.createElement(image_1.default, { src: logo, alt: name, width: 120, height: 120, style: {
+                        objectFit: 'contain'
+                    } })))),
+            react_1.default.createElement(material_1.Box, { sx: sx.gridContainer },
+                react_1.default.createElement(material_1.Box, { sx: sx.grid }, menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (menuItem, i) { return (react_1.default.createElement(FooterLinks_1.default, { key: i, menuItem: menuItem, handleClick: handleClick })); }))),
+            react_1.default.createElement(material_1.Box, { sx: sx.right })),
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.footerLinks },
-            react_1.default.createElement(material_1.Box, { sx: sx.socialUrls },
+            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.socialUrls },
                 facebook && react_1.default.createElement(__1.SocialLink, { provider: "facebook", url: facebook }),
                 instagram && react_1.default.createElement(__1.SocialLink, { provider: "instagram", url: instagram }),
                 linkedin && react_1.default.createElement(__1.SocialLink, { provider: "linkedin", url: linkedin }),
@@ -73,21 +74,45 @@ var sx = {
         height: 120,
         width: 120
     },
+    container: {
+        width: '100%',
+        display: 'flex',
+        flexDirection: {
+            xs: 'column',
+            sm: 'row'
+        },
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+    },
+    left: {
+        p: 2,
+        width: 240
+    },
+    right: {
+        p: 2,
+        width: 240
+    },
     logoContainer: {
-        px: 4,
-        py: 2,
+        px: 1,
         width: '100%',
         display: 'flex',
         justifyContent: 'flex-start',
         alignItems: 'center',
     },
-    grid: {
-        display: 'grid',
-        gridTemplateColumns: {
-            xs: 'repeat(2, 1fr)',
-            md: 'repeat(4, 1fr)',
-        },
+    gridContainer: {
+        mt: 2,
         width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    grid: {
+        px: 2,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        flexWrap: 'wrap',
     },
     copyright: {
         width: '100%',
@@ -96,10 +121,6 @@ var sx = {
         alignItems: 'center',
     },
     socialUrls: {
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
         py: 1,
     },
     divider: {

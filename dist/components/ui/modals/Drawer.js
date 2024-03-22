@@ -31,7 +31,7 @@ var Drawer = function (props) {
                     react_1.default.createElement(material_1.Typography, { variant: "body1" }, title)),
                 react_1.default.createElement(material_1.Box, { sx: sx.headerAction }, anchor != 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
                     react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon }))))),
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (!disablePadding && sx.contentPadding)) }, children),
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (actions && sx.contentActions)), (!disablePadding && sx.contentPadding)) }, children),
             actions && (react_1.default.createElement(material_1.Box, { sx: sx.actions }, actions)))));
 };
 exports.default = Drawer;
@@ -58,7 +58,6 @@ var sx = {
         height: 50,
         borderBottom: '1px solid',
         borderColor: 'divider',
-        mb: 2,
     },
     headerAction: {
         minWidth: '40px'
@@ -87,14 +86,17 @@ var sx = {
     },
     content: {
         width: '100%',
-        maxHeight: 'calc(100vh - 120px)',
         overflowY: 'scroll',
         '&::-webkit-scrollbar': {
             display: 'none'
         },
+        maxHeight: 'calc(100vh - 60px)',
         pb: 4,
     },
+    contentActions: {
+        maxHeight: 'calc(100vh - 120px)',
+    },
     contentPadding: {
-        px: 2,
+        p: 2,
     },
 };

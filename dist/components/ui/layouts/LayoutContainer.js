@@ -66,7 +66,7 @@ var sx = {
         minHeight: '100%',
     },
     contentHeader: {
-        pt: '60px',
+        pt: '64px',
     },
     contentSideNav: {
         width: {
@@ -79,6 +79,6 @@ var sx = {
         },
     },
     contentTopNav: {
-        minHeight: 'calc(100% - 60px)',
+        minHeight: 'calc(100% - 64px)',
     },
 };

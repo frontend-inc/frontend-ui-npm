@@ -26,9 +26,7 @@ exports.default = Label;
 var sx = {
     chip: {
         color: 'text.primary',
-        textTransform: 'uppercase',
         characterSpacing: '1em',
-        fontSize: 11,
         fontWeight: 500,
         fontFamily: function (theme) { return theme.typography.fontFamily.caption; },
         letterSpacing: '0.05em',

@@ -20,11 +20,11 @@ var __1 = require("../..");
 var Logo_1 = __importDefault(require("./Logo"));
 var material_2 = require("@mui/material");
 var Logos = function (props) {
-    var title = props.title, _a = props.images, images = _a === void 0 ? [] : _a, editing = props.editing, rest = __rest(props, ["title", "images", "editing"]);
+    var title = props.title, _a = props.items, items = _a === void 0 ? [] : _a, editing = props.editing, rest = __rest(props, ["title", "items", "editing"]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_2.Typography, { variant: "caption", sx: sx.caption }, title),
-        react_1.default.createElement(material_1.Stack, { sx: sx.logos, direction: "row", spacing: 1 }, images === null || images === void 0 ? void 0 : images.map(function (image, index) { return (react_1.default.createElement(Logo_1.default, { key: index, title: "Logo", image: image === null || image === void 0 ? void 0 : image.src, height: 50, width: 120 })); })),
-        (images === null || images === void 0 ? void 0 : images.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Camera', title: "No images found", description: "Images will appear here" }))));
+        react_1.default.createElement(material_1.Stack, { sx: sx.logos, direction: "row", spacing: 1 }, items === null || items === void 0 ? void 0 : items.map(function (item, index) { return (react_1.default.createElement(Logo_1.default, { key: index, title: "Logo", image: item === null || item === void 0 ? void 0 : item.src, height: 50, width: 120 })); })),
+        (items === null || items === void 0 ? void 0 : items.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Search', title: "No logos", description: "Logos will appear here" }))));
 };
 exports.default = Logos;
 var sx = {

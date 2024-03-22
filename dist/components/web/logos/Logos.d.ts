@@ -1,7 +1,10 @@
 import React from 'react';
 type LogosProps = {
     title?: string;
-    images?: Record<string, any>[];
+    items?: {
+        src: string;
+        alt?: string;
+    }[];
     editing?: boolean;
     buttonText?: string;
     autoPlay?: boolean;

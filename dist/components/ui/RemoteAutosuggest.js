@@ -111,20 +111,20 @@ var RemoteAutosuggest = function (props) {
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (resources || defaultOptions) {
+        if (resources) {
             setOptions(__spreadArray(__spreadArray([], formatResources(resources), true), defaultOptions, true));
         }
-    }, [resources, defaultOptions]);
+    }, [resources]);
     (0, react_1.useEffect)(function () {
         if (value && resources && resources.length > 0) {
             findOption(value);
         }
-    }, [value, resources, defaultOptions, url]);
+    }, [value, resources, url]);
     (0, react_1.useEffect)(function () {
         if (url) {
             findMany(defaultQuery);
         }
-    }, [url, defaultQuery]);
+    }, [url]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(components_1.Autosuggest, { direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange }),
         react_1.default.createElement(components_2.ErrorText, { error: error })));

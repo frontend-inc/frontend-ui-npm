@@ -44,7 +44,7 @@ var material_2 = require("@mui/material");
 var TabContent_1 = __importDefault(require("./TabContent"));
 var Tabs = function (props) {
     var _a = (0, react_1.useState)(0), currentTab = _a[0], setCurrentTab = _a[1];
-    var title = props.title, _b = props.items, items = _b === void 0 ? [] : _b, _c = props.orientation, orientation = _c === void 0 ? 'vertical' : _c, _d = props.fullWidth, fullWidth = _d === void 0 ? false : _d;
+    var title = props.title, _b = props.items, items = _b === void 0 ? [] : _b, _c = props.orientation, orientation = _c === void 0 ? 'vertical' : _c;
     var handleChange = function (event, newValue) {
         setCurrentTab(newValue);
     };

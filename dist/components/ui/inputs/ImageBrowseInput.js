@@ -19,4 +19,3 @@ var ImageInput = function (props) {
         react_1.default.createElement(material_1.Button, { size: "small", variant: "outlined", onClick: function () { return handleBrowse(name); }, startIcon: react_1.default.createElement(lucide_react_1.Search, null) }, "Browse")));
 };
 exports.default = ImageInput;
-var sx = {};
