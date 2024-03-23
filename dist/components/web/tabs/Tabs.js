@@ -52,9 +52,9 @@ var Tabs = function (props) {
         title && (react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'space-between', spacing: 1 },
             react_1.default.createElement(material_2.Typography, { variant: "h5", sx: sx.title, color: "textPrimary" }, title))),
         react_1.default.createElement(material_2.Tabs, { centered: true, orientation: orientation, value: currentTab, onChange: handleChange, color: "primary", sx: __assign(__assign({}, sx.tabs), (orientation === 'vertical' && sx.verticalTabs)) }, items === null || items === void 0 ? void 0 : items.map(function (item, i) { return (react_1.default.createElement(material_2.Tab, { label: item.label, value: i, icon: item.icon ? (react_1.default.createElement(material_1.Box, { sx: sx.tabIcon },
-                react_1.default.createElement(__1.Icon, { name: item.icon, size: 20, color: currentTab === i ? 'primary.main' : 'text.primary' }))) : '', iconPosition: "start" })); })), items === null || items === void 0 ? void 0 :
+                react_1.default.createElement(__1.Icon, { name: item.icon, size: 20, color: currentTab === i ? 'primary.main' : 'text.primary' }))) : (''), iconPosition: "start" })); })), items === null || items === void 0 ? void 0 :
         items.map(function (item, i) { return (react_1.default.createElement(TabContent_1.default, { key: i, active: i == currentTab, title: item === null || item === void 0 ? void 0 : item.title, description: item === null || item === void 0 ? void 0 : item.description, image: item === null || item === void 0 ? void 0 : item.image })); }),
-        (items === null || items === void 0 ? void 0 : items.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Search', title: "No content", description: "Your content will appear here." }))));
+        (items === null || items === void 0 ? void 0 : items.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Search", title: "No content", description: "Your content will appear here." }))));
 };
 exports.default = Tabs;
 var sx = {
@@ -67,8 +67,8 @@ var sx = {
             color: 'text.primary',
         },
         '& .MuiButtonBase-root.Mui-selected': {
-            color: 'text.primary'
-        }
+            color: 'text.primary',
+        },
     },
     title: {
         width: '100%',

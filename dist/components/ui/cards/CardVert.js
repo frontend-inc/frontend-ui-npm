@@ -109,7 +109,7 @@ var sx = {
         color: 'text.primary',
         bgcolor: 'tertiary.main',
         '&:hover': {
-            bgcolor: 'tertiary.dark'
-        }
-    }
+            bgcolor: 'tertiary.dark',
+        },
+    },
 };

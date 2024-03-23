@@ -63,8 +63,7 @@ var DesktopSideNav = function (props) {
                             react_1.default.createElement(shopify_1.SearchButton, { variant: "sideNav" }),
                             react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav", editing: editing }))))),
                 (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
-                    enableShopify &&
-                        react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }),
+                    enableShopify && react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }),
                     enableAuth && (react_1.default.createElement(__1.AuthButton, { showLabel: true, editing: editing, myAccountUrl: "".concat(clientUrl, "/my-account") }))))))));
 };
 exports.default = DesktopSideNav;

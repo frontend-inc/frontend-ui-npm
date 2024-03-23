@@ -94,7 +94,7 @@ var sx = {
         width: {
             xs: '100%',
             sm: '50%',
-        }
+        },
     },
     actions: {
         mt: 2,

@@ -16,6 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var react_medium_image_zoom_1 = __importDefault(require("react-medium-image-zoom"));
 var image_1 = __importDefault(require("next/image"));
 var Thumbnail = function (props) {
     var image = props.image, active = props.active, handleClick = props.handleClick;
@@ -30,9 +31,12 @@ var Thumbnail = function (props) {
 var ProductImageSlider = function (props) {
     var image = props.image, images = props.images, handleClick = props.handleClick, _a = props.height, height = _a === void 0 ? 520 : _a, _b = props.width, width = _b === void 0 ? 520 : _b, _c = props.thumbnailSize, thumbnailSize = _c === void 0 ? 80 : _c;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0, sx: sx.root },
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.image), { width: '100%' }) }, (image === null || image === void 0 ? void 0 : image.url) && (react_1.default.createElement(image_1.default, { src: image === null || image === void 0 ? void 0 : image.url, alt: image === null || image === void 0 ? void 0 : image.altText, height: height, width: width, layout: "responsive", style: {
-                objectFit: 'contain',
-            } }))),
+        react_1.default.createElement(material_1.Box, { sx: sx.image }, (image === null || image === void 0 ? void 0 : image.url) && (react_1.default.createElement(react_medium_image_zoom_1.default, null,
+            react_1.default.createElement("img", { src: image === null || image === void 0 ? void 0 : image.url, alt: image === null || image === void 0 ? void 0 : image.altText, style: {
+                    height: '100%',
+                    width: '100%',
+                    objectFit: 'contain',
+                } })))),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.thumbnails }, images === null || images === void 0 ? void 0 : images.map(function (img) { return (react_1.default.createElement(Thumbnail, { key: img === null || img === void 0 ? void 0 : img.id, image: img, active: (img === null || img === void 0 ? void 0 : img.id) === (image === null || image === void 0 ? void 0 : image.id), handleClick: handleClick, size: thumbnailSize })); }))));
 };
 exports.default = ProductImageSlider;
@@ -42,9 +46,6 @@ var sx = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'flex-start',
-        width: '100%',
-        maxWidth: '100vw',
-        height: '100%',
     },
     thumbnails: {
         mt: 1,

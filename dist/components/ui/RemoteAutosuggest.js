@@ -93,7 +93,7 @@ var RemoteAutosuggest = function (props) {
     var formatResources = function (resources) {
         return resources.map(function (resource) { return ({
             label: resource[displayField],
-            value: resource[valueParam]
+            value: resource[valueParam],
         }); });
     };
     var findOption = function (value) { return __awaiter(void 0, void 0, void 0, function () {

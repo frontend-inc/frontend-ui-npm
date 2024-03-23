@@ -19,7 +19,7 @@ export declare const sx: {
             p: string;
             fontSize: (theme: any) => any;
             fontFamily: (theme: any) => any;
-            borderRadius: (theme: any) => any;
+            borderRadius: (theme: any) => string;
             bgcolor: string;
             border: (theme: any) => string;
             transition: string;

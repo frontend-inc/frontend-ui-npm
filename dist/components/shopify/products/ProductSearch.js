@@ -82,7 +82,7 @@ var ProductSearch = function (props) {
             var searchKeywords = (_a = decodeURI(String(query)).split('-')) === null || _a === void 0 ? void 0 : _a.join(' ');
             var filterQuery = formatQueryFilters(filters);
             searchProducts({
-                query: "".concat(searchKeywords, " ").concat(filterQuery)
+                query: "".concat(searchKeywords, " ").concat(filterQuery),
             });
         }
         else {
@@ -96,7 +96,7 @@ var ProductSearch = function (props) {
     }, [handle]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.header, spacing: 1 },
-            title && (react_1.default.createElement(__3.Heading, { title: title })),
+            title && react_1.default.createElement(__3.Heading, { title: title }),
             enableSorting && (react_1.default.createElement(__2.ProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick }))),
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 },
             enableFilters && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 12, md: 3 },
@@ -123,7 +123,7 @@ var sx = {
         mb: 1,
         ml: {
             sm: 1,
-            xs: 0
-        }
-    }
+            xs: 0,
+        },
+    },
 };

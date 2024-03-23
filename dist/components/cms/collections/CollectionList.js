@@ -33,7 +33,7 @@ var sx = {
     list: {
         display: 'flex',
         flexDirection: 'column',
-        gap: '16px'
+        gap: '16px',
     },
     grid: {
         display: 'grid',
@@ -41,6 +41,6 @@ var sx = {
             md: '1fr 1fr 1fr',
             xs: '1fr',
         },
-        gap: '16px'
+        gap: '16px',
     },
 };

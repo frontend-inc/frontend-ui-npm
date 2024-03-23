@@ -19,6 +19,6 @@ var sx = {
         p: 0,
     },
     rating: {
-        color: 'primary.main'
-    }
+        color: 'primary.main',
+    },
 };

@@ -19,10 +19,10 @@ var material_1 = require("@mui/material");
 var Popup = function (props) {
     var _a = props || {}, open = _a.open, handleClose = _a.handleClose, anchorEl = _a.anchorEl, children = _a.children, _b = _a.disablePadding, disablePadding = _b === void 0 ? false : _b, _c = _a.p, p = _c === void 0 ? 2 : _c, _d = _a.anchorOrigin, anchorOrigin = _d === void 0 ? {
         vertical: 'bottom',
-        horizontal: 'left'
+        horizontal: 'left',
     } : _d, _e = _a.transformOrigin, transformOrigin = _e === void 0 ? {
         vertical: 'top',
-        horizontal: 'left'
+        horizontal: 'left',
     } : _e;
     return (react_1.default.createElement(material_1.Popover, { open: open, anchorEl: anchorEl, onClose: handleClose, anchorOrigin: anchorOrigin, transformOrigin: transformOrigin, sx: sx.root },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), { p: p }), (disablePadding && sx.disablePadding)) }, children)));

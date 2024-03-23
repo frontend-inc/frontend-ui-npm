@@ -12,7 +12,7 @@ var CheckboxFilterList = function (props) {
     var handleFilterClick = function (value) {
         handleClick({
             name: option.name,
-            value: value
+            value: value,
         });
     };
     if (!option || !(typeof (option === null || option === void 0 ? void 0 : option.value) == 'object'))
@@ -21,11 +21,11 @@ var CheckboxFilterList = function (props) {
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleFilterClick(option); } },
             react_1.default.createElement(material_1.ListItemIcon, null,
                 react_1.default.createElement(material_1.Checkbox, { checked: values === null || values === void 0 ? void 0 : values.includes(option), color: "primary" })),
-            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: 'text.primary' }, option) })))); })));
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, option) })))); })));
 };
 exports.default = CheckboxFilterList;
 var sx = {
     listItemButton: {
-        py: 0
-    }
+        py: 0,
+    },
 };

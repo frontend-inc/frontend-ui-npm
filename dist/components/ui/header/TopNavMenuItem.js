@@ -88,10 +88,10 @@ var TopNavMenuItem = function (props) {
                 onMouseLeave: handleMouseLeave,
             }, anchorOrigin: {
                 vertical: 'bottom',
-                horizontal: 'center'
+                horizontal: 'center',
             }, transformOrigin: {
                 vertical: 'top',
-                horizontal: 'center'
+                horizontal: 'center',
             } }, children === null || children === void 0 ? void 0 :
             children.map(function (child, index) { return (react_1.default.createElement(material_1.MenuItem
             //@ts-ignore
@@ -139,6 +139,6 @@ var sx = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        p: 2
-    }
+        p: 2,
+    },
 };

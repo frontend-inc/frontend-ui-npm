@@ -1,5 +1,5 @@
 import React from 'react';
-type CollectionHeroProps = {
+type CollectionCoverImageProps = {
     handle: string;
     editing?: boolean;
     height?: number;
@@ -14,5 +14,5 @@ type CollectionHeroProps = {
     overlayColor?: string;
     href?: string;
 };
-declare const CollectionHero: React.FC<CollectionHeroProps>;
-export default CollectionHero;
+declare const CollectionCoverImage: React.FC<CollectionCoverImageProps>;
+export default CollectionCoverImage;

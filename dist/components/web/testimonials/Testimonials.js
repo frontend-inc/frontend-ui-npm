@@ -15,7 +15,7 @@ var Testimonials = function (props) {
         title && (react_1.default.createElement(material_2.Typography, { sx: sx.title, variant: "h5", color: "textPrimary" }, title)),
         layout == 'grid' && react_1.default.createElement(TestimonialsGrid_1.default, { testimonials: items }),
         layout == 'carousel' && (react_1.default.createElement(SwipeableTestimonials_1.default, { enableAutoPlay: enableAutoPlay, enableArrows: enableArrows, testimonials: items })),
-        (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Star', title: "No content", description: "Your content will appear here." }))));
+        (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Star", title: "No content", description: "Your content will appear here." }))));
 };
 exports.default = Testimonials;
 var sx = {

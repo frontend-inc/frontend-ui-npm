@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var NumberRangeInput = function (props) {
     var _a = props || {}, _b = _a.value, value = _b === void 0 ? {
         min: 0,
-        max: 0
+        max: 0,
     } : _b, name = _a.name, label = _a.label, handleChange = _a.handleChange, _c = _a.currency, currency = _c === void 0 ? '' : _c;
     var handleMinChange = function (ev) {
         var min = ev.target.value;

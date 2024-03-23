@@ -44,16 +44,20 @@ var useFilters = function (props) {
         return a === b;
     };
     var findDuplicateFilterIndex = function (filters, filter) {
-        return filters.findIndex(function (f) { return (f.field === filter.field &&
-            f.operator === filter.operator &&
-            f.where === filter.where &&
-            compareValues(f.value, filter.value)); });
+        return filters.findIndex(function (f) {
+            return f.field === filter.field &&
+                f.operator === filter.operator &&
+                f.where === filter.where &&
+                compareValues(f.value, filter.value);
+        });
     };
     var findDuplicateFilter = function (filters, filter) {
-        return filters.find(function (f) { return (f.field === filter.field &&
-            f.operator === filter.operator &&
-            f.where === filter.where &&
-            compareValues(f.value, filter.value)); });
+        return filters.find(function (f) {
+            return f.field === filter.field &&
+                f.operator === filter.operator &&
+                f.where === filter.where &&
+                compareValues(f.value, filter.value);
+        });
     };
     var handleAddFilter = function (filter) {
         var updatedFilters = __spreadArray([], activeFilters, true);
@@ -62,7 +66,7 @@ var useFilters = function (props) {
             updatedFilters = updatedFilters === null || updatedFilters === void 0 ? void 0 : updatedFilters.filter(function (f, index) { return index !== duplicateIndex; });
         }
         else {
-            //@ts-ignore 
+            //@ts-ignore
             updatedFilters = __spreadArray(__spreadArray([], updatedFilters, true), [filter], false);
         }
         setActiveFilters(updatedFilters);
@@ -132,7 +136,7 @@ var useFilters = function (props) {
         setActiveFilters: setActiveFilters,
         findDuplicateFilter: findDuplicateFilter,
         findDuplicateFilterIndex: findDuplicateFilterIndex,
-        buildQueryFilters: buildQueryFilters
+        buildQueryFilters: buildQueryFilters,
     };
 };
 exports.default = useFilters;

@@ -94,7 +94,7 @@ var Collection = function (props) {
     };
     var delayedLoading = (0, hooks_2.useDelayedLoading)({
         loading: loading,
-        delay: 250
+        delay: 250,
     }).loading;
     (0, react_1.useEffect)(function () {
         if (url && defaultQuery && perPage) {
@@ -129,12 +129,12 @@ var sx = {
         width: '100%',
     },
     content: {
-        width: '100%'
+        width: '100%',
     },
     list: {
         display: 'flex',
         flexDirection: 'column',
-        gap: '16px'
+        gap: '16px',
     },
     grid: {
         display: 'grid',
@@ -142,28 +142,28 @@ var sx = {
             md: '1fr 1fr 1fr',
             xs: '1fr',
         },
-        gap: '16px'
+        gap: '16px',
     },
     item: {
-        p: 2
+        p: 2,
     },
     filtersContainer: {
         mr: {
             sm: 2,
-            xs: 0
+            xs: 0,
         },
         mb: {
             sm: 0,
-            xs: 2
+            xs: 2,
         },
     },
     sortFilterActions: {
         justifyContent: 'flex-end',
     },
     loading: {
-        opacity: 0.7
+        opacity: 0.7,
     },
     circularProgress: {
-        color: 'primary.main'
-    }
+        color: 'primary.main',
+    },
 };

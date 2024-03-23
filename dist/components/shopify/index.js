@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MetafieldVideo = exports.MetafieldProducts = exports.MetafieldRichText = exports.MetafieldImage = exports.Metafields = exports.ProductSearch = exports.ProductRecommendations = exports.ProductModal = exports.ProductMetafields = exports.ProductImageThumbnails = exports.ProductImageCarousel = exports.ProductImages = exports.SwipeableProductImages = exports.ProductGrid = exports.ProductDescription = exports.ProductDetailPage = exports.ProductInfo = exports.ProductCollectionCarousel = exports.ProductCollection = exports.ProductCarousel = exports.ProductCard = exports.CollectionHero = exports.Collections = exports.ProductVariantSelector = exports.SearchModal = exports.SearchButton = exports.OrderDetails = exports.OrderItem = exports.OrderList = exports.QuantitySelector = exports.OrderLineItem = exports.ColorSelector = exports.CheckboxFilterButton = exports.CheckboxFilterList = exports.ProductSearchFilters = exports.ProductFiltersList = exports.ProductFilterButton = exports.ProductSortButton = exports.SubscriptionSelector = exports.QuickShopButton = exports.CheckoutButton = exports.CartText = exports.CartTotals = exports.CartLines = exports.CartLine = exports.CartDiscountCode = exports.CartDiscounts = exports.CartButton = exports.Cart = exports.AddToCartButton = void 0;
+exports.MetafieldVideo = exports.MetafieldProducts = exports.MetafieldRichText = exports.MetafieldImage = exports.Metafields = exports.ProductSearch = exports.ProductRecommendations = exports.ProductModal = exports.ProductMetafields = exports.ProductImagesSlider = exports.ProductImageCarousel = exports.ProductImages = exports.SwipeableProductImages = exports.ProductGrid = exports.ProductDescription = exports.ProductDetailPage = exports.ProductInfo = exports.ProductCollectionCarousel = exports.ProductCollection = exports.ProductCarousel = exports.ProductCard = exports.CollectionCoverImage = exports.Collections = exports.ProductVariantSelector = exports.SearchModal = exports.SearchButton = exports.OrderDetails = exports.OrderItem = exports.OrderList = exports.QuantitySelector = exports.OrderLineItem = exports.ColorSelector = exports.CheckboxFilterButton = exports.CheckboxFilterList = exports.ProductSearchFilters = exports.ProductFiltersList = exports.ProductFilterButton = exports.ProductSortButton = exports.SubscriptionSelector = exports.QuickShopButton = exports.CheckoutButton = exports.CartText = exports.CartTotals = exports.CartLines = exports.CartLine = exports.CartDiscountCode = exports.CartDiscounts = exports.CartButton = exports.Cart = exports.AddToCartButton = void 0;
 exports.ShopifyAuth = exports.RegisterForm = exports.Register = exports.Orders = exports.Order = exports.CustomerAccount = exports.SignInForm = exports.SignIn = exports.ChangePasswordForm = exports.ChangePassword = exports.Customer = exports.CustomerForm = exports.AddressForm = exports.AddressItem = exports.AddressList = exports.Addresses = exports.Address = exports.TrackRecentlyViewed = exports.RecentlyViewed = exports.ProductFavoritesCarousel = exports.ProductFavorites = exports.FavoriteButton = exports.ShopifyStore = void 0;
 // Cart and Checkout
 var AddToCartButton_1 = require("./cart/AddToCartButton");
@@ -66,8 +66,8 @@ Object.defineProperty(exports, "ProductVariantSelector", { enumerable: true, get
 // Collections
 var Collections_1 = require("./collections/Collections");
 Object.defineProperty(exports, "Collections", { enumerable: true, get: function () { return __importDefault(Collections_1).default; } });
-var CollectionHero_1 = require("./collections/CollectionHero");
-Object.defineProperty(exports, "CollectionHero", { enumerable: true, get: function () { return __importDefault(CollectionHero_1).default; } });
+var CollectionCoverImage_1 = require("./collections/CollectionCoverImage");
+Object.defineProperty(exports, "CollectionCoverImage", { enumerable: true, get: function () { return __importDefault(CollectionCoverImage_1).default; } });
 // Products
 var ProductCard_1 = require("./products/ProductCard");
 Object.defineProperty(exports, "ProductCard", { enumerable: true, get: function () { return __importDefault(ProductCard_1).default; } });
@@ -91,8 +91,8 @@ var ProductImages_1 = require("./products/images/ProductImages");
 Object.defineProperty(exports, "ProductImages", { enumerable: true, get: function () { return __importDefault(ProductImages_1).default; } });
 var ProductImageCarousel_1 = require("./products/images/ProductImageCarousel");
 Object.defineProperty(exports, "ProductImageCarousel", { enumerable: true, get: function () { return __importDefault(ProductImageCarousel_1).default; } });
-var ProductImageThumbnails_1 = require("./products/images/ProductImageThumbnails");
-Object.defineProperty(exports, "ProductImageThumbnails", { enumerable: true, get: function () { return __importDefault(ProductImageThumbnails_1).default; } });
+var ProductImagesSlider_1 = require("./products/images/ProductImagesSlider");
+Object.defineProperty(exports, "ProductImagesSlider", { enumerable: true, get: function () { return __importDefault(ProductImagesSlider_1).default; } });
 var ProductMetafields_1 = require("./products/ProductMetafields");
 Object.defineProperty(exports, "ProductMetafields", { enumerable: true, get: function () { return __importDefault(ProductMetafields_1).default; } });
 var ProductModal_1 = require("./products/ProductModal");

@@ -11,7 +11,7 @@ var CheckboxFilterItem = function (props) {
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick },
             react_1.default.createElement(material_1.ListItemIcon, null,
                 react_1.default.createElement(material_1.Checkbox, { checked: values.includes(option.value), color: "primary" })),
-            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: 'text.primary', variant: "button" }, option === null || option === void 0 ? void 0 : option.label) }))));
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "button" }, option === null || option === void 0 ? void 0 : option.label) }))));
 };
 exports.default = CheckboxFilterItem;
 var sx = {

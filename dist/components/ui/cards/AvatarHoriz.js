@@ -70,6 +70,6 @@ var sx = {
         width: '64px',
     },
     description: {
-        maxWidth: 320
-    }
+        maxWidth: 320,
+    },
 };

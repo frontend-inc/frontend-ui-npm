@@ -2,8 +2,8 @@ import React from 'react';
 type LogosProps = {
     title?: string;
     items?: {
-        src: string;
-        alt?: string;
+        image: string;
+        title?: string;
     }[];
     editing?: boolean;
     buttonText?: string;

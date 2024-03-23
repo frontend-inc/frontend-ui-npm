@@ -54,21 +54,21 @@ var useKlaviyo = function (params) {
                     body = JSON.stringify({
                         email: email,
                         listId: listId,
-                        apiKey: apiKey
+                        apiKey: apiKey,
                     });
                     return [4 /*yield*/, fetch("/api/klaviyo-subscribe", {
                             method: 'POST',
                             headers: {
-                                'Content-Type': 'application/json'
+                                'Content-Type': 'application/json',
                             },
-                            body: body
+                            body: body,
                         })];
                 case 2:
                     resp = _b.sent();
                     return [2 /*return*/, resp === null || resp === void 0 ? void 0 : resp.json()];
                 case 3:
                     e_1 = _b.sent();
-                    console.log("Error", e_1);
+                    console.log('Error', e_1);
                     return [3 /*break*/, 5];
                 case 4:
                     setLoading(false);

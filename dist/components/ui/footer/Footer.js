@@ -40,7 +40,7 @@ var Footer = function (props) {
         react_1.default.createElement(material_1.Box, { sx: sx.container },
             react_1.default.createElement(material_1.Box, { sx: sx.left },
                 react_1.default.createElement(material_1.Box, { sx: sx.logoContainer }, logo && (react_1.default.createElement(image_1.default, { src: logo, alt: name, width: 120, height: 120, style: {
-                        objectFit: 'contain'
+                        objectFit: 'contain',
                     } })))),
             react_1.default.createElement(material_1.Box, { sx: sx.gridContainer },
                 react_1.default.createElement(material_1.Box, { sx: sx.grid }, menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (menuItem, i) { return (react_1.default.createElement(FooterLinks_1.default, { key: i, menuItem: menuItem, handleClick: handleClick })); }))),
@@ -72,25 +72,25 @@ var sx = {
     },
     logo: {
         height: 120,
-        width: 120
+        width: 120,
     },
     container: {
         width: '100%',
         display: 'flex',
         flexDirection: {
             xs: 'column',
-            sm: 'row'
+            sm: 'row',
         },
         justifyContent: 'space-between',
         alignItems: 'flex-start',
     },
     left: {
         p: 2,
-        width: 240
+        width: 240,
     },
     right: {
         p: 2,
-        width: 240
+        width: 240,
     },
     logoContainer: {
         px: 1,
@@ -134,6 +134,6 @@ var sx = {
         direction: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
-        pb: 4
-    }
+        pb: 4,
+    },
 };

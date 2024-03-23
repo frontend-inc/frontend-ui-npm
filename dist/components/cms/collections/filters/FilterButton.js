@@ -60,10 +60,10 @@ var FilterButton = function (props) {
         react_1.default.createElement(material_1.Hidden, { smDown: true },
             react_1.default.createElement(__1.Popup, { p: 1, anchorEl: anchorEl, open: open, handleClose: handleClose, anchorOrigin: {
                     vertical: 'bottom',
-                    horizontal: 'right'
+                    horizontal: 'right',
                 }, transformOrigin: {
                     vertical: 'top',
-                    horizontal: 'right'
+                    horizontal: 'right',
                 } },
                 react_1.default.createElement(CollectionFilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter }))),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
@@ -81,7 +81,7 @@ var sx = {
         width: {
             sm: '100%',
             xs: '100%',
-        }
+        },
     },
     hideBorder: {
         borderRight: 'none',

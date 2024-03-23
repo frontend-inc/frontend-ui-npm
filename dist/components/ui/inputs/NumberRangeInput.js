@@ -20,7 +20,7 @@ var components_1 = require("../../../components");
 var NumberRangeInput = function (props) {
     var _a = props || {}, _b = _a.value, value = _b === void 0 ? {
         min: null,
-        max: null
+        max: null,
     } : _b, name = _a.name, label = _a.label, handleChange = _a.handleChange;
     var handleMinChange = function (ev) {
         var min = ev.target.value;

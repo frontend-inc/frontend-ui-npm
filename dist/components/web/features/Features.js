@@ -15,7 +15,7 @@ var Features = function (props) {
             items.map(function (item, i) { return (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, md: 4, key: i },
                 react_1.default.createElement(material_1.Box, { sx: sx.item },
                     react_1.default.createElement(Feature_1.default, { icon: item === null || item === void 0 ? void 0 : item.icon, title: item === null || item === void 0 ? void 0 : item.title, description: item === null || item === void 0 ? void 0 : item.description })))); })),
-        (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Search', title: "No content", description: "Your content will appear here." }))));
+        (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Search", title: "No content", description: "Your content will appear here." }))));
 };
 exports.default = Features;
 var sx = {

@@ -13,7 +13,7 @@ var CheckboxFilter = function (props) {
         { label: '4 Stars', value: 4 },
         { label: '3 Stars', value: 3 },
         { label: '2 Stars', value: 2 },
-        { label: '1 Stars', value: 1 }
+        { label: '1 Stars', value: 1 },
     ];
     return (react_1.default.createElement(components_1.ExpandableList, { label: label, enableBorder: enableBorder, disablePadding: disablePadding, closed: closed }, RATING_OPTIONS === null || RATING_OPTIONS === void 0 ? void 0 : RATING_OPTIONS.map(function (option, index) { return (react_1.default.createElement(CheckboxRatingsFilterItem_1.default, { key: index, values: values, option: option, handleClick: function () {
             return handleClick({

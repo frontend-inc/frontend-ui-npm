@@ -13,11 +13,11 @@ var Article = function (props) {
     var published_at = (data || {}).published_at;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 7 },
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
-            react_1.default.createElement(material_1.Typography, { color: 'text.primary', variant: "h3" }, title),
-            react_1.default.createElement(material_1.Typography, { color: 'text.secondary', variant: "caption" }, (0, moment_1.default)(published_at).format('MMMM D, YYYY'))),
+            react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
+            react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption" }, (0, moment_1.default)(published_at).format('MMMM D, YYYY'))),
         react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400 }),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
-            react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.primary', sx: sx.text }, description))));
+            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description))));
 };
 exports.default = Article;
 var sx = {
@@ -35,7 +35,7 @@ var sx = {
         width: '100%',
         maxWidth: {
             sm: 500,
-            xs: '100%'
+            xs: '100%',
         },
     },
     text: {
@@ -44,5 +44,5 @@ var sx = {
     },
     caption: {
         color: 'text.secondary',
-    }
+    },
 };

@@ -85,9 +85,9 @@ var sx = {
             md: '1fr 1fr 1fr',
             xs: '1fr',
         },
-        gap: '16px'
+        gap: '16px',
     },
     item: {
-        p: 2
-    }
+        p: 2,
+    },
 };

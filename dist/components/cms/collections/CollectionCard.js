@@ -33,15 +33,15 @@ var CollectionCard = function (props) {
         list: {
             card: __1.CardHoriz,
             avatar: __1.AvatarHoriz,
-            cover: __1.CoverHoriz
+            cover: __1.CoverHoriz,
         },
         grid: {
             card: __1.CardVert,
             avatar: __1.AvatarVert,
-            cover: __1.CoverVert
-        }
+            cover: __1.CoverVert,
+        },
     };
     var Component = COMPONENTS[layout][style] || __1.CardVert;
-    return (react_1.default.createElement(Component, __assign({}, rest)));
+    return react_1.default.createElement(Component, __assign({}, rest));
 };
 exports.default = CollectionCard;

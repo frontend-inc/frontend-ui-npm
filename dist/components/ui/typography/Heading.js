@@ -27,7 +27,7 @@ exports.default = Heading;
 var sx = {
     stack: {
         width: '100%',
-        mb: 2
+        mb: 2,
     },
     label: {
         color: 'primary.main',

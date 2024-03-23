@@ -105,5 +105,5 @@ var sx = {
     quickShopButton: {
         bgcolor: 'tertiary.main',
         color: 'text.primary',
-    }
+    },
 };

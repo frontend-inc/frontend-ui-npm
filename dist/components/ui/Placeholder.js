@@ -20,7 +20,7 @@ var components_1 = require("../../components");
 var Placeholder = function (props) {
     var icon = props.icon, title = props.title, description = props.description, actions = props.actions, _a = props.color, color = _a === void 0 ? 'text.secondary' : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.root), (enableBorder && sx.border)) },
-        icon && (react_1.default.createElement(components_1.Icon, { name: icon, size: 24, color: color })),
+        icon && react_1.default.createElement(components_1.Icon, { name: icon, size: 24, color: color }),
         react_1.default.createElement(material_1.Stack, null,
             react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: "button" }, title),
             react_1.default.createElement(material_1.Typography, { sx: sx.description, variant: "body2", color: "textSecondary" }, description),

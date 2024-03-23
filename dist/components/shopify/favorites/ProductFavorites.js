@@ -14,7 +14,7 @@ var ProductFavorites = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         title && (react_1.default.createElement(material_1.Typography, { mb: 1, color: "textPrimary", variant: "h5" }, title)),
         react_1.default.createElement(__2.ProductGrid, { editing: editing, products: favorites, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, buttonText: buttonText }),
-        (favorites === null || favorites === void 0 ? void 0 : favorites.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Heart", title: 'No favorites', description: "You have no favorites yet." }))));
+        (favorites === null || favorites === void 0 ? void 0 : favorites.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Heart', title: 'No favorites', description: 'You have no favorites yet.' }))));
 };
 exports.default = ProductFavorites;
 var sx = {

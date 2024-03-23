@@ -11,12 +11,11 @@ var RadioPriceRangeOption = function (props) {
     var priceOption = props.priceOption, values = props.values, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.ListItem, { disablePadding: true },
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleClick(priceOption); } },
-            react_1.default.createElement(material_1.ListItemIcon, null, (values === null || values === void 0 ? void 0 : values.includes(priceOption)) ?
-                react_1.default.createElement(icons_material_1.RadioButtonChecked, null) :
-                react_1.default.createElement(icons_material_1.RadioButtonUnchecked, null)),
-            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: 'text.primary' },
+            react_1.default.createElement(material_1.ListItemIcon, null, (values === null || values === void 0 ? void 0 : values.includes(priceOption)) ? (react_1.default.createElement(icons_material_1.RadioButtonChecked, null)) : (react_1.default.createElement(icons_material_1.RadioButtonUnchecked, null))),
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" },
                     (0, frontend_shopify_1.formatCurrency)(priceOption.min, 0),
-                    " - ",
+                    " -",
+                    ' ',
                     (0, frontend_shopify_1.formatCurrency)(priceOption.max, 0)) }))));
 };
 var RadioPriceRangeInput = function (props) {
@@ -25,7 +24,7 @@ var RadioPriceRangeInput = function (props) {
     var handleFilterClick = function (value) {
         handleClick({
             name: 'price',
-            value: value
+            value: value,
         });
     };
     if ((options === null || options === void 0 ? void 0 : options.length) == 0)
@@ -37,6 +36,6 @@ var RadioPriceRangeInput = function (props) {
 exports.default = RadioPriceRangeInput;
 var sx = {
     listItemButton: {
-        py: 0
-    }
+        py: 0,
+    },
 };

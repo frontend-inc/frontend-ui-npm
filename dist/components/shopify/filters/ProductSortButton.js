@@ -61,19 +61,19 @@ var sx = {
     buttonGroup: {
         width: {
             sm: 'auto',
-            xs: '100%'
+            xs: '100%',
         },
     },
     button: {
         width: {
             sm: 'auto',
-            xs: '100%'
+            xs: '100%',
         },
         color: 'text.primary',
         borderRight: 'none',
         bgcolor: 'tertiary.main',
         '&:hover': {
-            bgcolor: 'tertiary.light'
+            bgcolor: 'tertiary.light',
         },
     },
     secondaryButton: {

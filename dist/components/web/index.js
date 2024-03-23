@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SwipeableTestimonials = exports.TestimonialCard = exports.TestimonialsGrid = exports.Testimonials = exports.TabItem = exports.Tabs = exports.PriceCard = exports.Prices = exports.Logos = exports.FeaturedCard = exports.Featured = exports.Features = exports.Feature = exports.CTA = exports.Cards = exports.AccordionItem = exports.Accordion = void 0;
-// Web 
+// Web
 var Accordion_1 = require("./accordions/Accordion");
 Object.defineProperty(exports, "Accordion", { enumerable: true, get: function () { return __importDefault(Accordion_1).default; } });
 var AccordionItem_1 = require("./accordions/AccordionItem");

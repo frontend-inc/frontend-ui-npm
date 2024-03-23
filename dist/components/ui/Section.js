@@ -40,15 +40,15 @@ var theme_1 = require("../../theme");
 var Section = function (props) {
     var children = props.children, title = props.title, _a = props.textAlign, textAlign = _a === void 0 ? 'left' : _a, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _b = props.py, py = _b === void 0 ? 4 : _b, _c = props.px, px = _c === void 0 ? 2 : _c;
     var _d = (0, react_1.useState)(theme_1.muiTheme.breakpoints.values.md), width = _d[0], setWidth = _d[1];
-    // Since breakpoints are modified to  
-    // to compensate for the extra width of the Editor 
+    // Since breakpoints are modified to
+    // to compensate for the extra width of the Editor
     // we need to adjust the width of the Section component manually
     (0, react_1.useEffect)(function () {
         switch (maxWidth) {
-            case "sm":
+            case 'sm':
                 setWidth(theme_1.muiTheme.breakpoints.values.sm);
                 break;
-            case "md":
+            case 'md':
                 setWidth(theme_1.muiTheme.breakpoints.values.md);
                 break;
             default:

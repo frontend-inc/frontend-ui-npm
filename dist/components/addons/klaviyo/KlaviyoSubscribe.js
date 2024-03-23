@@ -67,7 +67,7 @@ var KlaviyoSubscribe = function (props) {
     var _a = props || {}, listId = _a.listId, apiKey = _a.apiKey, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b, title = _a.title, description = _a.description;
     var _c = (0, hooks_1.useAlerts)(), showAlertError = _c.showAlertError, showAlertSuccess = _c.showAlertSuccess;
     var _d = (0, hooks_1.useKlaviyo)({
-        apiKey: apiKey
+        apiKey: apiKey,
     }), loading = _d.loading, handleSubmit = _d.handleSubmit;
     var _e = (0, react_1.useState)(''), email = _e[0], setEmail = _e[1];
     var handleFormSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -76,28 +76,28 @@ var KlaviyoSubscribe = function (props) {
             switch (_a.label) {
                 case 0:
                     if (!email || !(email === null || email === void 0 ? void 0 : email.includes('@'))) {
-                        return [2 /*return*/, showAlertError("Please enter a valid email")];
+                        return [2 /*return*/, showAlertError('Please enter a valid email')];
                     }
                     if (!listId) {
-                        return [2 /*return*/, showAlertError("Please enter a klaviyo list ID")];
+                        return [2 /*return*/, showAlertError('Please enter a klaviyo list ID')];
                     }
                     if (!apiKey) {
-                        return [2 /*return*/, showAlertError("Please enter your public klaviyo API key")];
+                        return [2 /*return*/, showAlertError('Please enter your public klaviyo API key')];
                     }
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
                     return [4 /*yield*/, handleSubmit({
                             email: email,
-                            listId: listId
+                            listId: listId,
                         })];
                 case 2:
                     _a.sent();
-                    showAlertSuccess("You have been subscribed to our newsletter!");
+                    showAlertSuccess('You have been subscribed to our newsletter!');
                     return [3 /*break*/, 4];
                 case 3:
                     e_1 = _a.sent();
-                    console.log("Error", e_1);
+                    console.log('Error', e_1);
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
             }
@@ -107,7 +107,7 @@ var KlaviyoSubscribe = function (props) {
         setEmail(ev.target.value);
     };
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
-        (title || description) && (react_1.default.createElement(__1.Heading, { title: title, description: description, textAlign: 'center' })),
+        (title || description) && (react_1.default.createElement(__1.Heading, { title: title, description: description, textAlign: "center" })),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.form },
             react_1.default.createElement(__1.TextInput, { direction: "row", placeholder: 'Enter email...', name: "email", value: email, handleChange: handleChange, styles: sx.input }),
             react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "secondary", onClick: handleFormSubmit }, loading ? react_1.default.createElement(__1.ButtonLoader, { loading: loading }) : "".concat(buttonText)))));
@@ -116,7 +116,7 @@ exports.default = KlaviyoSubscribe;
 var sx = {
     root: {
         py: 2,
-        width: "100%",
+        width: '100%',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -125,15 +125,19 @@ var sx = {
         maxWidth: 400,
     },
     text: {
-        pt: 2
+        pt: 2,
     },
     button: {
         minWidth: 120,
-        borderRadius: function (theme) { return "0 ".concat(theme.shape.borderRadius, "px ").concat(theme.shape.borderRadius, "px 0"); },
+        borderRadius: function (theme) {
+            return "0 ".concat(theme.shape.borderRadius, "px ").concat(theme.shape.borderRadius, "px 0");
+        },
     },
     input: {
         '& .MuiInputBase-input': {
-            borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px 0 0 ").concat(theme.shape.borderRadius, "px"); },
-        }
-    }
+            borderRadius: function (theme) {
+                return "".concat(theme.shape.borderRadius, "px 0 0 ").concat(theme.shape.borderRadius, "px");
+            },
+        },
+    },
 };

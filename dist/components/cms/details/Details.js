@@ -38,10 +38,7 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
-var FULL_WIDTH_VARIANTS = [
-    'text',
-    'image'
-];
+var FULL_WIDTH_VARIANTS = ['text', 'image'];
 var Details = function (props) {
     var resource = props.resource, fields = props.fields, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a;
     var _b = (0, react_1.useState)(), document = _b[0], setDocument = _b[1];
@@ -51,9 +48,10 @@ var Details = function (props) {
         }
     }, [resource]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Grid, { container: true, spacing: 1 }, document && fields.map(function (field, i) { return (react_1.default.createElement(material_1.Grid, { key: i, item: true, xs: 12, sm: FULL_WIDTH_VARIANTS.includes(field === null || field === void 0 ? void 0 : field.variant) ? 12 : 4 },
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.item), (enableBorder && sx.itemBorder)) },
-                react_1.default.createElement(__1.Field, { field: field, document: document })))); }))));
+        react_1.default.createElement(material_1.Grid, { container: true, spacing: 1 }, document &&
+            fields.map(function (field, i) { return (react_1.default.createElement(material_1.Grid, { key: i, item: true, xs: 12, sm: FULL_WIDTH_VARIANTS.includes(field === null || field === void 0 ? void 0 : field.variant) ? 12 : 4 },
+                react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.item), (enableBorder && sx.itemBorder)) },
+                    react_1.default.createElement(__1.Field, { field: field, document: document })))); }))));
 };
 exports.default = Details;
 var sx = {
@@ -71,6 +69,6 @@ var sx = {
         borderColor: 'divider',
     },
     itemFullWidth: {
-        gridColumn: 'span 3'
+        gridColumn: 'span 3',
     },
 };

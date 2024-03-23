@@ -81,5 +81,5 @@ var SocialLink = function (props) {
 exports.default = SocialLink;
 var styles = {
     height: 32,
-    width: 32
+    width: 32,
 };
