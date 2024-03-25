@@ -9,7 +9,7 @@ type ModalProps = {
     children?: any;
     maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false;
     secondaryActions?: any;
-    p?: number;
+    disablePadding?: boolean;
     fullScreen?: boolean;
     enableCancel?: boolean;
     hideBackdrop?: boolean;

@@ -89,7 +89,7 @@ var TableView = function (props) {
         setQuery(__assign(__assign({}, query), (_a = {}, _a[name] = value, _a)));
     };
     var handleClearFilters = function () {
-        findMany(__assign(__assign({}, query), { filters: {}, keywords: '' }));
+        findMany(__assign(__assign({}, query), { filters: {}, sort_by: 'id', sort_direction: 'desc', keywords: '' }));
     };
     var handleSort = function (field) {
         var sortDirection = (query === null || query === void 0 ? void 0 : query.sort_by) || 'desc';

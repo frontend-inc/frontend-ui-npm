@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var Modal = function (props) {
-    var open = props.open, _a = props.loading, loading = _a === void 0 ? false : _a, handleClose = props.handleClose, title = props.title, subtitle = props.subtitle, actions = props.actions, children = props.children, maxWidth = props.maxWidth, secondaryActions = props.secondaryActions, _b = props.p, p = _b === void 0 ? 1 : _b, fullScreen = props.fullScreen, _c = props.enableCancel, enableCancel = _c === void 0 ? false : _c, _d = props.hideBackdrop, hideBackdrop = _d === void 0 ? false : _d;
+    var open = props.open, _a = props.loading, loading = _a === void 0 ? false : _a, handleClose = props.handleClose, title = props.title, subtitle = props.subtitle, actions = props.actions, children = props.children, maxWidth = props.maxWidth, secondaryActions = props.secondaryActions, _b = props.disablePadding, disablePadding = _b === void 0 ? false : _b, fullScreen = props.fullScreen, _c = props.enableCancel, enableCancel = _c === void 0 ? false : _c, _d = props.hideBackdrop, hideBackdrop = _d === void 0 ? false : _d;
     var isMobile = (0, hooks_1.useResponsive)().isMobile;
     return (react_1.default.createElement(material_1.Dialog, { sx: sx.root, fullWidth: true, maxWidth: maxWidth || 'sm', fullScreen: isMobile || fullScreen === true ? true : false, open: open, onClose: handleClose, hideBackdrop: hideBackdrop },
         react_1.default.createElement(material_1.DialogTitle, { sx: sx.dialogTitleContainer },
@@ -29,7 +29,7 @@ var Modal = function (props) {
                     secondaryActions && secondaryActions,
                     react_1.default.createElement(material_1.IconButton, { onClick: handleClose },
                         react_1.default.createElement(components_1.Icon, { name: "X" })))))),
-        react_1.default.createElement(material_1.DialogContent, { sx: __assign(__assign({}, sx.dialogContent), { p: p }) },
+        react_1.default.createElement(material_1.DialogContent, { sx: __assign(__assign({}, sx.dialogContent), (disablePadding && sx.disablePadding)) },
             subtitle && (react_1.default.createElement(material_1.Typography, { variant: "body1", mt: 1 }, subtitle)),
             react_1.default.createElement(components_1.Loader, { loading: loading }),
             !loading && react_1.default.createElement(material_1.Box, { sx: sx.content }, children)),
@@ -55,11 +55,15 @@ var sx = {
         justifyContent: 'space-between',
     },
     dialogContent: {
+        p: 2,
         height: '100%',
         bgcolor: 'background.default',
     },
     dialogActions: {
         bgcolor: 'background.default',
+    },
+    disablePadding: {
+        p: 0,
     },
     secondaryActions: {
         display: 'flex',

@@ -49,7 +49,7 @@ var VideoModal = function (props) {
         title = src === null || src === void 0 ? void 0 : src.split('/').pop();
     }
     return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme, bgcolor: "#000000" },
-        react_1.default.createElement(__1.Modal, { fullScreen: true, open: open, handleClose: handleClose, maxWidth: "md", p: 0, title: title, actions: react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(__1.Modal, { fullScreen: true, open: open, handleClose: handleClose, maxWidth: "md", title: title, actions: react_1.default.createElement(react_1.default.Fragment, null,
                 enableCopy && (react_1.default.createElement(material_1.Button, { variant: "outlined", sx: sx.button, startIcon: react_1.default.createElement(lucide_react_1.Link, null), onClick: handleCopyUrlClick }, "Copy URL")),
                 enableDownload && (react_1.default.createElement(material_1.Button, { variant: "outlined", sx: sx.button, startIcon: react_1.default.createElement(lucide_react_1.Download, null), onClick: handleDownloadClick }, "Download"))) },
             react_1.default.createElement(material_1.Box, { sx: sx.root },

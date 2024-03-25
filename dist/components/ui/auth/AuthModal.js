@@ -84,9 +84,9 @@ var AuthModal = function (props) {
     var router = (0, router_1.useRouter)();
     var appId = router.query.app_id;
     var _a = (0, react_1.useContext)(context_1.AppContext), authOpen = _a.authOpen, setAuthOpen = _a.setAuthOpen;
-    var _b = props || {}, logo = _b.logo, _c = _b.disableUsername, disableUsername = _c === void 0 ? false : _c;
-    var _d = (0, frontend_js_1.useAuth)(), errors = _d.errors, loading = _d.loading, user = _d.user, handleChange = _d.handleChange, login = _d.login, signup = _d.signup, forgotPassword = _d.forgotPassword, verifyPin = _d.verifyPin, sendPin = _d.sendPin;
-    var _e = (0, react_1.useState)(0), tab = _e[0], setTab = _e[1];
+    var logo = (props || {}).logo;
+    var _b = (0, frontend_js_1.useAuth)(), errors = _b.errors, loading = _b.loading, user = _b.user, handleChange = _b.handleChange, login = _b.login, signup = _b.signup, forgotPassword = _b.forgotPassword, verifyPin = _b.verifyPin, sendPin = _b.sendPin;
+    var _c = (0, react_1.useState)(0), tab = _c[0], setTab = _c[1];
     var handleTabChange = function (ev, newValue) {
         setTab(newValue);
     };
@@ -151,7 +151,7 @@ var AuthModal = function (props) {
             setTab(0);
         }
     }, [authOpen]);
-    return (react_1.default.createElement(components_1.Modal, { open: authOpen, handleClose: function () { return setAuthOpen(false); }, p: 4 },
+    return (react_1.default.createElement(components_1.Modal, { open: authOpen, handleClose: function () { return setAuthOpen(false); }, disablePadding: true },
         react_1.default.createElement(material_1.Box, { sx: sx.logo },
             react_1.default.createElement(image_1.default, { src: logo, alt: "Logo", height: 48, width: 48 })),
         react_1.default.createElement(material_1.Tabs, { variant: "fullWidth", value: tab, onChange: handleTabChange, sx: sx.tabs },

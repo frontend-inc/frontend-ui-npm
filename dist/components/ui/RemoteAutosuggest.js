@@ -74,7 +74,7 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var hooks_1 = require("../../hooks");
 var RemoteAutosuggest = function (props) {
-    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, handleChange = props.handleChange, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? null : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f;
+    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, handleChange = props.handleChange, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? {} : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f;
     var _g = (0, hooks_1.useError)({
         errors: errors,
         name: name,
@@ -122,6 +122,7 @@ var RemoteAutosuggest = function (props) {
     }, [value, resources, url]);
     (0, react_1.useEffect)(function () {
         if (url) {
+            //@ts-ignore
             findMany(defaultQuery);
         }
     }, [url]);
