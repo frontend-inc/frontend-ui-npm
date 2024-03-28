@@ -78,15 +78,16 @@ var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var FormField_1 = __importDefault(require("./FormField"));
+var components_1 = require("../../../components");
 var index_1 = require("../../../constants/index");
 var lodash_1 = require("lodash");
 var Form = function (props) {
-    var handle = props.handle, buttonText = props.buttonText, variant = props.variant, fields = props.fields, url = props.url;
-    var _a = (0, react_1.useState)(false), submitted = _a[0], setSubmitted = _a[1];
-    var _b = (0, frontend_js_1.useResource)({
+    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, title = props.title, fields = props.fields, url = props.url;
+    var _b = (0, react_1.useState)(false), submitted = _b[0], setSubmitted = _b[1];
+    var _c = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _b.loading, findOne = _b.findOne, resource = _b.resource, setResource = _b.setResource, update = _b.update, create = _b.create, handleChange = _b.handleChange, removeAttachment = _b.removeAttachment;
+    }), loading = _c.loading, findOne = _c.findOne, resource = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, handleChange = _c.handleChange, removeAttachment = _c.removeAttachment;
     var handleDataChange = function (ev) {
         var name = ev.target.name;
         var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
@@ -139,15 +140,20 @@ var Form = function (props) {
             findOne(handle);
         }
     }, [handle]);
-    return !submitted ? (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root }, fields === null || fields === void 0 ? void 0 :
-        fields.map(function (field, index) {
-            return index_1.SYSTEM_FIELDS.includes(field.name) ? (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove })) : (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource === null || resource === void 0 ? void 0 : resource.data, field.name), handleChange: handleDataChange }));
-        }),
-        react_1.default.createElement(material_1.Button, { variant: variant, onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: loading }) }, buttonText ? buttonText : 'Submit'))) : (react_1.default.createElement(__1.Placeholder, { enableBorder: true, icon: 'Check', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { variant: "outlined", onClick: function () { return setSubmitted(false); } }, "Done") }));
+    return (!submitted ? (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        title && (react_1.default.createElement(components_1.Heading, { title: title })),
+        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root }, fields === null || fields === void 0 ? void 0 :
+            fields.map(function (field, index) {
+                return index_1.SYSTEM_FIELDS.includes(field.name) ? (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove })) : (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource === null || resource === void 0 ? void 0 : resource.data, field.name), handleChange: handleDataChange }));
+            }),
+            react_1.default.createElement(material_1.Button, { size: "large", variant: 'contained', onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: loading }) }, buttonText)))) : (react_1.default.createElement(__1.Placeholder, { enableBorder: true, icon: 'Check', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { variant: "outlined", onClick: function () { return setSubmitted(false); } }, "Done") })));
 };
 exports.default = Form;
 var sx = {
     root: {
         width: '100%',
     },
+    button: {
+        mt: 2
+    }
 };

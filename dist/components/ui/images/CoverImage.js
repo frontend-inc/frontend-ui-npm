@@ -42,7 +42,7 @@ var context_1 = require("../../../context");
 var CoverImage = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var title = props.title, description = props.description, buttonText = props.buttonText, handleClick = props.handleClick, image = props.image, _a = props.height, height = _a === void 0 ? 400 : _a, _b = props.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.opacity, opacity = _f === void 0 ? 0.65 : _f, _g = props.alignItems, alignItems = _g === void 0 ? 'center' : _g, _h = props.overlayColor, overlayColor = _h === void 0 ? '#FFFFFF' : _h, href = props.href;
+    var title = props.title, description = props.description, buttonText = props.buttonText, handleClick = props.handleClick, image = props.image, _a = props.height, height = _a === void 0 ? 520 : _a, _b = props.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.opacity, opacity = _f === void 0 ? 0.65 : _f, _g = props.alignItems, alignItems = _g === void 0 ? 'center' : _g, _h = props.overlayColor, overlayColor = _h === void 0 ? '#FFFFFF' : _h, href = props.href;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -55,10 +55,10 @@ var CoverImage = function (props) {
         react_1.default.createElement(components_1.Image, { src: image, alt: alt, height: height, objectFit: objectFit, disableBorderRadius: true, bgcolor: overlayColor, enableGradient: enableGradient, enableOverlay: enableOverlay, opacity: opacity }),
         react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), { height: "".concat(height, "px") }) },
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, alignItems: alignItems, sx: sx.content },
-                title && (react_1.default.createElement(material_1.Typography, { variant: 'h4', color: "text.primary", sx: {
+                title && (react_1.default.createElement(material_1.Typography, { variant: 'h3', color: "text.primary", sx: {
                         textAlign: alignItems === 'center' ? 'center' : 'left',
                     } }, title)),
-                description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: {
+                description && (react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "text.primary", sx: {
                         textAlign: alignItems === 'center' ? 'center' : 'left',
                     } }, description)),
                 buttonText && (react_1.default.createElement(material_1.Box, { py: 2 },

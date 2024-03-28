@@ -38,7 +38,7 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var theme_1 = require("../../theme");
 var Section = function (props) {
-    var children = props.children, title = props.title, _a = props.textAlign, textAlign = _a === void 0 ? 'left' : _a, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _b = props.py, py = _b === void 0 ? 4 : _b, _c = props.px, px = _c === void 0 ? 2 : _c;
+    var children = props.children, title = props.title, _a = props.textAlign, textAlign = _a === void 0 ? 'left' : _a, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _b = props.py, py = _b === void 0 ? 6 : _b, _c = props.px, px = _c === void 0 ? 3 : _c;
     var _d = (0, react_1.useState)(theme_1.muiTheme.breakpoints.values.md), width = _d[0], setWidth = _d[1];
     // Since breakpoints are modified to
     // to compensate for the extra width of the Editor

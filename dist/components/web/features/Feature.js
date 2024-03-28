@@ -11,7 +11,7 @@ var Feature = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
         icon && (react_1.default.createElement(material_1.Avatar, { sx: sx.avatar },
             react_1.default.createElement(__1.Icon, { name: icon, color: "primary.contrastText", size: 24 }))),
-        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0 },
+        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
             react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.primary", variant: "subtitle1" }, title),
             react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.secondary", variant: "body1" }, description))));
 };

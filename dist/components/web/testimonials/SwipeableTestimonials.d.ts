@@ -1,6 +1,6 @@
 import React from 'react';
 type SwipeableTestimonialsProps = {
-    testimonials: Record<string, any>[];
+    items: Record<string, any>[];
     enableAutoPlay?: boolean;
     enableArrows?: boolean;
 };

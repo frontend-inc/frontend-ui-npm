@@ -62,7 +62,7 @@ var SearchInput = function (props) {
     }, [value]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         label && (react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" }, label)),
-        react_1.default.createElement(material_1.InputBase, { sx: __assign(__assign(__assign({}, sx.inputBase), styles_1.sx.inputBase), styles), type: "text", fullWidth: true, name: name, placeholder: placeholder, autoComplete: "off", onChange: handleInputChange, value: text, onKeyDown: function (e) {
+        react_1.default.createElement(material_1.InputBase, { sx: __assign(__assign(__assign({}, styles_1.sx.inputBase), sx.inputBase), styles), type: "text", fullWidth: true, name: name, placeholder: placeholder, autoComplete: "off", onChange: handleInputChange, value: text, onKeyDown: function (e) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
                     handleSearch(text);
@@ -76,5 +76,6 @@ var sx = {
     },
     inputBase: {
         minWidth: '165px',
+        '& input, & .MuiInputBase-inputMultiline': __assign(__assign({}, styles_1.sx.inputBase['& input, & .MuiInputBase-inputMultiline']), { fontSize: function (theme) { return theme.typography.subtitle1.fontSize; }, fontFamily: function (theme) { return theme.typography.subtitle1.fontFamily; } })
     },
 };

@@ -85,7 +85,7 @@ var SearchModal = function () {
                 react_1.default.createElement(material_1.Stack, { sx: sx.searchContainer, direction: "row", spacing: 1 },
                     react_1.default.createElement(material_1.Box, { sx: sx.spacer }),
                     react_1.default.createElement(material_1.Box, { sx: sx.searchInput },
-                        react_1.default.createElement(components_1.TextInput, { name: "keywords", value: keywords, handleChange: handleChange, placeholder: 'Search...' })),
+                        react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, handleChange: handleChange, placeholder: 'Search...' })),
                     react_1.default.createElement(material_1.Box, { sx: sx.spacer },
                         react_1.default.createElement(material_1.IconButton, { onClick: handleClose },
                             react_1.default.createElement(lucide_react_1.X, { size: 24, color: theme.palette.text.primary }))))),

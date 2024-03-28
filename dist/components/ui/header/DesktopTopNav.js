@@ -65,6 +65,7 @@ var DesktopTopNav = function (props) {
 exports.default = DesktopTopNav;
 var sx = {
     appBar: {
+        height: 64,
         position: 'absolute',
         zIndex: function (theme) { return theme.zIndex.appBar; },
         bgcolor: 'background.default',

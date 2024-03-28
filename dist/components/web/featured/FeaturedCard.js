@@ -62,8 +62,8 @@ var FeaturedCard = function (props) {
                     react_1.default.createElement(__1.Image, { src: image, height: 320, objectFit: objectFit, alt: title, enableOverlay: enableOverlay, enableGradient: enableGradient, disableBorderRadius: enableBorder }))),
             react_1.default.createElement(material_1.Box, { sx: sx.content },
                 react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.textContent },
-                    react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: 'h6' }, title),
-                    react_1.default.createElement(material_1.Typography, { variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 160)),
+                    react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: 'subtitle1' }, title),
+                    react_1.default.createElement(material_1.Typography, { variant: "subtitle2", sx: sx.description }, (0, helpers_1.truncate)(description, 160)),
                     buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
                         react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))))));
 };

@@ -23,7 +23,7 @@ exports.default = {
     },
     text: {
         primary: '#FFFFFF',
-        secondary: '#9DA5B4',
+        secondary: '#1c2b33',
         link: '#1E2124',
     },
     icon: '#787A82',

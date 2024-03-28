@@ -99,10 +99,10 @@ var Collection = function (props) {
         delay: 250,
     }).loading;
     (0, react_1.useEffect)(function () {
-        if (url && defaultQuery && perPage) {
+        if (url && perPage) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
-    }, [url, defaultQuery, perPage]);
+    }, [url, perPage]);
     (0, react_1.useEffect)(function () {
         if ((activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length) >= 0) {
             findMany(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters), page: 1, per_page: perPage }));

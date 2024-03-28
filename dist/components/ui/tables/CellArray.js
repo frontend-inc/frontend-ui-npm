@@ -46,7 +46,7 @@ var CellArray = function (props) {
             setVisibleTags(values.slice(0, 2));
         }
     }, [values]);
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root }, visibleTags === null || visibleTags === void 0 ? void 0 :
         visibleTags.map(function (value, index) { return (react_1.default.createElement(components_1.Label, { key: index, label: value })); }),
         !open && (react_1.default.createElement(material_1.Button, { sx: sx.button, size: "small", onClick: handleToggleSeeAll }, "..."))));
 };
