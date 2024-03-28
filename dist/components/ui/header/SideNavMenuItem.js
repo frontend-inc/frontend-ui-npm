@@ -44,7 +44,7 @@ var SublinkMenuItem = function (props) {
     var label = props.label, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.ListItem, { sx: sx.subLink, disablePadding: true },
         react_1.default.createElement(material_1.ListItemButton, { onClick: handleClick },
-            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, label) }))));
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.primary" }, label) }))));
 };
 var SideNavMenuItem = function (props) {
     var _a;
@@ -82,7 +82,7 @@ var SideNavMenuItem = function (props) {
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) && (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)), onClick: function () { return handleMenuClick(menuItem); } },
                 react_1.default.createElement(__1.Icon, { name: "ChevronDown" }))) },
             react_1.default.createElement(material_1.ListItemButton, { onClick: function () { return handleMenuClick(menuItem); } },
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, menuItem.name) }))),
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.primary" }, menuItem.name) }))),
         react_1.default.createElement(material_1.Collapse, { in: open },
             react_1.default.createElement(material_1.List, null, children === null || children === void 0 ? void 0 :
                 children.map(function (child, index) { return (react_1.default.createElement(SublinkMenuItem, { key: index, label: child.name, handleClick: function () { return handleMenuItemClick(child); } })); }),

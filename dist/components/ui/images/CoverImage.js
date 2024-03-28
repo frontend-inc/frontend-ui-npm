@@ -58,7 +58,7 @@ var CoverImage = function (props) {
                 title && (react_1.default.createElement(material_1.Typography, { variant: 'h3', color: "text.primary", sx: {
                         textAlign: alignItems === 'center' ? 'center' : 'left',
                     } }, title)),
-                description && (react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "text.primary", sx: {
+                description && (react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.primary", sx: {
                         textAlign: alignItems === 'center' ? 'center' : 'left',
                     } }, description)),
                 buttonText && (react_1.default.createElement(material_1.Box, { py: 2 },

@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Heading = function (props) {
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, textAlign = _a.textAlign, _b = _a.textVariant, textVariant = _b === void 0 ? 'h6' : _b;
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, textAlign = _a.textAlign, _b = _a.textVariant, textVariant = _b === void 0 ? 'h4' : _b;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.stack, direction: 'column', spacing: 0 },
         label && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption" }, label)),
         title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", style: __assign(__assign({}, sx.text), { textAlign: textAlign }) }, title)),
@@ -27,7 +27,7 @@ exports.default = Heading;
 var sx = {
     stack: {
         width: '100%',
-        pb: 3
+        pb: 4
     },
     text: {
         width: '100%',

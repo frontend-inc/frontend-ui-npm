@@ -33,7 +33,7 @@ var SideNavCartButton = function (props) {
     var _a = props.label, label = _a === void 0 ? 'Cart' : _a, totalQuantity = props.totalQuantity, handleClick = props.handleClick;
     return (react_1.default.createElement(material_2.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Badge, { badgeContent: totalQuantity, color: "primary", sx: sx.badge }) },
         react_1.default.createElement(material_2.ListItemButton, { onClick: handleClick },
-            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, label) }))));
+            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "subtitle2", color: "text.primary" }, label) }))));
 };
 var TopNavCartButton = function (props) {
     var _a = props.icon, icon = _a === void 0 ? 'ShoppingCart' : _a, totalQuantity = props.totalQuantity, handleClick = props.handleClick;

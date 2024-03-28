@@ -20,15 +20,16 @@ var LayoutLoader = function (props) {
 exports.default = LayoutLoader;
 var sx = {
     backdrop: {
+        height: '4px',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        bgcolor: 'background.default',
+        bgcolor: 'transparent',
         zIndex: function (theme) { return theme.zIndex.drawer + 1; },
     },
     progress: {
         height: '4px',
-        width: '220px',
+        width: '100vw',
         bgcolor: 'transparent',
         color: 'primary.dark',
         borderRadius: '4px',

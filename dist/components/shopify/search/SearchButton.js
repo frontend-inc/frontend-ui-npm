@@ -38,7 +38,7 @@ var SideNavSearchButton = function (props) {
     var handleClick = props.handleClick;
     return (react_1.default.createElement(material_2.ListItem, { disablePadding: true, disableGutters: true },
         react_1.default.createElement(material_2.ListItemButton, { onClick: handleClick },
-            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, "Search") }))));
+            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "subtitle2", color: "text.primary" }, "Search") }))));
 };
 var SearchButton = function (props) {
     var _a = props.variant, variant = _a === void 0 ? 'topNav' : _a;

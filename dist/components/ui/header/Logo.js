@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
-//import SampleLogo from '../../../assets/sample-logo.svg'
 var LOGO_WIDTH = 120;
 var LOGO_HEIGHT = 60;
 var Logo = function (props) {
