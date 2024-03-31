@@ -15,7 +15,6 @@ export declare const sx: {
             border: string;
             borderColor: string;
             m: string;
-            boxShadow: string;
             '&:focus': {
                 m: string;
                 boxShadow: string;

@@ -44,9 +44,9 @@ var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var Login = function (props) {
-    var _a = props || {}, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl;
+    var _a = props || {}, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl, _d = _a.enableGoogle, enableGoogle = _d === void 0 ? false : _d;
     var router = (0, router_1.useRouter)();
-    var _d = (0, frontend_js_1.useAuth)(), errors = _d.errors, loading = _d.loading, user = _d.user, handleChange = _d.handleChange, login = _d.login;
+    var _e = (0, frontend_js_1.useAuth)(), errors = _e.errors, loading = _e.loading, user = _e.user, handleChange = _e.handleChange, login = _e.login;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -61,6 +61,9 @@ var Login = function (props) {
             }
         });
     }); };
+    var handleGoogleSuccess = function () {
+        router.push(redirectUrl);
+    };
     var handleSignup = function () {
         router.push(signupUrl);
     };
@@ -72,6 +75,6 @@ var Login = function (props) {
     };
     return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
         react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
-            react_1.default.createElement(components_1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleOneTimePassword: oneTimePasswordUrl && handleOneTimePassword, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword }))));
+            react_1.default.createElement(components_1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleOneTimePassword: oneTimePasswordUrl && handleOneTimePassword, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess }))));
 };
 exports.default = Login;

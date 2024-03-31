@@ -146,7 +146,7 @@ var Form = function (props) {
             fields.map(function (field, index) {
                 return index_1.SYSTEM_FIELDS.includes(field.name) ? (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove })) : (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource === null || resource === void 0 ? void 0 : resource.data, field.name), handleChange: handleDataChange }));
             }),
-            react_1.default.createElement(material_1.Button, { size: "large", variant: 'contained', onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: loading }) }, buttonText)))) : (react_1.default.createElement(__1.Placeholder, { enableBorder: true, icon: 'Check', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { variant: "outlined", onClick: function () { return setSubmitted(false); } }, "Done") })));
+            react_1.default.createElement(material_1.Button, { size: "large", variant: 'contained', onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: loading }) }, buttonText)))) : (react_1.default.createElement(__1.Placeholder, { icon: 'CheckCircle', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { variant: "contained", onClick: function () { return setSubmitted(false); } }, "Done") })));
 };
 exports.default = Form;
 var sx = {

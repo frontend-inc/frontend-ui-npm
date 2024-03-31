@@ -92,6 +92,7 @@ export declare const typography: {
         textTransform: string;
         fontWeight: number;
         fontSize: number;
+        lineHeight: string;
         letterSpacing: string;
     };
 };

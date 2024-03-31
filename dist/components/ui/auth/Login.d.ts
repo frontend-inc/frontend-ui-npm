@@ -7,6 +7,7 @@ type LoginProps = {
     signupUrl?: string;
     oneTimePasswordUrl?: string;
     disableUsername?: boolean;
+    enableGoogle?: boolean;
 };
 declare const Login: React.FC<LoginProps>;
 export default Login;

@@ -19,8 +19,7 @@ var PriceCard = function (props) {
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, price.title),
             react_1.default.createElement(material_1.Typography, { variant: "h5", color: "text.primary" }, price.price),
             react_1.default.createElement(material_1.Divider, null),
-            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.features }, price.features),
-            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: sx.nonFeatures }, price.disabledFeatures)),
+            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.features }, price.features)),
         react_1.default.createElement(material_1.Button, { onClick: handleClick, variant: "contained", color: "primary", fullWidth: true }, price.buttonText)));
 };
 exports.default = PriceCard;
@@ -42,11 +41,5 @@ var sx = {
         whiteSpace: 'pre-line',
         color: 'text.primary',
         mb: 0,
-    },
-    nonFeatures: {
-        mt: 0,
-        whiteSpace: 'pre-line',
-        textDecoration: 'line-through',
-        color: 'text.secondary',
     },
 };

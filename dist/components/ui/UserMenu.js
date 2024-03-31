@@ -9,6 +9,7 @@ var UserMenu = function (props) {
     var open = props.open, anchorEl = props.anchorEl, toggleMenu = props.toggleMenu, handleLogoutClick = props.handleLogoutClick, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.Menu, { open: open, onClose: toggleMenu, anchorEl: anchorEl },
         react_1.default.createElement(material_1.MenuItem, { onClick: function () { return handleClick('/my-account'); } }, "My Account"),
+        react_1.default.createElement(material_1.Divider, null),
         react_1.default.createElement(material_1.MenuItem, { onClick: handleLogoutClick },
             react_1.default.createElement(material_1.Badge, { color: "success", variant: "dot", sx: sx.badgeOnline, anchorOrigin: {
                     vertical: 'top',

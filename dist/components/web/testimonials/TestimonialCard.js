@@ -15,7 +15,7 @@ var TestimonialCard = function (props) {
         react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.content },
             react_1.default.createElement(material_1.Box, { sx: sx.testimonial },
                 react_1.default.createElement(material_1.Box, { sx: sx.ratingContainer }, rating && (react_1.default.createElement(Rating_1.default, { readOnly: true, value: rating, icon: react_1.default.createElement(icons_material_2.Star, { sx: sx.rating }), emptyIcon: react_1.default.createElement(icons_material_2.StarBorderOutlined, { sx: sx.emptyRating }) }))),
-                text && (react_1.default.createElement(material_1.Typography, { sx: sx.text, variant: 'subtitle2', color: "text.primary" },
+                text && (react_1.default.createElement(material_1.Typography, { sx: sx.text, variant: 'subtitle1', color: "text.primary" },
                     react_1.default.createElement(icons_material_1.FormatQuote, { sx: sx.quote }),
                     (0, helpers_1.truncate)(text, 240)))),
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.author },

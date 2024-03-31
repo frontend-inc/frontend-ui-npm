@@ -1,10 +1,10 @@
 import React from 'react';
+import { CollectionType } from 'frontend-shopify';
 type CollectionCoverImageProps = {
-    handle: string;
+    shopifyCollection: CollectionType;
     editing?: boolean;
     height?: number;
     width?: number;
-    objectFit?: 'cover' | 'contain';
     alignItems?: 'flex-start' | 'center' | 'flex-end';
     alt?: string;
     handleClick?: () => void;

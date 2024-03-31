@@ -95,6 +95,7 @@ exports.typography = {
         textTransform: 'none',
         fontWeight: 600,
         fontSize: 14,
+        lineHeight: '1em',
         letterSpacing: 'auto',
     },
 };

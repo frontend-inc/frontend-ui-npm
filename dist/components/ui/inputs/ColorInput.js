@@ -98,7 +98,7 @@ var ColorInput = function (props) {
                 react_1.default.createElement(material_1.Tooltip, { title: value },
                     react_1.default.createElement(material_1.IconButton, null, value ? (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.color), { bgcolor: value }) })) : (react_1.default.createElement(TransparentColor, { value: value, handleClick: openMenu })))),
                 react_1.default.createElement(material_1.IconButton, { size: "small" },
-                    react_1.default.createElement(components_1.Icon, { name: "ChevronDown", size: 20 }))), onClick: openMenu }, "Choose color"),
+                    react_1.default.createElement(components_1.Icon, { name: "ChevronDown", size: 20 }))), onClick: openMenu }, "Color"),
         react_1.default.createElement(components_1.Popup, { open: open, anchorEl: anchorEl, handleClose: closeMenu },
             react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", sx: sx.root },
                 react_1.default.createElement(material_1.Box, { sx: sx.grid },
@@ -134,7 +134,8 @@ var sx = {
         width: '100%',
     },
     color: {
-        border: '2px solid transparent',
+        border: '2px solid',
+        borderColor: 'divider',
         borderRadius: '8px',
         height: '32px',
         width: '32px',

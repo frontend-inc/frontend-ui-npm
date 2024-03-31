@@ -12,12 +12,6 @@ var ProductDetailPage = function (props) {
     var _c = (0, frontend_shopify_1.useProductDetails)({
         product: product,
     }), price = _c.price, compareAtPrice = _c.compareAtPrice, variant = _c.variant, selectedOptions = _c.selectedOptions, handleOptionChange = _c.handleOptionChange, image = _c.image, images = _c.images, handleImageClick = _c.handleImageClick;
-    /*
-    useEffect(() => {
-        if (handle) {
-            findProduct(String(handle), metafields)
-        }
-    }, [handle]) */
     return (react_1.default.createElement(material_1.Stack, { spacing: 0, direction: "row", sx: sx.container },
         react_1.default.createElement(material_1.Box, { sx: sx.left },
             react_1.default.createElement(shopify_1.ProductImages, { product: product, image: image, images: images, handleClick: handleImageClick })),

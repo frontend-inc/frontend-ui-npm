@@ -17,8 +17,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var LayoutScroll = function (props) {
-    var _a = props || {}, children = _a.children, ref = _a.ref, _b = _a.pb, pb = _b === void 0 ? 0 : _b;
-    return (react_1.default.createElement(material_1.Box, __assign({ ref: ref && ref, sx: __assign(__assign({}, sx.root), { pb: pb }) }, props), children));
+    var _a = props || {}, children = _a.children, ref = _a.ref, _b = _a.p, p = _b === void 0 ? 0 : _b;
+    return (react_1.default.createElement(material_1.Box, { ref: ref && ref, sx: __assign(__assign({}, sx.root), { p: p }) }, children));
 };
 exports.default = LayoutScroll;
 var sx = {

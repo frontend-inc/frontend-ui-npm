@@ -50,7 +50,7 @@ var hooks_2 = require("../../../hooks");
 var Collection = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, _c = props.filterAnchor, filterAnchor = _c === void 0 ? 'left' : _c, _d = props.filterOptions, filterOptions = _d === void 0 ? [] : _d, _e = props.sortOptions, sortOptions = _e === void 0 ? [] : _e, _f = props.query, defaultQuery = _f === void 0 ? {} : _f, _g = props.perPage, perPage = _g === void 0 ? 20 : _g, _h = props.enableSearch, enableSearch = _h === void 0 ? false : _h, _j = props.enableFilters, enableFilters = _j === void 0 ? false : _j, _k = props.enableSorting, enableSorting = _k === void 0 ? false : _k, _l = props.enableInfiniteLoad, enableInfiniteLoad = _l === void 0 ? false : _l, _m = props.enableLoadMore, enableLoadMore = _m === void 0 ? true : _m, navigateUrl = props.navigateUrl, buttonText = props.buttonText, _o = props.enableBorder, enableBorder = _o === void 0 ? false : _o, _p = props.enableGradient, enableGradient = _p === void 0 ? false : _p;
+    var label = props.label, title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, _c = props.filterAnchor, filterAnchor = _c === void 0 ? 'left' : _c, _d = props.filterOptions, filterOptions = _d === void 0 ? [] : _d, _e = props.sortOptions, sortOptions = _e === void 0 ? [] : _e, _f = props.query, defaultQuery = _f === void 0 ? {} : _f, _g = props.perPage, perPage = _g === void 0 ? 20 : _g, _h = props.enableSearch, enableSearch = _h === void 0 ? false : _h, _j = props.enableFilters, enableFilters = _j === void 0 ? false : _j, _k = props.enableSorting, enableSorting = _k === void 0 ? false : _k, _l = props.enableInfiniteLoad, enableInfiniteLoad = _l === void 0 ? false : _l, _m = props.enableLoadMore, enableLoadMore = _m === void 0 ? true : _m, navigateUrl = props.navigateUrl, buttonText = props.buttonText, _o = props.enableBorder, enableBorder = _o === void 0 ? false : _o, _p = props.enableGradient, enableGradient = _p === void 0 ? false : _p;
     var _q = (0, frontend_js_1.useResource)({
         url: url,
     }), loading = _q.loading, query = _q.query, findMany = _q.findMany, resources = _q.resources, page = _q.page, numPages = _q.numPages, loadMore = _q.loadMore;
@@ -110,7 +110,7 @@ var Collection = function (props) {
     }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-            react_1.default.createElement(__1.Heading, { title: title }),
+            react_1.default.createElement(__1.Heading, { label: label, title: title }),
             enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch })),
             react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.sortFilterActions, spacing: 1 },
                 enableFilters && filterAnchor == 'top' && (react_1.default.createElement(__1.CollectionFilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions })),

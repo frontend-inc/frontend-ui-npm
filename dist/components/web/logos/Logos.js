@@ -18,11 +18,11 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var Logo_1 = __importDefault(require("./Logo"));
-var material_2 = require("@mui/material");
+var __2 = require("../..");
 var Logos = function (props) {
-    var title = props.title, _a = props.items, items = _a === void 0 ? [] : _a, editing = props.editing, rest = __rest(props, ["title", "items", "editing"]);
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(material_2.Typography, { variant: "caption", sx: sx.caption }, title),
+    var title = props.title, label = props.label, _a = props.items, items = _a === void 0 ? [] : _a, editing = props.editing, rest = __rest(props, ["title", "label", "items", "editing"]);
+    return (react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.root },
+        react_1.default.createElement(__2.Heading, { title: title, label: label, textAlign: 'center' }),
         react_1.default.createElement(material_1.Stack, { sx: sx.logos, direction: "row", spacing: 1 }, items === null || items === void 0 ? void 0 : items.map(function (item, index) { return (react_1.default.createElement(Logo_1.default, { key: index, title: "Logo", image: item === null || item === void 0 ? void 0 : item.image, height: 60, width: 120 })); })),
         (items === null || items === void 0 ? void 0 : items.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Image", title: "No logos", description: "Logos will appear here" }))));
 };
@@ -33,8 +33,7 @@ var sx = {
         p: 2,
         bgcolor: 'background.main',
     },
-    caption: {
-        color: 'text.primary',
+    label: {
         textAlign: 'center',
     },
     logos: {

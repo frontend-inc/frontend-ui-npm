@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var helpers_1 = require("../../../helpers");
+var __1 = require("../..");
 var router_1 = require("next/router");
 var context_1 = require("../../../context");
 // Call To Action
@@ -42,10 +42,8 @@ var CTA = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 0 },
-            label && (react_1.default.createElement(material_1.Typography, { color: "primary", sx: sx.label, variant: "caption" }, label)),
-            react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: textVariant }, title),
-            react_1.default.createElement(material_1.Typography, { variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 160)),
+        react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 1 },
+            react_1.default.createElement(__1.Heading, { label: label, title: title, description: description, textAlign: 'center' }),
             buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
                 react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))));
 };
@@ -58,7 +56,6 @@ var sx = {
         width: '100%',
     },
     label: {
-        color: 'primary.main',
         textAlign: 'center',
     },
     title: {

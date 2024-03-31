@@ -2,6 +2,7 @@ import React from 'react';
 import { SearchFilterOptionType } from '../../../types';
 import { SortOptionType } from '../../../types';
 type CollectionProps = {
+    label?: string;
     title?: string;
     url: string;
     layout: 'list' | 'grid';

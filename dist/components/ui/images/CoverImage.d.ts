@@ -7,7 +7,6 @@ type CoverImageProps = {
     image?: string;
     height?: number;
     width?: number;
-    objectFit?: 'cover' | 'contain';
     alignItems?: 'flex-start' | 'center' | 'flex-end';
     alt?: string;
     handleClick?: () => void;

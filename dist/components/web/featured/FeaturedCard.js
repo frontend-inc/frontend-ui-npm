@@ -93,7 +93,7 @@ var sx = {
         height: '100%',
         width: {
             xs: '100%',
-            sm: '50%',
+            sm: '55%',
         },
     },
     actions: {
@@ -112,7 +112,7 @@ var sx = {
             xs: 'center',
         },
         width: {
-            sm: '50%',
+            sm: '45%',
             xs: '100%',
         },
         alignItems: 'center',

@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -71,80 +60,49 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var react_dropzone_1 = require("react-dropzone");
 var material_1 = require("@mui/material");
-var lucide_react_1 = require("lucide-react");
-var DropZone = function (props) {
-    var onDrop = props.onDrop, _a = props.label, label = _a === void 0 ? 'Upload file' : _a, _b = props.dropLabel, dropLabel = _b === void 0 ? 'Drop file here' : _b;
-    var theme = (0, material_1.useTheme)();
-    var _c = (0, react_1.useState)(false), loading = _c[0], setLoading = _c[1];
-    var handleOnDrop = function (files) {
-        var reader = new FileReader();
-        var file = files[0];
-        reader.onload = function (e) { return __awaiter(void 0, void 0, void 0, function () {
-            var preview;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        preview = {
-                            src: e.target.result,
-                            name: file.name,
-                            size: file.size,
-                            type: file.type,
-                        };
-                        setLoading(true);
-                        return [4 /*yield*/, onDrop(file, preview)];
-                    case 1:
-                        _a.sent();
-                        setLoading(false);
-                        return [2 /*return*/];
-                }
-            });
-        }); };
-        reader.readAsDataURL(file);
-    };
-    var _d = (0, react_dropzone_1.useDropzone)({
-        onDrop: handleOnDrop,
-    }), getRootProps = _d.getRootProps, getInputProps = _d.getInputProps, isDragActive = _d.isDragActive;
-    return (react_1.default.createElement(material_1.Box, __assign({ sx: sx.dropZone }, getRootProps()),
-        react_1.default.createElement("input", __assign({}, getInputProps())),
-        loading ? (react_1.default.createElement(material_1.CircularProgress, { disableShrink: true, size: 32, sx: sx.icon })) : (react_1.default.createElement(react_1.default.Fragment, null,
-            isDragActive ? (react_1.default.createElement(lucide_react_1.DownloadCloud, { color: theme.palette.text.secondary })) : (react_1.default.createElement(lucide_react_1.UploadCloud, { color: theme.palette.text.secondary })),
-            react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" }, isDragActive ? dropLabel : label)))));
+var google_1 = require("@react-oauth/google");
+var frontend_js_1 = require("frontend-js");
+var GoogleIcon = "\n  <svg width=\"24px\" height=\"24px\" viewBox=\"-3 0 262 262\" xmlns=\"http://www.w3.org/2000/svg\" preserveAspectRatio=\"xMidYMid\"><path d=\"M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027\" fill=\"#4285F4\"/><path d=\"M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1\" fill=\"#34A853\"/><path d=\"M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782\" fill=\"#FBBC05\"/><path d=\"M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251\" fill=\"#EB4335\"/></svg>\n";
+var GoogleLoginButton = function (props) {
+    var handleSuccess = props.handleSuccess;
+    var _a = (0, frontend_js_1.useAuth)(), loading = _a.loading, googleLogin = _a.googleLogin;
+    var _b = (0, react_1.useState)(null), OAuthCredentials = _b[0], setOAuthCredentials = _b[1];
+    var handleLogin = (0, google_1.useGoogleLogin)({
+        onSuccess: function (codeResponse) { return setOAuthCredentials(codeResponse); },
+        onError: function (error) { return console.log('Login Failed:', error); }
+    });
+    var handleGoogleLogin = function (accessToken) { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, googleLogin(accessToken)];
+                case 1:
+                    resp = _a.sent();
+                    if ((resp === null || resp === void 0 ? void 0 : resp.id) && handleSuccess) {
+                        handleSuccess();
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    (0, react_1.useEffect)(function () {
+        if (OAuthCredentials) {
+            handleGoogleLogin(OAuthCredentials === null || OAuthCredentials === void 0 ? void 0 : OAuthCredentials.access_token);
+        }
+    }, [OAuthCredentials]);
+    return (
+    //@ts-ignore 
+    react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "secondary", onClick: handleLogin, startIcon: react_1.default.createElement(material_1.Box, { sx: sx.icon, dangerouslySetInnerHTML: { __html: GoogleIcon } }) }, "Sign In with Google"));
 };
-exports.default = DropZone;
+exports.default = GoogleLoginButton;
 var sx = {
-    dropZone: {
-        m: '1px',
-        p: 2,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
-        border: '2px solid',
-        borderColor: 'divider',
-        bgcolor: 'background.paper',
-        textAlign: 'center',
-        '&:hover': {
-            m: 0,
-            border: '3px solid',
-            cursor: 'pointer',
-            borderColor: 'primary.main',
-        },
+    button: {
+        position: 'relative'
     },
     icon: {
-        color: 'icon',
-        height: 32,
-        width: 32,
-    },
-    iconButton: {
-        fontSize: 11,
-        top: 0,
-        left: -48,
-        color: 'text.secondary',
-        '&& ': {
-            bgcolor: 'background.paper',
-        },
-    },
+        position: 'absolute',
+        top: 10,
+        left: '25%'
+    }
 };

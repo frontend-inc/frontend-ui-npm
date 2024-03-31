@@ -1,6 +1,7 @@
 import React from 'react';
 type LogosProps = {
     title?: string;
+    label?: string;
     items?: {
         image: string;
         title?: string;

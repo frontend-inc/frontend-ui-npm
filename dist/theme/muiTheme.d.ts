@@ -410,6 +410,7 @@ export declare const muiTheme: {
             textTransform: string;
             fontWeight: number;
             fontSize: number;
+            lineHeight: string;
             letterSpacing: string;
         };
     };
