@@ -7,6 +7,7 @@ type RatingInputProps = InputPropsType & {
     size?: 'small' | 'medium' | 'large';
     label?: string;
     value?: number;
+    direction?: 'row' | 'column';
     handleChange?: (e: SyntheticEventType) => void;
 };
 declare const RatingInput: React.FC<RatingInputProps>;

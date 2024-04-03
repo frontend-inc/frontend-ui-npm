@@ -12,11 +12,9 @@ type ForeignCollectionProps = {
     perPage?: number;
     query?: any;
     buttonText?: string;
-    autoPlay?: boolean;
-    arrows?: boolean;
-    showDots?: boolean;
     enableBorder?: boolean;
     enableGradient?: boolean;
+    enableLoadMore?: boolean;
 };
 declare const ForeignCollection: React.FC<ForeignCollectionProps>;
 export default ForeignCollection;

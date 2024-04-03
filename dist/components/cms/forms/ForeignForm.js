@@ -78,10 +78,11 @@ var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var FormField_1 = __importDefault(require("./FormField"));
+var components_1 = require("../../../components");
 var index_1 = require("../../../constants/index");
 var lodash_1 = require("lodash");
 var ForeignForm = function (props) {
-    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, _b = props.variant, variant = _b === void 0 ? 'contained' : _b, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl;
+    var handle = props.handle, title = props.title, label = props.label, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, _b = props.variant, variant = _b === void 0 ? 'contained' : _b, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl;
     var _c = (0, react_1.useState)(false), submitted = _c[0], setSubmitted = _c[1];
     var _d = (0, frontend_js_1.useResource)({
         name: 'document',
@@ -144,15 +145,20 @@ var ForeignForm = function (props) {
             }
         });
     }); };
-    return !submitted ? (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root }, fields === null || fields === void 0 ? void 0 :
-        fields.map(function (field) {
-            return index_1.SYSTEM_FIELDS.includes(field.name) ? (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove })) : (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource === null || resource === void 0 ? void 0 : resource.data, field.name), handleChange: handleDataChange }));
-        }),
-        react_1.default.createElement(material_1.Button, { variant: variant, onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: foreignLoading }) }, buttonText))) : (react_1.default.createElement(__1.Placeholder, { enableBorder: true, icon: 'Check', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { color: "secondary", variant: "outlined", onClick: function () { return setSubmitted(false); } }, "Done") }));
+    return !submitted ? (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        (title || label) && (react_1.default.createElement(components_1.Heading, { label: label, title: title })),
+        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.form }, fields === null || fields === void 0 ? void 0 :
+            fields.map(function (field) {
+                return index_1.SYSTEM_FIELDS.includes(field.name) ? (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove })) : (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource === null || resource === void 0 ? void 0 : resource.data, field.name), handleChange: handleDataChange }));
+            }),
+            react_1.default.createElement(material_1.Button, { variant: variant, onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: foreignLoading }) }, buttonText)))) : (react_1.default.createElement(__1.Placeholder, { enableBorder: true, icon: 'Check', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: function () { return setSubmitted(false); } }, "Done") }));
 };
 exports.default = ForeignForm;
 var sx = {
     root: {
         width: '100%',
     },
+    form: {
+        width: '100%',
+    }
 };
