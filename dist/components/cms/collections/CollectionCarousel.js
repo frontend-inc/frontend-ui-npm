@@ -62,10 +62,10 @@ var CollectionCarousel = function (props) {
         }
     };
     (0, react_1.useEffect)(function () {
-        if (url && defaultQuery && perPage) {
+        if (url && perPage) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
-    }, [url, defaultQuery, perPage]);
+    }, [url, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_2.Typography, { variant: "h5", color: "textPrimary" }, title),
         react_1.default.createElement(__1.Carousel, { enableDots: enableDots, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) {

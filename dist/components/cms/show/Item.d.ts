@@ -1,7 +1,7 @@
 import React from 'react';
 import { DocumentType } from '../../../types';
-type HeroProps = {
+type ItemProps = {
     resource: DocumentType;
 };
-declare const Hero: React.FC<HeroProps>;
-export default Hero;
+declare const Item: React.FC<ItemProps>;
+export default Item;

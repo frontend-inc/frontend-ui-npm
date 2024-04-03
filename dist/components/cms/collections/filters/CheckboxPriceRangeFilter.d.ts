@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterOperatorType, FilterWhereType, FilterOptionType } from '../../../../types';
-type CheckboxNumberRangeFilterProps = {
+type CheckboxPriceRangeFilterProps = {
     name: string;
     where?: FilterWhereType;
     operator?: FilterOperatorType;
@@ -13,9 +13,8 @@ type CheckboxNumberRangeFilterProps = {
     label?: string;
     icon?: React.ReactNode;
     enableBorder?: boolean;
-    enableCurrency?: boolean;
     disablePadding?: boolean;
     closed?: boolean;
 };
-declare const CheckboxNumberRangeFilter: React.FC<CheckboxNumberRangeFilterProps>;
-export default CheckboxNumberRangeFilter;
+declare const CheckboxPriceRangeFilter: React.FC<CheckboxPriceRangeFilterProps>;
+export default CheckboxPriceRangeFilter;

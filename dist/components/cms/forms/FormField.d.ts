@@ -4,7 +4,7 @@ type FormFieldProps = {
     field: any;
     errors?: any;
     value?: any | any[];
-    handleChange?: (e: SyntheticEventType) => void;
+    handleChange: (e: SyntheticEventType) => void;
     handleRemove?: (name: string) => void;
 };
 declare const FormField: React.FC<FormFieldProps>;
