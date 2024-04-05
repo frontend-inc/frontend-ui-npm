@@ -26,7 +26,9 @@ var SortableListItem = function (props) {
 };
 exports.default = SortableListItem;
 var sx = {
-    item: {},
+    item: {
+        position: 'static !important',
+    },
     icon: {
         color: 'text.secondary',
     },

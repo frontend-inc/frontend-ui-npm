@@ -1,10 +1,11 @@
 import React from 'react';
-import { DocumentType } from '../../../types';
+import { ActionType, DocumentType } from '../../../types';
 type ShowProps = {
     style: 'article' | 'person' | 'item';
     fields: any[];
     url: string;
     enableBorder?: boolean;
+    actions?: ActionType[];
     resource: DocumentType;
 };
 declare const Show: React.FC<ShowProps>;

@@ -1,7 +1,8 @@
 import React from 'react';
-import { DocumentType } from '../../../types';
+import { ActionType } from '../../../types';
 type PersonProps = {
-    resource: DocumentType;
+    actions?: ActionType[];
+    resource: any;
 };
 declare const Person: React.FC<PersonProps>;
 export default Person;
