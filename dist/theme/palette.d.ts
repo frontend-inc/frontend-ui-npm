@@ -3,10 +3,8 @@ export declare const palette: {
         main: "#3f51b5";
     };
     secondary: {
-        main: "#212121";
-    };
-    tertiary: {
         main: "#eeeeee";
+        contrastText: "#424242";
     };
     accent: {
         main: "#212121";

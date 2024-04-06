@@ -65,8 +65,8 @@ var FavoriteButton = function (props) {
             return [2 /*return*/];
         });
     }); };
-    return (react_1.default.createElement(material_1.Button, { size: "large", onClick: handleClick, sx: __assign(__assign({}, sx.button), (isFavorite && sx.favorited)) },
-        react_1.default.createElement(components_1.Icon, { name: "Heart", color: isFavorite ? 'primary.contrastText' : 'text.primary' })));
+    return (react_1.default.createElement(material_1.Button, { size: "large", onClick: handleClick, variant: "contained", color: isFavorite ? 'primary' : 'secondary', sx: __assign({}, sx.button) },
+        react_1.default.createElement(components_1.Icon, { name: "Heart", color: isFavorite ? 'primary.contrastText' : 'secondary.contrastText' })));
 };
 exports.default = FavoriteButton;
 var sx = {
@@ -74,15 +74,5 @@ var sx = {
         minWidth: '44px',
         p: 0,
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
-        bgcolor: 'tertiary.main',
-        '&:hover': {
-            bgcolor: 'tertiary.main',
-        },
-    },
-    favorited: {
-        bgcolor: 'primary.main',
-        '&:hover': {
-            bgcolor: 'primary.dark',
-        },
     },
 };

@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var MuiAccordian_1 = __importDefault(require("./MuiAccordian"));
 var MuiAutocomplete_1 = __importDefault(require("./MuiAutocomplete"));
 var MuiButton_1 = __importDefault(require("./MuiButton"));
+var MuiButtonGroup_1 = __importDefault(require("./MuiButtonGroup"));
 var MuiCardActions_1 = __importDefault(require("./MuiCardActions"));
 var MuiCardContent_1 = __importDefault(require("./MuiCardContent"));
 var MuiCardHeader_1 = __importDefault(require("./MuiCardHeader"));
@@ -31,6 +32,7 @@ exports.default = {
     MuiAccordian: MuiAccordian_1.default,
     MuiAutocomplete: MuiAutocomplete_1.default,
     MuiButton: MuiButton_1.default,
+    MuiButtonGroup: MuiButtonGroup_1.default,
     MuiCardActions: MuiCardActions_1.default,
     MuiCardContent: MuiCardContent_1.default,
     MuiCardHeader: MuiCardHeader_1.default,

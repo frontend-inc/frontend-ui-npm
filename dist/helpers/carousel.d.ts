@@ -58,6 +58,36 @@ export declare const getCarouselResponsive: (theme?: {
                 };
             };
         };
+        MuiButtonGroup: {
+            defaultProps: {
+                disableRipple: boolean;
+                border: string;
+            };
+            styleOverrides: {
+                root: {
+                    whiteSpace: string;
+                };
+                sizeSmall: {
+                    height: string;
+                    minWidth: string;
+                };
+                sizeLarge: {
+                    height: string;
+                };
+                outlined: {
+                    boxShadow: string;
+                    '&:hover': {
+                        boxShadow: string;
+                    };
+                };
+                contained: {
+                    boxShadow: string;
+                    '&:hover': {
+                        boxShadow: string;
+                    };
+                };
+            };
+        };
         MuiCardActions: {
             styleOverrides: {
                 root: {
@@ -276,10 +306,8 @@ export declare const getCarouselResponsive: (theme?: {
             main: "#3f51b5";
         };
         secondary: {
-            main: "#212121";
-        };
-        tertiary: {
             main: "#eeeeee";
+            contrastText: "#424242";
         };
         accent: {
             main: "#212121";

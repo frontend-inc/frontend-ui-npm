@@ -84,7 +84,7 @@ var frontend_shopify_3 = require("frontend-shopify");
 var router_1 = require("next/router");
 var CartQuantityInput = function (props) {
     var quantity = props.quantity, handleAddQuantity = props.handleAddQuantity, handleRemoveQuantity = props.handleRemoveQuantity;
-    return (react_1.default.createElement(material_1.ButtonGroup, { sx: sx.buttonGroup },
+    return (react_1.default.createElement(material_1.ButtonGroup, { color: "secondary", variant: "contained", sx: sx.buttonGroup },
         react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: handleRemoveQuantity },
             react_1.default.createElement(components_1.Icon, { name: "Minus", size: 16 })),
         react_1.default.createElement(material_1.Button, { sx: sx.button }, quantity),
@@ -189,7 +189,6 @@ var sx = {
         mr: 2,
     },
     buttonGroup: {
-        bgcolor: 'tertiary.main',
         height: '28px',
         '& .MuiButton-root': {
             minWidth: '28px',
@@ -198,10 +197,7 @@ var sx = {
     button: {
         px: 0,
         color: 'text.primary',
-        border: 'none',
-        '&:hover': {
-            border: 'none',
-        },
+        border: 'none !important',
         fontSize: function (theme) { return theme.typography.overline.fontSize; },
     },
     subscription: {

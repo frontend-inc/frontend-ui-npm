@@ -48,6 +48,36 @@ declare const _default: {
             };
         };
     };
+    MuiButtonGroup: {
+        defaultProps: {
+            disableRipple: boolean;
+            border: string;
+        };
+        styleOverrides: {
+            root: {
+                whiteSpace: string;
+            };
+            sizeSmall: {
+                height: string;
+                minWidth: string;
+            };
+            sizeLarge: {
+                height: string;
+            };
+            outlined: {
+                boxShadow: string;
+                '&:hover': {
+                    boxShadow: string;
+                };
+            };
+            contained: {
+                boxShadow: string;
+                '&:hover': {
+                    boxShadow: string;
+                };
+            };
+        };
+    };
     MuiCardActions: {
         styleOverrides: {
             root: {

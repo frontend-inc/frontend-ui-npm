@@ -74,7 +74,7 @@ var FeaturedProduct = function (props) {
                         ? 'row'
                         : 'column', spacing: 1 },
                     enableAddToCart && (react_1.default.createElement(shopify_1.AddToCartButton, { product: product, variant: (_d = (_c = product === null || product === void 0 ? void 0 : product.variants) === null || _c === void 0 ? void 0 : _c.edges[0]) === null || _d === void 0 ? void 0 : _d.node, enableQuantity: enableQuantity, label: buttonText })),
-                    enableQuickShop && (react_1.default.createElement(shopify_1.QuickShopButton, { size: "large", product: product, buttonVariant: enableAddToCart ? 'text' : 'contained', buttonText: buttonText, quickShopButtonText: quickShopButtonText })))))));
+                    enableQuickShop && (react_1.default.createElement(shopify_1.QuickShopButton, { size: "large", product: product, color: enableAddToCart ? 'secondary' : 'primary', buttonText: buttonText, quickShopButtonText: quickShopButtonText })))))));
 };
 exports.default = FeaturedProduct;
 var sx = {

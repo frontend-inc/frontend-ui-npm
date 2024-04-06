@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var lucide_react_1 = require("lucide-react");
 var QuantitySelector = function (props) {
     var _a = props || {}, size = _a.size, quantity = _a.quantity, handleAddQuantity = _a.handleAddQuantity, handleRemoveQuantity = _a.handleRemoveQuantity;
-    return (react_1.default.createElement(material_1.ButtonGroup, { sx: __assign(__assign({}, sx.buttonGroup), (size == 'small' && sx.buttonGroupSmall)) },
+    return (react_1.default.createElement(material_1.ButtonGroup, { variant: "contained", color: "secondary", sx: __assign({}, (size == 'small' && sx.buttonGroupSmall)) },
         react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: handleRemoveQuantity },
             react_1.default.createElement(lucide_react_1.Minus, { size: size == 'large' ? 24 : 16 })),
         react_1.default.createElement(material_1.Button, { sx: sx.button }, quantity),
@@ -28,9 +28,6 @@ var QuantitySelector = function (props) {
 };
 exports.default = QuantitySelector;
 var sx = {
-    buttonGroup: {
-        bgcolor: 'tertiary.main',
-    },
     buttonGroupSmall: {
         height: '40px',
         '& .MuiButton-root': {
@@ -41,9 +38,6 @@ var sx = {
         px: 0,
         width: '100%',
         color: 'text.primary',
-        border: 'none',
-        '&:hover': {
-            border: 'none',
-        },
+        border: 'none !important',
     },
 };

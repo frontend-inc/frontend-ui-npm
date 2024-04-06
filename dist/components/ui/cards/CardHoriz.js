@@ -63,7 +63,7 @@ var CardHoriz = function (props) {
                     react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80)),
                     label && (react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "caption" }, label))),
                 buttonText && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", onClick: handleItemClick }, buttonText)))))));
+                    react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleItemClick }, buttonText)))))));
 };
 exports.default = CardHoriz;
 var sx = {
@@ -112,12 +112,5 @@ var sx = {
     },
     description: {
         maxWidth: '320px',
-    },
-    button: {
-        color: 'text.primary',
-        bgcolor: 'tertiary.main',
-        '&:hover': {
-            bgcolor: 'tertiary.dark',
-        },
     },
 };

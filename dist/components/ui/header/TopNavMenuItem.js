@@ -110,9 +110,6 @@ var TopNavMenuItem = function (props) {
 };
 exports.default = TopNavMenuItem;
 var sx = {
-    buttonGroup: {
-        borderRight: 'none !important',
-    },
     menuButton: {
         cursor: 'pointer',
         justifyContent: 'flex-start',

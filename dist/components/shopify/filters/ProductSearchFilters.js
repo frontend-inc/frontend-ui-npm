@@ -15,7 +15,7 @@ var ProductSearchFilters = function (props) {
         react_1.default.createElement(material_1.Hidden, { smDown: true },
             react_1.default.createElement(ProductFiltersList_1.default, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray })),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
-            react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: toggleMenu, variant: "text", startIcon: react_1.default.createElement(__1.Icon, { name: "SlidersHorizontal", size: 20 }) }, "Filters"),
+            react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: toggleMenu, variant: "contained", color: "secondary", startIcon: react_1.default.createElement(__1.Icon, { name: "SlidersHorizontal", size: 20 }) }, "Filters"),
             react_1.default.createElement(__1.Drawer, { open: open, handleClose: closeMenu, anchor: "right" },
                 react_1.default.createElement(ProductFiltersList_1.default, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray })))));
 };
@@ -23,10 +23,5 @@ exports.default = ProductSearchFilters;
 var sx = {
     button: {
         width: '100%',
-        color: 'text.primary',
-        bgcolor: 'tertiary.main',
-        '&:hover': {
-            bgcolor: 'tertiary.dark',
-        },
     },
 };

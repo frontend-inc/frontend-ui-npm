@@ -1,11 +1,11 @@
 import React from 'react';
-type QuickShopProps = {
+type QuickShopButtonProps = {
     size?: 'small' | 'medium' | 'large';
-    buttonVariant?: 'contained' | 'outlined' | 'text';
+    color?: 'primary' | 'secondary';
     buttonText?: string;
     quickShopButtonText?: string;
     product?: any;
     enableQuantity?: boolean;
 };
-declare const QuickShop: React.FC<QuickShopProps>;
-export default QuickShop;
+declare const QuickShopButton: React.FC<QuickShopButtonProps>;
+export default QuickShopButton;
