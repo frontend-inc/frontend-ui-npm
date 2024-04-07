@@ -7,7 +7,6 @@ var react_1 = __importDefault(require("react"));
 var index_1 = require("../../../constants/index");
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
-var lucide_react_1 = require("lucide-react");
 var FilterFieldWrapper = function (props) {
     var _a;
     var index = props.index, filter = props.filter, fieldOptions = props.fieldOptions, handleChange = props.handleChange, handleRemove = props.handleRemove;
@@ -28,7 +27,7 @@ var FilterFieldWrapper = function (props) {
             react_1.default.createElement(components_1.Autosuggest, { name: 'operator', placeholder: "\u2026", options: operatorOptions, value: (filter === null || filter === void 0 ? void 0 : filter.operator) || '', handleChange: function (ev) { return handleChange(ev, index); } }))),
         react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.IconButton, { size: "small", onClick: function () { return handleRemove(index); } },
-                react_1.default.createElement(lucide_react_1.X, { size: 20 }))),
+                react_1.default.createElement(components_1.Icon, { name: "X", size: 20 }))),
         react_1.default.createElement(material_1.Box, { sx: sx.inputSpacer }),
         react_1.default.createElement(material_1.Box, { sx: sx.inputValue },
             index_1.BOOLEAN_FIELDS.includes(field === null || field === void 0 ? void 0 : field.db_type) && (react_1.default.createElement(components_1.Autosuggest, { name: 'value', placeholder: "true or false", options: index_1.BOOLEAN_OPTIONS, value: (filter === null || filter === void 0 ? void 0 : filter.value) || '', handleChange: function (ev) { return handleChange(ev, index); } })),
@@ -70,6 +69,7 @@ var sx = {
     inputFilter: {
         gridColumn: 'span 1',
         minWidth: '100px',
+        mr: '5px'
     },
     inputOperator: {
         gridColumn: 'span 1',

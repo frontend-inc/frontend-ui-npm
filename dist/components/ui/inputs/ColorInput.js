@@ -56,7 +56,8 @@ var ColorInput = function (props) {
         setTone(newTone);
     };
     var handleColorChange = function (color) {
-        setColor(color);
+        var hexColor = COLORS[color][tone];
+        setHex(hexColor);
         closeMenu();
     };
     var handleHexColorChange = function (hexColor) {
@@ -78,12 +79,6 @@ var ColorInput = function (props) {
             setText(value);
         }
     }, [value]);
-    (0, react_1.useEffect)(function () {
-        if (color) {
-            var hexColor = COLORS[color][tone];
-            setHex(hexColor);
-        }
-    }, [color]);
     (0, react_1.useEffect)(function () {
         handleChange({
             target: {

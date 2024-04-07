@@ -2,6 +2,7 @@ import React from 'react';
 type ImageProps = {
     src?: string;
     height: number;
+    width?: number;
     objectFit?: 'cover' | 'contain';
     alt?: string;
     bgcolor?: string;
