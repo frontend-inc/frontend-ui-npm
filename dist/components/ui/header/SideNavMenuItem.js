@@ -35,7 +35,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var frontend_shopify_1 = require("frontend-shopify");
@@ -49,33 +48,33 @@ var SublinkMenuItem = function (props) {
 var SideNavMenuItem = function (props) {
     var _a;
     var router = (0, router_1.useRouter)();
-    var _b = (0, react_1.useContext)(context_1.AppContext), setMenuOpen = _b.setMenuOpen, clientUrl = _b.clientUrl;
     var menuItem = props.menuItem, handleClick = props.handleClick;
-    var _c = (0, react_1.useState)(false), open = _c[0], setOpen = _c[1];
-    var children = menuItem.children, shopify_collection = menuItem.shopify_collection;
-    var _d = (0, frontend_shopify_1.useCollections)(), loading = _d.loading, products = _d.products, findCollection = _d.findCollection;
+    var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
+    var children = menuItem.children;
+    var _c = (0, frontend_shopify_1.useCollections)(), loading = _c.loading, products = _c.products, findCollection = _c.findCollection;
     var handleCollectionClick = function () {
-        router.push("".concat(clientUrl, "/collections/").concat(shopify_collection));
+        router.push("/collections/".concat(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle));
         setOpen(false);
-        setMenuOpen(false);
     };
     var handleProductClick = function (product) {
-        router.push("".concat(clientUrl, "/products/").concat(product.handle));
-        setMenuOpen(false);
+        router.push("/products/".concat(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle));
+        setOpen(false);
     };
-    var handleMenuItemClick = function (menuItem) {
-        setMenuOpen(false);
-        handleClick(menuItem === null || menuItem === void 0 ? void 0 : menuItem.path);
-    };
-    var handleMenuClick = function (ev) {
-        if ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) {
-            setOpen(!open);
+    var handleMenuClick = function () {
+        if ((children === null || children === void 0 ? void 0 : children.length) > 0) {
+            setOpen(false);
+            return;
+        }
+        if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') {
+            setOpen(false);
+            findCollection(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle);
+            return;
+        }
+        else if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'url') {
+            window.open(menuItem.url, '_blank');
         }
         else {
-            handleMenuItemClick(menuItem);
-        }
-        if (shopify_collection && !open && !products) {
-            findCollection(shopify_collection);
+            handleClick(menuItem.path);
         }
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,

@@ -54,7 +54,7 @@ var DesktopTopNav = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.desktopTopNav },
                     react_1.default.createElement(material_1.Box, { sx: sx.leftMenu },
                         react_1.default.createElement(Logo_1.default, { src: logo, width: 120, height: 40, handleClick: function () { return handleClick('/'); } })),
-                    react_1.default.createElement(material_1.Box, { sx: sx.centerMenu }, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.map(function (menuItem, index) { return (react_1.default.createElement(TopNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: function () { return handleClick(menuItem.path); } })); })),
+                    react_1.default.createElement(material_1.Box, { sx: sx.centerMenu }, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.map(function (menuItem, index) { return (react_1.default.createElement(TopNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); })),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu },
                         enableAuth && (react_1.default.createElement(__1.AuthButton, { editing: editing, myAccountUrl: "".concat(clientUrl, "/my-account") })),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,

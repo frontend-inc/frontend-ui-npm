@@ -18,9 +18,12 @@ var useTheme = function (props) {
     var _a = props || {}, _b = _a.muiTheme, muiTheme = _b === void 0 ? theme_1.muiTheme : _b, primaryColor = _a.primaryColor, bgcolor = _a.bgcolor, borderRadius = _a.borderRadius, bodyFont = _a.bodyFont, headerFont = _a.headerFont, _c = _a.offset, offset = _c === void 0 ? 0 : _c, _d = _a.mobile, mobile = _d === void 0 ? false : _d;
     var _e = (0, react_1.useState)(muiTheme), theme = _e[0], setTheme = _e[1];
     (0, react_1.useEffect)(function () {
-        var newTheme = __assign({}, theme);
+        var newTheme = {};
         if (muiTheme) {
             newTheme = muiTheme;
+        }
+        else {
+            newTheme = __assign({}, theme);
         }
         var breakpoints = __assign({}, newTheme.breakpoints);
         var palette = __assign({}, newTheme.palette);
@@ -74,7 +77,7 @@ var useTheme = function (props) {
         headerFont,
         bodyFont,
         borderRadius,
-        muiTheme,
+        muiTheme
     ]);
     return {
         theme: theme,

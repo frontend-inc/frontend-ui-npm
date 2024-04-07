@@ -2,12 +2,15 @@ export type MenuLinkTypes = 'dropdown' | 'link' | 'sublink' | 'shopify_collectio
 export type MenuLinkType = {
     name: string;
     path: string;
+    header?: boolean;
     url?: string;
     icon?: string;
     link_type?: MenuLinkTypes;
     position: number;
+    document_id?: number;
+    collection_id?: number;
     parent_id?: number | null;
-    shopify_collection?: string;
+    shopify_handle?: string;
     children: MenuLinkType[] | [];
 };
 export type NotificationTypes = 'text' | 'page' | 'document' | 'shopify_collection' | 'shopify_product' | 'url';

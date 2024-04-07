@@ -31,7 +31,7 @@ var router_1 = require("next/router");
 var Notification = function (props) {
     var router = (0, router_1.useRouter)();
     var notification = (props || {}).notification;
-    var _a = notification || {}, text = _a.text, path = _a.path, url = _a.url, position = _a.position, notification_type = _a.notification_type;
+    var _a = notification || {}, text = _a.text, path = _a.path, url = _a.url, notification_type = _a.notification_type;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var handleClick = function () {
         switch (notification_type) {
