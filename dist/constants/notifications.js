@@ -9,16 +9,16 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LINK_OPTIONS = void 0;
-var DEFAULT_LINK_OPTIONS = [
-    { value: 'dropdown', label: 'Dropdown', icon: 'Folder' },
+exports.NOTIFICATION_OPTIONS = void 0;
+var DEFAULT_NOTIFICATION_OPTIONS = [
+    { value: 'text', label: 'Text', icon: 'Text' },
     { value: 'page', label: 'Page', icon: 'StickyNote' },
     { value: 'url', label: 'URL', icon: 'ExternalLink' },
     { value: 'document', label: 'Document', icon: 'Database' },
 ];
-exports.LINK_OPTIONS = {
-    default: DEFAULT_LINK_OPTIONS,
-    shopify: __spreadArray(__spreadArray([], DEFAULT_LINK_OPTIONS, true), [
+exports.NOTIFICATION_OPTIONS = {
+    default: DEFAULT_NOTIFICATION_OPTIONS,
+    shopify: __spreadArray(__spreadArray([], DEFAULT_NOTIFICATION_OPTIONS, true), [
         {
             value: 'shopify_collection',
             label: 'Shopify Collection',

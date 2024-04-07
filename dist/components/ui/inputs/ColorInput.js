@@ -46,7 +46,7 @@ var TransparentColor = function (props) {
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.color), sx.transparent), (value == '' && sx.selected)), { bgcolor: '#FFF' }), onClick: handleClick })));
 };
 var ColorInput = function (props) {
-    var label = props.label, name = props.name, value = props.value, _a = props.placeholder, placeholder = _a === void 0 ? "Color" : _a, _b = props.disableTone, disableTone = _b === void 0 ? false : _b, handleChange = props.handleChange;
+    var label = props.label, name = props.name, value = props.value, _a = props.placeholder, placeholder = _a === void 0 ? 'Color' : _a, _b = props.disableTone, disableTone = _b === void 0 ? false : _b, handleChange = props.handleChange;
     var _c = (0, react_1.useState)(500), tone = _c[0], setTone = _c[1];
     var _d = (0, react_1.useState)(value || ''), hex = _d[0], setHex = _d[1];
     var _e = (0, react_1.useState)(value || ''), text = _e[0], setText = _e[1];

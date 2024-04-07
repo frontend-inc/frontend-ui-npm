@@ -21,7 +21,7 @@ var LoginForm = function (props) {
 exports.default = LoginForm;
 var sx = {
     root: {
-        mt: 2
+        mt: 2,
     },
     button: {
         color: 'text.primary',

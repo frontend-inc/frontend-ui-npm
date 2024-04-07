@@ -52,7 +52,7 @@ var ProductRecommendations = function (props) {
         }
     }, [handle]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        title && (react_1.default.createElement(components_1.Heading, { title: title })),
+        title && react_1.default.createElement(components_1.Heading, { title: title }),
         layout == 'grid' && (react_1.default.createElement(shopify_1.ProductGrid, { editing: editing, loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText })),
         layout == 'carousel' && (react_1.default.createElement(shopify_1.ProductCarousel, { editing: editing, loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText }))));
 };

@@ -33,7 +33,7 @@ var ActionButton = function (props) {
     var _b = action || {}, icon = _b.icon, _c = _b.label, label = _c === void 0 ? 'View' : _c;
     var handleClick = (0, hooks_1.useActions)({
         action: action,
-        resource: resource
+        resource: resource,
     }).handleClick;
     var onClick = function (ev) {
         handleClick(ev);

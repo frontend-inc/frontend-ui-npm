@@ -67,7 +67,7 @@ var sx = {
     description: {
         color: 'text.secondary',
         textAlign: 'center',
-        maxWidth: '600px'
+        maxWidth: '600px',
     },
     actions: {
         mt: 2,

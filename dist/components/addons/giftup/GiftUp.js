@@ -32,7 +32,7 @@ var GiftUp = function (props) {
             script.src = 'https://cdn.giftup.app/dist/gift-up.js';
             script.async = true;
             script.onload = function () {
-                //@ts-ignore				
+                //@ts-ignore
                 window.giftup =
                     //@ts-ignore
                     window.giftup ||

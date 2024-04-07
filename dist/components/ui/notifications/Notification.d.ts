@@ -1,10 +1,7 @@
 import React from 'react';
+import { NotificationType } from '../../../types';
 type NotificationProps = {
-    text: string;
-    buttonText?: string;
-    path?: string;
-    discountCode?: string;
-    copyToClipboard?: boolean;
+    notification: NotificationType;
 };
 declare const Notification: React.FC<NotificationProps>;
 export default Notification;

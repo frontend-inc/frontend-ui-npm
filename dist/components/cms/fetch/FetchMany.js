@@ -7,7 +7,7 @@ var FetchMany = function (props) {
         sort_by: 'id',
         sort_direction: 'desc',
         per_page: 20,
-        page: 1
+        page: 1,
     } : _a;
     var findMany = (0, frontend_js_1.useResourceContext)({
         url: url,

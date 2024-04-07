@@ -17,6 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var CheckboxNumberRangeFilter_1 = __importDefault(require("./CheckboxNumberRangeFilter"));
 var CheckboxPriceRangeFilter = function (props) {
-    return (react_1.default.createElement(CheckboxNumberRangeFilter_1.default, __assign({}, props, { enableCurrency: true })));
+    return react_1.default.createElement(CheckboxNumberRangeFilter_1.default, __assign({}, props, { enableCurrency: true }));
 };
 exports.default = CheckboxPriceRangeFilter;

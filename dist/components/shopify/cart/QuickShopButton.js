@@ -27,13 +27,13 @@ var react_1 = __importStar(require("react"));
 var shopify_1 = require("../../../components/shopify");
 var material_1 = require("@mui/material");
 var QuickShopButton = function (props) {
-    var _a = props || {}, size = _a.size, product = _a.product, _b = _a.color, color = _b === void 0 ? "secondary" : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Add to Cart' : _c, _d = _a.quickShopButtonText, quickShopButtonText = _d === void 0 ? 'Quick Shop' : _d, _e = _a.enableQuantity, enableQuantity = _e === void 0 ? false : _e;
+    var _a = props || {}, size = _a.size, product = _a.product, _b = _a.color, color = _b === void 0 ? 'secondary' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Add to Cart' : _c, _d = _a.quickShopButtonText, quickShopButtonText = _d === void 0 ? 'Quick Shop' : _d, _e = _a.enableQuantity, enableQuantity = _e === void 0 ? false : _e;
     var _f = (0, react_1.useState)(false), open = _f[0], setOpen = _f[1];
     var handleQuickShop = function () {
         setOpen(true);
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Button, { size: size, color: color, variant: 'contained', onClick: handleQuickShop }, quickShopButtonText),
+        react_1.default.createElement(material_1.Button, { size: size, color: color, variant: "contained", onClick: handleQuickShop }, quickShopButtonText),
         react_1.default.createElement(shopify_1.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, shopifyProduct: product, enableQuantity: enableQuantity, buttonText: buttonText })));
 };
 exports.default = QuickShopButton;

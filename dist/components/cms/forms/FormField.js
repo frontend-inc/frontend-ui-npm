@@ -22,7 +22,7 @@ var FormField = function (props) {
             }); }), handleChange: handleChange, placeholder: placeholder })),
         variant === 'rating' && (react_1.default.createElement(__1.RatingInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'image' && (react_1.default.createElement(__1.ImageInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, handleRemove: handleRemove })),
-        variant === 'price' && (react_1.default.createElement(__1.TextInput, { type: 'number', errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
+        variant === 'price' && (react_1.default.createElement(__1.TextInput, { type: "number", errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'json' && (react_1.default.createElement(__1.JSONInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder }))));
 };
 exports.default = FormField;

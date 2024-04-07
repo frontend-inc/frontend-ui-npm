@@ -92,11 +92,11 @@ var sx = {
     image: {
         pr: {
             sm: 2,
-            xs: 0
+            xs: 0,
         },
         mr: {
             sm: 2,
-            xs: 0
+            xs: 0,
         },
         width: {
             sm: 220,

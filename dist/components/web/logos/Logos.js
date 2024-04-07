@@ -22,7 +22,7 @@ var __2 = require("../..");
 var Logos = function (props) {
     var title = props.title, label = props.label, _a = props.items, items = _a === void 0 ? [] : _a, editing = props.editing, rest = __rest(props, ["title", "label", "items", "editing"]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.root },
-        react_1.default.createElement(__2.Heading, { title: title, label: label, textAlign: 'center' }),
+        react_1.default.createElement(__2.Heading, { title: title, label: label, textAlign: "center" }),
         react_1.default.createElement(material_1.Stack, { sx: sx.logos, direction: "row", spacing: 1 }, items === null || items === void 0 ? void 0 : items.map(function (item, index) { return (react_1.default.createElement(Logo_1.default, { key: index, title: "Logo", image: item === null || item === void 0 ? void 0 : item.image, height: 60, width: 120 })); })),
         (items === null || items === void 0 ? void 0 : items.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Image", title: "No logos", description: "Logos will appear here" }))));
 };

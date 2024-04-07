@@ -146,7 +146,7 @@ var ForeignForm = function (props) {
         });
     }); };
     return !submitted ? (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        (title || label) && (react_1.default.createElement(components_1.Heading, { label: label, title: title })),
+        (title || label) && react_1.default.createElement(components_1.Heading, { label: label, title: title }),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.form }, fields === null || fields === void 0 ? void 0 :
             fields.map(function (field) {
                 return index_1.SYSTEM_FIELDS.includes(field.name) ? (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove })) : (react_1.default.createElement(FormField_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource === null || resource === void 0 ? void 0 : resource.data, field.name), handleChange: handleDataChange }));
@@ -160,5 +160,5 @@ var sx = {
     },
     form: {
         width: '100%',
-    }
+    },
 };

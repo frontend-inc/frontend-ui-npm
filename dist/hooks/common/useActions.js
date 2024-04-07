@@ -72,7 +72,7 @@ var useActions = function (params) {
                         return fetch(action.url, {
                             method: (_a = action === null || action === void 0 ? void 0 : action.options) === null || _a === void 0 ? void 0 : _a.method,
                             headers: (_b = action === null || action === void 0 ? void 0 : action.options) === null || _b === void 0 ? void 0 : _b.headers,
-                            body: JSON.stringify((_c = action === null || action === void 0 ? void 0 : action.options) === null || _c === void 0 ? void 0 : _c.body)
+                            body: JSON.stringify((_c = action === null || action === void 0 ? void 0 : action.options) === null || _c === void 0 ? void 0 : _c.body),
                         });
                     })];
                 case 4:
@@ -87,7 +87,7 @@ var useActions = function (params) {
         loading: loading,
         data: data,
         errors: errors,
-        handleClick: handleClick
+        handleClick: handleClick,
     };
 };
 exports.default = useActions;

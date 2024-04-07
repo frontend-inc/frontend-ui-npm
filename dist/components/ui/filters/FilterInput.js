@@ -69,7 +69,7 @@ var sx = {
     inputFilter: {
         gridColumn: 'span 1',
         minWidth: '100px',
-        mr: '5px'
+        mr: '5px',
     },
     inputOperator: {
         gridColumn: 'span 1',

@@ -16,7 +16,7 @@ var Notifications = function (props) {
     if (!(notifications === null || notifications === void 0 ? void 0 : notifications.length))
         return null;
     return (react_1.default.createElement(material_1.List, { sx: sx.root },
-        react_1.default.createElement(react_swipeable_views_1.default, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true }, notifications === null || notifications === void 0 ? void 0 : notifications.map(function (notification, i) { return (react_1.default.createElement(components_1.Notification, { key: i, text: notification.text, buttonText: notification.buttonText, path: notification.path, discountCode: notification.discountCode, copyToClipboard: notification.copyToClipboard })); }))));
+        react_1.default.createElement(react_swipeable_views_1.default, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true }, notifications === null || notifications === void 0 ? void 0 : notifications.map(function (notification, i) { return (react_1.default.createElement(components_1.Notification, { key: i, notification: notification })); }))));
 };
 exports.default = Notifications;
 var sx = {

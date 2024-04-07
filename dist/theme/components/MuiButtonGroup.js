@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     defaultProps: {
         disableRipple: true,
-        border: 'none !important'
+        border: 'none !important',
     },
     styleOverrides: {
         root: {

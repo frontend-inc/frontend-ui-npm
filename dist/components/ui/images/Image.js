@@ -29,7 +29,9 @@ var Image = function (props) {
             width: width ? "min(".concat(width, "px, 100vw)") : '100%',
             minHeight: "".concat(height, "px"),
             objectFit: objectFit,
-            borderRadius: !disableBorderRadius ? "".concat(theme.shape.borderRadius, "px") : '0px',
+            borderRadius: !disableBorderRadius
+                ? "".concat(theme.shape.borderRadius, "px")
+                : '0px',
         } })) : (react_1.default.createElement(components_1.NoImage, { height: height }))));
 };
 exports.default = Image;

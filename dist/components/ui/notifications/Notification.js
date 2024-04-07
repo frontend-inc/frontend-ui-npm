@@ -22,32 +22,33 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
 var hooks_1 = require("../../../hooks");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var Notification = function (props) {
     var router = (0, router_1.useRouter)();
-    var text = props.text, _a = props.buttonText, buttonText = _a === void 0 ? 'View details' : _a, path = props.path, discountCode = props.discountCode, copyToClipboard = props.copyToClipboard;
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
+    var notification = (props || {}).notification;
+    var _a = notification || {}, text = _a.text, path = _a.path, url = _a.url, position = _a.position, notification_type = _a.notification_type;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var handleClick = function () {
-        if (copyToClipboard) {
-            (0, copy_to_clipboard_1.default)(discountCode);
-            showAlertSuccess('Discount code copied to clipboard');
-        }
-        else if (path) {
-            router.push("".concat(clientUrl, "/").concat(path));
+        switch (notification_type) {
+            case 'url':
+                window.open(url, '_blank');
+                break;
+            case 'page':
+            case 'document':
+                router.push("".concat(clientUrl).concat(path));
+                break;
         }
     };
+    var _b = (0, hooks_1.useClickOrDrag)({
+        onClick: handleClick,
+    }), onMouseDown = _b.onMouseDown, onMouseUp = _b.onMouseUp;
     return (react_1.default.createElement(material_1.ListItem, { sx: sx.root },
-        react_1.default.createElement(material_1.ListItemButton, { disableRipple: true, sx: sx.listItemButton, onClick: handleClick },
+        react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onMouseDown: onMouseDown, onMouseUp: onMouseUp },
             react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body2", sx: sx.text }, text) }))));
 };
 exports.default = Notification;

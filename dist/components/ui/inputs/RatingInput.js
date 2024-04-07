@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var Rating_1 = __importDefault(require("@mui/material/Rating"));
 var icons_material_1 = require("@mui/icons-material");
 var RatingInput = function (props) {
-    var label = props.label, value = props.value, name = props.name, handleChange = props.handleChange, _a = props.disableBorder, disableBorder = _a === void 0 ? false : _a, _b = props.readOnly, readOnly = _b === void 0 ? false : _b, _c = props.direction, direction = _c === void 0 ? "column" : _c, size = props.size;
+    var label = props.label, value = props.value, name = props.name, handleChange = props.handleChange, _a = props.disableBorder, disableBorder = _a === void 0 ? false : _a, _b = props.readOnly, readOnly = _b === void 0 ? false : _b, _c = props.direction, direction = _c === void 0 ? 'column' : _c, size = props.size;
     var onChange = function (event, value) {
         handleChange({
             target: {
@@ -60,7 +60,7 @@ var sx = {
     },
     label: {
         width: '100px',
-        mb: 0
+        mb: 0,
     },
     stack: {
         width: '100%',

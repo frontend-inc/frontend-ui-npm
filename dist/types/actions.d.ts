@@ -10,9 +10,9 @@ export type ActionType = {
     url: string;
     path?: string;
     options?: {
-        'method': 'GET' | 'POST' | 'PUT' | 'DELETE';
-        'headers': Record<string, string>;
-        'body': Record<string, string>;
+        method: 'GET' | 'POST' | 'PUT' | 'DELETE';
+        headers: Record<string, string>;
+        body: Record<string, string>;
         'content-type': string;
     };
 };

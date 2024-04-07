@@ -27,7 +27,7 @@ var sx = {
         minWidth: '100px',
         bgcolor: 'background.paper',
         borderBottom: '1px solid',
-        borderColor: 'divider'
+        borderColor: 'divider',
     },
     header: {
         p: 0,

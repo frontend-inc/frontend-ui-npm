@@ -41,7 +41,7 @@ var Item = function (props) {
                 react_1.default.createElement(material_1.Box, null,
                     open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
                     (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all'))),
-                actions && (react_1.default.createElement(components_1.Actions, { actions: actions, resource: resource }))))));
+                actions && react_1.default.createElement(components_1.Actions, { actions: actions, resource: resource })))));
 };
 exports.default = Item;
 var sx = {

@@ -76,6 +76,6 @@ var sx = {
     },
     inputBase: {
         minWidth: '165px',
-        '& input, & .MuiInputBase-inputMultiline': __assign(__assign({}, styles_1.sx.inputBase['& input, & .MuiInputBase-inputMultiline']), { fontSize: function (theme) { return theme.typography.subtitle1.fontSize; }, fontFamily: function (theme) { return theme.typography.subtitle1.fontFamily; } })
+        '& input, & .MuiInputBase-inputMultiline': __assign(__assign({}, styles_1.sx.inputBase['& input, & .MuiInputBase-inputMultiline']), { fontSize: function (theme) { return theme.typography.subtitle1.fontSize; }, fontFamily: function (theme) { return theme.typography.subtitle1.fontFamily; } }),
     },
 };

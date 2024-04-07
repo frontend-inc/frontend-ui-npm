@@ -18,7 +18,7 @@ var Article = function (props) {
         react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400 }),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)),
-        actions && (react_1.default.createElement(components_1.Actions, { actions: actions, resource: resource }))));
+        actions && react_1.default.createElement(components_1.Actions, { actions: actions, resource: resource })));
 };
 exports.default = Article;
 var sx = {

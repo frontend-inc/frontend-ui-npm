@@ -71,7 +71,7 @@ var GoogleLoginButton = function (props) {
     var _b = (0, react_1.useState)(null), OAuthCredentials = _b[0], setOAuthCredentials = _b[1];
     var handleLogin = (0, google_1.useGoogleLogin)({
         onSuccess: function (codeResponse) { return setOAuthCredentials(codeResponse); },
-        onError: function (error) { return console.log('Login Failed:', error); }
+        onError: function (error) { return console.log('Login Failed:', error); },
     });
     var handleGoogleLogin = function (accessToken) { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
@@ -93,17 +93,15 @@ var GoogleLoginButton = function (props) {
         }
     }, [OAuthCredentials]);
     return (
-    //@ts-ignore 
-    react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "secondary", onClick: handleLogin, startIcon: loading ?
-            react_1.default.createElement(components_1.ButtonLoader, { color: 'secondary.contrastText', loading: loading }) :
-            react_1.default.createElement(material_1.Box, { sx: sx.icon, dangerouslySetInnerHTML: { __html: GoogleIcon } }) }, "Sign In with Google"));
+    //@ts-ignore
+    react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "secondary", onClick: handleLogin, startIcon: loading ? (react_1.default.createElement(components_1.ButtonLoader, { color: "secondary.contrastText", loading: loading })) : (react_1.default.createElement(material_1.Box, { sx: sx.icon, dangerouslySetInnerHTML: { __html: GoogleIcon } })) }, "Sign In with Google"));
 };
 exports.default = GoogleLoginButton;
 var sx = {
     button: {
-        position: 'relative'
+        position: 'relative',
     },
     icon: {
-        mb: '-6px'
-    }
+        mb: '-6px',
+    },
 };
