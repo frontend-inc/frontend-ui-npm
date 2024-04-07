@@ -60,7 +60,7 @@ var SideNavMenuItem = function (props) {
         router.push("/products/".concat(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle));
         setOpen(false);
     };
-    var handleMenuClick = function () {
+    var handleMenuClick = function (menuItem) {
         if ((children === null || children === void 0 ? void 0 : children.length) > 0) {
             setOpen(false);
             return;
@@ -78,13 +78,13 @@ var SideNavMenuItem = function (props) {
         }
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) && (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)), onClick: function () { return handleMenuClick(menuItem); } },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: ((children === null || children === void 0 ? void 0 : children.length) > 0 || (menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') && (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)), onClick: function () { return handleMenuClick(menuItem); } },
                 react_1.default.createElement(__1.Icon, { name: "ChevronDown" }))) },
             react_1.default.createElement(material_1.ListItemButton, { onClick: function () { return handleMenuClick(menuItem); } },
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.primary" }, menuItem.name) }))),
         react_1.default.createElement(material_1.Collapse, { in: open },
             react_1.default.createElement(material_1.List, null, children === null || children === void 0 ? void 0 :
-                children.map(function (child, index) { return (react_1.default.createElement(SublinkMenuItem, { key: index, label: child.name, handleClick: function () { return handleMenuItemClick(child); } })); }),
+                children.map(function (child, index) { return (react_1.default.createElement(SublinkMenuItem, { key: index, label: child.name, handleClick: function () { return handleMenuClick(child); } })); }),
                 loading && (react_1.default.createElement(material_1.Box, { sx: sx.loading },
                     react_1.default.createElement(material_1.CircularProgress, { size: 30 }))), (_a = products === null || products === void 0 ? void 0 : products.slice(0, 5)) === null || _a === void 0 ? void 0 :
                 _a.map(function (product, i) { return (react_1.default.createElement(SublinkMenuItem, { label: product.title, handleClick: function () { return handleProductClick(product); } })); }),
