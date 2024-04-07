@@ -58,7 +58,7 @@ var AutocompletePaper = function (props) {
     return react_1.default.createElement(material_1.Paper, __assign({}, props, { elevation: 10, sx: sx.paper }));
 };
 var Autosuggest = function (props) {
-    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? 'column' : _a, options = props.options, label = props.label, name = props.name, _b = props.placeholder, placeholder = _b === void 0 ? 'Select' : _b, _c = props.multiselect, multiselect = _c === void 0 ? false : _c, handleChange = props.handleChange, handleInputChange = props.handleInputChange, _d = props.freeSolo, freeSolo = _d === void 0 ? false : _d;
+    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? 'column' : _a, options = props.options, label = props.label, name = props.name, _b = props.placeholder, placeholder = _b === void 0 ? 'Select' : _b, _c = props.multiselect, multiselect = _c === void 0 ? false : _c, handleChange = props.handleChange, handleInputChange = props.handleInputChange, handleClear = props.handleClear, _d = props.freeSolo, freeSolo = _d === void 0 ? false : _d;
     var _e = (0, react_1.useState)({
         label: '',
         value: null,
@@ -78,6 +78,12 @@ var Autosuggest = function (props) {
             },
         });
     };
+    var handleInputClear = function () {
+        if (handleClear) {
+            setSelected({ label: '', value: null });
+            handleClear();
+        }
+    };
     (0, react_1.useEffect)(function () {
         if (typeof value != 'object') {
             setSelected(options.find(function (o) { return o.value == value; }));
@@ -96,7 +102,9 @@ var Autosuggest = function (props) {
             //@ts-ignore
             getOptionLabel: function (option) { return (option === null || option === void 0 ? void 0 : option.label) || ''; }, 
             //@ts-ignore
-            getOptionSelected: function (option, value) { return (option === null || option === void 0 ? void 0 : option.value) == (value === null || value === void 0 ? void 0 : value.value); }, renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)) })); } }),
+            getOptionSelected: function (option, value) { return (option === null || option === void 0 ? void 0 : option.value) == (value === null || value === void 0 ? void 0 : value.value); }, renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)), endAdornment: handleClear && (react_1.default.createElement(material_1.InputAdornment, { position: "start" },
+                    react_1.default.createElement(material_1.IconButton, { onClick: handleInputClear, size: "small" },
+                        react_1.default.createElement(components_1.Icon, { name: "X", size: 20 })))) })); } }),
         react_1.default.createElement(components_1.ErrorText, { error: error })));
 };
 exports.default = Autosuggest;

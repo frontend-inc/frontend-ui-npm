@@ -49,9 +49,9 @@ var Details = function (props) {
     }, [resource]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 1 }, document &&
-            fields.map(function (field, i) { return (react_1.default.createElement(material_1.Grid, { key: i, item: true, xs: 12, sm: FULL_WIDTH_VARIANTS.includes(field === null || field === void 0 ? void 0 : field.variant) ? 12 : 4 },
+            (fields === null || fields === void 0 ? void 0 : fields.map(function (field, i) { return (react_1.default.createElement(material_1.Grid, { key: i, item: true, xs: 12, sm: FULL_WIDTH_VARIANTS.includes(field === null || field === void 0 ? void 0 : field.variant) ? 12 : 4 },
                 react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.item), (enableBorder && sx.itemBorder)) },
-                    react_1.default.createElement(__1.Field, { field: field, document: document })))); }))));
+                    react_1.default.createElement(__1.Field, { field: field, document: document })))); })))));
 };
 exports.default = Details;
 var sx = {

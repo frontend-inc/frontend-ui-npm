@@ -38,18 +38,9 @@ var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var frontend_shopify_1 = require("frontend-shopify");
 var router_1 = require("next/router");
-var TopNavSubmenuItem = function (props) {
-    var menuItem = props.menuItem, handleClick = props.handleClick;
-    return (react_1.default.createElement(material_1.MenuItem
-    // @ts-ignore
-    , { 
-        // @ts-ignore
-        onClick: function () { return handleClick(menuItem.path); } },
-        react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, menuItem.name)));
-};
 var TopNavMenuItem = function (props) {
     var _a;
     var router = (0, router_1.useRouter)();
@@ -72,7 +63,12 @@ var TopNavMenuItem = function (props) {
         }
         else {
             closeMenu();
-            handleClick(menuItem.path);
+            if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'url') {
+                window.open(menuItem.url, '_blank');
+            }
+            else {
+                handleClick(menuItem.path);
+            }
         }
         if (shopify_collection && !products) {
             findCollection(shopify_collection);
@@ -83,7 +79,7 @@ var TopNavMenuItem = function (props) {
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: handleMenuClick, endIcon: ((children === null || children === void 0 ? void 0 : children.length) > 0 || shopify_collection) && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) },
-                react_1.default.createElement(__1.Icon, { name: "ChevronDown" }))) }, menuItem.name),
+                react_1.default.createElement(components_1.Icon, { name: "ChevronDown" }))) }, menuItem.name),
         react_1.default.createElement(material_1.Menu, { open: open, anchorEl: anchorEl, onClose: closeMenu, MenuListProps: {
                 onMouseLeave: handleMouseLeave,
             }, anchorOrigin: {

@@ -8,6 +8,7 @@ type RemoteAutosuggestProps = {
     url: string;
     displayField?: string;
     handleChange: (event: SyntheticEventType) => void;
+    handleClear?: () => void;
     valueParam?: string;
     placeholder?: string;
     imageField?: string;

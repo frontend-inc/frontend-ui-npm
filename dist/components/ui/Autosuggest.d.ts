@@ -11,6 +11,7 @@ type AutosuggestProps = {
     multiselect?: boolean;
     handleChange: (e: SyntheticEventType) => void;
     handleInputChange?: (value: string) => void;
+    handleClear?: () => void;
     freeSolo?: boolean;
 };
 declare const Autosuggest: React.FC<AutosuggestProps>;

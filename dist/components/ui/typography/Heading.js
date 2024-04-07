@@ -22,16 +22,22 @@ var Heading = function (props) {
         label && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption", sx: {
                 textAlign: textAlign
             } }, label)),
-        title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", style: __assign(__assign({}, sx.text), { textAlign: textAlign }) }, title)),
+        title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", style: __assign(__assign({}, sx.title), { textAlign: textAlign }) }, title)),
         description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", style: __assign(__assign({}, sx.text), { textAlign: textAlign }) }, description))));
 };
 exports.default = Heading;
 var sx = {
     stack: {
         width: '100%',
-        pb: 4
+        pb: 4,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    title: {
+        width: '100%',
     },
     text: {
         width: '100%',
+        maxWidth: '600px',
     },
 };
