@@ -60,10 +60,10 @@ var useTheme = function (props) {
             palette = (0, helpers_1.buildMuiPalette)(palette, bgcolor);
         }
         if (headerFont) {
-            typography = __assign(__assign({}, typography), { h1: __assign(__assign({}, typography.h1), { fontFamily: headerFont }), h2: __assign(__assign({}, typography.h2), { fontFamily: headerFont }), h3: __assign(__assign({}, typography.h3), { fontFamily: headerFont }), h4: __assign(__assign({}, typography.h4), { fontFamily: headerFont }), h5: __assign(__assign({}, typography.h5), { fontFamily: headerFont }), h6: __assign(__assign({}, typography.h6), { fontFamily: headerFont }) });
+            typography = __assign(__assign({}, typography), { h1: __assign(__assign({}, typography.h1), { fontFamily: headerFont }), h2: __assign(__assign({}, typography.h2), { fontFamily: headerFont }), h3: __assign(__assign({}, typography.h3), { fontFamily: headerFont }), h4: __assign(__assign({}, typography.h4), { fontFamily: headerFont }), h5: __assign(__assign({}, typography.h5), { fontFamily: headerFont }), h6: __assign(__assign({}, typography.h6), { fontFamily: headerFont }), subtitle1: __assign(__assign({}, typography.subtitle1), { fontFamily: headerFont }), subtitle2: __assign(__assign({}, typography.subtitle2), { fontFamily: headerFont }) });
         }
         if (bodyFont) {
-            typography = __assign(__assign({}, typography), { subtitle1: __assign(__assign({}, typography.subtitle1), { fontFamily: bodyFont }), subtitle2: __assign(__assign({}, typography.subtitle2), { fontFamily: bodyFont }), body1: __assign(__assign({}, typography.body1), { fontFamily: bodyFont }), body2: __assign(__assign({}, typography.body2), { fontFamily: bodyFont }), button: __assign(__assign({}, typography.button), { fontFamily: bodyFont }), caption: __assign(__assign({}, typography.caption), { fontFamily: bodyFont }), overline: __assign(__assign({}, typography.overline), { fontFamily: bodyFont }) });
+            typography = __assign(__assign({}, typography), { body1: __assign(__assign({}, typography.body1), { fontFamily: bodyFont }), body2: __assign(__assign({}, typography.body2), { fontFamily: bodyFont }), button: __assign(__assign({}, typography.button), { fontFamily: bodyFont }), caption: __assign(__assign({}, typography.caption), { fontFamily: bodyFont }), overline: __assign(__assign({}, typography.overline), { fontFamily: bodyFont }) });
         }
         if (Number(borderRadius) >= 0) {
             shape = __assign(__assign({}, shape), { borderRadius: Number(borderRadius) });

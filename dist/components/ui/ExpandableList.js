@@ -58,13 +58,13 @@ var sx = {
         my: 0,
     },
     listItem: {
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         height: '40px',
     },
     listItemButton: {
         py: 0,
         px: 1,
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         height: '40px',
     },
     listItemIcon: {

@@ -1,6 +1,5 @@
 import React from 'react';
-type TestimonialsProps = {
-    title?: string;
+export type TestimonialsProps = {
     layout?: 'grid' | 'carousel';
     items: Record<string, any>[];
     enableAutoPlay?: boolean;

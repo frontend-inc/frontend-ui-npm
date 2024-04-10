@@ -121,7 +121,7 @@ var sx = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         border: '2px solid',
         borderColor: 'divider',
         bgcolor: 'background.paper',

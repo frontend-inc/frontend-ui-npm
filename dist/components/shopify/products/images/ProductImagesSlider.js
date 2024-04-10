@@ -65,7 +65,7 @@ var sx = {
         width: '100px',
         height: '100px',
         border: '2px solid transparent',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         '&:hover': {
             opacity: 0.8,
         },

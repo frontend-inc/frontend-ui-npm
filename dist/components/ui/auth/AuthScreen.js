@@ -54,7 +54,7 @@ var sx = {
         },
         border: '1px solid',
         borderColor: 'divider',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         bgcolor: 'background.paper',
     },
 };

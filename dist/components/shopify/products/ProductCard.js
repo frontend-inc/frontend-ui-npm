@@ -80,7 +80,7 @@ var sx = {
     root: {
         flexDirection: 'column',
         overflow: 'hidden',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
     },
     rootBorder: {
         border: '1px solid',

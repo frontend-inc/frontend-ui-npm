@@ -61,7 +61,7 @@ var sx = {
     item: {
         p: 2,
         width: '100%',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         minHeight: 110,
     },
     itemBorder: {

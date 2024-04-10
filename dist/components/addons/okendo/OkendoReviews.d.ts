@@ -1,5 +1,5 @@
 import React from 'react';
-type OkendoReviewsProps = {
+export type OkendoReviewsProps = {
     handle: string | string[];
     subscriberId: string;
 };

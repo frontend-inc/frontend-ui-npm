@@ -11,7 +11,7 @@ exports.sx = {
             MozAppearance: 'none',
             appearance: 'none',
             p: 1,
-            borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+            borderRadius: 1,
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
             bgcolor: 'background.default',
@@ -29,7 +29,7 @@ exports.sx = {
     inputError: {
         '& input, & .MuiInputBase-inputMultiline': {
             p: 1,
-            borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+            borderRadius: 1,
             border: '2px solid',
             borderColor: 'error.main',
         },

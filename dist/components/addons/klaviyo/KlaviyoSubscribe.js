@@ -64,7 +64,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var KlaviyoSubscribe = function (props) {
-    var _a = props || {}, listId = _a.listId, apiKey = _a.apiKey, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b, title = _a.title, description = _a.description;
+    var _a = props || {}, listId = _a.listId, apiKey = _a.apiKey, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
     var _c = (0, hooks_1.useAlerts)(), showAlertError = _c.showAlertError, showAlertSuccess = _c.showAlertSuccess;
     var _d = (0, hooks_1.useKlaviyo)({
         apiKey: apiKey,
@@ -107,7 +107,6 @@ var KlaviyoSubscribe = function (props) {
         setEmail(ev.target.value);
     };
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
-        (title || description) && (react_1.default.createElement(__1.Heading, { title: title, description: description, textAlign: "center" })),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.form },
             react_1.default.createElement(__1.TextInput, { direction: "row", placeholder: 'Enter email...', name: "email", value: email, handleChange: handleChange, styles: sx.input }),
             react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "secondary", onClick: handleFormSubmit }, loading ? react_1.default.createElement(__1.ButtonLoader, { loading: loading }) : "".concat(buttonText)))));

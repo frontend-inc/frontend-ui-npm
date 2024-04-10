@@ -62,12 +62,13 @@ var sx = {
     rootBorder: {
         border: '1px solid',
         borderColor: 'divider',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
     },
     avatar: {
         mr: 2,
         height: '64px',
         width: '64px',
+        backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)'
     },
     description: {
         maxWidth: 320,

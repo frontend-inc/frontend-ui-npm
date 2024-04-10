@@ -2,9 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     styleOverrides: {
-        root: {
-            overflow: 'hidden',
-        },
+        root: {},
         colorPrimary: {},
     },
 };

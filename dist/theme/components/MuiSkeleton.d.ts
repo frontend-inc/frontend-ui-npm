@@ -1,8 +1,6 @@
 declare const _default: {
     styleOverrides: {
-        root: {
-            bgcolor: string;
-        };
+        root: {};
     };
 };
 export default _default;

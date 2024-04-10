@@ -17,14 +17,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var index_1 = require("../../../constants/index");
-var image_1 = __importDefault(require("next/image"));
+var components_1 = require("../../../components");
 var Logo = function (props) {
     var _a = props || {}, _b = _a.title, title = _b === void 0 ? '' : _b, _c = _a.image, image = _c === void 0 ? '' : _c, _d = _a.height, height = _d === void 0 ? index_1.LOGO_HEIGHT : _d, _e = _a.width, width = _e === void 0 ? index_1.LOGO_WIDTH : _e;
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { height: "".concat(height, "px"), width: "".concat(width, "px"), minWidth: "".concat(width, "px"), minHeight: "".concat(height, "px") }) },
-        react_1.default.createElement(image_1.default, { height: height, width: width, src: image, alt: title, style: {
-                width: '100%',
-                objectFit: 'contain',
-            } })));
+        react_1.default.createElement(components_1.Image, { height: height, width: width, src: image, alt: title })));
 };
 exports.default = Logo;
 var sx = {

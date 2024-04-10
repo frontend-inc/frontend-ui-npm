@@ -3,6 +3,7 @@ type AlertModalProps = {
     loading?: boolean;
     title?: string;
     description?: string;
+    icon?: string;
     open: boolean;
     handleClose: () => void;
     handleConfirm: any;

@@ -1,8 +1,6 @@
 declare const _default: {
     styleOverrides: {
-        root: {
-            overflow: string;
-        };
+        root: {};
         colorPrimary: {};
     };
 };

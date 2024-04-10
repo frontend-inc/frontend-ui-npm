@@ -29,7 +29,7 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var Table = function (props) {
     var _a = (0, react_1.useState)(false), showFilters = _a[0], setShowFilters = _a[1];
-    var loading = props.loading, _b = props.enableBorder, enableBorder = _b === void 0 ? true : _b, fields = props.fields, rows = props.rows, _c = props.enableSelect, enableSelect = _c === void 0 ? false : _c, _d = props.enableEdit, enableEdit = _d === void 0 ? false : _d, _e = props.enableDelete, enableDelete = _e === void 0 ? false : _e, handleClick = props.handleClick, handleEdit = props.handleEdit, handleEditSelected = props.handleEditSelected, handleDelete = props.handleDelete, handlePublish = props.handlePublish, handleUnpublish = props.handleUnpublish, secondaryActions = props.secondaryActions, query = props.query, handleClearQuery = props.handleClearQuery, handleQueryChange = props.handleQueryChange, handleSearch = props.handleSearch, handleKeywordSearch = props.handleKeywordSearch, handleSort = props.handleSort, _f = props.page, page = _f === void 0 ? 1 : _f, _g = props.numPages, numPages = _g === void 0 ? 1 : _g, _h = props.totalCount, totalCount = _h === void 0 ? 0 : _h, handlePaginate = props.handlePaginate, _j = props.styles, styles = _j === void 0 ? {} : _j;
+    var loading = props.loading, fields = props.fields, rows = props.rows, _b = props.enableSelect, enableSelect = _b === void 0 ? false : _b, _c = props.enableEdit, enableEdit = _c === void 0 ? false : _c, _d = props.enableDelete, enableDelete = _d === void 0 ? false : _d, handleClick = props.handleClick, handleEdit = props.handleEdit, handleEditSelected = props.handleEditSelected, handleDelete = props.handleDelete, handlePublish = props.handlePublish, handleUnpublish = props.handleUnpublish, secondaryActions = props.secondaryActions, query = props.query, handleClearQuery = props.handleClearQuery, handleQueryChange = props.handleQueryChange, handleSearch = props.handleSearch, handleKeywordSearch = props.handleKeywordSearch, handleSort = props.handleSort, _e = props.page, page = _e === void 0 ? 1 : _e, _f = props.numPages, numPages = _f === void 0 ? 1 : _f, _g = props.totalCount, totalCount = _g === void 0 ? 0 : _g, handlePaginate = props.handlePaginate, _h = props.styles, styles = _h === void 0 ? {} : _h;
     var handleKeywordChange = function (e) {
         handleQueryChange({
             target: {
@@ -38,8 +38,8 @@ var Table = function (props) {
             },
         });
     };
-    var _k = (0, hooks_1.useSelected)(), selected = _k.selected, selectedIds = _k.selectedIds, setSelected = _k.setSelected, setSelectedIds = _k.setSelectedIds, handleSelect = _k.handleSelect;
-    var _l = (0, react_1.useState)(null), anchorEl = _l[0], setAnchorEl = _l[1];
+    var _j = (0, hooks_1.useSelected)(), selected = _j.selected, selectedIds = _j.selectedIds, setSelected = _j.setSelected, setSelectedIds = _j.setSelectedIds, handleSelect = _j.handleSelect;
+    var _k = (0, react_1.useState)(null), anchorEl = _k[0], setAnchorEl = _k[1];
     var handleFilterClick = function (ev) {
         setAnchorEl(ev.currentTarget);
         setShowFilters(true);

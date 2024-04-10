@@ -1,13 +1,13 @@
 import React from 'react';
 type CardType = {
-    title: string;
+    label?: string;
+    title?: string;
     description: string;
     image: string;
     buttonText?: string;
     url?: string;
 };
-type CardsProps = {
-    title?: string;
+export type CardsProps = {
     layout?: 'grid' | 'list';
     style?: 'avatar' | 'card' | 'cover';
     items: CardType[];

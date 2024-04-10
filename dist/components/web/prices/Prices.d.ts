@@ -1,7 +1,6 @@
 import React from 'react';
 import { PriceType } from '../../..';
-type PricesProps = {
-    title?: string;
+export type PricesProps = {
     items: PriceType[];
 };
 declare const Prices: React.FC<PricesProps>;

@@ -1,12 +1,7 @@
 declare const _default: {
     styleOverrides: {
         root: {};
-        input: {
-            '&::placeholder': {
-                opacity: number;
-                color: "#424242";
-            };
-        };
+        input: {};
     };
 };
 export default _default;

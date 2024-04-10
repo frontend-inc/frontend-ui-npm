@@ -61,8 +61,9 @@ var SideNavMenuItem = function (props) {
         setOpen(false);
     };
     var handleMenuClick = function (menuItem) {
-        if ((children === null || children === void 0 ? void 0 : children.length) > 0) {
-            setOpen(false);
+        var _a;
+        if (((_a = menuItem === null || menuItem === void 0 ? void 0 : menuItem.children) === null || _a === void 0 ? void 0 : _a.length) > 0) {
+            setOpen(!open);
             return;
         }
         if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') {
@@ -81,6 +82,8 @@ var SideNavMenuItem = function (props) {
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: ((children === null || children === void 0 ? void 0 : children.length) > 0 || (menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') && (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)), onClick: function () { return handleMenuClick(menuItem); } },
                 react_1.default.createElement(__1.Icon, { name: "ChevronDown" }))) },
             react_1.default.createElement(material_1.ListItemButton, { onClick: function () { return handleMenuClick(menuItem); } },
+                (menuItem === null || menuItem === void 0 ? void 0 : menuItem.icon) && (react_1.default.createElement(material_1.ListItemIcon, null,
+                    react_1.default.createElement(__1.Icon, { name: menuItem.icon, size: 24 }))),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.primary" }, menuItem.name) }))),
         react_1.default.createElement(material_1.Collapse, { in: open },
             react_1.default.createElement(material_1.List, null, children === null || children === void 0 ? void 0 :

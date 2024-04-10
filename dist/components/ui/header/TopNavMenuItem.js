@@ -26,7 +26,7 @@ var TopNavMenuItem = function (props) {
     var menuItem = props.menuItem, handleClick = props.handleClick;
     var children = menuItem.children;
     var _b = (0, frontend_shopify_1.useCollections)(), loading = _b.loading, products = _b.products, findCollection = _b.findCollection;
-    var _c = (0, hooks_1.useMenu)(), open = _c.open, openMenu = _c.openMenu, closeMenu = _c.closeMenu, anchorEl = _c.anchorEl;
+    var _c = (0, hooks_1.useMenu)(), open = _c.open, openMenu = _c.openMenu, closeMenu = _c.closeMenu, anchorEl = _c.anchorEl, toggleMenu = _c.toggleMenu;
     var handleCollectionClick = function () {
         router.push("/collections/".concat(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle));
         closeMenu();
@@ -35,9 +35,9 @@ var TopNavMenuItem = function (props) {
         router.push("/products/".concat(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle));
         closeMenu();
     };
-    var handleMenuClick = function (ev) {
-        if ((children === null || children === void 0 ? void 0 : children.length) > 0) {
-            openMenu(ev);
+    var handleMenuClick = function (ev, menuItem) {
+        if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.children.length) > 0) {
+            toggleMenu(ev);
             return;
         }
         if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') {
@@ -46,9 +46,11 @@ var TopNavMenuItem = function (props) {
             return;
         }
         else if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'url') {
+            closeMenu();
             window.open(menuItem.url, '_blank');
         }
         else {
+            closeMenu();
             handleClick(menuItem.path);
         }
     };
@@ -56,7 +58,7 @@ var TopNavMenuItem = function (props) {
         closeMenu();
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: handleMenuClick, endIcon: ((children === null || children === void 0 ? void 0 : children.length) > 0 || (menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) },
+        react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: function (ev) { return handleMenuClick(ev, menuItem); }, endIcon: ((children === null || children === void 0 ? void 0 : children.length) > 0 || (menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) },
                 react_1.default.createElement(components_1.Icon, { name: "ChevronDown" }))) }, menuItem.name),
         react_1.default.createElement(material_1.Menu, { open: open, anchorEl: anchorEl, onClose: closeMenu, MenuListProps: {
                 onMouseLeave: handleMouseLeave,
@@ -69,7 +71,7 @@ var TopNavMenuItem = function (props) {
             } }, children === null || children === void 0 ? void 0 :
             children.map(function (child, index) { return (react_1.default.createElement(material_1.MenuItem, { key: index, 
                 //@ts-ignore
-                onClick: function () { return handleClick(child.path); } },
+                onClick: function (ev) { return handleMenuClick(ev, child); } },
                 react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, child.name))); }),
             loading && (react_1.default.createElement(material_1.Box, { sx: sx.loading },
                 react_1.default.createElement(material_1.CircularProgress, { size: 30 }))), (_a = products === null || products === void 0 ? void 0 : products.slice(0, 5)) === null || _a === void 0 ? void 0 :

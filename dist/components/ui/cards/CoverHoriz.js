@@ -32,7 +32,7 @@ var router_1 = require("next/router");
 var index_1 = require("../../../constants/index");
 var CoverHoriz = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, label = _a.label, icon = _a.icon, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? index_1.COVER_HORIZ_HEIGHT : _e, _f = _a.width, width = _f === void 0 ? index_1.COVER_HORIZ_WIDTH : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h;
+    var _a = props || {}, label = _a.label, icon = _a.icon, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? index_1.COVER_HORIZ_HEIGHT : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -62,12 +62,12 @@ var sx = {
         position: 'relative',
         flexDirection: 'column',
         overflow: 'hidden',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
     },
     cover: {
         position: 'absolute',
-        bottom: '10px',
-        left: '10px',
+        bottom: '18px',
+        left: '24px',
         zIndex: 1,
     },
     button: {

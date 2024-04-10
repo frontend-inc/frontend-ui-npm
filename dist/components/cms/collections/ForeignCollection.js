@@ -39,11 +39,10 @@ var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var helpers_1 = require("../../../helpers");
-var __1 = require("../..");
-var __2 = require("../..");
+var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var ForeignCollection = function (props) {
-    var title = props.title, field = props.field, resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, foreignUrl = props.foreignUrl, navigateUrl = props.navigateUrl, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, buttonText = props.buttonText, _d = props.query, defaultQuery = _d === void 0 ? null : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableLoadMore, enableLoadMore = _g === void 0 ? true : _g;
+    var field = props.field, resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, foreignUrl = props.foreignUrl, navigateUrl = props.navigateUrl, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, buttonText = props.buttonText, _d = props.query, defaultQuery = _d === void 0 ? null : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableLoadMore, enableLoadMore = _g === void 0 ? true : _g;
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _h = (0, frontend_js_1.useResource)({
@@ -70,9 +69,8 @@ var ForeignCollection = function (props) {
         }
     }, [resource, field, foreignUrl]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(__2.Heading, { title: title }),
-        react_1.default.createElement(__1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient }),
-        enableLoadMore && (react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore }))));
+        react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient }),
+        enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore }))));
 };
 exports.default = ForeignCollection;
 var sx = {

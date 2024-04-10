@@ -52,26 +52,25 @@ var CardHoriz = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), { width: '100%' }) },
-        react_1.default.createElement(material_1.Stack, { spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
+        react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
             react_1.default.createElement(material_1.Box, { sx: sx.image },
                 react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
                     react_1.default.createElement(components_1.Image, { src: image, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, disableBorderRadius: enableBorder }))),
-            react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
-                react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
-                    react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80)),
-                    label && (react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "caption" }, label))),
-                buttonText && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleItemClick }, buttonText)))))));
+            react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
+                label && (react_1.default.createElement(components_1.Label, { label: label })),
+                react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
+                react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80))),
+            buttonText && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.actions), (enableBorder && sx.actionsBorder)) },
+                react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleItemClick }, buttonText))))));
 };
 exports.default = CardHoriz;
 var sx = {
     root: {
-        position: 'relative',
+        width: '100%',
         display: 'flex',
         flexDirection: 'row',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         overflow: 'hidden',
     },
     gradient: {
@@ -89,6 +88,9 @@ var sx = {
         border: '1px solid',
         borderColor: 'divider',
     },
+    container: {
+        width: "100%"
+    },
     image: {
         pr: {
             sm: 2,
@@ -102,15 +104,41 @@ var sx = {
             sm: 220,
             xs: '100%',
         },
+        minWidth: {
+            sm: 220,
+            xs: '100%',
+        },
         height: '100%',
     },
     content: {
+        width: '100%',
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
         height: '100%',
-        py: 1,
+        py: {
+            sm: 0,
+            xs: 1,
+        }
+    },
+    contentBorder: {
+        p: 2
     },
     description: {
         maxWidth: '320px',
     },
+    actions: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: {
+            sm: 'flex-end',
+            xs: 'flex-start'
+        },
+    },
+    actionsBorder: {
+        px: 1,
+        pb: {
+            sm: 0,
+            xs: 1
+        },
+    }
 };

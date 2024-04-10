@@ -1,6 +1,5 @@
 import React from 'react';
-type AccordionProps = {
-    title?: string;
+export type AccordionProps = {
     items?: {
         title: string;
         description: string;

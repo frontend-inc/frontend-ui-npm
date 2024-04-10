@@ -1,9 +1,6 @@
 declare const _default: {
     styleOverrides: {
-        root: {
-            color: string;
-            '&:hover': {};
-        };
+        root: {};
     };
 };
 export default _default;

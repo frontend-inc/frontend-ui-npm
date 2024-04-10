@@ -8,7 +8,7 @@ var material_1 = require("@mui/material");
 var CellButton = function (props) {
     var children = props.children, icon = props.icon, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.Box, { sx: sx.cell },
-        react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "outlined", sx: sx.button, endIcon: icon && icon, onClick: handleClick && handleClick }, children)));
+        react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", sx: sx.button, endIcon: icon && icon, onClick: handleClick && handleClick }, children)));
 };
 exports.default = CellButton;
 var sx = {

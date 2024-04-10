@@ -1,4 +1,7 @@
 import React from 'react';
 import { InputPropsType } from '../../../types';
-declare const NoSpaceInput: React.FC<InputPropsType>;
+type NoSpaceInputPropsType = InputPropsType & {
+    joinChar?: string;
+};
+declare const NoSpaceInput: React.FC<NoSpaceInputPropsType>;
 export default NoSpaceInput;

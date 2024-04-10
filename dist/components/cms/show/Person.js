@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
+var __1 = require("../..");
 var Person = function (props) {
     var MAX_CHARS = 500;
     var _a = props || {}, actions = _a.actions, resource = _a.resource;
@@ -47,16 +47,16 @@ var Person = function (props) {
                     twitter ||
                     youtube ||
                     (blog && (react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.socialUrls },
-                        facebook && react_1.default.createElement(components_1.SocialLink, { provider: "facebook", url: facebook }),
-                        instagram && (react_1.default.createElement(components_1.SocialLink, { provider: "instagram", url: instagram })),
-                        linkedin && react_1.default.createElement(components_1.SocialLink, { provider: "linkedin", url: linkedin }),
-                        twitter && react_1.default.createElement(components_1.SocialLink, { provider: "twitter", url: twitter }),
-                        youtube && react_1.default.createElement(components_1.SocialLink, { provider: "youtube", url: youtube }),
-                        blog && react_1.default.createElement(components_1.SocialLink, { provider: "blog", url: blog })))),
+                        facebook && react_1.default.createElement(__1.SocialLink, { provider: "facebook", url: facebook }),
+                        instagram && (react_1.default.createElement(__1.SocialLink, { provider: "instagram", url: instagram })),
+                        linkedin && react_1.default.createElement(__1.SocialLink, { provider: "linkedin", url: linkedin }),
+                        twitter && react_1.default.createElement(__1.SocialLink, { provider: "twitter", url: twitter }),
+                        youtube && react_1.default.createElement(__1.SocialLink, { provider: "youtube", url: youtube }),
+                        blog && react_1.default.createElement(__1.SocialLink, { provider: "blog", url: blog })))),
                 react_1.default.createElement(material_1.Box, null,
                     open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
                     (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all'))),
-                actions && react_1.default.createElement(components_1.Actions, { actions: actions, resource: resource })))));
+                actions && react_1.default.createElement(__1.Actions, { actions: actions, resource: resource })))));
 };
 exports.default = Person;
 var sx = {

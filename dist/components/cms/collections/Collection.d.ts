@@ -1,9 +1,7 @@
 import React from 'react';
 import { SearchFilterOptionType } from '../../../types';
 import { SortOptionType } from '../../../types';
-type CollectionProps = {
-    label?: string;
-    title?: string;
+export type CollectionProps = {
     url: string;
     layout: 'list' | 'grid';
     style: 'avatar' | 'card' | 'cover';

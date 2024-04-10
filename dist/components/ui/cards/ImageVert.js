@@ -51,7 +51,7 @@ var sx = {
         position: 'relative',
         flexDirection: 'column',
         overflow: 'hidden',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
     },
     gradient: {
         '&::after': {

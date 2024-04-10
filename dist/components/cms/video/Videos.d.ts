@@ -2,8 +2,8 @@ import React from 'react';
 type VideosProps = {
     title?: string;
     url: string;
-    layout: 'list' | 'grid' | 'carousel';
-    style: 'cover' | 'story';
+    layout: 'list' | 'grid';
+    style: 'card' | 'avatar' | 'cover';
     editing?: boolean;
     perPage?: number;
     query?: any;

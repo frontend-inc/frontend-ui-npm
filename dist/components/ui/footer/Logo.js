@@ -7,8 +7,8 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
 var NoImage_1 = __importDefault(require("../NoImage"));
-var LOGO_WIDTH = 100;
-var LOGO_HEIGHT = 50;
+var LOGO_WIDTH = 160;
+var LOGO_HEIGHT = 60;
 var Logo = function (props) {
     var _a = props || {}, src = _a.src, _b = _a.width, width = _b === void 0 ? LOGO_WIDTH : _b, _c = _a.height, height = _c === void 0 ? LOGO_HEIGHT : _c, handleClick = _a.handleClick;
     return (

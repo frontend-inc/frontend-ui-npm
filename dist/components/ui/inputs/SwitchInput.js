@@ -32,7 +32,7 @@ var sx = {
         width: '100%',
         display: 'flex',
         direction: 'column',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         py: '2px',
         px: 2,
         fontSize: 15,

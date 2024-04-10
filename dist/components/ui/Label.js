@@ -25,12 +25,14 @@ var Label = function (props) {
 exports.default = Label;
 var sx = {
     chip: {
-        color: 'text.primary',
+        bgcolor: 'secondary.main',
+        color: 'secondary.contrastText',
         characterSpacing: '1em',
         fontWeight: 500,
         fontFamily: function (theme) { return theme.typography.fontFamily.caption; },
         letterSpacing: '0.05em',
-        bgcolor: 'background.paper',
         cursor: 'pointer',
+        borderRadius: 1,
+        boxShadow: '1px 0px 0 0 rgba(0,0,0,0.1)',
     },
 };

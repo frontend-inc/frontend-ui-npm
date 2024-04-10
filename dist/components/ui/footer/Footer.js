@@ -29,22 +29,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
-var FooterLinks_1 = __importDefault(require("./FooterLinks"));
 var __1 = require("../..");
-var image_1 = __importDefault(require("next/image"));
 var moment_1 = __importDefault(require("moment"));
 var Footer = function (props) {
     var handleClick = props.handleClick, menuItems = props.menuItems, facebook = props.facebook, instagram = props.instagram, linkedin = props.linkedin, twitter = props.twitter, youtube = props.youtube, tiktok = props.tiktok;
     var _a = (0, react_1.useContext)(context_1.AppContext), logo = _a.logo, name = _a.name;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 1, direction: "column" },
         react_1.default.createElement(material_1.Box, { sx: sx.container },
-            react_1.default.createElement(material_1.Box, { sx: sx.left },
-                react_1.default.createElement(material_1.Box, { sx: sx.logoContainer }, logo && (react_1.default.createElement(image_1.default, { src: logo, alt: name, width: 120, height: 120, style: {
-                        objectFit: 'contain',
-                    } })))),
             react_1.default.createElement(material_1.Box, { sx: sx.gridContainer },
-                react_1.default.createElement(material_1.Box, { sx: sx.grid }, menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (menuItem, i) { return (react_1.default.createElement(FooterLinks_1.default, { key: i, menuItem: menuItem, handleClick: handleClick })); }))),
-            react_1.default.createElement(material_1.Box, { sx: sx.right })),
+                react_1.default.createElement(material_1.Stack, { direction: "row", divider: react_1.default.createElement(material_1.Divider, null), spacing: 2 }, menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (menuItem, i) { return (
+                //@ts-ignore
+                react_1.default.createElement(material_1.Button, { key: i, handleClick: function () { return handleClick(menuItem); } }, menuItem === null || menuItem === void 0 ? void 0 : menuItem.name)); })))),
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.footerLinks },
             react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.socialUrls },
                 facebook && react_1.default.createElement(__1.SocialLink, { provider: "facebook", url: facebook }),

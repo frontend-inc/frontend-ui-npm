@@ -1,5 +1,5 @@
 import React from 'react';
-type TypeformProps = {
+export type TypeformProps = {
     typeformId?: string;
     justifyContent?: string;
 };

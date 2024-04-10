@@ -1,8 +1,6 @@
 declare const _default: {
     styleOverrides: {
-        button: {
-            '&:hover': {};
-        };
+        button: {};
     };
 };
 export default _default;

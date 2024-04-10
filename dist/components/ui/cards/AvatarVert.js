@@ -59,7 +59,7 @@ var AvatarVert = function (props) {
                 width: width,
             } },
             react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
-                react_1.default.createElement(material_1.Avatar, { src: image, sx: __assign(__assign(__assign({}, (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: height, width: width }) },
+                react_1.default.createElement(material_1.Avatar, { src: image, sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: height, width: width }) },
                     react_1.default.createElement(material_1.Box, null)))),
         react_1.default.createElement(material_1.Stack, { spacing: 1 },
             react_1.default.createElement(material_1.Stack, { spacing: 0 },
@@ -75,6 +75,9 @@ var sx = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    avatar: {
+        backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)'
     },
     gradient: {
         '&::after': {
@@ -104,7 +107,7 @@ var sx = {
         border: '1px solid',
         borderColor: 'divider',
         p: 1,
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
     },
     title: {
         textAlign: 'center',

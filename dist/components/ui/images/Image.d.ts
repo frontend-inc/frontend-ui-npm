@@ -1,5 +1,5 @@
 import React from 'react';
-type ImageProps = {
+export type ImageProps = {
     src?: string;
     height: number;
     width?: number;
@@ -7,7 +7,6 @@ type ImageProps = {
     alt?: string;
     bgcolor?: string;
     opacity?: number;
-    enableBorder?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
     disableBorderRadius?: boolean;

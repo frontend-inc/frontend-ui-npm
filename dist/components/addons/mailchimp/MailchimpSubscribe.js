@@ -64,8 +64,8 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var use_mailchimp_form_1 = require("use-mailchimp-form");
 var hooks_1 = require("../../../hooks");
-var MailchimpEmbed = function (props) {
-    var _a = props || {}, title = _a.title, description = _a.description, formId = _a.formId, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
+var MailchimpSubscribe = function (props) {
+    var _a = props || {}, formId = _a.formId, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
     var _c = (0, use_mailchimp_form_1.useMailChimpForm)(formId), loading = _c.loading, error = _c.error, success = _c.success, message = _c.message, handleSubmit = _c.handleSubmit;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _d = (0, react_1.useState)(''), email = _d[0], setEmail = _d[1];
@@ -92,12 +92,11 @@ var MailchimpEmbed = function (props) {
         }
     }, [message]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
-        (title || description) && (react_1.default.createElement(__1.Heading, { title: title, description: description, textAlign: "center" })),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.form },
             react_1.default.createElement(__1.TextInput, { direction: "row", placeholder: "Enter email...", name: "EMAIL", value: email, handleChange: handleChange, styles: sx.input }),
             react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "secondary", onClick: handleFormSubmit }, loading ? react_1.default.createElement(__1.ButtonLoader, { loading: loading }) : "".concat(buttonText)))));
 };
-exports.default = MailchimpEmbed;
+exports.default = MailchimpSubscribe;
 var sx = {
     root: {
         py: 2,

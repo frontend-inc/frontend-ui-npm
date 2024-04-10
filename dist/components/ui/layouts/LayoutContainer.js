@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var LayoutContainer = function (props) {
-    var children = props.children, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.mode, mode = _b === void 0 ? 'accent' : _b, _c = props.topNav, topNav = _c === void 0 ? false : _c, handleClick = props.handleClick, headerLinks = props.headerLinks, footerLinks = props.footerLinks, notifications = props.notifications, _d = props.enableAuth, enableAuth = _d === void 0 ? false : _d, _e = props.enableShopify, enableShopify = _e === void 0 ? false : _e, facebook = props.facebook, instagram = props.instagram, linkedin = props.linkedin, twitter = props.twitter, youtube = props.youtube, tiktok = props.tiktok;
+    var children = props.children, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.mode, mode = _b === void 0 ? 'accent' : _b, _c = props.topNav, topNav = _c === void 0 ? false : _c, handleClick = props.handleClick, headerLinks = props.headerLinks, footerLinks = props.footerLinks, notifications = props.notifications, _d = props.enableAuth, enableAuth = _d === void 0 ? false : _d, _e = props.enableShopify, enableShopify = _e === void 0 ? false : _e, facebook = props.facebook, instagram = props.instagram, linkedin = props.linkedin, twitter = props.twitter, youtube = props.youtube, tiktok = props.tiktok, _f = props.pageMargin, pageMargin = _f === void 0 ? 201 : _f;
     var enableNotifications = (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0;
     return (react_1.default.createElement(material_1.Box, { sx: sx.layout },
         react_1.default.createElement(components_1.Alert, null),
@@ -26,11 +26,13 @@ var LayoutContainer = function (props) {
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (!topNav && sx.sideNav)) },
             react_1.default.createElement(components_1.ModeTheme, { mode: mode },
                 react_1.default.createElement(components_1.Header, { editing: editing, topNav: topNav, menuItems: headerLinks, enableNotifications: enableNotifications, handleClick: handleClick, enableAuth: enableAuth, enableShopify: enableShopify })),
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (topNav && sx.contentHeader)), (topNav ? sx.contentTopNav : sx.contentSideNav)) },
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (topNav ? sx.contentTopNav : sx.contentSideNav)) },
                 react_1.default.createElement(components_1.LayoutScroll, null,
-                    children,
-                    react_1.default.createElement(components_1.ModeTheme, { mode: mode },
-                        react_1.default.createElement(components_1.Footer, { menuItems: footerLinks, handleClick: handleClick, facebook: facebook, instagram: instagram, linkedin: linkedin, twitter: twitter, youtube: youtube, tiktok: tiktok })))))));
+                    react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.page), { minHeight: {
+                                sm: "calc(100vh - ".concat(pageMargin, "px)"),
+                                xs: '100vh'
+                            } }) }, children),
+                    react_1.default.createElement(components_1.Footer, { menuItems: footerLinks, handleClick: handleClick, facebook: facebook, instagram: instagram, linkedin: linkedin, twitter: twitter, youtube: youtube, tiktok: tiktok }))))));
 };
 exports.default = LayoutContainer;
 var sx = {
@@ -44,7 +46,6 @@ var sx = {
         '&::-webkit-scrollbar': {
             display: 'none',
         },
-        minHeight: '100%',
         bgcolor: 'background.default',
     },
     sideNav: {
@@ -53,7 +54,6 @@ var sx = {
             sm: 'row',
             xs: 'column',
         },
-        height: '100vh',
         pt: {
             sm: 0,
             xs: '60px',
@@ -63,10 +63,6 @@ var sx = {
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        minHeight: '100%',
-    },
-    contentHeader: {
-        pt: '64px',
     },
     contentSideNav: {
         width: {
@@ -79,6 +75,11 @@ var sx = {
         },
     },
     contentTopNav: {
-        minHeight: 'calc(100% - 64px)',
+        pt: '60px',
+        minHeight: 'calc(100% - 60px)',
+    },
+    page: {
+        width: '100%',
+        bgcolor: 'background.default',
     },
 };

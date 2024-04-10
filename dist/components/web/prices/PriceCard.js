@@ -28,7 +28,7 @@ var sx = {
         width: '100%',
         border: '1px solid',
         borderColor: 'divider',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         p: 2,
         display: 'flex',
         flexDirection: 'column',

@@ -1,9 +1,8 @@
 import React from 'react';
-type CollectionProps = {
-    title?: string;
+export type CollectionsProps = {
     editing?: boolean;
-    layout?: 'grid' | 'list' | 'carousel';
-    style?: 'card' | 'list' | 'avatar' | 'cover';
+    layout?: 'grid' | 'list';
+    style?: 'card' | 'avatar' | 'cover';
     perPage?: number;
     buttonText?: string;
     autoPlay?: boolean;
@@ -12,5 +11,5 @@ type CollectionProps = {
     enableBorder?: boolean;
     enableGradient?: boolean;
 };
-declare const Collections: React.FC<CollectionProps>;
+declare const Collections: React.FC<CollectionsProps>;
 export default Collections;

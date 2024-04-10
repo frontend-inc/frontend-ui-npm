@@ -1,6 +1,5 @@
 import React from 'react';
-type ForeignCollectionProps = {
-    title: string;
+export type ForeignCollectionProps = {
     layout?: 'list' | 'grid';
     style?: 'card' | 'avatar' | 'cover';
     field: any;

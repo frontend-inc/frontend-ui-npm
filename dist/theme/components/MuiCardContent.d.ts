@@ -1,8 +1,6 @@
 declare const _default: {
     styleOverrides: {
-        root: {
-            p: number;
-        };
+        root: {};
     };
 };
 export default _default;

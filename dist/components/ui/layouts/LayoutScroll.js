@@ -23,7 +23,6 @@ var LayoutScroll = function (props) {
 exports.default = LayoutScroll;
 var sx = {
     root: {
-        height: '100vh',
         overflowY: 'scroll',
         '&::-webkit-scrollbar': {
             display: 'none',

@@ -1,9 +1,7 @@
 import React from 'react';
-type MailchimpEmbedProps = {
-    title?: string;
-    description?: string;
+export type MailchimpSubscribeProps = {
     formId: string;
     buttonText?: string;
 };
-declare const MailchimpEmbed: React.FC<MailchimpEmbedProps>;
-export default MailchimpEmbed;
+declare const MailchimpSubscribe: React.FC<MailchimpSubscribeProps>;
+export default MailchimpSubscribe;

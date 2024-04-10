@@ -121,7 +121,7 @@ var sx = {
             p: 1,
             height: 20,
             color: 'text.secondary',
-            borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+            borderRadius: 1,
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
             bgcolor: 'background.paper',
@@ -168,7 +168,7 @@ var sx = {
 };
 var styles = {
     image: {
-        borderRadius: 8,
+        borderRadius: 1,
         objectFit: 'cover',
         marginRight: '0px',
     },

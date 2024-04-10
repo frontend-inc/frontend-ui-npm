@@ -1,6 +1,6 @@
 import React from 'react';
 import { MetafieldIdentifierType } from 'frontend-shopify';
-type ProductMetafieldsProps = {
+export type ProductMetafieldsProps = {
     handle: string;
     metafields: MetafieldIdentifierType[];
 };

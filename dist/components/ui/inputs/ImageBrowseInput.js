@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
-var lucide_react_1 = require("lucide-react");
 var image_1 = __importDefault(require("next/image"));
 var ImageInput = function (props) {
     var name = props.name, value = props.value, handleChange = props.handleChange, handleBrowse = props.handleBrowse, placeholder = props.placeholder, errors = props.errors;
@@ -16,6 +15,6 @@ var ImageInput = function (props) {
                 objectFit: 'contain',
             } })) : (react_1.default.createElement(components_1.EmptyImage, { height: 64, width: 64 })),
         react_1.default.createElement(components_1.TextInput, { name: name, value: value, handleChange: handleChange, placeholder: placeholder, errors: errors }),
-        react_1.default.createElement(material_1.Button, { size: "small", variant: "outlined", onClick: function () { return handleBrowse(name); }, startIcon: react_1.default.createElement(lucide_react_1.Search, null) }, "Browse")));
+        react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", onClick: function () { return handleBrowse(name); }, startIcon: react_1.default.createElement(components_1.Icon, { name: "Search" }) }, "Browse")));
 };
 exports.default = ImageInput;

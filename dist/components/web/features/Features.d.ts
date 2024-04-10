@@ -1,6 +1,5 @@
 import React from 'react';
-type FeaturesProps = {
-    title?: string;
+export type FeaturesProps = {
     items: {
         icon?: any;
         title?: string;

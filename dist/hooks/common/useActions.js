@@ -59,7 +59,7 @@ var useActions = function (params) {
                     return [3 /*break*/, 5];
                 case 1:
                     url = "".concat(clientUrl).concat(action === null || action === void 0 ? void 0 : action.path);
-                    if (resource) {
+                    if (resource === null || resource === void 0 ? void 0 : resource.handle) {
                         url = "".concat(clientUrl).concat(action === null || action === void 0 ? void 0 : action.path, "/").concat(resource.handle);
                     }
                     router.push(url);

@@ -1,3 +1,12 @@
 import React from 'react';
-declare const CheckboxInput: (props: any) => React.JSX.Element;
+import { SyntheticEventType } from '../../../types';
+type CheckboxInputProps = {
+    name: string;
+    value: boolean;
+    placeholder: string;
+    label: string;
+    handleChange: (e: SyntheticEventType) => void;
+    disableBorder?: boolean;
+};
+declare const CheckboxInput: React.FC<CheckboxInputProps>;
 export default CheckboxInput;

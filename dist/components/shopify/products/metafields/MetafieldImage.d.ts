@@ -1,6 +1,6 @@
 import React from 'react';
 import { MetafieldIdentifierType } from 'frontend-shopify';
-type MetafieldImageProps = {
+export type MetafieldImageProps = {
     handle: string;
     metafield: MetafieldIdentifierType;
     height: number;

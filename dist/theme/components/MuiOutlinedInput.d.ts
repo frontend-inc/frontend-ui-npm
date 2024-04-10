@@ -1,11 +1,7 @@
 declare const _default: {
     styleOverrides: {
-        root: {
-            fontSize: string;
-        };
-        notchedOutline: {
-            borderColor: string;
-        };
+        root: {};
+        notchedOutline: {};
     };
 };
 export default _default;

@@ -1,7 +1,6 @@
 import React from 'react';
-type ProductFavoritesProps = {
+export type ProductFavoritesProps = {
     editing?: boolean;
-    title?: string;
     perPage?: string;
     enableBorder?: boolean;
     enableAddToCart?: boolean;

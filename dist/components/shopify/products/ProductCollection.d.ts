@@ -1,7 +1,6 @@
 import React from 'react';
 import { PriceOptionType, SearchFilterOptionType } from 'frontend-shopify';
-type ProductCollectionProps = {
-    title?: string;
+export type ProductCollectionProps = {
     editing?: boolean;
     handle: string | string[];
     options: SearchFilterOptionType[];

@@ -53,7 +53,7 @@ var sx = {
         p: 1,
         pb: 0.5,
         bgcolor: 'background.paper',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         border: '1px solid',
         borderColor: 'divider',
         boxShadow: "rgb(0 0 0 / 5%) 0px 2px 4px !important",

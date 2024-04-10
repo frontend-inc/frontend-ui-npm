@@ -1,5 +1,5 @@
 import React from 'react';
-type ProductCollectionCarouselProps = {
+export type ProductCollectionCarouselProps = {
     title?: string;
     editing?: boolean;
     handle: string | string[];

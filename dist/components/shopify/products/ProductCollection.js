@@ -38,9 +38,8 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
-var components_1 = require("../../../components");
 var ProductCollection = function (props) {
-    var title = props.title, handle = props.handle, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.options, options = _b === void 0 ? [] : _b, _c = props.priceOptions, priceOptions = _c === void 0 ? [] : _c, _d = props.enableFilters, enableFilters = _d === void 0 ? false : _d, _e = props.enableSort, enableSort = _e === void 0 ? false : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableAddToCart, enableAddToCart = _g === void 0 ? false : _g, _h = props.enableQuickShop, enableQuickShop = _h === void 0 ? false : _h, _j = props.enableQuantity, enableQuantity = _j === void 0 ? false : _j, _k = props.enableOkendoStarRating, enableOkendoStarRating = _k === void 0 ? false : _k;
+    var handle = props.handle, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.options, options = _b === void 0 ? [] : _b, _c = props.priceOptions, priceOptions = _c === void 0 ? [] : _c, _d = props.enableFilters, enableFilters = _d === void 0 ? false : _d, _e = props.enableSort, enableSort = _e === void 0 ? false : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableAddToCart, enableAddToCart = _g === void 0 ? false : _g, _h = props.enableQuickShop, enableQuickShop = _h === void 0 ? false : _h, _j = props.enableQuantity, enableQuantity = _j === void 0 ? false : _j, _k = props.enableOkendoStarRating, enableOkendoStarRating = _k === void 0 ? false : _k;
     var _l = (0, react_1.useState)({}), query = _l[0], setQuery = _l[1];
     var _m = (0, react_1.useState)('COLLECTION_DEFAULT'), sortKey = _m[0], setSortKey = _m[1];
     var _o = (0, react_1.useState)(false), reverse = _o[0], setReverse = _o[1];
@@ -63,7 +62,6 @@ var ProductCollection = function (props) {
         }
     }, [handle, filters, sortKey, reverse]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 2 },
-        react_1.default.createElement(components_1.Heading, { title: title }),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
             enableFilters && (react_1.default.createElement(shopify_1.ProductFilterButton, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray })),
             enableSort && (react_1.default.createElement(shopify_1.ProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick }))),

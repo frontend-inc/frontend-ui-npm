@@ -1,30 +1,16 @@
 declare const _default: {
     defaultProps: {
         disableRipple: boolean;
+        disableElevation: boolean;
     };
     styleOverrides: {
         root: {
             whiteSpace: string;
         };
-        sizeSmall: {
-            height: string;
-            minWidth: string;
-        };
-        sizeLarge: {
-            height: string;
-        };
-        outlined: {
-            boxShadow: string;
-            '&:hover': {
-                boxShadow: string;
-            };
-        };
-        contained: {
-            boxShadow: string;
-            '&:hover': {
-                boxShadow: string;
-            };
-        };
+        sizeSmall: {};
+        sizeLarge: {};
+        outlined: {};
+        contained: {};
     };
 };
 export default _default;

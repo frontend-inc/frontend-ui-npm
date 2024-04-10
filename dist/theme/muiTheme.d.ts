@@ -11,12 +11,7 @@ export declare const muiTheme: {
     components: {
         MuiAccordian: {
             styleOverrides: {
-                root: {
-                    bgcolor: string;
-                    '&:before': {
-                        bgcolor: string;
-                    };
-                };
+                root: {};
             };
         };
         MuiAutocomplete: {
@@ -32,89 +27,52 @@ export declare const muiTheme: {
         MuiButton: {
             defaultProps: {
                 disableRipple: boolean;
+                disableElevation: boolean;
             };
             styleOverrides: {
                 root: {
                     whiteSpace: string;
                 };
-                sizeSmall: {
-                    height: string;
-                    minWidth: string;
-                };
-                sizeLarge: {
-                    height: string;
-                };
-                outlined: {
-                    boxShadow: string;
-                    '&:hover': {
-                        boxShadow: string;
-                    };
-                };
-                contained: {
-                    boxShadow: string;
-                    '&:hover': {
-                        boxShadow: string;
-                    };
-                };
+                sizeSmall: {};
+                sizeLarge: {};
+                outlined: {};
+                contained: {};
             };
         };
         MuiButtonGroup: {
             defaultProps: {
                 disableRipple: boolean;
                 border: string;
+                disableElevation: boolean;
             };
             styleOverrides: {
                 root: {
                     whiteSpace: string;
                 };
-                sizeSmall: {
-                    height: string;
-                    minWidth: string;
-                };
-                sizeLarge: {
-                    height: string;
-                };
-                outlined: {
-                    boxShadow: string;
-                    '&:hover': {
-                        boxShadow: string;
-                    };
-                };
-                contained: {
-                    boxShadow: string;
-                    '&:hover': {
-                        boxShadow: string;
-                    };
-                };
+                sizeSmall: {};
+                sizeLarge: {};
+                outlined: {};
+                contained: {};
             };
         };
         MuiCardActions: {
             styleOverrides: {
-                root: {
-                    p: string;
-                };
+                root: {};
             };
         };
         MuiCardContent: {
             styleOverrides: {
-                root: {
-                    p: number;
-                };
+                root: {};
             };
         };
         MuiCardHeader: {
             styleOverrides: {
-                root: {
-                    p: string;
-                };
+                root: {};
             };
         };
         MuiChip: {
             styleOverrides: {
-                root: {
-                    bgcolor: string;
-                    fontFamily: string;
-                };
+                root: {};
                 deletable: {
                     '&:focus': {};
                 };
@@ -137,67 +95,40 @@ export declare const muiTheme: {
         };
         MuiFormControlLabel: {
             styleOverrides: {
-                root: {
-                    fontFamily: string;
-                    textTransform: string;
-                    fontWeight: number;
-                    fontSize: number;
-                    '@media (max-width:600px)': {
-                        fontSize: number;
-                    };
-                };
+                root: {};
             };
         };
         MuiIconButton: {
             styleOverrides: {
-                root: {
-                    color: string;
-                    '&:hover': {};
-                };
+                root: {};
             };
         };
         MuiInputBase: {
             styleOverrides: {
                 root: {};
-                input: {
-                    '&::placeholder': {
-                        opacity: number;
-                        color: "#424242";
-                    };
-                };
+                input: {};
             };
         };
         MuiLinearProgress: {
             styleOverrides: {
-                root: {
-                    overflow: string;
-                };
+                root: {};
                 colorPrimary: {};
             };
         };
         MuiListItem: {
             styleOverrides: {
-                button: {
-                    '&:hover': {};
-                };
+                button: {};
             };
         };
         MuiListItemIcon: {
             styleOverrides: {
-                root: {
-                    color: string;
-                    minWidth: number;
-                };
+                root: {};
             };
         };
         MuiOutlinedInput: {
             styleOverrides: {
-                root: {
-                    fontSize: string;
-                };
-                notchedOutline: {
-                    borderColor: string;
-                };
+                root: {};
+                notchedOutline: {};
             };
         };
         MuiPaper: {
@@ -207,20 +138,14 @@ export declare const muiTheme: {
         };
         MuiSkeleton: {
             styleOverrides: {
-                root: {
-                    bgcolor: string;
-                };
+                root: {};
             };
         };
         MuiRadio: {
             styleOverrides: {
-                root: {
-                    fontSize: string;
-                    textTransform: string;
-                };
+                root: {};
                 input: {
                     '&::placeholder': {
-                        opacity: number;
                         color: "#424242";
                     };
                 };
@@ -230,7 +155,6 @@ export declare const muiTheme: {
             styleOverrides: {
                 root: {
                     padding: string;
-                    borderBottom: string;
                     fontFamily: string;
                     textTransform: string;
                     fontWeight: number;
@@ -245,55 +169,21 @@ export declare const muiTheme: {
             styleOverrides: {
                 root: {
                     width: string;
-                    bgcolor: any;
                 };
             };
         };
         MuiTableRow: {
             styleOverrides: {
-                root: {
-                    '&$selected': {
-                        bgcolor: string;
-                    };
-                    '&$hover': {
-                        '&:hover': {
-                            bgcolor: string;
-                        };
-                    };
-                };
+                root: {};
             };
         };
         MuiToggleButton: {
             styleOverrides: {
-                root: {
-                    color: string;
-                    '&:hover': {
-                        bgcolor: string;
-                    };
-                    '&$selected': {
-                        bgcolor: string;
-                        color: "#3f51b5";
-                        '&:hover': {
-                            bgcolor: string;
-                        };
-                    };
-                    '&:first-child': {
-                        borderTopLeftRadius: number;
-                        borderBottomLeftRadius: number;
-                    };
-                    '&:last-child': {
-                        borderTopRightRadius: number;
-                        borderBottomRightRadius: number;
-                    };
-                };
+                root: {};
             };
         };
         MuiTypography: {
-            styleOverrides: {
-                gutterBottom: {
-                    mb: number;
-                };
-            };
+            styleOverrides: {};
         };
     };
     palette: {

@@ -33,39 +33,18 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
-var __1 = require("../..");
-var VideoVert_1 = __importDefault(require("./VideoVert"));
-var VideoHoriz_1 = __importDefault(require("./VideoHoriz"));
-var VideoStory_1 = __importDefault(require("./VideoStory"));
+var components_1 = require("../../../components");
 var material_2 = require("@mui/material");
 var Videos = function (props) {
-    var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'vert' : _b, url = props.url, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, editing = props.editing, enableOverlay = props.enableOverlay, enableGradient = props.enableGradient, enableBorder = props.enableBorder;
+    var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'cover' : _b, url = props.url, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, enableOverlay = props.enableOverlay, enableGradient = props.enableGradient, enableBorder = props.enableBorder;
     var _e = (0, frontend_js_1.useResource)({
         url: url,
     }), loading = _e.loading, findMany = _e.findMany, resources = _e.resources;
     var handleClick = function () { return null; };
-    var COMPONENTS = {
-        grid: {
-            cover: VideoVert_1.default,
-            story: VideoStory_1.default,
-        },
-        carousel: {
-            cover: VideoVert_1.default,
-            story: VideoStory_1.default,
-        },
-        list: {
-            cover: VideoHoriz_1.default,
-            story: VideoStory_1.default,
-        },
-    };
-    var component = COMPONENTS[layout][style] || VideoVert_1.default;
     (0, react_1.useEffect)(function () {
         if (url && defaultQuery && perPage) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
@@ -73,10 +52,8 @@ var Videos = function (props) {
     }, [url, defaultQuery, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_2.Typography, { variant: "h5", color: "text.primary" }, title),
-        layout == 'grid' && (react_1.default.createElement(__1.GridView, { editing: editing, loading: loading, items: resources, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleClick })),
-        layout == 'list' && (react_1.default.createElement(__1.ListView, { spacing: 2, editing: editing, items: resources, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleClick })),
-        layout == 'carousel' && (react_1.default.createElement(__1.ListView, { flexDirection: "row", justifyContent: "center", spacing: 4, editing: editing, items: resources, component: component, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleClick })),
-        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Video', title: "No videos found", description: "Try adjusting your search or filters" }))));
+        react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, enableBorder: enableBorder, enableGradient: enableGradient, handleClick: handleClick }),
+        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Video', title: "No videos found", description: "Try adjusting your search or filters" }))));
 };
 exports.default = Videos;
 var sx = {

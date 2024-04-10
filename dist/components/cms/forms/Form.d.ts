@@ -1,7 +1,6 @@
 import React from 'react';
-type FormProps = {
+export type FormProps = {
     handle: string;
-    title?: string;
     url: string;
     buttonText?: string;
     variant?: 'contained' | 'outlined' | 'text';

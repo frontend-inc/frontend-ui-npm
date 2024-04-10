@@ -24,7 +24,7 @@ var ListView = function (props) {
                 xs: 'flex-start',
             } }), direction: flexDirection, spacing: spacing }, items === null || items === void 0 ? void 0 : items.map(function (item, index) {
         var _a, _b;
-        return (react_1.default.createElement(Component, { key: index, title: item === null || item === void 0 ? void 0 : item.title, image: (_a = item === null || item === void 0 ? void 0 : item.image) === null || _a === void 0 ? void 0 : _a.url, video: (_b = item === null || item === void 0 ? void 0 : item.video) === null || _b === void 0 ? void 0 : _b.url, description: item === null || item === void 0 ? void 0 : item.description, editing: editing, buttonText: buttonText, handleClick: function () { return handleClick(item); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay }));
+        return (react_1.default.createElement(Component, { key: index, label: item === null || item === void 0 ? void 0 : item.label, title: item === null || item === void 0 ? void 0 : item.title, image: (_a = item === null || item === void 0 ? void 0 : item.image) === null || _a === void 0 ? void 0 : _a.url, video: (_b = item === null || item === void 0 ? void 0 : item.video) === null || _b === void 0 ? void 0 : _b.url, description: item === null || item === void 0 ? void 0 : item.description, editing: editing, buttonText: buttonText, handleClick: function () { return handleClick(item); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay }));
     })));
 };
 exports.default = ListView;

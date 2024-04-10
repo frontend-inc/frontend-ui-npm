@@ -2,7 +2,7 @@ import React from 'react';
 import { MenuLinkType } from '../../../types';
 type FooterProps = {
     menuItems?: MenuLinkType[];
-    handleClick: (path: string) => void;
+    handleClick: (MenuItem: MenuLinkType) => void;
     facebook?: string;
     instagram?: string;
     linkedin?: string;

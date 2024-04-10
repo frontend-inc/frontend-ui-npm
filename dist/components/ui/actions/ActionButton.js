@@ -28,6 +28,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
+var components_1 = require("../../../components");
 var ActionButton = function (props) {
     var color = props.color, _a = props.variant, variant = _a === void 0 ? 'contained' : _a, action = props.action, resource = props.resource, rest = __rest(props, ["color", "variant", "action", "resource"]);
     var _b = action || {}, icon = _b.icon, _c = _b.label, label = _c === void 0 ? 'View' : _c;
@@ -38,6 +39,14 @@ var ActionButton = function (props) {
     var onClick = function (ev) {
         handleClick(ev);
     };
-    return (react_1.default.createElement(material_1.Button, __assign({ onClick: onClick, variant: variant, color: color }, rest), label));
+    return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, startIcon: icon && (react_1.default.createElement(components_1.Icon, { name: icon, size: 20, color: color == 'primary' ? 'primary.contrastText' : 'secondary.contrastText' })), onClick: onClick, variant: variant, color: color }, rest), label));
 };
 exports.default = ActionButton;
+var sx = {
+    button: {
+        width: {
+            sm: 'auto',
+            xs: '100%'
+        }
+    }
+};

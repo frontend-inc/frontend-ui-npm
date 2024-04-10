@@ -1,5 +1,5 @@
 import React from 'react';
-type GiftUpProps = {
+export type GiftUpProps = {
     id: string;
 };
 declare const GiftUp: React.FC<GiftUpProps>;

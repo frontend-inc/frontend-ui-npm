@@ -19,6 +19,7 @@ type LayoutContainerProps = {
     twitter?: string;
     youtube?: string;
     tiktok?: string;
+    pageMargin?: number;
 };
 declare const LayoutContainer: React.FC<LayoutContainerProps>;
 export default LayoutContainer;

@@ -24,11 +24,11 @@ var CustomPopper = function (props) {
     return react_1.default.createElement(material_1.Popper, __assign({}, props, { sx: exports.sx.popper, placement: "bottom" }));
 };
 var ArrayInput = function (props) {
-    var errors = props.errors, label = props.label, name = props.name, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, _a = props.freeSolo, freeSolo = _a === void 0 ? true : _a;
-    var _b = (0, hooks_1.useError)({
+    var errors = props.errors, label = props.label, name = props.name, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, _a = props.direction, direction = _a === void 0 ? "column" : _a, _b = props.freeSolo, freeSolo = _b === void 0 ? true : _b;
+    var _c = (0, hooks_1.useError)({
         errors: errors,
         name: name,
-    }), error = _b.error, clearError = _b.clearError;
+    }), error = _c.error, clearError = _c.clearError;
     var handleInputChange = function (ev, values) {
         if (error)
             clearError();
@@ -40,8 +40,8 @@ var ArrayInput = function (props) {
             },
         });
     };
-    return (react_1.default.createElement(material_1.FormControl, { fullWidth: true },
-        react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label),
+    return (react_1.default.createElement(material_1.Stack, { sx: exports.sx.root, direction: direction, spacing: 1 },
+        react_1.default.createElement(material_1.Typography, { sx: exports.sx.label, variant: "caption", color: "text.secondary" }, label),
         value && (react_1.default.createElement(material_1.Autocomplete, { multiple: true, freeSolo: freeSolo, defaultValue: value || [], onChange: handleInputChange, options: options || ['Enter value'], getOptionLabel: function (option) { return option; }, PopperComponent: CustomPopper, clearIcon: react_1.default.createElement(lucide_react_1.X, null), renderTags: function (tagValue, getTagProps) {
                 return Array.isArray(tagValue) &&
                     tagValue.map(function (option, index) { return (react_1.default.createElement(material_1.Chip, __assign({ sx: exports.sx.chip, label: option, color: "secondary", deleteIcon: react_1.default.createElement(lucide_react_1.X, { size: 20 }) }, getTagProps({ index: index })))); });
@@ -54,13 +54,13 @@ exports.sx = {
     textField: {
         '& .MuiOutlinedInput-root': {
             p: '4px',
+            color: 'text.secondary',
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
-            borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
-            bgcolor: 'background.paper',
+            borderRadius: 1,
+            bgcolor: 'background.default',
             border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
-            transition: '0.5s',
-            boxShadow: "rgb(0 0 0 / 5%) 0px 2px 4px !important",
+            //boxShadow: `rgb(0 0 0 / 5%) 0px 2px 4px !important`,
             width: '100%',
             '& fieldset': {
                 border: "1px solid transparent",
@@ -85,7 +85,7 @@ exports.sx = {
     icon: {
         height: 20,
         width: 20,
-        color: '#888',
+        color: 'text.primary',
     },
     popper: {
         fontWeight: function (theme) { return theme.typography.body2.fontWeight; },
@@ -94,4 +94,7 @@ exports.sx = {
     chip: {
         pr: 0.5,
     },
+    label: {
+        width: '100px',
+    }
 };

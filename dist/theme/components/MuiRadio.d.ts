@@ -1,12 +1,8 @@
 declare const _default: {
     styleOverrides: {
-        root: {
-            fontSize: string;
-            textTransform: string;
-        };
+        root: {};
         input: {
             '&::placeholder': {
-                opacity: number;
                 color: "#424242";
             };
         };

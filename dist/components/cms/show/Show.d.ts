@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActionType, DocumentType } from '../../../types';
-type ShowProps = {
+export type ShowProps = {
     style: 'article' | 'person' | 'item';
     fields: any[];
     url: string;

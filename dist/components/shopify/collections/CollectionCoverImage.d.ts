@@ -1,6 +1,6 @@
 import React from 'react';
 import { CollectionType } from 'frontend-shopify';
-type CollectionCoverImageProps = {
+export type CollectionCoverImageProps = {
     shopifyCollection: CollectionType;
     editing?: boolean;
     height?: number;

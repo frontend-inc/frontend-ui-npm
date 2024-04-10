@@ -26,12 +26,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
-var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var ProductRecommendations = function (props) {
-    var _a = props || {}, handle = _a.handle, _b = _a.editing, editing = _b === void 0 ? false : _b, _c = _a.layout, layout = _c === void 0 ? 'grid' : _c, _d = _a.title, title = _d === void 0 ? 'Similar products' : _d, _e = _a.perPage, perPage = _e === void 0 ? 12 : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.buttonText, buttonText = _g === void 0 ? 'Add to cart' : _g, enableAddToCart = _a.enableAddToCart, enableQuantity = _a.enableQuantity, enableQuickShop = _a.enableQuickShop, enableOkendoStarRating = _a.enableOkendoStarRating, maxWidth = _a.maxWidth;
-    var _h = (0, react_1.useState)(), similarProducts = _h[0], setSimilarProducts = _h[1];
-    var _j = (0, frontend_shopify_1.useProducts)(), loading = _j.loading, findProduct = _j.findProduct, product = _j.product, products = _j.products, findProductRecommendations = _j.findProductRecommendations;
+    var _a = props || {}, handle = _a.handle, _b = _a.editing, editing = _b === void 0 ? false : _b, _c = _a.layout, layout = _c === void 0 ? 'grid' : _c, _d = _a.perPage, perPage = _d === void 0 ? 12 : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = _a.buttonText, buttonText = _f === void 0 ? 'Add to cart' : _f, enableAddToCart = _a.enableAddToCart, enableQuantity = _a.enableQuantity, enableQuickShop = _a.enableQuickShop, enableOkendoStarRating = _a.enableOkendoStarRating, maxWidth = _a.maxWidth;
+    var _g = (0, react_1.useState)(), similarProducts = _g[0], setSimilarProducts = _g[1];
+    var _h = (0, frontend_shopify_1.useProducts)(), loading = _h.loading, findProduct = _h.findProduct, product = _h.product, products = _h.products, findProductRecommendations = _h.findProductRecommendations;
     (0, react_1.useEffect)(function () {
         if (product) {
             findProductRecommendations(product === null || product === void 0 ? void 0 : product.id);
@@ -52,7 +51,6 @@ var ProductRecommendations = function (props) {
         }
     }, [handle]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        title && react_1.default.createElement(components_1.Heading, { title: title }),
         layout == 'grid' && (react_1.default.createElement(shopify_1.ProductGrid, { editing: editing, loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText })),
         layout == 'carousel' && (react_1.default.createElement(shopify_1.ProductCarousel, { editing: editing, loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText }))));
 };

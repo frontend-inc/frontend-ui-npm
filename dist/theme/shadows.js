@@ -10,7 +10,4 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.shadows = void 0;
-exports.shadows = __spreadArray([
-    'none',
-    '0rem 0.125rem 0.25rem #1f21241a,0rem 0.0625rem 0.375rem #1f21240d'
-], Array(23).fill('none'), true);
+exports.shadows = __spreadArray([], Array(25).fill('none'), true);

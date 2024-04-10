@@ -1,8 +1,4 @@
 declare const _default: {
-    styleOverrides: {
-        gutterBottom: {
-            mb: number;
-        };
-    };
+    styleOverrides: {};
 };
 export default _default;

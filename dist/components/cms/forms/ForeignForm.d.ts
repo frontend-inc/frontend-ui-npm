@@ -1,8 +1,6 @@
 import React from 'react';
-type ForeignFormProps = {
+export type ForeignFormProps = {
     handle: string;
-    title?: string;
-    label?: string;
     url: string;
     foreignUrl?: string;
     buttonText?: string;

@@ -1,9 +1,8 @@
 import React from 'react';
-type ProductRecommendationsProps = {
+export type ProductRecommendationsProps = {
     handle?: string | string[];
     editing?: boolean;
     layout?: 'grid' | 'carousel';
-    title?: string;
     perPage?: string;
     enableBorder?: boolean;
     enableAddToCart?: boolean;

@@ -1,6 +1,5 @@
 import React from 'react';
-type FeaturedProps = {
-    title?: string;
+export type FeaturedProps = {
     items: {
         icon?: string;
         title?: string;

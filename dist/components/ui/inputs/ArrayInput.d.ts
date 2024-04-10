@@ -8,6 +8,7 @@ type ArrayInputProps = {
     options?: any[];
     placeholder?: string;
     handleChange: (e: SyntheticEventType) => void;
+    direction?: 'row' | 'column';
     freeSolo?: boolean;
 };
 declare const ArrayInput: React.FC<ArrayInputProps>;
@@ -17,13 +18,12 @@ export declare const sx: {
     textField: {
         '& .MuiOutlinedInput-root': {
             p: string;
+            color: string;
             fontSize: (theme: any) => any;
             fontFamily: (theme: any) => any;
-            borderRadius: (theme: any) => string;
+            borderRadius: number;
             bgcolor: string;
             border: (theme: any) => string;
-            transition: string;
-            boxShadow: string;
             width: string;
             '& fieldset': {
                 border: string;
@@ -56,5 +56,8 @@ export declare const sx: {
     };
     chip: {
         pr: number;
+    };
+    label: {
+        width: string;
     };
 };

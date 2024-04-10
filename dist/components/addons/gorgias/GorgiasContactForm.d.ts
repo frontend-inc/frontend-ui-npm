@@ -1,5 +1,5 @@
 import React from 'react';
-type GorgiasContactFormProps = {
+export type GorgiasContactFormProps = {
     src?: string;
 };
 declare const GorgiasContactForm: React.FC<GorgiasContactFormProps>;

@@ -1,6 +1,5 @@
 import React from 'react';
-type TabsProps = {
-    title?: string;
+export type TabsProps = {
     orientation?: 'horizontal' | 'vertical';
     items?: {
         icon?: string;

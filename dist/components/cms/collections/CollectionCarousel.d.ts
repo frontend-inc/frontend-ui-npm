@@ -1,5 +1,5 @@
 import React from 'react';
-type CollectionCarouselProps = {
+export type CollectionCarouselProps = {
     title?: string;
     url: string;
     style: 'card' | 'avatar' | 'cover';

@@ -41,7 +41,7 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var index_1 = require("../../../constants/index");
 var TransparentColor = function (props) {
-    var value = props.value, handleClick = props.handleClick;
+    var _a = props.value, value = _a === void 0 ? 'Ban' : _a, handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.Tooltip, { title: "Transparent" },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.color), sx.transparent), (value == '' && sx.selected)), { bgcolor: '#FFF' }), onClick: handleClick })));
 };
@@ -88,7 +88,7 @@ var ColorInput = function (props) {
     }, [hex]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
         label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label)),
-        react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, variant: "outlined", color: "secondary", endIcon: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },
+        react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, variant: "contained", color: "secondary", endIcon: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },
                 react_1.default.createElement(material_1.Tooltip, { title: value },
                     react_1.default.createElement(material_1.IconButton, null, value ? (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.color), { bgcolor: value }) })) : (react_1.default.createElement(TransparentColor, { value: value, handleClick: openMenu })))),
                 react_1.default.createElement(material_1.IconButton, { size: "small" },
@@ -117,9 +117,14 @@ var sx = {
         justifyContent: 'space-between',
         border: '1px solid',
         borderColor: 'divider',
+        color: 'text.primary',
         bgcolor: 'background.paper',
         fontSize: function (theme) { return theme.typography.body1.fontSize; },
         fontWeight: function (theme) { return theme.typography.body1.fontWeight; },
+        '&:hover': {
+            bgcolor: 'background.paper',
+            borderColor: 'primary.main'
+        }
     },
     grid: {
         display: 'grid',

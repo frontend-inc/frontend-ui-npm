@@ -19,12 +19,12 @@ var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
 var Image = function (props) {
-    var _a = props.src, src = _a === void 0 ? null : _a, height = props.height, width = props.width, _b = props.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = props.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = props.alt, alt = _d === void 0 ? 'image' : _d, _e = props.bgcolor, bgcolor = _e === void 0 ? '#000000' : _e, _f = props.opacity, opacity = _f === void 0 ? 0.5 : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableGradient, enableGradient = _h === void 0 ? false : _h, _j = props.disableBorderRadius, disableBorderRadius = _j === void 0 ? false : _j;
+    var _a = props.src, src = _a === void 0 ? null : _a, height = props.height, width = props.width, _b = props.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.bgcolor, bgcolor = _d === void 0 ? '#000000' : _d, _e = props.opacity, opacity = _e === void 0 ? 0.5 : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.disableBorderRadius, disableBorderRadius = _h === void 0 ? false : _h;
     var theme = (0, material_1.useTheme)();
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { height: "".concat(height, "px"), '&::after': __assign(__assign(__assign(__assign(__assign(__assign(__assign({}, sx.afterBase), (enableOverlay && sx.overlay)), (!enableOverlay && enableGradient && sx.gradient)), (!disableBorderRadius && sx.borderRadius)), (!enableOverlay &&
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { height: "".concat(height, "px"), '&::after': __assign(__assign(__assign(__assign(__assign(__assign({}, sx.afterBase), (enableOverlay && sx.overlay)), (!enableOverlay && enableGradient && sx.gradient)), (!disableBorderRadius && sx.borderRadius)), (!enableOverlay &&
                 !disableBorderRadius &&
                 enableGradient &&
-                sx.gradientBorderRadius)), (enableBorder && sx.border)), { bgcolor: bgcolor, opacity: opacity }) }) }, src ? (react_1.default.createElement(image_1.default, { src: src, alt: alt, height: 1600, width: 1600, style: {
+                sx.gradientBorderRadius)), { bgcolor: bgcolor, opacity: opacity }) }) }, src ? (react_1.default.createElement(image_1.default, { src: src, alt: alt, height: 1600, width: 1600, style: {
             height: "".concat(height, "px"),
             width: width ? "min(".concat(width, "px, 100vw)") : '100%',
             minHeight: "".concat(height, "px"),
@@ -45,7 +45,7 @@ var sx = {
         overflow: 'hidden',
     },
     borderRadius: {
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
     },
     afterBase: {
         content: '""',
@@ -66,7 +66,7 @@ var sx = {
     gradientBorderRadius: {
         height: '50%',
         background: 'linear-gradient(to top, rgb(0,0,0,1.0), transparent)',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
     },
     border: {
         border: '1px solid',

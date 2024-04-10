@@ -1,7 +1,7 @@
 import React from 'react';
 type FavoritesProps = {
-    layout?: 'list' | 'grid' | 'carousel';
-    style?: 'card' | 'avatar' | 'image' | 'cover' | 'chip';
+    layout?: 'list' | 'grid';
+    style?: 'card' | 'avatar' | 'cover';
     field: any;
     url: string;
     handle: string;

@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var FormField = function (props) {
+    var _a;
     var field = props.field, errors = props.errors, value = props.value, handleChange = props.handleChange, handleRemove = props.handleRemove;
     var name = field.name, label = field.label, placeholder = field.placeholder, variant = field.variant;
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -16,7 +17,7 @@ var FormField = function (props) {
         variant === 'number' && (react_1.default.createElement(__1.TextInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'date' && (react_1.default.createElement(__1.DateInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'boolean' && (react_1.default.createElement(__1.SwitchInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
-        variant === 'select' && (react_1.default.createElement(__1.SelectInput, { errors: errors, label: label, name: name, value: value, options: field.options.map(function (option) { return ({
+        variant === 'select' && (react_1.default.createElement(__1.SelectInput, { errors: errors, label: label, name: name, value: value, options: (_a = field === null || field === void 0 ? void 0 : field.options) === null || _a === void 0 ? void 0 : _a.map(function (option) { return ({
                 label: option,
                 value: option,
             }); }), handleChange: handleChange, placeholder: placeholder })),

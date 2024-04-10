@@ -27,9 +27,8 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
-var components_1 = require("../../../components");
 var ProductCollectionCarousel = function (props) {
-    var title = props.title, handle = props.handle, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.enableAutoPlay, enableAutoPlay = _b === void 0 ? false : _b, _c = props.enableArrows, enableArrows = _c === void 0 ? false : _c, _d = props.enableDots, enableDots = _d === void 0 ? false : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableAddToCart, enableAddToCart = _f === void 0 ? false : _f, _g = props.enableQuickShop, enableQuickShop = _g === void 0 ? false : _g, _h = props.enableQuantity, enableQuantity = _h === void 0 ? false : _h, _j = props.enableOkendoStarRating, enableOkendoStarRating = _j === void 0 ? false : _j;
+    var handle = props.handle, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.enableAutoPlay, enableAutoPlay = _b === void 0 ? false : _b, _c = props.enableArrows, enableArrows = _c === void 0 ? false : _c, _d = props.enableDots, enableDots = _d === void 0 ? false : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableAddToCart, enableAddToCart = _f === void 0 ? false : _f, _g = props.enableQuickShop, enableQuickShop = _g === void 0 ? false : _g, _h = props.enableQuantity, enableQuantity = _h === void 0 ? false : _h, _j = props.enableOkendoStarRating, enableOkendoStarRating = _j === void 0 ? false : _j;
     var _k = (0, frontend_shopify_1.useCollections)(), loading = _k.loading, products = _k.products, findCollection = _k.findCollection;
     (0, react_1.useEffect)(function () {
         if (handle) {
@@ -37,7 +36,6 @@ var ProductCollectionCarousel = function (props) {
         }
     }, [handle]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 2 },
-        react_1.default.createElement(components_1.Heading, { title: title }),
         react_1.default.createElement(shopify_1.ProductCarousel, { editing: editing, loading: loading, products: products, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows, enableDots: enableDots, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating })));
 };
 exports.default = ProductCollectionCarousel;

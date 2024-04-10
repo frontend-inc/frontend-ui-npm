@@ -1,8 +1,7 @@
 import React from 'react';
-type RecentlyViewedProps = {
+export type RecentlyViewedProps = {
     editing?: boolean;
     layout?: 'grid' | 'carousel';
-    title?: string;
     perPage?: string;
     enableBorder?: boolean;
     enableAddToCart?: boolean;

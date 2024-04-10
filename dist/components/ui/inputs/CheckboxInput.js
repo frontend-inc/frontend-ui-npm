@@ -27,13 +27,16 @@ var CheckboxInput = function (props) {
             },
         });
     };
-    return (react_1.default.createElement(material_1.Box, null,
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.input), (!disableBorder && sx.border)) },
             react_1.default.createElement(material_1.FormControlLabel, { control: react_1.default.createElement(material_1.Checkbox, { name: name, checked: value == true ? true : false, onChange: handleCheckboxChange, value: "true" }), label: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" }, placeholder) }))));
 };
 exports.default = CheckboxInput;
 var sx = {
+    root: {
+        width: '100%'
+    },
     input: {
         display: 'flex',
         direction: 'column',
@@ -46,6 +49,6 @@ var sx = {
         pr: 2,
         pb: 0.5,
         pl: 2,
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
     },
 };

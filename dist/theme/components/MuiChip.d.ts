@@ -1,9 +1,6 @@
 declare const _default: {
     styleOverrides: {
-        root: {
-            bgcolor: string;
-            fontFamily: string;
-        };
+        root: {};
         deletable: {
             '&:focus': {};
         };

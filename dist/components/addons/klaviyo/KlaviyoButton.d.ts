@@ -1,5 +1,5 @@
 import React from 'react';
-type KlaviyoButtonProps = {
+export type KlaviyoButtonProps = {
     formId?: string;
     justifyContent?: string;
     buttonText?: string;

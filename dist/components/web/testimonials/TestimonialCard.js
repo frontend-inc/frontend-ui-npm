@@ -49,7 +49,7 @@ var sx = {
         border: '1px solid',
         borderColor: 'grey.300',
         p: 1,
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
     },
     content: {
         width: '100%',

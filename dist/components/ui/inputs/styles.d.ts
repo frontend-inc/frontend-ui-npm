@@ -8,7 +8,7 @@ export declare const sx: {
             MozAppearance: string;
             appearance: string;
             p: number;
-            borderRadius: (theme: any) => string;
+            borderRadius: number;
             fontSize: (theme: any) => any;
             fontFamily: (theme: any) => any;
             bgcolor: string;
@@ -26,7 +26,7 @@ export declare const sx: {
     inputError: {
         '& input, & .MuiInputBase-inputMultiline': {
             p: number;
-            borderRadius: (theme: any) => string;
+            borderRadius: number;
             border: string;
             borderColor: string;
         };

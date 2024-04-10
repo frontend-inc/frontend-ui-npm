@@ -7,12 +7,10 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var TestimonialsGrid_1 = __importDefault(require("./TestimonialsGrid"));
 var SwipeableTestimonials_1 = __importDefault(require("./SwipeableTestimonials"));
-var material_2 = require("@mui/material");
 var __1 = require("../..");
 var Testimonials = function (props) {
-    var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, enableArrows = props.enableArrows, enableAutoPlay = props.enableAutoPlay, _b = props.items, items = _b === void 0 ? [] : _b;
+    var _a = props.layout, layout = _a === void 0 ? 'grid' : _a, enableArrows = props.enableArrows, enableAutoPlay = props.enableAutoPlay, _b = props.items, items = _b === void 0 ? [] : _b;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        title && (react_1.default.createElement(material_2.Typography, { sx: sx.title, variant: "h5", color: "textPrimary" }, title)),
         layout == 'carousel' ? (react_1.default.createElement(SwipeableTestimonials_1.default, { items: items, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows })) : (react_1.default.createElement(TestimonialsGrid_1.default, { items: items })),
         (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Star", title: "No testimonials yet.", description: "Your testimonials will appear here." }))));
 };
