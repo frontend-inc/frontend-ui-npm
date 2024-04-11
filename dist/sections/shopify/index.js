@@ -3,13 +3,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShopifySearch = exports.ShopifyMetafieldVideo = exports.ShopifyMetafieldImage = exports.ShopifyMetafieldProducts = exports.ShopifyMetafields = exports.ShopifyProductRecommendations = exports.ShopifyProductDetails = exports.ShopifyProductsCarousel = exports.ShopifyProducts = exports.ShopifyRecentlyViewed = exports.ShopifyFavorites = exports.ShopifyCollections = exports.ShopifyCollectionCoverImage = void 0;
+exports.ShopifySearch = exports.ShopifyMetafieldVideo = exports.ShopifyMetafieldImage = exports.ShopifyMetafieldProducts = exports.ShopifyMetafields = exports.ShopifyProductRecommendations = exports.ShopifyProductDetails = exports.ShopifyProductsCarousel = exports.ShopifyProducts = exports.ShopifyRecentlyViewed = exports.ShopifyProductFeatured = exports.ShopifyFavorites = exports.ShopifyCollections = exports.ShopifyCollectionCoverImage = void 0;
 var ShopifyCollectionCoverImage_1 = require("./ShopifyCollectionCoverImage");
 Object.defineProperty(exports, "ShopifyCollectionCoverImage", { enumerable: true, get: function () { return __importDefault(ShopifyCollectionCoverImage_1).default; } });
 var ShopifyCollections_1 = require("./ShopifyCollections");
 Object.defineProperty(exports, "ShopifyCollections", { enumerable: true, get: function () { return __importDefault(ShopifyCollections_1).default; } });
 var ShopifyFavorites_1 = require("./ShopifyFavorites");
 Object.defineProperty(exports, "ShopifyFavorites", { enumerable: true, get: function () { return __importDefault(ShopifyFavorites_1).default; } });
+var ShopifyProductFeatured_1 = require("./ShopifyProductFeatured");
+Object.defineProperty(exports, "ShopifyProductFeatured", { enumerable: true, get: function () { return __importDefault(ShopifyProductFeatured_1).default; } });
 var ShopifyRecentlyViewed_1 = require("./ShopifyRecentlyViewed");
 Object.defineProperty(exports, "ShopifyRecentlyViewed", { enumerable: true, get: function () { return __importDefault(ShopifyRecentlyViewed_1).default; } });
 var ShopifyProducts_1 = require("./ShopifyProducts");

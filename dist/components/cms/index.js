@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.Videos = exports.SortButton = exports.Show = exports.TableView = exports.Person = exports.CollectionFilterButton = exports.ListViewSkeleton = exports.ListView = exports.LoadMore = exports.GridViewSkeleton = exports.GridView = exports.Item = exports.FetchMany = exports.Fetch = exports.FormInput = exports.ForeignCollection = exports.ForeignForm = exports.Form = exports.Favorites = exports.Details = exports.CollectionCard = exports.CollectionList = exports.CollectionCarousel = exports.Collection = exports.Article = void 0;
+exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.Videos = exports.SortButton = exports.Show = exports.TableView = exports.Person = exports.CollectionFilterButton = exports.ListViewSkeleton = exports.ListView = exports.LoadMore = exports.GridViewSkeleton = exports.GridView = exports.Item = exports.FetchMany = exports.Fetch = exports.FormInput = exports.ForeignCollection = exports.ForeignForm = exports.FormWizard = exports.Form = exports.Favorites = exports.Details = exports.CollectionCard = exports.CollectionList = exports.CollectionCarousel = exports.Collection = exports.Article = void 0;
 // CMS
 var Article_1 = require("./show/Article");
 Object.defineProperty(exports, "Article", { enumerable: true, get: function () { return __importDefault(Article_1).default; } });
@@ -21,6 +21,8 @@ var Favorites_1 = require("../cms/favorites/Favorites");
 Object.defineProperty(exports, "Favorites", { enumerable: true, get: function () { return __importDefault(Favorites_1).default; } });
 var Form_1 = require("../cms/forms/Form");
 Object.defineProperty(exports, "Form", { enumerable: true, get: function () { return __importDefault(Form_1).default; } });
+var FormWizard_1 = require("../cms/forms/FormWizard");
+Object.defineProperty(exports, "FormWizard", { enumerable: true, get: function () { return __importDefault(FormWizard_1).default; } });
 var ForeignForm_1 = require("./forms/ForeignForm");
 Object.defineProperty(exports, "ForeignForm", { enumerable: true, get: function () { return __importDefault(ForeignForm_1).default; } });
 var ForeignCollection_1 = require("./collections/ForeignCollection");

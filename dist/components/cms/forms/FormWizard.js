@@ -76,24 +76,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
-var __1 = require("../..");
-var FormField_1 = __importDefault(require("./FormField"));
-var index_1 = require("../../../constants/index");
-var lodash_1 = require("lodash");
-var Form = function (props) {
-    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url;
-    var _b = (0, react_1.useState)(false), submitted = _b[0], setSubmitted = _b[1];
-    var _c = (0, frontend_js_1.useResource)({
+var components_1 = require("../../../components");
+var FormCard_1 = __importDefault(require("./wizard/FormCard"));
+var FormWizardField_1 = __importDefault(require("./wizard/FormWizardField"));
+var FormWizardButtons_1 = __importDefault(require("./wizard/FormWizardButtons"));
+var FormWizard = function (props) {
+    var _a = props.py, py = _a === void 0 ? 4 : _a, handle = props.handle, fields = props.fields, url = props.url, title = props.title, description = props.description, image = props.image, _b = props.buttonText, buttonText = _b === void 0 ? 'Start' : _b, endTitle = props.endTitle, endDescription = props.endDescription, endImage = props.endImage, endButtonText = props.endButtonText;
+    var _c = (0, react_1.useState)(false), submitted = _c[0], setSubmitted = _c[1];
+    var _d = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _c.loading, findOne = _c.findOne, resource = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, handleChange = _c.handleChange, removeAttachment = _c.removeAttachment;
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        setResource(function (prev) {
-            var _a;
-            return (__assign(__assign({}, prev), { data: __assign(__assign({}, prev.data), (_a = {}, _a[name] = value, _a)) }));
-        });
+    }), loading = _d.loading, findOne = _d.findOne, resource = _d.resource, setResource = _d.setResource, update = _d.update, create = _d.create, handleChange = _d.handleChange, removeAttachment = _d.removeAttachment;
+    var _e = (0, react_1.useState)(), currentField = _e[0], setCurrentField = _e[1];
+    var _f = (0, react_1.useState)(0), currentStep = _f[0], setCurrentStep = _f[1];
+    var _g = (0, react_1.useState)(0), totalSteps = _g[0], setTotalSteps = _g[1];
+    var handleStartClick = function () {
+        setCurrentStep(1);
+    };
+    var handleResetForm = function () {
+        setResource({});
+        setSubmitted(false);
+        setCurrentStep(0);
     };
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -105,7 +108,7 @@ var Form = function (props) {
             }
         });
     }); };
-    var handleSubmit = function (e) { return __awaiter(void 0, void 0, void 0, function () {
+    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -134,24 +137,71 @@ var Form = function (props) {
             }
         });
     }); };
+    var handleNextStep = function () {
+        var nextStep = currentStep + 1;
+        if (nextStep > totalSteps) {
+            return;
+        }
+        setCurrentStep(nextStep);
+    };
+    var handlePrevStep = function () {
+        var nextStep = currentStep - 1;
+        if (nextStep < 0) {
+            return;
+        }
+        setCurrentStep(nextStep);
+    };
     (0, react_1.useEffect)(function () {
         if (handle) {
             findOne(handle);
         }
     }, [handle]);
-    return !submitted ? (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root }, fields === null || fields === void 0 ? void 0 :
-            fields.map(function (field, index) {
-                return index_1.SYSTEM_FIELDS.includes(field.name) ? (react_1.default.createElement(FormField_1.default, { key: index, field: field, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove })) : (react_1.default.createElement(FormField_1.default, { key: index, field: field, value: (0, lodash_1.get)(resource === null || resource === void 0 ? void 0 : resource.data, field.name), handleChange: handleDataChange }));
-            }),
-            react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.ButtonLoader, { color: "primary", loading: loading }) }, buttonText)))) : (react_1.default.createElement(__1.Placeholder, { icon: 'CheckCircle', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { variant: "contained", onClick: function () { return setSubmitted(false); } }, "Done") }));
+    (0, react_1.useEffect)(function () {
+        if (fields) {
+            setTotalSteps(fields.length); // End card adds 1      
+        }
+    }, [fields]);
+    (0, react_1.useEffect)(function () {
+        if (fields && currentStep > 0) {
+            setCurrentField(fields[currentStep - 1]);
+        }
+    }, [fields, currentStep]);
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        react_1.default.createElement(material_1.LinearProgress, { sx: sx.linearProgress, variant: "determinate", value: (currentStep / totalSteps) * 100 }),
+        react_1.default.createElement(material_1.Box, { sx: sx.label },
+            react_1.default.createElement(components_1.Label, { label: "Step ".concat(currentStep, " of ").concat(totalSteps) })),
+        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.form), { py: py }) }, !submitted ? (react_1.default.createElement(react_1.default.Fragment, null,
+            currentStep == 0 && (react_1.default.createElement(FormCard_1.default, { title: title, description: description, image: image, buttonText: buttonText, handleClick: handleStartClick })),
+            currentStep > 0 && (react_1.default.createElement(react_1.default.Fragment, null,
+                react_1.default.createElement(FormWizardField_1.default, { field: currentField, handleChange: handleChange, handleRemove: handleRemove, resource: resource, setResource: setResource }),
+                react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: endButtonText }))))) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleResetForm })))));
 };
-exports.default = Form;
+exports.default = FormWizard;
 var sx = {
     root: {
+        width: "100%",
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    form: {
+        px: 2,
         width: '100%',
+        maxWidth: '600px'
     },
     button: {
         mt: 2,
     },
+    linearProgress: {
+        width: '100%',
+        height: '10px'
+    },
+    title: {
+        textAlign: 'center',
+        width: '100%'
+    },
+    label: {
+        m: 2
+    }
 };

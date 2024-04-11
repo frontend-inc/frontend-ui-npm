@@ -69,7 +69,9 @@ var sx = {
             sm: 'calc(100% - 280px)',
             xs: '100%',
         },
-        overflowY: 'scroll',
+        height: '100%',
+        maxHeight: '100vh',
+        overflow: 'hidden',
         '&::-webkit-scrollbar': {
             display: 'none',
         },
