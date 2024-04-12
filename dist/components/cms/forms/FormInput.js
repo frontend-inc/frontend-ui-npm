@@ -12,13 +12,15 @@ var FormInput = function (props) {
         variant === 'string' && (react_1.default.createElement(__1.TextInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'url' && (react_1.default.createElement(__1.TextInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'text' && (react_1.default.createElement(__1.TextInput, { multiline: true, rows: 6, errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
-        variant === 'number' && (react_1.default.createElement(__1.TextInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
+        variant === 'number' && (react_1.default.createElement(__1.TextInput, { type: "number", errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
+        variant === 'price' && (react_1.default.createElement(__1.TextInput, { type: "number", errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'date' && (react_1.default.createElement(__1.DateInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'boolean' && (react_1.default.createElement(__1.SwitchInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'select' && (react_1.default.createElement(__1.ArrayInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'rating' && (react_1.default.createElement(__1.RatingInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'image' && (react_1.default.createElement(__1.ImageInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, handleRemove: handleRemove })),
         variant === 'json' && (react_1.default.createElement(__1.JSONInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
-        variant === 'multiple_choice' && (react_1.default.createElement(__1.MultipleChoiceInput, { label: label, name: name, value: value, options: options, handleChange: handleChange }))));
+        variant === 'multiple_choice' && (react_1.default.createElement(__1.MultipleChoiceInput, { label: label, name: name, value: value, options: options, handleChange: handleChange })),
+        variant === 'single_choice' && (react_1.default.createElement(__1.MultipleChoiceInput, { label: label, name: name, value: value, options: options, handleChange: handleChange }))));
 };
 exports.default = FormInput;
