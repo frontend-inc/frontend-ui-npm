@@ -14,6 +14,6 @@ var CustomerForm = function (props) {
         react_1.default.createElement(components_1.TextInput, { placeholder: "Email", name: "email", value: (customer === null || customer === void 0 ? void 0 : customer.email) || '', handleChange: handleChange }),
         react_1.default.createElement(components_1.TextInput, { placeholder: "Phone number", name: "phone", value: (customer === null || customer === void 0 ? void 0 : customer.phone) || '', handleChange: handleChange }),
         react_1.default.createElement(components_1.TextInput, { type: "password", placeholder: "Change Password", name: "password", value: (customer === null || customer === void 0 ? void 0 : customer.password) || '', handleChange: handleChange }),
-        react_1.default.createElement(material_1.Button, { color: "secondary", endIcon: react_1.default.createElement(components_1.IconLoader, { loading: loading }), variant: "contained", onClick: handleSubmit }, "Update Account")));
+        react_1.default.createElement(material_1.Button, { color: "secondary", endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }), variant: "contained", onClick: handleSubmit }, "Update Account")));
 };
 exports.default = CustomerForm;

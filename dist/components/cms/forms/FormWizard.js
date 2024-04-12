@@ -76,7 +76,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
+var FormWizardProgress_1 = __importDefault(require("./wizard/FormWizardProgress"));
 var FormCard_1 = __importDefault(require("./wizard/FormCard"));
 var FormWizardField_1 = __importDefault(require("./wizard/FormWizardField"));
 var FormWizardButtons_1 = __importDefault(require("./wizard/FormWizardButtons"));
@@ -90,8 +90,10 @@ var FormWizard = function (props) {
     var _e = (0, react_1.useState)(), currentField = _e[0], setCurrentField = _e[1];
     var _f = (0, react_1.useState)(0), currentStep = _f[0], setCurrentStep = _f[1];
     var _g = (0, react_1.useState)(0), totalSteps = _g[0], setTotalSteps = _g[1];
+    var _h = (0, react_1.useState)(false), fadeIn = _h[0], setFadeIn = _h[1];
     var handleStartClick = function () {
         setCurrentStep(1);
+        setFadeIn(true);
     };
     var handleResetForm = function () {
         setResource({});
@@ -138,11 +140,15 @@ var FormWizard = function (props) {
         });
     }); };
     var handleNextStep = function () {
+        setFadeIn(false);
         var nextStep = currentStep + 1;
         if (nextStep > totalSteps) {
             return;
         }
-        setCurrentStep(nextStep);
+        setTimeout(function () {
+            setCurrentStep(nextStep);
+            setFadeIn(true);
+        }, 500);
     };
     var handlePrevStep = function () {
         var nextStep = currentStep - 1;
@@ -167,13 +173,11 @@ var FormWizard = function (props) {
         }
     }, [fields, currentStep]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.LinearProgress, { sx: sx.linearProgress, variant: "determinate", value: (currentStep / totalSteps) * 100 }),
-        react_1.default.createElement(material_1.Box, { sx: sx.label },
-            react_1.default.createElement(components_1.Label, { label: "Step ".concat(currentStep, " of ").concat(totalSteps) })),
+        currentStep > 0 && (react_1.default.createElement(FormWizardProgress_1.default, { currentStep: currentStep, totalSteps: totalSteps })),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.form), { py: py }) }, !submitted ? (react_1.default.createElement(react_1.default.Fragment, null,
             currentStep == 0 && (react_1.default.createElement(FormCard_1.default, { title: title, description: description, image: image, buttonText: buttonText, handleClick: handleStartClick })),
             currentStep > 0 && (react_1.default.createElement(react_1.default.Fragment, null,
-                react_1.default.createElement(FormWizardField_1.default, { field: currentField, handleChange: handleChange, handleRemove: handleRemove, resource: resource, setResource: setResource }),
+                react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleChange, handleRemove: handleRemove, resource: resource, setResource: setResource }),
                 react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: endButtonText }))))) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleResetForm })))));
 };
 exports.default = FormWizard;
@@ -193,15 +197,8 @@ var sx = {
     button: {
         mt: 2,
     },
-    linearProgress: {
-        width: '100%',
-        height: '10px'
-    },
     title: {
         textAlign: 'center',
         width: '100%'
     },
-    label: {
-        m: 2
-    }
 };

@@ -11,7 +11,7 @@ var SignInForm = function (props) {
     return (react_1.default.createElement(material_1.Stack, { spacing: 1 },
         react_1.default.createElement(__1.TextInput, { errors: errors, name: "email", value: customer === null || customer === void 0 ? void 0 : customer.email, placeholder: "Email", handleChange: handleChange }),
         react_1.default.createElement(__1.TextInput, { errors: errors, name: "password", value: customer === null || customer === void 0 ? void 0 : customer.password, type: "password", placeholder: "Password", handleChange: handleChange }),
-        react_1.default.createElement(material_1.Button, { fullWidth: true, color: "primary", onClick: handleSubmit, variant: "contained", endIcon: react_1.default.createElement(__1.IconLoader, { loading: loading }) }, "Sign In"),
+        react_1.default.createElement(material_1.Button, { fullWidth: true, color: "primary", onClick: handleSubmit, variant: "contained", endIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, "Sign In"),
         handleSignup && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "primary", variant: "outlined", onClick: handleSignup }, "No account? Sign up")),
         handleForgotPassword && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "primary", variant: "outlined", onClick: handleForgotPassword }, "Forgot password?"))));
 };

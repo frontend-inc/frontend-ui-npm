@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var FormInput = function (props) {
-    var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove;
+    var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove;
     return (react_1.default.createElement(react_1.default.Fragment, null,
         variant === 'array' && (react_1.default.createElement(__1.ArrayInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'string' && (react_1.default.createElement(__1.TextInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
@@ -18,6 +18,7 @@ var FormInput = function (props) {
         variant === 'select' && (react_1.default.createElement(__1.ArrayInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'rating' && (react_1.default.createElement(__1.RatingInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
         variant === 'image' && (react_1.default.createElement(__1.ImageInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, handleRemove: handleRemove })),
-        variant === 'json' && (react_1.default.createElement(__1.JSONInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder }))));
+        variant === 'json' && (react_1.default.createElement(__1.JSONInput, { errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder })),
+        variant === 'multiple_choice' && (react_1.default.createElement(__1.MultipleChoiceInput, { label: label, name: name, value: value, options: options, handleChange: handleChange }))));
 };
 exports.default = FormInput;

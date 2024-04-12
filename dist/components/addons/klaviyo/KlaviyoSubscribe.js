@@ -109,7 +109,7 @@ var KlaviyoSubscribe = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.form },
             react_1.default.createElement(__1.TextInput, { direction: "row", placeholder: 'Enter email...', name: "email", value: email, handleChange: handleChange, styles: sx.input }),
-            react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "secondary", onClick: handleFormSubmit }, loading ? react_1.default.createElement(__1.ButtonLoader, { loading: loading }) : "".concat(buttonText)))));
+            react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "secondary", onClick: handleFormSubmit }, loading ? react_1.default.createElement(__1.IconLoading, { loading: loading }) : "".concat(buttonText)))));
 };
 exports.default = KlaviyoSubscribe;
 var sx = {

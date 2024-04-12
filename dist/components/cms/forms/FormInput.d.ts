@@ -6,9 +6,10 @@ type FormInputProps = {
     label?: string;
     errors?: any;
     value?: any | any[];
+    options: any;
     placeholder?: string;
-    handleChange?: (e: SyntheticEventType) => void;
-    handleRemove?: (name: string) => void;
+    handleChange: (e: SyntheticEventType) => void;
+    handleRemove: (name: string) => void;
 };
 declare const FormInput: React.FC<FormInputProps>;
 export default FormInput;

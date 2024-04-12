@@ -10,6 +10,7 @@ export type FormWizardProps = {
     handleChange: (ev: any) => void;
     handleRemove: (name: string) => void;
     resource: any;
+    fadeIn: boolean;
     setResource: (resource: any) => void;
 };
 declare const FormWizardField: React.FC<FormWizardProps>;

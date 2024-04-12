@@ -42,7 +42,7 @@ var ArrayInput = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { sx: exports.sx.root, direction: direction, spacing: 1 },
         react_1.default.createElement(material_1.Typography, { sx: exports.sx.label, variant: "caption", color: "text.secondary" }, label),
-        value && (react_1.default.createElement(material_1.Autocomplete, { multiple: true, freeSolo: freeSolo, defaultValue: value || [], onChange: handleInputChange, options: options || ['Enter value'], getOptionLabel: function (option) { return option; }, PopperComponent: CustomPopper, clearIcon: react_1.default.createElement(lucide_react_1.X, null), renderTags: function (tagValue, getTagProps) {
+        value && (react_1.default.createElement(material_1.Autocomplete, { multiple: true, freeSolo: freeSolo, defaultValue: value || [], onChange: handleInputChange, options: options || [], getOptionLabel: function (option) { return option; }, PopperComponent: CustomPopper, clearIcon: react_1.default.createElement(lucide_react_1.X, null), renderTags: function (tagValue, getTagProps) {
                 return Array.isArray(tagValue) &&
                     tagValue.map(function (option, index) { return (react_1.default.createElement(material_1.Chip, __assign({ sx: exports.sx.chip, label: option, color: "secondary", deleteIcon: react_1.default.createElement(lucide_react_1.X, { size: 20 }) }, getTagProps({ index: index })))); });
             }, renderInput: function (params) { return (react_1.default.createElement(material_1.TextField, __assign({}, params, { color: "primary", sx: __assign(__assign({}, exports.sx.textField), ((error && exports.sx.inputError) || {})), placeholder: placeholder, margin: "dense", variant: "outlined" }))); } })),
@@ -50,9 +50,12 @@ var ArrayInput = function (props) {
 };
 exports.default = ArrayInput;
 exports.sx = {
-    root: {},
+    root: {
+        width: '100%',
+    },
     textField: {
         '& .MuiOutlinedInput-root': {
+            minWidth: '230px',
             p: '4px',
             color: 'text.secondary',
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
@@ -73,6 +76,7 @@ exports.sx = {
             },
         },
         root: {
+            width: '100%',
             height: 26,
         },
     },
@@ -96,5 +100,6 @@ exports.sx = {
     },
     label: {
         width: '100px',
+        minWidth: '100px',
     }
 };

@@ -70,9 +70,9 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
-var components_1 = require("../../components");
-var components_2 = require("../../components");
-var hooks_1 = require("../../hooks");
+var __1 = require("../..");
+var __2 = require("../..");
+var hooks_1 = require("../../../hooks");
 var RemoteAutosuggest = function (props) {
     var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, handleChange = props.handleChange, handleClear = props.handleClear, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? {} : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f;
     var _g = (0, hooks_1.useError)({
@@ -82,7 +82,7 @@ var RemoteAutosuggest = function (props) {
     var _h = (0, frontend_js_1.useResource)({
         url: url,
         name: name,
-    }), resources = _h.resources, findMany = _h.findMany;
+    }), delayedLoading = _h.delayedLoading, resources = _h.resources, findMany = _h.findMany;
     var _j = (0, react_1.useState)({}), option = _j[0], setOption = _j[1];
     var _k = (0, react_1.useState)([]), options = _k[0], setOptions = _k[1];
     var handleInputChange = function (newValue) {
@@ -127,7 +127,7 @@ var RemoteAutosuggest = function (props) {
         }
     }, [url]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        (options === null || options === void 0 ? void 0 : options.length) > 0 && (react_1.default.createElement(components_1.Autosuggest, { direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear })),
-        react_1.default.createElement(components_2.ErrorText, { error: error })));
+        react_1.default.createElement(__1.Autosuggest, { loading: delayedLoading, direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear }),
+        react_1.default.createElement(__2.ErrorText, { error: error })));
 };
 exports.default = RemoteAutosuggest;

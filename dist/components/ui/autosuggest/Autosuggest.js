@@ -39,15 +39,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var hooks_1 = require("../../hooks");
-var components_1 = require("../../components");
+var hooks_1 = require("../../../hooks");
+var __1 = require("../..");
 var Autocomplete_1 = __importDefault(require("@mui/material/Autocomplete"));
 var image_1 = __importDefault(require("next/image"));
 var AutocompleteOption = function (props) {
     var option = props.option;
     return (react_1.default.createElement(material_1.ListItem, __assign({ sx: { mr: 2, flexShrink: 0 } }, props),
         (option === null || option === void 0 ? void 0 : option.icon) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-            react_1.default.createElement(components_1.Icon, { name: option.icon, size: 20 }))),
+            react_1.default.createElement(__1.Icon, { name: option.icon, size: 20 }))),
         (option === null || option === void 0 ? void 0 : option.image) && (react_1.default.createElement(material_1.ListItemIcon, null,
             react_1.default.createElement(image_1.default, { src: option === null || option === void 0 ? void 0 : option.image, alt: option === null || option === void 0 ? void 0 : option.label, width: 32, height: 32, 
                 //@ts-ignore
@@ -58,15 +58,15 @@ var AutocompletePaper = function (props) {
     return react_1.default.createElement(material_1.Paper, __assign({}, props, { elevation: 10, sx: sx.paper }));
 };
 var Autosuggest = function (props) {
-    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? 'column' : _a, options = props.options, label = props.label, name = props.name, _b = props.placeholder, placeholder = _b === void 0 ? 'Select' : _b, _c = props.multiselect, multiselect = _c === void 0 ? false : _c, handleChange = props.handleChange, handleInputChange = props.handleInputChange, handleClear = props.handleClear, _d = props.freeSolo, freeSolo = _d === void 0 ? false : _d;
-    var _e = (0, react_1.useState)({
+    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? 'column' : _a, options = props.options, label = props.label, _b = props.loading, loading = _b === void 0 ? false : _b, name = props.name, _c = props.placeholder, placeholder = _c === void 0 ? 'Select' : _c, _d = props.multiselect, multiselect = _d === void 0 ? false : _d, handleChange = props.handleChange, handleInputChange = props.handleInputChange, handleClear = props.handleClear, _e = props.freeSolo, freeSolo = _e === void 0 ? false : _e;
+    var _f = (0, react_1.useState)({
         label: '',
         value: null,
-    }), selected = _e[0], setSelected = _e[1];
-    var _f = (0, hooks_1.useError)({
+    }), selected = _f[0], setSelected = _f[1];
+    var _g = (0, hooks_1.useError)({
         errors: errors,
         name: name,
-    }), error = _f.error, clearError = _f.clearError;
+    }), error = _g.error, clearError = _g.clearError;
     var handleOnChange = function (ev, newValue) {
         if (error)
             clearError();
@@ -104,10 +104,19 @@ var Autosuggest = function (props) {
             //@ts-ignore
             getOptionSelected: function (option, value) { return (option === null || option === void 0 ? void 0 : option.value) == (value === null || value === void 0 ? void 0 : value.value); }, renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)), endAdornment: handleClear && (react_1.default.createElement(material_1.InputAdornment, { position: "start" },
                     react_1.default.createElement(material_1.IconButton, { onClick: handleInputClear, size: "small" },
-                        react_1.default.createElement(components_1.Icon, { name: "X", size: 20 })))) })); } }),
-        react_1.default.createElement(components_1.ErrorText, { error: error })));
+                        react_1.default.createElement(__1.Icon, { name: "X", size: 20 })))) })); } }),
+        loading && (react_1.default.createElement(material_1.Box, { sx: sx.loaderContainer },
+            react_1.default.createElement(material_1.CircularProgress, { size: 20, thickness: 5, disableShrink: true, sx: sx.circularProgress }))),
+        react_1.default.createElement(__1.ErrorText, { error: error })));
 };
 exports.default = Autosuggest;
+var styles = {
+    image: {
+        borderRadius: 1,
+        objectFit: 'cover',
+        marginRight: '0px',
+    },
+};
 var sx = {
     autocomplete: {
         width: '100%',
@@ -165,11 +174,14 @@ var sx = {
     stackVertical: {
         alignItems: 'center',
     },
-};
-var styles = {
-    image: {
-        borderRadius: 1,
-        objectFit: 'cover',
-        marginRight: '0px',
+    loaderContainer: {
+        width: '41px',
+        height: '41px',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
     },
+    circularProgress: {
+        color: 'text.secondary'
+    }
 };

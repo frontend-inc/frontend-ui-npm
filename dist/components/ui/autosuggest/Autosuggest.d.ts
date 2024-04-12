@@ -1,6 +1,7 @@
 import React from 'react';
-import { SyntheticEventType } from '../../types';
+import { SyntheticEventType } from '../../../types';
 type AutosuggestProps = {
+    loading?: boolean;
     errors?: any;
     value?: any;
     direction?: 'row' | 'column';

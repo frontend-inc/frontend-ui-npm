@@ -56,7 +56,7 @@ var FilterButton = function (props) {
                 vertical: 'top',
                 horizontal: 'right',
             } },
-            react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), ((filters === null || filters === void 0 ? void 0 : filters.length) > 0 && sx.hideBorder)), color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(__1.ButtonLoader, { loading: loading })) : (react_1.default.createElement(icons_material_1.FilterList, { sx: sx.icon })), onClick: handleClick }, "Filters")),
+            react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), ((filters === null || filters === void 0 ? void 0 : filters.length) > 0 && sx.hideBorder)), color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(__1.IconLoading, { loading: loading })) : (react_1.default.createElement(icons_material_1.FilterList, { sx: sx.icon })), onClick: handleClick }, "Filters")),
         react_1.default.createElement(material_1.Hidden, { smDown: true },
             react_1.default.createElement(__1.Popup, { p: 1, anchorEl: anchorEl, open: open, handleClose: handleClose, anchorOrigin: {
                     vertical: 'bottom',

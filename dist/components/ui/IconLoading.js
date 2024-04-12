@@ -16,18 +16,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var IconLoader = function (props) {
+var IconLoading = function (props) {
     var _a = props.loading, loading = _a === void 0 ? false : _a, _b = props.color, color = _b === void 0 ? 'primary.contrastText' : _b;
     if (!loading)
         return null;
-    return (react_1.default.createElement(material_1.CircularProgress, { size: 20, sx: __assign(__assign({}, sx.root), { color: color }), disableShrink: true }));
+    return (react_1.default.createElement(material_1.CircularProgress, { size: 20, disableShrink: true, sx: __assign(__assign({}, sx.loader), { color: color }) }));
 };
-exports.default = IconLoader;
+exports.default = IconLoading;
 var sx = {
-    root: {
+    loader: {
         color: 'primary.contrastText',
-    },
-    outlined: {
-        color: 'primary.main',
     },
 };

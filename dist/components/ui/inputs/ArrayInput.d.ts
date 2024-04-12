@@ -14,9 +14,12 @@ type ArrayInputProps = {
 declare const ArrayInput: React.FC<ArrayInputProps>;
 export default ArrayInput;
 export declare const sx: {
-    root: {};
+    root: {
+        width: string;
+    };
     textField: {
         '& .MuiOutlinedInput-root': {
+            minWidth: string;
             p: string;
             color: string;
             fontSize: (theme: any) => any;
@@ -36,6 +39,7 @@ export declare const sx: {
             };
         };
         root: {
+            width: string;
             height: number;
         };
     };
@@ -59,5 +63,6 @@ export declare const sx: {
     };
     label: {
         width: string;
+        minWidth: string;
     };
 };

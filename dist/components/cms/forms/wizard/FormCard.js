@@ -9,7 +9,7 @@ var components_1 = require("../../../../components");
 var FormCard = function (props) {
     var title = props.title, description = props.description, image = props.image, handleClick = props.handleClick, buttonText = props.buttonText;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.root, spacing: 2 },
-        react_1.default.createElement(components_1.Image, { src: image, height: 280 }),
+        react_1.default.createElement(components_1.Image, { src: image, height: 400 }),
         react_1.default.createElement(material_1.Typography, { variant: "h4", color: "text.primary" }, title),
         react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, description),
         react_1.default.createElement(material_1.Box, null,
