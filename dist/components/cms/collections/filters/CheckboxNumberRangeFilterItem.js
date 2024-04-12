@@ -25,10 +25,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var frontend_shopify_1 = require("frontend-shopify");
 var CheckboxNumberRangeFilterItem = function (props) {
-    var _a = props.values, values = _a === void 0 ? [] : _a, option = props.option, _b = props.enableCurrency, enableCurrency = _b === void 0 ? false : _b, handleClick = props.handleClick;
-    var _c = (0, react_1.useState)(false), checked = _c[0], setChecked = _c[1];
+    var _a = props.values, values = _a === void 0 ? [] : _a, option = props.option, handleClick = props.handleClick;
+    var _b = (0, react_1.useState)(false), checked = _b[0], setChecked = _b[1];
     // Compare an array of min / max values to see if they are equal
     // to the option min / max pair
     var compareValues = function (values, option) {
@@ -54,14 +53,7 @@ var CheckboxNumberRangeFilterItem = function (props) {
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick },
             react_1.default.createElement(material_1.ListItemIcon, null,
                 react_1.default.createElement(material_1.Checkbox, { checked: checked, color: "primary" })),
-            react_1.default.createElement(material_1.ListItemText, { primary: enableCurrency ? (react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "button" },
-                    (0, frontend_shopify_1.formatCurrency)(option === null || option === void 0 ? void 0 : option.min, 0),
-                    " -",
-                    ' ',
-                    (0, frontend_shopify_1.formatCurrency)(option === null || option === void 0 ? void 0 : option.max, 0))) : (react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "button" }, option === null || option === void 0 ? void 0 :
-                    option.min,
-                    " - ", option === null || option === void 0 ? void 0 :
-                    option.max)) }))));
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "button" }, option.label) }))));
 };
 exports.default = CheckboxNumberRangeFilterItem;
 var sx = {

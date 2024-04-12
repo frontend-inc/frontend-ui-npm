@@ -5,6 +5,7 @@ type CheckboxNumberRangeFilterProps = {
     where?: FilterWhereType;
     operator?: FilterOperatorType;
     options?: {
+        label: string;
         min: string | number;
         max: string | number;
     }[];
@@ -13,7 +14,6 @@ type CheckboxNumberRangeFilterProps = {
     label?: string;
     icon?: React.ReactNode;
     enableBorder?: boolean;
-    enableCurrency?: boolean;
     disablePadding?: boolean;
     closed?: boolean;
 };

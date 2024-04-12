@@ -10,7 +10,7 @@ var __1 = require("../../..");
 var hooks_1 = require("../../../../hooks");
 var CollectionSearchFilters = function (props) {
     var _a = props.filters, filters = _a === void 0 ? [] : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, handleFilter = props.handleFilter;
-    var _c = (0, hooks_1.useMenu)(), open = _c.open, toggleMenu = _c.toggleMenu, closeMenu = _c.closeMenu, anchorEl = _c.anchorEl;
+    var _c = (0, hooks_1.useMenu)(), open = _c.open, toggleMenu = _c.toggleMenu, closeMenu = _c.closeMenu;
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Hidden, { smDown: true },
             react_1.default.createElement(CollectionFilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter })),
