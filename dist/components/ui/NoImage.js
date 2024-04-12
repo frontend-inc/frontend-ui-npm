@@ -28,7 +28,7 @@ var sx = {
         justifyContent: 'center',
         border: '1px solid',
         borderColor: 'divider',
-        backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)'
+        backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)',
     },
     icon: {
         color: 'divider',

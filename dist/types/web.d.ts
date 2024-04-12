@@ -35,10 +35,12 @@ export type CardProps = {
     icon?: string;
 };
 export type PriceType = {
+    label: string;
     title: string;
     price: number;
-    features: string;
-    disabledFeatures: string;
+    features: {
+        label: string;
+    }[];
     buttonText: string;
     url: string;
 };

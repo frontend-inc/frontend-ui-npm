@@ -123,8 +123,8 @@ var sx = {
         fontWeight: function (theme) { return theme.typography.body1.fontWeight; },
         '&:hover': {
             bgcolor: 'background.paper',
-            borderColor: 'primary.main'
-        }
+            borderColor: 'primary.main',
+        },
     },
     grid: {
         display: 'grid',

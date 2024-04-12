@@ -68,7 +68,7 @@ var sx = {
         mr: 2,
         height: '64px',
         width: '64px',
-        backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)'
+        backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)',
     },
     description: {
         maxWidth: 320,

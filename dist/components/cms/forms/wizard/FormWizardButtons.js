@@ -19,6 +19,6 @@ var sx = {
     actions: {
         width: '100%',
         justifyContent: 'flex-end',
-        py: 4
+        py: 4,
     },
 };

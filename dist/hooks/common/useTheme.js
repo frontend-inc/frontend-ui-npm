@@ -77,7 +77,7 @@ var useTheme = function (props) {
         headerFont,
         bodyFont,
         borderRadius,
-        muiTheme
+        muiTheme,
     ]);
     return {
         theme: theme,

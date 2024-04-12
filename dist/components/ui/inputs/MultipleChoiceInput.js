@@ -38,8 +38,8 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var MultipleChoiceInput = function (props) {
-    var label = props.label, _a = props.direction, direction = _a === void 0 ? 'column' : _a, name = props.name, value = props.value, options = props.options, _b = props.buttonText, buttonText = _b === void 0 ? 'Submit' : _b, handleChange = props.handleChange, _c = props.multiSelect, multiSelect = _c === void 0 ? true : _c;
-    var _d = (0, react_1.useState)([]), selected = _d[0], setSelected = _d[1];
+    var label = props.label, _a = props.direction, direction = _a === void 0 ? 'column' : _a, name = props.name, value = props.value, options = props.options, handleChange = props.handleChange, _b = props.multiSelect, multiSelect = _b === void 0 ? true : _b;
+    var _c = (0, react_1.useState)(value || []), selected = _c[0], setSelected = _c[1];
     var handleSelect = function (item) {
         if (selected.find(function (i) { return i === item; })) {
             setSelected(selected.filter(function (i) { return i != item; }));
@@ -53,26 +53,23 @@ var MultipleChoiceInput = function (props) {
             }
         }
     };
-    var handleSubmit = function () {
+    (0, react_1.useEffect)(function () {
         handleChange({
             target: {
                 name: name,
-                value: multiSelect ?
-                    selected :
-                    selected[0]
-            }
+                value: selected,
+            },
         });
-    };
+    }, [selected]);
     return (react_1.default.createElement(material_1.FormControl, { size: "small", fullWidth: true, variant: "outlined" },
         react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 1 },
             react_1.default.createElement(material_1.Typography, { variant: "caption", sx: sx.label, gutterBottom: true }, label),
-            react_1.default.createElement(material_1.List, { disablePadding: true, sx: sx.list }, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement(components_1.SelectableListItem, { key: idx, title: option.label, icon: option.icon, image: option.image, selected: selected.find(function (i) { return i === option.value; }), handleClick: function () { return handleSelect(option === null || option === void 0 ? void 0 : option.value); } })); })),
-            react_1.default.createElement(material_1.Button, { onClick: handleSubmit, variant: "contained", color: "primary" }, buttonText))));
+            react_1.default.createElement(material_1.List, { disablePadding: true, sx: sx.list }, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement(components_1.SelectableListItem, { key: idx, title: option.label, icon: option.icon, image: option.image, selected: selected.find(function (i) { return i === option.value; }), handleClick: function () { return handleSelect(option === null || option === void 0 ? void 0 : option.value); } })); })))));
 };
 exports.default = MultipleChoiceInput;
 var sx = {
     list: {
-        width: '100%'
+        width: '100%',
     },
     label: {
         mb: 0,

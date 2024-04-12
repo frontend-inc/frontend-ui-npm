@@ -19,10 +19,9 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var PageHeader = function (props) {
     var label = props.label, title = props.title, description = props.description, breadcrumbs = props.breadcrumbs, actions = props.actions, resource = props.resource, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a;
-    console.log("ACTIONS", actions);
     return (react_1.default.createElement(material_1.Stack, { direction: {
             xs: 'column',
-            sm: 'row'
+            sm: 'row',
         }, spacing: 1, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(__1.Heading, { label: label, title: title, description: description, textAlign: "left" }),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
@@ -37,12 +36,12 @@ var sx = {
     },
     rootBorder: {
         borderBottom: 1,
-        borderColor: 'divider'
+        borderColor: 'divider',
     },
     actions: {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        py: 1
-    }
+        py: 1,
+    },
 };

@@ -164,7 +164,7 @@ var FormWizard = function (props) {
     }, [handle]);
     (0, react_1.useEffect)(function () {
         if (fields) {
-            setTotalSteps(fields.length); // End card adds 1      
+            setTotalSteps(fields.length); // End card adds 1
         }
     }, [fields]);
     (0, react_1.useEffect)(function () {
@@ -183,7 +183,7 @@ var FormWizard = function (props) {
 exports.default = FormWizard;
 var sx = {
     root: {
-        width: "100%",
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -192,13 +192,13 @@ var sx = {
     form: {
         px: 2,
         width: '100%',
-        maxWidth: '600px'
+        maxWidth: '600px',
     },
     button: {
         mt: 2,
     },
     title: {
         textAlign: 'center',
-        width: '100%'
+        width: '100%',
     },
 };

@@ -17,8 +17,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var TableCell_1 = __importDefault(require("@mui/material/TableCell"));
 var TableCell = function (props) {
-    var _a = props.align, align = _a === void 0 ? 'left' : _a, children = props.children, _b = props.header, header = _b === void 0 ? false : _b, _c = props.sticky, sticky = _c === void 0 ? false : _c;
-    return (react_1.default.createElement(TableCell_1.default, { align: align, sx: __assign(__assign(__assign(__assign({}, sx.root), (header && sx.header)), (sticky && sx.stickyCell)), (header && sticky && sx.stickyHeader)) }, children));
+    var _a = props.align, align = _a === void 0 ? 'left' : _a, children = props.children, _b = props.header, header = _b === void 0 ? false : _b, _c = props.sticky, sticky = _c === void 0 ? false : _c, _d = props.small, small = _d === void 0 ? false : _d;
+    return (react_1.default.createElement(TableCell_1.default, { align: align, sx: __assign(__assign(__assign(__assign(__assign({}, sx.root), (small && sx.cellSmall)), (sticky && sx.cellSticky)), (header && sx.cellHeader)), (header && sticky && sx.cellStickyHeader)) }, children));
 };
 exports.default = TableCell;
 var sx = {
@@ -26,23 +26,31 @@ var sx = {
         px: 1,
         minWidth: '100px',
         bgcolor: 'background.paper',
-        borderBottom: '1px solid',
+        borderBottom: '1px dotted',
+        borderRight: '1px dotted',
         borderColor: 'divider',
-    },
-    header: {
-        p: 0,
+        overflowX: 'scroll',
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
         whiteSpace: 'nowrap',
+        maxWidth: '200px'
     },
-    stickyHeader: {
-        position: 'sticky',
-        left: 0,
-        minWidth: 40,
-        zIndex: function (theme) { return theme.zIndex.modal - 1; },
+    cellSmall: {
+        minWidth: '40px',
+        width: '40px'
     },
-    stickyCell: {
+    cellHeader: {
+        borderBottom: '3px solid',
         zIndex: function (theme) { return theme.zIndex.modal - 2; },
+    },
+    cellSticky: {
         position: 'sticky',
         left: 0,
-        minWidth: 40,
+        borderRight: '3px solid',
+        zIndex: function (theme) { return theme.zIndex.modal - 3; },
     },
+    cellStickyHeader: {
+        zIndex: function (theme) { return theme.zIndex.modal - 1; },
+    }
 };

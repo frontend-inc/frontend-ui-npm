@@ -17,9 +17,9 @@ exports.default = FormWizardProgress;
 var sx = {
     linearProgress: {
         width: '100%',
-        height: '10px'
+        height: '10px',
     },
     label: {
-        m: 2
-    }
+        m: 2,
+    },
 };

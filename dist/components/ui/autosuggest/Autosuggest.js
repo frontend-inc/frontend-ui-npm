@@ -182,6 +182,6 @@ var sx = {
         alignItems: 'center',
     },
     circularProgress: {
-        color: 'text.secondary'
-    }
+        color: 'text.secondary',
+    },
 };

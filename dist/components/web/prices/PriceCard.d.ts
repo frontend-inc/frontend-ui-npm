@@ -1,5 +1,5 @@
 import React from 'react';
-import { PriceType } from '../../..';
+import { PriceType } from '../../../types';
 type PriceCardProps = {
     price: PriceType;
 };

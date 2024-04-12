@@ -49,7 +49,7 @@ var Notification = function (props) {
     }), onMouseDown = _b.onMouseDown, onMouseUp = _b.onMouseUp;
     return (react_1.default.createElement(material_1.ListItem, { sx: sx.root },
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onMouseDown: onMouseDown, onMouseUp: onMouseUp },
-            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: 'primary.contrastText', variant: "body2", sx: sx.text }, text) }))));
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: "primary.contrastText", variant: "body2", sx: sx.text }, text) }))));
 };
 exports.default = Notification;
 var sx = {

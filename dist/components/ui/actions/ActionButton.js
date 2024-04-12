@@ -39,14 +39,16 @@ var ActionButton = function (props) {
     var onClick = function (ev) {
         handleClick(ev);
     };
-    return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, startIcon: icon && (react_1.default.createElement(components_1.Icon, { name: icon, size: 20, color: color == 'primary' ? 'primary.contrastText' : 'secondary.contrastText' })), onClick: onClick, variant: variant, color: color }, rest), label));
+    return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, startIcon: icon && (react_1.default.createElement(components_1.Icon, { name: icon, size: 20, color: color == 'primary'
+                ? 'primary.contrastText'
+                : 'secondary.contrastText' })), onClick: onClick, variant: variant, color: color }, rest), label));
 };
 exports.default = ActionButton;
 var sx = {
     button: {
         width: {
             sm: 'auto',
-            xs: '100%'
-        }
-    }
+            xs: '100%',
+        },
+    },
 };

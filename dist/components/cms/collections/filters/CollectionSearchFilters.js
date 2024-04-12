@@ -15,13 +15,16 @@ var CollectionSearchFilters = function (props) {
         react_1.default.createElement(material_1.Hidden, { smDown: true },
             react_1.default.createElement(CollectionFilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter })),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
-            react_1.default.createElement(material_1.Button, { onClick: toggleMenu, color: "secondary", variant: "contained", startIcon: react_1.default.createElement(__1.Icon, { name: "SlidersHorizontal", size: 20 }) }, "Filters"),
+            react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: toggleMenu, color: "secondary", variant: "contained", startIcon: react_1.default.createElement(__1.Icon, { name: "SlidersHorizontal", size: 20 }) }, "Filters"),
             react_1.default.createElement(__1.Drawer, { open: open, handleClose: closeMenu, anchor: "right" },
                 react_1.default.createElement(CollectionFilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter })))));
 };
 exports.default = CollectionSearchFilters;
 var sx = {
     button: {
-        width: '100%',
+        width: {
+            sm: 'auto',
+            xs: '100%',
+        },
     },
 };

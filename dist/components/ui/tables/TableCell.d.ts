@@ -4,6 +4,7 @@ type TableCellProps = {
     children?: React.ReactNode;
     header?: boolean;
     sticky?: boolean;
+    small?: boolean;
 };
 declare const TableCell: React.FC<TableCellProps>;
 export default TableCell;

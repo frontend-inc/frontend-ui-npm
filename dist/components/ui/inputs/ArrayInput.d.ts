@@ -18,6 +18,7 @@ export declare const sx: {
         width: string;
     };
     textField: {
+        my: number;
         '& .MuiOutlinedInput-root': {
             minWidth: string;
             p: string;
@@ -59,7 +60,7 @@ export declare const sx: {
         fontFamily: (theme: any) => any;
     };
     chip: {
-        pr: number;
+        borderRadius: string;
     };
     label: {
         width: string;

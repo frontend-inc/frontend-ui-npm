@@ -58,7 +58,8 @@ var TopNavMenuItem = function (props) {
         closeMenu();
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: function (ev) { return handleMenuClick(ev, menuItem); }, endIcon: ((children === null || children === void 0 ? void 0 : children.length) > 0 || (menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) },
+        react_1.default.createElement(material_1.Button, { sx: sx.menuButton, onClick: function (ev) { return handleMenuClick(ev, menuItem); }, endIcon: ((children === null || children === void 0 ? void 0 : children.length) > 0 ||
+                (menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)) },
                 react_1.default.createElement(components_1.Icon, { name: "ChevronDown" }))) }, menuItem.name),
         react_1.default.createElement(material_1.Menu, { open: open, anchorEl: anchorEl, onClose: closeMenu, MenuListProps: {
                 onMouseLeave: handleMouseLeave,

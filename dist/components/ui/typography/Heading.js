@@ -23,16 +23,16 @@ var Heading = function (props) {
         return null;
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), { alignItems: {
                 sm: textAlign === 'center' ? 'center' : 'flex-start',
-                xs: 'center'
+                xs: 'center',
             } }), direction: 'column', spacing: 1 },
-        label && (react_1.default.createElement(components_1.Label, { label: label })),
+        label && react_1.default.createElement(components_1.Label, { label: label }),
         title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", sx: __assign(__assign({}, sx.title), { textAlign: {
                     sm: textAlign,
-                    xs: 'center'
+                    xs: 'center',
                 } }) }, title)),
         description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: __assign(__assign({}, sx.description), { textAlign: {
                     sm: textAlign,
-                    xs: 'center'
+                    xs: 'center',
                 } }) }, description))));
 };
 exports.default = Heading;

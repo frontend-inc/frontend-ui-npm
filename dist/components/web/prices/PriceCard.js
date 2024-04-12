@@ -6,7 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var router_1 = require("next/router");
+var components_1 = require("../../../components");
 var PriceCard = function (props) {
+    var _a;
     var router = (0, router_1.useRouter)();
     var price = props.price;
     var handleClick = function () {
@@ -16,10 +18,13 @@ var PriceCard = function (props) {
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 1 },
+            (price === null || price === void 0 ? void 0 : price.label) && (react_1.default.createElement(material_1.Box, null,
+                react_1.default.createElement(components_1.Label, { label: price.label }))),
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, price.title),
             react_1.default.createElement(material_1.Typography, { variant: "h5", color: "text.primary" }, price.price),
             react_1.default.createElement(material_1.Divider, null),
-            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.features }, price.features)),
+            react_1.default.createElement(material_1.List, { disablePadding: true }, (_a = price === null || price === void 0 ? void 0 : price.features) === null || _a === void 0 ? void 0 : _a.map(function (feature, i) { return (react_1.default.createElement(material_1.ListItem, { key: i },
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, feature === null || feature === void 0 ? void 0 : feature.label) }))); }))),
         react_1.default.createElement(material_1.Button, { onClick: handleClick, variant: "contained", color: "primary", fullWidth: true }, price.buttonText)));
 };
 exports.default = PriceCard;

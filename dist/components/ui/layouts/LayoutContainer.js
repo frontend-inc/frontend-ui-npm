@@ -30,7 +30,7 @@ var LayoutContainer = function (props) {
                 react_1.default.createElement(components_1.LayoutScroll, null,
                     react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.page), { minHeight: {
                                 sm: "calc(100vh - ".concat(pageMargin, "px)"),
-                                xs: '100vh'
+                                xs: '100vh',
                             } }) }, children),
                     react_1.default.createElement(components_1.Footer, { menuItems: footerLinks, handleClick: handleClick, facebook: facebook, instagram: instagram, linkedin: linkedin, twitter: twitter, youtube: youtube, tiktok: tiktok }))))));
 };

@@ -8,7 +8,7 @@ var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
 var CellText = function (props) {
     var value = props.value;
-    return react_1.default.createElement(components_1.CellString, { variant: "body2", value: (0, helpers_1.truncate)(value, 20) });
+    return react_1.default.createElement(components_1.CellString, { variant: "body2", value: (0, helpers_1.truncate)(value, 250) });
 };
 exports.default = CellText;
 var sx = {

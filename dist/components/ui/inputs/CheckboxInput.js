@@ -35,7 +35,7 @@ var CheckboxInput = function (props) {
 exports.default = CheckboxInput;
 var sx = {
     root: {
-        width: '100%'
+        width: '100%',
     },
     input: {
         display: 'flex',

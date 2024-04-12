@@ -29,12 +29,13 @@ var components_1 = require("../../../components");
 var CellArray = function (props) {
     var value = props.value;
     var values = (value === null || value === void 0 ? void 0 : value.length) > 0 ? value : null;
+    var MAX_TAGS = 2;
     var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
     var _b = (0, react_1.useState)([]), visibleTags = _b[0], setVisibleTags = _b[1];
     var handleToggleSeeAll = function () {
         if (open) {
             setOpen(false);
-            setVisibleTags(values.slice(0, 2));
+            setVisibleTags(values.slice(0, MAX_TAGS));
         }
         else {
             setOpen(true);
@@ -43,12 +44,13 @@ var CellArray = function (props) {
     };
     (0, react_1.useEffect)(function () {
         if (values) {
-            setVisibleTags(values.slice(0, 2));
+            setVisibleTags(values.slice(0, MAX_TAGS));
         }
     }, [values]);
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root }, visibleTags === null || visibleTags === void 0 ? void 0 :
+    return (react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0.5 }, visibleTags === null || visibleTags === void 0 ? void 0 :
         visibleTags.map(function (value, index) { return (react_1.default.createElement(components_1.Label, { key: index, label: value })); }),
-        !open && (react_1.default.createElement(material_1.Button, { sx: sx.button, size: "small", onClick: handleToggleSeeAll }, "..."))));
+        !open && (visibleTags === null || visibleTags === void 0 ? void 0 : visibleTags.length) > MAX_TAGS && (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: handleToggleSeeAll },
+            react_1.default.createElement(components_1.Label, { label: "..." })))));
 };
 exports.default = CellArray;
 var sx = {
@@ -60,6 +62,6 @@ var sx = {
     button: {
         p: 0,
         minWidth: '30px',
-        height: '30px',
+        height: '26px',
     },
 };

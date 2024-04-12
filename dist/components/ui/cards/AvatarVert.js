@@ -77,7 +77,7 @@ var sx = {
         justifyContent: 'center',
     },
     avatar: {
-        backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)'
+        backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)',
     },
     gradient: {
         '&::after': {

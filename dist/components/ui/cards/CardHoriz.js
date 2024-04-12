@@ -58,7 +58,7 @@ var CardHoriz = function (props) {
                 react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
                     react_1.default.createElement(components_1.Image, { src: image, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, disableBorderRadius: enableBorder }))),
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
-                label && (react_1.default.createElement(components_1.Label, { label: label })),
+                label && react_1.default.createElement(components_1.Label, { label: label }),
                 react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
                 react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80))),
             buttonText && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.actions), (enableBorder && sx.actionsBorder)) },
@@ -89,7 +89,7 @@ var sx = {
         borderColor: 'divider',
     },
     container: {
-        width: "100%"
+        width: '100%',
     },
     image: {
         pr: {
@@ -118,10 +118,10 @@ var sx = {
         py: {
             sm: 0,
             xs: 1,
-        }
+        },
     },
     contentBorder: {
-        p: 2
+        p: 2,
     },
     description: {
         maxWidth: '320px',
@@ -131,14 +131,14 @@ var sx = {
         flexDirection: 'column',
         alignItems: {
             sm: 'flex-end',
-            xs: 'flex-start'
+            xs: 'flex-start',
         },
     },
     actionsBorder: {
         px: 1,
         pb: {
             sm: 0,
-            xs: 1
+            xs: 1,
         },
-    }
+    },
 };

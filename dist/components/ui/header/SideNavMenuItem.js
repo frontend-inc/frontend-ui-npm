@@ -79,7 +79,8 @@ var SideNavMenuItem = function (props) {
         }
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: ((children === null || children === void 0 ? void 0 : children.length) > 0 || (menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') && (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)), onClick: function () { return handleMenuClick(menuItem); } },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: ((children === null || children === void 0 ? void 0 : children.length) > 0 ||
+                (menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') && (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.icon), (open && sx.rotateIcon)), onClick: function () { return handleMenuClick(menuItem); } },
                 react_1.default.createElement(__1.Icon, { name: "ChevronDown" }))) },
             react_1.default.createElement(material_1.ListItemButton, { onClick: function () { return handleMenuClick(menuItem); } },
                 (menuItem === null || menuItem === void 0 ? void 0 : menuItem.icon) && (react_1.default.createElement(material_1.ListItemIcon, null,

@@ -40,7 +40,7 @@ var sx = {
         },
     },
     listItemIcon: {
-        mr: 1
+        mr: 1,
     },
     selected: {
         borderColor: 'primary.main',
@@ -60,5 +60,5 @@ var sx = {
         alignItems: 'center',
         justifyContent: 'center',
         boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
-    }
+    },
 };

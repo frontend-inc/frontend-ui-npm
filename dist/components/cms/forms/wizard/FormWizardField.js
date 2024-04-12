@@ -40,10 +40,10 @@ exports.default = FormWizardField;
 var sx = {
     title: {
         textAlign: 'center',
-        width: '100%'
+        width: '100%',
     },
     description: {
         textAlign: 'center',
-        width: '100%'
+        width: '100%',
     },
 };

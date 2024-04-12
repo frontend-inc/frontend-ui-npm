@@ -39,8 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../../..");
-var icons_material_1 = require("@mui/icons-material");
+var components_1 = require("../../../../components");
 var CollectionFilterList_1 = __importDefault(require("./CollectionFilterList"));
 var FilterButton = function (props) {
     var _a = props || {}, _b = _a.loading, loading = _b === void 0 ? false : _b, _c = _a.filters, filters = _c === void 0 ? [] : _c, _d = _a.filterOptions, filterOptions = _d === void 0 ? [] : _d, handleFilter = _a.handleFilter;
@@ -56,9 +55,9 @@ var FilterButton = function (props) {
                 vertical: 'top',
                 horizontal: 'right',
             } },
-            react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), ((filters === null || filters === void 0 ? void 0 : filters.length) > 0 && sx.hideBorder)), color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(__1.IconLoading, { loading: loading })) : (react_1.default.createElement(icons_material_1.FilterList, { sx: sx.icon })), onClick: handleClick }, "Filters")),
+            react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), ((filters === null || filters === void 0 ? void 0 : filters.length) > 0 && sx.hideBorder)), color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(components_1.IconLoading, { loading: loading })) : (react_1.default.createElement(components_1.Icon, { name: "SlidersHorizontal", size: 20 })), onClick: handleClick }, "Filters")),
         react_1.default.createElement(material_1.Hidden, { smDown: true },
-            react_1.default.createElement(__1.Popup, { p: 1, anchorEl: anchorEl, open: open, handleClose: handleClose, anchorOrigin: {
+            react_1.default.createElement(components_1.Popup, { p: 1, anchorEl: anchorEl, open: open, handleClose: handleClose, anchorOrigin: {
                     vertical: 'bottom',
                     horizontal: 'right',
                 }, transformOrigin: {
@@ -67,7 +66,7 @@ var FilterButton = function (props) {
                 } },
                 react_1.default.createElement(CollectionFilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter }))),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
-            react_1.default.createElement(__1.Drawer, { open: open, handleClose: handleClose, title: "Search" },
+            react_1.default.createElement(components_1.Drawer, { open: open, handleClose: handleClose, title: "Search" },
                 react_1.default.createElement(CollectionFilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter })))));
 };
 exports.default = FilterButton;
@@ -90,10 +89,6 @@ var sx = {
         '&:hover': {
             borderLeft: 'none',
         },
-    },
-    icon: {
-        height: 20,
-        width: 20,
     },
     mobileDrawer: {
         width: {

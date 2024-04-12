@@ -24,7 +24,7 @@ var CustomPopper = function (props) {
     return react_1.default.createElement(material_1.Popper, __assign({}, props, { sx: exports.sx.popper, placement: "bottom" }));
 };
 var ArrayInput = function (props) {
-    var errors = props.errors, label = props.label, name = props.name, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, _a = props.direction, direction = _a === void 0 ? "column" : _a, _b = props.freeSolo, freeSolo = _b === void 0 ? true : _b;
+    var errors = props.errors, label = props.label, name = props.name, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, _a = props.direction, direction = _a === void 0 ? 'column' : _a, _b = props.freeSolo, freeSolo = _b === void 0 ? true : _b;
     var _c = (0, hooks_1.useError)({
         errors: errors,
         name: name,
@@ -40,7 +40,7 @@ var ArrayInput = function (props) {
             },
         });
     };
-    return (react_1.default.createElement(material_1.Stack, { sx: exports.sx.root, direction: direction, spacing: 1 },
+    return (react_1.default.createElement(material_1.Stack, { sx: exports.sx.root, direction: direction, spacing: 0 },
         react_1.default.createElement(material_1.Typography, { sx: exports.sx.label, variant: "caption", color: "text.secondary" }, label),
         value && (react_1.default.createElement(material_1.Autocomplete, { multiple: true, freeSolo: freeSolo, defaultValue: value || [], onChange: handleInputChange, options: options || [], getOptionLabel: function (option) { return option; }, PopperComponent: CustomPopper, clearIcon: react_1.default.createElement(lucide_react_1.X, null), renderTags: function (tagValue, getTagProps) {
                 return Array.isArray(tagValue) &&
@@ -54,6 +54,7 @@ exports.sx = {
         width: '100%',
     },
     textField: {
+        my: 0,
         '& .MuiOutlinedInput-root': {
             minWidth: '230px',
             p: '4px',
@@ -96,10 +97,10 @@ exports.sx = {
         fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
     },
     chip: {
-        pr: 0.5,
+        borderRadius: '4px'
     },
     label: {
         width: '100px',
         minWidth: '100px',
-    }
+    },
 };

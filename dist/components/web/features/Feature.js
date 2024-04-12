@@ -33,7 +33,7 @@ var sx = {
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 1
+        borderRadius: 1,
     },
     avatar: {
         bgcolor: 'primary.main',
@@ -56,6 +56,6 @@ var sx = {
     },
     enableBorder: {
         border: '1px solid',
-        borderColor: 'divider'
-    }
+        borderColor: 'divider',
+    },
 };

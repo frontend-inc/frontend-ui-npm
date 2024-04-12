@@ -4,7 +4,7 @@ exports.default = {
     defaultProps: {
         disableRipple: true,
         border: 'none !important',
-        disableElevation: true
+        disableElevation: true,
     },
     styleOverrides: {
         root: {

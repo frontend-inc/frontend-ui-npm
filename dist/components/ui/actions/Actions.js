@@ -24,5 +24,5 @@ var sx = {
     buttons: {
         width: '100%',
         justifyContent: 'center',
-    }
+    },
 };

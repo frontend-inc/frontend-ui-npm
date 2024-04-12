@@ -6,7 +6,7 @@ type TableHeaderProps = {
     checked?: boolean;
     enableSelect?: boolean;
     enableEdit?: boolean;
-    handleSort?: (e: any) => void;
+    handleSort: (e: any) => void;
     handleSelectAll?: (e: any) => void;
 };
 declare const TableHeaders: React.FC<TableHeaderProps>;
