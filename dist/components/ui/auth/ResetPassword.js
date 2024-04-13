@@ -65,7 +65,8 @@ var ResetPassword = function (props) {
     var handleLogin = function () {
         router.push(loginUrl);
     };
-    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(components_1.Loader, { loading: loading }),
         react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(components_1.ResetPasswordForm, { loading: loading, errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };

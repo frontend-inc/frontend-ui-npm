@@ -25,10 +25,7 @@ var TableContainer = function (props) {
 exports.default = TableContainer;
 var sx = {
     table: {
-        width: {
-            sm: '100%',
-            xs: '100vw',
-        },
+        width: '100%',
         bgcolor: 'background.main',
         '&::-webkit-scrollbar': {
             display: 'none',

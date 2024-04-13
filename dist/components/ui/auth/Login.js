@@ -73,7 +73,8 @@ var Login = function (props) {
     var handleOneTimePassword = function () {
         router.push(oneTimePasswordUrl);
     };
-    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(components_1.Loader, { loading: loading }),
         react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(components_1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleOneTimePassword: oneTimePasswordUrl && handleOneTimePassword, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess }))));
 };

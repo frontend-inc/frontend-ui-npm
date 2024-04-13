@@ -6,26 +6,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
-var LayoutLoader = function (props) {
-    var _a = props.loading, loading = _a === void 0 ? true : _a, _b = props.delay, delay = _b === void 0 ? 500 : _b, children = props.children;
+var Loader = function (props) {
+    var _a = props.loading, loading = _a === void 0 ? true : _a, _b = props.delay, delay = _b === void 0 ? 500 : _b;
     var easeLoading = (0, hooks_1.useDelayedLoading)({
         loading: loading,
         delay: delay,
     }).loading;
-    if (!easeLoading)
-        return children;
     return (react_1.default.createElement(material_1.Backdrop, { open: easeLoading, sx: sx.backdrop },
         react_1.default.createElement(material_1.LinearProgress, { color: "primary", sx: sx.progress })));
 };
-exports.default = LayoutLoader;
+exports.default = Loader;
 var sx = {
     backdrop: {
-        height: '4px',
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        bgcolor: 'transparent !important',
-        zIndex: function (theme) { return theme.zIndex.drawer + 1; },
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        zIndex: function (theme) { return theme.zIndex.modal + 1; },
     },
     progress: {
         height: '4px',

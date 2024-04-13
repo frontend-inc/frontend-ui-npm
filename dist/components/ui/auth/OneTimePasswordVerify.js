@@ -97,7 +97,8 @@ var OneTimePasswordVerify = function (props) {
             handleVerifyOTP();
         }
     }, [oneTimePassword]);
-    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(components_1.Loader, { loading: loading }),
         react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(components_1.OneTimePasswordVerifyMessage, { verified: verified, handleRedirect: handleRedirect, handleLogin: handleLogin }))));
 };

@@ -22,9 +22,14 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.filterDocumentLinks = exports.flattenDocument = exports.getDocumentValue = void 0;
+exports.filterDocumentLinks = exports.getDocumentValue = exports.flattenDocument = void 0;
 var index_1 = require("../constants/index");
 var lodash_1 = require("lodash");
+var flattenDocument = function (resource) {
+    var _a = resource || {}, data = _a.data, rest = __rest(_a, ["data"]);
+    return __assign(__assign({}, rest), data);
+};
+exports.flattenDocument = flattenDocument;
 var getDocumentValue = function (document, field) {
     var _a, _b, _c;
     if (index_1.ATTACHMENT_FIELDS.includes(field === null || field === void 0 ? void 0 : field.variant)) {
@@ -42,11 +47,6 @@ var getDocumentValue = function (document, field) {
     }
 };
 exports.getDocumentValue = getDocumentValue;
-var flattenDocument = function (resource) {
-    var _a = resource || {}, data = _a.data, rest = __rest(_a, ["data"]);
-    return __assign(__assign({}, rest), data);
-};
-exports.flattenDocument = flattenDocument;
 var filterDocumentLinks = function (document, contentType) {
     var _a, _b;
     var documents = (_b = (_a = document === null || document === void 0 ? void 0 : document.document_links) === null || _a === void 0 ? void 0 : _a.filter(function (d) { var _a; return ((_a = d === null || d === void 0 ? void 0 : d.target) === null || _a === void 0 ? void 0 : _a.content_type) === contentType; })) === null || _b === void 0 ? void 0 : _b.map(function (d) { return d.target; });

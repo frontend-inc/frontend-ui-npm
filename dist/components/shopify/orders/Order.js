@@ -44,7 +44,8 @@ var ShopifyCustomerOrder = function (props) {
             findCustomerOrder(orderId);
         }
     }, [orderId]);
-    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(components_1.Loader, { loading: loading }),
         react_1.default.createElement(components_1.AuthScreen, { title: "Order ".concat(order.name), subtitle: (0, moment_1.default)(order === null || order === void 0 ? void 0 : order.processedAt).format('MMMM Do, YYYY') },
             react_1.default.createElement(shopify_1.OrderDetails, { order: order }))));
 };

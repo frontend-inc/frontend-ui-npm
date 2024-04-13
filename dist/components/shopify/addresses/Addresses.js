@@ -106,7 +106,8 @@ var Addresses = function (props) {
             findCustomerAddresses();
         }
     }, [addresses]);
-    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(components_1.Loader, { loading: loading }),
         react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(shopify_1.AddressList, { addresses: addresses, handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
             react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "outlined", onClick: handleAddAddress, startIcon: react_1.default.createElement(lucide_react_1.Plus, null) }, "Add Address"),

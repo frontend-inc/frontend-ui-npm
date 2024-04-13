@@ -178,7 +178,7 @@ var FormWizard = function (props) {
             currentStep == 0 && (react_1.default.createElement(FormCard_1.default, { title: title, description: description, image: image, buttonText: buttonText, handleClick: handleStartClick })),
             currentStep > 0 && (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleChange, handleRemove: handleRemove, resource: resource, setResource: setResource }),
-                react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: endButtonText }))))) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleResetForm })))));
+                react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: endButtonText }))))) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: 'Done', handleClick: handleResetForm })))));
 };
 exports.default = FormWizard;
 var sx = {

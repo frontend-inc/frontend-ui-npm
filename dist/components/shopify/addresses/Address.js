@@ -112,7 +112,8 @@ var Address = function (props) {
             findCustomerAddress(addressId);
         }
     }, [addressId]);
-    return (react_1.default.createElement(components_1.LayoutLoader, { loading: loading },
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(components_1.Loader, { loading: loading }),
         react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(material_1.Stack, { spacing: 1 },
                 react_1.default.createElement(shopify_1.AddressForm, { address: address, handleChange: handleChange }),

@@ -68,7 +68,8 @@ var SignIn = function (props) {
     var handleForgotPassword = function () {
         router.push(forgotPasswordUrl);
     };
-    return (react_1.default.createElement(__1.LayoutLoader, { loading: loading },
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(__1.Loader, { loading: loading }),
         react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(__2.SignInForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword }))));
 };

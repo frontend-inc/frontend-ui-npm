@@ -1,7 +1,7 @@
 import React from 'react';
 type CellButtonProps = {
     children: string;
-    icon?: React.ReactNode;
+    icon: string;
     handleClick?: (value: any, row?: any, field?: any) => void;
 };
 declare const CellButton: React.FC<CellButtonProps>;
