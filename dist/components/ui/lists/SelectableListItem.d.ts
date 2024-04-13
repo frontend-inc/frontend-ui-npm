@@ -3,7 +3,6 @@ type SelectableListItemProps = {
     selected?: boolean;
     title: string;
     description?: string;
-    image?: string;
     icon?: string;
     color?: string;
     handleClick?: () => void;

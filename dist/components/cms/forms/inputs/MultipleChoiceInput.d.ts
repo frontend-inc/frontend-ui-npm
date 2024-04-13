@@ -1,11 +1,17 @@
 import React from 'react';
 export type MultipleChoiceInputProps = {
     label?: string;
+    layout?: 'list' | 'grid';
     direction?: 'row' | 'column';
     name: string;
     value?: any;
-    options: any[];
-    buttonText?: string;
+    options: {
+        label: string;
+        description: string;
+        value: string | number;
+        image: string;
+        icon?: string;
+    }[];
     handleChange: (e: any) => void;
     multiSelect?: boolean;
 };

@@ -6,8 +6,10 @@ export type FormWizardProps = {
     variant?: 'contained' | 'outlined' | 'text';
     fields: any[];
     children?: React.ReactElement[];
-    title: string;
-    description: string;
+    startTitle: string;
+    startDescription: string;
+    startImage: string;
+    startButtonText?: string;
     buttonText?: string;
     image: string;
     endTitle: string;

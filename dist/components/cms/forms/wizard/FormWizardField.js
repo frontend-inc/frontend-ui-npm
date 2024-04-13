@@ -22,7 +22,9 @@ var lodash_1 = require("lodash");
 var FormWizardInput_1 = __importDefault(require("./FormWizardInput"));
 var WIZARD_FIELD_VARIENTS = [
     'multiple_choice',
+    'multiple_choice_images',
     'single_choice',
+    'single_choice_image',
 ];
 var FormWizardField = function (props) {
     var field = props.field, fadeIn = props.fadeIn, resource = props.resource, setResource = props.setResource, handleChange = props.handleChange, handleRemove = props.handleRemove;

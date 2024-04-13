@@ -4,7 +4,11 @@ export type PageHeaderProps = {
     label?: string;
     title?: string;
     description?: string;
-    breadcrumbs?: any;
+    links: {
+        label: string;
+        path: string;
+    }[];
+    maxLinks?: number;
     actions: ActionType[];
     resource?: any;
     enableBorder?: boolean;

@@ -16,25 +16,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var PageHeader = function (props) {
-    var label = props.label, title = props.title, description = props.description, breadcrumbs = props.breadcrumbs, actions = props.actions, resource = props.resource, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a;
-    return (react_1.default.createElement(material_1.Stack, { direction: {
-            xs: 'column',
-            sm: 'row',
-        }, spacing: 1, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(__1.Heading, { label: label, title: title, description: description, textAlign: "left" }),
-        react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            react_1.default.createElement(__1.Actions, { actions: actions, resource: resource }))));
+    var label = props.label, title = props.title, description = props.description, links = props.links, _a = props.maxLinks, maxLinks = _a === void 0 ? 3 : _a, actions = props.actions, resource = props.resource, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
+    return (react_1.default.createElement(material_1.Stack, { sx: sx.root, direction: "column", spacing: 3 },
+        react_1.default.createElement(components_1.Breadcrumbs, { maxLinks: maxLinks, links: links }),
+        react_1.default.createElement(material_1.Stack, { direction: {
+                xs: 'column',
+                sm: 'row',
+            }, spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
+            react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: "left" }),
+            (actions === null || actions === void 0 ? void 0 : actions.length) > 0 && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
+                react_1.default.createElement(components_1.Actions, { actions: actions, resource: resource }))))));
 };
 exports.default = PageHeader;
 var sx = {
     root: {
+        pt: 2,
+        width: '100%',
+    },
+    content: {
         justifyContent: 'space-between',
         width: '100%',
         bgcolor: 'background.default',
     },
-    rootBorder: {
+    contentBorder: {
         borderBottom: 1,
         borderColor: 'divider',
     },
