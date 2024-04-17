@@ -4,6 +4,7 @@ export type ImageProps = {
     height: number;
     width?: number;
     objectFit?: 'cover' | 'contain';
+    label?: string;
     alt?: string;
     bgcolor?: string;
     opacity?: number;

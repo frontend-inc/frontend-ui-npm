@@ -94,7 +94,7 @@ exports.typography = {
         fontFamily: 'Inter',
         textTransform: 'none',
         fontWeight: 600,
-        fontSize: 14,
+        fontSize: 13,
         lineHeight: '1em',
         letterSpacing: 'auto',
     },

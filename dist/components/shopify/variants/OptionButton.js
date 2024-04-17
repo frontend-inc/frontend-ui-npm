@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var OptionButton = function (props) {
     var value = props.value, name = props.name, active = props.active, handleClick = props.handleClick, children = props.children;
-    return (react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), (active && sx.active)), variant: active ? 'contained' : 'outlined', color: "primary", onClick: function () { return handleClick(name, value); } }, children));
+    return (react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), (active && sx.active)), variant: "contained", color: active ? 'primary' : 'secondary', onClick: function () { return handleClick(name, value); } }, children));
 };
 exports.default = OptionButton;
 var sx = {

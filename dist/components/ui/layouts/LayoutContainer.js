@@ -24,7 +24,7 @@ var LayoutContainer = function (props) {
         react_1.default.createElement(components_1.Alert, null),
         react_1.default.createElement(components_1.Notifications, { notifications: notifications }),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (!topNav && sx.sideNav)) },
-            react_1.default.createElement(components_1.ModeTheme, { mode: mode },
+            react_1.default.createElement(components_1.ColorModeTheme, { mode: mode },
                 react_1.default.createElement(components_1.Header, { editing: editing, topNav: topNav, menuItems: headerLinks, enableNotifications: enableNotifications, handleClick: handleClick, enableAuth: enableAuth, enableShopify: enableShopify })),
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (topNav ? sx.contentTopNav : sx.contentSideNav)) },
                 react_1.default.createElement(components_1.LayoutScroll, null,
@@ -32,7 +32,8 @@ var LayoutContainer = function (props) {
                                 sm: "calc(100vh - ".concat(pageMargin, "px)"),
                                 xs: '100vh',
                             } }) }, children),
-                    react_1.default.createElement(components_1.Footer, { menuItems: footerLinks, handleClick: handleClick, facebook: facebook, instagram: instagram, linkedin: linkedin, twitter: twitter, youtube: youtube, tiktok: tiktok }))))));
+                    react_1.default.createElement(components_1.Footer, { menuItems: footerLinks, handleClick: handleClick, facebook: facebook, instagram: instagram, linkedin: linkedin, twitter: twitter, youtube: youtube, tiktok: tiktok })))),
+        react_1.default.createElement(components_1.AuthModal, null)));
 };
 exports.default = LayoutContainer;
 var sx = {

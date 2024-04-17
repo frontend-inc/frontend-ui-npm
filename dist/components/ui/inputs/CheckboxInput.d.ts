@@ -4,7 +4,7 @@ type CheckboxInputProps = {
     name: string;
     value: boolean;
     placeholder: string;
-    label: string;
+    label?: string;
     handleChange: (e: SyntheticEventType) => void;
     disableBorder?: boolean;
 };

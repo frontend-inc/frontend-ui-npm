@@ -48,13 +48,13 @@ var router_1 = require("next/router");
 var TopNavShopifyAuthButton = function (props) {
     var handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
-        react_1.default.createElement(components_1.Icon, { name: "User", size: 24 })));
+        react_1.default.createElement(components_1.Icon, { name: "ShoppingBag", size: 24 })));
 };
 var SideNavShopifyAuthButton = function (props) {
     var handleClick = props.handleClick;
     return (react_1.default.createElement(material_2.ListItem, { disablePadding: true, disableGutters: true },
         react_1.default.createElement(material_2.ListItemButton, { onClick: handleClick },
-            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, "My Account") }))));
+            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, "My Orders") }))));
 };
 var ShopifyAuth = function (props) {
     var router = (0, router_1.useRouter)();

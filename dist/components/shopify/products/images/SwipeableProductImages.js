@@ -41,30 +41,30 @@ var react_1 = __importStar(require("react"));
 var react_swipeable_views_1 = __importDefault(require("react-swipeable-views"));
 var components_1 = require("../../../../components");
 var material_1 = require("@mui/material");
-var index_1 = require("../../../../constants/index");
 var frontend_shopify_1 = require("frontend-shopify");
 var SwipeableProductImages = function (props) {
     var _a, _b;
-    var product = props.product, _c = props.height, height = _c === void 0 ? index_1.PRODUCT_CARD_HEIGHT : _c, _d = props.width, width = _d === void 0 ? index_1.PRODUCT_CARD_WIDTH : _d, handleClick = props.handleClick, _e = props.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = props.responsiveHeight, responsiveHeight = _f === void 0 ? false : _f;
+    var product = props.product, _c = props.height, height = _c === void 0 ? 320 : _c, handleClick = props.handleClick, _d = props.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = props.disableBorderRadius, disableBorderRadius = _e === void 0 ? false : _e, _f = props.responsiveHeight, responsiveHeight = _f === void 0 ? false : _f;
     var _g = (0, react_1.useState)(0), activeStep = _g[0], setActiveStep = _g[1];
     // @ts-ignore
     var maxSteps = (_a = product === null || product === void 0 ? void 0 : product.images) === null || _a === void 0 ? void 0 : _a.edges.length;
     var handleStepChange = function (step) {
         setActiveStep(step);
     };
-    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), { height: !responsiveHeight && "".concat(height, "px"), minHeight: "".concat(height, "px"), minWidth: !responsiveHeight && "".concat(width, "px") }), direction: "column" },
+    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), { height: !responsiveHeight ? "".concat(height, "px") : null, minHeight: "".concat(height, "px"), width: {
+                sm: '100%',
+                xs: "100%"
+            } }), direction: "column" },
         react_1.default.createElement(react_swipeable_views_1.default, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true }, 
         // @ts-ignore
         (_b = product === null || product === void 0 ? void 0 : product.images) === null || _b === void 0 ? void 0 : _b.edges.map(function (_a) {
             var image = _a.node;
             return (react_1.default.createElement(material_1.Box, { key: image.id, sx: __assign({}, sx.image) },
                 react_1.default.createElement(components_1.TouchableOpacity, { key: image.id, handleClick: handleClick },
-                    react_1.default.createElement("img", { src: (0, frontend_shopify_1.shopifyResizeImage)(image === null || image === void 0 ? void 0 : image.url, {
-                            width: width * 2,
-                            height: height * 2,
-                        }), alt: product === null || product === void 0 ? void 0 : product.title, width: width, height: height, style: {
-                            objectFit: objectFit,
-                        } }))));
+                    react_1.default.createElement(components_1.Image, { src: (0, frontend_shopify_1.shopifyResizeImage)(image === null || image === void 0 ? void 0 : image.url, {
+                            width: 600,
+                            height: 600,
+                        }), alt: product === null || product === void 0 ? void 0 : product.title, height: height, objectFit: objectFit, disableBorderRadius: disableBorderRadius }))));
         })),
         maxSteps > 1 && (react_1.default.createElement(material_1.MobileStepper, { sx: sx.stepper, steps: maxSteps, position: "static", activeStep: activeStep, backButton: react_1.default.createElement(material_1.Box, null), nextButton: react_1.default.createElement(material_1.Box, null) }))));
 };

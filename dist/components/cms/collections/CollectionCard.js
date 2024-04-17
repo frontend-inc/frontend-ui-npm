@@ -30,18 +30,11 @@ var __1 = require("../..");
 var CollectionCard = function (props) {
     var _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, rest = __rest(props, ["layout", "style"]);
     var COMPONENTS = {
-        list: {
-            card: __1.CardHoriz,
-            avatar: __1.AvatarHoriz,
-            cover: __1.CoverHoriz,
-        },
-        grid: {
-            card: __1.CardVert,
-            avatar: __1.AvatarVert,
-            cover: __1.CoverVert,
-        },
+        card: __1.Card,
+        avatar: __1.AvatarCard,
+        cover: __1.Cover
     };
-    var Component = COMPONENTS[layout][style] || __1.CardVert;
-    return react_1.default.createElement(Component, __assign({}, rest));
+    var Component = COMPONENTS[style] || __1.Card;
+    return (react_1.default.createElement(Component, __assign({ direction: layout === 'list' ? 'column' : 'row' }, rest)));
 };
 exports.default = CollectionCard;

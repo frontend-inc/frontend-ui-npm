@@ -18,10 +18,19 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
+var theme_1 = require("../../../theme");
 var Modal = function (props) {
-    var open = props.open, _a = props.loading, loading = _a === void 0 ? false : _a, handleClose = props.handleClose, title = props.title, subtitle = props.subtitle, actions = props.actions, children = props.children, maxWidth = props.maxWidth, secondaryActions = props.secondaryActions, _b = props.disablePadding, disablePadding = _b === void 0 ? false : _b, fullScreen = props.fullScreen, _c = props.enableCancel, enableCancel = _c === void 0 ? false : _c, _d = props.hideBackdrop, hideBackdrop = _d === void 0 ? false : _d;
+    var open = props.open, _a = props.loading, loading = _a === void 0 ? false : _a, handleClose = props.handleClose, title = props.title, subtitle = props.subtitle, actions = props.actions, children = props.children, _b = props.maxWidth, maxWidth = _b === void 0 ? 'sm' : _b, secondaryActions = props.secondaryActions, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, fullScreen = props.fullScreen, _d = props.enableCancel, enableCancel = _d === void 0 ? false : _d, _e = props.hideBackdrop, hideBackdrop = _e === void 0 ? false : _e;
     var isMobile = (0, hooks_1.useResponsive)().isMobile;
-    return (react_1.default.createElement(material_1.Dialog, { sx: sx.root, fullWidth: true, maxWidth: maxWidth || 'sm', fullScreen: isMobile || fullScreen === true ? true : false, open: open, onClose: handleClose, hideBackdrop: hideBackdrop },
+    return (react_1.default.createElement(material_1.Dialog, { sx: __assign(__assign({}, sx.root), { 
+            // Manually reset the maxWidth breakpoints 
+            // since these are modifed in the Editor
+            '& .MuiDialog-paper': {
+                maxWidth: {
+                    sm: theme_1.muiTheme.breakpoints.values[maxWidth],
+                    xs: '100vw'
+                }
+            } }), fullWidth: true, fullScreen: isMobile || fullScreen === true ? true : false, open: open, onClose: handleClose, hideBackdrop: hideBackdrop },
         react_1.default.createElement(material_1.DialogTitle, { sx: sx.dialogTitleContainer },
             react_1.default.createElement(material_1.Box, { sx: sx.dialogTitleContent },
                 react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "textPrimary", sx: sx.title }, title),

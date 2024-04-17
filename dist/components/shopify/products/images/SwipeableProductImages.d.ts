@@ -7,6 +7,7 @@ type SwipeableProductImagesProps = {
     handleClick?: () => void;
     objectFit?: 'contain' | 'cover';
     responsiveHeight?: boolean;
+    disableBorderRadius?: boolean;
 };
 declare const SwipeableProductImages: React.FC<SwipeableProductImagesProps>;
 export default SwipeableProductImages;

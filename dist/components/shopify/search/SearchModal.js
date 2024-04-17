@@ -41,11 +41,8 @@ var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var frontend_shopify_2 = require("frontend-shopify");
 var addons_1 = require("../../../hooks/addons");
-var lucide_react_1 = require("lucide-react");
-var styles_1 = require("@mui/material/styles");
 var SearchModal = function () {
     // Minimum number of characters to track analytics
-    var theme = (0, styles_1.useTheme)();
     var MIN_ANALYTICS_CHARS = 5;
     var trackProductsSearched = (0, addons_1.useSegment)().trackProductsSearched;
     var _a = (0, react_1.useContext)(frontend_shopify_1.ShopContext), setMenuOpen = _a.setMenuOpen, searchOpen = _a.searchOpen, setSearchOpen = _a.setSearchOpen;
@@ -63,7 +60,7 @@ var SearchModal = function () {
         setExpanded(false);
     };
     var handleClear = function () { return setKeywords(''); };
-    var handleSearch = function () {
+    var handleSearch = function (keywords) {
         if ((keywords === null || keywords === void 0 ? void 0 : keywords.length) >= MIN_ANALYTICS_CHARS) {
             trackProductsSearched(keywords);
         }
@@ -72,7 +69,7 @@ var SearchModal = function () {
     };
     (0, react_1.useEffect)(function () {
         if ((keywords === null || keywords === void 0 ? void 0 : keywords.length) > 0) {
-            handleSearch();
+            handleSearch(keywords);
         }
         else {
             setProducts(null);
@@ -85,10 +82,10 @@ var SearchModal = function () {
                 react_1.default.createElement(material_1.Stack, { sx: sx.searchContainer, direction: "row", spacing: 1 },
                     react_1.default.createElement(material_1.Box, { sx: sx.spacer }),
                     react_1.default.createElement(material_1.Box, { sx: sx.searchInput },
-                        react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, handleChange: handleChange, placeholder: 'Search...' })),
+                        react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, handleChange: handleChange, handleSearch: handleSearch, placeholder: 'Search...' })),
                     react_1.default.createElement(material_1.Box, { sx: sx.spacer },
                         react_1.default.createElement(material_1.IconButton, { onClick: handleClose },
-                            react_1.default.createElement(lucide_react_1.X, { size: 24, color: theme.palette.text.primary }))))),
+                            react_1.default.createElement(components_1.Icon, { name: "X", size: 24 }))))),
             react_1.default.createElement(material_1.Container, { maxWidth: "md" },
                 react_1.default.createElement(shopify_1.ProductGrid, { loading: loading, products: products, xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }),
                 (keywords === null || keywords === void 0 ? void 0 : keywords.length) > 0 && !loading && (products === null || products === void 0 ? void 0 : products.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Search', title: "No search results", description: "Try another search term" }))))));

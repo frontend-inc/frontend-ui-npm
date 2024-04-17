@@ -193,7 +193,7 @@ export declare const muiTheme: {
             light: string;
         };
         primary: {
-            main: "#3f51b5";
+            main: "#212121";
         };
         secondary: {
             main: "#eeeeee";

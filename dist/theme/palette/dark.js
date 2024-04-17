@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = {
     primary: {
-        main: '#538BFF',
-        contrastText: '#ffffff',
+        main: '#FFFFFF',
+        contrastText: '#000000',
     },
     secondary: {
         main: '#FFFFFF',

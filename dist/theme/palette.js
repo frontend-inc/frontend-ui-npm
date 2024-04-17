@@ -27,7 +27,7 @@ exports.palette = void 0;
 var COLORS = __importStar(require("@mui/material/colors"));
 exports.palette = {
     primary: {
-        main: COLORS.indigo[500],
+        main: COLORS.grey[900],
     },
     secondary: {
         main: COLORS.grey[200],

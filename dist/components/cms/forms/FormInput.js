@@ -38,6 +38,9 @@ var FormInput = function (props) {
             multiline: true,
             rows: 6
         },
+        "select": {
+            options: options
+        },
         "number": {
             type: "number"
         },

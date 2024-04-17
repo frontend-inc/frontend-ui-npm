@@ -32,6 +32,6 @@ var VideoVert = function (props) {
     var handleItemClick = function () {
         setOpen(true);
     };
-    return !open ? (react_1.default.createElement(__1.CoverHoriz, { title: title, image: image, handleClick: handleItemClick, buttonText: buttonText, textVariant: textVariant, objectFit: objectFit, height: height, width: width, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, icon: "PlayCircle" })) : (react_1.default.createElement(__1.VideoModal, { title: title, src: video, open: open, handleClose: function () { return setOpen(false); } }));
+    return !open ? (react_1.default.createElement(__1.Cover, { direction: "column", title: title, image: image, handleClick: handleItemClick, buttonText: buttonText, textVariant: textVariant, objectFit: objectFit, height: height, width: width, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, icon: "PlayCircle" })) : (react_1.default.createElement(__1.VideoModal, { title: title, src: video, open: open, handleClose: function () { return setOpen(false); } }));
 };
 exports.default = VideoVert;

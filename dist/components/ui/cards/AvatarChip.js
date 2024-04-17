@@ -15,8 +15,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var AvatarHoriz_1 = __importDefault(require("./AvatarHoriz"));
+var ChipHoriz_1 = __importDefault(require("./variants/ChipHoriz"));
 var AvatarChip = function (props) {
-    return react_1.default.createElement(AvatarHoriz_1.default, __assign({ height: 32, width: 32 }, props, { description: null }));
+    return react_1.default.createElement(ChipHoriz_1.default, __assign({}, props));
 };
 exports.default = AvatarChip;

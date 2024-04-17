@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var WebCoverImage = function (props) {
-    var bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, rest = __rest(props, ["bgcolor", "py", "px", "maxWidth"]);
-    return (react_1.default.createElement(components_1.Section, { bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
+    var enableTransitions = props.enableTransitions, bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, rest = __rest(props, ["enableTransitions", "bgcolor", "py", "px", "maxWidth"]);
+    return (react_1.default.createElement(components_1.Section, { enableTransitions: enableTransitions, bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_2.CoverImage, __assign({}, rest))));
 };
 exports.default = WebCoverImage;

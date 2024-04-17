@@ -38,8 +38,8 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var theme_1 = require("../../theme");
 var Section = function (props) {
-    var children = props.children, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _a = props.py, py = _a === void 0 ? 6 : _a, _b = props.px, px = _b === void 0 ? 3 : _b;
-    var _c = (0, react_1.useState)(theme_1.muiTheme.breakpoints.values.md), width = _c[0], setWidth = _c[1];
+    var _a = props.enableTransitions, enableTransitions = _a === void 0 ? false : _a, children = props.children, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _b = props.py, py = _b === void 0 ? 6 : _b, _c = props.px, px = _c === void 0 ? 3 : _c;
+    var _d = (0, react_1.useState)(theme_1.muiTheme.breakpoints.values.md), width = _d[0], setWidth = _d[1];
     // Since breakpoints are modified to
     // to compensate for the extra width of the Editor
     // we need to adjust the width of the Section component manually
@@ -58,7 +58,7 @@ var Section = function (props) {
     }, [maxWidth]);
     return (react_1.default.createElement(material_1.Fade, { in: true, timeout: 1000 },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { bgcolor: bgcolor }) },
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.container), { py: py, px: px, maxWidth: width }) }, children))));
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.container), (enableTransitions && sx.containerTransitions)), { py: py, px: px, maxWidth: width }) }, children))));
 };
 exports.default = Section;
 var sx = {
@@ -76,6 +76,9 @@ var sx = {
         '&::-webkit-scrollbar': {
             display: 'none',
         },
+    },
+    containerTransitions: {
+        transition: 'all 0.3s ease-in-out',
     },
     title: {
         width: '100%',

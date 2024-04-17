@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var Logo_1 = __importDefault(require("./Logo"));
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
@@ -56,7 +56,7 @@ var DesktopTopNav = function (props) {
                         react_1.default.createElement(Logo_1.default, { src: logo, width: 120, height: 40, handleClick: function () { return handleClick('/'); } })),
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu }, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.map(function (menuItem, index) { return (react_1.default.createElement(TopNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); })),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu },
-                        enableAuth && (react_1.default.createElement(__1.AuthButton, { editing: editing, myAccountUrl: "".concat(clientUrl, "/my-account") })),
+                        enableAuth && (react_1.default.createElement(components_1.AuthButton, { editing: editing, myAccountUrl: "".concat(clientUrl, "/auth/my-account") })),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement(shopify_1.ShopifyAuth, null),
                             react_1.default.createElement(shopify_1.SearchButton, null),
