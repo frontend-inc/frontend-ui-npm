@@ -13,10 +13,10 @@ var AuthScreen = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Container, { maxWidth: "sm" },
             react_1.default.createElement(material_1.Paper, { elevation: 0, sx: sx.paper },
-                react_1.default.createElement(material_1.Box, { sx: sx.logo }, logo && (react_1.default.createElement(image_1.default, { src: logo, alt: "Logo", height: 48, width: 48 }))),
+                react_1.default.createElement(material_1.Box, { sx: sx.logo }, logo && react_1.default.createElement(image_1.default, { src: logo, alt: "Logo", height: 48, width: 48 })),
                 react_1.default.createElement(material_1.Box, { sx: sx.titles },
                     react_1.default.createElement(material_1.Typography, { variant: "h4", sx: sx.title }, title),
-                    subtitle && (react_1.default.createElement(material_1.Typography, { variant: "body1", sx: sx.subtitle }, subtitle))),
+                    subtitle && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.secondary', sx: sx.subtitle }, subtitle))),
                 children))));
 };
 exports.default = AuthScreen;
@@ -27,7 +27,7 @@ var sx = {
         alignItems: 'center',
         justifyContent: 'center',
         bgcolor: 'background.default',
-        height: '100%',
+        height: 'calc(100vh - 120px)',
     },
     titles: {
         mb: 1,

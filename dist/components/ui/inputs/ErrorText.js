@@ -14,6 +14,7 @@ var ErrorText = function (props) {
 exports.default = ErrorText;
 var sx = {
     root: {
+        pt: 1,
         color: 'error.main',
         fontSize: '0.75rem',
     },

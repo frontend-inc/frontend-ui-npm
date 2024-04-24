@@ -1,5 +1,6 @@
 import React from 'react';
 export type FeaturedCardProps = {
+    label?: string;
     title?: string;
     description?: string;
     image?: string;

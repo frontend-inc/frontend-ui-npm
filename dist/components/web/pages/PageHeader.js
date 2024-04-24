@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var PageHeader = function (props) {
     var label = props.label, title = props.title, description = props.description, links = props.links, _a = props.maxLinks, maxLinks = _a === void 0 ? 3 : _a, actions = props.actions, resource = props.resource, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
-    return (react_1.default.createElement(material_1.Stack, { sx: sx.root, direction: "column", spacing: 3 },
+    return (react_1.default.createElement(material_1.Stack, { sx: sx.root, direction: "column", spacing: 2 },
         react_1.default.createElement(components_1.Breadcrumbs, { maxLinks: maxLinks, links: links }),
         react_1.default.createElement(material_1.Stack, { direction: {
                 xs: 'column',
@@ -46,8 +46,11 @@ var sx = {
     },
     actions: {
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'flex-end',
-        py: 1,
+        pb: {
+            sm: 0,
+            xs: 1,
+        },
     },
 };

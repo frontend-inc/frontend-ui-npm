@@ -17,8 +17,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var NoImage = function (props) {
-    var _a = props.height, height = _a === void 0 ? 100 : _a, width = props.width, enableBorder = props.enableBorder, disableBorderRadius = props.disableBorderRadius;
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.root), (enableBorder && sx.enableBorder)), (disableBorderRadius && sx.disableBorderRadius)), { height: height ? "".concat(height, "px") : '100%', width: width ? "".concat(width, "px") : '100%' }) }));
+    var _a = props.darkMode, darkMode = _a === void 0 ? false : _a, _b = props.height, height = _b === void 0 ? 100 : _b, width = props.width, disableBorder = props.disableBorder, disableBorderRadius = props.disableBorderRadius;
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign(__assign({}, sx.root), (disableBorder && sx.disableBorder)), (disableBorderRadius && sx.disableBorderRadius)), (darkMode && sx.darkMode)), { height: height ? "".concat(height, "px") : '100%', width: width ? "".concat(width, "px") : '100%' }) }));
 };
 exports.default = NoImage;
 var sx = {
@@ -31,11 +31,13 @@ var sx = {
         borderRadius: 1,
         backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)',
     },
-    enableBorder: {
-        border: '1px solid',
-        borderColor: 'divider',
+    darkMode: {
+        backgroundImage: 'linear-gradient(45deg, #666666, #222222,#000000)',
+    },
+    disableBorder: {
+        border: 'none',
     },
     disableBorderRadius: {
         borderRadius: 0,
-    }
+    },
 };

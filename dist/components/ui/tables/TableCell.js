@@ -34,23 +34,23 @@ var sx = {
             display: 'none',
         },
         whiteSpace: 'nowrap',
-        maxWidth: '240px'
+        maxWidth: '240px',
     },
     cellSmall: {
         minWidth: '40px',
-        width: '40px'
+        width: '40px',
     },
     cellHeader: {
         borderBottom: '3px solid',
-        zIndex: function (theme) { return theme.zIndex.modal - 2; },
+        zIndex: 1,
     },
     cellSticky: {
         position: 'sticky',
         left: 0,
         borderRight: '3px solid',
-        zIndex: function (theme) { return theme.zIndex.modal - 3; },
+        zIndex: 2,
     },
     cellStickyHeader: {
-        zIndex: function (theme) { return theme.zIndex.modal - 1; },
-    }
+        zIndex: 3,
+    },
 };

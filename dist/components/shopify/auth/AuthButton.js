@@ -31,7 +31,7 @@ var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var lucide_react_1 = require("lucide-react");
 var context_1 = require("../../../context");
-var AuthAvatarButton = function () {
+var AuthButton = function () {
     var router = (0, router_1.useRouter)();
     var _a = (0, frontend_shopify_1.useAuth)(), logout = _a.logout, customer = _a.customer;
     var _b = (0, hooks_1.useMenu)(), open = _b.open, anchorEl = _b.anchorEl, closeMenu = _b.closeMenu, toggleMenu = _b.toggleMenu;
@@ -55,7 +55,7 @@ var AuthAvatarButton = function () {
             react_1.default.createElement(lucide_react_1.User, { size: 32, color: "black" })),
         react_1.default.createElement(components_1.UserMenu, { open: open, anchorEl: anchorEl, toggleMenu: toggleMenu, handleLogoutClick: handleLogoutClick, handleClick: handleClick })));
 };
-exports.default = AuthAvatarButton;
+exports.default = AuthButton;
 var sx = {
     button: {
         bgcolor: 'background.paper',

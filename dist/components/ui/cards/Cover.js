@@ -20,9 +20,9 @@ var CoverHoriz_1 = __importDefault(require("./variants/CoverHoriz"));
 var Cover = function (props) {
     var direction = props.direction;
     switch (direction) {
-        case 'column':
-            return react_1.default.createElement(CoverVert_1.default, __assign({}, props));
         case 'row':
+            return react_1.default.createElement(CoverVert_1.default, __assign({}, props));
+        case 'column':
             return react_1.default.createElement(CoverHoriz_1.default, __assign({}, props));
         default:
             return react_1.default.createElement(CoverVert_1.default, __assign({}, props));

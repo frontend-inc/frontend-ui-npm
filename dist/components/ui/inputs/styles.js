@@ -34,6 +34,9 @@ exports.sx = {
             borderColor: 'error.main',
         },
     },
+    inputContainer: {
+        width: '100%',
+    },
     paper: {
         bgcolor: 'background.paper',
         mt: 1,
@@ -55,13 +58,16 @@ exports.sx = {
         position: 'relative',
     },
     label: {
-        mb: 0,
         minWidth: '100px',
     },
     stack: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'flex-start',
         alignItems: 'flex-start',
     },
     stackVertical: {
+        justifyContent: 'flex-start',
         alignItems: 'center',
     },
 };

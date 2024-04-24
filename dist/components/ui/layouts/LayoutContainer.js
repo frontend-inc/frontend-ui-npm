@@ -17,23 +17,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
+var components_2 = require("../../../components");
 var LayoutContainer = function (props) {
-    var children = props.children, _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.mode, mode = _b === void 0 ? 'accent' : _b, _c = props.topNav, topNav = _c === void 0 ? false : _c, handleClick = props.handleClick, headerLinks = props.headerLinks, footerLinks = props.footerLinks, notifications = props.notifications, _d = props.enableAuth, enableAuth = _d === void 0 ? false : _d, _e = props.enableShopify, enableShopify = _e === void 0 ? false : _e, facebook = props.facebook, instagram = props.instagram, linkedin = props.linkedin, twitter = props.twitter, youtube = props.youtube, tiktok = props.tiktok, _f = props.pageMargin, pageMargin = _f === void 0 ? 201 : _f;
-    var enableNotifications = (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0;
+    var children = props.children, header = props.header, footer = props.footer, notifications = props.notifications, _a = props.enableSideNav, enableSideNav = _a === void 0 ? false : _a, _b = props.pageMargin, pageMargin = _b === void 0 ? 201 : _b;
     return (react_1.default.createElement(material_1.Box, { sx: sx.layout },
         react_1.default.createElement(components_1.Alert, null),
-        react_1.default.createElement(components_1.Notifications, { notifications: notifications }),
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (!topNav && sx.sideNav)) },
-            react_1.default.createElement(components_1.ColorModeTheme, { mode: mode },
-                react_1.default.createElement(components_1.Header, { editing: editing, topNav: topNav, menuItems: headerLinks, enableNotifications: enableNotifications, handleClick: handleClick, enableAuth: enableAuth, enableShopify: enableShopify })),
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (topNav ? sx.contentTopNav : sx.contentSideNav)) },
+        (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0 && (react_1.default.createElement(components_2.Notifications, { notifications: notifications })),
+        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableSideNav && sx.sideNav)) },
+            header,
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (enableSideNav ? sx.contentSideNav : sx.contentTopNav)) },
                 react_1.default.createElement(components_1.LayoutScroll, null,
                     react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.page), { minHeight: {
                                 sm: "calc(100vh - ".concat(pageMargin, "px)"),
                                 xs: '100vh',
                             } }) }, children),
-                    react_1.default.createElement(components_1.Footer, { menuItems: footerLinks, handleClick: handleClick, facebook: facebook, instagram: instagram, linkedin: linkedin, twitter: twitter, youtube: youtube, tiktok: tiktok })))),
-        react_1.default.createElement(components_1.AuthModal, null)));
+                    footer)))));
 };
 exports.default = LayoutContainer;
 var sx = {

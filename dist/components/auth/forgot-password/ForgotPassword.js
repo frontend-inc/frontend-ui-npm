@@ -80,6 +80,6 @@ var ForgotPassword = function (props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.Loader, { loading: loading }),
         react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
-            react_1.default.createElement(__1.ForgotPasswordForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
+            react_1.default.createElement(__1.ForgotPasswordForm, { loading: loading, errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
 };
 exports.default = ForgotPassword;

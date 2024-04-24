@@ -53,7 +53,7 @@ var SwipeableProductImages = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), { height: !responsiveHeight ? "".concat(height, "px") : null, minHeight: "".concat(height, "px"), width: {
                 sm: '100%',
-                xs: "100%"
+                xs: '100%',
             } }), direction: "column" },
         react_1.default.createElement(react_swipeable_views_1.default, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true }, 
         // @ts-ignore

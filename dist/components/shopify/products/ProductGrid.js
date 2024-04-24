@@ -47,7 +47,7 @@ exports.default = ProductGrid;
 var sx = {
     item: {
         p: 1,
-        gridColumn: 'span 1'
+        gridColumn: 'span 1',
     },
     grid: {
         maxWidth: '100%',
@@ -57,6 +57,6 @@ var sx = {
             md: '1fr 1fr 1fr',
             sm: '1fr 1fr',
             xs: '1fr',
-        }
-    }
+        },
+    },
 };

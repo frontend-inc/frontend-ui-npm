@@ -10,6 +10,7 @@ export type ImageProps = {
     opacity?: number;
     enableGradient?: boolean;
     enableOverlay?: boolean;
+    disableBorder?: boolean;
     disableBorderRadius?: boolean;
 };
 declare const Image: React.FC<ImageProps>;

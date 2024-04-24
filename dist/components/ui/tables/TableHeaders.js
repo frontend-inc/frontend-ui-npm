@@ -12,7 +12,7 @@ var TableHeaders = function (props) {
         react_1.default.createElement(material_1.TableRow, null,
             enableSelect && (react_1.default.createElement(components_1.TableCell, { sticky: true, header: true, small: true },
                 react_1.default.createElement(material_1.Checkbox, { checked: checked, onChange: handleSelectAll, value: "true" }))),
-            enableEdit && (react_1.default.createElement(components_1.TableCell, { header: true, small: true })), fields === null || fields === void 0 ? void 0 :
+            enableEdit && react_1.default.createElement(components_1.TableCell, { header: true, small: true }), fields === null || fields === void 0 ? void 0 :
             fields.map(function (field, index) { return (react_1.default.createElement(components_1.TableCell, { header: true, key: index },
                 react_1.default.createElement(components_1.CellHeader, { field: field, sortBy: sortBy, sortDirection: sortDirection, handleSort: handleSort }))); }))));
 };

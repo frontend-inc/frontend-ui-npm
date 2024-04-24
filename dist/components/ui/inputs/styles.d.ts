@@ -31,6 +31,9 @@ export declare const sx: {
             borderColor: string;
         };
     };
+    inputContainer: {
+        width: string;
+    };
     paper: {
         bgcolor: string;
         mt: number;
@@ -52,13 +55,16 @@ export declare const sx: {
         position: string;
     };
     label: {
-        mb: number;
         minWidth: string;
     };
     stack: {
+        width: string;
+        display: string;
+        justifyContent: string;
         alignItems: string;
     };
     stackVertical: {
+        justifyContent: string;
         alignItems: string;
     };
 };

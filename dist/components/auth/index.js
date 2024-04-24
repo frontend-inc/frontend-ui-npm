@@ -3,7 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProfileForm = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.SignupForm = exports.Signup = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.MyAccountForm = exports.MyAccount = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthButton = exports.AuthAvatar = exports.AuthRequired = void 0;
+exports.ProfileForm = exports.Profile = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.MyAccountForm = exports.MyAccount = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthButton = exports.AuthAvatar = exports.AuthRequired = exports.AuthorizationForm = exports.AuthorizationModal = void 0;
+var AuthorizationModal_1 = require("./modals/AuthorizationModal");
+Object.defineProperty(exports, "AuthorizationModal", { enumerable: true, get: function () { return __importDefault(AuthorizationModal_1).default; } });
+var AuthorizationForm_1 = require("./authorization/AuthorizationForm");
+Object.defineProperty(exports, "AuthorizationForm", { enumerable: true, get: function () { return __importDefault(AuthorizationForm_1).default; } });
 var AuthRequired_1 = require("./AuthRequired");
 Object.defineProperty(exports, "AuthRequired", { enumerable: true, get: function () { return __importDefault(AuthRequired_1).default; } });
 var AuthAvatar_1 = require("./avatars/AuthAvatar");
@@ -52,6 +56,10 @@ var ResetPassword_1 = require("./forgot-password/ResetPassword");
 Object.defineProperty(exports, "ResetPassword", { enumerable: true, get: function () { return __importDefault(ResetPassword_1).default; } });
 var ResetPasswordForm_1 = require("./forgot-password/ResetPasswordForm");
 Object.defineProperty(exports, "ResetPasswordForm", { enumerable: true, get: function () { return __importDefault(ResetPasswordForm_1).default; } });
+var SignInButton_1 = require("./buttons/SignInButton");
+Object.defineProperty(exports, "SignInButton", { enumerable: true, get: function () { return __importDefault(SignInButton_1).default; } });
+var SignUpButton_1 = require("./buttons/SignUpButton");
+Object.defineProperty(exports, "SignUpButton", { enumerable: true, get: function () { return __importDefault(SignUpButton_1).default; } });
 var Signup_1 = require("./signup/Signup");
 Object.defineProperty(exports, "Signup", { enumerable: true, get: function () { return __importDefault(Signup_1).default; } });
 var SignupForm_1 = require("./signup/SignupForm");
@@ -62,6 +70,8 @@ var VerifyPinForm_1 = require("./verify/VerifyPinForm");
 Object.defineProperty(exports, "VerifyPinForm", { enumerable: true, get: function () { return __importDefault(VerifyPinForm_1).default; } });
 var VerifySendPinForm_1 = require("./verify/VerifySendPinForm");
 Object.defineProperty(exports, "VerifySendPinForm", { enumerable: true, get: function () { return __importDefault(VerifySendPinForm_1).default; } });
-// Profiles 
+// Profiles
+var Profile_1 = require("./profiles/Profile");
+Object.defineProperty(exports, "Profile", { enumerable: true, get: function () { return __importDefault(Profile_1).default; } });
 var ProfileForm_1 = require("./profiles/ProfileForm");
 Object.defineProperty(exports, "ProfileForm", { enumerable: true, get: function () { return __importDefault(ProfileForm_1).default; } });

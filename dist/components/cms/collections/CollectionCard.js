@@ -32,7 +32,7 @@ var CollectionCard = function (props) {
     var COMPONENTS = {
         card: __1.Card,
         avatar: __1.AvatarCard,
-        cover: __1.Cover
+        cover: __1.Cover,
     };
     var Component = COMPONENTS[style] || __1.Card;
     return (react_1.default.createElement(Component, __assign({ direction: layout === 'list' ? 'column' : 'row' }, rest)));

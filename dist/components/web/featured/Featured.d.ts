@@ -2,6 +2,7 @@ import React from 'react';
 export type FeaturedProps = {
     items: {
         icon?: string;
+        label?: string;
         title?: string;
         description?: string;
         image?: string;

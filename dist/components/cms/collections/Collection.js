@@ -104,8 +104,9 @@ var Collection = function (props) {
         }
     }, [url, perPage]);
     (0, react_1.useEffect)(function () {
-        if ((activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length) >= 0) {
-            findMany(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters), page: 1, per_page: perPage }));
+        console.log('ACTIVE FILTERS', activeFilters);
+        if (activeFilters) {
+            findMany(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters) }));
         }
     }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },

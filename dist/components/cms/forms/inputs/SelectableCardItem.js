@@ -25,7 +25,7 @@ var SelectableCardItem = function (props) {
                 react_1.default.createElement(components_1.Image, { src: image, height: 200, objectFit: 'cover', alt: title, disableBorderRadius: true })),
             react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
                 react_1.default.createElement(material_1.Stack, { spacing: 0 },
-                    react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: 'body1' }, title),
+                    react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "body1" }, title),
                     description && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2" }, description)))))));
 };
 exports.default = SelectableCardItem;

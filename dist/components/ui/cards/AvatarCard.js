@@ -20,9 +20,9 @@ var AvatarHoriz_1 = __importDefault(require("./variants/AvatarHoriz"));
 var AvatarCard = function (props) {
     var direction = props.direction;
     switch (direction) {
-        case 'column':
-            return react_1.default.createElement(AvatarVert_1.default, __assign({}, props));
         case 'row':
+            return react_1.default.createElement(AvatarVert_1.default, __assign({}, props));
+        case 'column':
             return react_1.default.createElement(AvatarHoriz_1.default, __assign({}, props));
         default:
             return react_1.default.createElement(AvatarVert_1.default, __assign({}, props));

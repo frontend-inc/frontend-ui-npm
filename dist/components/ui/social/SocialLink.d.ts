@@ -1,6 +1,6 @@
 import React from 'react';
 type SocialLinkProps = {
-    provider: 'facebook' | 'instagram' | 'linkedin' | 'twitter' | 'youtube' | 'tiktok' | 'blog';
+    provider: string;
     url: string;
 };
 declare const SocialLink: React.FC<SocialLinkProps>;

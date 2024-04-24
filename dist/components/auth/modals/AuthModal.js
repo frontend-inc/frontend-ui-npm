@@ -77,68 +77,78 @@ var router_1 = require("next/router");
 var material_1 = require("@mui/material");
 var context_1 = require("../../../context");
 var AuthModal = function (props) {
+    var _a = props.disableUsername, disableUsername = _a === void 0 ? false : _a;
     var router = (0, router_1.useRouter)();
     var appId = router.query.app_id;
-    var _a = (0, react_1.useContext)(context_1.AppContext), authOpen = _a.authOpen, setAuthOpen = _a.setAuthOpen;
-    var _b = (0, frontend_js_1.useAuth)(), errors = _b.errors, loading = _b.loading, user = _b.user, handleChange = _b.handleChange, login = _b.login, signup = _b.signup, forgotPassword = _b.forgotPassword, verifyPin = _b.verifyPin, sendPin = _b.sendPin;
-    var _c = (0, react_1.useState)(0), tab = _c[0], setTab = _c[1];
+    var _b = (0, react_1.useContext)(context_1.AppContext), authOpen = _b.authOpen, setAuthOpen = _b.setAuthOpen;
+    var _c = (0, frontend_js_1.useAuth)(), errors = _c.errors, loading = _c.loading, user = _c.user, currentUser = _c.currentUser, handleChange = _c.handleChange, login = _c.login, signup = _c.signup, verifyPin = _c.verifyPin, sendPin = _c.sendPin;
+    var _d = (0, react_1.useState)(0), tab = _d[0], setTab = _d[1];
     var handleTabChange = function (ev, newValue) {
         setTab(newValue);
     };
-    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resp, _a;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0:
-                    _a = tab;
-                    switch (_a) {
-                        case 0: return [3 /*break*/, 1];
-                        case 1: return [3 /*break*/, 3];
-                        case 2: return [3 /*break*/, 5];
-                        case 3: return [3 /*break*/, 7];
-                        case 4: return [3 /*break*/, 9];
-                    }
-                    return [3 /*break*/, 11];
-                case 1: return [4 /*yield*/, login(user)];
-                case 2:
-                    resp = _b.sent();
-                    return [3 /*break*/, 11];
-                case 3: return [4 /*yield*/, signup(__assign(__assign({}, user), { app_id: appId }))];
-                case 4:
-                    resp = _b.sent();
-                    return [3 /*break*/, 11];
-                case 5: return [4 /*yield*/, sendPin(__assign(__assign({}, user), { app_id: appId }))];
-                case 6:
-                    _b.sent();
-                    setTab(3);
-                    return [3 /*break*/, 11];
-                case 7: return [4 /*yield*/, verifyPin(user === null || user === void 0 ? void 0 : user.email, user === null || user === void 0 ? void 0 : user.pin)];
-                case 8:
-                    resp = _b.sent();
-                    return [3 /*break*/, 11];
-                case 9: return [4 /*yield*/, sendPin(__assign(__assign({}, user), { app_id: appId }))];
-                case 10:
-                    resp = _b.sent();
-                    setTab(3);
-                    return [3 /*break*/, 11];
-                case 11:
-                    if (tab !== 4 && (resp === null || resp === void 0 ? void 0 : resp.id)) {
+    var handleLogin = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, login(user)];
+                case 1:
+                    resp = _a.sent();
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setAuthOpen(false);
                     }
                     return [2 /*return*/];
             }
         });
     }); };
-    var handleSignup = function () {
+    var handleSignup = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, signup(__assign(__assign({}, user), { app_id: appId }))];
+                case 1:
+                    resp = _a.sent();
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setAuthOpen(false);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleSendPin = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, sendPin(__assign(__assign({}, user), { app_id: appId }))];
+                case 1:
+                    _a.sent();
+                    setTab(3);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleVerifyPin = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, verifyPin(user === null || user === void 0 ? void 0 : user.email, user === null || user === void 0 ? void 0 : user.pin)];
+                case 1:
+                    resp = _a.sent();
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setAuthOpen(false);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleSignupClick = function () {
         setTab(1);
     };
-    var handleLogin = function () {
+    var handleLoginClick = function () {
         setTab(0);
     };
-    var handleForgotPassword = function () {
+    var handleForgotPasswordClick = function () {
         setTab(2);
     };
-    var handleResendPin = function () {
+    var handleResendPinClick = function () {
         setTab(4);
     };
     (0, react_1.useEffect)(function () {
@@ -152,11 +162,11 @@ var AuthModal = function (props) {
                 react_1.default.createElement(material_1.Tab, { label: "Login" }),
                 react_1.default.createElement(material_1.Tab, { label: "Register" }))),
         react_1.default.createElement(material_1.Box, { p: 4, sx: sx.content },
-            tab === 0 && (react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleSignup: handleSignup, handleForgotPassword: handleForgotPassword })),
-            tab === 1 && (react_1.default.createElement(__1.SignupForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin })),
-            tab === 2 && (react_1.default.createElement(__1.ForgotPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin })),
-            tab === 3 && (react_1.default.createElement(__1.VerifyPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleResendPin: handleResendPin })),
-            tab === 4 && (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit })))));
+            tab === 0 && (react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleLogin, handleSignup: handleSignupClick, handleForgotPassword: handleForgotPasswordClick })),
+            tab === 1 && (react_1.default.createElement(__1.SignupForm, { disableUsername: disableUsername, errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSignup, handleLogin: handleLoginClick })),
+            tab === 2 && (react_1.default.createElement(__1.ForgotPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),
+            tab === 3 && (react_1.default.createElement(__1.VerifyPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPinClick })),
+            tab === 4 && (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin })))));
 };
 exports.default = AuthModal;
 var sx = {
@@ -171,5 +181,5 @@ var sx = {
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
-    }
+    },
 };

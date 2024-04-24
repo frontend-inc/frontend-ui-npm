@@ -19,7 +19,7 @@ var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
 var Image = function (props) {
-    var _a = props.src, src = _a === void 0 ? null : _a, height = props.height, width = props.width, _b = props.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, label = props.label, _d = props.bgcolor, bgcolor = _d === void 0 ? '#000000' : _d, _e = props.opacity, opacity = _e === void 0 ? 0.5 : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.disableBorderRadius, disableBorderRadius = _h === void 0 ? false : _h;
+    var _a = props.src, src = _a === void 0 ? null : _a, height = props.height, width = props.width, _b = props.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, label = props.label, _d = props.bgcolor, bgcolor = _d === void 0 ? '#000000' : _d, _e = props.opacity, opacity = _e === void 0 ? 0.5 : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.disableBorder, disableBorder = _h === void 0 ? false : _h, _j = props.disableBorderRadius, disableBorderRadius = _j === void 0 ? false : _j;
     var theme = (0, material_1.useTheme)();
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { height: "".concat(height, "px"), '&::after': __assign(__assign(__assign(__assign(__assign(__assign({}, sx.afterBase), (enableOverlay && sx.overlay)), (!enableOverlay && enableGradient && sx.gradient)), (!disableBorderRadius && sx.borderRadius)), (!enableOverlay &&
                 !disableBorderRadius &&
@@ -33,9 +33,9 @@ var Image = function (props) {
                 borderRadius: !disableBorderRadius
                     ? "".concat(theme.shape.borderRadius, "px")
                     : '0px',
-            } })) : (react_1.default.createElement(components_1.NoImage, { height: height, width: width, disableBorderRadius: disableBorderRadius })),
+            } })) : (react_1.default.createElement(components_1.NoImage, { darkMode: true, height: height, width: width, disableBorder: disableBorder, disableBorderRadius: disableBorderRadius })),
         label && (react_1.default.createElement(material_1.Box, { sx: sx.label },
-            react_1.default.createElement(components_1.Label, { color: 'common.white', label: label })))));
+            react_1.default.createElement(components_1.Label, { color: "common.white", label: label })))));
 };
 exports.default = Image;
 var sx = {
@@ -50,7 +50,7 @@ var sx = {
     label: {
         position: 'absolute',
         right: 15,
-        top: 15
+        top: 15,
     },
     borderRadius: {
         borderRadius: 1,

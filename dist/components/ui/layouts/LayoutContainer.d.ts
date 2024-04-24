@@ -1,24 +1,12 @@
 import React, { ReactNode } from 'react';
 import { NotificationType } from '../../../types';
-import { MenuLinkType } from '../../..';
 type LayoutContainerProps = {
-    position?: 'fixed' | 'absolute' | 'relative';
-    mode?: 'accent' | 'light' | 'dark';
-    topNav?: boolean;
     handleClick: (item: any) => void;
-    headerLinks: MenuLinkType[];
-    footerLinks: MenuLinkType[];
-    notifications: NotificationType[];
     children: ReactNode;
-    editing?: boolean;
-    enableAuth?: boolean;
-    enableShopify?: boolean;
-    facebook?: string;
-    instagram?: string;
-    linkedin?: string;
-    twitter?: string;
-    youtube?: string;
-    tiktok?: string;
+    header?: ReactNode;
+    footer?: ReactNode;
+    enableSideNav?: boolean;
+    notifications: NotificationType[];
     pageMargin?: number;
 };
 declare const LayoutContainer: React.FC<LayoutContainerProps>;

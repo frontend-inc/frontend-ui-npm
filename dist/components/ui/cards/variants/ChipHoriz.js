@@ -33,7 +33,7 @@ var sx = {
         p: 0,
     },
     listItemButton: {
-        minHeight: 50
+        minHeight: 50,
     },
     gradient: {
         '&::after': {

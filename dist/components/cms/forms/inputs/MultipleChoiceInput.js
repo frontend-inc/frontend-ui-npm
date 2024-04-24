@@ -68,7 +68,7 @@ var sx = {
     grid: {
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
-        gap: '10px'
+        gap: '10px',
     },
     item: {
         width: '100%',

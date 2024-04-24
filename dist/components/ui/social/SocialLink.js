@@ -62,21 +62,15 @@ var SocialLink = function (props) {
             window.open(formatUrl(url), '_blank');
         }
     };
-    var _b = (0, react_1.useState)('white'), fgColor = _b[0], setFgColor = _b[1];
-    var _c = (0, react_1.useState)('black'), bgColor = _c[0], setBgColor = _c[1];
+    var _b = (0, react_1.useState)('black'), bgColor = _b[0], setBgColor = _b[1];
     var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
     (0, react_1.useEffect)(function () {
         if (theme) {
-            setFgColor(theme.palette.text.main);
             setBgColor('#222222');
         }
     }, [theme]);
-    return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
-        provider === 'facebook' && (react_1.default.createElement(react_social_icons_1.SocialIcon, { network: "facebook", bgColor: bgColor, style: styles })),
-        provider === 'instagram' && (react_1.default.createElement(react_social_icons_1.SocialIcon, { network: "instagram", bgColor: bgColor, style: styles })),
-        provider === 'linkedin' && (react_1.default.createElement(react_social_icons_1.SocialIcon, { network: "linkedin", bgColor: bgColor, style: styles })),
-        provider === 'twitter' && (react_1.default.createElement(react_social_icons_1.SocialIcon, { network: "twitter", bgColor: bgColor, style: styles })),
-        provider === 'youtube' && (react_1.default.createElement(react_social_icons_1.SocialIcon, { network: "youtube", bgColor: bgColor, style: styles }))));
+    return (react_1.default.createElement(material_1.IconButton, { size: "small", onClick: handleClick },
+        react_1.default.createElement(react_social_icons_1.SocialIcon, { network: provider, bgColor: bgColor, style: styles })));
 };
 exports.default = SocialLink;
 var styles = {

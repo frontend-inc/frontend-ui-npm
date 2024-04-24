@@ -2,7 +2,8 @@ import React from 'react';
 type NoImageProps = {
     height?: number;
     width?: number;
-    enableBorder?: boolean;
+    darkMode?: boolean;
+    disableBorder?: boolean;
     disableBorderRadius?: boolean;
 };
 declare const NoImage: React.FC<NoImageProps>;

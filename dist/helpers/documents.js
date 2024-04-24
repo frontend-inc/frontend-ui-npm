@@ -22,9 +22,23 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.filterDocumentLinks = exports.getDocumentValue = exports.flattenDocument = void 0;
+exports.filterDocumentLinks = exports.getDocumentValue = exports.flattenDocument = exports.handleDocumentChange = void 0;
 var index_1 = require("../constants/index");
 var lodash_1 = require("lodash");
+var handleDocumentChange = function (ev, resource) {
+    var _a;
+    var name = ev.target.name;
+    var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
+    var newResource = __assign({}, resource);
+    if (index_1.SYSTEM_FIELDS.includes(name)) {
+        newResource[name] = value;
+    }
+    else {
+        newResource = __assign(__assign({}, newResource), { data: __assign(__assign({}, newResource.data), (_a = {}, _a[name] = value, _a)) });
+    }
+    return newResource;
+};
+exports.handleDocumentChange = handleDocumentChange;
 var flattenDocument = function (resource) {
     var _a = resource || {}, data = _a.data, rest = __rest(_a, ["data"]);
     return __assign(__assign({}, rest), data);

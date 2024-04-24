@@ -13,6 +13,7 @@ type ModalProps = {
     fullScreen?: boolean;
     enableCancel?: boolean;
     hideBackdrop?: boolean;
+    disableClose?: boolean;
 };
 declare const Modal: React.FC<ModalProps>;
 export default Modal;

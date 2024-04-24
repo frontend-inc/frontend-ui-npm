@@ -105,8 +105,6 @@ var Autosuggest = function (props) {
             getOptionSelected: function (option, value) { return (option === null || option === void 0 ? void 0 : option.value) == (value === null || value === void 0 ? void 0 : value.value); }, renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)), endAdornment: handleClear && (react_1.default.createElement(material_1.InputAdornment, { position: "start" },
                     react_1.default.createElement(material_1.IconButton, { onClick: handleInputClear, size: "small" },
                         react_1.default.createElement(__1.Icon, { name: "X", size: 20 })))) })); } }),
-        loading && (react_1.default.createElement(material_1.Box, { sx: sx.loaderContainer },
-            react_1.default.createElement(material_1.CircularProgress, { size: 20, thickness: 5, disableShrink: true, sx: sx.circularProgress }))),
         react_1.default.createElement(__1.ErrorText, { error: error })));
 };
 exports.default = Autosuggest;
@@ -163,7 +161,7 @@ var sx = {
     },
     label: {
         mb: 0,
-        minWidth: '100px',
+        minWidth: '95px',
     },
     icon: {
         marginRight: '10px',

@@ -20,9 +20,9 @@ var CardHoriz_1 = __importDefault(require("./variants/CardHoriz"));
 var Card = function (props) {
     var direction = props.direction;
     switch (direction) {
-        case 'column':
-            return react_1.default.createElement(CardVert_1.default, __assign({}, props));
         case 'row':
+            return react_1.default.createElement(CardVert_1.default, __assign({}, props));
+        case 'column':
             return react_1.default.createElement(CardHoriz_1.default, __assign({}, props));
         default:
             return react_1.default.createElement(CardVert_1.default, __assign({}, props));

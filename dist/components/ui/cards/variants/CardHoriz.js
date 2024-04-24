@@ -123,8 +123,8 @@ var sx = {
         py: 2,
         px: {
             sm: 0,
-            xs: 2
-        }
+            xs: 2,
+        },
     },
     description: {
         maxWidth: '320px',

@@ -59,7 +59,7 @@ var CardVert = function (props) {
                 react_1.default.createElement(__1.Image, { src: image, height: height, objectFit: objectFit, alt: title, label: label, enableGradient: enableGradient, disableBorderRadius: enableBorder, enableOverlay: enableOverlay }))),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
             react_1.default.createElement(material_1.Stack, { spacing: 0 },
-                react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title))),
+                react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "subtitle2" }, (0, helpers_1.truncate)(title))),
             buttonText && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleItemClick }, buttonText))))));
 };

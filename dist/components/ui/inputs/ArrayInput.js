@@ -97,7 +97,7 @@ exports.sx = {
         fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
     },
     chip: {
-        borderRadius: '4px'
+        borderRadius: '4px',
     },
     label: {
         width: '100px',

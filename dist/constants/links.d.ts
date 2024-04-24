@@ -10,3 +10,7 @@ export declare const LINK_OPTIONS: {
         icon: string;
     }[];
 };
+export declare const SOCIAL_LINK_PROVIDERS: {
+    value: string;
+    label: string;
+}[];

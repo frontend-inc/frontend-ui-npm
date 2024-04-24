@@ -100,9 +100,9 @@ var MyAccount = function (props) {
     }, [currentUser]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.Loader, { loading: loading }),
-        currentUser && (react_1.default.createElement(__1.AuthScreen, { title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username) ?
-                "@".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.username) :
-                'Update account' },
+        currentUser && (react_1.default.createElement(__1.AuthScreen, { title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
+                ? "@".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
+                : 'Update account' },
             react_1.default.createElement(__1.MyAccountForm, { user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleRedirect: handleRedirect })))));
 };
 exports.default = MyAccount;

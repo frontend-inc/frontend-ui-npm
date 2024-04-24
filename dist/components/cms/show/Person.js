@@ -33,7 +33,7 @@ var Person = function (props) {
     var _c = resource || {}, title = _c.title, image = _c.image, description = _c.description;
     var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { md: 'row', xs: 'column' }, spacing: 4 },
+        react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { sm: 'row', xs: 'column' }, spacing: 4 },
             react_1.default.createElement(material_1.Stack, { direction: "column" },
                 react_1.default.createElement(material_1.Avatar, { sx: sx.avatarContainer },
                     react_1.default.createElement(material_1.Avatar, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, sx: sx.avatar },
@@ -55,8 +55,8 @@ var Person = function (props) {
                         blog && react_1.default.createElement(__1.SocialLink, { provider: "blog", url: blog })))),
                 react_1.default.createElement(material_1.Box, null,
                     open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
-                    (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all'))),
-                actions && react_1.default.createElement(__1.Actions, { actions: actions, resource: resource })))));
+                    (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all')))),
+            actions && (react_1.default.createElement(__1.Actions, { actions: actions, resource: resource, justifyContent: "flex-end" })))));
 };
 exports.default = Person;
 var sx = {
@@ -70,27 +70,27 @@ var sx = {
         width: '100%',
         justifyContent: 'flex-start',
         alignItems: {
-            md: 'flex-start',
+            sm: 'flex-start',
             xs: 'center',
         },
     },
     avatar: {
         height: {
-            sm: 256,
+            sm: 180,
             xs: 180,
         },
         width: {
-            sm: 256,
+            sm: 180,
             xs: 180,
         },
     },
     avatarContainer: {
         height: {
-            sm: 260,
+            sm: 180,
             xs: 180,
         },
         width: {
-            sm: 260,
+            sm: 180,
             xs: 180,
         },
     },

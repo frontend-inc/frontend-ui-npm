@@ -25,6 +25,7 @@ var Field = function (props) {
         variant === 'number' && react_1.default.createElement(components_1.FieldText, { label: label, value: value }),
         variant === 'array' && react_1.default.createElement(components_1.FieldArray, { label: label, value: value }),
         variant === 'string' && react_1.default.createElement(components_1.FieldString, { label: label, value: value }),
+        variant === 'select' && react_1.default.createElement(components_1.FieldString, { label: label, value: value }),
         variant === 'price' && react_1.default.createElement(components_1.FieldPrice, { label: label, value: value })));
 };
 exports.default = Field;

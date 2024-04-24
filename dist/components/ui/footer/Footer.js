@@ -1,73 +1,32 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
+var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var moment_1 = __importDefault(require("moment"));
 var Footer = function (props) {
-    var handleClick = props.handleClick, menuItems = props.menuItems, facebook = props.facebook, instagram = props.instagram, linkedin = props.linkedin, twitter = props.twitter, youtube = props.youtube, tiktok = props.tiktok;
-    var _a = (0, react_1.useContext)(context_1.AppContext), logo = _a.logo, name = _a.name;
+    var handleClick = props.handleClick, menuLinks = props.menuLinks, socialLinks = props.socialLinks;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 1, direction: "column" },
-        react_1.default.createElement(material_1.Box, { sx: sx.container },
-            react_1.default.createElement(material_1.Box, { sx: sx.gridContainer },
-                react_1.default.createElement(material_1.Stack, { direction: "row", divider: react_1.default.createElement(material_1.Divider, null), spacing: 2 }, menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (menuItem, i) { return (
-                //@ts-ignore
-                react_1.default.createElement(material_1.Button, { key: i, handleClick: function () { return handleClick(menuItem); } }, menuItem === null || menuItem === void 0 ? void 0 : menuItem.name)); })))),
-        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.footerLinks },
-            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.socialUrls },
-                facebook && react_1.default.createElement(__1.SocialLink, { provider: "facebook", url: facebook }),
-                instagram && react_1.default.createElement(__1.SocialLink, { provider: "instagram", url: instagram }),
-                linkedin && react_1.default.createElement(__1.SocialLink, { provider: "linkedin", url: linkedin }),
-                twitter && react_1.default.createElement(__1.SocialLink, { provider: "twitter", url: twitter }),
-                youtube && react_1.default.createElement(__1.SocialLink, { provider: "youtube", url: youtube }),
-                tiktok && react_1.default.createElement(__1.SocialLink, { provider: "tiktok", url: tiktok })),
-            react_1.default.createElement(material_1.Box, { sx: sx.copyright },
-                react_1.default.createElement(material_1.Typography, { variant: 'body2', color: "text.secondary" },
-                    "\u00A9 copyright ",
-                    (0, moment_1.default)().format('YYYY'),
-                    " ",
-                    name)))));
+        react_1.default.createElement(material_1.Stack, { direction: "row", divider: react_1.default.createElement(material_1.Divider, null), spacing: 1 }, menuLinks === null || menuLinks === void 0 ? void 0 : menuLinks.map(function (menuLink, i) { return (
+        //@ts-ignore
+        react_1.default.createElement(material_1.Link, { sx: sx.link, key: i, handleClick: function () { return handleClick(menuLink); } }, menuLink === null || menuLink === void 0 ? void 0 : menuLink.name)); })),
+        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 }, socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.map(function (link, i) {
+            var _a;
+            return (react_1.default.createElement(__1.SocialLink, { key: i, provider: (_a = link === null || link === void 0 ? void 0 : link.name) === null || _a === void 0 ? void 0 : _a.toLowerCase(), url: link === null || link === void 0 ? void 0 : link.url }));
+        }))));
 };
 exports.default = Footer;
 var sx = {
     root: {
+        py: 2,
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
         bgcolor: 'background.default',
         borderTop: '1px solid',
         borderColor: 'divider',
-    },
-    logo: {
-        height: 120,
-        width: 120,
     },
     container: {
         width: '100%',
@@ -79,56 +38,14 @@ var sx = {
         justifyContent: 'space-between',
         alignItems: 'flex-start',
     },
-    left: {
-        p: 2,
-        width: 240,
-    },
-    right: {
-        p: 2,
-        width: 240,
-    },
-    logoContainer: {
-        px: 1,
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-    },
-    gridContainer: {
-        mt: 2,
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    grid: {
-        px: 2,
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        flexWrap: 'wrap',
-    },
-    copyright: {
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    socialUrls: {
-        py: 1,
-    },
     divider: {
         borderTop: '1px solid',
         borderColor: 'divider',
         width: '96%',
     },
-    footerLinks: {
-        px: 4,
-        display: 'flex',
-        direction: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        pb: 4,
+    link: {
+        color: 'text.secondary',
+        cursor: 'pointer',
+        textDecoration: 'none',
     },
 };

@@ -138,7 +138,7 @@ var ProfileForm = function (props) {
         }
     }, [resource]);
     if (!currentUser) {
-        return (react_1.default.createElement(components_1.AuthRequired, null));
+        return react_1.default.createElement(components_1.AuthRequired, null);
     }
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root }, fields === null || fields === void 0 ? void 0 :

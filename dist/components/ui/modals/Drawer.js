@@ -20,7 +20,7 @@ var material_2 = require("@mui/material");
 var components_1 = require("../../../components");
 var Drawer = function (props) {
     var open = props.open, title = props.title, _a = props.anchor, anchor = _a === void 0 ? 'right' : _a, handleClose = props.handleClose, children = props.children, actions = props.actions, _b = props.variant, variant = _b === void 0 ? 'temporary' : _b, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, _d = props.hideBackdrop, hideBackdrop = _d === void 0 ? false : _d, _e = props.closeIcon, closeIcon = _e === void 0 ? 'X' : _e, _f = props.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = props.styles, styles = _g === void 0 ? {} : _g;
-    return (react_1.default.createElement(material_1.SwipeableDrawer, { open: open, variant: variant, anchor: anchor, onOpen: handleClose, onClose: handleClose, hideBackdrop: hideBackdrop, PaperProps: {
+    return (react_1.default.createElement(material_1.SwipeableDrawer, { open: open, variant: variant, anchor: anchor, onOpen: handleClose, onClose: handleClose, PaperProps: {
             sx: __assign(__assign({}, sx.paper), styles),
         } },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (fullWidth && sx.fullWidth)) },
@@ -28,7 +28,7 @@ var Drawer = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.headerAction }, anchor == 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
                     react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon })))),
                 react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Typography, { variant: "body1" }, title)),
+                    react_1.default.createElement(material_1.Typography, { variant: "subtitle1" }, title)),
                 react_1.default.createElement(material_1.Box, { sx: sx.headerAction }, anchor != 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
                     react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon }))))),
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (actions && sx.contentActions)), (!disablePadding && sx.contentPadding)) }, children),
@@ -41,7 +41,10 @@ var sx = {
             xs: '100vw',
             md: '380px',
         },
-        maxWidth: '380px',
+        maxWidth: {
+            sm: '380px',
+            xs: '480px',
+        },
     },
     fullWidth: {
         width: '100vw',

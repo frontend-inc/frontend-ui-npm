@@ -9,7 +9,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LINK_OPTIONS = void 0;
+exports.SOCIAL_LINK_PROVIDERS = exports.LINK_OPTIONS = void 0;
 var DEFAULT_LINK_OPTIONS = [
     //{ value: 'dropdown', label: 'Dropdown', icon: 'Folder' },
     { value: 'page', label: 'Page', icon: 'StickyNote' },
@@ -27,3 +27,11 @@ exports.LINK_OPTIONS = {
         { value: 'shopify_product', label: 'Product', icon: 'Shirt' },
     ], false),
 };
+exports.SOCIAL_LINK_PROVIDERS = [
+    { value: 'Facebook', label: 'Facebook' },
+    { value: 'Twitter', label: 'Twitter' },
+    { value: 'Instagram', label: 'Instagram' },
+    { value: 'Linkedin', label: 'LinkedIn' },
+    { value: 'YouTube', label: 'YouTube' },
+    { value: 'TikTok', label: 'TikTok' },
+];

@@ -131,3 +131,4 @@ var RemoteAutosuggest = function (props) {
         react_1.default.createElement(__2.ErrorText, { error: error })));
 };
 exports.default = RemoteAutosuggest;
+var sx = {};

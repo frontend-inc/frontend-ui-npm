@@ -87,10 +87,10 @@ var sx = {
     },
     text: {
         py: 1,
-        height: '80px',
+        height: '90px',
     },
     textWithReviews: {
-        height: '110px',
+        height: '120px',
     },
     contentBorder: {
         p: 1,

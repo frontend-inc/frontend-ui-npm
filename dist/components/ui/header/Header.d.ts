@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuLinkType } from '../../..';
+import { MenuLinkType } from '../../../types';
 type HeaderProps = {
     editing?: boolean;
     topNav?: boolean;

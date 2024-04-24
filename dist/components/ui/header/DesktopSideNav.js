@@ -69,7 +69,7 @@ var DesktopSideNav = function (props) {
 exports.default = DesktopSideNav;
 var sx = {
     sideNav: {
-        height: '100vh',
+        height: '100%',
         width: {
             sm: '280px',
             xs: '100%',
