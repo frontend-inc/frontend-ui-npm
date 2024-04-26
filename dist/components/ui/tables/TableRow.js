@@ -17,9 +17,6 @@ var TableRow = function (props) {
                 react_1.default.createElement(components_1.Icon, { name: "Edit", size: 20 })))), fields === null || fields === void 0 ? void 0 :
         fields.map(function (field, index) {
             var value = row[field.name];
-            if ((field === null || field === void 0 ? void 0 : field.name) == 'user') {
-                console.log('value', field === null || field === void 0 ? void 0 : field.name, row);
-            }
             return (react_1.default.createElement(components_1.TableCell, { key: index },
                 react_1.default.createElement(components_1.Cell, { row: row, field: field, value: value, handleClick: handleClick ? function () { return handleClick(value, row, field); } : null })));
         })));

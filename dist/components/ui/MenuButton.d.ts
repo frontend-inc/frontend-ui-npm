@@ -1,7 +1,7 @@
 import React from 'react';
 type MenuButtonProps = {
     children: React.ReactNode;
-    icon?: React.ReactNode;
+    icon?: 'string';
     size?: 'small' | 'medium';
     selected?: boolean;
 };

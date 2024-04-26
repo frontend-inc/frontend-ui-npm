@@ -141,7 +141,6 @@ var ProfileForm = function (props) {
         });
     }); };
     (0, react_1.useEffect)(function () {
-        console.log("Profile", resource);
         if (resource) {
             setResource(__assign({}, resource));
         }
