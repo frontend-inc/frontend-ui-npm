@@ -111,7 +111,7 @@ var Autosuggest = function (props) {
 exports.default = Autosuggest;
 var styles = {
     image: {
-        borderRadius: 1,
+        borderRadius: '4px',
         objectFit: 'cover',
         marginRight: '0px',
     },
