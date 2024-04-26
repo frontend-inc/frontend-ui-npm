@@ -15,16 +15,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
-var UserAvatar = function (props) {
-    var src = props.src, _a = props.size, size = _a === void 0 ? 20 : _a;
-    return (react_1.default.createElement(material_1.Avatar, { variant: "circular", src: src, sx: __assign(__assign({}, sx.avatar), { height: size + 10, width: size + 10 }) },
-        react_1.default.createElement(components_1.Icon, { name: "User", size: size, color: 'secondary.contrastText' })));
+var __1 = require("../..");
+var AuthCollection = function (props) {
+    return (react_1.default.createElement(__1.AuthRequired, null,
+        react_1.default.createElement(__1.Collection, __assign({}, props))));
 };
-exports.default = UserAvatar;
-var sx = {
-    avatar: {
-        bgcolor: 'secondary.main',
-    },
-};
+exports.default = AuthCollection;

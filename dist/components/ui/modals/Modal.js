@@ -43,9 +43,9 @@ var Modal = function (props) {
             subtitle && (react_1.default.createElement(material_1.Typography, { variant: "body1", mt: 1 }, subtitle)),
             react_1.default.createElement(components_1.Loader, { loading: loading }),
             !loading && react_1.default.createElement(material_1.Box, { sx: sx.content }, children)),
-        !loading && (react_1.default.createElement(material_1.DialogActions, { sx: sx.dialogActions },
+        !loading && (react_1.default.createElement(react_1.default.Fragment, null, (enableCancel || actions) && (react_1.default.createElement(material_1.DialogActions, { sx: sx.dialogActions },
             enableCancel && (react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleClose }, "Cancel")),
-            actions && actions))));
+            actions && actions))))));
 };
 exports.default = Modal;
 var sx = {

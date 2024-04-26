@@ -1,3 +1,6 @@
 import React from 'react';
-declare const AuthRequired: React.FC;
+export type AuthRequiredProps = {
+    children: React.ReactNode;
+};
+declare const AuthRequired: React.FC<AuthRequiredProps>;
 export default AuthRequired;

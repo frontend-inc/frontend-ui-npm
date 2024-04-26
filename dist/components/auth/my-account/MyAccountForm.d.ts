@@ -1,5 +1,6 @@
 import React from 'react';
 type AccountFormProps = {
+    loading: boolean;
     user: any;
     handleChange: (ev: any) => void;
     handleSubmit: () => void;

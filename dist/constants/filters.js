@@ -89,6 +89,8 @@ exports.FILTERABLE_TYPES = [
     'price',
     'rating',
     'select',
+    'string',
+    'text'
 ];
 exports.SORTABLE_TYPES = [
     'float',

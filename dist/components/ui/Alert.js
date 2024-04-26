@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -27,9 +38,10 @@ var react_1 = __importStar(require("react"));
 var context_1 = require("../../context");
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var Alert = function () {
-    var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
-    var _b = (0, react_1.useContext)(context_1.AppContext), alert = _b.alert, setAlert = _b.setAlert;
+var Alert = function (props) {
+    var _a = props.anchorBottom, anchorBottom = _a === void 0 ? false : _a;
+    var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
+    var _c = (0, react_1.useContext)(context_1.AppContext), alert = _c.alert, setAlert = _c.setAlert;
     var handleClose = function () {
         setOpen(false);
         setAlert();
@@ -44,16 +56,14 @@ var Alert = function () {
             setTimeout(function () { return setOpen(false); }, 2500);
     }, [open]);
     return (react_1.default.createElement(material_1.Fade, { in: open },
-        react_1.default.createElement(material_1.Slide, { direction: "down", in: open },
-            react_1.default.createElement(material_1.Box, { width: "100%", p: 0, sx: sx.root },
+        react_1.default.createElement(material_1.Slide, { direction: anchorBottom ? "up" : "down", in: open },
+            react_1.default.createElement(material_1.Box, { width: "100%", p: 0, sx: __assign(__assign({}, sx.root), (anchorBottom && sx.anchorBottom)) },
                 react_1.default.createElement(material_1.Paper, { elevation: 4, sx: sx.alert },
                     react_1.default.createElement(material_1.List, { disablePadding: true },
-                        react_1.default.createElement(material_1.ListItem, null,
+                        react_1.default.createElement(material_1.ListItem, { secondaryAction: react_1.default.createElement(material_1.IconButton, { size: "small", onClick: handleClose },
+                                react_1.default.createElement(icons_material_1.Clear, { sx: sx.icon })) },
                             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClose },
-                                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", sx: sx.text }, (alert === null || alert === void 0 ? void 0 : alert.message) || '') }))),
-                        react_1.default.createElement(material_1.ListItemSecondaryAction, null,
-                            react_1.default.createElement(material_1.IconButton, { size: "small", onClick: handleClose },
-                                react_1.default.createElement(icons_material_1.Clear, { sx: sx.icon })))))))));
+                                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", sx: sx.text }, (alert === null || alert === void 0 ? void 0 : alert.message) || '') })))))))));
 };
 exports.default = Alert;
 var sx = {
@@ -63,6 +73,10 @@ var sx = {
         width: '100%',
         top: 30,
         left: 0,
+    },
+    anchorBottom: {
+        top: 'auto',
+        bottom: 30,
     },
     alert: {
         p: 0,

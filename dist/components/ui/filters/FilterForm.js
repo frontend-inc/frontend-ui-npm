@@ -121,7 +121,7 @@ var FilterForm = function (props) {
         return fields
             .filter(filterFn)
             .map(function (field) { return ({
-            label: field.name,
+            label: field.label,
             value: field.name,
             variant: field.variant,
             db_type: field.db_type,

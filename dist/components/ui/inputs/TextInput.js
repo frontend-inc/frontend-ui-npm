@@ -69,9 +69,11 @@ var TextInput = function (props) {
             setText(value);
         }
     }, [value]);
-    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, styles_1.sx.stack), (direction == 'row' && !multiline && styles_1.sx.stackVertical)), direction: direction, spacing: 0.5 },
-        label && (react_1.default.createElement(material_1.Typography, { sx: styles_1.sx.label, variant: "caption", color: "text.secondary" }, label)),
-        react_1.default.createElement(material_1.InputBase, { rows: rows, error: error ? true : false, sx: __assign(__assign(__assign({}, styles_1.sx.inputBase), ((error && styles_1.sx.inputError) || {})), styles), multiline: multiline, autoComplete: "off", fullWidth: true, type: type, name: name, margin: margin, disabled: disabled, placeholder: placeholder, onChange: debouncedChanged, value: text }),
-        react_1.default.createElement(components_1.ErrorText, { error: error })));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, styles_1.sx.stack), (direction == 'row' && !multiline && styles_1.sx.stackVertical)), direction: direction, spacing: 0.5 },
+            label && (react_1.default.createElement(material_1.Typography, { sx: styles_1.sx.label, variant: "caption", color: "text.secondary" }, label)),
+            react_1.default.createElement(material_1.Box, { sx: styles_1.sx.inputContainer },
+                react_1.default.createElement(material_1.InputBase, { rows: rows, error: error ? true : false, sx: __assign(__assign(__assign({}, styles_1.sx.inputBase), ((error && styles_1.sx.inputError) || {})), styles), multiline: multiline, autoComplete: "off", fullWidth: true, type: type, name: name, margin: margin, disabled: disabled, placeholder: placeholder, onChange: debouncedChanged, value: text }),
+                react_1.default.createElement(components_1.ErrorText, { error: error })))));
 };
 exports.default = TextInput;

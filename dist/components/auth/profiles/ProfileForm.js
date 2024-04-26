@@ -79,12 +79,12 @@ var lodash_1 = require("lodash");
 var constants_1 = require("../../../constants");
 var ProfileForm = function (props) {
     var resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields;
-    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var _b = (0, react_1.useState)(false), submitted = _b[0], setSubmitted = _b[1];
+    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var _c = (0, frontend_js_1.useResource)({
         name: 'profile',
         url: "/api/v1/cms/profiles",
-    }), loading = _c.loading, delayedLoading = _c.delayedLoading, profile = _c.resource, setResource = _c.setResource, update = _c.update, removeAttachment = _c.removeAttachment;
+    }), loading = _c.loading, delayedLoading = _c.delayedLoading, profile = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, removeAttachment = _c.removeAttachment;
     var handleDataChange = function (ev) {
         var name = ev.target.name;
         var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
@@ -116,34 +116,41 @@ var ProfileForm = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 2, , 3]);
+                    _a.trys.push([0, 5, , 6]);
+                    resp = void 0;
+                    if (!(profile === null || profile === void 0 ? void 0 : profile.id)) return [3 /*break*/, 2];
                     return [4 /*yield*/, update(profile)];
                 case 1:
                     resp = _a.sent();
+                    return [3 /*break*/, 4];
+                case 2: return [4 /*yield*/, create(profile)];
+                case 3:
+                    resp = _a.sent();
+                    _a.label = 4;
+                case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setSubmitted(true);
                     }
-                    return [3 /*break*/, 3];
-                case 2:
+                    return [3 /*break*/, 6];
+                case 5:
                     err_1 = _a.sent();
                     console.log('Error', err_1);
-                    return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
+                    return [3 /*break*/, 6];
+                case 6: return [2 /*return*/];
             }
         });
     }); };
     (0, react_1.useEffect)(function () {
+        console.log("Profile", resource);
         if (resource) {
             setResource(__assign({}, resource));
         }
     }, [resource]);
-    if (!currentUser) {
-        return react_1.default.createElement(components_1.AuthRequired, null);
-    }
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root }, fields === null || fields === void 0 ? void 0 :
-            fields.map(function (field, index) { return (react_1.default.createElement(components_1.FormFieldInput, { key: index, field: field, value: (0, lodash_1.get)((0, helpers_1.flattenDocument)(profile), field.name), handleChange: handleDataChange, handleRemove: handleRemove })); }),
-            react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", onClick: handleSubmit, disabled: delayedLoading, endIcon: react_1.default.createElement(components_1.IconLoading, { color: "primary", loading: delayedLoading }) }, buttonText))));
+    return (react_1.default.createElement(components_1.AuthRequired, null,
+        react_1.default.createElement(material_1.Box, { sx: sx.root },
+            react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root }, fields === null || fields === void 0 ? void 0 :
+                fields.map(function (field, index) { return (react_1.default.createElement(components_1.FormFieldInput, { key: index, field: field, value: (0, lodash_1.get)((0, helpers_1.flattenDocument)(profile), field.name), handleChange: handleDataChange, handleRemove: handleRemove })); }),
+                react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", onClick: handleSubmit, endIcon: react_1.default.createElement(components_1.IconLoading, { color: "primary.contrastText", loading: delayedLoading }) }, buttonText)))));
 };
 exports.default = ProfileForm;
 var sx = {

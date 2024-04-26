@@ -78,6 +78,10 @@ var sx = {
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
+        px: {
+            sm: 0,
+            xs: 3
+        }
     },
     content: {
         maxWidth: '540px',

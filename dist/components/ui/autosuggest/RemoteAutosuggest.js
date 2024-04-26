@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -71,10 +82,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
-var __2 = require("../..");
 var hooks_1 = require("../../../hooks");
+var lodash_1 = require("lodash");
 var RemoteAutosuggest = function (props) {
-    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, handleChange = props.handleChange, handleClear = props.handleClear, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? {} : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f;
+    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, imageField = props.imageField, handleChange = props.handleChange, handleClear = props.handleClear, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? {} : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f;
     var _g = (0, hooks_1.useError)({
         errors: errors,
         name: name,
@@ -83,7 +94,7 @@ var RemoteAutosuggest = function (props) {
         url: url,
         name: name,
     }), delayedLoading = _h.delayedLoading, resources = _h.resources, findMany = _h.findMany;
-    var _j = (0, react_1.useState)({}), option = _j[0], setOption = _j[1];
+    var _j = (0, react_1.useState)(), option = _j[0], setOption = _j[1];
     var _k = (0, react_1.useState)([]), options = _k[0], setOptions = _k[1];
     var handleInputChange = function (newValue) {
         if (error)
@@ -94,18 +105,20 @@ var RemoteAutosuggest = function (props) {
         return resources.map(function (resource) { return ({
             label: resource[displayField],
             value: resource[valueParam],
+            image: imageField ? (0, lodash_1.get)(resource, imageField) : null
         }); });
     };
     var findOption = function (value) { return __awaiter(void 0, void 0, void 0, function () {
-        var matchOption;
+        var resource;
         return __generator(this, function (_a) {
             if (!value)
                 return [2 /*return*/, null];
-            if ((options === null || options === void 0 ? void 0 : options.length) > 0) {
-                matchOption = options.find(function (option) { return option.value == value; });
-                if (matchOption) {
-                    setOption(matchOption);
-                }
+            resource = resources.find(function (resource) { return resource[displayField] == value; });
+            if (resource) {
+                setOption({
+                    label: resource[displayField],
+                    value: resource[valueParam]
+                });
             }
             return [2 /*return*/];
         });
@@ -116,19 +129,23 @@ var RemoteAutosuggest = function (props) {
         }
     }, [resources]);
     (0, react_1.useEffect)(function () {
-        if (value && resources && resources.length > 0) {
-            findOption(value);
+        if (value && (resources === null || resources === void 0 ? void 0 : resources.length) > 0) {
+            var resource = resources.find(function (resource) { return resource[valueParam] == value; });
+            if (resource) {
+                setOption({
+                    label: resource[displayField],
+                    value: resource[valueParam]
+                });
+            }
         }
-    }, [value, resources, url]);
+    }, [value, resources]);
     (0, react_1.useEffect)(function () {
         if (url) {
             //@ts-ignore
-            findMany(defaultQuery);
+            findMany(__assign(__assign({}, defaultQuery), { per_page: 100 }));
         }
     }, [url]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(__1.Autosuggest, { loading: delayedLoading, direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear }),
-        react_1.default.createElement(__2.ErrorText, { error: error })));
+        react_1.default.createElement(__1.Autosuggest, { errors: errors, loading: delayedLoading, direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear })));
 };
 exports.default = RemoteAutosuggest;
-var sx = {};

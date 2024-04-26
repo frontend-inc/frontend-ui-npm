@@ -81,7 +81,7 @@ var AuthModal = function (props) {
     var router = (0, router_1.useRouter)();
     var appId = router.query.app_id;
     var _b = (0, react_1.useContext)(context_1.AppContext), authOpen = _b.authOpen, setAuthOpen = _b.setAuthOpen;
-    var _c = (0, frontend_js_1.useAuth)(), errors = _c.errors, loading = _c.loading, user = _c.user, currentUser = _c.currentUser, handleChange = _c.handleChange, login = _c.login, signup = _c.signup, verifyPin = _c.verifyPin, sendPin = _c.sendPin;
+    var _c = (0, frontend_js_1.useAuth)(), errors = _c.errors, loading = _c.loading, user = _c.user, updateMe = _c.updateMe, handleChange = _c.handleChange, login = _c.login, signup = _c.signup, verifyPin = _c.verifyPin, sendPin = _c.sendPin;
     var _d = (0, react_1.useState)(0), tab = _d[0], setTab = _d[1];
     var handleTabChange = function (ev, newValue) {
         setTab(newValue);
@@ -90,11 +90,12 @@ var AuthModal = function (props) {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, login(user)];
+                case 0: return [4 /*yield*/, login(__assign(__assign({}, user), { app_id: appId }))];
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setAuthOpen(false);
+                        window.location.reload();
                     }
                     return [2 /*return*/];
             }
@@ -133,6 +134,23 @@ var AuthModal = function (props) {
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setTab(5);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleResetPassword = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, updateMe({
+                        password: user === null || user === void 0 ? void 0 : user.password,
+                        password_confirmation: user === null || user === void 0 ? void 0 : user.password_confirmation
+                    })];
+                case 1:
+                    resp = _a.sent();
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setAuthOpen(false);
                     }
                     return [2 /*return*/];
@@ -161,12 +179,13 @@ var AuthModal = function (props) {
             react_1.default.createElement(material_1.Tabs, { value: tab, onChange: handleTabChange },
                 react_1.default.createElement(material_1.Tab, { label: "Login" }),
                 react_1.default.createElement(material_1.Tab, { label: "Register" }))),
-        react_1.default.createElement(material_1.Box, { p: 4, sx: sx.content },
+        react_1.default.createElement(material_1.Box, { px: 4, sx: sx.content },
             tab === 0 && (react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleLogin, handleSignup: handleSignupClick, handleForgotPassword: handleForgotPasswordClick })),
             tab === 1 && (react_1.default.createElement(__1.SignupForm, { disableUsername: disableUsername, errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSignup, handleLogin: handleLoginClick })),
             tab === 2 && (react_1.default.createElement(__1.ForgotPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),
             tab === 3 && (react_1.default.createElement(__1.VerifyPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPinClick })),
-            tab === 4 && (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin })))));
+            tab === 4 && (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),
+            tab == 5 && (react_1.default.createElement(__1.ResetPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleResetPassword, handleLogin: handleLogin })))));
 };
 exports.default = AuthModal;
 var sx = {

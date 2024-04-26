@@ -59,7 +59,7 @@ var Collection = function (props) {
         setKeywords(ev.target.value);
     };
     var handleSearch = function (keywords) {
-        findMany(__assign(__assign(__assign({}, defaultQuery), query), { keywords: keywords, page: 1, per_page: perPage }));
+        findMany(__assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1, per_page: perPage }));
     };
     var handleSortBy = function (sortBy) {
         findMany(__assign(__assign({}, query), { sort_by: sortBy }));
@@ -74,7 +74,7 @@ var Collection = function (props) {
     var handleClearFilters = function () {
         setActiveFilters([]);
         findMany({
-            filters: {},
+            filters: __assign({}, defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters),
             sort_by: 'id',
             sort_direction: 'desc',
             keywords: '',
@@ -104,11 +104,10 @@ var Collection = function (props) {
         }
     }, [url, perPage]);
     (0, react_1.useEffect)(function () {
-        console.log('ACTIVE FILTERS', activeFilters);
         if (activeFilters) {
-            findMany(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters) }));
+            findMany(__assign(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters) }), defaultQuery));
         }
-    }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length]);
+    }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length, defaultQuery]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
             enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch })),

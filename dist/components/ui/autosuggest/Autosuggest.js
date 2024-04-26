@@ -48,7 +48,7 @@ var AutocompleteOption = function (props) {
     return (react_1.default.createElement(material_1.ListItem, __assign({ sx: { mr: 2, flexShrink: 0 } }, props),
         (option === null || option === void 0 ? void 0 : option.icon) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
             react_1.default.createElement(__1.Icon, { name: option.icon, size: 20 }))),
-        (option === null || option === void 0 ? void 0 : option.image) && (react_1.default.createElement(material_1.ListItemIcon, null,
+        (option === null || option === void 0 ? void 0 : option.image) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
             react_1.default.createElement(image_1.default, { src: option === null || option === void 0 ? void 0 : option.image, alt: option === null || option === void 0 ? void 0 : option.label, width: 32, height: 32, 
                 //@ts-ignore
                 style: styles.image }))),
@@ -85,27 +85,28 @@ var Autosuggest = function (props) {
         }
     };
     (0, react_1.useEffect)(function () {
-        if (typeof value != 'object') {
-            setSelected(options.find(function (o) { return o.value == value; }));
-        }
-        else {
+        if (typeof value === 'object') {
             setSelected(value);
+        }
+        else if ((options === null || options === void 0 ? void 0 : options.length) > 0) {
+            setSelected(options.find(function (option) { return option.value == value; }));
         }
     }, [value, options]);
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 1 },
         label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.label }, label)),
-        react_1.default.createElement(Autocomplete_1.default, { freeSolo: freeSolo, multiple: multiselect, disableCloseOnSelect: multiselect, sx: __assign(__assign({}, sx.autocomplete), { paper: sx.paper, option: sx.option, popperDisablePortal: sx.popperDisablePortal }), value: selected, onChange: function (event, newValue) {
-                handleOnChange(event, newValue);
-            }, onInputChange: function (event, newInputValue) {
-                handleInputChange && handleInputChange(newInputValue);
-            }, noOptionsText: "No options", clearOnBlur: true, handleHomeEndKeys: true, options: options, 
-            //@ts-ignore
-            getOptionLabel: function (option) { return (option === null || option === void 0 ? void 0 : option.label) || ''; }, 
-            //@ts-ignore
-            getOptionSelected: function (option, value) { return (option === null || option === void 0 ? void 0 : option.value) == (value === null || value === void 0 ? void 0 : value.value); }, renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)), endAdornment: handleClear && (react_1.default.createElement(material_1.InputAdornment, { position: "start" },
-                    react_1.default.createElement(material_1.IconButton, { onClick: handleInputClear, size: "small" },
-                        react_1.default.createElement(__1.Icon, { name: "X", size: 20 })))) })); } }),
-        react_1.default.createElement(__1.ErrorText, { error: error })));
+        react_1.default.createElement(material_1.Box, { sx: sx.inputContainer },
+            react_1.default.createElement(Autocomplete_1.default, { freeSolo: freeSolo, multiple: multiselect, disableCloseOnSelect: multiselect, sx: __assign(__assign({}, sx.autocomplete), { paper: sx.paper, option: sx.option, popperDisablePortal: sx.popperDisablePortal }), value: selected, onChange: function (event, newValue) {
+                    handleOnChange(event, newValue);
+                }, onInputChange: function (event, newInputValue) {
+                    handleInputChange && handleInputChange(newInputValue);
+                }, noOptionsText: "No options", clearOnBlur: true, handleHomeEndKeys: true, options: options, 
+                //@ts-ignore
+                getOptionLabel: function (option) { return (option === null || option === void 0 ? void 0 : option.label) || ''; }, 
+                //@ts-ignore
+                renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)), endAdornment: ((selected === null || selected === void 0 ? void 0 : selected.value) && handleClear) && (react_1.default.createElement(material_1.InputAdornment, { position: "start", sx: sx.inputAdornment },
+                        react_1.default.createElement(material_1.IconButton, { onClick: handleInputClear, size: "small" },
+                            react_1.default.createElement(__1.Icon, { name: "X", color: 'text.secondary', size: 20 })))) })); } }),
+            react_1.default.createElement(__1.ErrorText, { error: error }))));
 };
 exports.default = Autosuggest;
 var styles = {
@@ -147,6 +148,9 @@ var sx = {
             borderRadius: function (theme) { return theme.shape.borderRadius; },
         },
     },
+    inputContainer: {
+        width: '100%'
+    },
     paper: {
         bgcolor: 'background.paper',
         color: 'text.primary',
@@ -158,6 +162,7 @@ var sx = {
     },
     listItemIcon: {
         minWidth: '32px',
+        mr: 1
     },
     label: {
         mb: 0,
@@ -182,4 +187,8 @@ var sx = {
     circularProgress: {
         color: 'text.secondary',
     },
+    inputAdornment: {
+        position: 'absolute',
+        right: 0
+    }
 };

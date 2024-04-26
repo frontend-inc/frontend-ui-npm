@@ -5,6 +5,7 @@ type SendPinFormProps = {
     user: Record<string, any>;
     handleChange: (ev: any) => void;
     handleSubmit: () => void;
+    handleLogin: () => void;
 };
 declare const SendPinForm: React.FC<SendPinFormProps>;
 export default SendPinForm;

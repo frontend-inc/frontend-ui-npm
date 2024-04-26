@@ -126,7 +126,7 @@ var VerifyPin = function (props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.Loader, { loading: loading }),
         react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
-            !showVerifyPin ? (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSendPin })) : (react_1.default.createElement(__1.VerifyPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPin })),
+            !showVerifyPin ? (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLogin })) : (react_1.default.createElement(__1.VerifyPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPin })),
             loginUrl && (react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, onClick: handleLogin, color: "primary" }, "Back to login")))));
 };
 exports.default = VerifyPin;

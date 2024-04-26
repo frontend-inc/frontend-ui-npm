@@ -29,7 +29,8 @@ var __1 = require("../..");
 var Person = function (props) {
     var MAX_CHARS = 500;
     var _a = props || {}, actions = _a.actions, resource = _a.resource;
-    var _b = (resource || { data: {} }).data, facebook = _b.facebook, instagram = _b.instagram, linkedin = _b.linkedin, twitter = _b.twitter, youtube = _b.youtube, blog = _b.blog;
+    var data = (resource || {}).data;
+    var _b = data || {}, facebook = _b.facebook, instagram = _b.instagram, linkedin = _b.linkedin, twitter = _b.twitter, youtube = _b.youtube, blog = _b.blog;
     var _c = resource || {}, title = _c.title, image = _c.image, description = _c.description;
     var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
