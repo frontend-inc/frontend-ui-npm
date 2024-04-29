@@ -25,6 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
+//@ts-ignore
 var react_social_icons_1 = require("react-social-icons");
 var context_1 = require("../../../context");
 var SocialLink = function (props) {
@@ -54,6 +55,8 @@ var SocialLink = function (props) {
         }
     };
     var handleClick = function () {
+        if (!url)
+            return;
         if (url.includes('http') || url.includes('www')) {
             window.open(url, '_blank');
             return;

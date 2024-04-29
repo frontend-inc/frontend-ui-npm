@@ -10,9 +10,14 @@ type CollectionCardProps = {
     buttonText?: string;
     href?: string;
     handleClick: () => void;
+    handleEdit?: (item: any) => void;
+    handleDelete?: (item: any) => void;
     enableBorder?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
+    enableEdit?: boolean;
+    enableCreate?: boolean;
+    enableDelete?: boolean;
 };
 declare const CollectionCard: React.FC<CollectionCardProps>;
 export default CollectionCard;

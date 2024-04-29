@@ -14,12 +14,3 @@ var Featured = function (props) {
         (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: "LayoutList", title: "No featured content.", description: "Your featured content will appear here." }))));
 };
 exports.default = Featured;
-var sx = {
-    title: {
-        width: '100%',
-        textAlign: 'center',
-    },
-    item: {
-        p: 2,
-    },
-};

@@ -1,0 +1,36 @@
+import React from 'react';
+type UseCommentsProps = {
+    url: string;
+    handle: string;
+};
+declare const useComments: (props: UseCommentsProps) => {
+    loading: boolean;
+    delayedLoading: any;
+    errors: Record<string, any>;
+    loaded: any;
+    empty: any;
+    comment: import("frontend-js").ResourceType;
+    comments: import("frontend-js").ResourceType[];
+    findComment: (id: import("frontend-js").ID) => import("frontend-js").ResourceType;
+    findComments: (queryParams?: import("frontend-js").QueryParamsType, loadMore?: boolean) => Promise<any>;
+    createComment: (resource: import("frontend-js").ResourceType) => import("frontend-js").ResourceType;
+    updateComment: (resource: import("frontend-js").ResourceType) => import("frontend-js").ResourceType;
+    deleteComment: (id: import("frontend-js").ID) => Promise<any>;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChangePage: any;
+    reloadComments: () => Promise<any>;
+    setComment: (value: import("frontend-js").ResourceType) => void;
+    query: import("frontend-js").QueryParamsType;
+    setQuery: (params: import("frontend-js").QueryParamsType) => void;
+    paginate: (page: number) => Promise<any>;
+    page: number;
+    numPages: number;
+    perPage: number;
+    totalCount: number;
+    sortBy: any;
+    sortDirection: any;
+    handleSort: any;
+    loadMore: () => void;
+    loadingWrapper: (fn: () => void) => void;
+};
+export default useComments;

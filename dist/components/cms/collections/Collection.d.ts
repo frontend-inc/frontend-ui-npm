@@ -1,4 +1,5 @@
 import React from 'react';
+import { FieldType } from '../../../types';
 import { SearchFilterOptionType } from '../../../types';
 import { SortOptionType } from '../../../types';
 export type CollectionProps = {
@@ -11,6 +12,7 @@ export type CollectionProps = {
     navigateUrl: any;
     perPage?: number;
     query?: any;
+    fields: FieldType[];
     filterAnchor?: 'left' | 'top';
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
@@ -21,6 +23,9 @@ export type CollectionProps = {
     buttonText?: string;
     enableBorder?: boolean;
     enableGradient?: boolean;
+    enableEdit?: boolean;
+    enableCreate?: boolean;
+    enableDelete?: boolean;
 };
 declare const Collection: React.FC<CollectionProps>;
 export default Collection;

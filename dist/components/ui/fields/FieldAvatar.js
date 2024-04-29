@@ -30,6 +30,6 @@ var components_1 = require("../../../components");
 var FieldAvatar = function (props) {
     var value = props.value, label = props.label, _a = props.size, size = _a === void 0 ? 32 : _a, rest = __rest(props, ["value", "label", "size"]);
     return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
-        react_1.default.createElement(components_1.UserAvatar, { src: value })));
+        react_1.default.createElement(components_1.Avatar, { src: value })));
 };
 exports.default = FieldAvatar;

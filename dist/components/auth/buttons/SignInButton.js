@@ -26,11 +26,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var frontend_js_1 = require("frontend-js");
-var components_1 = require("../../../components");
 var context_1 = require("../../../context");
 var SignInButton = function (props) {
-    var _a = props || {}, _b = _a.showIcon, showIcon = _b === void 0 ? true : _b, _c = _a.color, color = _c === void 0 ? 'primary' : _c, _d = _a.buttonText, buttonText = _d === void 0 ? 'Sign In' : _d;
-    var _e = (0, frontend_js_1.useAuth)(), fetchMe = _e.fetchMe, currentUser = _e.currentUser;
+    var _a = props || {}, _b = _a.color, color = _b === void 0 ? 'primary' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Sign In' : _c;
+    var _d = (0, frontend_js_1.useAuth)(), fetchMe = _d.fetchMe, currentUser = _d.currentUser;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var handleLogin = function () {
         setAuthOpen(true);
@@ -42,9 +41,7 @@ var SignInButton = function (props) {
     }, [currentUser]);
     if (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
         return null;
-    return (react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: color, onClick: handleLogin, startIcon: showIcon && (react_1.default.createElement(components_1.Icon, { color: color == 'primary'
-                ? 'primary.contrastText'
-                : 'secondary.contrastText', name: "User", size: 20 })) }, buttonText));
+    return (react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: color, onClick: handleLogin }, buttonText));
 };
 exports.default = SignInButton;
 var sx = {

@@ -88,7 +88,6 @@ var sx = {
     menuButton: {
         cursor: 'pointer',
         justifyContent: 'flex-start',
-        bgcolor: 'background.default',
         color: 'text.primary',
         borderRight: 'none !important',
     },

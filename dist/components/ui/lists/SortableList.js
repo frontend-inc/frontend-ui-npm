@@ -36,7 +36,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var react_beautiful_dnd_1 = require("react-beautiful-dnd");
+var dnd_1 = require("@hello-pangea/dnd");
 var SortableList = function (props) {
     var items = props.items, droppableId = props.droppableId, renderItem = props.renderItem, handleDrop = props.handleDrop;
     var _a = (0, react_1.useState)(items), sorted = _a[0], setSorted = _a[1];
@@ -56,9 +56,9 @@ var SortableList = function (props) {
     (0, react_1.useEffect)(function () {
         setSorted(items);
     }, [items]);
-    return (react_1.default.createElement(react_beautiful_dnd_1.DragDropContext, { onDragEnd: onDragEnd },
-        react_1.default.createElement(react_beautiful_dnd_1.Droppable, { droppableId: String(droppableId) }, function (provided) { return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-            react_1.default.createElement(material_1.List, __assign({ disablePadding: true, disableGutters: true, sx: sx.list, dense: true }, provided.droppableProps, { ref: provided.innerRef }), sorted === null || sorted === void 0 ? void 0 : sorted.map(function (item, index) { return (react_1.default.createElement(react_beautiful_dnd_1.Draggable, { key: (item === null || item === void 0 ? void 0 : item.id) || index, draggableId: String((item === null || item === void 0 ? void 0 : item.id) || index), index: index }, function (provided, snapshot) { return (react_1.default.createElement(material_1.Box, __assign({ ref: provided.innerRef }, provided.draggableProps, provided.dragHandleProps, { sx: __assign(__assign({}, sx.draggableItem), (snapshot.isDragging && sx.isDragging)) }), renderItem(__assign(__assign({}, item), { isDragging: snapshot.isDragging }), index))); })); })),
+    return (react_1.default.createElement(dnd_1.DragDropContext, { onDragEnd: onDragEnd },
+        react_1.default.createElement(dnd_1.Droppable, { droppableId: String(droppableId) }, function (provided) { return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+            react_1.default.createElement(material_1.List, __assign({ dense: true, disablePadding: true, sx: sx.list }, provided.droppableProps, { ref: provided.innerRef }), sorted === null || sorted === void 0 ? void 0 : sorted.map(function (item, index) { return (react_1.default.createElement(dnd_1.Draggable, { key: (item === null || item === void 0 ? void 0 : item.id) || index, draggableId: String((item === null || item === void 0 ? void 0 : item.id) || index), index: index }, function (provided, snapshot) { return (react_1.default.createElement(material_1.Box, __assign({ ref: provided.innerRef }, provided.draggableProps, provided.dragHandleProps, { sx: __assign(__assign({}, sx.draggableItem), (snapshot.isDragging && sx.isDragging)) }), renderItem(__assign(__assign({}, item), { isDragging: snapshot.isDragging }), index))); })); })),
             provided.placeholder)); })));
 };
 exports.default = SortableList;

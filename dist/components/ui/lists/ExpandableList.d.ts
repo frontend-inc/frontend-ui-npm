@@ -1,6 +1,7 @@
 import React from 'react';
 type ExpandableListProps = {
     children: React.ReactNode;
+    id?: string;
     label?: string;
     icon?: React.ReactNode;
     enableBorder?: boolean;

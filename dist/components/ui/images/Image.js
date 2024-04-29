@@ -17,6 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
+var helpers_1 = require("../../../helpers");
 var image_1 = __importDefault(require("next/image"));
 var Image = function (props) {
     var _a = props.src, src = _a === void 0 ? null : _a, height = props.height, width = props.width, _b = props.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, label = props.label, _d = props.bgcolor, bgcolor = _d === void 0 ? '#000000' : _d, _e = props.opacity, opacity = _e === void 0 ? 0.5 : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.disableBorder, disableBorder = _h === void 0 ? false : _h, _j = props.disableBorderRadius, disableBorderRadius = _j === void 0 ? false : _j;
@@ -35,7 +36,7 @@ var Image = function (props) {
                     : '0px',
             } })) : (react_1.default.createElement(components_1.NoImage, { darkMode: true, height: height, width: width, disableBorder: disableBorder, disableBorderRadius: disableBorderRadius })),
         label && (react_1.default.createElement(material_1.Box, { sx: sx.label },
-            react_1.default.createElement(components_1.Label, { color: "common.white", label: label })))));
+            react_1.default.createElement(components_1.Label, { color: "common.white", label: (0, helpers_1.truncate)(label, 22) })))));
 };
 exports.default = Image;
 var sx = {

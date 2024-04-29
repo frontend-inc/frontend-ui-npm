@@ -37,18 +37,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
+var cookies_next_1 = require("cookies-next");
 var ExpandableList = function (props) {
-    var label = props.label, children = props.children, enableBorder = props.enableBorder, _a = props.closed, closed = _a === void 0 ? false : _a;
-    var _b = (0, react_1.useState)(!closed), open = _b[0], setOpen = _b[1];
+    var id = props.id, label = props.label, _a = props.closed, closed = _a === void 0 ? false : _a, children = props.children, _b = props.enableBorder, enableBorder = _b === void 0 ? true : _b;
+    var _c = (0, react_1.useState)(!closed), open = _c[0], setOpen = _c[1];
     var handleToggleClick = function () {
+        //setMenuCookie(!open)
         setOpen(!open);
     };
+    var setMenuCookie = function (value) {
+        if (!id)
+            return null;
+        // @ts-ignore
+        var jsonCookie = JSON.parse((0, cookies_next_1.getCookie)("app-config") || '{}');
+        jsonCookie[id] = value;
+        (0, cookies_next_1.setCookie)("app-config", JSON.stringify(jsonCookie));
+    };
+    var handleReadCookieState = function (id) {
+        var cookie = (0, cookies_next_1.getCookie)("app-config") || '{}';
+        // @ts-ignore
+        var jsonConfig = JSON.parse(cookie);
+        if (jsonConfig[id] = undefined) {
+            setOpen(jsonConfig[id]);
+        }
+    };
+    (0, react_1.useEffect)(function () {
+        if (id) {
+            //handleReadCookieState(id)
+        }
+    }, [id]);
     return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.root), (enableBorder && sx.borderTop)) },
         label && (react_1.default.createElement(material_1.ListItem, { sx: sx.listItem, disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleToggleClick },
                 react_1.default.createElement(icons_material_1.ChevronRight, { sx: __assign(__assign({}, sx.icon), (open && sx.expandMore)) })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: handleToggleClick },
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: 'caption' }, label) })))),
-        react_1.default.createElement(material_1.Collapse, { in: open, timeout: "auto", unmountOnExit: true }, children)));
+        react_1.default.createElement(material_1.Collapse, { in: open, timeout: "auto", unmountOnExit: true },
+            react_1.default.createElement(material_1.Box, { px: 1 }, children))));
 };
 exports.default = ExpandableList;
 var sx = {

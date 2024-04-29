@@ -29,10 +29,9 @@ var material_1 = require("@mui/material");
 var __1 = require("../../..");
 var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
-var index_1 = require("../../../../constants/index");
 var CoverHoriz = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, label = _a.label, icon = _a.icon, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? index_1.COVER_HORIZ_HEIGHT : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g;
+    var _a = props || {}, label = _a.label, icon = _a.icon, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 240 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -51,7 +50,8 @@ var CoverHoriz = function (props) {
                     react_1.default.createElement(__1.Icon, { size: 20, name: icon, color: "common.white" }))),
                 react_1.default.createElement(material_1.Box, { sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 40)),
-                    label && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, label)))),
+                    label && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, label))),
+                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: 'EllipsisVertical', color: 'common.white', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
             buttonText && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { variant: "contained", sx: sx.button, onClick: handleItemClick }, buttonText))))));
 };
@@ -65,9 +65,10 @@ var sx = {
         borderRadius: 1,
     },
     cover: {
+        width: '100%',
         position: 'absolute',
-        bottom: '18px',
-        left: '24px',
+        left: 0,
+        bottom: 0,
         zIndex: 1,
     },
     button: {
@@ -80,7 +81,9 @@ var sx = {
         },
     },
     content: {
-        height: '50px',
+        width: '100%',
+        p: 2,
+        minHeight: '60px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

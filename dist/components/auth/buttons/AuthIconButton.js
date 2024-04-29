@@ -31,10 +31,9 @@ var __1 = require("../..");
 var router_1 = require("next/router");
 var context_1 = require("../../../context");
 var AuthButton = function () {
-    var _a;
     var router = (0, router_1.useRouter)();
-    var _b = (0, frontend_js_1.useAuth)(), logout = _b.logout, fetchMe = _b.fetchMe, currentUser = _b.currentUser;
-    var _c = (0, hooks_1.useMenu)(), open = _c.open, anchorEl = _c.anchorEl, closeMenu = _c.closeMenu, toggleMenu = _c.toggleMenu;
+    var _a = (0, frontend_js_1.useAuth)(), logout = _a.logout, fetchMe = _a.fetchMe, currentUser = _a.currentUser;
+    var _b = (0, hooks_1.useMenu)(), open = _b.open, anchorEl = _b.anchorEl, closeMenu = _b.closeMenu, toggleMenu = _b.toggleMenu;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var handleMenuClick = function (ev) {
         toggleMenu(ev);
@@ -58,7 +57,7 @@ var AuthButton = function () {
     }, [currentUser]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.IconButton, { onClick: handleMenuClick },
-            react_1.default.createElement(__1.UserAvatar, { src: (_a = currentUser === null || currentUser === void 0 ? void 0 : currentUser.avatar) === null || _a === void 0 ? void 0 : _a.url })),
+            react_1.default.createElement(__1.UserAvatar, { user: currentUser })),
         react_1.default.createElement(__1.UserMenu, { open: open, anchorEl: anchorEl, toggleMenu: toggleMenu, handleLogoutClick: handleLogoutClick, handleClick: handleClick })));
 };
 exports.default = AuthButton;

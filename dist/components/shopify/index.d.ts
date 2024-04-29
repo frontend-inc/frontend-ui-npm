@@ -50,7 +50,7 @@ export { default as MetafieldRichText } from './products/metafields/MetafieldRic
 export { default as MetafieldProducts } from './products/metafields/MetafieldProducts';
 export { default as MetafieldVideo } from './products/metafields/MetafieldVideo';
 export { default as ShopifyStore } from './store/ShopifyStore';
-export { default as FavoriteButton } from './favorites/FavoriteButton';
+export { default as ProductFavoriteButton } from './favorites/ProductFavoriteButton';
 export { default as ProductFavorites } from './favorites/ProductFavorites';
 export { default as ProductFavoritesCarousel } from './favorites/ProductFavoritesCarousel';
 export { default as RecentlyViewed } from './recently-viewed/RecentlyViewed';

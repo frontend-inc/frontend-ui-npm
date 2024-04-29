@@ -1,8 +1,10 @@
 import React from 'react';
+import { FieldType } from '../../../types';
 export type ForeignCollectionProps = {
     layout?: 'list' | 'grid';
     style?: 'card' | 'avatar' | 'cover';
     field: any;
+    fields: FieldType[];
     resource: any;
     url: string;
     handle: string;
@@ -11,6 +13,9 @@ export type ForeignCollectionProps = {
     perPage?: number;
     query?: any;
     buttonText?: string;
+    enableEdit?: boolean;
+    enableCreate?: boolean;
+    enableDelete?: boolean;
     enableBorder?: boolean;
     enableGradient?: boolean;
     enableLoadMore?: boolean;

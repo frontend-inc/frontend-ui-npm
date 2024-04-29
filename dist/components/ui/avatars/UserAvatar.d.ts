@@ -1,6 +1,6 @@
 import React from 'react';
 type UserAvatarProps = {
-    src: string;
+    user: any;
     size?: number;
 };
 declare const UserAvatar: React.FC<UserAvatarProps>;

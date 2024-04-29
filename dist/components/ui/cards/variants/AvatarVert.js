@@ -43,7 +43,7 @@ var router_1 = require("next/router");
 var index_1 = require("../../../../constants/index");
 var AvatarVert = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, label = _a.label, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? index_1.AVATAR_VERT_HEIGHT : _c, _d = _a.width, width = _d === void 0 ? index_1.AVATAR_VERT_WIDTH : _d, buttonText = _a.buttonText, _e = _a.textVariant, textVariant = _e === void 0 ? 'subtitle1' : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h;
+    var _a = props || {}, label = _a.label, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? index_1.AVATAR_VERT_HEIGHT : _c, _d = _a.width, width = _d === void 0 ? index_1.AVATAR_VERT_WIDTH : _d, buttonText = _a.buttonText, _e = _a.textVariant, textVariant = _e === void 0 ? 'subtitle1' : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -61,10 +61,11 @@ var AvatarVert = function (props) {
             react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
                 react_1.default.createElement(material_1.Avatar, { src: image, sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: height, width: width }) },
                     react_1.default.createElement(material_1.Box, null)))),
-        react_1.default.createElement(material_1.Stack, { spacing: 1 },
-            react_1.default.createElement(material_1.Stack, { spacing: 0 },
-                react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
-                label && (react_1.default.createElement(material_1.Typography, { sx: sx.label, color: "textSecondary", variant: "caption" }, label))),
+        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.contentArea },
+            react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.contentArea, spacing: 0 },
+                react_1.default.createElement(material_1.Stack, { sx: sx.content },
+                    react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title))),
+                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: 'EllipsisVertical', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
             buttonText && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { variant: "outlined", color: "secondary", onClick: handleItemClick }, buttonText))))));
 };
@@ -110,9 +111,17 @@ var sx = {
         borderRadius: 1,
     },
     title: {
+        width: '100%',
         textAlign: 'center',
     },
     label: {
         textAlign: 'center',
     },
+    content: {
+        width: '100%',
+        alignItems: 'center'
+    },
+    contentArea: {
+        width: '100%'
+    }
 };

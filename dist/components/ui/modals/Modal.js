@@ -34,7 +34,7 @@ var Modal = function (props) {
             } }), fullWidth: true, fullScreen: isMobile || fullScreen === true ? true : false, open: open, onClose: handleClose, hideBackdrop: hideBackdrop },
         react_1.default.createElement(material_1.DialogTitle, { sx: sx.dialogTitleContainer },
             react_1.default.createElement(material_1.Box, { sx: sx.dialogTitleContent },
-                react_1.default.createElement(material_1.Typography, { variant: "h6", color: "textPrimary", sx: sx.title }, title),
+                react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "textPrimary", sx: sx.title }, title),
                 !loading && (react_1.default.createElement(material_1.Box, { sx: sx.secondaryActions },
                     secondaryActions && secondaryActions,
                     !disableClose && (react_1.default.createElement(material_1.IconButton, { onClick: handleClose },

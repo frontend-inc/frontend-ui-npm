@@ -32,7 +32,7 @@ var sx = {
         fontFamily: function (theme) { return theme.typography.fontFamily.overline; },
         letterSpacing: '0.05em',
         cursor: 'pointer',
-        borderRadius: '4px',
+        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
         boxShadow: '1px 0px 0 0 rgba(0,0,0,0.1)',
     },
     darkMode: {

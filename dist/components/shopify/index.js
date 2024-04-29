@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MetafieldProducts = exports.MetafieldRichText = exports.MetafieldImage = exports.Metafields = exports.ProductSearch = exports.ProductRecommendations = exports.ProductModal = exports.ProductMetafields = exports.ProductImagesSlider = exports.ProductImageCarousel = exports.ProductImages = exports.SwipeableProductImages = exports.ProductGrid = exports.ProductFeatured = exports.ProductDescription = exports.ProductDetails = exports.ProductInfo = exports.ProductCollectionCarousel = exports.ProductCollection = exports.ProductCarousel = exports.ProductCard = exports.CollectionCoverImage = exports.Collections = exports.ProductVariantSelector = exports.SearchModal = exports.SearchButton = exports.OrderDetails = exports.OrderItem = exports.OrderList = exports.QuantitySelector = exports.OrderLineItem = exports.ColorSelector = exports.CheckboxFilterButton = exports.CheckboxFilterList = exports.ProductSearchFilters = exports.ProductFiltersList = exports.ProductFilterButton = exports.ProductSortButton = exports.SubscriptionSelector = exports.QuickShopButton = exports.CheckoutButton = exports.CartText = exports.CartTotals = exports.CartLines = exports.CartLine = exports.CartDiscountCode = exports.CartDiscounts = exports.CartButton = exports.Cart = exports.AddToCartButton = void 0;
-exports.ShopifyAuth = exports.RegisterForm = exports.Register = exports.Orders = exports.Order = exports.CustomerAccount = exports.SignInForm = exports.SignIn = exports.ChangePasswordForm = exports.ChangePassword = exports.Customer = exports.CustomerForm = exports.AddressForm = exports.AddressItem = exports.AddressList = exports.Addresses = exports.Address = exports.TrackRecentlyViewed = exports.RecentlyViewed = exports.ProductFavoritesCarousel = exports.ProductFavorites = exports.FavoriteButton = exports.ShopifyStore = exports.MetafieldVideo = void 0;
+exports.ShopifyAuth = exports.RegisterForm = exports.Register = exports.Orders = exports.Order = exports.CustomerAccount = exports.SignInForm = exports.SignIn = exports.ChangePasswordForm = exports.ChangePassword = exports.Customer = exports.CustomerForm = exports.AddressForm = exports.AddressItem = exports.AddressList = exports.Addresses = exports.Address = exports.TrackRecentlyViewed = exports.RecentlyViewed = exports.ProductFavoritesCarousel = exports.ProductFavorites = exports.ProductFavoriteButton = exports.ShopifyStore = exports.MetafieldVideo = void 0;
 // Cart and Checkout
 var AddToCartButton_1 = require("./cart/AddToCartButton");
 Object.defineProperty(exports, "AddToCartButton", { enumerable: true, get: function () { return __importDefault(AddToCartButton_1).default; } });
@@ -118,8 +118,8 @@ Object.defineProperty(exports, "MetafieldVideo", { enumerable: true, get: functi
 var ShopifyStore_1 = require("./store/ShopifyStore");
 Object.defineProperty(exports, "ShopifyStore", { enumerable: true, get: function () { return __importDefault(ShopifyStore_1).default; } });
 // Favorites
-var FavoriteButton_1 = require("./favorites/FavoriteButton");
-Object.defineProperty(exports, "FavoriteButton", { enumerable: true, get: function () { return __importDefault(FavoriteButton_1).default; } });
+var ProductFavoriteButton_1 = require("./favorites/ProductFavoriteButton");
+Object.defineProperty(exports, "ProductFavoriteButton", { enumerable: true, get: function () { return __importDefault(ProductFavoriteButton_1).default; } });
 var ProductFavorites_1 = require("./favorites/ProductFavorites");
 Object.defineProperty(exports, "ProductFavorites", { enumerable: true, get: function () { return __importDefault(ProductFavorites_1).default; } });
 var ProductFavoritesCarousel_1 = require("./favorites/ProductFavoritesCarousel");

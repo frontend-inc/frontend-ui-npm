@@ -69,35 +69,39 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
-var __1 = require("../..");
-var FormFieldInput_1 = __importDefault(require("./FormFieldInput"));
-var index_1 = require("../../../constants/index");
-var lodash_1 = require("lodash");
+var components_1 = require("../../../components");
+var helpers_1 = require("../../../helpers");
+var constants_1 = require("../../../constants");
 var ForeignForm = function (props) {
-    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, _b = props.variant, variant = _b === void 0 ? 'contained' : _b, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl;
-    var _c = (0, react_1.useState)(false), submitted = _c[0], setSubmitted = _c[1];
-    var _d = (0, frontend_js_1.useResource)({
+    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl;
+    var _b = (0, react_1.useState)(false), submitted = _b[0], setSubmitted = _b[1];
+    var _c = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _d.loading, addLinks = _d.addLinks;
-    var _e = (0, frontend_js_1.useResource)({
+    }), loading = _c.loading, addLinks = _c.addLinks;
+    var _d = (0, frontend_js_1.useResource)({
         name: 'document',
         url: foreignUrl,
-    }), foreignLoading = _e.loading, resource = _e.resource, setResource = _e.setResource, update = _e.update, create = _e.create, handleChange = _e.handleChange, removeAttachment = _e.removeAttachment;
+    }), errors = _d.errors, resource = _d.resource, setResource = _d.setResource, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment;
     var handleDataChange = function (ev) {
         var name = ev.target.name;
         var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        setResource(function (prev) {
-            var _a;
-            return (__assign(__assign({}, prev), { data: __assign(__assign({}, prev.data), (_a = {}, _a[name] = value, _a)) }));
-        });
+        if (constants_1.SYSTEM_FIELDS.includes(name)) {
+            setResource(function (prev) {
+                var _a;
+                return (__assign(__assign({}, prev), (_a = {}, _a[name] = value, _a)));
+            });
+        }
+        else {
+            setResource(function (prev) {
+                var _a;
+                return (__assign(__assign({}, prev), { data: __assign(__assign({}, prev.data), (_a = {}, _a[name] = value, _a)) }));
+            });
+        }
     };
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -109,7 +113,7 @@ var ForeignForm = function (props) {
             }
         });
     }); };
-    var handleSubmit = function (e) { return __awaiter(void 0, void 0, void 0, function () {
+    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp, addResp, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -145,11 +149,7 @@ var ForeignForm = function (props) {
         });
     }); };
     return !submitted ? (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.form }, fields === null || fields === void 0 ? void 0 :
-            fields.map(function (field) {
-                return index_1.SYSTEM_FIELDS.includes(field.name) ? (react_1.default.createElement(FormFieldInput_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove })) : (react_1.default.createElement(FormFieldInput_1.default, { key: field.id, field: field, value: (0, lodash_1.get)(resource === null || resource === void 0 ? void 0 : resource.data, field.name), handleChange: handleDataChange }));
-            }),
-            react_1.default.createElement(material_1.Button, { variant: variant, onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.IconLoading, { color: "primary", loading: foreignLoading }) }, buttonText)))) : (react_1.default.createElement(__1.Placeholder, { enableBorder: true, icon: 'Check', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: function () { return setSubmitted(false); } }, "Done") }));
+        react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }))) : (react_1.default.createElement(components_1.Placeholder, { enableBorder: true, icon: 'Check', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: function () { return setSubmitted(false); } }, "Done") }));
 };
 exports.default = ForeignForm;
 var sx = {

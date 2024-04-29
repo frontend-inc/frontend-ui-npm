@@ -52,9 +52,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
+var __1 = require("../..");
 var frontend_shopify_1 = require("frontend-shopify");
-var FavoriteButton = function (props) {
+var ProductFavoriteButton = function (props) {
     var product = props.product;
     var _a = (0, frontend_shopify_1.useFavorites)({
         product: product,
@@ -66,9 +66,9 @@ var FavoriteButton = function (props) {
         });
     }); };
     return (react_1.default.createElement(material_1.Button, { size: "large", onClick: handleClick, variant: "contained", color: isFavorite ? 'primary' : 'secondary', sx: __assign({}, sx.button) },
-        react_1.default.createElement(components_1.Icon, { name: "Heart", color: isFavorite ? 'primary.contrastText' : 'secondary.contrastText' })));
+        react_1.default.createElement(__1.Icon, { name: "Heart", color: isFavorite ? 'primary.contrastText' : 'secondary.contrastText' })));
 };
-exports.default = FavoriteButton;
+exports.default = ProductFavoriteButton;
 var sx = {
     button: {
         minWidth: '44px',

@@ -1,11 +1,14 @@
 import React from 'react';
+import { FieldType, SyntheticEventType } from '../../../types';
 export type FormProps = {
-    handle: string;
-    url: string;
+    loading: boolean;
+    errors: any;
+    fields: FieldType[];
+    resource: any;
+    handleChange: (e: SyntheticEventType) => void;
+    handleRemove: (name: string) => void;
+    handleSubmit?: () => void;
     buttonText?: string;
-    variant?: 'contained' | 'outlined' | 'text';
-    fields: any[];
-    children?: React.ReactElement[];
 };
 declare const Form: React.FC<FormProps>;
 export default Form;

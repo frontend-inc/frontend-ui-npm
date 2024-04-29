@@ -139,7 +139,7 @@ var AddToCartButton = function (props) {
             react_1.default.createElement(material_1.Button, { fullWidth: true, sx: __assign(__assign({}, sx.addToCartButton), (size == 'small' && sx.addToCartButtonSmall)), color: "primary", onClick: handleAddToCart, variant: buttonVariant, size: size, startIcon: react_1.default.createElement(components_1.IconLoading, { color: buttonVariant == 'contained'
                         ? 'primary.contrastText'
                         : 'primary.main', loading: loading }) }, label),
-            enableFavorites && react_1.default.createElement(shopify_1.FavoriteButton, { product: product }))));
+            enableFavorites && react_1.default.createElement(shopify_1.ProductFavoriteButton, { product: product }))));
 };
 exports.default = AddToCartButton;
 var sx = {

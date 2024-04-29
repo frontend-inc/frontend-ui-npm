@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.Videos = exports.SortButton = exports.Show = exports.TableView = exports.Person = exports.CollectionFilterButton = exports.ListViewSkeleton = exports.ListView = exports.LoadMore = exports.GridViewSkeleton = exports.GridView = exports.Item = exports.FetchMany = exports.Fetch = exports.FormFieldInput = exports.FormInput = exports.ForeignCollection = exports.ForeignForm = exports.FormWizard = exports.Form = exports.Favorites = exports.Details = exports.CollectionCard = exports.CollectionList = exports.CollectionCarousel = exports.Collection = exports.Article = void 0;
+exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.Videos = exports.SortButton = exports.Show = exports.TableView = exports.Person = exports.CollectionFilterButton = exports.ListViewSkeleton = exports.ListView = exports.LoadMore = exports.GridViewSkeleton = exports.GridView = exports.Item = exports.FetchMany = exports.Fetch = exports.FormFieldInput = exports.FormInput = exports.ForeignCollection = exports.ForeignForm = exports.FormWizard = exports.Form = exports.Favorites = exports.Details = exports.CollectionForm = exports.CollectionCard = exports.CollectionList = exports.CollectionCarousel = exports.Collection = exports.Article = void 0;
 // CMS
 var Article_1 = require("./show/Article");
 Object.defineProperty(exports, "Article", { enumerable: true, get: function () { return __importDefault(Article_1).default; } });
@@ -15,6 +15,8 @@ var CollectionList_1 = require("./collections/CollectionList");
 Object.defineProperty(exports, "CollectionList", { enumerable: true, get: function () { return __importDefault(CollectionList_1).default; } });
 var CollectionCard_1 = require("./collections/CollectionCard");
 Object.defineProperty(exports, "CollectionCard", { enumerable: true, get: function () { return __importDefault(CollectionCard_1).default; } });
+var CollectionForm_1 = require("../cms/forms/CollectionForm");
+Object.defineProperty(exports, "CollectionForm", { enumerable: true, get: function () { return __importDefault(CollectionForm_1).default; } });
 var Details_1 = require("./details/Details");
 Object.defineProperty(exports, "Details", { enumerable: true, get: function () { return __importDefault(Details_1).default; } });
 var Favorites_1 = require("../cms/favorites/Favorites");

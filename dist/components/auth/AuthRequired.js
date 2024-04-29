@@ -11,6 +11,6 @@ var AuthRequired = function (props) {
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     if (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
         return children;
-    return (react_1.default.createElement(components_1.Placeholder, { title: "Sign In", description: "Please sign in to view this content.", actions: react_1.default.createElement(components_1.SignInButton, { buttonText: "Login" }) }));
+    return (react_1.default.createElement(components_1.Placeholder, { title: "Sign In required", description: "You must be logged in.", actions: react_1.default.createElement(components_1.SignInButton, null) }));
 };
 exports.default = AuthRequired;

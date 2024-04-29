@@ -33,6 +33,42 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
@@ -41,22 +77,122 @@ var router_1 = require("next/router");
 var helpers_1 = require("../../../helpers");
 var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
+var constants_1 = require("../../../constants");
+var helpers_2 = require("../../../helpers");
 var ForeignCollection = function (props) {
-    var field = props.field, resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, foreignUrl = props.foreignUrl, navigateUrl = props.navigateUrl, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, buttonText = props.buttonText, _d = props.query, defaultQuery = _d === void 0 ? null : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableLoadMore, enableLoadMore = _g === void 0 ? true : _g;
+    var field = props.field, fields = props.fields, resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, foreignUrl = props.foreignUrl, navigateUrl = props.navigateUrl, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, buttonText = props.buttonText, _d = props.query, defaultQuery = _d === void 0 ? null : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableLoadMore, enableLoadMore = _g === void 0 ? true : _g, _h = props.enableCreate, enableCreate = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k;
     var router = (0, router_1.useRouter)();
+    var _l = (0, react_1.useState)(false), openModal = _l[0], setOpenModal = _l[1];
+    var _m = (0, react_1.useState)(false), openDeleteModal = _m[0], setOpenDeleteModal = _m[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _h = (0, frontend_js_1.useResource)({
+    var addLinks = (0, frontend_js_1.useResource)({
+        name: 'document',
+        url: url,
+    }).addLinks;
+    var _o = (0, frontend_js_1.useResource)({
+        name: 'document',
         url: foreignUrl,
-    }), loading = _h.loading, query = _h.query, resources = _h.resources, findMany = _h.findMany, page = _h.page, numPages = _h.numPages, loadMore = _h.loadMore;
+    }), loading = _o.loading, errors = _o.errors, query = _o.query, _resource = _o.resource, setResource = _o.setResource, setResources = _o.setResources, update = _o.update, create = _o.create, destroy = _o.destroy, resources = _o.resources, findMany = _o.findMany, removeAttachment = _o.removeAttachment, page = _o.page, numPages = _o.numPages, loadMore = _o.loadMore, reloadMany = _o.reloadMany;
     var handleClick = function (item) {
         if (clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
             router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
-    (0, react_1.useEffect)(function () {
-        if (resource && field && foreignUrl) {
-            var documents = (0, helpers_1.filterDocumentLinks)(resource, field === null || field === void 0 ? void 0 : field.foreign_content_type);
-            var documentIds = documents === null || documents === void 0 ? void 0 : documents.map(function (document) { return document.id; });
+    var handleDataChange = function (ev) {
+        var name = ev.target.name;
+        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
+        if (constants_1.SYSTEM_FIELDS.includes(name)) {
+            setResource(function (prev) {
+                var _a;
+                return (__assign(__assign({}, prev), (_a = {}, _a[name] = value, _a)));
+            });
+        }
+        else {
+            setResource(function (prev) {
+                var _a;
+                return (__assign(__assign({}, prev), { data: __assign(__assign({}, prev.data), (_a = {}, _a[name] = value, _a)) }));
+            });
+        }
+    };
+    var handleAdd = function () {
+        setResource({});
+        setOpenModal(true);
+    };
+    var handleEdit = function (item) {
+        setResource(item);
+        setOpenModal(true);
+    };
+    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp, documentIds, err_1;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 6, , 7]);
+                    resp = void 0;
+                    if (!(_resource === null || _resource === void 0 ? void 0 : _resource.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, update(_resource)];
+                case 1:
+                    resp = _a.sent();
+                    return [3 /*break*/, 5];
+                case 2: return [4 /*yield*/, create(_resource)];
+                case 3:
+                    resp = _a.sent();
+                    if (!(resp === null || resp === void 0 ? void 0 : resp.id)) return [3 /*break*/, 5];
+                    return [4 /*yield*/, addLinks(resource === null || resource === void 0 ? void 0 : resource.handle, [resp.id])];
+                case 4:
+                    _a.sent();
+                    _a.label = 5;
+                case 5:
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setResource({});
+                        setOpenModal(false);
+                        documentIds = getDocumentIds();
+                        documentIds.push(resp.id);
+                        handleLoadDocuments(documentIds);
+                    }
+                    return [3 /*break*/, 7];
+                case 6:
+                    err_1 = _a.sent();
+                    console.log('Error', err_1);
+                    return [3 /*break*/, 7];
+                case 7: return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleDeleteClick = function (item) {
+        setResource(item);
+        setOpenDeleteModal(true);
+    };
+    var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, destroy(_resource === null || _resource === void 0 ? void 0 : _resource.id)];
+                case 1:
+                    _a.sent();
+                    setOpenDeleteModal(false);
+                    setOpenModal(false);
+                    setResource({});
+                    reloadMany();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var getDocumentIds = function () {
+        var _a;
+        return (_a = (0, helpers_1.filterDocumentLinks)(resource, field === null || field === void 0 ? void 0 : field.foreign_content_type)) === null || _a === void 0 ? void 0 : _a.map(function (link) { return link === null || link === void 0 ? void 0 : link.id; });
+    };
+    var handleLoadDocuments = function (documentIds) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
             findMany(__assign(__assign(__assign({}, query), defaultQuery), { filters: {
                     AND: [
                         {
@@ -66,11 +202,23 @@ var ForeignCollection = function (props) {
                         },
                     ],
                 }, per_page: perPage, page: 1 }));
+            return [2 /*return*/];
+        });
+    }); };
+    (0, react_1.useEffect)(function () {
+        if (resource && field && foreignUrl) {
+            var documentIds = getDocumentIds();
+            handleLoadDocuments(documentIds);
         }
     }, [resource, field, foreignUrl]);
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient }),
-        enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore }))));
+    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
+        enableCreate && (react_1.default.createElement(material_1.Box, null,
+            react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))),
+        react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableCreate: enableCreate, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
+        enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })),
+        react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save') },
+            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_2.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove })),
+        react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };
 exports.default = ForeignCollection;
 var sx = {

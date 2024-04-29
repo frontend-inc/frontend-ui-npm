@@ -32,6 +32,6 @@ var CmsForm = function (props) {
     var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, rest = __rest(props, ["label", "title", "description", "textAlign", "bgcolor", "py", "px", "maxWidth"]);
     return (react_1.default.createElement(components_1.Section, { bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
-        react_1.default.createElement(components_2.Form, __assign({}, rest))));
+        react_1.default.createElement(components_2.CollectionForm, __assign({}, rest))));
 };
 exports.default = CmsForm;

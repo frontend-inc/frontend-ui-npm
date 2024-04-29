@@ -29,11 +29,15 @@ export type CardProps = {
     height?: number;
     width?: number;
     handleClick?: () => void;
+    handleEdit?: (item: any) => void;
+    handleDelete?: (item: any) => void;
     objectFit?: 'cover' | 'contain';
     responsive?: boolean;
     enableBorder?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
+    enableEdit?: boolean;
+    enableDelete?: boolean;
     icon?: string;
 };
 export type PriceType = {

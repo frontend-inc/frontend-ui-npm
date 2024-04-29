@@ -7,6 +7,11 @@ type CollectionListProps = {
     buttonText?: string;
     enableBorder?: boolean;
     enableGradient?: boolean;
+    enableEdit?: boolean;
+    enableCreate?: boolean;
+    enableDelete?: boolean;
+    handleEdit?: (item: any) => void;
+    handleDelete?: (item: any) => void;
 };
 declare const CollectionList: React.FC<CollectionListProps>;
 export default CollectionList;

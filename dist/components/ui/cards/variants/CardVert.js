@@ -43,7 +43,7 @@ var router_1 = require("next/router");
 var index_1 = require("../../../../constants/index");
 var CardVert = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, label = _a.label, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? index_1.CARD_VERT_HEIGHT : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g;
+    var _a = props || {}, label = _a.label, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? index_1.CARD_VERT_HEIGHT : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -58,8 +58,9 @@ var CardVert = function (props) {
             react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
                 react_1.default.createElement(__1.Image, { src: image, height: height, objectFit: objectFit, alt: title, label: label, enableGradient: enableGradient, disableBorderRadius: enableBorder, enableOverlay: enableOverlay }))),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
-            react_1.default.createElement(material_1.Stack, { spacing: 0 },
-                react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "subtitle2" }, (0, helpers_1.truncate)(title))),
+            react_1.default.createElement(material_1.Stack, { sx: sx.contentArea, direction: "row", spacing: 0 },
+                react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
+                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: 'EllipsisVertical', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
             buttonText && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleItemClick }, buttonText))))));
 };
@@ -92,13 +93,18 @@ var sx = {
         },
     },
     content: {
+        width: '100%',
         minHeight: '60px',
+    },
+    contentArea: {
+        width: '100%',
     },
     contentBorder: {
         p: 1,
         pt: 0,
     },
     title: {
+        width: '100%',
         minHeight: '50px',
     },
     description: {
