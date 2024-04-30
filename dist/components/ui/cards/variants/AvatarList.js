@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var helpers_1 = require("../../../../helpers");
 var __1 = require("../../..");
-var AvatarHoriz = function (props) {
+var AvatarList = function (props) {
     var title = props.title, description = props.description, _a = props.textVariant, textVariant = _a === void 0 ? 'body1' : _a, image = props.image, _b = props.height, height = _b === void 0 ? 128 : _b, _c = props.width, width = _c === void 0 ? 128 : _c, handleClick = props.handleClick, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
     return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.listItem), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: 'EllipsisVertical', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined })) },
@@ -30,7 +30,7 @@ var AvatarHoriz = function (props) {
                         react_1.default.createElement(material_1.Box, null))),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: sx.description }, (0, helpers_1.truncate)(description, 80)) })))));
 };
-exports.default = AvatarHoriz;
+exports.default = AvatarList;
 var sx = {
     listItem: {
         my: 0,

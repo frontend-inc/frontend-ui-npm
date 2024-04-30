@@ -41,7 +41,7 @@ var __1 = require("../../..");
 var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
 var index_1 = require("../../../../constants/index");
-var CardVert = function (props) {
+var CardGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, label = _a.label, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? index_1.CARD_VERT_HEIGHT : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete;
     var router = (0, router_1.useRouter)();
@@ -64,7 +64,7 @@ var CardVert = function (props) {
             buttonText && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleItemClick }, buttonText))))));
 };
-exports.default = CardVert;
+exports.default = CardGrid;
 var sx = {
     root: {
         width: '100%',

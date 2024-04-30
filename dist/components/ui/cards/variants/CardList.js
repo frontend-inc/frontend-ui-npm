@@ -40,7 +40,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../../..");
 var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
-var CardHoriz = function (props) {
+var CardList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 180 : _c, buttonText = _a.buttonText, _d = _a.textVariant, textVariant = _d === void 0 ? 'subtitle1' : _d, handleClick = _a.handleClick, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete;
     var router = (0, router_1.useRouter)();
@@ -65,7 +65,7 @@ var CardHoriz = function (props) {
             buttonText && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.actions), (enableBorder && sx.actionsBorder)) },
                 react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleItemClick }, buttonText))))));
 };
-exports.default = CardHoriz;
+exports.default = CardList;
 var sx = {
     root: {
         width: '100%',

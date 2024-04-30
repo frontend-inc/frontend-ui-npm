@@ -1,6 +1,6 @@
 import React from 'react';
 type FavoritesProps = {
-    layout?: 'list' | 'grid';
+    variant?: 'list' | 'grid';
     style?: 'card' | 'avatar' | 'cover';
     field: any;
     url: string;

@@ -26,16 +26,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var __1 = require("../..");
-var CollectionCard = function (props) {
-    var _a = props.variant, variant = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, rest = __rest(props, ["variant", "style"]);
-    var COMPONENTS = {
-        card: __1.Card,
-        avatar: __1.AvatarCard,
-        cover: __1.Cover,
-        chip: __1.Chip
-    };
-    var Component = COMPONENTS[style] || __1.Card;
-    return (react_1.default.createElement(Component, __assign({ variant: variant }, rest)));
+var components_1 = require("../../components");
+var components_2 = require("../../components");
+var CmsTable = function (props) {
+    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, rest = __rest(props, ["label", "title", "description", "textAlign", "bgcolor", "py", "px", "maxWidth"]);
+    return (react_1.default.createElement(components_1.Section, { bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
+        react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
+        react_1.default.createElement(components_2.CollectionTable, __assign({}, rest))));
 };
-exports.default = CollectionCard;
+exports.default = CmsTable;

@@ -7622,10 +7622,11 @@ from2@^2.1.0:
     readable-stream "^2.0.0"
 
 "frontend-js@git+https://github.com/frontend-inc/frontend-js.git":
-  version "0.0.51"
-  resolved "git+https://github.com/frontend-inc/frontend-js.git#03787e0d5352c79bbdb6bdfcb27ddc6dbc3d383a"
+  version "0.0.54"
+  resolved "git+https://github.com/frontend-inc/frontend-js.git#ec9de8846d77240611ca01e0eb51901b301223c0"
   dependencies:
     cookies-next "^2.1.1"
+    lodash "^4.17.21"
 
 "frontend-shopify@git+https://github.com/frontend-inc/frontend-shopify.git":
   version "0.0.33"

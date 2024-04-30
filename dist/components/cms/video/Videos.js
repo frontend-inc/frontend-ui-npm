@@ -40,7 +40,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var material_2 = require("@mui/material");
 var Videos = function (props) {
-    var title = props.title, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'cover' : _b, url = props.url, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, enableOverlay = props.enableOverlay, enableGradient = props.enableGradient, enableBorder = props.enableBorder;
+    var title = props.title, _a = props.variant, variant = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'cover' : _b, url = props.url, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, enableOverlay = props.enableOverlay, enableGradient = props.enableGradient, enableBorder = props.enableBorder;
     var _e = (0, frontend_js_1.useResource)({
         url: url,
     }), loading = _e.loading, findMany = _e.findMany, resources = _e.resources;
@@ -52,7 +52,7 @@ var Videos = function (props) {
     }, [url, defaultQuery, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_2.Typography, { variant: "h5", color: "text.primary" }, title),
-        react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: resources, enableBorder: enableBorder, enableGradient: enableGradient, handleClick: handleClick }),
+        react_1.default.createElement(components_1.CollectionList, { variant: variant, style: style, resources: resources, enableBorder: enableBorder, enableGradient: enableGradient, handleClick: handleClick }),
         !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Video', title: "No videos found", description: "Try adjusting your search or filters" }))));
 };
 exports.default = Videos;

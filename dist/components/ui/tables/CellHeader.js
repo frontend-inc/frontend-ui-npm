@@ -37,14 +37,18 @@ var CellHeader = function (props) {
             setActive(false);
         }
     }, [field, sortBy]);
-    return (react_1.default.createElement(material_1.Button, { disableRipple: true, fullWidth: true, onClick: function () { return handleSort(field); }, endIcon: active && (react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement(material_1.Button, { sx: sx.root, disableRipple: true, fullWidth: true, onClick: function () { return handleSort(field); }, endIcon: active && (react_1.default.createElement(react_1.default.Fragment, null,
             sortDirection === 'asc' && react_1.default.createElement(components_1.Icon, { name: "ChevronUp", size: 20 }),
             sortDirection === 'desc' && react_1.default.createElement(components_1.Icon, { name: "ChevronDown", size: 20 }))) },
         react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.label }, field === null || field === void 0 ? void 0 : field.label)));
 };
 exports.default = CellHeader;
 var sx = {
-    root: {},
+    root: {
+        borderRadius: 0,
+        width: '100%',
+        height: '100%',
+    },
     label: {
         textTransform: 'lowercase',
         fontWeight: 500,

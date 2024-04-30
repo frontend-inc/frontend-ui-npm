@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -25,22 +36,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var Person = function (props) {
     var MAX_CHARS = 500;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
     var data = (resource || {}).data;
     var _b = data || {}, facebook = _b.facebook, instagram = _b.instagram, linkedin = _b.linkedin, twitter = _b.twitter, youtube = _b.youtube, blog = _b.blog;
-    var _c = resource || {}, title = _c.title, image = _c.image, description = _c.description;
+    var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
     var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { sm: 'row', xs: 'column' }, spacing: 4 },
-            react_1.default.createElement(material_1.Stack, { direction: "column" },
-                react_1.default.createElement(material_1.Avatar, { sx: sx.avatarContainer },
-                    react_1.default.createElement(material_1.Avatar, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, sx: sx.avatar },
-                        react_1.default.createElement(material_1.Box, null)),
-                    react_1.default.createElement(material_1.Box, null))),
-            react_1.default.createElement(material_1.Stack, { spacing: 2, sx: sx.content },
+            react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
+                react_1.default.createElement(components_1.Image, { label: label, height: 240, src: image === null || image === void 0 ? void 0 : image.url, alt: title, disableBorderRadius: enableBorder })),
+            react_1.default.createElement(material_1.Stack, { spacing: 2, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
                 react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
                 facebook ||
                     instagram ||
@@ -48,16 +56,18 @@ var Person = function (props) {
                     twitter ||
                     youtube ||
                     (blog && (react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.socialUrls },
-                        facebook && react_1.default.createElement(__1.SocialLink, { provider: "facebook", url: facebook }),
-                        instagram && (react_1.default.createElement(__1.SocialLink, { provider: "instagram", url: instagram })),
-                        linkedin && react_1.default.createElement(__1.SocialLink, { provider: "linkedin", url: linkedin }),
-                        twitter && react_1.default.createElement(__1.SocialLink, { provider: "twitter", url: twitter }),
-                        youtube && react_1.default.createElement(__1.SocialLink, { provider: "youtube", url: youtube }),
-                        blog && react_1.default.createElement(__1.SocialLink, { provider: "blog", url: blog })))),
+                        facebook && react_1.default.createElement(components_1.SocialLink, { provider: "facebook", url: facebook }),
+                        instagram && (react_1.default.createElement(components_1.SocialLink, { provider: "instagram", url: instagram })),
+                        linkedin && react_1.default.createElement(components_1.SocialLink, { provider: "linkedin", url: linkedin }),
+                        twitter && react_1.default.createElement(components_1.SocialLink, { provider: "twitter", url: twitter }),
+                        youtube && react_1.default.createElement(components_1.SocialLink, { provider: "youtube", url: youtube }),
+                        blog && react_1.default.createElement(components_1.SocialLink, { provider: "blog", url: blog })))),
                 react_1.default.createElement(material_1.Box, null,
                     open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
                     (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all')))),
-            actions && (react_1.default.createElement(__1.Actions, { actions: actions, resource: resource, justifyContent: "flex-end" })))));
+            (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { p: enableBorder ? 1 : 0 },
+                enableEdit && (react_1.default.createElement(components_1.ActionButton, { resource: resource, action: { label: 'Edit', color: 'secondary', name: 'click', onClick: handleEdit } })),
+                react_1.default.createElement(components_1.Actions, { actions: actions, resource: resource, justifyContent: "flex-end" }))))));
 };
 exports.default = Person;
 var sx = {
@@ -66,6 +76,13 @@ var sx = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+    },
+    rootBorder: {
+        overflow: 'hidden',
+        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        border: '1px solid',
+        borderColor: 'divider',
     },
     container: {
         width: '100%',
@@ -75,25 +92,17 @@ var sx = {
             xs: 'center',
         },
     },
-    avatar: {
-        height: {
-            sm: 180,
-            xs: 180,
+    imageContainer: {
+        width: "100%",
+        height: "100%",
+        maxHeight: {
+            sm: 240,
+            xs: 240
         },
-        width: {
-            sm: 180,
-            xs: 180,
-        },
-    },
-    avatarContainer: {
-        height: {
-            sm: 180,
-            xs: 180,
-        },
-        width: {
-            sm: 180,
-            xs: 180,
-        },
+        maxWidth: {
+            sm: 240,
+            xs: '100%'
+        }
     },
     header: {
         width: '100%',
@@ -101,6 +110,9 @@ var sx = {
     },
     content: {
         width: '100%',
+    },
+    contentBorder: {
+        p: 2,
     },
     text: {
         width: '100%',

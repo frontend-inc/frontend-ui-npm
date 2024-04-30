@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.filterDocumentLinks = exports.getDocumentValue = exports.flattenDocument = exports.handleDocumentChange = void 0;
+exports.filterDocumentLinks = exports.getDocumentValue = exports.flattenDocument = exports.flattenDocuments = exports.handleDocumentChange = void 0;
 var index_1 = require("../constants/index");
 var lodash_1 = require("lodash");
 var handleDocumentChange = function (ev, resource) {
@@ -39,9 +39,13 @@ var handleDocumentChange = function (ev, resource) {
     return newResource;
 };
 exports.handleDocumentChange = handleDocumentChange;
+var flattenDocuments = function (resources) {
+    return resources.map(function (resource) { return (0, exports.flattenDocument)(resource); });
+};
+exports.flattenDocuments = flattenDocuments;
 var flattenDocument = function (resource) {
-    var _a = resource || {}, data = _a.data, rest = __rest(_a, ["data"]);
-    return __assign(__assign({}, rest), data);
+    var _a = resource || {}, data = _a.data, image = _a.image, video = _a.video, file = _a.file, rest = __rest(_a, ["data", "image", "video", "file"]);
+    return __assign(__assign({ image: image === null || image === void 0 ? void 0 : image.url, video: video === null || video === void 0 ? void 0 : video.url, file: file === null || file === void 0 ? void 0 : file.url }, rest), data);
 };
 exports.flattenDocument = flattenDocument;
 var getDocumentValue = function (document, field) {

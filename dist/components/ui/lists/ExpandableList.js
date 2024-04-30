@@ -72,7 +72,7 @@ var ExpandableList = function (props) {
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: handleToggleClick },
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: 'caption' }, label) })))),
         react_1.default.createElement(material_1.Collapse, { in: open, timeout: "auto", unmountOnExit: true },
-            react_1.default.createElement(material_1.Box, { px: 1 }, children))));
+            react_1.default.createElement(material_1.Box, { px: 2 }, children))));
 };
 exports.default = ExpandableList;
 var sx = {
@@ -87,7 +87,7 @@ var sx = {
     },
     listItemButton: {
         py: 0,
-        px: 1,
+        px: 2,
         borderRadius: 1,
         height: '40px',
     },

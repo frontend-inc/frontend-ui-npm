@@ -15,17 +15,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var CoverVert_1 = __importDefault(require("./variants/CoverVert"));
-var CoverHoriz_1 = __importDefault(require("./variants/CoverHoriz"));
+var CoverGrid_1 = __importDefault(require("./variants/CoverGrid"));
+var CoverList_1 = __importDefault(require("./variants/CoverList"));
 var Cover = function (props) {
-    var direction = props.direction;
-    switch (direction) {
-        case 'row':
-            return react_1.default.createElement(CoverVert_1.default, __assign({}, props));
-        case 'column':
-            return react_1.default.createElement(CoverHoriz_1.default, __assign({}, props));
-        default:
-            return react_1.default.createElement(CoverVert_1.default, __assign({}, props));
-    }
+    var variant = props.variant;
+    return variant == 'list' ?
+        react_1.default.createElement(CoverList_1.default, __assign({}, props)) :
+        react_1.default.createElement(CoverGrid_1.default, __assign({}, props));
 };
 exports.default = Cover;

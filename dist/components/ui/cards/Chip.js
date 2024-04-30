@@ -15,8 +15,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var ChipHoriz_1 = __importDefault(require("./variants/ChipHoriz"));
-var AvatarChip = function (props) {
-    return react_1.default.createElement(ChipHoriz_1.default, __assign({}, props));
+var ChipList_1 = __importDefault(require("./variants/ChipList"));
+var ChipGrid_1 = __importDefault(require("./variants/ChipGrid"));
+var Chip = function (props) {
+    var variant = props.variant;
+    return variant == 'list' ?
+        react_1.default.createElement(ChipList_1.default, __assign({}, props)) :
+        react_1.default.createElement(ChipGrid_1.default, __assign({}, props));
 };
-exports.default = AvatarChip;
+exports.default = Chip;

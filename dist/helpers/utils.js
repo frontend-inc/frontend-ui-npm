@@ -71,6 +71,8 @@ var resize = function (src, _a) {
 };
 exports.resize = resize;
 var imageFromVideoUrl = function (url) {
+    if (!url)
+        return null;
     return url === null || url === void 0 ? void 0 : url.replace(/mp4|mpeg|ogg|mkv|mov/i, 'jpg');
 };
 exports.imageFromVideoUrl = imageFromVideoUrl;

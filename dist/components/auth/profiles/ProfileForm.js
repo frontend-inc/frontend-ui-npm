@@ -80,11 +80,10 @@ var constants_1 = require("../../../constants");
 var ProfileForm = function (props) {
     var resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields;
     var _b = (0, react_1.useState)(false), submitted = _b[0], setSubmitted = _b[1];
-    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var _c = (0, frontend_js_1.useResource)({
-        name: 'profile',
+        name: 'document',
         url: "/api/v1/cms/profiles",
-    }), loading = _c.loading, delayedLoading = _c.delayedLoading, profile = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, removeAttachment = _c.removeAttachment;
+    }), delayedLoading = _c.delayedLoading, profile = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, removeAttachment = _c.removeAttachment;
     var handleDataChange = function (ev) {
         var name = ev.target.name;
         var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
@@ -111,7 +110,7 @@ var ProfileForm = function (props) {
             }
         });
     }); };
-    var handleSubmit = function (e) { return __awaiter(void 0, void 0, void 0, function () {
+    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {

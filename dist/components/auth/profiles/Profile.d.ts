@@ -1,11 +1,13 @@
 import React from 'react';
-import { ActionType, DocumentType } from '../../../types';
+import { ActionType, DocumentType, FieldType } from '../../../types';
 export type ProfileProps = {
-    fields: any[];
+    displayFields: FieldType[];
+    fields: FieldType[];
     url: string;
-    enableBorder?: boolean;
     actions?: ActionType[];
     resource: DocumentType;
+    enableBorder?: boolean;
+    enableEdit?: boolean;
 };
 declare const Profile: React.FC<ProfileProps>;
 export default Profile;

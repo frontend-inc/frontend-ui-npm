@@ -1,7 +1,7 @@
 import React from 'react';
 import { FieldType } from '../../../types';
 export type ForeignCollectionProps = {
-    layout?: 'list' | 'grid';
+    variant?: 'list' | 'grid';
     style?: 'card' | 'avatar' | 'cover';
     field: any;
     fields: FieldType[];

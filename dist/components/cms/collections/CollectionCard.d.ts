@@ -1,7 +1,7 @@
 import React from 'react';
 type CollectionCardProps = {
-    layout: 'list' | 'grid';
-    style: 'card' | 'avatar' | 'cover';
+    variant: 'list' | 'grid';
+    style: 'card' | 'avatar' | 'cover' | 'chip';
     label?: string;
     title?: string;
     image?: string;

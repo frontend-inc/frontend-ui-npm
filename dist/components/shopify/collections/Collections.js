@@ -30,7 +30,7 @@ var material_1 = require("@mui/material");
 var frontend_shopify_2 = require("frontend-shopify");
 var router_1 = require("next/router");
 var Collections = function (props) {
-    var _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.layout, layout = _b === void 0 ? 'grid' : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, buttonText = props.buttonText, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e;
+    var _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.variant, variant = _b === void 0 ? 'grid' : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, buttonText = props.buttonText, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e;
     var router = (0, router_1.useRouter)();
     var _f = (0, frontend_shopify_1.useCollections)(), loading = _f.loading, collections = _f.collections, findCollections = _f.findCollections;
     var shopUrl = (0, react_1.useContext)(frontend_shopify_2.ShopContext).shopUrl;
@@ -47,7 +47,7 @@ var Collections = function (props) {
         findCollections();
     }, []);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(components_1.CollectionList, { layout: layout, style: style, resources: collections, buttonText: buttonText, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient })));
+        react_1.default.createElement(components_1.CollectionList, { variant: variant, style: style, resources: collections, buttonText: buttonText, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient })));
 };
 exports.default = Collections;
 var sx = {

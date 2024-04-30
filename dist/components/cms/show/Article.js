@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -8,17 +19,19 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var moment_1 = __importDefault(require("moment"));
 var Article = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource;
-    var _b = resource || {}, title = _b.title, image = _b.image, description = _b.description, data = _b.data;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
+    var _b = resource || {}, label = _b.label, title = _b.title, image = _b.image, description = _b.description, data = _b.data;
     var published_at = (data || {}).published_at;
-    return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 7 },
+    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), spacing: 7 },
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
-            react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption" }, (0, moment_1.default)(published_at).format('MMMM D, YYYY'))),
-        react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400 }),
+            react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption" }, (0, moment_1.default)(published_at).format('MMMM D, YYYY')),
+            (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { px: 2 },
+                enableEdit && (react_1.default.createElement(__1.ActionButton, { resource: resource, action: { label: 'Edit', color: 'secondary', name: 'click', onClick: handleEdit } })),
+                react_1.default.createElement(__1.Actions, { actions: actions, resource: resource })))),
+        react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label, disableBorderRadius: enableBorder }),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
-            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)),
-        actions && react_1.default.createElement(__1.Actions, { actions: actions, resource: resource })));
+            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description))));
 };
 exports.default = Article;
 var sx = {
@@ -26,6 +39,11 @@ var sx = {
         width: '100%',
         justifyContent: 'flex-start',
         alignItems: 'center',
+    },
+    rootBorder: {
+        py: 2,
+        border: '1px solid',
+        borderColor: 'divider',
     },
     header: {
         maxWidth: 500,

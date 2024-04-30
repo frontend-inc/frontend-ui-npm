@@ -79,20 +79,15 @@ var TableToolbar = function (props) {
 exports.default = TableToolbar;
 var sx = {
     root: {
-        px: 2,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        bgcolor: 'background.paper',
-        pb: 1,
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
         width: {
             xs: 'calc(100vw - 42px)',
             sm: '100%',
         },
     },
-    pl: '6px',
     toolbar: {
         display: 'flex',
         flexDirection: 'row',
@@ -106,7 +101,6 @@ var sx = {
         maxWidth: '140px',
     },
     searchBar: {
-        mt: 1,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',

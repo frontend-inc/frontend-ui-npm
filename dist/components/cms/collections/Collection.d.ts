@@ -4,8 +4,8 @@ import { SearchFilterOptionType } from '../../../types';
 import { SortOptionType } from '../../../types';
 export type CollectionProps = {
     url: string;
-    layout: 'list' | 'grid';
-    style: 'avatar' | 'card' | 'cover';
+    variant: 'list' | 'grid';
+    style: 'avatar' | 'card' | 'cover' | 'chip';
     editing?: boolean;
     enableInfiniteLoad?: boolean;
     enableLoadMore?: boolean;

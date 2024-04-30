@@ -109,7 +109,7 @@ var AttachmentInput = function (props) {
     }); };
     var onRemove = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            if (!(attachment === null || attachment === void 0 ? void 0 : attachment.url)) {
+            if (!attachment) {
                 handleChange({
                     target: {
                         name: name,
@@ -130,9 +130,9 @@ var AttachmentInput = function (props) {
     }); };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label),
-        (attachment === null || attachment === void 0 ? void 0 : attachment.url) && (react_1.default.createElement(RenderAttachment, { variant: variant, src: attachment.url, size: size, objectFit: objectFit, onDelete: function () { return handleDelete(name); } })),
-        !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && src && (react_1.default.createElement(RenderAttachment, { src: src, size: size, variant: variant, objectFit: objectFit, onDelete: onRemove })),
-        !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && !src && (react_1.default.createElement(DropZone_1.default, { onDrop: onDrop, label: 'Upload attachment' }))));
+        attachment && (react_1.default.createElement(RenderAttachment, { variant: variant, src: attachment, size: size, objectFit: objectFit, onDelete: function () { return handleDelete(name); } })),
+        !attachment && src && (react_1.default.createElement(RenderAttachment, { src: src, size: size, variant: variant, objectFit: objectFit, onDelete: onRemove })),
+        !attachment && !src && (react_1.default.createElement(DropZone_1.default, { onDrop: onDrop, label: 'Upload attachment' }))));
 };
 exports.default = AttachmentInput;
 var sx = {

@@ -1,7 +1,7 @@
 import React from 'react';
 export type CollectionsProps = {
     editing?: boolean;
-    layout?: 'grid' | 'list';
+    variant?: 'grid' | 'list';
     style?: 'card' | 'avatar' | 'cover';
     perPage?: number;
     buttonText?: string;

@@ -49,7 +49,7 @@ var MobileDrawer = function (props) {
                     react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav" })))),
             (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
                 enableShopify && react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }),
-                enableAuth && (react_1.default.createElement(__1.AuthButton, { editing: editing, myAccountUrl: "".concat(clientUrl, "/auth/my-account") })))))));
+                enableAuth && (react_1.default.createElement(__1.AuthButton, { showLabel: true, editing: editing, myAccountUrl: "".concat(clientUrl, "/auth/my-account") })))))));
 };
 exports.default = MobileDrawer;
 var sx = {

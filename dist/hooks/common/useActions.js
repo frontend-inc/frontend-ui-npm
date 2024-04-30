@@ -53,21 +53,25 @@ var useActions = function (params) {
                     _a = action === null || action === void 0 ? void 0 : action.name;
                     switch (_a) {
                         case 'navigate': return [3 /*break*/, 1];
-                        case 'url': return [3 /*break*/, 2];
-                        case 'webhook': return [3 /*break*/, 3];
+                        case 'click': return [3 /*break*/, 2];
+                        case 'url': return [3 /*break*/, 3];
+                        case 'webhook': return [3 /*break*/, 4];
                     }
-                    return [3 /*break*/, 5];
+                    return [3 /*break*/, 6];
                 case 1:
                     url = "".concat(clientUrl).concat(action === null || action === void 0 ? void 0 : action.path);
                     if (resource === null || resource === void 0 ? void 0 : resource.handle) {
                         url = "".concat(clientUrl).concat(action === null || action === void 0 ? void 0 : action.path, "/").concat(resource.handle);
                     }
                     router.push(url);
-                    return [3 /*break*/, 6];
+                    return [3 /*break*/, 7];
                 case 2:
+                    (action === null || action === void 0 ? void 0 : action.onClick) && action.onClick(ev);
+                    return [3 /*break*/, 7];
+                case 3:
                     window.open(action === null || action === void 0 ? void 0 : action.path, '_blank');
-                    return [3 /*break*/, 6];
-                case 3: return [4 /*yield*/, loadingWrapper(function () {
+                    return [3 /*break*/, 7];
+                case 4: return [4 /*yield*/, loadingWrapper(function () {
                         var _a, _b, _c;
                         return fetch(action.url, {
                             method: (_a = action === null || action === void 0 ? void 0 : action.options) === null || _a === void 0 ? void 0 : _a.method,
@@ -75,11 +79,11 @@ var useActions = function (params) {
                             body: JSON.stringify((_c = action === null || action === void 0 ? void 0 : action.options) === null || _c === void 0 ? void 0 : _c.body),
                         });
                     })];
-                case 4:
+                case 5:
                     _b.sent();
-                    return [3 /*break*/, 6];
-                case 5: return [3 /*break*/, 6];
-                case 6: return [2 /*return*/];
+                    return [3 /*break*/, 7];
+                case 6: return [3 /*break*/, 7];
+                case 7: return [2 /*return*/];
             }
         });
     }); };

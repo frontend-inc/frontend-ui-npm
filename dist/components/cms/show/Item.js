@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -25,23 +36,25 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var Item = function (props) {
     var MAX_CHARS = 500;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource;
-    var _b = resource || {}, title = _b.title, image = _b.image, description = _b.description;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
+    var _b = resource || {}, label = _b.label, title = _b.title, image = _b.image, description = _b.description;
     var _c = (0, react_1.useState)(false), open = _c[0], setOpen = _c[1];
     if (!resource)
         return null;
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { md: 'row', xs: 'column' }, spacing: 4 },
-            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 256 }),
-            react_1.default.createElement(material_1.Stack, { spacing: 2, sx: sx.content },
+            react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 360, label: label, disableBorderRadius: enableBorder }),
+            react_1.default.createElement(material_1.Stack, { spacing: 2, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
                 react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
                 react_1.default.createElement(material_1.Box, null,
                     open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
-                    (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all'))),
-                actions && react_1.default.createElement(__1.Actions, { actions: actions, resource: resource })))));
+                    (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all')))),
+            (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.actions), (enableBorder && sx.actionsBorder)) },
+                enableEdit && (react_1.default.createElement(components_1.ActionButton, { resource: resource, action: { label: 'Edit', color: 'secondary', name: 'click', onClick: handleEdit } })),
+                react_1.default.createElement(components_1.Actions, { actions: actions, resource: resource }))))));
 };
 exports.default = Item;
 var sx = {
@@ -50,6 +63,12 @@ var sx = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    rootBorder: {
+        overflow: 'hidden',
+        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        border: '1px solid',
+        borderColor: 'divider'
     },
     container: {
         width: '100%',
@@ -80,6 +99,9 @@ var sx = {
             xs: '100%',
         },
     },
+    contentBorder: {
+        p: 2,
+    },
     text: {
         width: '100%',
         whiteSpace: 'pre-line',
@@ -91,4 +113,10 @@ var sx = {
         cursor: 'pointer',
         color: 'text.secondary',
     },
+    actions: {
+        p: 0,
+    },
+    actionsBorder: {
+        p: 1
+    }
 };

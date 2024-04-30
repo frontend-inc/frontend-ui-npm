@@ -2,8 +2,8 @@ import React from 'react';
 type CollectionListProps = {
     resources: any;
     handleClick: (item: any) => void;
-    layout: 'list' | 'grid';
-    style: 'card' | 'avatar' | 'cover';
+    variant: 'list' | 'grid';
+    style: 'card' | 'avatar' | 'cover' | 'chip';
     buttonText?: string;
     enableBorder?: boolean;
     enableGradient?: boolean;

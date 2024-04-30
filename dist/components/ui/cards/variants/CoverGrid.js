@@ -56,12 +56,12 @@ var CoverVert = function (props) {
         react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
             react_1.default.createElement(__1.Image, { label: label, src: image, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },
-            react_1.default.createElement(material_1.Stack, { spacing: 1, direction: 'row', alignItems: "center" },
+            react_1.default.createElement(material_1.Stack, { sx: sx.fullWidth, spacing: 1, direction: 'row', alignItems: "center" },
                 icon && (react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(__1.Icon, { size: 20, name: icon, color: "common.white" }))),
                 react_1.default.createElement(material_1.Box, { sx: sx.content },
                     react_1.default.createElement(material_1.Stack, { sx: sx.contentContainer, direction: "row", spacing: 1 },
-                        react_1.default.createElement(material_1.Box, null,
+                        react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
                             react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 60)),
                             description && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, (0, helpers_1.truncate)(description, 30)))),
                         (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: 'EllipsisVertical', color: 'common.white', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))))),
@@ -78,6 +78,7 @@ var sx = {
         borderRadius: 1,
     },
     cover: {
+        width: '100%',
         position: 'absolute',
         bottom: 0,
         left: 0,
@@ -95,8 +96,12 @@ var sx = {
             opacity: 0.9,
         },
     },
+    fullWidth: {
+        width: '100%',
+    },
     content: {
         p: 2,
+        width: '100%',
         minHeight: '60px',
         display: 'flex',
         flexDirection: 'column',
@@ -104,6 +109,7 @@ var sx = {
         alignItems: 'flex-start',
     },
     contentContainer: {
+        width: '100%',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
     }

@@ -1,12 +1,17 @@
 import React from 'react';
-import { ActionType, DocumentType } from '../../../types';
-export type ShowProps = {
-    style: 'article' | 'person' | 'item';
-    fields: any[];
-    url: string;
+import { ActionType, FieldType } from '../../../types';
+export type ShowItemProps = {
     enableBorder?: boolean;
     actions?: ActionType[];
-    resource: DocumentType;
+    resource: any;
+    enableEdit?: boolean;
+    handleEdit?: () => void;
+};
+export type ShowProps = ShowItemProps & {
+    fields: FieldType[];
+    displayFields: FieldType[];
+    url: string;
+    style: 'article' | 'person' | 'item';
 };
 declare const Show: React.FC<ShowProps>;
 export default Show;

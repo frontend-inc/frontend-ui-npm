@@ -16,19 +16,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var ChipHoriz = function (props) {
-    var title = props.title, _a = props.textVariant, textVariant = _a === void 0 ? 'body1' : _a, image = props.image, handleClick = props.handleClick, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d;
-    return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.listItem), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true },
+var components_1 = require("../../../../components");
+var helpers_1 = require("../../../../helpers");
+var ChipList = function (props) {
+    var label = props.label, title = props.title, description = props.description, image = props.image, handleClick = props.handleClick, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+    return (react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.actions },
+                label && (react_1.default.createElement(components_1.Label, { label: label })),
+                (enableEdit || enableDelete) && (react_1.default.createElement(components_1.MenuButton, { icon: 'EllipsisVertical', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
-                react_1.default.createElement(material_1.ListItemIcon, null,
+                image && (react_1.default.createElement(material_1.ListItemIcon, null,
                     react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: image, alt: title },
-                        react_1.default.createElement(material_1.Box, null))),
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary" }, title) })))));
+                        react_1.default.createElement(material_1.Box, null)))),
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: 'body1', color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: 'body2', color: "text.secondary" }, (0, helpers_1.truncate)(description)) })))));
 };
-exports.default = ChipHoriz;
+exports.default = ChipList;
 var sx = {
-    listItem: {
+    root: {
         my: 0,
         p: 0,
     },
@@ -65,9 +69,12 @@ var sx = {
         borderRadius: 1,
     },
     avatar: {
-        mr: 2,
+        mr: 1,
         height: '32px',
         width: '32px',
         backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)',
     },
+    actions: {
+        px: 1
+    }
 };

@@ -3,7 +3,6 @@ type TableProps = {
     loading: boolean;
     fields: Array<any>;
     rows: Array<any>;
-    enableBorder?: boolean;
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSelect?: boolean;
@@ -19,6 +18,7 @@ type TableProps = {
     page?: number;
     perPage?: number;
     numPages?: number;
+    numResults?: number;
     totalCount?: number;
     query: any;
     handleQueryChange: (e: any) => void;
@@ -26,7 +26,9 @@ type TableProps = {
     handlePaginate?: (e: any, page: number) => void;
     handleSearch?: (keywords: any) => void;
     handleKeywordSearch: (keywords: string) => void;
-    handleSort?: (e: any) => void;
+    handleSort?: (field: any) => void;
+    enableBorder?: boolean;
+    disableBorderRadius?: boolean;
     styles?: any;
 };
 declare const Table: React.FC<TableProps>;

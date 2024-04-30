@@ -39,7 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var Logo_1 = __importDefault(require("./Logo"));
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
@@ -64,7 +64,7 @@ var DesktopSideNav = function (props) {
                             react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav", editing: editing }))))),
                 (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
                     enableShopify && react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }),
-                    enableAuth && (react_1.default.createElement(__1.AuthButton, { showLabel: true, editing: editing, myAccountUrl: "".concat(clientUrl, "/auth/my-account") }))))))));
+                    enableAuth && (react_1.default.createElement(components_1.AuthButton, { showLabel: true, editing: editing, myAccountUrl: "".concat(clientUrl, "/auth/my-account") }))))))));
 };
 exports.default = DesktopSideNav;
 var sx = {

@@ -6,6 +6,7 @@ type TableHeaderProps = {
     checked?: boolean;
     enableSelect?: boolean;
     enableEdit?: boolean;
+    enableDelete?: boolean;
     handleSort: (e: any) => void;
     handleSelectAll?: (e: any) => void;
 };

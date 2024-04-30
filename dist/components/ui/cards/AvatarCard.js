@@ -15,17 +15,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var AvatarVert_1 = __importDefault(require("./variants/AvatarVert"));
-var AvatarHoriz_1 = __importDefault(require("./variants/AvatarHoriz"));
+var AvatarGrid_1 = __importDefault(require("./variants/AvatarGrid"));
+var AvatarList_1 = __importDefault(require("./variants/AvatarList"));
 var AvatarCard = function (props) {
-    var direction = props.direction;
-    switch (direction) {
-        case 'row':
-            return react_1.default.createElement(AvatarVert_1.default, __assign({}, props));
-        case 'column':
-            return react_1.default.createElement(AvatarHoriz_1.default, __assign({}, props));
-        default:
-            return react_1.default.createElement(AvatarVert_1.default, __assign({}, props));
-    }
+    var variant = props.variant;
+    return (variant == 'grid' ?
+        react_1.default.createElement(AvatarGrid_1.default, __assign({}, props)) :
+        react_1.default.createElement(AvatarList_1.default, __assign({}, props)));
 };
 exports.default = AvatarCard;

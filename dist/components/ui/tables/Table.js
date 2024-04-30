@@ -24,12 +24,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var Table = function (props) {
     var _a = (0, react_1.useState)(false), showFilters = _a[0], setShowFilters = _a[1];
-    var loading = props.loading, fields = props.fields, rows = props.rows, _b = props.enableSelect, enableSelect = _b === void 0 ? false : _b, _c = props.enableEdit, enableEdit = _c === void 0 ? false : _c, _d = props.enableDelete, enableDelete = _d === void 0 ? false : _d, handleClick = props.handleClick, handleEdit = props.handleEdit, handleEditSelected = props.handleEditSelected, handleDelete = props.handleDelete, handlePublish = props.handlePublish, handleUnpublish = props.handleUnpublish, secondaryActions = props.secondaryActions, query = props.query, handleClearQuery = props.handleClearQuery, handleQueryChange = props.handleQueryChange, handleSearch = props.handleSearch, handleKeywordSearch = props.handleKeywordSearch, handleSort = props.handleSort, _e = props.page, page = _e === void 0 ? 1 : _e, _f = props.numPages, numPages = _f === void 0 ? 1 : _f, _g = props.totalCount, totalCount = _g === void 0 ? 0 : _g, handlePaginate = props.handlePaginate, _h = props.styles, styles = _h === void 0 ? {} : _h;
+    var loading = props.loading, fields = props.fields, rows = props.rows, _b = props.enableSelect, enableSelect = _b === void 0 ? false : _b, _c = props.enableEdit, enableEdit = _c === void 0 ? false : _c, _d = props.enableDelete, enableDelete = _d === void 0 ? false : _d, handleClick = props.handleClick, handleEdit = props.handleEdit, handleEditSelected = props.handleEditSelected, handleDelete = props.handleDelete, handlePublish = props.handlePublish, handleUnpublish = props.handleUnpublish, secondaryActions = props.secondaryActions, query = props.query, handleClearQuery = props.handleClearQuery, handleQueryChange = props.handleQueryChange, handleSearch = props.handleSearch, handleKeywordSearch = props.handleKeywordSearch, handleSort = props.handleSort, _e = props.page, page = _e === void 0 ? 1 : _e, _f = props.perPage, perPage = _f === void 0 ? 10 : _f, numPages = props.numPages, numResults = props.numResults, totalCount = props.totalCount, handlePaginate = props.handlePaginate, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.disableBorderRadius, disableBorderRadius = _h === void 0 ? false : _h, _j = props.styles, styles = _j === void 0 ? {} : _j;
     var handleKeywordChange = function (e) {
         handleQueryChange({
             target: {
@@ -38,8 +37,8 @@ var Table = function (props) {
             },
         });
     };
-    var _j = (0, hooks_1.useSelected)(), selected = _j.selected, selectedIds = _j.selectedIds, setSelected = _j.setSelected, setSelectedIds = _j.setSelectedIds, handleSelect = _j.handleSelect;
-    var _k = (0, react_1.useState)(null), anchorEl = _k[0], setAnchorEl = _k[1];
+    var _k = (0, hooks_1.useSelected)(), selected = _k.selected, selectedIds = _k.selectedIds, setSelected = _k.setSelected, setSelectedIds = _k.setSelectedIds, handleSelect = _k.handleSelect;
+    var _l = (0, react_1.useState)(null), anchorEl = _l[0], setAnchorEl = _l[1];
     var handleFilterClick = function (ev) {
         setAnchorEl(ev.currentTarget);
         setShowFilters(true);
@@ -54,20 +53,8 @@ var Table = function (props) {
             setSelectedIds(rows.map(function (r) { return r.id; }));
         }
     };
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.TableToolbar, { loading: loading, query: query, selected: selected, handleKeywordSearch: handleKeywordSearch, handleKeywordChange: handleKeywordChange, handleFilter: handleFilterClick, handleClearQuery: handleClearQuery, enableEdit: enableEdit, enableDelete: enableDelete, handleDelete: handleDelete, handleEdit: handleEditSelected, handlePublish: handlePublish, handleUnpublish: handleUnpublish, secondaryActions: secondaryActions }),
-        react_1.default.createElement(components_1.TableContainer, { styles: styles },
-            react_1.default.createElement(components_1.TableHeaders, { enableEdit: enableEdit, enableSelect: enableSelect, fields: fields, sortBy: query === null || query === void 0 ? void 0 : query.sort_by, sortDirection: query === null || query === void 0 ? void 0 : query.sort_direction, checked: (selected === null || selected === void 0 ? void 0 : selected.length) > 0 && (selected === null || selected === void 0 ? void 0 : selected.length) === (rows === null || rows === void 0 ? void 0 : rows.length), handleSort: handleSort, handleSelectAll: handleSelectAll }),
-            react_1.default.createElement(material_1.TableBody, null, rows === null || rows === void 0 ? void 0 : rows.map(function (row) { return (react_1.default.createElement(components_1.TableRow, { key: row === null || row === void 0 ? void 0 : row.id, row: row, fields: fields, selectedIds: selectedIds, enableSelect: enableSelect, enableEdit: enableEdit, handleClick: handleClick, handleEdit: handleEdit, handleSelect: handleSelect })); }))),
-        react_1.default.createElement(components_1.Pagination, { page: page, numPages: numPages, totalCount: totalCount, loading: loading, handlePaginate: handlePaginate }),
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(components_1.TableList, { loading: loading, enableBorder: enableBorder, disableBorderRadius: disableBorderRadius, query: query, toolbar: react_1.default.createElement(components_1.TableToolbar, { loading: loading, query: query, selected: selected, handleKeywordSearch: handleKeywordSearch, handleKeywordChange: handleKeywordChange, handleFilter: handleFilterClick, handleClearQuery: handleClearQuery, enableEdit: enableEdit, enableDelete: enableDelete, handleDelete: handleDelete, handleEdit: handleEditSelected, handlePublish: handlePublish, handleUnpublish: handleUnpublish, secondaryActions: secondaryActions }), fields: fields, rows: rows, enableEdit: enableEdit, enableSelect: enableSelect, selected: selected, selectedIds: selectedIds, handleClick: handleClick, handleEdit: handleEdit, handleSelect: handleSelect, handleSort: handleSort, handleSelectAll: handleSelectAll, page: page, perPage: perPage, numPages: numPages, numResults: numResults, totalCount: totalCount, handlePaginate: handlePaginate, styles: styles }),
         react_1.default.createElement(components_1.FilterPopup, { open: showFilters, anchorEl: anchorEl, query: query, handleClose: function () { return setShowFilters(false); }, fields: fields, handleSearch: handleSearch, handleChange: handleQueryChange, handleClearFilters: handleClearQuery })));
 };
 exports.default = Table;
-var sx = {
-    root: {
-        bgcolor: 'background.paper',
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
-        border: '1px solid',
-        borderColor: 'divider',
-    },
-};

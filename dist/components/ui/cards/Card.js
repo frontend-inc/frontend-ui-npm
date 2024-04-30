@@ -15,17 +15,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var CardVert_1 = __importDefault(require("./variants/CardVert"));
-var CardHoriz_1 = __importDefault(require("./variants/CardHoriz"));
+var CardGrid_1 = __importDefault(require("./variants/CardGrid"));
+var CardList_1 = __importDefault(require("./variants/CardList"));
 var Card = function (props) {
-    var direction = props.direction;
-    switch (direction) {
-        case 'row':
-            return react_1.default.createElement(CardVert_1.default, __assign({}, props));
-        case 'column':
-            return react_1.default.createElement(CardHoriz_1.default, __assign({}, props));
-        default:
-            return react_1.default.createElement(CardVert_1.default, __assign({}, props));
-    }
+    var variant = props.variant;
+    return variant == 'list' ?
+        react_1.default.createElement(CardList_1.default, __assign({}, props)) :
+        react_1.default.createElement(CardGrid_1.default, __assign({}, props));
 };
 exports.default = Card;

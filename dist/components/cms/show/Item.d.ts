@@ -1,8 +1,4 @@
 import React from 'react';
-import { ActionType, DocumentType } from '../../../types';
-type ItemProps = {
-    resource: DocumentType;
-    actions?: ActionType[];
-};
-declare const Item: React.FC<ItemProps>;
+import { ShowItemProps } from './Show';
+declare const Item: React.FC<ShowItemProps>;
 export default Item;

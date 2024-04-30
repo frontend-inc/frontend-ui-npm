@@ -3,9 +3,11 @@ type TableRowProps = {
     row: any;
     fields: Array<any>;
     enableEdit?: boolean;
+    enableDelete?: boolean;
     enableSelect?: boolean;
     handleClick?: (value: any, row: any, field: any) => void;
     handleEdit?: (item: any) => void;
+    handleDelete?: (item: any) => void;
     selectedIds?: Array<any>;
     handleSelect?: (item: any) => void;
 };

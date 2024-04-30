@@ -51,11 +51,11 @@ var FilterButton = function (props) {
     };
     var handleClose = function () { return setOpen(false); };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Badge, { badgeContent: filters === null || filters === void 0 ? void 0 : filters.length, color: "secondary", anchorOrigin: {
+        react_1.default.createElement(material_1.Badge, { sx: sx.badge, badgeContent: filters === null || filters === void 0 ? void 0 : filters.length, color: "primary", anchorOrigin: {
                 vertical: 'top',
                 horizontal: 'right',
             } },
-            react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), ((filters === null || filters === void 0 ? void 0 : filters.length) > 0 && sx.hideBorder)), color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(components_1.IconLoading, { loading: loading })) : (react_1.default.createElement(components_1.Icon, { name: "SlidersHorizontal", size: 20 })), onClick: handleClick }, "Filters")),
+            react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), ((filters === null || filters === void 0 ? void 0 : filters.length) > 0 && sx.hideBorder)), color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(components_1.IconLoading, { loading: loading })) : (react_1.default.createElement(components_1.Icon, { name: "SlidersHorizontal", color: 'secondary.contrastText', size: 20 })), onClick: handleClick }, "Filters")),
         react_1.default.createElement(material_1.Hidden, { smDown: true },
             react_1.default.createElement(components_1.Popup, { p: 1, anchorEl: anchorEl, open: open, handleClose: handleClose, anchorOrigin: {
                     vertical: 'bottom',
@@ -96,4 +96,7 @@ var sx = {
             sm: '360px',
         },
     },
+    badge: {
+        width: '100%',
+    }
 };

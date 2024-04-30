@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DEFAULT_FIELDS = exports.USER_FIELD = exports.TAGS_FIELD = exports.LOCALE_FIELD = exports.PUBLISHED_FIELD = exports.TITLE_FIELD = exports.HANDLE_FIELD = exports.ID_FIELD = exports.SYSTEM_FIELDS = exports.ATTACHMENT_FIELDS = exports.REFERENCE_FIELDS = void 0;
 exports.REFERENCE_FIELDS = ['habtm'];
-exports.ATTACHMENT_FIELDS = ['image', 'audio', 'video', 'attachment'];
+exports.ATTACHMENT_FIELDS = ['image', 'video', 'file'];
 exports.SYSTEM_FIELDS = [
     'id',
     'title',
