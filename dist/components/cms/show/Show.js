@@ -123,7 +123,7 @@ var Show = function (props) {
         react_1.default.createElement(Component, { resource: _resource, actions: actions, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit }),
         (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(Details_1.default, { url: url, fields: displayFields, resource: resource, enableBorder: enableBorder })),
         react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: _resource, handleChange: handleDataChange, handleRemove: handleRemove }))));
+            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove }))));
 };
 exports.default = Show;
 var sx = {

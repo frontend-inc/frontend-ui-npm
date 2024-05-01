@@ -1,11 +1,12 @@
 import React from 'react';
 import { FilterOptionType, SearchFilterOptionType } from '../../../..';
-type FilterButtonProps = {
+type CollectionFilterButtonProps = {
     filters?: FilterOptionType[];
     loading?: boolean;
     filterOptions?: SearchFilterOptionType[];
+    disableFilterCount?: boolean;
     handleFilter: (filter: FilterOptionType) => void;
     handleClear: () => void;
 };
-declare const FilterButton: React.FC<FilterButtonProps>;
-export default FilterButton;
+declare const CollectionFilterButton: React.FC<CollectionFilterButtonProps>;
+export default CollectionFilterButton;

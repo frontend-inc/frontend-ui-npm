@@ -39,25 +39,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("../../../../components");
+var __1 = require("../../..");
 var CollectionFilterList_1 = __importDefault(require("./CollectionFilterList"));
-var FilterButton = function (props) {
-    var _a = props || {}, _b = _a.loading, loading = _b === void 0 ? false : _b, _c = _a.filters, filters = _c === void 0 ? [] : _c, _d = _a.filterOptions, filterOptions = _d === void 0 ? [] : _d, handleFilter = _a.handleFilter;
-    var _e = (0, react_1.useState)(false), open = _e[0], setOpen = _e[1];
-    var _f = (0, react_1.useState)(null), anchorEl = _f[0], setAnchorEl = _f[1];
+var CollectionFilterButton = function (props) {
+    var _a = props || {}, _b = _a.loading, loading = _b === void 0 ? false : _b, _c = _a.filters, filters = _c === void 0 ? [] : _c, _d = _a.filterOptions, filterOptions = _d === void 0 ? [] : _d, handleFilter = _a.handleFilter, _e = _a.disableFilterCount, disableFilterCount = _e === void 0 ? false : _e;
+    var _f = (0, react_1.useState)(false), open = _f[0], setOpen = _f[1];
+    var _g = (0, react_1.useState)(null), anchorEl = _g[0], setAnchorEl = _g[1];
     var handleClick = function (ev) {
         setAnchorEl(ev.currentTarget);
         setOpen(true);
     };
     var handleClose = function () { return setOpen(false); };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Badge, { sx: sx.badge, badgeContent: filters === null || filters === void 0 ? void 0 : filters.length, color: "primary", anchorOrigin: {
+        react_1.default.createElement(material_1.Badge, { sx: sx.badge, badgeContent: disableFilterCount ? 0 : filters === null || filters === void 0 ? void 0 : filters.length, color: "primary", anchorOrigin: {
                 vertical: 'top',
                 horizontal: 'right',
             } },
-            react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), ((filters === null || filters === void 0 ? void 0 : filters.length) > 0 && sx.hideBorder)), color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(components_1.IconLoading, { loading: loading })) : (react_1.default.createElement(components_1.Icon, { name: "SlidersHorizontal", color: 'secondary.contrastText', size: 20 })), onClick: handleClick }, "Filters")),
+            react_1.default.createElement(material_1.Button, { sx: __assign(__assign({}, sx.button), ((filters === null || filters === void 0 ? void 0 : filters.length) > 0 && sx.hideBorder)), color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(__1.IconLoading, { loading: loading })) : (react_1.default.createElement(__1.Icon, { name: "SlidersHorizontal", color: 'secondary.contrastText', size: 20 })), onClick: handleClick }, "Filters")),
         react_1.default.createElement(material_1.Hidden, { smDown: true },
-            react_1.default.createElement(components_1.Popup, { p: 1, anchorEl: anchorEl, open: open, handleClose: handleClose, anchorOrigin: {
+            react_1.default.createElement(__1.Popup, { p: 1, anchorEl: anchorEl, open: open, handleClose: handleClose, anchorOrigin: {
                     vertical: 'bottom',
                     horizontal: 'right',
                 }, transformOrigin: {
@@ -66,10 +66,10 @@ var FilterButton = function (props) {
                 } },
                 react_1.default.createElement(CollectionFilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter }))),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
-            react_1.default.createElement(components_1.Drawer, { open: open, handleClose: handleClose, title: "Search" },
+            react_1.default.createElement(__1.Drawer, { open: open, handleClose: handleClose, title: "Search" },
                 react_1.default.createElement(CollectionFilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter })))));
 };
-exports.default = FilterButton;
+exports.default = CollectionFilterButton;
 var sx = {
     button: {
         width: {

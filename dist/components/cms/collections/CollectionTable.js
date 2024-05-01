@@ -80,7 +80,6 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
-var __1 = require("../..");
 var CollectionSearchFilters_1 = __importDefault(require("./filters/CollectionSearchFilters"));
 var constants_1 = require("../../../constants");
 var helpers_1 = require("../../../helpers");
@@ -88,14 +87,18 @@ var components_2 = require("../../../components");
 var CollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var url = props.url, fields = props.fields, headers = props.headers, _a = props.filterAnchor, filterAnchor = _a === void 0 ? 'left' : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.sortOptions, sortOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, _h = props.enableSorting, enableSorting = _h === void 0 ? false : _h, navigateUrl = props.navigateUrl, _j = props.enableBorder, enableBorder = _j === void 0 ? false : _j, _k = props.enableEdit, enableEdit = _k === void 0 ? false : _k, _l = props.enableCreate, enableCreate = _l === void 0 ? false : _l, _m = props.enableDelete, enableDelete = _m === void 0 ? false : _m;
-    var _o = (0, react_1.useState)(false), openModal = _o[0], setOpenModal = _o[1];
-    var _p = (0, react_1.useState)(false), openDeleteModal = _p[0], setOpenDeleteModal = _p[1];
-    var _q = (0, frontend_js_1.useResource)({
+    var url = props.url, fields = props.fields, headers = props.headers, _a = props.filterAnchor, filterAnchor = _a === void 0 ? 'left' : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, navigateUrl = props.navigateUrl, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k;
+    var _l = (0, react_1.useState)(false), openModal = _l[0], setOpenModal = _l[1];
+    var _m = (0, react_1.useState)(false), openDeleteModal = _m[0], setOpenDeleteModal = _m[1];
+    var addLinks = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _q.loading, delayedLoading = _q.delayedLoading, errors = _q.errors, resource = _q.resource, resources = _q.resources, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, query = _q.query, findMany = _q.findMany, reloadMany = _q.reloadMany, removeAttachment = _q.removeAttachment, page = _q.page, numPages = _q.numPages, numResults = _q.numResults, totalCount = _q.totalCount, paginate = _q.paginate, loadMore = _q.loadMore;
-    var _r = (0, react_1.useState)(''), keywords = _r[0], setKeywords = _r[1];
+    }).addLinks;
+    var _o = (0, frontend_js_1.useResource)({
+        name: 'document',
+        url: url,
+    }), loading = _o.loading, delayedLoading = _o.delayedLoading, errors = _o.errors, resource = _o.resource, resources = _o.resources, setResource = _o.setResource, update = _o.update, create = _o.create, destroy = _o.destroy, query = _o.query, findMany = _o.findMany, reloadMany = _o.reloadMany, removeAttachment = _o.removeAttachment, page = _o.page, numPages = _o.numPages, numResults = _o.numResults, totalCount = _o.totalCount, paginate = _o.paginate;
+    var _p = (0, react_1.useState)(''), keywords = _p[0], setKeywords = _p[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -106,21 +109,16 @@ var CollectionTable = function (props) {
         paginate(page);
     };
     var handleSort = function (field) {
-        handleSortBy(field === null || field === void 0 ? void 0 : field.name);
-    };
-    var handleSortBy = function (sortBy) {
+        var sortBy = field === null || field === void 0 ? void 0 : field.name;
         var sortDir = query === null || query === void 0 ? void 0 : query.sort_direction;
         if (sortBy == (query === null || query === void 0 ? void 0 : query.sort_by)) {
             sortDir = (query === null || query === void 0 ? void 0 : query.sort_direction) == 'asc' ? 'desc' : 'asc';
         }
         findMany(__assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
     };
-    var handleSortDirection = function (sortDirection) {
-        findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
-    };
-    var _s = (0, hooks_1.useFilters)({
+    var _q = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _s.activeFilters, setActiveFilters = _s.setActiveFilters, handleAddFilter = _s.handleAddFilter, buildQueryFilters = _s.buildQueryFilters;
+    }), activeFilters = _q.activeFilters, setActiveFilters = _q.setActiveFilters, handleAddFilter = _q.handleAddFilter, buildQueryFilters = _q.buildQueryFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -229,13 +227,13 @@ var CollectionTable = function (props) {
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (activeFilters) {
+        if (activeFilters && url && perPage) {
             findMany(__assign(__assign(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters) }), defaultQuery), { per_page: perPage }));
         }
-    }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length, defaultQuery, perPage]);
-    var _t = (0, react_1.useState)([]), rows = _t[0], setRows = _t[1];
+    }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length, defaultQuery, perPage, url]);
+    var _r = (0, react_1.useState)([]), rows = _r[0], setRows = _r[1];
     (0, react_1.useEffect)(function () {
-        if ((resources === null || resources === void 0 ? void 0 : resources.length) > 0) {
+        if ((resources === null || resources === void 0 ? void 0 : resources.length) >= 0) {
             var flatten = (0, helpers_1.flattenDocuments)(resources);
             setRows(flatten);
         }
@@ -252,8 +250,7 @@ var CollectionTable = function (props) {
                             enableFilters && filterAnchor == 'top' && (react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
                                 react_1.default.createElement(components_1.CollectionFilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
                             enableCreate && (react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
-                                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: 'secondary.contrastText', size: 20 }) }, "Add")))), enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit, enableDelete: enableDelete, handleDelete: handleDeleteClick, loading: resources && loading, fields: headers, rows: rows, handleClick: handleClick, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, numResults: numResults, totalCount: totalCount, handlePaginate: handlePaginate })),
-                !loading && resources.length == 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Search", title: "No results found", description: "Try adjusting your search or filters" })))),
+                                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: 'secondary.contrastText', size: 20 }) }, "Add")))), enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit, enableDelete: enableDelete, handleDelete: handleDeleteClick, loading: resources && loading, fields: headers, rows: rows, handleClick: handleClick, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, numResults: numResults, totalCount: totalCount, handlePaginate: handlePaginate })))),
         react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
             react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove })),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
