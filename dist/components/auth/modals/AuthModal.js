@@ -185,7 +185,7 @@ var AuthModal = function (props) {
             tab === 2 && (react_1.default.createElement(__1.ForgotPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),
             tab === 3 && (react_1.default.createElement(__1.VerifyPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPinClick })),
             tab === 4 && (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),
-            tab == 5 && (react_1.default.createElement(__1.ResetPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleResetPassword, handleLogin: handleLogin })))));
+            tab == 5 && (react_1.default.createElement(__1.ResetPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleResetPassword, handleLogin: handleLoginClick })))));
 };
 exports.default = AuthModal;
 var sx = {

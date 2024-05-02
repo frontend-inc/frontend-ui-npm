@@ -66,7 +66,7 @@ var router_1 = require("next/router");
 var MyAccount = function (props) {
     var router = (0, router_1.useRouter)();
     var redirectUrl = (props || {}).redirectUrl;
-    var _a = (0, frontend_js_1.useAuth)(), loading = _a.loading, delayedLoading = _a.delayedLoading, user = _a.user, setUser = _a.setUser, currentUser = _a.currentUser, updateMe = _a.updateMe, handleChange = _a.handleChange, fetchMe = _a.fetchMe, deleteAvatar = _a.deleteAvatar;
+    var _a = (0, frontend_js_1.useAuth)(), loading = _a.loading, delayedLoading = _a.delayedLoading, user = _a.user, setUser = _a.setUser, currentUser = _a.currentUser, updateMe = _a.updateMe, handleChange = _a.handleChange, fetchMe = _a.fetchMe, logout = _a.logout, deleteAvatar = _a.deleteAvatar;
     var handleDeleteAvatar = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -87,9 +87,17 @@ var MyAccount = function (props) {
             }
         });
     }); };
-    var handleRedirect = function () {
-        router.push(redirectUrl);
-    };
+    var handleLogout = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, logout()];
+                case 1:
+                    _a.sent();
+                    router.push(redirectUrl);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     (0, react_1.useEffect)(function () {
         if (!currentUser) {
             fetchMe();
@@ -101,6 +109,6 @@ var MyAccount = function (props) {
     return (react_1.default.createElement(react_1.default.Fragment, null, currentUser && (react_1.default.createElement(__1.AuthScreen, { title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
             ? "@".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
             : 'Update account' },
-        react_1.default.createElement(__1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleRedirect: handleRedirect })))));
+        react_1.default.createElement(__1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout })))));
 };
 exports.default = MyAccount;

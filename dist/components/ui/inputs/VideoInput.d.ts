@@ -1,9 +1,12 @@
 import React from 'react';
+import { SyntheticEventType } from '../../../types';
 type VideoInputProps = {
     name: string;
     label: string;
-    value: string;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value: {
+        url: string;
+    };
+    handleChange: (e: SyntheticEventType) => void;
     handleBrowse: (name: string) => void;
     placeholder?: string;
     errors?: string;

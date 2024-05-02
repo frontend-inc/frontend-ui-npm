@@ -74,25 +74,24 @@ var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
-var helpers_1 = require("../../../helpers");
 var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var constants_1 = require("../../../constants");
-var helpers_2 = require("../../../helpers");
+var helpers_1 = require("../../../helpers");
 var ForeignCollection = function (props) {
-    var field = props.field, fields = props.fields, resource = props.resource, _a = props.variant, variant = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, foreignUrl = props.foreignUrl, navigateUrl = props.navigateUrl, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, buttonText = props.buttonText, _d = props.query, defaultQuery = _d === void 0 ? null : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableLoadMore, enableLoadMore = _g === void 0 ? true : _g, _h = props.enableCreate, enableCreate = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k;
+    var field = props.field, fields = props.fields, resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'drawer' : _a, _b = props.variant, variant = _b === void 0 ? 'list' : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, url = props.url, foreignUrl = props.foreignUrl, foreignContentType = props.foreignContentType, navigateUrl = props.navigateUrl, _d = props.perPage, perPage = _d === void 0 ? 10 : _d, buttonText = props.buttonText, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableLoadMore, enableLoadMore = _h === void 0 ? true : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableEdit, enableEdit = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
     var router = (0, router_1.useRouter)();
-    var _l = (0, react_1.useState)(false), openModal = _l[0], setOpenModal = _l[1];
-    var _m = (0, react_1.useState)(false), openDeleteModal = _m[0], setOpenDeleteModal = _m[1];
+    var _m = (0, react_1.useState)(false), openModal = _m[0], setOpenModal = _m[1];
+    var _o = (0, react_1.useState)(false), openDeleteModal = _o[0], setOpenDeleteModal = _o[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var addLinks = (0, frontend_js_1.useResource)({
+    var _p = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }).addLinks;
-    var _o = (0, frontend_js_1.useResource)({
+    }), loading = _p.loading, query = _p.query, resources = _p.resources, page = _p.page, numPages = _p.numPages, loadMore = _p.loadMore, reloadMany = _p.reloadMany, findLinks = _p.findLinks, addLinks = _p.addLinks;
+    var _q = (0, frontend_js_1.useResource)({
         name: 'document',
         url: foreignUrl,
-    }), loading = _o.loading, errors = _o.errors, query = _o.query, _resource = _o.resource, setResource = _o.setResource, update = _o.update, create = _o.create, destroy = _o.destroy, resources = _o.resources, findMany = _o.findMany, removeAttachment = _o.removeAttachment, page = _o.page, numPages = _o.numPages, loadMore = _o.loadMore, reloadMany = _o.reloadMany;
+    }), errors = _q.errors, _resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, removeAttachment = _q.removeAttachment;
     var handleClick = function (item) {
         if (clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
             router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
@@ -116,14 +115,14 @@ var ForeignCollection = function (props) {
     };
     var handleAdd = function () {
         setResource({});
-        setOpenModal(true);
+        setOpenModal(!openModal);
     };
     var handleEdit = function (item) {
         setResource(item);
         setOpenModal(true);
     };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resp, documentIds, err_1;
+        var resp, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -141,14 +140,13 @@ var ForeignCollection = function (props) {
                     return [4 /*yield*/, addLinks(resource === null || resource === void 0 ? void 0 : resource.handle, [resp.id])];
                 case 4:
                     _a.sent();
+                    handleFetchResources();
                     _a.label = 5;
                 case 5:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        handleFetchResources();
                         setResource({});
                         setOpenModal(false);
-                        documentIds = getDocumentIds();
-                        documentIds.push(resp.id);
-                        handleLoadDocuments(documentIds);
                     }
                     return [3 /*break*/, 7];
                 case 6:
@@ -171,8 +169,7 @@ var ForeignCollection = function (props) {
                     _a.sent();
                     setOpenDeleteModal(false);
                     setOpenModal(false);
-                    setResource({});
-                    reloadMany();
+                    handleFetchResources();
                     return [2 /*return*/];
             }
         });
@@ -180,44 +177,35 @@ var ForeignCollection = function (props) {
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
+                case 0: return [4 /*yield*/, removeAttachment(_resource === null || _resource === void 0 ? void 0 : _resource.id, name)];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
             }
         });
     }); };
-    var getDocumentIds = function () {
-        var _a;
-        return (_a = (0, helpers_1.filterDocumentLinks)(resource, field === null || field === void 0 ? void 0 : field.foreign_content_type)) === null || _a === void 0 ? void 0 : _a.map(function (link) { return link === null || link === void 0 ? void 0 : link.id; });
-    };
-    var handleLoadDocuments = function (documentIds) { return __awaiter(void 0, void 0, void 0, function () {
+    var handleFetchResources = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            findMany(__assign(__assign(__assign({}, query), defaultQuery), { filters: {
-                    AND: [
-                        {
-                            id: {
-                                in: documentIds,
-                            },
-                        },
-                    ],
-                }, per_page: perPage, page: 1 }));
+            findLinks(resource.id, foreignContentType, __assign(__assign(__assign({}, query), defaultQuery), { per_page: perPage, page: 1 }));
             return [2 /*return*/];
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (resource && field && foreignUrl) {
-            var documentIds = getDocumentIds();
-            handleLoadDocuments(documentIds);
+        if ((resource === null || resource === void 0 ? void 0 : resource.id) && foreignContentType) {
+            handleFetchResources();
         }
-    }, [resource, field, foreignUrl]);
+    }, [resource, foreignContentType]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
         enableCreate && (react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))),
+        layout == 'inline' && (react_1.default.createElement(material_1.Collapse, { in: openModal },
+            react_1.default.createElement(material_1.Stack, { direction: 'column', sx: sx.form, spacing: 1 },
+                react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove }),
+                react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save')))),
         react_1.default.createElement(components_1.CollectionList, { variant: variant, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableCreate: enableCreate, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
         enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })),
-        react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_2.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove })),
+        layout == 'drawer' && (react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save') },
+            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove }))),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };
 exports.default = ForeignCollection;
@@ -244,4 +232,9 @@ var sx = {
     item: {
         p: 2,
     },
+    form: {
+        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        p: 2,
+        bgcolor: 'secondary.light',
+    }
 };

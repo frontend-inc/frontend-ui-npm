@@ -7,14 +7,14 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var MyAccountForm = function (props) {
-    var loading = props.loading, user = props.user, handleSubmit = props.handleSubmit, handleChange = props.handleChange, handleRedirect = props.handleRedirect, handleDeleteAvatar = props.handleDeleteAvatar;
+    var loading = props.loading, user = props.user, handleSubmit = props.handleSubmit, handleChange = props.handleChange, handleLogout = props.handleLogout, handleDeleteAvatar = props.handleDeleteAvatar;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(components_1.ImageInput, { value: user.avatar, name: "avatar", handleChange: handleChange, handleRemove: handleDeleteAvatar }),
         react_1.default.createElement(components_1.TextInput, { value: user.first_name, name: "first_name", placeholder: "First name", handleChange: handleChange }),
         react_1.default.createElement(components_1.TextInput, { value: user.last_name, name: "last_name", placeholder: "Last name", handleChange: handleChange }),
         react_1.default.createElement(components_1.SwitchInput, { value: user === null || user === void 0 ? void 0 : user.accepts_marketing, placeholder: "Accept email marketing", name: "accepts_marketing", handleChange: handleChange }),
         react_1.default.createElement(material_1.Button, { color: "primary", variant: "contained", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Save"),
-        react_1.default.createElement(material_1.Button, { color: "primary", onClick: handleRedirect }, "Go back")));
+        react_1.default.createElement(material_1.Button, { color: "secondary", variant: 'contained', onClick: handleLogout }, "Logout")));
 };
 exports.default = MyAccountForm;
 var sx = {

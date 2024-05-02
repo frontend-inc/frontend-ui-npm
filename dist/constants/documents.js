@@ -84,7 +84,7 @@ exports.LOCALE_FIELD = {
     editable: true,
 };
 exports.TAGS_FIELD = {
-    label: 'tags',
+    label: 'Tags',
     variant: 'array',
     reference: false,
     db_type: 'string',

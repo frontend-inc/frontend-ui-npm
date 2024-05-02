@@ -1,6 +1,8 @@
 import React from 'react';
 type CellImageProps = {
-    value: string;
+    value: {
+        url: any;
+    };
     handleClick?: (value?: string) => void;
     size?: number;
 };

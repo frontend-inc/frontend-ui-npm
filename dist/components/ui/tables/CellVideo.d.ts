@@ -1,6 +1,8 @@
 import React from 'react';
 type CellVideoProps = {
-    value: string;
+    value: {
+        url: string;
+    };
     size?: number;
     handleClick?: () => void;
 };

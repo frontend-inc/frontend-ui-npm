@@ -84,27 +84,26 @@ var CollectionSearchFilters_1 = __importDefault(require("./filters/CollectionSea
 var constants_1 = require("../../../constants");
 var helpers_1 = require("../../../helpers");
 var __1 = require("../..");
-var helpers_2 = require("../../../helpers");
 var ForeignCollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var resource = props.resource, field = props.field, url = props.url, foreignUrl = props.foreignUrl, fields = props.fields, headers = props.headers, _a = props.filterAnchor, filterAnchor = _a === void 0 ? 'left' : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, navigateUrl = props.navigateUrl, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k;
+    var resource = props.resource, field = props.field, url = props.url, foreignUrl = props.foreignUrl, foreignContentType = props.foreignContentType, fields = props.fields, headers = props.headers, _a = props.filterAnchor, filterAnchor = _a === void 0 ? 'left' : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, navigateUrl = props.navigateUrl, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k;
     var _l = (0, react_1.useState)(false), openModal = _l[0], setOpenModal = _l[1];
     var _m = (0, react_1.useState)(false), openDeleteModal = _m[0], setOpenDeleteModal = _m[1];
-    var addLinks = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: url,
-    }).addLinks;
     var _o = (0, frontend_js_1.useResource)({
         name: 'document',
+        url: url,
+    }), loading = _o.loading, delayedLoading = _o.delayedLoading, query = _o.query, resources = _o.resources, findLinks = _o.findLinks, page = _o.page, numPages = _o.numPages, numResults = _o.numResults, totalCount = _o.totalCount, paginate = _o.paginate, addLinks = _o.addLinks;
+    var _p = (0, frontend_js_1.useResource)({
+        name: 'document',
         url: foreignUrl
-    }), loading = _o.loading, delayedLoading = _o.delayedLoading, errors = _o.errors, _resource = _o.resource, resources = _o.resources, setResource = _o.setResource, update = _o.update, create = _o.create, destroy = _o.destroy, query = _o.query, findMany = _o.findMany, reloadMany = _o.reloadMany, removeAttachment = _o.removeAttachment, page = _o.page, numPages = _o.numPages, numResults = _o.numResults, totalCount = _o.totalCount, paginate = _o.paginate;
-    var _p = (0, react_1.useState)(''), keywords = _p[0], setKeywords = _p[1];
+    }), errors = _p.errors, _resource = _p.resource, setResource = _p.setResource, update = _p.update, create = _p.create, destroy = _p.destroy, removeAttachment = _p.removeAttachment;
+    var _q = (0, react_1.useState)(''), keywords = _q[0], setKeywords = _q[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
     var handleSearch = function (keywords) {
-        findMany(__assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1, per_page: perPage }));
+        findLinks(resource.id, foreignContentType, __assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1, per_page: perPage }));
     };
     var handlePaginate = function (ev, page) {
         paginate(page);
@@ -117,15 +116,15 @@ var ForeignCollectionTable = function (props) {
         if (sortBy == (query === null || query === void 0 ? void 0 : query.sort_by)) {
             sortDir = (query === null || query === void 0 ? void 0 : query.sort_direction) == 'asc' ? 'desc' : 'asc';
         }
-        findMany(__assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
+        findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignContentType, __assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
     };
-    var _q = (0, hooks_1.useFilters)({
+    var _r = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _q.activeFilters, setActiveFilters = _q.setActiveFilters, handleAddFilter = _q.handleAddFilter, buildQueryFilters = _q.buildQueryFilters;
+    }), activeFilters = _r.activeFilters, setActiveFilters = _r.setActiveFilters, handleAddFilter = _r.handleAddFilter, buildQueryFilters = _r.buildQueryFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
-        findMany({
+        findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignContentType, {
             filters: __assign({}, defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters),
             sort_by: 'id',
             sort_direction: 'desc',
@@ -171,7 +170,7 @@ var ForeignCollectionTable = function (props) {
         setOpenModal(true);
     };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resp, documentIds, err_1;
+        var resp, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -189,15 +188,12 @@ var ForeignCollectionTable = function (props) {
                     return [4 /*yield*/, addLinks(resource === null || resource === void 0 ? void 0 : resource.handle, [resp.id])];
                 case 4:
                     _a.sent();
-                    documentIds = getDocumentIds();
-                    documentIds.push(resp.id);
-                    handleLoadDocuments(documentIds);
                     _a.label = 5;
                 case 5:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        handleFetchResources();
                         setResource({});
                         setOpenModal(false);
-                        reloadMany();
                     }
                     return [3 /*break*/, 7];
                 case 6:
@@ -213,7 +209,6 @@ var ForeignCollectionTable = function (props) {
         setOpenDeleteModal(true);
     };
     var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var documentIds;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, destroy(_resource === null || _resource === void 0 ? void 0 : _resource.id)];
@@ -222,9 +217,7 @@ var ForeignCollectionTable = function (props) {
                     setOpenDeleteModal(false);
                     setOpenModal(false);
                     setResource({});
-                    documentIds = getDocumentIds();
-                    documentIds = documentIds.filter(function (id) { return id !== (_resource === null || _resource === void 0 ? void 0 : _resource.id); });
-                    handleLoadDocuments(documentIds);
+                    handleFetchResources();
                     return [2 /*return*/];
             }
         });
@@ -232,32 +225,19 @@ var ForeignCollectionTable = function (props) {
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
+                case 0: return [4 /*yield*/, removeAttachment(_resource === null || _resource === void 0 ? void 0 : _resource.id, name)];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
             }
         });
     }); };
-    var _r = (0, react_1.useState)([]), rows = _r[0], setRows = _r[1];
-    var getDocumentIds = function () {
-        var _a;
-        return (_a = (0, helpers_2.filterDocumentLinks)(resource, field === null || field === void 0 ? void 0 : field.foreign_content_type)) === null || _a === void 0 ? void 0 : _a.map(function (link) { return link === null || link === void 0 ? void 0 : link.id; });
-    };
-    var handleLoadDocuments = function (documentIds) { return __awaiter(void 0, void 0, void 0, function () {
-        var activeFilterQuery, filterQuery;
+    var _s = (0, react_1.useState)([]), rows = _s[0], setRows = _s[1];
+    var handleFetchResources = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var filterQuery;
         return __generator(this, function (_a) {
-            activeFilterQuery = buildQueryFilters(activeFilters);
-            filterQuery = __assign(__assign(__assign({}, query), defaultQuery), { filters: {
-                    AND: [
-                        {
-                            id: {
-                                in: documentIds,
-                            },
-                        },
-                    ],
-                }, per_page: perPage, page: 1 });
-            findMany(filterQuery);
+            filterQuery = __assign(__assign(__assign({}, query), defaultQuery), { per_page: perPage, page: 1 });
+            findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignContentType, filterQuery);
             return [2 /*return*/];
         });
     }); };
@@ -268,11 +248,10 @@ var ForeignCollectionTable = function (props) {
         }
     }, [resources]);
     (0, react_1.useEffect)(function () {
-        if (resource && field && foreignUrl) {
-            var documentIds = getDocumentIds();
-            handleLoadDocuments(documentIds);
+        if ((resource === null || resource === void 0 ? void 0 : resource.id) && foreignContentType) {
+            handleFetchResources();
         }
-    }, [resource, field, foreignUrl]);
+    }, [resource, foreignContentType]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 },
             enableFilters && filterAnchor == 'left' && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, lg: 3 },

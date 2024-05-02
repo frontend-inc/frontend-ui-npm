@@ -5,6 +5,7 @@ export type ForeignCollectionTableProps = CollectionProps & {
     resource: any;
     field: FieldType;
     foreignUrl?: string;
+    foreignContentType?: string;
     headers: {
         name: string;
         label: string;

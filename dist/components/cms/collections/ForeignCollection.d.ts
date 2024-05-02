@@ -7,7 +7,9 @@ export type ForeignCollectionProps = {
     fields: FieldType[];
     resource: any;
     url: string;
+    layout?: 'drawer' | 'inline';
     handle: string;
+    foreignContentType?: string;
     navigateUrl?: any;
     foreignUrl?: string;
     perPage?: number;

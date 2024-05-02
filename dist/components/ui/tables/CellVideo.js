@@ -9,10 +9,10 @@ var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
 var CellVideo = function (props) {
     var value = props.value, handleClick = props.handleClick, _a = props.size, size = _a === void 0 ? 64 : _a;
-    if (!value)
+    if (!(value === null || value === void 0 ? void 0 : value.url))
         return react_1.default.createElement(components_1.NoImage, { height: size, width: size });
     return (react_1.default.createElement(material_1.Button, { sx: sx.root, onClick: handleClick },
-        react_1.default.createElement(components_1.Image, { src: (0, helpers_1.imageFromVideoUrl)(value), 
+        react_1.default.createElement(components_1.Image, { src: (0, helpers_1.imageFromVideoUrl)(value === null || value === void 0 ? void 0 : value.url), 
             // @ts-ignore
             width: size, height: size })));
 };

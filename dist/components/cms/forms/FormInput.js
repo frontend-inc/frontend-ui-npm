@@ -28,12 +28,15 @@ var FormInput = function (props) {
         date: components_1.DateInput,
         datetime: components_1.DateInput,
         boolean: components_1.SwitchInput,
-        select: components_1.ArrayInput,
+        select: components_1.Autosuggest,
         rating: components_1.RatingInput,
         image: components_1.ImageInput,
         json: components_1.JSONInput,
     };
-    var componentProps = {
+    var inputProps = {
+        array: {
+            value: value || []
+        },
         text: {
             multiline: true,
             rows: 6,
@@ -52,6 +55,6 @@ var FormInput = function (props) {
         },
     };
     var InputComponent = componentMapper[variant];
-    return (react_1.default.createElement(InputComponent, __assign({ errors: errors, label: label, name: name, value: value, handleChange: handleChange, placeholder: placeholder }, componentProps[variant])));
+    return (react_1.default.createElement(InputComponent, __assign({ errors: errors, label: label, name: name, value: value || '', handleChange: handleChange, placeholder: placeholder }, inputProps[variant])));
 };
 exports.default = FormInput;

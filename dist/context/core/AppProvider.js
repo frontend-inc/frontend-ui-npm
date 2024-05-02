@@ -34,9 +34,10 @@ var AppProvider = function (props) {
     var _c = (0, react_1.useState)(false), loading = _c[0], setLoading = _c[1];
     var _d = (0, react_1.useState)(false), loaded = _d[0], setLoaded = _d[1];
     var _e = (0, react_1.useState)(false), authOpen = _e[0], setAuthOpen = _e[1]; // Auth modal
-    var _f = (0, react_1.useState)(false), authorizationOpen = _f[0], setAuthorizationOpen = _f[1]; // App authorization
-    var _g = (0, react_1.useState)(false), menuOpen = _g[0], setMenuOpen = _g[1]; // Mobile menu
-    var _h = (0, react_1.useState)(), app = _h[0], setApp = _h[1];
+    var _f = (0, react_1.useState)(false), myAccountOpen = _f[0], setMyAccountOpen = _f[1]; // My account modal
+    var _g = (0, react_1.useState)(false), authorizationOpen = _g[0], setAuthorizationOpen = _g[1]; // App authorization
+    var _h = (0, react_1.useState)(false), menuOpen = _h[0], setMenuOpen = _h[1]; // Mobile menu
+    var _j = (0, react_1.useState)(), app = _j[0], setApp = _j[1];
     var value = {
         name: name,
         app: app,
@@ -47,6 +48,8 @@ var AppProvider = function (props) {
         setAlert: setAlert,
         authOpen: authOpen,
         setAuthOpen: setAuthOpen,
+        myAccountOpen: myAccountOpen,
+        setMyAccountOpen: setMyAccountOpen,
         authorizationOpen: authorizationOpen,
         setAuthorizationOpen: setAuthorizationOpen,
         menuOpen: menuOpen,

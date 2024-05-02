@@ -58,78 +58,58 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var material_1 = require("@mui/material");
-var Article_1 = __importDefault(require("./Article"));
-var Item_1 = __importDefault(require("./Item"));
-var Person_1 = __importDefault(require("./Person"));
-var Details_1 = __importDefault(require("../details/Details"));
-var components_1 = require("../../../components");
+var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
-var Show = function (props) {
-    var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'item' : _b, resource = _a.resource, fields = _a.fields, displayFields = _a.displayFields, url = _a.url, actions = _a.actions, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit;
-    var _c = (0, frontend_js_1.useDocuments)({
-        collection: resource === null || resource === void 0 ? void 0 : resource.content_type
-    }), loading = _c.loading, errors = _c.errors, update = _c.update, _resource = _c.resource, setResource = _c.setResource, removeAttachment = _c.removeAttachment, handleDataChange = _c.handleDataChange;
-    var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
+var components_1 = require("../../../components");
+var MyAccount = function () {
+    var _a = (0, react_1.useContext)(context_1.AppContext), myAccountOpen = _a.myAccountOpen, setMyAccountOpen = _a.setMyAccountOpen;
+    var _b = (0, frontend_js_1.useAuth)(), loading = _b.loading, delayedLoading = _b.delayedLoading, user = _b.user, setUser = _b.setUser, currentUser = _b.currentUser, updateMe = _b.updateMe, handleChange = _b.handleChange, fetchMe = _b.fetchMe, deleteAvatar = _b.deleteAvatar, logout = _b.logout;
+    var handleLogout = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, removeAttachment(_resource === null || _resource === void 0 ? void 0 : _resource.id, name)];
+                case 0: return [4 /*yield*/, logout()];
+                case 1:
+                    _a.sent();
+                    setMyAccountOpen(false);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleDeleteAvatar = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, deleteAvatar()];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
             }
         });
     }); };
-    var _d = (0, react_1.useState)(false), openModal = _d[0], setOpenModal = _d[1];
-    var handleEdit = function () {
-        setOpenModal(true);
-    };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resp, e_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, update(_resource)];
+                case 0: return [4 /*yield*/, updateMe(user)];
                 case 1:
-                    resp = _a.sent();
-                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        setOpenModal(false);
-                    }
-                    return [3 /*break*/, 3];
-                case 2:
-                    e_1 = _a.sent();
-                    console.error(e_1);
-                    return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
+                    _a.sent();
+                    return [2 /*return*/];
             }
         });
     }); };
-    var components = {
-        "item": Item_1.default,
-        "article": Article_1.default,
-        "person": Person_1.default
-    };
-    var Component = components[style];
     (0, react_1.useEffect)(function () {
-        if (resource === null || resource === void 0 ? void 0 : resource.id) {
-            setResource(resource);
+        if (!currentUser) {
+            fetchMe();
         }
-    }, [resource]);
-    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
-        react_1.default.createElement(Component, { resource: _resource, actions: actions, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit }),
-        (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(Details_1.default, { url: url, fields: displayFields, resource: resource, enableBorder: enableBorder })),
-        react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove }))));
+        else {
+            setUser(currentUser);
+        }
+    }, [currentUser]);
+    if (!currentUser)
+        return null;
+    return (react_1.default.createElement(components_1.Modal, { open: myAccountOpen, handleClose: function () { return setMyAccountOpen(false); }, title: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ?
+            "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name) :
+            'My Account' },
+        react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout })));
 };
-exports.default = Show;
-var sx = {
-    root: {
-        width: '100%',
-    },
-};
+exports.default = MyAccount;

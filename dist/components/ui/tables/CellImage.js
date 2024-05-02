@@ -8,7 +8,7 @@ var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
 var CellImage = function (props) {
     var value = props.value, _a = props.size, size = _a === void 0 ? 64 : _a;
-    var src = (0, helpers_1.imageFromVideoUrl)(value);
+    var src = (0, helpers_1.imageFromVideoUrl)(value === null || value === void 0 ? void 0 : value.url);
     return (react_1.default.createElement(components_1.Image, { disableBorder: true, disableBorderRadius: true, src: src, width: size, height: size, alt: 'Image' }));
 };
 exports.default = CellImage;
