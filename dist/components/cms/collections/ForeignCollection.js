@@ -87,11 +87,11 @@ var ForeignCollection = function (props) {
     var _p = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _p.loading, query = _p.query, resources = _p.resources, page = _p.page, numPages = _p.numPages, loadMore = _p.loadMore, reloadMany = _p.reloadMany, findLinks = _p.findLinks, addLinks = _p.addLinks;
+    }), query = _p.query, resources = _p.resources, page = _p.page, numPages = _p.numPages, loadMore = _p.loadMore, reloadMany = _p.reloadMany, findLinks = _p.findLinks, addLinks = _p.addLinks;
     var _q = (0, frontend_js_1.useResource)({
         name: 'document',
         url: foreignUrl,
-    }), errors = _q.errors, _resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, removeAttachment = _q.removeAttachment;
+    }), errors = _q.errors, loading = _q.loading, delayedLoading = _q.delayedLoading, _resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, removeAttachment = _q.removeAttachment;
     var handleClick = function (item) {
         if (clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
             router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
@@ -201,7 +201,7 @@ var ForeignCollection = function (props) {
         layout == 'inline' && (react_1.default.createElement(material_1.Collapse, { in: openModal },
             react_1.default.createElement(material_1.Stack, { direction: 'column', sx: sx.form, spacing: 1 },
                 react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove }),
-                react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save')))),
+                react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: delayedLoading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save')))),
         react_1.default.createElement(components_1.CollectionList, { variant: variant, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableCreate: enableCreate, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
         enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })),
         layout == 'drawer' && (react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save') },

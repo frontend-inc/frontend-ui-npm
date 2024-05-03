@@ -1,6 +1,6 @@
 {
     "name": "frontend-mui",
-    "version": "0.0.70",
+    "version": "0.0.71",
     "license": "MIT",
     "description": "A MUI library designed for Frontend.co",
     "homepage": "https://github.com/frontend-inc/frontend-mui",
@@ -70,6 +70,7 @@
     },
     "dependencies": {
         "@apollo/client": "^3.8.9",
+        "@elgorditosalsero/react-gtm-hook": "^2.7.2",
         "@emotion/react": "^11.8.2",
         "@emotion/styled": "^11.8.1",
         "@hello-pangea/dnd": "^16.6.0",

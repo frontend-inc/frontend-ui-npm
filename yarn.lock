@@ -1290,6 +1290,11 @@
   resolved "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
+"@elgorditosalsero/react-gtm-hook@^2.7.2":
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/@elgorditosalsero/react-gtm-hook/-/react-gtm-hook-2.7.2.tgz#dd3b76ab331d61bada1b0b0ec5923d243d311458"
+  integrity sha512-5lGZOk7BcWTdz2pqu2sa/IyAtuTItCCZuEGUthnlJgpWKvVGrzVyhIOVj1/ed575jusaMIr+yIfeZ11WzH2QqQ==
+
 "@emotion/babel-plugin@^11.11.0":
   version "11.11.0"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.11.0.tgz#c2d872b6a7767a9d176d007f5b31f7d504bb5d6c"

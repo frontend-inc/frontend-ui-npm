@@ -93,8 +93,8 @@ var RenderAttachment = function (props) {
                 react_1.default.createElement(icons_material_1.DeleteOutlined, null)))));
 };
 var AttachmentInput = function (props) {
-    var name = props.name, label = props.label, handleChange = props.handleChange, attachment = props.value, handleRemove = props.handleRemove, _a = props.variant, variant = _a === void 0 ? 'file' : _a, _b = props.size, size = _b === void 0 ? IMAGE_WIDTH : _b, _c = props.objectFit, objectFit = _c === void 0 ? 'cover' : _c;
-    var _d = (0, react_1.useState)(), src = _d[0], setSrc = _d[1];
+    var name = props.name, label = props.label, handleChange = props.handleChange, attachment = props.value, handleRemove = props.handleRemove, _a = props.variant, variant = _a === void 0 ? 'file' : _a, _b = props.size, size = _b === void 0 ? IMAGE_WIDTH : _b, _c = props.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = props.placeholder, placeholder = _d === void 0 ? 'Upload file' : _d;
+    var _e = (0, react_1.useState)(), src = _e[0], setSrc = _e[1];
     var onDrop = function (file, preview) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             setSrc(preview.src);
@@ -132,7 +132,7 @@ var AttachmentInput = function (props) {
         react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label),
         (attachment === null || attachment === void 0 ? void 0 : attachment.url) && (react_1.default.createElement(RenderAttachment, { variant: variant, src: attachment === null || attachment === void 0 ? void 0 : attachment.url, size: size, objectFit: objectFit, onDelete: function () { return handleDelete(name); } })),
         !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && src && (react_1.default.createElement(RenderAttachment, { src: src, size: size, variant: variant, objectFit: objectFit, onDelete: onRemove })),
-        !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && !src && (react_1.default.createElement(DropZone_1.default, { onDrop: onDrop, label: 'Upload attachment' }))));
+        !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && !src && (react_1.default.createElement(DropZone_1.default, { onDrop: onDrop, label: placeholder }))));
 };
 exports.default = AttachmentInput;
 var sx = {

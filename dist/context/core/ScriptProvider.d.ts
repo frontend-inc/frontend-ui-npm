@@ -7,6 +7,7 @@ type ScriptProviderProps = {
     googleAnalyticsId?: string;
     gorgiasChatId?: string;
     gorgiasContactFormSrc?: string;
+    gtmId?: string;
     hotJarId?: string;
     redditPixelId?: string;
     segmentWriteKey?: string;

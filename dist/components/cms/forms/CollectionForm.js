@@ -72,18 +72,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
-var material_1 = require("@mui/material");
-var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
 var constants_1 = require("../../../constants");
 var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
 var CollectionForm = function (props) {
-    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url;
-    var _b = (0, react_1.useState)(false), submitted = _b[0], setSubmitted = _b[1];
+    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
+    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _c = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _c.loading, errors = _c.errors, findOne = _c.findOne, resource = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, handleChange = _c.handleChange, removeAttachment = _c.removeAttachment;
+    }), delayedLoading = _c.delayedLoading, errors = _c.errors, findOne = _c.findOne, resource = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, removeAttachment = _c.removeAttachment;
     var handleDataChange = function (ev) {
         var name = ev.target.name;
         var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
@@ -128,7 +127,7 @@ var CollectionForm = function (props) {
                     _a.label = 4;
                 case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        setSubmitted(true);
+                        showAlertSuccess(onSuccessMessage);
                     }
                     return [3 /*break*/, 6];
                 case 5:
@@ -144,8 +143,7 @@ var CollectionForm = function (props) {
             findOne(handle);
         }
     }, [handle]);
-    return !submitted ? (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }))) : (react_1.default.createElement(__1.Placeholder, { icon: 'CheckCircle', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { variant: "contained", onClick: function () { return setSubmitted(false); } }, "Done") }));
+    return (react_1.default.createElement(components_1.Form, { loading: delayedLoading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = CollectionForm;
 var sx = {
