@@ -36,7 +36,6 @@ var Pagination = function (props) {
     };
     (0, react_1.useEffect)(function () {
         if (page && numPages && numResults && perPage) {
-            console.log('perPage', perPage);
             var start = (page - 1) * perPage + 1;
             setStartIndex(start);
             setEndIndex(start + numResults - 1);

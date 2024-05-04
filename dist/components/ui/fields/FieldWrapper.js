@@ -17,25 +17,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var FieldWrapper = function (props) {
-    var _a = props || {}, _b = _a.variant, variant = _b === void 0 ? 'overline' : _b, _c = _a.flexDirection, flexDirection = _c === void 0 ? 'row' : _c, label = _a.label, _d = _a.color, color = _d === void 0 ? 'text.primary' : _d, helperText = _a.helperText, children = _a.children;
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.field), { flexDirection: {
-                    xs: 'column',
-                    sm: flexDirection,
-                } }) },
-            label && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.label), { color: color }), (flexDirection === 'row' && sx.labelRow)) },
-                react_1.default.createElement(material_1.Typography, { variant: variant, sx: __assign(__assign({}, sx.text), { textAlign: flexDirection === 'row' ? 'right' : 'left' }) }, label))),
-            react_1.default.createElement(material_1.Box, { sx: sx.field }, children)),
-        helperText && (react_1.default.createElement(material_1.Typography, { variant: variant, sx: sx.helperText }, helperText))));
+    var _a = props || {}, _b = _a.direction, direction = _b === void 0 ? 'column' : _b, label = _a.label, _c = _a.enableBorder, enableBorder = _c === void 0 ? false : _c, children = _a.children;
+    return (react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: direction }, spacing: 1, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
+        label && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.label), (direction === 'row' && sx.labelRow)) },
+            react_1.default.createElement(material_1.Typography, { variant: 'caption', color: 'text.secondary' }, label))),
+        react_1.default.createElement(material_1.Box, null, children)));
 };
 exports.default = FieldWrapper;
 var sx = {
-    root: {
-        display: 'flex',
-        flexDirection: 'column',
-        width: '100%',
-    },
-    field: {},
     text: {
         color: 'text.secondary',
     },
@@ -43,11 +32,18 @@ var sx = {
         width: '100%',
     },
     labelRow: {
-        width: '100%',
-        maxWidth: 160,
+        minWidth: 100,
+        width: 100,
         pr: 1,
     },
-    helperText: {
-        color: 'text.secondary',
+    root: {
+        minHeight: 110,
+    },
+    rootBorder: {
+        p: 2,
+        width: '100%',
+        borderRadius: 1,
+        border: '1px solid',
+        borderColor: 'divider',
     },
 };

@@ -63,11 +63,11 @@ var sx = {
     },
     rootSideNav: {
         width: {
-            sm: '280px',
+            md: '280px',
             xs: '100%',
         },
         minWidth: {
-            sm: '280px',
+            md: '280px',
             xs: '100%',
         },
     },

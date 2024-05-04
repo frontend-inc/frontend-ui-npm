@@ -37,6 +37,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
+var frontend_js_1 = require("frontend-js");
 var Person = function (props) {
     var MAX_CHARS = 500;
     var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
@@ -65,9 +66,9 @@ var Person = function (props) {
                 react_1.default.createElement(material_1.Box, null,
                     open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
                     (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all')))),
-            (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { p: enableBorder ? 1 : 0 },
-                enableEdit && (react_1.default.createElement(components_1.ActionButton, { resource: resource, action: { label: 'Edit', color: 'secondary', name: 'click', onClick: handleEdit } })),
-                react_1.default.createElement(components_1.Actions, { actions: actions, resource: resource, justifyContent: "flex-end" }))))));
+            (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: { sm: 'row', xs: 'column' }, spacing: 1, p: enableBorder ? 1 : 0 },
+                enableEdit && (react_1.default.createElement(components_1.ActionButton, { resource: (0, frontend_js_1.flattenDocument)(resource), action: { label: 'Edit', color: 'secondary', name: 'click', onClick: handleEdit } })),
+                react_1.default.createElement(components_1.Actions, { actions: actions, resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "flex-end" }))))));
 };
 exports.default = Person;
 var sx = {
@@ -130,4 +131,11 @@ var sx = {
         justifyContent: 'flex-start',
         alignItems: 'center',
     },
+    actions: {
+        width: "100%",
+        justifyContent: {
+            sm: 'flex-end',
+            xs: 'center'
+        }
+    }
 };

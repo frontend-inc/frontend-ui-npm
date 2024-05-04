@@ -26,10 +26,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
-var FieldImage = function (props) {
-    var label = props.label, value = props.value, _a = props.objectFit, objectFit = _a === void 0 ? 'cover' : _a, rest = __rest(props, ["label", "value", "objectFit"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
-        react_1.default.createElement(components_1.Image, { src: (value === null || value === void 0 ? void 0 : value.url) || value, height: 120, objectFit: objectFit })));
+var components_1 = require("../../components");
+var components_2 = require("../../components");
+var AuthProfileFormWizard = function (props) {
+    var bgcolor = props.bgcolor, py = props.py, //special case for padding y
+    px = props.px, maxWidth = props.maxWidth, rest = __rest(props, ["bgcolor", "py", "px", "maxWidth"]);
+    return (react_1.default.createElement(components_1.Section, { bgcolor: bgcolor, py: 0, px: px, maxWidth: maxWidth },
+        react_1.default.createElement(components_2.ProfileFormWizard, __assign({ py: py }, rest))));
 };
-exports.default = FieldImage;
+exports.default = AuthProfileFormWizard;

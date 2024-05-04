@@ -16,8 +16,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var moment_1 = __importDefault(require("moment"));
+var frontend_js_1 = require("frontend-js");
 var Article = function (props) {
     var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
     var _b = resource || {}, label = _b.label, title = _b.title, image = _b.image, description = _b.description, data = _b.data;
@@ -26,10 +27,15 @@ var Article = function (props) {
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
             react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption" }, (0, moment_1.default)(published_at).format('MMMM D, YYYY')),
-            (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { px: 2 },
-                enableEdit && (react_1.default.createElement(__1.ActionButton, { resource: resource, action: { label: 'Edit', color: 'secondary', name: 'click', onClick: handleEdit } })),
-                react_1.default.createElement(__1.Actions, { actions: actions, resource: resource })))),
-        react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label, disableBorderRadius: enableBorder }),
+            (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.actions, spacing: 1 },
+                enableEdit && (react_1.default.createElement(components_1.ActionButton, { resource: (0, frontend_js_1.flattenDocument)(resource), action: {
+                        label: 'Edit',
+                        color: 'secondary',
+                        name: 'click',
+                        onClick: handleEdit
+                    } })),
+                react_1.default.createElement(components_1.Actions, { actions: actions, resource: (0, frontend_js_1.flattenDocument)(resource) })))),
+        react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label, disableBorderRadius: enableBorder }),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description))));
 };
@@ -64,4 +70,11 @@ var sx = {
     caption: {
         color: 'text.secondary',
     },
+    actions: {
+        justifyContent: 'center',
+        width: {
+            sm: 'auto',
+            xs: '100%'
+        }
+    }
 };

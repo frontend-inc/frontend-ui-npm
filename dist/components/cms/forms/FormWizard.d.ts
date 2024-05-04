@@ -5,7 +5,6 @@ export type FormWizardProps = {
     url: string;
     variant?: 'contained' | 'outlined' | 'text';
     fields: any[];
-    children?: React.ReactElement[];
     startTitle: string;
     startDescription: string;
     startImage: string;
@@ -16,6 +15,7 @@ export type FormWizardProps = {
     endDescription: string;
     endImage: string;
     endButtonText: string;
+    navigateUrl?: string;
 };
 declare const FormWizard: React.FC<FormWizardProps>;
 export default FormWizard;

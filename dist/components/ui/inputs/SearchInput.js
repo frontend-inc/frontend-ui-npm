@@ -65,7 +65,9 @@ var SearchInput = function (props) {
         react_1.default.createElement(material_1.InputBase, { sx: __assign(__assign(__assign({}, styles_1.sx.inputBase), sx.inputBase), styles), type: "text", fullWidth: true, name: name, placeholder: placeholder, autoComplete: "off", onChange: handleInputChange, value: text, onKeyDown: function (e) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
-                    handleSearch(text);
+                    if (handleSearch) {
+                        handleSearch(value);
+                    }
                 }
             } })));
 };

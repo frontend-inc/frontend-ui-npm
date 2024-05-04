@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProfileForm = exports.Profile = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.MyAccountModal = exports.MyAccountForm = exports.MyAccount = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthForeignCollection = exports.AuthButton = exports.AuthAvatar = exports.AuthRequired = exports.AuthCollection = void 0;
+exports.ProfileFormWizard = exports.ProfileForm = exports.Profile = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.MyAccountModal = exports.MyAccountForm = exports.MyAccount = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthForeignCollection = exports.AuthButton = exports.AuthAvatar = exports.AuthRequired = exports.AuthCollection = void 0;
 var AuthCollection_1 = require("./collections/AuthCollection");
 Object.defineProperty(exports, "AuthCollection", { enumerable: true, get: function () { return __importDefault(AuthCollection_1).default; } });
 var AuthRequired_1 = require("./AuthRequired");
@@ -77,3 +77,5 @@ var Profile_1 = require("./profiles/Profile");
 Object.defineProperty(exports, "Profile", { enumerable: true, get: function () { return __importDefault(Profile_1).default; } });
 var ProfileForm_1 = require("./profiles/ProfileForm");
 Object.defineProperty(exports, "ProfileForm", { enumerable: true, get: function () { return __importDefault(ProfileForm_1).default; } });
+var ProfileFormWizard_1 = require("./profiles/ProfileFormWizard");
+Object.defineProperty(exports, "ProfileFormWizard", { enumerable: true, get: function () { return __importDefault(ProfileFormWizard_1).default; } });

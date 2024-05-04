@@ -22,11 +22,10 @@ var ImageModal = function (props) {
     return (react_1.default.createElement(components_1.Modal, { open: open, handleClose: handleClose, title: title, maxWidth: "md", disablePadding: true, actions: react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(material_1.Button, { onClick: handleCopyUrlClick }, "Copy URL"),
             react_1.default.createElement(material_1.Button, { variant: "contained", onClick: handleDownloadClick }, "Download")) },
-        react_1.default.createElement(material_1.Box, { sx: sx.root },
-            react_1.default.createElement(image_1.default, { alt: "Image", src: image === null || image === void 0 ? void 0 : image.url, height: (image === null || image === void 0 ? void 0 : image.height) || 500, width: (image === null || image === void 0 ? void 0 : image.width) || 500, placeholder: "blur", style: {
-                    width: '100%',
-                    objectFit: 'contain',
-                } }))));
+        react_1.default.createElement(image_1.default, { alt: "Image", src: image === null || image === void 0 ? void 0 : image.url, height: (image === null || image === void 0 ? void 0 : image.height) || 1200, width: (image === null || image === void 0 ? void 0 : image.width) || 1200, style: {
+                width: '100%',
+                objectFit: 'contain',
+            } })));
 };
 exports.default = ImageModal;
 var sx = {

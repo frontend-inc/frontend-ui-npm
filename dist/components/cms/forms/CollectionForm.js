@@ -71,13 +71,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
+var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var constants_1 = require("../../../constants");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
+var router_1 = require("next/router");
 var CollectionForm = function (props) {
-    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
+    var router = (0, router_1.useRouter)();
+    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, navigateUrl = props.navigateUrl, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _c = (0, frontend_js_1.useResource)({
         name: 'document',
@@ -128,6 +132,9 @@ var CollectionForm = function (props) {
                 case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         showAlertSuccess(onSuccessMessage);
+                        if (navigateUrl) {
+                            router.push("".concat(clientUrl).concat(navigateUrl));
+                        }
                     }
                     return [3 /*break*/, 6];
                 case 5:

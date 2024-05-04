@@ -27,18 +27,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var lucide_react_1 = require("lucide-react");
 var components_1 = require("../../../components");
 var FieldURL = function (props) {
     var value = props.value, label = props.label, handleClick = props.handleClick, rest = __rest(props, ["value", "label", "handleClick"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest), value && (react_1.default.createElement(material_1.Button, { size: "small", color: "primary", sx: sx.button, startIcon: react_1.default.createElement(lucide_react_1.Link2, { size: 20 }), onClick: handleClick }, value))));
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest), value && (react_1.default.createElement(material_1.Link, { href: value, sx: sx.link }, value))));
 };
 exports.default = FieldURL;
 var sx = {
-    button: {
-        textTransform: 'none',
-        fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
-        letterSpacing: 0,
+    link: {
+        color: 'text.secondary',
+        textDecoration: 'none',
+        '&:hover': {
+            color: 'text.primary',
+            textDecoration: 'underline',
+        },
     },
     cell: {
         display: 'flex',

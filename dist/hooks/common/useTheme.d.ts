@@ -7,7 +7,7 @@ type ThemeProps = {
     bodyFont?: string;
     headerFont?: string;
     offset?: number;
-    mobile?: boolean;
+    deviceSize?: 'mobile' | 'tablet' | 'desktop';
 };
 declare const useTheme: (props: ThemeProps) => {
     theme: any;

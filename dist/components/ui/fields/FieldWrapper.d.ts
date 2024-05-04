@@ -1,11 +1,8 @@
 import React from 'react';
-import { TypographyVariantsType } from '../../../types';
 type FieldWrapperProps = {
-    variant?: TypographyVariantsType;
-    flexDirection?: 'row' | 'column';
+    direction?: 'row' | 'column';
     label?: string;
-    color?: string;
-    helperText?: string;
+    enableBorder?: boolean;
     children?: React.ReactNode;
 };
 declare const FieldWrapper: React.FC<FieldWrapperProps>;

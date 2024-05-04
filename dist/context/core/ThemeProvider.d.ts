@@ -7,7 +7,7 @@ type ThemeProviderProps = {
     headerFont?: string;
     bodyFont?: string;
     borderRadius?: number;
-    mobile?: boolean;
+    deviceSize?: 'mobile' | 'tablet' | 'desktop';
     offset?: number;
 };
 declare const ThemeProvider: (props: ThemeProviderProps) => React.JSX.Element;

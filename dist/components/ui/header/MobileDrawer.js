@@ -32,18 +32,20 @@ var __1 = require("../..");
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
 var SideNavMenuItem_1 = __importDefault(require("./SideNavMenuItem"));
+var frontend_js_1 = require("frontend-js");
 var MobileDrawer = function (props) {
-    var _a;
-    var _b = (0, react_1.useContext)(context_1.AppContext), clientUrl = _b.clientUrl, menuOpen = _b.menuOpen, setMenuOpen = _b.setMenuOpen;
+    var _a, _b;
+    var _c = (0, react_1.useContext)(context_1.AppContext), menuOpen = _c.menuOpen, setMenuOpen = _c.setMenuOpen;
     var editing = props.editing, menuItems = props.menuItems, handleClick = props.handleClick, enableAuth = props.enableAuth, enableShopify = props.enableShopify;
+    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var handleMenuClick = function (path) {
         setMenuOpen(false);
         handleClick(path);
     };
     return (react_1.default.createElement(__1.Drawer, { open: menuOpen, handleClose: function () { return setMenuOpen(false); }, anchor: "left", styles: sx.drawer },
         react_1.default.createElement(material_1.Box, { sx: sx.sideNavMenu },
-            react_1.default.createElement(material_1.List, { sx: sx.sideNavMenuItems }, (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 :
-                _a.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); }),
+            react_1.default.createElement(material_1.List, { sx: sx.sideNavMenuItems }, (_b = (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.filter(function (menuItem) { return ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.require_auth) ? currentUser === null || currentUser === void 0 ? void 0 : currentUser.id : !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)); })) === null || _b === void 0 ? void 0 :
+                _b.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); }),
                 enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(shopify_1.SearchButton, { variant: "sideNav" }),
                     react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav" })))),
@@ -65,12 +67,8 @@ var sx = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        height: '100%',
-        minHeight: 'calc(100vh - 70px)',
-        width: {
-            xs: '100%',
-            sm: '320px',
-        },
+        height: 'calc(100vh - 100px)',
+        width: '100%',
     },
     sideNavMenuItems: {
         width: '100%',

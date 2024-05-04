@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -50,23 +39,12 @@ var Details = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 1 }, document &&
             (fields === null || fields === void 0 ? void 0 : fields.map(function (field, i) { return (react_1.default.createElement(material_1.Grid, { key: i, item: true, xs: 12, sm: FULL_WIDTH_VARIANTS.includes(field === null || field === void 0 ? void 0 : field.variant) ? 12 : 4 },
-                react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.item), (enableBorder && sx.itemBorder)) },
-                    react_1.default.createElement(__1.Field, { field: field, document: document })))); })))));
+                react_1.default.createElement(__1.Field, { field: field, enableBorder: enableBorder, document: document }))); })))));
 };
 exports.default = Details;
 var sx = {
     root: {
         width: '100%',
-    },
-    item: {
-        p: 2,
-        width: '100%',
-        borderRadius: 1,
-        minHeight: 110,
-    },
-    itemBorder: {
-        border: '1px solid',
-        borderColor: 'divider',
     },
     itemFullWidth: {
         gridColumn: 'span 3',

@@ -35,55 +35,103 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var context_1 = require("../../context");
 var router_1 = require("next/router");
 var _1 = require(".");
+var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
+var hooks_1 = require("../../hooks");
 var useActions = function (params) {
     var _a = (0, _1.useLoadingWrapper)(), loading = _a.loading, data = _a.data, errors = _a.errors, loadingWrapper = _a.loadingWrapper;
     var action = params.action, resource = params.resource;
+    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var handleClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {
-        var _a, url;
+        var value, _a, url;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
+                    value = resource[action === null || action === void 0 ? void 0 : action.fieldName];
                     _a = action === null || action === void 0 ? void 0 : action.name;
                     switch (_a) {
                         case 'navigate': return [3 /*break*/, 1];
                         case 'click': return [3 /*break*/, 2];
-                        case 'url': return [3 /*break*/, 3];
-                        case 'webhook': return [3 /*break*/, 4];
+                        case 'copy': return [3 /*break*/, 3];
+                        case 'email': return [3 /*break*/, 4];
+                        case 'phone': return [3 /*break*/, 5];
+                        case 'sms': return [3 /*break*/, 6];
+                        case 'url': return [3 /*break*/, 7];
+                        case 'link': return [3 /*break*/, 8];
+                        case 'download': return [3 /*break*/, 9];
+                        case 'webhook': return [3 /*break*/, 10];
                     }
-                    return [3 /*break*/, 6];
+                    return [3 /*break*/, 12];
                 case 1:
                     url = "".concat(clientUrl).concat(action === null || action === void 0 ? void 0 : action.path);
                     if (resource === null || resource === void 0 ? void 0 : resource.handle) {
                         url = "".concat(clientUrl).concat(action === null || action === void 0 ? void 0 : action.path, "/").concat(resource.handle);
                     }
                     router.push(url);
-                    return [3 /*break*/, 7];
+                    return [3 /*break*/, 13];
                 case 2:
                     (action === null || action === void 0 ? void 0 : action.onClick) && action.onClick(ev);
-                    return [3 /*break*/, 7];
+                    return [3 /*break*/, 13];
                 case 3:
-                    window.open(action === null || action === void 0 ? void 0 : action.path, '_blank');
-                    return [3 /*break*/, 7];
-                case 4: return [4 /*yield*/, loadingWrapper(function () {
-                        var _a, _b, _c;
+                    if (value) {
+                        (0, copy_to_clipboard_1.default)(value);
+                        showAlertSuccess('Copied to clipboard');
+                    }
+                    return [3 /*break*/, 13];
+                case 4:
+                    if (value) {
+                        window.location.href = "mailto:".concat(value);
+                    }
+                    return [3 /*break*/, 13];
+                case 5:
+                    if (value) {
+                        window.location.href = "tel:".concat(value);
+                    }
+                    return [3 /*break*/, 13];
+                case 6:
+                    if (value) {
+                        window.location.href = "sms:".concat(value);
+                    }
+                    return [3 /*break*/, 13];
+                case 7:
+                    if (action === null || action === void 0 ? void 0 : action.path) {
+                        window.open(action === null || action === void 0 ? void 0 : action.path, '_blank');
+                    }
+                    return [3 /*break*/, 13];
+                case 8:
+                    if (value) {
+                        window.open(value, '_blank');
+                    }
+                    return [3 /*break*/, 13];
+                case 9:
+                    if (value === null || value === void 0 ? void 0 : value.url) {
+                        window.open(value.url, '_blank');
+                    }
+                    return [3 /*break*/, 13];
+                case 10: return [4 /*yield*/, loadingWrapper(function () {
+                        var _a, _b;
                         return fetch(action.url, {
                             method: (_a = action === null || action === void 0 ? void 0 : action.options) === null || _a === void 0 ? void 0 : _a.method,
                             headers: (_b = action === null || action === void 0 ? void 0 : action.options) === null || _b === void 0 ? void 0 : _b.headers,
-                            body: JSON.stringify((_c = action === null || action === void 0 ? void 0 : action.options) === null || _c === void 0 ? void 0 : _c.body),
+                            body: JSON.stringify({
+                                data: resource
+                            }),
                         });
                     })];
-                case 5:
+                case 11:
                     _b.sent();
-                    return [3 /*break*/, 7];
-                case 6: return [3 /*break*/, 7];
-                case 7: return [2 /*return*/];
+                    return [3 /*break*/, 13];
+                case 12: return [3 /*break*/, 13];
+                case 13: return [2 /*return*/];
             }
         });
     }); };

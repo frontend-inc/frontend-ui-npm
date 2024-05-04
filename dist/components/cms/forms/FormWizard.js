@@ -74,14 +74,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
+var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var FormWizardProgress_1 = __importDefault(require("./wizard/FormWizardProgress"));
 var FormCard_1 = __importDefault(require("./wizard/FormCard"));
 var FormWizardField_1 = __importDefault(require("./wizard/FormWizardField"));
 var FormWizardButtons_1 = __importDefault(require("./wizard/FormWizardButtons"));
+var router_1 = require("next/router");
 var FormWizard = function (props) {
-    var _a = props.py, py = _a === void 0 ? 4 : _a, handle = props.handle, fields = props.fields, url = props.url, startTitle = props.startTitle, startDescription = props.startDescription, startImage = props.startImage, _b = props.startButtonText, startButtonText = _b === void 0 ? 'Start' : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Submit' : _c, endTitle = props.endTitle, endDescription = props.endDescription, endImage = props.endImage, endButtonText = props.endButtonText;
+    var router = (0, router_1.useRouter)();
+    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var _a = props.py, py = _a === void 0 ? 4 : _a, handle = props.handle, fields = props.fields, url = props.url, startTitle = props.startTitle, startDescription = props.startDescription, startImage = props.startImage, _b = props.startButtonText, startButtonText = _b === void 0 ? 'Start' : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Submit' : _c, endTitle = props.endTitle, endDescription = props.endDescription, endImage = props.endImage, endButtonText = props.endButtonText, navigateUrl = props.navigateUrl;
     var _d = (0, react_1.useState)(false), submitted = _d[0], setSubmitted = _d[1];
     var _e = (0, frontend_js_1.useResource)({
         name: 'document',
@@ -99,6 +103,14 @@ var FormWizard = function (props) {
         setResource({});
         setSubmitted(false);
         setCurrentStep(0);
+    };
+    var handleSuccess = function () {
+        if (navigateUrl) {
+            router.push("".concat(clientUrl).concat(navigateUrl));
+        }
+        else {
+            handleResetForm();
+        }
     };
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -178,7 +190,7 @@ var FormWizard = function (props) {
             currentStep == 0 && (react_1.default.createElement(FormCard_1.default, { title: startTitle, description: startDescription, image: startImage, buttonText: startButtonText, handleClick: handleStartClick })),
             currentStep > 0 && (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleChange, handleRemove: handleRemove, resource: resource, setResource: setResource }),
-                react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: buttonText }))))) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleResetForm })))));
+                react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: buttonText }))))) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleSuccess })))));
 };
 exports.default = FormWizard;
 var sx = {

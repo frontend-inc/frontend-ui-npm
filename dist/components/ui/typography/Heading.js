@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var Heading = function (props) {
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.textAlign, textAlign = _b === void 0 ? 'left' : _b, _c = _a.textVariant, textVariant = _c === void 0 ? 'h4' : _c;
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.textAlign, textAlign = _b === void 0 ? 'left' : _b, _c = _a.textVariant, textVariant = _c === void 0 ? 'h6' : _c;
     if (!title && !description && !label)
         return null;
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), { alignItems: {
@@ -26,10 +26,7 @@ var Heading = function (props) {
                 xs: 'center',
             } }), direction: 'column', spacing: 1 },
         label && react_1.default.createElement(components_1.Label, { label: label }),
-        title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", sx: __assign(__assign({}, sx.title), { textAlign: {
-                    sm: textAlign,
-                    xs: 'center',
-                } }) }, title)),
+        title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", sx: __assign(__assign({}, sx.title), { textAlign: textAlign }) }, title)),
         description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: __assign(__assign({}, sx.description), { textAlign: {
                     sm: textAlign,
                     xs: 'center',

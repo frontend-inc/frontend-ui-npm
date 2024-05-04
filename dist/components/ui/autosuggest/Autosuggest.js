@@ -132,7 +132,7 @@ var sx = {
             borderRadius: 1,
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
-            bgcolor: 'background.paper',
+            bgcolor: 'background.default',
             border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
             '&:focus': {
                 border: function (theme) { return "2px solid ".concat(theme.palette.primary.light); },

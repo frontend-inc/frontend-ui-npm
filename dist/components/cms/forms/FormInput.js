@@ -21,6 +21,7 @@ var FormInput = function (props) {
     var componentMapper = {
         array: components_1.ArrayInput,
         string: components_1.TextInput,
+        file: components_1.AttachmentInput,
         url: components_1.TextInput,
         text: components_1.TextInput,
         number: components_1.TextInput,
@@ -51,6 +52,15 @@ var FormInput = function (props) {
             type: 'number',
         },
         image: {
+            handleRemove: handleRemove,
+        },
+        video: {
+            handleRemove: handleRemove,
+        },
+        audio: {
+            handleRemove: handleRemove,
+        },
+        file: {
             handleRemove: handleRemove,
         },
     };

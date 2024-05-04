@@ -26,10 +26,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
+var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
-var FieldImage = function (props) {
-    var label = props.label, value = props.value, _a = props.objectFit, objectFit = _a === void 0 ? 'cover' : _a, rest = __rest(props, ["label", "value", "objectFit"]);
+var FieldFile = function (props) {
+    var value = props.value, label = props.label, handleClick = props.handleClick, rest = __rest(props, ["value", "label", "handleClick"]);
     return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
-        react_1.default.createElement(components_1.Image, { src: (value === null || value === void 0 ? void 0 : value.url) || value, height: 120, objectFit: objectFit })));
+        react_1.default.createElement(material_1.Stack, { direction: 'row', spacing: 1 },
+            react_1.default.createElement(components_1.Icon, { name: 'File', size: 20, color: 'text.primary' }),
+            (value === null || value === void 0 ? void 0 : value.content_type) && (react_1.default.createElement(material_1.Link, { href: value === null || value === void 0 ? void 0 : value.url, sx: sx.link, target: '_blank' }, value === null || value === void 0 ? void 0 : value.content_type)))));
 };
-exports.default = FieldImage;
+exports.default = FieldFile;
+var sx = {
+    link: {
+        color: 'text.secondary',
+        textDecoration: 'none',
+        '&:hover': {
+            color: 'text.primary',
+            textDecoration: 'underline',
+        },
+    },
+    cell: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        p: '0.5rem',
+    },
+};

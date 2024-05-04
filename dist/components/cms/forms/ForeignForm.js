@@ -71,14 +71,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
+var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
-var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
 var constants_1 = require("../../../constants");
+var hooks_1 = require("../../../hooks");
+var router_1 = require("next/router");
 var ForeignForm = function (props) {
-    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl;
-    var _b = (0, react_1.useState)(false), submitted = _b[0], setSubmitted = _b[1];
+    var router = (0, router_1.useRouter)();
+    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl, navigateUrl = props.navigateUrl, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
+    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _c = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
@@ -120,7 +124,6 @@ var ForeignForm = function (props) {
                 case 0:
                     _a.trys.push([0, 7, , 8]);
                     resp = void 0;
-                    addResp = void 0;
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
                     return [4 /*yield*/, update(resource)];
                 case 1:
@@ -136,7 +139,12 @@ var ForeignForm = function (props) {
                 case 5:
                     addResp = _a.sent();
                     if (addResp === null || addResp === void 0 ? void 0 : addResp.id) {
-                        setSubmitted(true);
+                        if (onSuccessMessage) {
+                            showAlertSuccess(onSuccessMessage);
+                        }
+                        if (navigateUrl) {
+                            router.push("".concat(clientUrl).concat(navigateUrl));
+                        }
                     }
                     _a.label = 6;
                 case 6: return [3 /*break*/, 8];
@@ -148,8 +156,7 @@ var ForeignForm = function (props) {
             }
         });
     }); };
-    return !submitted ? (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }))) : (react_1.default.createElement(components_1.Placeholder, { enableBorder: true, icon: 'Check', title: "Success", description: "Your form has been submitted", actions: react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: function () { return setSubmitted(false); } }, "Done") }));
+    return (react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = ForeignForm;
 var sx = {

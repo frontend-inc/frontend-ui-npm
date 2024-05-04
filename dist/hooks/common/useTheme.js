@@ -15,7 +15,7 @@ var react_1 = require("react");
 var theme_1 = require("../../theme");
 var helpers_1 = require("../../helpers");
 var useTheme = function (props) {
-    var _a = props || {}, _b = _a.muiTheme, muiTheme = _b === void 0 ? theme_1.muiTheme : _b, primaryColor = _a.primaryColor, bgcolor = _a.bgcolor, borderRadius = _a.borderRadius, bodyFont = _a.bodyFont, headerFont = _a.headerFont, _c = _a.offset, offset = _c === void 0 ? 0 : _c, _d = _a.mobile, mobile = _d === void 0 ? false : _d;
+    var _a = props || {}, _b = _a.muiTheme, muiTheme = _b === void 0 ? theme_1.muiTheme : _b, primaryColor = _a.primaryColor, bgcolor = _a.bgcolor, borderRadius = _a.borderRadius, bodyFont = _a.bodyFont, headerFont = _a.headerFont, _c = _a.offset, offset = _c === void 0 ? 0 : _c, _d = _a.deviceSize, deviceSize = _d === void 0 ? 'desktop' : _d;
     var _e = (0, react_1.useState)(muiTheme), theme = _e[0], setTheme = _e[1];
     (0, react_1.useEffect)(function () {
         var newTheme = {};
@@ -40,11 +40,22 @@ var useTheme = function (props) {
                 },
             };
         }
-        if (mobile == true) {
+        if (deviceSize == 'mobile') {
             breakpoints = {
                 values: {
                     xs: 0,
                     sm: 5000,
+                    md: 5000,
+                    lg: 5000,
+                    xl: 5000,
+                },
+            };
+        }
+        if (deviceSize == 'tablet') {
+            breakpoints = {
+                values: {
+                    xs: 0,
+                    sm: 0,
                     md: 5000,
                     lg: 5000,
                     xl: 5000,
@@ -71,7 +82,7 @@ var useTheme = function (props) {
         setTheme(__assign(__assign({}, theme), { palette: palette, breakpoints: breakpoints, typography: typography, shape: shape }));
     }, [
         offset,
-        mobile,
+        deviceSize,
         primaryColor,
         bgcolor,
         headerFont,

@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProgressLoader = exports.Placeholder = exports.Paper = exports.NoImage = exports.Loading = exports.TouchableOpacity = exports.PopupButton = exports.Popup = exports.OnlineStatusBadge = exports.OnlineStatusAvatar = exports.Notifications = exports.Notification = exports.Modal = exports.MobileButton = exports.MenuItem = exports.MenuButton = exports.Label = exports.IconLoading = exports.Icon = exports.FilterSortInput = exports.FilterKeywordsInput = exports.FilterInputs = exports.FilterInput = exports.FilterForm = exports.FilterPopup = exports.FilterDrawer = exports.FilterButton = exports.Heading = exports.Drawer = exports.Divider = exports.ContextLoader = exports.CloudinaryImage = exports.Center = exports.CarouselImage = exports.CarouselDot = exports.Carousel = exports.Column = exports.Cover = exports.Card = exports.Breadcrumbs = exports.Button = exports.Autosuggest = exports.Alert = exports.AlertButton = exports.AlertModal = exports.AvatarCard = exports.Chip = exports.Avatar = exports.ActionButton = exports.Actions = void 0;
 exports.CellDate = exports.CellButton = exports.CellBoolean = exports.CellArray = exports.Cell = exports.VideoInput = exports.SearchInput = exports.SwitchInput = exports.SelectInput = exports.NoSpaceInput = exports.RatingInput = exports.RadioInput = exports.TextInput = exports.PriceRangeInput = exports.NumberRangeInput = exports.NumberSliderInput = exports.JSONInput = exports.ImageInput = exports.HelperText = exports.FileInput = exports.ErrorText = exports.ExpandableList = exports.EditableTextInput = exports.EditableTypography = exports.DateInput = exports.DropZone = exports.ColorInput = exports.CheckboxInput = exports.CheckboxGroupInput = exports.AttachmentInput = exports.ArrayListInput = exports.ArrayInput = exports.ColorModeTheme = exports.LayoutScroll = exports.Loader = exports.LayoutEmpty = exports.LayoutContainer = exports.Header = exports.Footer = exports.ProfileImage = exports.ProfileInfo = exports.ProfileDetails = exports.UserMenu = exports.UserAvatar = exports.Toolbar = exports.Text = exports.Subheader = exports.SocialLink = exports.Section = exports.RemoteAutosuggest = void 0;
-exports.FieldString = exports.FieldJSON = exports.FieldImageThumbnail = exports.FieldImage = exports.FieldWrapper = exports.FieldDate = exports.FieldBoolean = exports.FieldArray = exports.Field = exports.Swipeable = exports.TextModal = exports.Logo = exports.ImageModal = exports.ImageVert = exports.ImageHoriz = exports.Image = exports.EmptyImage = exports.Pagination = exports.SortedDescIcon = exports.SortedAscIcon = exports.SortableTableHeader = exports.SelectableListItem = exports.SortableListItem = exports.SortableList = exports.TableToolbar = exports.TableRowSkeleton = exports.TableRow = exports.TableContainer = exports.TableCell = exports.TableHeaders = exports.TableList = exports.Table = exports.CircularLoader = exports.CellUser = exports.CellHeader = exports.CellHABTM = exports.CellVideo = exports.CellBelongsTo = exports.CellRating = exports.CellPrice = exports.CellPublished = exports.CellText = exports.CellLink = exports.CellLabel = exports.CellStringExpanded = exports.CellString = exports.CellJSON = exports.CellImage = exports.CellExpand = exports.CellEnum = void 0;
-exports.FieldVideo = exports.FieldPrice = exports.FieldText = exports.FieldReference = exports.FieldRating = exports.FieldURL = void 0;
+exports.FieldImage = exports.FieldWrapper = exports.FieldFile = exports.FieldDate = exports.FieldBoolean = exports.FieldArray = exports.Field = exports.Swipeable = exports.TextModal = exports.Logo = exports.ImageModal = exports.ImageVert = exports.ImageHoriz = exports.Image = exports.EmptyImage = exports.AttachmentImage = exports.Pagination = exports.SortedDescIcon = exports.SortedAscIcon = exports.SortableTableHeader = exports.SelectableListItem = exports.SortableListItem = exports.SortableList = exports.TableToolbar = exports.TableRowSkeleton = exports.TableRow = exports.TableContainer = exports.TableCell = exports.TableHeaders = exports.TableList = exports.Table = exports.CircularLoader = exports.CellUser = exports.CellHeader = exports.CellHABTM = exports.CellVideo = exports.CellBelongsTo = exports.CellRating = exports.CellPrice = exports.CellPublished = exports.CellText = exports.CellLink = exports.CellLabel = exports.CellStringExpanded = exports.CellString = exports.CellJSON = exports.CellImage = exports.CellExpand = exports.CellFile = exports.CellEnum = void 0;
+exports.FieldVideo = exports.FieldPrice = exports.FieldText = exports.FieldReference = exports.FieldRating = exports.FieldURL = exports.FieldString = exports.FieldJSON = exports.FieldImageThumbnail = void 0;
 var Actions_1 = require("./actions/Actions");
 Object.defineProperty(exports, "Actions", { enumerable: true, get: function () { return __importDefault(Actions_1).default; } });
 var ActionButton_1 = require("./actions/ActionButton");
@@ -213,6 +213,8 @@ var CellDate_1 = require("./tables/CellDate");
 Object.defineProperty(exports, "CellDate", { enumerable: true, get: function () { return __importDefault(CellDate_1).default; } });
 var CellEnum_1 = require("./tables/CellEnum");
 Object.defineProperty(exports, "CellEnum", { enumerable: true, get: function () { return __importDefault(CellEnum_1).default; } });
+var CellFile_1 = require("./tables/CellFile");
+Object.defineProperty(exports, "CellFile", { enumerable: true, get: function () { return __importDefault(CellFile_1).default; } });
 var CellExpand_1 = require("./tables/CellExpand");
 Object.defineProperty(exports, "CellExpand", { enumerable: true, get: function () { return __importDefault(CellExpand_1).default; } });
 var CellImage_1 = require("./tables/CellImage");
@@ -278,6 +280,8 @@ Object.defineProperty(exports, "SortedDescIcon", { enumerable: true, get: functi
 var Pagination_1 = require("./Pagination");
 Object.defineProperty(exports, "Pagination", { enumerable: true, get: function () { return __importDefault(Pagination_1).default; } });
 // Media
+var AttachmentImage_1 = require("./images/AttachmentImage");
+Object.defineProperty(exports, "AttachmentImage", { enumerable: true, get: function () { return __importDefault(AttachmentImage_1).default; } });
 var EmptyImage_1 = require("./images/EmptyImage");
 Object.defineProperty(exports, "EmptyImage", { enumerable: true, get: function () { return __importDefault(EmptyImage_1).default; } });
 var Image_1 = require("./images/Image");
@@ -303,6 +307,8 @@ var FieldBoolean_1 = require("./fields/FieldBoolean");
 Object.defineProperty(exports, "FieldBoolean", { enumerable: true, get: function () { return __importDefault(FieldBoolean_1).default; } });
 var FieldDate_1 = require("./fields/FieldDate");
 Object.defineProperty(exports, "FieldDate", { enumerable: true, get: function () { return __importDefault(FieldDate_1).default; } });
+var FieldFile_1 = require("./fields/FieldFile");
+Object.defineProperty(exports, "FieldFile", { enumerable: true, get: function () { return __importDefault(FieldFile_1).default; } });
 var FieldWrapper_1 = require("./fields/FieldWrapper");
 Object.defineProperty(exports, "FieldWrapper", { enumerable: true, get: function () { return __importDefault(FieldWrapper_1).default; } });
 var FieldImage_1 = require("./fields/FieldImage");
