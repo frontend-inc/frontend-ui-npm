@@ -36,7 +36,7 @@ var sx = {
         gap: '16px',
     },
     listDense: {
-        gap: '8px'
+        gap: '8px',
     },
     grid: {
         display: 'grid',

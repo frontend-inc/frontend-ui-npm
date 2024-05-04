@@ -10,7 +10,7 @@ var CommentForm = function (props) {
     var _a = props || {}, _b = _a.pl, pl = _b === void 0 ? 0 : _b, loading = _a.loading, errors = _a.errors, comment = _a.comment, handleChange = _a.handleChange, handleSubmit = _a.handleSubmit;
     return (react_1.default.createElement(components_1.AuthRequired, null,
         react_1.default.createElement(material_1.ListItem, { sx: {
-                pl: pl
+                pl: pl,
             } },
             react_1.default.createElement(material_1.Stack, { sx: sx.form, direction: "column", spacing: 1 },
                 react_1.default.createElement(components_1.TextInput, { errors: errors, multiline: true, rows: 4, name: "body", value: comment === null || comment === void 0 ? void 0 : comment.body, handleChange: handleChange, placeholder: "Leave a comment..." }),
@@ -26,5 +26,5 @@ var sx = {
         width: '100%',
         alignItems: 'flex-start',
         bgcolor: 'secondary.light',
-    }
+    },
 };

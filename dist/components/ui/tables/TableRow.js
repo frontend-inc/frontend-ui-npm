@@ -14,8 +14,8 @@ var TableRow = function (props) {
             react_1.default.createElement(material_1.Checkbox, { checked: selected, onChange: function () { return handleSelect(row); }, value: "true" }))),
         (enableEdit || enableDelete) && (react_1.default.createElement(components_1.TableCell, { small: true, align: "center" },
             react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
-                enableEdit && (react_1.default.createElement(material_1.Button, { size: 'small', variant: 'contained', color: 'secondary', onClick: function () { return handleEdit(row); } }, "Edit")),
-                enableDelete && (react_1.default.createElement(material_1.Button, { size: 'small', variant: 'contained', color: 'secondary', onClick: function () { return handleDelete(row); } }, "Delete"))))), fields === null || fields === void 0 ? void 0 :
+                enableEdit && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", onClick: function () { return handleEdit(row); } }, "Edit")),
+                enableDelete && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", onClick: function () { return handleDelete(row); } }, "Delete"))))), fields === null || fields === void 0 ? void 0 :
         fields.map(function (field, index) {
             var value = row[field.name];
             return (react_1.default.createElement(components_1.TableCell, { key: index },

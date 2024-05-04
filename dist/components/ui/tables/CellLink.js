@@ -8,7 +8,7 @@ var material_1 = require("@mui/material");
 var lucide_react_1 = require("lucide-react");
 var CellLink = function (props) {
     var value = props.value, handleClick = props.handleClick;
-    return (react_1.default.createElement(material_1.Box, { sx: sx.cell }, value && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: 'secondary', sx: sx.button, startIcon: react_1.default.createElement(lucide_react_1.ExternalLink, { size: 20 }), onClick: handleClick }, value))));
+    return (react_1.default.createElement(material_1.Box, { sx: sx.cell }, value && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", sx: sx.button, startIcon: react_1.default.createElement(lucide_react_1.ExternalLink, { size: 20 }), onClick: handleClick }, value))));
 };
 exports.default = CellLink;
 var sx = {

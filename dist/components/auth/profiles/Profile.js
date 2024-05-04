@@ -8,7 +8,7 @@ var components_1 = require("../../../components");
 var Profile = function (props) {
     var _a = props || {}, url = _a.url, fields = _a.fields, displayFields = _a.displayFields, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, actions = _a.actions, resource = _a.resource;
     return (react_1.default.createElement(components_1.AuthRequired, null,
-        react_1.default.createElement(components_1.Show, { style: 'person', url: url, resource: resource, actions: actions, fields: fields, displayFields: displayFields, enableBorder: enableBorder, enableEdit: enableEdit })));
+        react_1.default.createElement(components_1.Show, { style: "person", url: url, resource: resource, actions: actions, fields: fields, displayFields: displayFields, enableBorder: enableBorder, enableEdit: enableEdit })));
 };
 exports.default = Profile;
 var sx = {

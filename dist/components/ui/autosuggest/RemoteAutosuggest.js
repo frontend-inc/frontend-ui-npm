@@ -105,7 +105,7 @@ var RemoteAutosuggest = function (props) {
         return resources.map(function (resource) { return ({
             label: resource[displayField],
             value: resource[valueParam],
-            image: imageField ? (0, lodash_1.get)(resource, imageField) : null
+            image: imageField ? (0, lodash_1.get)(resource, imageField) : null,
         }); });
     };
     var findOption = function (value) { return __awaiter(void 0, void 0, void 0, function () {
@@ -117,7 +117,7 @@ var RemoteAutosuggest = function (props) {
             if (resource) {
                 setOption({
                     label: resource[displayField],
-                    value: resource[valueParam]
+                    value: resource[valueParam],
                 });
             }
             return [2 /*return*/];
@@ -134,7 +134,7 @@ var RemoteAutosuggest = function (props) {
             if (resource) {
                 setOption({
                     label: resource[displayField],
-                    value: resource[valueParam]
+                    value: resource[valueParam],
                 });
             }
         }

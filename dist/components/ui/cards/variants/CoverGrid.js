@@ -64,7 +64,7 @@ var CoverVert = function (props) {
                         react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
                             react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 60)),
                             description && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, (0, helpers_1.truncate)(description, 30)))),
-                        (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: 'EllipsisVertical', color: 'common.white', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))))),
+                        (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: "EllipsisVertical", color: "common.white", handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))))),
             buttonText && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { variant: "contained", sx: sx.button, onClick: handleItemClick }, buttonText))))));
 };
@@ -112,5 +112,5 @@ var sx = {
         width: '100%',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
-    }
+    },
 };

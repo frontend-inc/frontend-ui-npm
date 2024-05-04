@@ -19,8 +19,6 @@ var CoverGrid_1 = __importDefault(require("./variants/CoverGrid"));
 var CoverList_1 = __importDefault(require("./variants/CoverList"));
 var Cover = function (props) {
     var variant = props.variant;
-    return variant == 'list' ?
-        react_1.default.createElement(CoverList_1.default, __assign({}, props)) :
-        react_1.default.createElement(CoverGrid_1.default, __assign({}, props));
+    return variant == 'list' ? react_1.default.createElement(CoverList_1.default, __assign({}, props)) : react_1.default.createElement(CoverGrid_1.default, __assign({}, props));
 };
 exports.default = Cover;

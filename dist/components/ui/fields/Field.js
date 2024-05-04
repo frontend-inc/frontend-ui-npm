@@ -13,23 +13,23 @@ var Field = function (props) {
         value = '-';
     }
     var components = {
-        "boolean": components_1.FieldBoolean,
-        "date": components_1.FieldDate,
-        "datetime": components_1.FieldDate,
-        "file": components_1.FieldFile,
-        "image": components_1.FieldImage,
-        "video": components_1.FieldVideo,
-        "json": components_1.FieldJSON,
-        "url": components_1.FieldURL,
-        "rating": components_1.FieldRating,
-        "text": components_1.FieldText,
-        "number": components_1.FieldText,
-        "array": components_1.FieldArray,
-        "string": components_1.FieldString,
-        "select": components_1.FieldString,
-        "price": components_1.FieldPrice
+        boolean: components_1.FieldBoolean,
+        date: components_1.FieldDate,
+        datetime: components_1.FieldDate,
+        file: components_1.FieldFile,
+        image: components_1.FieldImage,
+        video: components_1.FieldVideo,
+        json: components_1.FieldJSON,
+        url: components_1.FieldURL,
+        rating: components_1.FieldRating,
+        text: components_1.FieldText,
+        number: components_1.FieldText,
+        array: components_1.FieldArray,
+        string: components_1.FieldString,
+        select: components_1.FieldString,
+        price: components_1.FieldPrice,
     };
     var Component = components[variant];
-    return (react_1.default.createElement(Component, { label: label, value: value, enableBorder: enableBorder }));
+    return react_1.default.createElement(Component, { label: label, value: value, enableBorder: enableBorder });
 };
 exports.default = Field;

@@ -36,7 +36,7 @@ var FormInput = function (props) {
     };
     var inputProps = {
         array: {
-            value: value || []
+            value: value || [],
         },
         text: {
             multiline: true,

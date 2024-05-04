@@ -56,7 +56,7 @@ var Alert = function (props) {
             setTimeout(function () { return setOpen(false); }, 2500);
     }, [open]);
     return (react_1.default.createElement(material_1.Fade, { in: open },
-        react_1.default.createElement(material_1.Slide, { direction: anchorBottom ? "up" : "down", in: open },
+        react_1.default.createElement(material_1.Slide, { direction: anchorBottom ? 'up' : 'down', in: open },
             react_1.default.createElement(material_1.Box, { width: "100%", p: 0, sx: __assign(__assign({}, sx.root), (anchorBottom && sx.anchorBottom)) },
                 react_1.default.createElement(material_1.Paper, { elevation: 4, sx: sx.alert },
                     react_1.default.createElement(material_1.List, { disablePadding: true },

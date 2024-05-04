@@ -60,7 +60,7 @@ var CardGrid = function (props) {
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
             react_1.default.createElement(material_1.Stack, { sx: sx.contentArea, direction: "row", spacing: 0 },
                 react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
-                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: 'EllipsisVertical', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
+                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: "EllipsisVertical", handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
             buttonText && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleItemClick }, buttonText))))));
 };

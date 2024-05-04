@@ -44,14 +44,16 @@ var MobileDrawer = function (props) {
     };
     return (react_1.default.createElement(__1.Drawer, { open: menuOpen, handleClose: function () { return setMenuOpen(false); }, anchor: "left", styles: sx.drawer },
         react_1.default.createElement(material_1.Box, { sx: sx.sideNavMenu },
-            react_1.default.createElement(material_1.List, { sx: sx.sideNavMenuItems }, (_b = (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.filter(function (menuItem) { return ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.require_auth) ? currentUser === null || currentUser === void 0 ? void 0 : currentUser.id : !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)); })) === null || _b === void 0 ? void 0 :
+            react_1.default.createElement(material_1.List, { sx: sx.sideNavMenuItems }, (_b = (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.filter(function (menuItem) {
+                return (menuItem === null || menuItem === void 0 ? void 0 : menuItem.require_auth) ? currentUser === null || currentUser === void 0 ? void 0 : currentUser.id : !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id);
+            })) === null || _b === void 0 ? void 0 :
                 _b.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); }),
                 enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(shopify_1.SearchButton, { variant: "sideNav" }),
                     react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav" })))),
             (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
                 enableShopify && react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }),
-                enableAuth && (react_1.default.createElement(__1.AuthButton, { showLabel: true, editing: editing })))))));
+                enableAuth && react_1.default.createElement(__1.AuthButton, { showLabel: true, editing: editing }))))));
 };
 exports.default = MobileDrawer;
 var sx = {

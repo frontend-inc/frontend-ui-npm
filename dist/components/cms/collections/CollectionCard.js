@@ -33,9 +33,9 @@ var CollectionCard = function (props) {
         card: __1.Card,
         avatar: __1.AvatarCard,
         cover: __1.Cover,
-        chip: __1.Chip
+        chip: __1.Chip,
     };
     var Component = COMPONENTS[style] || __1.Card;
-    return (react_1.default.createElement(Component, __assign({ variant: variant }, rest)));
+    return react_1.default.createElement(Component, __assign({ variant: variant }, rest));
 };
 exports.default = CollectionCard;

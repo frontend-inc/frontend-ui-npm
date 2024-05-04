@@ -57,7 +57,7 @@ var ExpandableList = function (props) {
         var cookie = (0, cookies_next_1.getCookie)("app-config") || '{}';
         // @ts-ignore
         var jsonConfig = JSON.parse(cookie);
-        if (jsonConfig[id] = undefined) {
+        if ((jsonConfig[id] = undefined)) {
             setOpen(jsonConfig[id]);
         }
     };

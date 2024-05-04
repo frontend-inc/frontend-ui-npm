@@ -31,9 +31,9 @@ var components_1 = require("../../../components");
 var FieldFile = function (props) {
     var value = props.value, label = props.label, handleClick = props.handleClick, rest = __rest(props, ["value", "label", "handleClick"]);
     return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
-        react_1.default.createElement(material_1.Stack, { direction: 'row', spacing: 1 },
-            react_1.default.createElement(components_1.Icon, { name: 'File', size: 20, color: 'text.primary' }),
-            (value === null || value === void 0 ? void 0 : value.content_type) && (react_1.default.createElement(material_1.Link, { href: value === null || value === void 0 ? void 0 : value.url, sx: sx.link, target: '_blank' }, value === null || value === void 0 ? void 0 : value.content_type)))));
+        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
+            react_1.default.createElement(components_1.Icon, { name: "File", size: 20, color: "text.primary" }),
+            (value === null || value === void 0 ? void 0 : value.content_type) && (react_1.default.createElement(material_1.Link, { href: value === null || value === void 0 ? void 0 : value.url, sx: sx.link, target: "_blank" }, value === null || value === void 0 ? void 0 : value.content_type)))));
 };
 exports.default = FieldFile;
 var sx = {

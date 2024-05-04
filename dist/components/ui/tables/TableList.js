@@ -21,7 +21,7 @@ var TableList = function (props) {
     var title = props.title, toolbar = props.toolbar, loading = props.loading, fields = props.fields, rows = props.rows, enableBorder = props.enableBorder, disableBorderRadius = props.disableBorderRadius, _a = props.enableSelect, enableSelect = _a === void 0 ? false : _a, _b = props.enableEdit, enableEdit = _b === void 0 ? false : _b, _c = props.enableDelete, enableDelete = _c === void 0 ? false : _c, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, query = props.query, selected = props.selected, selectedIds = props.selectedIds, handleSelect = props.handleSelect, handleSelectAll = props.handleSelectAll, handleSort = props.handleSort, handlePaginate = props.handlePaginate, page = props.page, perPage = props.perPage, numPages = props.numPages, numResults = props.numResults, totalCount = props.totalCount, _d = props.styles, styles = _d === void 0 ? {} : _d;
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), (disableBorderRadius && sx.disableBorderRadius)) },
         react_1.default.createElement(material_1.Box, { p: 1, sx: sx.toolbar },
-            title && (react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: 'text.primary' }, title)),
+            title && (react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "text.primary" }, title)),
             toolbar && toolbar),
         react_1.default.createElement(components_1.TableContainer, { styles: styles },
             react_1.default.createElement(material_1.TableBody, null,
@@ -43,10 +43,10 @@ var sx = {
         borderColor: 'divider',
     },
     disableBorderRadius: {
-        borderRadius: 0
+        borderRadius: 0,
     },
     toolbar: {
         minHeight: 40,
-        width: "100%"
-    }
+        width: '100%',
+    },
 };

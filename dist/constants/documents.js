@@ -114,5 +114,5 @@ exports.DEFAULT_FIELDS = [
     exports.PUBLISHED_FIELD,
     exports.LOCALE_FIELD,
     exports.TAGS_FIELD,
-    exports.USER_FIELD
+    exports.USER_FIELD,
 ];

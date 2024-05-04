@@ -51,7 +51,7 @@ var CoverList = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 40)),
                     label && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, label))),
-                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: 'EllipsisVertical', color: 'common.white', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
+                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: "EllipsisVertical", color: "common.white", handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
             buttonText && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { variant: "contained", sx: sx.button, onClick: handleItemClick }, buttonText))))));
 };

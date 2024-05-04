@@ -18,6 +18,6 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var FieldJSON = function (props) {
     var value = props.value, label = props.label, rest = __rest(props, ["value", "label"]);
-    return (react_1.default.createElement(components_1.FieldString, { value: JSON.stringify(value, null, 2) }));
+    return react_1.default.createElement(components_1.FieldString, { value: JSON.stringify(value, null, 2) });
 };
 exports.default = FieldJSON;

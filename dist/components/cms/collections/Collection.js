@@ -243,7 +243,7 @@ var Collection = function (props) {
             react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: enableFilters && filterAnchor == 'left' ? 8 : 12, lg: enableFilters && filterAnchor == 'left' ? 9 : 12 },
                 react_1.default.createElement(material_1.Box, { sx: __assign({}, (delayedLoading && sx.loading)) },
                     layout == 'inline' && (react_1.default.createElement(material_1.Collapse, { in: openModal },
-                        react_1.default.createElement(material_1.Stack, { direction: 'column', sx: sx.form, spacing: 1 },
+                        react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.form, spacing: 1 },
                             react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }),
                             react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save')))),
                     react_1.default.createElement(__1.CollectionList, { variant: variant, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableCreate: enableCreate, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick })),
@@ -275,7 +275,7 @@ var sx = {
         gap: '16px',
     },
     form: {
-        width: '100%'
+        width: '100%',
     },
     item: {
         p: 2,
@@ -283,8 +283,8 @@ var sx = {
     button: {
         width: {
             sm: 'auto',
-            xs: '100%'
-        }
+            xs: '100%',
+        },
     },
     filtersContainer: {
         mr: {

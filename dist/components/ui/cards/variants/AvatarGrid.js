@@ -65,7 +65,7 @@ var AvatarGrid = function (props) {
             react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.contentArea, spacing: 0 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title))),
-                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: 'EllipsisVertical', handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
+                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: "EllipsisVertical", handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
             buttonText && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { variant: "outlined", color: "secondary", onClick: handleItemClick }, buttonText))))));
 };
@@ -119,9 +119,9 @@ var sx = {
     },
     content: {
         width: '100%',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     contentArea: {
-        width: '100%'
-    }
+        width: '100%',
+    },
 };

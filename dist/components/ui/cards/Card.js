@@ -19,8 +19,6 @@ var CardGrid_1 = __importDefault(require("./variants/CardGrid"));
 var CardList_1 = __importDefault(require("./variants/CardList"));
 var Card = function (props) {
     var variant = props.variant;
-    return variant == 'list' ?
-        react_1.default.createElement(CardList_1.default, __assign({}, props)) :
-        react_1.default.createElement(CardGrid_1.default, __assign({}, props));
+    return variant == 'list' ? react_1.default.createElement(CardList_1.default, __assign({}, props)) : react_1.default.createElement(CardGrid_1.default, __assign({}, props));
 };
 exports.default = Card;

@@ -107,9 +107,9 @@ var MyAccount = function () {
     }, [currentUser]);
     if (!currentUser)
         return null;
-    return (react_1.default.createElement(components_1.Modal, { open: myAccountOpen, handleClose: function () { return setMyAccountOpen(false); }, title: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ?
-            "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name) :
-            'My Account' },
+    return (react_1.default.createElement(components_1.Modal, { open: myAccountOpen, handleClose: function () { return setMyAccountOpen(false); }, title: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
+            ? "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name)
+            : 'My Account' },
         react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout })));
 };
 exports.default = MyAccount;

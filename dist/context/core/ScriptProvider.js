@@ -56,8 +56,7 @@ var ScriptProvider = function (props) {
         segmentWriteKey: segmentWriteKey,
     };
     var wrapGTMProvider = function (gtmId, children) {
-        return !gtmId ? children :
-            react_1.default.createElement(react_gtm_hook_1.GTMProvider, { state: { id: gtmId } }, children);
+        return !gtmId ? (children) : (react_1.default.createElement(react_gtm_hook_1.GTMProvider, { state: { id: gtmId } }, children));
     };
     return (react_1.default.createElement(ScriptContext_1.default.Provider, { value: value },
         !disableAnalytics && (react_1.default.createElement(react_1.default.Fragment, null,

@@ -19,8 +19,6 @@ var AvatarGrid_1 = __importDefault(require("./variants/AvatarGrid"));
 var AvatarList_1 = __importDefault(require("./variants/AvatarList"));
 var AvatarCard = function (props) {
     var variant = props.variant;
-    return (variant == 'grid' ?
-        react_1.default.createElement(AvatarGrid_1.default, __assign({}, props)) :
-        react_1.default.createElement(AvatarList_1.default, __assign({}, props)));
+    return variant == 'grid' ? (react_1.default.createElement(AvatarGrid_1.default, __assign({}, props))) : (react_1.default.createElement(AvatarList_1.default, __assign({}, props)));
 };
 exports.default = AvatarCard;

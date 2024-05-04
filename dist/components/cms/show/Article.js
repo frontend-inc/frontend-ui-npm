@@ -32,7 +32,7 @@ var Article = function (props) {
                         label: 'Edit',
                         color: 'secondary',
                         name: 'click',
-                        onClick: handleEdit
+                        onClick: handleEdit,
                     } })),
                 react_1.default.createElement(components_1.Actions, { actions: actions, resource: (0, frontend_js_1.flattenDocument)(resource) })))),
         react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label, disableBorderRadius: enableBorder }),
@@ -74,7 +74,7 @@ var sx = {
         justifyContent: 'center',
         width: {
             sm: 'auto',
-            xs: '100%'
-        }
-    }
+            xs: '100%',
+        },
+    },
 };

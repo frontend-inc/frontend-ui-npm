@@ -43,7 +43,7 @@ var useGTM = function () {
     var cart = (0, frontend_shopify_1.useCart)().cart;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var sendDataToGTM = (0, react_gtm_hook_1.useGTMDispatch)();
-    // Helper method to return just the numeric 
+    // Helper method to return just the numeric
     // parts of a Shopify GID
     var convertGidToId = function (gid) {
         var parts = gid.split('/');
@@ -59,7 +59,8 @@ var useGTM = function () {
                     case 0: return [4 /*yield*/, sendDataToGTM({
                             event: 'add_to_cart',
                             ecommerce: {
-                                items: [{
+                                items: [
+                                    {
                                         item_name: product === null || product === void 0 ? void 0 : product.title,
                                         item_id: convertGidToId(product === null || product === void 0 ? void 0 : product.id),
                                         item_variant_id: convertGidToId(variant === null || variant === void 0 ? void 0 : variant.id),
@@ -71,8 +72,9 @@ var useGTM = function () {
                                         currency: 'USD',
                                         name: product === null || product === void 0 ? void 0 : product.title,
                                         url: window.location.href,
-                                    }]
-                            }
+                                    },
+                                ],
+                            },
                         })];
                     case 1:
                         _d.sent();
@@ -86,7 +88,8 @@ var useGTM = function () {
         var variant = _a.variant, quantity = _a.quantity, product = _a.product;
         sendDataToGTM({
             event: 'remove_from_cart',
-            ecommerce: [{
+            ecommerce: [
+                {
                     cart_id: cart === null || cart === void 0 ? void 0 : cart.id,
                     product_id: convertGidToId(product === null || product === void 0 ? void 0 : product.id),
                     sku: variant === null || variant === void 0 ? void 0 : variant.sku,
@@ -97,8 +100,9 @@ var useGTM = function () {
                     price: (_b = variant === null || variant === void 0 ? void 0 : variant.price) === null || _b === void 0 ? void 0 : _b.amount,
                     quantity: quantity,
                     url: window.location.href,
-                    image_url: (_c = variant === null || variant === void 0 ? void 0 : variant.image) === null || _c === void 0 ? void 0 : _c.url
-                }]
+                    image_url: (_c = variant === null || variant === void 0 ? void 0 : variant.image) === null || _c === void 0 ? void 0 : _c.url,
+                },
+            ],
         });
     };
     var trackCartViewed = function (checkout) {
@@ -122,7 +126,8 @@ var useGTM = function () {
         });
         sendDataToGTM({
             event: 'cart_viewed',
-            ecommerce: [{
+            ecommerce: [
+                {
                     order_id: checkout.id,
                     affiliation: 'oneroad',
                     value: (_a = checkout === null || checkout === void 0 ? void 0 : checkout.totalPrice) === null || _a === void 0 ? void 0 : _a.amount,
@@ -130,7 +135,8 @@ var useGTM = function () {
                     coupon: (_c = checkout.discountApplications.edges) === null || _c === void 0 ? void 0 : _c.map(function (e) { return e === null || e === void 0 ? void 0 : e.node; }).map(function (node) { return node === null || node === void 0 ? void 0 : node.code; }).join(', '),
                     currency: (_e = (_d = checkout === null || checkout === void 0 ? void 0 : checkout.cost) === null || _d === void 0 ? void 0 : _d.totalAmount) === null || _e === void 0 ? void 0 : _e.currencyCode,
                     products: products,
-                }]
+                },
+            ],
         });
     };
     var identify = function (email) {
@@ -157,12 +163,13 @@ var useGTM = function () {
                     variant: convertGidToId(variant === null || variant === void 0 ? void 0 : variant.id),
                     category: product === null || product === void 0 ? void 0 : product.productType,
                     url: window.location.href,
-                    image_url: (_c = variant === null || variant === void 0 ? void 0 : variant.image) === null || _c === void 0 ? void 0 : _c.src
+                    image_url: (_c = variant === null || variant === void 0 ? void 0 : variant.image) === null || _c === void 0 ? void 0 : _c.src,
                 };
             });
             sendDataToGTM({
                 event: 'checkout_started',
-                ecommerce: [{
+                ecommerce: [
+                    {
                         order_id: cart.id,
                         userId: currentUser === null || currentUser === void 0 ? void 0 : currentUser.email,
                         value: ((_c = (_b = cart === null || cart === void 0 ? void 0 : cart.cost) === null || _b === void 0 ? void 0 : _b.totalAmount) === null || _c === void 0 ? void 0 : _c.amount) + ((_d = cart === null || cart === void 0 ? void 0 : cart.cost) === null || _d === void 0 ? void 0 : _d.totalTaxAmount),
@@ -174,8 +181,9 @@ var useGTM = function () {
                             ((_m = cart === null || cart === void 0 ? void 0 : cart.cost) === null || _m === void 0 ? void 0 : _m.totalTaxAmount),
                         coupon: cart.discountCodes.join(','),
                         currency: (_p = (_o = cart === null || cart === void 0 ? void 0 : cart.cost) === null || _o === void 0 ? void 0 : _o.totalAmount) === null || _p === void 0 ? void 0 : _p.currencyCode,
-                        products: products
-                    }]
+                        products: products,
+                    },
+                ],
             });
         }
     };
@@ -185,7 +193,8 @@ var useGTM = function () {
         var product = variant === null || variant === void 0 ? void 0 : variant.product;
         sendDataToGTM({
             event: 'remove_from_cart',
-            ecommerce: [{
+            ecommerce: [
+                {
                     cart_id: cart === null || cart === void 0 ? void 0 : cart.id,
                     product_id: convertGidToId(product === null || product === void 0 ? void 0 : product.id),
                     userId: currentUser === null || currentUser === void 0 ? void 0 : currentUser.email,
@@ -197,8 +206,9 @@ var useGTM = function () {
                     price: (_a = variant === null || variant === void 0 ? void 0 : variant.price) === null || _a === void 0 ? void 0 : _a.amount,
                     quantity: line === null || line === void 0 ? void 0 : line.quantity,
                     url: window.location.href,
-                    image_url: (_b = variant === null || variant === void 0 ? void 0 : variant.image) === null || _b === void 0 ? void 0 : _b.src
-                }]
+                    image_url: (_b = variant === null || variant === void 0 ? void 0 : variant.image) === null || _b === void 0 ? void 0 : _b.src,
+                },
+            ],
         });
     };
     var trackProductViewed = function (product) {
@@ -206,7 +216,8 @@ var useGTM = function () {
         var variant = product.variants.edges[0].node;
         sendDataToGTM({
             event: 'view_item',
-            ecommerce: [{
+            ecommerce: [
+                {
                     item_name: product === null || product === void 0 ? void 0 : product.title,
                     item_id: convertGidToId(product === null || product === void 0 ? void 0 : product.id),
                     item_variant_id: convertGidToId(variant === null || variant === void 0 ? void 0 : variant.id),
@@ -216,7 +227,8 @@ var useGTM = function () {
                     price: (_b = variant === null || variant === void 0 ? void 0 : variant.price) === null || _b === void 0 ? void 0 : _b.amount,
                     currency: 'USD',
                     url: window.location.href,
-                }]
+                },
+            ],
         });
     };
     var trackProductsSearched = function (query) {
@@ -230,7 +242,8 @@ var useGTM = function () {
         var variant = product.variants.edges[0].node;
         sendDataToGTM({
             event: 'product_clicked',
-            ecommerce: [{
+            ecommerce: [
+                {
                     product_id: convertGidToId(product === null || product === void 0 ? void 0 : product.id),
                     sku: (_c = (_b = (_a = product === null || product === void 0 ? void 0 : product.variants) === null || _a === void 0 ? void 0 : _a.edges[0]) === null || _b === void 0 ? void 0 : _b.node) === null || _c === void 0 ? void 0 : _c.sku,
                     category: product === null || product === void 0 ? void 0 : product.productType,
@@ -241,7 +254,8 @@ var useGTM = function () {
                     quantity: 1,
                     url: "/products/".concat(product === null || product === void 0 ? void 0 : product.handle),
                     image_url: (_e = variant === null || variant === void 0 ? void 0 : variant.image) === null || _e === void 0 ? void 0 : _e.url,
-                }]
+                },
+            ],
         });
     };
     var trackProductList = function (collection) {
@@ -262,11 +276,13 @@ var useGTM = function () {
             });
             sendDataToGTM({
                 event: 'product_list_viewed',
-                ecommerce: [{
+                ecommerce: [
+                    {
                         list_id: collection === null || collection === void 0 ? void 0 : collection.id,
                         userId: currentUser === null || currentUser === void 0 ? void 0 : currentUser.email,
-                        products: products
-                    }]
+                        products: products,
+                    },
+                ],
             });
         }
     };

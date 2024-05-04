@@ -19,8 +19,6 @@ var ChipList_1 = __importDefault(require("./variants/ChipList"));
 var ChipGrid_1 = __importDefault(require("./variants/ChipGrid"));
 var Chip = function (props) {
     var variant = props.variant;
-    return variant == 'list' ?
-        react_1.default.createElement(ChipList_1.default, __assign({}, props)) :
-        react_1.default.createElement(ChipGrid_1.default, __assign({}, props));
+    return variant == 'list' ? react_1.default.createElement(ChipList_1.default, __assign({}, props)) : react_1.default.createElement(ChipGrid_1.default, __assign({}, props));
 };
 exports.default = Chip;

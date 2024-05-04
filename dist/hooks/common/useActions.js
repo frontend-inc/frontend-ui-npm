@@ -123,7 +123,7 @@ var useActions = function (params) {
                             method: (_a = action === null || action === void 0 ? void 0 : action.options) === null || _a === void 0 ? void 0 : _a.method,
                             headers: (_b = action === null || action === void 0 ? void 0 : action.options) === null || _b === void 0 ? void 0 : _b.headers,
                             body: JSON.stringify({
-                                data: resource
+                                data: resource,
                             }),
                         });
                     })];

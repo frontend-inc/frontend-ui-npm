@@ -12,7 +12,7 @@ var AuthAvatar = function (props) {
     var _b = props.size, size = _b === void 0 ? 20 : _b;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     return (react_1.default.createElement(material_1.Avatar, { variant: "circular", src: (_a = currentUser === null || currentUser === void 0 ? void 0 : currentUser.avatar) === null || _a === void 0 ? void 0 : _a.url, sx: sx.avatar },
-        react_1.default.createElement(components_1.Icon, { name: 'User', size: size, color: 'primary.contrastText' })));
+        react_1.default.createElement(components_1.Icon, { name: "User", size: size, color: 'primary.contrastText' })));
 };
 exports.default = AuthAvatar;
 var sx = {

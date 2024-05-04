@@ -10,7 +10,7 @@ var CommentButton = function (props) {
     var handleToggleClick = function () {
         handleClick();
     };
-    return (react_1.default.createElement(material_1.Button, { variant: 'contained', color: "secondary", onClick: handleToggleClick }, reply ? 'Reply' : 'Leave a comment'));
+    return (react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleToggleClick }, reply ? 'Reply' : 'Leave a comment'));
 };
 exports.default = CommentButton;
 var sx = {

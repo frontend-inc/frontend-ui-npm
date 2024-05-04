@@ -123,8 +123,8 @@ var Comment = function (props) {
                 react_1.default.createElement(components_2.Icon, { name: "MessageSquare", size: 20 })) },
             ((_b = (_a = comment === null || comment === void 0 ? void 0 : comment.user) === null || _a === void 0 ? void 0 : _a.avatar) === null || _b === void 0 ? void 0 : _b.url) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(components_1.UserAvatar, { user: comment === null || comment === void 0 ? void 0 : comment.user }))),
-            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.primary', sx: sx.commentText }, parentComment === null || parentComment === void 0 ? void 0 : parentComment.body), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: sx.caption }, "@".concat((_c = parentComment === null || parentComment === void 0 ? void 0 : parentComment.user) === null || _c === void 0 ? void 0 : _c.username),
-                    " commented ",
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.commentText }, parentComment === null || parentComment === void 0 ? void 0 : parentComment.body), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: sx.caption }, "@".concat((_c = parentComment === null || parentComment === void 0 ? void 0 : parentComment.user) === null || _c === void 0 ? void 0 : _c.username),
+                    " commented",
                     ' ',
                     (0, moment_1.default)(parentComment === null || parentComment === void 0 ? void 0 : parentComment.created_at).fromNow()) })),
         react_1.default.createElement(material_1.Collapse, { in: openComment },
@@ -163,7 +163,7 @@ var sx = {
         whiteSpace: 'pre-wrap',
         '& span': {
             fontWeight: 500,
-        }
+        },
     },
     content: {
         width: '100%',
@@ -182,11 +182,11 @@ var sx = {
     },
     footerText: {},
     showReplyButton: {
-        color: 'text.secondary'
+        color: 'text.secondary',
     },
     divider: {
         pb: 1,
         borderBottom: '1px solid',
-        borderColor: 'divider'
-    }
+        borderColor: 'divider',
+    },
 };

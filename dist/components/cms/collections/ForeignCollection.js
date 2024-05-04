@@ -199,7 +199,7 @@ var ForeignCollection = function (props) {
         enableCreate && (react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))),
         layout == 'inline' && (react_1.default.createElement(material_1.Collapse, { in: openModal },
-            react_1.default.createElement(material_1.Stack, { direction: 'column', sx: sx.form, spacing: 1 },
+            react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.form, spacing: 1 },
                 react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove }),
                 react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: delayedLoading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save')))),
         react_1.default.createElement(components_1.CollectionList, { variant: variant, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableCreate: enableCreate, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
@@ -236,5 +236,5 @@ var sx = {
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
         p: 2,
         bgcolor: 'secondary.light',
-    }
+    },
 };

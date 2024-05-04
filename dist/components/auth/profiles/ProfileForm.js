@@ -30,7 +30,7 @@ var components_1 = require("../../../components");
 var ProfileForm = function (props) {
     var resource = props.resource, buttonText = props.buttonText, fields = props.fields, rest = __rest(props, ["resource", "buttonText", "fields"]);
     return (react_1.default.createElement(components_1.AuthRequired, null,
-        react_1.default.createElement(components_1.CollectionForm, __assign({}, rest, { url: "/api/v1/cms/profiles", fields: fields, buttonText: buttonText, handle: resource === null || resource === void 0 ? void 0 : resource.handle, onSuccessMessage: 'Profile updated successfully!' }))));
+        react_1.default.createElement(components_1.CollectionForm, __assign({}, rest, { url: "/api/v1/cms/profiles", fields: fields, buttonText: buttonText, handle: resource === null || resource === void 0 ? void 0 : resource.handle, onSuccessMessage: "Profile updated successfully!" }))));
 };
 exports.default = ProfileForm;
 var sx = {

@@ -20,7 +20,7 @@ var FieldWrapper = function (props) {
     var _a = props || {}, _b = _a.direction, direction = _b === void 0 ? 'column' : _b, label = _a.label, _c = _a.enableBorder, enableBorder = _c === void 0 ? false : _c, children = _a.children;
     return (react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: direction }, spacing: 1, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         label && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.label), (direction === 'row' && sx.labelRow)) },
-            react_1.default.createElement(material_1.Typography, { variant: 'caption', color: 'text.secondary' }, label))),
+            react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label))),
         react_1.default.createElement(material_1.Box, null, children)));
 };
 exports.default = FieldWrapper;

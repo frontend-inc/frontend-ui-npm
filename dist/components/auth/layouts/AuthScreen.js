@@ -16,7 +16,7 @@ var AuthScreen = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.logo }, logo && react_1.default.createElement(image_1.default, { src: logo, alt: "Logo", height: 48, width: 48 })),
                 react_1.default.createElement(material_1.Box, { sx: sx.titles },
                     react_1.default.createElement(material_1.Typography, { variant: "h4", sx: sx.title }, title),
-                    subtitle && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.secondary', sx: sx.subtitle }, subtitle))),
+                    subtitle && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: sx.subtitle }, subtitle))),
                 children))));
 };
 exports.default = AuthScreen;

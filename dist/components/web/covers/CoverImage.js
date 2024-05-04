@@ -80,8 +80,8 @@ var sx = {
         alignItems: 'center',
         px: {
             sm: 0,
-            xs: 3
-        }
+            xs: 3,
+        },
     },
     content: {
         maxWidth: '540px',

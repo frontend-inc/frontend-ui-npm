@@ -90,7 +90,7 @@ exports.FILTERABLE_TYPES = [
     'rating',
     'select',
     'string',
-    'text'
+    'text',
 ];
 exports.SORTABLE_TYPES = [
     'float',

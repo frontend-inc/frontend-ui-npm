@@ -73,7 +73,7 @@ var frontend_js_1 = require("frontend-js");
 var Show = function (props) {
     var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'item' : _b, resource = _a.resource, fields = _a.fields, displayFields = _a.displayFields, url = _a.url, actions = _a.actions, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit;
     var _c = (0, frontend_js_1.useDocuments)({
-        collection: resource === null || resource === void 0 ? void 0 : resource.content_type
+        collection: resource === null || resource === void 0 ? void 0 : resource.content_type,
     }), loading = _c.loading, errors = _c.errors, update = _c.update, _resource = _c.resource, setResource = _c.setResource, removeAttachment = _c.removeAttachment, handleDataChange = _c.handleDataChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -111,9 +111,9 @@ var Show = function (props) {
         });
     }); };
     var components = {
-        "item": Item_1.default,
-        "article": Article_1.default,
-        "person": Person_1.default
+        item: Item_1.default,
+        article: Article_1.default,
+        person: Person_1.default,
     };
     var Component = components[style];
     (0, react_1.useEffect)(function () {

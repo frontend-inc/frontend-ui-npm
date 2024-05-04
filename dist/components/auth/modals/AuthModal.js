@@ -146,7 +146,7 @@ var AuthModal = function (props) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, updateMe({
                         password: user === null || user === void 0 ? void 0 : user.password,
-                        password_confirmation: user === null || user === void 0 ? void 0 : user.password_confirmation
+                        password_confirmation: user === null || user === void 0 ? void 0 : user.password_confirmation,
                     })];
                 case 1:
                     resp = _a.sent();

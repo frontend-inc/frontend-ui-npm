@@ -31,6 +31,6 @@ var moment_1 = __importDefault(require("moment"));
 var FieldDate = function (props) {
     var value = props.value, label = props.label, rest = __rest(props, ["value", "label"]);
     var formattedValue = (0, moment_1.default)(value).format('MM/DD/YYYY');
-    return (react_1.default.createElement(components_1.FieldString, __assign({ label: label, value: formattedValue }, rest)));
+    return react_1.default.createElement(components_1.FieldString, __assign({ label: label, value: formattedValue }, rest));
 };
 exports.default = FieldDate;
