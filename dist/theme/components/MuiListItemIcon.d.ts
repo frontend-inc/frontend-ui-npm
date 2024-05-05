@@ -1,6 +1,9 @@
 declare const _default: {
     styleOverrides: {
-        root: {};
+        root: {
+            minWidth: string;
+            width: string;
+        };
     };
 };
 export default _default;

@@ -11,7 +11,7 @@ var CarouselView = function (props) {
     return (react_1.default.createElement(components_1.Carousel, { enableAutoPlay: enableAutoPlay, enableArrows: enableArrows, enableDots: enableDots }, items === null || items === void 0 ? void 0 : items.map(function (item, index) {
         var _a, _b;
         return (react_1.default.createElement(material_1.Box, { sx: sx.item },
-            react_1.default.createElement(Component, { key: index, editing: editing, direction: "row", title: item === null || item === void 0 ? void 0 : item.title, description: item === null || item === void 0 ? void 0 : item.description, image: (_a = item === null || item === void 0 ? void 0 : item.image) === null || _a === void 0 ? void 0 : _a.url, video: (_b = item === null || item === void 0 ? void 0 : item.video) === null || _b === void 0 ? void 0 : _b.url, buttonText: buttonText, handleClick: function () { return handleClick(item); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })));
+            react_1.default.createElement(Component, { key: index, editing: editing, variant: "grid", title: item === null || item === void 0 ? void 0 : item.title, description: item === null || item === void 0 ? void 0 : item.description, image: (_a = item === null || item === void 0 ? void 0 : item.image) === null || _a === void 0 ? void 0 : _a.url, video: (_b = item === null || item === void 0 ? void 0 : item.video) === null || _b === void 0 ? void 0 : _b.url, buttonText: buttonText, handleClick: function () { return handleClick(item); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })));
     })));
 };
 exports.default = CarouselView;

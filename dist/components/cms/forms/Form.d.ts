@@ -1,9 +1,9 @@
 import React from 'react';
-import { FieldType, SyntheticEventType } from '../../../types';
+import { FormFieldType, SyntheticEventType } from '../../../types';
 export type FormProps = {
     loading: boolean;
     errors: any;
-    fields: FieldType[];
+    fields: FormFieldType[];
     resource: any;
     handleChange: (e: SyntheticEventType) => void;
     handleRemove: (name: string) => void;

@@ -66,7 +66,7 @@ var SearchInput = function (props) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
                     if (handleSearch) {
-                        handleSearch(value);
+                        handleSearch(text);
                     }
                 }
             } })));

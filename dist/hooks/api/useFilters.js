@@ -22,10 +22,11 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var useFilters = function (props) {
+    var _a;
     var query = (props || {}).query;
-    var _a = (0, react_1.useState)(false), showFilterModal = _a[0], setShowFilterModal = _a[1];
-    var _b = (0, react_1.useState)(), filter = _b[0], setFilter = _b[1];
-    var _c = (0, react_1.useState)([]), activeFilters = _c[0], setActiveFilters = _c[1];
+    var _b = (0, react_1.useState)(false), showFilterModal = _b[0], setShowFilterModal = _b[1];
+    var _c = (0, react_1.useState)(), filter = _c[0], setFilter = _c[1];
+    var _d = (0, react_1.useState)([]), activeFilters = _d[0], setActiveFilters = _d[1];
     var handleOpenFilterModal = function () {
         setShowFilterModal(true);
     };
@@ -73,7 +74,7 @@ var useFilters = function (props) {
     };
     var isBlank = function (value) {
         return (value === '' ||
-            value === false ||
+            value == undefined ||
             value == null ||
             (Array.isArray(value) && value.length === 0));
     };
@@ -120,10 +121,11 @@ var useFilters = function (props) {
         return formattedFilters;
     };
     (0, react_1.useEffect)(function () {
-        if (query === null || query === void 0 ? void 0 : query.filters) {
+        var _a;
+        if (((_a = query === null || query === void 0 ? void 0 : query.filters) === null || _a === void 0 ? void 0 : _a.length) >= 0) {
             formatFilterArray(query === null || query === void 0 ? void 0 : query.filters);
         }
-    }, [query]);
+    }, [(_a = query === null || query === void 0 ? void 0 : query.filters) === null || _a === void 0 ? void 0 : _a.length]);
     return {
         filter: filter,
         findFilter: findFilter,

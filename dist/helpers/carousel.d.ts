@@ -122,7 +122,10 @@ export declare const getCarouselResponsive: (theme?: {
         };
         MuiListItemIcon: {
             styleOverrides: {
-                root: {};
+                root: {
+                    minWidth: string;
+                    width: string;
+                };
             };
         };
         MuiOutlinedInput: {

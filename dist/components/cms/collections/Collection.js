@@ -81,7 +81,7 @@ var components_1 = require("../../../components");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var __1 = require("../..");
-var CollectionSearchFilters_1 = __importDefault(require("./filters/CollectionSearchFilters"));
+var SearchFilters_1 = __importDefault(require("../filters/SearchFilters"));
 var constants_1 = require("../../../constants");
 var helpers_1 = require("../../../helpers");
 var Collection = function (props) {
@@ -101,8 +101,8 @@ var Collection = function (props) {
     var handleSearch = function (keywords) {
         findMany(__assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1, per_page: perPage }));
     };
-    var handleSortBy = function (sortBy) {
-        findMany(__assign(__assign({}, query), { sort_by: sortBy }));
+    var handleSortBy = function (field) {
+        findMany(__assign(__assign({}, query), { sort_by: field === null || field === void 0 ? void 0 : field.field }));
     };
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
@@ -232,14 +232,14 @@ var Collection = function (props) {
             enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
             react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.sortFilterActions, spacing: 1 },
                 enableFilters && filterAnchor == 'top' && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(components_1.CollectionFilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
-                enableSorting && (react_1.default.createElement(components_1.SortButton, { sortBy: query === null || query === void 0 ? void 0 : query.sort_by, sortDirection: query === null || query === void 0 ? void 0 : query.sort_direction, sortOptions: sortOptions, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })),
+                    react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
+                enableSorting && (react_1.default.createElement(components_1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })),
                 enableCreate && (react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))))),
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 },
             enableFilters && filterAnchor == 'left' && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, lg: 3 },
                 react_1.default.createElement(material_1.Box, { sx: sx.filtersContainer },
-                    react_1.default.createElement(CollectionSearchFilters_1.default, { filters: activeFilters, filterOptions: filterOptions, handleFilter: handleFilter })))),
+                    react_1.default.createElement(SearchFilters_1.default, { filters: activeFilters, filterOptions: filterOptions, handleFilter: handleFilter })))),
             react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: enableFilters && filterAnchor == 'left' ? 8 : 12, lg: enableFilters && filterAnchor == 'left' ? 9 : 12 },
                 react_1.default.createElement(material_1.Box, { sx: __assign({}, (delayedLoading && sx.loading)) },
                     layout == 'inline' && (react_1.default.createElement(material_1.Collapse, { in: openModal },
@@ -260,19 +260,6 @@ var sx = {
     },
     content: {
         width: '100%',
-    },
-    list: {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '16px',
-    },
-    grid: {
-        display: 'grid',
-        gridTemplateColumns: {
-            md: '1fr 1fr 1fr',
-            xs: '1fr',
-        },
-        gap: '16px',
     },
     form: {
         width: '100%',

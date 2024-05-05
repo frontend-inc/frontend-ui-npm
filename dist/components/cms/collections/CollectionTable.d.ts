@@ -1,12 +1,8 @@
 import React from 'react';
+import { TableHeaderType } from '../../../types';
 import { CollectionProps } from './Collection';
 export type CollectionTableProps = CollectionProps & {
-    headers: {
-        name: string;
-        label: string;
-        variant: string;
-        sortable: boolean;
-    }[];
+    headers: TableHeaderType[];
 };
 declare const CollectionTable: React.FC<CollectionTableProps>;
 export default CollectionTable;

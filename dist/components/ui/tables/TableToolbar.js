@@ -47,7 +47,7 @@ var TableToolbar = function (props) {
                 react_1.default.createElement(components_1.SearchInput, { value: query === null || query === void 0 ? void 0 : query.keywords, handleChange: handleKeywordChange, handleSearch: handleKeywordSearch })),
             react_1.default.createElement(material_1.Hidden, { mdDown: true },
                 react_1.default.createElement(material_1.Box, { sx: sx.toolbar },
-                    react_1.default.createElement(components_2.FilterButton, { loading: loading, query: query, handleClick: handleFilter, badgeCount: badgeCount, handleClearFilters: handleClearQuery })))),
+                    react_1.default.createElement(components_2.TableFilterButton, { loading: loading, query: query, handleClick: handleFilter, badgeCount: badgeCount, handleClearFilters: handleClearQuery })))),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
             react_1.default.createElement(material_1.Box, { sx: sx.toolbar },
                 react_1.default.createElement(material_1.Hidden, { mdDown: true },

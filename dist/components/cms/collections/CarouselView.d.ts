@@ -5,7 +5,7 @@ type CarouselViewProps = {
     editing?: boolean;
     defaultQuery?: any;
     buttonText?: string;
-    handleClick?: (item: any) => void;
+    handleClick: (item: any) => void;
     component?: React.FC<any>;
     enableAutoPlay?: boolean;
     enableArrows?: boolean;

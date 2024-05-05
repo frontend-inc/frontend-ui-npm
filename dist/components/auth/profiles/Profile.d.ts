@@ -1,8 +1,8 @@
 import React from 'react';
-import { ActionType, DocumentType, FieldType } from '../../../types';
+import { ActionType, DisplayFieldType, DocumentType, FormFieldType } from '../../../types';
 export type ProfileProps = {
-    displayFields: FieldType[];
-    fields: FieldType[];
+    displayFields: DisplayFieldType[];
+    fields: FormFieldType[];
     url: string;
     actions?: ActionType[];
     resource: DocumentType;

@@ -122,7 +122,10 @@ export declare const muiTheme: {
         };
         MuiListItemIcon: {
             styleOverrides: {
-                root: {};
+                root: {
+                    minWidth: string;
+                    width: string;
+                };
             };
         };
         MuiOutlinedInput: {

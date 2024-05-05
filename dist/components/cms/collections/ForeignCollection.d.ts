@@ -1,10 +1,10 @@
 import React from 'react';
-import { FieldType } from '../../../types';
+import { FormFieldType } from '../../../types';
 export type ForeignCollectionProps = {
     variant?: 'list' | 'grid';
     style?: 'card' | 'avatar' | 'cover';
     field: any;
-    fields: FieldType[];
+    fields: FormFieldType[];
     resource: any;
     url: string;
     layout?: 'drawer' | 'inline';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionType, FieldType } from '../../../types';
+import { ActionType, DisplayFieldType, FormFieldType } from '../../../types';
 export type ShowItemProps = {
     enableBorder?: boolean;
     actions: ActionType[];
@@ -8,8 +8,8 @@ export type ShowItemProps = {
     handleEdit?: () => void;
 };
 export type ShowProps = ShowItemProps & {
-    fields: FieldType[];
-    displayFields: FieldType[];
+    fields: FormFieldType[];
+    displayFields: DisplayFieldType[];
     url: string;
     style: 'article' | 'person' | 'item';
 };

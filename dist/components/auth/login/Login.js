@@ -75,7 +75,7 @@ var Login = function (props) {
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.Loader, { loading: loading }),
-        react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
-            react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleOneTimePassword: oneTimePasswordUrl && handleOneTimePassword, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess }))));
+        !loading && (react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
+            react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleOneTimePassword: oneTimePasswordUrl && handleOneTimePassword, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })))));
 };
 exports.default = Login;

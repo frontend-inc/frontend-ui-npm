@@ -112,7 +112,10 @@ declare const _default: {
     };
     MuiListItemIcon: {
         styleOverrides: {
-            root: {};
+            root: {
+                minWidth: string;
+                width: string;
+            };
         };
     };
     MuiOutlinedInput: {

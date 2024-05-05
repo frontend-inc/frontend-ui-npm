@@ -1,7 +1,6 @@
 import React from 'react';
-import { FieldType } from '../../../types';
-import { SearchFilterOptionType } from '../../../types';
-import { SortOptionType } from '../../../types';
+import { FormFieldType } from '../../../types';
+import { SortOptionType, SearchFilterOptionType } from '../../../types';
 export type CollectionProps = {
     url: string;
     variant: 'list' | 'grid';
@@ -13,14 +12,13 @@ export type CollectionProps = {
     navigateUrl: any;
     perPage?: number;
     query?: any;
-    fields: FieldType[];
+    fields: FormFieldType[];
     filterAnchor?: 'left' | 'top';
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
-    secondaryActions?: React.ReactNode;
     buttonText?: string;
     enableBorder?: boolean;
     enableGradient?: boolean;

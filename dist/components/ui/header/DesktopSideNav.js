@@ -26,6 +26,15 @@ var DesktopSideNav = function (props) {
     var _a, _b;
     var editing = props.editing, logo = props.logo, menuItems = props.menuItems, _c = props.logoWidth, logoWidth = _c === void 0 ? index_1.HEADER_LOGO_WIDTH : _c, _d = props.logoHeight, logoHeight = _d === void 0 ? index_1.HEADER_LOGO_HEIGHT : _d, handleClick = props.handleClick, _e = props.enableAuth, enableAuth = _e === void 0 ? false : _e, _f = props.enableShopify, enableShopify = _f === void 0 ? false : _f, _g = props.enableNotifications, enableNotifications = _g === void 0 ? false : _g;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
+    var filterVisibility = function (menuItem) {
+        if (menuItem.visibility === 'logged_in' && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+            return false;
+        }
+        if (menuItem.visibility === 'logged_out' && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+            return false;
+        }
+        return true;
+    };
     return (react_1.default.createElement(material_1.Hidden, { mdDown: true },
         react_1.default.createElement(material_1.Box, { sx: sx.sideNav },
             react_1.default.createElement(material_1.Stack, { sx: __assign(__assign(__assign(__assign({}, sx.desktopSideNav), (enableNotifications && sx.desktopSideNavNotifications)), (editing && sx.desktopSideNavEditor)), (editing &&
@@ -34,9 +43,7 @@ var DesktopSideNav = function (props) {
                 react_1.default.createElement(material_1.Stack, { sx: sx.desktopSideMenuItems, direction: "column", spacing: 2 },
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu },
                         react_1.default.createElement(Logo_1.default, { handleClick: function () { return handleClick('/'); }, src: logo, width: logoWidth, height: logoHeight })),
-                    react_1.default.createElement(material_1.List, null, (_b = (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.filter(function (menuItem) {
-                        return (menuItem === null || menuItem === void 0 ? void 0 : menuItem.require_auth) ? currentUser === null || currentUser === void 0 ? void 0 : currentUser.id : !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id);
-                    })) === null || _b === void 0 ? void 0 :
+                    react_1.default.createElement(material_1.List, null, (_b = (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.filter(filterVisibility)) === null || _b === void 0 ? void 0 :
                         _b.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); }),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement(shopify_1.SearchButton, { variant: "sideNav" }),

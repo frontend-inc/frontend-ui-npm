@@ -36,6 +36,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
+var icons_material_1 = require("@mui/icons-material");
 var COLORS = __importStar(require("@mui/material/colors"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
@@ -92,7 +93,7 @@ var ColorInput = function (props) {
                 react_1.default.createElement(material_1.Tooltip, { title: value },
                     react_1.default.createElement(material_1.IconButton, null, value ? (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.color), { bgcolor: value }) })) : (react_1.default.createElement(TransparentColor, { value: value, handleClick: openMenu })))),
                 react_1.default.createElement(material_1.IconButton, { size: "small" },
-                    react_1.default.createElement(components_1.Icon, { name: "ChevronDown", size: 20 }))), onClick: openMenu }, placeholder),
+                    react_1.default.createElement(icons_material_1.ExpandMore, null))), onClick: openMenu }, placeholder),
         react_1.default.createElement(components_1.Popup, { open: open, anchorEl: anchorEl, handleClose: closeMenu },
             react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", sx: sx.root },
                 react_1.default.createElement(material_1.Box, { sx: sx.grid },
