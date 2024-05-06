@@ -199,10 +199,11 @@ var ResourceList = function (props) {
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
             enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
-            react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.sortFilterActions, spacing: 1 },
-                enableFilters && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(__1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
-                enableSorting && (react_1.default.createElement(__1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSort, handleSortDirection: handleSortDirection })),
+            react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.actions, spacing: 1 },
+                react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, spacing: 1 },
+                    enableFilters && (react_1.default.createElement(material_1.Box, null,
+                        react_1.default.createElement(__1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
+                    enableSorting && (react_1.default.createElement(__1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSort, handleSortDirection: handleSortDirection }))),
                 enableCreate && (react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", color: 'secondary.contrastText', size: 20 }) }, "Add"))))),
         react_1.default.createElement(material_1.Box, { sx: __assign({}, (delayedLoading && sx.loading)) },
@@ -268,8 +269,9 @@ var sx = {
             xs: 2,
         },
     },
-    sortFilterActions: {
-        justifyContent: 'flex-end',
+    actions: {
+        width: '100%',
+        justifyContent: 'space-between',
     },
     loading: {
         opacity: 0.7,

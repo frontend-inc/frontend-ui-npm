@@ -1,4 +1,5 @@
 export { default as CmsCarousel } from './CmsCarousel';
+export { default as CmsEmailSignup } from './CmsEmailSignup';
 export { default as CmsForm } from './CmsForm';
 export { default as CmsFormWizard } from './CmsFormWizard';
 export { default as CmsForeignTable } from './CmsForeignTable';
@@ -7,3 +8,5 @@ export { default as CmsForeignList } from './CmsForeignList';
 export { default as CmsList } from './CmsList';
 export { default as CmsShow } from './CmsShow';
 export { default as CmsTable } from './CmsTable';
+export { default as CmsVimeo } from './CmsVimeo';
+export { default as CmsYouTube } from './CmsYouTube';

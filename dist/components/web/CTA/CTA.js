@@ -29,7 +29,7 @@ var router_1 = require("next/router");
 var context_1 = require("../../../context");
 // Call To Action
 var CTA = function (props) {
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, buttonText = _a.buttonText, _b = _a.textVariant, textVariant = _b === void 0 ? 'h4' : _b, href = _a.href, handleClick = _a.handleClick;
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, buttonText = _a.buttonText, href = _a.href, handleClick = _a.handleClick;
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var handleItemClick = function () {

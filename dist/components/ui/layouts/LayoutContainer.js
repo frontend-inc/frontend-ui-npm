@@ -19,16 +19,22 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var LayoutContainer = function (props) {
-    var children = props.children, header = props.header, footer = props.footer, notifications = props.notifications, _a = props.enableSideNav, enableSideNav = _a === void 0 ? false : _a, _b = props.pageMargin, pageMargin = _b === void 0 ? 201 : _b;
-    return (react_1.default.createElement(material_1.Box, { sx: sx.layout },
+    var children = props.children, header = props.header, footer = props.footer, notifications = props.notifications, _a = props.enableSideNav, enableSideNav = _a === void 0 ? false : _a, _b = props.offsetX, offsetX = _b === void 0 ? 0 : _b, _c = props.offsetY, offsetY = _c === void 0 ? 0 : _c;
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.layout), { height: {
+                sm: "calc(100vh - ".concat(offsetY, "px)"),
+                xs: '100vh',
+            } }) },
         react_1.default.createElement(components_1.Alert, null),
         (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0 && (react_1.default.createElement(components_2.Notifications, { notifications: notifications })),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableSideNav && sx.sideNav)) },
             header,
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (enableSideNav ? sx.contentSideNav : sx.contentTopNav)) },
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (enableSideNav ? sx.contentSideNav : sx.contentTopNav)), { height: {
+                        sm: "calc(100vh - ".concat(offsetY - 80, "px)"),
+                        xs: '100vh',
+                    } }) },
                 react_1.default.createElement(components_1.LayoutScroll, null,
                     react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.page), { minHeight: {
-                                sm: "calc(100vh - ".concat(pageMargin, "px)"),
+                                sm: "calc(100vh - ".concat(offsetY - 30, "px)"),
                                 xs: '100vh',
                             } }) }, children),
                     footer)))));
@@ -37,7 +43,7 @@ exports.default = LayoutContainer;
 var sx = {
     layout: {
         width: '100%',
-        height: '100%',
+        overflowY: 'hidden'
     },
     root: {
         width: '100%',
@@ -70,10 +76,6 @@ var sx = {
         },
         height: '100%',
         maxHeight: '100vh',
-        overflow: 'hidden',
-        '&::-webkit-scrollbar': {
-            display: 'none',
-        },
     },
     contentTopNav: {
         pt: '60px',

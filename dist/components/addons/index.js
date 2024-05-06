@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OkendoStarRating = exports.OkendoReviews = exports.Typeform = exports.MailchimpSubscribe = exports.GorgiasChat = exports.GiftUp = exports.VisualWebsiteOptimizerScript = exports.RedditScript = exports.OkendoScript = exports.KlaviyoSubscribe = exports.KlaviyoScript = exports.KlaviyoEmbed = exports.KlaviyoButton = exports.HotJarScript = exports.GorgiasContactForm = exports.GoogleTagManagerScript = exports.GoogleAnalyticsScript = void 0;
+exports.VimeoEmbed = exports.YouTubeEmbed = exports.OkendoStarRating = exports.OkendoReviews = exports.Typeform = exports.MailchimpSubscribe = exports.GorgiasChat = exports.GiftUp = exports.VisualWebsiteOptimizerScript = exports.RedditScript = exports.OkendoScript = exports.KlaviyoSubscribe = exports.KlaviyoScript = exports.KlaviyoEmbed = exports.KlaviyoButton = exports.HotJarScript = exports.GorgiasContactForm = exports.GoogleTagManagerScript = exports.GoogleAnalyticsScript = void 0;
 //Scripts
 var GoogleAnalyticsScript_1 = require("./google/GoogleAnalyticsScript");
 Object.defineProperty(exports, "GoogleAnalyticsScript", { enumerable: true, get: function () { return __importDefault(GoogleAnalyticsScript_1).default; } });
@@ -40,3 +40,7 @@ var OkendoReviews_1 = require("./okendo/OkendoReviews");
 Object.defineProperty(exports, "OkendoReviews", { enumerable: true, get: function () { return __importDefault(OkendoReviews_1).default; } });
 var OkendoStarRating_1 = require("./okendo/OkendoStarRating");
 Object.defineProperty(exports, "OkendoStarRating", { enumerable: true, get: function () { return __importDefault(OkendoStarRating_1).default; } });
+var YouTubeEmbed_1 = require("./youtube/YouTubeEmbed");
+Object.defineProperty(exports, "YouTubeEmbed", { enumerable: true, get: function () { return __importDefault(YouTubeEmbed_1).default; } });
+var VimeoEmbed_1 = require("./vimeo/VimeoEmbed");
+Object.defineProperty(exports, "VimeoEmbed", { enumerable: true, get: function () { return __importDefault(VimeoEmbed_1).default; } });

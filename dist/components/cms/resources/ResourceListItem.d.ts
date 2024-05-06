@@ -4,7 +4,7 @@ export type ResourceListItemProps = {
     handleClick: (resource: any) => void;
     handleEdit: (resource: any) => void;
     handleDelete: (resource: any) => void;
-    color?: string;
+    colorField?: string;
     secondaryActions?: React.ReactNode;
     menuActions?: any;
     titleField?: string;

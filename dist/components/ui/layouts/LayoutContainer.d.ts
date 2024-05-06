@@ -7,7 +7,8 @@ type LayoutContainerProps = {
     footer?: ReactNode;
     enableSideNav?: boolean;
     notifications: NotificationType[];
-    pageMargin?: number;
+    offsetY?: number;
+    offsetX?: number;
 };
 declare const LayoutContainer: React.FC<LayoutContainerProps>;
 export default LayoutContainer;

@@ -26,7 +26,7 @@ var Article = function (props) {
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), spacing: 7 },
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
-            react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption" }, (0, moment_1.default)(published_at).format('MMMM D, YYYY')),
+            published_at && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption" }, (0, moment_1.default)(published_at).format('MMMM D, YYYY'))),
             (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.actions, spacing: 1 },
                 enableEdit && (react_1.default.createElement(components_1.ActionButton, { resource: (0, frontend_js_1.flattenDocument)(resource), action: {
                         label: 'Edit',

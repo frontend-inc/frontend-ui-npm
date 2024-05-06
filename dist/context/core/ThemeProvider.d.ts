@@ -8,7 +8,8 @@ type ThemeProviderProps = {
     bodyFont?: string;
     borderRadius?: number;
     deviceSize?: 'mobile' | 'tablet' | 'desktop';
-    offset?: number;
+    offsetX?: number;
+    offsetY?: number;
 };
 declare const ThemeProvider: (props: ThemeProviderProps) => React.JSX.Element;
 export default ThemeProvider;

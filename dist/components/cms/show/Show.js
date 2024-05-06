@@ -68,10 +68,12 @@ var Article_1 = __importDefault(require("./Article"));
 var Item_1 = __importDefault(require("./Item"));
 var Person_1 = __importDefault(require("./Person"));
 var Details_1 = __importDefault(require("../details/Details"));
+var YouTubeVideo_1 = __importDefault(require("./addons/YouTubeVideo"));
+var VimeoVideo_1 = __importDefault(require("./addons/VimeoVideo"));
 var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
 var Show = function (props) {
-    var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'item' : _b, resource = _a.resource, fields = _a.fields, displayFields = _a.displayFields, url = _a.url, actions = _a.actions, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit;
+    var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'item' : _b, resource = _a.resource, fields = _a.fields, fieldName = _a.fieldName, displayFields = _a.displayFields, url = _a.url, actions = _a.actions, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit;
     var _c = (0, frontend_js_1.useDocuments)({
         collection: resource === null || resource === void 0 ? void 0 : resource.content_type,
     }), loading = _c.loading, errors = _c.errors, update = _c.update, _resource = _c.resource, setResource = _c.setResource, removeAttachment = _c.removeAttachment, handleDataChange = _c.handleDataChange;
@@ -114,6 +116,8 @@ var Show = function (props) {
         item: Item_1.default,
         article: Article_1.default,
         person: Person_1.default,
+        youtube: YouTubeVideo_1.default,
+        vimeo: VimeoVideo_1.default,
     };
     var Component = components[style];
     (0, react_1.useEffect)(function () {
@@ -122,7 +126,7 @@ var Show = function (props) {
         }
     }, [resource]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
-        react_1.default.createElement(Component, { resource: _resource, actions: actions, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit }),
+        react_1.default.createElement(Component, { fieldName: fieldName, resource: _resource, actions: actions, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit }),
         (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(Details_1.default, { url: url, fields: displayFields, resource: resource, enableBorder: enableBorder })),
         react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
             react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove }))));
