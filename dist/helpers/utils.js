@@ -30,16 +30,21 @@ var truncate = function (str, length) {
     return str;
 };
 exports.truncate = truncate;
-var getInitials = function (name) {
+function getInitials(name) {
     if (!name)
         return '';
-    var initials = name
-        .split(' ')
-        .splice(0, 2)
-        .map(function (word) { return word[0]; })
-        .join('');
-    return initials;
-};
+    // Trim any extra spaces and split the name into parts based on spaces
+    var parts = name.trim().split(/\s+/);
+    // Check if we have at least two parts (multiple words)
+    if (parts.length >= 2) {
+        // Use the first letter of the first two parts
+        return parts[0][0] + parts[1][0];
+    }
+    else {
+        // Use the first two letters of the single part, if it's at least 2 characters long
+        return parts[0].length > 1 ? parts[0].substring(0, 2) : parts[0][0] + parts[0][0];
+    }
+}
 exports.getInitials = getInitials;
 var groupBy = function (arr, name) {
     var grouped = {};

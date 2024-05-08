@@ -35,52 +35,65 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(require("react"));
+var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
-var __1 = require("../..");
-var router_1 = require("next/router");
-var MyAccount = function (props) {
-    var router = (0, router_1.useRouter)();
-    var redirectUrl = (props || {}).redirectUrl;
-    var _a = (0, frontend_js_1.useAuth)(), loading = _a.loading, delayedLoading = _a.delayedLoading, user = _a.user, setUser = _a.setUser, currentUser = _a.currentUser, updateMe = _a.updateMe, handleChange = _a.handleChange, fetchMe = _a.fetchMe, logout = _a.logout, deleteAvatar = _a.deleteAvatar;
-    var handleDeleteAvatar = function () { return __awaiter(void 0, void 0, void 0, function () {
+var useTeams = function () {
+    var api = (0, frontend_js_1.useApi)().api;
+    var _a = (0, react_1.useState)({}), user = _a[0], setUser = _a[1];
+    var _b = (0, frontend_js_1.useResource)({
+        name: 'team',
+        url: '/api/v1/teams'
+    }), loading = _b.loading, delayedLoading = _b.delayedLoading, errors = _b.errors, team = _b.resource, teams = _b.resources, findTeam = _b.findOne, findTeams = _b.findMany, updateTeam = _b.update, createTeam = _b.create, deleteTeam = _b.destroy, setTeam = _b.setResource, handleChange = _b.handleChange, handleChangePage = _b.handleChangePage, reloadTeams = _b.reloadMany, query = _b.query, setQuery = _b.setQuery, page = _b.page, numPages = _b.numPages, perPage = _b.perPage, totalCount = _b.totalCount, sortBy = _b.sortBy, sortDirection = _b.sortDirection, handleSort = _b.handleSort, loadMore = _b.loadMore, loadingWrapper = _b.loadingWrapper, paginate = _b.paginate;
+    var selectTeam = function (teamId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, deleteAvatar()];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("/api/v1/teams/".concat(teamId, "/select_team")); })];
+                case 1: return [2 /*return*/, _a.sent()];
             }
         });
     }); };
-    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var inviteUser = function (teamId, user) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, updateMe(user)];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("/api/v1/teams/".concat(teamId, "/invite_user"), {
+                        user: user
+                    }); })];
+                case 1: return [2 /*return*/, _a.sent()];
             }
         });
     }); };
-    var handleLogout = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, logout()];
-                case 1:
-                    _a.sent();
-                    router.push(redirectUrl);
-                    return [2 /*return*/];
-            }
-        });
-    }); };
-    return (react_1.default.createElement(react_1.default.Fragment, null, currentUser && (react_1.default.createElement(__1.AuthScreen, { title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
-            ? "@".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
-            : 'Update account' },
-        react_1.default.createElement(__1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout })))));
+    return {
+        loading: loading,
+        delayedLoading: delayedLoading,
+        errors: errors,
+        team: team,
+        teams: teams,
+        findTeam: findTeam,
+        findTeams: findTeams,
+        updateTeam: updateTeam,
+        createTeam: createTeam,
+        deleteTeam: deleteTeam,
+        selectTeam: selectTeam,
+        setTeam: setTeam,
+        user: user,
+        setUser: setUser,
+        inviteUser: inviteUser,
+        handleChange: handleChange,
+        handleChangePage: handleChangePage,
+        reloadTeams: reloadTeams,
+        query: query,
+        setQuery: setQuery,
+        page: page,
+        numPages: numPages,
+        perPage: perPage,
+        totalCount: totalCount,
+        sortBy: sortBy,
+        sortDirection: sortDirection,
+        handleSort: handleSort,
+        loadMore: loadMore,
+        loadingWrapper: loadingWrapper,
+        paginate: paginate,
+    };
 };
-exports.default = MyAccount;
+exports.default = useTeams;

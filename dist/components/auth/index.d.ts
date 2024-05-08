@@ -35,3 +35,8 @@ export { default as VerifySendPinForm } from './verify/VerifySendPinForm';
 export { default as Profile } from './profiles/Profile';
 export { default as ProfileForm } from './profiles/ProfileForm';
 export { default as ProfileFormWizard } from './profiles/ProfileFormWizard';
+export { default as TeamList } from './teams/TeamList';
+export { default as TeamUsersList } from './teams/TeamUsersList';
+export { default as TeamUserForm } from './teams/TeamUserInviteForm';
+export { default as TeamUserInvite } from './teams/TeamUserInvite';
+export { default as UserListItem } from './lists/UserListItem';

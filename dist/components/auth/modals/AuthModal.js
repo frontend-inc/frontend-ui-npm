@@ -77,12 +77,12 @@ var router_1 = require("next/router");
 var material_1 = require("@mui/material");
 var context_1 = require("../../../context");
 var AuthModal = function (props) {
-    var _a = props.disableUsername, disableUsername = _a === void 0 ? false : _a;
+    var _a = props.disableUsername, disableUsername = _a === void 0 ? false : _a, _b = props.enableTeams, enableTeams = _b === void 0 ? false : _b;
     var router = (0, router_1.useRouter)();
     var appId = router.query.app_id;
-    var _b = (0, react_1.useContext)(context_1.AppContext), authOpen = _b.authOpen, setAuthOpen = _b.setAuthOpen;
-    var _c = (0, frontend_js_1.useAuth)(), errors = _c.errors, loading = _c.loading, user = _c.user, updateMe = _c.updateMe, handleChange = _c.handleChange, login = _c.login, signup = _c.signup, verifyPin = _c.verifyPin, sendPin = _c.sendPin;
-    var _d = (0, react_1.useState)(0), tab = _d[0], setTab = _d[1];
+    var _c = (0, react_1.useContext)(context_1.AppContext), authOpen = _c.authOpen, setAuthOpen = _c.setAuthOpen;
+    var _d = (0, frontend_js_1.useAuth)(), errors = _d.errors, loading = _d.loading, user = _d.user, updateMe = _d.updateMe, handleChange = _d.handleChange, login = _d.login, signup = _d.signup, verifyPin = _d.verifyPin, sendPin = _d.sendPin;
+    var _e = (0, react_1.useState)(0), tab = _e[0], setTab = _e[1];
     var handleTabChange = function (ev, newValue) {
         setTab(newValue);
     };
@@ -95,7 +95,7 @@ var AuthModal = function (props) {
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setAuthOpen(false);
-                        window.location.reload();
+                        //window.location.reload()
                     }
                     return [2 /*return*/];
             }
@@ -177,8 +177,8 @@ var AuthModal = function (props) {
     return (react_1.default.createElement(__1.Modal, { open: authOpen, handleClose: function () { return setAuthOpen(false); }, disablePadding: true },
         react_1.default.createElement(material_1.Box, { sx: sx.tabsContainer },
             react_1.default.createElement(material_1.Tabs, { value: tab, onChange: handleTabChange },
-                react_1.default.createElement(material_1.Tab, { label: "Login" }),
-                react_1.default.createElement(material_1.Tab, { label: "Register" }))),
+                react_1.default.createElement(material_1.Tab, { label: "Login", value: 0 }),
+                react_1.default.createElement(material_1.Tab, { label: "Register", value: 1 }))),
         react_1.default.createElement(material_1.Box, { px: 4, sx: sx.content },
             tab === 0 && (react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleLogin, handleSignup: handleSignupClick, handleForgotPassword: handleForgotPasswordClick })),
             tab === 1 && (react_1.default.createElement(__1.SignupForm, { disableUsername: disableUsername, errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSignup, handleLogin: handleLoginClick })),

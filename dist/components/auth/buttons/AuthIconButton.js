@@ -50,11 +50,6 @@ var AuthButton = function () {
         closeMenu();
         logout();
     };
-    (0, react_1.useEffect)(function () {
-        if (!currentUser) {
-            fetchMe();
-        }
-    }, [currentUser]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.IconButton, { onClick: handleMenuClick },
             react_1.default.createElement(__1.UserAvatar, { user: currentUser })),

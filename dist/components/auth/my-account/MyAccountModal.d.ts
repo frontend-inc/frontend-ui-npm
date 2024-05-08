@@ -1,3 +1,6 @@
 import React from 'react';
-declare const MyAccount: React.FC;
-export default MyAccount;
+type MyAccountModalProps = {
+    enableTeams?: boolean;
+};
+declare const MyAccountModal: React.FC<MyAccountModalProps>;
+export default MyAccountModal;

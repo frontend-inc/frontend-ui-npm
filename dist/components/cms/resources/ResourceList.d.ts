@@ -13,7 +13,7 @@ export type ResourceListProps = {
     enableLoadMore?: boolean;
     perPage?: number;
     query?: any;
-    fields: FormFieldType[];
+    fields?: FormFieldType[];
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
     enableSearch?: boolean;

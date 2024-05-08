@@ -64,10 +64,10 @@ var AuthButton = function (props) {
         }
     };
     (0, react_1.useEffect)(function () {
-        if (!currentUser) {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
             fetchMe();
         }
-    }, [currentUser]);
+    }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         !showLabel ? (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(material_1.IconButton, { onClick: toggleMenu },
             react_1.default.createElement(__1.AuthAvatar, null))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleLogin },

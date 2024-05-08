@@ -26,5 +26,6 @@ __exportStar(require("./storage"), exports);
 __exportStar(require("./styles"), exports);
 __exportStar(require("./search"), exports);
 __exportStar(require("./seo"), exports);
+__exportStar(require("./teams"), exports);
 __exportStar(require("./users"), exports);
 __exportStar(require("./web"), exports);

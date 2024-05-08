@@ -34,11 +34,6 @@ var SignInButton = function (props) {
     var handleLogin = function () {
         setAuthOpen(true);
     };
-    (0, react_1.useEffect)(function () {
-        if (!currentUser) {
-            fetchMe();
-        }
-    }, [currentUser]);
     if (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
         return null;
     return (react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: color, onClick: handleLogin }, buttonText));

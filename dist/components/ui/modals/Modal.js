@@ -69,16 +69,16 @@ var sx = {
         justifyContent: 'space-between',
     },
     dialogContent: {
-        my: 2,
+        py: 2,
         height: '100%',
+    },
+    disablePadding: {
+        p: 0
     },
     dialogActions: {
         borderTop: '1px solid',
         borderColor: 'divider',
         bgcolor: 'background.default',
-    },
-    disablePadding: {
-        p: 0,
     },
     secondaryActions: {
         display: 'flex',

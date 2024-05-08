@@ -3,7 +3,7 @@ export type SearchFilterOptionType = {
     label: string;
     field: string;
     variant: SearchFilterVariantType;
-    options: {
+    options?: {
         label: string;
         value: string | number;
     }[] | {

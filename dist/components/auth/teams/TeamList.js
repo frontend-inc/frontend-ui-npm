@@ -58,72 +58,42 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
-var components_1 = require("../../../components");
-var components_2 = require("../../../components");
-var MyAccountTabs_1 = __importDefault(require("./MyAccountTabs"));
 var material_1 = require("@mui/material");
-var MyAccountModal = function (props) {
-    var enableTeams = (props || {}).enableTeams;
-    var _a = (0, react_1.useContext)(context_1.AppContext), myAccountOpen = _a.myAccountOpen, setMyAccountOpen = _a.setMyAccountOpen;
-    var _b = (0, frontend_js_1.useAuth)(), loading = _b.loading, delayedLoading = _b.delayedLoading, user = _b.user, setUser = _b.setUser, currentUser = _b.currentUser, updateMe = _b.updateMe, handleChange = _b.handleChange, fetchMe = _b.fetchMe, deleteAvatar = _b.deleteAvatar, logout = _b.logout;
-    var _c = (0, react_1.useState)(0), currentTab = _c[0], setCurrentTab = _c[1];
-    var handleTabChange = function (ev, newValue) {
-        setCurrentTab(newValue);
-    };
-    var handleLogout = function () { return __awaiter(void 0, void 0, void 0, function () {
+var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
+var TeamList = function (props) {
+    var _a = (0, hooks_1.useTeams)(), loading = _a.loading, teams = _a.teams, findTeams = _a.findTeams;
+    var _b = (0, frontend_js_1.useAuth)(), currentUser = _b.currentUser, fetchMe = _b.fetchMe;
+    var selectTeam = (0, hooks_1.useTeams)().selectTeam;
+    var _c = (0, react_1.useState)(-1), activeTeamId = _c[0], setActiveTeamId = _c[1];
+    var handleClick = function (team) { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, logout()];
+                case 0: return [4 /*yield*/, selectTeam(team.id)
+                    //@ts-ignore
+                ];
                 case 1:
-                    _a.sent();
-                    setMyAccountOpen(false);
+                    resp = _a.sent();
+                    //@ts-ignore
+                    if (resp === null || resp === void 0 ? void 0 : resp.team_id) {
+                        //@ts-ignore
+                        setActiveTeamId(resp === null || resp === void 0 ? void 0 : resp.team_id);
+                        fetchMe();
+                    }
                     return [2 /*return*/];
             }
         });
     }); };
-    var handleDeleteAvatar = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, deleteAvatar()];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    }); };
-    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, updateMe(user)];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    }); };
-    var handleAddUser = function () {
-        setCurrentTab(3);
-    };
-    return (react_1.default.createElement(components_1.Modal, { disablePadding: true, open: myAccountOpen, handleClose: function () { return setMyAccountOpen(false); }, title: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
-            ? "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name)
-            : 'My Account' },
-        enableTeams && (react_1.default.createElement(MyAccountTabs_1.default, { tab: currentTab, handleChange: handleTabChange })),
-        react_1.default.createElement(material_1.Box, { sx: sx.content },
-            currentTab == 0 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout })),
-            currentTab == 1 && (react_1.default.createElement(components_2.TeamList, null)),
-            currentTab == 2 && (react_1.default.createElement(components_2.TeamUsersList, { handleAddUser: function () { return setCurrentTab(3); } })),
-            currentTab == 3 && (react_1.default.createElement(components_2.TeamUserInvite, { handleSuccess: function () { return setCurrentTab(2); }, handleCancel: function () { return setCurrentTab(2); } })))));
+    (0, react_1.useEffect)(function () {
+        if (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) {
+            setActiveTeamId(currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id);
+            findTeams();
+        }
+    }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
+    return (react_1.default.createElement(material_1.List, null, teams === null || teams === void 0 ? void 0 : teams.map(function (team) { return (react_1.default.createElement(components_1.SelectableListItem, { key: team.id, selected: (team === null || team === void 0 ? void 0 : team.id) == activeTeamId ? true : false, icon: 'Users', color: team.color, title: team.name, handleClick: function () { return handleClick(team); } })); })));
 };
-exports.default = MyAccountModal;
-var sx = {
-    content: {
-        p: 2
-    }
-};
+exports.default = TeamList;

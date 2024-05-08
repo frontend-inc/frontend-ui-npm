@@ -10,16 +10,42 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(require("react"));
+var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var LayoutContainer = function (props) {
     var children = props.children, header = props.header, footer = props.footer, notifications = props.notifications, _a = props.enableSideNav, enableSideNav = _a === void 0 ? false : _a, _b = props.offsetX, offsetX = _b === void 0 ? 0 : _b, _c = props.offsetY, offsetY = _c === void 0 ? 0 : _c;
+    var _d = (0, react_1.useState)(false), enableNotifications = _d[0], setEnableNotifications = _d[1];
+    (0, react_1.useEffect)(function () {
+        if ((notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0) {
+            setEnableNotifications(true);
+        }
+    }, [notifications]);
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.layout), { height: {
                 sm: "calc(100vh - ".concat(offsetY, "px)"),
                 xs: '100vh',
@@ -28,15 +54,9 @@ var LayoutContainer = function (props) {
         (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0 && (react_1.default.createElement(components_2.Notifications, { notifications: notifications })),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableSideNav && sx.sideNav)) },
             header,
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (enableSideNav ? sx.contentSideNav : sx.contentTopNav)), { height: {
-                        sm: "calc(100vh - ".concat(offsetY - 80, "px)"),
-                        xs: '100vh',
-                    } }) },
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (enableSideNav ? sx.contentSideNav : sx.contentTopNav)), (enableNotifications && sx.contentNotifications)) },
                 react_1.default.createElement(components_1.LayoutScroll, null,
-                    react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.page), { minHeight: {
-                                sm: "calc(100vh - ".concat(offsetY - 30, "px)"),
-                                xs: '100vh',
-                            } }) }, children),
+                    children,
                     footer)))));
 };
 exports.default = LayoutContainer;
@@ -75,7 +95,9 @@ var sx = {
             xs: '100%',
         },
         height: '100%',
-        maxHeight: '100vh',
+    },
+    contentNotifications: {
+        pb: '45px',
     },
     contentTopNav: {
         pt: '60px',

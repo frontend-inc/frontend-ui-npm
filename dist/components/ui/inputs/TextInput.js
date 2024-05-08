@@ -49,8 +49,7 @@ var TextInput = function (props) {
         name: name,
     }), error = _e.error, clearError = _e.clearError;
     var handleInputChange = function (e) {
-        if (error)
-            clearError();
+        clearError();
         setText(e.target.value);
     };
     var debouncedChanged = (0, use_debounce_1.useDebounce)(handleInputChange, 3000)[0];

@@ -27,5 +27,6 @@ var sx = {
         '&::-webkit-scrollbar': {
             display: 'none',
         },
+        height: '100%'
     },
 };

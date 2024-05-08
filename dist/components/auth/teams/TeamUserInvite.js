@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -41,46 +52,49 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var frontend_js_1 = require("frontend-js");
-var __1 = require("../..");
-var router_1 = require("next/router");
-var MyAccount = function (props) {
-    var router = (0, router_1.useRouter)();
-    var redirectUrl = (props || {}).redirectUrl;
-    var _a = (0, frontend_js_1.useAuth)(), loading = _a.loading, delayedLoading = _a.delayedLoading, user = _a.user, setUser = _a.setUser, currentUser = _a.currentUser, updateMe = _a.updateMe, handleChange = _a.handleChange, fetchMe = _a.fetchMe, logout = _a.logout, deleteAvatar = _a.deleteAvatar;
-    var handleDeleteAvatar = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, deleteAvatar()];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    }); };
+var hooks_1 = require("../../../hooks");
+var hooks_2 = require("../../../hooks");
+var TeamUserInviteForm_1 = __importDefault(require("./TeamUserInviteForm"));
+var material_1 = require("@mui/material");
+var components_1 = require("../../../components");
+var TeamUserInvite = function (props) {
+    var _a = props || {}, handleSuccess = _a.handleSuccess, handleCancel = _a.handleCancel;
+    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
+    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
+    var _b = (0, hooks_2.useTeams)(), loading = _b.loading, errors = _b.errors, user = _b.user, setUser = _b.setUser, inviteUser = _b.inviteUser;
+    var handleChange = function (e) {
+        var _a;
+        setUser(__assign(__assign({}, user), (_a = {}, _a[e.target.name] = e.target.value, _a)));
+    };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, updateMe(user)];
+                case 0: return [4 /*yield*/, inviteUser(currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id, user)
+                    //@ts-ignore
+                ];
                 case 1:
-                    _a.sent();
+                    resp = _a.sent();
+                    //@ts-ignore
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setUser({ username: '', first_name: '', last_name: '', email: '' });
+                        showAlertSuccess('User invited successfully');
+                        handleSuccess();
+                    }
                     return [2 /*return*/];
             }
         });
     }); };
-    var handleLogout = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, logout()];
-                case 1:
-                    _a.sent();
-                    router.push(redirectUrl);
-                    return [2 /*return*/];
-            }
-        });
-    }); };
-    return (react_1.default.createElement(react_1.default.Fragment, null, currentUser && (react_1.default.createElement(__1.AuthScreen, { title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
-            ? "@".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
-            : 'Update account' },
-        react_1.default.createElement(__1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout })))));
+    return (react_1.default.createElement(material_1.Stack, { direction: 'column', spacing: 1.5 },
+        react_1.default.createElement(TeamUserInviteForm_1.default, { errors: errors, user: user, handleChange: handleChange }),
+        react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: 'row', spacing: 1 },
+            react_1.default.createElement(material_1.Button, { color: "secondary", onClick: handleCancel, variant: "contained", startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Cancel"),
+            react_1.default.createElement(material_1.Button, { color: "primary", onClick: handleSubmit, variant: "contained", startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Send Invite"))));
 };
-exports.default = MyAccount;
+exports.default = TeamUserInvite;
+var sx = {
+    actions: {
+        width: '100%',
+        justifyContent: 'flex-end'
+    }
+};

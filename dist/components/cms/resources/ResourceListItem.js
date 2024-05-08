@@ -21,6 +21,8 @@ var ResourceListItem = function (props) {
                             bgcolor: (0, lodash_1.get)(resource, colorField)
                         } },
                         react_1.default.createElement(__1.Icon, { name: (0, lodash_1.get)(resource, iconField), size: 24 })))),
+                (resource === null || resource === void 0 ? void 0 : resource.user) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
+                    react_1.default.createElement(__1.UserAvatar, { user: resource === null || resource === void 0 ? void 0 : resource.user }))),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.primary' }, (0, lodash_1.get)(resource, titleField)), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: 'text.secondary' }, (0, lodash_1.get)(resource, descriptionField)) })))));
 };
 exports.default = ResourceListItem;
@@ -34,7 +36,7 @@ var sx = {
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); }
     },
     actions: {
-        justifyContent: 'center'
+        alignItems: 'center'
     },
     listItemIcon: {
         mr: 2

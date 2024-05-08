@@ -18,13 +18,17 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var UserAvatar = function (props) {
-    var src = props.src, _a = props.size, size = _a === void 0 ? 20 : _a;
-    return (react_1.default.createElement(material_1.Avatar, { variant: "circular", src: src, sx: __assign(__assign({}, sx.avatar), { height: size + 10, width: size + 10 }) },
-        react_1.default.createElement(__1.Icon, { name: "User", size: size, color: "secondary.contrastText" })));
+    var src = props.src, color = props.color, label = props.label, _a = props.size, size = _a === void 0 ? 40 : _a;
+    return (react_1.default.createElement(material_1.Avatar, { variant: "circular", src: src, sx: __assign(__assign({}, sx.avatar), { height: size, width: size, bgcolor: src ? 'common.white' : color }) }, label ? (react_1.default.createElement(material_1.Typography, { variant: "button", color: "background.default", sx: sx.label }, label)) : (react_1.default.createElement(__1.Icon, { name: "User", color: "secondary.contrastText" }))));
 };
 exports.default = UserAvatar;
 var sx = {
     avatar: {
+        display: 'flex',
+        pt: '2px',
         bgcolor: 'secondary.main',
     },
+    label: {
+        textTransform: 'uppercase'
+    }
 };
