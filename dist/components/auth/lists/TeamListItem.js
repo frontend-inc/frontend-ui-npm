@@ -37,29 +37,24 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
-var frontend_js_1 = require("frontend-js");
-var UserListItem = function (props) {
-    var user = props.user, _a = props.selected, selected = _a === void 0 ? false : _a, _b = props.isAdmin, isAdmin = _b === void 0 ? false : _b, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+var TeamListItem = function (props) {
+    var team = props.team, _a = props.selected, selected = _a === void 0 ? false : _a, _b = props.isAdmin, isAdmin = _b === void 0 ? false : _b, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
     var _c = (0, react_1.useState)(false), canEdit = _c[0], setCanEdit = _c[1];
     var _d = (0, react_1.useState)(false), canDelete = _d[0], setCanDelete = _d[1];
-    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     (0, react_1.useEffect)(function () {
-        if (isAdmin && (user === null || user === void 0 ? void 0 : user.role) !== 'admin') {
+        if (isAdmin) {
             setCanEdit(true);
-        }
-        if (isAdmin && ((user === null || user === void 0 ? void 0 : user.role) !== 'admin' || (user === null || user === void 0 ? void 0 : user.id) == (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))) {
             setCanDelete(true);
         }
-    }, [user, isAdmin]);
-    return (react_1.default.createElement(material_1.ListItem, { sx: __assign(__assign({}, sx.root), (selected && sx.selected)), disableGutters: true, secondaryAction: (canEdit || canDelete) && (react_1.default.createElement(components_1.MenuButton, { handleEdit: canEdit && (function () { return handleEdit(user); }), handleDelete: canDelete && (function () { return handleDelete(user); }) })) },
+    }, [team, isAdmin]);
+    return (react_1.default.createElement(material_1.ListItem, { sx: __assign(__assign({}, sx.root), (selected && sx.selected)), disableGutters: true, secondaryAction: (canEdit || canDelete) && (react_1.default.createElement(components_1.MenuButton, { handleEdit: canEdit && (function () { return handleEdit(team); }), handleDelete: canDelete && (function () { return handleDelete(team); }) })) },
         react_1.default.createElement(material_1.ListItemButton, { onClick: handleClick },
             react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                react_1.default.createElement(components_1.UserAvatar, { user: user })),
+                react_1.default.createElement(components_1.TeamAvatar, { team: team })),
             react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
-                    react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, user.name),
-                    (user === null || user === void 0 ? void 0 : user.role) && react_1.default.createElement(components_1.Label, { label: user === null || user === void 0 ? void 0 : user.role })), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, user.email) }))));
+                    react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, team.name)) }))));
 };
-exports.default = UserListItem;
+exports.default = TeamListItem;
 var sx = {
     root: {
         p: 0,

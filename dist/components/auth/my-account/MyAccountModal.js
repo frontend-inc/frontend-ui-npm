@@ -108,9 +108,6 @@ var MyAccountModal = function (props) {
             }
         });
     }); };
-    var handleAddUser = function () {
-        setCurrentTab(3);
-    };
     return (react_1.default.createElement(components_1.Modal, { disablePadding: true, open: myAccountOpen, handleClose: function () { return setMyAccountOpen(false); }, title: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
             ? "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name)
             : 'My Account' },

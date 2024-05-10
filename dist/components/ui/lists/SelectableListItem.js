@@ -18,13 +18,15 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var SelectableListItem = function (props) {
-    var selected = props.selected, secondaryActions = props.secondaryActions, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, icon = props.icon, _b = props.color, color = _b === void 0 ? 'transparent' : _b, title = props.title, description = props.description, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+    var selected = props.selected, secondaryActions = props.secondaryActions, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, icon = props.icon, avatar = props.avatar, _b = props.color, color = _b === void 0 ? 'transparent' : _b, title = props.title, description = props.description, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
     return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, sx: __assign(__assign(__assign({}, sx.root), (selected && sx.selected)), (enableBorder && sx.rootBorder)), secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.secondaryActions },
             secondaryActions,
             (handleEdit || handleDelete) && (react_1.default.createElement(components_1.MenuButton, { handleEdit: handleEdit, handleDelete: handleDelete }))) },
         react_1.default.createElement(material_1.ListItemButton, { disableRipple: true, sx: sx.listItemButton, onClick: handleClick },
-            react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon }, icon && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.iconContainer), { bgcolor: color }) },
-                react_1.default.createElement(components_1.Icon, { name: icon })))),
+            icon && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
+                react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.iconContainer), { bgcolor: color }) },
+                    react_1.default.createElement(components_1.Icon, { name: icon })))),
+            avatar && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon }, avatar)),
             react_1.default.createElement(material_1.ListItemText, { primary: title, secondary: description }))));
 };
 exports.default = SelectableListItem;

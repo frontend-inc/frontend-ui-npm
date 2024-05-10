@@ -4,8 +4,8 @@ type MenuButtonProps = {
     icon?: string;
     color?: string;
     enableIcons?: boolean;
-    handleEdit?: (item: any) => void;
-    handleDelete?: (item: any) => void;
+    handleEdit?: false | ((item: any) => void);
+    handleDelete?: false | ((item: any) => void);
 };
 declare const MenuButton: React.FC<MenuButtonProps>;
 export default MenuButton;

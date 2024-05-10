@@ -65,22 +65,61 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var TeamList = function (props) {
-    var _a = (0, hooks_1.useTeams)(), loading = _a.loading, teams = _a.teams, findTeams = _a.findTeams;
+    var _a = (0, hooks_1.useTeams)(), loading = _a.delayedLoading, errors = _a.errors, team = _a.team, setTeam = _a.setTeam, updateTeam = _a.updateTeam, createTeam = _a.createTeam, teams = _a.teams, findTeams = _a.findTeams, handleChange = _a.handleChange, reloadTeams = _a.reloadTeams, deleteImage = _a.deleteImage;
     var _b = (0, frontend_js_1.useAuth)(), currentUser = _b.currentUser, fetchMe = _b.fetchMe;
     var selectTeam = (0, hooks_1.useTeams)().selectTeam;
-    var _c = (0, react_1.useState)(-1), activeTeamId = _c[0], setActiveTeamId = _c[1];
+    var _c = (0, react_1.useState)(false), isEditing = _c[0], setIsEditing = _c[1];
+    var _d = (0, react_1.useState)(-1), activeTeamId = _d[0], setActiveTeamId = _d[1];
+    var handleEditClick = function (team) {
+        setTeam(team);
+        setIsEditing(true);
+    };
+    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!(team === null || team === void 0 ? void 0 : team.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, updateTeam(team)];
+                case 1:
+                    resp = _a.sent();
+                    return [3 /*break*/, 4];
+                case 2: return [4 /*yield*/, createTeam(team)];
+                case 3:
+                    resp = _a.sent();
+                    _a.label = 4;
+                case 4:
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setIsEditing(false);
+                        reloadTeams();
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleDeleteImage = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, deleteImage(team === null || team === void 0 ? void 0 : team.id)];
+                case 1:
+                    resp = _a.sent();
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setTeam(resp);
+                    }
+                    findTeams();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     var handleClick = function (team) { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, selectTeam(team.id)
-                    //@ts-ignore
-                ];
+                case 0: return [4 /*yield*/, selectTeam(team.id)];
                 case 1:
                     resp = _a.sent();
-                    //@ts-ignore
                     if (resp === null || resp === void 0 ? void 0 : resp.team_id) {
-                        //@ts-ignore
                         setActiveTeamId(resp === null || resp === void 0 ? void 0 : resp.team_id);
                         fetchMe();
                     }
@@ -94,6 +133,9 @@ var TeamList = function (props) {
             findTeams();
         }
     }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
-    return (react_1.default.createElement(material_1.List, null, teams === null || teams === void 0 ? void 0 : teams.map(function (team) { return (react_1.default.createElement(components_1.SelectableListItem, { key: team.id, selected: (team === null || team === void 0 ? void 0 : team.id) == activeTeamId ? true : false, icon: 'Users', color: team.color, title: team.name, handleClick: function () { return handleClick(team); } })); })));
+    return (react_1.default.createElement(react_1.default.Fragment, null, !isEditing ? (react_1.default.createElement(material_1.List, null, teams === null || teams === void 0 ? void 0 : teams.map(function (team) {
+        var selected = (team === null || team === void 0 ? void 0 : team.id) == activeTeamId;
+        return (react_1.default.createElement(components_1.SelectableListItem, { key: team.id, selected: selected, avatar: react_1.default.createElement(components_1.TeamAvatar, { team: team }), title: team.name, handleClick: function () { return handleClick(team); }, handleEdit: selected ? function () { return handleEditClick(team); } : undefined }));
+    }))) : (react_1.default.createElement(components_1.TeamForm, { loading: loading, errors: errors, team: team, handleChange: handleChange, handleSubmit: handleSubmit, handleCancel: function () { return setIsEditing(false); }, handleSuccess: function () { return setIsEditing(false); }, handleDeleteImage: handleDeleteImage }))));
 };
 exports.default = TeamList;

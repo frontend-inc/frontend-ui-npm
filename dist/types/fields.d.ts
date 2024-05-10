@@ -1,4 +1,4 @@
-export type FieldVariantType = 'array' | 'audio' | 'habtm' | 'html' | 'string' | 'text' | 'number' | 'float' | 'boolean' | 'date' | 'datetime' | 'price' | 'url' | 'rating' | 'image' | 'video' | 'file' | 'json' | 'state' | 'country' | 'select' | 'shopify_product' | 'shopify_collection' | 'user';
+export type FieldVariantType = 'array' | 'audio' | 'habtm' | 'html' | 'string' | 'text' | 'number' | 'float' | 'boolean' | 'date' | 'datetime' | 'price' | 'url' | 'rating' | 'image' | 'video' | 'file' | 'json' | 'state' | 'country' | 'select' | 'shopify_product' | 'shopify_collection' | 'user' | 'team';
 export type FieldDbType = 'string' | 'text' | 'integer' | 'float' | 'boolean' | 'date' | 'datetime' | 'jsonb' | 'habtm' | 'belongs_to';
 export type FieldVariant = {
     icon: string;

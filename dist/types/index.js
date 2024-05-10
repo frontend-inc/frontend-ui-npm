@@ -22,6 +22,7 @@ __exportStar(require("./colors"), exports);
 __exportStar(require("./fields"), exports);
 __exportStar(require("./forms"), exports);
 __exportStar(require("./inputs"), exports);
+__exportStar(require("./router"), exports);
 __exportStar(require("./storage"), exports);
 __exportStar(require("./styles"), exports);
 __exportStar(require("./search"), exports);

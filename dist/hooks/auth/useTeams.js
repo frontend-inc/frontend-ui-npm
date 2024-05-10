@@ -44,7 +44,7 @@ var useTeams = function () {
     var _b = (0, frontend_js_1.useResource)({
         name: 'team',
         url: '/api/v1/teams'
-    }), loading = _b.loading, delayedLoading = _b.delayedLoading, errors = _b.errors, team = _b.resource, teams = _b.resources, findTeam = _b.findOne, findTeams = _b.findMany, updateTeam = _b.update, createTeam = _b.create, deleteTeam = _b.destroy, setTeam = _b.setResource, handleChange = _b.handleChange, handleChangePage = _b.handleChangePage, reloadTeams = _b.reloadMany, query = _b.query, setQuery = _b.setQuery, page = _b.page, numPages = _b.numPages, perPage = _b.perPage, totalCount = _b.totalCount, sortBy = _b.sortBy, sortDirection = _b.sortDirection, handleSort = _b.handleSort, loadMore = _b.loadMore, loadingWrapper = _b.loadingWrapper, paginate = _b.paginate;
+    }), loading = _b.loading, delayedLoading = _b.delayedLoading, errors = _b.errors, team = _b.resource, teams = _b.resources, findTeam = _b.findOne, findTeams = _b.findMany, updateTeam = _b.update, createTeam = _b.create, deleteTeam = _b.destroy, setTeam = _b.setResource, handleChange = _b.handleChange, handleChangePage = _b.handleChangePage, reloadTeams = _b.reloadMany, query = _b.query, setQuery = _b.setQuery, page = _b.page, numPages = _b.numPages, perPage = _b.perPage, totalCount = _b.totalCount, sortBy = _b.sortBy, sortDirection = _b.sortDirection, handleSort = _b.handleSort, loadMore = _b.loadMore, loadingWrapper = _b.loadingWrapper, paginate = _b.paginate, removeAttachment = _b.removeAttachment;
     var selectTeam = function (teamId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -59,6 +59,14 @@ var useTeams = function () {
                 case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("/api/v1/teams/".concat(teamId, "/invite_user"), {
                         user: user
                     }); })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
+    var deleteImage = function (teamId) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("/api/v1/teams/".concat(teamId, "/delete_image")); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -79,6 +87,7 @@ var useTeams = function () {
         user: user,
         setUser: setUser,
         inviteUser: inviteUser,
+        deleteImage: deleteImage,
         handleChange: handleChange,
         handleChangePage: handleChangePage,
         reloadTeams: reloadTeams,
@@ -94,6 +103,7 @@ var useTeams = function () {
         loadMore: loadMore,
         loadingWrapper: loadingWrapper,
         paginate: paginate,
+        removeAttachment: removeAttachment
     };
 };
 exports.default = useTeams;

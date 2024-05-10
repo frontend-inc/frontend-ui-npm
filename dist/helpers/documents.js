@@ -24,7 +24,6 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.filterDocumentLinks = exports.getDocumentValue = exports.flattenDocument = exports.flattenDocuments = exports.handleDocumentChange = void 0;
 var index_1 = require("../constants/index");
-var lodash_1 = require("lodash");
 var handleDocumentChange = function (ev, resource) {
     var _a;
     var name = ev.target.name;
@@ -49,17 +48,7 @@ var flattenDocument = function (resource) {
 };
 exports.flattenDocument = flattenDocument;
 var getDocumentValue = function (document, field) {
-    var _a, _b;
-    if (index_1.REFERENCE_FIELDS.includes(field === null || field === void 0 ? void 0 : field.variant)) {
-        var documents = (_b = (_a = document === null || document === void 0 ? void 0 : document.document_links) === null || _a === void 0 ? void 0 : _a.filter(function (d) { var _a; return ((_a = d === null || d === void 0 ? void 0 : d.target) === null || _a === void 0 ? void 0 : _a.content_type) === (field === null || field === void 0 ? void 0 : field.foreign_content_type); })) === null || _b === void 0 ? void 0 : _b.map(function (d) { return d.target; });
-        return documents;
-    }
-    else if (index_1.SYSTEM_FIELDS.includes(field === null || field === void 0 ? void 0 : field.name)) {
-        return (0, lodash_1.get)(document, field === null || field === void 0 ? void 0 : field.name);
-    }
-    else {
-        return (0, lodash_1.get)(document, "data.".concat(field === null || field === void 0 ? void 0 : field.name));
-    }
+    return (0, exports.flattenDocument)(document)[field === null || field === void 0 ? void 0 : field.name];
 };
 exports.getDocumentValue = getDocumentValue;
 var filterDocumentLinks = function (document, contentType) {

@@ -46,7 +46,7 @@ var router_1 = require("next/router");
 var MyAccount = function (props) {
     var router = (0, router_1.useRouter)();
     var redirectUrl = (props || {}).redirectUrl;
-    var _a = (0, frontend_js_1.useAuth)(), loading = _a.loading, delayedLoading = _a.delayedLoading, user = _a.user, setUser = _a.setUser, currentUser = _a.currentUser, updateMe = _a.updateMe, handleChange = _a.handleChange, fetchMe = _a.fetchMe, logout = _a.logout, deleteAvatar = _a.deleteAvatar;
+    var _a = (0, frontend_js_1.useAuth)(), delayedLoading = _a.delayedLoading, user = _a.user, currentUser = _a.currentUser, updateMe = _a.updateMe, handleChange = _a.handleChange, logout = _a.logout, deleteAvatar = _a.deleteAvatar;
     var handleDeleteAvatar = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

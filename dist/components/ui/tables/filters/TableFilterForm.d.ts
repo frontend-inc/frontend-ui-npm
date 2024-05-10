@@ -1,10 +1,10 @@
 import React from 'react';
-type FilterFormProps = {
+type TableFilterFormProps = {
     query: any;
     fields: any[];
     handleChange: (e: any) => void;
     handleSearch: (e: any) => void;
     handleClearFilters: () => void;
 };
-declare const FilterForm: React.FC<FilterFormProps>;
-export default FilterForm;
+declare const TableFilterForm: React.FC<TableFilterFormProps>;
+export default TableFilterForm;

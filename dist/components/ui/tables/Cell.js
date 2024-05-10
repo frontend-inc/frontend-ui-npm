@@ -26,6 +26,7 @@ var Cell = function (props) {
         string: components_1.CellString,
         select: components_1.CellEnum,
         user: components_1.CellUser,
+        team: components_1.CellTeam,
         file: components_1.CellFile,
     };
     var CellComponent = componentMapper[field.variant];

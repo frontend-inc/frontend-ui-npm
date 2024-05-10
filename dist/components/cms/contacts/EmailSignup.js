@@ -41,19 +41,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 // Call To Action
 var EmailSignup = function (props) {
-    var router = (0, router_1.useRouter)();
-    var appId = (router === null || router === void 0 ? void 0 : router.query).app_id;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
     var _c = (0, frontend_js_1.useResource)({
         name: 'contact',
-        url: "/api/v1/apps/".concat(appId, "/contacts"),
+        url: "/api/v1/contacts",
     }), errors = _c.errors, delayedLoading = _c.delayedLoading, contact = _c.resource, setContact = _c.setResource, handleChange = _c.handleChange, create = _c.create;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;

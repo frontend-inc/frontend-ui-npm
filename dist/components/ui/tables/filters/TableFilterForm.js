@@ -49,7 +49,7 @@ var index_1 = require("../../../../constants/index");
 var icons_material_1 = require("@mui/icons-material");
 var lucide_react_1 = require("lucide-react");
 var __1 = require("../../..");
-var FilterForm = function (props) {
+var TableFilterForm = function (props) {
     var query = props.query, fields = props.fields, handleChange = props.handleChange, handleSearch = props.handleSearch, handleClearFilters = props.handleClearFilters;
     var _a = (0, react_1.useState)([]), filterOptions = _a[0], setFilterOptions = _a[1];
     var _b = (0, react_1.useState)([]), sortOptions = _b[0], setSortOptions = _b[1];
@@ -137,6 +137,7 @@ var FilterForm = function (props) {
                     var field = Object.keys(filter)[0];
                     var operator = Object.keys(filter[field])[0];
                     var value = filter[field][operator];
+                    //@ts-ignore 
                     formattedFilters.push({
                         where: where,
                         field: field,
@@ -173,7 +174,7 @@ var FilterForm = function (props) {
         react_1.default.createElement(material_1.Button, { sx: sx.button, startIcon: react_1.default.createElement(lucide_react_1.Search, { size: 20 }), onClick: handleFilterSearch, fullWidth: true, variant: "contained", color: "primary" }, "Search"),
         react_1.default.createElement(material_1.Button, { sx: sx.button, startIcon: react_1.default.createElement(icons_material_1.FilterList, null), onClick: handleClearFilters, fullWidth: true, variant: "outlined", color: "secondary" }, "Reset filters")));
 };
-exports.default = FilterForm;
+exports.default = TableFilterForm;
 var sx = {
     button: {
         mt: 2,

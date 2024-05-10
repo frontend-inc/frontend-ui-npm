@@ -8,7 +8,7 @@ var Avatar_1 = __importDefault(require("./Avatar"));
 var helpers_1 = require("../../../helpers");
 var UserAvatar = function (props) {
     var _a;
-    var user = props.user, _b = props.size, size = _b === void 0 ? 40 : _b;
-    return (react_1.default.createElement(Avatar_1.default, { color: user === null || user === void 0 ? void 0 : user.color, label: (0, helpers_1.getInitials)(user === null || user === void 0 ? void 0 : user.full_name), size: size, src: (_a = user === null || user === void 0 ? void 0 : user.avatar) === null || _a === void 0 ? void 0 : _a.url }));
+    var user = props.user, _b = props.size, size = _b === void 0 ? 36 : _b;
+    return (react_1.default.createElement(Avatar_1.default, { color: user === null || user === void 0 ? void 0 : user.color, label: (0, helpers_1.getInitials)(user === null || user === void 0 ? void 0 : user.name), size: size, src: (_a = user === null || user === void 0 ? void 0 : user.avatar) === null || _a === void 0 ? void 0 : _a.url }));
 };
 exports.default = UserAvatar;

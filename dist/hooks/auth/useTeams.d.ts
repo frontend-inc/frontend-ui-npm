@@ -1,5 +1,5 @@
 import React from 'react';
-import { TeamType } from '../../types';
+import { UserType, TeamType } from '../../types';
 declare const useTeams: () => {
     loading: boolean;
     delayedLoading: any;
@@ -11,11 +11,12 @@ declare const useTeams: () => {
     updateTeam: (resource: import("frontend-js").ResourceType) => import("frontend-js").ResourceType;
     createTeam: (resource: import("frontend-js").ResourceType) => import("frontend-js").ResourceType;
     deleteTeam: (id: import("frontend-js").ID) => Promise<any>;
-    selectTeam: (teamId: any) => Promise<TeamType>;
+    selectTeam: (teamId: any) => Promise<UserType>;
     setTeam: (value: import("frontend-js").ResourceType) => void;
     user: {};
     setUser: React.Dispatch<React.SetStateAction<{}>>;
     inviteUser: (teamId: any, user: any) => Promise<void>;
+    deleteImage: (teamId: any) => Promise<TeamType>;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     handleChangePage: any;
     reloadTeams: () => Promise<any>;
@@ -31,5 +32,6 @@ declare const useTeams: () => {
     loadMore: () => void;
     loadingWrapper: (fn: () => void) => void;
     paginate: (page: number) => Promise<any>;
+    removeAttachment: (id: import("frontend-js").ID, fieldName: string) => import("frontend-js").ResourceType;
 };
 export default useTeams;

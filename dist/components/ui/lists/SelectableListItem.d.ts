@@ -3,11 +3,12 @@ type SelectableListItemProps = {
     selected?: boolean;
     title: string;
     description?: string;
-    icon: string;
+    icon?: string;
     color?: string;
     enableBorder?: boolean;
     secondaryActions?: React.ReactNode;
     handleClick?: () => void;
+    avatar?: React.ReactNode;
     handleEdit?: null | ((item: any) => void);
     handleDelete?: null | ((item: any) => void);
 };
