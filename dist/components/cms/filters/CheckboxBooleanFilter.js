@@ -10,7 +10,7 @@ var CheckboxFilter = function (props) {
     var label = props.label, name = props.name, values = props.values, handleClick = props.handleClick, enableBorder = props.enableBorder, _a = props.disablePadding, disablePadding = _a === void 0 ? false : _a, _b = props.closed, closed = _b === void 0 ? false : _b;
     var BOOLEAN_OPTIONS = [
         { label: 'True', operator: 'eq', value: true },
-        { label: 'False', operator: 'eq', value: false }
+        { label: 'False', operator: 'eq', value: false },
     ];
     return (react_1.default.createElement(__1.ExpandableList, { label: label, enableBorder: enableBorder, disablePadding: disablePadding, closed: closed }, BOOLEAN_OPTIONS === null || BOOLEAN_OPTIONS === void 0 ? void 0 : BOOLEAN_OPTIONS.map(function (option, index) { return (react_1.default.createElement(CheckboxFilterItem_1.default, { key: index, values: values, option: option, handleClick: function () {
             return handleClick({

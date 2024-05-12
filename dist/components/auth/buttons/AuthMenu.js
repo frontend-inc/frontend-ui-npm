@@ -28,6 +28,6 @@ var sx = {
     divider: {
         height: '4px',
         borderBottom: '1px solid',
-        borderColor: 'background.default'
-    }
+        borderColor: 'background.default',
+    },
 };

@@ -90,7 +90,7 @@ var Collection = function (props) {
     var _v = (0, react_1.useState)(false), openModal = _v[0], setOpenModal = _v[1];
     var _w = (0, react_1.useState)(false), openDeleteModal = _w[0], setOpenDeleteModal = _w[1];
     var _x = (0, frontend_js_1.useDocuments)({
-        collection: contentType
+        collection: contentType,
     }), loading = _x.loading, delayedLoading = _x.delayedLoading, errors = _x.errors, resource = _x.resource, resources = _x.resources, setResource = _x.setResource, update = _x.update, create = _x.create, destroy = _x.destroy, query = _x.query, findMany = _x.findMany, reloadMany = _x.reloadMany, removeAttachment = _x.removeAttachment, page = _x.page, numPages = _x.numPages, loadMore = _x.loadMore, handleDataChange = _x.handleDataChange, flattenDocument = _x.flattenDocument;
     var _y = (0, react_1.useState)(''), keywords = _y[0], setKeywords = _y[1];
     var handleKeywordChange = function (ev) {
@@ -210,8 +210,7 @@ var Collection = function (props) {
         }
     }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length, defaultQuery]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(CollectionToolbar_1.default, { query: query, activeFilters: activeFilters, enableFilters: enableFilters &&
-                filterAnchor == 'top', enableSorting: enableSorting, enableCreate: enableCreate, enableSearch: enableSearch, filterOptions: filterOptions, sortOptions: sortOptions, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection, handleAdd: handleAdd, keywords: keywords, handleKeywordChange: handleKeywordChange, handleSearch: handleSearch }),
+        react_1.default.createElement(CollectionToolbar_1.default, { query: query, activeFilters: activeFilters, enableFilters: enableFilters && filterAnchor == 'top', enableSorting: enableSorting, enableCreate: enableCreate, enableSearch: enableSearch, filterOptions: filterOptions, sortOptions: sortOptions, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection, handleAdd: handleAdd, keywords: keywords, handleKeywordChange: handleKeywordChange, handleSearch: handleSearch }),
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 },
             enableFilters && filterAnchor == 'left' && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, lg: 3 },
                 react_1.default.createElement(material_1.Box, { sx: sx.filtersContainer },

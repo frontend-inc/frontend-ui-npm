@@ -55,8 +55,8 @@ var Item = function (props) {
                     react_1.default.createElement(components_1.Actions, { actions: (0, helpers_1.buildActions)({
                             enableEdit: enableEdit,
                             handleEdit: handleEdit,
-                            actions: actions
-                        }), justifyContent: 'flex-end', resource: (0, frontend_js_1.flattenDocument)(resource) }))),
+                            actions: actions,
+                        }), justifyContent: "flex-end", resource: (0, frontend_js_1.flattenDocument)(resource) }))),
                 react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
                 react_1.default.createElement(material_1.Box, null,
                     open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
@@ -123,7 +123,7 @@ var sx = {
         width: '100%',
     },
     imageContainer: {
-        width: "100%",
-        minWidth: 300
-    }
+        width: '100%',
+        minWidth: 300,
+    },
 };

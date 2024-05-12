@@ -63,7 +63,7 @@ exports.default = LayoutContainer;
 var sx = {
     layout: {
         width: '100%',
-        overflowY: 'hidden'
+        overflowY: 'hidden',
     },
     root: {
         width: '100%',

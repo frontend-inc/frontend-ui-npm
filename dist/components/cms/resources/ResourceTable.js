@@ -82,7 +82,7 @@ var ResourceTable = function (props) {
     var _l = (0, react_1.useState)(false), openDeleteModal = _l[0], setOpenDeleteModal = _l[1];
     var _m = (0, frontend_js_1.useResource)({
         name: name,
-        url: url
+        url: url,
     }), loading = _m.loading, delayedLoading = _m.delayedLoading, errors = _m.errors, resource = _m.resource, resources = _m.resources, setResource = _m.setResource, update = _m.update, create = _m.create, destroy = _m.destroy, handleChange = _m.handleChange, query = _m.query, findMany = _m.findMany, reloadMany = _m.reloadMany, removeAttachment = _m.removeAttachment, page = _m.page, numPages = _m.numPages, numResults = _m.numResults, totalCount = _m.totalCount, paginate = _m.paginate;
     var _o = (0, react_1.useState)(''), keywords = _o[0], setKeywords = _o[1];
     var handleKeywordChange = function (ev) {

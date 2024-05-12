@@ -52,7 +52,7 @@ var Videos = function (props) {
     }, [url, defaultQuery, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_2.Typography, { variant: "h5", color: "text.primary" }, title),
-        react_1.default.createElement(components_1.CollectionList, { actions: [], variant: variant, style: style, resources: resources, enableBorder: enableBorder, enableGradient: enableGradient, handleClick: handleClick, enableEdit: false, enableDelete: false, handleEdit: function () { return (null); }, handleDelete: function () { return (null); } }),
+        react_1.default.createElement(components_1.CollectionList, { actions: [], variant: variant, style: style, resources: resources, enableBorder: enableBorder, enableGradient: enableGradient, handleClick: handleClick, enableEdit: false, enableDelete: false, handleEdit: function () { return null; }, handleDelete: function () { return null; } }),
         !loading && (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Video', title: "No videos found", description: "Try adjusting your search or filters" }))));
 };
 exports.default = Videos;

@@ -1,4 +1,4 @@
-import { ActionType } from "..";
+import { ActionType } from '..';
 type BuildActionParams = {
     enableEdit?: boolean;
     handleEdit?: (item: any) => void;
@@ -6,5 +6,5 @@ type BuildActionParams = {
     handleDelete?: (item: any) => void;
     actions: ActionType[];
 };
-export declare const buildActions: ({ enableEdit, enableDelete, handleEdit, handleDelete, actions }: BuildActionParams) => ActionType[];
+export declare const buildActions: ({ enableEdit, enableDelete, handleEdit, handleDelete, actions, }: BuildActionParams) => ActionType[];
 export {};

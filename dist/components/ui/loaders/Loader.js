@@ -16,11 +16,11 @@ var Loader = function (props) {
 exports.default = Loader;
 var sx = {
     root: {
-        height: "100%",
+        height: '100%',
         minHeight: 200,
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
     },
-    circularProgress: {}
+    circularProgress: {},
 };

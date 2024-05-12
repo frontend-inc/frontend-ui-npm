@@ -26,7 +26,7 @@ var CollectionList = function (props) {
                 enableDelete: enableDelete,
                 handleEdit: function () { return handleEdit(resource); },
                 handleDelete: function () { return handleDelete(resource); },
-                actions: actions
+                actions: actions,
             }), enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })); }))));
 };
 exports.default = CollectionList;

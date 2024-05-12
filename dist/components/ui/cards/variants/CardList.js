@@ -115,7 +115,7 @@ var sx = {
         width: '100%',
     },
     contentAreaBorder: {
-        pr: 1
+        pr: 1,
     },
     content: {
         width: '100%',

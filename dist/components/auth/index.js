@@ -72,7 +72,7 @@ var VerifyPinForm_1 = require("./verify/VerifyPinForm");
 Object.defineProperty(exports, "VerifyPinForm", { enumerable: true, get: function () { return __importDefault(VerifyPinForm_1).default; } });
 var VerifySendPinForm_1 = require("./verify/VerifySendPinForm");
 Object.defineProperty(exports, "VerifySendPinForm", { enumerable: true, get: function () { return __importDefault(VerifySendPinForm_1).default; } });
-// Teams 
+// Teams
 var TeamList_1 = require("./teams/TeamList");
 Object.defineProperty(exports, "TeamList", { enumerable: true, get: function () { return __importDefault(TeamList_1).default; } });
 var TeamForm_1 = require("./teams/TeamForm");
@@ -83,7 +83,7 @@ var TeamUserInviteForm_1 = require("./teams/TeamUserInviteForm");
 Object.defineProperty(exports, "TeamUserForm", { enumerable: true, get: function () { return __importDefault(TeamUserInviteForm_1).default; } });
 var TeamUserInvite_1 = require("./teams/TeamUserInvite");
 Object.defineProperty(exports, "TeamUserInvite", { enumerable: true, get: function () { return __importDefault(TeamUserInvite_1).default; } });
-// Lists 
+// Lists
 var UserListItem_1 = require("./lists/UserListItem");
 Object.defineProperty(exports, "UserListItem", { enumerable: true, get: function () { return __importDefault(UserListItem_1).default; } });
 var TeamListItem_1 = require("./lists/TeamListItem");

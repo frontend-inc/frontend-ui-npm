@@ -84,7 +84,7 @@ var ForeignCollection = function (props) {
     var _o = (0, react_1.useState)(false), openDeleteModal = _o[0], setOpenDeleteModal = _o[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _p = (0, frontend_js_1.useDocuments)({
-        collection: contentType
+        collection: contentType,
     }), query = _p.query, _resource = _p.resource, _resources = _p.resources, _setResource = _p.setResource, page = _p.page, numPages = _p.numPages, loadMore = _p.loadMore, findMany = _p.findMany, findLinks = _p.findLinks, addLinks = _p.addLinks;
     var _q = (0, frontend_js_1.useDocuments)({
         collection: foreignContentType,
@@ -189,7 +189,7 @@ var ForeignCollection = function (props) {
                 case 0:
                     searchQuery = {
                         page: 1,
-                        per_page: 1
+                        per_page: 1,
                     };
                     return [4 /*yield*/, findMany(searchQuery)];
                 case 1:

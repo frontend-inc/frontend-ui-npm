@@ -10,7 +10,7 @@ var MyAccountTabs = function (props) {
     var TABS = [
         { label: 'Account', value: 0 },
         { label: 'Teams', value: 1 },
-        { label: 'Members', value: 2 }
+        { label: 'Members', value: 2 },
     ];
     return (react_1.default.createElement(material_1.Tabs, { value: tab, onChange: handleChange, color: "secondary", sx: sx.root, variant: "fullWidth" }, TABS.map(function (tab, index) { return (react_1.default.createElement(material_1.Tab, { disableRipple: true, key: index, sx: sx.tab, label: tab.label, value: tab.value })); })));
 };

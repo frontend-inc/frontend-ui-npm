@@ -114,13 +114,13 @@ var MyAccountModal = function (props) {
         enableTeams && (react_1.default.createElement(MyAccountTabs_1.default, { tab: currentTab, handleChange: handleTabChange })),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
             currentTab == 0 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout })),
-            currentTab == 1 && (react_1.default.createElement(components_2.TeamList, null)),
+            currentTab == 1 && react_1.default.createElement(components_2.TeamList, null),
             currentTab == 2 && (react_1.default.createElement(components_2.TeamUsersList, { handleAddUser: function () { return setCurrentTab(3); } })),
             currentTab == 3 && (react_1.default.createElement(components_2.TeamUserInvite, { handleSuccess: function () { return setCurrentTab(2); }, handleCancel: function () { return setCurrentTab(2); } })))));
 };
 exports.default = MyAccountModal;
 var sx = {
     content: {
-        p: 2
-    }
+        p: 2,
+    },
 };

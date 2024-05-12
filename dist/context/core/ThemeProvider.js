@@ -17,7 +17,7 @@ var ThemeProvider = function (props) {
         bodyFont: bodyFont,
         borderRadius: borderRadius,
         deviceSize: deviceSize,
-        offsetX: offsetX
+        offsetX: offsetX,
     }), theme = _b.theme, setTheme = _b.setTheme;
     var value = {
         theme: theme,

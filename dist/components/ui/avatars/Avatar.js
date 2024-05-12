@@ -29,6 +29,6 @@ var sx = {
         bgcolor: 'secondary.main',
     },
     label: {
-        textTransform: 'uppercase'
-    }
+        textTransform: 'uppercase',
+    },
 };

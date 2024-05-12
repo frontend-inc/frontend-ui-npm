@@ -73,7 +73,7 @@ var VideoModal_1 = require("../cms/video/VideoModal");
 Object.defineProperty(exports, "VideoModal", { enumerable: true, get: function () { return __importDefault(VideoModal_1).default; } });
 var VideoPlayer_1 = require("../cms/video/VideoPlayer");
 Object.defineProperty(exports, "VideoPlayer", { enumerable: true, get: function () { return __importDefault(VideoPlayer_1).default; } });
-// Resources 
+// Resources
 var ResourceList_1 = require("./resources/ResourceList");
 Object.defineProperty(exports, "ResourceList", { enumerable: true, get: function () { return __importDefault(ResourceList_1).default; } });
 var ResourceListItem_1 = require("./resources/ResourceListItem");

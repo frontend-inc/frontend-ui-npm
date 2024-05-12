@@ -73,7 +73,7 @@ var sx = {
         height: '100%',
     },
     disablePadding: {
-        p: 0
+        p: 0,
     },
     dialogActions: {
         borderTop: '1px solid',

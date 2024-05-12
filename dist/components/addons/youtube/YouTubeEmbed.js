@@ -17,5 +17,5 @@ exports.default = YouTubeEmbed;
 var sx = {
     root: {
         width: '100%',
-    }
+    },
 };

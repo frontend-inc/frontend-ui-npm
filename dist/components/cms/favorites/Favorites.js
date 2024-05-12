@@ -68,6 +68,6 @@ var Favorites = function (props) {
                 }, per_page: perPage, page: 1 }));
         }
     }, [currentUser, url, defaultQuery]);
-    return (react_1.default.createElement(components_1.CollectionList, { actions: [], resources: resources, variant: variant, style: style, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: false, enableDelete: false, handleEdit: function () { return (null); }, handleDelete: function () { return (null); } }));
+    return (react_1.default.createElement(components_1.CollectionList, { actions: [], resources: resources, variant: variant, style: style, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: false, enableDelete: false, handleEdit: function () { return null; }, handleDelete: function () { return null; } }));
 };
 exports.default = Favorites;

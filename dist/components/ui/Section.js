@@ -59,9 +59,7 @@ var Section = function (props) {
     }, [maxWidth]);
     return (react_1.default.createElement(material_1.Fade, { in: true, timeout: 1000 },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { bgcolor: bgcolor }) },
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.container), (enableTransitions && sx.containerTransitions)), { py: py, px: px, maxWidth: width }) }, requireAuth ?
-                react_1.default.createElement(components_1.AuthRequired, null, children) :
-                children))));
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.container), (enableTransitions && sx.containerTransitions)), { py: py, px: px, maxWidth: width }) }, requireAuth ? react_1.default.createElement(components_1.AuthRequired, null, children) : children))));
 };
 exports.default = Section;
 var sx = {

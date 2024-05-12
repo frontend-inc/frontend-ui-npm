@@ -13,7 +13,7 @@ var VimeoEmbed = function (props) {
                 top: '0px',
                 left: '0px',
                 width: '100%',
-                height: '100%'
+                height: '100%',
             }, frameBorder: "0" })));
 };
 exports.default = VimeoEmbed;
@@ -21,6 +21,6 @@ var sx = {
     root: {
         paddingBottom: '56.25%',
         maxWidth: '100%',
-        position: 'relative'
-    }
+        position: 'relative',
+    },
 };

@@ -137,7 +137,7 @@ var TableFilterForm = function (props) {
                     var field = Object.keys(filter)[0];
                     var operator = Object.keys(filter[field])[0];
                     var value = filter[field][operator];
-                    //@ts-ignore 
+                    //@ts-ignore
                     formattedFilters.push({
                         where: where,
                         field: field,

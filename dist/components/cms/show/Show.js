@@ -90,7 +90,7 @@ var Show = function (props) {
         handle = undefined;
     var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'item' : _b, _resource = _a.resource, fields = _a.fields, fieldName = _a.fieldName, displayFields = _a.displayFields, url = _a.url, contentType = _a.contentType, actions = _a.actions, enableBorder = _a.enableBorder, enableCreate = _a.enableCreate, enableEdit = _a.enableEdit;
     var _c = (0, frontend_js_1.useDocuments)({
-        collection: contentType
+        collection: contentType,
     }), loading = _c.loading, errors = _c.errors, update = _c.update, create = _c.create, resource = _c.resource, setResource = _c.setResource, findMany = _c.findMany, removeAttachment = _c.removeAttachment, handleDataChange = _c.handleDataChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -151,11 +151,11 @@ var Show = function (props) {
                 case 0:
                     searchQuery = {
                         page: 1,
-                        per_page: 1
+                        per_page: 1,
                     };
                     if (!handle) return [3 /*break*/, 2];
                     return [4 /*yield*/, findMany(__assign(__assign({}, searchQuery), { filters: {
-                                AND: [{ handle: { eq: handle } }]
+                                AND: [{ handle: { eq: handle } }],
                             } }))];
                 case 1:
                     resources = _a.sent();
@@ -202,5 +202,5 @@ var sx = {
         p: 4,
         width: '100%',
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
-    }
+    },
 };

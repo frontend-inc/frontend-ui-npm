@@ -29,7 +29,7 @@ var ShowContainer = function (props) {
                 react_1.default.createElement(components_1.Actions, { actions: (0, helpers_1.buildActions)({
                         enableEdit: enableEdit,
                         handleEdit: handleEdit,
-                        actions: actions
+                        actions: actions,
                     }), resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "flex-end" })))),
         react_1.default.createElement(material_1.Box, { sx: sx.container }, children),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },

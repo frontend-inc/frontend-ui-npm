@@ -70,7 +70,7 @@ var sx = {
     actions: {
         position: 'absolute',
         top: 10,
-        right: 10
+        right: 10,
     },
     rootBorder: {
         border: '1px solid',

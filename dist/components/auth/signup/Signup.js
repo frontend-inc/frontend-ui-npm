@@ -85,6 +85,7 @@ var Signup = function (props) {
     }); };
     var handleLogin = function () {
         if (loginUrl) {
+            ;
             "".concat(clientUrl).concat(loginUrl);
         }
     };

@@ -38,6 +38,6 @@ var ErrorInput = function (props) {
     }, [value]);
     if (!error)
         return null;
-    return (react_1.default.createElement(components_1.ErrorText, { error: error }));
+    return react_1.default.createElement(components_1.ErrorText, { error: error });
 };
 exports.default = ErrorInput;

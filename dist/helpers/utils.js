@@ -42,7 +42,9 @@ function getInitials(name) {
     }
     else {
         // Use the first two letters of the single part, if it's at least 2 characters long
-        return parts[0].length > 1 ? parts[0].substring(0, 2) : parts[0][0] + parts[0][0];
+        return parts[0].length > 1
+            ? parts[0].substring(0, 2)
+            : parts[0][0] + parts[0][0];
     }
 }
 exports.getInitials = getInitials;

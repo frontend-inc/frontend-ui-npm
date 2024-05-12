@@ -11,7 +11,7 @@ var TeamForm = function (props) {
     var loading = props.loading, errors = props.errors, team = props.team, handleSubmit = props.handleSubmit, handleCancel = props.handleCancel, handleChange = props.handleChange, handleDeleteImage = props.handleDeleteImage;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     if ((team === null || team === void 0 ? void 0 : team.id) && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_role) != 'admin') {
-        return (react_1.default.createElement(components_1.Placeholder, { icon: 'lock', title: 'Unauthorized', description: 'You do not have permission to access this page', actions: react_1.default.createElement(material_1.Button, { color: "secondary", onClick: handleCancel, variant: "contained", startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Cancel") }));
+        return (react_1.default.createElement(components_1.Placeholder, { icon: "lock", title: "Unauthorized", description: "You do not have permission to access this page", actions: react_1.default.createElement(material_1.Button, { color: "secondary", onClick: handleCancel, variant: "contained", startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Cancel") }));
     }
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(components_1.TextInput, { errors: errors, value: team.handle, name: "handle", placeholder: "Username", handleChange: handleChange }),
@@ -32,6 +32,6 @@ var sx = {
     },
     actions: {
         width: '100%',
-        justifyContent: 'flex-end'
-    }
+        justifyContent: 'flex-end',
+    },
 };

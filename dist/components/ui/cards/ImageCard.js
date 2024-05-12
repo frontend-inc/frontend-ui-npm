@@ -19,6 +19,6 @@ var ImageGrid_1 = __importDefault(require("./variants/ImageGrid"));
 var ImageList_1 = __importDefault(require("./variants/ImageList"));
 var ImageCard = function (props) {
     var variant = props.variant;
-    return variant == 'grid' ? (react_1.default.createElement(ImageGrid_1.default, __assign({}, props))) : (react_1.default.createElement(ImageList_1.default, __assign({}, props)));
+    return variant == 'grid' ? react_1.default.createElement(ImageGrid_1.default, __assign({}, props)) : react_1.default.createElement(ImageList_1.default, __assign({}, props));
 };
 exports.default = ImageCard;

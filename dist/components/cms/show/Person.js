@@ -71,7 +71,7 @@ var Person = function (props) {
                 react_1.default.createElement(components_1.Actions, { actions: (0, helpers_1.buildActions)({
                         enableEdit: enableEdit,
                         handleEdit: handleEdit,
-                        actions: actions
+                        actions: actions,
                     }), resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "flex-end" }))))));
 };
 exports.default = Person;

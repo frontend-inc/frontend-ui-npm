@@ -93,6 +93,6 @@ var sx = {
     actions: {
         position: 'absolute',
         top: 0,
-        right: 10
-    }
+        right: 10,
+    },
 };

@@ -71,5 +71,5 @@ var sx = {
         top: 10,
         right: 10,
         width: '100%',
-    }
+    },
 };

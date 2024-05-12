@@ -111,7 +111,7 @@ var sx = {
     },
     title: {
         width: '100%',
-        textAlign: 'left'
+        textAlign: 'left',
     },
     label: {
         textAlign: 'center',

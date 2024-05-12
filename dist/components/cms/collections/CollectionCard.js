@@ -35,7 +35,7 @@ var CollectionCard = function (props) {
         cover: __1.Cover,
         chip: __1.Chip,
         text: __1.TextCard,
-        image: __1.ImageCard
+        image: __1.ImageCard,
     };
     var Component = COMPONENTS[style] || __1.Card;
     return react_1.default.createElement(Component, __assign({ variant: variant }, rest));

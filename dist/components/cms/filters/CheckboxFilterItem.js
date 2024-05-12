@@ -19,6 +19,6 @@ var sx = {
         p: 0,
     },
     listItemIcon: {
-        mr: 2
-    }
+        mr: 2,
+    },
 };

@@ -50,7 +50,7 @@ var FormInput = function (props) {
         },
         boolean: {
             label: null,
-            placeholder: label
+            placeholder: label,
         },
         price: {
             type: 'number',

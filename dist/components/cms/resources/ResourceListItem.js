@@ -18,27 +18,27 @@ var ResourceListItem = function (props) {
                     react_1.default.createElement(__1.Image, { src: (0, lodash_1.get)(resource, imageField), width: 32, height: 32, alt: (0, lodash_1.get)(resource, titleField) }))),
                 (0, lodash_1.get)(resource, iconField) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(material_1.Avatar, { sx: {
-                            bgcolor: (0, lodash_1.get)(resource, colorField)
+                            bgcolor: (0, lodash_1.get)(resource, colorField),
                         } },
                         react_1.default.createElement(__1.Icon, { name: (0, lodash_1.get)(resource, iconField), size: 24 })))),
                 (resource === null || resource === void 0 ? void 0 : resource.user) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(__1.UserAvatar, { user: resource === null || resource === void 0 ? void 0 : resource.user }))),
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.primary' }, (0, lodash_1.get)(resource, titleField)), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: 'text.secondary' }, (0, lodash_1.get)(resource, descriptionField)) })))));
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, (0, lodash_1.get)(resource, titleField)), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, (0, lodash_1.get)(resource, descriptionField)) })))));
 };
 exports.default = ResourceListItem;
 var sx = {
     root: {
         p: 0,
-        m: 0
+        m: 0,
     },
     listItemButton: {
         p: 1,
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); }
+        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
     },
     actions: {
-        alignItems: 'center'
+        alignItems: 'center',
     },
     listItemIcon: {
-        mr: 2
-    }
+        mr: 2,
+    },
 };

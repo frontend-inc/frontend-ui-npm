@@ -57,7 +57,7 @@ var EmailSignup = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    console.log("Contact", contact);
+                    console.log('Contact', contact);
                     return [4 /*yield*/, create(contact)];
                 case 1:
                     resp = _a.sent();
@@ -71,7 +71,7 @@ var EmailSignup = function (props) {
     }); };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 1 },
-            label && (react_1.default.createElement(components_1.Label, { label: label })),
+            label && react_1.default.createElement(components_1.Label, { label: label }),
             title && (react_1.default.createElement(material_1.Typography, { variant: 'h6', color: "text.primary", sx: sx.title }, title)),
             description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: sx.description }, description)),
             react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: "row", spacing: 0 },
@@ -103,7 +103,7 @@ var sx = {
         pt: 2,
         textAlign: 'center',
         width: '100%',
-        maxWidth: 420
+        maxWidth: 420,
     },
     input: {
         '& .MuiInputBase-input': {

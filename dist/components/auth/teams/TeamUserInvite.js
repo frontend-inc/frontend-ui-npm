@@ -85,7 +85,7 @@ var TeamUserInvite = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(material_1.Stack, { direction: 'column', spacing: 1.5 },
+    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1.5 },
         react_1.default.createElement(TeamUserInviteForm_1.default, { errors: errors, user: user, handleChange: handleChange }),
         react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: 'row', spacing: 1 },
             react_1.default.createElement(material_1.Button, { color: "secondary", onClick: handleCancel, variant: "contained", startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Cancel"),
@@ -95,6 +95,6 @@ exports.default = TeamUserInvite;
 var sx = {
     actions: {
         width: '100%',
-        justifyContent: 'flex-end'
-    }
+        justifyContent: 'flex-end',
+    },
 };

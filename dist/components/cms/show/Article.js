@@ -32,7 +32,7 @@ var Article = function (props) {
                 react_1.default.createElement(components_1.Actions, { actions: (0, helpers_1.buildActions)({
                         enableEdit: enableEdit,
                         handleEdit: handleEdit,
-                        actions: actions
+                        actions: actions,
                     }), numVisible: 4, resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "center" })))),
         react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label, disableBorderRadius: enableBorder }),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
