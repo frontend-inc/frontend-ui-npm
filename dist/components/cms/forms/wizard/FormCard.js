@@ -7,11 +7,11 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../../components");
 var FormCard = function (props) {
-    var title = props.title, description = props.description, image = props.image, handleClick = props.handleClick, buttonText = props.buttonText;
+    var title = props.title, description = props.description, image = props.image, handleClick = props.handleClick, _a = props.buttonText, buttonText = _a === void 0 ? 'Continue' : _a;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.root, spacing: 2 },
-        react_1.default.createElement(components_1.Image, { src: image, height: 400 }),
-        react_1.default.createElement(material_1.Typography, { variant: "h4", color: "text.primary" }, title),
-        react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, description),
+        image && (react_1.default.createElement(components_1.Image, { src: image, height: 400 })),
+        title && (react_1.default.createElement(material_1.Typography, { variant: "h4", color: "text.primary" }, title)),
+        description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, description)),
         react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Button, { onClick: handleClick, variant: "contained", color: "primary" }, buttonText))));
 };

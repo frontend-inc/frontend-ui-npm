@@ -24,7 +24,7 @@ var ChipList = function (props) {
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: item }) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
                 image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: (image === null || image === void 0 ? void 0 : image.url) || image, alt: title },
+                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: image === null || image === void 0 ? void 0 : image.url, alt: title },
                         react_1.default.createElement(material_1.Box, null)))),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, title) })))));
 };

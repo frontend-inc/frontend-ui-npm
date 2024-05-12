@@ -44,7 +44,7 @@ var CoverList = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 1 },
         react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-            react_1.default.createElement(__1.Image, { label: label, src: (image === null || image === void 0 ? void 0 : image.url) || image, objectFit: objectFit, alt: title, height: height, enableGradient: enableGradient, enableOverlay: enableOverlay })),
+            react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, objectFit: objectFit, alt: title, height: height, enableGradient: enableGradient, enableOverlay: enableOverlay })),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: 'row', alignItems: "center" },
                 icon && (react_1.default.createElement(material_1.Box, null,

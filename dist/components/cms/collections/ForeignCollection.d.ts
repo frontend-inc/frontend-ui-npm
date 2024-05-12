@@ -6,12 +6,11 @@ export type ForeignCollectionProps = {
     field: any;
     fields: FormFieldType[];
     resource: any;
-    url: string;
     layout?: 'drawer' | 'inline';
     handle: string;
+    contentType: string;
     foreignContentType?: string;
     navigateUrl?: any;
-    foreignUrl?: string;
     perPage?: number;
     query?: any;
     enableEdit?: boolean;

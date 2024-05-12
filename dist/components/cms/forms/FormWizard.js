@@ -85,12 +85,11 @@ var router_1 = require("next/router");
 var FormWizard = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props.py, py = _a === void 0 ? 4 : _a, handle = props.handle, fields = props.fields, url = props.url, startTitle = props.startTitle, startDescription = props.startDescription, startImage = props.startImage, _b = props.startButtonText, startButtonText = _b === void 0 ? 'Start' : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Submit' : _c, endTitle = props.endTitle, endDescription = props.endDescription, endImage = props.endImage, endButtonText = props.endButtonText, navigateUrl = props.navigateUrl;
+    var _a = props.py, py = _a === void 0 ? 4 : _a, handle = props.handle, fields = props.fields, contentType = props.contentType, startTitle = props.startTitle, startDescription = props.startDescription, startImage = props.startImage, _b = props.startButtonText, startButtonText = _b === void 0 ? 'Start' : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Submit' : _c, endTitle = props.endTitle, endDescription = props.endDescription, endImage = props.endImage, endButtonText = props.endButtonText, navigateUrl = props.navigateUrl;
     var _d = (0, react_1.useState)(false), submitted = _d[0], setSubmitted = _d[1];
-    var _e = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: url,
-    }), loading = _e.loading, findOne = _e.findOne, resource = _e.resource, setResource = _e.setResource, update = _e.update, create = _e.create, handleChange = _e.handleChange, removeAttachment = _e.removeAttachment;
+    var _e = (0, frontend_js_1.useDocuments)({
+        collection: contentType
+    }), loading = _e.loading, findOne = _e.findOne, resource = _e.resource, setResource = _e.setResource, update = _e.update, create = _e.create, handleDataChange = _e.handleDataChange, removeAttachment = _e.removeAttachment, flattenDocument = _e.flattenDocument;
     var _f = (0, react_1.useState)(), currentField = _f[0], setCurrentField = _f[1];
     var _g = (0, react_1.useState)(0), currentStep = _g[0], setCurrentStep = _g[1];
     var _h = (0, react_1.useState)(0), totalSteps = _h[0], setTotalSteps = _h[1];
@@ -189,7 +188,7 @@ var FormWizard = function (props) {
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.form), { py: py }) }, !submitted ? (react_1.default.createElement(react_1.default.Fragment, null,
             currentStep == 0 && (react_1.default.createElement(FormCard_1.default, { title: startTitle, description: startDescription, image: startImage, buttonText: startButtonText, handleClick: handleStartClick })),
             currentStep > 0 && (react_1.default.createElement(react_1.default.Fragment, null,
-                react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleChange, handleRemove: handleRemove, resource: resource, setResource: setResource }),
+                react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleDataChange, handleRemove: handleRemove, resource: flattenDocument(resource), setResource: setResource }),
                 react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: buttonText }))))) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleSuccess })))));
 };
 exports.default = FormWizard;

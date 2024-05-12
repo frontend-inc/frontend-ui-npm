@@ -27,7 +27,7 @@ var AvatarList = function (props) {
                     minHeight: height + 44,
                 }, onClick: handleClick && handleClick },
                 react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: "".concat(height, "px"), width: "".concat(width, "px") }), src: (image === null || image === void 0 ? void 0 : image.url) || image, alt: title },
+                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: "".concat(height, "px"), width: "".concat(width, "px") }), src: image === null || image === void 0 ? void 0 : image.url, alt: title },
                         react_1.default.createElement(material_1.Box, null))),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: 'subtitle2', color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: sx.description }, (0, helpers_1.truncate)(description, 80)) })))));
 };

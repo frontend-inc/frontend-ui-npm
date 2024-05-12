@@ -60,7 +60,7 @@ var AvatarGrid = function (props) {
                 width: width,
             } },
             react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
-                react_1.default.createElement(material_1.Avatar, { src: (image === null || image === void 0 ? void 0 : image.url) || image, sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: height, width: width }) },
+                react_1.default.createElement(material_1.Avatar, { src: image === null || image === void 0 ? void 0 : image.url, sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: height, width: width }) },
                     react_1.default.createElement(material_1.Box, null)))),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.contentArea },
             react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.contentArea, spacing: 0 },

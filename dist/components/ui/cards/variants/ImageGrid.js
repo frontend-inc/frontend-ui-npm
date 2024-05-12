@@ -43,7 +43,7 @@ var ImageVert = function (props) {
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-            react_1.default.createElement(__1.Image, { src: (image === null || image === void 0 ? void 0 : image.url) || image, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
+            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
             react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: item, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
 };

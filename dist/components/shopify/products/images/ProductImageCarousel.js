@@ -20,9 +20,12 @@ var components_1 = require("../../../../components");
 var frontend_shopify_1 = require("frontend-shopify");
 var ProductImageCarousel = function () {
     var _a = (0, frontend_shopify_1.useProductContext)(), images = _a.images, handleImageClick = _a.handleImageClick;
-    return (react_1.default.createElement(components_1.CarouselImage, null, images === null || images === void 0 ? void 0 : images.map(function (image) { return (react_1.default.createElement(material_1.Box, { sx: sx.image, key: image.id },
-        react_1.default.createElement(components_1.TouchableOpacity, { handleClick: function () { return handleImageClick(image); } },
-            react_1.default.createElement(material_1.Box, { component: "img", src: (image === null || image === void 0 ? void 0 : image.url) || (image === null || image === void 0 ? void 0 : image.url), sx: __assign(__assign({}, sx.image), { height: '512px' }), alt: image === null || image === void 0 ? void 0 : image.altText })))); })));
+    return (react_1.default.createElement(components_1.CarouselImage, null, images === null || images === void 0 ? void 0 : images.map(function (image) {
+        var _a;
+        return (react_1.default.createElement(material_1.Box, { sx: sx.image, key: image.id },
+            react_1.default.createElement(components_1.TouchableOpacity, { handleClick: function () { return handleImageClick(image); } },
+                react_1.default.createElement(material_1.Box, { component: "img", src: (_a = image === null || image === void 0 ? void 0 : image.url) === null || _a === void 0 ? void 0 : _a.url, sx: __assign(__assign({}, sx.image), { height: '512px' }), alt: image === null || image === void 0 ? void 0 : image.altText }))));
+    })));
 };
 exports.default = ProductImageCarousel;
 var sx = {

@@ -76,41 +76,22 @@ var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
-var constants_1 = require("../../../constants");
 var helpers_1 = require("../../../helpers");
 var ForeignCollection = function (props) {
-    var field = props.field, fields = props.fields, resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'drawer' : _a, _b = props.variant, variant = _b === void 0 ? 'list' : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, url = props.url, foreignUrl = props.foreignUrl, foreignContentType = props.foreignContentType, navigateUrl = props.navigateUrl, _d = props.perPage, perPage = _d === void 0 ? 10 : _d, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableLoadMore, enableLoadMore = _h === void 0 ? true : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableEdit, enableEdit = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
+    var fields = props.fields, __resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'drawer' : _a, _b = props.variant, variant = _b === void 0 ? 'list' : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, contentType = props.contentType, foreignContentType = props.foreignContentType, navigateUrl = props.navigateUrl, _d = props.perPage, perPage = _d === void 0 ? 10 : _d, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableLoadMore, enableLoadMore = _h === void 0 ? true : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableEdit, enableEdit = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
     var router = (0, router_1.useRouter)();
     var _m = (0, react_1.useState)(false), openModal = _m[0], setOpenModal = _m[1];
     var _o = (0, react_1.useState)(false), openDeleteModal = _o[0], setOpenDeleteModal = _o[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _p = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: url,
-    }), query = _p.query, resources = _p.resources, page = _p.page, numPages = _p.numPages, loadMore = _p.loadMore, reloadMany = _p.reloadMany, findLinks = _p.findLinks, addLinks = _p.addLinks;
-    var _q = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: foreignUrl,
-    }), errors = _q.errors, loading = _q.loading, delayedLoading = _q.delayedLoading, _resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, removeAttachment = _q.removeAttachment;
+    var _p = (0, frontend_js_1.useDocuments)({
+        collection: contentType
+    }), query = _p.query, _resource = _p.resource, _resources = _p.resources, _setResource = _p.setResource, page = _p.page, numPages = _p.numPages, loadMore = _p.loadMore, findMany = _p.findMany, findLinks = _p.findLinks, addLinks = _p.addLinks;
+    var _q = (0, frontend_js_1.useDocuments)({
+        collection: foreignContentType,
+    }), errors = _q.errors, loading = _q.loading, delayedLoading = _q.delayedLoading, resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, handleDataChange = _q.handleDataChange, removeAttachment = _q.removeAttachment;
     var handleClick = function (item) {
         if (clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
             router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
-        }
-    };
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        if (constants_1.SYSTEM_FIELDS.includes(name)) {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), (_a = {}, _a[name] = value, _a)));
-            });
-        }
-        else {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), { data: __assign(__assign({}, prev.data), (_a = {}, _a[name] = value, _a)) }));
-            });
         }
     };
     var handleAdd = function () {
@@ -128,16 +109,16 @@ var ForeignCollection = function (props) {
                 case 0:
                     _a.trys.push([0, 6, , 7]);
                     resp = void 0;
-                    if (!(_resource === null || _resource === void 0 ? void 0 : _resource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, update(_resource)];
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, update(resource)];
                 case 1:
                     resp = _a.sent();
                     return [3 /*break*/, 5];
-                case 2: return [4 /*yield*/, create(_resource)];
+                case 2: return [4 /*yield*/, create(resource)];
                 case 3:
                     resp = _a.sent();
                     if (!(resp === null || resp === void 0 ? void 0 : resp.id)) return [3 /*break*/, 5];
-                    return [4 /*yield*/, addLinks(resource === null || resource === void 0 ? void 0 : resource.handle, [resp.id])];
+                    return [4 /*yield*/, addLinks(_resource === null || _resource === void 0 ? void 0 : _resource.handle, [resp.id])];
                 case 4:
                     _a.sent();
                     handleFetchResources();
@@ -164,48 +145,83 @@ var ForeignCollection = function (props) {
     var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, destroy(_resource === null || _resource === void 0 ? void 0 : _resource.id)];
+                case 0:
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, destroy(resource === null || resource === void 0 ? void 0 : resource.id)];
                 case 1:
                     _a.sent();
                     setOpenDeleteModal(false);
                     setOpenModal(false);
                     handleFetchResources();
-                    return [2 /*return*/];
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
             }
         });
     }); };
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, removeAttachment(_resource === null || _resource === void 0 ? void 0 : _resource.id, name)];
+                case 0:
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
                 case 1:
                     _a.sent();
-                    return [2 /*return*/];
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
             }
         });
     }); };
     var handleFetchResources = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            findLinks(resource.id, foreignContentType, __assign(__assign(__assign({}, query), defaultQuery), { per_page: perPage, page: 1 }));
+            findLinks(_resource.id, foreignContentType, __assign(__assign(__assign({}, query), defaultQuery), { per_page: perPage, page: 1 }));
             return [2 /*return*/];
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if ((resource === null || resource === void 0 ? void 0 : resource.id) && foreignContentType) {
+        if ((_resource === null || _resource === void 0 ? void 0 : _resource.id) && foreignContentType) {
             handleFetchResources();
         }
-    }, [resource, foreignContentType]);
+    }, [_resource === null || _resource === void 0 ? void 0 : _resource.id, foreignContentType]);
+    var handleFetchResource = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var searchQuery, resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    searchQuery = {
+                        page: 1,
+                        per_page: 1
+                    };
+                    return [4 /*yield*/, findMany(searchQuery)];
+                case 1:
+                    resp = _a.sent();
+                    if ((resp === null || resp === void 0 ? void 0 : resp.length) > 0) {
+                        _setResource(resp[0]);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    (0, react_1.useEffect)(function () {
+        if (__resource === null || __resource === void 0 ? void 0 : __resource.id) {
+            _setResource(__resource);
+        }
+        else {
+            if (contentType) {
+                handleFetchResource();
+            }
+        }
+    }, [__resource, contentType]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
         enableCreate && (react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))),
         layout == 'inline' && (react_1.default.createElement(material_1.Collapse, { in: openModal },
             react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.form, spacing: 1 },
-                react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove }),
-                react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: delayedLoading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save')))),
-        react_1.default.createElement(components_1.CollectionList, { actions: [], variant: variant, style: style, resources: resources, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
+                react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }),
+                react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: delayedLoading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save')))),
+        react_1.default.createElement(components_1.CollectionList, { actions: [], variant: variant, style: style, resources: _resources, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
         enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })),
-        layout == 'drawer' && (react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove }))),
+        layout == 'drawer' && (react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
+            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }))),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };
 exports.default = ForeignCollection;
