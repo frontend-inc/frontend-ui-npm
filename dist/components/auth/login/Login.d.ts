@@ -1,6 +1,5 @@
 import React from 'react';
-type LoginProps = {
-    redirectUrl: string;
+export type LoginProps = {
     title?: string;
     subtitle?: string;
     forgotPasswordUrl?: string;
@@ -8,6 +7,7 @@ type LoginProps = {
     oneTimePasswordUrl?: string;
     disableUsername?: boolean;
     enableGoogle?: boolean;
+    navigateUrl: string;
 };
 declare const Login: React.FC<LoginProps>;
 export default Login;

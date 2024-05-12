@@ -1,4 +1,27 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,16 +58,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(require("react"));
+var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
+var context_1 = require("../../../context");
 var Login = function (props) {
-    var _a = props || {}, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl, _d = _a.enableGoogle, enableGoogle = _d === void 0 ? false : _d;
+    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var _a = props || {}, navigateUrl = _a.navigateUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl, _d = _a.enableGoogle, enableGoogle = _d === void 0 ? false : _d;
     var router = (0, router_1.useRouter)();
     var _e = (0, frontend_js_1.useAuth)(), errors = _e.errors, loading = _e.loading, user = _e.user, handleChange = _e.handleChange, login = _e.login;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -55,27 +77,33 @@ var Login = function (props) {
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        router.push(redirectUrl);
+                        router.push("".concat(clientUrl).concat(navigateUrl));
                     }
                     return [2 /*return*/];
             }
         });
     }); };
     var handleGoogleSuccess = function () {
-        router.push(redirectUrl);
+        router.push("".concat(clientUrl).concat(navigateUrl));
     };
     var handleSignup = function () {
-        router.push(signupUrl);
+        if (signupUrl) {
+            router.push("".concat(clientUrl).concat(signupUrl));
+        }
     };
     var handleForgotPassword = function () {
-        router.push(forgotPasswordUrl);
+        if (forgotPasswordUrl) {
+            router.push("".concat(clientUrl).concat(forgotPasswordUrl));
+        }
     };
     var handleOneTimePassword = function () {
-        router.push(oneTimePasswordUrl);
+        if (oneTimePasswordUrl) {
+            router.push("".concat(clientUrl).concat(oneTimePasswordUrl));
+        }
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.Loader, { loading: loading }),
         !loading && (react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
-            react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleOneTimePassword: oneTimePasswordUrl && handleOneTimePassword, handleSignup: signupUrl && handleSignup, handleForgotPassword: forgotPasswordUrl && handleForgotPassword, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })))));
+            react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleOneTimePassword: oneTimePasswordUrl ? handleOneTimePassword : false, handleSignup: signupUrl ? handleSignup : false, handleForgotPassword: forgotPasswordUrl ? handleForgotPassword : false, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })))));
 };
 exports.default = Login;

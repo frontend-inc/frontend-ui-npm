@@ -30,8 +30,8 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var CmsFormWizard = function (props) {
     var bgcolor = props.bgcolor, py = props.py, //special case for padding y
-    px = props.px, maxWidth = props.maxWidth, rest = __rest(props, ["bgcolor", "py", "px", "maxWidth"]);
-    return (react_1.default.createElement(components_1.Section, { bgcolor: bgcolor, py: 0, px: px, maxWidth: maxWidth },
+    px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["bgcolor", "py", "px", "maxWidth", "requireAuth"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgcolor: bgcolor, py: 0, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_2.FormWizard, __assign({ py: py }, rest))));
 };
 exports.default = CmsFormWizard;

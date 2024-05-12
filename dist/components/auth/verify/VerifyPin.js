@@ -76,15 +76,15 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var VerifyPin = function (props) {
-    var _a = props || {}, title = _a.title, subtitle = _a.subtitle, redirectUrl = _a.redirectUrl, loginUrl = _a.loginUrl, _b = _a.authConfig, authConfig = _b === void 0 ? {} : _b;
-    var _c = (0, react_1.useState)(false), showVerifyPin = _c[0], setShowVerifyPin = _c[1];
-    var _d = (0, frontend_js_1.useAuth)(), loading = _d.loading, errors = _d.errors, user = _d.user, setUser = _d.setUser, handleChange = _d.handleChange, sendPin = _d.sendPin, verifyPin = _d.verifyPin;
+    var _a = props || {}, title = _a.title, subtitle = _a.subtitle, redirectUrl = _a.redirectUrl, loginUrl = _a.loginUrl;
+    var _b = (0, react_1.useState)(false), showVerifyPin = _b[0], setShowVerifyPin = _b[1];
+    var _c = (0, frontend_js_1.useAuth)(), loading = _c.loading, errors = _c.errors, user = _c.user, setUser = _c.setUser, handleChange = _c.handleChange, sendPin = _c.sendPin, verifyPin = _c.verifyPin;
     var router = (0, router_1.useRouter)();
     var handleSendPin = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, sendPin(__assign(__assign({}, user), authConfig))];
+                case 0: return [4 /*yield*/, sendPin(user)];
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
@@ -113,7 +113,7 @@ var VerifyPin = function (props) {
             switch (_a.label) {
                 case 0:
                     setUser(__assign(__assign({}, user), { pin: '' }));
-                    return [4 /*yield*/, sendPin(__assign(__assign({}, user), authConfig))];
+                    return [4 /*yield*/, sendPin(user)];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];

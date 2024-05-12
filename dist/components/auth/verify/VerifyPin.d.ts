@@ -4,7 +4,6 @@ type VerifyPinProps = {
     subtitle?: string;
     redirectUrl: string;
     loginUrl: string;
-    authConfig?: Record<string, any>;
 };
 declare const VerifyPin: React.FC<VerifyPinProps>;
 export default VerifyPin;
