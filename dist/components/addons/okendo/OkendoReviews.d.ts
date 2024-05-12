@@ -1,6 +1,6 @@
 import React from 'react';
 export type OkendoReviewsProps = {
-    handle: string | string[];
+    handle: string;
     subscriberId: string;
 };
 declare const OkendoReviews: React.FC<OkendoReviewsProps>;

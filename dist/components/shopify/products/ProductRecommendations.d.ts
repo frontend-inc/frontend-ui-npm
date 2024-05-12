@@ -1,6 +1,6 @@
 import React from 'react';
 export type ProductRecommendationsProps = {
-    handle?: string | string[];
+    handle?: string;
     editing?: boolean;
     layout?: 'grid' | 'carousel';
     perPage?: string;

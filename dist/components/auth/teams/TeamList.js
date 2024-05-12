@@ -65,15 +65,33 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var TeamList = function (props) {
-    var _a = (0, hooks_1.useTeams)(), loading = _a.delayedLoading, errors = _a.errors, team = _a.team, setTeam = _a.setTeam, updateTeam = _a.updateTeam, createTeam = _a.createTeam, teams = _a.teams, findTeams = _a.findTeams, handleChange = _a.handleChange, reloadTeams = _a.reloadTeams, deleteImage = _a.deleteImage;
+    var _a = (0, hooks_1.useTeams)(), loading = _a.delayedLoading, errors = _a.errors, team = _a.team, setTeam = _a.setTeam, updateTeam = _a.updateTeam, createTeam = _a.createTeam, deleteTeam = _a.deleteTeam, teams = _a.teams, findTeams = _a.findTeams, handleChange = _a.handleChange, reloadTeams = _a.reloadTeams, deleteImage = _a.deleteImage;
     var _b = (0, frontend_js_1.useAuth)(), currentUser = _b.currentUser, fetchMe = _b.fetchMe;
     var selectTeam = (0, hooks_1.useTeams)().selectTeam;
     var _c = (0, react_1.useState)(false), isEditing = _c[0], setIsEditing = _c[1];
-    var _d = (0, react_1.useState)(-1), activeTeamId = _d[0], setActiveTeamId = _d[1];
+    var _d = (0, react_1.useState)(false), openDeleteModal = _d[0], setOpenDeleteModal = _d[1];
+    var _e = (0, react_1.useState)(-1), activeTeamId = _e[0], setActiveTeamId = _e[1];
+    var handleAddTeamClick = function () {
+        setTeam({});
+        setIsEditing(true);
+    };
     var handleEditClick = function (team) {
         setTeam(team);
         setIsEditing(true);
     };
+    var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, deleteTeam(team === null || team === void 0 ? void 0 : team.id)];
+                case 1:
+                    resp = _a.sent();
+                    setOpenDeleteModal(false);
+                    reloadTeams();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -112,6 +130,10 @@ var TeamList = function (props) {
             }
         });
     }); };
+    var handleDeleteClick = function (team) {
+        setTeam(team);
+        setOpenDeleteModal(true);
+    };
     var handleClick = function (team) { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -133,9 +155,22 @@ var TeamList = function (props) {
             findTeams();
         }
     }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
-    return (react_1.default.createElement(react_1.default.Fragment, null, !isEditing ? (react_1.default.createElement(material_1.List, null, teams === null || teams === void 0 ? void 0 : teams.map(function (team) {
-        var selected = (team === null || team === void 0 ? void 0 : team.id) == activeTeamId;
-        return (react_1.default.createElement(components_1.SelectableListItem, { key: team.id, selected: selected, avatar: react_1.default.createElement(components_1.TeamAvatar, { team: team }), title: team.name, handleClick: function () { return handleClick(team); }, handleEdit: selected ? function () { return handleEditClick(team); } : undefined }));
-    }))) : (react_1.default.createElement(components_1.TeamForm, { loading: loading, errors: errors, team: team, handleChange: handleChange, handleSubmit: handleSubmit, handleCancel: function () { return setIsEditing(false); }, handleSuccess: function () { return setIsEditing(false); }, handleDeleteImage: handleDeleteImage }))));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        !isEditing ? (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement(material_1.List, null, teams === null || teams === void 0 ? void 0 : teams.map(function (team) {
+                var selected = (team === null || team === void 0 ? void 0 : team.id) == activeTeamId;
+                return (react_1.default.createElement(components_1.SelectableListItem, { key: team.id, selected: selected, avatar: react_1.default.createElement(components_1.TeamAvatar, { team: team }), title: team.name, handleClick: function () { return handleClick(team); }, handleEdit: selected ? function () { return handleEditClick(team); } : undefined, handleDelete: selected ? function () { return handleDeleteClick(team); } : undefined }));
+            })),
+            !(teams === null || teams === void 0 ? void 0 : teams.length) && (react_1.default.createElement(components_1.Placeholder, { icon: 'Users', title: "No Teams", description: "Add a team to get started" })),
+            react_1.default.createElement(material_1.Box, { sx: sx.actions },
+                react_1.default.createElement(material_1.Button, { variant: "contained", onClick: handleAddTeamClick }, "Add Team")))) : (react_1.default.createElement(components_1.TeamForm, { loading: loading, errors: errors, team: team, handleChange: handleChange, handleSubmit: handleSubmit, handleCancel: function () { return setIsEditing(false); }, handleSuccess: function () { return setIsEditing(false); }, handleDeleteImage: handleDeleteImage })),
+        react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, title: "Delete Team", description: "Are you sure you want to delete this team?", handleConfirm: handleDelete, handleClose: function () { return setOpenDeleteModal(false); } })));
 };
 exports.default = TeamList;
+var sx = {
+    actions: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'flex-end',
+    }
+};

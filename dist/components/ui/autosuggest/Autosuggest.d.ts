@@ -14,6 +14,7 @@ type AutosuggestProps = {
     handleInputChange?: (value: string) => void;
     handleClear?: () => void;
     freeSolo?: boolean;
+    enableClear?: boolean;
 };
 declare const Autosuggest: React.FC<AutosuggestProps>;
 export default Autosuggest;

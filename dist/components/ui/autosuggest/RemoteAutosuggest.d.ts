@@ -15,6 +15,8 @@ type RemoteAutosuggestProps = {
     direction?: 'row' | 'column';
     defaultQuery?: QueryParamsType;
     defaultOptions?: OptionType[];
+    enableRemoteSearch?: boolean;
+    enableClear: any;
 };
 declare const RemoteAutosuggest: React.FC<RemoteAutosuggestProps>;
 export default RemoteAutosuggest;

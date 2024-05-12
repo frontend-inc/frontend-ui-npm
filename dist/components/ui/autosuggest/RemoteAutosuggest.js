@@ -85,21 +85,25 @@ var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var lodash_1 = require("lodash");
 var RemoteAutosuggest = function (props) {
-    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, imageField = props.imageField, handleChange = props.handleChange, handleClear = props.handleClear, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? {} : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f;
-    var _g = (0, hooks_1.useError)({
+    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, imageField = props.imageField, handleChange = props.handleChange, handleClear = props.handleClear, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? {} : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f, _g = props.enableRemoteSearch, enableRemoteSearch = _g === void 0 ? false : _g, _h = props.enableClear, enableClear = _h === void 0 ? false : _h;
+    var _j = (0, hooks_1.useError)({
         errors: errors,
         name: name,
-    }), error = _g.error, clearError = _g.clearError;
-    var _h = (0, frontend_js_1.useResource)({
+    }), error = _j.error, clearError = _j.clearError;
+    var _k = (0, frontend_js_1.useResource)({
         url: url,
         name: name,
-    }), delayedLoading = _h.delayedLoading, resources = _h.resources, findMany = _h.findMany;
-    var _j = (0, react_1.useState)(), option = _j[0], setOption = _j[1];
-    var _k = (0, react_1.useState)([]), options = _k[0], setOptions = _k[1];
+    }), loading = _k.loading, delayedLoading = _k.delayedLoading, resources = _k.resources, findMany = _k.findMany;
+    var _l = (0, react_1.useState)(), option = _l[0], setOption = _l[1];
+    var _m = (0, react_1.useState)([]), options = _m[0], setOptions = _m[1];
     var handleInputChange = function (newValue) {
         if (error)
             clearError();
         findOption(newValue);
+        if (enableRemoteSearch && !loading) {
+            //@ts-ignore
+            findMany(__assign(__assign({}, defaultQuery), { keywords: newValue }));
+        }
     };
     var formatResources = function (resources) {
         return resources.map(function (resource) { return ({
@@ -146,6 +150,6 @@ var RemoteAutosuggest = function (props) {
         }
     }, [url]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(__1.Autosuggest, { errors: errors, loading: delayedLoading, direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear })));
+        react_1.default.createElement(__1.Autosuggest, { errors: errors, loading: delayedLoading, direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear, enableClear: enableClear })));
 };
 exports.default = RemoteAutosuggest;

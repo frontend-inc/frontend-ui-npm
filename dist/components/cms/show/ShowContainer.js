@@ -18,21 +18,19 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
+var helpers_1 = require("../../../helpers");
 var ShowContainer = function (props) {
     var _a = props || {}, actions = _a.actions, resource = _a.resource, children = _a.children, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
     var _b = resource || {}, title = _b.title, description = _b.description;
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), spacing: 2 },
         react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: __assign(__assign({}, sx.header), (enableBorder && sx.headerBorder)) },
             react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "h6" }, title),
-            (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.actions, spacing: 0 },
-                enableEdit && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(components_1.ActionButton, { resource: (0, frontend_js_1.flattenDocument)(resource), action: {
-                            label: 'Edit',
-                            color: 'secondary',
-                            name: 'click',
-                            onClick: handleEdit,
-                        } }))),
-                react_1.default.createElement(components_1.Actions, { actions: actions, resource: (0, frontend_js_1.flattenDocument)(resource) })))),
+            (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: { sm: 'row', xs: 'column' }, spacing: 1, p: enableBorder ? 1 : 0 },
+                react_1.default.createElement(components_1.Actions, { actions: (0, helpers_1.buildActions)({
+                        enableEdit: enableEdit,
+                        handleEdit: handleEdit,
+                        actions: actions
+                    }), resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "flex-end" })))),
         react_1.default.createElement(material_1.Box, { sx: sx.container }, children),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description))));

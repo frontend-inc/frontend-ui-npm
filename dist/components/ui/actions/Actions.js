@@ -21,16 +21,19 @@ var ActionMenuItem_1 = __importDefault(require("./ActionMenuItem"));
 var components_1 = require("../../../components");
 var Actions = function (props) {
     var _a, _b;
-    var actions = props.actions, resource = props.resource, _c = props.justifyContent, justifyContent = _c === void 0 ? 'center' : _c;
-    return (react_1.default.createElement(material_1.Stack, { sx: {
-            justifyContent: justifyContent,
-        }, direction: "row", spacing: 1 },
-        react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.buttons), { justifyContent: justifyContent }), direction: { sm: 'row', xs: 'column' }, spacing: 1 }, (_a = actions === null || actions === void 0 ? void 0 : actions.slice(0, 2)) === null || _a === void 0 ? void 0 : _a.map(function (action, index) { return (react_1.default.createElement(ActionButton_1.default, { key: index, action: action, resource: resource })); })),
-        (actions === null || actions === void 0 ? void 0 : actions.length) > 2 && (react_1.default.createElement(components_1.MenuButton, null, (_b = actions === null || actions === void 0 ? void 0 : actions.slice(2, actions.length)) === null || _b === void 0 ? void 0 : _b.map(function (action, index) { return (react_1.default.createElement(ActionMenuItem_1.default, { key: index, action: action, resource: resource })); })))));
+    var actions = props.actions, resource = props.resource, _c = props.numVisible, numVisible = _c === void 0 ? 2 : _c, justifyContent = props.justifyContent;
+    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), { justifyContent: justifyContent }), direction: "row", spacing: 1 },
+        react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.buttons), { justifyContent: justifyContent }), direction: { sm: 'row', xs: 'column' }, spacing: 1 }, (_a = actions === null || actions === void 0 ? void 0 : actions.slice(0, numVisible)) === null || _a === void 0 ? void 0 : _a.map(function (action, index) { return (react_1.default.createElement(ActionButton_1.default, { key: index, action: action, resource: resource })); })),
+        (actions === null || actions === void 0 ? void 0 : actions.length) > numVisible && (react_1.default.createElement(components_1.MenuButton, null, (_b = actions === null || actions === void 0 ? void 0 : actions.slice(numVisible, actions.length)) === null || _b === void 0 ? void 0 : _b.map(function (action, index) { return (react_1.default.createElement(ActionMenuItem_1.default, { key: index, action: action, resource: resource })); })))));
 };
 exports.default = Actions;
 var sx = {
+    root: {
+        width: '100%',
+        justifyContent: 'space-between',
+    },
     buttons: {
         width: '100%',
+        justifyContent: 'flex-start',
     },
 };

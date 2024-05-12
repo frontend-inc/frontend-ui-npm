@@ -39,8 +39,8 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var LayoutContainer = function (props) {
-    var children = props.children, header = props.header, footer = props.footer, notifications = props.notifications, _a = props.enableSideNav, enableSideNav = _a === void 0 ? false : _a, _b = props.offsetX, offsetX = _b === void 0 ? 0 : _b, _c = props.offsetY, offsetY = _c === void 0 ? 0 : _c;
-    var _d = (0, react_1.useState)(false), enableNotifications = _d[0], setEnableNotifications = _d[1];
+    var children = props.children, header = props.header, footer = props.footer, notifications = props.notifications, _a = props.enableSideNav, enableSideNav = _a === void 0 ? false : _a, _b = props.offsetY, offsetY = _b === void 0 ? 0 : _b;
+    var _c = (0, react_1.useState)(false), enableNotifications = _c[0], setEnableNotifications = _c[1];
     (0, react_1.useEffect)(function () {
         if ((notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0) {
             setEnableNotifications(true);
@@ -68,6 +68,7 @@ var sx = {
     root: {
         width: '100%',
         height: '100%',
+        overflowY: 'scroll',
         '&::-webkit-scrollbar': {
             display: 'none',
         },
