@@ -82,6 +82,7 @@ var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var __1 = require("../..");
 var SearchFilters_1 = __importDefault(require("../filters/SearchFilters"));
+var CollectionToolbar_1 = __importDefault(require("./CollectionToolbar"));
 var Collection = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
@@ -209,14 +210,8 @@ var Collection = function (props) {
         }
     }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length, defaultQuery]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-            enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
-            react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.sortFilterActions, spacing: 1 },
-                enableFilters && filterAnchor == 'top' && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
-                enableSorting && (react_1.default.createElement(components_1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })),
-                enableCreate && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))))),
+        react_1.default.createElement(CollectionToolbar_1.default, { query: query, activeFilters: activeFilters, enableFilters: enableFilters &&
+                filterAnchor == 'top', enableSorting: enableSorting, enableCreate: enableCreate, enableSearch: enableSearch, filterOptions: filterOptions, sortOptions: sortOptions, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection, handleAdd: handleAdd, keywords: keywords, handleKeywordChange: handleKeywordChange, handleSearch: handleSearch }),
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 },
             enableFilters && filterAnchor == 'left' && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, lg: 3 },
                 react_1.default.createElement(material_1.Box, { sx: sx.filtersContainer },

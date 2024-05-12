@@ -59,7 +59,7 @@ var CardList = function (props) {
             react_1.default.createElement(material_1.Box, { sx: sx.image },
                 react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
                     react_1.default.createElement(components_1.Image, { label: label, src: (image === null || image === void 0 ? void 0 : image.url) || image, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, disableBorderRadius: enableBorder }))),
-            react_1.default.createElement(material_1.Stack, { sx: sx.contentArea, direction: "row", spacing: 1 },
+            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: __assign(__assign({}, sx.contentArea), (enableBorder && sx.contentAreaBorder)) },
                 react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
                     react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
                     react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80))),
@@ -113,6 +113,9 @@ var sx = {
     },
     contentArea: {
         width: '100%',
+    },
+    contentAreaBorder: {
+        pr: 1
     },
     content: {
         width: '100%',

@@ -52,12 +52,13 @@ var Document = function (props) {
             react_1.default.createElement(material_1.Box, null,
                 open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
                 (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all')))),
-        (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: { sm: 'row', xs: 'column' }, spacing: 1, p: enableBorder ? 1 : 0 },
-            react_1.default.createElement(components_1.Actions, { actions: (0, helpers_1.buildActions)({
-                    enableEdit: enableEdit,
-                    handleEdit: handleEdit,
-                    actions: actions
-                }), resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "flex-end" })))));
+        (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { direction: { sm: 'row', xs: 'column' }, spacing: 1, p: enableBorder ? 1 : 0 },
+            react_1.default.createElement(material_1.Box, null,
+                react_1.default.createElement(components_1.Actions, { actions: (0, helpers_1.buildActions)({
+                        enableEdit: enableEdit,
+                        handleEdit: handleEdit,
+                        actions: actions
+                    }), resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "flex-end" }))))));
 };
 exports.default = Document;
 var sx = {
@@ -119,12 +120,5 @@ var sx = {
         width: '100%',
         justifyContent: 'flex-start',
         alignItems: 'center',
-    },
-    actions: {
-        width: '100%',
-        justifyContent: {
-            sm: 'flex-end',
-            xs: 'center',
-        },
     },
 };
