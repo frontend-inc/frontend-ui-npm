@@ -3,7 +3,7 @@ type VideosProps = {
     title?: string;
     url: string;
     variant: 'list' | 'grid';
-    style: 'card' | 'avatar' | 'cover';
+    style: 'card' | 'avatar' | 'cover' | 'chip' | 'text' | 'image';
     editing?: boolean;
     perPage?: number;
     query?: any;

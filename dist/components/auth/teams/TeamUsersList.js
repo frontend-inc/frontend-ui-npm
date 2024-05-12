@@ -153,8 +153,9 @@ var TeamUsersList = function (props) {
                 function () { return handleEdit(teamUser); }, handleDelete: 
                 // @ts-ignore
                 function () { return handleDeleteClick(teamUser); } })); }))),
-        react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            react_1.default.createElement(material_1.Button, { onClick: handleAddUser, variant: 'contained', color: "primary" }, "Add User")),
+        !(teamUsers === null || teamUsers === void 0 ? void 0 : teamUsers.length) && (react_1.default.createElement(components_1.Placeholder, { icon: 'Users', title: "No Teams", description: "Add a team to get started" })),
+        (currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id) && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            react_1.default.createElement(material_1.Button, { onClick: handleAddUser, variant: 'contained', color: "primary" }, "Add User"))),
         react_1.default.createElement(components_1.AlertModal, { loading: loading, open: openDeleteModal, title: "Remove User", description: "Are you sure you want to remove ".concat((_a = teamUser === null || teamUser === void 0 ? void 0 : teamUser.user) === null || _a === void 0 ? void 0 : _a.name, "?"), handleClose: function () { return setOpenDeleteModal(false); }, handleConfirm: handleDelete }))) : (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1.5 },
         react_1.default.createElement(TeamUserForm_1.default
         //@ts-ignore  

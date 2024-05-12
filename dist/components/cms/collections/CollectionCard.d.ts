@@ -1,12 +1,17 @@
 import React from 'react';
+import { ActionType } from '../../../types';
+type CardStyleTypes = 'card' | 'avatar' | 'cover' | 'chip' | 'image' | 'text';
 type CollectionCardProps = {
+    actions: ActionType[];
     variant: 'list' | 'grid';
-    style: 'card' | 'avatar' | 'cover' | 'chip';
-    label?: string;
-    title?: string;
-    image?: string;
-    video?: string;
-    description: string;
+    style: CardStyleTypes;
+    item: any & {
+        label?: string;
+        title?: string;
+        image?: string;
+        video?: string;
+        description: string;
+    };
     buttonText?: string;
     href?: string;
     handleClick: () => void;

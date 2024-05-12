@@ -47,7 +47,7 @@ var Collections = function (props) {
         findCollections();
     }, []);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(components_1.CollectionList, { variant: variant, style: style, resources: collections, buttonText: buttonText, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient })));
+        react_1.default.createElement(components_1.CollectionList, { actions: [], variant: variant, style: style, resources: collections, buttonText: buttonText, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: false, enableDelete: false, handleEdit: function () { return (null); }, handleDelete: function () { return (null); } })));
 };
 exports.default = Collections;
 var sx = {

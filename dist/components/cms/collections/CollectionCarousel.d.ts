@@ -1,14 +1,14 @@
 import React from 'react';
+import { ActionType } from '../../../types';
 export type CollectionCarouselProps = {
-    title?: string;
+    actions: ActionType[];
     url: string;
-    style: 'card' | 'avatar' | 'cover';
+    style: 'card' | 'avatar' | 'cover' | 'chip' | 'text' | 'image';
     fields?: any;
     editing?: boolean;
     navigateUrl: any;
     perPage?: number;
     query?: any;
-    buttonText?: string;
     enableAutoPlay?: boolean;
     enableArrows?: boolean;
     enableBorder?: boolean;

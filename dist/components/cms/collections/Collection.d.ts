@@ -1,17 +1,19 @@
 import React from 'react';
-import { FormFieldType } from '../../../types';
+import { ActionType, FormFieldType } from '../../../types';
 import { SortOptionType, SearchFilterOptionType } from '../../../types';
 export type CollectionProps = {
     url: string;
     variant: 'list' | 'grid';
-    style: 'avatar' | 'card' | 'cover' | 'chip';
+    style: 'avatar' | 'card' | 'cover' | 'chip' | 'text' | 'image';
     layout?: 'drawer' | 'inline';
     editing?: boolean;
+    contentType: string;
     enableInfiniteLoad?: boolean;
     enableLoadMore?: boolean;
     navigateUrl: any;
     perPage?: number;
     query?: any;
+    actions: ActionType[];
     fields: FormFieldType[];
     filterAnchor?: 'left' | 'top';
     filterOptions?: SearchFilterOptionType[];
@@ -22,6 +24,7 @@ export type CollectionProps = {
     buttonText?: string;
     enableBorder?: boolean;
     enableGradient?: boolean;
+    enableOverlay?: boolean;
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;

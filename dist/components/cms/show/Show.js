@@ -78,6 +78,7 @@ var material_1 = require("@mui/material");
 var Article_1 = __importDefault(require("./Article"));
 var Item_1 = __importDefault(require("./Item"));
 var Person_1 = __importDefault(require("./Person"));
+var Document_1 = __importDefault(require("./Document"));
 var Details_1 = __importDefault(require("../details/Details"));
 var YouTubeVideo_1 = __importDefault(require("./addons/YouTubeVideo"));
 var VimeoVideo_1 = __importDefault(require("./addons/VimeoVideo"));
@@ -138,6 +139,7 @@ var Show = function (props) {
         item: Item_1.default,
         article: Article_1.default,
         person: Person_1.default,
+        document: Document_1.default,
         youtube: YouTubeVideo_1.default,
         vimeo: VimeoVideo_1.default,
     };

@@ -41,14 +41,13 @@ var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var material_2 = require("@mui/material");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var CollectionCard_1 = __importDefault(require("./CollectionCard"));
 var CollectionCarousel = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var title = props.title, url = props.url, _a = props.style, style = _a === void 0 ? 'card' : _a, _b = props.query, defaultQuery = _b === void 0 ? {} : _b, _c = props.perPage, perPage = _c === void 0 ? 20 : _c, navigateUrl = props.navigateUrl, buttonText = props.buttonText, _d = props.enableAutoPlay, enableAutoPlay = _d === void 0 ? false : _d, _e = props.enableArrows, enableArrows = _e === void 0 ? false : _e, _f = props.enableDots, enableDots = _f === void 0 ? true : _f, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.enableGradient, enableGradient = _h === void 0 ? false : _h;
+    var actions = props.actions, url = props.url, _a = props.style, style = _a === void 0 ? 'card' : _a, _b = props.query, defaultQuery = _b === void 0 ? {} : _b, _c = props.perPage, perPage = _c === void 0 ? 20 : _c, navigateUrl = props.navigateUrl, _d = props.enableAutoPlay, enableAutoPlay = _d === void 0 ? false : _d, _e = props.enableArrows, enableArrows = _e === void 0 ? false : _e, _f = props.enableDots, enableDots = _f === void 0 ? true : _f, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.enableGradient, enableGradient = _h === void 0 ? false : _h;
     var _j = (0, frontend_js_1.useResource)({
         url: url,
     }), findMany = _j.findMany, resources = _j.resources;
@@ -67,12 +66,8 @@ var CollectionCarousel = function (props) {
         }
     }, [url, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(material_2.Typography, { variant: "h5", color: "textPrimary" }, title),
-        react_1.default.createElement(__1.Carousel, { enableDots: enableDots, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) {
-            var _a, _b;
-            return (react_1.default.createElement(material_1.Box, { key: index, sx: sx.item },
-                react_1.default.createElement(CollectionCard_1.default, { variant: "grid", style: style, label: resource === null || resource === void 0 ? void 0 : resource.label, title: resource === null || resource === void 0 ? void 0 : resource.title, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, video: (_b = resource === null || resource === void 0 ? void 0 : resource.video) === null || _b === void 0 ? void 0 : _b.url, description: resource === null || resource === void 0 ? void 0 : resource.description, buttonText: buttonText, handleClick: function () { return handleClick(resource); }, enableBorder: enableBorder, enableGradient: enableGradient })));
-        }))));
+        react_1.default.createElement(__1.Carousel, { enableDots: enableDots, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(material_1.Box, { key: index, sx: sx.item },
+            react_1.default.createElement(CollectionCard_1.default, { actions: actions, variant: "grid", style: style, item: resource, handleClick: function () { return handleClick(resource); }, enableBorder: enableBorder, enableGradient: enableGradient }))); }))));
 };
 exports.default = CollectionCarousel;
 var sx = {

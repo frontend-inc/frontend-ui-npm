@@ -27,11 +27,11 @@ var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var index_1 = require("../../../constants/index");
 var VideoVert = function (props) {
-    var _a = props || {}, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, _c = _a.video, video = _c === void 0 ? '' : _c, buttonText = _a.buttonText, _d = _a.textVariant, textVariant = _d === void 0 ? 'subtitle1' : _d, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.height, height = _f === void 0 ? index_1.VIDEO_HORIZ_HEIGHT : _f, _g = _a.width, width = _g === void 0 ? index_1.VIDEO_HORIZ_WIDTH : _g, _h = _a.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = _a.enableGradient, enableGradient = _j === void 0 ? false : _j, _k = _a.enableOverlay, enableOverlay = _k === void 0 ? false : _k;
-    var _l = (0, react_1.useState)(false), open = _l[0], setOpen = _l[1];
+    var _a = props || {}, actions = _a.actions, item = _a.item, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? index_1.VIDEO_HORIZ_HEIGHT : _c, _d = _a.width, width = _d === void 0 ? index_1.VIDEO_HORIZ_WIDTH : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g;
+    var _h = (0, react_1.useState)(false), open = _h[0], setOpen = _h[1];
     var handleItemClick = function () {
         setOpen(true);
     };
-    return !open ? (react_1.default.createElement(__1.Cover, { variant: "list", title: title, image: image, handleClick: handleItemClick, buttonText: buttonText, textVariant: textVariant, objectFit: objectFit, height: height, width: width, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, icon: "PlayCircle" })) : (react_1.default.createElement(__1.VideoModal, { title: title, src: video, open: open, handleClose: function () { return setOpen(false); } }));
+    return !open ? (react_1.default.createElement(__1.Cover, { actions: actions, variant: "list", item: item, handleClick: handleItemClick, objectFit: objectFit, height: height, width: width, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, icon: "PlayCircle" })) : (react_1.default.createElement(__1.VideoModal, { title: item === null || item === void 0 ? void 0 : item.title, src: item === null || item === void 0 ? void 0 : item.video, open: open, handleClose: function () { return setOpen(false); } }));
 };
 exports.default = VideoVert;

@@ -37,15 +37,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../../context");
 var material_1 = require("@mui/material");
-var components_1 = require("../../../../components");
 var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
-var components_2 = require("../../../../components");
+var __1 = require("../../..");
 var CardList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, actions = _a.actions, item = _a.item, href = _a.href, _b = _a.height, height = _b === void 0 ? 180 : _b, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, handleClick = _a.handleClick, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g;
     var router = (0, router_1.useRouter)();
-    var _h = item || {}, label = _h.label, title = _h.title, description = _h.description, image = _h.image, resource = _h.resource;
+    var _h = item || {}, title = _h.title, description = _h.description;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -55,19 +54,18 @@ var CardList = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
-            react_1.default.createElement(material_1.Box, { sx: sx.image },
-                react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
-                    react_1.default.createElement(components_1.Image, { label: label, src: (image === null || image === void 0 ? void 0 : image.url) || image, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, disableBorderRadius: enableBorder }))),
+        react_1.default.createElement(material_1.CardActionArea, { onClick: handleItemClick },
             react_1.default.createElement(material_1.Stack, { sx: sx.contentArea, direction: "row", spacing: 1 },
                 react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
                     react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
-                    react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80))),
-                react_1.default.createElement(components_2.Actions, { numVisible: 0, resource: item, actions: actions })))));
+                    react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80))))),
+        react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            react_1.default.createElement(__1.Actions, { numVisible: 0, resource: item, actions: actions }))));
 };
 exports.default = CardList;
 var sx = {
     root: {
+        position: 'relative',
         width: '100%',
         display: 'flex',
         flexDirection: 'row',
@@ -86,6 +84,7 @@ var sx = {
         },
     },
     rootBorder: {
+        pl: 2,
         border: '1px solid',
         borderColor: 'divider',
     },
@@ -135,18 +134,8 @@ var sx = {
         maxWidth: '320px',
     },
     actions: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: {
-            sm: 'flex-end',
-            xs: 'flex-start',
-        },
-    },
-    actionsBorder: {
-        px: 1,
-        pb: {
-            sm: 0,
-            xs: 1,
-        },
+        position: 'absolute',
+        top: 10,
+        right: 10
     },
 };

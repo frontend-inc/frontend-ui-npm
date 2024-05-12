@@ -37,13 +37,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../../context");
 var material_1 = require("@mui/material");
-var __1 = require("../../..");
+var components_1 = require("../../../../components");
 var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
 var index_1 = require("../../../../constants/index");
 var AvatarGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, label = _a.label, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? index_1.AVATAR_VERT_HEIGHT : _c, _d = _a.width, width = _d === void 0 ? index_1.AVATAR_VERT_WIDTH : _d, buttonText = _a.buttonText, _e = _a.textVariant, textVariant = _e === void 0 ? 'subtitle1' : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete;
+    var _a = props || {}, actions = _a.actions, item = _a.item, href = _a.href, handleClick = _a.handleClick, _b = _a.height, height = _b === void 0 ? index_1.AVATAR_VERT_HEIGHT : _b, _c = _a.width, width = _c === void 0 ? index_1.AVATAR_VERT_WIDTH : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f;
+    var _g = item || {}, title = _g.title, image = _g.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -58,16 +59,14 @@ var AvatarGrid = function (props) {
                 height: height,
                 width: width,
             } },
-            react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-                react_1.default.createElement(material_1.Avatar, { src: image, sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: height, width: width }) },
+            react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
+                react_1.default.createElement(material_1.Avatar, { src: (image === null || image === void 0 ? void 0 : image.url) || image, sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: height, width: width }) },
                     react_1.default.createElement(material_1.Box, null)))),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.contentArea },
             react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.contentArea, spacing: 0 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.content },
-                    react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title))),
-                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: "EllipsisVertical", handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
-            buttonText && (react_1.default.createElement(material_1.Box, null,
-                react_1.default.createElement(material_1.Button, { variant: "outlined", color: "secondary", onClick: handleItemClick }, buttonText))))));
+                    react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title))),
+                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: item })))));
 };
 exports.default = AvatarGrid;
 var sx = {
@@ -112,7 +111,7 @@ var sx = {
     },
     title: {
         width: '100%',
-        textAlign: 'center',
+        textAlign: 'left'
     },
     label: {
         textAlign: 'center',

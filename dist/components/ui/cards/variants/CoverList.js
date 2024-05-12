@@ -31,7 +31,8 @@ var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
 var CoverList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, label = _a.label, icon = _a.icon, title = _a.title, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 240 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete;
+    var _a = props || {}, item = _a.item, actions = _a.actions, icon = _a.icon, href = _a.href, handleClick = _a.handleClick, _b = _a.textVariant, textVariant = _b === void 0 ? 'subtitle1' : _b, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 240 : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f;
+    var _g = item || {}, label = _g.label, title = _g.title, image = _g.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -43,17 +44,16 @@ var CoverList = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 1 },
         react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-            react_1.default.createElement(__1.Image, { label: label, src: image, objectFit: objectFit, alt: title, height: height, enableGradient: enableGradient, enableOverlay: enableOverlay })),
+            react_1.default.createElement(__1.Image, { label: label, src: (image === null || image === void 0 ? void 0 : image.url) || image, objectFit: objectFit, alt: title, height: height, enableGradient: enableGradient, enableOverlay: enableOverlay })),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: 'row', alignItems: "center" },
                 icon && (react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(__1.Icon, { size: 20, name: icon, color: "common.white" }))),
                 react_1.default.createElement(material_1.Box, { sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 40)),
-                    label && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, label))),
-                (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: "EllipsisVertical", color: "common.white", handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))),
-            buttonText && (react_1.default.createElement(material_1.Box, null,
-                react_1.default.createElement(material_1.Button, { variant: "contained", sx: sx.button, onClick: handleItemClick }, buttonText))))));
+                    label && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, label))))),
+        react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            react_1.default.createElement(__1.Actions, { numVisible: 0, resource: item, actions: actions, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
 };
 exports.default = CoverList;
 var sx = {
@@ -65,6 +65,7 @@ var sx = {
         borderRadius: 1,
     },
     cover: {
+        p: 1,
         width: '100%',
         position: 'absolute',
         left: 0,
@@ -81,12 +82,17 @@ var sx = {
         },
     },
     content: {
+        p: 1,
         width: '100%',
-        p: 2,
         minHeight: '60px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'flex-start',
     },
+    actions: {
+        position: 'absolute',
+        top: 0,
+        right: 10
+    }
 };

@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -73,36 +62,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
-var helpers_1 = require("../../../helpers");
-var constants_1 = require("../../../constants");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var CollectionForm = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, navigateUrl = props.navigateUrl, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
+    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, contentType = props.contentType, navigateUrl = props.navigateUrl, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _c = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: url,
-    }), delayedLoading = _c.delayedLoading, errors = _c.errors, findOne = _c.findOne, resource = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, removeAttachment = _c.removeAttachment;
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        if (constants_1.SYSTEM_FIELDS.includes(name)) {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), (_a = {}, _a[name] = value, _a)));
-            });
-        }
-        else {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), { data: __assign(__assign({}, prev.data), (_a = {}, _a[name] = value, _a)) }));
-            });
-        }
-    };
+    var _c = (0, frontend_js_1.useDocuments)({
+        collection: contentType,
+    }), delayedLoading = _c.delayedLoading, errors = _c.errors, findOne = _c.findOne, resource = _c.resource, update = _c.update, create = _c.create, flattenDocument = _c.flattenDocument, handleDataChange = _c.handleDataChange, removeAttachment = _c.removeAttachment;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -150,7 +120,7 @@ var CollectionForm = function (props) {
             findOne(handle);
         }
     }, [handle]);
-    return (react_1.default.createElement(components_1.Form, { loading: delayedLoading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
+    return (react_1.default.createElement(components_1.Form, { loading: delayedLoading, errors: errors, fields: fields, resource: flattenDocument(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = CollectionForm;
 var sx = {

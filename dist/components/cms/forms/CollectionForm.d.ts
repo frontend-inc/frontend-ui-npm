@@ -6,6 +6,7 @@ export type CollectionFormProps = {
     buttonText?: string;
     variant?: 'contained' | 'outlined' | 'text';
     fields: any[];
+    contentType: string;
     onSuccessMessage?: string;
 };
 declare const CollectionForm: React.FC<CollectionFormProps>;

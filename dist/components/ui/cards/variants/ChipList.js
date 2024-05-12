@@ -19,14 +19,15 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../../components");
 var helpers_1 = require("../../../../helpers");
 var ChipList = function (props) {
-    var label = props.label, title = props.title, description = props.description, image = props.image, handleClick = props.handleClick, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+    var item = props.item, actions = props.actions, handleClick = props.handleClick, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c;
+    var _d = item || {}, label = _d.label, title = _d.title, description = _d.description, image = _d.image;
     return (react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.actions },
                 label && react_1.default.createElement(components_1.Label, { label: label }),
-                (enableEdit || enableDelete) && (react_1.default.createElement(components_1.MenuButton, { icon: "EllipsisVertical", handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined }))) },
+                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: item })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
-                image && (react_1.default.createElement(material_1.ListItemIcon, null,
-                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: image, alt: title },
+                image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
+                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: (image === null || image === void 0 ? void 0 : image.url) || image, alt: title },
                         react_1.default.createElement(material_1.Box, null)))),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, (0, helpers_1.truncate)(description)) })))));
 };
@@ -37,7 +38,7 @@ var sx = {
         p: 0,
     },
     listItemButton: {
-        minHeight: 50,
+        minHeight: 48,
     },
     gradient: {
         '&::after': {
@@ -69,10 +70,14 @@ var sx = {
         borderRadius: 1,
     },
     avatar: {
-        mr: 1,
-        height: '32px',
-        width: '32px',
+        height: '48px',
+        width: '48px',
         backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)',
+    },
+    listItemIcon: {
+        mr: 2,
+        height: '48px',
+        width: '48px',
     },
     actions: {
         px: 1,

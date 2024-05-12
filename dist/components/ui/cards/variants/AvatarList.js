@@ -17,18 +17,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var helpers_1 = require("../../../../helpers");
-var __1 = require("../../..");
+var components_1 = require("../../../../components");
 var AvatarList = function (props) {
-    var title = props.title, description = props.description, _a = props.textVariant, textVariant = _a === void 0 ? 'body1' : _a, image = props.image, _b = props.height, height = _b === void 0 ? 128 : _b, _c = props.width, width = _c === void 0 ? 128 : _c, handleClick = props.handleClick, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+    var actions = props.actions, item = props.item, _a = props.height, height = _a === void 0 ? 128 : _a, _b = props.width, width = _b === void 0 ? 128 : _b, handleClick = props.handleClick, _c = props.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e;
+    var _f = item || {}, title = _f.title, description = _f.description, image = _f.image;
     return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.listItem), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: (enableEdit || enableDelete) && (react_1.default.createElement(__1.MenuButton, { icon: "EllipsisVertical", handleEdit: enableEdit ? handleEdit : undefined, handleDelete: enableDelete ? handleDelete : undefined })) },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: item }) },
             react_1.default.createElement(material_1.ListItemButton, { sx: {
                     minHeight: height + 44,
                 }, onClick: handleClick && handleClick },
-                react_1.default.createElement(material_1.ListItemIcon, null,
-                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: "".concat(height, "px"), width: "".concat(width, "px") }), src: image, alt: title },
+                react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
+                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: "".concat(height, "px"), width: "".concat(width, "px") }), src: (image === null || image === void 0 ? void 0 : image.url) || image, alt: title },
                         react_1.default.createElement(material_1.Box, null))),
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: sx.description }, (0, helpers_1.truncate)(description, 80)) })))));
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: 'subtitle2', color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: sx.description }, (0, helpers_1.truncate)(description, 80)) })))));
 };
 exports.default = AvatarList;
 var sx = {
@@ -60,13 +61,16 @@ var sx = {
             background: 'rgb(0,0,0,0.5)',
         },
     },
+    listItemIcon: {
+        width: 130,
+        mr: 2,
+    },
     rootBorder: {
         border: '1px solid',
         borderColor: 'divider',
         borderRadius: 1,
     },
     avatar: {
-        mr: 2,
         height: '64px',
         width: '64px',
         backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)',

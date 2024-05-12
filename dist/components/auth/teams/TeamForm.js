@@ -14,6 +14,7 @@ var TeamForm = function (props) {
         return (react_1.default.createElement(components_1.Placeholder, { icon: 'lock', title: 'Unauthorized', description: 'You do not have permission to access this page', actions: react_1.default.createElement(material_1.Button, { color: "secondary", onClick: handleCancel, variant: "contained", startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Cancel") }));
     }
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        react_1.default.createElement(components_1.TextInput, { errors: errors, value: team.handle, name: "handle", placeholder: "Username", handleChange: handleChange }),
         react_1.default.createElement(components_1.TextInput, { errors: errors, value: team.name, name: "name", placeholder: "Name", handleChange: handleChange }),
         react_1.default.createElement(components_1.ImageInput, { value: team.image, name: "image", handleChange: handleChange, handleRemove: handleDeleteImage }),
         react_1.default.createElement(components_1.TextInput, { multiline: true, rows: 6, errors: errors, value: team.description, name: "description", placeholder: "Description", handleChange: handleChange }),

@@ -56,7 +56,10 @@ var useActions = function (params) {
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    value = resource[action === null || action === void 0 ? void 0 : action.fieldName];
+                    console.log("Action", action, resource);
+                    if (action.fieldName) {
+                        value = resource[action.fieldName];
+                    }
                     _a = action === null || action === void 0 ? void 0 : action.name;
                     switch (_a) {
                         case 'navigate': return [3 /*break*/, 1];

@@ -14,7 +14,6 @@ export type ForeignCollectionProps = {
     foreignUrl?: string;
     perPage?: number;
     query?: any;
-    buttonText?: string;
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;

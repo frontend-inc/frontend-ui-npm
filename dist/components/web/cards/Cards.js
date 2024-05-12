@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -16,9 +27,13 @@ var Cards = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Box, null,
-        variant == 'list' && (react_1.default.createElement(material_1.Stack, { spacing: 2 }, items === null || items === void 0 ? void 0 : items.map(function (card, i) { return (react_1.default.createElement(components_1.CollectionCard, { key: i, variant: variant, style: style, label: card === null || card === void 0 ? void 0 : card.label, title: card === null || card === void 0 ? void 0 : card.title, description: card === null || card === void 0 ? void 0 : card.description, image: card === null || card === void 0 ? void 0 : card.image, buttonText: card === null || card === void 0 ? void 0 : card.buttonText, handleClick: function () { return handleClick(card); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })); }))),
+        variant == 'list' && (react_1.default.createElement(material_1.Stack, { spacing: 2 }, items === null || items === void 0 ? void 0 : items.map(function (card, i) { return (react_1.default.createElement(components_1.CollectionCard, { actions: [], key: i, variant: variant, style: style, item: __assign(__assign({}, card), { image: {
+                    url: card === null || card === void 0 ? void 0 : card.image
+                } }), handleClick: function () { return handleClick(card); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })); }))),
         variant == 'grid' && (react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 }, items === null || items === void 0 ? void 0 : items.map(function (card, i) { return (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, md: 4, key: i },
-            react_1.default.createElement(components_1.CollectionCard, { variant: variant, style: style, label: card === null || card === void 0 ? void 0 : card.label, image: card === null || card === void 0 ? void 0 : card.image, title: card === null || card === void 0 ? void 0 : card.title, description: card === null || card === void 0 ? void 0 : card.description, buttonText: card === null || card === void 0 ? void 0 : card.buttonText, handleClick: function () { return handleClick(card); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay }))); }))),
+            react_1.default.createElement(components_1.CollectionCard, { actions: [], variant: variant, style: style, item: __assign(__assign({}, card), { image: {
+                        url: card === null || card === void 0 ? void 0 : card.image
+                    } }), handleClick: function () { return handleClick(card); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay }))); }))),
         (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: "Search", title: "No content yet.", description: "Your content will appear here." }))));
 };
 exports.default = Cards;

@@ -1,5 +1,6 @@
 /// <reference types="react" />
 import { TypographyVariant } from '@mui/material';
+import { ActionType } from './actions';
 export type HeadingProps = {
     label?: string;
     title?: string;
@@ -15,13 +16,18 @@ export type SectionProps = {
     px?: number;
 };
 export type CardProps = {
+    actions: ActionType[];
     editing?: boolean;
     variant?: 'list' | 'grid';
-    label?: string;
-    title?: string;
-    description?: string;
-    image?: string;
-    video?: string;
+    item: any & {
+        label?: string;
+        title?: string;
+        description?: string;
+        image?: {
+            url: string;
+        };
+        video?: string;
+    };
     buttonText?: string;
     textVariant?: TypographyVariant;
     size?: number;

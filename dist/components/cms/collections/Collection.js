@@ -82,19 +82,16 @@ var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var __1 = require("../..");
 var SearchFilters_1 = __importDefault(require("../filters/SearchFilters"));
-var constants_1 = require("../../../constants");
-var helpers_1 = require("../../../helpers");
 var Collection = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props.variant, variant = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, _c = props.layout, layout = _c === void 0 ? 'drawer' : _c, url = props.url, fields = props.fields, _d = props.filterAnchor, filterAnchor = _d === void 0 ? 'left' : _d, _e = props.filterOptions, filterOptions = _e === void 0 ? [] : _e, _f = props.sortOptions, sortOptions = _f === void 0 ? [] : _f, _g = props.query, defaultQuery = _g === void 0 ? {} : _g, _h = props.perPage, perPage = _h === void 0 ? 20 : _h, _j = props.enableSearch, enableSearch = _j === void 0 ? false : _j, _k = props.enableFilters, enableFilters = _k === void 0 ? false : _k, _l = props.enableSorting, enableSorting = _l === void 0 ? false : _l, _m = props.enableInfiniteLoad, enableInfiniteLoad = _m === void 0 ? false : _m, _o = props.enableLoadMore, enableLoadMore = _o === void 0 ? true : _o, navigateUrl = props.navigateUrl, buttonText = props.buttonText, _p = props.enableBorder, enableBorder = _p === void 0 ? false : _p, _q = props.enableGradient, enableGradient = _q === void 0 ? false : _q, _r = props.enableEdit, enableEdit = _r === void 0 ? false : _r, _s = props.enableCreate, enableCreate = _s === void 0 ? false : _s, _t = props.enableDelete, enableDelete = _t === void 0 ? false : _t;
-    var _u = (0, react_1.useState)(false), openModal = _u[0], setOpenModal = _u[1];
-    var _v = (0, react_1.useState)(false), openDeleteModal = _v[0], setOpenDeleteModal = _v[1];
-    var _w = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: url,
-    }), loading = _w.loading, delayedLoading = _w.delayedLoading, errors = _w.errors, resource = _w.resource, resources = _w.resources, setResource = _w.setResource, update = _w.update, create = _w.create, destroy = _w.destroy, query = _w.query, findMany = _w.findMany, reloadMany = _w.reloadMany, removeAttachment = _w.removeAttachment, page = _w.page, numPages = _w.numPages, loadMore = _w.loadMore;
-    var _x = (0, react_1.useState)(''), keywords = _x[0], setKeywords = _x[1];
+    var actions = props.actions, _a = props.variant, variant = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, _c = props.layout, layout = _c === void 0 ? 'drawer' : _c, url = props.url, contentType = props.contentType, fields = props.fields, _d = props.filterAnchor, filterAnchor = _d === void 0 ? 'left' : _d, _e = props.filterOptions, filterOptions = _e === void 0 ? [] : _e, _f = props.sortOptions, sortOptions = _f === void 0 ? [] : _f, _g = props.query, defaultQuery = _g === void 0 ? {} : _g, _h = props.perPage, perPage = _h === void 0 ? 20 : _h, _j = props.enableSearch, enableSearch = _j === void 0 ? false : _j, _k = props.enableFilters, enableFilters = _k === void 0 ? false : _k, _l = props.enableSorting, enableSorting = _l === void 0 ? false : _l, _m = props.enableInfiniteLoad, enableInfiniteLoad = _m === void 0 ? false : _m, _o = props.enableLoadMore, enableLoadMore = _o === void 0 ? true : _o, navigateUrl = props.navigateUrl, buttonText = props.buttonText, _p = props.enableBorder, enableBorder = _p === void 0 ? false : _p, _q = props.enableGradient, enableGradient = _q === void 0 ? false : _q, _r = props.enableOverlay, enableOverlay = _r === void 0 ? false : _r, _s = props.enableEdit, enableEdit = _s === void 0 ? false : _s, _t = props.enableCreate, enableCreate = _t === void 0 ? false : _t, _u = props.enableDelete, enableDelete = _u === void 0 ? false : _u;
+    var _v = (0, react_1.useState)(false), openModal = _v[0], setOpenModal = _v[1];
+    var _w = (0, react_1.useState)(false), openDeleteModal = _w[0], setOpenDeleteModal = _w[1];
+    var _x = (0, frontend_js_1.useDocuments)({
+        collection: contentType
+    }), loading = _x.loading, delayedLoading = _x.delayedLoading, errors = _x.errors, resource = _x.resource, resources = _x.resources, setResource = _x.setResource, update = _x.update, create = _x.create, destroy = _x.destroy, query = _x.query, findMany = _x.findMany, reloadMany = _x.reloadMany, removeAttachment = _x.removeAttachment, page = _x.page, numPages = _x.numPages, loadMore = _x.loadMore, handleDataChange = _x.handleDataChange, flattenDocument = _x.flattenDocument;
+    var _y = (0, react_1.useState)(''), keywords = _y[0], setKeywords = _y[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -107,9 +104,9 @@ var Collection = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _y = (0, hooks_1.useFilters)({
+    var _z = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _y.activeFilters, setActiveFilters = _y.setActiveFilters, handleAddFilter = _y.handleAddFilter, buildQueryFilters = _y.buildQueryFilters;
+    }), activeFilters = _z.activeFilters, setActiveFilters = _z.setActiveFilters, handleAddFilter = _z.handleAddFilter, buildQueryFilters = _z.buildQueryFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -132,22 +129,6 @@ var Collection = function (props) {
                 behavior: 'smooth',
             });
             router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
-        }
-    };
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        if (constants_1.SYSTEM_FIELDS.includes(name)) {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), (_a = {}, _a[name] = value, _a)));
-            });
-        }
-        else {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), { data: __assign(__assign({}, prev.data), (_a = {}, _a[name] = value, _a)) }));
-            });
         }
     };
     var handleAdd = function () {
@@ -244,13 +225,13 @@ var Collection = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: __assign({}, (delayedLoading && sx.loading)) },
                     layout == 'inline' && (react_1.default.createElement(material_1.Collapse, { in: openModal },
                         react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.form, spacing: 1 },
-                            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }),
+                            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: flattenDocument(resource), handleChange: handleDataChange, handleRemove: handleRemove }),
                             react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save')))),
-                    react_1.default.createElement(__1.CollectionList, { variant: variant, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableCreate: enableCreate, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick })),
+                    react_1.default.createElement(__1.CollectionList, { actions: actions, variant: variant, style: style, resources: resources, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick })),
                 !loading && resources.length == 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Search", title: "No results found", description: "Try adjusting your search or filters" })))),
         enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore, enableInfiniteLoad: enableInfiniteLoad })),
         layout == 'drawer' && (react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }))),
+            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: flattenDocument(resource), handleChange: handleDataChange, handleRemove: handleRemove }))),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };
 exports.default = Collection;
