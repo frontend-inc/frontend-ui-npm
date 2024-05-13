@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.filterDocumentLinks = exports.getDocumentValue = exports.flattenDocument = exports.flattenDocuments = exports.handleDocumentChange = void 0;
+exports.filterDocumentLinks = exports.flattenDocument = exports.flattenDocuments = exports.handleDocumentChange = void 0;
 var index_1 = require("../constants/index");
 var handleDocumentChange = function (ev, resource) {
     var _a;
@@ -47,10 +47,6 @@ var flattenDocument = function (resource) {
     return __assign(__assign({}, data), rest);
 };
 exports.flattenDocument = flattenDocument;
-var getDocumentValue = function (document, field) {
-    return (0, exports.flattenDocument)(document)[field === null || field === void 0 ? void 0 : field.name];
-};
-exports.getDocumentValue = getDocumentValue;
 var filterDocumentLinks = function (document, contentType) {
     var _a, _b, _c;
     if (!(document === null || document === void 0 ? void 0 : document.document_links) ||

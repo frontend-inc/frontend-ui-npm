@@ -56,9 +56,7 @@ var EmailSignup = function (props) {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    console.log('Contact', contact);
-                    return [4 /*yield*/, create(contact)];
+                case 0: return [4 /*yield*/, create(contact)];
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {

@@ -1,6 +1,7 @@
 import React from 'react';
 export type FormWizardProps = {
     handle: string;
+    resource?: any;
     py?: number;
     contentType: string;
     variant?: 'contained' | 'outlined' | 'text';

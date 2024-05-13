@@ -1,6 +1,7 @@
 import React from 'react';
 export type CollectionFormProps = {
     handle: string;
+    resource?: any;
     url: string;
     navigateUrl?: string;
     buttonText?: string;

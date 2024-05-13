@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -58,82 +69,61 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
-var components_1 = require("../../../components");
-var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
-var CollectionForm = function (props) {
-    var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var handle = props.handle, _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, contentType = props.contentType, navigateUrl = props.navigateUrl, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _c = (0, frontend_js_1.useDocuments)({
+var FormWizard_1 = __importDefault(require("../../cms/forms/FormWizard"));
+var AuthFormWizard = function (props) {
+    var handle = props.handle;
+    if (handle == 'index')
+        handle = null;
+    var _resource = props.resource, contentType = props.contentType, rest = __rest(props, ["resource", "contentType"]);
+    var _a = (0, frontend_js_1.useDocuments)({
         collection: contentType,
-    }), delayedLoading = _c.delayedLoading, errors = _c.errors, findOne = _c.findOne, resource = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, flattenDocument = _c.flattenDocument, handleDataChange = _c.handleDataChange, removeAttachment = _c.removeAttachment;
-    var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
+    }), resource = _a.resource, setResource = _a.setResource, findMany = _a.findMany;
+    var handleFetchResource = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resources, searchQuery;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
+                    searchQuery = {
+                        page: 1,
+                        per_page: 1,
+                    };
+                    return [4 /*yield*/, findMany(searchQuery)];
                 case 1:
-                    _a.sent();
-                    _a.label = 2;
-                case 2: return [2 /*return*/];
-            }
-        });
-    }); };
-    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resp, err_1;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 5, , 6]);
-                    resp = void 0;
-                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, update(resource)];
-                case 1:
-                    resp = _a.sent();
-                    return [3 /*break*/, 4];
-                case 2: return [4 /*yield*/, create(resource)];
-                case 3:
-                    resp = _a.sent();
-                    _a.label = 4;
-                case 4:
-                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        showAlertSuccess(onSuccessMessage);
-                        if (navigateUrl) {
-                            router.push("".concat(clientUrl).concat(navigateUrl));
-                        }
+                    resources = _a.sent();
+                    if ((resources === null || resources === void 0 ? void 0 : resources.length) > 0) {
+                        setResource(resources[0]);
                     }
-                    return [3 /*break*/, 6];
-                case 5:
-                    err_1 = _a.sent();
-                    console.log('Error', err_1);
-                    return [3 /*break*/, 6];
-                case 6: return [2 /*return*/];
+                    return [2 /*return*/];
             }
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (_resource) {
+        if (_resource === null || _resource === void 0 ? void 0 : _resource.id) {
             setResource(_resource);
         }
-        else if (handle) {
-            findOne(handle);
+        else if (contentType) {
+            handleFetchResource();
         }
-    }, [_resource, handle]);
-    return (react_1.default.createElement(components_1.Form, { loading: delayedLoading, errors: errors, fields: fields, resource: flattenDocument(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
+    }, [_resource, contentType, handle]);
+    if (!(resource === null || resource === void 0 ? void 0 : resource.id))
+        return null;
+    return (react_1.default.createElement(FormWizard_1.default, __assign({}, rest, { resource: resource, contentType: contentType, handle: resource === null || resource === void 0 ? void 0 : resource.handle })));
 };
-exports.default = CollectionForm;
-var sx = {
-    root: {
-        width: '100%',
-    },
-    button: {
-        mt: 2,
-    },
-};
+exports.default = AuthFormWizard;

@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -91,7 +80,7 @@ var Show = function (props) {
     var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'item' : _b, _resource = _a.resource, fields = _a.fields, fieldName = _a.fieldName, displayFields = _a.displayFields, url = _a.url, contentType = _a.contentType, actions = _a.actions, enableBorder = _a.enableBorder, enableCreate = _a.enableCreate, enableEdit = _a.enableEdit;
     var _c = (0, frontend_js_1.useDocuments)({
         collection: contentType,
-    }), loading = _c.loading, errors = _c.errors, update = _c.update, create = _c.create, resource = _c.resource, setResource = _c.setResource, findMany = _c.findMany, removeAttachment = _c.removeAttachment, handleDataChange = _c.handleDataChange;
+    }), loading = _c.loading, errors = _c.errors, update = _c.update, create = _c.create, resource = _c.resource, setResource = _c.setResource, removeAttachment = _c.removeAttachment, handleDataChange = _c.handleDataChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -144,48 +133,15 @@ var Show = function (props) {
         vimeo: VimeoVideo_1.default,
     };
     var Component = components[style];
-    var handleFetchResource = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resources, searchQuery;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    searchQuery = {
-                        page: 1,
-                        per_page: 1,
-                    };
-                    if (!handle) return [3 /*break*/, 2];
-                    return [4 /*yield*/, findMany(__assign(__assign({}, searchQuery), { filters: {
-                                AND: [{ handle: { eq: handle } }],
-                            } }))];
-                case 1:
-                    resources = _a.sent();
-                    return [3 /*break*/, 4];
-                case 2: return [4 /*yield*/, findMany(searchQuery)];
-                case 3:
-                    resources = _a.sent();
-                    _a.label = 4;
-                case 4:
-                    if ((resources === null || resources === void 0 ? void 0 : resources.length) > 0) {
-                        setResource(resources[0]);
-                    }
-                    return [2 /*return*/];
-            }
-        });
-    }); };
     (0, react_1.useEffect)(function () {
         if (_resource === null || _resource === void 0 ? void 0 : _resource.id) {
             setResource(_resource);
         }
-        else {
-            if (contentType) {
-                handleFetchResource();
-            }
-        }
-    }, [_resource, contentType, handle]);
+    }, [_resource]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
         (resource === null || resource === void 0 ? void 0 : resource.id) && (react_1.default.createElement(Component, { fieldName: fieldName, resource: resource, actions: actions, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit })),
         (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(Details_1.default, { url: url, fields: displayFields, resource: resource, enableBorder: enableBorder })),
-        !loading && !(resource === null || resource === void 0 ? void 0 : resource.id) && enableCreate && (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.inlineForm },
+        (!(resource === null || resource === void 0 ? void 0 : resource.id) && !(_resource === null || _resource === void 0 ? void 0 : _resource.id) && enableCreate) && (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.inlineForm },
             react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }),
             react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Create"))),
         react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },

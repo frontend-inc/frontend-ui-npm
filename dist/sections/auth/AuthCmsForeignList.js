@@ -26,23 +26,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
-var FieldArray = function (props) {
-    var values = props.value, label = props.label, rest = __rest(props, ["value", "label"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
-        react_1.default.createElement(material_1.Stack, { sx: sx.stack, direction: 'row', spacing: 1 }, Array.isArray(values) &&
-            (values === null || values === void 0 ? void 0 : values.map(function (value, index) { return (react_1.default.createElement(material_1.Chip, { key: index, label: value, sx: sx.chip, size: "small" })); })))));
+var components_1 = require("../../components");
+var components_2 = require("../../components");
+var AuthCmsForeignCollection = function (props) {
+    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, rest = __rest(props, ["label", "title", "description", "textAlign", "bgcolor", "py", "px", "maxWidth"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: true, bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
+        react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
+        react_1.default.createElement(components_2.AuthForeignCollection, __assign({}, rest))));
 };
-exports.default = FieldArray;
-var sx = {
-    chip: {
-        fontFamily: function (theme) { return theme.typography.button.fontFamily; },
-        letterSpacing: 0,
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
-    },
-    stack: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    }
-};
+exports.default = AuthCmsForeignCollection;
