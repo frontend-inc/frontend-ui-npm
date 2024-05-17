@@ -24,7 +24,7 @@ exports.default = Paper;
 var sx = {
     root: {
         width: '100%',
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
+        borderRadius: 1,
         bgcolor: 'background.paper',
         boxShadow: 0,
         border: '1px solid',

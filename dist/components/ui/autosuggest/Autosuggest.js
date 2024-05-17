@@ -141,7 +141,7 @@ var sx = {
             borderRadius: 1,
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
-            bgcolor: 'background.default',
+            bgcolor: 'background.paper',
             border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
             '&:focus': {
                 border: function (theme) { return "2px solid ".concat(theme.palette.primary.light); },
@@ -154,7 +154,7 @@ var sx = {
             borderColor: 'error.main',
             p: 1,
             height: 20,
-            borderRadius: function (theme) { return theme.shape.borderRadius; },
+            borderRadius: 1,
         },
     },
     inputContainer: {

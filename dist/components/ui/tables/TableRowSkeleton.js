@@ -36,7 +36,7 @@ var sx = {
     skeleton: {
         m: 0.5,
         opacity: 0.1,
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
+        borderRadius: 1,
         bgcolor: 'text.secondary',
     },
 };

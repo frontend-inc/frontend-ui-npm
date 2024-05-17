@@ -172,7 +172,7 @@ var TableFilterForm = function (props) {
             react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", startIcon: react_1.default.createElement(lucide_react_1.Plus, null), onClick: handleAddFilter, sx: sx.addFilterButton }, "Filter"))),
         react_1.default.createElement(material_1.Button, { sx: sx.button, startIcon: react_1.default.createElement(lucide_react_1.Search, { size: 20 }), onClick: handleFilterSearch, fullWidth: true, variant: "contained", color: "primary" }, "Search"),
-        react_1.default.createElement(material_1.Button, { sx: sx.button, startIcon: react_1.default.createElement(icons_material_1.FilterList, null), onClick: handleClearFilters, fullWidth: true, variant: "outlined", color: "secondary" }, "Reset filters")));
+        react_1.default.createElement(material_1.Button, { sx: sx.button, startIcon: react_1.default.createElement(icons_material_1.FilterList, null), onClick: handleClearFilters, fullWidth: true, variant: "contained", color: "secondary" }, "Reset filters")));
 };
 exports.default = TableFilterForm;
 var sx = {

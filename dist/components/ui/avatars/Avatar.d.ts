@@ -5,5 +5,5 @@ type UserAvatarProps = {
     size?: number;
     color?: string;
 };
-declare const UserAvatar: React.FC<UserAvatarProps>;
-export default UserAvatar;
+declare const Avatar: React.FC<UserAvatarProps>;
+export default Avatar;

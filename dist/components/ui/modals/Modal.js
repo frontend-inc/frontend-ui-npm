@@ -50,7 +50,7 @@ var Modal = function (props) {
 exports.default = Modal;
 var sx = {
     root: {
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
+        borderRadius: 1,
     },
     title: {},
     dialogTitleContainer: {

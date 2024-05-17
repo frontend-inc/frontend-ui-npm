@@ -11,6 +11,7 @@ export type ResourceListItemProps = {
     descriptionField?: string;
     imageField?: string;
     iconField?: string;
+    avatar?: any;
 };
 declare const ResourceListItem: React.FC<ResourceListItemProps>;
 export default ResourceListItem;

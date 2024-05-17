@@ -18,7 +18,7 @@ var sx = {
     root: {
         px: 2,
         py: 0.5,
-        borderRadius: function (theme) { return theme.shape.borderRadius; },
+        borderRadius: 1,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-start',
