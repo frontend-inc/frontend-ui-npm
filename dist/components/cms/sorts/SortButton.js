@@ -59,7 +59,7 @@ var SortButton = function (props) {
                 } },
                 react_1.default.createElement(SortList_1.default, { sortOptions: sortOptions, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection }))),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
-            react_1.default.createElement(ui_1.Drawer, { title: "Sort", open: showModal, handleClose: handleCloseModal, anchor: 'right' },
+            react_1.default.createElement(ui_1.Drawer, { title: "Sort", open: showModal, handleClose: handleCloseModal, anchor: 'right', disablePadding: true },
                 react_1.default.createElement(SortList_1.default, { sortOptions: sortOptions, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))));
 };
 exports.default = SortButton;

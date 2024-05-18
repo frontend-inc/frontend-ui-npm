@@ -17,10 +17,10 @@ var ProductFiltersList = function (props) {
             var option = options === null || options === void 0 ? void 0 : options.find(function (o) { return o.name == filterType.value; });
             if (!option)
                 return null;
-            return (react_1.default.createElement(components_1.ExpandableList, { label: filterType.label },
+            return (react_1.default.createElement(components_1.MenuList, { label: filterType.label },
                 react_1.default.createElement(__1.CheckboxFilterList, { filters: activeFilters, option: option, handleClick: filterType.array ? handleFilterArray : handleFilter })));
         }),
-        (priceOptions === null || priceOptions === void 0 ? void 0 : priceOptions.length) > 0 && (react_1.default.createElement(components_1.ExpandableList, { label: "Price" },
+        (priceOptions === null || priceOptions === void 0 ? void 0 : priceOptions.length) > 0 && (react_1.default.createElement(components_1.MenuList, { label: "Price" },
             react_1.default.createElement(RadioPriceRangeInput_1.default, { filters: filters, options: priceOptions, handleClick: handleFilter })))));
 };
 exports.default = ProductFiltersList;

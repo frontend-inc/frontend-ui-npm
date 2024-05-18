@@ -43,7 +43,7 @@ var sx = {
         fontSize: 15,
     },
     border: {
-        border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
+        border: function (theme) { return "3px solid ".concat(theme.palette.divider); },
         boxShadow: "rgb(0 0 0 / 5%) 0px 2px 4px !important",
         pt: 0.5,
         pr: 2,

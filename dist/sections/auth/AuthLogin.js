@@ -30,7 +30,7 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var AuthLogin = function (props) {
     var bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["bgcolor", "py", "px", "maxWidth", "requireAuth"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
+    return (react_1.default.createElement(components_1.Section, { requireAuth: false, bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_2.Login, __assign({}, rest))));
 };
 exports.default = AuthLogin;

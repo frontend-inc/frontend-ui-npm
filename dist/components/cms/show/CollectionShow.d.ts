@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActionType, DisplayFieldType, FormFieldType } from '../../../types';
-export type ShowItemProps = {
+export type CollectionShowItemProps = {
     handle?: string;
     enableBorder?: boolean;
     actions: ActionType[];
@@ -11,11 +11,11 @@ export type ShowItemProps = {
     enableCreate?: boolean;
     handleEdit?: () => void;
 };
-export type ShowProps = ShowItemProps & {
+export type CollectionShowProps = CollectionShowItemProps & {
     fields: FormFieldType[];
     displayFields: DisplayFieldType[];
     url: string;
     style: 'article' | 'person' | 'item' | 'youtube' | 'vimeo';
 };
-declare const Show: React.FC<ShowProps>;
-export default Show;
+declare const CollectionShow: React.FC<CollectionShowProps>;
+export default CollectionShow;

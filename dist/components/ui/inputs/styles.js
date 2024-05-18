@@ -15,11 +15,9 @@ exports.sx = {
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
             bgcolor: 'background.paper',
-            border: '2px solid',
+            border: '3px solid',
             borderColor: 'divider',
-            m: '1px',
             '&:focus': {
-                m: '0px',
                 boxShadow: "none",
                 border: '3px solid',
                 borderColor: 'primary.main',

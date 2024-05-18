@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShowProps } from '../../components/cms/show/Show';
+import { CollectionShowProps } from '../../components/cms/show/CollectionShow';
 import { SectionProps } from '../../types';
-type CmsYouTubeProps = SectionProps & ShowProps;
+type CmsYouTubeProps = SectionProps & CollectionShowProps;
 declare const CmsYouTube: React.FC<CmsYouTubeProps>;
 export default CmsYouTube;

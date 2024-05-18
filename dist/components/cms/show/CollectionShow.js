@@ -71,9 +71,9 @@ var Document_1 = __importDefault(require("./Document"));
 var Details_1 = __importDefault(require("../details/Details"));
 var YouTubeVideo_1 = __importDefault(require("./addons/YouTubeVideo"));
 var VimeoVideo_1 = __importDefault(require("./addons/VimeoVideo"));
-var components_1 = require("../../../components");
+var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var Show = function (props) {
+var CollectionShow = function (props) {
     var handle = props.handle;
     if (handle == 'index')
         handle = undefined;
@@ -142,12 +142,12 @@ var Show = function (props) {
         (resource === null || resource === void 0 ? void 0 : resource.id) && (react_1.default.createElement(Component, { fieldName: fieldName, resource: resource, actions: actions, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit })),
         (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(Details_1.default, { url: url, fields: displayFields, resource: resource, enableBorder: enableBorder })),
         (!(resource === null || resource === void 0 ? void 0 : resource.id) && !(_resource === null || _resource === void 0 ? void 0 : _resource.id) && enableCreate) && (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.inlineForm },
-            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }),
-            react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Create"))),
-        react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }))));
+            react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }),
+            react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, "Create"))),
+        react_1.default.createElement(__1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
+            react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }))));
 };
-exports.default = Show;
+exports.default = CollectionShow;
 var sx = {
     root: {
         width: '100%',

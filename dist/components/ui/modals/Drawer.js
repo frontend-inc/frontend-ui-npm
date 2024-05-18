@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var material_2 = require("@mui/material");
 var components_1 = require("../../../components");
 var Drawer = function (props) {
-    var open = props.open, title = props.title, _a = props.anchor, anchor = _a === void 0 ? 'right' : _a, handleClose = props.handleClose, children = props.children, actions = props.actions, _b = props.variant, variant = _b === void 0 ? 'temporary' : _b, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, _d = props.hideBackdrop, hideBackdrop = _d === void 0 ? false : _d, _e = props.closeIcon, closeIcon = _e === void 0 ? 'X' : _e, _f = props.fullWidth, fullWidth = _f === void 0 ? false : _f, _g = props.styles, styles = _g === void 0 ? {} : _g;
+    var open = props.open, title = props.title, _a = props.anchor, anchor = _a === void 0 ? 'right' : _a, handleClose = props.handleClose, children = props.children, actions = props.actions, _b = props.variant, variant = _b === void 0 ? 'temporary' : _b, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, _d = props.closeIcon, closeIcon = _d === void 0 ? 'X' : _d, _e = props.fullWidth, fullWidth = _e === void 0 ? false : _e, _f = props.styles, styles = _f === void 0 ? {} : _f;
     return (react_1.default.createElement(material_1.SwipeableDrawer, { open: open, variant: variant, anchor: anchor, onOpen: handleClose, onClose: handleClose, PaperProps: {
             sx: __assign(__assign({}, sx.paper), styles),
         } },
@@ -28,7 +28,7 @@ var Drawer = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.headerAction }, anchor == 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
                     react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon })))),
                 react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Typography, { variant: "subtitle1" }, title)),
+                    react_1.default.createElement(material_1.Typography, { color: 'text.secondary', variant: "subtitle2" }, title)),
                 react_1.default.createElement(material_1.Box, { sx: sx.headerAction }, anchor != 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
                     react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon }))))),
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (actions && sx.contentActions)), (!disablePadding && sx.contentPadding)) }, children),

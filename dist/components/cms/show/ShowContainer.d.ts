@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShowItemProps } from './Show';
-type ShowContainerProps = ShowItemProps & {
+import { CollectionShowItemProps } from './CollectionShow';
+type ShowContainerProps = CollectionShowItemProps & {
     children: React.ReactNode;
 };
 declare const ShowContainer: React.FC<ShowContainerProps>;

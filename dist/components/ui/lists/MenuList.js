@@ -38,8 +38,8 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var cookies_next_1 = require("cookies-next");
-var ExpandableList = function (props) {
-    var id = props.id, label = props.label, _a = props.closed, closed = _a === void 0 ? false : _a, children = props.children, _b = props.enableBorder, enableBorder = _b === void 0 ? true : _b;
+var MenuList = function (props) {
+    var id = props.id, label = props.label, _a = props.closed, closed = _a === void 0 ? false : _a, children = props.children, _b = props.disableBorder, disableBorder = _b === void 0 ? false : _b;
     var _c = (0, react_1.useState)(!closed), open = _c[0], setOpen = _c[1];
     var handleToggleClick = function () {
         //setMenuCookie(!open)
@@ -66,20 +66,26 @@ var ExpandableList = function (props) {
             //handleReadCookieState(id)
         }
     }, [id]);
-    return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.root), (enableBorder && sx.borderTop)) },
+    return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.root), (!disableBorder && sx.borderTop)) },
         label && (react_1.default.createElement(material_1.ListItem, { sx: sx.listItem, disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleToggleClick },
                 react_1.default.createElement(icons_material_1.ChevronRight, { sx: __assign(__assign({}, sx.icon), (open && sx.expandMore)) })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: handleToggleClick },
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: 'caption' }, label) })))),
-        react_1.default.createElement(material_1.Collapse, { in: open, timeout: "auto", unmountOnExit: true },
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: 'overline' }, label) })))),
+        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.collapse), (open && sx.open)) },
             react_1.default.createElement(material_1.Box, { pb: 2, px: 2 }, children))));
 };
-exports.default = ExpandableList;
+exports.default = MenuList;
 var sx = {
     root: {
         width: '100%',
         minWidth: 200,
         my: 0,
+    },
+    collapse: {
+        display: 'none',
+    },
+    open: {
+        display: 'block',
     },
     listItem: {
         borderRadius: 1,
@@ -100,7 +106,6 @@ var sx = {
     },
     icon: {
         color: 'text.secondary',
-        transition: 'transform 0.3s ease-in-out',
     },
     expandMore: {
         transform: 'rotate(90deg)',

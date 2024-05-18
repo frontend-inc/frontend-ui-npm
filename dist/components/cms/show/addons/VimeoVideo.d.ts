@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShowItemProps } from '../Show';
-type VimeoVideoProps = ShowItemProps & {
+import { CollectionShowItemProps } from '../CollectionShow';
+type VimeoVideoProps = CollectionShowItemProps & {
     fieldName: string;
 };
 declare const VimeoVideo: React.FC<VimeoVideoProps>;

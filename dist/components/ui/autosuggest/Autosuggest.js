@@ -111,8 +111,7 @@ var Autosuggest = function (props) {
                 //@ts-ignore
                 getOptionLabel: function (option) { return (option === null || option === void 0 ? void 0 : option.label) || ''; }, 
                 //@ts-ignore
-                renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)), endAdornment: (selected === null || selected === void 0 ? void 0 : selected.value) &&
-                        (enableClear || handleClear) && (react_1.default.createElement(material_1.InputAdornment, { position: "start", sx: sx.inputAdornment },
+                renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)), endAdornment: (enableClear || handleClear) && (react_1.default.createElement(material_1.InputAdornment, { position: "start", sx: sx.inputAdornment },
                         react_1.default.createElement(material_1.IconButton, { onClick: handleInputClear, size: "small" },
                             react_1.default.createElement(__1.Icon, { name: "X", color: "text.secondary", size: 20 })))) })); } }),
             react_1.default.createElement(__1.ErrorText, { error: error }))));
@@ -142,9 +141,9 @@ var sx = {
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
             bgcolor: 'background.paper',
-            border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
+            border: function (theme) { return "3px solid ".concat(theme.palette.divider); },
             '&:focus': {
-                border: function (theme) { return "2px solid ".concat(theme.palette.primary.light); },
+                border: function (theme) { return "3px solid ".concat(theme.palette.primary.light); },
             },
         },
     },

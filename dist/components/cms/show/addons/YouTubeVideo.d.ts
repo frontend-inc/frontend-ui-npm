@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShowItemProps } from '../Show';
-type YouTubeVideoProps = ShowItemProps & {
+import { CollectionShowItemProps } from '../CollectionShow';
+type YouTubeVideoProps = CollectionShowItemProps & {
     fieldName: string;
 };
 declare const YouTubeVideo: React.FC<YouTubeVideoProps>;

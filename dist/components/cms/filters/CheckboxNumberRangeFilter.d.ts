@@ -13,7 +13,6 @@ type CheckboxNumberRangeFilterProps = {
     handleClick: (filter: FilterOptionType) => void;
     label?: string;
     icon?: React.ReactNode;
-    enableBorder?: boolean;
     disablePadding?: boolean;
     closed?: boolean;
 };

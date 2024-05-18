@@ -1,4 +1,4 @@
 import React from 'react';
-import { ShowItemProps } from './Show';
-declare const Document: React.FC<ShowItemProps>;
+import { CollectionShowItemProps } from './CollectionShow';
+declare const Document: React.FC<CollectionShowItemProps>;
 export default Document;

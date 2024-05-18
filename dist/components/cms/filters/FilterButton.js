@@ -66,7 +66,7 @@ var FilterButton = function (props) {
                 } },
                 react_1.default.createElement(FilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter }))),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
-            react_1.default.createElement(__1.Drawer, { open: open, handleClose: handleClose, title: "Search" },
+            react_1.default.createElement(__1.Drawer, { open: open, handleClose: handleClose, title: "Search", disablePadding: true },
                 react_1.default.createElement(FilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter })))));
 };
 exports.default = FilterButton;

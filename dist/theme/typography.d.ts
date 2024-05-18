@@ -84,13 +84,14 @@ export declare const typography: {
     caption: {
         fontFamily: string;
         fontWeight: number;
+        textTransform: string;
         fontSize: number;
         letterSpacing: string;
     };
     overline: {
         fontFamily: string;
-        textTransform: string;
         fontWeight: number;
+        textTransform: string;
         fontSize: number;
         lineHeight: string;
         letterSpacing: string;

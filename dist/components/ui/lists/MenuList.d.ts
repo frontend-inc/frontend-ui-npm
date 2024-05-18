@@ -1,12 +1,12 @@
 import React from 'react';
-type ExpandableListProps = {
+type MenuListProps = {
     children: React.ReactNode;
     id?: string;
     label?: string;
     icon?: React.ReactNode;
-    enableBorder?: boolean;
+    disableBorder?: boolean;
     disablePadding?: boolean;
     closed?: boolean;
 };
-declare const ExpandableList: React.FC<ExpandableListProps>;
-export default ExpandableList;
+declare const MenuList: React.FC<MenuListProps>;
+export default MenuList;
