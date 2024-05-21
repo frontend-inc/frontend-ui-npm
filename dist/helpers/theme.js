@@ -13,18 +13,17 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildMuiPalette = void 0;
 var material_1 = require("@mui/material");
-var buildMuiPalette = function (palette, bgcolor) {
-    var paper = (0, material_1.lighten)(bgcolor, 0.2);
-    var contrast = (0, material_1.getContrastRatio)(bgcolor, '#000000');
-    var primaryText = contrast > 4.5 ? '#000000' : '#FFFFFF';
-    var secondaryText = contrast > 2.5 ? '#737373' : '#BBBBBB';
-    var fill = contrast > 4.5 ? '#fcfcfc' : '#111111';
-    var divider = contrast > 4.5 ? (0, material_1.darken)(bgcolor, 0.1) : (0, material_1.lighten)(bgcolor, 0.2);
+var buildMuiPalette = function (palette) {
+    var bgColor = palette.background.default;
+    var contrast = (0, material_1.getContrastRatio)(bgColor, '#000000');
+    var paper = (0, material_1.lighten)(bgColor, 0.01);
+    var primaryText = contrast > 10 ? (0, material_1.darken)(bgColor, 0.9) : (0, material_1.lighten)(bgColor, 0.9);
+    var secondaryText = contrast > 10 ? (0, material_1.darken)(bgColor, 0.7) : (0, material_1.lighten)(bgColor, 0.7);
+    var divider = contrast > 10 ? (0, material_1.darken)(bgColor, 0.12) : (0, material_1.lighten)(bgColor, 0.12);
     var muiPalette = __assign(__assign({}, palette), { background: {
-            default: bgcolor,
-            main: bgcolor,
+            default: bgColor,
+            main: bgColor,
             paper: paper,
-            fill: fill,
         }, divider: divider, text: {
             primary: primaryText,
             secondary: secondaryText,

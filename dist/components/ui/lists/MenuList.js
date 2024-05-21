@@ -71,7 +71,7 @@ var MenuList = function (props) {
                 react_1.default.createElement(icons_material_1.ChevronRight, { sx: __assign(__assign({}, sx.icon), (open && sx.expandMore)) })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: handleToggleClick },
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: 'overline' }, label) })))),
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.collapse), (open && sx.open)) },
+        react_1.default.createElement(material_1.Collapse, { in: open },
             react_1.default.createElement(material_1.Box, { pb: 2, px: 2 }, children))));
 };
 exports.default = MenuList;
@@ -80,12 +80,6 @@ var sx = {
         width: '100%',
         minWidth: 200,
         my: 0,
-    },
-    collapse: {
-        display: 'none',
-    },
-    open: {
-        display: 'block',
     },
     listItem: {
         borderRadius: 1,
@@ -105,6 +99,7 @@ var sx = {
         lineHeight: '1em',
     },
     icon: {
+        transition: 'transform 0.3s ease-in-out',
         color: 'text.secondary',
     },
     expandMore: {

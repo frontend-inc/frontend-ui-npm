@@ -44,12 +44,12 @@ var material_2 = require("@mui/material");
 var TabContent_1 = __importDefault(require("./TabContent"));
 var Tabs = function (props) {
     var _a = (0, react_1.useState)(0), currentTab = _a[0], setCurrentTab = _a[1];
-    var _b = props.items, items = _b === void 0 ? [] : _b, _c = props.orientation, orientation = _c === void 0 ? 'vertical' : _c;
+    var _b = props.items, items = _b === void 0 ? [] : _b, _c = props.direction, direction = _c === void 0 ? 'row' : _c;
     var handleChange = function (event, newValue) {
         setCurrentTab(newValue);
     };
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1, direction: orientation === 'vertical' ? 'row' : 'column', sx: sx.root },
-        react_1.default.createElement(material_2.Tabs, { centered: true, orientation: orientation, value: currentTab, onChange: handleChange, color: "primary", sx: __assign(__assign({}, sx.tabs), (orientation === 'vertical' && sx.verticalTabs)) }, items === null || items === void 0 ? void 0 : items.map(function (item, i) { return (react_1.default.createElement(material_2.Tab, { label: item.label, value: i, icon: item.icon ? (react_1.default.createElement(material_1.Box, { sx: sx.tabIcon },
+    return (react_1.default.createElement(material_1.Stack, { spacing: 1, direction: direction == 'column' ? 'row' : 'column', sx: sx.root },
+        react_1.default.createElement(material_2.Tabs, { centered: true, orientation: direction == 'column' ? 'vertical' : 'horizontal', value: currentTab, onChange: handleChange, color: "primary", sx: __assign(__assign({}, sx.tabs), (direction === 'column' && sx.verticalTabs)) }, items === null || items === void 0 ? void 0 : items.map(function (item, i) { return (react_1.default.createElement(material_2.Tab, { label: item.label, value: i, icon: item.icon ? (react_1.default.createElement(material_1.Box, { sx: sx.tabIcon },
                 react_1.default.createElement(components_1.Icon, { name: item.icon, size: 20, color: currentTab === i ? 'primary.main' : 'text.primary' }))) : (''), iconPosition: "start" })); })), items === null || items === void 0 ? void 0 :
         items.map(function (item, i) { return (react_1.default.createElement(TabContent_1.default, { key: i, active: i == currentTab, title: item === null || item === void 0 ? void 0 : item.title, description: item === null || item === void 0 ? void 0 : item.description, image: item === null || item === void 0 ? void 0 : item.image })); }),
         (items === null || items === void 0 ? void 0 : items.length) === 0 && (react_1.default.createElement(components_1.Placeholder, { icon: "Search", title: "No content", description: "Your content will appear here." }))));

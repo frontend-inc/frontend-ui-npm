@@ -53,7 +53,7 @@ exports.palette = {
     },
     background: {
         default: '#FFFFFF',
-        paper: '#FFFFFF',
+        paper: '#fcfcfc',
         light: '#FFFFFF',
         dark: '#FFFFFF',
     },

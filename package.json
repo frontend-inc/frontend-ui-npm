@@ -1,6 +1,6 @@
 {
     "name": "frontend-mui",
-    "version": "0.0.86",
+    "version": "0.0.87",
     "license": "MIT",
     "description": "A MUI library designed for Frontend.co",
     "homepage": "https://github.com/frontend-inc/frontend-mui",
@@ -81,6 +81,8 @@
         "@mui/x-tree-view": "^6.0.0-alpha.3",
         "@react-oauth/google": "^0.12.1",
         "@segment/analytics-next": "^1.58.0",
+        "@stripe/react-stripe-js": "^2.7.1",
+        "@stripe/stripe-js": "^3.4.1",
         "apollo-link-context": "^1.0.20",
         "apollo-link-http": "^1.5.17",
         "attr-accept": "^2.2.2",

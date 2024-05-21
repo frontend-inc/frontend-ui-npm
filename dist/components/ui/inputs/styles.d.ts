@@ -11,9 +11,9 @@ export declare const sx: {
             borderRadius: (theme: any) => string;
             fontSize: (theme: any) => any;
             fontFamily: (theme: any) => any;
-            bgcolor: string;
             border: string;
             borderColor: string;
+            bgcolor: string;
             '&:focus': {
                 boxShadow: string;
                 border: string;

@@ -15,5 +15,7 @@ export { default as MailchimpSubscribe } from './mailchimp/MailchimpSubscribe';
 export { default as Typeform } from './typeform/Typeform';
 export { default as OkendoReviews } from './okendo/OkendoReviews';
 export { default as OkendoStarRating } from './okendo/OkendoStarRating';
+export { default as StripePricingTable } from './stripe/StripePricingTable';
+export { default as StripeBuyButton } from './stripe/StripeBuyButton';
 export { default as YouTubeEmbed } from './youtube/YouTubeEmbed';
 export { default as VimeoEmbed } from './vimeo/VimeoEmbed';

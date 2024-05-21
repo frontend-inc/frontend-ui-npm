@@ -11,11 +11,12 @@ export type CollectionShowItemProps = {
     enableCreate?: boolean;
     handleEdit?: () => void;
 };
+type CollectionShowStyleTypes = 'item' | 'article' | 'person' | 'document' | 'youtube' | 'vimeo';
 export type CollectionShowProps = CollectionShowItemProps & {
     fields: FormFieldType[];
     displayFields: DisplayFieldType[];
     url: string;
-    style: 'article' | 'person' | 'item' | 'youtube' | 'vimeo';
+    style: CollectionShowStyleTypes;
 };
 declare const CollectionShow: React.FC<CollectionShowProps>;
 export default CollectionShow;

@@ -1,6 +1,6 @@
 import React from 'react';
 export type TabsProps = {
-    orientation?: 'horizontal' | 'vertical';
+    direction?: 'row' | 'column';
     items?: {
         icon?: string;
         label: string;

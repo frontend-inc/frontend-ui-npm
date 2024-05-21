@@ -27,7 +27,7 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
-var FULL_WIDTH_VARIANTS = ['text', 'image',];
+var FULL_WIDTH_VARIANTS = ['string', 'text', 'image', 'url'];
 var Details = function (props) {
     var resource = props.resource, fields = props.fields, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a;
     var _b = (0, react_1.useState)(), document = _b[0], setDocument = _b[1];

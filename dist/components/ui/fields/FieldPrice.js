@@ -35,6 +35,6 @@ var FieldPrice = function (props) {
         maximumFractionDigits: digits,
         minimumFractionDigits: digits,
     }).format(value);
-    return (react_1.default.createElement(components_1.FieldString, __assign({ variant: variant, value: price, label: label, color: color, placeholder: placeholder }, rest)));
+    return (react_1.default.createElement(components_1.FieldString, __assign({ variant: variant, value: isNaN(value) ? '-' : price, label: label, color: color, placeholder: placeholder }, rest)));
 };
 exports.default = FieldPrice;

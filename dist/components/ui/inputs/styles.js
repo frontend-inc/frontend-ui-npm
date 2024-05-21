@@ -14,9 +14,9 @@ exports.sx = {
             borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
-            bgcolor: 'background.paper',
             border: '3px solid',
             borderColor: 'divider',
+            bgcolor: 'background.main',
             '&:focus': {
                 boxShadow: "none",
                 border: '3px solid',
@@ -36,7 +36,7 @@ exports.sx = {
         width: '100%',
     },
     paper: {
-        bgcolor: 'background.paper',
+        bgcolor: 'background.default',
         mt: 1,
         color: 'text.secondary',
         fontSize: 15,

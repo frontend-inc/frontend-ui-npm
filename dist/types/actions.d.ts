@@ -1,4 +1,4 @@
-export type ActionNamesType = 'webhook' | 'navigate' | 'url' | 'page' | 'email' | 'sms' | 'phone' | 'copy' | 'download' | 'link' | 'print' | 'share' | 'click';
+export type ActionNamesType = 'webhook' | 'navigate' | 'url' | 'page' | 'email' | 'sms' | 'phone' | 'copy' | 'download' | 'link' | 'print' | 'share' | 'click' | 'stripe_payment_link';
 export type ActionType = {
     id?: number;
     icon?: string;

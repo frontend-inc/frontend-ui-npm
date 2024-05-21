@@ -68,8 +68,9 @@ var useTheme = function (props) {
                     main: primaryColor }) });
         }
         if (bgcolor) {
-            palette = (0, helpers_1.buildMuiPalette)(palette, bgcolor);
+            palette = __assign(__assign({}, palette), { background: __assign(__assign({}, palette.background), { default: bgcolor, main: bgcolor }) });
         }
+        palette = (0, helpers_1.buildMuiPalette)(palette);
         if (headerFont) {
             typography = __assign(__assign({}, typography), { h1: __assign(__assign({}, typography.h1), { fontFamily: headerFont }), h2: __assign(__assign({}, typography.h2), { fontFamily: headerFont }), h3: __assign(__assign({}, typography.h3), { fontFamily: headerFont }), h4: __assign(__assign({}, typography.h4), { fontFamily: headerFont }), h5: __assign(__assign({}, typography.h5), { fontFamily: headerFont }), h6: __assign(__assign({}, typography.h6), { fontFamily: headerFont }), subtitle1: __assign(__assign({}, typography.subtitle1), { fontFamily: headerFont }), subtitle2: __assign(__assign({}, typography.subtitle2), { fontFamily: headerFont }) });
         }

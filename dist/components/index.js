@@ -19,5 +19,6 @@ __exportStar(require("./auth"), exports);
 __exportStar(require("./cms"), exports);
 __exportStar(require("./web"), exports);
 __exportStar(require("./ui"), exports);
+__exportStar(require("./payments"), exports);
 __exportStar(require("./social"), exports);
 __exportStar(require("./shopify"), exports);
