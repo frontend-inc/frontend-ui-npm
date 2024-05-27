@@ -66,7 +66,7 @@ var router_1 = require("next/router");
 var context_1 = require("../../../context");
 var Login = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, navigateUrl = _a.navigateUrl, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl, _d = _a.enableGoogle, enableGoogle = _d === void 0 ? false : _d;
+    var _a = props || {}, href = _a.href, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl, _d = _a.enableGoogle, enableGoogle = _d === void 0 ? false : _d;
     var router = (0, router_1.useRouter)();
     var _e = (0, frontend_js_1.useAuth)(), errors = _e.errors, loading = _e.loading, user = _e.user, handleChange = _e.handleChange, login = _e.login;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -77,14 +77,14 @@ var Login = function (props) {
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        router.push("".concat(clientUrl).concat(navigateUrl));
+                        router.push("".concat(clientUrl).concat(href));
                     }
                     return [2 /*return*/];
             }
         });
     }); };
     var handleGoogleSuccess = function () {
-        router.push("".concat(clientUrl).concat(navigateUrl));
+        router.push("".concat(clientUrl).concat(href));
     };
     var handleSignup = function () {
         if (signupUrl) {

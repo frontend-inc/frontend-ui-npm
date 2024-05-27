@@ -42,15 +42,15 @@ var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var Favorites = function (props) {
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
-    var _a = props.variant, variant = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, navigateUrl = props.navigateUrl, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, _d = props.editing, editing = _d === void 0 ? false : _d, buttonText = props.buttonText, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g;
+    var _a = props.variant, variant = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, href = props.href, _c = props.perPage, perPage = _c === void 0 ? 5 : _c, _d = props.editing, editing = _d === void 0 ? false : _d, buttonText = props.buttonText, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g;
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _h = (0, frontend_js_1.useResource)({
         url: url,
     }), loading = _h.loading, query = _h.query, resources = _h.resources, findMany = _h.findMany;
     var handleClick = function (item) {
-        if (!editing && clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
-            router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
+        if (!editing && clientUrl && href && (item === null || item === void 0 ? void 0 : item.handle)) {
+            router.push("".concat(clientUrl).concat(href, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
     (0, react_1.useEffect)(function () {

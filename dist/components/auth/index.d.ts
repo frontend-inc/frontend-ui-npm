@@ -1,5 +1,4 @@
 export { default as AuthRequired } from './AuthRequired';
-export { default as AuthAvatar } from './avatars/AuthAvatar';
 export { default as AuthButton } from './buttons/AuthButton';
 export { default as AuthIconButton } from './buttons/AuthIconButton';
 export { default as AuthLayout } from './layouts/AuthLayout';
@@ -27,6 +26,7 @@ export { default as SignInButton } from './buttons/SignInButton';
 export { default as SignUpButton } from './buttons/SignUpButton';
 export { default as Signup } from './signup/Signup';
 export { default as SignupForm } from './signup/SignupForm';
+export { default as UserItem } from './users/UserItem';
 export { default as VerifyPin } from './verify/VerifyPin';
 export { default as VerifyPinForm } from './verify/VerifyPinForm';
 export { default as VerifySendPinForm } from './verify/VerifySendPinForm';

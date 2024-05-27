@@ -86,7 +86,7 @@ var CollectionToolbar_1 = __importDefault(require("./CollectionToolbar"));
 var Collection = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var actions = props.actions, _a = props.variant, variant = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, _c = props.layout, layout = _c === void 0 ? 'drawer' : _c, url = props.url, contentType = props.contentType, fields = props.fields, _d = props.filterAnchor, filterAnchor = _d === void 0 ? 'left' : _d, _e = props.filterOptions, filterOptions = _e === void 0 ? [] : _e, _f = props.sortOptions, sortOptions = _f === void 0 ? [] : _f, _g = props.query, defaultQuery = _g === void 0 ? {} : _g, _h = props.perPage, perPage = _h === void 0 ? 20 : _h, _j = props.enableSearch, enableSearch = _j === void 0 ? false : _j, _k = props.enableFilters, enableFilters = _k === void 0 ? false : _k, _l = props.enableSorting, enableSorting = _l === void 0 ? false : _l, _m = props.enableInfiniteLoad, enableInfiniteLoad = _m === void 0 ? false : _m, _o = props.enableLoadMore, enableLoadMore = _o === void 0 ? true : _o, navigateUrl = props.navigateUrl, buttonText = props.buttonText, _p = props.enableBorder, enableBorder = _p === void 0 ? false : _p, _q = props.enableGradient, enableGradient = _q === void 0 ? false : _q, _r = props.enableOverlay, enableOverlay = _r === void 0 ? false : _r, _s = props.enableEdit, enableEdit = _s === void 0 ? false : _s, _t = props.enableCreate, enableCreate = _t === void 0 ? false : _t, _u = props.enableDelete, enableDelete = _u === void 0 ? false : _u;
+    var actions = props.actions, _a = props.variant, variant = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, _c = props.layout, layout = _c === void 0 ? 'drawer' : _c, url = props.url, contentType = props.contentType, fields = props.fields, _d = props.filterAnchor, filterAnchor = _d === void 0 ? 'left' : _d, _e = props.filterOptions, filterOptions = _e === void 0 ? [] : _e, _f = props.sortOptions, sortOptions = _f === void 0 ? [] : _f, _g = props.query, defaultQuery = _g === void 0 ? {} : _g, _h = props.perPage, perPage = _h === void 0 ? 20 : _h, _j = props.enableSearch, enableSearch = _j === void 0 ? false : _j, _k = props.enableFilters, enableFilters = _k === void 0 ? false : _k, _l = props.enableSorting, enableSorting = _l === void 0 ? false : _l, _m = props.enableInfiniteLoad, enableInfiniteLoad = _m === void 0 ? false : _m, _o = props.enableLoadMore, enableLoadMore = _o === void 0 ? true : _o, href = props.href, buttonText = props.buttonText, _p = props.enableBorder, enableBorder = _p === void 0 ? false : _p, _q = props.enableGradient, enableGradient = _q === void 0 ? false : _q, _r = props.enableOverlay, enableOverlay = _r === void 0 ? false : _r, _s = props.enableEdit, enableEdit = _s === void 0 ? false : _s, _t = props.enableCreate, enableCreate = _t === void 0 ? false : _t, _u = props.enableDelete, enableDelete = _u === void 0 ? false : _u;
     var _v = (0, react_1.useState)(false), openModal = _v[0], setOpenModal = _v[1];
     var _w = (0, react_1.useState)(false), openDeleteModal = _w[0], setOpenDeleteModal = _w[1];
     var _x = (0, frontend_js_1.useDocuments)({
@@ -124,12 +124,12 @@ var Collection = function (props) {
         handleAddFilter(filter);
     };
     var handleClick = function (item) {
-        if (clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
+        if (clientUrl && href && (item === null || item === void 0 ? void 0 : item.handle)) {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth',
             });
-            router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
+            router.push("".concat(clientUrl).concat(href, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
     var handleAdd = function () {

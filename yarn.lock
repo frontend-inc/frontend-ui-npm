@@ -7646,8 +7646,8 @@ from2@^2.1.0:
     lodash "^4.17.21"
 
 "frontend-shopify@git+https://github.com/frontend-inc/frontend-shopify.git":
-  version "0.0.33"
-  resolved "git+https://github.com/frontend-inc/frontend-shopify.git#b8ad1934e72fcfeff494fc924f7e93c3bab0f943"
+  version "0.0.37"
+  resolved "git+https://github.com/frontend-inc/frontend-shopify.git#3cde0ad5c4a5c08226ca0dfcbd2390dfc667da3d"
   dependencies:
     "@apollo/client" "^3.8.9"
     apollo-link-context "^1.0.20"

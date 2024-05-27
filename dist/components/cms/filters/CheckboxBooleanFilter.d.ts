@@ -11,7 +11,7 @@ type CheckboxFilterProps = {
     icon?: React.ReactNode;
     disableBorder?: boolean;
     disablePadding?: boolean;
-    closed?: boolean;
+    defaultClosed?: boolean;
 };
 declare const CheckboxFilter: React.FC<CheckboxFilterProps>;
 export default CheckboxFilter;

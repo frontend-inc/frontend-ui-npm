@@ -1,6 +1,6 @@
 import React from 'react';
 export type RecentlyViewedProps = {
-    editing?: boolean;
+    href: string;
     layout?: 'grid' | 'carousel';
     perPage?: string;
     enableBorder?: boolean;

@@ -5,7 +5,7 @@ type FavoritesProps = {
     field: any;
     url: string;
     handle: string;
-    navigateUrl?: any;
+    href?: any;
     foreignUrl?: string;
     perPage?: number;
     query?: any;

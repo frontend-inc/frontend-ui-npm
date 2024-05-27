@@ -16,7 +16,7 @@ export type FormWizardProps = {
     endDescription: string;
     endImage: string;
     endButtonText: string;
-    navigateUrl?: string;
+    href?: string;
 };
 declare const FormWizard: React.FC<FormWizardProps>;
 export default FormWizard;

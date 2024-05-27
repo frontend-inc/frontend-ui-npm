@@ -1,12 +1,12 @@
 import React from 'react';
 export type ResourceListItemProps = {
-    resource?: any;
+    avatar?: React.ReactNode;
+    icon?: string;
+    color?: string;
     title?: string;
     description?: string;
-    avatar?: any;
-    icon?: string;
     image?: string;
-    color?: string;
+    resource: any;
     handleClick?: (resource: any) => void;
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;

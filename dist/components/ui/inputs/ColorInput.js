@@ -57,10 +57,22 @@ var ColorInput = function (props) {
     };
     var handleColorChange = function (color) {
         var hexColor = COLORS[color][tone];
+        handleChange({
+            target: {
+                name: name,
+                value: hexColor,
+            },
+        });
         setHex(hexColor);
         closeMenu();
     };
     var handleHexColorChange = function (hexColor) {
+        handleChange({
+            target: {
+                name: name,
+                value: hexColor,
+            },
+        });
         setHex(hexColor);
         closeMenu();
     };
@@ -77,16 +89,14 @@ var ColorInput = function (props) {
         if (value) {
             setHex(value);
             setText(value);
+            handleChange({
+                target: {
+                    name: name,
+                    value: value,
+                },
+            });
         }
     }, [value]);
-    (0, react_1.useEffect)(function () {
-        handleChange({
-            target: {
-                name: name,
-                value: hex,
-            },
-        });
-    }, [hex]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
         label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label)),
         react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, variant: "contained", color: "secondary", endIcon: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },

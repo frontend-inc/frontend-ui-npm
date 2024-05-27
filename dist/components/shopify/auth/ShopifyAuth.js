@@ -1,4 +1,27 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,31 +58,32 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(require("react"));
+var react_1 = __importStar(require("react"));
+var frontend_shopify_1 = require("frontend-shopify");
 var material_1 = require("@mui/material");
 var material_2 = require("@mui/material");
-var frontend_shopify_1 = require("frontend-shopify");
+var frontend_shopify_2 = require("frontend-shopify");
 var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var TopNavShopifyAuthButton = function (props) {
-    var handleClick = props.handleClick;
+    var handleClick = props.handleClick, icon = props.icon;
     return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
-        react_1.default.createElement(components_1.Icon, { name: "ShoppingBag", size: 24 })));
+        react_1.default.createElement(components_1.Icon, { name: icon, size: 24 })));
 };
 var SideNavShopifyAuthButton = function (props) {
-    var handleClick = props.handleClick;
+    var handleClick = props.handleClick, icon = props.icon;
     return (react_1.default.createElement(material_2.ListItem, { disablePadding: true, disableGutters: true },
-        react_1.default.createElement(material_2.ListItemButton, { onClick: handleClick },
-            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, "My Orders") }))));
+        react_1.default.createElement(material_2.ListItemButton, { sx: sx.listItemButton, onClick: handleClick },
+            react_1.default.createElement(material_2.ListItemIcon, null,
+                react_1.default.createElement(components_1.Icon, { name: icon })),
+            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, "Orders") }))));
 };
 var ShopifyAuth = function (props) {
     var router = (0, router_1.useRouter)();
-    var _a = props || {}, _b = _a.variant, variant = _b === void 0 ? 'topNav' : _b, customerUrl = _a.customerUrl;
-    var findShop = (0, frontend_shopify_1.useShop)().findShop;
+    var _a = props || {}, _b = _a.icon, icon = _b === void 0 ? 'ReceiptText' : _b, _c = _a.variant, variant = _c === void 0 ? 'topNav' : _c;
+    var customerPortalUrl = (0, react_1.useContext)(frontend_shopify_1.ShopContext).customerPortalUrl;
+    var findShop = (0, frontend_shopify_2.useShop)().findShop;
     var getLastPathOfUrl = function (urlString) {
         var url = new URL(urlString);
         var pathname = url.pathname;
@@ -69,23 +93,32 @@ var ShopifyAuth = function (props) {
         return pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : '';
     };
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            if (customerPortalUrl) {
+                router.push(customerPortalUrl);
+            }
+            return [2 /*return*/];
+        });
+    }); };
+    var fetchCustomerPortalUrl = function () { return __awaiter(void 0, void 0, void 0, function () {
         var shop, shopId;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    if (!customerUrl) return [3 /*break*/, 1];
-                    router.push(customerUrl);
-                    return [3 /*break*/, 3];
-                case 1: return [4 /*yield*/, findShop()];
-                case 2:
+                case 0: return [4 /*yield*/, findShop()];
+                case 1:
                     shop = _a.sent();
                     shopId = getLastPathOfUrl(shop === null || shop === void 0 ? void 0 : shop.id);
-                    router.push("https://shopify.com/".concat(shopId, "/account"));
-                    _a.label = 3;
-                case 3: return [2 /*return*/];
+                    return [2 /*return*/, "https://shopify.com/".concat(shopId, "/account")];
             }
         });
     }); };
-    return variant == 'topNav' ? (react_1.default.createElement(TopNavShopifyAuthButton, { handleClick: handleClick })) : (react_1.default.createElement(SideNavShopifyAuthButton, { handleClick: handleClick }));
+    if (!customerPortalUrl)
+        return null;
+    return variant == 'topNav' ? (react_1.default.createElement(TopNavShopifyAuthButton, { icon: icon, handleClick: handleClick })) : (react_1.default.createElement(SideNavShopifyAuthButton, { icon: icon, handleClick: handleClick }));
 };
 exports.default = ShopifyAuth;
+var sx = {
+    listItemButton: {
+        px: 1
+    },
+};

@@ -1,6 +1,7 @@
 import React from 'react';
 type ShopifyAuthProps = {
-    customerUrl?: string;
+    icon?: string;
+    customerPortalUrl?: string;
     variant?: 'topNav' | 'sideNav';
 };
 declare const ShopifyAuth: React.FC<ShopifyAuthProps>;

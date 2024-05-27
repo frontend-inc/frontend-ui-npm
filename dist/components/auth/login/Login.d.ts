@@ -7,7 +7,7 @@ export type LoginProps = {
     oneTimePasswordUrl?: string;
     disableUsername?: boolean;
     enableGoogle?: boolean;
-    navigateUrl: string;
+    href: string;
 };
 declare const Login: React.FC<LoginProps>;
 export default Login;

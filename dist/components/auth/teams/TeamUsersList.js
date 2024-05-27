@@ -148,7 +148,7 @@ var TeamUsersList = function (props) {
         react_1.default.createElement(material_1.List, { dense: true },
             react_1.default.createElement(components_1.Loading, { loading: loading }),
             !loading &&
-                (teamUsers === null || teamUsers === void 0 ? void 0 : teamUsers.map(function (teamUser) { return (react_1.default.createElement(components_1.UserListItem, { key: teamUser.id, isAdmin: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_role) === 'admin', user: __assign(__assign({}, teamUser === null || teamUser === void 0 ? void 0 : teamUser.user), { role: teamUser === null || teamUser === void 0 ? void 0 : teamUser.role }), handleClick: 
+                (teamUsers === null || teamUsers === void 0 ? void 0 : teamUsers.map(function (teamUser) { return (react_1.default.createElement(components_1.UserItem, { key: teamUser.id, isAdmin: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_role) === 'admin', user: __assign(__assign({}, teamUser === null || teamUser === void 0 ? void 0 : teamUser.user), { role: teamUser === null || teamUser === void 0 ? void 0 : teamUser.role }), handleClick: 
                     // @ts-ignore
                     function () { return handleClick(teamUser); }, handleEdit: 
                     // @ts-ignore

@@ -41,7 +41,8 @@ var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var frontend_shopify_2 = require("frontend-shopify");
 var addons_1 = require("../../../hooks/addons");
-var SearchModal = function () {
+var SearchModal = function (props) {
+    var href = props.href;
     // Minimum number of characters to track analytics
     var MIN_ANALYTICS_CHARS = 5;
     var trackProductsSearched = (0, addons_1.useSegment)().trackProductsSearched;
@@ -87,7 +88,7 @@ var SearchModal = function () {
                         react_1.default.createElement(material_1.IconButton, { onClick: handleClose },
                             react_1.default.createElement(components_1.Icon, { name: "X", size: 24 }))))),
             react_1.default.createElement(material_1.Container, { maxWidth: "md" },
-                react_1.default.createElement(shopify_1.ProductGrid, { loading: loading, products: products, xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }),
+                react_1.default.createElement(shopify_1.ProductGrid, { href: href, loading: loading, products: products, xs: 12, sm: 12, md: 6, lg: 6, xl: 6 }),
                 (keywords === null || keywords === void 0 ? void 0 : keywords.length) > 0 && !loading && (products === null || products === void 0 ? void 0 : products.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'search', title: "No search results", description: "Try another search term" }))))));
 };
 exports.default = SearchModal;

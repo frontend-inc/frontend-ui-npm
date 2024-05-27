@@ -68,7 +68,7 @@ var router_1 = require("next/router");
 var CollectionForm = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var handle = props.handle, _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, contentType = props.contentType, navigateUrl = props.navigateUrl, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
+    var handle = props.handle, _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, contentType = props.contentType, href = props.href, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _c = (0, frontend_js_1.useDocuments)({
         collection: contentType,
@@ -105,8 +105,8 @@ var CollectionForm = function (props) {
                 case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         showAlertSuccess(onSuccessMessage);
-                        if (navigateUrl) {
-                            router.push("".concat(clientUrl).concat(navigateUrl));
+                        if (href) {
+                            router.push("".concat(clientUrl).concat(href));
                         }
                     }
                     return [3 /*break*/, 6];

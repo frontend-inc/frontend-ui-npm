@@ -1,7 +1,7 @@
 import React from 'react';
 export type ProductRecommendationsProps = {
     handle?: string;
-    editing?: boolean;
+    href?: string;
     layout?: 'grid' | 'carousel';
     perPage?: string;
     enableBorder?: boolean;

@@ -50,7 +50,7 @@ var shopify_1 = require("../../../shopify");
 var frontend_shopify_1 = require("frontend-shopify");
 var frontend_shopify_2 = require("frontend-shopify");
 var MetafieldProducts = function (props) {
-    var handle = props.handle, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, metafield = props.metafield, rest = __rest(props, ["handle", "layout", "metafield"]);
+    var handle = props.handle, href = props.href, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, metafield = props.metafield, rest = __rest(props, ["handle", "href", "layout", "metafield"]);
     var _b = (0, frontend_shopify_2.useProducts)(), loading = _b.loading, product = _b.product, findProduct = _b.findProduct;
     var _c = (0, react_1.useState)(null), products = _c[0], setProducts = _c[1];
     (0, react_1.useEffect)(function () {
@@ -66,7 +66,7 @@ var MetafieldProducts = function (props) {
     if (!products)
         return null;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        layout == 'grid' && react_1.default.createElement(shopify_1.ProductGrid, __assign({ products: products }, rest)),
-        layout == 'carousel' && (react_1.default.createElement(shopify_1.ProductCarousel, __assign({ products: products }, rest)))));
+        layout == 'grid' && (react_1.default.createElement(shopify_1.ProductGrid, __assign({ href: href, products: products }, rest))),
+        layout == 'carousel' && (react_1.default.createElement(shopify_1.ProductCarousel, __assign({ href: href, products: products }, rest)))));
 };
 exports.default = MetafieldProducts;

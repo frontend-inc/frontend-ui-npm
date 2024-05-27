@@ -65,8 +65,7 @@ var Register = function (props) {
     var handleLogin = function () {
         router.push(loginUrl);
     };
-    return (react_1.default.createElement(__1.AuthLayout, null,
-        react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
-            react_1.default.createElement(__2.RegisterForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin }))));
+    return (react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
+        react_1.default.createElement(__2.RegisterForm, { errors: errors, loading: loading, customer: customer, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: handleLogin })));
 };
 exports.default = Register;

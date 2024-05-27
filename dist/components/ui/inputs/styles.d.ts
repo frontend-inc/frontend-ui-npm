@@ -15,8 +15,6 @@ export declare const sx: {
             borderColor: string;
             bgcolor: string;
             '&:focus': {
-                boxShadow: string;
-                border: string;
                 borderColor: string;
             };
         };

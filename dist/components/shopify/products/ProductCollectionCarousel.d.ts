@@ -1,7 +1,6 @@
 import React from 'react';
 export type ProductCollectionCarouselProps = {
-    title?: string;
-    editing?: boolean;
+    href: string;
     handle: string;
     enableAutoPlay?: boolean;
     enableArrows?: boolean;

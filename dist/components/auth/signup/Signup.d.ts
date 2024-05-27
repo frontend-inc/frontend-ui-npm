@@ -1,6 +1,6 @@
 import React from 'react';
 export type SignupProps = {
-    navigateUrl: string;
+    href: string;
     loginUrl: string;
     title?: string;
     subtitle?: string;

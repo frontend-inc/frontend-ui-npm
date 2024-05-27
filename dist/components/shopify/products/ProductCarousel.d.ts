@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProductType } from 'frontend-shopify';
 type ProductCarouselProps = {
-    editing?: boolean;
+    href: string;
     loading?: boolean;
     products: ProductType[];
     buttonText?: string;

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResourceTable = exports.ResourceListItem = exports.ResourceList = exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.Videos = exports.VimeoVideo = exports.YouTubeVideo = exports.SortButton = exports.Person = exports.FilterButton = exports.LoadMore = exports.GridView = exports.Item = exports.FetchMany = exports.Fetch = exports.FormFieldInput = exports.FormInput = exports.ForeignCollectionTable = exports.ForeignCollection = exports.ForeignForm = exports.FormWizard = exports.Form = exports.Favorites = exports.EmailSignup = exports.Document = exports.Details = exports.CollectionShow = exports.CollectionTable = exports.CollectionForm = exports.CollectionCard = exports.CollectionList = exports.CollectionCarousel = exports.Collection = exports.Article = void 0;
+exports.ResourceTable = exports.ResourceListItem = exports.ResourceList = exports.Resource = exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.Videos = exports.VimeoVideo = exports.YouTubeVideo = exports.SortButton = exports.Person = exports.FilterButton = exports.LoadMore = exports.GridView = exports.Item = exports.FetchMany = exports.Fetch = exports.FormFieldInput = exports.FormInput = exports.ForeignCollectionTable = exports.ForeignCollection = exports.ForeignForm = exports.FormWizard = exports.Form = exports.Favorites = exports.EmailSignup = exports.Document = exports.Details = exports.CollectionShow = exports.CollectionTable = exports.CollectionForm = exports.CollectionCard = exports.CollectionList = exports.CollectionCarousel = exports.Collection = exports.Article = void 0;
 // CMS
 var Article_1 = require("./show/Article");
 Object.defineProperty(exports, "Article", { enumerable: true, get: function () { return __importDefault(Article_1).default; } });
@@ -74,6 +74,8 @@ Object.defineProperty(exports, "VideoModal", { enumerable: true, get: function (
 var VideoPlayer_1 = require("../cms/video/VideoPlayer");
 Object.defineProperty(exports, "VideoPlayer", { enumerable: true, get: function () { return __importDefault(VideoPlayer_1).default; } });
 // Resources
+var Resource_1 = require("./resources/Resource");
+Object.defineProperty(exports, "Resource", { enumerable: true, get: function () { return __importDefault(Resource_1).default; } });
 var ResourceList_1 = require("./resources/ResourceList");
 Object.defineProperty(exports, "ResourceList", { enumerable: true, get: function () { return __importDefault(ResourceList_1).default; } });
 var ResourceListItem_1 = require("./resources/ResourceListItem");

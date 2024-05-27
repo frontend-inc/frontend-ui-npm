@@ -67,7 +67,6 @@ var sx = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.2)',
     },
     secondaryActions: {
         alignItems: 'center',

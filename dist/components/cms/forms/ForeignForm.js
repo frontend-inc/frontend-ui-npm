@@ -81,7 +81,7 @@ var router_1 = require("next/router");
 var ForeignForm = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl, navigateUrl = props.navigateUrl, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
+    var handle = props.handle, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, foreignUrl = props.foreignUrl, href = props.href, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _c = (0, frontend_js_1.useResource)({
         name: 'document',
@@ -142,8 +142,8 @@ var ForeignForm = function (props) {
                         if (onSuccessMessage) {
                             showAlertSuccess(onSuccessMessage);
                         }
-                        if (navigateUrl) {
-                            router.push("".concat(clientUrl).concat(navigateUrl));
+                        if (href) {
+                            router.push("".concat(clientUrl).concat(href));
                         }
                     }
                     _a.label = 6;

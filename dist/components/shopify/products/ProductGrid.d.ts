@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProductType } from 'frontend-shopify';
 type ProductGridProps = {
-    editing?: boolean;
+    href: string;
     loading?: boolean;
     products: ProductType[];
     xs?: number;

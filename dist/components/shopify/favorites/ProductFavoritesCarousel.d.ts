@@ -1,6 +1,6 @@
 import React from 'react';
 type ProductFavoritesCarouselProps = {
-    editing?: boolean;
+    href: string;
     title?: string;
     perPage?: string;
     enableBorder?: boolean;

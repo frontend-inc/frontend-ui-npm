@@ -14,12 +14,10 @@ exports.sx = {
             borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
-            border: '3px solid',
+            border: '1px solid',
             borderColor: 'divider',
             bgcolor: 'background.main',
             '&:focus': {
-                boxShadow: "none",
-                border: '3px solid',
                 borderColor: 'primary.main',
             },
         },

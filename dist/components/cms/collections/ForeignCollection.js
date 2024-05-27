@@ -78,7 +78,7 @@ var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var helpers_1 = require("../../../helpers");
 var ForeignCollection = function (props) {
-    var fields = props.fields, _resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'drawer' : _a, _b = props.variant, variant = _b === void 0 ? 'list' : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, contentType = props.contentType, foreignContentType = props.foreignContentType, navigateUrl = props.navigateUrl, _d = props.perPage, perPage = _d === void 0 ? 10 : _d, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableLoadMore, enableLoadMore = _h === void 0 ? true : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableEdit, enableEdit = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
+    var fields = props.fields, _resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'drawer' : _a, _b = props.variant, variant = _b === void 0 ? 'list' : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, contentType = props.contentType, foreignContentType = props.foreignContentType, href = props.href, _d = props.perPage, perPage = _d === void 0 ? 10 : _d, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableLoadMore, enableLoadMore = _h === void 0 ? true : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableEdit, enableEdit = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
     var router = (0, router_1.useRouter)();
     var _m = (0, react_1.useState)(false), openModal = _m[0], setOpenModal = _m[1];
     var _o = (0, react_1.useState)(false), openDeleteModal = _o[0], setOpenDeleteModal = _o[1];
@@ -90,8 +90,8 @@ var ForeignCollection = function (props) {
         collection: foreignContentType,
     }), errors = _q.errors, loading = _q.loading, delayedLoading = _q.delayedLoading, resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, handleDataChange = _q.handleDataChange, removeAttachment = _q.removeAttachment;
     var handleClick = function (item) {
-        if (clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
-            router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
+        if (clientUrl && href && (item === null || item === void 0 ? void 0 : item.handle)) {
+            router.push("".concat(clientUrl).concat(href, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
     var handleAdd = function () {

@@ -10,7 +10,7 @@ export type ForeignCollectionProps = {
     handle: string;
     contentType: string;
     foreignContentType?: string;
-    navigateUrl?: any;
+    href?: any;
     perPage?: number;
     query?: any;
     enableEdit?: boolean;

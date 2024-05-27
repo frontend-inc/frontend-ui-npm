@@ -14,7 +14,7 @@ type CheckboxNumberRangeFilterProps = {
     label?: string;
     icon?: React.ReactNode;
     disablePadding?: boolean;
-    closed?: boolean;
+    defaultClosed?: boolean;
 };
 declare const CheckboxNumberRangeFilter: React.FC<CheckboxNumberRangeFilterProps>;
 export default CheckboxNumberRangeFilter;

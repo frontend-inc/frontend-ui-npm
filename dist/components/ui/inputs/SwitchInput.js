@@ -36,7 +36,7 @@ var sx = {
         py: '2px',
         px: 2,
         fontSize: 15,
-        border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
+        border: function (theme) { return "2px solid ".concat(theme.palette.divider); },
         '&:focus': {
             borderColor: 'primary.light',
         },

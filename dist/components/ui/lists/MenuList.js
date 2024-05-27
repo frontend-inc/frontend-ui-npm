@@ -39,8 +39,8 @@ var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var cookies_next_1 = require("cookies-next");
 var MenuList = function (props) {
-    var id = props.id, label = props.label, _a = props.closed, closed = _a === void 0 ? false : _a, children = props.children, _b = props.disableBorder, disableBorder = _b === void 0 ? false : _b;
-    var _c = (0, react_1.useState)(!closed), open = _c[0], setOpen = _c[1];
+    var id = props.id, label = props.label, _a = props.defaultClosed, defaultClosed = _a === void 0 ? false : _a, children = props.children, _b = props.disableBorder, disableBorder = _b === void 0 ? false : _b;
+    var _c = (0, react_1.useState)(!defaultClosed), open = _c[0], setOpen = _c[1];
     var handleToggleClick = function () {
         //setMenuCookie(!open)
         setOpen(!open);

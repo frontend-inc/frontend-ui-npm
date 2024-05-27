@@ -61,6 +61,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
+var frontend_js_1 = require("frontend-js");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var CreditCards = function (props) {
@@ -68,6 +69,7 @@ var CreditCards = function (props) {
     var _a = (0, hooks_1.useCreditCards)(), loading = _a.delayedLoading, errors = _a.errors, creditCard = _a.creditCard, setCreditCard = _a.setCreditCard, createCreditCard = _a.createCreditCard, deleteCreditCard = _a.deleteCreditCard, selectCreditCard = _a.selectCreditCard, creditCards = _a.creditCards, findCreditCards = _a.findCreditCards, reloadCreditCards = _a.reloadCreditCards;
     var _b = (0, react_1.useState)(false), isEditing = _b[0], setIsEditing = _b[1];
     var _c = (0, react_1.useState)(false), openDeleteModal = _c[0], setOpenDeleteModal = _c[1];
+    var _d = (0, frontend_js_1.useAuth)(), currentUser = _d.currentUser, fetchMe = _d.fetchMe;
     var handleAddCreditCardClick = function () {
         setCreditCard({});
         setIsEditing(true);
@@ -115,6 +117,7 @@ var CreditCards = function (props) {
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         findCreditCards();
+                        fetchMe();
                     }
                     return [2 /*return*/];
             }
@@ -123,10 +126,15 @@ var CreditCards = function (props) {
     (0, react_1.useEffect)(function () {
         findCreditCards();
     }, []);
+    (0, react_1.useEffect)(function () {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+            fetchMe();
+        }
+    }, [currentUser]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         !isEditing ? (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(components_1.Loading, { loading: loading }),
-            react_1.default.createElement(material_1.List, null, !loading && (creditCards === null || creditCards === void 0 ? void 0 : creditCards.map(function (creditCard) { return (react_1.default.createElement(components_1.SelectableListItem, { key: creditCard.id, selected: creditCard.primary, icon: 'CreditCard', title: creditCard.last_4, description: creditCard.brand, handleClick: function () { return handleClick(creditCard); }, handleDelete: function () { return handleDeleteClick(creditCard); } })); }))),
+            react_1.default.createElement(material_1.List, null, !loading && (creditCards === null || creditCards === void 0 ? void 0 : creditCards.map(function (creditCard) { return (react_1.default.createElement(components_1.SelectableListItem, { key: creditCard.id, selected: creditCard.id == (currentUser === null || currentUser === void 0 ? void 0 : currentUser.credit_card_id), icon: 'CreditCard', title: creditCard.last4, description: creditCard.brand, handleClick: function () { return handleClick(creditCard); }, handleDelete: function () { return handleDeleteClick(creditCard); } })); }))),
             (!loading && !(creditCards === null || creditCards === void 0 ? void 0 : creditCards.length)) && (react_1.default.createElement(components_1.Placeholder, { icon: "CreditCard", title: "No Credit Cards", description: "Add a credit card to get started" })),
             react_1.default.createElement(material_1.Box, { sx: sx.actions },
                 react_1.default.createElement(material_1.Button, { variant: "contained", onClick: handleAddCreditCardClick }, "Add Credit Card")))) : (react_1.default.createElement(components_1.StripeCreditCard, { publishableKey: stripePublishableKey, handleSubmit: handleSubmit, handleCancel: function () { return setIsEditing(false); } })),

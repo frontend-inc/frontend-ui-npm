@@ -6,7 +6,7 @@ export type CollectionCarouselProps = {
     style: 'card' | 'avatar' | 'cover' | 'chip' | 'text' | 'image';
     fields?: any;
     editing?: boolean;
-    navigateUrl: any;
+    href: any;
     perPage?: number;
     query?: any;
     enableAutoPlay?: boolean;

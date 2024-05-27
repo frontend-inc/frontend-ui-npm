@@ -141,9 +141,9 @@ var sx = {
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
             bgcolor: 'background.paper',
-            border: function (theme) { return "3px solid ".concat(theme.palette.divider); },
+            border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
             '&:focus': {
-                border: function (theme) { return "3px solid ".concat(theme.palette.primary.light); },
+                border: function (theme) { return "1px solid ".concat(theme.palette.primary.light); },
             },
         },
     },

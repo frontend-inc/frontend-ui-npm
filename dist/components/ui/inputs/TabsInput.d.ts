@@ -1,7 +1,10 @@
 import React from 'react';
-type ButtonGroupProps = {
-    handleChange: (newValue: number) => void;
-    tabs: {
+import { SyntheticEventType } from '../../../types';
+type TabsInputProps = {
+    name: string;
+    label?: string;
+    handleChange: (ev: SyntheticEventType) => void;
+    options: {
         icon?: string;
         label?: string;
         value: number | string | boolean;
@@ -12,6 +15,7 @@ type ButtonGroupProps = {
     iconPosition?: 'start' | 'end' | 'top' | 'bottom';
     variant?: 'fullWidth' | 'scrollable';
     size?: 'small' | 'large';
+    direction?: 'row' | 'column';
 };
-declare const ButtonGroup: React.FC<ButtonGroupProps>;
-export default ButtonGroup;
+declare const TabsInput: React.FC<TabsInputProps>;
+export default TabsInput;

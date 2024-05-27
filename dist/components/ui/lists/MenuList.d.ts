@@ -6,7 +6,7 @@ type MenuListProps = {
     icon?: React.ReactNode;
     disableBorder?: boolean;
     disablePadding?: boolean;
-    closed?: boolean;
+    defaultClosed?: boolean;
 };
 declare const MenuList: React.FC<MenuListProps>;
 export default MenuList;

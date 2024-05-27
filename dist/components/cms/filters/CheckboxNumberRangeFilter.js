@@ -7,8 +7,8 @@ var react_1 = __importDefault(require("react"));
 var CheckboxNumberRangeFilterItem_1 = __importDefault(require("./CheckboxNumberRangeFilterItem"));
 var __1 = require("../..");
 var CheckboxNumberRangeFilter = function (props) {
-    var label = props.label, name = props.name, options = props.options, values = props.values, handleClick = props.handleClick, _a = props.disablePadding, disablePadding = _a === void 0 ? false : _a, _b = props.closed, closed = _b === void 0 ? false : _b;
-    return (react_1.default.createElement(__1.MenuList, { label: label, disablePadding: disablePadding, closed: closed }, options === null || options === void 0 ? void 0 : options.map(function (option, index) { return (react_1.default.createElement(CheckboxNumberRangeFilterItem_1.default, { key: index, values: values, option: {
+    var label = props.label, name = props.name, options = props.options, values = props.values, handleClick = props.handleClick, _a = props.disablePadding, disablePadding = _a === void 0 ? false : _a, _b = props.defaultClosed, defaultClosed = _b === void 0 ? false : _b;
+    return (react_1.default.createElement(__1.MenuList, { label: label, disablePadding: disablePadding, defaultClosed: defaultClosed }, options === null || options === void 0 ? void 0 : options.map(function (option, index) { return (react_1.default.createElement(CheckboxNumberRangeFilterItem_1.default, { key: index, values: values, option: {
             label: option.label,
             min: parseFloat(String(option.min)),
             max: parseFloat(String(option.max)),

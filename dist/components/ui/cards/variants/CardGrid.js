@@ -40,11 +40,10 @@ var material_1 = require("@mui/material");
 var __1 = require("../../..");
 var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
-var index_1 = require("../../../../constants/index");
 var components_1 = require("../../../../components");
 var CardGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, item = _a.item, href = _a.href, handleClick = _a.handleClick, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? index_1.CARD_VERT_HEIGHT : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f;
+    var _a = props || {}, actions = _a.actions, item = _a.item, href = _a.href, handleClick = _a.handleClick, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? 240 : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f;
     var _g = item || {}, label = _g.label, title = _g.title, image = _g.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
@@ -55,7 +54,7 @@ var CardGrid = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), { minWidth: "".concat(index_1.CARD_VERT_WIDTH, "px"), minHeight: height + 80 }) },
+    return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), { width: '100%', minHeight: height + 80 }) },
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
             react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
                 react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, label: label, enableGradient: enableGradient, disableBorderRadius: enableBorder, enableOverlay: enableOverlay }))),

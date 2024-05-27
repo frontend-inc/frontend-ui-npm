@@ -47,17 +47,17 @@ var CollectionCard_1 = __importDefault(require("./CollectionCard"));
 var CollectionCarousel = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var actions = props.actions, url = props.url, _a = props.style, style = _a === void 0 ? 'card' : _a, _b = props.query, defaultQuery = _b === void 0 ? {} : _b, _c = props.perPage, perPage = _c === void 0 ? 20 : _c, navigateUrl = props.navigateUrl, _d = props.enableAutoPlay, enableAutoPlay = _d === void 0 ? false : _d, _e = props.enableArrows, enableArrows = _e === void 0 ? false : _e, _f = props.enableDots, enableDots = _f === void 0 ? true : _f, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.enableGradient, enableGradient = _h === void 0 ? false : _h;
+    var actions = props.actions, url = props.url, _a = props.style, style = _a === void 0 ? 'card' : _a, _b = props.query, defaultQuery = _b === void 0 ? {} : _b, _c = props.perPage, perPage = _c === void 0 ? 20 : _c, href = props.href, _d = props.enableAutoPlay, enableAutoPlay = _d === void 0 ? false : _d, _e = props.enableArrows, enableArrows = _e === void 0 ? false : _e, _f = props.enableDots, enableDots = _f === void 0 ? true : _f, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.enableGradient, enableGradient = _h === void 0 ? false : _h;
     var _j = (0, frontend_js_1.useResource)({
         url: url,
     }), findMany = _j.findMany, resources = _j.resources;
     var handleClick = function (item) {
-        if (clientUrl && navigateUrl && (item === null || item === void 0 ? void 0 : item.handle)) {
+        if (clientUrl && href && (item === null || item === void 0 ? void 0 : item.handle)) {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth',
             });
-            router.push("".concat(clientUrl).concat(navigateUrl, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
+            router.push("".concat(clientUrl).concat(href, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
     (0, react_1.useEffect)(function () {

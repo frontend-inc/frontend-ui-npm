@@ -3,7 +3,7 @@ export type ForeignFormProps = {
     handle: string;
     url: string;
     foreignUrl?: string;
-    navigateUrl?: string;
+    href?: string;
     buttonText?: string;
     variant?: 'contained' | 'outlined' | 'text';
     fields: any[];

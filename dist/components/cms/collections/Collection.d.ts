@@ -10,7 +10,7 @@ export type CollectionProps = {
     contentType: string;
     enableInfiniteLoad?: boolean;
     enableLoadMore?: boolean;
-    navigateUrl: any;
+    href: any;
     perPage?: number;
     query?: any;
     actions: ActionType[];

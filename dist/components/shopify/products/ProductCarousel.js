@@ -31,15 +31,15 @@ var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var context_1 = require("../../../context");
 var ProductCarousel = function (props) {
-    var _a = props.editing, editing = _a === void 0 ? false : _a, products = props.products, _b = props.buttonText, buttonText = _b === void 0 ? 'Add to cart' : _b, _c = props.enableAutoPlay, enableAutoPlay = _c === void 0 ? false : _c, _d = props.enableArrows, enableArrows = _d === void 0 ? false : _d, _e = props.enableDots, enableDots = _e === void 0 ? true : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, enableAddToCart = props.enableAddToCart, enableQuickShop = props.enableQuickShop, _g = props.enableQuantity, enableQuantity = _g === void 0 ? false : _g, enableOkendoStarRating = props.enableOkendoStarRating;
+    var _a = props.href, href = _a === void 0 ? '/products' : _a, products = props.products, _b = props.buttonText, buttonText = _b === void 0 ? 'Add to cart' : _b, _c = props.enableAutoPlay, enableAutoPlay = _c === void 0 ? false : _c, _d = props.enableArrows, enableArrows = _d === void 0 ? false : _d, _e = props.enableDots, enableDots = _e === void 0 ? true : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, enableAddToCart = props.enableAddToCart, enableQuickShop = props.enableQuickShop, _g = props.enableQuantity, enableQuantity = _g === void 0 ? false : _g, enableOkendoStarRating = props.enableOkendoStarRating;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var router = (0, router_1.useRouter)();
     var trackProductClicked = (0, addons_1.useSegment)().trackProductClicked;
     var handleClick = function (product) {
-        if (!editing)
-            trackProductClicked(product);
-        var url = "".concat(clientUrl, "/products/").concat(product === null || product === void 0 ? void 0 : product.handle);
-        router.push(url);
+        if (href) {
+            var url = "".concat(clientUrl).concat(href, "/").concat(product === null || product === void 0 ? void 0 : product.handle);
+            router.push(url);
+        }
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(components_1.Carousel, { enableAutoPlay: enableAutoPlay, enableArrows: enableArrows, enableDots: enableDots }, products === null || products === void 0 ? void 0 : products.map(function (product) { return (react_1.default.createElement(material_1.Box, { sx: sx.item, key: product.id },

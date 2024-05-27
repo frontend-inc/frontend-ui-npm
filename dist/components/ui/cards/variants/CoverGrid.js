@@ -43,7 +43,7 @@ var router_1 = require("next/router");
 var CoverVert = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, actions = _a.actions, item = _a.item, href = _a.href, handleClick = _a.handleClick, _b = _a.textVariant, textVariant = _b === void 0 ? 'subtitle1' : _b, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 320 : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, icon = _a.icon;
-    var _g = item || {}, label = _g.label, title = _g.title, description = _g.description, image = _g.image, resource = _g.resource;
+    var _g = item || {}, label = _g.label, title = _g.title, description = _g.description, image = _g.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -64,7 +64,7 @@ var CoverVert = function (props) {
                     react_1.default.createElement(material_1.Stack, { sx: sx.contentContainer, direction: "column", spacing: 0 },
                         react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
                             react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 60)),
-                            description && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, (0, helpers_1.truncate)(description, 30)))))))),
+                            description && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "body2" }, (0, helpers_1.truncate)(description, 30)))))))),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
             react_1.default.createElement(__1.Actions, { numVisible: 0, resource: item, actions: actions, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
 };

@@ -3,7 +3,7 @@ export type CollectionFormProps = {
     handle: string;
     resource?: any;
     url: string;
-    navigateUrl?: string;
+    href?: string;
     buttonText?: string;
     variant?: 'contained' | 'outlined' | 'text';
     fields: any[];

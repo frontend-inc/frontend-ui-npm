@@ -15,7 +15,7 @@ var ProductFilterButton = function (props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: toggleMenu, color: "secondary", variant: "contained", startIcon: react_1.default.createElement(lucide_react_1.ListFilter, null) }, "Filter"),
         react_1.default.createElement(material_1.Hidden, { smDown: true },
-            react_1.default.createElement(__1.Popup, { anchorEl: anchorEl, open: open, handleClose: closeMenu, p: 1 },
+            react_1.default.createElement(__1.Popup, { disablePadding: true, anchorEl: anchorEl, open: open, handleClose: closeMenu, p: 1 },
                 react_1.default.createElement(ProductFiltersList_1.default, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray }))),
         react_1.default.createElement(material_1.Hidden, { smUp: true },
             react_1.default.createElement(__1.Drawer, { open: open, handleClose: closeMenu },
