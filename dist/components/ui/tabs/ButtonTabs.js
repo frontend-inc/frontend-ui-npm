@@ -18,16 +18,16 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ButtonTabs = function (props) {
-    var _a = props.disablePadding, disablePadding = _a === void 0 ? false : _a, _b = props.disableBorder, disableBorder = _b === void 0 ? false : _b, handleChange = props.handleChange, options = props.options, value = props.value, _c = props.iconPosition, iconPosition = _c === void 0 ? 'start' : _c, _d = props.variant, variant = _d === void 0 ? "fullWidth" : _d, _e = props.size, size = _e === void 0 ? "large" : _e;
+    var _a = props.disablePadding, disablePadding = _a === void 0 ? false : _a, _b = props.disableBorder, disableBorder = _b === void 0 ? false : _b, handleChange = props.handleChange, options = props.options, value = props.value, _c = props.iconPosition, iconPosition = _c === void 0 ? 'start' : _c, _d = props.variant, variant = _d === void 0 ? 'fullWidth' : _d, _e = props.size, size = _e === void 0 ? 'large' : _e;
     var handleInputChange = function (ev, value) {
         handleChange(value);
     };
     return (react_1.default.createElement(material_1.Tabs, { variant: variant, sx: __assign(__assign(__assign({}, sx.root), (!disableBorder && sx.rootBorder)), { p: disablePadding ? 0 : '3px', '& .MuiTab-root': {
-                height: size == "small" ? 34 : 36,
-                minWidth: size == "small" ? 44 : 64,
+                height: size == 'small' ? 34 : 36,
+                minWidth: size == 'small' ? 44 : 64,
             } }), value: value, onChange: handleInputChange, indicatorColor: "primary", textColor: "inherit" }, options.map(function (tab, i) { return (react_1.default.createElement(material_1.Tab, { key: i, disableRipple: true, iconPosition: iconPosition, onClick: 
         //@ts-ignore
-        function () { return handleChange(tab.value); }, label: tab.label, value: tab.value, icon: tab.icon && react_1.default.createElement(__1.Icon, { size: 20, color: 'text.secondary', name: tab.icon }) })); })));
+        function () { return handleChange(tab.value); }, label: tab.label, value: tab.value, icon: tab.icon && (react_1.default.createElement(__1.Icon, { size: 20, color: "text.secondary", name: tab.icon })) })); })));
 };
 exports.default = ButtonTabs;
 var sx = {
@@ -36,11 +36,11 @@ var sx = {
         borderRadius: 1.5,
         bgcolor: 'background.paper',
         '& svg': {
-            mx: 0.5
+            mx: 0.5,
         },
         '& .MuiTabs-indicator': {
-            height: "100%",
-            width: "100px",
+            height: '100%',
+            width: '100px',
             borderRadius: 1,
             borderRight: '1px solid',
             borderBottom: '1px solid',
@@ -71,6 +71,6 @@ var sx = {
     },
     rootBorder: {
         border: '1px solid',
-        borderColor: 'divider'
-    }
+        borderColor: 'divider',
+    },
 };

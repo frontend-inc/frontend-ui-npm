@@ -119,6 +119,6 @@ var ShopifyAuth = function (props) {
 exports.default = ShopifyAuth;
 var sx = {
     listItemButton: {
-        px: 1
+        px: 1,
     },
 };

@@ -125,10 +125,11 @@ var SubscriptionPlanList = function (props) {
     }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.Loading, { loading: loading }),
-        react_1.default.createElement(material_1.List, null, !loading && (subscriptionPlans === null || subscriptionPlans === void 0 ? void 0 : subscriptionPlans.map(function (subscriptionPlan) {
-            var selected = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.subscription_plan_id) === subscriptionPlan.id;
-            return (react_1.default.createElement(__1.SelectableListItem, { key: subscriptionPlan.id, selected: selected, icon: "CreditCard", title: subscriptionPlan.title, description: subscriptionPlan.description, handleClick: function () { return handleSubscribeClick(subscriptionPlan); } }));
-        }))),
+        react_1.default.createElement(material_1.List, null, !loading &&
+            (subscriptionPlans === null || subscriptionPlans === void 0 ? void 0 : subscriptionPlans.map(function (subscriptionPlan) {
+                var selected = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.subscription_plan_id) === subscriptionPlan.id;
+                return (react_1.default.createElement(__1.SelectableListItem, { key: subscriptionPlan.id, selected: selected, icon: "CreditCard", title: subscriptionPlan.title, description: subscriptionPlan.description, handleClick: function () { return handleSubscribeClick(subscriptionPlan); } }));
+            }))),
         !loading && !(subscriptionPlans === null || subscriptionPlans === void 0 ? void 0 : subscriptionPlans.length) && (react_1.default.createElement(__1.Placeholder, { icon: "CreditCard", title: "No subscription plans", description: "Subscription plans will appear here." })),
         !loading && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.stripe_subscription_id) && (react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "secondary", onClick: handleUnsubscribeClick }, "Cancel Subscription")),
         react_1.default.createElement(__1.AlertModal, { loading: loading, open: openSubscribeModel, title: "Confirm Subscription", description: "Confirming your subscription will charge your card on file.", handleConfirm: handleSubscribe, handleClose: function () { return setOpenSubscribeModal(false); } }),

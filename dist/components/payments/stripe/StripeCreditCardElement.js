@@ -78,7 +78,7 @@ var StripeCreditCardElement = function (props) {
         react_1.default.createElement(material_1.Box, { sx: sx.cardElement },
             react_1.default.createElement(react_stripe_js_1.CardElement, null)),
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-            react_1.default.createElement(material_1.Button, { color: "primary", startIcon: react_1.default.createElement(__1.Icon, { name: "CreditCard", color: 'primary.contrastText' }), onClick: handleClick, variant: "contained" }, "Add Credit Card"),
+            react_1.default.createElement(material_1.Button, { color: "primary", startIcon: react_1.default.createElement(__1.Icon, { name: "CreditCard", color: "primary.contrastText" }), onClick: handleClick, variant: "contained" }, "Add Credit Card"),
             react_1.default.createElement(material_1.Button, { color: "secondary", onClick: handleCancel, variant: "contained" }, "Cancel")),
         react_1.default.createElement(material_1.Typography, { color: "text.secondary", sx: sx.caption, variant: "caption" },
             "We support all major credit cards.",
@@ -93,10 +93,10 @@ var sx = {
         boxShadow: 1,
         borderRadius: 1,
         '& .ElementsApp input': {
-            fontSize: 24
-        }
+            fontSize: 24,
+        },
     },
     caption: {
-        textAlign: 'center'
-    }
+        textAlign: 'center',
+    },
 };

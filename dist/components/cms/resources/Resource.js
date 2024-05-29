@@ -13,12 +13,12 @@ var Resource = function (props) {
                 secondaryActions,
                 react_1.default.createElement(__1.MenuButton, { handleEdit: handleEdit, handleDelete: handleDelete }, menuActions)) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick ? function () { return handleClick(resource); } : undefined },
-                avatar && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon }, avatar)),
-                (!avatar && image) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
+                avatar && react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon }, avatar),
+                !avatar && image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(__1.Image, { src: image, width: 32, height: 32, alt: image }))),
                 icon && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(material_1.Avatar, { sx: {
-                            bgcolor: color
+                            bgcolor: color,
                         } },
                         react_1.default.createElement(__1.Icon, { name: icon, size: 24 })))),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, description) })))));

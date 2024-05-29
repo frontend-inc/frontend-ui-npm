@@ -69,6 +69,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -81,20 +90,28 @@ var components_1 = require("../../../components");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var SearchFilters_1 = __importDefault(require("../filters/SearchFilters"));
-var constants_1 = require("../../../constants");
 var helpers_1 = require("../../../helpers");
 var components_2 = require("../../../components");
+var frontend_js_2 = require("frontend-js");
 var CollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var url = props.url, fields = props.fields, headers = props.headers, _a = props.filterAnchor, filterAnchor = _a === void 0 ? 'left' : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, href = props.href, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k;
-    var _l = (0, react_1.useState)(false), openModal = _l[0], setOpenModal = _l[1];
-    var _m = (0, react_1.useState)(false), openDeleteModal = _m[0], setOpenDeleteModal = _m[1];
-    var _o = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: url,
-    }), loading = _o.loading, delayedLoading = _o.delayedLoading, errors = _o.errors, resource = _o.resource, resources = _o.resources, setResource = _o.setResource, update = _o.update, create = _o.create, destroy = _o.destroy, query = _o.query, findMany = _o.findMany, reloadMany = _o.reloadMany, removeAttachment = _o.removeAttachment, page = _o.page, numPages = _o.numPages, numResults = _o.numResults, totalCount = _o.totalCount, paginate = _o.paginate;
-    var _p = (0, react_1.useState)(''), keywords = _p[0], setKeywords = _p[1];
+    var _a = (0, react_1.useContext)(context_1.AppContext), clientUrl = _a.clientUrl, setAuthOpen = _a.setAuthOpen;
+    var currentUser = (0, frontend_js_2.useAuth)().currentUser;
+    var contentType = props.contentType, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l, _m = props.filterUser, filterUser = _m === void 0 ? false : _m, _o = props.filterTeam, filterTeam = _o === void 0 ? false : _o;
+    var _p = (0, react_1.useState)(false), openModal = _p[0], setOpenModal = _p[1];
+    var _q = (0, react_1.useState)(false), openDeleteModal = _q[0], setOpenDeleteModal = _q[1];
+    var _r = (0, frontend_js_1.useDocuments)({
+        collection: contentType
+    }), loading = _r.loading, delayedLoading = _r.delayedLoading, errors = _r.errors, resource = _r.resource, resources = _r.resources, setResource = _r.setResource, update = _r.update, create = _r.create, destroy = _r.destroy, handleDataChange = _r.handleDataChange, query = _r.query, findMany = _r.findMany, reloadMany = _r.reloadMany, removeAttachment = _r.removeAttachment, page = _r.page, numPages = _r.numPages, numResults = _r.numResults, totalCount = _r.totalCount, paginate = _r.paginate;
+    var _s = (0, react_1.useState)(), currentUserFilter = _s[0], setCurrentUserFilter = _s[1];
+    (0, react_1.useEffect)(function () {
+        var newFilter = {
+            AND: __spreadArray(__spreadArray([], (filterUser && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? [{ user_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.id } }] : []), true), (filterTeam && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id) ? [{ team_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id } }] : []), true)
+        };
+        //@ts-ignore
+        setCurrentUserFilter(newFilter);
+    }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id, filterUser, filterTeam]);
+    var _t = (0, react_1.useState)(''), keywords = _t[0], setKeywords = _t[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -112,14 +129,16 @@ var CollectionTable = function (props) {
         }
         findMany(__assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
     };
-    var _q = (0, hooks_1.useFilters)({
+    var _u = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _q.activeFilters, setActiveFilters = _q.setActiveFilters, handleAddFilter = _q.handleAddFilter, buildQueryFilters = _q.buildQueryFilters;
+    }), queryFilters = _u.queryFilters, activeFilters = _u.activeFilters, setActiveFilters = _u.setActiveFilters, handleAddFilter = _u.handleAddFilter, mergeAllFilters = _u.mergeAllFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
         findMany({
-            filters: __assign({}, defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters),
+            filters: mergeAllFilters(__spreadArray(__spreadArray([], defaultQuery.filters, true), [
+                currentUserFilter,
+            ], false)),
             sort_by: 'id',
             sort_direction: 'desc',
             keywords: '',
@@ -139,27 +158,15 @@ var CollectionTable = function (props) {
             router.push("".concat(clientUrl).concat(href, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        if (constants_1.SYSTEM_FIELDS.includes(name)) {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), (_a = {}, _a[name] = value, _a)));
-            });
-        }
-        else {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), { data: __assign(__assign({}, prev.data), (_a = {}, _a[name] = value, _a)) }));
-            });
-        }
-    };
     var handleAdd = function () {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setResource({});
         setOpenModal(true);
     };
     var handleEdit = function (item) {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setResource(item);
         setOpenModal(true);
     };
@@ -168,42 +175,54 @@ var CollectionTable = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 5, , 6]);
-                    resp = void 0;
-                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, update(resource)];
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
+                    _a.label = 1;
                 case 1:
+                    _a.trys.push([1, 6, , 7]);
+                    resp = void 0;
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 3];
+                    return [4 /*yield*/, update(resource)];
+                case 2:
                     resp = _a.sent();
-                    return [3 /*break*/, 4];
-                case 2: return [4 /*yield*/, create(resource)];
-                case 3:
-                    resp = _a.sent();
-                    _a.label = 4;
+                    return [3 /*break*/, 5];
+                case 3: return [4 /*yield*/, create(resource)];
                 case 4:
+                    resp = _a.sent();
+                    _a.label = 5;
+                case 5:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setResource({});
                         setOpenModal(false);
                         reloadMany();
                     }
-                    return [3 /*break*/, 6];
-                case 5:
+                    return [3 /*break*/, 7];
+                case 6:
                     err_1 = _a.sent();
                     console.log('Error', err_1);
-                    return [3 /*break*/, 6];
-                case 6: return [2 /*return*/];
+                    return [3 /*break*/, 7];
+                case 7: return [2 /*return*/];
             }
         });
     }); };
     var handleDeleteClick = function (item) {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setResource(item);
         setOpenDeleteModal(true);
     };
     var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, destroy(resource === null || resource === void 0 ? void 0 : resource.id)];
+                case 0:
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, destroy(resource.id)];
                 case 1:
                     _a.sent();
+                    _a.label = 2;
+                case 2:
                     setOpenDeleteModal(false);
                     setOpenModal(false);
                     setResource({});
@@ -215,19 +234,35 @@ var CollectionTable = function (props) {
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
+                case 0:
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, removeAttachment(resource.id, name)];
                 case 1:
                     _a.sent();
-                    return [2 /*return*/];
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
             }
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (activeFilters && url && perPage) {
-            findMany(__assign(__assign(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters) }), defaultQuery), { per_page: perPage }));
+        if (contentType && perPage) {
+            findMany(__assign(__assign({}, defaultQuery), { filters: mergeAllFilters([
+                    defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters,
+                    currentUserFilter,
+                    queryFilters
+                ]), per_page: perPage }));
         }
-    }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length, defaultQuery, perPage, url]);
-    var _r = (0, react_1.useState)([]), rows = _r[0], setRows = _r[1];
+    }, [
+        contentType,
+        perPage,
+        currentUserFilter,
+        currentUser === null || currentUser === void 0 ? void 0 : currentUser.id,
+        queryFilters,
+        defaultQuery,
+    ]);
+    var _v = (0, react_1.useState)([]), rows = _v[0], setRows = _v[1];
     (0, react_1.useEffect)(function () {
         if ((resources === null || resources === void 0 ? void 0 : resources.length) >= 0) {
             var flatten = (0, helpers_1.flattenDocuments)(resources);

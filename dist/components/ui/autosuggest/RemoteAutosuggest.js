@@ -149,6 +149,13 @@ var RemoteAutosuggest = function (props) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: 100 }));
         }
     }, [url]);
+    (0, react_1.useEffect)(function () {
+        var _a;
+        if (((_a = Object.keys(defaultQuery)) === null || _a === void 0 ? void 0 : _a.length) > 0 && url) {
+            //@ts-ignore
+            findMany(__assign(__assign({}, defaultQuery), { per_page: 100 }));
+        }
+    }, [defaultQuery]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.Autosuggest, { errors: errors, loading: delayedLoading, direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear, enableClear: enableClear })));
 };

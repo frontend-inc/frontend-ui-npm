@@ -64,7 +64,7 @@ var sx = {
         justifyContent: 'flex-start',
     },
     listItemButton: {
-        px: 1
+        px: 1,
     },
     badge: {
         mr: 1,

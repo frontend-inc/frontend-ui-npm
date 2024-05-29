@@ -77,7 +77,10 @@ var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var helpers_1 = require("../../../helpers");
+var frontend_js_2 = require("frontend-js");
 var ForeignCollection = function (props) {
+    var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
+    var currentUser = (0, frontend_js_2.useAuth)().currentUser;
     var fields = props.fields, _resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'drawer' : _a, _b = props.variant, variant = _b === void 0 ? 'list' : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, contentType = props.contentType, foreignContentType = props.foreignContentType, href = props.href, _d = props.perPage, perPage = _d === void 0 ? 10 : _d, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableLoadMore, enableLoadMore = _h === void 0 ? true : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableEdit, enableEdit = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
     var router = (0, router_1.useRouter)();
     var _m = (0, react_1.useState)(false), openModal = _m[0], setOpenModal = _m[1];
@@ -95,10 +98,14 @@ var ForeignCollection = function (props) {
         }
     };
     var handleAdd = function () {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setResource({});
         setOpenModal(!openModal);
     };
     var handleEdit = function (item) {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setResource(item);
         setOpenModal(true);
     };
@@ -139,6 +146,8 @@ var ForeignCollection = function (props) {
         });
     }); };
     var handleDeleteClick = function (item) {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setResource(item);
         setOpenDeleteModal(true);
     };
@@ -146,6 +155,8 @@ var ForeignCollection = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
                     return [4 /*yield*/, destroy(resource === null || resource === void 0 ? void 0 : resource.id)];
                 case 1:
@@ -162,6 +173,8 @@ var ForeignCollection = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
                     return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
                 case 1:
@@ -183,7 +196,7 @@ var ForeignCollection = function (props) {
         if ((_resource === null || _resource === void 0 ? void 0 : _resource.id) && foreignContentType) {
             handleFetchResources();
         }
-    }, [_resource === null || _resource === void 0 ? void 0 : _resource.id, foreignContentType]);
+    }, [_resource === null || _resource === void 0 ? void 0 : _resource.id, foreignContentType, currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
         enableCreate && (react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))),

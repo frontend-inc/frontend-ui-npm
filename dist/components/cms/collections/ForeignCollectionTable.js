@@ -81,24 +81,23 @@ var components_1 = require("../../../components");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var SearchFilters_1 = __importDefault(require("../filters/SearchFilters"));
-var constants_1 = require("../../../constants");
 var helpers_1 = require("../../../helpers");
 var __1 = require("../..");
+var frontend_js_2 = require("frontend-js");
 var ForeignCollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, foreignContentType = props.foreignContentType, fields = props.fields, headers = props.headers, _a = props.filterAnchor, filterAnchor = _a === void 0 ? 'left' : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.query, defaultQuery = _c === void 0 ? {} : _c, _d = props.perPage, perPage = _d === void 0 ? 20 : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, href = props.href, _g = props.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k;
-    var _l = (0, react_1.useState)(false), openModal = _l[0], setOpenModal = _l[1];
-    var _m = (0, react_1.useState)(false), openDeleteModal = _m[0], setOpenDeleteModal = _m[1];
-    var _o = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: url,
-    }), loading = _o.loading, delayedLoading = _o.delayedLoading, query = _o.query, resources = _o.resources, findLinks = _o.findLinks, page = _o.page, numPages = _o.numPages, numResults = _o.numResults, totalCount = _o.totalCount, paginate = _o.paginate, addLinks = _o.addLinks;
-    var _p = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: foreignUrl,
-    }), errors = _p.errors, _resource = _p.resource, setResource = _p.setResource, update = _p.update, create = _p.create, destroy = _p.destroy, removeAttachment = _p.removeAttachment;
-    var _q = (0, react_1.useState)(''), keywords = _q[0], setKeywords = _q[1];
+    var _a = (0, react_1.useContext)(context_1.AppContext), clientUrl = _a.clientUrl, setAuthOpen = _a.setAuthOpen;
+    var currentUser = (0, frontend_js_2.useAuth)().currentUser;
+    var resource = props.resource, contentType = props.contentType, foreignContentType = props.foreignContentType, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
+    var _m = (0, react_1.useState)(false), openModal = _m[0], setOpenModal = _m[1];
+    var _o = (0, react_1.useState)(false), openDeleteModal = _o[0], setOpenDeleteModal = _o[1];
+    var _p = (0, frontend_js_1.useDocuments)({
+        collection: contentType
+    }), loading = _p.loading, delayedLoading = _p.delayedLoading, query = _p.query, resources = _p.resources, findLinks = _p.findLinks, page = _p.page, numPages = _p.numPages, numResults = _p.numResults, totalCount = _p.totalCount, paginate = _p.paginate, addLinks = _p.addLinks;
+    var _q = (0, frontend_js_1.useDocuments)({
+        collection: foreignContentType,
+    }), errors = _q.errors, _resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, handleDataChange = _q.handleDataChange, removeAttachment = _q.removeAttachment;
+    var _r = (0, react_1.useState)(''), keywords = _r[0], setKeywords = _r[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -118,9 +117,9 @@ var ForeignCollectionTable = function (props) {
         }
         findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignContentType, __assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
     };
-    var _r = (0, hooks_1.useFilters)({
+    var _s = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _r.activeFilters, setActiveFilters = _r.setActiveFilters, handleAddFilter = _r.handleAddFilter, buildQueryFilters = _r.buildQueryFilters;
+    }), activeFilters = _s.activeFilters, setActiveFilters = _s.setActiveFilters, handleAddFilter = _s.handleAddFilter;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -145,27 +144,15 @@ var ForeignCollectionTable = function (props) {
             router.push("".concat(clientUrl).concat(href, "/").concat(item === null || item === void 0 ? void 0 : item.handle));
         }
     };
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        if (constants_1.SYSTEM_FIELDS.includes(name)) {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), (_a = {}, _a[name] = value, _a)));
-            });
-        }
-        else {
-            setResource(function (prev) {
-                var _a;
-                return (__assign(__assign({}, prev), { data: __assign(__assign({}, prev.data), (_a = {}, _a[name] = value, _a)) }));
-            });
-        }
-    };
     var handleAdd = function () {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setResource({});
         setOpenModal(true);
     };
     var handleEdit = function (item) {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setResource(item);
         setOpenModal(true);
     };
@@ -174,44 +161,53 @@ var ForeignCollectionTable = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 6, , 7]);
-                    resp = void 0;
-                    if (!(_resource === null || _resource === void 0 ? void 0 : _resource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, update(_resource)];
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
+                    _a.label = 1;
                 case 1:
+                    _a.trys.push([1, 7, , 8]);
+                    resp = void 0;
+                    if (!(_resource === null || _resource === void 0 ? void 0 : _resource.id)) return [3 /*break*/, 3];
+                    return [4 /*yield*/, update(_resource)];
+                case 2:
                     resp = _a.sent();
-                    return [3 /*break*/, 5];
-                case 2: return [4 /*yield*/, create(_resource)];
-                case 3:
-                    resp = _a.sent();
-                    if (!(resp === null || resp === void 0 ? void 0 : resp.id)) return [3 /*break*/, 5];
-                    return [4 /*yield*/, addLinks(resource === null || resource === void 0 ? void 0 : resource.handle, [resp.id])];
+                    return [3 /*break*/, 6];
+                case 3: return [4 /*yield*/, create(_resource)];
                 case 4:
-                    _a.sent();
-                    _a.label = 5;
+                    resp = _a.sent();
+                    if (!(resp === null || resp === void 0 ? void 0 : resp.id)) return [3 /*break*/, 6];
+                    return [4 /*yield*/, addLinks(resource === null || resource === void 0 ? void 0 : resource.handle, [resp.id])];
                 case 5:
+                    _a.sent();
+                    _a.label = 6;
+                case 6:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         handleFetchResources();
                         setResource({});
                         setOpenModal(false);
                     }
-                    return [3 /*break*/, 7];
-                case 6:
+                    return [3 /*break*/, 8];
+                case 7:
                     err_1 = _a.sent();
                     console.log('Error', err_1);
-                    return [3 /*break*/, 7];
-                case 7: return [2 /*return*/];
+                    return [3 /*break*/, 8];
+                case 8: return [2 /*return*/];
             }
         });
     }); };
     var handleDeleteClick = function (item) {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setResource(item);
         setOpenDeleteModal(true);
     };
     var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, destroy(_resource === null || _resource === void 0 ? void 0 : _resource.id)];
+                case 0:
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
+                    return [4 /*yield*/, destroy(_resource === null || _resource === void 0 ? void 0 : _resource.id)];
                 case 1:
                     _a.sent();
                     setOpenDeleteModal(false);
@@ -225,14 +221,17 @@ var ForeignCollectionTable = function (props) {
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, removeAttachment(_resource === null || _resource === void 0 ? void 0 : _resource.id, name)];
+                case 0:
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
+                    return [4 /*yield*/, removeAttachment(_resource === null || _resource === void 0 ? void 0 : _resource.id, name)];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
             }
         });
     }); };
-    var _s = (0, react_1.useState)([]), rows = _s[0], setRows = _s[1];
+    var _t = (0, react_1.useState)([]), rows = _t[0], setRows = _t[1];
     var handleFetchResources = function () { return __awaiter(void 0, void 0, void 0, function () {
         var filterQuery;
         return __generator(this, function (_a) {
@@ -251,7 +250,7 @@ var ForeignCollectionTable = function (props) {
         if ((resource === null || resource === void 0 ? void 0 : resource.id) && foreignContentType) {
             handleFetchResources();
         }
-    }, [resource, foreignContentType]);
+    }, [resource, foreignContentType, currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 },
             enableFilters && filterAnchor == 'left' && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, lg: 3 },

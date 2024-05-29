@@ -16,9 +16,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var MyAccountTabs = function (props) {
     var _a = props || {}, tab = _a.tab, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe, handleChange = _a.handleChange;
-    var TABS = [
-        { label: 'Account', value: 0 },
-    ];
+    var TABS = [{ label: 'Account', value: 0 }];
     var TEAM_TABS = [
         { label: 'Teams', value: 1 },
         { label: 'Members', value: 2 },

@@ -118,7 +118,7 @@ var MyAccountModal = function (props) {
             currentTab == 2 && (react_1.default.createElement(components_2.TeamUsersList, { handleAddUser: function () { return setCurrentTab(3); } })),
             currentTab == 3 && (react_1.default.createElement(components_2.TeamUserInvite, { handleSuccess: function () { return setCurrentTab(2); }, handleCancel: function () { return setCurrentTab(2); } })),
             currentTab == 4 && (react_1.default.createElement(components_2.CreditCards, { stripePublishableKey: stripePublishableKey })),
-            currentTab == 6 && (react_1.default.createElement(components_2.SubscriptionPlans, null)))));
+            currentTab == 6 && react_1.default.createElement(components_2.SubscriptionPlans, null))));
 };
 exports.default = MyAccountModal;
 var sx = {

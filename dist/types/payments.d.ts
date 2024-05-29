@@ -1,4 +1,4 @@
-import { UserType } from "./users";
+import { UserType } from './users';
 export type CreditCardType = {
     id: number;
     user_id: number;

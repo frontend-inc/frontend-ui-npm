@@ -1,4 +1,4 @@
-import { OptionType } from "frontend-js";
+import { OptionType } from 'frontend-js';
 export type FormFieldType = {
     name: string;
     variant: string;

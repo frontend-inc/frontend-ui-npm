@@ -26,7 +26,8 @@ var useFilters = function (props) {
     var query = (props || {}).query;
     var _b = (0, react_1.useState)(false), showFilterModal = _b[0], setShowFilterModal = _b[1];
     var _c = (0, react_1.useState)(), filter = _c[0], setFilter = _c[1];
-    var _d = (0, react_1.useState)([]), activeFilters = _d[0], setActiveFilters = _d[1];
+    var _d = (0, react_1.useState)({}), queryFilters = _d[0], setQueryFilters = _d[1];
+    var _e = (0, react_1.useState)([]), activeFilters = _e[0], setActiveFilters = _e[1];
     var handleOpenFilterModal = function () {
         setShowFilterModal(true);
     };
@@ -78,6 +79,25 @@ var useFilters = function (props) {
             value == null ||
             (Array.isArray(value) && value.length === 0));
     };
+    var mergeFilters = function (filters, newFilters) {
+        if (!filters)
+            return newFilters;
+        if (!newFilters)
+            return filters;
+        var mergedFilters = {
+            AND: __spreadArray(__spreadArray([], ((filters === null || filters === void 0 ? void 0 : filters.AND) || []), true), ((newFilters === null || newFilters === void 0 ? void 0 : newFilters.AND) || []), true),
+            OR: __spreadArray(__spreadArray([], (filters.OR || []), true), (newFilters.OR || []), true)
+        };
+        return mergedFilters;
+    };
+    var mergeAllFilters = function (filters) {
+        if (filters.length === 0) {
+            return {};
+        }
+        return filters.reduce(function (mergedFilter, currentFilter) {
+            return mergeFilters(mergedFilter, currentFilter);
+        }, {});
+    };
     var buildQueryFilters = function (activeFilters) {
         var filters = {};
         activeFilters
@@ -98,6 +118,9 @@ var useFilters = function (props) {
         });
         return filters;
     };
+    (0, react_1.useEffect)(function () {
+        setQueryFilters(buildQueryFilters(activeFilters));
+    }, [activeFilters]);
     // Convert the query object into an array of filter options
     var formatFilterArray = function (filters) {
         var formattedFilters = [];
@@ -134,10 +157,13 @@ var useFilters = function (props) {
         handleOpenFilterModal: handleOpenFilterModal,
         handleCloseFilterModal: handleCloseFilterModal,
         handleAddFilter: handleAddFilter,
+        queryFilters: queryFilters,
         activeFilters: activeFilters,
         setActiveFilters: setActiveFilters,
         findDuplicateFilter: findDuplicateFilter,
         findDuplicateFilterIndex: findDuplicateFilterIndex,
+        mergeFilters: mergeFilters,
+        mergeAllFilters: mergeAllFilters,
         buildQueryFilters: buildQueryFilters,
     };
 };

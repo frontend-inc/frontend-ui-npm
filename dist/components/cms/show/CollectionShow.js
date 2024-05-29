@@ -63,6 +63,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
+var context_1 = require("../../../context");
+var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var Article_1 = __importDefault(require("./Article"));
 var Item_1 = __importDefault(require("./Item"));
@@ -72,13 +74,15 @@ var Details_1 = __importDefault(require("../details/Details"));
 var YouTubeVideo_1 = __importDefault(require("./addons/YouTubeVideo"));
 var VimeoVideo_1 = __importDefault(require("./addons/VimeoVideo"));
 var __1 = require("../..");
-var frontend_js_1 = require("frontend-js");
+var frontend_js_2 = require("frontend-js");
 var CollectionShow = function (props) {
     var handle = props.handle;
     if (handle == 'index')
         handle = undefined;
+    var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
+    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'item' : _b, _resource = _a.resource, fields = _a.fields, fieldName = _a.fieldName, displayFields = _a.displayFields, url = _a.url, contentType = _a.contentType, actions = _a.actions, enableBorder = _a.enableBorder, enableCreate = _a.enableCreate, enableEdit = _a.enableEdit;
-    var _c = (0, frontend_js_1.useDocuments)({
+    var _c = (0, frontend_js_2.useDocuments)({
         collection: contentType,
     }), loading = _c.delayedLoading, errors = _c.errors, update = _c.update, create = _c.create, resource = _c.resource, setResource = _c.setResource, removeAttachment = _c.removeAttachment, handleDataChange = _c.handleDataChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
@@ -93,6 +97,8 @@ var CollectionShow = function (props) {
     }); };
     var _d = (0, react_1.useState)(false), openModal = _d[0], setOpenModal = _d[1];
     var handleEdit = function () {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
         setOpenModal(true);
     };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -100,27 +106,31 @@ var CollectionShow = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 5, , 6]);
-                    resp = void 0;
-                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, update(resource)];
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
+                    _a.label = 1;
                 case 1:
+                    _a.trys.push([1, 6, , 7]);
+                    resp = void 0;
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 3];
+                    return [4 /*yield*/, update(resource)];
+                case 2:
                     resp = _a.sent();
-                    return [3 /*break*/, 4];
-                case 2: return [4 /*yield*/, create(resource)];
-                case 3:
-                    resp = _a.sent();
-                    _a.label = 4;
+                    return [3 /*break*/, 5];
+                case 3: return [4 /*yield*/, create(resource)];
                 case 4:
+                    resp = _a.sent();
+                    _a.label = 5;
+                case 5:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setOpenModal(false);
                     }
-                    return [3 /*break*/, 6];
-                case 5:
+                    return [3 /*break*/, 7];
+                case 6:
                     e_1 = _a.sent();
                     console.error(e_1);
-                    return [3 /*break*/, 6];
-                case 6: return [2 /*return*/];
+                    return [3 /*break*/, 7];
+                case 7: return [2 /*return*/];
             }
         });
     }); };
@@ -141,11 +151,8 @@ var CollectionShow = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
         (resource === null || resource === void 0 ? void 0 : resource.id) && (react_1.default.createElement(Component, { fieldName: fieldName, resource: resource, actions: actions, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit })),
         (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(Details_1.default, { url: url, fields: displayFields, resource: resource, enableBorder: enableBorder })),
-        (!(resource === null || resource === void 0 ? void 0 : resource.id) && !(_resource === null || _resource === void 0 ? void 0 : _resource.id) && enableCreate) && (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.inlineForm },
-            react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }),
-            react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, "Create"))),
         react_1.default.createElement(__1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }))));
+            react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_2.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }))));
 };
 exports.default = CollectionShow;
 var sx = {

@@ -39,8 +39,8 @@ var material_1 = require("@mui/material");
 var theme_1 = require("../../theme");
 var components_1 = require("../../components");
 var Section = function (props) {
-    var _a = props.enableTransitions, enableTransitions = _a === void 0 ? false : _a, _b = props.requireAuth, requireAuth = _b === void 0 ? false : _b, children = props.children, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _c = props.py, py = _c === void 0 ? 4 : _c, _d = props.px, px = _d === void 0 ? 3 : _d;
-    var _e = (0, react_1.useState)(theme_1.muiTheme.breakpoints.values.md), width = _e[0], setWidth = _e[1];
+    var _a = props.enableTransitions, enableTransitions = _a === void 0 ? false : _a, _b = props.requireAuth, requireAuth = _b === void 0 ? false : _b, _c = props.requireTeam, requireTeam = _c === void 0 ? false : _c, _d = props.requirePaid, requirePaid = _d === void 0 ? false : _d, _e = props.requireAdmin, requireAdmin = _e === void 0 ? false : _e, children = props.children, bgcolor = props.bgcolor, maxWidth = props.maxWidth, _f = props.py, py = _f === void 0 ? 4 : _f, _g = props.px, px = _g === void 0 ? 3 : _g;
+    var _h = (0, react_1.useState)(theme_1.muiTheme.breakpoints.values.md), width = _h[0], setWidth = _h[1];
     // Since breakpoints are modified to
     // to compensate for the extra width of the Editor
     // we need to adjust the width of the Section component manually
@@ -59,7 +59,8 @@ var Section = function (props) {
     }, [maxWidth]);
     return (react_1.default.createElement(material_1.Fade, { in: true, timeout: 1000 },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { bgcolor: bgcolor }) },
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.container), (enableTransitions && sx.containerTransitions)), { py: py, px: px, maxWidth: width }) }, requireAuth ? react_1.default.createElement(components_1.AuthRequired, null, children) : children))));
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.container), (enableTransitions && sx.containerTransitions)), { py: py, px: px, maxWidth: width }) },
+                react_1.default.createElement(components_1.AuthRequired, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin }, children)))));
 };
 exports.default = Section;
 var sx = {

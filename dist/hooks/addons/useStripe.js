@@ -45,11 +45,13 @@ var useStripe = function () {
     var createCustomer = function (token) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post('/api/v1/app/stripe/create_customer', {
-                        stripe: {
-                            token: token,
-                        },
-                    }); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () {
+                        return api.post('/api/v1/app/stripe/create_customer', {
+                            stripe: {
+                                token: token,
+                            },
+                        });
+                    })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -57,7 +59,9 @@ var useStripe = function () {
     var deleteCustomer = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post('/api/v1/app/stripe/delete_customer'); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () {
+                        return api.post('/api/v1/app/stripe/delete_customer');
+                    })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });

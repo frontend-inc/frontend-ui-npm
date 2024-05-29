@@ -27,10 +27,10 @@ var DesktopSideNav = function (props) {
     var editing = props.editing, logo = props.logo, menuItems = props.menuItems, _c = props.logoWidth, logoWidth = _c === void 0 ? index_1.HEADER_LOGO_WIDTH : _c, _d = props.logoHeight, logoHeight = _d === void 0 ? index_1.HEADER_LOGO_HEIGHT : _d, handleClick = props.handleClick, _e = props.enableAuth, enableAuth = _e === void 0 ? false : _e, _f = props.enableShopify, enableShopify = _f === void 0 ? false : _f, _g = props.enableNotifications, enableNotifications = _g === void 0 ? false : _g;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var filterVisibility = function (menuItem) {
-        if (menuItem.visibility === 'logged_in' && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+        if (menuItem.require_user && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
             return false;
         }
-        if (menuItem.visibility === 'logged_out' && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+        if (menuItem.require_guest && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
             return false;
         }
         return true;

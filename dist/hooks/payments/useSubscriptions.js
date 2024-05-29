@@ -88,7 +88,7 @@ var useSubscriptions = function () {
         handleSort: handleSort,
         loadMore: loadMore,
         loadingWrapper: loadingWrapper,
-        paginate: paginate
+        paginate: paginate,
     };
 };
 exports.default = useSubscriptions;

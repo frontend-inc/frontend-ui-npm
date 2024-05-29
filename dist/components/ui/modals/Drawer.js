@@ -28,7 +28,7 @@ var Drawer = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.headerAction }, anchor == 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
                     react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon })))),
                 react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Typography, { color: 'text.secondary', variant: "subtitle2" }, title)),
+                    react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "subtitle2" }, title)),
                 react_1.default.createElement(material_1.Box, { sx: sx.headerAction }, anchor != 'right' && (react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
                     react_1.default.createElement(components_1.Icon, { color: "text.primary", name: closeIcon }))))),
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (actions && sx.contentActions)), (!disablePadding && sx.contentPadding)) }, children),

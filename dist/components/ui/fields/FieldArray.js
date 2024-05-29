@@ -44,5 +44,5 @@ var sx = {
     stack: {
         display: 'flex',
         flexWrap: 'wrap',
-    }
+    },
 };

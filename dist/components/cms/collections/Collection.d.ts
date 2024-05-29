@@ -28,6 +28,8 @@ export type CollectionProps = {
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
+    filterUser?: boolean;
+    filterTeam?: boolean;
 };
 declare const Collection: React.FC<CollectionProps>;
 export default Collection;

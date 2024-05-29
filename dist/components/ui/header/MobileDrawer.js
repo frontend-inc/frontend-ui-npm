@@ -43,10 +43,10 @@ var MobileDrawer = function (props) {
         handleClick(path);
     };
     var filterVisibility = function (menuItem) {
-        if (menuItem.visibility === 'logged_in' && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+        if (menuItem.require_user && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
             return false;
         }
-        if (menuItem.visibility === 'logged_out' && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+        if (menuItem.require_guest && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
             return false;
         }
         return true;
@@ -58,9 +58,8 @@ var MobileDrawer = function (props) {
                 enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav" }),
                     react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }))),
-                enableAuth &&
-                    react_1.default.createElement(material_1.Box, { sx: sx.divider },
-                        react_1.default.createElement(__1.AuthButton, { showLabel: true, editing: editing })))))));
+                enableAuth && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
+                    react_1.default.createElement(__1.AuthButton, { showLabel: true, editing: editing }))))))));
 };
 exports.default = MobileDrawer;
 var sx = {

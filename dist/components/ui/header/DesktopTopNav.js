@@ -26,10 +26,10 @@ var DesktopTopNav = function (props) {
     var editing = props.editing, logo = props.logo, menuItems = props.menuItems, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableShopify, enableShopify = _d === void 0 ? false : _d, _e = props.enableNotifications, enableNotifications = _e === void 0 ? false : _e, _f = props.position, position = _f === void 0 ? 'absolute' : _f;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var filterVisibility = function (menuItem) {
-        if (menuItem.visibility === 'logged_in' && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+        if (menuItem.require_user && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
             return false;
         }
-        if (menuItem.visibility === 'logged_out' && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+        if (menuItem.require_guest && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
             return false;
         }
         return true;
