@@ -38,7 +38,7 @@ var Breadcrumbs = function (props) {
 exports.default = Breadcrumbs;
 var sx = {
     root: {
-        py: 1,
+        py: 0,
     },
     link: {
         color: 'text.secondary',

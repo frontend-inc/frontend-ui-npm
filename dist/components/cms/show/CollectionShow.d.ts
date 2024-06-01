@@ -5,10 +5,11 @@ export type CollectionShowItemProps = {
     enableBorder?: boolean;
     actions: ActionType[];
     fieldName?: string;
-    contentType?: string;
+    url?: string;
     resource: any;
     enableEdit?: boolean;
     enableCreate?: boolean;
+    enableFavorites?: boolean;
     handleEdit?: () => void;
 };
 type CollectionShowStyleTypes = 'item' | 'article' | 'person' | 'document' | 'youtube' | 'vimeo';

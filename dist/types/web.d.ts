@@ -21,9 +21,10 @@ export type SectionProps = {
 };
 export type CardProps = {
     actions: ActionType[];
+    enableFavorites?: boolean;
     editing?: boolean;
     variant?: 'list' | 'grid';
-    item: any & {
+    resource: any & {
         label?: string;
         title?: string;
         description?: string;
@@ -51,12 +52,17 @@ export type CardProps = {
     icon?: string;
 };
 export type PriceType = {
+    id?: number;
     label: string;
     title: string;
     price: number;
+    price_type: 'stripe_payment_link' | 'url';
     features: {
         label: string;
     }[];
+    recurring?: boolean;
+    recurring_rate?: string;
     buttonText: string;
-    url: string;
+    url?: string;
+    stripe_payment_url?: string;
 };

@@ -81,16 +81,16 @@ var frontend_js_2 = require("frontend-js");
 var ForeignCollection = function (props) {
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
-    var fields = props.fields, _resource = props.resource, _a = props.layout, layout = _a === void 0 ? 'drawer' : _a, _b = props.variant, variant = _b === void 0 ? 'list' : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, contentType = props.contentType, foreignContentType = props.foreignContentType, href = props.href, _d = props.perPage, perPage = _d === void 0 ? 10 : _d, _e = props.query, defaultQuery = _e === void 0 ? null : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableLoadMore, enableLoadMore = _h === void 0 ? true : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableEdit, enableEdit = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
+    var fields = props.fields, _resource = props.resource, _a = props.variant, variant = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, url = props.url, foreignUrl = props.foreignUrl, href = props.href, _c = props.perPage, perPage = _c === void 0 ? 10 : _c, _d = props.query, defaultQuery = _d === void 0 ? null : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableLoadMore, enableLoadMore = _g === void 0 ? true : _g, _h = props.enableCreate, enableCreate = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k, _l = props.enableFavorites, enableFavorites = _l === void 0 ? false : _l;
     var router = (0, router_1.useRouter)();
     var _m = (0, react_1.useState)(false), openModal = _m[0], setOpenModal = _m[1];
     var _o = (0, react_1.useState)(false), openDeleteModal = _o[0], setOpenDeleteModal = _o[1];
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _p = (0, frontend_js_1.useDocuments)({
-        collection: contentType,
+        url: url
     }), query = _p.query, resources = _p.resources, page = _p.page, numPages = _p.numPages, loadMore = _p.loadMore, findLinks = _p.findLinks, addLinks = _p.addLinks;
     var _q = (0, frontend_js_1.useDocuments)({
-        collection: foreignContentType,
+        url: foreignUrl,
     }), errors = _q.errors, loading = _q.loading, delayedLoading = _q.delayedLoading, resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, handleDataChange = _q.handleDataChange, removeAttachment = _q.removeAttachment;
     var handleClick = function (item) {
         if (clientUrl && href && (item === null || item === void 0 ? void 0 : item.handle)) {
@@ -186,28 +186,25 @@ var ForeignCollection = function (props) {
     }); };
     var handleFetchResources = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            if ((_resource === null || _resource === void 0 ? void 0 : _resource.id) && foreignContentType) {
-                findLinks(_resource.id, foreignContentType, __assign(__assign(__assign({}, query), defaultQuery), { per_page: perPage, page: 1 }));
+            if ((_resource === null || _resource === void 0 ? void 0 : _resource.id) && foreignUrl) {
+                findLinks(_resource.id, foreignUrl, __assign(__assign(__assign({}, query), defaultQuery), { per_page: perPage, page: 1 }));
             }
             return [2 /*return*/];
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if ((_resource === null || _resource === void 0 ? void 0 : _resource.id) && foreignContentType) {
+        if ((_resource === null || _resource === void 0 ? void 0 : _resource.id) && foreignUrl) {
             handleFetchResources();
         }
-    }, [_resource === null || _resource === void 0 ? void 0 : _resource.id, foreignContentType, currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
+    }, [_resource === null || _resource === void 0 ? void 0 : _resource.id, foreignUrl, currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
         enableCreate && (react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))),
-        layout == 'inline' && (react_1.default.createElement(material_1.Collapse, { in: openModal },
-            react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.form, spacing: 1 },
-                react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }),
-                react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: delayedLoading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save')))),
-        react_1.default.createElement(components_1.CollectionList, { actions: [], variant: variant, style: style, resources: resources, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
+        react_1.default.createElement(components_1.CardList, { actions: [], variant: variant, style: style, resources: resources, handleClick: handleClick, enableFavorites: enableFavorites, enableBorder: enableBorder, enableGradient: enableGradient, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
         enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })),
-        layout == 'drawer' && (react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }))),
+        !loading && resources.length == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: "Search", title: "No results found", description: "Try adjusting your search or filters" })),
+        react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
+            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove })),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };
 exports.default = ForeignCollection;

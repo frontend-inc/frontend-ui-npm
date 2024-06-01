@@ -6,6 +6,7 @@ type HeaderProps = {
     mode?: 'accent' | 'light' | 'dark';
     logo?: string;
     enableAuth?: boolean;
+    enableStripe?: boolean;
     enableShopify?: boolean;
     enableNotifications?: boolean;
     bgcolor?: string;

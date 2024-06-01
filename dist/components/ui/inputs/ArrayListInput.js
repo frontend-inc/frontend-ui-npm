@@ -83,10 +83,10 @@ var ArrayListInput = function (props) {
         });
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 0.5, sx: sx.root },
-        label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label)), values === null || values === void 0 ? void 0 :
-        values.map(function (value, index) { return (react_1.default.createElement(ArrayItemInput, { key: index, index: index, value: value, handleChange: handleInputChange, handleRemove: handleRemove })); }),
+        label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label)),
+        Array.isArray(values) && (values === null || values === void 0 ? void 0 : values.map(function (value, index) { return (react_1.default.createElement(ArrayItemInput, { key: index, index: index, value: value, handleChange: handleInputChange, handleRemove: handleRemove })); })),
         react_1.default.createElement(material_1.Box, null,
-            react_1.default.createElement(material_1.Button, { onClick: handleAddClick, startIcon: react_1.default.createElement(lucide_react_1.Plus, { size: 20 }) }, "Add"))));
+            react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleAddClick, startIcon: react_1.default.createElement(lucide_react_1.Plus, { size: 20 }) }, "Add"))));
 };
 exports.default = ArrayListInput;
 var sx = {

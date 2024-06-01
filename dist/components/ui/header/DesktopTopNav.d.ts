@@ -6,6 +6,7 @@ type DesktopNavProps = {
     menuItems?: MenuLinkType[];
     enableAuth?: boolean;
     enableShopify?: boolean;
+    enableStripe?: boolean;
     enableNotifications?: boolean;
     handleClick: (path: string) => void;
     position?: 'fixed' | 'relative' | 'absolute';

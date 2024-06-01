@@ -43,8 +43,8 @@ var router_1 = require("next/router");
 var components_1 = require("../../../../components");
 var CardGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, item = _a.item, href = _a.href, handleClick = _a.handleClick, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? 240 : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f;
-    var _g = item || {}, label = _g.label, title = _g.title, image = _g.image;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, handleClick = _a.handleClick, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? 240 : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g;
+    var _h = resource || {}, label = _h.label, title = _h.title, image = _h.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -56,12 +56,12 @@ var CardGrid = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), { width: '100%', minHeight: height + 80 }) },
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-            react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-                react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, label: label, enableGradient: enableGradient, disableBorderRadius: enableBorder, enableOverlay: enableOverlay }))),
+            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, label: label, enableGradient: enableGradient, disableBorderRadius: enableBorder, enableOverlay: enableOverlay, handleClick: handleItemClick, secondaryActions: enableFavorites &&
+                    react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }) })),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
             react_1.default.createElement(material_1.Stack, { sx: sx.contentArea, direction: "row", spacing: 0 },
                 react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
-                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: item })))));
+                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource })))));
 };
 exports.default = CardGrid;
 var sx = {

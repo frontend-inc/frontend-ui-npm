@@ -19,12 +19,12 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../../components");
 var helpers_1 = require("../../../../helpers");
 var ChipList = function (props) {
-    var item = props.item, actions = props.actions, handleClick = props.handleClick, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c;
-    var _d = item || {}, label = _d.label, title = _d.title, description = _d.description, image = _d.image;
+    var resource = props.resource, actions = props.actions, handleClick = props.handleClick, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c;
+    var _d = resource || {}, label = _d.label, title = _d.title, description = _d.description, image = _d.image;
     return (react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.actions },
                 label && react_1.default.createElement(components_1.Label, { label: label }),
-                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: item })) },
+                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
                 image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: image === null || image === void 0 ? void 0 : image.url, alt: title },

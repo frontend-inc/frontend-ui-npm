@@ -72,38 +72,41 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 var context_1 = require("../../../context");
+var icons_material_1 = require("@mui/icons-material");
 var FavoriteButton = function (props) {
-    var url = props.url, handle = props.handle;
-    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    var _a = (0, react_1.useContext)(context_1.AppContext), authOpen = _a.authOpen, setAuthOpen = _a.setAuthOpen;
-    var _b = (0, react_1.useState)(false), favorited = _b[0], setFavorited = _b[1];
+    var handle = props.handle;
+    var _a = (0, frontend_js_1.useAuth)(), fetchMe = _a.fetchMe, currentUser = _a.currentUser;
+    var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
+    var _b = (0, react_1.useState)(false), isFavorite = _b[0], setIsFavorite = _b[1];
     var _c = (0, hooks_1.useSocial)({
-        url: url,
+        url: '/api/v1/social'
     }), loading = _c.loading, favorite = _c.favorite, unfavorite = _c.unfavorite;
-    var showAlertError = (0, hooks_1.useAlerts)().showAlertError;
-    var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var handleClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
+                    ev.stopPropagation();
+                    ev.preventDefault();
                     if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
                         return [2 /*return*/, setAuthOpen(true)];
                     }
-                    if (!favorited) return [3 /*break*/, 2];
-                    setFavorited(false);
+                    if (!isFavorite) return [3 /*break*/, 2];
+                    setIsFavorite(false);
                     return [4 /*yield*/, unfavorite(handle)];
                 case 1:
                     _a.sent();
+                    fetchMe();
                     return [3 /*break*/, 4];
                 case 2:
-                    setFavorited(true);
+                    setIsFavorite(true);
                     return [4 /*yield*/, favorite(handle)];
                 case 3:
                     _a.sent();
+                    fetchMe();
                     _a.label = 4;
                 case 4: return [2 /*return*/];
             }
@@ -112,28 +115,29 @@ var FavoriteButton = function (props) {
     (0, react_1.useEffect)(function () {
         if (currentUser && handle) {
             if ((0, helpers_1.isFavorited)(currentUser, handle)) {
-                setFavorited(true);
+                setIsFavorite(true);
             }
             else {
-                setFavorited(false);
+                setIsFavorite(false);
             }
         }
     }, [currentUser, handle]);
-    return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({}, sx.icon), (favorited && sx.favorited)) },
-        react_1.default.createElement(__1.Icon, { name: "Heart", color: favorited ? 'primary.contrastText' : 'text.primary' })));
+    return (react_1.default.createElement(material_1.IconButton, { size: "small", onClick: handleClick, sx: __assign(__assign({}, sx.icon), (isFavorite && sx.isFavorite)) }, isFavorite ?
+        react_1.default.createElement(icons_material_1.Favorite, null) :
+        react_1.default.createElement(icons_material_1.FavoriteBorder, null)));
 };
 exports.default = FavoriteButton;
 var sx = {
     icon: {
-        bgcolor: 'grey.100',
+        color: 'text.secondary',
         '&:hover': {
-            bgcolor: 'grey.300',
+            color: 'text.secondary',
         },
     },
-    favorited: {
-        bgcolor: 'primary.main',
+    isFavorite: {
+        color: 'primary.main',
         '&:hover': {
-            bgcolor: 'primary.dark',
+            color: 'primary.dark',
         },
     },
 };

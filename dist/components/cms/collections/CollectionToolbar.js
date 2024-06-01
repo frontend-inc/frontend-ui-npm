@@ -7,10 +7,15 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var CollectionToolbar = function (props) {
-    var _a = props.query, query = _a === void 0 ? {} : _a, activeFilters = props.activeFilters, _b = props.enableCreate, enableCreate = _b === void 0 ? false : _b, _c = props.enableSearch, enableSearch = _c === void 0 ? false : _c, _d = props.enableFilters, enableFilters = _d === void 0 ? false : _d, _e = props.enableSorting, enableSorting = _e === void 0 ? false : _e, _f = props.filterOptions, filterOptions = _f === void 0 ? [] : _f, _g = props.sortOptions, sortOptions = _g === void 0 ? [] : _g, handleAdd = props.handleAdd, handleFilter = props.handleFilter, handleClearFilters = props.handleClearFilters, keywords = props.keywords, handleKeywordChange = props.handleKeywordChange, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection, handleSearch = props.handleSearch;
-    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-        enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
-        react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.toolbarActions, spacing: 1 },
+    var handleNull = function () { return null; };
+    var _a = props.query, query = _a === void 0 ? {} : _a, activeFilters = props.activeFilters, _b = props.enableCreate, enableCreate = _b === void 0 ? false : _b, _c = props.enableSearch, enableSearch = _c === void 0 ? false : _c, _d = props.enableFilters, enableFilters = _d === void 0 ? false : _d, _e = props.enableSorting, enableSorting = _e === void 0 ? false : _e, _f = props.filterOptions, filterOptions = _f === void 0 ? [] : _f, _g = props.sortOptions, sortOptions = _g === void 0 ? [] : _g, _h = props.handleAdd, handleAdd = _h === void 0 ? handleNull : _h, handleFilter = props.handleFilter, handleClearFilters = props.handleClearFilters, keywords = props.keywords, handleKeywordChange = props.handleKeywordChange, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection, handleSearch = props.handleSearch;
+    if (!enableSearch && !enableFilters && !enableSorting && !enableCreate) {
+        return null;
+    }
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        enableSearch && (react_1.default.createElement(material_1.Box, { sx: sx.searchBar },
+            react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch }))),
+        react_1.default.createElement(material_1.Stack, { justifyContent: 'space-between', direction: { sm: 'row', xs: 'column' }, spacing: 1 },
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' } },
                 enableFilters && (react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
@@ -23,38 +28,32 @@ var sx = {
     root: {
         width: '100%',
     },
-    content: {
-        width: '100%',
-    },
-    form: {
-        width: '100%',
-    },
-    item: {
-        p: 2,
-    },
     button: {
         width: {
             sm: 'auto',
             xs: '100%',
         },
     },
-    filtersContainer: {
-        mr: {
-            sm: 2,
-            xs: 0,
-        },
-        mb: {
-            sm: 0,
-            xs: 2,
-        },
+    toolbar: {
+        borderTop: '1px solid',
+        borderColor: 'divider',
     },
     toolbarActions: {
+        display: 'flex',
+        width: '100%',
         justifyContent: 'space-between',
+        flexDirection: {
+            xs: 'column',
+            sm: 'row',
+        }
     },
     loading: {
         opacity: 0.7,
     },
     circularProgress: {
         color: 'primary.main',
+    },
+    searchBar: {
+        width: '100%'
     },
 };

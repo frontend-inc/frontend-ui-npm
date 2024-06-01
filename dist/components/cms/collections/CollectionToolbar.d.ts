@@ -10,7 +10,7 @@ export type CollectionToolbarProps = {
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
     enableCreate?: boolean;
-    handleAdd: () => void;
+    handleAdd?: () => void;
     handleFilter: (filter: FilterOptionType) => void;
     handleClearFilters: () => void;
     handleSortBy: (sortBy: SortOptionType) => void;

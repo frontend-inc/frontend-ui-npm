@@ -6,7 +6,6 @@ type MobileNavProps = {
     logoWidth?: number;
     logoHeight?: number;
     menuItems?: MenuLinkType[];
-    enableAuth?: boolean;
     enableShopify?: boolean;
     enableNotifications?: boolean;
     handleClick: (path: string) => void;

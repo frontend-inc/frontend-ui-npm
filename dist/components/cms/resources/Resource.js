@@ -21,7 +21,7 @@ var Resource = function (props) {
                             bgcolor: color,
                         } },
                         react_1.default.createElement(__1.Icon, { name: icon, size: 24 })))),
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, description) })))));
+                react_1.default.createElement(material_1.ListItemText, { primary: title, secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, description) })))));
 };
 exports.default = Resource;
 var sx = {

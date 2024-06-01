@@ -21,8 +21,8 @@ var moment_1 = __importDefault(require("moment"));
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var Article = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
-    var _b = resource || {}, label = _b.label, title = _b.title, image = _b.image, description = _b.description, data = _b.data;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites;
+    var _b = resource || {}, handle = _b.handle, label = _b.label, title = _b.title, image = _b.image, description = _b.description, data = _b.data;
     var published_at = (data || {}).published_at;
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), spacing: 7 },
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
@@ -34,7 +34,7 @@ var Article = function (props) {
                         handleEdit: handleEdit,
                         actions: actions,
                     }), numVisible: 4, resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "center" })))),
-        react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label, disableBorderRadius: enableBorder }),
+        react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label, disableBorderRadius: enableBorder, secondaryActions: enableFavorites && (react_1.default.createElement(components_1.FavoriteButton, { handle: handle })) }),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description))));
 };

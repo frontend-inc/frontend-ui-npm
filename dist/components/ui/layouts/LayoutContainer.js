@@ -90,15 +90,19 @@ var sx = {
         flexDirection: 'column',
         width: '100%',
     },
+    contentNotifications: {
+        pb: '45px',
+    },
     contentSideNav: {
+        pt: {
+            md: 0,
+            sm: '60px',
+        },
         width: {
             md: 'calc(100% - 280px)',
             xs: '100%',
         },
         height: '100%',
-    },
-    contentNotifications: {
-        pb: '45px',
     },
     contentTopNav: {
         pt: '60px',

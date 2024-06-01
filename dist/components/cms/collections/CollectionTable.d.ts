@@ -1,7 +1,7 @@
 import React from 'react';
 import { TableHeaderType } from '../../../types';
-import { CollectionProps } from './Collection';
-export type CollectionTableProps = CollectionProps & {
+import { CollectionListProps } from './CollectionList';
+export type CollectionTableProps = CollectionListProps & {
     headers: TableHeaderType[];
 };
 declare const CollectionTable: React.FC<CollectionTableProps>;

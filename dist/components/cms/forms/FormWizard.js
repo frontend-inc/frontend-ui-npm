@@ -85,10 +85,10 @@ var router_1 = require("next/router");
 var FormWizard = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props.py, py = _a === void 0 ? 4 : _a, handle = props.handle, _resource = props.resource, fields = props.fields, contentType = props.contentType, startTitle = props.startTitle, startDescription = props.startDescription, startImage = props.startImage, _b = props.startButtonText, startButtonText = _b === void 0 ? 'Start' : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Submit' : _c, endTitle = props.endTitle, endDescription = props.endDescription, endImage = props.endImage, endButtonText = props.endButtonText, href = props.href;
+    var _a = props.py, py = _a === void 0 ? 4 : _a, handle = props.handle, _resource = props.resource, fields = props.fields, url = props.url, startTitle = props.startTitle, startDescription = props.startDescription, startImage = props.startImage, _b = props.startButtonText, startButtonText = _b === void 0 ? 'Start' : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Submit' : _c, endTitle = props.endTitle, endDescription = props.endDescription, endImage = props.endImage, endButtonText = props.endButtonText, href = props.href;
     var _d = (0, react_1.useState)(false), submitted = _d[0], setSubmitted = _d[1];
     var _e = (0, frontend_js_1.useDocuments)({
-        collection: contentType,
+        url: url,
     }), loading = _e.loading, findOne = _e.findOne, resource = _e.resource, setResource = _e.setResource, update = _e.update, create = _e.create, handleDataChange = _e.handleDataChange, removeAttachment = _e.removeAttachment, flattenDocument = _e.flattenDocument;
     var _f = (0, react_1.useState)(), currentField = _f[0], setCurrentField = _f[1];
     var _g = (0, react_1.useState)(0), currentStep = _g[0], setCurrentStep = _g[1];
@@ -182,10 +182,10 @@ var FormWizard = function (props) {
         if (_resource === null || _resource === void 0 ? void 0 : _resource.id) {
             setResource(_resource);
         }
-        else if (handle && contentType) {
+        else if (handle && url) {
             findOne(handle);
         }
-    }, [_resource, handle, contentType]);
+    }, [_resource, handle, url]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         currentStep > 0 && (react_1.default.createElement(FormWizardProgress_1.default, { currentStep: currentStep, totalSteps: totalSteps })),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.form), { py: py }) }, !submitted ? (react_1.default.createElement(react_1.default.Fragment, null,

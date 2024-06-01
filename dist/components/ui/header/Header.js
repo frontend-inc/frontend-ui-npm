@@ -46,11 +46,11 @@ var DesktopTopNav_1 = __importDefault(require("./DesktopTopNav"));
 var DesktopSideNav_1 = __importDefault(require("./DesktopSideNav"));
 var Header = function (props) {
     var logo = (0, react_1.useContext)(context_1.AppContext).logo;
-    var _a = props.sideNav, sideNav = _a === void 0 ? false : _a, _b = props.editing, editing = _b === void 0 ? false : _b, menuItems = props.menuItems, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableShopify, enableShopify = _d === void 0 ? false : _d, _e = props.enableNotifications, enableNotifications = _e === void 0 ? false : _e;
+    var _a = props.sideNav, sideNav = _a === void 0 ? false : _a, _b = props.editing, editing = _b === void 0 ? false : _b, menuItems = props.menuItems, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableStripe, enableStripe = _d === void 0 ? false : _d, _e = props.enableShopify, enableShopify = _e === void 0 ? false : _e, _f = props.enableNotifications, enableNotifications = _f === void 0 ? false : _f;
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (sideNav && sx.rootSideNav)) },
-        !sideNav ? (react_1.default.createElement(DesktopTopNav_1.default, { editing: editing, logo: logo, enableAuth: enableAuth, enableShopify: enableShopify, enableNotifications: enableNotifications, menuItems: menuItems, handleClick: handleClick })) : (react_1.default.createElement(DesktopSideNav_1.default, { editing: editing, logo: logo, enableAuth: enableAuth, enableShopify: enableShopify, enableNotifications: enableNotifications, menuItems: menuItems, handleClick: handleClick })),
+        !sideNav ? (react_1.default.createElement(DesktopTopNav_1.default, { editing: editing, logo: logo, enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, enableNotifications: enableNotifications, menuItems: menuItems, handleClick: handleClick })) : (react_1.default.createElement(DesktopSideNav_1.default, { editing: editing, logo: logo, enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, enableNotifications: enableNotifications, menuItems: menuItems, handleClick: handleClick })),
         react_1.default.createElement(MobileTopNav_1.default, { editing: editing, logo: logo, enableShopify: enableShopify, enableNotifications: enableNotifications, menuItems: menuItems, handleClick: handleClick }),
-        react_1.default.createElement(MobileDrawer_1.default, { editing: editing, enableAuth: enableAuth, enableShopify: enableShopify, menuItems: menuItems, handleClick: handleClick })));
+        react_1.default.createElement(MobileDrawer_1.default, { editing: editing, enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, menuItems: menuItems, handleClick: handleClick })));
 };
 exports.default = Header;
 var sx = {

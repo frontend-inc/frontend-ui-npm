@@ -1,0 +1,20 @@
+import React from 'react';
+import { ActionType } from '../../../types';
+type CardListProps = {
+    resources: any;
+    actions?: ActionType[];
+    variant: 'list' | 'grid';
+    style: 'card' | 'avatar' | 'cover' | 'chip' | 'text' | 'image';
+    buttonText?: string;
+    enableBorder?: boolean;
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
+    enableEdit?: boolean;
+    enableDelete?: boolean;
+    enableFavorites?: boolean;
+    handleClick: (item: any) => void;
+    handleEdit?: (item: any) => void;
+    handleDelete?: (item: any) => void;
+};
+declare const CardList: React.FC<CardListProps>;
+export default CardList;

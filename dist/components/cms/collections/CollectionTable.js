@@ -97,21 +97,13 @@ var CollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = (0, react_1.useContext)(context_1.AppContext), clientUrl = _a.clientUrl, setAuthOpen = _a.setAuthOpen;
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
-    var contentType = props.contentType, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l, _m = props.filterUser, filterUser = _m === void 0 ? false : _m, _o = props.filterTeam, filterTeam = _o === void 0 ? false : _o;
+    var url = props.url, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l, _m = props.filterUser, filterUser = _m === void 0 ? false : _m, _o = props.filterTeam, filterTeam = _o === void 0 ? false : _o;
     var _p = (0, react_1.useState)(false), openModal = _p[0], setOpenModal = _p[1];
     var _q = (0, react_1.useState)(false), openDeleteModal = _q[0], setOpenDeleteModal = _q[1];
     var _r = (0, frontend_js_1.useDocuments)({
-        collection: contentType
+        url: url
     }), loading = _r.loading, delayedLoading = _r.delayedLoading, errors = _r.errors, resource = _r.resource, resources = _r.resources, setResource = _r.setResource, update = _r.update, create = _r.create, destroy = _r.destroy, handleDataChange = _r.handleDataChange, query = _r.query, findMany = _r.findMany, reloadMany = _r.reloadMany, removeAttachment = _r.removeAttachment, page = _r.page, numPages = _r.numPages, numResults = _r.numResults, totalCount = _r.totalCount, paginate = _r.paginate;
-    var _s = (0, react_1.useState)(), currentUserFilter = _s[0], setCurrentUserFilter = _s[1];
-    (0, react_1.useEffect)(function () {
-        var newFilter = {
-            AND: __spreadArray(__spreadArray([], (filterUser && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? [{ user_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.id } }] : []), true), (filterTeam && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id) ? [{ team_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id } }] : []), true)
-        };
-        //@ts-ignore
-        setCurrentUserFilter(newFilter);
-    }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id, filterUser, filterTeam]);
-    var _t = (0, react_1.useState)(''), keywords = _t[0], setKeywords = _t[1];
+    var _s = (0, react_1.useState)(''), keywords = _s[0], setKeywords = _s[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -129,9 +121,9 @@ var CollectionTable = function (props) {
         }
         findMany(__assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
     };
-    var _u = (0, hooks_1.useFilters)({
+    var _t = (0, hooks_1.useFilters)({
         query: query,
-    }), queryFilters = _u.queryFilters, activeFilters = _u.activeFilters, setActiveFilters = _u.setActiveFilters, handleAddFilter = _u.handleAddFilter, mergeAllFilters = _u.mergeAllFilters;
+    }), queryFilters = _t.queryFilters, activeFilters = _t.activeFilters, setActiveFilters = _t.setActiveFilters, handleAddFilter = _t.handleAddFilter, mergeAllFilters = _t.mergeAllFilters, buildUserFilters = _t.buildUserFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -246,8 +238,9 @@ var CollectionTable = function (props) {
             }
         });
     }); };
+    var currentUserFilter = buildUserFilters(currentUser, filterUser, filterTeam);
     (0, react_1.useEffect)(function () {
-        if (contentType && perPage) {
+        if (url && currentUser) {
             findMany(__assign(__assign({}, defaultQuery), { filters: mergeAllFilters([
                     defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters,
                     currentUserFilter,
@@ -255,14 +248,15 @@ var CollectionTable = function (props) {
                 ]), per_page: perPage }));
         }
     }, [
-        contentType,
+        url,
         perPage,
-        currentUserFilter,
-        currentUser === null || currentUser === void 0 ? void 0 : currentUser.id,
+        filterUser,
+        filterTeam,
+        currentUser,
         queryFilters,
-        defaultQuery,
+        defaultQuery, ,
     ]);
-    var _v = (0, react_1.useState)([]), rows = _v[0], setRows = _v[1];
+    var _u = (0, react_1.useState)([]), rows = _u[0], setRows = _u[1];
     (0, react_1.useEffect)(function () {
         if ((resources === null || resources === void 0 ? void 0 : resources.length) >= 0) {
             var flatten = (0, helpers_1.flattenDocuments)(resources);

@@ -41,15 +41,15 @@ var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var Person = function (props) {
     var MAX_CHARS = 500;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites;
     var data = (resource || {}).data;
     var _b = data || {}, facebook = _b.facebook, instagram = _b.instagram, linkedin = _b.linkedin, twitter = _b.twitter, youtube = _b.youtube, blog = _b.blog;
-    var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
+    var _c = resource || {}, handle = _c.handle, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
     var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { sm: 'row', xs: 'column' }, spacing: 4 },
             react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-                react_1.default.createElement(components_1.Image, { label: label, height: 240, src: image === null || image === void 0 ? void 0 : image.url, alt: title, disableBorderRadius: enableBorder })),
+                react_1.default.createElement(components_1.Image, { label: label, height: 240, src: image === null || image === void 0 ? void 0 : image.url, alt: title, disableBorderRadius: enableBorder, secondaryActions: enableFavorites && (react_1.default.createElement(components_1.FavoriteButton, { handle: handle })) })),
             react_1.default.createElement(material_1.Stack, { spacing: 2, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
                 react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
                 facebook ||

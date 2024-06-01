@@ -3,7 +3,7 @@ export type ResourceProps = {
     avatar?: React.ReactNode;
     icon?: string;
     color?: string;
-    title?: string;
+    title?: string | React.ReactNode;
     description?: string;
     image?: string;
     resource: any;

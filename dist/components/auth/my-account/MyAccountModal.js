@@ -70,7 +70,7 @@ var components_2 = require("../../../components");
 var MyAccountTabs_1 = __importDefault(require("./MyAccountTabs"));
 var material_1 = require("@mui/material");
 var MyAccountModal = function (props) {
-    var _a = props || {}, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe, stripePublishableKey = _a.stripePublishableKey;
+    var _a = props || {}, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe;
     var _b = (0, react_1.useContext)(context_1.AppContext), myAccountOpen = _b.myAccountOpen, setMyAccountOpen = _b.setMyAccountOpen;
     var _c = (0, frontend_js_1.useAuth)(), delayedLoading = _c.delayedLoading, user = _c.user, currentUser = _c.currentUser, updateMe = _c.updateMe, handleChange = _c.handleChange, deleteAvatar = _c.deleteAvatar, logout = _c.logout;
     var _d = (0, react_1.useState)(0), currentTab = _d[0], setCurrentTab = _d[1];
@@ -117,7 +117,7 @@ var MyAccountModal = function (props) {
             currentTab == 1 && react_1.default.createElement(components_2.TeamList, null),
             currentTab == 2 && (react_1.default.createElement(components_2.TeamUsersList, { handleAddUser: function () { return setCurrentTab(3); } })),
             currentTab == 3 && (react_1.default.createElement(components_2.TeamUserInvite, { handleSuccess: function () { return setCurrentTab(2); }, handleCancel: function () { return setCurrentTab(2); } })),
-            currentTab == 4 && (react_1.default.createElement(components_2.CreditCards, { stripePublishableKey: stripePublishableKey })),
+            currentTab == 4 && (react_1.default.createElement(components_2.CreditCards, null)),
             currentTab == 6 && react_1.default.createElement(components_2.SubscriptionPlans, null))));
 };
 exports.default = MyAccountModal;

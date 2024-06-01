@@ -82,7 +82,12 @@ var ColorInput = function (props) {
             value = "#".concat(value);
         }
         if ((value === null || value === void 0 ? void 0 : value.length) == 7) {
-            setHex(value);
+            handleChange({
+                target: {
+                    name: name,
+                    value: value,
+                },
+            });
         }
     };
     (0, react_1.useEffect)(function () {

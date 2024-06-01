@@ -44,7 +44,7 @@ var SocialButtons = function (props) {
         return null;
     return (react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: justifyContent, spacing: 1 },
         enableLikes && react_1.default.createElement(components_1.LikeButton, { handle: handle, url: url }),
-        enableFavorites && react_1.default.createElement(components_1.FavoriteButton, { handle: handle, url: url }),
+        enableFavorites && react_1.default.createElement(components_1.FavoriteButton, { handle: handle }),
         enableShares && react_1.default.createElement(components_1.ShareButton, { url: currentPageUrl })));
 };
 exports.default = SocialButtons;

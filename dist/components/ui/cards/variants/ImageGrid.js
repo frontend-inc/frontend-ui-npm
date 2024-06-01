@@ -30,8 +30,8 @@ var router_1 = require("next/router");
 var material_1 = require("@mui/material");
 var ImageVert = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, item = _a.item, href = _a.href, handleClick = _a.handleClick, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? 320 : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e;
-    var _f = item || {}, title = _f.title, image = _f.image;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, handleClick = _a.handleClick, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? 320 : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableFavorites, enableFavorites = _f === void 0 ? false : _f;
+    var _g = resource || {}, title = _g.title, image = _g.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -43,9 +43,9 @@ var ImageVert = function (props) {
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
+            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, secondaryActions: enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })) })),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: item, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
+            react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
 };
 exports.default = ImageVert;
 var sx = {

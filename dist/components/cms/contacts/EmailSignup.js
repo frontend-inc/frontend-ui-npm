@@ -69,7 +69,7 @@ var EmailSignup = function (props) {
     }); };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 1 },
-            label && react_1.default.createElement(components_1.Label, { label: label }),
+            label && (react_1.default.createElement(material_1.Typography, { variant: 'caption', color: "text.secondary", sx: sx.label }, label)),
             title && (react_1.default.createElement(material_1.Typography, { variant: 'h6', color: "text.primary", sx: sx.title }, title)),
             description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: sx.description }, description)),
             react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: "row", spacing: 0 },

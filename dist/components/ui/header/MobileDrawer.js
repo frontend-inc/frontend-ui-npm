@@ -33,31 +33,24 @@ var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
 var SideNavMenuItem_1 = __importDefault(require("./SideNavMenuItem"));
 var frontend_js_1 = require("frontend-js");
+var __2 = require("../../..");
 var MobileDrawer = function (props) {
     var _a, _b;
     var _c = (0, react_1.useContext)(context_1.AppContext), menuOpen = _c.menuOpen, setMenuOpen = _c.setMenuOpen;
-    var editing = props.editing, menuItems = props.menuItems, handleClick = props.handleClick, enableAuth = props.enableAuth, enableShopify = props.enableShopify;
+    var editing = props.editing, menuItems = props.menuItems, handleClick = props.handleClick, enableAuth = props.enableAuth, enableStripe = props.enableStripe, enableShopify = props.enableShopify;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var handleMenuClick = function (path) {
         setMenuOpen(false);
         handleClick(path);
     };
-    var filterVisibility = function (menuItem) {
-        if (menuItem.require_user && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
-            return false;
-        }
-        if (menuItem.require_guest && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
-            return false;
-        }
-        return true;
-    };
     return (react_1.default.createElement(__1.Drawer, { open: menuOpen, handleClose: function () { return setMenuOpen(false); }, anchor: "left", styles: sx.drawer },
         react_1.default.createElement(material_1.Box, { sx: sx.sideNavMenu },
-            react_1.default.createElement(material_1.List, { sx: sx.sideNavMenuItems }, (_b = (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.filter(filterVisibility)) === null || _b === void 0 ? void 0 : _b.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); })),
+            react_1.default.createElement(material_1.List, { sx: sx.sideNavMenuItems }, (_b = (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.filter(function (menuItem) { return (0, __2.filterLinkVisibility)(menuItem, currentUser); })) === null || _b === void 0 ? void 0 : _b.map(function (menuItem, index) { return (react_1.default.createElement(SideNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); })),
             (enableAuth || enableShopify) && (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
                 enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav" }),
                     react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }))),
+                enableStripe && (react_1.default.createElement(__1.StripeCustomerButton, { variant: "sideNav" })),
                 enableAuth && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
                     react_1.default.createElement(__1.AuthButton, { showLabel: true, editing: editing }))))))));
 };

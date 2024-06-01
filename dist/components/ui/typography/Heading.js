@@ -16,29 +16,39 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
 var Heading = function (props) {
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.textAlign, textAlign = _b === void 0 ? 'left' : _b, _c = _a.textVariant, textVariant = _c === void 0 ? 'h6' : _c;
+    var _a = props || {}, actions = _a.actions, label = _a.label, title = _a.title, description = _a.description, _b = _a.textAlign, textAlign = _b === void 0 ? 'left' : _b, _c = _a.textVariant, textVariant = _c === void 0 ? 'h5' : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d;
     if (!title && !description && !label)
         return null;
-    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), { alignItems: {
-                sm: textAlign === 'center' ? 'center' : 'flex-start',
-                xs: 'center',
-            } }), direction: 'column', spacing: 1 },
-        label && react_1.default.createElement(components_1.Label, { label: label }),
-        title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", sx: __assign(__assign({}, sx.title), { textAlign: textAlign }) }, title)),
-        description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: __assign(__assign({}, sx.description), { textAlign: {
-                    sm: textAlign,
-                    xs: 'center',
-                } }) }, description))));
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        react_1.default.createElement(material_1.Stack, { sx: __assign(__assign(__assign({}, sx.stack), (enableBorder && sx.border)), { alignItems: textAlign }), direction: 'column', spacing: 0 },
+            label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: 'text.secondary' }, label)),
+            title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", sx: __assign(__assign({}, sx.title), { textAlign: textAlign }) }, title)),
+            description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: __assign(__assign({}, sx.description), { textAlign: textAlign }) }, description))),
+        actions));
 };
 exports.default = Heading;
 var sx = {
-    stack: {
+    root: {
         width: '100%',
-        pb: 4,
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: {
+            xs: 'column',
+            sm: 'row',
+        }
+    },
+    stack: {
+        pb: 1,
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    border: {
+        py: 2,
+        borderBottom: '1px solid',
+        borderColor: 'divider'
     },
     title: {
         width: '100%',

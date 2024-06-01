@@ -19,7 +19,7 @@ var components_1 = require("../../../components");
 var FormInput = function (props) {
     var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove;
     var componentMapper = {
-        array: components_1.ArrayInput,
+        array: components_1.ArrayListInput,
         string: components_1.TextInput,
         file: components_1.AttachmentInput,
         url: components_1.TextInput,
@@ -35,9 +35,6 @@ var FormInput = function (props) {
         json: components_1.JSONInput,
     };
     var inputProps = {
-        array: {
-            value: value || [],
-        },
         text: {
             multiline: true,
             rows: 6,

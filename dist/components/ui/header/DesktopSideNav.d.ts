@@ -7,6 +7,7 @@ type DesktopNavProps = {
     logoHeight?: number;
     menuItems?: MenuLinkType[];
     enableAuth?: boolean;
+    enableStripe?: boolean;
     enableShopify?: boolean;
     enableNotifications?: boolean;
     handleClick: (path: string) => void;

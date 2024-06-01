@@ -14,6 +14,7 @@ export type CollectionCarouselProps = {
     enableBorder?: boolean;
     enableDots?: boolean;
     enableGradient?: boolean;
+    enableFavorites?: boolean;
 };
 declare const CollectionCarousel: React.FC<CollectionCarouselProps>;
 export default CollectionCarousel;

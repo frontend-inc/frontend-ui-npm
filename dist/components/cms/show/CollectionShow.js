@@ -79,11 +79,11 @@ var CollectionShow = function (props) {
     var handle = props.handle;
     if (handle == 'index')
         handle = undefined;
+    var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'item' : _b, _resource = _a.resource, fields = _a.fields, fieldName = _a.fieldName, displayFields = _a.displayFields, url = _a.url, actions = _a.actions, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, enableFavorites = _a.enableFavorites;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'item' : _b, _resource = _a.resource, fields = _a.fields, fieldName = _a.fieldName, displayFields = _a.displayFields, url = _a.url, contentType = _a.contentType, actions = _a.actions, enableBorder = _a.enableBorder, enableCreate = _a.enableCreate, enableEdit = _a.enableEdit;
     var _c = (0, frontend_js_2.useDocuments)({
-        collection: contentType,
+        url: url
     }), loading = _c.delayedLoading, errors = _c.errors, update = _c.update, create = _c.create, resource = _c.resource, setResource = _c.setResource, removeAttachment = _c.removeAttachment, handleDataChange = _c.handleDataChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -149,7 +149,7 @@ var CollectionShow = function (props) {
         }
     }, [_resource]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
-        (resource === null || resource === void 0 ? void 0 : resource.id) && (react_1.default.createElement(Component, { fieldName: fieldName, resource: resource, actions: actions, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit })),
+        (resource === null || resource === void 0 ? void 0 : resource.id) && (react_1.default.createElement(Component, { fieldName: fieldName, resource: resource, actions: actions, enableFavorites: enableFavorites, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit })),
         (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(Details_1.default, { url: url, fields: displayFields, resource: resource, enableBorder: enableBorder })),
         react_1.default.createElement(__1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
             react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_2.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }))));

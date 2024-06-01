@@ -19,10 +19,10 @@ var material_1 = require("@mui/material");
 var helpers_1 = require("../../../../helpers");
 var components_1 = require("../../../../components");
 var AvatarList = function (props) {
-    var actions = props.actions, item = props.item, _a = props.height, height = _a === void 0 ? 128 : _a, _b = props.width, width = _b === void 0 ? 128 : _b, handleClick = props.handleClick, _c = props.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e;
-    var _f = item || {}, title = _f.title, description = _f.description, image = _f.image;
+    var actions = props.actions, resource = props.resource, _a = props.height, height = _a === void 0 ? 128 : _a, _b = props.width, width = _b === void 0 ? 128 : _b, handleClick = props.handleClick, _c = props.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e;
+    var _f = resource || {}, title = _f.title, description = _f.description, image = _f.image;
     return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.listItem), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: item }) },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource }) },
             react_1.default.createElement(material_1.ListItemButton, { sx: {
                     minHeight: height + 44,
                 }, onClick: handleClick && handleClick },
@@ -73,7 +73,7 @@ var sx = {
     avatar: {
         height: '64px',
         width: '64px',
-        backgroundImage: 'linear-gradient(45deg, #999999,#DDDDDD,#FAFAFA)',
+        backgroundImage: 'linear-gradient(45deg, #888888, #222222,#000000)',
     },
     description: {
         maxWidth: 320,

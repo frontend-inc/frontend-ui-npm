@@ -68,10 +68,10 @@ var router_1 = require("next/router");
 var CollectionForm = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var handle = props.handle, _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, contentType = props.contentType, href = props.href, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
+    var handle = props.handle, _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, href = props.href, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _c = (0, frontend_js_1.useDocuments)({
-        collection: contentType,
+        url: url,
     }), delayedLoading = _c.delayedLoading, errors = _c.errors, findOne = _c.findOne, resource = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, flattenDocument = _c.flattenDocument, handleDataChange = _c.handleDataChange, removeAttachment = _c.removeAttachment;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {

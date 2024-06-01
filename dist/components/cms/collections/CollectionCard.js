@@ -32,7 +32,7 @@ var CollectionCard = function (props) {
     var COMPONENTS = {
         card: __1.Card,
         avatar: __1.AvatarCard,
-        cover: __1.Cover,
+        cover: __1.CoverCard,
         chip: __1.Chip,
         text: __1.TextCard,
         image: __1.ImageCard,

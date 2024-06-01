@@ -5,7 +5,7 @@ type CollectionCardProps = {
     actions: ActionType[];
     variant: 'list' | 'grid';
     style: CardStyleTypes;
-    item: any & {
+    resource: any & {
         label?: string;
         title?: string;
         image?: string;
@@ -23,6 +23,7 @@ type CollectionCardProps = {
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
+    enableFavorites?: boolean;
 };
 declare const CollectionCard: React.FC<CollectionCardProps>;
 export default CollectionCard;

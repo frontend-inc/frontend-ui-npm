@@ -17,6 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./auth"), exports);
 __exportStar(require("./addons"), exports);
 __exportStar(require("./cms"), exports);
+__exportStar(require("./commerce"), exports);
 __exportStar(require("./shopify"), exports);
 __exportStar(require("./social"), exports);
-__exportStar(require("./web"), exports);
+__exportStar(require("./ui"), exports);

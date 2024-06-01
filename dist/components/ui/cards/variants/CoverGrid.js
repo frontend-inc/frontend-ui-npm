@@ -42,8 +42,8 @@ var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
 var CoverVert = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, item = _a.item, href = _a.href, handleClick = _a.handleClick, _b = _a.textVariant, textVariant = _b === void 0 ? 'subtitle1' : _b, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 320 : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, icon = _a.icon;
-    var _g = item || {}, label = _g.label, title = _g.title, description = _g.description, image = _g.image;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, handleClick = _a.handleClick, _b = _a.textVariant, textVariant = _b === void 0 ? 'subtitle1' : _b, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 320 : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g, icon = _a.icon;
+    var _h = resource || {}, label = _h.label, title = _h.title, description = _h.description, image = _h.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -55,7 +55,7 @@ var CoverVert = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign({}, sx.root) },
         react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-            react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
+            react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, secondaryActions: enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })) })),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },
             react_1.default.createElement(material_1.Stack, { sx: sx.fullWidth, spacing: 1, direction: 'row', alignItems: "center" },
                 icon && (react_1.default.createElement(material_1.Box, null,
@@ -66,7 +66,7 @@ var CoverVert = function (props) {
                             react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 60)),
                             description && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "body2" }, (0, helpers_1.truncate)(description, 30)))))))),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            react_1.default.createElement(__1.Actions, { numVisible: 0, resource: item, actions: actions, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
+            react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, actions: actions, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
 };
 exports.default = CoverVert;
 var sx = {

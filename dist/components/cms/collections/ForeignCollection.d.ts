@@ -6,10 +6,9 @@ export type ForeignCollectionProps = {
     field: any;
     fields: FormFieldType[];
     resource: any;
-    layout?: 'drawer' | 'inline';
     handle: string;
-    contentType: string;
-    foreignContentType?: string;
+    url: string;
+    foreignUrl: string;
     href?: any;
     perPage?: number;
     query?: any;
@@ -18,6 +17,7 @@ export type ForeignCollectionProps = {
     enableDelete?: boolean;
     enableBorder?: boolean;
     enableGradient?: boolean;
+    enableFavorites?: boolean;
     enableLoadMore?: boolean;
 };
 declare const ForeignCollection: React.FC<ForeignCollectionProps>;

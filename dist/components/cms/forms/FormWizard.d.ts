@@ -3,7 +3,7 @@ export type FormWizardProps = {
     handle: string;
     resource?: any;
     py?: number;
-    contentType: string;
+    url: string;
     variant?: 'contained' | 'outlined' | 'text';
     fields: any[];
     startTitle: string;

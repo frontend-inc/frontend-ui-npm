@@ -24,7 +24,10 @@ var CustomPopper = function (props) {
     return react_1.default.createElement(material_1.Popper, __assign({}, props, { sx: exports.sx.popper, placement: "bottom" }));
 };
 var ArrayInput = function (props) {
-    var errors = props.errors, label = props.label, name = props.name, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, _a = props.direction, direction = _a === void 0 ? 'column' : _a, _b = props.freeSolo, freeSolo = _b === void 0 ? true : _b;
+    var errors = props.errors, label = props.label, name = props.name, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, _a = props.direction, direction = _a === void 0 ? 'column' : _a, _b = props.freeSolo, freeSolo = _b === void 0 ? true : _b;
+    var value = props.value;
+    if (!value)
+        value = [];
     var _c = (0, hooks_1.useError)({
         errors: errors,
         name: name,
@@ -42,10 +45,10 @@ var ArrayInput = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { sx: exports.sx.root, direction: direction, spacing: 0 },
         react_1.default.createElement(material_1.Typography, { sx: exports.sx.label, variant: "caption", color: "text.secondary" }, label),
-        value && (react_1.default.createElement(material_1.Autocomplete, { multiple: true, freeSolo: freeSolo, defaultValue: value || [], onChange: handleInputChange, options: options || [], getOptionLabel: function (option) { return option; }, PopperComponent: CustomPopper, clearIcon: react_1.default.createElement(lucide_react_1.X, null), renderTags: function (tagValue, getTagProps) {
+        react_1.default.createElement(material_1.Autocomplete, { multiple: true, freeSolo: freeSolo, defaultValue: value || [], onChange: handleInputChange, options: options || [], getOptionLabel: function (option) { return option; }, PopperComponent: CustomPopper, clearIcon: react_1.default.createElement(lucide_react_1.X, null), renderTags: function (tagValue, getTagProps) {
                 return Array.isArray(tagValue) &&
                     tagValue.map(function (option, index) { return (react_1.default.createElement(material_1.Chip, __assign({ sx: exports.sx.chip, label: option, color: "secondary", deleteIcon: react_1.default.createElement(lucide_react_1.X, { size: 20 }) }, getTagProps({ index: index })))); });
-            }, renderInput: function (params) { return (react_1.default.createElement(material_1.TextField, __assign({}, params, { color: "primary", sx: __assign(__assign({}, exports.sx.textField), ((error && exports.sx.inputError) || {})), placeholder: placeholder, margin: "dense", variant: "outlined" }))); } })),
+            }, renderInput: function (params) { return (react_1.default.createElement(material_1.TextField, __assign({}, params, { color: "primary", sx: __assign(__assign({}, exports.sx.textField), ((error && exports.sx.inputError) || {})), placeholder: placeholder, margin: "dense", variant: "outlined" }))); } }),
         react_1.default.createElement(components_1.ErrorText, { error: error })));
 };
 exports.default = ArrayInput;

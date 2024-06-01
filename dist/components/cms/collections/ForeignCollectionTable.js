@@ -88,21 +88,21 @@ var ForeignCollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = (0, react_1.useContext)(context_1.AppContext), clientUrl = _a.clientUrl, setAuthOpen = _a.setAuthOpen;
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
-    var resource = props.resource, contentType = props.contentType, foreignContentType = props.foreignContentType, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
+    var resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l;
     var _m = (0, react_1.useState)(false), openModal = _m[0], setOpenModal = _m[1];
     var _o = (0, react_1.useState)(false), openDeleteModal = _o[0], setOpenDeleteModal = _o[1];
     var _p = (0, frontend_js_1.useDocuments)({
-        collection: contentType
+        url: url
     }), loading = _p.loading, delayedLoading = _p.delayedLoading, query = _p.query, resources = _p.resources, findLinks = _p.findLinks, page = _p.page, numPages = _p.numPages, numResults = _p.numResults, totalCount = _p.totalCount, paginate = _p.paginate, addLinks = _p.addLinks;
     var _q = (0, frontend_js_1.useDocuments)({
-        collection: foreignContentType,
+        url: foreignUrl,
     }), errors = _q.errors, _resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, handleDataChange = _q.handleDataChange, removeAttachment = _q.removeAttachment;
     var _r = (0, react_1.useState)(''), keywords = _r[0], setKeywords = _r[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
     var handleSearch = function (keywords) {
-        findLinks(resource.id, foreignContentType, __assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1, per_page: perPage }));
+        findLinks(resource.id, foreignUrl, __assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1, per_page: perPage }));
     };
     var handlePaginate = function (ev, page) {
         paginate(page);
@@ -115,7 +115,7 @@ var ForeignCollectionTable = function (props) {
         if (sortBy == (query === null || query === void 0 ? void 0 : query.sort_by)) {
             sortDir = (query === null || query === void 0 ? void 0 : query.sort_direction) == 'asc' ? 'desc' : 'asc';
         }
-        findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignContentType, __assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
+        findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignUrl, __assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
     };
     var _s = (0, hooks_1.useFilters)({
         query: query,
@@ -123,7 +123,7 @@ var ForeignCollectionTable = function (props) {
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
-        findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignContentType, {
+        findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignUrl, {
             filters: __assign({}, defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters),
             sort_by: 'id',
             sort_direction: 'desc',
@@ -236,7 +236,7 @@ var ForeignCollectionTable = function (props) {
         var filterQuery;
         return __generator(this, function (_a) {
             filterQuery = __assign(__assign(__assign({}, query), defaultQuery), { per_page: perPage, page: 1 });
-            findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignContentType, filterQuery);
+            findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignUrl, filterQuery);
             return [2 /*return*/];
         });
     }); };
@@ -247,10 +247,10 @@ var ForeignCollectionTable = function (props) {
         }
     }, [resources]);
     (0, react_1.useEffect)(function () {
-        if ((resource === null || resource === void 0 ? void 0 : resource.id) && foreignContentType) {
+        if ((resource === null || resource === void 0 ? void 0 : resource.id) && foreignUrl) {
             handleFetchResources();
         }
-    }, [resource, foreignContentType, currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
+    }, [resource, foreignUrl, currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 0 },
             enableFilters && filterAnchor == 'left' && (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, lg: 3 },
