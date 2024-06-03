@@ -32,6 +32,7 @@ var sx = {
         textAlign: 'center',
     },
     paper: {
+        width: '100%',
         p: {
             sm: 4,
             xs: 2,

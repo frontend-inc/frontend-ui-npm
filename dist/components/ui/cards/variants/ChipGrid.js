@@ -18,10 +18,12 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../../..");
 var ChipList = function (props) {
-    var resource = props.resource, actions = props.actions, handleClick = props.handleClick, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c;
-    var _d = resource || {}, title = _d.title, image = _d.image;
+    var resource = props.resource, actions = props.actions, handleClick = props.handleClick, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, _d = props.enableFavorites, enableFavorites = _d === void 0 ? false : _d;
+    var _e = resource || {}, title = _e.title, image = _e.image;
     return (react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource }) },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: 'flex-end', sx: sx.actions },
+                enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
                 image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: image === null || image === void 0 ? void 0 : image.url, alt: title },

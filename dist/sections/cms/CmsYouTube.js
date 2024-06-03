@@ -31,6 +31,6 @@ var components_2 = require("../../components");
 var CmsYouTube = function (props) {
     var bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, rest = __rest(props, ["bgcolor", "py", "px", "maxWidth", "requireAuth", "requireTeam", "requirePaid", "requireAdmin"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_2.CollectionShow, __assign({}, rest, { style: 'youtube' }))));
+        react_1.default.createElement(components_2.HeroYouTube, __assign({}, rest))));
 };
 exports.default = CmsYouTube;

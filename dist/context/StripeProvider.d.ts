@@ -1,6 +1,6 @@
 import React from 'react';
 type StripeProviderProps = {
-    publishableKey: string;
+    publishableKey?: string;
     customerPortalUrl?: string;
     children: React.ReactNode;
 };

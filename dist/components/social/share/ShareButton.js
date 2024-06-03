@@ -22,25 +22,21 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
-var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
+var icons_material_1 = require("@mui/icons-material");
 var ShareButton = function (props) {
-    var url = props.url;
-    var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
+    var url = props.url, _a = props.variant, variant = _a === void 0 ? 'icon' : _a;
+    var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
     var SOCIAL_PLATFORMS = [
         { label: 'Share to Instagram', value: 'instagram' },
         { label: 'Share to Facebook', value: 'facebook' },
         { label: 'Share to Twitter', value: 'twitter' },
         { label: 'Share to LinkedIn', value: 'linkedin' },
         { label: 'Send by Email', value: 'email' },
-        { label: 'Copy share URL', value: 'copy' },
     ];
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var handleClick = function () {
@@ -70,27 +66,37 @@ var ShareButton = function (props) {
                 return "https://www.linkedin.com/shareArticle?mini=true&url=".concat(url);
             case 'email':
                 return "mailto:?subject=Check out this product&body=".concat(url);
-            case 'copy':
-                (0, copy_to_clipboard_1.default)(url);
-                showAlertSuccess('Share link copied to clipboard');
-                return;
             default:
                 return;
         }
     };
     return (react_1.default.createElement(material_1.Box, null,
-        react_1.default.createElement(material_1.IconButton, { sx: sx.iconButton, onClick: handleClick },
-            react_1.default.createElement(__1.Icon, { name: "Share" })),
+        variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { sx: sx.iconButton, onClick: handleClick },
+            react_1.default.createElement(icons_material_1.IosShare, { fontSize: "small" }))) : (react_1.default.createElement(material_1.IconButton, { sx: sx.button, onClick: handleClick },
+            react_1.default.createElement(icons_material_1.IosShare, { fontSize: "small" }))),
         react_1.default.createElement(__1.Modal, { open: open, handleClose: function () { return setOpen(false); }, title: "Share" },
-            react_1.default.createElement(material_1.List, null, SOCIAL_PLATFORMS.map(function (platform, index) { return (react_1.default.createElement(material_1.ListItem, { key: index },
-                react_1.default.createElement(material_1.ListItemButton, { onClick: function (ev) { return handleShareClick(platform.value); } },
-                    react_1.default.createElement(material_1.ListItemIcon, null,
-                        react_1.default.createElement(__1.SocialLink, { provider: platform.value })),
-                    react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1" }, platform.label) })))); })))));
+            react_1.default.createElement(material_1.Box, { p: 4 },
+                react_1.default.createElement(material_1.Stack, { spacing: 2 },
+                    react_1.default.createElement(material_1.Box, { width: '100%' },
+                        react_1.default.createElement(material_1.Typography, { sx: sx.text, color: 'text.primary', variant: 'subtitle1' }, "Share to social media"),
+                        react_1.default.createElement(material_1.Typography, { sx: sx.text, color: 'text.secondary', variant: 'body1' }, "Select your social media platform")),
+                    react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.socialButtons }, SOCIAL_PLATFORMS.map(function (platform, index) { return (react_1.default.createElement(__1.SocialIcon, { key: index, provider: platform.value, handleClick: function () { return handleShareClick(platform.value); } })); })))))));
 };
 exports.default = ShareButton;
 var sx = {
     iconButton: {
-        bgcolor: 'tertiary.main',
+        color: 'grey.100'
     },
+    button: {
+        color: 'primary.main'
+    },
+    socialButtons: {
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    text: {
+        width: '100%',
+        textAlign: 'center'
+    }
 };

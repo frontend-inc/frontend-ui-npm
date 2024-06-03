@@ -1,5 +1,5 @@
 import React from 'react';
-type DetailsProps = {
+export type DetailsProps = {
     fields: any[];
     url: string;
     resource: any;

@@ -44,7 +44,7 @@ var CoverList = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 1 },
         react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-            react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, objectFit: objectFit, alt: title, height: height, enableGradient: enableGradient, enableOverlay: enableOverlay, secondaryActions: enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })) })),
+            react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, objectFit: objectFit, alt: title, height: height, enableGradient: enableGradient, enableOverlay: enableOverlay })),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: 'row', alignItems: "center" },
                 icon && (react_1.default.createElement(material_1.Box, null,
@@ -53,6 +53,7 @@ var CoverList = function (props) {
                     react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 40)),
                     label && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, label))))),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
             react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, actions: actions, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
 };
 exports.default = CoverList;
@@ -91,6 +92,8 @@ var sx = {
         alignItems: 'flex-start',
     },
     actions: {
+        display: 'flex',
+        flexDirection: 'row',
         position: 'absolute',
         top: 0,
         right: 10,

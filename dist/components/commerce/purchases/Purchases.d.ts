@@ -1,0 +1,28 @@
+import React from 'react';
+import { SortOptionType, SearchFilterOptionType } from '../../../types';
+export type PurchasesProps = {
+    variant: 'list' | 'grid';
+    style: 'card' | 'avatar' | 'cover';
+    field: any;
+    url: string;
+    handle: string;
+    href: any;
+    foreignUrl?: string;
+    filterAnchor?: 'left' | 'top';
+    filterOptions?: SearchFilterOptionType[];
+    sortOptions?: SortOptionType[];
+    enableSearch?: boolean;
+    enableFilters?: boolean;
+    enableSorting?: boolean;
+    perPage?: number;
+    query?: any;
+    buttonText?: string;
+    enableBorder?: boolean;
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
+    enablePurchases?: boolean;
+    enableInfiniteLoad?: boolean;
+    enableLoadMore?: boolean;
+};
+declare const Purchases: React.FC<PurchasesProps>;
+export default Purchases;

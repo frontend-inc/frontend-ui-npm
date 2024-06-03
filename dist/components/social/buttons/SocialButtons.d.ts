@@ -1,10 +1,11 @@
 import React from 'react';
 type SocialButtonsProps = {
-    url: string;
     handle: string;
     enableLikes?: boolean;
-    enableShares?: boolean;
     enableFavorites?: boolean;
+    enableSharing?: boolean;
+    numLikes?: number;
+    numFavorites?: number;
     justifyContent?: string;
 };
 declare const SocialButtons: React.FC<SocialButtonsProps>;

@@ -60,7 +60,7 @@ var Section = function (props) {
     return (react_1.default.createElement(material_1.Fade, { in: true, timeout: 1000 },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { bgcolor: bgcolor }) },
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.container), (enableTransitions && sx.containerTransitions)), { py: py, px: px, maxWidth: width }) },
-                react_1.default.createElement(components_1.AuthRequired, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin }, children)))));
+                react_1.default.createElement(components_1.AuthGuard, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin }, children)))));
 };
 exports.default = Section;
 var sx = {

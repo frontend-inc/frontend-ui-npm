@@ -76,7 +76,7 @@ var Login = function (props) {
                 case 0: return [4 /*yield*/, login(user)];
                 case 1:
                     resp = _a.sent();
-                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                    if ((resp === null || resp === void 0 ? void 0 : resp.id) && href) {
                         router.push("".concat(clientUrl).concat(href));
                     }
                     return [2 /*return*/];

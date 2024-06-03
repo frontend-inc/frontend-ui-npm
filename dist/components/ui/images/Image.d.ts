@@ -13,7 +13,6 @@ export type ImageProps = {
     disableBorder?: boolean;
     disableBorderRadius?: boolean;
     handleClick?: () => void;
-    secondaryActions?: React.ReactNode;
 };
 declare const Image: React.FC<ImageProps>;
 export default Image;

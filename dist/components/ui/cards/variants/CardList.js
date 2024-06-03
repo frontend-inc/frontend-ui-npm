@@ -58,12 +58,15 @@ var CardList = function (props) {
         react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
             react_1.default.createElement(material_1.Box, { sx: sx.image },
                 react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
-                    react_1.default.createElement(components_1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, disableBorderRadius: enableBorder, secondaryActions: enableFavorites && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })) }))),
+                    react_1.default.createElement(components_1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, disableBorderRadius: enableBorder }))),
             react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: __assign(__assign({}, sx.contentArea), (enableBorder && sx.contentAreaBorder)) },
                 react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
                     react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
                     react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80))),
-                react_1.default.createElement(components_2.Actions, { numVisible: 0, resource: resource, actions: actions })))));
+                react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'flex-end' },
+                    enableFavorites &&
+                        react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
+                    react_1.default.createElement(components_2.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
 };
 exports.default = CardList;
 var sx = {
@@ -140,10 +143,6 @@ var sx = {
     actions: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: {
-            sm: 'flex-end',
-            xs: 'flex-start',
-        },
     },
     actionsBorder: {
         px: 1,

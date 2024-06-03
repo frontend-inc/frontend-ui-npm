@@ -42,9 +42,9 @@ var router_1 = require("next/router");
 var __1 = require("../../..");
 var CardList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, _b = _a.textVariant, textVariant = _b === void 0 ? 'subtitle1' : _b, handleClick = _a.handleClick, _c = _a.enableBorder, enableBorder = _c === void 0 ? false : _c;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, _b = _a.textVariant, textVariant = _b === void 0 ? 'subtitle1' : _b, handleClick = _a.handleClick, _c = _a.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = _a.enableFavorites, enableFavorites = _d === void 0 ? false : _d;
     var router = (0, router_1.useRouter)();
-    var _d = resource || {}, title = _d.title, description = _d.description;
+    var _e = resource || {}, title = _e.title, description = _e.description;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -59,8 +59,9 @@ var CardList = function (props) {
                 react_1.default.createElement(material_1.Link, { onClick: handleItemClick },
                     react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title))),
                 react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 80)))),
-        react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, actions: actions }))));
+        react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'flex-end', sx: sx.actions },
+            enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+            react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource }))));
 };
 exports.default = CardList;
 var sx = {

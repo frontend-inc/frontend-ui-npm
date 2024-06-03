@@ -35,7 +35,7 @@ var DesktopTopNav = function (props) {
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu }, (_b = (_a = menuItems === null || menuItems === void 0 ? void 0 : menuItems.filter(function (menuItem) { return menuItem.parent_id == null; })) === null || _a === void 0 ? void 0 : _a.filter(function (menuItem) { return (0, __1.filterLinkVisibility)(menuItem, currentUser); })) === null || _b === void 0 ? void 0 : _b.map(function (menuItem, index) { return (react_1.default.createElement(TopNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); })),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu },
                         enableAuth && (react_1.default.createElement(components_1.AuthButton, { editing: editing })),
-                        enableStripe && (react_1.default.createElement(components_1.StripeCustomerButton, null)),
+                        enableStripe && (react_1.default.createElement(components_1.StripeCustomerPortalButton, null)),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement(shopify_1.ShopifyAuth, null),
                             react_1.default.createElement(shopify_1.CartButton, null)))))))));

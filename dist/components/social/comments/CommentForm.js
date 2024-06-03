@@ -8,7 +8,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var CommentForm = function (props) {
     var _a = props || {}, _b = _a.pl, pl = _b === void 0 ? 0 : _b, loading = _a.loading, errors = _a.errors, comment = _a.comment, handleChange = _a.handleChange, handleSubmit = _a.handleSubmit;
-    return (react_1.default.createElement(components_1.AuthRequired, null,
+    return (react_1.default.createElement(components_1.AuthGuard, null,
         react_1.default.createElement(material_1.ListItem, { sx: {
                 pl: pl,
             } },

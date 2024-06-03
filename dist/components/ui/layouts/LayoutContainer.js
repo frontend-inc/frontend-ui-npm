@@ -39,7 +39,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var LayoutContainer = function (props) {
-    var children = props.children, header = props.header, footer = props.footer, notifications = props.notifications, _a = props.enableSideNav, enableSideNav = _a === void 0 ? false : _a, _b = props.offsetY, offsetY = _b === void 0 ? 0 : _b;
+    var children = props.children, header = props.header, footer = props.footer, notifications = props.notifications, _a = props.enableSideNav, enableSideNav = _a === void 0 ? false : _a, _b = props.offsetY, offsetY = _b === void 0 ? 0 : _b, requireAuth = props.requireAuth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin;
     var _c = (0, react_1.useState)(false), enableNotifications = _c[0], setEnableNotifications = _c[1];
     (0, react_1.useEffect)(function () {
         if ((notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0) {
@@ -56,8 +56,9 @@ var LayoutContainer = function (props) {
             header,
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (enableSideNav ? sx.contentSideNav : sx.contentTopNav)), (enableNotifications && sx.contentNotifications)) },
                 react_1.default.createElement(components_1.LayoutScroll, null,
-                    children,
-                    footer)))));
+                    react_1.default.createElement(components_1.AuthGuard, { requireAuth: requireAuth, requirePaid: requirePaid, requireTeam: requireTeam, requireAdmin: requireAdmin },
+                        children,
+                        footer))))));
 };
 exports.default = LayoutContainer;
 var sx = {

@@ -58,8 +58,6 @@ var sx = {
         px: 1,
         pl: 3,
         bgcolor: 'background.default',
-        borderBottom: '1px solid',
-        borderColor: 'divider',
     },
     dialogTitleContent: {
         height: '50px',

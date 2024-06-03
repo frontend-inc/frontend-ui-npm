@@ -28,7 +28,7 @@ exports.default = TouchableOpacity;
 var sx = {
     root: {
         p: 0,
-        cursor: 'pointer',
+        cursor: 'pointer !important',
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'row',

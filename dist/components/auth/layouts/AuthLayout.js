@@ -10,7 +10,7 @@ var hooks_1 = require("../../../hooks");
 var AuthLayout = function (props) {
     var children = props.children, footer = props.footer;
     var logo = (0, hooks_1.useApp)().logo;
-    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, justifyContent: "space-between" },
+    return (react_1.default.createElement(material_1.Stack, { width: '100%', direction: "column", spacing: 2, justifyContent: "space-between" },
         react_1.default.createElement(material_1.Box, { sx: sx.header },
             react_1.default.createElement(material_1.Box, { sx: sx.logo }, logo && (react_1.default.createElement(image_1.default, { src: logo, alt: "Logo", height: 100, width: 100, layout: "responsive", style: {
                     width: '100%',
@@ -23,6 +23,7 @@ var AuthLayout = function (props) {
 exports.default = AuthLayout;
 var sx = {
     root: {
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

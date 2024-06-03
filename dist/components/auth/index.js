@@ -3,9 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TeamListItem = exports.UserListItem = exports.TeamUserInvite = exports.TeamUserForm = exports.TeamUsersList = exports.TeamForm = exports.TeamList = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.UserItem = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.MyAccountModal = exports.MyAccountForm = exports.MyAccount = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthButton = exports.AuthRequired = void 0;
-var AuthRequired_1 = require("./AuthRequired");
-Object.defineProperty(exports, "AuthRequired", { enumerable: true, get: function () { return __importDefault(AuthRequired_1).default; } });
+exports.TeamListItem = exports.UserListItem = exports.TeamUserInvite = exports.TeamUserForm = exports.TeamUsersList = exports.TeamForm = exports.TeamList = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.UserItem = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.MyAccountModal = exports.MyAccountForm = exports.MyAccount = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthButton = exports.AuthWall = exports.AuthGuard = void 0;
+var AuthGuard_1 = require("./AuthGuard");
+Object.defineProperty(exports, "AuthGuard", { enumerable: true, get: function () { return __importDefault(AuthGuard_1).default; } });
+var AuthWall_1 = require("./AuthWall");
+Object.defineProperty(exports, "AuthWall", { enumerable: true, get: function () { return __importDefault(AuthWall_1).default; } });
 var AuthButton_1 = require("./buttons/AuthButton");
 Object.defineProperty(exports, "AuthButton", { enumerable: true, get: function () { return __importDefault(AuthButton_1).default; } });
 var AuthIconButton_1 = require("./buttons/AuthIconButton");

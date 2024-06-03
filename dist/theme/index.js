@@ -19,4 +19,5 @@ __exportStar(require("./palette"), exports);
 __exportStar(require("./shape"), exports);
 __exportStar(require("./typography"), exports);
 __exportStar(require("./spacing"), exports);
+__exportStar(require("./shadows"), exports);
 __exportStar(require("./muiTheme"), exports);

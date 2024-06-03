@@ -154,6 +154,7 @@ var SubscriptionTable = function () {
 exports.default = SubscriptionTable;
 var sx = {
     table: {
+        width: "100%",
         justifyContent: 'center',
         alignItems: 'center',
     },

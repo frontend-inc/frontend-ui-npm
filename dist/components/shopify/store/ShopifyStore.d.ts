@@ -1,11 +1,11 @@
 import React from 'react';
 type ShopifyStoreProps = {
     enableShopify?: boolean;
-    domain: string;
-    storefrontAccessToken: string;
+    domain?: string;
+    storefrontAccessToken?: string;
     customerPortalUrl?: string;
     logo?: string;
-    shopUrl: string;
+    shopUrl?: string;
     children: any;
 };
 declare const ShopifyStore: React.FC<ShopifyStoreProps>;

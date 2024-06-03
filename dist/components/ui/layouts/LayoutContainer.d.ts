@@ -9,6 +9,10 @@ type LayoutContainerProps = {
     notifications: NotificationType[];
     offsetY?: number;
     offsetX?: number;
+    requireAuth?: boolean;
+    requireTeam?: boolean;
+    requirePaid?: boolean;
+    requireAdmin?: boolean;
 };
 declare const LayoutContainer: React.FC<LayoutContainerProps>;
 export default LayoutContainer;

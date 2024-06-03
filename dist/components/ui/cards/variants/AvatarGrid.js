@@ -58,14 +58,13 @@ var AvatarGrid = function (props) {
         react_1.default.createElement(material_1.Box, { sx: __assign({}, sx.avatarContainer) },
             react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
                 react_1.default.createElement(material_1.Avatar, { src: image === null || image === void 0 ? void 0 : image.url, sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: height, width: width }) },
-                    react_1.default.createElement(material_1.Box, null))),
-            enableFavorites && (react_1.default.createElement(material_1.Box, { sx: sx.secondaryActions },
-                react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })))),
+                    react_1.default.createElement(material_1.Box, null)))),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.contentArea },
             react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.contentArea, spacing: 0 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title))),
-                react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
+                react_1.default.createElement(material_1.Box, { sx: sx.actions },
+                    enableFavorites && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
                     react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
 };
 exports.default = AvatarGrid;
@@ -128,9 +127,10 @@ var sx = {
         width: '100%',
         position: 'relative',
     },
-    secondaryActions: {
-        position: "absolute",
-        top: 0,
-        right: 0
+    actions: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
     }
 };

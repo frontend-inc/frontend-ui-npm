@@ -40,7 +40,7 @@ var DesktopSideNav = function (props) {
                     enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement(shopify_1.CartButton, { variant: "sideNav", editing: editing }),
                         react_1.default.createElement(shopify_1.ShopifyAuth, { variant: "sideNav" }))),
-                    enableStripe && (react_1.default.createElement(components_1.StripeCustomerButton, { variant: "sideNav" })),
+                    enableStripe && (react_1.default.createElement(components_1.StripeCustomerPortalButton, { variant: "sideNav" })),
                     enableAuth && (react_1.default.createElement(material_1.Box, { sx: sx.divider },
                         react_1.default.createElement(components_1.AuthButton, { showLabel: true, editing: editing })))))))));
 };

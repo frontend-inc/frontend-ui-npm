@@ -1,6 +1,6 @@
 import React from 'react';
-import { CollectionShowProps } from '../../components/cms/show/CollectionShow';
+import { HeroVimeoProps } from '../../components/cms/heros/addons/HeroVimeo';
 import { SectionProps } from '../../types';
-type CmsVimeoProps = SectionProps & CollectionShowProps;
+type CmsVimeoProps = SectionProps & HeroVimeoProps;
 declare const CmsVimeo: React.FC<CmsVimeoProps>;
 export default CmsVimeo;

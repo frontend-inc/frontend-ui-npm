@@ -19,10 +19,12 @@ var material_1 = require("@mui/material");
 var helpers_1 = require("../../../../helpers");
 var components_1 = require("../../../../components");
 var AvatarList = function (props) {
-    var actions = props.actions, resource = props.resource, _a = props.height, height = _a === void 0 ? 128 : _a, _b = props.width, width = _b === void 0 ? 128 : _b, handleClick = props.handleClick, _c = props.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e;
-    var _f = resource || {}, title = _f.title, description = _f.description, image = _f.image;
+    var actions = props.actions, resource = props.resource, _a = props.height, height = _a === void 0 ? 128 : _a, _b = props.width, width = _b === void 0 ? 128 : _b, handleClick = props.handleClick, _c = props.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.enableFavorites, enableFavorites = _f === void 0 ? false : _f;
+    var _g = resource || {}, title = _g.title, description = _g.description, image = _g.image;
     return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.listItem), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource }) },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-end", mr: 1 },
+                enableFavorites && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: {
                     minHeight: height + 44,
                 }, onClick: handleClick && handleClick },

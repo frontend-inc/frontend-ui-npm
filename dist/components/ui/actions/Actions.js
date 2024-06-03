@@ -20,11 +20,11 @@ var ActionButton_1 = __importDefault(require("./ActionButton"));
 var ActionMenuItem_1 = __importDefault(require("./ActionMenuItem"));
 var components_1 = require("../../../components");
 var Actions = function (props) {
-    var _a, _b;
-    var color = props.color, actions = props.actions, resource = props.resource, _c = props.numVisible, numVisible = _c === void 0 ? 2 : _c, justifyContent = props.justifyContent;
-    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), { justifyContent: justifyContent }), direction: "row", spacing: 1 },
-        react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.buttons), { justifyContent: justifyContent }), direction: { sm: 'row', xs: 'column' }, spacing: 1 }, (_a = actions === null || actions === void 0 ? void 0 : actions.slice(0, numVisible)) === null || _a === void 0 ? void 0 : _a.map(function (action, index) { return (react_1.default.createElement(ActionButton_1.default, { key: index, action: action, resource: resource })); })),
-        (actions === null || actions === void 0 ? void 0 : actions.length) > numVisible && (react_1.default.createElement(components_1.MenuButton, { color: color }, (_b = actions === null || actions === void 0 ? void 0 : actions.slice(numVisible, actions.length)) === null || _b === void 0 ? void 0 : _b.map(function (action, index) { return (react_1.default.createElement(ActionMenuItem_1.default, { key: index, action: action, resource: resource })); })))));
+    var _a, _b, _c;
+    var color = props.color, actions = props.actions, resource = props.resource, _d = props.numVisible, numVisible = _d === void 0 ? 2 : _d, justifyContent = props.justifyContent;
+    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), { justifyContent: justifyContent }), direction: "row", spacing: 0 },
+        ((_a = actions === null || actions === void 0 ? void 0 : actions.slice(0, numVisible)) === null || _a === void 0 ? void 0 : _a.length) > 0 && (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.buttons), { justifyContent: justifyContent }), direction: { sm: 'row', xs: 'column' }, spacing: 1 }, (_b = actions === null || actions === void 0 ? void 0 : actions.slice(0, numVisible)) === null || _b === void 0 ? void 0 : _b.map(function (action, index) { return (react_1.default.createElement(ActionButton_1.default, { key: index, action: action, resource: resource })); }))),
+        (actions === null || actions === void 0 ? void 0 : actions.length) > numVisible && (react_1.default.createElement(components_1.MenuButton, { color: color }, (_c = actions === null || actions === void 0 ? void 0 : actions.slice(numVisible, actions.length)) === null || _c === void 0 ? void 0 : _c.map(function (action, index) { return (react_1.default.createElement(ActionMenuItem_1.default, { key: index, action: action, resource: resource })); })))));
 };
 exports.default = Actions;
 var sx = {

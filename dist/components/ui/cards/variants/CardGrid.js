@@ -56,17 +56,21 @@ var CardGrid = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), { width: '100%', minHeight: height + 80 }) },
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, label: label, enableGradient: enableGradient, disableBorderRadius: enableBorder, enableOverlay: enableOverlay, handleClick: handleItemClick, secondaryActions: enableFavorites &&
-                    react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }) })),
+            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, label: label, enableGradient: enableGradient, disableBorderRadius: enableBorder, enableOverlay: enableOverlay, handleClick: handleItemClick })),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
             react_1.default.createElement(material_1.Stack, { sx: sx.contentArea, direction: "row", spacing: 0 },
                 react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
-                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource })))));
+                react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: 'flex-end' },
+                    enableFavorites &&
+                        react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
+                    react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
 };
 exports.default = CardGrid;
 var sx = {
     root: {
+        borderRadius: 1,
         width: '100%',
+        minWidth: 300,
     },
     rootBorder: {
         border: '1px solid',

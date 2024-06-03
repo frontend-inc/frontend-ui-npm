@@ -43,8 +43,9 @@ var ImageVert = function (props) {
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, secondaryActions: enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })) })),
+            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
             react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
 };
 exports.default = ImageVert;
@@ -67,9 +68,11 @@ var sx = {
         },
     },
     actions: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
         position: 'absolute',
         top: 10,
         right: 10,
-        width: '100%',
     },
 };
