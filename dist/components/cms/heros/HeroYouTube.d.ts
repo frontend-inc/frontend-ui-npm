@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeroProps } from '../Hero';
+import { HeroProps } from './Hero';
 export type HeroYouTubeProps = HeroProps & {
     fieldName: string;
 };

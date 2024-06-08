@@ -29,7 +29,7 @@ var Thumbnail = function (props) {
                 } }))));
 };
 var ProductImageSlider = function (props) {
-    var image = props.image, images = props.images, handleClick = props.handleClick, _a = props.height, height = _a === void 0 ? 520 : _a, _b = props.width, width = _b === void 0 ? 520 : _b, _c = props.thumbnailSize, thumbnailSize = _c === void 0 ? 80 : _c;
+    var image = props.image, images = props.images, handleClick = props.handleClick, _a = props.thumbnailSize, thumbnailSize = _a === void 0 ? 80 : _a;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0, sx: sx.root },
         react_1.default.createElement(material_1.Box, { sx: sx.image }, (image === null || image === void 0 ? void 0 : image.url) && (react_1.default.createElement(react_medium_image_zoom_1.default, null,
             react_1.default.createElement("img", { src: image === null || image === void 0 ? void 0 : image.url, alt: image === null || image === void 0 ? void 0 : image.altText, style: {

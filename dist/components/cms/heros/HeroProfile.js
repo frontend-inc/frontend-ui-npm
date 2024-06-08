@@ -39,26 +39,27 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
-var Profile = function (props) {
+var HeroProfile = function (props) {
     var MAX_CHARS = 500;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
     var data = (resource || {}).data;
-    var _b = resource || {}, label = _b.label, title = _b.title, image = _b.image, description = _b.description;
-    var _c = (0, react_1.useState)(false), open = _c[0], setOpen = _c[1];
-    return (react_1.default.createElement(material_1.Stack, { spacing: 3, direction: 'column', justifyContent: 'center' },
+    var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
+    var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
+    return (react_1.default.createElement(material_1.Stack, { spacing: 3, direction: "column", justifyContent: "center" },
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
             react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { sm: 'row', xs: 'column' }, spacing: 4 },
-                react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.leftPanel), ((enableBorder && (enableFavorites || enableSharing || enableLikes)) && sx.leftPanelBorder)), spacing: 2, direction: "column" },
+                react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.leftPanel), (enableBorder &&
+                        (enableFavorites || enableSharing || enableLikes) &&
+                        sx.leftPanelBorder)), spacing: 2, direction: "column" },
                     react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
                         react_1.default.createElement(__1.Image, { label: label, height: 240, src: image === null || image === void 0 ? void 0 : image.url, alt: title, disableBorderRadius: enableBorder })),
                     react_1.default.createElement(__1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
                 react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
+                    react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                     enableBuyNow && (react_1.default.createElement(__1.BuyNowButton, { resource: resource, buttonText: "Buy Now" })),
                     enableStripePaymentLink && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout" })),
-                    react_1.default.createElement(material_1.Box, null,
-                        open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
-                        (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all')))),
+                    react_1.default.createElement(__1.ExpandableText, { text: description })),
                 (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: { sm: 'row', xs: 'column' }, spacing: 1, p: enableBorder ? 1 : 0 },
                     react_1.default.createElement(__1.Actions, { actions: (0, helpers_1.buildActions)({
                             enableEdit: enableEdit,
@@ -66,7 +67,7 @@ var Profile = function (props) {
                             actions: actions,
                         }), resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "flex-end" })))))));
 };
-exports.default = Profile;
+exports.default = HeroProfile;
 var sx = {
     root: {
         width: '100%',
@@ -90,7 +91,7 @@ var sx = {
         },
     },
     leftPanel: {
-        width: "100%",
+        width: '100%',
     },
     leftPanelBorder: {
         pb: 2,
@@ -106,12 +107,7 @@ var sx = {
             sm: 240,
             xs: '100%',
         },
-        transition: 'all 0.4s ease-in-out',
         borderRadius: 1,
-        boxShadow: '0 0 20px rgba(0,0,0,0.2)',
-        '&:hover': {
-            boxShadow: '0 0 20px rgba(0,0,0,0.4)',
-        }
     },
     header: {
         width: '100%',

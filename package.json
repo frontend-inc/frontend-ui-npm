@@ -1,6 +1,6 @@
 {
     "name": "frontend-mui",
-    "version": "0.0.91",
+    "version": "0.0.92",
     "license": "MIT",
     "description": "A MUI library designed for Frontend.co",
     "homepage": "https://github.com/frontend-inc/frontend-mui",
@@ -83,6 +83,7 @@
         "@segment/analytics-next": "^1.58.0",
         "@stripe/react-stripe-js": "^2.7.1",
         "@stripe/stripe-js": "^3.4.1",
+        "@vis.gl/react-google-maps": "^1.0.2",
         "apollo-link-context": "^1.0.20",
         "apollo-link-http": "^1.5.17",
         "attr-accept": "^2.2.2",
@@ -101,6 +102,7 @@
         "moment": "^2.26.0",
         "prettier": "^2.4.1",
         "react-beautiful-dnd": "^13.1.1",
+        "react-calendly": "^4.3.1",
         "react-color": "^2.19.3",
         "react-dropzone": "^14.2.3",
         "react-facebook-pixel": "^1.0.4",

@@ -8,7 +8,7 @@ var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var PayWall = function () {
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.Heading, { title: 'Subscription required', description: 'Please subscribe below to continue', textAlign: 'center' }),
+        react_1.default.createElement(components_1.Heading, { title: "Subscription required", description: "Please subscribe below to continue", textAlign: "center" }),
         react_1.default.createElement(material_1.Box, { width: '100%' },
             react_1.default.createElement(components_1.SubscriptionTable, null))));
 };
@@ -21,6 +21,6 @@ var sx = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: '40px'
-    }
+        gap: '40px',
+    },
 };

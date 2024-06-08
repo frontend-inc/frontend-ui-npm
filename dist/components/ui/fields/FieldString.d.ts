@@ -1,12 +1,4 @@
 import React from 'react';
-import { TypographyVariantsType } from '../../../types';
-type FieldStringProps = {
-    value: string;
-    variant?: TypographyVariantsType;
-    label?: string;
-    color?: string;
-    placeholder?: string;
-    rest?: any;
-};
-declare const FieldString: React.FC<FieldStringProps>;
+import { FieldElementProps } from './Field';
+declare const FieldString: React.FC<FieldElementProps>;
 export default FieldString;

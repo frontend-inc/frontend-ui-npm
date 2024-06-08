@@ -28,8 +28,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var FieldAvatar = function (props) {
-    var value = props.value, label = props.label, _a = props.size, size = _a === void 0 ? 32 : _a, rest = __rest(props, ["value", "label", "size"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
+    var value = props.value, label = props.label, color = props.color, _a = props.size, size = _a === void 0 ? 32 : _a, rest = __rest(props, ["value", "label", "color", "size"]);
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label, color: color }, rest),
         react_1.default.createElement(components_1.Avatar, { src: value })));
 };
 exports.default = FieldAvatar;

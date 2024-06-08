@@ -34,7 +34,7 @@ var Cart = function (props) {
     var _a, _b;
     var _c = props.title, title = _c === void 0 ? 'Your Cart' : _c;
     var trackCartViewed = (0, addons_1.useSegment)().trackCartViewed;
-    var _d = (0, react_1.useContext)(frontend_shopify_2.ShopContext), cartOpen = _d.cartOpen, toggleCart = _d.toggleCart;
+    var _d = (0, react_1.useContext)(frontend_shopify_2.ShopifyContext), cartOpen = _d.cartOpen, toggleCart = _d.toggleCart;
     var cart = (0, frontend_shopify_1.useCart)().cart;
     (0, react_1.useEffect)(function () {
         if (cartOpen && cart) {

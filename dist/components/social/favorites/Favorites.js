@@ -30,7 +30,7 @@ var __1 = require("../..");
 var Favorites = function (props) {
     var url = props.url, rest = __rest(props, ["url"]);
     return (react_1.default.createElement(__1.CollectionList, __assign({ enableFavorites: true, url: "".concat(url, "/favorites"), 
-        // Todo: Component errors without a default value 
+        // Todo: Component errors without a default value
         query: {} }, rest)));
 };
 exports.default = Favorites;

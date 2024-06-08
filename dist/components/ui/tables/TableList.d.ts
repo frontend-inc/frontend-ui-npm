@@ -26,6 +26,9 @@ type TableProps = {
     handleSelectAll?: () => void;
     handleSort: (field: any) => void;
     handlePaginate: (e: any, page: number) => void;
+    emptyIcon?: string;
+    emptyTitle?: string;
+    emptyDescription?: string;
 };
 declare const TableList: React.FC<TableProps>;
 export default TableList;

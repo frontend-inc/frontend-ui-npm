@@ -97,7 +97,7 @@ var CartLine = function (props) {
     var router = (0, router_1.useRouter)();
     var trackRemoveFromCart = (0, addons_1.useSegment)().trackRemoveFromCart;
     var _j = (0, frontend_shopify_2.useCart)(), loading = _j.loading, cartLineRemove = _j.cartLineRemove, cartLineUpdate = _j.cartLineUpdate;
-    var _k = (0, react_1.useContext)(frontend_shopify_1.ShopContext), shopUrl = _k.shopUrl, setCartOpen = _k.setCartOpen;
+    var _k = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext), shopUrl = _k.shopUrl, setCartOpen = _k.setCartOpen;
     var _l = line || {}, id = _l.id, quantity = _l.quantity, merchandise = _l.merchandise, sellingPlanAllocation = _l.sellingPlanAllocation;
     var _m = (0, react_1.useState)(null), price = _m[0], setPrice = _m[1];
     var _o = (0, react_1.useState)(null), compareAtPrice = _o[0], setCompareAtPrice = _o[1];

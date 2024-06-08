@@ -19,11 +19,12 @@ var components_1 = require("../../../components");
 var FormInput = function (props) {
     var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove;
     var componentMapper = {
-        array: components_1.ArrayListInput,
+        array: components_1.ArrayInput,
         string: components_1.TextInput,
         file: components_1.AttachmentInput,
         url: components_1.TextInput,
         text: components_1.TextInput,
+        location: components_1.LocationInput,
         number: components_1.TextInput,
         price: components_1.TextInput,
         date: components_1.DateInput,
@@ -33,6 +34,7 @@ var FormInput = function (props) {
         rating: components_1.RatingInput,
         image: components_1.ImageInput,
         json: components_1.JSONInput,
+        shopify: components_1.ShopifyProductInput,
     };
     var inputProps = {
         text: {

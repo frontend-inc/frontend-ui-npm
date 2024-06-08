@@ -26,13 +26,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var __1 = require("../../..");
-var frontend_js_1 = require("frontend-js");
-var HeroContainer_1 = __importDefault(require("../HeroContainer"));
-var HeroYouTube = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, fieldName = _a.fieldName, rest = __rest(_a, ["actions", "resource", "fieldName"]);
-    var src = (0, frontend_js_1.flattenDocument)(resource)[fieldName];
-    return (react_1.default.createElement(HeroContainer_1.default, __assign({}, rest, { actions: actions, resource: resource }),
-        react_1.default.createElement(__1.YouTubeEmbed, { src: src })));
+var components_1 = require("../../../components");
+var components_2 = require("../../../components");
+var CmsShopifyProduct = function (props) {
+    var bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, rest = __rest(props, ["bgcolor", "py", "px", "maxWidth", "requireAuth", "requireTeam", "requirePaid", "requireAdmin"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
+        react_1.default.createElement(components_2.AddonShopifyProduct, __assign({}, rest))));
 };
-exports.default = HeroYouTube;
+exports.default = CmsShopifyProduct;

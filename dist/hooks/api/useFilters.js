@@ -86,7 +86,7 @@ var useFilters = function (props) {
             return filters;
         var mergedFilters = {
             AND: __spreadArray(__spreadArray([], ((filters === null || filters === void 0 ? void 0 : filters.AND) || []), true), ((newFilters === null || newFilters === void 0 ? void 0 : newFilters.AND) || []), true),
-            OR: __spreadArray(__spreadArray([], (filters.OR || []), true), (newFilters.OR || []), true)
+            OR: __spreadArray(__spreadArray([], (filters.OR || []), true), (newFilters.OR || []), true),
         };
         return mergedFilters;
     };
@@ -145,7 +145,11 @@ var useFilters = function (props) {
     };
     var buildUserFilters = function (currentUser, filterUser, filterTeam) {
         return {
-            AND: __spreadArray(__spreadArray([], (filterUser && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? [{ user_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.id } }] : []), true), (filterTeam && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id) ? [{ team_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id } }] : []), true)
+            AND: __spreadArray(__spreadArray([], (filterUser && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
+                ? [{ user_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.id } }]
+                : []), true), (filterTeam && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id)
+                ? [{ team_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id } }]
+                : []), true),
         };
     };
     (0, react_1.useEffect)(function () {

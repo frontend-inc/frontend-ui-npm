@@ -60,7 +60,9 @@ var PriceCard = function (props) {
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, price.title),
             react_1.default.createElement(material_1.Typography, { variant: "h5", color: "text.primary" },
                 (0, frontend_shopify_1.formatCurrency)(price.price, 0),
-                (price.recurring && price.recurring_rate) && ("/".concat(price.recurring_rate))),
+                price.recurring &&
+                    price.recurring_rate &&
+                    "/".concat(price.recurring_rate)),
             react_1.default.createElement(material_1.Divider, null),
             react_1.default.createElement(material_1.List, { disablePadding: true }, (_a = price === null || price === void 0 ? void 0 : price.features) === null || _a === void 0 ? void 0 : _a.map(function (feature, i) { return (react_1.default.createElement(material_1.ListItem, { key: i },
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, feature === null || feature === void 0 ? void 0 : feature.label) }))); }))),

@@ -42,7 +42,7 @@ var SideNavSearchButton = function (props) {
 };
 var SearchButton = function (props) {
     var _a = props.variant, variant = _a === void 0 ? 'topNav' : _a;
-    var toggleSearch = (0, react_1.useContext)(frontend_shopify_1.ShopContext).toggleSearch;
+    var toggleSearch = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext).toggleSearch;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var handleToggleSearch = function () {
         setMenuOpen(false);

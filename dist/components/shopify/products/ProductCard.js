@@ -49,7 +49,7 @@ var ProductCard = function (props) {
     var _a, _b, _c, _d;
     var _e = props || {}, product = _e.product, handleClick = _e.handleClick, _f = _e.height, height = _f === void 0 ? 320 : _f, _g = _e.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = _e.enableAddToCart, enableAddToCart = _h === void 0 ? false : _h, _j = _e.enableQuantity, enableQuantity = _j === void 0 ? false : _j, _k = _e.enableQuickShop, enableQuickShop = _k === void 0 ? false : _k, _l = _e.enableOkendoStarRating, enableOkendoStarRating = _l === void 0 ? false : _l, _m = _e.buttonVariant, buttonVariant = _m === void 0 ? 'contained' : _m, buttonText = _e.buttonText;
     var _o = (0, react_1.useState)(false), open = _o[0], setOpen = _o[1];
-    var setSearchOpen = (0, react_1.useContext)(frontend_shopify_1.ShopContext).setSearchOpen;
+    var setSearchOpen = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext).setSearchOpen;
     var handleQuickShop = function () {
         setOpen(true);
     };

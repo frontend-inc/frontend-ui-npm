@@ -120,9 +120,9 @@ var LikeButton = function (props) {
             }
         }
     }, [currentUser, handle]);
-    return (variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({}, sx.icon), (liked && sx.iconLiked)) },
+    return variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({}, sx.icon), (liked && sx.iconLiked)) },
         react_1.default.createElement(icons_material_1.ThumbUp, null))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({}, sx.button), (liked && sx.buttonLiked)) },
-        react_1.default.createElement(icons_material_1.ThumbUp, { fontSize: "small" }))));
+        react_1.default.createElement(icons_material_1.ThumbUp, { fontSize: "small" })));
 };
 exports.default = LikeButton;
 var sx = {

@@ -11,6 +11,3 @@ var CellText = function (props) {
     return react_1.default.createElement(components_1.CellString, { variant: "body2", value: (0, helpers_1.truncate)(value, 250) });
 };
 exports.default = CellText;
-var sx = {
-    root: {},
-};

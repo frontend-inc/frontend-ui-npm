@@ -1,7 +1,7 @@
 import React from 'react';
 import { FilterOperatorType, FilterWhereType, FilterOptionType } from '../../../types';
 type CheckboxFilterProps = {
-    name: string;
+    field: string;
     where?: FilterWhereType;
     operator?: FilterOperatorType;
     values?: any;

@@ -30,6 +30,9 @@ type TableProps = {
     enableBorder?: boolean;
     disableBorderRadius?: boolean;
     styles?: any;
+    emptyIcon?: string;
+    emptyTitle?: string;
+    emptyDescription?: string;
 };
 declare const Table: React.FC<TableProps>;
 export default Table;

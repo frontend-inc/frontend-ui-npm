@@ -31,8 +31,8 @@ var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
 var CoverList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, resource = _a.resource, actions = _a.actions, icon = _a.icon, href = _a.href, handleClick = _a.handleClick, _b = _a.textVariant, textVariant = _b === void 0 ? 'subtitle1' : _b, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 240 : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g;
-    var _h = resource || {}, label = _h.label, title = _h.title, image = _h.image;
+    var _a = props || {}, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, actions = _a.actions, icon = _a.icon, href = _a.href, handleClick = _a.handleClick, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 240 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h;
+    var _j = resource || {}, label = _j.label, title = _j.title, image = _j.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -51,9 +51,9 @@ var CoverList = function (props) {
                     react_1.default.createElement(__1.Icon, { size: 20, name: icon, color: "common.white" }))),
                 react_1.default.createElement(material_1.Box, { sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 40)),
-                    label && (react_1.default.createElement(material_1.Typography, { color: "common.white", variant: "caption" }, label))))),
+                    react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource, color: "common.white" })))),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+            enableFavorites && react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
             react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, actions: actions, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
 };
 exports.default = CoverList;

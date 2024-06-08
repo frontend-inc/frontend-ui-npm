@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionType, FormFieldType } from '../../../types';
+import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
 import { SortOptionType, SearchFilterOptionType } from '../../../types';
 export type CollectionListProps = {
     variant: 'list' | 'grid';
@@ -14,12 +14,14 @@ export type CollectionListProps = {
     query?: any;
     actions?: ActionType[];
     fields?: FormFieldType[];
+    displayFields?: DisplayFieldType[];
     filterAnchor?: 'left' | 'top';
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
+    enableGoogleMap?: boolean;
     buttonText?: string;
     handleClick?: (resource: any) => void;
     enableBorder?: boolean;
@@ -31,6 +33,9 @@ export type CollectionListProps = {
     enableFavorites?: boolean;
     filterUser?: boolean;
     filterTeam?: boolean;
+    emptyIcon?: string;
+    emptyTitle?: string;
+    emptyDescription?: string;
 };
 declare const CollectionList: React.FC<CollectionListProps>;
 export default CollectionList;

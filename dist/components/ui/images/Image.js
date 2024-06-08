@@ -87,5 +87,5 @@ var sx = {
         position: 'absolute',
         right: 15,
         top: 10,
-    }
+    },
 };

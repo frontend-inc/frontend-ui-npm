@@ -20,20 +20,24 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var HeroContainer = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, children = _a.children, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
-    var _b = resource || {}, title = _b.title, description = _b.description;
-    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), spacing: 2 },
-        react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: __assign(__assign({}, sx.header), (enableBorder && sx.headerBorder)) },
-            react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "h6" }, title),
-            (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: { sm: 'row', xs: 'column' }, spacing: 1, p: enableBorder ? 1 : 0 },
-                react_1.default.createElement(__1.Actions, { actions: (0, helpers_1.buildActions)({
-                        enableEdit: enableEdit,
-                        handleEdit: handleEdit,
-                        actions: actions,
-                    }), resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "flex-end" })))),
+    var _a = props || {}, actions = _a.actions, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, resource = _a.resource, children = _a.children, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _c = resource || {}, title = _c.title, description = _c.description;
+    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), spacing: 4 },
+        (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { pt: enableBorder ? 4 : 0, sx: sx.actions },
+            react_1.default.createElement(__1.Actions, { actions: (0, helpers_1.buildActions)({
+                    enableEdit: enableEdit,
+                    handleEdit: handleEdit,
+                    actions: actions,
+                }), numVisible: 4, resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "center" }))),
+        react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
+            react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
+            react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
+            enableBuyNow && (react_1.default.createElement(__1.BuyNowButton, { resource: resource, buttonText: "Buy Now", justifyContent: "center" })),
+            enableStripePaymentLink && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout", justifyContent: "center" }))),
         react_1.default.createElement(material_1.Box, { sx: sx.container }, children),
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
-            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description))));
+        react_1.default.createElement(__1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
+        react_1.default.createElement(material_1.Box, { sx: sx.content },
+            react_1.default.createElement(__1.ExpandableText, { text: description }))));
 };
 exports.default = HeroContainer;
 var sx = {
@@ -43,29 +47,20 @@ var sx = {
         alignItems: 'center',
     },
     rootBorder: {
-        py: 2,
         border: '1px solid',
         borderColor: 'divider',
     },
     header: {
+        maxWidth: 500,
         width: '100%',
-        textAlign: 'space-between',
-    },
-    headerBorder: {
-        px: 2,
-    },
-    title: {
-        width: '100%',
+        textAlign: 'center',
     },
     content: {
         width: '100%',
-        maxWidth: '100%',
-    },
-    contentBorder: {
-        px: 2,
-    },
-    container: {
-        width: '100%',
+        maxWidth: {
+            sm: 500,
+            xs: '100%',
+        },
     },
     text: {
         width: '100%',
@@ -75,7 +70,14 @@ var sx = {
         color: 'text.secondary',
     },
     actions: {
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
+        width: {
+            sm: 'auto',
+            xs: '100%',
+        },
+    },
+    container: {
         width: '100%',
+        borderRadius: 1,
     },
 };

@@ -1,6 +1,7 @@
 import React from 'react';
+import { DisplayFieldType } from '../../../types';
 export type DetailsProps = {
-    fields: any[];
+    displayFields: DisplayFieldType[];
     url: string;
     resource: any;
     enableBorder?: boolean;

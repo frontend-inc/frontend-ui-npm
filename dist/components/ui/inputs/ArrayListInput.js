@@ -48,8 +48,9 @@ var ArrayItemInput = function (props) {
         react_1.default.createElement(components_1.TextInput, { name: "value", value: value, placeholder: "Enter...", 
             //@ts-ignore
             handleChange: handleInputChange }),
-        react_1.default.createElement(material_1.IconButton, { size: "small", onClick: function () { return handleRemove(index); } },
-            react_1.default.createElement(lucide_react_1.X, { size: 20 }))));
+        react_1.default.createElement(material_1.Box, null,
+            react_1.default.createElement(material_1.IconButton, { size: "small", onClick: function () { return handleRemove(index); } },
+                react_1.default.createElement(lucide_react_1.X, { size: 20 })))));
 };
 var ArrayListInput = function (props) {
     var name = props.name, label = props.label, _a = props.value, values = _a === void 0 ? [] : _a, handleChange = props.handleChange;
@@ -84,7 +85,8 @@ var ArrayListInput = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 0.5, sx: sx.root },
         label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label)),
-        Array.isArray(values) && (values === null || values === void 0 ? void 0 : values.map(function (value, index) { return (react_1.default.createElement(ArrayItemInput, { key: index, index: index, value: value, handleChange: handleInputChange, handleRemove: handleRemove })); })),
+        Array.isArray(values) &&
+            (values === null || values === void 0 ? void 0 : values.map(function (value, index) { return (react_1.default.createElement(ArrayItemInput, { key: index, index: index, value: value, handleChange: handleInputChange, handleRemove: handleRemove })); })),
         react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleAddClick, startIcon: react_1.default.createElement(lucide_react_1.Plus, { size: 20 }) }, "Add"))));
 };

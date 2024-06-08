@@ -26,13 +26,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var __1 = require("../../..");
-var frontend_js_1 = require("frontend-js");
-var HeroContainer_1 = __importDefault(require("../HeroContainer"));
-var VimeoVideo = function (props) {
-    var _a = props || {}, resource = _a.resource, actions = _a.actions, fieldName = _a.fieldName, rest = __rest(_a, ["resource", "actions", "fieldName"]);
-    var src = (0, frontend_js_1.flattenDocument)(resource)[fieldName];
-    return (react_1.default.createElement(HeroContainer_1.default, __assign({}, rest, { actions: actions, resource: resource }),
-        react_1.default.createElement(__1.VimeoEmbed, { src: src })));
+var components_1 = require("../../../components");
+var components_2 = require("../../../components");
+var CmsCalendly = function (props) {
+    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, rest = __rest(props, ["label", "title", "description", "textAlign", "bgcolor", "py", "px", "maxWidth", "requireAuth", "requireTeam", "requirePaid", "requireAdmin"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
+        react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
+        react_1.default.createElement(components_2.AddonCalendly, __assign({}, rest))));
 };
-exports.default = VimeoVideo;
+exports.default = CmsCalendly;

@@ -1,7 +1,8 @@
 import React from 'react';
-import { ActionType } from '../../../types';
-type CardListProps = {
+import { ActionType, DisplayFieldType } from '../../../types';
+type CollectionCardsProps = {
     resources: any;
+    displayFields?: DisplayFieldType[];
     actions?: ActionType[];
     variant: 'list' | 'grid';
     style: 'card' | 'avatar' | 'cover' | 'chip' | 'text' | 'image';
@@ -16,5 +17,5 @@ type CardListProps = {
     handleEdit?: (item: any) => void;
     handleDelete?: (item: any) => void;
 };
-declare const CardList: React.FC<CardListProps>;
-export default CardList;
+declare const CollectionCards: React.FC<CollectionCardsProps>;
+export default CollectionCards;

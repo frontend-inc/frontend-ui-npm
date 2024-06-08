@@ -46,7 +46,7 @@ var SearchModal = function (props) {
     // Minimum number of characters to track analytics
     var MIN_ANALYTICS_CHARS = 5;
     var trackProductsSearched = (0, addons_1.useSegment)().trackProductsSearched;
-    var _a = (0, react_1.useContext)(frontend_shopify_1.ShopContext), setMenuOpen = _a.setMenuOpen, searchOpen = _a.searchOpen, setSearchOpen = _a.setSearchOpen;
+    var _a = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext), setMenuOpen = _a.setMenuOpen, searchOpen = _a.searchOpen, setSearchOpen = _a.setSearchOpen;
     var _b = (0, react_1.useState)(false), expanded = _b[0], setExpanded = _b[1];
     var _c = (0, react_1.useState)(''), keywords = _c[0], setKeywords = _c[1];
     var _d = (0, frontend_shopify_2.useProducts)(), loading = _d.loading, products = _d.products, setProducts = _d.setProducts, searchProducts = _d.searchProducts;

@@ -43,8 +43,8 @@ var index_1 = require("../../../../constants/index");
 var __1 = require("../../..");
 var TextGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, handleClick = _a.handleClick, _b = _a.height, height = _b === void 0 ? index_1.CARD_VERT_HEIGHT : _b, _c = _a.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = _a.enableFavorites, enableFavorites = _d === void 0 ? false : _d;
-    var _e = resource || {}, title = _e.title, description = _e.description;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? index_1.CARD_VERT_HEIGHT : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableFavorites, enableFavorites = _e === void 0 ? false : _e;
+    var _f = resource || {}, title = _f.title, description = _f.description;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -55,12 +55,13 @@ var TextGrid = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), { minWidth: "".concat(index_1.CARD_VERT_WIDTH, "px"), minHeight: height + 80 }) },
-        react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: 'flex-end', sx: sx.actions },
-            enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+        react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-end", sx: sx.actions },
+            enableFavorites && react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
             react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource })),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
             react_1.default.createElement(material_1.Link, { onClick: handleItemClick },
                 react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "subtitle1" }, (0, helpers_1.truncate)(title))),
+            react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
             react_1.default.createElement(material_1.Typography, { sx: sx.description, color: "text.secondary", variant: "body1" }, (0, helpers_1.truncate)(description, 200)))));
 };
 exports.default = TextGrid;

@@ -6,6 +6,7 @@ type FieldReferenceProps = {
     handleClick?: () => void;
     label?: string;
     rest?: any;
+    color?: string;
 };
 declare const FieldReference: React.FC<FieldReferenceProps>;
 export default FieldReference;

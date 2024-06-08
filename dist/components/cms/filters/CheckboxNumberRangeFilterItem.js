@@ -51,7 +51,7 @@ var CheckboxNumberRangeFilterItem = function (props) {
     }, [values, option]);
     return (react_1.default.createElement(material_1.ListItem, { disableGutters: true, disablePadding: true },
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick },
-            react_1.default.createElement(material_1.ListItemIcon, null,
+            react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(material_1.Checkbox, { checked: checked, color: "primary" })),
             react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "button" }, option.label) }))));
 };
@@ -59,5 +59,8 @@ exports.default = CheckboxNumberRangeFilterItem;
 var sx = {
     listItemButton: {
         p: 0,
+    },
+    listItemIcon: {
+        mr: 2,
     },
 };

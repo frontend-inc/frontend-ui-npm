@@ -1,9 +1,10 @@
 import React from 'react';
-import { ActionType, FormFieldType } from '../../../types';
+import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
 export type HeroProps = {
     handle?: string;
     enableBorder?: boolean;
     actions: ActionType[];
+    displayFields: DisplayFieldType[];
     fields?: FormFieldType[];
     fieldName?: string;
     url?: string;

@@ -1,9 +1,7 @@
 import React from 'react';
-import { FilterOperatorType, FilterWhereType, FilterOptionType } from '../../../types';
+import { FilterOptionType } from '../../../types';
 type CheckboxNumberRangeFilterProps = {
-    name: string;
-    where?: FilterWhereType;
-    operator?: FilterOperatorType;
+    field: string;
     options?: {
         label: string;
         min: string | number;
@@ -12,7 +10,6 @@ type CheckboxNumberRangeFilterProps = {
     values?: any;
     handleClick: (filter: FilterOptionType) => void;
     label?: string;
-    icon?: React.ReactNode;
     disablePadding?: boolean;
     defaultClosed?: boolean;
 };

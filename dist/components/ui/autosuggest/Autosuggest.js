@@ -58,15 +58,15 @@ var AutocompletePaper = function (props) {
     return react_1.default.createElement(material_1.Paper, __assign({}, props, { elevation: 10, sx: sx.paper }));
 };
 var Autosuggest = function (props) {
-    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? 'column' : _a, options = props.options, label = props.label, _b = props.loading, loading = _b === void 0 ? false : _b, name = props.name, _c = props.placeholder, placeholder = _c === void 0 ? 'Select' : _c, _d = props.multiselect, multiselect = _d === void 0 ? false : _d, handleChange = props.handleChange, handleInputChange = props.handleInputChange, handleClear = props.handleClear, _e = props.enableClear, enableClear = _e === void 0 ? false : _e, _f = props.freeSolo, freeSolo = _f === void 0 ? false : _f;
-    var _g = (0, react_1.useState)({
+    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? 'column' : _a, options = props.options, label = props.label, name = props.name, _b = props.placeholder, placeholder = _b === void 0 ? 'Select' : _b, _c = props.multiselect, multiselect = _c === void 0 ? false : _c, handleChange = props.handleChange, handleInputChange = props.handleInputChange, handleClear = props.handleClear, _d = props.enableClear, enableClear = _d === void 0 ? false : _d, _e = props.freeSolo, freeSolo = _e === void 0 ? false : _e;
+    var _f = (0, react_1.useState)({
         label: '',
         value: null,
-    }), selected = _g[0], setSelected = _g[1];
-    var _h = (0, hooks_1.useError)({
+    }), selected = _f[0], setSelected = _f[1];
+    var _g = (0, hooks_1.useError)({
         errors: errors,
         name: name,
-    }), error = _h.error, clearError = _h.clearError;
+    }), error = _g.error, clearError = _g.clearError;
     var handleOnChange = function (ev, newValue) {
         if (error)
             clearError();
@@ -93,13 +93,17 @@ var Autosuggest = function (props) {
         }
     };
     (0, react_1.useEffect)(function () {
-        if (typeof value === 'object') {
+        if (options && value && typeof value === 'object') {
             setSelected(value);
         }
-        else if ((options === null || options === void 0 ? void 0 : options.length) > 0) {
-            setSelected(options.find(function (option) { return option.value == value; }));
+        else if (value && options && (options === null || options === void 0 ? void 0 : options.length) > 0) {
+            var option = options.find(function (option) { return option.value == value; });
+            if (option)
+                setSelected(option);
         }
     }, [value, options]);
+    if (!options)
+        return null;
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 1 },
         label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.label }, label)),
         react_1.default.createElement(material_1.Box, { sx: sx.inputContainer },
@@ -140,7 +144,7 @@ var sx = {
             borderRadius: 1,
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
-            bgcolor: 'background.paper',
+            bgcolor: 'background.main',
             border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
             '&:focus': {
                 border: function (theme) { return "1px solid ".concat(theme.palette.primary.light); },
@@ -180,6 +184,7 @@ var sx = {
         marginRight: '10px',
     },
     stack: {
+        width: '100%',
         alignItems: 'flex-start',
     },
     stackVertical: {

@@ -30,7 +30,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var FieldString = function (props) {
     var value = props.value, label = props.label, _a = props.color, color = _a === void 0 ? 'text.primary' : _a, placeholder = props.placeholder, _b = props.variant, variant = _b === void 0 ? 'body1' : _b, rest = __rest(props, ["value", "label", "color", "placeholder", "variant"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label, color: color }, rest),
         react_1.default.createElement(material_1.Typography, { variant: variant, color: color, sx: sx.text }, value || placeholder)));
 };
 exports.default = FieldString;

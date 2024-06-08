@@ -16,12 +16,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var components_1 = require("../../../components");
 var FieldWrapper = function (props) {
-    var _a = props || {}, _b = _a.direction, direction = _b === void 0 ? 'column' : _b, label = _a.label, _c = _a.enableBorder, enableBorder = _c === void 0 ? false : _c, children = _a.children;
-    return (react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: direction }, spacing: 1, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
-        label && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.label), (direction === 'row' && sx.labelRow)) },
-            react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label))),
-        react_1.default.createElement(material_1.Box, null, children)));
+    var _a = props || {}, _b = _a.direction, direction = _b === void 0 ? 'column' : _b, label = _a.label, icon = _a.icon, _c = _a.color, color = _c === void 0 ? 'text.secondary' : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.disablePadding, disablePadding = _e === void 0 ? false : _e, children = _a.children;
+    return (react_1.default.createElement(material_1.Stack, { direction: direction, spacing: disablePadding ? 0 : 1, sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
+        label && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.label), ((direction === 'row' || direction == 'row-reverse') &&
+                sx.labelRow)) },
+            react_1.default.createElement(material_1.Typography, { variant: "caption", color: color }, label))),
+        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
+            icon && react_1.default.createElement(components_1.Icon, { name: icon, color: color, size: 20 }),
+            children)));
 };
 exports.default = FieldWrapper;
 var sx = {
@@ -36,9 +40,7 @@ var sx = {
         width: 100,
         pr: 1,
     },
-    root: {
-        minHeight: 110,
-    },
+    root: {},
     rootBorder: {
         p: 2,
         width: '100%',

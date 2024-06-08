@@ -9,8 +9,8 @@ var StripeProvider = function (props) {
     var _a = props || {}, children = _a.children, publishableKey = _a.publishableKey, customerPortalUrl = _a.customerPortalUrl;
     var value = {
         stripeCustomerPortalUrl: customerPortalUrl,
-        stripePublishableKey: publishableKey
+        stripePublishableKey: publishableKey,
     };
-    return react_1.default.createElement(StripeContext_1.default.Provider, { value: value }, children);
+    return (react_1.default.createElement(StripeContext_1.default.Provider, { value: value }, children));
 };
 exports.default = StripeProvider;

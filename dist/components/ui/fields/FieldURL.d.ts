@@ -4,6 +4,7 @@ type FieldURLProps = {
     handleClick?: () => void;
     label?: string;
     rest?: any;
+    color?: string;
 };
 declare const FieldURL: React.FC<FieldURLProps>;
 export default FieldURL;

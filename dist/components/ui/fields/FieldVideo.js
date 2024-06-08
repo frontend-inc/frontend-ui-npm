@@ -28,7 +28,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var FieldVideo = function (props) {
-    var value = props.value, label = props.label, handleClick = props.handleClick, rest = __rest(props, ["value", "label", "handleClick"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest), value ? react_1.default.createElement("video", { src: value, controls: true, muted: true, autoPlay: true }) : react_1.default.createElement(components_1.NoImage, null)));
+    var value = props.value, label = props.label, color = props.color, handleClick = props.handleClick, rest = __rest(props, ["value", "label", "color", "handleClick"]);
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label, color: color }, rest), value ? react_1.default.createElement("video", { src: value, controls: true, muted: true, autoPlay: true }) : react_1.default.createElement(components_1.NoImage, null)));
 };
 exports.default = FieldVideo;

@@ -26,7 +26,7 @@ var ColorVariantsOptions = function (props) {
             var variant = (0, frontend_shopify_1.findVariantByColor)(product, value);
             return (react_1.default.createElement(material_1.Button, { key: value, sx: __assign(__assign({}, sx.button), (selected === value && sx.activeButton)), onClick: function () { return handleChange(name, value); } },
                 react_1.default.createElement(image_1.default, { height: 64, width: 64, src: (_a = variant === null || variant === void 0 ? void 0 : variant.image) === null || _a === void 0 ? void 0 : _a.url, alt: (_b = variant === null || variant === void 0 ? void 0 : variant.image) === null || _b === void 0 ? void 0 : _b.altText, style: {
-                        objectFit: 'contain',
+                        objectFit: 'cover',
                     } })));
         }))));
 };
@@ -45,7 +45,9 @@ var sx = {
         gap: '10px',
     },
     button: {
-        border: '2px solid transparent',
+        p: 0,
+        overflow: 'hidden',
+        border: '3px solid transparent',
         '&:hover': {
             bgcolor: 'transparent',
             opacity: 0.85,
@@ -53,7 +55,6 @@ var sx = {
     },
     activeButton: {
         opacity: 1,
-        border: '2px solid',
         borderColor: 'primary.main',
     },
 };

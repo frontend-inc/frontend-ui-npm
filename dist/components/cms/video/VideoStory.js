@@ -32,6 +32,6 @@ var VideoVert = function (props) {
     var handleItemClick = function () {
         setOpen(true);
     };
-    return !open ? (react_1.default.createElement(__1.AvatarCard, { actions: actions, variant: "grid", resource: resource, handleClick: handleItemClick, objectFit: objectFit, height: height, width: width, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })) : (react_1.default.createElement(__1.VideoModal, { open: open, title: title, src: video, handleClose: function () { return setOpen(false); } }));
+    return !open ? (react_1.default.createElement(__1.AvatarCard, { actions: actions, variant: "grid", resource: resource, handleClick: handleItemClick, objectFit: objectFit, height: height, width: width, displayFields: [], enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })) : (react_1.default.createElement(__1.VideoModal, { open: open, title: title, src: video, handleClose: function () { return setOpen(false); } }));
 };
 exports.default = VideoVert;

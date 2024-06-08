@@ -14,8 +14,8 @@ var SocialButtons = function (props) {
     if (!enableLikes && !enableFavorites && !enableSharing)
         return null;
     return (react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: justifyContent, spacing: 1 },
-        enableLikes && (react_1.default.createElement(components_1.LikeButton, { variant: 'button', handle: handle, numLikes: numLikes })),
-        enableFavorites && (react_1.default.createElement(components_1.FavoriteButton, { variant: 'button', handle: handle, numFavorites: numFavorites })),
-        enableSharing && (react_1.default.createElement(components_1.ShareButton, { variant: 'button', url: currentPageUrl }))));
+        enableLikes && (react_1.default.createElement(components_1.LikeButton, { variant: "button", handle: handle, numLikes: numLikes })),
+        enableFavorites && (react_1.default.createElement(components_1.FavoriteButton, { variant: "button", handle: handle, numFavorites: numFavorites })),
+        enableSharing && react_1.default.createElement(components_1.ShareButton, { variant: "button", url: currentPageUrl })));
 };
 exports.default = SocialButtons;

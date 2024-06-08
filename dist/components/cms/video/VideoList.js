@@ -32,6 +32,6 @@ var VideoVert = function (props) {
     var handleItemClick = function () {
         setOpen(true);
     };
-    return !open ? (react_1.default.createElement(__1.CoverCard, { actions: actions, variant: "grid", resource: resource, handleClick: handleItemClick, objectFit: objectFit, height: height, width: width, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, icon: "PlayCircle" })) : (react_1.default.createElement(__1.VideoModal, { open: open, title: resource === null || resource === void 0 ? void 0 : resource.title, src: resource === null || resource === void 0 ? void 0 : resource.video, handleClose: function () { return setOpen(false); } }));
+    return !open ? (react_1.default.createElement(__1.CoverCard, { actions: actions, variant: "grid", resource: resource, handleClick: handleItemClick, objectFit: objectFit, height: height, width: width, displayFields: [], enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, icon: "PlayCircle" })) : (react_1.default.createElement(__1.VideoModal, { open: open, title: resource === null || resource === void 0 ? void 0 : resource.title, src: resource === null || resource === void 0 ? void 0 : resource.video, handleClose: function () { return setOpen(false); } }));
 };
 exports.default = VideoVert;

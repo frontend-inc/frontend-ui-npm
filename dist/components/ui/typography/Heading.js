@@ -22,7 +22,7 @@ var Heading = function (props) {
         return null;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: __assign(__assign(__assign({}, sx.stack), (enableBorder && sx.border)), { alignItems: textAlign }), direction: 'column', spacing: 0 },
-            label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: 'text.secondary' }, label)),
+            label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label)),
             title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", sx: __assign(__assign({}, sx.title), { textAlign: textAlign }) }, title)),
             description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: __assign(__assign({}, sx.description), { textAlign: textAlign }) }, description))),
         actions));
@@ -37,7 +37,7 @@ var sx = {
         flexDirection: {
             xs: 'column',
             sm: 'row',
-        }
+        },
     },
     stack: {
         pb: 1,
@@ -48,7 +48,7 @@ var sx = {
     border: {
         py: 2,
         borderBottom: '1px solid',
-        borderColor: 'divider'
+        borderColor: 'divider',
     },
     title: {
         width: '100%',

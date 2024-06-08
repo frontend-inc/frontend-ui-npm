@@ -138,9 +138,7 @@ var CreditCards = function () {
             react_1.default.createElement(material_1.List, null, !loading &&
                 (creditCards === null || creditCards === void 0 ? void 0 : creditCards.map(function (creditCard) {
                     var selected = creditCard.id == (currentUser === null || currentUser === void 0 ? void 0 : currentUser.credit_card_id);
-                    return (react_1.default.createElement(components_1.SelectableListItem, { key: creditCard.id, selected: selected, icon: 'CreditCard', title: creditCard.last4, description: creditCard.brand, handleClick: function () { return handleClick(creditCard); }, handleDelete: selected ?
-                            undefined :
-                            function () { return handleDeleteClick(creditCard); } }));
+                    return (react_1.default.createElement(components_1.SelectableListItem, { key: creditCard.id, selected: selected, icon: 'CreditCard', title: creditCard.last4, description: creditCard.brand, handleClick: function () { return handleClick(creditCard); }, handleDelete: selected ? undefined : function () { return handleDeleteClick(creditCard); } }));
                 }))),
             !loading && !(creditCards === null || creditCards === void 0 ? void 0 : creditCards.length) && (react_1.default.createElement(components_1.Placeholder, { icon: "CreditCard", title: "No Credit Cards", description: "Add a credit card to get started" })),
             react_1.default.createElement(material_1.Box, { sx: sx.actions },

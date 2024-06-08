@@ -10,62 +10,43 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
+var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var HeroPlace = function (props) {
     var MAX_CHARS = 500;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
-    var _b = resource || {}, handle = _b.handle, label = _b.label, title = _b.title, image = _b.image, description = _b.description;
-    var _c = (0, react_1.useState)(false), open = _c[0], setOpen = _c[1];
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
     if (!resource)
         return null;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2 },
         (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            react_1.default.createElement(__1.Actions, { actions: (0, helpers_1.buildActions)({
+            react_1.default.createElement(components_1.Actions, { actions: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
                     actions: actions,
                 }), justifyContent: "flex-end", resource: (0, frontend_js_1.flattenDocument)(resource) }))),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
             react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { md: 'row', xs: 'column' }, spacing: 4 },
-                react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", sx: __assign(__assign({}, sx.leftPanel), ((enableBorder && (enableFavorites || enableSharing || enableLikes)) && sx.leftPanelBorder)) },
+                react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", sx: __assign(__assign({}, sx.leftPanel), (enableBorder &&
+                        (enableFavorites || enableSharing || enableLikes) &&
+                        sx.leftPanelBorder)) },
                     react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-                        react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 360, label: label, disableBorderRadius: enableBorder })),
-                    react_1.default.createElement(__1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
-                react_1.default.createElement(material_1.Stack, { spacing: 2, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
+                        react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 500, label: label, disableBorderRadius: enableBorder })),
+                    react_1.default.createElement(components_1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
-                    enableBuyNow && (react_1.default.createElement(__1.BuyNowButton, { resource: resource, buttonText: "Buy Now" })),
-                    enableStripePaymentLink && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout" })),
-                    react_1.default.createElement(material_1.Box, null,
-                        open ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description)) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description === null || description === void 0 ? void 0 : description.slice(0, MAX_CHARS))),
-                        (description === null || description === void 0 ? void 0 : description.length) > MAX_CHARS && (react_1.default.createElement(material_1.Link, { onClick: function () { return setOpen(!open); }, sx: sx.link }, open ? 'See less' : '... See all'))))))));
+                    react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource }),
+                    enableBuyNow && (react_1.default.createElement(components_1.BuyNowButton, { resource: resource, buttonText: "Buy Now" })),
+                    enableStripePaymentLink && (react_1.default.createElement(components_1.StripePaymentLink, { resource: resource, buttonText: "Checkout" })),
+                    react_1.default.createElement(components_1.ExpandableText, { text: description })),
+                react_1.default.createElement(material_1.Stack, { spacing: 2, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
+                    react_1.default.createElement(components_1.GoogleMap, { enableBorder: true, resources: [resource] }))))));
 };
 exports.default = HeroPlace;
 var sx = {
@@ -132,15 +113,11 @@ var sx = {
         borderRadius: 1,
         width: '100%',
         minWidth: 300,
-        boxShadow: '0 0 20px rgba(0,0,0,0.2)',
-        '&:hover': {
-            boxShadow: '0 0 20px rgba(0,0,0,0.4)',
-        }
     },
     leftPanel: {
-        width: "100%"
+        width: '100%',
     },
     leftPanelBorder: {
-        pb: 2
-    }
+        pb: 2,
+    },
 };

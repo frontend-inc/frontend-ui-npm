@@ -26,10 +26,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
+var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var FieldImage = function (props) {
-    var label = props.label, value = props.value, _a = props.objectFit, objectFit = _a === void 0 ? 'cover' : _a, rest = __rest(props, ["label", "value", "objectFit"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
-        react_1.default.createElement(components_1.Image, { src: (value === null || value === void 0 ? void 0 : value.url) || value, height: 120, objectFit: objectFit })));
+    var label = props.label, value = props.value, _a = props.height, height = _a === void 0 ? 140 : _a, width = props.width, color = props.color, _b = props.objectFit, objectFit = _b === void 0 ? 'cover' : _b, rest = __rest(props, ["label", "value", "height", "width", "color", "objectFit"]);
+    if (!value)
+        return null;
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ color: color, label: label }, rest),
+        react_1.default.createElement(material_1.Box, { sx: {
+                height: height,
+                width: width ? width : undefined,
+            } },
+            react_1.default.createElement(components_1.Image, { src: (value === null || value === void 0 ? void 0 : value.url) || value, height: height, objectFit: objectFit }))));
 };
 exports.default = FieldImage;
+var sx = {
+    imageContainer: {
+        borderRadius: 1,
+        height: 140,
+        width: 140,
+        overflow: 'none',
+    },
+};

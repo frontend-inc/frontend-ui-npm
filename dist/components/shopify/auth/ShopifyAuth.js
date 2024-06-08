@@ -82,7 +82,7 @@ var SideNavShopifyAuthButton = function (props) {
 var ShopifyAuth = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = props || {}, _b = _a.icon, icon = _b === void 0 ? 'ReceiptText' : _b, _c = _a.variant, variant = _c === void 0 ? 'topNav' : _c;
-    var customerPortalUrl = (0, react_1.useContext)(frontend_shopify_1.ShopContext).customerPortalUrl;
+    var customerPortalUrl = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext).customerPortalUrl;
     var findShop = (0, frontend_shopify_2.useShop)().findShop;
     var getLastPathOfUrl = function (urlString) {
         var url = new URL(urlString);

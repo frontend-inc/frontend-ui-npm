@@ -3,9 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStripe = exports.useSegment = exports.useTikTok = exports.useKlaviyo = exports.useFacebookPixel = exports.useGTM = void 0;
+exports.useStripe = exports.useSegment = exports.useTikTok = exports.useKlaviyo = exports.useFacebookPixel = exports.useGooglePlaces = exports.useGTM = void 0;
 var useGTM_1 = require("./useGTM");
 Object.defineProperty(exports, "useGTM", { enumerable: true, get: function () { return __importDefault(useGTM_1).default; } });
+var useGooglePlaces_1 = require("./useGooglePlaces");
+Object.defineProperty(exports, "useGooglePlaces", { enumerable: true, get: function () { return __importDefault(useGooglePlaces_1).default; } });
 var useFacebookPixel_1 = require("./useFacebookPixel");
 Object.defineProperty(exports, "useFacebookPixel", { enumerable: true, get: function () { return __importDefault(useFacebookPixel_1).default; } });
 var useKlaviyo_1 = require("./useKlaviyo");

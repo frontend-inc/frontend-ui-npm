@@ -1,4 +1,8 @@
 import React from 'react';
 import { TextInputPropsType } from '../../../types';
-declare const TextInput: React.FC<TextInputPropsType>;
+type TextInputProps = TextInputPropsType & {
+    onBlur?: () => void;
+    onFocus?: () => void;
+};
+declare const TextInput: React.FC<TextInputProps>;
 export default TextInput;

@@ -45,7 +45,7 @@ var TopNavCartButton = function (props) {
 };
 var CartButton = function (props) {
     var _a = props.variant, variant = _a === void 0 ? 'topNav' : _a, _b = props.label, label = _b === void 0 ? 'Cart' : _b, _c = props.icon, icon = _c === void 0 ? 'ShoppingCart' : _c;
-    var _d = (0, react_1.useContext)(frontend_shopify_1.ShopContext), cart = _d.cart, toggleCart = _d.toggleCart;
+    var _d = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext), cart = _d.cart, toggleCart = _d.toggleCart;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var handleCartClick = function () {
         setMenuOpen(false);

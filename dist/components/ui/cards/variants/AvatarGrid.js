@@ -43,8 +43,8 @@ var router_1 = require("next/router");
 var index_1 = require("../../../../constants/index");
 var AvatarGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, handleClick = _a.handleClick, _b = _a.height, height = _b === void 0 ? index_1.AVATAR_VERT_HEIGHT : _b, _c = _a.width, width = _c === void 0 ? index_1.AVATAR_VERT_WIDTH : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g;
-    var _h = resource || {}, title = _h.title, image = _h.image;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? index_1.AVATAR_VERT_HEIGHT : _c, _d = _a.width, width = _d === void 0 ? index_1.AVATAR_VERT_WIDTH : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h;
+    var _j = resource || {}, title = _j.title, image = _j.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -61,11 +61,11 @@ var AvatarGrid = function (props) {
                     react_1.default.createElement(material_1.Box, null)))),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.contentArea },
             react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.contentArea, spacing: 0 },
-                react_1.default.createElement(material_1.Stack, { sx: sx.content },
-                    react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title))),
+                react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "textPrimary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title)),
                 react_1.default.createElement(material_1.Box, { sx: sx.actions },
-                    enableFavorites && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                    react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
+                    enableFavorites && react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
+                    react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource })))),
+        react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource })));
 };
 exports.default = AvatarGrid;
 var sx = {
@@ -132,5 +132,5 @@ var sx = {
         flexDirection: 'row',
         alignItems: 'flex-end',
         justifyContent: 'flex-end',
-    }
+    },
 };

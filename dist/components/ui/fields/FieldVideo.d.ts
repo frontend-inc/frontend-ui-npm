@@ -4,6 +4,7 @@ type FieldVideoProps = {
     handleClick?: (item: any) => void;
     label?: string;
     rest?: any;
+    color?: string;
 };
 declare const FieldVideo: React.FC<FieldVideoProps>;
 export default FieldVideo;

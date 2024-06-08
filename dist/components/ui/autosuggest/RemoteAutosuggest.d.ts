@@ -1,6 +1,6 @@
 import React from 'react';
 import { OptionType, QueryParamsType, SyntheticEventType } from '../../../types';
-type RemoteAutosuggestProps = {
+export type RemoteAutosuggestProps = {
     errors?: any;
     value?: any;
     label?: string;

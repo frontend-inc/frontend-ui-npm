@@ -1,8 +1,27 @@
 import React from 'react';
-type FieldProps = {
-    field?: any;
+import { DisplayFieldType, TypographyVariantsType } from '../../../types';
+export type FieldElementProps = {
+    label?: string;
+    value: any;
+    color?: string;
+    direction?: 'row' | 'column';
+    variant?: TypographyVariantsType;
+    placeholder?: string;
     enableBorder?: boolean;
-    document?: any;
+    disablePadding?: boolean;
+    dateFormat?: string;
+};
+type FieldProps = {
+    label?: string;
+    color?: string;
+    direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
+    variant?: TypographyVariantsType;
+    placeholder?: string;
+    enableBorder?: boolean;
+    disablePadding?: boolean;
+    field: DisplayFieldType;
+    resource?: any;
+    dateFormat?: string;
 };
 declare const Field: React.FC<FieldProps>;
 export default Field;

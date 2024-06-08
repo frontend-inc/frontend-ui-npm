@@ -5,6 +5,7 @@ export type ForeignCollectionTableProps = CollectionListProps & {
     resource: any;
     field: FieldType;
     foreignUrl?: string;
+    foreignContentType?: string;
     headers: TableHeaderType[];
 };
 declare const ForeignCollectionTable: React.FC<ForeignCollectionTableProps>;

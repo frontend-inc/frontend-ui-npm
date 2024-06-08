@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var CheckboxRatingsFilterItem_1 = __importDefault(require("./CheckboxRatingsFilterItem"));
 var __1 = require("../..");
 var CheckboxFilter = function (props) {
-    var label = props.label, name = props.name, values = props.values, handleClick = props.handleClick, _a = props.disablePadding, disablePadding = _a === void 0 ? false : _a, _b = props.defaultClosed, defaultClosed = _b === void 0 ? false : _b;
+    var label = props.label, field = props.field, values = props.values, handleClick = props.handleClick, _a = props.disablePadding, disablePadding = _a === void 0 ? false : _a, _b = props.defaultClosed, defaultClosed = _b === void 0 ? false : _b;
     var RATING_OPTIONS = [
         { label: '5 Star', value: 5 },
         { label: '4 Stars', value: 4 },
@@ -19,7 +19,7 @@ var CheckboxFilter = function (props) {
             return handleClick({
                 where: 'OR',
                 operator: 'eq',
-                field: name,
+                field: field,
                 value: option.value,
             });
         } })); })));

@@ -28,8 +28,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var FieldBoolean = function (props) {
-    var value = props.value, label = props.label, rest = __rest(props, ["value", "label"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
+    var value = props.value, label = props.label, color = props.color, rest = __rest(props, ["value", "label", "color"]);
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label, color: color }, rest),
         react_1.default.createElement(components_1.Label, { label: value ? 'true' : 'false' })));
 };
 exports.default = FieldBoolean;

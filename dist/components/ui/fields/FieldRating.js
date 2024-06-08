@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var Rating_1 = __importDefault(require("@mui/material/Rating"));
 var components_1 = require("../../../components");
 var FieldRating = function (props) {
-    var value = props.value, label = props.label, rest = __rest(props, ["value", "label"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
+    var value = props.value, label = props.label, color = props.color, rest = __rest(props, ["value", "label", "color"]);
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label, color: color }, rest),
         react_1.default.createElement(Rating_1.default, { readOnly: true, sx: sx.rating, value: value })));
 };
 exports.default = FieldRating;

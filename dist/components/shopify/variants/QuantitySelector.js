@@ -37,7 +37,7 @@ var sx = {
     button: {
         px: 0,
         width: '100%',
-        color: 'text.primary',
+        color: 'secondary.contrastText',
         border: 'none !important',
     },
 };

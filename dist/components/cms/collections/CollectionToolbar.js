@@ -15,7 +15,7 @@ var CollectionToolbar = function (props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         enableSearch && (react_1.default.createElement(material_1.Box, { sx: sx.searchBar },
             react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch }))),
-        react_1.default.createElement(material_1.Stack, { justifyContent: 'space-between', direction: { sm: 'row', xs: 'column' }, spacing: 1 },
+        react_1.default.createElement(material_1.Stack, { justifyContent: "space-between", direction: { sm: 'row', xs: 'column' }, spacing: 1 },
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' } },
                 enableFilters && (react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
@@ -45,7 +45,7 @@ var sx = {
         flexDirection: {
             xs: 'column',
             sm: 'row',
-        }
+        },
     },
     loading: {
         opacity: 0.7,
@@ -54,6 +54,6 @@ var sx = {
         color: 'primary.main',
     },
     searchBar: {
-        width: '100%'
+        width: '100%',
     },
 };

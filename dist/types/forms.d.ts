@@ -1,4 +1,12 @@
 import { OptionType } from 'frontend-js';
+export type DisplayFieldType = {
+    name: string;
+    variant: string;
+    icon?: string;
+    label: string;
+    options?: OptionType[];
+    placeholder?: string;
+};
 export type FormFieldType = {
     name: string;
     variant: string;
@@ -6,7 +14,6 @@ export type FormFieldType = {
     options?: OptionType[];
     placeholder?: string;
 };
-export type DisplayFieldType = FormFieldType;
 export type TableHeaderType = {
     name: string;
     label: string;

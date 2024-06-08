@@ -30,8 +30,8 @@ var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var components_1 = require("../../../components");
 var FieldReference = function (props) {
-    var value = props.value, label = props.label, handleClick = props.handleClick, rest = __rest(props, ["value", "label", "handleClick"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
+    var value = props.value, label = props.label, color = props.color, handleClick = props.handleClick, rest = __rest(props, ["value", "label", "color", "handleClick"]);
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label, color: color }, rest),
         react_1.default.createElement(material_1.Button, { color: "primary", variant: "outlined", sx: sx.button, endIcon: react_1.default.createElement(icons_material_1.Repeat, null), onClick: handleClick }, value)));
 };
 exports.default = FieldReference;

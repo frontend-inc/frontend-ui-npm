@@ -1,9 +1,10 @@
 import React from 'react';
-import { SortOptionType, SearchFilterOptionType } from '../../../types';
+import { SortOptionType, SearchFilterOptionType, DisplayFieldType } from '../../../types';
 export type PurchasesProps = {
     variant: 'list' | 'grid';
     style: 'card' | 'avatar' | 'cover';
     field: any;
+    displayFields?: DisplayFieldType[];
     url: string;
     handle: string;
     href: any;
@@ -23,6 +24,9 @@ export type PurchasesProps = {
     enablePurchases?: boolean;
     enableInfiniteLoad?: boolean;
     enableLoadMore?: boolean;
+    emptyIcon?: string;
+    emptyTitle?: string;
+    emptyDescription?: string;
 };
 declare const Purchases: React.FC<PurchasesProps>;
 export default Purchases;

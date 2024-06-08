@@ -67,7 +67,7 @@ var CollectionCarousel = function (props) {
     }, [url, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(__1.Carousel, { enableDots: enableDots, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(material_1.Box, { key: index, sx: sx.item },
-            react_1.default.createElement(CollectionCard_1.default, { actions: actions, variant: "grid", style: style, resource: resource, handleClick: function () { return handleClick(resource); }, enableBorder: enableBorder, enableGradient: enableGradient, enableFavorites: enableFavorites }))); }))));
+            react_1.default.createElement(CollectionCard_1.default, { actions: actions, variant: "grid", style: style, resource: resource, displayFields: [], handleClick: function () { return handleClick(resource); }, enableBorder: enableBorder, enableGradient: enableGradient, enableFavorites: enableFavorites }))); }))));
 };
 exports.default = CollectionCarousel;
 var sx = {

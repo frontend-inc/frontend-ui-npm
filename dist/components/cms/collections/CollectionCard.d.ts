@@ -1,13 +1,15 @@
 import React from 'react';
-import { ActionType } from '../../../types';
+import { ActionType, DisplayFieldType } from '../../../types';
 type CardStyleTypes = 'card' | 'avatar' | 'cover' | 'chip' | 'image' | 'text';
 type CollectionCardProps = {
     actions: ActionType[];
     variant: 'list' | 'grid';
     style: CardStyleTypes;
+    displayFields: DisplayFieldType[];
     resource: any & {
         label?: string;
         title?: string;
+        subtitle?: string;
         image?: string;
         video?: string;
         description: string;

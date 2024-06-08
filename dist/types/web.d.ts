@@ -1,6 +1,7 @@
 /// <reference types="react" />
 import { TypographyVariant } from '@mui/material';
 import { ActionType } from './actions';
+import { DisplayFieldType } from './forms';
 export type HeadingProps = {
     label?: string;
     title?: string;
@@ -33,6 +34,7 @@ export type CardProps = {
         };
         video?: string;
     };
+    displayFields: DisplayFieldType[];
     buttonText?: string;
     textVariant?: TypographyVariant;
     size?: number;

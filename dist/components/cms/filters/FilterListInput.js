@@ -8,6 +8,8 @@ var CheckboxFilter_1 = __importDefault(require("./CheckboxFilter"));
 var CheckboxBooleanFilter_1 = __importDefault(require("./CheckboxBooleanFilter"));
 var CheckboxNumberRangeFilter_1 = __importDefault(require("./CheckboxNumberRangeFilter"));
 var CheckboxRatingsFilter_1 = __importDefault(require("./CheckboxRatingsFilter"));
+var CheckboxDatesPastFilter_1 = __importDefault(require("./CheckboxDatesPastFilter"));
+var CheckboxDatesFutureFilter_1 = __importDefault(require("./CheckboxDatesFutureFilter"));
 var FilterListInput = function (props) {
     var _a = props || {}, filterOption = _a.filterOption, _b = _a.filters, filters = _b === void 0 ? [] : _b, handleFilter = _a.handleFilter;
     var findFilterValues = function (fieldName, filters) {
@@ -15,13 +17,18 @@ var FilterListInput = function (props) {
         return _filters.map(function (f) { return f.value; });
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        filterOption.variant == 'boolean' && (react_1.default.createElement(CheckboxBooleanFilter_1.default, { name: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), handleClick: handleFilter })),
-        filterOption.variant == 'multiple_choice' && (react_1.default.createElement(CheckboxFilter_1.default, { name: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), 
+        filterOption.variant == 'boolean' && (react_1.default.createElement(CheckboxBooleanFilter_1.default, { field: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), handleClick: handleFilter })),
+        filterOption.variant == 'date_range' && (
+        // Todo: Update to use date range component
+        react_1.default.createElement(CheckboxDatesPastFilter_1.default, { field: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), handleClick: handleFilter })),
+        filterOption.variant == 'date_range_past' && (react_1.default.createElement(CheckboxDatesPastFilter_1.default, { field: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), handleClick: handleFilter })),
+        filterOption.variant == 'date_range_future' && (react_1.default.createElement(CheckboxDatesFutureFilter_1.default, { field: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), handleClick: handleFilter })),
+        filterOption.variant == 'multiple_choice' && (react_1.default.createElement(CheckboxFilter_1.default, { field: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), 
             // @ts-ignore
             options: filterOption.options, handleClick: handleFilter })),
-        filterOption.variant == 'number_range' && (react_1.default.createElement(CheckboxNumberRangeFilter_1.default, { name: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), 
+        filterOption.variant == 'number_range' && (react_1.default.createElement(CheckboxNumberRangeFilter_1.default, { field: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), 
             // @ts-ignore
             options: filterOption.options, handleClick: handleFilter })),
-        filterOption.variant == 'ratings_scale' && (react_1.default.createElement(CheckboxRatingsFilter_1.default, { name: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), handleClick: handleFilter }))));
+        filterOption.variant == 'ratings_scale' && (react_1.default.createElement(CheckboxRatingsFilter_1.default, { field: filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, label: filterOption === null || filterOption === void 0 ? void 0 : filterOption.label, values: findFilterValues(filterOption === null || filterOption === void 0 ? void 0 : filterOption.field, filters), handleClick: handleFilter }))));
 };
 exports.default = FilterListInput;

@@ -81,7 +81,7 @@ var frontend_shopify_2 = require("frontend-shopify");
 var AddToCartButton = function (props) {
     var showAlertError = (0, hooks_1.useAlerts)().showAlertError;
     var trackAddToCart = (0, addons_1.useSegment)().trackAddToCart;
-    var toggleCart = (0, react_1.useContext)(frontend_shopify_2.ShopContext).toggleCart;
+    var toggleCart = (0, react_1.useContext)(frontend_shopify_2.ShopifyContext).toggleCart;
     var _a = (0, frontend_shopify_1.useCart)(), loading = _a.loading, cartLineAdd = _a.cartLineAdd;
     var _b = props.size, size = _b === void 0 ? 'large' : _b, _c = props.label, label = _c === void 0 ? 'Add to Cart' : _c, product = props.product, variant = props.variant, _d = props.buttonVariant, buttonVariant = _d === void 0 ? 'contained' : _d, _e = props.enableQuantity, enableQuantity = _e === void 0 ? false : _e, _f = props.enableSubscription, enableSubscription = _f === void 0 ? false : _f, _g = props.enableFavorites, enableFavorites = _g === void 0 ? false : _g;
     var _h = (0, react_1.useState)(1), quantity = _h[0], setQuantity = _h[1];
@@ -156,5 +156,5 @@ var sx = {
     },
     fullWidth: {
         width: '100%',
-    }
+    },
 };

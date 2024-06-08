@@ -141,7 +141,7 @@ var SubscriptionTable = function () {
             (subscriptionPlans === null || subscriptionPlans === void 0 ? void 0 : subscriptionPlans.map(function (subscriptionPlan) {
                 var selected = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.subscription_plan_id) === subscriptionPlan.id;
                 return (react_1.default.createElement(SubscriptionTableCard_1.default, { key: subscriptionPlan.id, selected: selected, 
-                    //@ts-ignore 
+                    //@ts-ignore
                     subscriptionPlan: subscriptionPlan, handleClick: function () { return handleSubscribeClick(subscriptionPlan); } }));
             }))),
         !loading && !(subscriptionPlans === null || subscriptionPlans === void 0 ? void 0 : subscriptionPlans.length) && (react_1.default.createElement(__1.Placeholder, { icon: "CreditCard", title: "No subscription plans", description: "Subscription plans will appear here." })),
@@ -154,21 +154,21 @@ var SubscriptionTable = function () {
 exports.default = SubscriptionTable;
 var sx = {
     table: {
-        width: "100%",
+        width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
     },
     cancelLink: {
-        py: 2
+        py: 2,
     },
     footerLinks: {
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     divider: {
         height: '100%',
         borderRight: '1px solid',
-        borderColor: 'divider'
-    }
+        borderColor: 'divider',
+    },
 };

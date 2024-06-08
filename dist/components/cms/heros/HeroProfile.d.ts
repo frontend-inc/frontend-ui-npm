@@ -1,4 +1,4 @@
 import React from 'react';
 import { HeroProps } from './Hero';
-declare const Profile: React.FC<HeroProps>;
-export default Profile;
+declare const HeroProfile: React.FC<HeroProps>;
+export default HeroProfile;

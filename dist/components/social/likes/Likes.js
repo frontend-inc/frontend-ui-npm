@@ -30,7 +30,7 @@ var __1 = require("../..");
 var Likes = function (props) {
     var url = props.url, rest = __rest(props, ["url"]);
     return (react_1.default.createElement(__1.CollectionList, __assign({ enableLikes: true, url: "".concat(url, "/likes"), 
-        // Todo: Component errors without a default value 
+        // Todo: Component errors without a default value
         query: {} }, rest)));
 };
 exports.default = Likes;

@@ -5,6 +5,7 @@ type FieldAvatarProps = {
     rounded?: boolean;
     label?: string;
     rest?: any;
+    color?: string;
 };
 declare const FieldAvatar: React.FC<FieldAvatarProps>;
 export default FieldAvatar;

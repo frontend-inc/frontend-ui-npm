@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var FieldArray = function (props) {
-    var values = props.value, label = props.label, rest = __rest(props, ["value", "label"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label }, rest),
+    var values = props.value, color = props.color, label = props.label, rest = __rest(props, ["value", "color", "label"]);
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label, color: color }, rest),
         react_1.default.createElement(material_1.Stack, { sx: sx.stack, direction: 'row', spacing: 1 }, Array.isArray(values) &&
             (values === null || values === void 0 ? void 0 : values.map(function (value, index) { return (react_1.default.createElement(material_1.Chip, { key: index, label: value, sx: sx.chip, size: "small" })); })))));
 };

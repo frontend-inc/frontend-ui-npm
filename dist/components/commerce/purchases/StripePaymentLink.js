@@ -41,21 +41,21 @@ var StripePaymentLink = function (props) {
         window.open(url, '_blank');
     };
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, direction: "row", justifyContent: justifyContent, spacing: 1 },
-        react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "primary", onClick: handleClick, disabled: !stripe_payment_link, startIcon: react_1.default.createElement(__1.Icon, { name: "CreditCard", size: 20, color: 'primary.contrastText' }) }, buttonText)));
+        react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "primary", onClick: handleClick, disabled: !stripe_payment_link, startIcon: react_1.default.createElement(__1.Icon, { name: "CreditCard", size: 20, color: "primary.contrastText" }) }, buttonText)));
 };
 exports.default = StripePaymentLink;
 var sx = {
     root: {
         width: '100%',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     button: {
         width: {
             sm: 240,
-            xs: '100%'
-        }
+            xs: '100%',
+        },
     },
     caption: {
-        width: "100%"
-    }
+        width: '100%',
+    },
 };

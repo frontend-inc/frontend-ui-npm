@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DEFAULT_FIELDS = exports.USER_FIELD = exports.TAGS_FIELD = exports.LOCALE_FIELD = exports.PUBLISHED_FIELD = exports.TITLE_FIELD = exports.HANDLE_FIELD = exports.ID_FIELD = exports.SYSTEM_FIELDS = exports.ATTACHMENT_FIELDS = exports.REFERENCE_FIELDS = void 0;
+exports.DEFAULT_FIELDS = exports.USER_FIELD = exports.TAGS_FIELD = exports.LOCALE_FIELD = exports.PUBLISHED_FIELD = exports.SUBTITLE_FIELD = exports.TITLE_FIELD = exports.HANDLE_FIELD = exports.ID_FIELD = exports.SYSTEM_FIELDS = exports.ATTACHMENT_FIELDS = exports.REFERENCE_FIELDS = void 0;
 exports.REFERENCE_FIELDS = ['habtm'];
 exports.ATTACHMENT_FIELDS = ['image', 'video', 'file'];
 exports.SYSTEM_FIELDS = [
     'id',
     'title',
+    'subtitle',
     'description',
     'handle',
     'user_id',
@@ -14,6 +15,7 @@ exports.SYSTEM_FIELDS = [
     'shopify_handle',
     'published',
     'locale',
+    'location',
     'tags',
     'habtm',
     'image',
@@ -60,13 +62,25 @@ exports.TITLE_FIELD = {
     visible: true,
     editable: true,
 };
+exports.SUBTITLE_FIELD = {
+    label: 'Subtitle',
+    variant: 'string',
+    reference: false,
+    db_type: 'string',
+    name: 'subtitle',
+    position: 3,
+    array: false,
+    internal: true,
+    visible: true,
+    editable: true,
+};
 exports.PUBLISHED_FIELD = {
     label: 'Published',
     variant: 'boolean',
     reference: false,
     db_type: 'boolean',
     name: 'published',
-    position: 3,
+    position: 4,
     array: false,
     internal: true,
     visible: true,
@@ -78,7 +92,7 @@ exports.LOCALE_FIELD = {
     reference: false,
     db_type: 'string',
     name: 'locale',
-    position: 4,
+    position: 5,
     array: false,
     internal: true,
     visible: true,
@@ -90,7 +104,7 @@ exports.TAGS_FIELD = {
     reference: false,
     db_type: 'string',
     name: 'tags',
-    position: 5,
+    position: 6,
     array: true,
     internal: true,
     editable: true,
@@ -102,7 +116,7 @@ exports.USER_FIELD = {
     db_type: 'belongs_to',
     name: 'user',
     internal: true,
-    position: 6,
+    position: 7,
     array: false,
     visible: true,
     editable: false,
@@ -112,6 +126,7 @@ exports.DEFAULT_FIELDS = [
     exports.ID_FIELD,
     exports.HANDLE_FIELD,
     exports.TITLE_FIELD,
+    exports.SUBTITLE_FIELD,
     exports.PUBLISHED_FIELD,
     exports.LOCALE_FIELD,
     exports.TAGS_FIELD,

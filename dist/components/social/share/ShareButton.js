@@ -74,29 +74,33 @@ var ShareButton = function (props) {
         variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { sx: sx.iconButton, onClick: handleClick },
             react_1.default.createElement(icons_material_1.IosShare, { fontSize: "small" }))) : (react_1.default.createElement(material_1.IconButton, { sx: sx.button, onClick: handleClick },
             react_1.default.createElement(icons_material_1.IosShare, { fontSize: "small" }))),
-        react_1.default.createElement(__1.Modal, { open: open, handleClose: function () { return setOpen(false); }, title: "Share" },
+        react_1.default.createElement(__1.Modal, { open: open, handleClose: function () { return setOpen(false); } },
             react_1.default.createElement(material_1.Box, { p: 4 },
                 react_1.default.createElement(material_1.Stack, { spacing: 2 },
-                    react_1.default.createElement(material_1.Box, { width: '100%' },
-                        react_1.default.createElement(material_1.Typography, { sx: sx.text, color: 'text.primary', variant: 'subtitle1' }, "Share to social media"),
-                        react_1.default.createElement(material_1.Typography, { sx: sx.text, color: 'text.secondary', variant: 'body1' }, "Select your social media platform")),
+                    react_1.default.createElement(material_1.Box, { width: "100%" },
+                        react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.primary", variant: "subtitle1" }, "Share to social media"),
+                        react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.secondary", variant: "body1" }, "Select your social media platform")),
                     react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.socialButtons }, SOCIAL_PLATFORMS.map(function (platform, index) { return (react_1.default.createElement(__1.SocialIcon, { key: index, provider: platform.value, handleClick: function () { return handleShareClick(platform.value); } })); })))))));
 };
 exports.default = ShareButton;
 var sx = {
     iconButton: {
-        color: 'grey.100'
+        border: '1px solid',
+        borderColor: 'primary.main',
+        color: 'primary.main',
     },
     button: {
-        color: 'primary.main'
+        border: '1px solid',
+        borderColor: 'primary.main',
+        color: 'primary.main',
     },
     socialButtons: {
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     text: {
         width: '100%',
-        textAlign: 'center'
-    }
+        textAlign: 'center',
+    },
 };

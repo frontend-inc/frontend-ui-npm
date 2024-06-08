@@ -29,11 +29,17 @@ var Cards = function (props) {
     return (react_1.default.createElement(material_1.Box, null,
         variant == 'list' && (react_1.default.createElement(material_1.Stack, { spacing: 2 }, items === null || items === void 0 ? void 0 : items.map(function (card, i) { return (react_1.default.createElement(components_1.CollectionCard, { actions: [], key: i, variant: variant, style: style, resource: __assign(__assign({}, card), { image: {
                     url: card === null || card === void 0 ? void 0 : card.image,
-                } }), handleClick: function () { return handleClick(card); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })); }))),
+                } }), displayFields: [
+                {
+                    name: 'description',
+                    variant: 'text',
+                    label: 'Description'
+                }
+            ], handleClick: function () { return handleClick(card); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })); }))),
         variant == 'grid' && (react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 }, items === null || items === void 0 ? void 0 : items.map(function (card, i) { return (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, md: 4, key: i },
             react_1.default.createElement(components_1.CollectionCard, { actions: [], variant: variant, style: style, resource: __assign(__assign({}, card), { image: {
                         url: card === null || card === void 0 ? void 0 : card.image,
-                    } }), handleClick: function () { return handleClick(card); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay }))); }))),
+                    } }), displayFields: [], handleClick: function () { return handleClick(card); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay }))); }))),
         (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: "Search", title: "No content yet.", description: "Your content will appear here." }))));
 };
 exports.default = Cards;

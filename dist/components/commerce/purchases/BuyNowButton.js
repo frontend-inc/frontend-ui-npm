@@ -72,7 +72,7 @@ var BuyNowButton = function (props) {
     var _f = (0, frontend_js_1.useAuth)(), fetchMe = _f.fetchMe, currentUser = _f.currentUser;
     var _g = (0, react_1.useContext)(context_1.AppContext), setCreditCardOpen = _g.setCreditCardOpen, setAuthOpen = _g.setAuthOpen;
     var _h = (0, hooks_1.usePayments)({
-        url: '/api/v1/payments'
+        url: '/api/v1/payments',
     }), loading = _h.loading, purchase = _h.purchase;
     var _j = (0, react_1.useState)(false), purchaseModal = _j[0], setPurchaseModal = _j[1];
     var handleClick = function () {
@@ -106,12 +106,12 @@ var BuyNowButton = function (props) {
     }); };
     return (react_1.default.createElement(material_1.Box, null,
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, alignItems: justifyContent },
-            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: 'center', justifyContent: justifyContent },
+            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: "center", justifyContent: justifyContent },
                 react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "textPrimary" }, displayAmount ? displayAmount : 'FREE'),
-                react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, availableForSale ? "Price" : "Sold out")),
-            react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "primary", onClick: handleClick, disabled: !availableForSale, startIcon: purchased ?
-                    react_1.default.createElement(components_1.Icon, { name: "CheckCircle", size: 20, color: "primary.contrastText" }) :
-                    react_1.default.createElement(components_1.Icon, { name: "CreditCard", size: 20, color: "primary.contrastText" }), endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, purchased ? "Purchased" : "".concat(buttonText, " ").concat(displayAmount ? displayAmount : ''))),
+                react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, availableForSale ? 'Price' : 'Sold out')),
+            react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "primary", onClick: handleClick, disabled: !availableForSale, startIcon: purchased ? (react_1.default.createElement(components_1.Icon, { name: "CheckCircle", size: 20, color: "primary.contrastText" })) : (react_1.default.createElement(components_1.Icon, { name: "CreditCard", size: 20, color: 'primary.contrastText' })), endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, purchased
+                ? 'Purchased'
+                : "".concat(buttonText, " ").concat(displayAmount ? displayAmount : ''))),
         react_1.default.createElement(components_1.AlertModal, { loading: loading, open: purchaseModal, title: "Confirm Purchase", description: "Are you sure you want to purchase for ".concat(displayAmount, "?"), handleConfirm: handlePurchase, handleClose: function () { return setPurchaseModal(false); } })));
 };
 exports.default = BuyNowButton;
@@ -119,7 +119,7 @@ var sx = {
     button: {
         width: {
             sm: 240,
-            xs: '100%'
-        }
-    }
+            xs: '100%',
+        },
+    },
 };
