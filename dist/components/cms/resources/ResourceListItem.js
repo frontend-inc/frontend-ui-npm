@@ -7,10 +7,10 @@ var react_1 = __importDefault(require("react"));
 var Resource_1 = __importDefault(require("./Resource"));
 var ResourceListItem = function (props) {
     var _a;
-    var resource = props.resource, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, secondaryActions = props.secondaryActions, menuActions = props.menuActions;
-    var _b = resource || {}, icon = _b.icon, color = _b.color, title = _b.title, description = _b.description;
+    var resource = props.resource, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, secondaryActions = props.secondaryActions, menuActions = props.menuActions, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b;
+    var _c = resource || {}, icon = _c.icon, color = _c.color, title = _c.title, description = _c.description;
     var image = (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url;
-    return (react_1.default.createElement(Resource_1.default, { icon: icon, color: color, title: title, description: description, image: image, resource: resource, handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete, secondaryActions: secondaryActions, menuActions: menuActions }));
+    return (react_1.default.createElement(Resource_1.default, { icon: icon, color: color, title: title, description: description, image: image, displayFields: displayFields, resource: resource, handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete, secondaryActions: secondaryActions, menuActions: menuActions }));
 };
 exports.default = ResourceListItem;
 var sx = {

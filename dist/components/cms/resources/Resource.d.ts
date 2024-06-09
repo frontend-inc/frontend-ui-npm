@@ -1,4 +1,5 @@
 import React from 'react';
+import { DisplayFieldType } from '../../../types';
 export type ResourceProps = {
     avatar?: React.ReactNode;
     icon?: string;
@@ -12,6 +13,7 @@ export type ResourceProps = {
     handleDelete?: (resource: any) => void;
     secondaryActions?: React.ReactNode;
     menuActions?: any;
+    displayFields: DisplayFieldType[];
 };
 declare const Resource: React.FC<ResourceProps>;
 export default Resource;

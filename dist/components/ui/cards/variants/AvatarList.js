@@ -18,8 +18,8 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../../components");
 var AvatarList = function (props) {
-    var actions = props.actions, resource = props.resource, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, _b = props.height, height = _b === void 0 ? 128 : _b, _c = props.width, width = _c === void 0 ? 128 : _c, handleClick = props.handleClick, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = props.enableFavorites, enableFavorites = _g === void 0 ? false : _g;
-    var _h = resource || {}, title = _h.title, description = _h.description, image = _h.image;
+    var actions = props.actions, resource = props.resource, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, _b = props.height, height = _b === void 0 ? 128 : _b, _c = props.width, width = _c === void 0 ? 128 : _c, handleClick = props.handleClick, _d = props.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = props.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = props.enableRatings, enableRatings = _h === void 0 ? false : _h;
+    var _j = resource || {}, title = _j.title, image = _j.image;
     return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.listItem), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-end", mr: 1 },
                 enableFavorites && react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
@@ -30,7 +30,9 @@ var AvatarList = function (props) {
                 react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: "".concat(height, "px"), width: "".concat(width, "px") }), src: image === null || image === void 0 ? void 0 : image.url, alt: title },
                         react_1.default.createElement(material_1.Box, null))),
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: 'subtitle2', color: "text.primary" }, title), secondary: react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource }) })))));
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: 'subtitle2', color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Stack, { direction: 'column', spacing: 1 },
+                        enableRatings && (react_1.default.createElement(components_1.AvgRating, { resource: resource, size: "small" })),
+                        react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource })) })))));
 };
 exports.default = AvatarList;
 var sx = {

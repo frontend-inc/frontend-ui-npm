@@ -26,6 +26,7 @@ type CollectionCardProps = {
     enableCreate?: boolean;
     enableDelete?: boolean;
     enableFavorites?: boolean;
+    enableRatings?: boolean;
 };
 declare const CollectionCard: React.FC<CollectionCardProps>;
 export default CollectionCard;

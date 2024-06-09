@@ -1,4 +1,5 @@
 import React from 'react';
+import { DisplayFieldType } from '../../../types';
 export type ResourceListItemProps = {
     avatar?: React.ReactNode;
     icon?: string;
@@ -12,6 +13,7 @@ export type ResourceListItemProps = {
     handleDelete?: (resource: any) => void;
     secondaryActions?: React.ReactNode;
     menuActions?: any;
+    displayFields?: DisplayFieldType[];
 };
 declare const ResourceListItem: React.FC<ResourceListItemProps>;
 export default ResourceListItem;

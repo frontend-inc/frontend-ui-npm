@@ -10,6 +10,17 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -18,7 +29,7 @@ var react_1 = __importDefault(require("react"));
 var CardGrid_1 = __importDefault(require("./variants/CardGrid"));
 var CardList_1 = __importDefault(require("./variants/CardList"));
 var Card = function (props) {
-    var variant = props.variant;
-    return variant == 'list' ? react_1.default.createElement(CardList_1.default, __assign({}, props)) : react_1.default.createElement(CardGrid_1.default, __assign({}, props));
+    var variant = props.variant, rest = __rest(props, ["variant"]);
+    return variant == 'list' ? react_1.default.createElement(CardList_1.default, __assign({}, rest)) : react_1.default.createElement(CardGrid_1.default, __assign({}, rest));
 };
 exports.default = Card;

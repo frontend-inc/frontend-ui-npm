@@ -20,8 +20,7 @@ var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var HeroPlace = function (props) {
-    var MAX_CHARS = 500;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
     var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
     if (!resource)
         return null;
@@ -41,6 +40,7 @@ var HeroPlace = function (props) {
                         react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 500, label: label, disableBorderRadius: enableBorder })),
                     react_1.default.createElement(components_1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
+                    enableRatings && (react_1.default.createElement(components_1.AvgRating, { resource: resource, enableTotal: true })),
                     react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource }),
                     enableBuyNow && (react_1.default.createElement(components_1.BuyNowButton, { resource: resource, buttonText: "Buy Now" })),
                     enableStripePaymentLink && (react_1.default.createElement(components_1.StripePaymentLink, { resource: resource, buttonText: "Checkout" })),

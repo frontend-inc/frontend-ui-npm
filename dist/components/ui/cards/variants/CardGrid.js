@@ -43,8 +43,8 @@ var router_1 = require("next/router");
 var components_1 = require("../../../../components");
 var CardGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 240 : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h;
-    var _j = resource || {}, label = _j.label, title = _j.title, image = _j.image;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 240 : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j;
+    var _k = resource || {}, label = _k.label, title = _k.title, image = _k.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -63,7 +63,8 @@ var CardGrid = function (props) {
                 react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
                     enableFavorites && react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
                     react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource }))),
-            react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }))));
+            enableRatings && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
+            (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource })))));
 };
 exports.default = CardGrid;
 var sx = {

@@ -20,7 +20,7 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var HeroArticle = function (props) {
-    var _a = props || {}, actions = _a.actions, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, _c = _a.direction, direction = _c === void 0 ? 'column' : _c, resource = _a.resource, _d = _a.disableImage, disableImage = _d === void 0 ? false : _d, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _a = props || {}, actions = _a.actions, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, _c = _a.direction, direction = _c === void 0 ? 'column' : _c, resource = _a.resource, _d = _a.disableImage, disableImage = _d === void 0 ? false : _d, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
     var _e = resource || {}, label = _e.label, title = _e.title, image = _e.image, description = _e.description;
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), spacing: 4 },
         (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { pt: enableBorder ? 4 : 0, sx: sx.actions },
@@ -33,6 +33,7 @@ var HeroArticle = function (props) {
             react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label, disableBorderRadius: enableBorder }))),
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
+            enableRatings && (react_1.default.createElement(__1.AvgRating, { justifyContent: "center", resource: resource, enableTotal: true })),
             react_1.default.createElement(__1.DisplayFields, { alignItems: "center", fields: displayFields, resource: resource }),
             enableBuyNow && (react_1.default.createElement(__1.BuyNowButton, { resource: resource, buttonText: "Buy Now", justifyContent: "center" })),
             enableStripePaymentLink && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout", justifyContent: "center" }))),

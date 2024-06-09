@@ -25,6 +25,9 @@ export type ResourceListProps = {
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
+    emptyIcon?: string;
+    emptyTitle?: string;
+    emptyDescription?: string;
 };
 declare const ResourceList: React.FC<ResourceListProps>;
 export default ResourceList;

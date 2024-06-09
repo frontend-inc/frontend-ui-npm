@@ -7,17 +7,6 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var CommentButton = function (props) {
     var reply = props.reply, handleClick = props.handleClick;
-    var handleToggleClick = function () {
-        handleClick();
-    };
-    return (react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleToggleClick }, reply ? 'Reply' : 'Leave a comment'));
+    return (react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: handleClick }, reply ? 'Reply' : 'Leave a comment'));
 };
 exports.default = CommentButton;
-var sx = {
-    icon: {
-        fontSize: '28px',
-    },
-    selected: {
-        color: 'primary.main',
-    },
-};

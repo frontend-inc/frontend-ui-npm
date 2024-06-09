@@ -42,8 +42,8 @@ var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
 var CoverVert = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 320 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h, icon = _a.icon;
-    var _j = resource || {}, label = _j.label, title = _j.title, image = _j.image;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 320 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j, icon = _a.icon;
+    var _k = resource || {}, label = _k.label, title = _k.title, image = _k.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -64,6 +64,7 @@ var CoverVert = function (props) {
                     react_1.default.createElement(material_1.Stack, { sx: sx.contentContainer, direction: "column", spacing: 0 },
                         react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
                             react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 60)),
+                            enableRatings && (react_1.default.createElement(__1.AvgRating, { color: 'common.white', resource: resource, size: "small" })),
                             react_1.default.createElement(__1.DisplayFields, { color: "common.white", fields: displayFields, resource: resource })))))),
         react_1.default.createElement(material_1.Box, { sx: sx.actions },
             enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, color: "common.white" })),

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsYouTube = exports.CmsVimeo = exports.CmsTable = exports.CmsHeader = exports.CmsHero = exports.CmsList = exports.CmsForeignList = exports.CmsForeignForm = exports.CmsForeignTable = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsCarousel = void 0;
+exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsYouTube = exports.CmsVimeo = exports.CmsTable = exports.CmsKanBan = exports.CmsHeader = exports.CmsHero = exports.CmsList = exports.CmsForeignList = exports.CmsForeignForm = exports.CmsForeignTable = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsCarousel = void 0;
 var CmsCarousel_1 = require("./CmsCarousel");
 Object.defineProperty(exports, "CmsCarousel", { enumerable: true, get: function () { return __importDefault(CmsCarousel_1).default; } });
 var CmsDetails_1 = require("./CmsDetails");
@@ -26,6 +26,8 @@ var CmsHero_1 = require("./CmsHero");
 Object.defineProperty(exports, "CmsHero", { enumerable: true, get: function () { return __importDefault(CmsHero_1).default; } });
 var CmsHeader_1 = require("./CmsHeader");
 Object.defineProperty(exports, "CmsHeader", { enumerable: true, get: function () { return __importDefault(CmsHeader_1).default; } });
+var CmsKanBan_1 = require("./CmsKanBan");
+Object.defineProperty(exports, "CmsKanBan", { enumerable: true, get: function () { return __importDefault(CmsKanBan_1).default; } });
 var CmsTable_1 = require("./CmsTable");
 Object.defineProperty(exports, "CmsTable", { enumerable: true, get: function () { return __importDefault(CmsTable_1).default; } });
 var CmsVimeo_1 = require("./CmsVimeo");

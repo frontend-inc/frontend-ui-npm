@@ -101,7 +101,7 @@ var CollectionTable = function (props) {
     var _r = (0, react_1.useState)(false), openModal = _r[0], setOpenModal = _r[1];
     var _s = (0, react_1.useState)(false), openDeleteModal = _s[0], setOpenDeleteModal = _s[1];
     var _t = (0, frontend_js_1.useDocuments)({
-        url: url,
+        url: url
     }), loading = _t.loading, delayedLoading = _t.delayedLoading, errors = _t.errors, resource = _t.resource, resources = _t.resources, setResource = _t.setResource, update = _t.update, create = _t.create, destroy = _t.destroy, handleDataChange = _t.handleDataChange, query = _t.query, findMany = _t.findMany, reloadMany = _t.reloadMany, removeAttachment = _t.removeAttachment, page = _t.page, numPages = _t.numPages, numResults = _t.numResults, totalCount = _t.totalCount, paginate = _t.paginate;
     var _u = (0, react_1.useState)(''), keywords = _u[0], setKeywords = _u[1];
     var handleKeywordChange = function (ev) {
@@ -128,7 +128,9 @@ var CollectionTable = function (props) {
     var handleClearFilters = function () {
         setActiveFilters([]);
         findMany({
-            filters: mergeAllFilters(__spreadArray(__spreadArray([], defaultQuery.filters, true), [currentUserFilter], false)),
+            filters: mergeAllFilters(__spreadArray(__spreadArray([], defaultQuery.filters, true), [
+                currentUserFilter
+            ], false)),
             sort_by: 'id',
             sort_direction: 'desc',
             keywords: '',

@@ -21,7 +21,7 @@ export type CollectionListProps = {
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
-    enableGoogleMap?: boolean;
+    enableGoogleMaps?: boolean;
     buttonText?: string;
     handleClick?: (resource: any) => void;
     enableBorder?: boolean;
@@ -31,6 +31,7 @@ export type CollectionListProps = {
     enableCreate?: boolean;
     enableDelete?: boolean;
     enableFavorites?: boolean;
+    enableRatings?: boolean;
     filterUser?: boolean;
     filterTeam?: boolean;
     emptyIcon?: string;

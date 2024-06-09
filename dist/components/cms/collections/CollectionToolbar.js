@@ -12,7 +12,7 @@ var CollectionToolbar = function (props) {
     if (!enableSearch && !enableFilters && !enableSorting && !enableCreate) {
         return null;
     }
-    return (react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
         enableSearch && (react_1.default.createElement(material_1.Box, { sx: sx.searchBar },
             react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch }))),
         react_1.default.createElement(material_1.Stack, { justifyContent: "space-between", direction: { sm: 'row', xs: 'column' }, spacing: 1 },
