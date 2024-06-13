@@ -58,7 +58,7 @@ var GoogleMarker = function (props) {
                 ((_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url) && (react_1.default.createElement(material_2.Box, { sx: sx.imageContainer },
                     react_1.default.createElement(components_1.Image, { height: 64, width: 64, src: (_b = resource === null || resource === void 0 ? void 0 : resource.image) === null || _b === void 0 ? void 0 : _b.url }))),
                 react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "grey.900" }, marker === null || marker === void 0 ? void 0 : marker.label),
-                react_1.default.createElement(components_1.DisplayFields, { color: 'grey.800', fields: displayFields, resource: resource }))))));
+                react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource }))))));
 };
 exports.default = GoogleMarker;
 var sx = {

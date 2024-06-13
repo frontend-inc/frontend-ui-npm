@@ -3,6 +3,8 @@ type ThemeProps = {
     muiTheme?: any;
     primaryColor?: string;
     bgcolor?: string;
+    textPrimary?: string;
+    textSecondary?: string;
     borderRadius?: number;
     bodyFont?: string;
     headerFont?: string;

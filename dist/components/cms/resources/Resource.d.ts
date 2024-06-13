@@ -4,6 +4,7 @@ export type ResourceProps = {
     avatar?: React.ReactNode;
     icon?: string;
     color?: string;
+    layout?: 'list' | 'grid';
     title?: string | React.ReactNode;
     description?: string;
     image?: string;

@@ -72,7 +72,7 @@ var material_1 = require("@mui/material");
 var MyAccountModal = function (props) {
     var _a = props || {}, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe;
     var _b = (0, react_1.useContext)(context_1.AppContext), myAccountOpen = _b.myAccountOpen, setMyAccountOpen = _b.setMyAccountOpen;
-    var _c = (0, frontend_js_1.useAuth)(), delayedLoading = _c.delayedLoading, user = _c.user, currentUser = _c.currentUser, updateMe = _c.updateMe, handleChange = _c.handleChange, deleteAvatar = _c.deleteAvatar, logout = _c.logout;
+    var _c = (0, frontend_js_1.useAuth)(), delayedLoading = _c.delayedLoading, user = _c.user, setUser = _c.setUser, fetchMe = _c.fetchMe, currentUser = _c.currentUser, updateMe = _c.updateMe, handleChange = _c.handleChange, deleteAvatar = _c.deleteAvatar, logout = _c.logout;
     var _d = (0, react_1.useState)(0), currentTab = _d[0], setCurrentTab = _d[1];
     var handleLogout = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -108,6 +108,16 @@ var MyAccountModal = function (props) {
     var handleTabChange = function (ev, newValue) {
         setCurrentTab(newValue);
     };
+    (0, react_1.useEffect)(function () {
+        if (currentUser) {
+            setUser(currentUser);
+        }
+    }, [currentUser]);
+    (0, react_1.useEffect)(function () {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+            fetchMe();
+        }
+    }, [currentUser]);
     return (react_1.default.createElement(components_1.Modal, { disablePadding: true, open: myAccountOpen, handleClose: function () { return setMyAccountOpen(false); }, title: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
             ? "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name)
             : 'My Account' },

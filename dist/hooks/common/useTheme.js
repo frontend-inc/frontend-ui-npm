@@ -15,7 +15,7 @@ var react_1 = require("react");
 var theme_1 = require("../../theme");
 var helpers_1 = require("../../helpers");
 var useTheme = function (props) {
-    var _a = props || {}, _b = _a.muiTheme, muiTheme = _b === void 0 ? theme_1.muiTheme : _b, primaryColor = _a.primaryColor, bgcolor = _a.bgcolor, borderRadius = _a.borderRadius, bodyFont = _a.bodyFont, headerFont = _a.headerFont, _c = _a.offsetX, offsetX = _c === void 0 ? 0 : _c, _d = _a.deviceSize, deviceSize = _d === void 0 ? 'desktop' : _d;
+    var _a = props || {}, _b = _a.muiTheme, muiTheme = _b === void 0 ? theme_1.muiTheme : _b, primaryColor = _a.primaryColor, textPrimary = _a.textPrimary, textSecondary = _a.textSecondary, bgcolor = _a.bgcolor, borderRadius = _a.borderRadius, bodyFont = _a.bodyFont, headerFont = _a.headerFont, _c = _a.offsetX, offsetX = _c === void 0 ? 0 : _c, _d = _a.deviceSize, deviceSize = _d === void 0 ? 'desktop' : _d;
     var _e = (0, react_1.useState)(muiTheme), theme = _e[0], setTheme = _e[1];
     (0, react_1.useEffect)(function () {
         var newTheme = {};
@@ -71,6 +71,12 @@ var useTheme = function (props) {
             palette = __assign(__assign({}, palette), { background: __assign(__assign({}, palette.background), { default: bgcolor, main: bgcolor }) });
         }
         palette = (0, helpers_1.buildMuiPalette)(palette);
+        if (textPrimary) {
+            palette = __assign(__assign({}, palette), { text: __assign(__assign({}, palette.text), { primary: textPrimary }) });
+        }
+        if (textSecondary) {
+            palette = __assign(__assign({}, palette), { text: __assign(__assign({}, palette.text), { secondary: textSecondary }) });
+        }
         if (headerFont) {
             typography = __assign(__assign({}, typography), { h1: __assign(__assign({}, typography.h1), { fontFamily: headerFont }), h2: __assign(__assign({}, typography.h2), { fontFamily: headerFont }), h3: __assign(__assign({}, typography.h3), { fontFamily: headerFont }), h4: __assign(__assign({}, typography.h4), { fontFamily: headerFont }), h5: __assign(__assign({}, typography.h5), { fontFamily: headerFont }), h6: __assign(__assign({}, typography.h6), { fontFamily: headerFont }), subtitle1: __assign(__assign({}, typography.subtitle1), { fontFamily: headerFont }), subtitle2: __assign(__assign({}, typography.subtitle2), { fontFamily: headerFont }) });
         }
@@ -86,10 +92,12 @@ var useTheme = function (props) {
         deviceSize,
         primaryColor,
         bgcolor,
+        textPrimary,
+        textSecondary,
         headerFont,
         bodyFont,
         borderRadius,
-        muiTheme,
+        muiTheme
     ]);
     return {
         theme: theme,

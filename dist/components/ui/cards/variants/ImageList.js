@@ -42,9 +42,9 @@ var router_1 = require("next/router");
 var index_1 = require("../../../../constants/index");
 var ImageHoriz = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, _b = _a.height, height = _b === void 0 ? index_1.IMAGE_HORIZ_HEIGHT : _b, handleClick = _a.handleClick, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableFavorites, enableFavorites = _f === void 0 ? false : _f;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, _b = _a.height, height = _b === void 0 ? index_1.IMAGE_HORIZ_HEIGHT : _b, handleClick = _a.handleClick, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.enableUsers, enableUsers = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g;
     var router = (0, router_1.useRouter)();
-    var _g = resource || {}, title = _g.title, image = _g.image;
+    var _h = resource || {}, title = _h.title, image = _h.image;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -53,13 +53,16 @@ var ImageHoriz = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    return (react_1.default.createElement(material_1.Box, { sx: __assign({}, sx.root) },
-        react_1.default.createElement(material_1.Box, { sx: __assign({}, (enableGradient && sx.gradient)) },
-            react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-                react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay }))),
-        react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            enableFavorites && react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
-            react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource, color: enableOverlay ? 'common.white' : 'text.secondary' }))));
+    var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
+    return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme, textPrimary: '#FFFFFF', textSecondary: '#FFFFFF' },
+        react_1.default.createElement(material_1.Box, { sx: __assign({}, sx.root) },
+            react_1.default.createElement(material_1.Box, { sx: __assign({}, (enableGradient && sx.gradient)) },
+                react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
+                    react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay }))),
+            react_1.default.createElement(material_1.Box, { sx: sx.actions },
+                enableFavorites && react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
+                react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource, color: enableOverlay ? 'common.white' : 'text.secondary' })),
+            react_1.default.createElement(material_1.Box, { sx: sx.userCard }, enableUsers && (react_1.default.createElement(__1.UserButton, { user: resource === null || resource === void 0 ? void 0 : resource.user }))))));
 };
 exports.default = ImageHoriz;
 var sx = {
@@ -86,5 +89,12 @@ var sx = {
         position: 'absolute',
         top: 10,
         right: 10,
+    },
+    userCard: {
+        display: 'flex',
+        flexDirection: 'row',
+        position: 'absolute',
+        bottom: 10,
+        left: 10,
     },
 };

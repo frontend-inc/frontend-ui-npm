@@ -28,6 +28,7 @@ export type ResourceListProps = {
     emptyIcon?: string;
     emptyTitle?: string;
     emptyDescription?: string;
+    componentProps?: any;
 };
 declare const ResourceList: React.FC<ResourceListProps>;
 export default ResourceList;

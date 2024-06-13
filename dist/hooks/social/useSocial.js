@@ -75,18 +75,18 @@ var useSocial = function (props) {
             }
         });
     }); };
-    var follow = function (itemId) { return __awaiter(void 0, void 0, void 0, function () {
+    var follow = function (username) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).follow(itemId); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).follow(username); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
     }); };
-    var unfollow = function (itemId) { return __awaiter(void 0, void 0, void 0, function () {
+    var unfollow = function (username) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).unfollow(itemId); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).unfollow(username); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });

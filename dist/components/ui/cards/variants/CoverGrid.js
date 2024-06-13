@@ -38,12 +38,13 @@ var react_1 = __importStar(require("react"));
 var context_1 = require("../../../../context");
 var material_1 = require("@mui/material");
 var __1 = require("../../..");
+var context_2 = require("../../../../context");
 var helpers_1 = require("../../../../helpers");
 var router_1 = require("next/router");
 var CoverVert = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 320 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j, icon = _a.icon;
-    var _k = resource || {}, label = _k.label, title = _k.title, image = _k.image;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 320 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableUsers, enableUsers = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k, icon = _a.icon;
+    var _l = resource || {}, label = _l.label, title = _l.title, image = _l.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -53,22 +54,25 @@ var CoverVert = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign({}, sx.root) },
-        react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-            react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
-        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },
-            react_1.default.createElement(material_1.Stack, { sx: sx.fullWidth, spacing: 1, direction: 'row', alignItems: "center" },
-                icon && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(__1.Icon, { size: 20, name: icon, color: "common.white" }))),
-                react_1.default.createElement(material_1.Box, { sx: sx.content },
-                    react_1.default.createElement(material_1.Stack, { sx: sx.contentContainer, direction: "column", spacing: 0 },
-                        react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
-                            react_1.default.createElement(material_1.Typography, { color: "common.white", variant: textVariant }, (0, helpers_1.truncate)(title, 60)),
-                            enableRatings && (react_1.default.createElement(__1.AvgRating, { color: 'common.white', resource: resource, size: "small" })),
-                            react_1.default.createElement(__1.DisplayFields, { color: "common.white", fields: displayFields, resource: resource })))))),
-        react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, color: "common.white" })),
-            react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, actions: actions, color: 'common.white' }))));
+    var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
+    return (react_1.default.createElement(context_2.ThemeProvider, { muiTheme: theme, textPrimary: '#FFFFFF', textSecondary: '#FFFFFF' },
+        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign({}, sx.root) },
+            react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
+                react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
+            react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },
+                react_1.default.createElement(material_1.Stack, { sx: sx.fullWidth, spacing: 1, direction: 'row', alignItems: "center" },
+                    icon && (react_1.default.createElement(material_1.Box, null,
+                        react_1.default.createElement(__1.Icon, { size: 20, name: icon, color: "common.white" }))),
+                    react_1.default.createElement(material_1.Box, { sx: sx.content },
+                        react_1.default.createElement(material_1.Stack, { sx: sx.contentContainer, direction: "column", spacing: 0 },
+                            react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
+                                react_1.default.createElement(material_1.Typography, { color: 'text.primary', variant: textVariant }, (0, helpers_1.truncate)(title, 60)),
+                                enableRatings && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
+                                react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
+                                enableUsers && (react_1.default.createElement(__1.UserButton, { user: resource === null || resource === void 0 ? void 0 : resource.user }))))))),
+            react_1.default.createElement(material_1.Box, { sx: sx.actions },
+                enableFavorites && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, color: "common.white" })),
+                react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, actions: actions })))));
 };
 exports.default = CoverVert;
 var sx = {

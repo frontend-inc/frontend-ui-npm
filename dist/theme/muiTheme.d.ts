@@ -124,7 +124,6 @@ export declare const muiTheme: {
             styleOverrides: {
                 root: {
                     minWidth: string;
-                    width: string;
                 };
             };
         };

@@ -1,9 +1,19 @@
 import { StorageType } from '../types';
 export type UserType = {
     id?: number;
-    first_name?: string;
-    last_name?: string;
+    username?: string;
+    name: string;
+    first_name: string;
+    last_name: string;
     email: string;
+    bio?: string;
+    avatar?: {
+        url: string;
+    };
+    display_num_followers?: string;
+    display_num_following?: string;
+    num_followers?: number;
+    num_following?: number;
     token?: string;
     paid?: boolean;
     role?: string;

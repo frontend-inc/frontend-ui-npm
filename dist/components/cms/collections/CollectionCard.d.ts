@@ -25,6 +25,7 @@ type CollectionCardProps = {
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
+    enableUsers?: boolean;
     enableFavorites?: boolean;
     enableRatings?: boolean;
 };

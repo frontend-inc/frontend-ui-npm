@@ -15,8 +15,10 @@ var isFavorited = function (user, documentId) {
         : false;
 };
 exports.isFavorited = isFavorited;
-var isFollowing = function (user, appId) {
+var isFollowing = function (user, followUser) {
     var _a;
-    return ((_a = user === null || user === void 0 ? void 0 : user.following) === null || _a === void 0 ? void 0 : _a.find(function (d) { return d.id === appId; })) ? true : false;
+    if (!user || !followUser)
+        return false;
+    return ((_a = user === null || user === void 0 ? void 0 : user.following) === null || _a === void 0 ? void 0 : _a.find(function (u) { return u.username === (followUser === null || followUser === void 0 ? void 0 : followUser.username); })) ? true : false;
 };
 exports.isFollowing = isFollowing;

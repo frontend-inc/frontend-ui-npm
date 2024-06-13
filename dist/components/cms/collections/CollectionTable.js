@@ -97,7 +97,7 @@ var CollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = (0, react_1.useContext)(context_1.AppContext), clientUrl = _a.clientUrl, setAuthOpen = _a.setAuthOpen;
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
-    var url = props.url, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l, _m = props.filterUser, filterUser = _m === void 0 ? false : _m, _o = props.filterTeam, filterTeam = _o === void 0 ? false : _o, emptyIcon = props.emptyIcon, _p = props.emptyTitle, emptyTitle = _p === void 0 ? 'No results found' : _p, _q = props.emptyDescription, emptyDescription = _q === void 0 ? 'Try adjusting your search or filters.' : _q;
+    var url = props.url, user = props.user, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l, _m = props.filterUser, filterUser = _m === void 0 ? false : _m, _o = props.filterTeam, filterTeam = _o === void 0 ? false : _o, emptyIcon = props.emptyIcon, _p = props.emptyTitle, emptyTitle = _p === void 0 ? 'No results found' : _p, _q = props.emptyDescription, emptyDescription = _q === void 0 ? 'Try adjusting your search or filters.' : _q;
     var _r = (0, react_1.useState)(false), openModal = _r[0], setOpenModal = _r[1];
     var _s = (0, react_1.useState)(false), openDeleteModal = _s[0], setOpenDeleteModal = _s[1];
     var _t = (0, frontend_js_1.useDocuments)({
@@ -129,7 +129,7 @@ var CollectionTable = function (props) {
         setActiveFilters([]);
         findMany({
             filters: mergeAllFilters(__spreadArray(__spreadArray([], defaultQuery.filters, true), [
-                currentUserFilter
+                userFilter
             ], false)),
             sort_by: 'id',
             sort_direction: 'desc',
@@ -238,24 +238,23 @@ var CollectionTable = function (props) {
             }
         });
     }); };
-    var currentUserFilter = buildUserFilters(currentUser, filterUser, filterTeam);
+    var userFilter = buildUserFilters(user, filterUser, filterTeam);
     (0, react_1.useEffect)(function () {
-        if (url && currentUser) {
+        if (url && user) {
             findMany(__assign(__assign({}, defaultQuery), { filters: mergeAllFilters([
                     defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters,
-                    currentUserFilter,
+                    userFilter,
                     queryFilters,
                 ]), per_page: perPage }));
         }
     }, [
         url,
+        user,
         perPage,
         filterUser,
         filterTeam,
-        currentUser,
         queryFilters,
         defaultQuery,
-        ,
     ]);
     var _w = (0, react_1.useState)([]), rows = _w[0], setRows = _w[1];
     (0, react_1.useEffect)(function () {

@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var Resource = function (props) {
-    var icon = props.icon, avatar = props.avatar, title = props.title, description = props.description, image = props.image, color = props.color, resource = props.resource, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, secondaryActions = props.secondaryActions, menuActions = props.menuActions, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a;
+    var icon = props.icon, avatar = props.avatar, title = props.title, description = props.description, _a = props.layout, layout = _a === void 0 ? 'list' : _a, image = props.image, color = props.color, resource = props.resource, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, secondaryActions = props.secondaryActions, menuActions = props.menuActions, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b;
     return (react_1.default.createElement(material_1.List, { sx: sx.root },
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.actions },
                 secondaryActions,
@@ -21,7 +21,7 @@ var Resource = function (props) {
                             bgcolor: color,
                         } },
                         react_1.default.createElement(__1.Icon, { name: icon, size: 24 })))),
-                react_1.default.createElement(material_1.ListItemText, { primary: title, secondary: react_1.default.createElement(react_1.default.Fragment, null,
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: 'text.primary', variant: 'body1' }, title), secondary: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                         react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, description)) })))));
 };

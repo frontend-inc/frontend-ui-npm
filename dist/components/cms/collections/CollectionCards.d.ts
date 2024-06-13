@@ -12,6 +12,7 @@ type CollectionCardsProps = {
     enableOverlay?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;
+    enableUsers?: boolean;
     enableFavorites?: boolean;
     enableRatings?: boolean;
     handleClick: (item: any) => void;

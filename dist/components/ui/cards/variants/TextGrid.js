@@ -43,8 +43,8 @@ var index_1 = require("../../../../constants/index");
 var __1 = require("../../..");
 var TextGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? index_1.CARD_VERT_HEIGHT : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableFavorites, enableFavorites = _e === void 0 ? false : _e, _f = _a.enableRatings, enableRatings = _f === void 0 ? false : _f;
-    var _g = resource || {}, title = _g.title, description = _g.description;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? index_1.CARD_VERT_HEIGHT : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableUsers, enableUsers = _e === void 0 ? false : _e, _f = _a.enableFavorites, enableFavorites = _f === void 0 ? false : _f, _g = _a.enableRatings, enableRatings = _g === void 0 ? false : _g;
+    var _h = resource || {}, title = _h.title, description = _h.description;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -61,6 +61,7 @@ var TextGrid = function (props) {
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
             react_1.default.createElement(material_1.Link, { onClick: handleItemClick },
                 react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "subtitle1" }, (0, helpers_1.truncate)(title))),
+            enableUsers && (react_1.default.createElement(__1.UserButton, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
             enableRatings && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
             react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
             react_1.default.createElement(material_1.Typography, { sx: sx.description, color: "text.secondary", variant: "body1" }, (0, helpers_1.truncate)(description, 200)))));

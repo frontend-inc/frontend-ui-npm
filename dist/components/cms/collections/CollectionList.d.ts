@@ -1,7 +1,8 @@
 import React from 'react';
-import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
+import { ActionType, FormFieldType, DisplayFieldType, UserType } from '../../../types';
 import { SortOptionType, SearchFilterOptionType } from '../../../types';
 export type CollectionListProps = {
+    user?: UserType;
     variant: 'list' | 'grid';
     style: 'avatar' | 'card' | 'cover' | 'chip' | 'text' | 'image';
     layout?: 'drawer' | 'inline';
@@ -18,6 +19,7 @@ export type CollectionListProps = {
     filterAnchor?: 'left' | 'top';
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
+    enableUsers?: boolean;
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;

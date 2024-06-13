@@ -15,8 +15,7 @@ var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../hooks");
 var useSearch = function (props) {
-    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    var url = props.url, _a = props.perPage, perPage = _a === void 0 ? 20 : _a, _b = props.filterUser, filterUser = _b === void 0 ? false : _b, _c = props.filterTeam, filterTeam = _c === void 0 ? false : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d;
+    var url = props.url, _a = props.perPage, perPage = _a === void 0 ? 20 : _a, user = props.user, _b = props.filterUser, filterUser = _b === void 0 ? false : _b, _c = props.filterTeam, filterTeam = _c === void 0 ? false : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d;
     var _e = (0, frontend_js_1.useDocuments)({
         url: url,
     }), loading = _e.loading, delayedLoading = _e.delayedLoading, resources = _e.resources, query = _e.query, findMany = _e.findMany, reloadMany = _e.reloadMany, page = _e.page, numPages = _e.numPages, loadMore = _e.loadMore;
@@ -40,7 +39,7 @@ var useSearch = function (props) {
     var handleClearFilters = function () {
         setActiveFilters([]);
         findMany({
-            filters: mergeAllFilters([defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, currentUserFilter]),
+            filters: mergeAllFilters([defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, userFilter]),
             sort_by: 'id',
             sort_direction: 'desc',
             keywords: '',
@@ -51,21 +50,21 @@ var useSearch = function (props) {
     var handleFilter = function (filter) {
         handleAddFilter(filter);
     };
-    var currentUserFilter = buildUserFilters(currentUser, filterUser, filterTeam);
+    var userFilter = buildUserFilters(user, filterUser, filterTeam);
     (0, react_1.useEffect)(function () {
-        if (url && currentUser) {
+        if (url && user) {
             findMany(__assign(__assign({}, defaultQuery), { filters: mergeAllFilters([
                     defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters,
-                    currentUserFilter,
+                    userFilter,
                     queryFilters,
                 ]), per_page: perPage }));
         }
     }, [
         url,
         perPage,
+        user,
         filterUser,
         filterTeam,
-        currentUser,
         queryFilters,
         defaultQuery,
     ]);

@@ -7,8 +7,8 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../../..");
 var material_1 = require("@mui/material");
 var DisplayFields = function (props) {
-    var _a = props || {}, fields = _a.fields, resource = _a.resource, color = _a.color, _b = _a.alignItems, alignItems = _b === void 0 ? 'flex-start' : _b;
-    return (react_1.default.createElement(material_1.Stack, { sx: sx.root, direction: "column", spacing: 0.5, alignItems: alignItems }, fields === null || fields === void 0 ? void 0 : fields.map(function (field, index) { return (react_1.default.createElement(__1.DisplayField, { key: index, color: color, field: field, resource: resource })); })));
+    var _a = props || {}, fields = _a.fields, resource = _a.resource, _b = _a.alignItems, alignItems = _b === void 0 ? 'flex-start' : _b;
+    return (react_1.default.createElement(material_1.Stack, { sx: sx.root, direction: "column", spacing: 0.5, alignItems: alignItems }, fields === null || fields === void 0 ? void 0 : fields.map(function (field, index) { return (react_1.default.createElement(__1.DisplayField, { key: index, field: field, resource: resource })); })));
 };
 exports.default = DisplayFields;
 var sx = {

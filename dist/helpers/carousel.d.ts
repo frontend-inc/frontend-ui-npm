@@ -124,7 +124,6 @@ export declare const getCarouselResponsive: (theme?: {
             styleOverrides: {
                 root: {
                     minWidth: string;
-                    width: string;
                 };
             };
         };

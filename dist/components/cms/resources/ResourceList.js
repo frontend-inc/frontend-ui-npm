@@ -77,18 +77,18 @@ var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
+var components_1 = require("../../../components");
 var __1 = require("../..");
-var __2 = require("../..");
 var ResourceListItem_1 = __importDefault(require("./ResourceListItem"));
 var ResourceList = function (props) {
-    var _a = props.layout, layout = _a === void 0 ? 'list' : _a, dense = props.dense, _b = props.component, Component = _b === void 0 ? ResourceListItem_1.default : _b, url = props.url, name = props.name, fields = props.fields, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.sortOptions, sortOptions = _d === void 0 ? [] : _d, _e = props.query, defaultQuery = _e === void 0 ? {} : _e, _f = props.perPage, perPage = _f === void 0 ? 20 : _f, _g = props.enableSearch, enableSearch = _g === void 0 ? false : _g, _h = props.enableFilters, enableFilters = _h === void 0 ? false : _h, _j = props.enableSorting, enableSorting = _j === void 0 ? false : _j, _k = props.enableLoadMore, enableLoadMore = _k === void 0 ? true : _k, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleClick = props.handleClick, _l = props.emptyIcon, emptyIcon = _l === void 0 ? 'Search' : _l, _m = props.emptyTitle, emptyTitle = _m === void 0 ? 'No results found' : _m, _o = props.emptyDescription, emptyDescription = _o === void 0 ? 'Try adjusting your search or filters' : _o;
-    var _p = (0, react_1.useState)(false), openModal = _p[0], setOpenModal = _p[1];
-    var _q = (0, react_1.useState)(false), openDeleteModal = _q[0], setOpenDeleteModal = _q[1];
-    var _r = (0, frontend_js_1.useResource)({
+    var _a = props.layout, layout = _a === void 0 ? 'list' : _a, dense = props.dense, _b = props.component, Component = _b === void 0 ? ResourceListItem_1.default : _b, url = props.url, name = props.name, _c = props.fields, fields = _c === void 0 ? [] : _c, _d = props.filterOptions, filterOptions = _d === void 0 ? [] : _d, _e = props.sortOptions, sortOptions = _e === void 0 ? [] : _e, _f = props.query, defaultQuery = _f === void 0 ? {} : _f, _g = props.perPage, perPage = _g === void 0 ? 20 : _g, _h = props.enableSearch, enableSearch = _h === void 0 ? false : _h, _j = props.enableFilters, enableFilters = _j === void 0 ? false : _j, _k = props.enableSorting, enableSorting = _k === void 0 ? false : _k, _l = props.enableLoadMore, enableLoadMore = _l === void 0 ? true : _l, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleClick = props.handleClick, _m = props.emptyIcon, emptyIcon = _m === void 0 ? 'Search' : _m, _o = props.emptyTitle, emptyTitle = _o === void 0 ? 'No results found' : _o, _p = props.emptyDescription, emptyDescription = _p === void 0 ? 'Try adjusting your search or filters' : _p, _q = props.componentProps, componentProps = _q === void 0 ? {} : _q;
+    var _r = (0, react_1.useState)(false), openModal = _r[0], setOpenModal = _r[1];
+    var _s = (0, react_1.useState)(false), openDeleteModal = _s[0], setOpenDeleteModal = _s[1];
+    var _t = (0, frontend_js_1.useResource)({
         name: name,
         url: url,
-    }), loading = _r.loading, delayedLoading = _r.delayedLoading, errors = _r.errors, resource = _r.resource, resources = _r.resources, setResource = _r.setResource, update = _r.update, create = _r.create, destroy = _r.destroy, handleChange = _r.handleChange, query = _r.query, findMany = _r.findMany, reloadMany = _r.reloadMany, removeAttachment = _r.removeAttachment, page = _r.page, numPages = _r.numPages, loadMore = _r.loadMore;
-    var _s = (0, react_1.useState)(''), keywords = _s[0], setKeywords = _s[1];
+    }), loading = _t.delayedLoading, errors = _t.errors, resource = _t.resource, resources = _t.resources, setResource = _t.setResource, update = _t.update, create = _t.create, destroy = _t.destroy, handleChange = _t.handleChange, query = _t.query, findMany = _t.findMany, reloadMany = _t.reloadMany, removeAttachment = _t.removeAttachment, page = _t.page, numPages = _t.numPages, loadMore = _t.loadMore;
+    var _u = (0, react_1.useState)(''), keywords = _u[0], setKeywords = _u[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -101,9 +101,9 @@ var ResourceList = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _t = (0, hooks_1.useFilters)({
+    var _v = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _t.activeFilters, setActiveFilters = _t.setActiveFilters, handleAddFilter = _t.handleAddFilter, buildQueryFilters = _t.buildQueryFilters;
+    }), activeFilters = _v.activeFilters, setActiveFilters = _v.setActiveFilters, handleAddFilter = _v.handleAddFilter, buildQueryFilters = _v.buildQueryFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -198,22 +198,23 @@ var ResourceList = function (props) {
     }, [url, name, perPage]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-            enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
+            enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
             react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.actions, spacing: 1 },
                 react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, spacing: 1 },
                     enableFilters && (react_1.default.createElement(material_1.Box, null,
-                        react_1.default.createElement(__1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
-                    enableSorting && (react_1.default.createElement(__1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSort, handleSortDirection: handleSortDirection }))),
+                        react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
+                    enableSorting && (react_1.default.createElement(components_1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSort, handleSortDirection: handleSortDirection }))),
                 enableCreate && (react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add"))))),
-        react_1.default.createElement(material_1.Box, { sx: __assign({}, (delayedLoading && sx.loading)) },
+                    react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add"))))),
+        react_1.default.createElement(material_1.Box, { sx: __assign({}, (loading && sx.loading)) },
             react_1.default.createElement(material_1.Stack, { spacing: 2, sx: sx.fullWidth },
-                react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.layout), (layout == 'grid' ? sx.grid : sx.list)), (dense && sx.listDense)) }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(Component, { key: index, resource: resource, handleClick: handleClick ? function () { return handleClick(resource); } : undefined, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined })); })))),
-        !loading && resources.length == 0 && (react_1.default.createElement(__2.Placeholder, { icon: emptyIcon, title: emptyTitle, description: emptyDescription })),
-        enableLoadMore && (react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })),
-        react_1.default.createElement(__1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove })),
-        react_1.default.createElement(__1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
+                react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.layout), (layout == 'grid' ? sx.grid : sx.list)), (dense && sx.listDense)) }, !loading && (resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, layout: layout, resource: resource, handleClick: handleClick ? function () { return handleClick(resource); } : undefined, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, componentProps))); }))))),
+        !loading && resources.length == 0 && (react_1.default.createElement(__1.Placeholder, { icon: emptyIcon, title: emptyTitle, description: emptyDescription })),
+        react_1.default.createElement(components_1.Loader, { loading: loading }),
+        enableLoadMore && (react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })),
+        react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
+            react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove })),
+        react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };
 exports.default = ResourceList;
 var sx = {

@@ -1,8 +1,8 @@
 import React from 'react';
+import { UserType } from '../../../types';
 type FollowButtonProps = {
-    following: boolean;
-    loading: boolean;
-    handleClick: () => void;
+    user: UserType;
+    color?: string;
 };
 declare const FollowButton: React.FC<FollowButtonProps>;
 export default FollowButton;

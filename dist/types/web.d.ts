@@ -22,6 +22,8 @@ export type SectionProps = {
 };
 export type CardProps = {
     actions: ActionType[];
+    enableUsers?: boolean;
+    enableComments?: boolean;
     enableFavorites?: boolean;
     enableRatings?: boolean;
     editing?: boolean;

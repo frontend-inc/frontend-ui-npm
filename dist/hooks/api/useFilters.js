@@ -21,6 +21,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
+var helpers_1 = require("../../helpers");
 var useFilters = function (props) {
     var _a;
     var query = (props || {}).query;
@@ -79,25 +80,6 @@ var useFilters = function (props) {
             value == null ||
             (Array.isArray(value) && value.length === 0));
     };
-    var mergeFilters = function (filters, newFilters) {
-        if (!filters)
-            return newFilters;
-        if (!newFilters)
-            return filters;
-        var mergedFilters = {
-            AND: __spreadArray(__spreadArray([], ((filters === null || filters === void 0 ? void 0 : filters.AND) || []), true), ((newFilters === null || newFilters === void 0 ? void 0 : newFilters.AND) || []), true),
-            OR: __spreadArray(__spreadArray([], (filters.OR || []), true), (newFilters.OR || []), true),
-        };
-        return mergedFilters;
-    };
-    var mergeAllFilters = function (filters) {
-        if (filters.length === 0) {
-            return {};
-        }
-        return filters.reduce(function (mergedFilter, currentFilter) {
-            return mergeFilters(mergedFilter, currentFilter);
-        }, {});
-    };
     var buildQueryFilters = function (activeFilters) {
         var filters = {};
         activeFilters
@@ -121,28 +103,6 @@ var useFilters = function (props) {
     (0, react_1.useEffect)(function () {
         setQueryFilters(buildQueryFilters(activeFilters));
     }, [activeFilters]);
-    // Convert the query object into an array of filter options
-    var formatFilterArray = function (filters) {
-        var formattedFilters = [];
-        if (typeof filters === 'object') {
-            Object.keys(filters).forEach(function (where) {
-                filters[where].forEach(function (filter) {
-                    var field = Object.keys(filter)[0];
-                    var operator = Object.keys(filter[field])[0];
-                    var value = filter[field][operator];
-                    //@ts-ignore
-                    formattedFilters.push({
-                        where: where,
-                        field: field,
-                        operator: operator,
-                        value: value,
-                    });
-                });
-            });
-            setActiveFilters(formattedFilters);
-        }
-        return formattedFilters;
-    };
     var buildUserFilters = function (currentUser, filterUser, filterTeam) {
         return {
             AND: __spreadArray(__spreadArray([], (filterUser && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
@@ -155,7 +115,8 @@ var useFilters = function (props) {
     (0, react_1.useEffect)(function () {
         var _a;
         if (((_a = query === null || query === void 0 ? void 0 : query.filters) === null || _a === void 0 ? void 0 : _a.length) >= 0) {
-            formatFilterArray(query === null || query === void 0 ? void 0 : query.filters);
+            var filterArray = (0, helpers_1.formatFilterArray)(query === null || query === void 0 ? void 0 : query.filters);
+            setActiveFilters(filterArray);
         }
     }, [(_a = query === null || query === void 0 ? void 0 : query.filters) === null || _a === void 0 ? void 0 : _a.length]);
     return {
@@ -171,8 +132,8 @@ var useFilters = function (props) {
         setActiveFilters: setActiveFilters,
         findDuplicateFilter: findDuplicateFilter,
         findDuplicateFilterIndex: findDuplicateFilterIndex,
-        mergeFilters: mergeFilters,
-        mergeAllFilters: mergeAllFilters,
+        mergeFilters: helpers_1.mergeFilters,
+        mergeAllFilters: helpers_1.mergeAllFilters,
         buildUserFilters: buildUserFilters,
         buildQueryFilters: buildQueryFilters,
     };
