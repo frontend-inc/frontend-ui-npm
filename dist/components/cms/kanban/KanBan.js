@@ -31,7 +31,7 @@ var frontend_js_1 = require("frontend-js");
 var Sortable_1 = __importDefault(require("./Sortable"));
 var utils_1 = require("../../../helpers/utils");
 var KanBan = function (props) {
-    var actions = props.actions, headers = props.headers, fieldName = props.fieldName, resources = props.resources, handleClick = props.handleClick, handleDrop = props.handleDrop, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, enableFavorites = props.enableFavorites, enableRatings = props.enableRatings, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+    var loading = props.loading, actions = props.actions, headers = props.headers, fieldName = props.fieldName, resources = props.resources, activeResource = props.activeResource, handleClick = props.handleClick, handleDrop = props.handleDrop, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, enableFavorites = props.enableFavorites, enableRatings = props.enableRatings, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleAdd = props.handleAdd;
     var _b = (0, react_1.useState)({}), groupedResources = _b[0], setGroupedResources = _b[1];
     var handleGroupResources = function (resources, fieldName) {
         var flattenedResources = (0, frontend_js_1.flattenDocuments)(resources);
@@ -40,12 +40,12 @@ var KanBan = function (props) {
         setGroupedResources(grouped);
     };
     (0, react_1.useEffect)(function () {
-        if ((resources === null || resources === void 0 ? void 0 : resources.length) > 0 && fieldName) {
+        if (resources) {
             handleGroupResources(resources, fieldName);
         }
     }, [resources, fieldName, headers]);
     if (Object.keys(groupedResources).length == 0)
         return null;
-    return (react_1.default.createElement(Sortable_1.default, { actions: actions, headers: headers, columns: groupedResources, handleDrop: handleDrop, handleClick: handleClick, displayFields: displayFields, enableFavorites: enableFavorites, enableRatings: enableRatings, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete }));
+    return (react_1.default.createElement(Sortable_1.default, { loading: loading, actions: actions, headers: headers, columns: groupedResources, activeResource: activeResource, handleDrop: handleDrop, handleClick: handleClick, displayFields: displayFields, enableFavorites: enableFavorites, enableRatings: enableRatings, enableEdit: enableEdit, enableDelete: enableDelete, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDelete, handleAdd: handleAdd }));
 };
 exports.default = KanBan;

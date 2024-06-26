@@ -6,8 +6,9 @@ export type CollectionKanBanProps = CollectionListProps & {
         label: string;
         value: string;
     }[];
+    resource: any;
     actions: ActionType[];
-    fieldName: string;
+    searchUrl: string;
 };
 declare const CollectionKanBan: React.FC<CollectionKanBanProps>;
 export default CollectionKanBan;

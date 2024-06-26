@@ -83,33 +83,42 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
-var components_1 = require("../../../components");
+var __1 = require("../..");
 var frontend_js_2 = require("frontend-js");
-var components_2 = require("../../../components");
+var hooks_1 = require("../../../hooks");
+var __2 = require("../..");
 var material_1 = require("@mui/material");
 var context_1 = require("../../../context");
 var frontend_js_3 = require("frontend-js");
 var CollectionKanBan = function (props) {
-    var _a = (0, react_1.useContext)(context_1.AppContext), clientUrl = _a.clientUrl, setAuthOpen = _a.setAuthOpen;
+    var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
-    var url = props.url, headers = props.headers, _b = props.fields, fields = _b === void 0 ? [] : _b, fieldName = props.fieldName, _c = props.displayFields, displayFields = _c === void 0 ? [] : _c, _d = props.actions, actions = _d === void 0 ? [] : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, enableEdit = props.enableEdit, enableFavorites = props.enableFavorites, enableRatings = props.enableRatings, enableUsers = props.enableUsers, rest = __rest(props, ["url", "headers", "fields", "fieldName", "displayFields", "actions", "enableOverlay", "enableEdit", "enableFavorites", "enableRatings", "enableUsers"]);
-    var _f = (0, frontend_js_1.useDocuments)({
+    var url = props.url, searchUrl = props.searchUrl, headers = props.headers, _a = props.fields, fields = _a === void 0 ? [] : _a, _resource = props.resource, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b, _c = props.actions, actions = _c === void 0 ? [] : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableFavorites = props.enableFavorites, enableRatings = props.enableRatings, enableUsers = props.enableUsers, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, _g = props.enableSorting, enableSorting = _g === void 0 ? false : _g, _h = props.filterOptions, filterOptions = _h === void 0 ? [] : _h, _j = props.sortOptions, sortOptions = _j === void 0 ? [] : _j, _k = props.filterUser, filterUser = _k === void 0 ? false : _k, _l = props.filterTeam, filterTeam = _l === void 0 ? false : _l, emptyIcon = props.emptyIcon, _m = props.emptyTitle, emptyTitle = _m === void 0 ? 'No results found' : _m, _o = props.emptyDescription, emptyDescription = _o === void 0 ? 'Try changing your search or filters.' : _o, rest = __rest(props, ["url", "searchUrl", "headers", "fields", "resource", "displayFields", "actions", "enableOverlay", "enableEdit", "enableDelete", "enableCreate", "enableFavorites", "enableRatings", "enableUsers", "enableSearch", "enableFilters", "enableSorting", "filterOptions", "sortOptions", "filterUser", "filterTeam", "emptyIcon", "emptyTitle", "emptyDescription"]);
+    var fieldName = 'status'; //Hard code the field as status
+    var _p = (0, frontend_js_1.useDocuments)({
         url: url
-    }), loading = _f.loading, errors = _f.errors, resource = _f.resource, resources = _f.resources, setResource = _f.setResource, create = _f.create, update = _f.update, destroy = _f.destroy, handleDataChange = _f.handleDataChange, removeAttachment = _f.removeAttachment, findMany = _f.findMany, reloadMany = _f.reloadMany, updatePositions = _f.updatePositions;
-    var _g = (0, react_1.useState)(false), open = _g[0], setOpen = _g[1];
-    var _h = (0, react_1.useState)(false), openModal = _h[0], setOpenModal = _h[1];
-    var _j = (0, react_1.useState)(false), openDeleteModal = _j[0], setOpenDeleteModal = _j[1];
-    var _k = (0, react_1.useState)(), activeResource = _k[0], setActiveResource = _k[1];
+    }), loading = _p.loading, delayedLoading = _p.delayedLoading, errors = _p.errors, resource = _p.resource, setResource = _p.setResource, create = _p.create, update = _p.update, destroy = _p.destroy, handleDataChange = _p.handleDataChange, removeAttachment = _p.removeAttachment, addLinks = _p.addLinks, updatePositions = _p.updatePositions;
+    var _q = (0, hooks_1.useSearch)({
+        url: searchUrl,
+        user: currentUser,
+        perPage: 1000,
+        filterUser: filterUser,
+        filterTeam: filterTeam,
+        query: {},
+    }), resources = _q.resources, query = _q.query, keywords = _q.keywords, handleKeywordChange = _q.handleKeywordChange, handleSearch = _q.handleSearch, handleSortBy = _q.handleSortBy, handleSortDirection = _q.handleSortDirection, reloadMany = _q.reloadMany, activeFilters = _q.activeFilters, handleFilter = _q.handleFilter, handleClearFilters = _q.handleClearFilters;
+    var _r = (0, react_1.useState)(false), open = _r[0], setOpen = _r[1];
+    var _s = (0, react_1.useState)(false), openModal = _s[0], setOpenModal = _s[1];
+    var _t = (0, react_1.useState)(false), openDeleteModal = _t[0], setOpenDeleteModal = _t[1];
+    var _u = (0, react_1.useState)(), activeResource = _u[0], setActiveResource = _u[1];
     var handleClick = function (resource) {
         setActiveResource(resource);
         setOpen(true);
     };
-    var handleAdd = function () {
+    var handleAdd = function (columnName) {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
-        setResource({
-            id: null,
-        });
+        var newResource = (0, frontend_js_3.changeDocumentValue)({}, fieldName, columnName);
+        setResource(newResource);
         setOpenModal(true);
     };
     var handleEdit = function (item) {
@@ -127,7 +136,7 @@ var CollectionKanBan = function (props) {
                         return [2 /*return*/, setAuthOpen(true)];
                     _a.label = 1;
                 case 1:
-                    _a.trys.push([1, 6, , 7]);
+                    _a.trys.push([1, 10, , 11]);
                     resp = void 0;
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 3];
                     return [4 /*yield*/, update(resource)];
@@ -139,28 +148,33 @@ var CollectionKanBan = function (props) {
                     resp = _a.sent();
                     _a.label = 5;
                 case 5:
-                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        /*
-                        if(_resource?.id) {
-                          await addLinks(resp.id, [_resource?.id])
-                          reloadMany()
-                        }*/
-                        setResource({});
-                        setOpenModal(false);
-                        reloadMany();
-                    }
-                    return [3 /*break*/, 7];
+                    if (!(resp === null || resp === void 0 ? void 0 : resp.id)) return [3 /*break*/, 9];
+                    if (!(_resource === null || _resource === void 0 ? void 0 : _resource.id)) return [3 /*break*/, 7];
+                    return [4 /*yield*/, addLinks(resp.id, [_resource === null || _resource === void 0 ? void 0 : _resource.id])];
                 case 6:
+                    _a.sent();
+                    reloadMany();
+                    _a.label = 7;
+                case 7:
+                    setResource({});
+                    setOpenModal(false);
+                    return [4 /*yield*/, reloadMany()];
+                case 8:
+                    _a.sent();
+                    _a.label = 9;
+                case 9: return [3 /*break*/, 11];
+                case 10:
                     err_1 = _a.sent();
                     console.log('Error', err_1);
-                    return [3 /*break*/, 7];
-                case 7: return [2 /*return*/];
+                    return [3 /*break*/, 11];
+                case 11: return [2 /*return*/];
             }
         });
     }); };
     var handleDeleteClick = function (item) {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
+        setActiveResource(item);
         setResource(item);
         setOpenDeleteModal(true);
     };
@@ -170,13 +184,17 @@ var CollectionKanBan = function (props) {
                 case 0:
                     if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
                         return [2 /*return*/, setAuthOpen(true)];
-                    return [4 /*yield*/, destroy(resource === null || resource === void 0 ? void 0 : resource.id)];
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id))
+                        return [2 /*return*/];
+                    return [4 /*yield*/, destroy(resource.id)];
                 case 1:
                     _a.sent();
                     setOpenDeleteModal(false);
                     setOpenModal(false);
+                    return [4 /*yield*/, reloadMany()];
+                case 2:
+                    _a.sent();
                     setResource({});
-                    reloadMany();
                     return [2 /*return*/];
             }
         });
@@ -194,24 +212,16 @@ var CollectionKanBan = function (props) {
             }
         });
     }); };
-    var handleDrop = function (movedItem, overContainer, columns) { return __awaiter(void 0, void 0, void 0, function () {
+    var handleDrop = function (movedItem, value, columns) { return __awaiter(void 0, void 0, void 0, function () {
         var movedDocument, columnItems;
-        var _a, _b;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
                 case 0:
-                    movedDocument = __assign({}, movedItem);
-                    if (frontend_js_2.SYSTEM_FIELDS.includes(fieldName)) {
-                        movedDocument = __assign(__assign({}, movedDocument), (_a = {}, _a[fieldName] = overContainer, _a));
-                    }
-                    else {
-                        movedDocument = __assign(__assign({}, movedDocument), { data: __assign(__assign({}, movedDocument.data), (_b = {}, _b[fieldName] = overContainer, _b)) });
-                    }
-                    // Update the moved item
+                    setActiveResource(null);
+                    movedDocument = (0, frontend_js_3.changeDocumentValue)(movedItem, fieldName, value);
                     return [4 /*yield*/, update(movedDocument)];
                 case 1:
-                    // Update the moved item
-                    _c.sent();
+                    _a.sent();
                     columnItems = Object.keys(columns).map(function (key) { return columns[key]; });
                     columnItems = columnItems.reduce(function (acc, val) { return acc.concat(val); }, []);
                     columnItems = columnItems.map(function (item, index) {
@@ -219,28 +229,23 @@ var CollectionKanBan = function (props) {
                     });
                     return [4 /*yield*/, updatePositions(columnItems)];
                 case 2:
-                    _c.sent();
+                    _a.sent();
+                    return [4 /*yield*/, reloadMany()];
+                case 3:
+                    _a.sent();
                     return [2 /*return*/];
             }
         });
     }); };
-    (0, react_1.useEffect)(function () {
-        if (url) {
-            findMany({
-                sort_by: 'position',
-                sort_direction: 'asc',
-                page: 1,
-                per_page: 1000
-            });
-        }
-    }, [url]);
-    if (!headers || !fieldName || (resources === null || resources === void 0 ? void 0 : resources.length) == 0)
+    if (!headers || !fieldName)
         return null;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(components_1.KanBan, { actions: actions, resources: resources, headers: headers, fieldName: fieldName, displayFields: displayFields, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, handleEdit: handleEdit, handleDelete: handleDeleteClick, enableFavorites: enableFavorites, enableRatings: enableRatings }),
-        react_1.default.createElement(components_2.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_2.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
-            react_1.default.createElement(components_2.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_3.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove })),
-        react_1.default.createElement(components_2.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete }),
-        react_1.default.createElement(components_2.HeroModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, resource: activeResource, url: url, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: function () { return handleEdit(activeResource); } })));
+        react_1.default.createElement(material_1.Box, { px: 0.5 },
+            react_1.default.createElement(__1.CollectionToolbar, { query: query, activeFilters: activeFilters, enableFilters: enableFilters, enableSorting: enableSorting, enableSearch: enableSearch, filterOptions: filterOptions, sortOptions: sortOptions, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection, keywords: keywords, handleKeywordChange: handleKeywordChange, handleSearch: handleSearch })),
+        react_1.default.createElement(__1.KanBan, { loading: delayedLoading, actions: actions, resources: resources, activeResource: activeResource, headers: headers, fieldName: fieldName, displayFields: displayFields, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, enableFavorites: enableFavorites, enableRatings: enableRatings }),
+        react_1.default.createElement(__2.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__2.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
+            react_1.default.createElement(__2.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_3.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove })),
+        react_1.default.createElement(__2.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete }),
+        react_1.default.createElement(__2.HeroModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, resource: activeResource, url: url, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: function () { return handleEdit(activeResource); } })));
 };
 exports.default = CollectionKanBan;

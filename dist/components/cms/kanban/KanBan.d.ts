@@ -1,7 +1,9 @@
 import React from 'react';
 import { ActionType, DisplayFieldType } from '../../../types';
 export type KanBanProps = {
+    loading?: boolean;
     resources: any;
+    activeResource: any;
     fieldName: string;
     headers: {
         label: string;
@@ -15,8 +17,10 @@ export type KanBanProps = {
     enableRatings?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;
-    handleEdit?: (resource: any) => void;
-    handleDelete?: (resource: any) => void;
+    enableCreate?: boolean;
+    handleEdit: (resource: any) => void;
+    handleDelete: (resource: any) => void;
+    handleAdd: (status: string) => void;
 };
 declare const KanBan: React.FC<KanBanProps>;
 export default KanBan;

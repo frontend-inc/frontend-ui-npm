@@ -15,11 +15,12 @@ var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../hooks");
 var useSearch = function (props) {
-    var url = props.url, _a = props.perPage, perPage = _a === void 0 ? 20 : _a, user = props.user, _b = props.filterUser, filterUser = _b === void 0 ? false : _b, _c = props.filterTeam, filterTeam = _c === void 0 ? false : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d;
-    var _e = (0, frontend_js_1.useDocuments)({
+    var _a;
+    var url = props.url, _b = props.perPage, perPage = _b === void 0 ? 20 : _b, user = props.user, _c = props.filterUser, filterUser = _c === void 0 ? false : _c, _d = props.filterTeam, filterTeam = _d === void 0 ? false : _d, _e = props.query, defaultQuery = _e === void 0 ? {} : _e;
+    var _f = (0, frontend_js_1.useDocuments)({
         url: url,
-    }), loading = _e.loading, delayedLoading = _e.delayedLoading, resources = _e.resources, query = _e.query, findMany = _e.findMany, reloadMany = _e.reloadMany, page = _e.page, numPages = _e.numPages, loadMore = _e.loadMore;
-    var _f = (0, react_1.useState)(''), keywords = _f[0], setKeywords = _f[1];
+    }), loading = _f.loading, delayedLoading = _f.delayedLoading, resources = _f.resources, query = _f.query, findMany = _f.findMany, reloadMany = _f.reloadMany, page = _f.page, numPages = _f.numPages, loadMore = _f.loadMore;
+    var _g = (0, react_1.useState)(''), keywords = _g[0], setKeywords = _g[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -32,9 +33,9 @@ var useSearch = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _g = (0, hooks_1.useFilters)({
+    var _h = (0, hooks_1.useFilters)({
         query: query,
-    }), queryFilters = _g.queryFilters, activeFilters = _g.activeFilters, setActiveFilters = _g.setActiveFilters, handleAddFilter = _g.handleAddFilter, mergeAllFilters = _g.mergeAllFilters, buildUserFilters = _g.buildUserFilters;
+    }), queryFilters = _h.queryFilters, activeFilters = _h.activeFilters, setActiveFilters = _h.setActiveFilters, handleAddFilter = _h.handleAddFilter, mergeAllFilters = _h.mergeAllFilters, buildUserFilters = _h.buildUserFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -66,7 +67,7 @@ var useSearch = function (props) {
         filterUser,
         filterTeam,
         queryFilters,
-        defaultQuery,
+        (_a = Object.keys(defaultQuery)) === null || _a === void 0 ? void 0 : _a.length,
     ]);
     return {
         loading: loading,

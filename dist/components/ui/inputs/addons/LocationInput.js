@@ -40,7 +40,7 @@ var __1 = require("../../..");
 var use_debounce_1 = require("use-debounce");
 var material_1 = require("@mui/material");
 var LocationInput = function (props) {
-    var _a = props || {}, _b = _a.name, name = _b === void 0 ? 'location' : _b, _c = _a.value, value = _c === void 0 ? '' : _c, label = _a.label, _d = _a.placeholder, placeholder = _d === void 0 ? 'Search location' : _d, handleChange = _a.handleChange, _e = _a.direction, direction = _e === void 0 ? 'column' : _e, _f = _a.height, height = _f === void 0 ? 240 : _f, _g = _a.width, width = _g === void 0 ? 360 : _g, _h = _a.zoom, zoom = _h === void 0 ? 16 : _h, _j = _a.darkTheme, darkTheme = _j === void 0 ? false : _j, _k = _a.enablePosition, enablePosition = _k === void 0 ? true : _k, lat = _a.lat, lng = _a.lng;
+    var _a = props || {}, _b = _a.name, name = _b === void 0 ? 'location' : _b, _c = _a.value, value = _c === void 0 ? '' : _c, label = _a.label, _d = _a.placeholder, placeholder = _d === void 0 ? 'Search location' : _d, handleChange = _a.handleChange, _e = _a.direction, direction = _e === void 0 ? 'column' : _e, _f = _a.height, height = _f === void 0 ? 240 : _f, _g = _a.width, width = _g === void 0 ? 360 : _g, _h = _a.zoom, zoom = _h === void 0 ? 16 : _h, _j = _a.darkTheme, darkTheme = _j === void 0 ? false : _j, _k = _a.enablePosition, enablePosition = _k === void 0 ? false : _k, lat = _a.lat, lng = _a.lng;
     var _l = (0, hooks_1.useGooglePlaces)(), loading = _l.loading, places = _l.places, fetchPlaces = _l.fetchPlaces;
     var _m = (0, react_1.useState)(value), keywords = _m[0], setKeywords = _m[1];
     var debouncedValue = (0, use_debounce_1.useDebounce)(keywords, 500)[0];

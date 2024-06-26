@@ -107,7 +107,7 @@ var CollectionContainer = function (props) {
         filterUser: filterUser,
         filterTeam: filterTeam,
         query: defaultQuery,
-    }), searchLoading = _10.delayedLoading, resources = _10.resources, query = _10.query, findMany = _10.findMany, reloadMany = _10.reloadMany, page = _10.page, numPages = _10.numPages, loadMore = _10.loadMore, keywords = _10.keywords, handleKeywordChange = _10.handleKeywordChange, handleSearch = _10.handleSearch, handleSortBy = _10.handleSortBy, handleSortDirection = _10.handleSortDirection, activeFilters = _10.activeFilters, handleFilter = _10.handleFilter, handleClearFilters = _10.handleClearFilters;
+    }), searchLoading = _10.delayedLoading, resources = _10.resources, query = _10.query, reloadMany = _10.reloadMany, page = _10.page, numPages = _10.numPages, loadMore = _10.loadMore, keywords = _10.keywords, handleKeywordChange = _10.handleKeywordChange, handleSearch = _10.handleSearch, handleSortBy = _10.handleSortBy, handleSortDirection = _10.handleSortDirection, activeFilters = _10.activeFilters, handleFilter = _10.handleFilter, handleClearFilters = _10.handleClearFilters;
     var handleNavigate = function (resource) {
         if (href) {
             if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
@@ -224,6 +224,6 @@ var CollectionContainer = function (props) {
         react_1.default.createElement(__1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
             react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: flattenDocument(resource), handleChange: handleDataChange, handleRemove: handleRemove })),
         react_1.default.createElement(__1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete }),
-        react_1.default.createElement(components_1.HeroModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, resource: activeResource, url: url, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: function () { return handleEdit(activeResource); } })));
+        react_1.default.createElement(components_1.HeroModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, resource: activeResource, url: url, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableFavorites: enableFavorites, enableRatings: enableRatings, enableUsers: enableUsers, handleEdit: function () { return handleEdit(activeResource); } })));
 };
 exports.default = CollectionContainer;

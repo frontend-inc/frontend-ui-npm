@@ -53,25 +53,32 @@ var material_1 = require("@mui/material");
 var Droppable_1 = __importDefault(require("./Droppable"));
 var components_1 = require("../../../components");
 var Sortable = function (props) {
-    var _a = props.actions, actions = _a === void 0 ? [] : _a, _b = props.headers, headers = _b === void 0 ? [] : _b, handleDrop = props.handleDrop, _c = props.displayFields, displayFields = _c === void 0 ? [] : _c, _d = props.columns, initialColumns = _d === void 0 ? {} : _d, handleClick = props.handleClick, enableFavorites = props.enableFavorites, enableRatings = props.enableRatings, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+    var loading = props.loading, activeResource = props.activeResource, _a = props.actions, actions = _a === void 0 ? [] : _a, _b = props.headers, headers = _b === void 0 ? [] : _b, handleDrop = props.handleDrop, _c = props.displayFields, displayFields = _c === void 0 ? [] : _c, _d = props.columns, initialColumns = _d === void 0 ? {} : _d, handleClick = props.handleClick, enableFavorites = props.enableFavorites, enableRatings = props.enableRatings, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleAdd = props.handleAdd;
     var _e = (0, react_1.useState)(null), activeId = _e[0], setActiveId = _e[1];
     var _f = (0, react_1.useState)(initialColumns), columns = _f[0], setColumns = _f[1];
     var sensors = (0, core_1.useSensors)((0, core_1.useSensor)(core_1.PointerSensor), (0, core_1.useSensor)(core_1.KeyboardSensor, {
         coordinateGetter: sortable_1.sortableKeyboardCoordinates,
     }));
-    var activeResource = activeId ? findResourceById(activeId) : null;
+    var draggedResource = activeId ? findResourceById(activeId) : null;
+    (0, react_1.useEffect)(function () {
+        if (initialColumns) {
+            setColumns(initialColumns);
+        }
+    }, [initialColumns]);
     if (headers.length === 0)
         return null;
     return (react_1.default.createElement(core_1.DndContext, { sensors: sensors, collisionDetection: core_1.closestCenter, onDragStart: handleDragStart, onDragEnd: handleDragEnd },
         react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: "row", spacing: 1 }, headers === null || headers === void 0 ? void 0 : headers.map(function (header) {
             var _a, _b;
-            return (react_1.default.createElement(material_1.Stack, { sx: sx.column, key: header.value, direction: "column", spacing: 1 },
-                react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: 'text.primary' }, header.label),
-                react_1.default.createElement(sortable_1.SortableContext, { key: header.value, items: (_a = columns[header.value]) === null || _a === void 0 ? void 0 : _a.map(function (res) { return res.id; }), strategy: sortable_1.verticalListSortingStrategy },
-                    react_1.default.createElement(material_1.List, { disablePadding: true }, columns[header.value].length > 0 ?
-                        (_b = columns[header.value]) === null || _b === void 0 ? void 0 : _b.map(function (res) { return (react_1.default.createElement(components_1.KanBanCard, { key: res === null || res === void 0 ? void 0 : res.id, id: res === null || res === void 0 ? void 0 : res.id, resource: res, actions: actions, displayFields: displayFields, handleClick: function () { return handleClick(res); }, enableFavorites: enableFavorites, enableRatings: enableRatings, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete })); }) : (react_1.default.createElement(Droppable_1.default, { id: header.value }))))));
+            return (react_1.default.createElement(material_1.Stack, { sx: sx.column, key: header.value, direction: "column", spacing: 1, justifyContent: 'space-between' },
+                react_1.default.createElement(material_1.Box, null,
+                    react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: 'text.primary' }, header.label),
+                    react_1.default.createElement(sortable_1.SortableContext, { key: header.value, items: (_a = columns[header.value]) === null || _a === void 0 ? void 0 : _a.map(function (res) { return res.id; }), strategy: sortable_1.verticalListSortingStrategy },
+                        react_1.default.createElement(material_1.List, { sx: sx.cardList, disablePadding: true }, columns[header.value].length > 0 ?
+                            (_b = columns[header.value]) === null || _b === void 0 ? void 0 : _b.map(function (res) { return (react_1.default.createElement(components_1.KanBanCard, { loading: loading && (activeResource === null || activeResource === void 0 ? void 0 : activeResource.id) == (res === null || res === void 0 ? void 0 : res.id), key: res === null || res === void 0 ? void 0 : res.id, id: res === null || res === void 0 ? void 0 : res.id, resource: res, actions: actions, displayFields: displayFields, handleClick: function () { return handleClick(res); }, enableFavorites: enableFavorites, enableRatings: enableRatings, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(res); }, handleDelete: function () { return handleDelete(res); } })); }) : (react_1.default.createElement(Droppable_1.default, { id: header.value }))))),
+                enableCreate && (react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "secondary", onClick: function () { return handleAdd(header.value); }, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))));
         })),
-        react_1.default.createElement(core_1.DragOverlay, null, activeResource ? (react_1.default.createElement(components_1.KanBanCard, { enableDragging: true, id: activeResource === null || activeResource === void 0 ? void 0 : activeResource.id, resource: activeResource, displayFields: displayFields, actions: [] })) :
+        react_1.default.createElement(core_1.DragOverlay, null, draggedResource ? (react_1.default.createElement(components_1.KanBanCard, { enableDragging: true, id: draggedResource === null || draggedResource === void 0 ? void 0 : draggedResource.id, resource: draggedResource, displayFields: displayFields, actions: [], enableRatings: enableRatings, enableFavorites: enableFavorites })) :
             null)));
     function handleDragStart(event) {
         var active = event.active;
@@ -82,7 +89,7 @@ var Sortable = function (props) {
         var active = event.active, over = event.over;
         if (over) {
             var activeContainer = findContainer(active.id);
-            var overContainer = findContainer(over.id) || over.id; // Check for column id if over.id is not an item
+            var overContainer = findContainer(over.id) || over.id;
             if (activeContainer && overContainer) {
                 var newColumns = void 0;
                 var movedItem = void 0;
@@ -130,14 +137,25 @@ var Sortable = function (props) {
 exports.default = Sortable;
 var sx = {
     container: {
-        px: 1,
+        px: 0.5,
         py: 2,
         width: '100%',
-        overflowX: 'scroll'
+        overflowX: 'scroll',
+    },
+    loading: {
+        opacity: 0.5
+    },
+    cardList: {
+        maxHeight: '100vh',
+        overflowY: 'scroll',
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
     },
     column: {
         p: 1,
         borderRadius: 1,
-        boxShadow: 2
+        boxShadow: 3,
+        width: 280
     }
 };
