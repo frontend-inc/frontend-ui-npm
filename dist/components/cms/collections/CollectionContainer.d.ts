@@ -3,6 +3,7 @@ import { CollectionListProps } from './CollectionList';
 export type CollectContainerProps = CollectionListProps & {
     resource?: any;
     searchUrl: string;
+    enableUsers?: boolean;
     component?: React.FC<any>;
     rest?: any;
 };

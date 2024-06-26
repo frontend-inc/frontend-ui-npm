@@ -94,30 +94,38 @@ var CollectionContainer = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = (0, react_1.useContext)(context_1.AppContext), clientUrl = _a.clientUrl, setAuthOpen = _a.setAuthOpen;
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
-    var _b = props.component, RenderList = _b === void 0 ? components_1.CollectionCards : _b, _resource = props.resource, user = props.user, actions = props.actions, _c = props.variant, variant = _c === void 0 ? 'grid' : _c, _d = props.style, style = _d === void 0 ? 'card' : _d, href = props.href, url = props.url, searchUrl = props.searchUrl, _e = props.fields, fields = _e === void 0 ? [] : _e, _f = props.displayFields, displayFields = _f === void 0 ? [] : _f, _g = props.filterAnchor, filterAnchor = _g === void 0 ? 'left' : _g, _h = props.filterOptions, filterOptions = _h === void 0 ? [] : _h, _j = props.sortOptions, sortOptions = _j === void 0 ? [] : _j, _k = props.enableGoogleMaps, enableGoogleMaps = _k === void 0 ? false : _k, _l = props.perPage, perPage = _l === void 0 ? 20 : _l, _m = props.enableSearch, enableSearch = _m === void 0 ? false : _m, _o = props.enableFilters, enableFilters = _o === void 0 ? false : _o, _p = props.enableSorting, enableSorting = _p === void 0 ? false : _p, _q = props.enableInfiniteLoad, enableInfiniteLoad = _q === void 0 ? false : _q, _r = props.enableLoadMore, enableLoadMore = _r === void 0 ? true : _r, buttonText = props.buttonText, _s = props.enableBorder, enableBorder = _s === void 0 ? false : _s, _t = props.enableGradient, enableGradient = _t === void 0 ? false : _t, _u = props.enableOverlay, enableOverlay = _u === void 0 ? false : _u, _v = props.enableEdit, enableEdit = _v === void 0 ? false : _v, _w = props.enableCreate, enableCreate = _w === void 0 ? false : _w, _x = props.enableDelete, enableDelete = _x === void 0 ? false : _x, _y = props.enableFavorites, enableFavorites = _y === void 0 ? false : _y, _z = props.enableRatings, enableRatings = _z === void 0 ? false : _z, _0 = props.enableUsers, enableUsers = _0 === void 0 ? false : _0, _1 = props.filterUser, filterUser = _1 === void 0 ? false : _1, _2 = props.filterTeam, filterTeam = _2 === void 0 ? false : _2, _3 = props.query, defaultQuery = _3 === void 0 ? {} : _3, emptyIcon = props.emptyIcon, _4 = props.emptyTitle, emptyTitle = _4 === void 0 ? 'No results found' : _4, _5 = props.emptyDescription, emptyDescription = _5 === void 0 ? 'Try changing your search or filters.' : _5, rest = __rest(props, ["component", "resource", "user", "actions", "variant", "style", "href", "url", "searchUrl", "fields", "displayFields", "filterAnchor", "filterOptions", "sortOptions", "enableGoogleMaps", "perPage", "enableSearch", "enableFilters", "enableSorting", "enableInfiniteLoad", "enableLoadMore", "buttonText", "enableBorder", "enableGradient", "enableOverlay", "enableEdit", "enableCreate", "enableDelete", "enableFavorites", "enableRatings", "enableUsers", "filterUser", "filterTeam", "query", "emptyIcon", "emptyTitle", "emptyDescription"]);
-    var _6 = (0, frontend_js_1.useDocuments)({
+    var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
+    var _c = (0, react_1.useState)({}), activeResource = _c[0], setActiveResource = _c[1];
+    var _d = props.component, RenderList = _d === void 0 ? components_1.CollectionCards : _d, _resource = props.resource, user = props.user, _e = props.actions, actions = _e === void 0 ? [] : _e, _f = props.variant, variant = _f === void 0 ? 'grid' : _f, _g = props.style, style = _g === void 0 ? 'card' : _g, href = props.href, url = props.url, searchUrl = props.searchUrl, _h = props.fields, fields = _h === void 0 ? [] : _h, _j = props.displayFields, displayFields = _j === void 0 ? [] : _j, _k = props.filterAnchor, filterAnchor = _k === void 0 ? 'left' : _k, _l = props.filterOptions, filterOptions = _l === void 0 ? [] : _l, _m = props.sortOptions, sortOptions = _m === void 0 ? [] : _m, _o = props.enableGoogleMaps, enableGoogleMaps = _o === void 0 ? false : _o, _p = props.perPage, perPage = _p === void 0 ? 20 : _p, _q = props.enableSearch, enableSearch = _q === void 0 ? false : _q, _r = props.enableFilters, enableFilters = _r === void 0 ? false : _r, _s = props.enableSorting, enableSorting = _s === void 0 ? false : _s, _t = props.enableInfiniteLoad, enableInfiniteLoad = _t === void 0 ? false : _t, _u = props.enableLoadMore, enableLoadMore = _u === void 0 ? true : _u, buttonText = props.buttonText, _v = props.enableBorder, enableBorder = _v === void 0 ? false : _v, _w = props.enableGradient, enableGradient = _w === void 0 ? false : _w, _x = props.enableOverlay, enableOverlay = _x === void 0 ? false : _x, _y = props.enableEdit, enableEdit = _y === void 0 ? false : _y, _z = props.enableCreate, enableCreate = _z === void 0 ? false : _z, _0 = props.enableDelete, enableDelete = _0 === void 0 ? false : _0, _1 = props.enableFavorites, enableFavorites = _1 === void 0 ? false : _1, _2 = props.enableRatings, enableRatings = _2 === void 0 ? false : _2, _3 = props.enableUsers, enableUsers = _3 === void 0 ? false : _3, _4 = props.filterUser, filterUser = _4 === void 0 ? false : _4, _5 = props.filterTeam, filterTeam = _5 === void 0 ? false : _5, _6 = props.query, defaultQuery = _6 === void 0 ? {} : _6, emptyIcon = props.emptyIcon, _7 = props.emptyTitle, emptyTitle = _7 === void 0 ? 'No results found' : _7, _8 = props.emptyDescription, emptyDescription = _8 === void 0 ? 'Try changing your search or filters.' : _8, rest = __rest(props, ["component", "resource", "user", "actions", "variant", "style", "href", "url", "searchUrl", "fields", "displayFields", "filterAnchor", "filterOptions", "sortOptions", "enableGoogleMaps", "perPage", "enableSearch", "enableFilters", "enableSorting", "enableInfiniteLoad", "enableLoadMore", "buttonText", "enableBorder", "enableGradient", "enableOverlay", "enableEdit", "enableCreate", "enableDelete", "enableFavorites", "enableRatings", "enableUsers", "filterUser", "filterTeam", "query", "emptyIcon", "emptyTitle", "emptyDescription"]);
+    var _9 = (0, frontend_js_1.useDocuments)({
         url: url,
-    }), loading = _6.loading, delayedLoading = _6.delayedLoading, errors = _6.errors, resource = _6.resource, setResource = _6.setResource, update = _6.update, create = _6.create, destroy = _6.destroy, addLinks = _6.addLinks, removeAttachment = _6.removeAttachment, handleDataChange = _6.handleDataChange, flattenDocument = _6.flattenDocument;
-    var _7 = (0, hooks_1.useSearch)({
+    }), loading = _9.loading, errors = _9.errors, resource = _9.resource, setResource = _9.setResource, update = _9.update, create = _9.create, destroy = _9.destroy, addLinks = _9.addLinks, removeAttachment = _9.removeAttachment, handleDataChange = _9.handleDataChange, flattenDocument = _9.flattenDocument;
+    var _10 = (0, hooks_1.useSearch)({
         url: searchUrl,
         user: user,
         perPage: perPage,
         filterUser: filterUser,
         filterTeam: filterTeam,
         query: defaultQuery,
-    }), searchLoading = _7.delayedLoading, resources = _7.resources, query = _7.query, findMany = _7.findMany, reloadMany = _7.reloadMany, page = _7.page, numPages = _7.numPages, loadMore = _7.loadMore, keywords = _7.keywords, handleKeywordChange = _7.handleKeywordChange, handleSearch = _7.handleSearch, handleSortBy = _7.handleSortBy, handleSortDirection = _7.handleSortDirection, activeFilters = _7.activeFilters, handleFilter = _7.handleFilter, handleClearFilters = _7.handleClearFilters;
+    }), searchLoading = _10.delayedLoading, resources = _10.resources, query = _10.query, findMany = _10.findMany, reloadMany = _10.reloadMany, page = _10.page, numPages = _10.numPages, loadMore = _10.loadMore, keywords = _10.keywords, handleKeywordChange = _10.handleKeywordChange, handleSearch = _10.handleSearch, handleSortBy = _10.handleSortBy, handleSortDirection = _10.handleSortDirection, activeFilters = _10.activeFilters, handleFilter = _10.handleFilter, handleClearFilters = _10.handleClearFilters;
     var handleNavigate = function (resource) {
-        if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
-            router.push("".concat(clientUrl).concat(href, "/").concat(resource === null || resource === void 0 ? void 0 : resource.handle));
+        if (href) {
+            if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                });
+                router.push("".concat(clientUrl).concat(href, "/").concat(resource === null || resource === void 0 ? void 0 : resource.handle));
+            }
+        }
+        else {
+            setActiveResource(resource);
+            setOpen(true);
         }
     };
-    var _8 = props.handleClick, handleClick = _8 === void 0 ? handleNavigate : _8;
-    var _9 = (0, react_1.useState)(false), openModal = _9[0], setOpenModal = _9[1];
-    var _10 = (0, react_1.useState)(false), openDeleteModal = _10[0], setOpenDeleteModal = _10[1];
+    var _11 = props.handleClick, handleClick = _11 === void 0 ? handleNavigate : _11;
+    var _12 = (0, react_1.useState)(false), openModal = _12[0], setOpenModal = _12[1];
+    var _13 = (0, react_1.useState)(false), openDeleteModal = _13[0], setOpenDeleteModal = _13[1];
     var handleAdd = function () {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
@@ -141,7 +149,7 @@ var CollectionContainer = function (props) {
                         return [2 /*return*/, setAuthOpen(true)];
                     _a.label = 1;
                 case 1:
-                    _a.trys.push([1, 9, , 10]);
+                    _a.trys.push([1, 6, , 7]);
                     resp = void 0;
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 3];
                     return [4 /*yield*/, update(resource)];
@@ -153,24 +161,17 @@ var CollectionContainer = function (props) {
                     resp = _a.sent();
                     _a.label = 5;
                 case 5:
-                    if (!(resp === null || resp === void 0 ? void 0 : resp.id)) return [3 /*break*/, 8];
-                    if (!(_resource === null || _resource === void 0 ? void 0 : _resource.id)) return [3 /*break*/, 7];
-                    return [4 /*yield*/, addLinks(resp.id, [_resource === null || _resource === void 0 ? void 0 : _resource.id])];
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setResource({});
+                        setOpenModal(false);
+                        reloadMany();
+                    }
+                    return [3 /*break*/, 7];
                 case 6:
-                    _a.sent();
-                    reloadMany();
-                    _a.label = 7;
-                case 7:
-                    setResource({});
-                    setOpenModal(false);
-                    reloadMany();
-                    _a.label = 8;
-                case 8: return [3 /*break*/, 10];
-                case 9:
                     err_1 = _a.sent();
                     console.log('Error', err_1);
-                    return [3 /*break*/, 10];
-                case 10: return [2 /*return*/];
+                    return [3 /*break*/, 7];
+                case 7: return [2 /*return*/];
             }
         });
     }); };
@@ -186,6 +187,8 @@ var CollectionContainer = function (props) {
                 case 0:
                     if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
                         return [2 /*return*/, setAuthOpen(true)];
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id))
+                        return [2 /*return*/];
                     return [4 /*yield*/, destroy(resource === null || resource === void 0 ? void 0 : resource.id)];
                 case 1:
                     _a.sent();
@@ -203,6 +206,8 @@ var CollectionContainer = function (props) {
                 case 0:
                     if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
                         return [2 /*return*/, setAuthOpen(true)];
+                    if (!(resource === null || resource === void 0 ? void 0 : resource.id))
+                        return [2 /*return*/];
                     return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
                 case 1:
                     _a.sent();
@@ -212,11 +217,13 @@ var CollectionContainer = function (props) {
     }); };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(components_1.CollectionLayout, { loading: loading || searchLoading, header: react_1.default.createElement(components_1.CollectionToolbar, { query: query, activeFilters: activeFilters, enableFilters: enableFilters && filterAnchor == 'top', enableSorting: enableSorting, enableCreate: enableCreate, enableSearch: enableSearch, filterOptions: filterOptions, sortOptions: sortOptions, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection, handleAdd: handleAdd, keywords: keywords, handleKeywordChange: handleKeywordChange, handleSearch: handleSearch }), expandLeft: enableFilters && filterAnchor == 'left', expandRight: enableGoogleMaps, leftPanel: react_1.default.createElement(components_1.SearchFilters, { filters: activeFilters, filterOptions: filterOptions, handleFilter: handleFilter }), rightPanel: react_1.default.createElement(__1.GoogleMap, { zoom: 15, height: 380, resources: resources, enableBorder: enableBorder, displayFields: displayFields }) },
-            react_1.default.createElement(RenderList, __assign({ actions: actions, variant: variant, style: style, resources: resources, displayFields: displayFields, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, enableEdit: enableEdit, enableDelete: enableDelete, enableUsers: enableUsers, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: handleEdit, handleDelete: handleDeleteClick }, rest)),
-            enableLoadMore && (react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore, enableInfiniteLoad: enableInfiniteLoad }))),
+            react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
+                react_1.default.createElement(RenderList, __assign({ actions: actions, variant: variant, style: style, resources: resources, displayFields: displayFields, handleClick: handleClick, buttonText: buttonText, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, enableEdit: enableEdit, enableDelete: enableDelete, enableUsers: enableUsers, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: handleEdit, handleDelete: handleDeleteClick }, rest)),
+                enableLoadMore && (react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore, enableInfiniteLoad: enableInfiniteLoad })))),
         !loading && resources.length == 0 && (react_1.default.createElement(components_1.Placeholder, { enableBorder: true, icon: emptyIcon, title: emptyTitle, description: emptyDescription })),
         react_1.default.createElement(__1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
             react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: flattenDocument(resource), handleChange: handleDataChange, handleRemove: handleRemove })),
-        react_1.default.createElement(__1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
+        react_1.default.createElement(__1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete }),
+        react_1.default.createElement(components_1.HeroModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, resource: activeResource, url: url, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: function () { return handleEdit(activeResource); } })));
 };
 exports.default = CollectionContainer;

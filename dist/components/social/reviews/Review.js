@@ -9,7 +9,7 @@ var components_1 = require("../../../components");
 var moment_1 = __importDefault(require("moment"));
 var Review = function (props) {
     var _a;
-    var review = props.review, handleDelete = props.handleDelete;
+    var review = props.review;
     return (react_1.default.createElement(material_1.ListItem, { sx: sx.listItem },
         react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
             react_1.default.createElement(components_1.UserAvatar, { user: review === null || review === void 0 ? void 0 : review.user })),

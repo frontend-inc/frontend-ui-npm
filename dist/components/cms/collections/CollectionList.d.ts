@@ -13,13 +13,12 @@ export type CollectionListProps = {
     href: any;
     perPage?: number;
     query?: any;
-    actions?: ActionType[];
+    actions: ActionType[];
     fields?: FormFieldType[];
-    displayFields?: DisplayFieldType[];
+    displayFields: DisplayFieldType[];
     filterAnchor?: 'left' | 'top';
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
-    enableUsers?: boolean;
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
@@ -34,6 +33,7 @@ export type CollectionListProps = {
     enableDelete?: boolean;
     enableFavorites?: boolean;
     enableRatings?: boolean;
+    enableUsers?: boolean;
     filterUser?: boolean;
     filterTeam?: boolean;
     emptyIcon?: string;

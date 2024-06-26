@@ -1,9 +1,10 @@
 import React from 'react';
-import { SortOptionType, SearchFilterOptionType, DisplayFieldType } from '../../../types';
+import { SortOptionType, SearchFilterOptionType, DisplayFieldType, ActionType } from '../../../types';
 export type PurchasesProps = {
     variant: 'list' | 'grid';
     style: 'card' | 'avatar' | 'cover';
     field: any;
+    actions?: ActionType[];
     displayFields?: DisplayFieldType[];
     url: string;
     handle: string;

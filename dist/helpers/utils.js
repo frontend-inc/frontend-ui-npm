@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatCurrency = exports.scrollTo = exports.imageFromVideoUrl = exports.resize = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
+exports.formatCurrency = exports.scrollTo = exports.imageFromVideoUrl = exports.resize = exports.groupResourcesByField = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
 var isEmptyObject = function (object) {
     if (Object.values(object).every(function (x) { return x === null || x === ''; })) {
         return false;
@@ -62,6 +62,23 @@ var groupBy = function (arr, name) {
     return grouped;
 };
 exports.groupBy = groupBy;
+var groupResourcesByField = function (resources, fieldName, allowedValues) {
+    // Initialize the grouped result object with keys from allowedValues
+    var grouped = {};
+    allowedValues.forEach(function (value) {
+        grouped[value] = [];
+    });
+    // Iterate over each resource
+    resources.forEach(function (resource) {
+        // Check if the resource has the specified field and if its value is allowed
+        if (resource.hasOwnProperty(fieldName) && allowedValues.includes(resource[fieldName])) {
+            // Add the resource to the appropriate group
+            grouped[resource[fieldName]].push(resource);
+        }
+    });
+    return grouped;
+};
+exports.groupResourcesByField = groupResourcesByField;
 // https://cloudinary.com/documentation/resizing_and_cropping
 var resize = function (src, _a) {
     var width = _a.width, height = _a.height, _b = _a.transform, transform = _b === void 0 ? 'fill' : _b;

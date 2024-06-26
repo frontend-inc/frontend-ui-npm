@@ -236,7 +236,6 @@ export declare const getCarouselResponsive: (theme?: {
         };
         divider: "#e0e0e0";
     };
-    shadows: any[];
     typography: {
         h1: {
             fontFamily: string;

@@ -236,7 +236,6 @@ export declare const muiTheme: {
         };
         divider: "#e0e0e0";
     };
-    shadows: any[];
     typography: {
         h1: {
             fontFamily: string;

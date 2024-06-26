@@ -10,10 +10,10 @@ export type UserType = {
     avatar?: {
         url: string;
     };
-    display_num_followers?: string;
-    display_num_following?: string;
     num_followers?: number;
     num_following?: number;
+    display_num_following?: string;
+    display_num_followers?: string;
     token?: string;
     paid?: boolean;
     role?: string;

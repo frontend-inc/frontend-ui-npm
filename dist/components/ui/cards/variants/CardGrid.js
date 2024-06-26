@@ -43,7 +43,7 @@ var router_1 = require("next/router");
 var components_1 = require("../../../../components");
 var CardGrid = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 240 : _d, _e = _a.enableUsers, enableUsers = _e === void 0 ? false : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k;
+    var _a = props || {}, ref = _a.ref, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 240 : _d, _e = _a.enableUsers, enableUsers = _e === void 0 ? false : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k;
     var _l = resource || {}, label = _l.label, title = _l.title, image = _l.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
@@ -54,7 +54,7 @@ var CardGrid = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), { width: '100%', minHeight: height + 80 }) },
+    return (react_1.default.createElement(material_1.Stack, { ref: ref, spacing: 1, sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), { width: '100%', minHeight: height + 80 }) },
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
             react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, label: label, enableGradient: enableGradient, disableBorderRadius: enableBorder, enableOverlay: enableOverlay, handleClick: handleItemClick })),
         react_1.default.createElement(material_1.Stack, { spacing: 0, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
@@ -73,6 +73,7 @@ var sx = {
         borderRadius: 1,
         width: '100%',
         minWidth: 300,
+        bgcolor: 'background.default'
     },
     rootBorder: {
         border: '1px solid',

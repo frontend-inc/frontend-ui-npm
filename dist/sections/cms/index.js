@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsStatistics = exports.CmsYouTube = exports.CmsVimeo = exports.CmsTable = exports.CmsKanBan = exports.CmsHeader = exports.CmsHero = exports.CmsList = exports.CmsForeignList = exports.CmsForeignForm = exports.CmsForeignTable = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsCarousel = void 0;
+exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsStatistics = exports.CmsSimilar = exports.CmsYouTube = exports.CmsVimeo = exports.CmsTable = exports.CmsKanBan = exports.CmsHeader = exports.CmsHero = exports.CmsList = exports.CmsForeignList = exports.CmsForeignForm = exports.CmsForeignTable = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsCarousel = void 0;
 var CmsCarousel_1 = require("./CmsCarousel");
 Object.defineProperty(exports, "CmsCarousel", { enumerable: true, get: function () { return __importDefault(CmsCarousel_1).default; } });
 var CmsDetails_1 = require("./CmsDetails");
@@ -34,6 +34,8 @@ var CmsVimeo_1 = require("./CmsVimeo");
 Object.defineProperty(exports, "CmsVimeo", { enumerable: true, get: function () { return __importDefault(CmsVimeo_1).default; } });
 var CmsYouTube_1 = require("./CmsYouTube");
 Object.defineProperty(exports, "CmsYouTube", { enumerable: true, get: function () { return __importDefault(CmsYouTube_1).default; } });
+var CmsSimilar_1 = require("./CmsSimilar");
+Object.defineProperty(exports, "CmsSimilar", { enumerable: true, get: function () { return __importDefault(CmsSimilar_1).default; } });
 var CmsStatistics_1 = require("./CmsStatistics");
 Object.defineProperty(exports, "CmsStatistics", { enumerable: true, get: function () { return __importDefault(CmsStatistics_1).default; } });
 // Cms Addons

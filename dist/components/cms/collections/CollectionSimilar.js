@@ -27,10 +27,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
-var Purchases = function (props) {
-    var _a = props.actions, actions = _a === void 0 ? [] : _a, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b, url = props.url, rest = __rest(props, ["actions", "displayFields", "url"]);
-    return (react_1.default.createElement(__1.CollectionList, __assign({ actions: actions, displayFields: displayFields, url: "".concat(url, "/purchases"), 
+var CollectionSimilar = function (props) {
+    var url = props.url, resource = props.resource, rest = __rest(props, ["url", "resource"]);
+    if (!(resource === null || resource === void 0 ? void 0 : resource.id) && url)
+        return null;
+    return (react_1.default.createElement(__1.CollectionList, __assign({ enableFavorites: true, url: "".concat(url, "/").concat(resource === null || resource === void 0 ? void 0 : resource.id, "/similar"), 
         // Todo: Component errors without a default value
         query: {} }, rest)));
 };
-exports.default = Purchases;
+exports.default = CollectionSimilar;

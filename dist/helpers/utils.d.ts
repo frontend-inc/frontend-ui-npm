@@ -3,6 +3,7 @@ export declare const buildOptions: (items: any, key: any, value: any) => any;
 export declare const truncate: (str: any, length?: number) => any;
 export declare function getInitials(name: any): any;
 export declare const groupBy: (arr: any, name: any) => {};
+export declare const groupResourcesByField: (resources: any, fieldName: any, allowedValues: any) => {};
 export declare const resize: (src: any, { width, height, transform }: {
     width: any;
     height: any;

@@ -19,7 +19,6 @@ var components_1 = __importDefault(require("./components"));
 var breakpoints_1 = require("./breakpoints");
 var palette_1 = require("./palette");
 var shape_1 = require("./shape");
-var shadows_1 = require("./shadows");
 var typography_1 = require("./typography");
 var spacing_1 = require("./spacing");
 exports.muiTheme = {
@@ -30,7 +29,6 @@ exports.muiTheme = {
             main: '#343842',
             light: '#343842',
         } }),
-    shadows: shadows_1.shadows,
     typography: typography_1.typography,
     shape: shape_1.shape,
     spacing: spacing_1.spacing,

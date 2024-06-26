@@ -28,7 +28,6 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var AiChatForm = function (props) {
     var _a = props.label, label = _a === void 0 ? 'Start a conversation' : _a, prompt = props.prompt, setMessages = props.setMessages, input = props.input, handleInputChange = props.handleInputChange;
-    console.log('prompt', prompt);
     (0, react_1.useEffect)(function () {
         setMessages([
             {
@@ -37,7 +36,7 @@ var AiChatForm = function (props) {
                 content: prompt,
             },
         ]);
-    }, []);
+    }, [prompt]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(components_1.TextInput, { multiline: true, label: label, name: "prompt", placeholder: "Enter text...", value: input, handleChange: handleInputChange })));
 };

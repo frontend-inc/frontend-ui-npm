@@ -53,7 +53,10 @@ var HeroProduct = function (props) {
                     actions: actions,
                 }), justifyContent: "flex-end", resource: (0, frontend_js_1.flattenDocument)(resource) }))),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
-            react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { md: 'row', xs: 'column' }, spacing: 4 },
+            react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: {
+                    md: 'row',
+                    xs: 'column'
+                }, spacing: 4 },
                 react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", sx: __assign(__assign({}, sx.leftPanel), (enableBorder &&
                         (enableFavorites || enableSharing || enableLikes) &&
                         sx.leftPanelBorder)) },

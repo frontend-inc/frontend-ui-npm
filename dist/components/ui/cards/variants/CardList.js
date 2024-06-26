@@ -45,7 +45,7 @@ var CardList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 180 : _c, _d = _a.textVariant, textVariant = _d === void 0 ? 'subtitle1' : _d, handleClick = _a.handleClick, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k, _l = _a.enableUsers, enableUsers = _l === void 0 ? false : _l;
     var router = (0, router_1.useRouter)();
-    var _m = resource || {}, label = _m.label, title = _m.title, subtitle = _m.subtitle, description = _m.description, image = _m.image;
+    var _m = resource || {}, label = _m.label, title = _m.title, image = _m.image;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();

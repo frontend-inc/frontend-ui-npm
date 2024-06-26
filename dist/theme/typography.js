@@ -63,7 +63,7 @@ exports.typography = {
     body1: {
         fontFamily: 'Inter',
         textTransform: 'none',
-        fontWeight: 400,
+        fontWeight: 500,
         fontSize: 15,
         '@media (max-width:600px)': {
             fontSize: 15,
@@ -72,8 +72,8 @@ exports.typography = {
     body2: {
         fontFamily: 'Inter',
         textTransform: 'none',
-        fontWeight: 400,
-        fontSize: 15,
+        fontWeight: 500,
+        fontSize: 14,
         '@media (max-width:600px)': {
             fontSize: 16,
         },

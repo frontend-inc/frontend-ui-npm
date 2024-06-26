@@ -1,4 +1,4 @@
-/// <reference types="react" />
+import React from 'react';
 import { TypographyVariant } from '@mui/material';
 import { ActionType } from './actions';
 import { DisplayFieldType } from './forms';
@@ -21,6 +21,7 @@ export type SectionProps = {
     requireAdmin?: boolean;
 };
 export type CardProps = {
+    ref?: React.Ref<any>;
     actions: ActionType[];
     enableUsers?: boolean;
     enableComments?: boolean;

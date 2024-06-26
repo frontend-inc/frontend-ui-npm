@@ -3,6 +3,7 @@ import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
 export type HeroProps = {
     handle?: string;
     enableBorder?: boolean;
+    enableOverlay?: boolean;
     actions: ActionType[];
     displayFields: DisplayFieldType[];
     fields?: FormFieldType[];

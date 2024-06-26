@@ -20,7 +20,7 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var theme_1 = require("../../../theme");
 var Modal = function (props) {
-    var open = props.open, _a = props.loading, loading = _a === void 0 ? false : _a, handleClose = props.handleClose, title = props.title, subtitle = props.subtitle, actions = props.actions, children = props.children, _b = props.maxWidth, maxWidth = _b === void 0 ? 'sm' : _b, secondaryActions = props.secondaryActions, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, fullScreen = props.fullScreen, _d = props.enableCancel, enableCancel = _d === void 0 ? false : _d, _e = props.hideBackdrop, hideBackdrop = _e === void 0 ? false : _e, _f = props.disableClose, disableClose = _f === void 0 ? false : _f;
+    var open = props.open, _a = props.loading, loading = _a === void 0 ? false : _a, handleClose = props.handleClose, title = props.title, subtitle = props.subtitle, actions = props.actions, children = props.children, _b = props.maxWidth, maxWidth = _b === void 0 ? 'sm' : _b, secondaryActions = props.secondaryActions, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, fullScreen = props.fullScreen, _d = props.enableCancel, enableCancel = _d === void 0 ? false : _d, _e = props.hideBackdrop, hideBackdrop = _e === void 0 ? false : _e, _f = props.disableClose, disableClose = _f === void 0 ? false : _f, _g = props.disableHeader, disableHeader = _g === void 0 ? false : _g;
     var isMobile = (0, hooks_1.useResponsive)().isMobile;
     return (react_1.default.createElement(material_1.Dialog, { sx: __assign(__assign({}, sx.root), { 
             // Manually reset the maxWidth breakpoints
@@ -32,13 +32,13 @@ var Modal = function (props) {
                     xs: '100vw',
                 },
             } }), fullWidth: true, fullScreen: isMobile || fullScreen === true ? true : false, open: open, onClose: handleClose, hideBackdrop: hideBackdrop },
-        react_1.default.createElement(material_1.DialogTitle, { sx: sx.dialogTitleContainer },
+        !disableHeader && (react_1.default.createElement(material_1.DialogTitle, { sx: sx.dialogTitleContainer },
             react_1.default.createElement(material_1.Box, { sx: sx.dialogTitleContent },
                 react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "textPrimary", sx: sx.title }, title),
                 !loading && (react_1.default.createElement(material_1.Box, { sx: sx.secondaryActions },
                     secondaryActions && secondaryActions,
                     !disableClose && (react_1.default.createElement(material_1.IconButton, { onClick: handleClose },
-                        react_1.default.createElement(components_1.Icon, { name: "X" }))))))),
+                        react_1.default.createElement(components_1.Icon, { name: "X" })))))))),
         react_1.default.createElement(material_1.DialogContent, { sx: __assign(__assign({}, sx.dialogContent), (disablePadding && sx.disablePadding)) },
             subtitle && (react_1.default.createElement(material_1.Typography, { variant: "body1", mt: 1 }, subtitle)),
             react_1.default.createElement(components_1.Loader, { loading: loading }),

@@ -29,7 +29,6 @@ var Actions = function (props) {
 exports.default = Actions;
 var sx = {
     root: {
-        width: '100%',
         justifyContent: 'space-between',
     },
     buttons: {

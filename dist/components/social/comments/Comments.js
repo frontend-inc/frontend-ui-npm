@@ -151,8 +151,6 @@ var Comments = function (props) {
 exports.default = Comments;
 var sx = {
     root: {
-        py: 2,
-        pb: 1.5,
         borderColor: 'divider',
     },
     commentHeader: {

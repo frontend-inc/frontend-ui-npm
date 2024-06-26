@@ -22,78 +22,30 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
+var Sortable_1 = __importDefault(require("./Sortable"));
+var utils_1 = require("../../../helpers/utils");
 var KanBan = function (props) {
-    var _a;
-    var KANBAN_HEADERS = [
-        { label: "To Do", value: "todo" },
-        { label: "Doing", value: "doing" },
-        { label: "Done", value: "done" },
-    ];
-    var resources = props.resources, handleClick = props.handleClick, handleDrop = props.handleDrop, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b, rest = __rest(props, ["resources", "handleClick", "handleDrop", "displayFields"]);
-    var headers = KANBAN_HEADERS;
-    var fieldName = "status";
-    var _c = (0, react_1.useState)({}), groupedResources = _c[0], setGroupedResources = _c[1];
-    var groupBy = function (resources, name) {
-        var grouped = {};
-        resources.forEach(function (item) {
-            if (!item)
-                return;
-            var groupBy = item[name];
-            if (!groupBy) {
-                groupBy = headers[0].value;
-            }
-            if (!grouped[groupBy]) {
-                grouped[groupBy] = [];
-            }
-            grouped[groupBy].push(item);
-        });
-        return grouped;
+    var actions = props.actions, headers = props.headers, fieldName = props.fieldName, resources = props.resources, handleClick = props.handleClick, handleDrop = props.handleDrop, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, enableFavorites = props.enableFavorites, enableRatings = props.enableRatings, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+    var _b = (0, react_1.useState)({}), groupedResources = _b[0], setGroupedResources = _b[1];
+    var handleGroupResources = function (resources, fieldName) {
+        var flattenedResources = (0, frontend_js_1.flattenDocuments)(resources);
+        var allowedOptions = headers.map(function (header) { return header.value; });
+        var grouped = (0, utils_1.groupResourcesByField)(flattenedResources, fieldName, allowedOptions);
+        setGroupedResources(grouped);
     };
     (0, react_1.useEffect)(function () {
-        if (resources && headers && fieldName) {
-            var grouped = groupBy((0, frontend_js_1.flattenDocuments)(resources), fieldName);
-            setGroupedResources(grouped);
+        if ((resources === null || resources === void 0 ? void 0 : resources.length) > 0 && fieldName) {
+            handleGroupResources(resources, fieldName);
         }
-    }, [resources, headers, fieldName]);
-    if (!groupedResources)
+    }, [resources, fieldName, headers]);
+    if (Object.keys(groupedResources).length == 0)
         return null;
-    return (react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 }, (_a = Object.keys(groupedResources)) === null || _a === void 0 ? void 0 : _a.map(function (key) {
-        var _a;
-        return (react_1.default.createElement(material_1.Stack, { key: key, direction: "column", spacing: 1, sx: sx.column }, (_a = groupedResources[key]) === null || _a === void 0 ? void 0 : _a.map(function (resource) { return (react_1.default.createElement(components_1.Card, { key: resource.id, enableBorder: true, resource: resource, displayFields: displayFields, actions: [], handleClick: handleClick, variant: "grid" })); })));
-    })));
+    return (react_1.default.createElement(Sortable_1.default, { actions: actions, headers: headers, columns: groupedResources, handleDrop: handleDrop, handleClick: handleClick, displayFields: displayFields, enableFavorites: enableFavorites, enableRatings: enableRatings, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete }));
 };
 exports.default = KanBan;
-var sx = {
-    board: {
-        width: "100%",
-        overflowX: "scroll",
-        '&::-webkit-scrollbar': {
-            display: 'none'
-        }
-    },
-    column: {
-        width: 320,
-        height: "100%",
-        overflowY: "scroll",
-        overflowX: "hidden",
-        '&::-webkit-scrollbar': {
-            display: 'none'
-        }
-    }
-};

@@ -80,12 +80,12 @@ var Hero = function (props) {
     var handle = props.handle;
     if (handle == 'index')
         handle = undefined;
-    var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'article' : _b, _resource = _a.resource, fields = _a.fields, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, fieldName = _a.fieldName, url = _a.url, actions = _a.actions, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'article' : _b, _resource = _a.resource, _c = _a.fields, fields = _c === void 0 ? [] : _c, _d = _a.displayFields, displayFields = _d === void 0 ? [] : _d, fieldName = _a.fieldName, url = _a.url, actions = _a.actions, enableBorder = _a.enableBorder, enableOverlay = _a.enableOverlay, enableEdit = _a.enableEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    var _d = (0, frontend_js_2.useDocuments)({
+    var _e = (0, frontend_js_2.useDocuments)({
         url: url,
-    }), loading = _d.delayedLoading, errors = _d.errors, update = _d.update, create = _d.create, resource = _d.resource, setResource = _d.setResource, removeAttachment = _d.removeAttachment, handleDataChange = _d.handleDataChange;
+    }), loading = _e.delayedLoading, errors = _e.errors, update = _e.update, create = _e.create, resource = _e.resource, setResource = _e.setResource, removeAttachment = _e.removeAttachment, handleDataChange = _e.handleDataChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -96,7 +96,7 @@ var Hero = function (props) {
             }
         });
     }); };
-    var _e = (0, react_1.useState)(false), openModal = _e[0], setOpenModal = _e[1];
+    var _f = (0, react_1.useState)(false), openModal = _f[0], setOpenModal = _f[1];
     var handleEdit = function () {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
@@ -152,7 +152,7 @@ var Hero = function (props) {
         }
     }, [_resource]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.root },
-        (resource === null || resource === void 0 ? void 0 : resource.id) && (react_1.default.createElement(Component, { fieldName: fieldName, resource: resource, actions: actions, displayFields: displayFields, enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit, enableFavorites: enableFavorites, enableLikes: enableLikes, enableSharing: enableSharing, enableRatings: enableRatings, enableBuyNow: enableBuyNow, enableStripePaymentLink: enableStripePaymentLink })),
+        (resource === null || resource === void 0 ? void 0 : resource.id) && (react_1.default.createElement(Component, { fieldName: fieldName, resource: resource, actions: actions, displayFields: displayFields, enableBorder: enableBorder, enableOverlay: enableOverlay, enableEdit: enableEdit, handleEdit: handleEdit, enableFavorites: enableFavorites, enableLikes: enableLikes, enableSharing: enableSharing, enableRatings: enableRatings, enableBuyNow: enableBuyNow, enableStripePaymentLink: enableStripePaymentLink })),
         react_1.default.createElement(__1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
             react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_2.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove }))));
 };
