@@ -27,29 +27,36 @@ export declare const muiTheme: {
         MuiButton: {
             defaultProps: {
                 disableRipple: boolean;
-                disableElevation: boolean;
             };
             styleOverrides: {
                 root: {
                     whiteSpace: string;
+                    boxShadow: string;
                 };
                 sizeSmall: {};
                 sizeLarge: {};
                 outlined: {};
-                contained: {};
+                contained: {
+                    boxShadow: string;
+                    '&:hover': {
+                        boxShadow: string;
+                    };
+                };
             };
         };
         MuiButtonGroup: {
             defaultProps: {
                 disableRipple: boolean;
                 border: string;
-                disableElevation: boolean;
             };
             styleOverrides: {
                 root: {
                     whiteSpace: string;
+                    boxShadow: string;
                 };
-                sizeSmall: {};
+                sizeSmall: {
+                    boxShadow: string;
+                };
                 sizeLarge: {};
                 outlined: {};
                 contained: {};
@@ -198,7 +205,7 @@ export declare const muiTheme: {
             main: "#212121";
         };
         secondary: {
-            main: "#eeeeee";
+            main: "#f5f5f5";
             contrastText: "#424242";
         };
         accent: {
@@ -315,7 +322,6 @@ export declare const muiTheme: {
         };
         button: {
             fontFamily: string;
-            textTransform: string;
             fontWeight: number;
             fontSize: number;
         };

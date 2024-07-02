@@ -33,7 +33,7 @@ var HeroModal = function (props) {
                                     react_1.default.createElement(__1.Icon, { name: "X", color: 'text.secondary', size: 20 })))),
                         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.innerContent },
                             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
-                            enableUsers && (react_1.default.createElement(__1.UserButton, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
+                            enableUsers && (react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
                             enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true })),
                             react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                             enableBuyNow && (react_1.default.createElement(__1.BuyNowButton, { resource: resource, buttonText: "Buy Now" })),

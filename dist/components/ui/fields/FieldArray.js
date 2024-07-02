@@ -44,6 +44,9 @@ var sx = {
     stack: {
         display: 'flex',
         flexWrap: 'wrap',
-        gap: '8px'
+        gap: '8px',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        width: '100%'
     },
 };

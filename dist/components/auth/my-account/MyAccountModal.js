@@ -109,11 +109,6 @@ var MyAccountModal = function (props) {
         setCurrentTab(newValue);
     };
     (0, react_1.useEffect)(function () {
-        if (currentUser) {
-            setUser(currentUser);
-        }
-    }, [currentUser]);
-    (0, react_1.useEffect)(function () {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
             fetchMe();
         }

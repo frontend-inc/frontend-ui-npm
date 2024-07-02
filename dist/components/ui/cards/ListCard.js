@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -35,17 +24,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../../context");
+var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
-var components_1 = require("../../../../components");
-var helpers_1 = require("../../../../helpers");
+var __1 = require("../..");
+var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
-var components_2 = require("../../../../components");
+var __2 = require("../..");
 var CardList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 180 : _c, _d = _a.textVariant, textVariant = _d === void 0 ? 'subtitle1' : _d, handleClick = _a.handleClick, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k, _l = _a.enableUsers, enableUsers = _l === void 0 ? false : _l;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 180 : _c, _d = _a.textVariant, textVariant = _d === void 0 ? 'subtitle1' : _d, handleClick = _a.handleClick, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j, _k = _a.enableUsers, enableUsers = _k === void 0 ? false : _k;
     var router = (0, router_1.useRouter)();
-    var _m = resource || {}, label = _m.label, title = _m.title, image = _m.image;
+    var _l = resource || {}, label = _l.label, title = _l.title, image = _l.image;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -54,20 +43,20 @@ var CardList = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
             react_1.default.createElement(material_1.Box, { sx: sx.image },
-                react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
-                    react_1.default.createElement(components_1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay, disableBorderRadius: enableBorder }))),
-            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: __assign(__assign({}, sx.contentArea), (enableBorder && sx.contentAreaBorder)) },
-                react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
+                react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
+                    react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay }))),
+            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.contentArea },
+                react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5, sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
-                    enableRatings && (react_1.default.createElement(components_1.AvgRating, { resource: resource, size: "small" })),
-                    react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource }),
-                    enableUsers && (react_1.default.createElement(components_1.UserButton, { user: resource === null || resource === void 0 ? void 0 : resource.user }))),
+                    enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
+                    react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
+                    enableUsers == true && (react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))),
                 react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
-                    enableFavorites && react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
-                    react_1.default.createElement(components_2.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
+                    enableFavorites == true && react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
+                    react_1.default.createElement(__2.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
 };
 exports.default = CardList;
 var sx = {
@@ -75,8 +64,11 @@ var sx = {
         width: '100%',
         display: 'flex',
         flexDirection: 'row',
-        borderRadius: 1,
+        pt: 1,
+        pb: 2,
         overflow: 'hidden',
+        borderBottom: '1px solid',
+        borderColor: 'divider',
     },
     gradient: {
         '&::after': {

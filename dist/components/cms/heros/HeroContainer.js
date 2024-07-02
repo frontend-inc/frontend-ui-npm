@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -20,10 +9,10 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var HeroContainer = function (props) {
-    var _a = props || {}, actions = _a.actions, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, resource = _a.resource, children = _a.children, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _a = props || {}, actions = _a.actions, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, resource = _a.resource, children = _a.children, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
     var _c = resource || {}, title = _c.title, description = _c.description;
-    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), spacing: 4 },
-        (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { pt: enableBorder ? 4 : 0, sx: sx.actions },
+    return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
+        (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
             react_1.default.createElement(__1.Actions, { actions: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
@@ -31,10 +20,10 @@ var HeroContainer = function (props) {
                 }), numVisible: 4, resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "center" }))),
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
-            enableRatings && (react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true })),
-            react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
-            enableBuyNow && (react_1.default.createElement(__1.BuyNowButton, { resource: resource, buttonText: "Buy Now", justifyContent: "center" })),
-            enableStripePaymentLink && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout", justifyContent: "center" }))),
+            enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true })),
+            (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource })),
+            enableBuyNow == true && (react_1.default.createElement(__1.BuyNowButton, { resource: resource, buttonText: "Buy Now", justifyContent: "center" })),
+            enableStripePaymentLink == true && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout", justifyContent: "center" }))),
         react_1.default.createElement(material_1.Box, { sx: sx.container }, children),
         react_1.default.createElement(__1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
         react_1.default.createElement(material_1.Box, { sx: sx.content },

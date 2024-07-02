@@ -43,6 +43,8 @@ var material_1 = require("@mui/material");
 var helpers_1 = require("../../../helpers");
 var styles_1 = require("@mui/material/styles");
 var CarouselDot_1 = __importDefault(require("./CarouselDot"));
+var CarouselLeftArrow_1 = __importDefault(require("./CarouselLeftArrow"));
+var CarouselRightArrow_1 = __importDefault(require("./CarouselRightArrow"));
 var ReactCarousel = function (props) {
     var theme = (0, styles_1.useTheme)();
     var _a = (0, react_1.useState)(null), responsive = _a[0], setResponsive = _a[1];
@@ -51,7 +53,7 @@ var ReactCarousel = function (props) {
         //@ts-ignore
         setResponsive((0, helpers_1.getCarouselResponsive)(theme));
     }, [theme === null || theme === void 0 ? void 0 : theme.breakpoints]);
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (styles && styles)) }, responsive && children && (react_1.default.createElement(react_multi_carousel_1.default, { responsive: responsive, swipeable: true, draggable: true, infinite: true, autoPlay: enableAutoPlay, arrows: enableArrows, showDots: enableDots, customDot: react_1.default.createElement(CarouselDot_1.default, null) }, children))));
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (styles && styles)) }, responsive && children && (react_1.default.createElement(react_multi_carousel_1.default, { responsive: responsive, swipeable: true, draggable: true, infinite: true, autoPlay: enableAutoPlay, arrows: enableArrows, showDots: enableDots, customDot: react_1.default.createElement(CarouselDot_1.default, null), customRightArrow: react_1.default.createElement(CarouselRightArrow_1.default, null), customLeftArrow: react_1.default.createElement(CarouselLeftArrow_1.default, null) }, children))));
 };
 exports.default = ReactCarousel;
 var sx = {

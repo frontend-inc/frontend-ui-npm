@@ -2,13 +2,15 @@ declare const _default: {
     defaultProps: {
         disableRipple: boolean;
         border: string;
-        disableElevation: boolean;
     };
     styleOverrides: {
         root: {
             whiteSpace: string;
+            boxShadow: string;
         };
-        sizeSmall: {};
+        sizeSmall: {
+            boxShadow: string;
+        };
         sizeLarge: {};
         outlined: {};
         contained: {};

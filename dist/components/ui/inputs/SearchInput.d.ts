@@ -5,8 +5,9 @@ type SearchInputProps = {
     label?: string;
     value: string;
     placeholder?: string;
+    fullWidth?: boolean;
     handleChange: (e: SyntheticEventType) => void;
-    handleSearch?: (keywords: string) => void;
+    handleSearch: (keywords: string) => void;
     styles?: any;
 };
 declare const SearchInput: React.FC<SearchInputProps>;

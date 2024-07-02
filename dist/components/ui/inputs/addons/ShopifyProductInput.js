@@ -55,7 +55,7 @@ var ShopifyProductInput = function (props) {
             findProduct(value);
         }
     }, [value]);
-    var handleAChange = function (e) {
+    var handleAutocompleteChange = function (e) {
         var value = e.target.value;
         handleChange({
             target: {
@@ -77,7 +77,7 @@ var ShopifyProductInput = function (props) {
                 react_1.default.createElement(components_2.Image, { disableBorder: true, disableBorderRadius: true, src: (_d = (_c = (_b = (_a = product === null || product === void 0 ? void 0 : product.images) === null || _a === void 0 ? void 0 : _a.edges) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.node) === null || _d === void 0 ? void 0 : _d.url, alt: product === null || product === void 0 ? void 0 : product.title, height: 120, width: 160 }),
                 react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.productContent },
                     react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.primary" }, product === null || product === void 0 ? void 0 : product.title)))),
-        react_1.default.createElement(components_1.AutocompleteInput, { name: name, label: label, value: value, options: options, handleChange: handleAChange, handleInputChange: handleInputChange, direction: direction, placeholder: placeholder })));
+        react_1.default.createElement(components_1.AutocompleteInput, { name: name, label: label, value: value, options: options, handleChange: handleAutocompleteChange, handleInputChange: handleInputChange, direction: direction, placeholder: placeholder })));
 };
 exports.default = ShopifyProductInput;
 var sx = {
@@ -89,12 +89,10 @@ var sx = {
         minHeight: 182,
         borderRadius: 1,
         overflow: 'hidden',
-        border: '1px solid',
-        borderColor: 'divider',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start',
         p: 0,
+        boxShadow: 1
     },
     productContent: {
         p: 1,

@@ -15,10 +15,79 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var AvatarGrid_1 = __importDefault(require("./variants/AvatarGrid"));
-var AvatarList_1 = __importDefault(require("./variants/AvatarList"));
-var AvatarCard = function (props) {
-    var variant = props.variant;
-    return variant == 'grid' ? (react_1.default.createElement(AvatarGrid_1.default, __assign({}, props))) : (react_1.default.createElement(AvatarList_1.default, __assign({}, props)));
+var material_1 = require("@mui/material");
+var components_1 = require("../../../components");
+var AvatarList = function (props) {
+    var actions = props.actions, resource = props.resource, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, _b = props.height, height = _b === void 0 ? 128 : _b, _c = props.width, width = _c === void 0 ? 128 : _c, handleClick = props.handleClick, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.enableUsers, enableUsers = _f === void 0 ? false : _f, _g = props.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = props.enableRatings, enableRatings = _h === void 0 ? false : _h;
+    var _j = resource || {}, title = _j.title, image = _j.image;
+    return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: sx.listItem },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-end", mr: 1 },
+                enableFavorites && react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
+                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource })) },
+            react_1.default.createElement(material_1.ListItemButton, { sx: __assign(__assign({}, sx.listItemButton), { minHeight: height + 44 }), onClick: handleClick && handleClick },
+                react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
+                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: "".concat(height, "px"), width: "".concat(width, "px") }), src: image === null || image === void 0 ? void 0 : image.url, alt: title },
+                        react_1.default.createElement(material_1.Box, null))),
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: 'subtitle2', color: "text.primary", sx: sx.title }, title), secondary: react_1.default.createElement(material_1.Stack, { direction: 'column', spacing: 1 },
+                        enableRatings == true && (react_1.default.createElement(components_1.AvgRating, { resource: resource, size: "small" })),
+                        react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource }),
+                        enableUsers == true && (react_1.default.createElement(components_1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))) })))));
 };
-exports.default = AvatarCard;
+exports.default = AvatarList;
+var sx = {
+    listItem: {
+        my: 0,
+        p: 0,
+        borderBottom: '1px solid',
+        borderColor: 'divider',
+    },
+    gradient: {
+        '&::after': {
+            content: '""',
+            borderRadius: '50%',
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'linear-gradient(to top, rgb(0,0,0,0.5), transparent)',
+        },
+    },
+    overlay: {
+        '&::after': {
+            content: '""',
+            borderRadius: '50%',
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            background: 'rgb(0,0,0,0.5)',
+        },
+    },
+    listItemIcon: {
+        width: 130,
+        mr: 2,
+    },
+    rootBorder: {
+        border: '1px solid',
+        borderColor: 'divider',
+        borderRadius: 1,
+    },
+    title: {
+        pb: 0.5
+    },
+    avatar: {
+        height: '64px',
+        width: '64px',
+        backgroundImage: 'linear-gradient(45deg, #888888, #222222,#000000)',
+    },
+    description: {
+        maxWidth: 320,
+    },
+    listItemButton: {
+        '&:hover': {
+            bgcolor: 'transparent'
+        }
+    }
+};

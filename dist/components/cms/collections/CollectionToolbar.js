@@ -13,14 +13,14 @@ var CollectionToolbar = function (props) {
         return null;
     }
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-        enableSearch && (react_1.default.createElement(material_1.Box, { sx: sx.searchBar },
-            react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch }))),
         react_1.default.createElement(material_1.Stack, { justifyContent: "space-between", direction: { sm: 'row', xs: 'column' }, spacing: 1 },
-            react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' } },
-                enableFilters && (react_1.default.createElement(material_1.Box, null,
+            react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' }, alignItems: 'center' },
+                enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
+                enableFilters && (react_1.default.createElement(material_1.Box, { sx: sx.buttonContainer },
                     react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
-                enableSorting && (react_1.default.createElement(components_1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection }))),
-            enableCreate && (react_1.default.createElement(material_1.Box, null,
+                enableSorting && (react_1.default.createElement(material_1.Box, { sx: sx.buttonContainer },
+                    react_1.default.createElement(components_1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
+            enableCreate && (react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' }, alignItems: 'center' },
                 react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))))));
 };
 exports.default = CollectionToolbar;
@@ -46,6 +46,12 @@ var sx = {
             xs: 'column',
             sm: 'row',
         },
+    },
+    buttonContainer: {
+        width: {
+            xs: '100%',
+            sm: 'auto'
+        }
     },
     loading: {
         opacity: 0.7,

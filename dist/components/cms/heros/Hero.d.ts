@@ -21,7 +21,7 @@ export type HeroProps = {
     enableStripePaymentLink?: boolean;
     handleEdit?: () => void;
 };
-type HeroStyleTypes = 'product' | 'article' | 'profile' | 'document' | 'youtube' | 'vimeo';
+type HeroStyleTypes = 'card' | 'cover' | 'list' | 'avatar' | 'youtube' | 'vimeo';
 export type HeroItemProps = HeroProps & {
     fieldName: string;
     fields?: FormFieldType[];

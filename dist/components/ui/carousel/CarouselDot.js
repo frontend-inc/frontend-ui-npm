@@ -40,8 +40,10 @@ var sx = {
     button: {
         py: 1,
         px: 0,
+        boxShadow: 0,
         mx: '0px',
         '&:hover': {
+            boxShadow: 0,
             bgcolor: 'transparent',
         },
     },

@@ -48,7 +48,7 @@ var SortButton = function (props) {
         }
     }, [sortOptions, sortBy]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleOpenModal, endIcon: react_1.default.createElement(ui_1.Icon, { name: sortDirection == 'asc' ? 'ArrowUp' : 'ArrowDown', color: "secondary.contrastText", size: 20 }) }, (selected === null || selected === void 0 ? void 0 : selected.label) ? selected === null || selected === void 0 ? void 0 : selected.label : 'Sort'),
+        react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleOpenModal, endIcon: react_1.default.createElement(ui_1.Icon, { name: sortDirection == 'asc' ? 'ArrowUp' : 'ArrowDown', color: "secondary.contrastText", size: 20 }) }, "Sort"),
         react_1.default.createElement(material_1.Hidden, { smDown: true },
             react_1.default.createElement(ui_1.Popup, { p: 0, anchorEl: anchorEl, open: showModal, handleClose: handleCloseModal, anchorOrigin: {
                     vertical: 'bottom',

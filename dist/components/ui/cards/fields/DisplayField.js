@@ -33,7 +33,7 @@ var DisplayField = function (props) {
     var field = props.field, resource = props.resource, _a = props.color, color = _a === void 0 ? 'text.secondary' : _a, rest = __rest(props, ["field", "resource", "color"]);
     var fieldVariant = field.variant, icon = field.icon;
     var value = (0, lodash_1.get)(resource, field === null || field === void 0 ? void 0 : field.name);
-    if (!value)
+    if (!value || (value === null || value === void 0 ? void 0 : value.length) == 0)
         return null;
     var components = {
         boolean: __1.FieldBoolean,
@@ -68,6 +68,8 @@ var DisplayField = function (props) {
     };
     var Component = components[fieldVariant];
     var componentProps = (variantProps === null || variantProps === void 0 ? void 0 : variantProps[fieldVariant]) || {};
-    return (react_1.default.createElement(Component, __assign({ disablePadding: true, icon: icon, variant: "caption", color: color, direction: "row-reverse", value: value }, componentProps, rest)));
+    if (!value || value == '')
+        return null;
+    return (react_1.default.createElement(Component, __assign({ disablePadding: true, icon: icon, variant: "caption", color: color, value: value }, componentProps, rest)));
 };
 exports.default = DisplayField;

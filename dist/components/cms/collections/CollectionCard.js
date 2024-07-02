@@ -28,16 +28,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var CollectionCard = function (props) {
-    var _a = props.variant, variant = _a === void 0 ? 'list' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, rest = __rest(props, ["variant", "style"]);
+    var _a = props.style, style = _a === void 0 ? 'card' : _a, rest = __rest(props, ["style"]);
     var COMPONENTS = {
         card: __1.Card,
         avatar: __1.AvatarCard,
         cover: __1.CoverCard,
-        chip: __1.Chip,
+        chip: __1.ChipCard,
+        table: __1.TableCard,
         text: __1.TextCard,
-        image: __1.ImageCard,
+        list: __1.ListCard
     };
     var Component = COMPONENTS[style] || __1.Card;
-    return react_1.default.createElement(Component, __assign({ variant: variant }, rest));
+    return react_1.default.createElement(Component, __assign({}, rest));
 };
 exports.default = CollectionCard;

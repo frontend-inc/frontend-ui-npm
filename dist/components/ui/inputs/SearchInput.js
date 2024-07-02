@@ -33,14 +33,19 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var styles_1 = require("./styles");
 var use_debounce_1 = require("use-debounce");
+var components_1 = require("../../../components");
+var InputBase_1 = __importDefault(require("@mui/material/InputBase"));
+var IconButton_1 = __importDefault(require("@mui/material/IconButton"));
 var SearchInput = function (props) {
-    var _a = props.name, name = _a === void 0 ? 'keywords' : _a, label = props.label, value = props.value, _b = props.placeholder, placeholder = _b === void 0 ? 'Search...' : _b, handleChange = props.handleChange, handleSearch = props.handleSearch, _c = props.styles, styles = _c === void 0 ? {} : _c;
-    var _d = (0, react_1.useState)(value), text = _d[0], setText = _d[1];
+    var _a = props.name, name = _a === void 0 ? 'keywords' : _a, _b = props.fullWidth, fullWidth = _b === void 0 ? false : _b, value = props.value, _c = props.placeholder, placeholder = _c === void 0 ? 'Search...' : _c, handleChange = props.handleChange, handleSearch = props.handleSearch, _d = props.styles, styles = _d === void 0 ? {} : _d;
+    var _e = (0, react_1.useState)(value), text = _e[0], setText = _e[1];
     var debouncedValue = (0, use_debounce_1.useDebounce)(text, 500)[0];
     var handleInputChange = function (e) {
         setText(e.target.value);
@@ -60,24 +65,37 @@ var SearchInput = function (props) {
             setText(value);
         }
     }, [value]);
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        label && (react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" }, label)),
-        react_1.default.createElement(material_1.InputBase, { sx: __assign(__assign(__assign({}, styles_1.sx.inputBase), sx.inputBase), styles), type: "text", fullWidth: true, name: name, placeholder: placeholder, autoComplete: "off", onChange: handleInputChange, value: text, onKeyDown: function (e) {
+    return (react_1.default.createElement(material_1.Paper, { component: "form", elevation: 0, sx: __assign(__assign({}, sx.root), (fullWidth && sx.fullWidth)) },
+        react_1.default.createElement(InputBase_1.default, { sx: { ml: 2, flex: 1 }, placeholder: placeholder, value: text, onChange: handleInputChange, onKeyDown: function (e) {
                 if (e.key === 'Enter') {
                     e.preventDefault();
-                    if (handleSearch) {
-                        handleSearch(text);
-                    }
+                    handleSearch(text);
                 }
-            } })));
+            } }),
+        react_1.default.createElement(IconButton_1.default, { onClick: function () { return handleSearch(debouncedValue); }, type: "button", sx: { p: '10px' }, "aria-label": "search" },
+            react_1.default.createElement(components_1.Icon, { name: "Search", size: 20, color: 'text.secondary' }))));
 };
 exports.default = SearchInput;
 var sx = {
     root: {
+        p: 0,
+        display: 'flex',
+        alignItems: 'center',
         width: '100%',
+        border: '1px solid',
+        borderColor: 'divider',
+        maxWidth: 400,
+        minWidth: {
+            sm: 320,
+            xs: "100%"
+        },
+        transition: 'box-shadow 0.3s',
+        '&:hover': {
+            boxShadow: 1
+        }
     },
-    inputBase: {
-        minWidth: '165px',
-        '& input, & .MuiInputBase-inputMultiline': __assign(__assign({}, styles_1.sx.inputBase['& input, & .MuiInputBase-inputMultiline']), { fontSize: function (theme) { return theme.typography.subtitle2.fontSize; }, fontFamily: function (theme) { return theme.typography.subtitle2.fontFamily; } }),
-    },
+    fullWidth: {
+        width: '100%',
+        minWidth: '100%'
+    }
 };

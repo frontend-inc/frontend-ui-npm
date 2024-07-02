@@ -1,4 +1,4 @@
 import React from 'react';
 import { CardProps } from '../../../types';
-declare const Chip: React.FC<CardProps>;
-export default Chip;
+declare const ChipCard: React.FC<CardProps>;
+export default ChipCard;

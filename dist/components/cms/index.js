@@ -3,8 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResourceListItem = exports.ResourceList = exports.Resource = exports.AddonShopifyProduct = exports.AddonGoogleMap = exports.AddonCalendly = exports.Statistics = exports.HeroVimeo = exports.HeroYouTube = exports.HeroHeader = exports.HeroPlace = exports.HeroProfile = exports.HeroProduct = exports.HeroModal = exports.HeroDocument = exports.HeroEvent = exports.HeroArticle = exports.Hero = exports.SearchFilters = exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.SortButton = exports.KanBan = exports.FilterButton = exports.LoadMore = exports.GridView = exports.FetchMany = exports.Fetch = exports.FormFieldInput = exports.FormInput = exports.ForeignCollectionTable = exports.ForeignCollectionKanBan = exports.ForeignCollection = exports.ForeignForm = exports.FormWizard = exports.Form = exports.EmailSignup = exports.CollectionKanBan = exports.CollectionTable = exports.CollectionSimilar = exports.CollectionForm = exports.CollectionToolbar = exports.CollectionList = exports.CollectionLayout = exports.CollectionContainer = exports.CollectionCard = exports.CollectionCarousel = exports.CollectionCards = void 0;
-exports.Details = exports.ResourceTable = void 0;
+exports.Details = exports.ResourceTable = exports.ResourceListItem = exports.ResourceList = exports.Resource = exports.AddonShopifyProduct = exports.AddonGoogleMap = exports.AddonCalendly = exports.Statistics = exports.HeroVimeo = exports.HeroYouTube = exports.HeroHeader = exports.HeroAvatar = exports.HeroCard = exports.HeroModal = exports.HeroCover = exports.HeroList = exports.Hero = exports.SearchFilters = exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.SortButton = exports.KanBan = exports.FilterButton = exports.LoadMore = exports.GridView = exports.FetchMany = exports.Fetch = exports.FormFieldInput = exports.FormInput = exports.ForeignCollectionTable = exports.ForeignCollectionKanBan = exports.ForeignCollection = exports.ForeignForm = exports.FormWizard = exports.Form = exports.EmailSignup = exports.CollectionKanBan = exports.CollectionTable = exports.CollectionSimilar = exports.CollectionForm = exports.CollectionToolbar = exports.CollectionList = exports.CollectionLayout = exports.CollectionContainer = exports.CollectionCard = exports.CollectionCarousel = exports.CollectionCards = void 0;
 // CMS
 var CollectionCards_1 = require("./collections/CollectionCards");
 Object.defineProperty(exports, "CollectionCards", { enumerable: true, get: function () { return __importDefault(CollectionCards_1).default; } });
@@ -73,20 +72,16 @@ Object.defineProperty(exports, "SearchFilters", { enumerable: true, get: functio
 // Show
 var Hero_1 = require("./heros/Hero");
 Object.defineProperty(exports, "Hero", { enumerable: true, get: function () { return __importDefault(Hero_1).default; } });
-var HeroArticle_1 = require("./heros/HeroArticle");
-Object.defineProperty(exports, "HeroArticle", { enumerable: true, get: function () { return __importDefault(HeroArticle_1).default; } });
-var HeroEvent_1 = require("./heros/HeroEvent");
-Object.defineProperty(exports, "HeroEvent", { enumerable: true, get: function () { return __importDefault(HeroEvent_1).default; } });
-var HeroDocument_1 = require("./heros/HeroDocument");
-Object.defineProperty(exports, "HeroDocument", { enumerable: true, get: function () { return __importDefault(HeroDocument_1).default; } });
+var HeroList_1 = require("./heros/HeroList");
+Object.defineProperty(exports, "HeroList", { enumerable: true, get: function () { return __importDefault(HeroList_1).default; } });
+var HeroCover_1 = require("./heros/HeroCover");
+Object.defineProperty(exports, "HeroCover", { enumerable: true, get: function () { return __importDefault(HeroCover_1).default; } });
 var HeroModal_1 = require("./heros/HeroModal");
 Object.defineProperty(exports, "HeroModal", { enumerable: true, get: function () { return __importDefault(HeroModal_1).default; } });
-var HeroProduct_1 = require("./heros/HeroProduct");
-Object.defineProperty(exports, "HeroProduct", { enumerable: true, get: function () { return __importDefault(HeroProduct_1).default; } });
-var HeroProfile_1 = require("./heros/HeroProfile");
-Object.defineProperty(exports, "HeroProfile", { enumerable: true, get: function () { return __importDefault(HeroProfile_1).default; } });
-var HeroPlace_1 = require("./heros/HeroPlace");
-Object.defineProperty(exports, "HeroPlace", { enumerable: true, get: function () { return __importDefault(HeroPlace_1).default; } });
+var HeroCard_1 = require("./heros/HeroCard");
+Object.defineProperty(exports, "HeroCard", { enumerable: true, get: function () { return __importDefault(HeroCard_1).default; } });
+var HeroAvatar_1 = require("./heros/HeroAvatar");
+Object.defineProperty(exports, "HeroAvatar", { enumerable: true, get: function () { return __importDefault(HeroAvatar_1).default; } });
 var HeroHeader_1 = require("./heros/HeroHeader");
 Object.defineProperty(exports, "HeroHeader", { enumerable: true, get: function () { return __importDefault(HeroHeader_1).default; } });
 var HeroYouTube_1 = require("./heros/HeroYouTube");

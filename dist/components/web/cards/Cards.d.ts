@@ -8,8 +8,7 @@ type CardType = {
     url?: string;
 };
 export type CardsProps = {
-    variant?: 'grid' | 'list';
-    style?: 'avatar' | 'card' | 'cover';
+    style?: 'card' | 'cover';
     items: CardType[];
     enableBorder?: boolean;
     enableGradient?: boolean;

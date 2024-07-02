@@ -77,7 +77,6 @@ export declare const typography: {
     };
     button: {
         fontFamily: string;
-        textTransform: string;
         fontWeight: number;
         fontSize: number;
     };

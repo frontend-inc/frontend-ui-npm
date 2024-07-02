@@ -111,6 +111,7 @@ var sx = {
         },
     },
     button: {
+        boxShadow: 1,
         minWidth: 120,
         borderRadius: function (theme) {
             return "0 ".concat(theme.shape.borderRadius, "px ").concat(theme.shape.borderRadius, "px 0");

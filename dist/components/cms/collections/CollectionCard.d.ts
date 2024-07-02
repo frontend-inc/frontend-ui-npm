@@ -1,9 +1,8 @@
 import React from 'react';
 import { ActionType, DisplayFieldType } from '../../../types';
-type CardStyleTypes = 'card' | 'avatar' | 'cover' | 'chip' | 'image' | 'text';
+type CardStyleTypes = 'list' | 'card' | 'avatar' | 'cover' | 'table' | 'text';
 type CollectionCardProps = {
     actions: ActionType[];
-    variant: 'list' | 'grid';
     style: CardStyleTypes;
     displayFields: DisplayFieldType[];
     resource: any & {

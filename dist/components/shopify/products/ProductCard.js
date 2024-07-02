@@ -62,9 +62,9 @@ var ProductCard = function (props) {
     };
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(SwipeableProductImages_1.default, { product: product, height: height, handleClick: handleItemClick, disableBorderRadius: enableBorder ? true : false }),
-        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign({}, (enableBorder && sx.contentBorder)) },
+        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
             react_1.default.createElement(material_1.Stack, { direction: "column", sx: __assign(__assign({}, sx.text), (enableOkendoStarRating && sx.textWithReviews)) },
-                react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "subtitle1" }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.title)),
+                react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: "subtitle2" }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.title)),
                 enableOkendoStarRating && react_1.default.createElement(addons_1.OkendoStarRating, { product: product }),
                 react_1.default.createElement(material_1.Typography, { color: "textSecondary", variant: "body2" }, (0, frontend_shopify_2.formatCurrency)((_b = (_a = product === null || product === void 0 ? void 0 : product.priceRange) === null || _a === void 0 ? void 0 : _a.minVariantPrice) === null || _b === void 0 ? void 0 : _b.amount))),
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: "column" },
@@ -80,6 +80,10 @@ var sx = {
         flexDirection: 'column',
         overflow: 'hidden',
         borderRadius: 1,
+        transition: 'box-shadow 0.3s',
+        '&:hover': {
+            boxShadow: 2
+        }
     },
     rootBorder: {
         border: '1px solid',
@@ -92,7 +96,7 @@ var sx = {
     textWithReviews: {
         minHeight: '120px',
     },
-    contentBorder: {
+    content: {
         p: 1,
         pt: 0,
     },

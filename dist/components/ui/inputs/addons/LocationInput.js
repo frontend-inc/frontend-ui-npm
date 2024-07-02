@@ -67,7 +67,9 @@ var LocationInput = function (props) {
     var _p = (0, react_1.useState)([]), options = _p[0], setOptions = _p[1];
     (0, react_1.useEffect)(function () {
         if (places && (places === null || places === void 0 ? void 0 : places.length) > 0) {
-            setOptions(places === null || places === void 0 ? void 0 : places.map(function (place) {
+            setOptions(
+            //@ts-ignore
+            places === null || places === void 0 ? void 0 : places.map(function (place) {
                 var _a;
                 return ({
                     label: (_a = place === null || place === void 0 ? void 0 : place.displayName) === null || _a === void 0 ? void 0 : _a.text,
@@ -79,7 +81,7 @@ var LocationInput = function (props) {
             setOpen(false);
         }
     }, [places]);
-    return (react_1.default.createElement(material_1.Stack, { width: '100%', direction: "column", spacing: 1 },
+    return (react_1.default.createElement(material_1.Stack, { width: '100%', direction: "column", spacing: 0 },
         enablePosition && lat && lng && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.mapContainer), { height: height, width: width }) },
             react_1.default.createElement(__1.GoogleMap, { enableBorder: true, darkTheme: darkTheme, height: height, width: width, zoom: zoom, resources: [document] }))),
         react_1.default.createElement(__1.TextInput, { name: name, label: label, value: keywords, options: options, handleChange: handleKeywordChange, direction: direction, placeholder: placeholder }),
@@ -90,7 +92,7 @@ var LocationInput = function (props) {
                         react_1.default.createElement(material_1.ListItemIcon, null,
                             react_1.default.createElement(__1.Icon, { name: "MapPin", size: 20 })),
                         react_1.default.createElement(material_1.ListItemText, { primary: option.label, secondary: option.value })))); })))),
-            enablePosition && (react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: "center" },
+            enablePosition == true && (react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: "center" },
                 react_1.default.createElement(__1.Icon, { name: "MapPin", size: 20 }),
                 react_1.default.createElement(material_1.Typography, { variant: "overline", color: "text.secondary" },
                     "Lat: ",
@@ -110,10 +112,10 @@ var sx = {
         left: 0,
         width: '100%',
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
-        minHeight: '100px',
         height: '100% !important',
         maxHeight: '240px',
         overflowY: 'scroll',
+        zIndex: function (theme) { return theme.zIndex.modal; },
     },
     list: {
         bgcolor: 'background.paper',

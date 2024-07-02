@@ -34,7 +34,11 @@ var sx = {
         borderRadius: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        width: '100%'
+        width: '100%',
+        transition: 'box-shadow 0.3s',
+        '&:hover': {
+            boxShadow: 1
+        }
     },
     rootBorder: {
         p: 2,

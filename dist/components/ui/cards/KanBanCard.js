@@ -36,9 +36,9 @@ var KanBanCard = function (props) {
                     react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: textVariant }, (0, helpers_1.truncate)(title)),
                     enableRatings == true && (react_1.default.createElement(components_1.AvgRating, { resource: resource, size: "small" })),
                     react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource }),
-                    enableUsers && (react_1.default.createElement(components_1.UserButton, { user: resource === null || resource === void 0 ? void 0 : resource.user }))))),
-        react_1.default.createElement(material_1.Box, { sx: sx.actionsContainer },
-            react_1.default.createElement(material_1.Button, { onClick: handleClick, size: "small", variant: "contained", color: "secondary" }, "DETAILS"),
+                    enableUsers && (react_1.default.createElement(components_1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))))),
+        react_1.default.createElement(material_1.Box, { sx: sx.footer },
+            react_1.default.createElement(material_1.Button, { onClick: handleClick, size: "small", variant: "contained", color: "secondary", sx: sx.button }, "Details"),
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-end" },
                 enableFavorites == true && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
                 react_1.default.createElement(components_2.Actions, { numVisible: 0, actions: (0, helpers_2.buildActions)({
@@ -61,6 +61,7 @@ var sx = {
         borderColor: 'divider',
         bgcolor: 'background.default',
         transition: 'box-shadow 0.3s',
+        overflow: 'hidden',
         '&:hover': {
             boxShadow: 2,
         }
@@ -85,11 +86,8 @@ var sx = {
             cursor: 'grabbing'
         }
     },
-    actions: {
-        height: '100%',
-        display: 'flex',
-        alignItems: 'flex-start',
-        justifyContent: 'center',
+    button: {
+        textTransform: 'uppercase'
     },
     image: {
         overflow: 'hidden',
@@ -114,7 +112,7 @@ var sx = {
     description: {
         maxWidth: '240px',
     },
-    actionsContainer: {
+    footer: {
         width: '100%',
         display: 'flex',
         justifyContent: 'space-between',

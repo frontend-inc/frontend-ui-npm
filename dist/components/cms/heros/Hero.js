@@ -66,12 +66,10 @@ var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
-var HeroArticle_1 = __importDefault(require("./HeroArticle"));
-var HeroProduct_1 = __importDefault(require("./HeroProduct"));
-var HeroProfile_1 = __importDefault(require("./HeroProfile"));
-var HeroDocument_1 = __importDefault(require("./HeroDocument"));
-var HeroEvent_1 = __importDefault(require("./HeroEvent"));
-var HeroPlace_1 = __importDefault(require("./HeroPlace"));
+var HeroList_1 = __importDefault(require("./HeroList"));
+var HeroCard_1 = __importDefault(require("./HeroCard"));
+var HeroAvatar_1 = __importDefault(require("./HeroAvatar"));
+var HeroCover_1 = __importDefault(require("./HeroCover"));
 var HeroYouTube_1 = __importDefault(require("./HeroYouTube"));
 var HeroVimeo_1 = __importDefault(require("./HeroVimeo"));
 var __1 = require("../..");
@@ -136,12 +134,10 @@ var Hero = function (props) {
         });
     }); };
     var components = {
-        article: HeroArticle_1.default,
-        event: HeroEvent_1.default,
-        product: HeroProduct_1.default,
-        profile: HeroProfile_1.default,
-        place: HeroPlace_1.default,
-        document: HeroDocument_1.default,
+        list: HeroList_1.default,
+        cover: HeroCover_1.default,
+        card: HeroCard_1.default,
+        avatar: HeroAvatar_1.default,
         youtube: HeroYouTube_1.default,
         vimeo: HeroVimeo_1.default,
     };

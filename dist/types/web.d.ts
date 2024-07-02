@@ -28,7 +28,6 @@ export type CardProps = {
     enableFavorites?: boolean;
     enableRatings?: boolean;
     editing?: boolean;
-    variant?: 'list' | 'grid';
     resource: any & {
         label?: string;
         title?: string;
@@ -50,7 +49,6 @@ export type CardProps = {
     handleDelete?: (item: any) => void;
     objectFit?: 'cover' | 'contain';
     responsive?: boolean;
-    enableBorder?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
     enableEdit?: boolean;

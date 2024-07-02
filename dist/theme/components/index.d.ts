@@ -17,29 +17,36 @@ declare const _default: {
     MuiButton: {
         defaultProps: {
             disableRipple: boolean;
-            disableElevation: boolean;
         };
         styleOverrides: {
             root: {
                 whiteSpace: string;
+                boxShadow: string;
             };
             sizeSmall: {};
             sizeLarge: {};
             outlined: {};
-            contained: {};
+            contained: {
+                boxShadow: string;
+                '&:hover': {
+                    boxShadow: string;
+                };
+            };
         };
     };
     MuiButtonGroup: {
         defaultProps: {
             disableRipple: boolean;
             border: string;
-            disableElevation: boolean;
         };
         styleOverrides: {
             root: {
                 whiteSpace: string;
+                boxShadow: string;
             };
-            sizeSmall: {};
+            sizeSmall: {
+                boxShadow: string;
+            };
             sizeLarge: {};
             outlined: {};
             contained: {};

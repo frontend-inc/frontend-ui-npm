@@ -4,8 +4,7 @@ type CollectionCardsProps = {
     resources: any;
     displayFields?: DisplayFieldType[];
     actions?: ActionType[];
-    variant: 'list' | 'grid';
-    style: 'card' | 'avatar' | 'cover' | 'chip' | 'text' | 'image';
+    style: 'list' | 'card' | 'avatar' | 'cover' | 'table' | 'text';
     buttonText?: string;
     enableBorder?: boolean;
     enableGradient?: boolean;
