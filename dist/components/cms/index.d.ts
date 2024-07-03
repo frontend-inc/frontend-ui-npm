@@ -39,6 +39,7 @@ export { default as HeroAvatar } from './heros/HeroAvatar';
 export { default as HeroHeader } from './heros/HeroHeader';
 export { default as HeroYouTube } from './heros/HeroYouTube';
 export { default as HeroVimeo } from './heros/HeroVimeo';
+export { default as HeroSnippet } from './heros/HeroSnippet';
 export { default as Statistics } from './analytics/Statistics';
 export { default as AddonCalendly } from './addons/AddonCalendly';
 export { default as AddonGoogleMap } from './addons/AddonGoogleMap';

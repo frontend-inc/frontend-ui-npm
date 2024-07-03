@@ -42,7 +42,6 @@ var material_1 = require("@mui/material");
 var react_google_maps_1 = require("@vis.gl/react-google-maps");
 var mapConfigs_1 = require("./styles/mapConfigs");
 var GoogleMarker_1 = __importDefault(require("./GoogleMarker"));
-// https://visgl.github.io/react-google-maps/docs/api-reference/components/map
 // https://visgl.github.io/react-google-maps/docs/api-reference/components/advanced-marker
 var GoogleMap = function (props) {
     var _a, _b;
@@ -58,8 +57,7 @@ var GoogleMap = function (props) {
     }, [darkTheme]);
     var _j = (0, react_1.useState)([]), googleMarkers = _j[0], setGoogleMarkers = _j[1];
     var handleSetMarkers = function (resources) {
-        var _a;
-        var markers = (_a = resources === null || resources === void 0 ? void 0 : resources.filter(function (res) { return (res === null || res === void 0 ? void 0 : res.lat) && (res === null || res === void 0 ? void 0 : res.lng); })) === null || _a === void 0 ? void 0 : _a.map(function (res) { return ({
+        var markers = resources === null || resources === void 0 ? void 0 : resources.map(function (res) { return ({
             lat: res === null || res === void 0 ? void 0 : res.lat,
             lng: res === null || res === void 0 ? void 0 : res.lng,
             label: res === null || res === void 0 ? void 0 : res.title,
@@ -74,6 +72,7 @@ var GoogleMap = function (props) {
             handleSetMarkers(resources);
         }
     }, [resources]);
+    console.log('googleMarkers', googleMarkers);
     if ((googleMarkers === null || googleMarkers === void 0 ? void 0 : googleMarkers.length) <= 0)
         return null;
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.mapContainer), (enableBorder && sx.mapBorder)), height: height, width: width ? width : '100%' },

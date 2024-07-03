@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -43,7 +32,7 @@ var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
 var CoverVert = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 320 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableUsers, enableUsers = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k, icon = _a.icon;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 400 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableUsers, enableUsers = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k, icon = _a.icon;
     var _l = resource || {}, label = _l.label, title = _l.title, image = _l.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
@@ -56,7 +45,7 @@ var CoverVert = function (props) {
     };
     var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
     return (react_1.default.createElement(context_2.ThemeProvider, { muiTheme: theme, textPrimary: '#FFFFFF', textSecondary: '#FFFFFF' },
-        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign({}, sx.root) },
+        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
             react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
                 react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },

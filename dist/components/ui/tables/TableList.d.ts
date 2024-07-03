@@ -5,7 +5,6 @@ type TableProps = {
     fields: Array<any>;
     rows: Array<any>;
     toolbar?: React.ReactNode;
-    enableBorder?: boolean;
     disableBorderRadius?: boolean;
     enableSelect?: boolean;
     enableEdit?: boolean;

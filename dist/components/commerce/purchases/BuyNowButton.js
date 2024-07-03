@@ -66,15 +66,15 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var BuyNowButton = function (props) {
-    var _a = props || {}, resource = _a.resource, _b = _a.buttonText, buttonText = _b === void 0 ? 'Buy Now' : _b, _c = _a.justifyContent, justifyContent = _c === void 0 ? 'flex-start' : _c;
-    var _d = resource || {}, availableForSale = _d.available_for_sale, displayAmount = _d.display_amount, amount = _d.stripe_amount;
-    var _e = (0, react_1.useState)(false), purchased = _e[0], setPurchased = _e[1];
-    var _f = (0, frontend_js_1.useAuth)(), fetchMe = _f.fetchMe, currentUser = _f.currentUser;
-    var _g = (0, react_1.useContext)(context_1.AppContext), setCreditCardOpen = _g.setCreditCardOpen, setAuthOpen = _g.setAuthOpen;
-    var _h = (0, hooks_1.usePayments)({
+    var _a = props || {}, _b = _a.size, size = _b === void 0 ? 'large' : _b, resource = _a.resource, _c = _a.buttonText, buttonText = _c === void 0 ? 'Buy Now' : _c, _d = _a.justifyContent, justifyContent = _d === void 0 ? 'flex-start' : _d;
+    var _e = resource || {}, availableForSale = _e.available_for_sale, displayAmount = _e.display_amount, amount = _e.stripe_amount;
+    var _f = (0, react_1.useState)(false), purchased = _f[0], setPurchased = _f[1];
+    var _g = (0, frontend_js_1.useAuth)(), fetchMe = _g.fetchMe, currentUser = _g.currentUser;
+    var _h = (0, react_1.useContext)(context_1.AppContext), setCreditCardOpen = _h.setCreditCardOpen, setAuthOpen = _h.setAuthOpen;
+    var _j = (0, hooks_1.usePayments)({
         url: '/api/v1/payments',
-    }), loading = _h.loading, purchase = _h.purchase;
-    var _j = (0, react_1.useState)(false), purchaseModal = _j[0], setPurchaseModal = _j[1];
+    }), loading = _j.loading, purchase = _j.purchase;
+    var _k = (0, react_1.useState)(false), purchaseModal = _k[0], setPurchaseModal = _k[1];
     var handleClick = function () {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
@@ -106,10 +106,9 @@ var BuyNowButton = function (props) {
     }); };
     return (react_1.default.createElement(material_1.Box, null,
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, alignItems: justifyContent },
-            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: "center", justifyContent: justifyContent },
-                react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "textPrimary" }, displayAmount ? displayAmount : 'FREE'),
-                react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, availableForSale ? 'Price' : 'Sold out')),
-            react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "primary", onClick: handleClick, disabled: !availableForSale, startIcon: purchased ? (react_1.default.createElement(components_1.Icon, { name: "CheckCircle", size: 20, color: "primary.contrastText" })) : (react_1.default.createElement(components_1.Icon, { name: "CreditCard", size: 20, color: 'primary.contrastText' })), endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, purchased
+            react_1.default.createElement(material_1.Button, { sx: sx.button, size: size, variant: "contained", color: "primary", onClick: handleClick, disabled: !availableForSale, startIcon: react_1.default.createElement(react_1.default.Fragment, null,
+                    purchased && (react_1.default.createElement(components_1.Icon, { name: "CheckCircle", size: 20, color: "primary.contrastText" })),
+                    !purchased && availableForSale == true && (react_1.default.createElement(components_1.Icon, { name: "CreditCard", size: 20, color: 'primary.contrastText' }))), endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, purchased
                 ? 'Purchased'
                 : "".concat(buttonText, " ").concat(displayAmount ? displayAmount : ''))),
         react_1.default.createElement(components_1.AlertModal, { loading: loading, open: purchaseModal, title: "Confirm Purchase", description: "Are you sure you want to purchase for ".concat(displayAmount, "?"), handleConfirm: handlePurchase, handleClose: function () { return setPurchaseModal(false); } })));

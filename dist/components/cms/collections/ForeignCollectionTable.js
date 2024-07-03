@@ -88,16 +88,16 @@ var ForeignCollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = (0, react_1.useContext)(context_1.AppContext), clientUrl = _a.clientUrl, setAuthOpen = _a.setAuthOpen;
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
-    var resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, foreignContentType = props.foreignContentType, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l, emptyIcon = props.emptyIcon, emptyTitle = props.emptyTitle, emptyDescription = props.emptyDescription;
-    var _m = (0, react_1.useState)(false), openModal = _m[0], setOpenModal = _m[1];
-    var _o = (0, react_1.useState)(false), openDeleteModal = _o[0], setOpenDeleteModal = _o[1];
-    var _p = (0, frontend_js_1.useDocuments)({
+    var resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, foreignContentType = props.foreignContentType, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k, emptyIcon = props.emptyIcon, emptyTitle = props.emptyTitle, emptyDescription = props.emptyDescription;
+    var _l = (0, react_1.useState)(false), openModal = _l[0], setOpenModal = _l[1];
+    var _m = (0, react_1.useState)(false), openDeleteModal = _m[0], setOpenDeleteModal = _m[1];
+    var _o = (0, frontend_js_1.useDocuments)({
         url: url,
-    }), loading = _p.loading, delayedLoading = _p.delayedLoading, query = _p.query, resources = _p.resources, findLinks = _p.findLinks, page = _p.page, numPages = _p.numPages, numResults = _p.numResults, totalCount = _p.totalCount, paginate = _p.paginate, addLinks = _p.addLinks;
-    var _q = (0, frontend_js_1.useDocuments)({
+    }), loading = _o.loading, delayedLoading = _o.delayedLoading, query = _o.query, resources = _o.resources, findLinks = _o.findLinks, page = _o.page, numPages = _o.numPages, numResults = _o.numResults, totalCount = _o.totalCount, paginate = _o.paginate, addLinks = _o.addLinks;
+    var _p = (0, frontend_js_1.useDocuments)({
         url: foreignUrl,
-    }), errors = _q.errors, _resource = _q.resource, setResource = _q.setResource, update = _q.update, create = _q.create, destroy = _q.destroy, handleDataChange = _q.handleDataChange, removeAttachment = _q.removeAttachment;
-    var _r = (0, react_1.useState)(''), keywords = _r[0], setKeywords = _r[1];
+    }), errors = _p.errors, _resource = _p.resource, setResource = _p.setResource, update = _p.update, create = _p.create, destroy = _p.destroy, handleDataChange = _p.handleDataChange, removeAttachment = _p.removeAttachment;
+    var _q = (0, react_1.useState)(''), keywords = _q[0], setKeywords = _q[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -117,9 +117,9 @@ var ForeignCollectionTable = function (props) {
         }
         findLinks(resource === null || resource === void 0 ? void 0 : resource.id, foreignContentType, __assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
     };
-    var _s = (0, hooks_1.useFilters)({
+    var _r = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _s.activeFilters, setActiveFilters = _s.setActiveFilters, handleAddFilter = _s.handleAddFilter;
+    }), activeFilters = _r.activeFilters, setActiveFilters = _r.setActiveFilters, handleAddFilter = _r.handleAddFilter;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -231,7 +231,7 @@ var ForeignCollectionTable = function (props) {
             }
         });
     }); };
-    var _t = (0, react_1.useState)([]), rows = _t[0], setRows = _t[1];
+    var _s = (0, react_1.useState)([]), rows = _s[0], setRows = _s[1];
     var handleFetchResources = function () { return __awaiter(void 0, void 0, void 0, function () {
         var filterQuery;
         return __generator(this, function (_a) {
@@ -263,7 +263,7 @@ var ForeignCollectionTable = function (props) {
                             enableFilters && filterAnchor == 'top' && (react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
                                 react_1.default.createElement(components_1.FilterButton, { disableFilterCount: false, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
                             enableCreate && (react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
-                                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add")))), enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit, enableDelete: enableDelete, handleDelete: handleDeleteClick, loading: resources && loading, fields: headers, rows: rows, handleClick: handleClick, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, numResults: numResults, totalCount: totalCount, handlePaginate: handlePaginate, emptyIcon: emptyIcon, emptyTitle: emptyTitle, emptyDescription: emptyDescription })))),
+                                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add")))), enableEdit: enableEdit, handleEdit: handleEdit, enableDelete: enableDelete, handleDelete: handleDeleteClick, loading: resources && loading, fields: headers, rows: rows, handleClick: handleClick, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, numResults: numResults, totalCount: totalCount, handlePaginate: handlePaginate, emptyIcon: emptyIcon, emptyTitle: emptyTitle, emptyDescription: emptyDescription })))),
         react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (_resource === null || _resource === void 0 ? void 0 : _resource.id) ? 'Update' : 'Save') },
             react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(_resource), handleChange: handleDataChange, handleRemove: handleRemove })),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));

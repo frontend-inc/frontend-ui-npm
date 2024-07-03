@@ -3,7 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Details = exports.ResourceTable = exports.ResourceListItem = exports.ResourceList = exports.Resource = exports.AddonShopifyProduct = exports.AddonGoogleMap = exports.AddonCalendly = exports.Statistics = exports.HeroVimeo = exports.HeroYouTube = exports.HeroHeader = exports.HeroAvatar = exports.HeroCard = exports.HeroModal = exports.HeroCover = exports.HeroList = exports.Hero = exports.SearchFilters = exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.SortButton = exports.KanBan = exports.FilterButton = exports.LoadMore = exports.GridView = exports.FetchMany = exports.Fetch = exports.FormFieldInput = exports.FormInput = exports.ForeignCollectionTable = exports.ForeignCollectionKanBan = exports.ForeignCollection = exports.ForeignForm = exports.FormWizard = exports.Form = exports.EmailSignup = exports.CollectionKanBan = exports.CollectionTable = exports.CollectionSimilar = exports.CollectionForm = exports.CollectionToolbar = exports.CollectionList = exports.CollectionLayout = exports.CollectionContainer = exports.CollectionCard = exports.CollectionCarousel = exports.CollectionCards = void 0;
+exports.ResourceTable = exports.ResourceListItem = exports.ResourceList = exports.Resource = exports.AddonShopifyProduct = exports.AddonGoogleMap = exports.AddonCalendly = exports.Statistics = exports.HeroSnippet = exports.HeroVimeo = exports.HeroYouTube = exports.HeroHeader = exports.HeroAvatar = exports.HeroCard = exports.HeroModal = exports.HeroCover = exports.HeroList = exports.Hero = exports.SearchFilters = exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.SortButton = exports.KanBan = exports.FilterButton = exports.LoadMore = exports.GridView = exports.FetchMany = exports.Fetch = exports.FormFieldInput = exports.FormInput = exports.ForeignCollectionTable = exports.ForeignCollectionKanBan = exports.ForeignCollection = exports.ForeignForm = exports.FormWizard = exports.Form = exports.EmailSignup = exports.CollectionKanBan = exports.CollectionTable = exports.CollectionSimilar = exports.CollectionForm = exports.CollectionToolbar = exports.CollectionList = exports.CollectionLayout = exports.CollectionContainer = exports.CollectionCard = exports.CollectionCarousel = exports.CollectionCards = void 0;
+exports.Details = void 0;
 // CMS
 var CollectionCards_1 = require("./collections/CollectionCards");
 Object.defineProperty(exports, "CollectionCards", { enumerable: true, get: function () { return __importDefault(CollectionCards_1).default; } });
@@ -88,6 +89,8 @@ var HeroYouTube_1 = require("./heros/HeroYouTube");
 Object.defineProperty(exports, "HeroYouTube", { enumerable: true, get: function () { return __importDefault(HeroYouTube_1).default; } });
 var HeroVimeo_1 = require("./heros/HeroVimeo");
 Object.defineProperty(exports, "HeroVimeo", { enumerable: true, get: function () { return __importDefault(HeroVimeo_1).default; } });
+var HeroSnippet_1 = require("./heros/HeroSnippet");
+Object.defineProperty(exports, "HeroSnippet", { enumerable: true, get: function () { return __importDefault(HeroSnippet_1).default; } });
 // Statistics 
 var Statistics_1 = require("./analytics/Statistics");
 Object.defineProperty(exports, "Statistics", { enumerable: true, get: function () { return __importDefault(Statistics_1).default; } });

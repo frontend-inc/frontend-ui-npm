@@ -28,7 +28,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var FieldText = function (props) {
-    var value = props.value, label = props.label, variant = props.variant, color = props.color, placeholder = props.placeholder, rest = __rest(props, ["value", "label", "variant", "color", "placeholder"]);
-    return (react_1.default.createElement(components_1.FieldString, __assign({ variant: variant, value: value, label: label, color: color, placeholder: placeholder }, rest)));
+    var value = props.value, label = props.label, variant = props.variant, color = props.color, placeholder = props.placeholder, _a = props.maxChars, maxChars = _a === void 0 ? 80 : _a, rest = __rest(props, ["value", "label", "variant", "color", "placeholder", "maxChars"]);
+    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ label: label, color: color }, rest),
+        react_1.default.createElement(components_1.ExpandableText, { text: value || placeholder, maxChars: maxChars })));
 };
 exports.default = FieldText;

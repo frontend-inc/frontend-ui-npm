@@ -97,13 +97,13 @@ var CollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = (0, react_1.useContext)(context_1.AppContext), clientUrl = _a.clientUrl, setAuthOpen = _a.setAuthOpen;
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
-    var url = props.url, user = props.user, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableBorder, enableBorder = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableCreate, enableCreate = _k === void 0 ? false : _k, _l = props.enableDelete, enableDelete = _l === void 0 ? false : _l, _m = props.filterUser, filterUser = _m === void 0 ? false : _m, _o = props.filterTeam, filterTeam = _o === void 0 ? false : _o, emptyIcon = props.emptyIcon, _p = props.emptyTitle, emptyTitle = _p === void 0 ? 'No results found' : _p, _q = props.emptyDescription, emptyDescription = _q === void 0 ? 'Try adjusting your search or filters.' : _q;
-    var _r = (0, react_1.useState)(false), openModal = _r[0], setOpenModal = _r[1];
-    var _s = (0, react_1.useState)(false), openDeleteModal = _s[0], setOpenDeleteModal = _s[1];
-    var _t = (0, frontend_js_1.useDocuments)({
+    var url = props.url, user = props.user, fields = props.fields, headers = props.headers, _b = props.filterAnchor, filterAnchor = _b === void 0 ? 'left' : _b, _c = props.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, _f = props.enableSearch, enableSearch = _f === void 0 ? false : _f, _g = props.enableFilters, enableFilters = _g === void 0 ? false : _g, href = props.href, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableCreate, enableCreate = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k, _l = props.filterUser, filterUser = _l === void 0 ? false : _l, _m = props.filterTeam, filterTeam = _m === void 0 ? false : _m, emptyIcon = props.emptyIcon, _o = props.emptyTitle, emptyTitle = _o === void 0 ? 'No results found' : _o, _p = props.emptyDescription, emptyDescription = _p === void 0 ? 'Try adjusting your search or filters.' : _p;
+    var _q = (0, react_1.useState)(false), openModal = _q[0], setOpenModal = _q[1];
+    var _r = (0, react_1.useState)(false), openDeleteModal = _r[0], setOpenDeleteModal = _r[1];
+    var _s = (0, frontend_js_1.useDocuments)({
         url: url
-    }), loading = _t.loading, delayedLoading = _t.delayedLoading, errors = _t.errors, resource = _t.resource, resources = _t.resources, setResource = _t.setResource, update = _t.update, create = _t.create, destroy = _t.destroy, handleDataChange = _t.handleDataChange, query = _t.query, findMany = _t.findMany, reloadMany = _t.reloadMany, removeAttachment = _t.removeAttachment, page = _t.page, numPages = _t.numPages, numResults = _t.numResults, totalCount = _t.totalCount, paginate = _t.paginate;
-    var _u = (0, react_1.useState)(''), keywords = _u[0], setKeywords = _u[1];
+    }), loading = _s.loading, delayedLoading = _s.delayedLoading, errors = _s.errors, resource = _s.resource, resources = _s.resources, setResource = _s.setResource, update = _s.update, create = _s.create, destroy = _s.destroy, handleDataChange = _s.handleDataChange, query = _s.query, findMany = _s.findMany, reloadMany = _s.reloadMany, removeAttachment = _s.removeAttachment, page = _s.page, numPages = _s.numPages, numResults = _s.numResults, totalCount = _s.totalCount, paginate = _s.paginate;
+    var _t = (0, react_1.useState)(''), keywords = _t[0], setKeywords = _t[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -121,9 +121,9 @@ var CollectionTable = function (props) {
         }
         findMany(__assign(__assign({}, query), { sort_by: sortBy, sort_direction: sortDir }));
     };
-    var _v = (0, hooks_1.useFilters)({
+    var _u = (0, hooks_1.useFilters)({
         query: query,
-    }), queryFilters = _v.queryFilters, activeFilters = _v.activeFilters, setActiveFilters = _v.setActiveFilters, handleAddFilter = _v.handleAddFilter, mergeAllFilters = _v.mergeAllFilters, buildUserFilters = _v.buildUserFilters;
+    }), queryFilters = _u.queryFilters, activeFilters = _u.activeFilters, setActiveFilters = _u.setActiveFilters, handleAddFilter = _u.handleAddFilter, mergeAllFilters = _u.mergeAllFilters, buildUserFilters = _u.buildUserFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -256,7 +256,7 @@ var CollectionTable = function (props) {
         queryFilters,
         defaultQuery,
     ]);
-    var _w = (0, react_1.useState)([]), rows = _w[0], setRows = _w[1];
+    var _v = (0, react_1.useState)([]), rows = _v[0], setRows = _v[1];
     (0, react_1.useEffect)(function () {
         if ((resources === null || resources === void 0 ? void 0 : resources.length) >= 0) {
             var flatten = (0, helpers_1.flattenDocuments)(resources);
@@ -275,7 +275,7 @@ var CollectionTable = function (props) {
                             enableFilters && filterAnchor == 'top' && (react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
                                 react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
                             enableCreate && (react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
-                                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add")))), enableBorder: enableBorder, enableEdit: enableEdit, handleEdit: handleEdit, enableDelete: enableDelete, handleDelete: handleDeleteClick, loading: resources && loading, fields: headers, rows: rows, handleClick: handleClick, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, numResults: numResults, totalCount: totalCount, handlePaginate: handlePaginate, emptyIcon: emptyIcon, emptyTitle: emptyTitle, emptyDescription: emptyDescription })))),
+                                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add")))), enableEdit: enableEdit, handleEdit: handleEdit, enableDelete: enableDelete, handleDelete: handleDeleteClick, loading: resources && loading, fields: headers, rows: rows, handleClick: handleClick, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, numResults: numResults, totalCount: totalCount, handlePaginate: handlePaginate, emptyIcon: emptyIcon, emptyTitle: emptyTitle, emptyDescription: emptyDescription })))),
         react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
             react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, helpers_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove })),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));

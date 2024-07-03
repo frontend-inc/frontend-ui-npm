@@ -6,6 +6,7 @@ type FieldTextProps = {
     placeholder?: string;
     variant?: TypographyVariantsType;
     color?: string;
+    maxChars?: number;
     rest?: any;
 };
 declare const FieldText: React.FC<FieldTextProps>;

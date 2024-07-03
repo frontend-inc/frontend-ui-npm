@@ -140,7 +140,7 @@ var Comments = function (props) {
                 "Comments (",
                 totalCount,
                 ")"),
-            react_1.default.createElement(components_1.CommentButton, { handleClick: handleToggleClick })),
+            react_1.default.createElement(components_1.CommentReplyButton, { handleClick: handleToggleClick })),
         react_1.default.createElement(material_1.Collapse, { in: openComment },
             react_1.default.createElement(components_1.CommentForm, { pl: 0, errors: errors, loading: loading, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit })),
         react_1.default.createElement(material_1.List, { disablePadding: true }, comments === null || comments === void 0 ? void 0 : comments.map(function (comment, i) { return (react_1.default.createElement(components_1.Comment, { key: i, url: url, handle: handle, comment: comment, handleDelete: handleDeleteComment })); })),

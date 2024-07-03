@@ -9,7 +9,7 @@ var __1 = require("../..");
 var ReviewForm = function (props) {
     var _a = props || {}, loading = _a.loading, errors = _a.errors, review = _a.review, handleChange = _a.handleChange, handleSubmit = _a.handleSubmit;
     return (react_1.default.createElement(__1.AuthGuard, null,
-        react_1.default.createElement(material_1.ListItem, null,
+        react_1.default.createElement(material_1.ListItem, { disableGutters: true },
             react_1.default.createElement(material_1.Stack, { sx: sx.form, direction: "column", spacing: 1 },
                 react_1.default.createElement(__1.RatingInput, { errors: errors, name: "rating", value: review === null || review === void 0 ? void 0 : review.rating, handleChange: handleChange }),
                 react_1.default.createElement(__1.TextInput, { errors: errors, name: "title", value: review === null || review === void 0 ? void 0 : review.title, handleChange: handleChange, placeholder: "Review summary..." }),
@@ -25,6 +25,8 @@ var sx = {
         p: 2,
         width: '100%',
         alignItems: 'flex-start',
-        bgcolor: 'secondary.light',
     },
+    paper: {
+        width: '100%'
+    }
 };

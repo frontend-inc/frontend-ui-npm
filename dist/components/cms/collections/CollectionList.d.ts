@@ -3,8 +3,7 @@ import { ActionType, FormFieldType, DisplayFieldType, UserType } from '../../../
 import { SortOptionType, SearchFilterOptionType } from '../../../types';
 export type CollectionListProps = {
     user?: UserType;
-    variant: 'list' | 'grid';
-    style: 'avatar' | 'card' | 'cover' | 'chip' | 'text' | 'image';
+    style: 'list' | 'avatar' | 'card' | 'cover' | 'text';
     layout?: 'drawer' | 'inline';
     editing?: boolean;
     url: string;
@@ -31,8 +30,11 @@ export type CollectionListProps = {
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
+    enableComments?: boolean;
     enableFavorites?: boolean;
+    enableLikes?: boolean;
     enableRatings?: boolean;
+    enableSharing?: boolean;
     enableUsers?: boolean;
     filterUser?: boolean;
     filterTeam?: boolean;

@@ -13,14 +13,18 @@ export type KanBanProps = {
     displayFields: DisplayFieldType[];
     handleDrop: (movedItem: any, overContainer: string, columns: any[]) => void;
     handleClick: (resource: any) => void;
+    enableComments?: boolean;
     enableFavorites?: boolean;
     enableRatings?: boolean;
+    enableOverlay?: boolean;
+    enableGradient?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;
     enableCreate?: boolean;
     handleEdit: (resource: any) => void;
     handleDelete: (resource: any) => void;
     handleAdd: (status: string) => void;
+    handleComment: (resource: any) => void;
 };
 declare const KanBan: React.FC<KanBanProps>;
 export default KanBan;

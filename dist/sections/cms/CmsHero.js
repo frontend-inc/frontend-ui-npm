@@ -30,7 +30,7 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var CmsHero = function (props) {
     var bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, style = props.style, rest = __rest(props, ["bgcolor", "py", "px", "maxWidth", "requireAuth", "requireTeam", "requirePaid", "requireAdmin", "style"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, bgcolor: bgcolor, py: py, px: style == 'cover' ? 0 : px, maxWidth: maxWidth },
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, bgcolor: bgcolor, py: style == 'cover' ? 0 : py, px: style == 'cover' ? 0 : px, maxWidth: maxWidth },
         react_1.default.createElement(components_2.Hero, __assign({}, rest, { style: style }))));
 };
 exports.default = CmsHero;

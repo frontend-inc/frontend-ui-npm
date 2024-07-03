@@ -7,6 +7,7 @@ type KanBanCardProps = CardProps & {
     attributes?: any;
     listeners?: any;
     enableDragging?: boolean;
+    handleComment: () => void;
 };
 declare const KanBanCard: React.FC<KanBanCardProps>;
 export default KanBanCard;

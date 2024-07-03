@@ -117,7 +117,7 @@ var Comment = function (props) {
         });
     }, [parentComment]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.ListItem, { sx: __assign(__assign({}, sx.listItem), { pl: Math.min(level * 7, 14) }), secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleReply },
+        react_1.default.createElement(material_1.ListItem, { sx: __assign(__assign({}, sx.listItem), { pl: Math.min(level * 7, 14) + 2 }), secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleReply },
                 react_1.default.createElement(components_2.Icon, { name: "MessageSquare", size: 20 })) },
             react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(components_1.UserAvatar, { user: parentComment === null || parentComment === void 0 ? void 0 : parentComment.user })),

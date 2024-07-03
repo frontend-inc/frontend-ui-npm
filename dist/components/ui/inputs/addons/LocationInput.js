@@ -81,9 +81,9 @@ var LocationInput = function (props) {
             setOpen(false);
         }
     }, [places]);
-    return (react_1.default.createElement(material_1.Stack, { width: '100%', direction: "column", spacing: 0 },
+    return (react_1.default.createElement(material_1.Stack, { width: '100%', direction: "column", spacing: 1 },
         enablePosition && lat && lng && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.mapContainer), { height: height, width: width }) },
-            react_1.default.createElement(__1.GoogleMap, { enableBorder: true, darkTheme: darkTheme, height: height, width: width, zoom: zoom, resources: [document] }))),
+            react_1.default.createElement(__1.GoogleMap, { enableBorder: true, darkTheme: darkTheme, height: height, width: width, zoom: zoom, resources: [{ lat: lat, lng: lng }] }))),
         react_1.default.createElement(__1.TextInput, { name: name, label: label, value: keywords, options: options, handleChange: handleKeywordChange, direction: direction, placeholder: placeholder }),
         react_1.default.createElement(material_1.Box, { sx: sx.anchor },
             open && (react_1.default.createElement(material_1.Paper, { sx: __assign(__assign({}, sx.container), { height: (((options === null || options === void 0 ? void 0 : options.length) || 0) * 64) }), elevation: 2 },
