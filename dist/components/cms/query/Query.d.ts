@@ -4,6 +4,7 @@ export type QueryProps = {
     query?: any;
     filterUser?: boolean;
     filterTeam?: boolean;
+    filterRelated?: boolean;
     children: React.ReactNode;
 };
 declare const Query: React.FC<QueryProps>;

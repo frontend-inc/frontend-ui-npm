@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var CollectionKanBanList_1 = __importDefault(require("./CollectionKanBanList"));
 var CollectionKanBan = function (props) {
-    var fields = props.fields, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions, url = props.url, _a = props.headers, headers = _a === void 0 ? [] : _a, _b = props.query, query = _b === void 0 ? {} : _b, filterUser = props.filterUser, filterTeam = props.filterTeam, perPage = props.perPage, rest = __rest(props, ["fields", "enableSearch", "enableCreate", "filterOptions", "sortOptions", "url", "headers", "query", "filterUser", "filterTeam", "perPage"]);
-    return (react_1.default.createElement(__1.CollectionContainer, { url: url, query: query, filterUser: filterUser, filterTeam: filterTeam, perPage: perPage, fields: fields, enableSearch: enableSearch, filterOptions: filterOptions },
+    var resource = props.resource, fields = props.fields, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions, url = props.url, _a = props.headers, headers = _a === void 0 ? [] : _a, _b = props.query, query = _b === void 0 ? {} : _b, filterUser = props.filterUser, filterTeam = props.filterTeam, filterRelated = props.filterRelated, perPage = props.perPage, rest = __rest(props, ["resource", "fields", "enableSearch", "enableCreate", "filterOptions", "sortOptions", "url", "headers", "query", "filterUser", "filterTeam", "filterRelated", "perPage"]);
+    return (react_1.default.createElement(__1.CollectionContainer, { resource: resource, url: url, query: query, filterUser: filterUser, filterTeam: filterTeam, filterRelated: filterRelated, perPage: perPage, fields: fields, enableSearch: enableSearch, filterOptions: filterOptions },
         react_1.default.createElement(CollectionKanBanList_1.default, __assign({}, rest, { url: url, headers: headers }))));
 };
 exports.default = CollectionKanBan;

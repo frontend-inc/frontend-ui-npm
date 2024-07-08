@@ -15,13 +15,14 @@ var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("..");
 var useSearch = function (props) {
-    var url = props.url, _a = props.perPage, perPage = _a === void 0 ? 20 : _a, _b = props.filterUser, filterUser = _b === void 0 ? false : _b, _c = props.filterTeam, filterTeam = _c === void 0 ? false : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d;
-    var _e = (0, frontend_js_1.useQuery)(), loading = _e.loading, delayedLoading = _e.delayedLoading, resources = _e.resources, query = _e.query, findMany = _e.findMany, reloadMany = _e.reloadMany, page = _e.page, numPages = _e.numPages, loadMore = _e.loadMore;
-    var _f = (0, react_1.useState)(''), keywords = _f[0], setKeywords = _f[1];
+    var url = props.url, _a = props.query, defaultQuery = _a === void 0 ? {} : _a, _b = props.perPage, perPage = _b === void 0 ? 20 : _b;
+    var _c = (0, frontend_js_1.useQuery)(), loading = _c.loading, delayedLoading = _c.delayedLoading, resources = _c.resources, query = _c.query, findMany = _c.findMany, reloadMany = _c.reloadMany, page = _c.page, numPages = _c.numPages, loadMore = _c.loadMore;
+    var _d = (0, react_1.useState)(''), keywords = _d[0], setKeywords = _d[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
     var handleSearch = function (keywords) {
+        if (keywords === void 0) { keywords = ''; }
         findMany(__assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1, per_page: perPage }));
     };
     var handleSortBy = function (field) {
@@ -30,31 +31,17 @@ var useSearch = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _g = (0, __1.useFilters)({
+    var _e = (0, __1.useFilters)({
         query: query,
-    }), queryFilters = _g.queryFilters, activeFilters = _g.activeFilters, setActiveFilters = _g.setActiveFilters, handleAddFilter = _g.handleAddFilter, mergeFilters = _g.mergeFilters;
+    }), activeFilters = _e.activeFilters, setActiveFilters = _e.setActiveFilters, handleAddFilter = _e.handleAddFilter;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
-        findMany({
-            filters: defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters,
-            sort_by: 'id',
-            sort_direction: 'desc',
-            keywords: '',
-            page: 1,
-            per_page: perPage,
-            current_user: filterUser ? true : false,
-            current_team: filterTeam ? true : false
-        });
+        findMany(__assign(__assign({}, defaultQuery), { filters: defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, sort_by: 'id', sort_direction: 'desc', keywords: '', page: 1, per_page: perPage }));
     };
     var handleFilter = function (filter) {
         handleAddFilter(filter);
     };
-    (0, react_1.useEffect)(function () {
-        if (!loading && url && perPage && defaultQuery && queryFilters) {
-            findMany(__assign(__assign({}, defaultQuery), { filters: mergeFilters(defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, queryFilters), per_page: perPage, current_user: filterUser ? true : false, current_team: filterTeam ? true : false }));
-        }
-    }, [url, filterUser, filterTeam]);
     return {
         loading: loading,
         delayedLoading: delayedLoading,

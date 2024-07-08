@@ -6,6 +6,7 @@ export type CollectionContainerProps = {
     query?: any;
     filterUser?: boolean;
     filterTeam?: boolean;
+    filterRelated?: boolean;
     fields?: FormFieldType[];
     displayFields?: DisplayFieldType[];
     filterOptions?: SearchFilterOptionType[];

@@ -68,15 +68,25 @@ var router_1 = require("next/router");
 var CollectionForm = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var handle = props.handle, _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, href = props.href, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b;
+    var _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, href = props.href, _b = props.filterRelated, filterRelated = _b === void 0 ? false : _b, _c = props.onSuccessMessage, onSuccessMessage = _c === void 0 ? 'Submitted successfully!' : _c;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _c = (0, frontend_js_1.useDocuments)(), delayedLoading = _c.delayedLoading, errors = _c.errors, findOne = _c.findOne, resource = _c.resource, setResource = _c.setResource, update = _c.update, create = _c.create, flattenDocument = _c.flattenDocument, handleDataChange = _c.handleDataChange, removeAttachment = _c.removeAttachment;
+    var _d = (0, frontend_js_1.useResource)({
+        name: 'document',
+        url: url
+    }), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment, addLinks = _d.addLinks;
+    var handleDataChange = function (ev) {
+        var name = ev.target.name;
+        var value = ev.target.type === 'checkbox' ?
+            ev.target.checked :
+            ev.target.value;
+        setResource(function (prev) { return (0, frontend_js_1.changeDocumentValue)(prev, name, value); });
+    };
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
+                    return [4 /*yield*/, removeAttachment(resource.id, name)];
                 case 1:
                     _a.sent();
                     _a.label = 2;
@@ -85,11 +95,11 @@ var CollectionForm = function (props) {
         });
     }); };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resp, err_1;
+        var resp, submitResp, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 5, , 6]);
+                    _a.trys.push([0, 7, , 8]);
                     resp = void 0;
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
                     return [4 /*yield*/, update(resource)];
@@ -101,37 +111,34 @@ var CollectionForm = function (props) {
                     resp = _a.sent();
                     _a.label = 4;
                 case 4:
-                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        showAlertSuccess(onSuccessMessage);
+                    if (!(resp === null || resp === void 0 ? void 0 : resp.id)) return [3 /*break*/, 6];
+                    if (!((_resource === null || _resource === void 0 ? void 0 : _resource.id) && filterRelated == true)) return [3 /*break*/, 6];
+                    return [4 /*yield*/, addLinks(resp.id, [_resource.id])];
+                case 5:
+                    submitResp = _a.sent();
+                    if (submitResp === null || submitResp === void 0 ? void 0 : submitResp.id) {
+                        if (onSuccessMessage) {
+                            showAlertSuccess(onSuccessMessage);
+                        }
                         if (href) {
                             router.push("".concat(clientUrl).concat(href));
                         }
                     }
-                    return [3 /*break*/, 6];
-                case 5:
+                    _a.label = 6;
+                case 6: return [3 /*break*/, 8];
+                case 7:
                     err_1 = _a.sent();
                     console.log('Error', err_1);
-                    return [3 /*break*/, 6];
-                case 6: return [2 /*return*/];
+                    return [3 /*break*/, 8];
+                case 8: return [2 /*return*/];
             }
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (_resource) {
-            setResource(_resource);
-        }
-        else if (handle) {
-            findOne(handle);
-        }
-    }, [_resource, handle]);
-    return (react_1.default.createElement(components_1.Form, { loading: delayedLoading, errors: errors, fields: fields, resource: flattenDocument(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
+        setResource({
+            title: ''
+        });
+    });
+    return (react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = CollectionForm;
-var sx = {
-    root: {
-        width: '100%',
-    },
-    button: {
-        mt: 2,
-    },
-};

@@ -28,8 +28,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var Collection = function (props) {
-    var fields = props.fields, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions, url = props.url, _a = props.query, query = _a === void 0 ? {} : _a, filterUser = props.filterUser, filterTeam = props.filterTeam, perPage = props.perPage, rest = __rest(props, ["fields", "enableSearch", "enableCreate", "filterOptions", "sortOptions", "url", "query", "filterUser", "filterTeam", "perPage"]);
-    return (react_1.default.createElement(__1.CollectionContainer, { url: url, query: query, filterUser: filterUser, filterTeam: filterTeam, perPage: perPage, fields: fields, enableSearch: enableSearch, enableCreate: enableCreate, filterOptions: filterOptions, sortOptions: sortOptions },
+    var resource = props.resource, fields = props.fields, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions, url = props.url, _a = props.query, query = _a === void 0 ? {} : _a, filterUser = props.filterUser, filterTeam = props.filterTeam, filterRelated = props.filterRelated, perPage = props.perPage, rest = __rest(props, ["resource", "fields", "enableSearch", "enableCreate", "filterOptions", "sortOptions", "url", "query", "filterUser", "filterTeam", "filterRelated", "perPage"]);
+    return (react_1.default.createElement(__1.CollectionContainer, { resource: resource, url: url, query: query, filterUser: filterUser, filterTeam: filterTeam, filterRelated: filterRelated, perPage: perPage, fields: fields, enableSearch: enableSearch, enableCreate: enableCreate, filterOptions: filterOptions, sortOptions: sortOptions },
         react_1.default.createElement(__1.CollectionList, __assign({}, rest, { url: url }))));
 };
 exports.default = Collection;

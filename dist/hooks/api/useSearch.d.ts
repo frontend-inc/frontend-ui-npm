@@ -13,7 +13,7 @@ declare const useSearch: (props: any) => {
     keywords: string;
     setKeywords: React.Dispatch<React.SetStateAction<string>>;
     handleKeywordChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
-    handleSearch: (keywords: string) => void;
+    handleSearch: (keywords?: string) => void;
     handleSortBy: (field: SortOptionType) => void;
     handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
     activeFilters: any[];
