@@ -1,10 +1,10 @@
 import React from 'react';
 import { SortOptionType, FilterOptionType } from '../../types';
 declare const useSearch: (props: any) => {
-    loading: boolean;
+    loading: any;
     delayedLoading: any;
-    resources: import("frontend-js").ResourceType[];
-    query: import("frontend-js").QueryParamsType;
+    resources: any;
+    query: any;
     findMany: (queryParams?: import("frontend-js").QueryParamsType, loadMore?: boolean) => Promise<any>;
     reloadMany: () => Promise<any>;
     page: number;

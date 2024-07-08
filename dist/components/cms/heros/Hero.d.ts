@@ -1,32 +1,6 @@
 import React from 'react';
-import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
-export type HeroProps = {
-    handle?: string;
-    enableBorder?: boolean;
-    enableOverlay?: boolean;
-    actions: ActionType[];
-    displayFields: DisplayFieldType[];
-    fields?: FormFieldType[];
-    fieldName?: string;
-    url?: string;
-    resource: any;
-    enableEdit?: boolean;
-    enableCreate?: boolean;
-    enableFavorites?: boolean;
-    enableLikes?: boolean;
-    enableSharing?: boolean;
-    enableRatings?: boolean;
-    enableBuyNow?: boolean;
-    enableUsers?: boolean;
-    enableStripePaymentLink?: boolean;
-    handleEdit?: () => void;
-};
-type HeroStyleTypes = 'card' | 'cover' | 'list' | 'avatar' | 'youtube' | 'vimeo';
-export type HeroItemProps = HeroProps & {
-    fieldName: string;
-    fields?: FormFieldType[];
-    url: string;
-    style: HeroStyleTypes;
-};
-declare const Hero: React.FC<HeroItemProps>;
+import { HeroContainerProps } from './HeroContainer';
+import { HeroItemProps } from './HeroItem';
+export type HeroProps = HeroContainerProps & HeroItemProps;
+declare const Hero: React.FC<HeroProps>;
 export default Hero;

@@ -1,0 +1,26 @@
+import React from 'react';
+import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
+export type ResourceModalProps = {
+    open: boolean;
+    handleClose: () => void;
+    handle?: string;
+    enableBorder?: boolean;
+    enableOverlay?: boolean;
+    actions: ActionType[];
+    displayFields: DisplayFieldType[];
+    fields?: FormFieldType[];
+    fieldName?: string;
+    enableEdit?: boolean;
+    enableCreate?: boolean;
+    enableFavorites?: boolean;
+    enableLikes?: boolean;
+    enableSharing?: boolean;
+    enableRatings?: boolean;
+    enableBuyNow?: boolean;
+    enableUsers?: boolean;
+    enableStripePaymentLink?: boolean;
+    handleEdit?: () => void;
+    enableComments?: boolean;
+};
+declare const ResourceModal: React.FC<ResourceModalProps>;
+export default ResourceModal;

@@ -1,10 +1,9 @@
 import React from 'react';
 import { CollectionListProps } from './CollectionList';
-export type ForeignCollectionProps = CollectionListProps & {
+import { CollectionContainerProps } from './CollectionContainer';
+export type ForeignProps = {
     resource: any;
-    url: string;
-    foreignUrl: string;
-    foreignContentType?: string;
 };
+export type ForeignCollectionProps = CollectionListProps & CollectionContainerProps & ForeignProps;
 declare const ForeignCollection: React.FC<ForeignCollectionProps>;
 export default ForeignCollection;

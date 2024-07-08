@@ -72,7 +72,6 @@ var GoogleMap = function (props) {
             handleSetMarkers(resources);
         }
     }, [resources]);
-    console.log('googleMarkers', googleMarkers);
     if ((googleMarkers === null || googleMarkers === void 0 ? void 0 : googleMarkers.length) <= 0)
         return null;
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.mapContainer), (enableBorder && sx.mapBorder)), height: height, width: width ? width : '100%' },

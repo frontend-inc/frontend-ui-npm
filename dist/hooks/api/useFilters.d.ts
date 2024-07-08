@@ -17,19 +17,6 @@ declare const useFilters: (props: UseFiltersProps) => {
     findDuplicateFilterIndex: (filters: any, filter: any) => any;
     mergeFilters: (filters: any, newFilters: any) => any;
     mergeAllFilters: (filters: any) => any;
-    buildUserFilters: (currentUser: any, filterUser: any, filterTeam: any) => {
-        AND: ({
-            user_id: {
-                eq: any;
-            };
-            team_id?: undefined;
-        } | {
-            team_id: {
-                eq: any;
-            };
-            user_id?: undefined;
-        })[];
-    };
     buildQueryFilters: (activeFilters: any) => {};
 };
 export default useFilters;

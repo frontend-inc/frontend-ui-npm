@@ -6,13 +6,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
+var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var CollectionToolbar = function (props) {
-    var handleNull = function () { return null; };
-    var _a = props.query, query = _a === void 0 ? {} : _a, activeFilters = props.activeFilters, _b = props.enableCreate, enableCreate = _b === void 0 ? false : _b, _c = props.enableSearch, enableSearch = _c === void 0 ? false : _c, _d = props.enableFilters, enableFilters = _d === void 0 ? false : _d, _e = props.enableSorting, enableSorting = _e === void 0 ? false : _e, _f = props.filterOptions, filterOptions = _f === void 0 ? [] : _f, _g = props.sortOptions, sortOptions = _g === void 0 ? [] : _g, _h = props.handleAdd, handleAdd = _h === void 0 ? handleNull : _h, handleFilter = props.handleFilter, handleClearFilters = props.handleClearFilters, keywords = props.keywords, handleKeywordChange = props.handleKeywordChange, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection, handleSearch = props.handleSearch;
+    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
+    var url = props.url, filterUser = props.filterUser, filterTeam = props.filterTeam, _a = props.query, defaultQuery = _a === void 0 ? {} : _a, perPage = props.perPage, _b = props.enableCreate, enableCreate = _b === void 0 ? false : _b, _c = props.enableSearch, enableSearch = _c === void 0 ? false : _c, _d = props.filterOptions, filterOptions = _d === void 0 ? [] : _d, _e = props.sortOptions, sortOptions = _e === void 0 ? [] : _e;
+    var _f = (0, hooks_1.useSearch)({
+        url: url,
+        user: currentUser,
+        perPage: perPage,
+        filterUser: filterUser,
+        filterTeam: filterTeam,
+        query: defaultQuery,
+    }), query = _f.query, keywords = _f.keywords, handleKeywordChange = _f.handleKeywordChange, handleSearch = _f.handleSearch, handleSortBy = _f.handleSortBy, handleSortDirection = _f.handleSortDirection, activeFilters = _f.activeFilters, handleFilter = _f.handleFilter, handleClearFilters = _f.handleClearFilters;
+    var handleAdd = (0, hooks_1.useForms)().handleAdd;
+    var enableFilters = enableSearch && filterOptions.length > 0;
+    var enableSorting = enableSearch && sortOptions.length > 0;
     if (!enableSearch && !enableFilters && !enableSorting && !enableCreate) {
         return null;
     }
-    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
+    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, mb: 1 },
         react_1.default.createElement(material_1.Stack, { justifyContent: "space-between", direction: { sm: 'row', xs: 'column' }, spacing: 1 },
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' }, alignItems: 'center' },
                 enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),

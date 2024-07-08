@@ -13,14 +13,11 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
-var hooks_1 = require("../../hooks");
+var __1 = require("..");
 var useSearch = function (props) {
-    var _a;
-    var url = props.url, _b = props.perPage, perPage = _b === void 0 ? 20 : _b, user = props.user, _c = props.filterUser, filterUser = _c === void 0 ? false : _c, _d = props.filterTeam, filterTeam = _d === void 0 ? false : _d, _e = props.query, defaultQuery = _e === void 0 ? {} : _e;
-    var _f = (0, frontend_js_1.useDocuments)({
-        url: url,
-    }), loading = _f.loading, delayedLoading = _f.delayedLoading, resources = _f.resources, query = _f.query, findMany = _f.findMany, reloadMany = _f.reloadMany, page = _f.page, numPages = _f.numPages, loadMore = _f.loadMore;
-    var _g = (0, react_1.useState)(''), keywords = _g[0], setKeywords = _g[1];
+    var url = props.url, _a = props.perPage, perPage = _a === void 0 ? 20 : _a, _b = props.filterUser, filterUser = _b === void 0 ? false : _b, _c = props.filterTeam, filterTeam = _c === void 0 ? false : _c, _d = props.query, defaultQuery = _d === void 0 ? {} : _d;
+    var _e = (0, frontend_js_1.useQuery)(), loading = _e.loading, delayedLoading = _e.delayedLoading, resources = _e.resources, query = _e.query, findMany = _e.findMany, reloadMany = _e.reloadMany, page = _e.page, numPages = _e.numPages, loadMore = _e.loadMore;
+    var _f = (0, react_1.useState)(''), keywords = _f[0], setKeywords = _f[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -33,42 +30,31 @@ var useSearch = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _h = (0, hooks_1.useFilters)({
+    var _g = (0, __1.useFilters)({
         query: query,
-    }), queryFilters = _h.queryFilters, activeFilters = _h.activeFilters, setActiveFilters = _h.setActiveFilters, handleAddFilter = _h.handleAddFilter, mergeAllFilters = _h.mergeAllFilters, buildUserFilters = _h.buildUserFilters;
+    }), queryFilters = _g.queryFilters, activeFilters = _g.activeFilters, setActiveFilters = _g.setActiveFilters, handleAddFilter = _g.handleAddFilter, mergeFilters = _g.mergeFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
         findMany({
-            filters: mergeAllFilters([defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, userFilter]),
+            filters: defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters,
             sort_by: 'id',
             sort_direction: 'desc',
             keywords: '',
             page: 1,
             per_page: perPage,
+            current_user: filterUser ? true : false,
+            current_team: filterTeam ? true : false
         });
     };
     var handleFilter = function (filter) {
         handleAddFilter(filter);
     };
-    var userFilter = buildUserFilters(user, filterUser, filterTeam);
     (0, react_1.useEffect)(function () {
-        if (url && user) {
-            findMany(__assign(__assign({}, defaultQuery), { filters: mergeAllFilters([
-                    defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters,
-                    userFilter,
-                    queryFilters,
-                ]), per_page: perPage }));
+        if (!loading && url && perPage && defaultQuery && queryFilters) {
+            findMany(__assign(__assign({}, defaultQuery), { filters: mergeFilters(defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, queryFilters), per_page: perPage, current_user: filterUser ? true : false, current_team: filterTeam ? true : false }));
         }
-    }, [
-        url,
-        perPage,
-        user,
-        filterUser,
-        filterTeam,
-        queryFilters,
-        (_a = Object.keys(defaultQuery)) === null || _a === void 0 ? void 0 : _a.length,
-    ]);
+    }, [url, filterUser, filterTeam]);
     return {
         loading: loading,
         delayedLoading: delayedLoading,

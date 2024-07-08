@@ -56,8 +56,8 @@ var sx = {
     },
     label: {
         position: 'absolute',
-        left: 15,
-        top: 15,
+        left: 10,
+        bottom: 15,
     },
     borderRadius: {
         borderRadius: 1,

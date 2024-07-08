@@ -28,11 +28,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var CollectionSimilar = function (props) {
-    var url = props.url, resource = props.resource, rest = __rest(props, ["url", "resource"]);
-    if (!(resource === null || resource === void 0 ? void 0 : resource.id) && url)
-        return null;
-    return (react_1.default.createElement(__1.CollectionList, __assign({ enableFavorites: true, url: "".concat(url, "/").concat(resource === null || resource === void 0 ? void 0 : resource.id, "/similar"), 
-        // Todo: Component errors without a default value
-        query: {} }, rest)));
+    var resource = props.resource, enableSearch = props.enableSearch, filterOptions = props.filterOptions, sortOptions = props.sortOptions, url = props.url, _a = props.query, query = _a === void 0 ? {} : _a, filterUser = props.filterUser, filterTeam = props.filterTeam, perPage = props.perPage, rest = __rest(props, ["resource", "enableSearch", "filterOptions", "sortOptions", "url", "query", "filterUser", "filterTeam", "perPage"]);
+    return (react_1.default.createElement(__1.CollectionContainer, { url: "".concat(url, "/").concat(resource === null || resource === void 0 ? void 0 : resource.id, "/similar"), query: query, filterUser: filterUser, filterTeam: filterTeam, perPage: perPage, enableSearch: enableSearch, filterOptions: filterOptions, sortOptions: sortOptions },
+        react_1.default.createElement(__1.CollectionList, __assign({}, rest, { url: url }))));
 };
 exports.default = CollectionSimilar;

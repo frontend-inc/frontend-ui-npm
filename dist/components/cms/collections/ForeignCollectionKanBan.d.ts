@@ -1,10 +1,11 @@
 import React from 'react';
-import { CollectionKanBanProps } from './CollectionKanBan';
-export type ForeignCollectionKanBanProps = CollectionKanBanProps & {
-    resource: any;
-    url: string;
-    foreignUrl: string;
-    foreignContentType?: string;
+import { CollectionListProps } from './CollectionList';
+import { ForeignCollectionContainerProps } from './ForeignCollectionContainer';
+export type ForeignCollectionKanBanProps = CollectionListProps & ForeignCollectionContainerProps & {
+    headers: {
+        label: string;
+        value: string;
+    }[];
 };
-declare const ForeignCollectionKanBan: React.FC<ForeignCollectionKanBanProps>;
-export default ForeignCollectionKanBan;
+declare const CollectionKanBan: React.FC<ForeignCollectionKanBanProps>;
+export default CollectionKanBan;

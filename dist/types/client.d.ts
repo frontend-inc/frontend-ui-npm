@@ -26,6 +26,8 @@ export type QueryParamsType = {
     filters?: FiltersType | Record<string, any>;
     page?: number | null;
     per_page?: number | null;
+    current_user?: boolean;
+    current_team?: boolean;
     rest?: any;
 };
 export type FilterOperatorType = 'asc' | 'desc' | 'true' | 'false' | 'eq' | 'neq' | 'like' | 'gt' | 'gte' | 'lt' | 'lte' | 'in' | 'nin' | 'btw' | '1_day_ago' | '7_days_ago' | '14_days_ago' | '30_days_ago' | '60_days_ago' | '90_days_ago' | 'current_year' | '1_day' | '7_days' | '14_days' | '30_days' | '60_days' | '90_days' | 'next_year';

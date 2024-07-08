@@ -6,18 +6,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var HeroModal = function (props) {
-    var _a = props || {}, open = _a.open, handleClose = _a.handleClose, resource = _a.resource, url = _a.url, _b = _a.actions, actions = _b === void 0 ? [] : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, enableComments = _a.enableComments, enableRatings = _a.enableRatings, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
-    var _d = resource || {}, image = _d.image, label = _d.label, title = _d.title;
+var frontend_js_1 = require("frontend-js");
+var ResourceModal = function (props) {
+    var _a = (0, frontend_js_1.useResourceContext)(), resource = _a.resource, url = _a.url;
+    var _b = props || {}, open = _b.open, handleClose = _b.handleClose, _c = _b.actions, actions = _c === void 0 ? [] : _c, _d = _b.displayFields, displayFields = _d === void 0 ? [] : _d, enableComments = _b.enableComments, enableRatings = _b.enableRatings, enableLikes = _b.enableLikes, enableFavorites = _b.enableFavorites, enableSharing = _b.enableSharing, enableEdit = _b.enableEdit, handleEdit = _b.handleEdit;
     if (!resource)
         return null;
     return (react_1.default.createElement(__1.Modal, { disablePadding: true, open: open, handleClose: handleClose, maxWidth: "md" },
         react_1.default.createElement(material_1.Box, { px: 3, pb: 2 },
-            react_1.default.createElement(__1.HeroSnippet, { resource: resource, enableEdit: enableEdit, handleEdit: handleEdit, actions: actions, displayFields: displayFields, enableRatings: enableRatings }),
+            react_1.default.createElement(__1.HeroSnippet, { resource: resource, enableEdit: enableEdit, actions: actions, displayFields: displayFields, enableRatings: enableRatings }),
             (enableLikes || enableFavorites || enableSharing) && (react_1.default.createElement(__1.SocialButtons, { justifyContent: "center", handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
             enableComments && (react_1.default.createElement(__1.Comments, { url: url, handle: resource === null || resource === void 0 ? void 0 : resource.handle })))));
 };
-exports.default = HeroModal;
+exports.default = ResourceModal;
 var sx = {
     root: {
         width: '100%',

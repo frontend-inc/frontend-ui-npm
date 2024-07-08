@@ -20,11 +20,11 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var HeroAvatar = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableBorder = _a.enableBorder, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
     var data = (resource || {}).data;
     var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", justifyContent: "center" },
-        (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: { sm: 'row', xs: 'column' }, spacing: 1, p: enableBorder ? 1 : 0 },
+        (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: { sm: 'row', xs: 'column' }, spacing: 1 },
             react_1.default.createElement(__1.Actions, { actions: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
@@ -37,7 +37,7 @@ var HeroAvatar = function (props) {
                         react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign({}, sx.avatar), { height: 200, width: 200 }), src: image === null || image === void 0 ? void 0 : image.url, alt: title },
                             react_1.default.createElement(material_1.Box, null))),
                     react_1.default.createElement(__1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
-                react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.content), (enableBorder && sx.contentBorder)) },
+                react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
                     enableRatings && (react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true })),
                     react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),

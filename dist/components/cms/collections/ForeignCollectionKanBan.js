@@ -27,8 +27,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
-var ForeignCollectionKanBan = function (props) {
-    var resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, foreignContentType = props.foreignContentType, rest = __rest(props, ["resource", "url", "foreignUrl", "foreignContentType"]);
-    return (react_1.default.createElement(__1.CollectionKanBan, __assign({}, rest, { url: foreignUrl, resource: resource, searchUrl: "".concat(url, "/").concat(resource === null || resource === void 0 ? void 0 : resource.id, "/").concat(foreignContentType) })));
+var CollectionKanBanList_1 = __importDefault(require("./CollectionKanBanList"));
+var CollectionKanBan = function (props) {
+    var url = props.url, resource = props.resource, _a = props.headers, headers = _a === void 0 ? [] : _a, fields = props.fields, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions, _b = props.query, query = _b === void 0 ? {} : _b, filterUser = props.filterUser, filterTeam = props.filterTeam, perPage = props.perPage, rest = __rest(props, ["url", "resource", "headers", "fields", "enableSearch", "enableCreate", "filterOptions", "sortOptions", "query", "filterUser", "filterTeam", "perPage"]);
+    return (react_1.default.createElement(__1.ForeignCollectionContainer, { resource: resource, url: url, query: query, filterUser: filterUser, filterTeam: filterTeam, perPage: perPage, fields: fields, enableSearch: enableSearch, filterOptions: filterOptions },
+        react_1.default.createElement(CollectionKanBanList_1.default, __assign({}, rest, { headers: headers, url: url }))));
 };
-exports.default = ForeignCollectionKanBan;
+exports.default = CollectionKanBan;

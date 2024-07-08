@@ -1,11 +1,7 @@
 import React from 'react';
-import { FieldType, TableHeaderType } from '../../../types';
-import { CollectionListProps } from './CollectionList';
-export type ForeignCollectionTableProps = CollectionListProps & {
-    resource: any;
-    field: FieldType;
-    foreignUrl?: string;
-    foreignContentType?: string;
+import { ForeignCollectionProps } from './ForeignCollection';
+import { TableHeaderType } from '../../../types';
+export type ForeignCollectionTableProps = ForeignCollectionProps & {
     headers: TableHeaderType[];
 };
 declare const ForeignCollectionTable: React.FC<ForeignCollectionTableProps>;

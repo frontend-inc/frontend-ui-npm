@@ -28,11 +28,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var HeroContainer_1 = __importDefault(require("./HeroContainer"));
+var HeroLayout_1 = __importDefault(require("./HeroLayout"));
 var VimeoVideo = function (props) {
     var _a = props || {}, resource = _a.resource, actions = _a.actions, fieldName = _a.fieldName, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, rest = __rest(_a, ["resource", "actions", "fieldName", "displayFields"]);
     var src = (0, frontend_js_1.flattenDocument)(resource)[fieldName];
-    return (react_1.default.createElement(HeroContainer_1.default, __assign({ actions: actions, resource: resource, displayFields: [] }, rest),
+    return (react_1.default.createElement(HeroLayout_1.default, __assign({ actions: actions, resource: resource, displayFields: [] }, rest),
         react_1.default.createElement(__1.VimeoEmbed, { src: src })));
 };
 exports.default = VimeoVideo;

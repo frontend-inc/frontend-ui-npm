@@ -103,15 +103,6 @@ var useFilters = function (props) {
     (0, react_1.useEffect)(function () {
         setQueryFilters(buildQueryFilters(activeFilters));
     }, [activeFilters]);
-    var buildUserFilters = function (currentUser, filterUser, filterTeam) {
-        return {
-            AND: __spreadArray(__spreadArray([], (filterUser && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
-                ? [{ user_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.id } }]
-                : []), true), (filterTeam && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id)
-                ? [{ team_id: { eq: currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id } }]
-                : []), true),
-        };
-    };
     (0, react_1.useEffect)(function () {
         var _a;
         if (((_a = query === null || query === void 0 ? void 0 : query.filters) === null || _a === void 0 ? void 0 : _a.length) >= 0) {
@@ -134,7 +125,6 @@ var useFilters = function (props) {
         findDuplicateFilterIndex: findDuplicateFilterIndex,
         mergeFilters: helpers_1.mergeFilters,
         mergeAllFilters: helpers_1.mergeAllFilters,
-        buildUserFilters: buildUserFilters,
         buildQueryFilters: buildQueryFilters,
     };
 };

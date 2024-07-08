@@ -9,8 +9,8 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var HeroCover = function (props) {
-    var _a = props || {}, actions = _a.actions, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, resource = _a.resource, enableBorder = _a.enableBorder, enableOverlay = _a.enableOverlay, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
-    var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
+    var _a = props || {}, actions = _a.actions, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, resource = _a.resource, handleEdit = _a.handleEdit, enableEdit = _a.enableEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _c = resource || {}, title = _c.title, image = _c.image, description = _c.description;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
         react_1.default.createElement(__1.Cover, { image: image === null || image === void 0 ? void 0 : image.url, height: 400, title: title, enableOverlay: true }),
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },

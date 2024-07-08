@@ -1,6 +1,6 @@
 import React from 'react';
-import { ForeignCollectionProps } from '../../components/cms/collections/ForeignCollectionList';
+import { ForeignCollectionGeoProps } from '../../components/cms/collections/ForeignCollectionGeo';
 import { SectionProps, HeadingProps } from '../../types';
-type CmsForeignGeoListProps = SectionProps & HeadingProps & ForeignCollectionProps;
+type CmsForeignGeoListProps = SectionProps & HeadingProps & ForeignCollectionGeoProps;
 declare const CmsForeignGeoList: React.FC<CmsForeignGeoListProps>;
 export default CmsForeignGeoList;

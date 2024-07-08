@@ -30,9 +30,9 @@ var material_1 = require("@mui/material");
 var router_1 = require("next/router");
 var context_1 = require("../../../context");
 var Collections = function (props) {
-    var href = props.href, _a = props.variant, variant = _a === void 0 ? 'grid' : _a, _b = props.style, style = _b === void 0 ? 'card' : _b, buttonText = props.buttonText, _c = props.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e;
+    var href = props.href, _a = props.style, style = _a === void 0 ? 'card' : _a, buttonText = props.buttonText, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d;
     var router = (0, router_1.useRouter)();
-    var _f = (0, frontend_shopify_1.useCollections)(), loading = _f.loading, collections = _f.collections, findCollections = _f.findCollections;
+    var _e = (0, frontend_shopify_1.useCollections)(), loading = _e.loading, collections = _e.collections, findCollections = _e.findCollections;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var handleClick = function (collection) {
         window.scrollTo({

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsStatistics = exports.CmsSimilar = exports.CmsYouTube = exports.CmsVimeo = exports.CmsTable = exports.CmsKanBan = exports.CmsHeader = exports.CmsHero = exports.CmsList = exports.CmsGeoList = exports.CmsForeignGeoList = exports.CmsForeignList = exports.CmsForeignForm = exports.CmsForeignTable = exports.CmsForeignKanBan = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsCarousel = void 0;
+exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsStatistics = exports.CmsSimilar = exports.CmsYouTube = exports.CmsVimeo = exports.CmsTable = exports.CmsKanBan = exports.CmsHeader = exports.CmsHero = exports.CmsList = exports.CmsGeoList = exports.CmsForeignGeoList = exports.CmsForeignList = exports.CmsForeignForm = exports.CmsForeignTable = exports.CmsForeignKanBan = exports.CmsForeignCarousel = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsCarousel = void 0;
 var CmsCarousel_1 = require("./CmsCarousel");
 Object.defineProperty(exports, "CmsCarousel", { enumerable: true, get: function () { return __importDefault(CmsCarousel_1).default; } });
 var CmsDetails_1 = require("./CmsDetails");
@@ -14,6 +14,8 @@ var CmsForm_1 = require("./CmsForm");
 Object.defineProperty(exports, "CmsForm", { enumerable: true, get: function () { return __importDefault(CmsForm_1).default; } });
 var CmsFormWizard_1 = require("./CmsFormWizard");
 Object.defineProperty(exports, "CmsFormWizard", { enumerable: true, get: function () { return __importDefault(CmsFormWizard_1).default; } });
+var CmsForeignCarousel_1 = require("./CmsForeignCarousel");
+Object.defineProperty(exports, "CmsForeignCarousel", { enumerable: true, get: function () { return __importDefault(CmsForeignCarousel_1).default; } });
 var CmsForeignKanBan_1 = require("./CmsForeignKanBan");
 Object.defineProperty(exports, "CmsForeignKanBan", { enumerable: true, get: function () { return __importDefault(CmsForeignKanBan_1).default; } });
 var CmsForeignTable_1 = require("./CmsForeignTable");

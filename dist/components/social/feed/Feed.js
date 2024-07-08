@@ -28,9 +28,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var Feed = function (props) {
-    var url = props.url, rest = __rest(props, ["url"]);
-    return (react_1.default.createElement(__1.CollectionList, __assign({ enableLikes: true, url: "".concat(url, "/social_feed"), 
-        // Todo: Component errors without a default value
-        query: {} }, rest)));
+    var fields = props.fields, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions, url = props.url, _a = props.query, query = _a === void 0 ? {} : _a, filterUser = props.filterUser, filterTeam = props.filterTeam, perPage = props.perPage, rest = __rest(props, ["fields", "enableSearch", "enableCreate", "filterOptions", "sortOptions", "url", "query", "filterUser", "filterTeam", "perPage"]);
+    var socialUrl = "".concat(url, "/social_feed");
+    return (react_1.default.createElement(__1.CollectionContainer, { url: socialUrl, query: query, filterUser: filterUser, filterTeam: filterTeam, perPage: perPage, fields: fields, enableSearch: enableSearch, enableCreate: enableCreate, filterOptions: filterOptions, sortOptions: sortOptions },
+        react_1.default.createElement(__1.CollectionList, __assign({}, rest, { url: url }))));
 };
 exports.default = Feed;
