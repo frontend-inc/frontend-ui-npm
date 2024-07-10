@@ -40,8 +40,9 @@ var react_1 = require("react");
 var useGooglePlaces = function () {
     var _a = (0, react_1.useState)(false), loading = _a[0], setLoading = _a[1];
     var _b = (0, react_1.useState)(null), error = _b[0], setError = _b[1];
-    var _c = (0, react_1.useState)(null), place = _c[0], setPlace = _c[1];
-    var _d = (0, react_1.useState)([]), places = _d[0], setPlaces = _d[1];
+    var _c = (0, react_1.useState)([]), placeOptions = _c[0], setPlaceOptions = _c[1];
+    var _d = (0, react_1.useState)(null), place = _d[0], setPlace = _d[1];
+    var _e = (0, react_1.useState)([]), places = _e[0], setPlaces = _e[1];
     var fetchPlace = function (placeId) { return __awaiter(void 0, void 0, void 0, function () {
         var resp, e_1;
         var _a, _b;
@@ -99,11 +100,25 @@ var useGooglePlaces = function () {
             }
         });
     }); };
+    (0, react_1.useEffect)(function () {
+        if (places && (places === null || places === void 0 ? void 0 : places.length) > 0) {
+            setPlaceOptions(
+            //@ts-ignore
+            places === null || places === void 0 ? void 0 : places.map(function (place) {
+                var _a;
+                return ({
+                    label: (_a = place === null || place === void 0 ? void 0 : place.displayName) === null || _a === void 0 ? void 0 : _a.text,
+                    value: place === null || place === void 0 ? void 0 : place.formattedAddress,
+                });
+            }));
+        }
+    }, [places]);
     return {
         loading: loading,
         error: error,
         place: place,
         places: places,
+        placeOptions: placeOptions,
         fetchPlace: fetchPlace,
         fetchPlaces: fetchPlaces,
     };

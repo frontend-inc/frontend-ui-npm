@@ -90,9 +90,8 @@ var hooks_1 = require("../../../hooks");
 var CollectionKanBanList = function (props) {
     var headers = props.headers, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, _b = props.actions, actions = _b === void 0 ? [] : _b, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableSharing = props.enableSharing, enableUsers = props.enableUsers, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, rest = __rest(props, ["headers", "displayFields", "actions", "enableEdit", "enableDelete", "enableCreate", "enableComments", "enableFavorites", "enableLikes", "enableRatings", "enableSharing", "enableUsers", "enableGradient", "enableOverlay"]);
     var fieldName = 'status'; //Hard code the field as status
-    var _c = (0, frontend_js_2.useQuery)(), loading = _c.loading, resources = _c.resources, updatePositions = _c.updatePositions, reloadMany = _c.reloadMany;
-    var _d = (0, frontend_js_2.useResourceContext)(), resource = _d.resource, setResource = _d.setResource, update = _d.update;
-    var _e = (0, react_1.useState)(false), open = _e[0], setOpen = _e[1];
+    var _c = (0, frontend_js_2.useCollection)(), loading = _c.loading, resource = _c.resource, resources = _c.resources, update = _c.update, updatePositions = _c.updatePositions, setResource = _c.setResource, reloadMany = _c.reloadMany;
+    var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
     var handleClick = function (resource) {
         setResource(resource);
         setOpen(true);
@@ -101,8 +100,8 @@ var CollectionKanBanList = function (props) {
         setResource(resource);
         setOpen(true);
     };
-    var _f = (0, hooks_1.useForms)(), handleEdit = _f.handleEdit, handleDeleteClick = _f.handleDeleteClick;
-    var setOpenFormModal = (0, react_1.useContext)(frontend_js_1.ResourceContext).setOpenFormModal;
+    var _e = (0, hooks_1.useForms)(), handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
+    var setOpenFormModal = (0, react_1.useContext)(frontend_js_1.CollectionContext).setOpenFormModal;
     var handleAdd = function (header) {
         setResource({
             status: header
@@ -138,6 +137,6 @@ var CollectionKanBanList = function (props) {
         return null;
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.KanBan, { loading: loading, actions: actions, resources: resources, activeResource: resource, headers: headers, fieldName: fieldName, displayFields: displayFields, enableOverlay: enableOverlay, enableGradient: enableGradient, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, handleComment: handleComment }),
-        react_1.default.createElement(__2.ResourceModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: function () { return handleEdit(resource); } })));
+        react_1.default.createElement(__2.CollectionShowModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: function () { return handleEdit(resource); } })));
 };
 exports.default = CollectionKanBanList;

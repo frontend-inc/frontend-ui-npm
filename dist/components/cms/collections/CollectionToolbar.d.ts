@@ -7,6 +7,7 @@ export type CollectionToolbarProps = {
     filterTeam: boolean;
     perPage: number;
     enableSearch?: boolean;
+    enableGeoSearch?: boolean;
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
     enableCreate?: boolean;

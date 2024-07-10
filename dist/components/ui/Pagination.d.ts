@@ -7,7 +7,6 @@ type PaginationProps = {
     page?: number;
     perPage?: number;
     numPages?: number;
-    numResults?: number;
     handlePaginate: (event: React.ChangeEvent<unknown>, page: number) => void;
 };
 declare const Pagination: React.FC<PaginationProps>;

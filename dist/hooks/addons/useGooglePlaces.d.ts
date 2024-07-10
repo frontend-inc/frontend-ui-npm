@@ -18,6 +18,7 @@ declare const useGooglePlaces: () => {
     error: any;
     place: GooglePlaceType;
     places: [] | GooglePredictionType[];
+    placeOptions: any[];
     fetchPlace: (placeId: any) => Promise<any>;
     fetchPlaces: (keywords: any) => Promise<any>;
 };

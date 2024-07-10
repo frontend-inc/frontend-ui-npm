@@ -13,6 +13,6 @@ export type SearchFilterOptionType = {
     }[];
 };
 export type SortOptionType = {
-    field: string;
+    name: string;
     label: string;
 };

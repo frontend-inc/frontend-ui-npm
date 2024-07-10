@@ -21,7 +21,7 @@ var helpers_1 = require("../../../helpers");
 var frontend_js_1 = require("frontend-js");
 var CollectionCards = function (props) {
     var handleNull = function () { return null; };
-    var resources = props.resources, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, _b = props.actions, actions = _b === void 0 ? [] : _b, handleClick = props.handleClick, _c = props.handleEdit, handleEdit = _c === void 0 ? handleNull : _c, _d = props.handleDelete, handleDelete = _d === void 0 ? handleNull : _d, _e = props.style, style = _e === void 0 ? 'card' : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k, _l = props.enableUsers, enableUsers = _l === void 0 ? false : _l, _m = props.enableFavorites, enableFavorites = _m === void 0 ? false : _m, _o = props.enableRatings, enableRatings = _o === void 0 ? false : _o;
+    var resources = props.resources, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, _b = props.actions, actions = _b === void 0 ? [] : _b, handleClick = props.handleClick, _c = props.handleEdit, handleEdit = _c === void 0 ? handleNull : _c, _d = props.handleDelete, handleDelete = _d === void 0 ? handleNull : _d, _e = props.style, style = _e === void 0 ? 'card' : _e, _f = props.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = props.enableGradient, enableGradient = _g === void 0 ? false : _g, _h = props.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = props.enableEdit, enableEdit = _j === void 0 ? false : _j, _k = props.enableDelete, enableDelete = _k === void 0 ? false : _k, _l = props.enableUsers, enableUsers = _l === void 0 ? false : _l, _m = props.enableComments, enableComments = _m === void 0 ? false : _m, _o = props.enableFavorites, enableFavorites = _o === void 0 ? false : _o, _p = props.enableRatings, enableRatings = _p === void 0 ? false : _p;
     var VARIANTS = {
         list: 'list',
         card: 'grid',
@@ -38,7 +38,7 @@ var CollectionCards = function (props) {
             handleEdit: function () { return handleEdit(resource); },
             handleDelete: function () { return handleDelete(resource); },
             actions: actions,
-        }), enableUsers: enableUsers, enableFavorites: enableFavorites, enableRatings: enableRatings, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })); })));
+        }), enableUsers: enableUsers, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay })); })));
 };
 exports.default = CollectionCards;
 var sx = {

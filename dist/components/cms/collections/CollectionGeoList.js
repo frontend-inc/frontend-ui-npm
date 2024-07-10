@@ -51,7 +51,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var CollectionGeoList = function (props) {
     var url = props.url, displayFields = props.displayFields, rest = __rest(props, ["url", "displayFields"]);
-    var resources = (0, react_1.useContext)(frontend_js_1.QueryContext).resources;
+    var resources = (0, react_1.useContext)(frontend_js_1.CollectionContext).resources;
     return (react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 },
         react_1.default.createElement(material_1.Grid, { item: true, sm: 12, md: 7 },
             react_1.default.createElement(__1.CollectionList, __assign({}, rest, { url: url, displayFields: displayFields, style: "list" }))),

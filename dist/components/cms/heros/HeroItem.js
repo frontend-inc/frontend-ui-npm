@@ -17,7 +17,7 @@ var HeroItem = function (props) {
     if (handle == 'index')
         handle = undefined;
     var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'article' : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, fieldName = _a.fieldName, actions = _a.actions, enableOverlay = _a.enableOverlay, enableEdit = _a.enableEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
-    var resource = (0, frontend_js_1.useResourceContext)().resource;
+    var resource = (0, frontend_js_1.useCollection)().resource;
     var components = {
         list: HeroList_1.default,
         cover: HeroCover_1.default,

@@ -4,10 +4,10 @@ declare const useSubscriptions: () => {
     loading: boolean;
     delayedLoading: any;
     errors: Record<string, any>;
-    subscriptionPlan: import("frontend-js").ResourceType;
-    subscriptionPlans: import("frontend-js").ResourceType[];
-    findSubscriptionPlan: (id: import("frontend-js").ID) => import("frontend-js").ResourceType;
-    findSubscriptionPlans: (queryParams?: import("frontend-js").QueryParamsType, loadMore?: boolean) => Promise<any>;
+    subscriptionPlan: any;
+    subscriptionPlans: any[];
+    findSubscriptionPlan: (id: import("frontend-js").ID) => any;
+    findSubscriptionPlans: (queryParams?: import("frontend-js").QueryParamsType, options?: import("frontend-js").FindManyOptionType) => Promise<any>;
     subscribe: (subscriptionPlanId: any) => Promise<SubscriptionPlanType>;
     unsubscribe: () => Promise<SubscriptionPlanType>;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

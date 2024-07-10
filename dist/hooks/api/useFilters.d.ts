@@ -9,7 +9,7 @@ declare const useFilters: (props: UseFiltersProps) => {
     setShowFilterModal: React.Dispatch<React.SetStateAction<boolean>>;
     handleOpenFilterModal: () => void;
     handleCloseFilterModal: () => void;
-    handleAddFilter: (filter: any) => void;
+    handleAddFilter: (filter: any) => any[];
     queryFilters: {};
     activeFilters: any[];
     setActiveFilters: React.Dispatch<React.SetStateAction<any[]>>;

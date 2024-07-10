@@ -52,11 +52,9 @@ var context_1 = require("../../context");
 var frontend_js_1 = require("frontend-js");
 var useForms = function (params) {
     var _resource = (params || {}).resource;
-    var _a = (0, frontend_js_1.useQuery)(), _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
-    var _c = (0, react_1.useContext)(frontend_js_1.ResourceContext), openDeleteModal = _c.openDeleteModal, setOpenDeleteModal = _c.setOpenDeleteModal, openFormModal = _c.openFormModal, setOpenFormModal = _c.setOpenFormModal;
-    var _d = (0, frontend_js_1.useDocuments)(), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, addLinks = _d.addLinks, create = _d.create, update = _d.update, destroy = _d.destroy, handleDataChange = _d.handleDataChange, removeAttachment = _d.removeAttachment;
+    var _a = (0, frontend_js_1.useCollection)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addLinks = _a.addLinks, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, setOpenShow = _a.setOpenShow, openDelete = _a.openDelete, setOpenDelete = _a.setOpenDelete, openEdit = _a.openEdit, setOpenEdit = _a.setOpenEdit;
     var reloadMany = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             if (_resource === null || _resource === void 0 ? void 0 : _resource.id) {
@@ -74,13 +72,15 @@ var useForms = function (params) {
         setResource({
             id: undefined,
         });
-        setOpenFormModal(true);
+        setOpenShow(false);
+        setOpenEdit(true);
     };
     var handleEdit = function (item) {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
         setResource(item);
-        setOpenFormModal(true);
+        setOpenShow(false);
+        setOpenEdit(true);
     };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp, err_1;
@@ -109,7 +109,7 @@ var useForms = function (params) {
                 case 6:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setResource({});
-                        setOpenFormModal(false);
+                        setOpenEdit(false);
                         reloadMany();
                     }
                     return [3 /*break*/, 8];
@@ -125,7 +125,7 @@ var useForms = function (params) {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
         setResource(item);
-        setOpenDeleteModal(true);
+        setOpenDelete(true);
     };
     var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -138,8 +138,8 @@ var useForms = function (params) {
                     return [4 /*yield*/, destroy(resource === null || resource === void 0 ? void 0 : resource.id)];
                 case 1:
                     _a.sent();
-                    setOpenDeleteModal(false);
-                    setOpenFormModal(false);
+                    setOpenDelete(false);
+                    setOpenEdit(false);
                     setResource({});
                     reloadMany();
                     return [2 /*return*/];
@@ -172,11 +172,11 @@ var useForms = function (params) {
         handleDelete: handleDelete,
         handleDeleteClick: handleDeleteClick,
         handleRemove: handleRemove,
-        handleDataChange: handleDataChange,
-        openFormModal: openFormModal,
-        setOpenFormModal: setOpenFormModal,
-        openDeleteModal: openDeleteModal,
-        setOpenDeleteModal: setOpenDeleteModal
+        handleChange: handleChange,
+        openEdit: openEdit,
+        setOpenEdit: setOpenEdit,
+        openDelete: openDelete,
+        setOpenDelete: setOpenDelete
     };
 };
 exports.default = useForms;

@@ -32,9 +32,8 @@ var ui_1 = require("../../ui");
 var SortList_1 = __importDefault(require("./SortList"));
 var SortButton = function (props) {
     var sortOptions = props.sortOptions, sortBy = props.sortBy, sortDirection = props.sortDirection, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection;
-    var _a = (0, react_1.useState)(null), selected = _a[0], setSelected = _a[1];
-    var _b = (0, react_1.useState)(false), showModal = _b[0], setShowModal = _b[1];
-    var _c = (0, react_1.useState)(null), anchorEl = _c[0], setAnchorEl = _c[1];
+    var _a = (0, react_1.useState)(false), showModal = _a[0], setShowModal = _a[1];
+    var _b = (0, react_1.useState)(null), anchorEl = _b[0], setAnchorEl = _b[1];
     var handleOpenModal = function (event) {
         setAnchorEl(event.currentTarget);
         setShowModal(true);
@@ -42,11 +41,6 @@ var SortButton = function (props) {
     var handleCloseModal = function () {
         setShowModal(false);
     };
-    (0, react_1.useEffect)(function () {
-        if ((sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.length) > 0 && sortBy) {
-            setSelected(sortOptions.find(function (option) { return option.field == sortBy; }));
-        }
-    }, [sortOptions, sortBy]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleOpenModal, endIcon: react_1.default.createElement(ui_1.Icon, { name: sortDirection == 'asc' ? 'ArrowUp' : 'ArrowDown', color: "secondary.contrastText", size: 20 }) }, "Sort"),
         react_1.default.createElement(material_1.Hidden, { smDown: true },

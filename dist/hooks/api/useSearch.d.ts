@@ -1,11 +1,11 @@
 import React from 'react';
 import { SortOptionType, FilterOptionType } from '../../types';
 declare const useSearch: (props: any) => {
-    loading: any;
+    loading: boolean;
     delayedLoading: any;
-    resources: any;
-    query: any;
-    findMany: (queryParams?: import("frontend-js").QueryParamsType, loadMore?: boolean) => Promise<any>;
+    resources: any[];
+    query: import("frontend-js").QueryParamsType;
+    findMany: (queryParams?: import("frontend-js").QueryParamsType, options?: import("frontend-js").FindManyOptionType) => Promise<any>;
     reloadMany: () => Promise<any>;
     page: number;
     numPages: number;
@@ -13,7 +13,10 @@ declare const useSearch: (props: any) => {
     keywords: string;
     setKeywords: React.Dispatch<React.SetStateAction<string>>;
     handleKeywordChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
-    handleSearch: (keywords?: string) => void;
+    location: string;
+    setLocation: React.Dispatch<React.SetStateAction<string>>;
+    handleLocationChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+    handleSearch: (keywords?: string, location?: string) => void;
     handleSortBy: (field: SortOptionType) => void;
     handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
     activeFilters: any[];

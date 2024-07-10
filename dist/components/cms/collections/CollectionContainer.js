@@ -18,8 +18,8 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var CollectionContainer = function (props) {
-    var resource = props.resource, url = props.url, children = props.children, _a = props.filterUser, filterUser = _a === void 0 ? false : _a, _b = props.filterTeam, filterTeam = _b === void 0 ? false : _b, _c = props.filterRelated, filterRelated = _c === void 0 ? false : _c, _d = props.fields, fields = _d === void 0 ? [] : _d, _e = props.perPage, perPage = _e === void 0 ? 20 : _e, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions;
-    var _f = (props || {}).query, query = _f === void 0 ? {} : _f;
+    var resource = props.resource, url = props.url, children = props.children, _a = props.perPage, perPage = _a === void 0 ? 12 : _a, _b = props.filterUser, filterUser = _b === void 0 ? false : _b, _c = props.filterTeam, filterTeam = _c === void 0 ? false : _c, _d = props.filterRelated, filterRelated = _d === void 0 ? false : _d, _e = props.filterGeo, filterGeo = _e === void 0 ? false : _e, _f = props.filterSimilar, filterSimilar = _f === void 0 ? false : _f, _g = props.fields, fields = _g === void 0 ? [] : _g, enableGeoSearch = props.enableGeoSearch, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions;
+    var _h = (props || {}).query, query = _h === void 0 ? {} : _h;
     if (filterRelated == true && (resource === null || resource === void 0 ? void 0 : resource.id)) {
         query = __assign(__assign({}, query), { belongs_to: resource.id });
     }
@@ -38,11 +38,16 @@ var CollectionContainer = function (props) {
     else {
         query = __assign(__assign({}, query), { current_team: false });
     }
-    return (react_1.default.createElement(frontend_js_1.QueryProvider, { url: url },
-        react_1.default.createElement(frontend_js_1.ResourceProvider, { url: url, name: 'document' },
-            react_1.default.createElement(__1.Query, { query: query, perPage: perPage },
-                react_1.default.createElement(__1.CollectionToolbar, { url: url, query: query, perPage: perPage, filterUser: filterUser, filterTeam: filterTeam, enableSearch: enableSearch, filterOptions: filterOptions, sortOptions: sortOptions, enableCreate: enableCreate }),
-                children),
-            react_1.default.createElement(__1.ResourceForm, { fields: fields, resource: resource }))));
+    if (filterGeo == true && (resource === null || resource === void 0 ? void 0 : resource.location)) {
+        query = __assign(__assign({}, query), { location: resource === null || resource === void 0 ? void 0 : resource.location });
+    }
+    if (filterSimilar == true && (resource === null || resource === void 0 ? void 0 : resource.id)) {
+        query = __assign(__assign({}, query), { similar_to: resource === null || resource === void 0 ? void 0 : resource.id });
+    }
+    return (react_1.default.createElement(frontend_js_1.CollectionProvider, { url: url },
+        react_1.default.createElement(__1.Query, { query: query, perPage: perPage },
+            react_1.default.createElement(__1.CollectionToolbar, { url: url, query: query, perPage: perPage, filterUser: filterUser, filterTeam: filterTeam, enableSearch: enableSearch, enableGeoSearch: enableGeoSearch, filterOptions: filterOptions, sortOptions: sortOptions, enableCreate: enableCreate }),
+            children),
+        react_1.default.createElement(__1.CollectionFormModal, { fields: fields, resource: resource })));
 };
 exports.default = CollectionContainer;

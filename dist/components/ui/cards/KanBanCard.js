@@ -40,8 +40,8 @@ var KanBanCard = function (props) {
         react_1.default.createElement(material_1.Box, { sx: sx.footer },
             react_1.default.createElement(material_1.Button, { onClick: handleClick, size: "small", variant: "contained", color: "secondary", sx: sx.button }, "Details"),
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-end" },
+                enableComments == true && (react_1.default.createElement(components_1.CommentButton, { resource: resource })),
                 enableFavorites == true && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                enableComments == true && (react_1.default.createElement(components_1.CommentButton, { handleClick: handleComment })),
                 react_1.default.createElement(components_2.Actions, { numVisible: 0, actions: (0, helpers_2.buildActions)({
                         enableEdit: enableEdit,
                         enableDelete: enableDelete,

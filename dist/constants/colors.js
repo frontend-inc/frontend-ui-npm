@@ -53,6 +53,5 @@ exports.MUI_COLOR_VARIANTS = [
 ];
 exports.HEX_COLORS = [
     { label: 'White', value: '#FFFFFF' },
-    { label: 'Grey', value: '#F6F6F6' },
     { label: 'Black', value: '#000000' },
 ];

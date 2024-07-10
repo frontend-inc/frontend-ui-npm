@@ -34,7 +34,8 @@ var KanBan = function (props) {
     var loading = props.loading, actions = props.actions, headers = props.headers, fieldName = props.fieldName, resources = props.resources, activeResource = props.activeResource, handleClick = props.handleClick, handleDrop = props.handleDrop, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, enableOverlay = props.enableOverlay, enableGradient = props.enableGradient, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableRatings = props.enableRatings, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleAdd = props.handleAdd, handleComment = props.handleComment;
     var _b = (0, react_1.useState)({}), groupedResources = _b[0], setGroupedResources = _b[1];
     var handleGroupResources = function (resources, fieldName) {
-        var flattenedResources = (0, frontend_js_1.flattenDocuments)(resources);
+        var sortedDocuments = resources.sort(function (a, b) { return a.position - b.position; });
+        var flattenedResources = (0, frontend_js_1.flattenDocuments)(sortedDocuments);
         var allowedOptions = headers.map(function (header) { return header.value; });
         var grouped = (0, utils_1.groupResourcesByField)(flattenedResources, fieldName, allowedOptions);
         setGroupedResources(grouped);

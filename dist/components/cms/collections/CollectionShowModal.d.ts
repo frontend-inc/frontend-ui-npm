@@ -1,6 +1,6 @@
 import React from 'react';
 import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
-export type ResourceModalProps = {
+export type CollectionShowModalProps = {
     open: boolean;
     handleClose: () => void;
     handle?: string;
@@ -22,5 +22,5 @@ export type ResourceModalProps = {
     handleEdit?: () => void;
     enableComments?: boolean;
 };
-declare const ResourceModal: React.FC<ResourceModalProps>;
-export default ResourceModal;
+declare const CollectionShowModal: React.FC<CollectionShowModalProps>;
+export default CollectionShowModal;

@@ -32,8 +32,8 @@ var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
 var CoverVert = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 400 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableUsers, enableUsers = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k, icon = _a.icon;
-    var _l = resource || {}, label = _l.label, title = _l.title, image = _l.image;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.height, height = _e === void 0 ? 400 : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableUsers, enableUsers = _g === void 0 ? false : _g, _h = _a.enableOverlay, enableOverlay = _h === void 0 ? false : _h, _j = _a.enableComments, enableComments = _j === void 0 ? false : _j, _k = _a.enableFavorites, enableFavorites = _k === void 0 ? false : _k, _l = _a.enableRatings, enableRatings = _l === void 0 ? false : _l, icon = _a.icon;
+    var _m = resource || {}, label = _m.label, title = _m.title, image = _m.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -60,6 +60,7 @@ var CoverVert = function (props) {
                                 react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                                 enableUsers == true && (react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))))))),
             react_1.default.createElement(material_1.Box, { sx: sx.actions },
+                enableComments == true && (react_1.default.createElement(__1.CommentButton, { resource: resource, color: "common.white" })),
                 enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, color: "common.white" })),
                 react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, actions: actions })))));
 };

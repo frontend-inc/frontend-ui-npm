@@ -115,7 +115,7 @@ var AuthButton = function (props) {
             react_1.default.createElement(__1.UserAvatar, { user: currentUser }))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleLogin },
             react_1.default.createElement(__1.Icon, { color: "primary.contrastText", name: "User", size: 24 }))))) : (react_1.default.createElement(react_1.default.Fragment, null, currentUser ? (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: toggleMenu, startIcon: showIcon && react_1.default.createElement(__1.UserAvatar, { user: currentUser }), endIcon: react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(__1.Icon, { name: "MoreVertical", size: 20 })) },
-            react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary", sx: sx.username }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.username))) : (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: handleLogin, startIcon: showIcon && react_1.default.createElement(__1.Icon, { name: "User", size: 24 }) }, "Sign In")))),
+            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.username }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.username))) : (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: handleLogin, startIcon: showIcon && react_1.default.createElement(__1.Icon, { name: "User", size: 24 }) }, "Sign In")))),
         currentUser && (react_1.default.createElement(__1.AuthMenu, { open: open, anchorEl: anchorEl, toggleMenu: toggleMenu, handleLogin: handleLogin, handleSignup: handleSignup, handleMyAccount: handleMyAccount, handleLogout: handleLogout, handleClick: handleClick }))));
 };
 exports.default = AuthButton;
@@ -127,6 +127,7 @@ var sx = {
         color: 'text.primary',
     },
     button: {
+        boxShadow: 0,
         width: '100%',
         color: 'text.primary',
         justifyContent: 'flex-start',

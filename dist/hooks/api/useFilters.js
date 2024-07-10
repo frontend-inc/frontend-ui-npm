@@ -73,6 +73,7 @@ var useFilters = function (props) {
             updatedFilters = __spreadArray(__spreadArray([], updatedFilters, true), [filter], false);
         }
         setActiveFilters(updatedFilters);
+        return updatedFilters;
     };
     var isBlank = function (value) {
         return (value === '' ||

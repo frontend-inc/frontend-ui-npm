@@ -7,12 +7,15 @@ export type CollectionContainerProps = {
     filterUser?: boolean;
     filterTeam?: boolean;
     filterRelated?: boolean;
+    filterGeo?: boolean;
+    filterSimilar?: boolean;
     fields?: FormFieldType[];
     displayFields?: DisplayFieldType[];
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
     perPage?: number;
     enableSearch?: boolean;
+    enableGeoSearch?: boolean;
     enableCreate?: boolean;
     children: React.ReactNode;
 };

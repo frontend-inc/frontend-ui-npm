@@ -75,7 +75,7 @@ var SideNavStripeCustomerPortalButton = function (props) {
         react_1.default.createElement(material_2.ListItemButton, { sx: sx.listItemButton, onClick: handleClick },
             react_1.default.createElement(material_2.ListItemIcon, null,
                 react_1.default.createElement(__1.Icon, { name: icon })),
-            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "button", color: "text.primary" }, "Billing") }))));
+            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "body1", color: "text.primary" }, "Billing") }))));
 };
 var StripeCustomerPortalButton = function (props) {
     var _a = props || {}, _b = _a.icon, icon = _b === void 0 ? 'CreditCard' : _b, _c = _a.variant, variant = _c === void 0 ? 'topNav' : _c;

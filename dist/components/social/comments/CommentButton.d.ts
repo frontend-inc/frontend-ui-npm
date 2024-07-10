@@ -1,7 +1,7 @@
 import React from 'react';
 type CommentButtonProps = {
+    resource: any;
     color?: string;
-    handleClick: () => void;
 };
 declare const CommentButton: React.FC<CommentButtonProps>;
 export default CommentButton;

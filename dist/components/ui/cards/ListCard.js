@@ -32,9 +32,9 @@ var router_1 = require("next/router");
 var __2 = require("../..");
 var CardList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 180 : _c, _d = _a.textVariant, textVariant = _d === void 0 ? 'subtitle1' : _d, handleClick = _a.handleClick, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j, _k = _a.enableUsers, enableUsers = _k === void 0 ? false : _k;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 180 : _c, _d = _a.textVariant, textVariant = _d === void 0 ? 'subtitle1' : _d, handleClick = _a.handleClick, _e = _a.objectFit, objectFit = _e === void 0 ? 'cover' : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableComments, enableComments = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k, _l = _a.enableUsers, enableUsers = _l === void 0 ? false : _l;
     var router = (0, router_1.useRouter)();
-    var _l = resource || {}, label = _l.label, title = _l.title, image = _l.image;
+    var _m = resource || {}, label = _m.label, title = _m.title, image = _m.image;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -53,8 +53,9 @@ var CardList = function (props) {
                     react_1.default.createElement(material_1.Typography, { color: "textPrimary", variant: textVariant }, (0, helpers_1.truncate)(title)),
                     enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
                     react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
-                    enableUsers == true && (react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))),
+                    (resource === null || resource === void 0 ? void 0 : resource.user) && (react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))),
                 react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
+                    enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource }),
                     enableFavorites == true && react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
                     react_1.default.createElement(__2.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
 };

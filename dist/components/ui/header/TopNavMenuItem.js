@@ -86,6 +86,7 @@ var TopNavMenuItem = function (props) {
 exports.default = TopNavMenuItem;
 var sx = {
     menuButton: {
+        boxShadow: 0,
         cursor: 'pointer',
         justifyContent: 'flex-start',
         color: 'text.primary',

@@ -71,17 +71,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
+var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var helpers_1 = require("../../../helpers");
 var __1 = require("../..");
-var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 var CollectionTable = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = (0, frontend_js_1.useQuery)(), loading = _a.loading, resources = _a.resources, findMany = _a.findMany, paginate = _a.paginate, query = _a.query, page = _a.page, perPage = _a.perPage, numPages = _a.numPages, numResults = _a.numResults, totalCount = _a.totalCount;
+    var _a = (0, frontend_js_1.useCollection)(), loading = _a.loading, resources = _a.resources, findMany = _a.findMany, paginate = _a.paginate, query = _a.query, page = _a.page, perPage = _a.perPage, numPages = _a.numPages, totalCount = _a.totalCount;
     var headers = props.headers, href = props.href, _b = props.enableEdit, enableEdit = _b === void 0 ? false : _b, _c = props.enableDelete, enableDelete = _c === void 0 ? false : _c;
     var handleClick = function (item) {
         if (clientUrl && href && (item === null || item === void 0 ? void 0 : item.handle)) {
@@ -121,7 +121,7 @@ var CollectionTable = function (props) {
     }, [resources]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Box, { sx: __assign({}, (loading && sx.loading)) },
-            react_1.default.createElement(__1.TableList, { enableEdit: enableEdit, handleEdit: handleEdit, enableDelete: enableDelete, handleDelete: handleDeleteClick, loading: resources && loading, fields: headers, rows: rows, handleClick: handleClick, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, numResults: numResults, totalCount: totalCount, handlePaginate: handlePaginate }))));
+            react_1.default.createElement(__1.TableList, { enableEdit: enableEdit, handleEdit: handleEdit, enableDelete: enableDelete, handleDelete: handleDeleteClick, loading: resources && loading, fields: headers, rows: rows, handleClick: handleClick, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate }))));
 };
 exports.default = CollectionTable;
 var sx = {

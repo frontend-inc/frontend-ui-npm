@@ -10,15 +10,15 @@ var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var CollectionToolbar = function (props) {
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    var url = props.url, filterUser = props.filterUser, filterTeam = props.filterTeam, _a = props.query, defaultQuery = _a === void 0 ? {} : _a, perPage = props.perPage, _b = props.enableCreate, enableCreate = _b === void 0 ? false : _b, _c = props.enableSearch, enableSearch = _c === void 0 ? false : _c, _d = props.filterOptions, filterOptions = _d === void 0 ? [] : _d, _e = props.sortOptions, sortOptions = _e === void 0 ? [] : _e;
-    var _f = (0, hooks_1.useSearch)({
+    var url = props.url, filterUser = props.filterUser, filterTeam = props.filterTeam, _a = props.query, defaultQuery = _a === void 0 ? {} : _a, perPage = props.perPage, _b = props.enableCreate, enableCreate = _b === void 0 ? false : _b, _c = props.enableSearch, enableSearch = _c === void 0 ? false : _c, _d = props.enableGeoSearch, enableGeoSearch = _d === void 0 ? false : _d, _e = props.filterOptions, filterOptions = _e === void 0 ? [] : _e, _f = props.sortOptions, sortOptions = _f === void 0 ? [] : _f;
+    var _g = (0, hooks_1.useSearch)({
         url: url,
         user: currentUser,
         perPage: perPage,
         filterUser: filterUser,
         filterTeam: filterTeam,
         query: defaultQuery,
-    }), query = _f.query, keywords = _f.keywords, handleKeywordChange = _f.handleKeywordChange, handleSearch = _f.handleSearch, handleSortBy = _f.handleSortBy, handleSortDirection = _f.handleSortDirection, activeFilters = _f.activeFilters, handleFilter = _f.handleFilter, handleClearFilters = _f.handleClearFilters;
+    }), query = _g.query, keywords = _g.keywords, handleKeywordChange = _g.handleKeywordChange, location = _g.location, handleLocationChange = _g.handleLocationChange, handleSearch = _g.handleSearch, handleSortBy = _g.handleSortBy, handleSortDirection = _g.handleSortDirection, activeFilters = _g.activeFilters, handleFilter = _g.handleFilter, handleClearFilters = _g.handleClearFilters;
     var handleAdd = (0, hooks_1.useForms)().handleAdd;
     var enableFilters = enableSearch && filterOptions.length > 0;
     var enableSorting = enableSearch && sortOptions.length > 0;
@@ -28,7 +28,8 @@ var CollectionToolbar = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, mb: 1 },
         react_1.default.createElement(material_1.Stack, { justifyContent: "space-between", direction: { sm: 'row', xs: 'column' }, spacing: 1 },
             react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' }, alignItems: 'center' },
-                enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
+                enableSearch && !enableGeoSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
+                enableGeoSearch && (react_1.default.createElement(components_1.GeoSearchInput, { value: keywords, location: location, handleChange: handleKeywordChange, handleLocationChange: handleLocationChange, handleSearch: handleSearch })),
                 enableFilters && (react_1.default.createElement(material_1.Box, { sx: sx.buttonContainer },
                     react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
                 enableSorting && (react_1.default.createElement(material_1.Box, { sx: sx.buttonContainer },

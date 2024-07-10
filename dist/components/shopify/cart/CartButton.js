@@ -35,7 +35,7 @@ var SideNavCartButton = function (props) {
         react_1.default.createElement(material_2.ListItemButton, { sx: sx.listItemButton, onClick: handleClick },
             react_1.default.createElement(material_2.ListItemIcon, null,
                 react_1.default.createElement(components_1.Icon, { name: icon })),
-            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "subtitle2", color: "text.primary" }, label) }))));
+            react_1.default.createElement(material_2.ListItemText, { primary: react_1.default.createElement(material_2.Typography, { variant: "body1", color: "text.primary" }, label) }))));
 };
 var TopNavCartButton = function (props) {
     var icon = props.icon, totalQuantity = props.totalQuantity, handleClick = props.handleClick;

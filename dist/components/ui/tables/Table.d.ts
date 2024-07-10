@@ -18,7 +18,6 @@ type TableProps = {
     page?: number;
     perPage?: number;
     numPages?: number;
-    numResults?: number;
     totalCount?: number;
     query: any;
     handleQueryChange: (e: any) => void;

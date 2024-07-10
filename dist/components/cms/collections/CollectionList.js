@@ -46,10 +46,9 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var frontend_js_2 = require("frontend-js");
+var frontend_js_1 = require("frontend-js");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var components_1 = require("../../../components");
@@ -57,10 +56,8 @@ var hooks_1 = require("../../../hooks");
 var CollectionList = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
-    var _b = (0, frontend_js_1.useResourceContext)(), resource = _b.resource, setResource = _b.setResource;
-    var _c = props.actions, actions = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'card' : _d, href = props.href, _e = props.displayFields, displayFields = _e === void 0 ? [] : _e, buttonText = props.buttonText, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableDelete, enableDelete = _j === void 0 ? false : _j, _k = props.enableFavorites, enableFavorites = _k === void 0 ? false : _k, _l = props.enableLikes, enableLikes = _l === void 0 ? false : _l, _m = props.enableUsers, enableUsers = _m === void 0 ? false : _m, _o = props.enableRatings, enableRatings = _o === void 0 ? false : _o, _p = props.enableComments, enableComments = _p === void 0 ? false : _p, emptyIcon = props.emptyIcon, _q = props.emptyTitle, emptyTitle = _q === void 0 ? 'No results found' : _q, _r = props.emptyDescription, emptyDescription = _r === void 0 ? 'Try changing your search or filters.' : _r, rest = __rest(props, ["actions", "style", "href", "displayFields", "buttonText", "enableGradient", "enableOverlay", "enableEdit", "enableDelete", "enableFavorites", "enableLikes", "enableUsers", "enableRatings", "enableComments", "emptyIcon", "emptyTitle", "emptyDescription"]);
-    var _s = (0, frontend_js_2.useQuery)(), loading = _s.loading, resources = _s.resources, page = _s.page, numPages = _s.numPages, loadMore = _s.loadMore;
+    var _a = (0, frontend_js_1.useCollection)(), resource = _a.resource, setResource = _a.setResource, loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, openShow = _a.openShow, setOpenShow = _a.setOpenShow;
+    var _b = props.actions, actions = _b === void 0 ? [] : _b, _c = props.style, style = _c === void 0 ? 'card' : _c, href = props.href, _d = props.displayFields, displayFields = _d === void 0 ? [] : _d, buttonText = props.buttonText, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = props.enableEdit, enableEdit = _g === void 0 ? false : _g, _h = props.enableDelete, enableDelete = _h === void 0 ? false : _h, _j = props.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = props.enableLikes, enableLikes = _k === void 0 ? false : _k, _l = props.enableUsers, enableUsers = _l === void 0 ? false : _l, _m = props.enableRatings, enableRatings = _m === void 0 ? false : _m, _o = props.enableComments, enableComments = _o === void 0 ? false : _o, emptyIcon = props.emptyIcon, _p = props.emptyTitle, emptyTitle = _p === void 0 ? 'No results found' : _p, _q = props.emptyDescription, emptyDescription = _q === void 0 ? 'Try changing your search or filters.' : _q, rest = __rest(props, ["actions", "style", "href", "displayFields", "buttonText", "enableGradient", "enableOverlay", "enableEdit", "enableDelete", "enableFavorites", "enableLikes", "enableUsers", "enableRatings", "enableComments", "emptyIcon", "emptyTitle", "emptyDescription"]);
     var handleNavigate = function (resource) {
         if (href) {
             if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
@@ -73,16 +70,16 @@ var CollectionList = function (props) {
         }
         else {
             setResource(resource);
-            setOpen(true);
+            setOpenShow(true);
         }
     };
-    var _t = props.handleClick, handleClick = _t === void 0 ? handleNavigate : _t;
-    var _u = (0, hooks_1.useForms)(), handleEdit = _u.handleEdit, handleDeleteClick = _u.handleDeleteClick;
+    var _r = props.handleClick, handleClick = _r === void 0 ? handleNavigate : _r;
+    var _s = (0, hooks_1.useForms)(), handleEdit = _s.handleEdit, handleDeleteClick = _s.handleDeleteClick;
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
-            react_1.default.createElement(components_1.CollectionCards, __assign({ actions: actions, style: style, resources: resources, displayFields: displayFields, handleClick: handleClick, buttonText: buttonText, enableGradient: enableGradient, enableOverlay: enableOverlay, enableEdit: enableEdit, enableDelete: enableDelete, enableUsers: enableUsers, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: handleEdit, handleDelete: handleDeleteClick }, rest)),
+            react_1.default.createElement(components_1.CollectionCards, __assign({ actions: actions, style: style, resources: resources, displayFields: displayFields, handleClick: handleClick, buttonText: buttonText, enableGradient: enableGradient, enableOverlay: enableOverlay, enableEdit: enableEdit, enableDelete: enableDelete, enableUsers: enableUsers, enableFavorites: enableFavorites, enableRatings: enableRatings, enableComments: enableComments, handleEdit: handleEdit, handleDelete: handleDeleteClick }, rest)),
             react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })),
         !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { enableBorder: true, icon: emptyIcon, title: emptyTitle, description: emptyDescription })),
-        react_1.default.createElement(components_1.ResourceModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableComments: enableComments, enableUsers: enableUsers, handleEdit: function () { return handleEdit(resource); } })));
+        react_1.default.createElement(components_1.CollectionShowModal, { open: openShow, handleClose: function () { return setOpenShow(false); }, actions: actions, displayFields: displayFields, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableComments: enableComments, enableUsers: enableUsers, enableEdit: enableEdit, handleEdit: function () { return handleEdit(resource); } })));
 };
 exports.default = CollectionList;

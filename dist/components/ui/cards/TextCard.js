@@ -31,9 +31,9 @@ var router_1 = require("next/router");
 var __1 = require("../..");
 var CardList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, handleClick = _a.handleClick, _d = _a.enableUsers, enableUsers = _d === void 0 ? false : _d, _e = _a.enableFavorites, enableFavorites = _e === void 0 ? false : _e, _f = _a.enableRatings, enableRatings = _f === void 0 ? false : _f;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.textVariant, textVariant = _c === void 0 ? 'subtitle1' : _c, handleClick = _a.handleClick, _d = _a.enableUsers, enableUsers = _d === void 0 ? false : _d, _e = _a.enableComments, enableComments = _e === void 0 ? false : _e, _f = _a.enableFavorites, enableFavorites = _f === void 0 ? false : _f, _g = _a.enableRatings, enableRatings = _g === void 0 ? false : _g;
     var router = (0, router_1.useRouter)();
-    var _g = resource || {}, title = _g.title, description = _g.description;
+    var _h = resource || {}, title = _h.title, description = _h.description;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -52,6 +52,7 @@ var CardList = function (props) {
                 react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 200)),
                 enableUsers == true && (react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))),
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end", sx: sx.actions },
+            enableComments == true && (react_1.default.createElement(__1.CommentButton, { resource: resource })),
             enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
             react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource }))));
 };

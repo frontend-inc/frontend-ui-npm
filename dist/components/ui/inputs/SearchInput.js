@@ -42,6 +42,7 @@ var material_1 = require("@mui/material");
 var use_debounce_1 = require("use-debounce");
 var components_1 = require("../../../components");
 var InputBase_1 = __importDefault(require("@mui/material/InputBase"));
+var Divider_1 = __importDefault(require("@mui/material/Divider"));
 var IconButton_1 = __importDefault(require("@mui/material/IconButton"));
 var SearchInput = function (props) {
     var _a = props.name, name = _a === void 0 ? 'keywords' : _a, _b = props.fullWidth, fullWidth = _b === void 0 ? false : _b, value = props.value, _c = props.placeholder, placeholder = _c === void 0 ? 'Search...' : _c, handleChange = props.handleChange, handleSearch = props.handleSearch, _d = props.styles, styles = _d === void 0 ? {} : _d;
@@ -72,6 +73,7 @@ var SearchInput = function (props) {
                     handleSearch(text);
                 }
             } }),
+        react_1.default.createElement(Divider_1.default, { sx: { height: 28, my: 0.5 }, orientation: "vertical" }),
         react_1.default.createElement(IconButton_1.default, { onClick: function () { return handleSearch(debouncedValue); }, type: "button", sx: { p: '10px' }, "aria-label": "search" },
             react_1.default.createElement(components_1.Icon, { name: "Search", size: 20, color: 'text.secondary' }))));
 };

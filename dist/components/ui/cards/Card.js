@@ -43,8 +43,8 @@ var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var Card = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, ref = _a.ref, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 240 : _d, _e = _a.enableUsers, enableUsers = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j;
-    var _k = resource || {}, label = _k.label, title = _k.title, image = _k.image;
+    var _a = props || {}, ref = _a.ref, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 240 : _d, _e = _a.enableUsers, enableUsers = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = _a.enableComments, enableComments = _h === void 0 ? false : _h, _j = _a.enableFavorites, enableFavorites = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k;
+    var _l = resource || {}, label = _l.label, title = _l.title, image = _l.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
@@ -64,8 +64,9 @@ var Card = function (props) {
                 (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }))),
             react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "space-between" },
                 react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 }, (resource === null || resource === void 0 ? void 0 : resource.user) && (react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))),
-                react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
+                react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },
                     enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                    enableComments == true && (react_1.default.createElement(__1.CommentButton, { resource: resource })),
                     (actions === null || actions === void 0 ? void 0 : actions.length) > 0 && (react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource })))))));
 };
 exports.default = Card;

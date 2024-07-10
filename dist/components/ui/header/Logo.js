@@ -22,6 +22,7 @@ var Logo = function (props) {
 exports.default = Logo;
 var sx = {
     root: {
+        boxShadow: 0,
         width: '100%',
         minHeight: 'auto',
         minWidth: 'auto',

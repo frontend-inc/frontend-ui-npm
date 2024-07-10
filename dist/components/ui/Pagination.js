@@ -26,7 +26,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var Pagination = function (props) {
-    var loading = props.loading, _a = props.totalCount, totalCount = _a === void 0 ? 0 : _a, _b = props.page, page = _b === void 0 ? 1 : _b, _c = props.numPages, numPages = _c === void 0 ? 1 : _c, _d = props.perPage, perPage = _d === void 0 ? 10 : _d, numResults = props.numResults, handlePaginate = props.handlePaginate;
+    var loading = props.loading, _a = props.totalCount, totalCount = _a === void 0 ? 0 : _a, _b = props.page, page = _b === void 0 ? 1 : _b, _c = props.numPages, numPages = _c === void 0 ? 1 : _c, _d = props.perPage, perPage = _d === void 0 ? 10 : _d, handlePaginate = props.handlePaginate;
     var _e = (0, react_1.useState)(0), startIndex = _e[0], setStartIndex = _e[1];
     var _f = (0, react_1.useState)(0), endIndex = _f[0], setEndIndex = _f[1];
     var _g = (0, react_1.useState)(page), pageNumber = _g[0], setPageNumber = _g[1];
@@ -35,12 +35,12 @@ var Pagination = function (props) {
         handlePaginate(event, nextPage);
     };
     (0, react_1.useEffect)(function () {
-        if (page && numPages && numResults && perPage) {
+        if (page && numPages && totalCount && perPage) {
             var start = (page - 1) * perPage + 1;
             setStartIndex(start);
-            setEndIndex(start + numResults - 1);
+            setEndIndex(start + totalCount - 1);
         }
-    }, [page, numPages, numResults]);
+    }, [page, numPages, totalCount]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.pagination },
         react_1.default.createElement(material_1.Hidden, { smDown: true },
             react_1.default.createElement(material_1.Box, { mx: 2 }, loading ? (react_1.default.createElement(material_1.CircularProgress, { size: 24 })) : (react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" },

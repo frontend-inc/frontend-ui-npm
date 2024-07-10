@@ -99,11 +99,11 @@ var Reviews = function (props) {
     var sortOptions = [
         {
             label: 'Date',
-            field: 'created_at',
+            name: 'created_at',
         },
         {
             label: 'Rating',
-            field: 'rating',
+            name: 'rating',
         }
     ];
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;

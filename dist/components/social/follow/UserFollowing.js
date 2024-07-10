@@ -11,9 +11,9 @@ var UserFollowing = function (props) {
     return (react_1.default.createElement(__1.ResourceList, { enableSearch: true, enableLoadMore: true, name: 'user', url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/following"), component: FollowUser_1.default, componentProps: {
             size: 64
         }, enableSorting: true, sortOptions: [
-            { label: 'Username', field: 'username' },
-            { label: 'Total followers', field: 'num_followers' },
-            { label: 'Total following', field: 'num_following' },
+            { label: 'Username', name: 'username' },
+            { label: 'Total followers', name: 'num_followers' },
+            { label: 'Total following', name: 'num_following' },
         ] }));
 };
 exports.default = UserFollowing;
