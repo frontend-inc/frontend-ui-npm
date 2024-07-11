@@ -7,6 +7,7 @@ type NumberRangeInputProps = {
         min: number;
         max: number;
     };
+    info?: string;
     handleChange: (value: SyntheticEventType) => void;
 };
 declare const NumberRangeInput: React.FC<NumberRangeInputProps>;

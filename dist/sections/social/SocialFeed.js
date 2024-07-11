@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var SocialFeed = function (props) {
-    var url = props.url, label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgcolor = props.bgcolor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, rest = __rest(props, ["url", "label", "title", "description", "textAlign", "bgcolor", "py", "px", "maxWidth", "requireTeam", "requirePaid", "requireAdmin"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: true, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, bgcolor: bgcolor, py: py, px: px, maxWidth: maxWidth },
+    var url = props.url, label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, theme = props.theme, py = props.py, px = props.px, maxWidth = props.maxWidth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, rest = __rest(props, ["url", "label", "title", "description", "textAlign", "theme", "py", "px", "maxWidth", "requireTeam", "requirePaid", "requireAdmin"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: true, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, theme: theme, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
         react_1.default.createElement(components_2.Feed, __assign({}, rest, { url: url }))));
 };

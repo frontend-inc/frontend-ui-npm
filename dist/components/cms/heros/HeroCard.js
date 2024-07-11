@@ -9,7 +9,7 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var HeroCard = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enableBuyNow = _a.enableBuyNow, enableStripePaymentLink = _a.enableStripePaymentLink;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
     var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
     if (!resource)
         return null;
@@ -33,8 +33,7 @@ var HeroCard = function (props) {
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
                     enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true })),
                     (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource })),
-                    enableBuyNow == true && (react_1.default.createElement(__1.BuyNowButton, { resource: resource, buttonText: "Buy Now" })),
-                    enableStripePaymentLink == true && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout" })),
+                    enablePayments == true && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout" })),
                     react_1.default.createElement(__1.ExpandableText, { text: description }))))));
 };
 exports.default = HeroCard;

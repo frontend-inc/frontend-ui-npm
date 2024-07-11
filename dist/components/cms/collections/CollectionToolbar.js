@@ -35,7 +35,7 @@ var CollectionToolbar = function (props) {
                 enableSorting && (react_1.default.createElement(material_1.Box, { sx: sx.buttonContainer },
                     react_1.default.createElement(components_1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
             enableCreate && (react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' }, alignItems: 'center' },
-                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20 }) }, "Add"))))));
+                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20, color: 'secondary.contrastText' }) }, "Add"))))));
 };
 exports.default = CollectionToolbar;
 var sx = {

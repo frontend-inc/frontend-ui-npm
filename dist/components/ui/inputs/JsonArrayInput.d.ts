@@ -5,6 +5,7 @@ type JsonArrayInputProps = InputPropsType & {
     fields: Record<string, any>[];
     name: string;
     label?: string;
+    info?: string;
     value: any[];
     handleChange: any;
 };

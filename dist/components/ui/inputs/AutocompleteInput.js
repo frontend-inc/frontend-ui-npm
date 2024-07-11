@@ -38,7 +38,7 @@ var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var material_1 = require("@mui/material");
 var AutocompleteInput = function (props) {
-    var _a = props || {}, _b = _a.name, name = _b === void 0 ? 'title' : _b, _c = _a.value, value = _c === void 0 ? '' : _c, label = _a.label, _d = _a.placeholder, placeholder = _d === void 0 ? 'Search' : _d, handleChange = _a.handleChange, handleInputChange = _a.handleInputChange, _e = _a.options, options = _e === void 0 ? [] : _e, _f = _a.direction, direction = _f === void 0 ? 'column' : _f;
+    var _a = props || {}, _b = _a.name, name = _b === void 0 ? 'title' : _b, _c = _a.value, value = _c === void 0 ? '' : _c, label = _a.label, _d = _a.placeholder, placeholder = _d === void 0 ? 'Search' : _d, handleChange = _a.handleChange, handleInputChange = _a.handleInputChange, _e = _a.options, options = _e === void 0 ? [] : _e, _f = _a.direction, direction = _f === void 0 ? 'column' : _f, info = _a.info;
     var _g = (0, react_1.useState)(false), open = _g[0], setOpen = _g[1];
     var handleClick = function (option) {
         setOpen(false);
@@ -59,8 +59,8 @@ var AutocompleteInput = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.ClickAwayListener, { onClickAway: function () { return setOpen(false); } },
-        react_1.default.createElement(material_1.Stack, { width: '100%', direction: "column", spacing: 1 },
-            react_1.default.createElement(__1.TextInput, { name: name, label: label, value: value, options: options, handleChange: handleKeywordChange, direction: direction, placeholder: placeholder, onFocus: function () { return setOpen(!open); } }),
+        react_1.default.createElement(material_1.Stack, { width: '100%', direction: "column", spacing: 0 },
+            react_1.default.createElement(__1.TextInput, { name: name, label: label, value: value, options: options, handleChange: handleKeywordChange, direction: direction, placeholder: placeholder, onFocus: function () { return setOpen(!open); }, info: info }),
             react_1.default.createElement(material_1.Box, { sx: sx.anchor }, open && (react_1.default.createElement(material_1.Paper, { elevation: 2, sx: __assign(__assign({}, sx.paper), { height: (options === null || options === void 0 ? void 0 : options.length) * 64 }) },
                 react_1.default.createElement(material_1.List, { dense: true, sx: sx.list }, options === null || options === void 0 ? void 0 : options.map(function (option, index) { return (react_1.default.createElement(material_1.ListItem, null,
                     react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleClick(option); } },
@@ -77,7 +77,7 @@ var sx = {
     paper: {
         p: 0,
         position: 'absolute',
-        top: -6,
+        top: 2,
         left: 0,
         width: '100%',
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
@@ -87,6 +87,8 @@ var sx = {
     },
     avatar: {
         borderRadius: 1,
+        height: 32,
+        width: 32
     },
     list: {
         bgcolor: 'background.paper',
@@ -103,8 +105,9 @@ var sx = {
         height: 44,
     },
     listItemIcon: {
-        width: 44,
-        minWidth: 44
+        width: 32,
+        minWidth: 32,
+        mr: 2
     },
     mapContainer: {
         overflow: 'hidden',

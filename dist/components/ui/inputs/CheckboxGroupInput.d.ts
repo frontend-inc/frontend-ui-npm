@@ -6,6 +6,7 @@ type CheckboxGroupInputProps = {
     label: string;
     value?: string[];
     options: OptionType[];
+    info?: string;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 declare const CheckboxGroupInput: React.FC<CheckboxGroupInputProps>;

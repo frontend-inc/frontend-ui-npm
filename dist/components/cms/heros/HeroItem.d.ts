@@ -13,9 +13,8 @@ export type HeroProps = {
     enableLikes?: boolean;
     enableSharing?: boolean;
     enableRatings?: boolean;
-    enableBuyNow?: boolean;
+    enablePayments?: boolean;
     enableUsers?: boolean;
-    enableStripePaymentLink?: boolean;
     enableOverlay?: boolean;
     handleEdit?: (res: any) => void;
 };

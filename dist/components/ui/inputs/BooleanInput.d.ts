@@ -1,6 +1,6 @@
 import React from 'react';
 import { SyntheticEventType } from '../../../types';
-type TabsSwitchInputProps = {
+type BooleanInputProps = {
     value: boolean;
     name: string;
     handleChange: (ev: SyntheticEventType) => void;
@@ -9,6 +9,7 @@ type TabsSwitchInputProps = {
     label?: string;
     direction?: 'row' | 'column';
     size?: 'small' | 'large';
+    info?: string;
 };
-declare const TabsSwitchInput: React.FC<TabsSwitchInputProps>;
-export default TabsSwitchInput;
+declare const BooleanInput: React.FC<BooleanInputProps>;
+export default BooleanInput;

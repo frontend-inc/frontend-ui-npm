@@ -8,6 +8,7 @@ type NumberSliderInputProps = {
     min: number;
     max: number;
     stepSize?: number;
+    info?: string;
 };
 declare const NumberSliderInput: React.FC<NumberSliderInputProps>;
 export default NumberSliderInput;

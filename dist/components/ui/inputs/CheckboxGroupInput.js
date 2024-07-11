@@ -14,8 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var components_1 = require("../../../components");
 var CheckboxGroupInput = function (props) {
-    var _a = props || {}, errors = _a.errors, label = _a.label, name = _a.name, _b = _a.value, values = _b === void 0 ? [] : _b, options = _a.options, handleChange = _a.handleChange;
+    var _a = props || {}, errors = _a.errors, label = _a.label, name = _a.name, _b = _a.value, values = _b === void 0 ? [] : _b, options = _a.options, handleChange = _a.handleChange, info = _a.info;
     var handleCheckboxChange = function (e) {
         e.preventDefault();
         var value = e.target.value;
@@ -32,7 +33,7 @@ var CheckboxGroupInput = function (props) {
     };
     return (react_1.default.createElement(material_1.FormControl, null,
         react_1.default.createElement(material_1.FormGroup, null,
-            react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label), options === null || options === void 0 ? void 0 :
+            react_1.default.createElement(components_1.InputLabel, { label: label, info: info }), options === null || options === void 0 ? void 0 :
             options.map(function (option, idx) { return (react_1.default.createElement(material_1.FormControlLabel, { key: idx, control: react_1.default.createElement(material_1.Checkbox, { name: name, checked: values.includes(String(option.value)) ? true : false, onChange: handleCheckboxChange, value: option.value }), label: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" }, option.label) })); }))));
 };
 exports.default = CheckboxGroupInput;

@@ -7,6 +7,7 @@ type CheckboxInputProps = {
     label?: string;
     handleChange: (e: SyntheticEventType) => void;
     disableBorder?: boolean;
+    info?: string;
 };
 declare const CheckboxInput: React.FC<CheckboxInputProps>;
 export default CheckboxInput;

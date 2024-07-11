@@ -16,10 +16,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var components_1 = require("../../../components");
 var SwitchInput = function (props) {
-    var name = props.name, value = props.value, _a = props.disableBorder, disableBorder = _a === void 0 ? false : _a, label = props.label, placeholder = props.placeholder, handleChange = props.handleChange;
+    var name = props.name, value = props.value, _a = props.disableBorder, disableBorder = _a === void 0 ? false : _a, label = props.label, placeholder = props.placeholder, handleChange = props.handleChange, info = props.info;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label),
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.input), (disableBorder && sx.disableBorder)) },
             react_1.default.createElement(material_1.FormControlLabel, { control: react_1.default.createElement(material_1.Switch, { name: name, checked: value, onChange: handleChange, value: "true" }), label: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "textPrimary" }, placeholder) }))));
 };

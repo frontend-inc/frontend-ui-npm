@@ -23,6 +23,7 @@ export type AttachmentInputProps = {
     objectFit?: 'contain' | 'cover';
     size?: number;
     placeholder?: string;
+    info?: string;
 };
 export type InputPropsType = {
     errors?: any;
@@ -35,6 +36,7 @@ export type InputPropsType = {
     options?: OptionType[];
     direction?: 'row' | 'column';
     styles?: any;
+    info?: string;
 };
 export type TextInputPropsType = InputPropsType & {
     direction?: 'row' | 'column';

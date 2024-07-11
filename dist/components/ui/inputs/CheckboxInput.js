@@ -16,8 +16,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var components_1 = require("../../../components");
 var CheckboxInput = function (props) {
-    var name = props.name, value = props.value, placeholder = props.placeholder, label = props.label, handleChange = props.handleChange, _a = props.disableBorder, disableBorder = _a === void 0 ? false : _a;
+    var name = props.name, value = props.value, placeholder = props.placeholder, label = props.label, handleChange = props.handleChange, _a = props.disableBorder, disableBorder = _a === void 0 ? false : _a, info = props.info;
     var handleCheckboxChange = function (ev) {
         var value = ev.target.checked;
         handleChange({
@@ -28,7 +29,7 @@ var CheckboxInput = function (props) {
         });
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label),
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.input), (!disableBorder && sx.border)) },
             react_1.default.createElement(material_1.FormControlLabel, { control: react_1.default.createElement(material_1.Checkbox, { name: name, checked: value == true ? true : false, onChange: handleCheckboxChange, value: "true" }), label: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textSecondary" }, placeholder) }))));
 };

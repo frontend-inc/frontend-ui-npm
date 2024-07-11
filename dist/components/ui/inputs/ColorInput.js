@@ -47,7 +47,7 @@ var TransparentColor = function (props) {
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.color), sx.transparent), (value == '' && sx.selected)), { bgcolor: '#FFF' }), onClick: handleClick })));
 };
 var ColorInput = function (props) {
-    var label = props.label, name = props.name, value = props.value, _a = props.placeholder, placeholder = _a === void 0 ? 'Color' : _a, _b = props.disableTone, disableTone = _b === void 0 ? false : _b, handleChange = props.handleChange;
+    var label = props.label, name = props.name, value = props.value, _a = props.placeholder, placeholder = _a === void 0 ? 'Color' : _a, _b = props.disableTone, disableTone = _b === void 0 ? false : _b, handleChange = props.handleChange, info = props.info;
     var _c = (0, react_1.useState)(500), tone = _c[0], setTone = _c[1];
     var _d = (0, react_1.useState)(value || ''), hex = _d[0], setHex = _d[1];
     var _e = (0, react_1.useState)(value || ''), text = _e[0], setText = _e[1];
@@ -103,7 +103,7 @@ var ColorInput = function (props) {
         }
     }, [value]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
-        label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label)),
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, variant: "contained", color: "secondary", endIcon: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },
                 react_1.default.createElement(material_1.Tooltip, { title: value },
                     react_1.default.createElement(material_1.IconButton, null, value ? (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.color), { bgcolor: value }) })) : (react_1.default.createElement(TransparentColor, { value: value, handleClick: openMenu })))),

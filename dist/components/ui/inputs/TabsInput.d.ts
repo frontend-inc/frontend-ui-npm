@@ -16,6 +16,7 @@ type TabsInputProps = {
     variant?: 'fullWidth' | 'scrollable';
     size?: 'small' | 'large';
     direction?: 'row' | 'column';
+    info?: string;
 };
 declare const TabsInput: React.FC<TabsInputProps>;
 export default TabsInput;

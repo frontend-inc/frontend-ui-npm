@@ -21,7 +21,7 @@ var NumberRangeInput = function (props) {
     var _a = props || {}, _b = _a.value, value = _b === void 0 ? {
         min: null,
         max: null,
-    } : _b, name = _a.name, label = _a.label, handleChange = _a.handleChange;
+    } : _b, name = _a.name, label = _a.label, handleChange = _a.handleChange, info = _a.info;
     var handleMinChange = function (ev) {
         var min = ev.target.value;
         handleChange({
@@ -41,7 +41,7 @@ var NumberRangeInput = function (props) {
         });
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label)),
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.Box, { sx: sx.inputs },
             react_1.default.createElement(components_1.TextInput, { type: "number", name: "min", handleChange: handleMinChange, value: value === null || value === void 0 ? void 0 : value.min, placeholder: "Min" }),
             react_1.default.createElement(components_1.TextInput, { type: "number", name: "max", handleChange: handleMaxChange, value: value === null || value === void 0 ? void 0 : value.max, placeholder: "Max" }))));

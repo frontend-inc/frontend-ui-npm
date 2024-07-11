@@ -37,7 +37,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var JSONInput = function (props) {
-    var errors = props.errors, value = props.value, name = props.name, label = props.label, placeholder = props.placeholder, handleChange = props.handleChange;
+    var errors = props.errors, value = props.value, name = props.name, label = props.label, info = props.info, placeholder = props.placeholder, handleChange = props.handleChange;
     var defaultValue = value ? JSON.stringify(value, null, 2) : '{}';
     var _a = (0, react_1.useState)(defaultValue), jsonValue = _a[0], setJsonValue = _a[1];
     var _b = (0, react_1.useState)({}), jsonError = _b[0], setJsonError = _b[1];
@@ -83,6 +83,6 @@ var JSONInput = function (props) {
             return json;
         }
     };
-    return (react_1.default.createElement(components_1.TextInput, { errors: __assign(__assign({}, errors), jsonError), multiline: true, rows: 4, value: prettyJson(jsonValue), placeholder: placeholder, handleChange: handleJSONChange, name: name, label: label }));
+    return (react_1.default.createElement(components_1.TextInput, { errors: __assign(__assign({}, errors), jsonError), multiline: true, rows: 4, value: prettyJson(jsonValue), placeholder: placeholder, handleChange: handleJSONChange, name: name, label: label, info: info }));
 };
 exports.default = JSONInput;

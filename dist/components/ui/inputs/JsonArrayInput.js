@@ -54,7 +54,7 @@ var JsonItem_1 = __importDefault(require("./json/JsonItem"));
 var hooks_1 = require("../../../hooks");
 var components_1 = require("../../../components");
 var JsonArrayInput = function (props) {
-    var title = props.title, name = props.name, label = props.label, _a = props.fields, fields = _a === void 0 ? [] : _a, _b = props.value, items = _b === void 0 ? [] : _b, handleChange = props.handleChange;
+    var title = props.title, name = props.name, label = props.label, _a = props.fields, fields = _a === void 0 ? [] : _a, _b = props.value, items = _b === void 0 ? [] : _b, handleChange = props.handleChange, info = props.info;
     var _c = (0, hooks_1.useMenu)(), open = _c.open, anchorEl = _c.anchorEl, openMenu = _c.openMenu, closeMenu = _c.closeMenu;
     var _d = (0, react_1.useState)({}), activeItem = _d[0], setActiveItem = _d[1];
     var _e = (0, react_1.useState)(0), currentIndex = _e[0], setCurrentIndex = _e[1];
@@ -123,7 +123,7 @@ var JsonArrayInput = function (props) {
         }
     }, [fields]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5, sx: sx.root },
-        label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label)),
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(components_1.SortableList, { droppableId: "json-array-".concat(name), handleDrop: handleDrop, items: items, renderItem: function (item, index) { return (react_1.default.createElement(JsonItem_1.default, { key: index, index: index, item: item, titleField: titleField, handleClick: handleEditClick, handleRemove: handleRemove })); } }),
         react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAddClick, startIcon: react_1.default.createElement(lucide_react_1.Plus, { size: 24 }) }, "Add")),

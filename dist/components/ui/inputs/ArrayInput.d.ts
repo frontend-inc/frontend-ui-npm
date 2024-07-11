@@ -10,6 +10,7 @@ type ArrayInputProps = {
     handleChange: (e: SyntheticEventType) => void;
     direction?: 'row' | 'column';
     freeSolo?: boolean;
+    info?: string;
 };
 declare const ArrayInput: React.FC<ArrayInputProps>;
 export default ArrayInput;

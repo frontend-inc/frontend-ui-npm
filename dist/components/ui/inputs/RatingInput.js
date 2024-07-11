@@ -18,8 +18,9 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Rating_1 = __importDefault(require("@mui/material/Rating"));
 var icons_material_1 = require("@mui/icons-material");
+var components_1 = require("../../../components");
 var RatingInput = function (props) {
-    var label = props.label, value = props.value, name = props.name, handleChange = props.handleChange, _a = props.disableBorder, disableBorder = _a === void 0 ? false : _a, _b = props.readOnly, readOnly = _b === void 0 ? false : _b, _c = props.direction, direction = _c === void 0 ? 'column' : _c, size = props.size;
+    var label = props.label, value = props.value, name = props.name, handleChange = props.handleChange, _a = props.disableBorder, disableBorder = _a === void 0 ? false : _a, _b = props.readOnly, readOnly = _b === void 0 ? false : _b, _c = props.direction, direction = _c === void 0 ? 'column' : _c, size = props.size, info = props.info;
     var onChange = function (event, value) {
         handleChange({
             target: {
@@ -29,7 +30,7 @@ var RatingInput = function (props) {
         });
     };
     return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 1 },
-        label && (react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: "caption", color: "textSecondary" }, label)),
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.input), (!disableBorder && sx.border)) },
             react_1.default.createElement(Rating_1.default, { name: name, readOnly: readOnly, onChange: onChange, size: size, value: parseInt(value), icon: react_1.default.createElement(icons_material_1.Star, { sx: sx.rating }), emptyIcon: react_1.default.createElement(icons_material_1.StarBorderOutlined, { sx: sx.emptyRating }) }))));
 };
@@ -39,8 +40,7 @@ var sx = {
         width: '100%',
         fontSize: 15,
         '&:focus': {
-            boxShadow: "".concat((0, material_1.alpha)('#999999', 0.25), " 0 0 0 0.2rem"),
-            borderColor: 'primary.light',
+            boxShadow: 2
         },
     },
     rating: {
@@ -57,10 +57,6 @@ var sx = {
         border: '1px solid',
         borderColor: 'divider',
         boxShadow: "rgb(0 0 0 / 5%) 0px 2px 4px !important",
-    },
-    label: {
-        width: '100px',
-        mb: 0,
     },
     stack: {
         width: '100%',

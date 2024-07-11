@@ -29,9 +29,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var moment_1 = __importDefault(require("moment"));
-var styles_1 = require("./styles");
+var styles_1 = require("./helpers/styles");
+var components_1 = require("../../../components");
 var DateInput = function (props) {
-    var errors = props.errors, required = props.required, label = props.label, name = props.name, value = props.value, handleChange = props.handleChange, placeholder = props.placeholder;
+    var errors = props.errors, required = props.required, label = props.label, info = props.info, name = props.name, value = props.value, handleChange = props.handleChange, placeholder = props.placeholder;
     var _a = (0, react_1.useState)(false), error = _a[0], setError = _a[1];
     var handleInputChange = function (ev) {
         var value = ev.target.value;
@@ -40,7 +41,7 @@ var DateInput = function (props) {
     };
     var selectedDate = (0, moment_1.default)(value).format('yyyy-MM-DD');
     return (react_1.default.createElement(material_1.FormControl, { fullWidth: true },
-        react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label),
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.InputBase, { error: error, autoComplete: "off", fullWidth: true, type: "date", name: name, sx: styles_1.sx.inputBase, placeholder: placeholder, margin: "dense", onChange: handleInputChange, value: selectedDate })));
 };
 exports.default = DateInput;

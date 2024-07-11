@@ -101,12 +101,12 @@ var CollectionKanBanList = function (props) {
         setOpen(true);
     };
     var _e = (0, hooks_1.useForms)(), handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
-    var setOpenFormModal = (0, react_1.useContext)(frontend_js_1.CollectionContext).setOpenFormModal;
+    var setOpenEdit = (0, react_1.useContext)(frontend_js_1.CollectionContext).setOpenEdit;
     var handleAdd = function (header) {
         setResource({
             status: header
         });
-        setOpenFormModal(true);
+        setOpenEdit(true);
     };
     var handleDrop = function (movedItem, value, columns) { return __awaiter(void 0, void 0, void 0, function () {
         var movedDocument, columnItems;

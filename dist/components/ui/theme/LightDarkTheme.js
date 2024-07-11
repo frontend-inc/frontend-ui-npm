@@ -25,26 +25,26 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
-var ColorModeTheme = function (props) {
-    var _a = (props || {}).mode, mode = _a === void 0 ? 'light' : _a;
-    var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
-    var _b = (0, react_1.useState)('#ffffff'), bgcolor = _b[0], setBgcolor = _b[1];
+var context_2 = require("../../../context");
+var LightDarkTheme = function (props) {
+    var _a, _b;
+    var _c = props || {}, lightDarkTheme = _c.theme, children = _c.children;
+    var _d = (0, react_1.useState)('#FFFFFF'), bgcolor = _d[0], setBgcolor = _d[1];
+    var muiTheme = (0, react_1.useContext)(context_2.ThemeContext).theme;
     (0, react_1.useEffect)(function () {
         var _a, _b;
-        if (mode) {
-            switch (mode) {
-                case 'light':
-                    setBgcolor('#ffffff');
-                    break;
-                case 'dark':
-                    setBgcolor('#000000');
-                    break;
-                case 'accent':
-                    setBgcolor((_b = (_a = theme === null || theme === void 0 ? void 0 : theme.palette) === null || _a === void 0 ? void 0 : _a.primary) === null || _b === void 0 ? void 0 : _b.main);
-                    break;
-            }
+        switch (lightDarkTheme) {
+            case 'dark':
+                setBgcolor('#000000');
+                break;
+            case 'light':
+                setBgcolor('#FFFFFF');
+                break;
+            case 'accent':
+                setBgcolor((_b = (_a = muiTheme === null || muiTheme === void 0 ? void 0 : muiTheme.palette) === null || _a === void 0 ? void 0 : _a.primary) === null || _b === void 0 ? void 0 : _b.main);
+                break;
         }
-    }, [mode, theme]);
-    return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme, bgcolor: bgcolor }, props.children));
+    }, [lightDarkTheme, (_b = (_a = muiTheme === null || muiTheme === void 0 ? void 0 : muiTheme.palette) === null || _a === void 0 ? void 0 : _a.primary) === null || _b === void 0 ? void 0 : _b.main]);
+    return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: muiTheme, bgcolor: bgcolor }, children));
 };
-exports.default = ColorModeTheme;
+exports.default = LightDarkTheme;

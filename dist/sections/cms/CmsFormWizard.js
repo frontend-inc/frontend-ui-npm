@@ -29,9 +29,9 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var CmsFormWizard = function (props) {
-    var bgcolor = props.bgcolor, py = props.py, //special case for padding y
-    px = props.px, maxWidth = props.maxWidth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, rest = __rest(props, ["bgcolor", "py", "px", "maxWidth", "requireTeam", "requirePaid", "requireAdmin"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: true, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, bgcolor: bgcolor, py: 0, px: px, maxWidth: maxWidth },
+    var theme = props.theme, py = props.py, //special case for padding y
+    px = props.px, maxWidth = props.maxWidth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, rest = __rest(props, ["theme", "py", "px", "maxWidth", "requireTeam", "requirePaid", "requireAdmin"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: true, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, theme: theme, py: 0, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_2.FormWizard, __assign({ py: py }, rest))));
 };
 exports.default = CmsFormWizard;

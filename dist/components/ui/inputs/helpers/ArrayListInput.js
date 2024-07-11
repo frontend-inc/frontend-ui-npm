@@ -35,7 +35,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var lucide_react_1 = require("lucide-react");
-var components_1 = require("../../../components");
+var __1 = require("../../..");
 var ArrayItemInput = function (props) {
     var index = props.index, _a = props.value, value = _a === void 0 ? '' : _a, handleChange = props.handleChange, handleRemove = props.handleRemove;
     var _b = (0, react_1.useState)(''), _value = _b[0], setValue = _b[1];
@@ -45,7 +45,7 @@ var ArrayItemInput = function (props) {
         handleChange(value, index);
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 0.5, direction: "row", sx: sx.root },
-        react_1.default.createElement(components_1.TextInput, { name: "value", value: value, placeholder: "Enter...", 
+        react_1.default.createElement(__1.TextInput, { name: "value", value: value, placeholder: "Enter...", 
             //@ts-ignore
             handleChange: handleInputChange }),
         react_1.default.createElement(material_1.Box, null,

@@ -16,11 +16,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var components_1 = require("../../../components");
 var NumberRangeInput = function (props) {
     var _a = props || {}, _b = _a.value, value = _b === void 0 ? {
         min: 0,
         max: 0,
-    } : _b, name = _a.name, label = _a.label, handleChange = _a.handleChange, _c = _a.currency, currency = _c === void 0 ? '' : _c;
+    } : _b, name = _a.name, label = _a.label, handleChange = _a.handleChange, _c = _a.currency, currency = _c === void 0 ? 'usd' : _c, info = _a.info;
     var handleMinChange = function (ev) {
         var min = ev.target.value;
         handleChange({
@@ -40,7 +41,7 @@ var NumberRangeInput = function (props) {
         });
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label)),
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.Box, { sx: sx.inputs },
             react_1.default.createElement(material_1.FormControl, { variant: "standard" },
                 react_1.default.createElement(material_1.Input, { type: "number", onChange: handleMinChange, value: value === null || value === void 0 ? void 0 : value.min, startAdornment: react_1.default.createElement(material_1.InputAdornment, { position: "start" },

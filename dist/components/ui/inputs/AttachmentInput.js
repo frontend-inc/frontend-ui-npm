@@ -77,8 +77,9 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var image_1 = __importDefault(require("next/image"));
-var DropZone_1 = __importDefault(require("./DropZone"));
+var DropZone_1 = __importDefault(require("./helpers/DropZone"));
 var lucide_react_1 = require("lucide-react");
+var components_1 = require("../../../components");
 var IMAGE_WIDTH = 140;
 var RenderAttachment = function (props) {
     var src = props.src, _a = props.objectFit, objectFit = _a === void 0 ? 'cover' : _a, size = props.size, onDelete = props.onDelete, _b = props.variant, variant = _b === void 0 ? 'file' : _b, _c = props.alt, alt = _c === void 0 ? '' : _c;
@@ -93,8 +94,8 @@ var RenderAttachment = function (props) {
                 react_1.default.createElement(icons_material_1.DeleteOutlined, null)))));
 };
 var AttachmentInput = function (props) {
-    var name = props.name, label = props.label, handleChange = props.handleChange, attachment = props.value, handleRemove = props.handleRemove, _a = props.variant, variant = _a === void 0 ? 'file' : _a, _b = props.size, size = _b === void 0 ? IMAGE_WIDTH : _b, _c = props.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = props.placeholder, placeholder = _d === void 0 ? 'Upload file' : _d;
-    var _e = (0, react_1.useState)(), src = _e[0], setSrc = _e[1];
+    var name = props.name, label = props.label, handleChange = props.handleChange, attachment = props.value, handleRemove = props.handleRemove, _a = props.variant, variant = _a === void 0 ? 'file' : _a, _b = props.size, size = _b === void 0 ? IMAGE_WIDTH : _b, _c = props.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = props.placeholder, placeholder = _d === void 0 ? 'Upload file' : _d, info = props.info;
+    var _e = (0, react_1.useState)(null), src = _e[0], setSrc = _e[1];
     var onDrop = function (file, preview) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             setSrc(preview.src);
@@ -129,7 +130,7 @@ var AttachmentInput = function (props) {
         });
     }); };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, label),
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         (attachment === null || attachment === void 0 ? void 0 : attachment.url) && (react_1.default.createElement(RenderAttachment, { variant: variant, src: attachment === null || attachment === void 0 ? void 0 : attachment.url, size: size, objectFit: objectFit, onDelete: function () { return handleDelete(name); } })),
         !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && src && (react_1.default.createElement(RenderAttachment, { src: src, size: size, variant: variant, objectFit: objectFit, onDelete: onRemove })),
         !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && !src && (react_1.default.createElement(DropZone_1.default, { onDrop: onDrop, label: placeholder }))));

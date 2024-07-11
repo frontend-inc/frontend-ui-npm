@@ -9,7 +9,7 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var HeroSnippet = function (props) {
-    var _a = props || {}, resource = _a.resource, url = _a.url, _b = _a.actions, actions = _b === void 0 ? [] : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, enableRatings = _a.enableRatings, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
+    var _a = props || {}, resource = _a.resource, url = _a.url, _b = _a.actions, actions = _b === void 0 ? [] : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit;
     var _d = resource || {}, image = _d.image, label = _d.label, title = _d.title;
     if (!resource)
         return null;
@@ -21,6 +21,7 @@ var HeroSnippet = function (props) {
                 react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: 'text.primary' }, resource === null || resource === void 0 ? void 0 : resource.title),
                 enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true })),
                 react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
+                enablePayments == true && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout", justifyContent: "center" })),
                 react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
             react_1.default.createElement(material_1.Box, { justifyContent: 'flex-end' }, ((actions === null || actions === void 0 ? void 0 : actions.length) > 0 || enableEdit) && (react_1.default.createElement(__1.Actions, { numVisible: 0, actions: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,

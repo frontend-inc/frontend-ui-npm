@@ -6,6 +6,7 @@ type DateInputProps = {
     name: string;
     value?: string;
     placeholder?: string;
+    info?: string;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 declare const DateInput: React.FC<DateInputProps>;

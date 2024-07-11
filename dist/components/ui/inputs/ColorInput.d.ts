@@ -8,6 +8,7 @@ type ColorInputProps = {
     handleChange: (e: SyntheticEventType) => void;
     errors?: any;
     disableTone?: boolean;
+    info?: string;
 };
 declare const ColorInput: React.FC<ColorInputProps>;
 export default ColorInput;
