@@ -40,7 +40,7 @@ var sx = {
         width: '100%',
         fontSize: 15,
         '&:focus': {
-            boxShadow: 2
+            boxShadow: 2,
         },
     },
     rating: {

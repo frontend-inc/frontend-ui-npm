@@ -41,7 +41,7 @@ var sx = {
         pr: 1,
     },
     root: {
-        width: "100%",
+        width: '100%',
     },
     rootBorder: {
         p: 2,

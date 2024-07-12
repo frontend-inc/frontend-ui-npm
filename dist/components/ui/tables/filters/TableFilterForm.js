@@ -103,7 +103,7 @@ var TableFilterForm = function (props) {
             per_page: (query === null || query === void 0 ? void 0 : query.per_page) || 20,
             sort_by: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id',
             sort_direction: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc',
-            filters: filters
+            filters: filters,
         };
         handleSearch(searchQuery);
     };

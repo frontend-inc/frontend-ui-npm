@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var CollectionCarouselList_1 = __importDefault(require("./CollectionCarouselList"));
 var CollectionCarousel = function (props) {
-    var fields = props.fields, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions, url = props.url, _a = props.query, query = _a === void 0 ? {} : _a, filterUser = props.filterUser, filterTeam = props.filterTeam, perPage = props.perPage, rest = __rest(props, ["fields", "enableSearch", "enableCreate", "filterOptions", "sortOptions", "url", "query", "filterUser", "filterTeam", "perPage"]);
-    return (react_1.default.createElement(__1.CollectionContainer, { url: url, query: query, filterUser: filterUser, filterTeam: filterTeam, perPage: perPage, fields: fields, enableSearch: enableSearch, enableCreate: enableCreate, filterOptions: filterOptions, sortOptions: sortOptions },
+    var fields = props.fields, enableSearch = props.enableSearch, enableCreate = props.enableCreate, enableFilters = props.enableFilters, enableSorting = props.enableSorting, url = props.url, _a = props.query, query = _a === void 0 ? {} : _a, filterUser = props.filterUser, filterTeam = props.filterTeam, perPage = props.perPage, rest = __rest(props, ["fields", "enableSearch", "enableCreate", "enableFilters", "enableSorting", "url", "query", "filterUser", "filterTeam", "perPage"]);
+    return (react_1.default.createElement(__1.CollectionContainer, { url: url, query: query, filterUser: filterUser, filterTeam: filterTeam, perPage: perPage, fields: fields, enableSearch: enableSearch, enableCreate: enableCreate, enableFilters: enableFilters, enableSorting: enableSorting },
         react_1.default.createElement(CollectionCarouselList_1.default, __assign({}, rest, { url: url }))));
 };
 exports.default = CollectionCarousel;

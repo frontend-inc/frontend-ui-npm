@@ -41,13 +41,13 @@ var FollowModal = function (props) {
             react_1.default.createElement(material_1.Tab, { label: "Followers", value: 0 }),
             react_1.default.createElement(material_1.Tab, { label: "Following", value: 1 })),
         react_1.default.createElement(material_1.Box, { sx: sx.container },
-            currentTab == 0 && (react_1.default.createElement(__1.ResourceList, { name: 'user', url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/followers"), enableSearch: true, component: FollowUser_1.default })),
-            currentTab == 1 && (react_1.default.createElement(__1.ResourceList, { name: 'user', url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/following"), enableSearch: true, component: FollowUser_1.default })))));
+            currentTab == 0 && (react_1.default.createElement(__1.ResourceList, { name: "user", url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/followers"), enableSearch: true, component: FollowUser_1.default })),
+            currentTab == 1 && (react_1.default.createElement(__1.ResourceList, { name: "user", url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/following"), enableSearch: true, component: FollowUser_1.default })))));
 };
 exports.default = FollowModal;
 var sx = {
     container: {
         py: 2,
-        minHeight: 200
-    }
+        minHeight: 200,
+    },
 };

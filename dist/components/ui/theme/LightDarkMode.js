@@ -26,14 +26,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var context_2 = require("../../../context");
-var LightDarkTheme = function (props) {
+var LightDarkMode = function (props) {
     var _a, _b;
-    var _c = props || {}, lightDarkTheme = _c.theme, children = _c.children;
+    var _c = props || {}, mode = _c.mode, children = _c.children;
     var _d = (0, react_1.useState)('#FFFFFF'), bgcolor = _d[0], setBgcolor = _d[1];
     var muiTheme = (0, react_1.useContext)(context_2.ThemeContext).theme;
     (0, react_1.useEffect)(function () {
         var _a, _b;
-        switch (lightDarkTheme) {
+        switch (mode) {
             case 'dark':
                 setBgcolor('#000000');
                 break;
@@ -44,7 +44,7 @@ var LightDarkTheme = function (props) {
                 setBgcolor((_b = (_a = muiTheme === null || muiTheme === void 0 ? void 0 : muiTheme.palette) === null || _a === void 0 ? void 0 : _a.primary) === null || _b === void 0 ? void 0 : _b.main);
                 break;
         }
-    }, [lightDarkTheme, (_b = (_a = muiTheme === null || muiTheme === void 0 ? void 0 : muiTheme.palette) === null || _a === void 0 ? void 0 : _a.primary) === null || _b === void 0 ? void 0 : _b.main]);
+    }, [mode, (_b = (_a = muiTheme === null || muiTheme === void 0 ? void 0 : muiTheme.palette) === null || _a === void 0 ? void 0 : _a.primary) === null || _b === void 0 ? void 0 : _b.main]);
     return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: muiTheme, bgcolor: bgcolor }, children));
 };
-exports.default = LightDarkTheme;
+exports.default = LightDarkMode;

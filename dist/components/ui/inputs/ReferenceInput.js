@@ -58,87 +58,84 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
-var frontend_js_1 = require("frontend-js");
 var components_1 = require("../../../components");
-var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
-var CollectionForm = function (props) {
-    var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, href = props.href, _b = props.filterRelated, filterRelated = _b === void 0 ? false : _b, _c = props.onSuccessMessage, onSuccessMessage = _c === void 0 ? 'Submitted successfully!' : _c;
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _d = (0, frontend_js_1.useResource)({
-        name: 'document',
-        url: url
-    }), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment, addLinks = _d.addLinks;
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ?
-            ev.target.checked :
-            ev.target.value;
-        setResource(function (prev) { return (0, frontend_js_1.changeDocumentValue)(prev, name, value); });
+var material_1 = require("@mui/material");
+var frontend_js_1 = require("frontend-js");
+var SortableDocumentLinks_1 = __importDefault(require("./helpers/SortableDocumentLinks"));
+var ReferenceInput = function (props) {
+    var _a;
+    var _b = props || {}, label = _b.label, _resource = _b.resource, url = _b.url, foreignUrl = _b.foreignUrl, contentType = _b.contentType;
+    var _c = (0, frontend_js_1.useResource)({
+        url: url,
+        name: 'document'
+    }), resource = _c.resource, setResource = _c.setResource, findOne = _c.findOne, addLinks = _c.addLinks, removeLinks = _c.removeLinks, updateLinkPositions = _c.updateLinkPositions;
+    var handleReload = function () {
+        findOne(_resource === null || _resource === void 0 ? void 0 : _resource.id);
     };
-    var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
+    var _d = (0, frontend_js_1.useResource)({
+        url: foreignUrl,
+        name: 'document'
+    }), foreignResource = _d.resource, setForeignResource = _d.setResource;
+    (0, react_1.useEffect)(function () {
+        if (_resource) {
+            setResource(_resource);
+        }
+    }, [_resource]);
+    var handleDrop = function (sorted) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            updateLinkPositions(resource === null || resource === void 0 ? void 0 : resource.id, sorted);
+            return [2 /*return*/];
+        });
+    }); };
+    var _e = (0, react_1.useState)(false), open = _e[0], setOpen = _e[1];
+    var handleAddClick = function () {
+        setForeignResource({});
+        setOpen(true);
+    };
+    var handleEdit = function (res) {
+        setForeignResource(res);
+        setOpen(true);
+    };
+    var handleDelete = function (res) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, removeAttachment(resource.id, name)];
+                case 0: return [4 /*yield*/, removeLinks(resource === null || resource === void 0 ? void 0 : resource.id, [res.id])];
                 case 1:
                     _a.sent();
-                    _a.label = 2;
-                case 2: return [2 /*return*/];
+                    handleReload();
+                    return [2 /*return*/];
             }
         });
     }); };
-    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resp, submitResp, err_1;
+    var handleSuccess = function (res) { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 7, , 8]);
-                    resp = void 0;
-                    if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, update(resource)];
+                case 0: return [4 /*yield*/, addLinks(resource === null || resource === void 0 ? void 0 : resource.id, [res === null || res === void 0 ? void 0 : res.id])];
                 case 1:
-                    resp = _a.sent();
-                    return [3 /*break*/, 4];
-                case 2: return [4 /*yield*/, create(resource)];
-                case 3:
-                    resp = _a.sent();
-                    _a.label = 4;
-                case 4:
-                    if (!(resp === null || resp === void 0 ? void 0 : resp.id)) return [3 /*break*/, 6];
-                    if (!((_resource === null || _resource === void 0 ? void 0 : _resource.id) && filterRelated == true)) return [3 /*break*/, 6];
-                    return [4 /*yield*/, addLinks(resp.id, [_resource.id])];
-                case 5:
-                    submitResp = _a.sent();
-                    if (submitResp === null || submitResp === void 0 ? void 0 : submitResp.id) {
-                        if (onSuccessMessage) {
-                            showAlertSuccess(onSuccessMessage);
-                        }
-                        if (href) {
-                            router.push("".concat(clientUrl).concat(href));
-                        }
+                    response = _a.sent();
+                    if (response === null || response === void 0 ? void 0 : response.id) {
+                        handleReload();
+                        setOpen(false);
                     }
-                    _a.label = 6;
-                case 6: return [3 /*break*/, 8];
-                case 7:
-                    err_1 = _a.sent();
-                    console.log('Error', err_1);
-                    return [3 /*break*/, 8];
-                case 8: return [2 /*return*/];
+                    return [2 /*return*/];
             }
         });
     }); };
-    (0, react_1.useEffect)(function () {
-        setResource({
-            title: ''
-        });
-    });
-    return (react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
+    var documentLinks = (_a = resource === null || resource === void 0 ? void 0 : resource.document_links) === null || _a === void 0 ? void 0 : _a.filter(function (link) { var _a; return ((_a = link === null || link === void 0 ? void 0 : link.target) === null || _a === void 0 ? void 0 : _a.content_type) === contentType; });
+    if (!(resource === null || resource === void 0 ? void 0 : resource.id))
+        return null;
+    return (react_1.default.createElement(material_1.Stack, { direction: 'column', spacing: 0.5 },
+        react_1.default.createElement(components_1.InputLabel, { label: label }),
+        react_1.default.createElement(SortableDocumentLinks_1.default, { documentLinks: documentLinks, handleDrop: handleDrop, handleEdit: handleEdit, handleDelete: handleDelete }),
+        react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleAddClick, variant: 'contained', color: 'secondary', startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20, color: 'secondary.contrastText' }) },
+            "Add ",
+            contentType),
+        react_1.default.createElement(components_1.RemoteFormModal, { open: open, handleClose: function () { return setOpen(false); }, url: foreignUrl, resource: foreignResource, handleSuccess: handleSuccess })));
 };
-exports.default = CollectionForm;
+exports.default = ReferenceInput;

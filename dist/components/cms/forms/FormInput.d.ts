@@ -1,5 +1,5 @@
 import React from 'react';
-import { SyntheticEventType } from '../../../types';
+import { FormFieldType, SyntheticEventType } from '../../../types';
 type FormInputProps = {
     variant: any;
     name: string;
@@ -10,6 +10,11 @@ type FormInputProps = {
     placeholder?: string;
     handleChange: (e: SyntheticEventType) => void;
     handleRemove: (name: string) => void;
+    resource?: any;
+    url?: string;
+    foreignUrl?: string;
+    contentType?: string;
+    fields?: FormFieldType[];
 };
 declare const FormInput: React.FC<FormInputProps>;
 export default FormInput;

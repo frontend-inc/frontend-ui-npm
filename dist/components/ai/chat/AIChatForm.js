@@ -46,5 +46,5 @@ var sx = {
         borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
         p: 2,
         bgcolor: 'secondary.light',
-    }
+    },
 };

@@ -70,18 +70,16 @@ var Sortable = function (props) {
     return (react_1.default.createElement(core_1.DndContext, { sensors: sensors, collisionDetection: core_1.closestCenter, onDragStart: handleDragStart, onDragEnd: handleDragEnd },
         react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: "row", spacing: 1 }, headers === null || headers === void 0 ? void 0 : headers.map(function (header) {
             var _a, _b;
-            return (react_1.default.createElement(material_1.Stack, { sx: sx.column, key: header.value, direction: "column", spacing: 1, justifyContent: 'space-between' },
+            return (react_1.default.createElement(material_1.Stack, { sx: sx.column, key: header.value, direction: "column", spacing: 1, justifyContent: "space-between" },
                 react_1.default.createElement(material_1.Box, null,
-                    react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: 'text.primary' }, header.label),
+                    react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.primary" }, header.label),
                     react_1.default.createElement(sortable_1.SortableContext, { key: header.value, items: (_a = columns[header.value]) === null || _a === void 0 ? void 0 : _a.map(function (res) { return res.id; }), strategy: sortable_1.verticalListSortingStrategy },
                         react_1.default.createElement(material_1.List, { sx: sx.cardList, disablePadding: true },
-                            columns[header.value].length > 0 ?
-                                (_b = columns[header.value]) === null || _b === void 0 ? void 0 : _b.map(function (res) { return (react_1.default.createElement(components_1.KanBanCard, { loading: loading && (activeResource === null || activeResource === void 0 ? void 0 : activeResource.id) == (res === null || res === void 0 ? void 0 : res.id), key: res === null || res === void 0 ? void 0 : res.id, id: res === null || res === void 0 ? void 0 : res.id, resource: res, actions: actions, displayFields: displayFields, handleClick: function () { return handleClick(res); }, enableOverlay: enableOverlay, enableGradient: enableGradient, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(res); }, handleDelete: function () { return handleDelete(res); }, handleComment: function () { return handleComment(res); } })); }) : (react_1.default.createElement(Droppable_1.default, { id: header.value })),
+                            columns[header.value].length > 0 ? ((_b = columns[header.value]) === null || _b === void 0 ? void 0 : _b.map(function (res) { return (react_1.default.createElement(components_1.KanBanCard, { loading: loading && (activeResource === null || activeResource === void 0 ? void 0 : activeResource.id) == (res === null || res === void 0 ? void 0 : res.id), key: res === null || res === void 0 ? void 0 : res.id, id: res === null || res === void 0 ? void 0 : res.id, resource: res, actions: actions, displayFields: displayFields, handleClick: function () { return handleClick(res); }, enableOverlay: enableOverlay, enableGradient: enableGradient, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(res); }, handleDelete: function () { return handleDelete(res); }, handleComment: function () { return handleComment(res); } })); })) : (react_1.default.createElement(Droppable_1.default, { id: header.value })),
                             react_1.default.createElement(Droppable_1.default, { id: header.value })))),
-                enableCreate && (react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "secondary", onClick: function () { return handleAdd(header.value); }, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: 'secondary.contrastText', size: 20 }) }, "Add"))));
+                enableCreate && (react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "secondary", onClick: function () { return handleAdd(header.value); }, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add"))));
         })),
-        react_1.default.createElement(core_1.DragOverlay, null, draggedResource ? (react_1.default.createElement(components_1.KanBanCard, { enableDragging: true, id: draggedResource === null || draggedResource === void 0 ? void 0 : draggedResource.id, resource: draggedResource, displayFields: displayFields, actions: [], enableRatings: enableRatings, enableFavorites: enableFavorites, handleComment: function () { return handleComment(activeResource); } })) :
-            null)));
+        react_1.default.createElement(core_1.DragOverlay, null, draggedResource ? (react_1.default.createElement(components_1.KanBanCard, { enableDragging: true, id: draggedResource === null || draggedResource === void 0 ? void 0 : draggedResource.id, resource: draggedResource, displayFields: displayFields, actions: [], enableRatings: enableRatings, enableFavorites: enableFavorites, handleComment: function () { return handleComment(activeResource); } })) : null)));
     function handleDragStart(event) {
         var active = event.active;
         setActiveId(active.id);
@@ -134,7 +132,9 @@ var Sortable = function (props) {
         return null;
     }
     function findContainer(id) {
-        return Object.keys(columns).find(function (key) { return columns[key].some(function (item) { return item.id === id; }); });
+        return Object.keys(columns).find(function (key) {
+            return columns[key].some(function (item) { return item.id === id; });
+        });
     }
 };
 exports.default = Sortable;
@@ -146,7 +146,7 @@ var sx = {
         overflowX: 'scroll',
     },
     loading: {
-        opacity: 0.5
+        opacity: 0.5,
     },
     cardList: {
         width: 260,
@@ -166,7 +166,7 @@ var sx = {
         transition: 'box-shadow 0.2s',
         boxShadow: 2,
         '&:hover': {
-            boxShadow: 4
-        }
-    }
+            boxShadow: 4,
+        },
+    },
 };

@@ -29,5 +29,5 @@ var sx = {
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
         width: '100%',
-    }
+    },
 };

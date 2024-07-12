@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisplayFieldType, FormFieldType, SearchFilterOptionType, SortOptionType } from '../../../types';
+import { DisplayFieldType, FormFieldType } from '../../../types';
 export type CollectionContainerProps = {
     resource?: any;
     url: string;
@@ -11,12 +11,12 @@ export type CollectionContainerProps = {
     filterSimilar?: boolean;
     fields?: FormFieldType[];
     displayFields?: DisplayFieldType[];
-    filterOptions?: SearchFilterOptionType[];
-    sortOptions?: SortOptionType[];
     perPage?: number;
     enableSearch?: boolean;
     enableGeoSearch?: boolean;
     enableCreate?: boolean;
+    enableFilters?: boolean;
+    enableSorting?: boolean;
     children: React.ReactNode;
 };
 declare const CollectionContainer: React.FC<CollectionContainerProps>;

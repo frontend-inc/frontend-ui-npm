@@ -1,6 +1,4 @@
 import React from 'react';
-import { CollectionListProps } from '../../cms/collections/CollectionList';
-import { CollectionContainerProps } from '../../cms/collections/CollectionContainer';
-export type FavoritesProps = CollectionListProps & CollectionContainerProps;
-declare const Favorites: React.FC<FavoritesProps>;
+import { CollectionProps } from '../../cms/collections/Collection';
+declare const Favorites: React.FC<CollectionProps>;
 export default Favorites;

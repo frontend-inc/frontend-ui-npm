@@ -18,7 +18,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SocialIcon = exports.SocialLink = exports.Section = exports.RemoteAutosuggest = exports.ProgressLoader = exports.Placeholder = exports.Paper = exports.NotFound = exports.NoImage = exports.MenuList = exports.Loading = exports.TouchableOpacity = exports.PopupButton = exports.Popup = exports.OnlineStatusBadge = exports.OnlineStatusAvatar = exports.Notifications = exports.Notification = exports.Modal = exports.MobileButton = exports.MenuItem = exports.MenuButton = exports.Label = exports.IconLoading = exports.Icon = exports.CircularLoader = exports.Heading = exports.GeoSearchInput = exports.ExpandableText = exports.Drawer = exports.Divider = exports.ContextLoader = exports.CloudinaryImage = exports.Center = exports.CarouselImage = exports.CarouselDot = exports.Carousel = exports.Column = exports.DisplayFields = exports.DisplayField = exports.Breadcrumbs = exports.ButtonTabs = exports.Button = exports.Autosuggest = exports.Alert = exports.AlertButton = exports.AlertModal = exports.Avatar = exports.ActionButton = exports.Actions = void 0;
-exports.LightDarkTheme = exports.Swipeable = exports.TextModal = exports.Logo = exports.ImageModal = exports.Image = exports.EmptyImage = exports.AttachmentImage = exports.Pagination = exports.SelectableListItem = exports.SortableListItem = exports.SortableList = exports.ShopifyProductInput = exports.LocationInput = exports.LayoutScroll = exports.Loader = exports.LayoutEmpty = exports.LayoutContainer = exports.Header = exports.Footer = exports.ProfileImage = exports.ProfileInfo = exports.ProfileDetails = exports.UserMenu = exports.UserAvatar = exports.TeamAvatar = exports.Toolbar = exports.Text = exports.Subheader = void 0;
+exports.LightDarkMode = exports.Swipeable = exports.TextModal = exports.Logo = exports.ImageModal = exports.Image = exports.EmptyImage = exports.AttachmentImage = exports.Pagination = exports.SelectableListItem = exports.SortableListItem = exports.SortableList = exports.ShopifyProductInput = exports.LocationInput = exports.LayoutScroll = exports.Loader = exports.LayoutEmpty = exports.LayoutContainer = exports.Header = exports.Footer = exports.ProfileImage = exports.ProfileInfo = exports.ProfileDetails = exports.UserMenu = exports.UserAvatar = exports.TeamAvatar = exports.Toolbar = exports.Text = exports.Subheader = void 0;
 var Actions_1 = require("./actions/Actions");
 Object.defineProperty(exports, "Actions", { enumerable: true, get: function () { return __importDefault(Actions_1).default; } });
 var ActionButton_1 = require("./actions/ActionButton");
@@ -178,9 +178,9 @@ var TextModal_1 = require("./TextModal");
 Object.defineProperty(exports, "TextModal", { enumerable: true, get: function () { return __importDefault(TextModal_1).default; } });
 var Swipeable_1 = require("./swipeable/Swipeable");
 Object.defineProperty(exports, "Swipeable", { enumerable: true, get: function () { return __importDefault(Swipeable_1).default; } });
-// Theme 
-var LightDarkTheme_1 = require("./theme/LightDarkTheme");
-Object.defineProperty(exports, "LightDarkTheme", { enumerable: true, get: function () { return __importDefault(LightDarkTheme_1).default; } });
+// Theme
+var LightDarkMode_1 = require("./theme/LightDarkMode");
+Object.defineProperty(exports, "LightDarkMode", { enumerable: true, get: function () { return __importDefault(LightDarkMode_1).default; } });
 // Inputs, Fields and Tables
 __exportStar(require("./cards"), exports);
 __exportStar(require("./inputs"), exports);

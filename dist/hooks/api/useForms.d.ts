@@ -1,6 +1,6 @@
 import React from 'react';
 type FormParams = {
-    resource?: any;
+    parentResource?: any;
 };
 declare const useForms: (params?: FormParams) => {
     loading: any;

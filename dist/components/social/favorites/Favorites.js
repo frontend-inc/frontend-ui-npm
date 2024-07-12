@@ -28,9 +28,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var Favorites = function (props) {
-    var fields = props.fields, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions, url = props.url, _a = props.query, query = _a === void 0 ? {} : _a, filterUser = props.filterUser, filterTeam = props.filterTeam, perPage = props.perPage, rest = __rest(props, ["fields", "enableSearch", "enableCreate", "filterOptions", "sortOptions", "url", "query", "filterUser", "filterTeam", "perPage"]);
-    var favoritesUrl = "".concat(url, "/favorites");
-    return (react_1.default.createElement(__1.CollectionContainer, { url: favoritesUrl, query: query, filterUser: filterUser, filterTeam: filterTeam, perPage: perPage, enableSearch: enableSearch, filterOptions: filterOptions, sortOptions: sortOptions },
-        react_1.default.createElement(__1.CollectionList, __assign({}, rest, { url: url }))));
+    var _a = props.query, query = _a === void 0 ? {} : _a, rest = __rest(props, ["query"]);
+    query = __assign(__assign({}, query), { method: 'favorites' });
+    return (react_1.default.createElement(__1.Collection, __assign({ query: query }, rest)));
 };
 exports.default = Favorites;

@@ -27,7 +27,7 @@ var sx = {
         py: 1,
     },
     rating: {
-        color: 'primary.main'
+        color: 'primary.main',
     },
     listItem: {
         pb: 1,
@@ -40,7 +40,7 @@ var sx = {
     },
     listItemIcon: {
         mt: 1,
-        mr: 2
+        mr: 2,
     },
     reviewText: {
         mb: 1,

@@ -13,6 +13,11 @@ export type FormFieldType = {
     label: string;
     options?: OptionType[];
     placeholder?: string;
+    resource?: any;
+    url?: string;
+    foreignUrl?: string;
+    fields?: FormFieldType[];
+    contentType?: string;
 };
 export type TableHeaderType = {
     name: string;

@@ -27,8 +27,8 @@ var sx = {
     root: {
         height: '50px',
         '&:hover .MuiTableCell-root': {
-            bgcolor: 'secondary.main'
-        }
+            bgcolor: 'secondary.main',
+        },
     },
     editIcon: {
         height: '20px',

@@ -39,7 +39,7 @@ var HeroAvatar = function (props) {
                     react_1.default.createElement(__1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
                 react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
-                    enableRatings && (react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true })),
+                    enableRatings && react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true }),
                     react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                     enablePayments && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout" })),
                     react_1.default.createElement(__1.ExpandableText, { text: description }))))));
@@ -99,8 +99,8 @@ var sx = {
     leftPanel: {
         width: {
             sm: 200,
-            xs: '100%'
-        }
+            xs: '100%',
+        },
     },
     leftPanelBorder: {
         pb: 2,

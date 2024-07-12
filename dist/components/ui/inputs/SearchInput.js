@@ -75,7 +75,7 @@ var SearchInput = function (props) {
             } }),
         react_1.default.createElement(Divider_1.default, { sx: { height: 28, my: 0.5 }, orientation: "vertical" }),
         react_1.default.createElement(IconButton_1.default, { onClick: function () { return handleSearch(debouncedValue); }, type: "button", sx: { p: '10px' }, "aria-label": "search" },
-            react_1.default.createElement(components_1.Icon, { name: "Search", size: 20, color: 'text.secondary' }))));
+            react_1.default.createElement(components_1.Icon, { name: "Search", size: 20, color: "text.secondary" }))));
 };
 exports.default = SearchInput;
 var sx = {
@@ -89,15 +89,15 @@ var sx = {
         maxWidth: 400,
         minWidth: {
             sm: 320,
-            xs: "100%"
+            xs: '100%',
         },
         transition: 'box-shadow 0.3s',
         '&:hover': {
-            boxShadow: 1
-        }
+            boxShadow: 1,
+        },
     },
     fullWidth: {
         width: '100%',
-        minWidth: '100%'
-    }
+        minWidth: '100%',
+    },
 };

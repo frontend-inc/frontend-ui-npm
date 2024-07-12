@@ -88,7 +88,7 @@ var sx = {
     avatar: {
         borderRadius: 1,
         height: 32,
-        width: 32
+        width: 32,
     },
     list: {
         bgcolor: 'background.paper',
@@ -107,13 +107,13 @@ var sx = {
     listItemIcon: {
         width: 32,
         minWidth: 32,
-        mr: 2
+        mr: 2,
     },
     mapContainer: {
         overflow: 'hidden',
     },
     label: {
         width: '100%',
-        textAlign: 'left'
-    }
+        textAlign: 'left',
+    },
 };

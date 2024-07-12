@@ -36,10 +36,10 @@ var FollowCounts = function (props) {
         setOpen(true);
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: 'center', divider: react_1.default.createElement(material_1.Divider, { sx: sx.divider }) },
-            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: 'center' },
+        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: "center", divider: react_1.default.createElement(material_1.Divider, { sx: sx.divider }) },
+            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: "center" },
                 react_1.default.createElement(material_1.Button, { sx: sx.link, onClick: handleClick }, user === null || user === void 0 ? void 0 : user.display_num_followers)),
-            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: 'center' },
+            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, alignItems: "center" },
                 react_1.default.createElement(material_1.Button, { sx: sx.link, onClick: handleClick }, user === null || user === void 0 ? void 0 : user.display_num_following))),
         react_1.default.createElement(FollowModal_1.default, { open: open, handleClose: function () { return setOpen(false); }, user: user })));
 };
@@ -53,5 +53,5 @@ var sx = {
     link: {
         boxShadow: 0,
         color: 'text.secondary',
-    }
+    },
 };

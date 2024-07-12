@@ -28,10 +28,10 @@ var Modal = function (props) {
             '& .MuiDialog-paper': {
                 bgcolor: 'background.default',
                 maxWidth: {
-                    sm: theme_1.muiTheme.breakpoints.values[maxWidth],
+                    sm: (isMobile || fullScreen) ? '100vw' : theme_1.muiTheme.breakpoints.values[maxWidth],
                     xs: '100vw',
                 },
-            } }), fullWidth: true, fullScreen: isMobile || fullScreen === true ? true : false, open: open, onClose: handleClose, hideBackdrop: hideBackdrop },
+            } }), fullWidth: true, fullScreen: isMobile || fullScreen === true, open: open, onClose: handleClose, hideBackdrop: hideBackdrop },
         !disableHeader && (react_1.default.createElement(material_1.DialogTitle, { sx: sx.dialogTitleContainer },
             react_1.default.createElement(material_1.Box, { sx: sx.dialogTitleContent },
                 react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "textPrimary", sx: sx.title }, title),

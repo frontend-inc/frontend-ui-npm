@@ -112,11 +112,11 @@ var FollowButton = function (props) {
     }, [currentUser, user]);
     if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) || (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) == (user === null || user === void 0 ? void 0 : user.id))
         return null;
-    return (react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: following ? 'secondary' : 'primary', onClick: usernameClick }, following ? "Following" : "Follow"));
+    return (react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: following ? 'secondary' : 'primary', onClick: usernameClick }, following ? 'Following' : 'Follow'));
 };
 exports.default = FollowButton;
 var sx = {
     button: {
-        minWidth: 120
-    }
+        minWidth: 120,
+    },
 };

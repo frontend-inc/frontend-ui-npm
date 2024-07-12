@@ -104,7 +104,7 @@ var Reviews = function (props) {
         {
             label: 'Rating',
             name: 'rating',
-        }
+        },
     ];
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var handleToggleClick = function () {
@@ -195,7 +195,7 @@ var Reviews = function (props) {
                 totalCount,
                 ")")),
         react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, justifyContent: "space-between", spacing: 1 },
-            react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, spacing: 1, alignItems: 'center' },
+            react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, spacing: 1, alignItems: "center" },
                 react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch }),
                 react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions })),

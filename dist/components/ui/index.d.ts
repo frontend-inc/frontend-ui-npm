@@ -76,7 +76,7 @@ export { default as ImageModal } from './images/ImageModal';
 export { default as Logo } from './images/Logo';
 export { default as TextModal } from './TextModal';
 export { default as Swipeable } from './swipeable/Swipeable';
-export { default as LightDarkTheme } from './theme/LightDarkTheme';
+export { default as LightDarkMode } from './theme/LightDarkMode';
 export * from './cards';
 export * from './inputs';
 export * from './fields';

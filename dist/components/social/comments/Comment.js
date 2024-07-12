@@ -154,7 +154,7 @@ var sx = {
     },
     listItemIcon: {
         mt: 1,
-        mr: 2
+        mr: 2,
     },
     commentText: {
         mb: 1,

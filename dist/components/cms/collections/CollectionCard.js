@@ -36,7 +36,7 @@ var CollectionCard = function (props) {
         chip: __1.ChipCard,
         table: __1.TableCard,
         text: __1.TextCard,
-        list: __1.ListCard
+        list: __1.ListCard,
     };
     var Component = COMPONENTS[style] || __1.Card;
     return react_1.default.createElement(Component, __assign({}, rest));

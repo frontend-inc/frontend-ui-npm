@@ -33,7 +33,7 @@ var AIChatForm_1 = __importDefault(require("./AIChatForm"));
 var AIChatMessages_1 = __importDefault(require("./AIChatMessages"));
 var react_2 = require("ai/react");
 var AIChat = function (props) {
-    var avatar = props.avatar, _a = props.id, id = _a === void 0 ? 'openai-chat' : _a, _b = props.label, label = _b === void 0 ? "Start a conversation" : _b, _c = props.prompt, prompt = _c === void 0 ? '' : _c, _d = props.buttonText, buttonText = _d === void 0 ? "Send Message" : _d;
+    var avatar = props.avatar, _a = props.id, id = _a === void 0 ? 'openai-chat' : _a, _b = props.label, label = _b === void 0 ? 'Start a conversation' : _b, _c = props.prompt, prompt = _c === void 0 ? '' : _c, _d = props.buttonText, buttonText = _d === void 0 ? 'Send Message' : _d;
     var _e = (0, react_1.useState)(false), loading = _e[0], setLoading = _e[1];
     var _f = (0, react_2.useChat)({
         id: id,

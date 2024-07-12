@@ -1,9 +1,11 @@
-type UseFieldParams = {
-    contentType: string;
+type UseFieldsParams = {
+    url: string;
 };
-declare const useFields: (props: UseFieldParams) => {
+declare const useFields: (props: UseFieldsParams) => {
     loading: boolean;
-    fetchFields: () => Promise<void>;
+    fetchSearchFields: () => Promise<void>;
+    fetchFormFields: () => Promise<void>;
+    fetchDisplayFields: () => Promise<void>;
     filterFields: any[];
     sortFields: any[];
     formFields: any[];

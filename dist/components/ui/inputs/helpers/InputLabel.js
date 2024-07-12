@@ -12,7 +12,7 @@ var InfoLabel = function (props) {
         label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label)),
         info && (react_1.default.createElement(material_1.Tooltip, { title: info },
             react_1.default.createElement(material_1.IconButton, { size: "small" },
-                react_1.default.createElement(components_1.Icon, { name: "Info", size: 16, color: 'text.secondary' }))))));
+                react_1.default.createElement(components_1.Icon, { name: "Info", size: 16, color: "text.secondary" }))))));
 };
 exports.default = InfoLabel;
 var sx = {
@@ -20,6 +20,6 @@ var sx = {
         minWidth: '110px',
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center'
-    }
+        alignItems: 'center',
+    },
 };

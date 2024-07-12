@@ -30,11 +30,11 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var frontend_js_1 = require("frontend-js");
 var SocialLikes = function (props) {
-    var url = props.url, label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, theme = props.theme, py = props.py, px = props.px, maxWidth = props.maxWidth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, rest = __rest(props, ["url", "label", "title", "description", "textAlign", "theme", "py", "px", "maxWidth", "requireTeam", "requirePaid", "requireAdmin"]);
+    var url = props.url, label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, requireAdmin = props.requireAdmin, rest = __rest(props, ["url", "label", "title", "description", "textAlign", "mode", "py", "px", "maxWidth", "requireTeam", "requirePaid", "requireAdmin"]);
     var likesUrl = "".concat(url, "/likes");
     return (react_1.default.createElement(frontend_js_1.CollectionProvider, { url: likesUrl },
         react_1.default.createElement(components_1.Query, null,
-            react_1.default.createElement(components_1.Section, { requireAuth: true, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, theme: theme, py: py, px: px, maxWidth: maxWidth },
+            react_1.default.createElement(components_1.Section, { requireAuth: true, requireTeam: requireTeam, requirePaid: requirePaid, requireAdmin: requireAdmin, mode: mode, py: py, px: px, maxWidth: maxWidth },
                 react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
                 react_1.default.createElement(components_2.Likes, __assign({ url: url }, rest))))));
 };

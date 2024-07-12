@@ -48,7 +48,7 @@ var sx = {
         transition: 'all 0.3s ease-in-out',
         '&:hover': {
             boxShadow: 6,
-        }
+        },
     },
     content: {
         minHeight: 300,

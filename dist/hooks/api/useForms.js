@@ -51,14 +51,14 @@ var react_1 = require("react");
 var context_1 = require("../../context");
 var frontend_js_1 = require("frontend-js");
 var useForms = function (params) {
-    var _resource = (params || {}).resource;
+    var parentResource = (params || {}).parentResource;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var _a = (0, frontend_js_1.useCollection)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addLinks = _a.addLinks, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, setOpenShow = _a.setOpenShow, openDelete = _a.openDelete, setOpenDelete = _a.setOpenDelete, openEdit = _a.openEdit, setOpenEdit = _a.setOpenEdit;
     var reloadMany = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            if (_resource === null || _resource === void 0 ? void 0 : _resource.id) {
-                findMany(__assign(__assign({}, query), { belongs_to: _resource === null || _resource === void 0 ? void 0 : _resource.id }));
+            if (parentResource === null || parentResource === void 0 ? void 0 : parentResource.id) {
+                findMany(__assign(__assign({}, query), { belongs_to: parentResource === null || parentResource === void 0 ? void 0 : parentResource.id }));
             }
             else {
                 findMany(query);
@@ -91,33 +91,35 @@ var useForms = function (params) {
                         return [2 /*return*/, setAuthOpen(true)];
                     _a.label = 1;
                 case 1:
-                    _a.trys.push([1, 7, , 8]);
+                    _a.trys.push([1, 8, , 9]);
                     resp = void 0;
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 3];
                     return [4 /*yield*/, update(resource)];
                 case 2:
                     resp = _a.sent();
-                    return [3 /*break*/, 6];
+                    return [3 /*break*/, 7];
                 case 3: return [4 /*yield*/, create(resource)];
                 case 4:
                     resp = _a.sent();
-                    if (!((_resource === null || _resource === void 0 ? void 0 : _resource.id) && (resp === null || resp === void 0 ? void 0 : resp.id))) return [3 /*break*/, 6];
-                    return [4 /*yield*/, addLinks(resp.id, [_resource === null || _resource === void 0 ? void 0 : _resource.id])];
+                    if (!((parentResource === null || parentResource === void 0 ? void 0 : parentResource.id) && (resp === null || resp === void 0 ? void 0 : resp.id))) return [3 /*break*/, 6];
+                    return [4 /*yield*/, addLinks(resp.id, [parentResource === null || parentResource === void 0 ? void 0 : parentResource.id])];
                 case 5:
                     _a.sent();
                     _a.label = 6;
                 case 6:
+                    setResource({});
+                    _a.label = 7;
+                case 7:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        setResource({});
                         setOpenEdit(false);
                         reloadMany();
                     }
-                    return [3 /*break*/, 8];
-                case 7:
+                    return [3 /*break*/, 9];
+                case 8:
                     err_1 = _a.sent();
                     console.log('Error', err_1);
-                    return [3 /*break*/, 8];
-                case 8: return [2 /*return*/];
+                    return [3 /*break*/, 9];
+                case 9: return [2 /*return*/];
             }
         });
     }); };
@@ -176,7 +178,7 @@ var useForms = function (params) {
         openEdit: openEdit,
         setOpenEdit: setOpenEdit,
         openDelete: openDelete,
-        setOpenDelete: setOpenDelete
+        setOpenDelete: setOpenDelete,
     };
 };
 exports.default = useForms;

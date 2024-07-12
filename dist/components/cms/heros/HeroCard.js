@@ -23,7 +23,7 @@ var HeroCard = function (props) {
         react_1.default.createElement(material_1.Box, { sx: sx.root },
             react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: {
                     md: 'row',
-                    xs: 'column'
+                    xs: 'column',
                 }, spacing: 4 },
                 react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", sx: sx.leftPanel },
                     react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },

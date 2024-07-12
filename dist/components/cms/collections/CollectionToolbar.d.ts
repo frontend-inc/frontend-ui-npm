@@ -1,5 +1,4 @@
 import React from 'react';
-import { SortOptionType, SearchFilterOptionType } from '../../../types';
 export type CollectionToolbarProps = {
     query: any;
     url: string;
@@ -8,9 +7,9 @@ export type CollectionToolbarProps = {
     perPage: number;
     enableSearch?: boolean;
     enableGeoSearch?: boolean;
-    filterOptions?: SearchFilterOptionType[];
-    sortOptions?: SortOptionType[];
     enableCreate?: boolean;
+    enableFilters?: boolean;
+    enableSorting?: boolean;
     handleAdd?: () => void;
 };
 declare const CollectionToolbar: React.FC<CollectionToolbarProps>;

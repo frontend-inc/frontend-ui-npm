@@ -1,5 +1,5 @@
 import React from 'react';
-import { SortOptionType, FilterOptionType } from '../../types';
+import { SortOptionType, FilterOptionType, SyntheticEventType } from '../../types';
 declare const useSearch: (props: any) => {
     loading: boolean;
     delayedLoading: any;
@@ -12,10 +12,10 @@ declare const useSearch: (props: any) => {
     loadMore: () => void;
     keywords: string;
     setKeywords: React.Dispatch<React.SetStateAction<string>>;
-    handleKeywordChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+    handleKeywordChange: (ev: SyntheticEventType) => void;
     location: string;
     setLocation: React.Dispatch<React.SetStateAction<string>>;
-    handleLocationChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+    handleLocationChange: (ev: SyntheticEventType) => void;
     handleSearch: (keywords?: string, location?: string) => void;
     handleSortBy: (field: SortOptionType) => void;
     handleSortDirection: (sortDirection: 'asc' | 'desc') => void;

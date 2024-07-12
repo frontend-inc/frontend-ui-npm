@@ -42,25 +42,56 @@ var common_1 = require("../common");
 var useFields = function (props) {
     var api = (0, frontend_js_1.useApi)().api;
     var _a = (0, common_1.useLoadingWrapper)(), loading = _a.loading, loadingWrapper = _a.loadingWrapper;
-    var contentType = (props || {}).contentType;
+    var url = (props || {}).url;
     var _b = (0, react_1.useState)([]), filterFields = _b[0], setFilterFields = _b[1];
     var _c = (0, react_1.useState)([]), sortFields = _c[0], setSortFields = _c[1];
     var _d = (0, react_1.useState)([]), formFields = _d[0], setFormFields = _d[1];
     var _e = (0, react_1.useState)([]), displayFields = _e[0], setDisplayFields = _e[1];
-    var fetchFields = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var fetchFormFields = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.get("/api/v1/cms/fields/".concat(contentType));
+                        return api.get("".concat(url, "/form_fields"));
                     })];
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.data) {
-                        setFilterFields(resp.data.filterFields);
-                        setSortFields(resp.data.sortFields);
-                        setFormFields(resp.data.formFields);
-                        setDisplayFields(resp.data.displayFields);
+                        setFormFields(resp.data);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var fetchSearchFields = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        var _a, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () {
+                        return api.get("".concat(url, "/search_fields"));
+                    })];
+                case 1:
+                    resp = _c.sent();
+                    if (resp === null || resp === void 0 ? void 0 : resp.data) {
+                        setFilterFields((_a = resp.data) === null || _a === void 0 ? void 0 : _a.filterFields);
+                        setSortFields((_b = resp.data) === null || _b === void 0 ? void 0 : _b.sortFields);
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var fetchDisplayFields = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () {
+                        return api.get("".concat(url, "/display_fields"));
+                    })];
+                case 1:
+                    resp = _a.sent();
+                    if (resp === null || resp === void 0 ? void 0 : resp.data) {
+                        setDisplayFields(resp.data);
                     }
                     return [2 /*return*/];
             }
@@ -68,7 +99,9 @@ var useFields = function (props) {
     }); };
     return {
         loading: loading,
-        fetchFields: fetchFields,
+        fetchSearchFields: fetchSearchFields,
+        fetchFormFields: fetchFormFields,
+        fetchDisplayFields: fetchDisplayFields,
         filterFields: filterFields,
         sortFields: sortFields,
         formFields: formFields,

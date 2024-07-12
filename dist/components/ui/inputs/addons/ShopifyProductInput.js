@@ -33,10 +33,13 @@ var ShopifyProductInput = function (props) {
     var _a, _b, _c, _d;
     var value = props.value, label = props.label, _e = props.direction, direction = _e === void 0 ? 'column' : _e, placeholder = props.placeholder, _f = props.name, name = _f === void 0 ? 'shopify_handle' : _f, handleChange = props.handleChange;
     var _g = (0, react_1.useContext)(frontend_shopify_2.ShopifyContext), domain = _g.domain, storefrontAccessToken = _g.storefrontAccessToken;
-    var _h = (0, frontend_shopify_1.useProducts)(), loading = _h.loading, product = _h.product, products = _h.products, findProduct = _h.findProduct, findProducts = _h.findProducts;
+    var _h = (0, frontend_shopify_1.useProducts)(), loading = _h.loading, product = _h.product, products = _h.products, setProduct = _h.setProduct, findProduct = _h.findProduct, findProducts = _h.findProducts;
     var _j = (0, react_1.useState)([]), options = _j[0], setOptions = _j[1];
     var handleInputChange = function (newValue) {
         findProducts(newValue);
+        if (newValue == '') {
+            setProduct(null);
+        }
     };
     (0, react_1.useEffect)(function () {
         if (products) {
@@ -72,7 +75,7 @@ var ShopifyProductInput = function (props) {
     if (!domain || !storefrontAccessToken)
         return (react_1.default.createElement(components_2.Placeholder, { title: "Shopify setup required", description: "Shopify provider is not setup" }));
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
-        react_1.default.createElement(material_1.Collapse, { in: (product === null || product === void 0 ? void 0 : product.id) || loading },
+        react_1.default.createElement(material_1.Collapse, { in: product === null || product === void 0 ? void 0 : product.id },
             react_1.default.createElement(material_1.Box, { sx: sx.productCard },
                 react_1.default.createElement(components_2.Image, { enableGradient: true, disableBorder: true, src: (_d = (_c = (_b = (_a = product === null || product === void 0 ? void 0 : product.images) === null || _a === void 0 ? void 0 : _a.edges) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.node) === null || _d === void 0 ? void 0 : _d.url, alt: product === null || product === void 0 ? void 0 : product.title, height: 180, width: 180 }))),
         react_1.default.createElement(components_1.AutocompleteInput, { name: name, label: label, value: value, options: options, handleChange: handleAutocompleteChange, handleInputChange: handleInputChange, direction: direction, placeholder: placeholder })));
@@ -92,8 +95,8 @@ var sx = {
         p: 0,
         transition: 'box-shadow 0.3s',
         '&:hover': {
-            boxShadow: 2
-        }
+            boxShadow: 2,
+        },
     },
     productContent: {
         p: 1,

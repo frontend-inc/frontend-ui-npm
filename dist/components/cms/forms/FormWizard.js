@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -81,6 +70,7 @@ var FormWizardProgress_1 = __importDefault(require("./wizard/FormWizardProgress"
 var FormCard_1 = __importDefault(require("./wizard/FormCard"));
 var FormWizardField_1 = __importDefault(require("./wizard/FormWizardField"));
 var FormWizardButtons_1 = __importDefault(require("./wizard/FormWizardButtons"));
+var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var FormWizard = function (props) {
     var router = (0, router_1.useRouter)();
@@ -89,7 +79,7 @@ var FormWizard = function (props) {
     var _d = (0, react_1.useState)(false), submitted = _d[0], setSubmitted = _d[1];
     var _e = (0, frontend_js_1.useResource)({
         url: url,
-        name: 'document'
+        name: 'document',
     }), loading = _e.loading, findOne = _e.findOne, resource = _e.resource, setResource = _e.setResource, update = _e.update, create = _e.create, removeAttachment = _e.removeAttachment;
     var handleDataChange = function (ev) {
         var name = ev.target.name;
@@ -100,14 +90,17 @@ var FormWizard = function (props) {
     var _g = (0, react_1.useState)(0), currentStep = _g[0], setCurrentStep = _g[1];
     var _h = (0, react_1.useState)(0), totalSteps = _h[0], setTotalSteps = _h[1];
     var _j = (0, react_1.useState)(false), fadeIn = _j[0], setFadeIn = _j[1];
+    var _k = (0, react_1.useState)(false), open = _k[0], setOpen = _k[1];
     var handleStartClick = function () {
-        setCurrentStep(1);
+        setCurrentStep(0);
         setFadeIn(true);
+        setOpen(true);
     };
     var handleResetForm = function () {
         setResource({});
         setSubmitted(false);
         setCurrentStep(0);
+        setOpen(false);
     };
     var handleSuccess = function () {
         if (href) {
@@ -146,6 +139,7 @@ var FormWizard = function (props) {
                 case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setSubmitted(true);
+                        setOpen(false);
                     }
                     return [3 /*break*/, 6];
                 case 5:
@@ -176,12 +170,12 @@ var FormWizard = function (props) {
     };
     (0, react_1.useEffect)(function () {
         if (fields) {
-            setTotalSteps(fields.length); // End card adds 1
+            setTotalSteps(fields.length);
         }
     }, [fields]);
     (0, react_1.useEffect)(function () {
-        if (fields && currentStep > 0) {
-            setCurrentField(fields[currentStep - 1]);
+        if (fields) {
+            setCurrentField(fields[currentStep]);
         }
     }, [fields, currentStep]);
     (0, react_1.useEffect)(function () {
@@ -193,12 +187,13 @@ var FormWizard = function (props) {
         }
     }, [_resource, handle, url]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        currentStep > 0 && (react_1.default.createElement(FormWizardProgress_1.default, { currentStep: currentStep, totalSteps: totalSteps })),
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.form), { py: py }) }, !submitted ? (react_1.default.createElement(react_1.default.Fragment, null,
-            currentStep == 0 && (react_1.default.createElement(FormCard_1.default, { title: startTitle, description: startDescription, image: startImage, buttonText: startButtonText, handleClick: handleStartClick })),
-            currentStep > 0 && (react_1.default.createElement(react_1.default.Fragment, null,
-                react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleDataChange, handleRemove: handleRemove, resource: (0, frontend_js_1.flattenDocument)(resource), setResource: setResource }),
-                react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: buttonText }))))) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleSuccess })))));
+        !submitted ? (react_1.default.createElement(FormCard_1.default, { title: startTitle, description: startDescription, image: startImage, buttonText: startButtonText, handleClick: handleStartClick })) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleSuccess })),
+        react_1.default.createElement(components_1.Modal, { fullScreen: true, disablePadding: true, open: open, handleClose: function () { return setOpen(false); } },
+            react_1.default.createElement(FormWizardProgress_1.default, { currentStep: currentStep, totalSteps: totalSteps }),
+            react_1.default.createElement(material_1.Box, { sx: sx.formContainer },
+                react_1.default.createElement(material_1.Box, { sx: sx.form },
+                    currentField && (react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleDataChange, handleRemove: handleRemove, resource: (0, frontend_js_1.flattenDocument)(resource), setResource: setResource })),
+                    react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: buttonText }))))));
 };
 exports.default = FormWizard;
 var sx = {
@@ -209,8 +204,17 @@ var sx = {
         justifyContent: 'space-between',
         alignItems: 'center',
     },
+    formContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+        height: 'calc(100vh - 200px)',
+    },
     form: {
         px: 2,
+        py: 4,
         width: '100%',
         maxWidth: '600px',
     },

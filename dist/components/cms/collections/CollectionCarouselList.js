@@ -69,7 +69,7 @@ var CollectionCarouselList = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.root), (loading && sx.loading)) },
         react_1.default.createElement(__1.Carousel, { enableDots: enableDots, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(material_1.Box, { key: index, sx: __assign(__assign({}, sx.item), { pt: enableArrows ? 5 : 1, pb: enableDots ? 4 : 1 }) },
-            react_1.default.createElement(CollectionCard_1.default, { actions: actions, style: 'card', resource: resource, displayFields: displayFields, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableFavorites: enableFavorites }))); })),
+            react_1.default.createElement(CollectionCard_1.default, { actions: actions, style: "card", resource: resource, displayFields: displayFields, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableFavorites: enableFavorites }))); })),
         react_1.default.createElement(__1.CollectionShowModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableFavorites: enableFavorites, enableRatings: enableRatings, enableUsers: enableUsers, handleEdit: function () { return handleEdit(resource); } })));
 };
 exports.default = CollectionCarouselList;
@@ -78,7 +78,7 @@ var sx = {
         width: '100%',
     },
     loading: {
-        opacity: 0.5
+        opacity: 0.5,
     },
     grid: {
         display: 'grid',
@@ -90,5 +90,5 @@ var sx = {
     },
     item: {
         p: 2,
-    }
+    },
 };

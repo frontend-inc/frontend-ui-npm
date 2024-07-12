@@ -50,7 +50,7 @@ var TableCard = function (props) {
                     react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
                         react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
             react_1.default.createElement(material_1.Box, { sx: sx.item },
-                react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: 'body1' }, (0, helpers_1.truncate)(title))),
+                react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "body1" }, (0, helpers_1.truncate)(title))),
             enableRatings == true && (react_1.default.createElement(material_1.Box, { sx: sx.item },
                 react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" }))), displayFields === null || displayFields === void 0 ? void 0 :
             displayFields.map(function (field, index) { return (react_1.default.createElement(material_1.Box, { sx: sx.item, key: index },
@@ -58,7 +58,7 @@ var TableCard = function (props) {
             enableUsers == true && (react_1.default.createElement(material_1.Box, { sx: sx.item },
                 react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))),
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
-            enableFavorites == true && react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
+            enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
             react_1.default.createElement(__2.Actions, { numVisible: 0, actions: actions, resource: resource }))));
 };
 exports.default = TableCard;
@@ -76,7 +76,7 @@ var sx = {
         justifyContent: 'space-between',
     },
     grid: {
-        width: "100%",
+        width: '100%',
         display: {
             sm: 'grid',
             xs: 'flex',
@@ -101,12 +101,12 @@ var sx = {
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        height: "100%"
+        height: '100%',
     },
     image: {
         width: 100,
         maxWidth: 100,
-        height: "100%"
+        height: '100%',
     },
     contentArea: {
         width: '100%',

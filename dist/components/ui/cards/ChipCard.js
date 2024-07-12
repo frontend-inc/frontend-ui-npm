@@ -22,7 +22,7 @@ var ChipCard = function (props) {
     var _g = resource || {}, title = _g.title, image = _g.image;
     return (react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: sx.root },
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.actions },
-                enableFavorites == true && react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
+                enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
                 react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
                 image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
@@ -32,7 +32,7 @@ var ChipCard = function (props) {
                         react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, title),
                         enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" }))), secondary: react_1.default.createElement(react_1.default.Fragment, null,
                         react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
-                        enableUsers == true && (react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))) })))));
+                        enableUsers == true && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })) })))));
 };
 exports.default = ChipCard;
 var sx = {
@@ -46,8 +46,8 @@ var sx = {
         p: 1,
         minHeight: 48,
         '&:hover': {
-            bgcolor: 'transparent'
-        }
+            bgcolor: 'transparent',
+        },
     },
     gradient: {
         '&::after': {

@@ -42,14 +42,14 @@ var ImageCard = function (props) {
         }
     };
     var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
-    return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme, textPrimary: '#FFFFFF', textSecondary: '#FFFFFF' },
+    return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme, textPrimary: "#FFFFFF", textSecondary: "#FFFFFF" },
         react_1.default.createElement(material_1.Box, { sx: sx.root },
             react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
                 react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             react_1.default.createElement(material_1.Box, { sx: sx.actions },
-                enableFavorites == true && react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
+                enableFavorites == true && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
                 react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource, color: enableOverlay ? 'common.white' : 'text.secondary' })),
-            react_1.default.createElement(material_1.Box, { sx: sx.userCard }, enableUsers == true && (react_1.default.createElement(components_1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))))));
+            react_1.default.createElement(material_1.Box, { sx: sx.userCard }, enableUsers == true && react_1.default.createElement(components_1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))));
 };
 exports.default = ImageCard;
 var sx = {
@@ -60,8 +60,8 @@ var sx = {
         borderRadius: 1,
         transition: 'box-shadow 0.3s',
         '&:hover': {
-            boxShadow: 2
-        }
+            boxShadow: 2,
+        },
     },
     gradient: {
         '&::after': {

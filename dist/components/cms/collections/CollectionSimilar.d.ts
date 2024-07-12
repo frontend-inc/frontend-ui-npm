@@ -1,8 +1,4 @@
 import React from 'react';
-import { CollectionListProps } from './CollectionList';
-import { CollectionContainerProps } from './CollectionContainer';
-export type CollectionSimilarProps = CollectionListProps & CollectionContainerProps & {
-    resource: any;
-};
-declare const CollectionSimilar: React.FC<CollectionSimilarProps>;
+import { CollectionProps } from './Collection';
+declare const CollectionSimilar: React.FC<CollectionProps>;
 export default CollectionSimilar;

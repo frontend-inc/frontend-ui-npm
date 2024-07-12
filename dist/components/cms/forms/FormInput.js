@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var FormInput = function (props) {
-    var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove;
+    var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove, resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, fields = props.fields, contentType = props.contentType;
     var componentMapper = {
         array: components_1.ArrayInput,
         string: components_1.TextInput,
@@ -35,6 +35,7 @@ var FormInput = function (props) {
         image: components_1.ImageInput,
         json: components_1.JSONInput,
         shopify: components_1.ShopifyProductInput,
+        habtm: components_1.ReferenceInput
     };
     var inputProps = {
         text: {
@@ -66,6 +67,13 @@ var FormInput = function (props) {
         file: {
             handleRemove: handleRemove,
         },
+        habtm: {
+            resource: resource,
+            url: url,
+            foreignUrl: foreignUrl,
+            contentType: contentType,
+            fields: fields
+        }
     };
     var InputComponent = componentMapper[variant];
     return (react_1.default.createElement(InputComponent, __assign({ errors: errors, label: label, name: name, value: value || '', handleChange: handleChange, placeholder: placeholder }, inputProps[variant])));

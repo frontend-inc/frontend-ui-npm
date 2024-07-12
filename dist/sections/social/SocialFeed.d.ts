@@ -1,6 +1,6 @@
 import React from 'react';
-import { FeedProps } from '../../components/social/feed/Feed';
+import { CollectionProps } from '../../components/cms/collections/Collection';
 import { SectionProps, HeadingProps } from '../../types';
-type SocialFeedProps = SectionProps & HeadingProps & FeedProps;
+type SocialFeedProps = SectionProps & HeadingProps & CollectionProps;
 declare const SocialFeed: React.FC<SocialFeedProps>;
 export default SocialFeed;

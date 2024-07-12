@@ -30,7 +30,7 @@ var useSearch = function (props) {
         if (location === void 0) { location = ''; }
         var searchQuery = __assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1, per_page: perPage });
         if ((location === null || location === void 0 ? void 0 : location.length) > 0) {
-            searchQuery = __assign(__assign({}, searchQuery), { location: location });
+            searchQuery = __assign(__assign({}, searchQuery), { method: 'location', location: location });
         }
         else {
             searchQuery = __assign(__assign({}, searchQuery), { location: null });

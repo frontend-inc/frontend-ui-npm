@@ -29,7 +29,7 @@ var CollectionCards = function (props) {
         cover: 'grid',
         chip: 'list',
         text: 'list',
-        table: 'table'
+        table: 'table',
     };
     var variant = VARIANTS[style];
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (variant == 'grid' ? sx.grid : sx.list)) }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__1.CollectionCard, { key: index, style: style, resource: (0, frontend_js_1.flattenDocument)(resource), displayFields: displayFields, handleClick: function () { return handleClick(resource); }, actions: (0, helpers_1.buildActions)({
@@ -61,6 +61,6 @@ var sx = {
             xs: '1fr',
         },
         gap: '16px',
-        pb: 1
+        pb: 1,
     },
 };

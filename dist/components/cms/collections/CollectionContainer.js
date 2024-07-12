@@ -18,13 +18,13 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var CollectionContainer = function (props) {
-    var resource = props.resource, url = props.url, children = props.children, _a = props.perPage, perPage = _a === void 0 ? 12 : _a, _b = props.filterUser, filterUser = _b === void 0 ? false : _b, _c = props.filterTeam, filterTeam = _c === void 0 ? false : _c, _d = props.filterRelated, filterRelated = _d === void 0 ? false : _d, _e = props.filterGeo, filterGeo = _e === void 0 ? false : _e, _f = props.filterSimilar, filterSimilar = _f === void 0 ? false : _f, _g = props.fields, fields = _g === void 0 ? [] : _g, enableGeoSearch = props.enableGeoSearch, enableSearch = props.enableSearch, enableCreate = props.enableCreate, filterOptions = props.filterOptions, sortOptions = props.sortOptions;
-    var _h = (props || {}).query, query = _h === void 0 ? {} : _h;
+    var resource = props.resource, url = props.url, children = props.children, _a = props.perPage, perPage = _a === void 0 ? 12 : _a, _b = props.filterUser, filterUser = _b === void 0 ? false : _b, _c = props.filterTeam, filterTeam = _c === void 0 ? false : _c, _d = props.filterRelated, filterRelated = _d === void 0 ? false : _d, _e = props.filterGeo, filterGeo = _e === void 0 ? false : _e, _f = props.filterSimilar, filterSimilar = _f === void 0 ? false : _f, _g = props.fields, fields = _g === void 0 ? [] : _g, enableGeoSearch = props.enableGeoSearch, enableSearch = props.enableSearch, enableCreate = props.enableCreate, _h = props.enableFilters, enableFilters = _h === void 0 ? true : _h, _j = props.enableSorting, enableSorting = _j === void 0 ? true : _j;
+    var _k = (props || {}).query, query = _k === void 0 ? {} : _k;
     if (filterRelated == true && (resource === null || resource === void 0 ? void 0 : resource.id)) {
-        query = __assign(__assign({}, query), { belongs_to: resource.id });
+        query = __assign(__assign({}, query), { method: 'related', resource_id: resource.id });
     }
     else {
-        query = __assign(__assign({}, query), { belongs_to: null });
+        query = __assign(__assign({}, query), { resource_id: null });
     }
     if (filterUser == true) {
         query = __assign(__assign({}, query), { current_user: true });
@@ -39,15 +39,16 @@ var CollectionContainer = function (props) {
         query = __assign(__assign({}, query), { current_team: false });
     }
     if (filterGeo == true && (resource === null || resource === void 0 ? void 0 : resource.location)) {
-        query = __assign(__assign({}, query), { location: resource === null || resource === void 0 ? void 0 : resource.location });
+        query = __assign(__assign({}, query), { method: 'location', location: resource === null || resource === void 0 ? void 0 : resource.location });
     }
     if (filterSimilar == true && (resource === null || resource === void 0 ? void 0 : resource.id)) {
-        query = __assign(__assign({}, query), { similar_to: resource === null || resource === void 0 ? void 0 : resource.id });
+        query = __assign(__assign({}, query), { method: 'similar', resource_id: resource === null || resource === void 0 ? void 0 : resource.id });
     }
     return (react_1.default.createElement(frontend_js_1.CollectionProvider, { url: url },
         react_1.default.createElement(__1.Query, { query: query, perPage: perPage },
-            react_1.default.createElement(__1.CollectionToolbar, { url: url, query: query, perPage: perPage, filterUser: filterUser, filterTeam: filterTeam, enableSearch: enableSearch, enableGeoSearch: enableGeoSearch, filterOptions: filterOptions, sortOptions: sortOptions, enableCreate: enableCreate }),
+            react_1.default.createElement(__1.CollectionToolbar, { url: url, query: query, perPage: perPage, filterUser: filterUser, filterTeam: filterTeam, enableSearch: enableSearch, enableGeoSearch: enableGeoSearch, enableCreate: enableCreate, enableFilters: enableFilters, enableSorting: enableSorting }),
             children),
-        react_1.default.createElement(__1.CollectionFormModal, { fields: fields, resource: resource })));
+        react_1.default.createElement(__1.CollectionFormModal, { fields: fields, parentResource: resource }),
+        react_1.default.createElement(__1.CollectionDeleteModal, null)));
 };
 exports.default = CollectionContainer;

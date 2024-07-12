@@ -16,7 +16,7 @@ var CollectionShowModal = function (props) {
         react_1.default.createElement(material_1.Box, { px: 3, pb: 2 },
             react_1.default.createElement(__1.HeroSnippet, { resource: resource, enableEdit: enableEdit, actions: actions, displayFields: displayFields, enableRatings: enableRatings, handleEdit: handleEdit }),
             (enableLikes || enableFavorites || enableSharing) && (react_1.default.createElement(__1.SocialButtons, { justifyContent: "center", handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
-            enableComments && (react_1.default.createElement(__1.Comments, { url: url, handle: resource === null || resource === void 0 ? void 0 : resource.handle })))));
+            enableComments && react_1.default.createElement(__1.Comments, { url: url, handle: resource === null || resource === void 0 ? void 0 : resource.handle }))));
 };
 exports.default = CollectionShowModal;
 var sx = {
@@ -42,7 +42,7 @@ var sx = {
     imageContainer: {
         borderRadius: 1,
         width: 240,
-        minWidth: 240
+        minWidth: 240,
     },
     closeButton: {
         position: 'absolute',
@@ -51,6 +51,6 @@ var sx = {
         bgcolor: 'rgb(0,0,0,0.5)',
     },
     paper: {
-        mb: 2
-    }
+        mb: 2,
+    },
 };

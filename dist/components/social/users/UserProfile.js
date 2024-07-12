@@ -54,19 +54,19 @@ var UserProfile = function (props) {
         }
     };
     if (!(user === null || user === void 0 ? void 0 : user.username)) {
-        return (react_1.default.createElement(components_1.Placeholder, { icon: 'UserCircle', title: 'Please sign in', description: 'Sign in to view the user profile' }));
+        return (react_1.default.createElement(components_1.Placeholder, { icon: "UserCircle", title: "Please sign in", description: "Sign in to view the user profile" }));
     }
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.container), (enableBorder && sx.containerBorder)) },
         react_1.default.createElement(material_1.Stack, { sx: sx.profile, direction: { sm: 'row', xs: 'column' }, spacing: { sm: 4, xs: 0 }, alignItems: "flex-start" },
-            react_1.default.createElement(material_1.Box, { height: "100%", sx: sx.avatarContainer }, (avatar === null || avatar === void 0 ? void 0 : avatar.url) && (react_1.default.createElement(components_1.UserAvatar, { user: user, size: 120 }))),
+            react_1.default.createElement(material_1.Box, { height: "100%", sx: sx.avatarContainer }, (avatar === null || avatar === void 0 ? void 0 : avatar.url) && react_1.default.createElement(components_1.UserAvatar, { user: user, size: 120 })),
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0 },
-                react_1.default.createElement(material_1.Typography, { variant: "caption", color: 'text.secondary', sx: sx.username },
+                react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.username },
                     "@",
                     username),
-                react_1.default.createElement(material_1.Typography, { variant: "h6", color: 'text.primary', sx: sx.name }, name),
-                enableFollowing == true && (react_1.default.createElement(components_1.FollowCounts, { user: user })),
-                bio && (react_1.default.createElement(components_1.ExpandableText, { text: bio, color: 'text.secondary' }))),
-            react_1.default.createElement(material_1.Stack, { direction: "row", height: "100%", justifyContent: 'flex-start' }, enableFollowing == true && (react_1.default.createElement(components_1.FollowButton, { user: user }))))));
+                react_1.default.createElement(material_1.Typography, { variant: "h6", color: "text.primary", sx: sx.name }, name),
+                enableFollowing == true && react_1.default.createElement(components_1.FollowCounts, { user: user }),
+                bio && react_1.default.createElement(components_1.ExpandableText, { text: bio, color: "text.secondary" })),
+            react_1.default.createElement(material_1.Stack, { direction: "row", height: "100%", justifyContent: "flex-start" }, enableFollowing == true && react_1.default.createElement(components_1.FollowButton, { user: user })))));
 };
 exports.default = UserProfile;
 var sx = {
@@ -82,22 +82,22 @@ var sx = {
     },
     button: {
         boxShadow: 0,
-        color: 'text.secondary'
+        color: 'text.secondary',
     },
     name: {
         width: '100%',
         minWidth: 200,
         textAlign: {
             sm: 'left',
-            xs: 'center'
-        }
+            xs: 'center',
+        },
     },
     profile: {
-        maxWidth: 600
+        maxWidth: 600,
     },
     avatar: {
         width: 110,
-        height: 110
+        height: 110,
     },
     avatarContainer: {
         height: 140,
@@ -108,11 +108,11 @@ var sx = {
     },
     username: {
         boxShadow: 0,
-        width: "100%",
+        width: '100%',
         display: 'flex',
         justifyContent: {
             sm: 'flex-start',
-            xs: 'center'
-        }
-    }
+            xs: 'center',
+        },
+    },
 };

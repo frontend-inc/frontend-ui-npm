@@ -1,8 +1,4 @@
 import React from 'react';
-import { CollectionListProps } from './CollectionList';
-import { CollectionContainerProps } from './CollectionContainer';
-export type CollectionGeoNearbyProps = CollectionListProps & CollectionContainerProps & {
-    resource: any;
-};
-declare const CollectionGeoNearby: React.FC<CollectionGeoNearbyProps>;
+import { CollectionProps } from './Collection';
+declare const CollectionGeoNearby: React.FC<CollectionProps>;
 export default CollectionGeoNearby;

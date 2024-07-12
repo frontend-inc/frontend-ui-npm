@@ -8,7 +8,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../../components");
 var JsonForm = function (props) {
     var item = props.item, handleChange = props.handleChange, fields = props.fields, _a = props.direction, direction = _a === void 0 ? 'column' : _a, handleRemove = props.handleRemove;
-    return (react_1.default.createElement(material_1.Stack, { direction: 'column', spacing: 1, sx: sx.root }, fields.map(function (field, i) { return (react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root }, fields.map(function (field, i) { return (react_1.default.createElement(react_1.default.Fragment, null,
         (field === null || field === void 0 ? void 0 : field.type) === 'boolean' && (react_1.default.createElement(components_1.BooleanInput, { label: field.label, name: field.name, value: item[field.name], handleChange: handleChange })),
         (field === null || field === void 0 ? void 0 : field.type) === 'string' && (react_1.default.createElement(components_1.TextInput, { label: field.label, direction: direction, name: field.name, value: item[field.name], placeholder: field.placeholder, 
             //@ts-ignore

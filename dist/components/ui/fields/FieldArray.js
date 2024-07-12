@@ -47,6 +47,6 @@ var sx = {
         gap: '8px',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
-        width: '100%'
+        width: '100%',
     },
 };

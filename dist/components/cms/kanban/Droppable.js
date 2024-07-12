@@ -33,9 +33,9 @@ var sx = {
         alignItems: 'center',
         justifyContent: 'center',
         p: 2,
-        height: '100%'
+        height: '100%',
     },
     isOver: {
-        borderColor: 'primary.main'
-    }
+        borderColor: 'primary.main',
+    },
 };

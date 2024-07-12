@@ -27,6 +27,6 @@ var sx = {
         alignItems: 'flex-start',
     },
     paper: {
-        width: '100%'
-    }
+        width: '100%',
+    },
 };

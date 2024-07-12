@@ -115,7 +115,7 @@ var GeoSearchInput = function (props) {
                 } }),
             react_1.default.createElement(Divider_1.default, { sx: sx.divider, orientation: "vertical" }),
             react_1.default.createElement(IconButton_1.default, { onClick: function () { return handleSearch(text, locationText); }, type: "button", sx: sx.iconButton, "aria-label": "search" },
-                react_1.default.createElement(__1.Icon, { name: "Search", size: 20, color: 'text.secondary' }))),
+                react_1.default.createElement(__1.Icon, { name: "Search", size: 20, color: "text.secondary" }))),
         react_1.default.createElement(LocationOptionsList_1.default, { open: open, options: placeOptions, handleClick: handleClick })));
 };
 exports.default = GeoSearchInput;
@@ -130,30 +130,30 @@ var sx = {
         maxWidth: 400,
         minWidth: {
             sm: 320,
-            xs: "100%"
+            xs: '100%',
         },
         transition: 'box-shadow 0.3s',
         '&:hover': {
-            boxShadow: 1
-        }
+            boxShadow: 1,
+        },
     },
     inputBase: {
         ml: 2,
-        flex: 1
+        flex: 1,
     },
     divider: {
         height: 28,
-        my: 0.5
+        my: 0.5,
     },
     iconButton: {
-        p: '10px'
+        p: '10px',
     },
     fullWidth: {
         width: '100%',
-        minWidth: '100%'
+        minWidth: '100%',
     },
     locationContainer: {
         position: 'relative',
-        width: "100%"
-    }
+        width: '100%',
+    },
 };

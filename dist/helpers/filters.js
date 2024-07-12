@@ -1,5 +1,5 @@
 "use strict";
-// Frontend uses filters in 3 formats. These are helper 
+// Frontend uses filters in 3 formats. These are helper
 // methods to convert between these formats.
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
@@ -22,7 +22,7 @@ var mergeFilters = function (filters, newFilters) {
         return filters;
     var mergedFilters = {
         AND: __spreadArray(__spreadArray([], ((filters === null || filters === void 0 ? void 0 : filters.AND) || []), true), ((newFilters === null || newFilters === void 0 ? void 0 : newFilters.AND) || []), true),
-        OR: __spreadArray(__spreadArray([], (filters.OR || []), true), (newFilters.OR || []), true)
+        OR: __spreadArray(__spreadArray([], (filters.OR || []), true), (newFilters.OR || []), true),
     };
     return mergedFilters;
 };

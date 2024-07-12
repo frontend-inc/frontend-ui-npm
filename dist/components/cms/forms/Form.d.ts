@@ -1,14 +1,14 @@
 import React from 'react';
-import { FormFieldType, SyntheticEventType } from '../../../types';
 export type FormProps = {
-    loading: boolean;
-    errors: any;
-    fields: FormFieldType[];
+    loading?: boolean;
     resource: any;
-    handleChange: (e: SyntheticEventType) => void;
-    handleRemove: (name: string) => void;
-    handleSubmit?: () => void;
+    parentResource?: any;
+    url: string;
+    href?: string;
     buttonText?: string;
+    fields: any[];
+    onSuccessMessage?: string;
+    handleSuccess?: (resource: any) => void;
 };
 declare const Form: React.FC<FormProps>;
 export default Form;

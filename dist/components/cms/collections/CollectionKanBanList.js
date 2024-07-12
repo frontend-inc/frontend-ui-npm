@@ -104,7 +104,7 @@ var CollectionKanBanList = function (props) {
     var setOpenEdit = (0, react_1.useContext)(frontend_js_1.CollectionContext).setOpenEdit;
     var handleAdd = function (header) {
         setResource({
-            status: header
+            status: header,
         });
         setOpenEdit(true);
     };

@@ -71,7 +71,8 @@ var groupResourcesByField = function (resources, fieldName, allowedValues) {
     // Iterate over each resource
     resources.forEach(function (resource) {
         // Check if the resource has the specified field and if its value is allowed
-        if (resource.hasOwnProperty(fieldName) && allowedValues.includes(resource[fieldName])) {
+        if (resource.hasOwnProperty(fieldName) &&
+            allowedValues.includes(resource[fieldName])) {
             // Add the resource to the appropriate group
             grouped[resource[fieldName]].push(resource);
         }

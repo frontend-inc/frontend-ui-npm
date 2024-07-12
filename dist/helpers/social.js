@@ -19,6 +19,8 @@ var isFollowing = function (user, followUser) {
     var _a;
     if (!user || !followUser)
         return false;
-    return ((_a = user === null || user === void 0 ? void 0 : user.following) === null || _a === void 0 ? void 0 : _a.find(function (u) { return u.username === (followUser === null || followUser === void 0 ? void 0 : followUser.username); })) ? true : false;
+    return ((_a = user === null || user === void 0 ? void 0 : user.following) === null || _a === void 0 ? void 0 : _a.find(function (u) { return u.username === (followUser === null || followUser === void 0 ? void 0 : followUser.username); }))
+        ? true
+        : false;
 };
 exports.isFollowing = isFollowing;

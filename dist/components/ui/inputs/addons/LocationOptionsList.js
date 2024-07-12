@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../../components");
 var LocationOptionsList = function (props) {
     var _a = props || {}, open = _a.open, _b = _a.options, options = _b === void 0 ? [] : _b, handleClick = _a.handleClick;
-    return (react_1.default.createElement(material_1.Box, { sx: sx.anchor }, open && (react_1.default.createElement(material_1.Paper, { sx: __assign(__assign({}, sx.container), { height: (((options === null || options === void 0 ? void 0 : options.length) || 0) * 58) }), elevation: 2 },
+    return (react_1.default.createElement(material_1.Box, { sx: sx.anchor }, open && (react_1.default.createElement(material_1.Paper, { sx: __assign(__assign({}, sx.container), { height: ((options === null || options === void 0 ? void 0 : options.length) || 0) * 58 }), elevation: 2 },
         react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: sx.list }, options === null || options === void 0 ? void 0 : options.map(function (option, index) { return (react_1.default.createElement(material_1.ListItem, { sx: sx.listItem, disableGutters: true },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleClick(option); } },
                 react_1.default.createElement(material_1.ListItemIcon, null,
@@ -52,8 +52,8 @@ var sx = {
     },
     listItem: {
         p: 0,
-        borderBottom: "1px solid",
-        borderColor: "divider",
+        borderBottom: '1px solid',
+        borderColor: 'divider',
     },
     listItemButton: {
         px: 1,

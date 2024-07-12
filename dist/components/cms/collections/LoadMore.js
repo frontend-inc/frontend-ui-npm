@@ -11,7 +11,7 @@ var LoadMore = function (props) {
     var page = props.page, numPages = props.numPages, loadMore = props.loadMore, _a = props.enableInfiniteLoad, enableInfiniteLoad = _a === void 0 ? false : _a;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root }, page < numPages && (react_1.default.createElement(react_1.default.Fragment, null,
         enableInfiniteLoad && react_1.default.createElement(react_waypoint_1.Waypoint, { onEnter: loadMore }),
-        react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: loadMore, endIcon: react_1.default.createElement(components_1.Icon, { name: "ChevronDown" }) }, "Load More")))));
+        react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: loadMore, endIcon: react_1.default.createElement(components_1.Icon, { name: "ChevronDown", color: "secondary.contrastText" }) }, "Load More")))));
 };
 exports.default = LoadMore;
 var sx = {
