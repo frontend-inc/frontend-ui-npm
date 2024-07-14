@@ -22,7 +22,7 @@ var SelectableCardItem = function (props) {
     return (react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleClick },
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.root), (selected && sx.selected)) },
             react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-                react_1.default.createElement(components_1.Image, { src: image, height: 200, objectFit: 'cover', alt: title, disableBorderRadius: true })),
+                react_1.default.createElement(components_1.Image, { src: image, height: 200, alt: title, disableBorderRadius: true })),
             react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
                 react_1.default.createElement(material_1.Stack, { spacing: 0 },
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "body1" }, title),

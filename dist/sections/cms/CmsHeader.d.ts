@@ -1,6 +1,6 @@
 import React from 'react';
-import { HeroHeaderProps } from '../../components/cms/heros/HeroHeader';
+import { ShowHeaderProps } from '../../components/cms/show/ShowHeader';
 import { SectionProps } from '../../types';
-type CmsHeaderProps = SectionProps & HeroHeaderProps;
+type CmsHeaderProps = SectionProps & ShowHeaderProps;
 declare const CmsHeader: React.FC<CmsHeaderProps>;
 export default CmsHeader;

@@ -1,0 +1,25 @@
+import React from 'react';
+import { ActionType, DisplayFieldType } from '../../../types';
+export type ListItemsProps = {
+    url: string;
+    href?: string;
+    style: 'list' | 'avatar' | 'card' | 'cover' | 'text';
+    actions: ActionType[];
+    displayFields: DisplayFieldType[];
+    handleClick?: (resource: any) => void;
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
+    enableEdit?: boolean;
+    enableDelete?: boolean;
+    enableComments?: boolean;
+    enableFavorites?: boolean;
+    enableLikes?: boolean;
+    enableRatings?: boolean;
+    enableSharing?: boolean;
+    enableUsers?: boolean;
+    emptyIcon?: string;
+    emptyTitle?: string;
+    emptyDescription?: string;
+};
+declare const ListItems: React.FC<ListItemsProps>;
+export default ListItems;

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CollectionDeleteModal = exports.CollectionFormModal = exports.RemoteFormModal = exports.RemoteForm = exports.FormFieldInput = exports.FormInput = exports.FormWizard = exports.FormFields = exports.FormModal = exports.Form = void 0;
+exports.RemoteFormModal = exports.RemoteForm = exports.FormFieldInput = exports.FormInput = exports.FormWizard = exports.FormFields = exports.FormModal = exports.Form = void 0;
 var Form_1 = require("./Form");
 Object.defineProperty(exports, "Form", { enumerable: true, get: function () { return __importDefault(Form_1).default; } });
 var FormModal_1 = require("./FormModal");
@@ -20,7 +20,3 @@ var RemoteForm_1 = require("./RemoteForm");
 Object.defineProperty(exports, "RemoteForm", { enumerable: true, get: function () { return __importDefault(RemoteForm_1).default; } });
 var RemoteFormModal_1 = require("./RemoteFormModal");
 Object.defineProperty(exports, "RemoteFormModal", { enumerable: true, get: function () { return __importDefault(RemoteFormModal_1).default; } });
-var CollectionFormModal_1 = require("./CollectionFormModal");
-Object.defineProperty(exports, "CollectionFormModal", { enumerable: true, get: function () { return __importDefault(CollectionFormModal_1).default; } });
-var CollectionDeleteModal_1 = require("./CollectionDeleteModal");
-Object.defineProperty(exports, "CollectionDeleteModal", { enumerable: true, get: function () { return __importDefault(CollectionDeleteModal_1).default; } });

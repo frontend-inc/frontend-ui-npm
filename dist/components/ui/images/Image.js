@@ -27,11 +27,10 @@ var Image = function (props) {
             width: '100%',
             height: "".concat(height, "px"),
         } },
-        react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleClick },
+        react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleClick ? handleClick : undefined },
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.root), { height: "".concat(height, "px"), minWidth: width ? "".concat(width, "px") : '100%' }), (!disableBorderRadius && sx.borderRadius)), { '&::after': __assign(__assign(__assign(__assign(__assign(__assign({}, sx.afterBase), (enableOverlay && sx.overlay)), (!enableOverlay && enableGradient && sx.gradient)), (!disableBorderRadius && sx.borderRadius)), (!enableOverlay &&
                         !disableBorderRadius &&
-                        enableGradient &&
-                        sx.gradientBorderRadius)), { bgcolor: bgcolor, opacity: opacity }) }) }, src ? (react_1.default.createElement(image_1.default, { src: src, alt: alt, height: 1600, width: 1600, layout: "responsive", style: {
+                        enableGradient && sx.borderRadius)), { bgcolor: bgcolor, opacity: opacity }) }) }, src ? (react_1.default.createElement(image_1.default, { src: src, alt: alt, height: 1600, width: 1600, layout: "responsive", style: {
                     height: "".concat(height, "px"),
                     width: width ? "min(".concat(width, "px, 100vw)") : '100%',
                     minHeight: "".concat(height, "px"),
@@ -80,13 +79,8 @@ var sx = {
         height: '100%',
     },
     gradient: {
-        height: '50%',
-        background: 'linear-gradient(to top, rgb(0,0,0,2.0), transparent)',
-    },
-    gradientBorderRadius: {
-        height: '50%',
-        background: 'linear-gradient(to top, rgb(0,0,0,2.0), transparent)',
-        borderRadius: 1,
+        height: '100%',
+        background: 'linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 20%, transparent 60%, rgba(0, 0, 0, 0.5) 100%)',
     },
     secondaryActions: {
         position: 'absolute',

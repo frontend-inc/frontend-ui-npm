@@ -6,7 +6,6 @@ type FieldImageProps = {
     height?: number;
     width?: number;
     handleClick?: () => void;
-    objectFit?: 'cover' | 'contain';
     color?: string;
 };
 declare const FieldImage: React.FC<FieldImageProps>;

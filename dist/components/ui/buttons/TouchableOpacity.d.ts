@@ -1,7 +1,7 @@
 import React from 'react';
 type TouchableOpacityProps = {
     children: any;
-    handleClick: () => void;
+    handleClick?: () => void;
     disableRipple?: boolean;
     justifyContent?: string;
 };

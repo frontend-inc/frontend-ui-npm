@@ -1,0 +1,24 @@
+import React from 'react';
+import { ActionType, DisplayFieldType } from '../../../types';
+type ListCardsProps = {
+    resources: any;
+    displayFields?: DisplayFieldType[];
+    actions?: ActionType[];
+    style: 'list' | 'card' | 'avatar' | 'cover' | 'table' | 'text';
+    buttonText?: string;
+    enableBorder?: boolean;
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
+    enableEdit?: boolean;
+    enableDelete?: boolean;
+    enableUsers?: boolean;
+    enableComments?: boolean;
+    enableFavorites?: boolean;
+    enableLikes?: boolean;
+    enableRatings?: boolean;
+    handleClick: (item: any) => void;
+    handleEdit?: (item: any) => void;
+    handleDelete?: (item: any) => void;
+};
+declare const ListCards: React.FC<ListCardsProps>;
+export default ListCards;

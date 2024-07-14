@@ -32,9 +32,9 @@ var router_1 = require("next/router");
 var __2 = require("../..");
 var TableCard = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 100 : _c, handleClick = _a.handleClick, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = _a.enableRatings, enableRatings = _h === void 0 ? false : _h, _j = _a.enableUsers, enableUsers = _j === void 0 ? false : _j;
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 100 : _c, handleClick = _a.handleClick, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableFavorites, enableFavorites = _f === void 0 ? false : _f, _g = _a.enableRatings, enableRatings = _g === void 0 ? false : _g, _h = _a.enableUsers, enableUsers = _h === void 0 ? false : _h;
     var router = (0, router_1.useRouter)();
-    var _k = resource || {}, label = _k.label, title = _k.title, image = _k.image;
+    var _j = resource || {}, label = _j.label, title = _j.title, image = _j.image;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -48,7 +48,7 @@ var TableCard = function (props) {
             react_1.default.createElement(material_1.Box, { sx: sx.imageItem },
                 react_1.default.createElement(material_1.Box, { sx: sx.image },
                     react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-                        react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
+                        react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
             react_1.default.createElement(material_1.Box, { sx: sx.item },
                 react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "body1" }, (0, helpers_1.truncate)(title))),
             enableRatings == true && (react_1.default.createElement(material_1.Box, { sx: sx.item },

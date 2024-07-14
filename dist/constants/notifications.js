@@ -21,7 +21,7 @@ exports.NOTIFICATION_OPTIONS = {
     shopify: __spreadArray(__spreadArray([], DEFAULT_NOTIFICATION_OPTIONS, true), [
         {
             value: 'shopify_collection',
-            label: 'Shopify Collection',
+            label: 'Shopify List',
             icon: 'ShoppingCart',
         },
         { value: 'shopify_product', label: 'Shopify Product', icon: 'TShirt' },

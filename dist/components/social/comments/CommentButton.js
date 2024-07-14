@@ -40,7 +40,7 @@ var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var CommentButton = function (props) {
     var resource = props.resource, _a = props.color, color = _a === void 0 ? 'text.secondary' : _a;
-    var _b = (0, react_1.useContext)(frontend_js_1.CollectionContext), openShow = _b.openShow, setOpenShow = _b.setOpenShow, setResource = _b.setResource;
+    var _b = (0, react_1.useContext)(frontend_js_1.ResourceContext), openShow = _b.openShow, setOpenShow = _b.setOpenShow, setResource = _b.setResource;
     var handleClick = function () {
         setResource(resource);
         setOpenShow(!openShow);

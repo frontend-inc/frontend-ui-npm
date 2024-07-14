@@ -1,55 +1,28 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
+var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var router_1 = require("next/router");
 var material_1 = require("@mui/material");
+var helpers_1 = require("../../../helpers");
 var ImageCard = function (props) {
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, href = _a.href, handleClick = _a.handleClick, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? 320 : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableUsers, enableUsers = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g;
-    var _h = resource || {}, title = _h.title, image = _h.image;
-    var router = (0, router_1.useRouter)();
-    var handleItemClick = function () {
-        if (handleClick) {
-            handleClick();
-        }
-        else if (href) {
-            router.push("".concat(clientUrl).concat(href));
-        }
-    };
-    var theme = (0, react_1.useContext)(context_1.ThemeContext).theme;
-    return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme, textPrimary: "#FFFFFF", textSecondary: "#FFFFFF" },
+    var _a = props || {}, resource = _a.resource, handleClick = _a.handleClick, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, _b = _a.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = _a.enableOverlay, enableOverlay = _c === void 0 ? false : _c, _d = _a.enableFavorites, enableFavorites = _d === void 0 ? false : _d;
+    var _e = resource || {}, title = _e.title, image = _e.image;
+    return (react_1.default.createElement(components_1.LightDarkMode, { mode: 'dark' },
         react_1.default.createElement(material_1.Box, { sx: sx.root },
-            react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleItemClick },
-                react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
+            react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleClick },
+                react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: 260, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             react_1.default.createElement(material_1.Box, { sx: sx.actions },
                 enableFavorites == true && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource, color: enableOverlay ? 'common.white' : 'text.secondary' })),
-            react_1.default.createElement(material_1.Box, { sx: sx.userCard }, enableUsers == true && react_1.default.createElement(components_1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))));
+                react_1.default.createElement(components_1.Actions, { resource: resource, numVisible: 0, actions: (0, helpers_1.buildActions)({
+                        enableEdit: enableEdit,
+                        enableDelete: enableDelete,
+                        handleEdit: handleEdit,
+                        handleDelete: handleDelete
+                    }) })),
+            react_1.default.createElement(material_1.Box, { sx: sx.userCard }, (resource === null || resource === void 0 ? void 0 : resource.user) && react_1.default.createElement(components_1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))));
 };
 exports.default = ImageCard;
 var sx = {
@@ -61,17 +34,6 @@ var sx = {
         transition: 'box-shadow 0.3s',
         '&:hover': {
             boxShadow: 2,
-        },
-    },
-    gradient: {
-        '&::after': {
-            content: '""',
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            width: '100%',
-            height: '50%',
-            background: 'linear-gradient(to top, rgb(0,0,0,0.5), transparent)',
         },
     },
     actions: {

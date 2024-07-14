@@ -4,7 +4,7 @@ type BuildActionParams = {
     handleEdit?: (item: any) => void;
     enableDelete?: boolean;
     handleDelete?: (item: any) => void;
-    actions: ActionType[];
+    actions?: ActionType[];
 };
 export declare const buildActions: ({ enableEdit, enableDelete, handleEdit, handleDelete, actions, }: BuildActionParams) => ActionType[];
 export {};

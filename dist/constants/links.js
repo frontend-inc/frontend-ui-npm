@@ -21,7 +21,7 @@ exports.LINK_OPTIONS = {
     shopify: __spreadArray(__spreadArray([], DEFAULT_LINK_OPTIONS, true), [
         {
             value: 'shopify_collection',
-            label: 'Collection',
+            label: 'List',
             icon: 'ShoppingCart',
         },
         { value: 'shopify_product', label: 'Product', icon: 'Shirt' },

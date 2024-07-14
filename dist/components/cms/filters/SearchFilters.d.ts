@@ -1,8 +1,8 @@
 import React from 'react';
-type CollectionFilterListProps = {
+type ListFilterListProps = {
     filters: any;
     filterOptions: any;
     handleFilter: any;
 };
-declare const CollectionSearchFilters: React.FC<CollectionFilterListProps>;
-export default CollectionSearchFilters;
+declare const ListSearchFilters: React.FC<ListFilterListProps>;
+export default ListSearchFilters;

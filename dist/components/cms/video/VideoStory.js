@@ -26,12 +26,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var VideoVert = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? 80 : _c, _d = _a.width, width = _d === void 0 ? 80 : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f;
-    var _g = resource || {}, video = _g.video, title = _g.title;
-    var _h = (0, react_1.useState)(false), open = _h[0], setOpen = _h[1];
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.height, height = _b === void 0 ? 80 : _b, _c = _a.width, width = _c === void 0 ? 80 : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e;
+    var _f = resource || {}, video = _f.video, title = _f.title;
+    var _g = (0, react_1.useState)(false), open = _g[0], setOpen = _g[1];
     var handleItemClick = function () {
         setOpen(true);
     };
-    return !open ? (react_1.default.createElement(__1.AvatarCard, { actions: actions, resource: resource, handleClick: handleItemClick, objectFit: objectFit, height: height, width: width, displayFields: [], enableGradient: enableGradient, enableOverlay: enableOverlay })) : (react_1.default.createElement(__1.VideoModal, { open: open, title: title, src: video, handleClose: function () { return setOpen(false); } }));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(__1.AvatarCard, { actions: actions, resource: resource, handleClick: handleItemClick, height: height, width: width, displayFields: [], enableGradient: enableGradient, enableOverlay: enableOverlay }),
+        react_1.default.createElement(__1.VideoModal, { open: open, title: title, src: video, handleClose: function () { return setOpen(false); } })));
 };
 exports.default = VideoVert;

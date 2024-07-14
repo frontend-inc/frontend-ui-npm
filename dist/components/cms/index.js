@@ -20,7 +20,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Details = exports.ResourceTable = exports.ResourceListItem = exports.ResourceList = exports.Resource = exports.Statistics = exports.Query = exports.SearchFilters = exports.VideoPlayer = exports.VideoModal = exports.VideoHoriz = exports.VideoVert = exports.SortButton = exports.KanBan = exports.FilterButton = exports.LoadMore = exports.EmailSignup = exports.AddonShopifyProduct = exports.AddonGoogleMap = exports.AddonCalendly = void 0;
 __exportStar(require("./collections"), exports);
 __exportStar(require("./forms"), exports);
-__exportStar(require("./heros"), exports);
+__exportStar(require("./show"), exports);
 var AddonCalendly_1 = require("./addons/AddonCalendly");
 Object.defineProperty(exports, "AddonCalendly", { enumerable: true, get: function () { return __importDefault(AddonCalendly_1).default; } });
 var AddonGoogleMap_1 = require("./addons/AddonGoogleMap");

@@ -28,7 +28,7 @@ var Cards = function (props) {
     };
     return (react_1.default.createElement(material_1.Box, null,
         react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 }, items === null || items === void 0 ? void 0 : items.map(function (card, i) { return (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, md: 4, key: i },
-            react_1.default.createElement(components_1.CollectionCard, { actions: [], style: style, resource: __assign(__assign({}, card), { image: {
+            react_1.default.createElement(components_1.ListCard, { actions: [], style: style, resource: __assign(__assign({}, card), { image: {
                         url: card === null || card === void 0 ? void 0 : card.image,
                     } }), displayFields: [], handleClick: function () { return handleClick(card); }, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay }))); })),
         (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: "Search", title: "No content yet.", description: "Your content will appear here." }))));

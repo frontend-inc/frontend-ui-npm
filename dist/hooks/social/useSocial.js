@@ -39,14 +39,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("..");
-var useSocial = function (props) {
-    var url = props.url;
+var useSocial = function (params) {
     var api = (0, react_1.useContext)(frontend_js_1.ApiContext).api;
     var _a = (0, __1.useLoaders)(), loading = _a.loading, loadingWrapper = _a.loadingWrapper;
     var like = function (itemId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).like(itemId); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.like(itemId, params); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -54,7 +53,7 @@ var useSocial = function (props) {
     var unlike = function (itemId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).unlike(itemId); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.unlike(itemId, params); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -62,7 +61,7 @@ var useSocial = function (props) {
     var favorite = function (itemId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).favorite(itemId); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.favorite(itemId, params); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -70,7 +69,7 @@ var useSocial = function (props) {
     var unfavorite = function (itemId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).unfavorite(itemId); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.unfavorite(itemId, params); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -78,7 +77,7 @@ var useSocial = function (props) {
     var follow = function (username) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).follow(username); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.follow(username, params); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -86,7 +85,7 @@ var useSocial = function (props) {
     var unfollow = function (username) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.url(url).unfollow(username); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.unfollow(username, params); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });

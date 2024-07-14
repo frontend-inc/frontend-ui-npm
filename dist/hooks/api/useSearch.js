@@ -15,10 +15,10 @@ var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("..");
 var useSearch = function (props) {
-    var _a = props.query, defaultQuery = _a === void 0 ? {} : _a, _b = props.perPage, perPage = _b === void 0 ? 20 : _b;
-    var _c = (0, frontend_js_1.useCollection)(), loading = _c.loading, delayedLoading = _c.delayedLoading, resources = _c.resources, query = _c.query, findMany = _c.findMany, reloadMany = _c.reloadMany, page = _c.page, numPages = _c.numPages, loadMore = _c.loadMore;
-    var _d = (0, react_1.useState)(''), keywords = _d[0], setKeywords = _d[1];
-    var _e = (0, react_1.useState)(''), location = _e[0], setLocation = _e[1];
+    var _a = props.query, defaultQuery = _a === void 0 ? {} : _a;
+    var _b = (0, frontend_js_1.useList)(), loading = _b.loading, delayedLoading = _b.delayedLoading, resources = _b.resources, query = _b.query, findMany = _b.findMany, reloadMany = _b.reloadMany, page = _b.page, numPages = _b.numPages, loadMore = _b.loadMore;
+    var _c = (0, react_1.useState)(''), keywords = _c[0], setKeywords = _c[1];
+    var _d = (0, react_1.useState)(''), location = _d[0], setLocation = _d[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -28,7 +28,7 @@ var useSearch = function (props) {
     var handleSearch = function (keywords, location) {
         if (keywords === void 0) { keywords = ''; }
         if (location === void 0) { location = ''; }
-        var searchQuery = __assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1, per_page: perPage });
+        var searchQuery = __assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1 });
         if ((location === null || location === void 0 ? void 0 : location.length) > 0) {
             searchQuery = __assign(__assign({}, searchQuery), { method: 'location', location: location });
         }
@@ -43,13 +43,13 @@ var useSearch = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _f = (0, __1.useFilters)({
+    var _e = (0, __1.useFilters)({
         query: query,
-    }), mergeFilters = _f.mergeFilters, buildQueryFilters = _f.buildQueryFilters, activeFilters = _f.activeFilters, setActiveFilters = _f.setActiveFilters, handleAddFilter = _f.handleAddFilter;
+    }), mergeFilters = _e.mergeFilters, buildQueryFilters = _e.buildQueryFilters, activeFilters = _e.activeFilters, setActiveFilters = _e.setActiveFilters, handleAddFilter = _e.handleAddFilter;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
-        findMany(__assign(__assign({}, defaultQuery), { filters: defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, sort_by: 'id', sort_direction: 'desc', keywords: '', page: 1, per_page: perPage }));
+        findMany(__assign(__assign({}, defaultQuery), { filters: defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, sort_by: 'id', sort_direction: 'desc', keywords: '', page: 1 }));
     };
     var handleFilter = function (filter) {
         var newFilters = handleAddFilter(filter);

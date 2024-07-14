@@ -4,7 +4,7 @@ type UserListItemProps = {
     user: UserType;
     selected?: boolean;
     isAdmin?: boolean;
-    handleClick?: (user: UserType) => void | undefined;
+    handleClick: () => void;
     handleEdit: (user: UserType) => void | undefined;
     handleDelete: (user: UserType) => void | undefined;
 };

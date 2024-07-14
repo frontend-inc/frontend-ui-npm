@@ -1,0 +1,25 @@
+import React from 'react';
+import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
+export type ShowModalProps = {
+    open: boolean;
+    handleClose: () => void;
+    handle?: string;
+    enableBorder?: boolean;
+    enableOverlay?: boolean;
+    actions: ActionType[];
+    displayFields: DisplayFieldType[];
+    fields?: FormFieldType[];
+    fieldName?: string;
+    enableEdit?: boolean;
+    enableCreate?: boolean;
+    enableFavorites?: boolean;
+    enableLikes?: boolean;
+    enableSharing?: boolean;
+    enableRatings?: boolean;
+    enableUsers?: boolean;
+    enablePayments?: boolean;
+    handleEdit?: () => void;
+    enableComments?: boolean;
+};
+declare const ShowModal: React.FC<ShowModalProps>;
+export default ShowModal;

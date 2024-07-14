@@ -27,11 +27,11 @@ var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var index_1 = require("../../../constants/index");
 var VideoVert = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.height, height = _c === void 0 ? index_1.VIDEO_VERT_HEIGHT : _c, _d = _a.width, width = _d === void 0 ? index_1.VIDEO_VERT_WIDTH : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f;
-    var _g = (0, react_1.useState)(false), open = _g[0], setOpen = _g[1];
+    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.height, height = _b === void 0 ? index_1.VIDEO_VERT_HEIGHT : _b, _c = _a.width, width = _c === void 0 ? index_1.VIDEO_VERT_WIDTH : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e;
+    var _f = (0, react_1.useState)(false), open = _f[0], setOpen = _f[1];
     var handleItemClick = function () {
         setOpen(true);
     };
-    return !open ? (react_1.default.createElement(__1.CoverCard, { actions: actions, resource: resource, handleClick: handleItemClick, objectFit: objectFit, height: height, width: width, displayFields: [], enableGradient: enableGradient, enableOverlay: enableOverlay, icon: "PlayCircle" })) : (react_1.default.createElement(__1.VideoModal, { open: open, title: resource === null || resource === void 0 ? void 0 : resource.title, src: resource === null || resource === void 0 ? void 0 : resource.video, handleClose: function () { return setOpen(false); } }));
+    return !open ? (react_1.default.createElement(__1.CoverCard, { actions: actions, resource: resource, handleClick: handleItemClick, height: height, width: width, displayFields: [], enableGradient: enableGradient, enableOverlay: enableOverlay })) : (react_1.default.createElement(__1.VideoModal, { open: open, title: resource === null || resource === void 0 ? void 0 : resource.title, src: resource === null || resource === void 0 ? void 0 : resource.video, handleClose: function () { return setOpen(false); } }));
 };
 exports.default = VideoVert;

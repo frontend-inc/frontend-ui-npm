@@ -124,7 +124,7 @@ var FavoriteButton = function (props) {
     }, [currentUser, handle]);
     return (react_1.default.createElement(material_1.Box, null, variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
                 color: color,
-            } }, sx.icon), (isFavorite && sx.iconFavorited)) }, isFavorite ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))) : (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.button), (isFavorite && sx.buttonFavorited)), onClick: handleClick }, isFavorite ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" }))))));
+            } }, sx.icon), (isFavorite && sx.iconFavorited)) }, isFavorite ? (react_1.default.createElement(icons_material_1.Bookmark, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.BookmarkBorder, { fontSize: "small" })))) : (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.button), (isFavorite && sx.buttonFavorited)), onClick: handleClick }, isFavorite ? (react_1.default.createElement(icons_material_1.Bookmark, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.BookmarkBorder, { fontSize: "small" }))))));
 };
 exports.default = FavoriteButton;
 var sx = {

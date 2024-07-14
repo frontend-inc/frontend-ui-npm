@@ -25,9 +25,9 @@ var TopNavMenuItem = function (props) {
     var router = (0, router_1.useRouter)();
     var menuItem = props.menuItem, handleClick = props.handleClick;
     var children = menuItem.children;
-    var _b = (0, frontend_shopify_1.useCollections)(), loading = _b.loading, products = _b.products, findCollection = _b.findCollection;
+    var _b = (0, frontend_shopify_1.useCollections)(), loading = _b.loading, products = _b.products, findCollections = _b.findCollections;
     var _c = (0, hooks_1.useMenu)(), open = _c.open, openMenu = _c.openMenu, closeMenu = _c.closeMenu, anchorEl = _c.anchorEl, toggleMenu = _c.toggleMenu;
-    var handleCollectionClick = function () {
+    var handleListClick = function () {
         router.push("/collections/".concat(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle));
         closeMenu();
     };
@@ -42,7 +42,7 @@ var TopNavMenuItem = function (props) {
         }
         if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') {
             openMenu(ev);
-            findCollection(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle);
+            findCollections(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle);
             return;
         }
         else if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'url') {
@@ -80,7 +80,7 @@ var TopNavMenuItem = function (props) {
                 react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, product.title))); }),
             (products === null || products === void 0 ? void 0 : products.length) > 5 && (react_1.default.createElement(react_1.default.Fragment, null,
                 react_1.default.createElement(material_1.Divider, null),
-                react_1.default.createElement(material_1.MenuItem, { onClick: handleCollectionClick },
+                react_1.default.createElement(material_1.MenuItem, { onClick: handleListClick },
                     react_1.default.createElement(material_1.Typography, { variant: "button", color: "text.primary" }, "See All")))))));
 };
 exports.default = TopNavMenuItem;

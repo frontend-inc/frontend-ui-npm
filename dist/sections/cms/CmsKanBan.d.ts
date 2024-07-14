@@ -1,6 +1,6 @@
 import React from 'react';
-import { CollectionKanBanProps } from '../../components/cms/collections/CollectionKanBan';
+import { KanBanListProps } from '../../components/cms/collections/KanBanList';
 import { SectionProps, HeadingProps } from '../../types';
-type CmsKanBanProps = SectionProps & HeadingProps & CollectionKanBanProps;
+type CmsKanBanProps = SectionProps & HeadingProps & KanBanListProps;
 declare const CmsKanBan: React.FC<CmsKanBanProps>;
 export default CmsKanBan;

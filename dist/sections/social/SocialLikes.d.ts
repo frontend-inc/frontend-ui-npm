@@ -1,6 +1,6 @@
 import React from 'react';
-import { CollectionProps } from '../../components/cms/collections/Collection';
+import { ListProps } from '../../components/cms/collections/List';
 import { SectionProps, HeadingProps } from '../../types';
-type SocialLikesProps = SectionProps & HeadingProps & CollectionProps;
+type SocialLikesProps = SectionProps & HeadingProps & ListProps;
 declare const SocialLikes: React.FC<SocialLikesProps>;
 export default SocialLikes;

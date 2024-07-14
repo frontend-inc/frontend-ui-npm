@@ -78,13 +78,13 @@ var frontend_js_1 = require("frontend-js");
 var icons_material_1 = require("@mui/icons-material");
 var context_1 = require("../../../context");
 var LikeButton = function (props) {
-    var handle = props.handle, _a = props.variant, variant = _a === void 0 ? 'icon' : _a, numLikes = props.numLikes;
+    var handle = props.handle, _a = props.color, color = _a === void 0 ? 'text.secondary' : _a, _b = props.variant, variant = _b === void 0 ? 'icon' : _b, numLikes = props.numLikes;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
-    var _b = (0, react_1.useState)(false), liked = _b[0], setLiked = _b[1];
-    var _c = (0, hooks_1.useSocial)({
+    var _c = (0, react_1.useState)(false), liked = _c[0], setLiked = _c[1];
+    var _d = (0, hooks_1.useSocial)({
         url: '/api/v1/social',
-    }), loading = _c.loading, like = _c.like, unlike = _c.unlike;
+    }), loading = _d.loading, like = _d.like, unlike = _d.unlike;
     var handleClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -120,18 +120,19 @@ var LikeButton = function (props) {
             }
         }
     }, [currentUser, handle]);
-    return variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({}, sx.icon), (liked && sx.iconLiked)) },
-        react_1.default.createElement(icons_material_1.ThumbUp, null))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({}, sx.button), (liked && sx.buttonLiked)) },
-        react_1.default.createElement(icons_material_1.ThumbUp, { fontSize: "small" })));
+    return (react_1.default.createElement(material_1.Box, null, variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
+                color: color,
+            } }, sx.icon), (liked && sx.iconLiked)) }, liked ?
+        react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" }) :
+        react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" }))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
+                color: color,
+            } }, sx.button), (liked && sx.buttonLiked)) }, liked ?
+        react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" }) :
+        react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))));
 };
 exports.default = LikeButton;
 var sx = {
-    icon: {
-        color: 'text.secondary',
-        '&:hover': {
-            color: 'text.secondary',
-        },
-    },
+    icon: {},
     iconLiked: {
         color: 'primary.main',
         '&:hover': {
@@ -142,13 +143,8 @@ var sx = {
         transition: 'transform 0.2s',
         border: '1px solid',
         borderColor: 'divider',
-        color: 'text.secondary',
-        '&:hover': {
-            color: 'text.secondary',
-        },
     },
     buttonLiked: {
-        transform: 'rotate(10deg)',
         borderColor: 'primary.main',
         color: 'primary.main',
         '&:hover': {

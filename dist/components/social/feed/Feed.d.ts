@@ -1,4 +1,4 @@
 import React from 'react';
-import { CollectionProps } from '../../cms/collections/Collection';
-declare const Feed: React.FC<CollectionProps>;
+import { ListProps } from '../../cms/collections/List';
+declare const Feed: React.FC<ListProps>;
 export default Feed;

@@ -51,8 +51,8 @@ var SideNavMenuItem = function (props) {
     var menuItem = props.menuItem, handleClick = props.handleClick;
     var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
     var children = menuItem.children;
-    var _c = (0, frontend_shopify_1.useCollections)(), loading = _c.loading, products = _c.products, findCollection = _c.findCollection;
-    var handleCollectionClick = function () {
+    var _c = (0, frontend_shopify_1.useCollections)(), loading = _c.loading, products = _c.products, findCollections = _c.findCollections;
+    var handleListClick = function () {
         router.push("/collections/".concat(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle));
         setOpen(false);
     };
@@ -68,7 +68,7 @@ var SideNavMenuItem = function (props) {
         }
         if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'shopify_collection') {
             setOpen(false);
-            findCollection(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle);
+            findCollections(menuItem === null || menuItem === void 0 ? void 0 : menuItem.shopify_handle);
             return;
         }
         else if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.link_type) == 'url') {
@@ -92,7 +92,7 @@ var SideNavMenuItem = function (props) {
                 loading && (react_1.default.createElement(material_1.Box, { sx: sx.loading },
                     react_1.default.createElement(material_1.CircularProgress, { size: 30 }))), (_a = products === null || products === void 0 ? void 0 : products.slice(0, 5)) === null || _a === void 0 ? void 0 :
                 _a.map(function (product, i) { return (react_1.default.createElement(SublinkMenuItem, { label: product.title, handleClick: function () { return handleProductClick(product); } })); }),
-                (products === null || products === void 0 ? void 0 : products.length) > 5 && (react_1.default.createElement(SublinkMenuItem, { label: "See all", handleClick: handleCollectionClick }))))));
+                (products === null || products === void 0 ? void 0 : products.length) > 5 && (react_1.default.createElement(SublinkMenuItem, { label: "See all", handleClick: handleListClick }))))));
 };
 exports.default = SideNavMenuItem;
 var sx = {

@@ -36,9 +36,8 @@ var AppProvider = function (props) {
     var _e = (0, react_1.useState)(false), authOpen = _e[0], setAuthOpen = _e[1]; // Auth modal
     var _f = (0, react_1.useState)(false), myAccountOpen = _f[0], setMyAccountOpen = _f[1]; // My account modal
     var _g = (0, react_1.useState)(false), creditCardOpen = _g[0], setCreditCardOpen = _g[1]; // Credit card modal
-    var _h = (0, react_1.useState)(false), authorizationOpen = _h[0], setAuthorizationOpen = _h[1]; // App authorization
-    var _j = (0, react_1.useState)(false), menuOpen = _j[0], setMenuOpen = _j[1]; // Mobile menu
-    var _k = (0, react_1.useState)(), app = _k[0], setApp = _k[1];
+    var _h = (0, react_1.useState)(false), menuOpen = _h[0], setMenuOpen = _h[1]; // Mobile menu
+    var _j = (0, react_1.useState)(), app = _j[0], setApp = _j[1];
     var value = {
         name: name,
         app: app,
@@ -53,8 +52,6 @@ var AppProvider = function (props) {
         setCreditCardOpen: setCreditCardOpen,
         myAccountOpen: myAccountOpen,
         setMyAccountOpen: setMyAccountOpen,
-        authorizationOpen: authorizationOpen,
-        setAuthorizationOpen: setAuthorizationOpen,
         menuOpen: menuOpen,
         setMenuOpen: setMenuOpen,
         loading: loading,

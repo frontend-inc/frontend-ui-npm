@@ -64,7 +64,7 @@ var SwipeableProductImages = function (props) {
                     react_1.default.createElement(components_1.Image, { src: (0, frontend_shopify_1.shopifyResizeImage)(image === null || image === void 0 ? void 0 : image.url, {
                             width: 600,
                             height: 600,
-                        }), alt: product === null || product === void 0 ? void 0 : product.title, height: height, objectFit: objectFit, disableBorderRadius: disableBorderRadius }))));
+                        }), alt: product === null || product === void 0 ? void 0 : product.title, height: height, disableBorderRadius: disableBorderRadius }))));
         })),
         maxSteps > 1 && (react_1.default.createElement(material_1.MobileStepper, { sx: sx.stepper, steps: maxSteps, position: "static", activeStep: activeStep, backButton: react_1.default.createElement(material_1.Box, null), nextButton: react_1.default.createElement(material_1.Box, null) }))));
 };

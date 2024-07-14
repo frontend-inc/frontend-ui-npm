@@ -43,7 +43,7 @@ var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var Card = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, ref = _a.ref, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = _a.height, height = _d === void 0 ? 240 : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = _a.enableComments, enableComments = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j;
+    var _a = props || {}, ref = _a.ref, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? 240 : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableComments, enableComments = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = _a.enableLikes, enableLikes = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j;
     var _k = resource || {}, label = _k.label, title = _k.title, image = _k.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
@@ -56,7 +56,7 @@ var Card = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { ref: ref, spacing: 0, sx: __assign(__assign({}, sx.root), { width: '100%', minHeight: height + 80 }) },
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, label: label, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleItemClick })),
+            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, alt: title, label: label, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleItemClick })),
         react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.cardContent },
             react_1.default.createElement(material_1.Box, { sx: sx.content },
                 react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
@@ -65,6 +65,7 @@ var Card = function (props) {
             react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "space-between" },
                 react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 }, (resource === null || resource === void 0 ? void 0 : resource.user) && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
                 react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },
+                    enableLikes == true && (react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
                     enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
                     enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource }),
                     (actions === null || actions === void 0 ? void 0 : actions.length) > 0 && (react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource })))))));

@@ -29,7 +29,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var FieldImage = function (props) {
-    var label = props.label, value = props.value, _a = props.height, height = _a === void 0 ? 140 : _a, width = props.width, color = props.color, _b = props.objectFit, objectFit = _b === void 0 ? 'cover' : _b, rest = __rest(props, ["label", "value", "height", "width", "color", "objectFit"]);
+    var label = props.label, value = props.value, _a = props.height, height = _a === void 0 ? 140 : _a, width = props.width, color = props.color, rest = __rest(props, ["label", "value", "height", "width", "color"]);
     if (!value)
         return null;
     return (react_1.default.createElement(components_1.FieldWrapper, __assign({ color: color, label: label }, rest),
@@ -37,7 +37,7 @@ var FieldImage = function (props) {
                 height: height,
                 width: width ? width : undefined,
             } },
-            react_1.default.createElement(components_1.Image, { src: (value === null || value === void 0 ? void 0 : value.url) || value, height: height, objectFit: objectFit }))));
+            react_1.default.createElement(components_1.Image, { src: (value === null || value === void 0 ? void 0 : value.url) || value, height: height }))));
 };
 exports.default = FieldImage;
 var sx = {

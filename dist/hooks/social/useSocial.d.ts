@@ -1,7 +1,7 @@
-type UseSocialProps = {
+type UseSocialParams = {
     url: string;
 };
-declare const useSocial: (props: UseSocialProps) => {
+declare const useSocial: (params: UseSocialParams) => {
     loading: boolean;
     like: (itemId: any) => Promise<any>;
     unlike: (itemId: any) => Promise<any>;

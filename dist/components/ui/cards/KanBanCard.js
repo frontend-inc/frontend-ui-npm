@@ -22,15 +22,15 @@ var components_2 = require("../../../components");
 var sortable_1 = require("@dnd-kit/sortable");
 var helpers_2 = require("../../../helpers");
 var KanBanCard = function (props) {
-    var _a = props || {}, id = _a.id, loading = _a.loading, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, _c = _a.height, height = _c === void 0 ? 200 : _c, handleClick = _a.handleClick, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.enableDragging, enableDragging = _e === void 0 ? false : _e, _f = _a.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = _a.enableOverlay, enableOverlay = _g === void 0 ? false : _g, enableComments = _a.enableComments, enableFavorites = _a.enableFavorites, enableRatings = _a.enableRatings, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, handleComment = _a.handleComment, enableUsers = _a.enableUsers;
-    var _h = (0, sortable_1.useSortable)({
+    var _a = props || {}, id = _a.id, loading = _a.loading, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, _c = _a.height, height = _c === void 0 ? 200 : _c, handleClick = _a.handleClick, _d = _a.enableDragging, enableDragging = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, enableComments = _a.enableComments, enableFavorites = _a.enableFavorites, enableRatings = _a.enableRatings, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, handleComment = _a.handleComment, enableUsers = _a.enableUsers;
+    var _g = (0, sortable_1.useSortable)({
         id: id,
-    }), attributes = _h.attributes, listeners = _h.listeners, setNodeRef = _h.setNodeRef;
-    var _j = resource || {}, title = _j.title, image = _j.image;
+    }), attributes = _g.attributes, listeners = _g.listeners, setNodeRef = _g.setNodeRef;
+    var _h = resource || {}, title = _h.title, image = _h.image;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", sx: __assign(__assign(__assign({}, sx.root), (enableDragging && sx.rootDragging)), (loading && sx.rootLoading)) },
         react_1.default.createElement(material_1.Stack, __assign({ direction: "column", ref: setNodeRef }, attributes, listeners),
             (image === null || image === void 0 ? void 0 : image.url) && (react_1.default.createElement(material_1.Box, { sx: sx.image },
-                react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, objectFit: objectFit, alt: title, disableBorderRadius: true, handleClick: handleClick, enableGradient: enableGradient, enableOverlay: enableOverlay }))),
+                react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, alt: title, disableBorderRadius: true, handleClick: handleClick, enableGradient: enableGradient, enableOverlay: enableOverlay }))),
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-start" },
                 react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5, sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title)),
