@@ -65,6 +65,7 @@ var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
+var material_1 = require("@mui/material");
 var Form = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
@@ -143,6 +144,12 @@ var Form = function (props) {
             });
         }
     }, [_resource]);
-    return (react_1.default.createElement(__1.FormFields, { loading: loading, errors: errors, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
+    return (react_1.default.createElement(material_1.Paper, { sx: sx.paper, elevation: 2 },
+        react_1.default.createElement(__1.FormFields, { loading: loading, errors: errors, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText })));
 };
 exports.default = Form;
+var sx = {
+    paper: {
+        p: 4
+    }
+};

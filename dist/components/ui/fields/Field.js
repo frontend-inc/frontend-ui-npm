@@ -33,8 +33,15 @@ var Field = function (props) {
     var field = props.field, resource = props.resource, _a = props.dateFormat, dateFormat = _a === void 0 ? 'MM/DD/YYYYY' : _a, rest = __rest(props, ["field", "resource", "dateFormat"]);
     var fieldVariant = field.variant, label = field.label;
     var value = (0, lodash_1.get)(resource, field === null || field === void 0 ? void 0 : field.name);
-    if (!value)
-        return null;
+    if (!value) {
+        switch (fieldVariant) {
+            case 'array':
+                value = [];
+            default:
+                value = '-';
+                break;
+        }
+    }
     if ((field === null || field === void 0 ? void 0 : field.variant) == 'date' || (field === null || field === void 0 ? void 0 : field.variant) == 'datetime') {
         value = (0, moment_1.default)(value).format(dateFormat);
     }
@@ -43,6 +50,7 @@ var Field = function (props) {
         date: components_1.FieldDate,
         datetime: components_1.FieldDate,
         file: components_1.FieldFile,
+        float: components_1.FieldString,
         image: components_1.FieldImage,
         video: components_1.FieldVideo,
         json: components_1.FieldJSON,
@@ -50,7 +58,7 @@ var Field = function (props) {
         rating: components_1.FieldRating,
         text: components_1.FieldText,
         location: components_1.FieldLocation,
-        number: components_1.FieldText,
+        number: components_1.FieldString,
         array: components_1.FieldArray,
         string: components_1.FieldString,
         select: components_1.FieldString,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { DetailsProps } from './Details';
+import { DetailsProps } from '../../cms/details/Details';
 import { UserType } from 'frontend-js';
 import { DisplayFieldType } from '../../../types';
 export type UserDetailsProps = DetailsProps & {
