@@ -30,9 +30,9 @@ var __1 = require("../../..");
 var lodash_1 = require("lodash");
 var helpers_1 = require("../../../../helpers");
 var DisplayField = function (props) {
-    var field = props.field, resource = props.resource, _a = props.color, color = _a === void 0 ? 'text.secondary' : _a, rest = __rest(props, ["field", "resource", "color"]);
-    var fieldVariant = field.variant, icon = field.icon;
-    var value = (0, lodash_1.get)(resource, field === null || field === void 0 ? void 0 : field.name);
+    var field = props.field, resource = props.resource, _a = props.color, color = _a === void 0 ? 'text.secondary' : _a, _b = props.alignItems, alignItems = _b === void 0 ? 'flex-start' : _b, rest = __rest(props, ["field", "resource", "color", "alignItems"]);
+    var name = field.name, fieldVariant = field.variant, icon = field.icon;
+    var value = (0, lodash_1.get)(resource, name);
     if (!value || (value === null || value === void 0 ? void 0 : value.length) == 0)
         return null;
     var components = {
@@ -69,6 +69,6 @@ var DisplayField = function (props) {
     var componentProps = (variantProps === null || variantProps === void 0 ? void 0 : variantProps[fieldVariant]) || {};
     if (!value || value == '')
         return null;
-    return (react_1.default.createElement(Component, __assign({ disablePadding: true, icon: icon, variant: "caption", color: color, value: value }, componentProps, rest)));
+    return (react_1.default.createElement(Component, __assign({ disablePadding: true, icon: icon, variant: "caption", color: color, value: value, alignItems: alignItems }, componentProps, rest)));
 };
 exports.default = DisplayField;

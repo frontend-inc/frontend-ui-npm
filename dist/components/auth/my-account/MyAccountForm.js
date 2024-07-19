@@ -1,4 +1,13 @@
 "use strict";
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -7,14 +16,21 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var MyAccountForm = function (props) {
-    var loading = props.loading, user = props.user, handleSubmit = props.handleSubmit, handleChange = props.handleChange, handleLogout = props.handleLogout, handleDeleteAvatar = props.handleDeleteAvatar;
+    var loading = props.loading, errors = props.errors, user = props.user, _a = props.metafields, metafields = _a === void 0 ? [] : _a, handleSubmit = props.handleSubmit, handleChange = props.handleChange, handleLogout = props.handleLogout, handleDeleteAvatar = props.handleDeleteAvatar;
+    var formFields = [
+        { name: 'avatar', variant: 'image' },
+        { label: 'First name', name: 'first_name', variant: 'string' },
+        { label: 'Last name', name: 'last_name', variant: 'string' },
+        { label: 'Bio', name: 'bio', variant: 'text' },
+    ];
+    if ((metafields === null || metafields === void 0 ? void 0 : metafields.length) > 0) {
+        formFields = __spreadArray(__spreadArray([], formFields, true), metafields, true);
+    }
+    formFields = __spreadArray(__spreadArray([], formFields, true), [
+        { label: 'Accept email marketing', name: 'accepts_marketing', variant: 'boolean' },
+    ], false);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.ImageInput, { value: user.avatar, name: "avatar", handleChange: handleChange, handleRemove: handleDeleteAvatar }),
-        react_1.default.createElement(components_1.TextInput, { value: user.first_name, name: "first_name", placeholder: "First name", handleChange: handleChange }),
-        react_1.default.createElement(components_1.TextInput, { value: user.last_name, name: "last_name", placeholder: "Last name", handleChange: handleChange }),
-        react_1.default.createElement(components_1.TextInput, { multiline: true, rows: 3, name: "bio", value: user === null || user === void 0 ? void 0 : user.bio, placeholder: "Bio", handleChange: handleChange }),
-        react_1.default.createElement(components_1.SwitchInput, { value: user === null || user === void 0 ? void 0 : user.accepts_marketing, placeholder: "Accept email marketing", name: "accepts_marketing", handleChange: handleChange }),
-        react_1.default.createElement(material_1.Button, { color: "primary", variant: "contained", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Save"),
+        react_1.default.createElement(components_1.FormFields, { loading: loading, errors: errors, fields: formFields, resource: user, handleChange: handleChange, handleRemove: handleDeleteAvatar, handleSubmit: handleSubmit, buttonText: 'Save' }),
         react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleLogout }, "Logout")));
 };
 exports.default = MyAccountForm;

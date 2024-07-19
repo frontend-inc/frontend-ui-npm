@@ -7,7 +7,7 @@ declare const useSubscriptions: () => {
     subscriptionPlan: any;
     subscriptionPlans: any[];
     findSubscriptionPlan: (id: import("frontend-js").ID) => any;
-    findSubscriptionPlans: (queryParams?: import("frontend-js").QueryParamsType, options?: import("frontend-js").FindManyOptionType) => Promise<any>;
+    findSubscriptionPlans: (queryParams?: import("frontend-js").QueryParamsType) => void;
     subscribe: (subscriptionPlanId: any) => Promise<SubscriptionPlanType>;
     unsubscribe: () => Promise<SubscriptionPlanType>;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

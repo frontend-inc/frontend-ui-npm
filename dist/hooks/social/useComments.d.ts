@@ -12,7 +12,7 @@ declare const useComments: (props: UseCommentsProps) => {
     comment: any;
     comments: any[];
     findComment: (id: import("frontend-js").ID) => any;
-    findComments: (queryParams?: import("frontend-js").QueryParamsType, options?: import("frontend-js").FindManyOptionType) => Promise<any>;
+    findComments: (queryParams?: import("frontend-js").QueryParamsType) => void;
     createComment: (resource: any) => any;
     updateComment: (resource: any) => any;
     deleteComment: (id: import("frontend-js").ID) => Promise<any>;

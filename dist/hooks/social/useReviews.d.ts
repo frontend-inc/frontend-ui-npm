@@ -13,7 +13,7 @@ declare const useReviews: (props: UseReviewsProps) => {
     review: any;
     reviews: any[];
     findReview: (id: import("frontend-js").ID) => any;
-    findReviews: (queryParams?: import("frontend-js").QueryParamsType, options?: import("frontend-js").FindManyOptionType) => Promise<any>;
+    findReviews: (queryParams?: import("frontend-js").QueryParamsType) => void;
     createReview: (resource: any) => any;
     updateReview: (resource: any) => any;
     deleteReview: (id: import("frontend-js").ID) => Promise<any>;

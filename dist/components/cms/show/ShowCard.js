@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var ShowCard = function (props) {
     var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
@@ -19,7 +18,7 @@ var ShowCard = function (props) {
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
                     actions: actions,
-                }), justifyContent: "flex-end", resource: (0, frontend_js_1.flattenDocument)(resource) }))),
+                }), justifyContent: "flex-end", resource: resource }))),
         react_1.default.createElement(material_1.Box, { sx: sx.root },
             react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: {
                     md: 'row',

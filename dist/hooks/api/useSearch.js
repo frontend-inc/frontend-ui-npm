@@ -16,7 +16,7 @@ var frontend_js_1 = require("frontend-js");
 var __1 = require("..");
 var useSearch = function (props) {
     var _a = props.query, defaultQuery = _a === void 0 ? {} : _a;
-    var _b = (0, frontend_js_1.useList)(), loading = _b.loading, delayedLoading = _b.delayedLoading, resources = _b.resources, query = _b.query, findMany = _b.findMany, reloadMany = _b.reloadMany, page = _b.page, numPages = _b.numPages, loadMore = _b.loadMore;
+    var _b = (0, frontend_js_1.useResourceContext)(), loading = _b.loading, delayedLoading = _b.delayedLoading, resources = _b.resources, query = _b.query, setQuery = _b.setQuery, findMany = _b.findMany, reloadMany = _b.reloadMany, page = _b.page, numPages = _b.numPages, loadMore = _b.loadMore;
     var _c = (0, react_1.useState)(''), keywords = _c[0], setKeywords = _c[1];
     var _d = (0, react_1.useState)(''), location = _d[0], setLocation = _d[1];
     var handleKeywordChange = function (ev) {
@@ -35,13 +35,14 @@ var useSearch = function (props) {
         else {
             searchQuery = __assign(__assign({}, searchQuery), { location: null });
         }
-        findMany(searchQuery);
+        setQuery(searchQuery);
+        //findMany(searchQuery)
     };
     var handleSortBy = function (field) {
-        findMany(__assign(__assign({}, query), { sort_by: field === null || field === void 0 ? void 0 : field.name }));
+        setQuery(__assign(__assign({}, query), { sort_by: field === null || field === void 0 ? void 0 : field.name }));
     };
     var handleSortDirection = function (sortDirection) {
-        findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
+        setQuery(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
     var _e = (0, __1.useFilters)({
         query: query,

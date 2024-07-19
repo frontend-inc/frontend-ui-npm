@@ -46,6 +46,7 @@ var _1 = require(".");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
 var hooks_1 = require("../../hooks");
 var frontend_js_1 = require("frontend-js");
+var lodash_1 = require("lodash");
 var useActions = function (params) {
     var _a = (0, _1.useLoadingWrapper)(), loading = _a.loading, data = _a.data, errors = _a.errors, loadingWrapper = _a.loadingWrapper;
     var action = params.action, resource = params.resource;
@@ -59,7 +60,7 @@ var useActions = function (params) {
             switch (_b.label) {
                 case 0:
                     if (action.fieldName) {
-                        value = resource[action.fieldName];
+                        value = (0, lodash_1.get)(resource, action.fieldName);
                     }
                     _a = action === null || action === void 0 ? void 0 : action.name;
                     switch (_a) {

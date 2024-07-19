@@ -7,7 +7,7 @@ declare const useCreditCards: () => {
     creditCard: any;
     creditCards: any[];
     findCreditCard: (id: import("frontend-js").ID) => any;
-    findCreditCards: (queryParams?: import("frontend-js").QueryParamsType, options?: import("frontend-js").FindManyOptionType) => Promise<any>;
+    findCreditCards: (queryParams?: import("frontend-js").QueryParamsType) => void;
     createCreditCard: (resource: any) => any;
     deleteCreditCard: (id: import("frontend-js").ID) => Promise<any>;
     selectCreditCard: (creditCardId: any) => Promise<CreditCardType>;

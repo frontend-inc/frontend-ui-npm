@@ -76,18 +76,13 @@ var RemoteForm = function (props) {
     };
     var _resource = props.resource, parentResource = props.parentResource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _d = (0, hooks_1.useFields)({
+    var fields = (0, hooks_1.useFetchForm)({
         url: url
-    }), formFields = _d.formFields, fetchFormFields = _d.fetchFormFields;
-    var _e = (0, frontend_js_1.useResource)({
+    }).fields;
+    var _d = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _e.delayedLoading, errors = _e.errors, resource = _e.resource, setResource = _e.setResource, findOne = _e.findOne, update = _e.update, create = _e.create, removeAttachment = _e.removeAttachment, addLinks = _e.addLinks;
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        setResource(function (prev) { return (0, frontend_js_1.changeDocumentValue)(prev, name, value); });
-    };
+    }), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, findOne = _d.findOne, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment, addReferences = _d.addReferences, handleChange = _d.handleChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -119,7 +114,7 @@ var RemoteForm = function (props) {
                 case 3:
                     resp = _a.sent();
                     if (!(parentResource === null || parentResource === void 0 ? void 0 : parentResource.id)) return [3 /*break*/, 5];
-                    return [4 /*yield*/, addLinks(resp.id, [parentResource.id])];
+                    return [4 /*yield*/, addReferences(resp.id, [parentResource.id])];
                 case 4:
                     _a.sent();
                     _a.label = 5;
@@ -151,13 +146,10 @@ var RemoteForm = function (props) {
             });
         }
     }, [_resource]);
-    (0, react_1.useEffect)(function () {
-        if (url) {
-            fetchFormFields();
-        }
-    }, [url]);
-    if (((_resource === null || _resource === void 0 ? void 0 : _resource.id) && !(resource === null || resource === void 0 ? void 0 : resource.id)) && formFields)
+    if (!fields || (fields === null || fields === void 0 ? void 0 : fields.length) == 0)
+        return null;
+    if ((_resource === null || _resource === void 0 ? void 0 : _resource.id) && !(resource === null || resource === void 0 ? void 0 : resource.id))
         return (react_1.default.createElement(__1.Loader, { loading: true }));
-    return (react_1.default.createElement(__1.FormFields, { loading: loading, errors: errors, fields: formFields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
+    return (react_1.default.createElement(__1.FormFields, { loading: loading, errors: errors, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = RemoteForm;

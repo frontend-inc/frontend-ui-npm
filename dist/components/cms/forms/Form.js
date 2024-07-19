@@ -79,12 +79,7 @@ var Form = function (props) {
     var _d = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment, addLinks = _d.addLinks;
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        setResource(function (prev) { return (0, frontend_js_1.changeDocumentValue)(prev, name, value); });
-    };
+    }), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment, addReferences = _d.addReferences, handleChange = _d.handleChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -116,7 +111,7 @@ var Form = function (props) {
                 case 3:
                     resp = _a.sent();
                     if (!(parentResource === null || parentResource === void 0 ? void 0 : parentResource.id)) return [3 /*break*/, 5];
-                    return [4 /*yield*/, addLinks(resp.id, [parentResource.id])];
+                    return [4 /*yield*/, addReferences(resp.id, [parentResource.id])];
                 case 4:
                     _a.sent();
                     _a.label = 5;
@@ -139,15 +134,15 @@ var Form = function (props) {
         });
     }); };
     (0, react_1.useEffect)(function () {
-        setResource({
-            title: '',
-        });
-    });
-    (0, react_1.useEffect)(function () {
         if (_resource) {
             setResource(_resource);
         }
+        else {
+            setResource({
+                title: '',
+            });
+        }
     }, [_resource]);
-    return (react_1.default.createElement(__1.FormFields, { loading: loading, errors: errors, fields: fields, resource: (0, frontend_js_1.flattenDocument)(resource), handleChange: handleDataChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
+    return (react_1.default.createElement(__1.FormFields, { loading: loading, errors: errors, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = Form;

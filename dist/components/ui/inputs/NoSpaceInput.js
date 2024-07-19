@@ -20,7 +20,7 @@ var NoSpaceInput = function (props) {
             },
         });
     };
-    return (react_1.default.createElement(components_1.TextInput, { direction: direction, errors: errors, value: value, disabled: disabled, placeholder: placeholder, handleChange: handleInputChange, name: name, label: label, info: info }));
+    return (react_1.default.createElement(components_1.TextInput, { disableDebounce: true, direction: direction, errors: errors, value: value, disabled: disabled, placeholder: placeholder, handleChange: handleInputChange, name: name, label: label, info: info }));
 };
 exports.default = NoSpaceInput;
 var sx = {

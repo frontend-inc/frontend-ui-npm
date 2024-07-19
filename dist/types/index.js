@@ -23,6 +23,7 @@ __exportStar(require("./geo"), exports);
 __exportStar(require("./fields"), exports);
 __exportStar(require("./forms"), exports);
 __exportStar(require("./inputs"), exports);
+__exportStar(require("./metafields"), exports);
 __exportStar(require("./payments"), exports);
 __exportStar(require("./router"), exports);
 __exportStar(require("./storage"), exports);

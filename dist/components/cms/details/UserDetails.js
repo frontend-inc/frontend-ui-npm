@@ -15,16 +15,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var material_1 = require("@mui/material");
-var VideoPlayer = function (props) {
-    var src = props.src, height = props.height, width = props.width;
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), { maxWidth: "".concat(width, "px"), maxHeight: "".concat(height, "px") }) },
-        react_1.default.createElement("video", { src: src, controls: true, height: height, width: width })));
+var components_1 = require("../../../components");
+var UserDetails = function (props) {
+    var user = props.user;
+    return (react_1.default.createElement(components_1.Details, __assign({}, props, { resource: user, enableBorder: true })));
 };
-exports.default = VideoPlayer;
-var sx = {
-    root: {
-        width: '100%',
-        height: '100%',
-    },
-};
+exports.default = UserDetails;

@@ -24,6 +24,7 @@ var FormInput = function (props) {
         file: components_1.AttachmentInput,
         url: components_1.TextInput,
         text: components_1.TextInput,
+        nospace: components_1.NoSpaceInput,
         location: components_1.LocationInput,
         number: components_1.TextInput,
         price: components_1.TextInput,
@@ -43,7 +44,11 @@ var FormInput = function (props) {
             rows: 6,
         },
         select: {
-            options: options,
+            // Handle both array of strings and array of objects
+            options: options === null || options === void 0 ? void 0 : options.map(function (option) { return ({
+                label: option.label || option,
+                value: option.value || option
+            }); }),
         },
         number: {
             type: 'number',
@@ -75,7 +80,7 @@ var FormInput = function (props) {
             fields: fields
         }
     };
-    var InputComponent = componentMapper[variant];
+    var InputComponent = componentMapper[variant] || components_1.TextInput;
     return (react_1.default.createElement(InputComponent, __assign({ errors: errors, label: label, name: name, value: value || '', handleChange: handleChange, placeholder: placeholder }, inputProps[variant])));
 };
 exports.default = FormInput;

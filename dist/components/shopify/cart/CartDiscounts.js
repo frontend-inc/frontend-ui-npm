@@ -82,7 +82,7 @@ var CartDiscountCodeInput = function () {
     }); };
     var handleChange = function (e) { return setDiscountCode(e.target.value); };
     return (react_1.default.createElement(material_1.Stack, null,
-        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },
+        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, alignItems: 'center' },
             react_1.default.createElement(components_1.TextInput, { name: "discountCode", value: discountCode, handleChange: handleChange, placeholder: "Enter discount code", styles: sx.input }),
             react_1.default.createElement(material_1.Button, { onClick: handleSubmit, color: "secondary", variant: "contained", sx: sx.button, endIcon: react_1.default.createElement(components_1.IconLoading, { color: "secondary.contrastText", loading: loading }) }, "Apply"))));
 };
@@ -104,7 +104,8 @@ var sx = {
         },
     },
     button: {
-        fontSize: 13,
+        mt: '4px',
+        height: 42,
         borderRadius: function (theme) {
             return "0 ".concat(theme.shape.borderRadius, "px ").concat(theme.shape.borderRadius, "px 0");
         },

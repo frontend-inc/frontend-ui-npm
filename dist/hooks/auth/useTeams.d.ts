@@ -7,7 +7,7 @@ declare const useTeams: () => {
     team: any;
     teams: any[];
     findTeam: (id: import("frontend-js").ID) => any;
-    findTeams: (queryParams?: import("frontend-js").QueryParamsType, options?: import("frontend-js").FindManyOptionType) => Promise<any>;
+    findTeams: (queryParams?: import("frontend-js").QueryParamsType) => void;
     updateTeam: (resource: any) => any;
     createTeam: (resource: any) => any;
     deleteTeam: (id: import("frontend-js").ID) => Promise<any>;

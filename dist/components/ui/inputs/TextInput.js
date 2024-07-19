@@ -41,28 +41,30 @@ var styles_1 = require("./helpers/styles");
 var hooks_1 = require("../../../hooks");
 var use_debounce_1 = require("use-debounce");
 var TextInput = function (props) {
-    var label = props.label, type = props.type, name = props.name, margin = props.margin, _a = props.value, value = _a === void 0 ? '' : _a, multiline = props.multiline, handleChange = props.handleChange, rows = props.rows, placeholder = props.placeholder, disabled = props.disabled, errors = props.errors, _b = props.direction, direction = _b === void 0 ? 'column' : _b, _c = props.styles, styles = _c === void 0 ? {} : _c, onBlur = props.onBlur, onFocus = props.onFocus, info = props.info;
-    var _d = (0, react_1.useState)(value), text = _d[0], setText = _d[1];
-    var debouncedValue = (0, use_debounce_1.useDebounce)(text, 500)[0];
-    var _e = (0, hooks_1.useError)({
+    var label = props.label, type = props.type, name = props.name, margin = props.margin, _a = props.value, value = _a === void 0 ? '' : _a, multiline = props.multiline, handleChange = props.handleChange, rows = props.rows, placeholder = props.placeholder, disabled = props.disabled, errors = props.errors, _b = props.direction, direction = _b === void 0 ? 'column' : _b, _c = props.styles, styles = _c === void 0 ? {} : _c, onBlur = props.onBlur, onFocus = props.onFocus, info = props.info, _d = props.disableDebounce, disableDebounce = _d === void 0 ? false : _d;
+    var _e = (0, react_1.useState)(value), text = _e[0], setText = _e[1];
+    var debouncedText = (0, use_debounce_1.useDebounce)(text, 500)[0];
+    var _f = (0, hooks_1.useError)({
         errors: errors,
         name: name,
-    }), error = _e.error, clearError = _e.clearError;
+    }), error = _f.error, clearError = _f.clearError;
     var handleInputChange = function (e) {
         clearError();
         setText(e.target.value);
+        if (disableDebounce) {
+            handleChange(e);
+        }
     };
-    var debouncedChanged = (0, use_debounce_1.useDebounce)(handleInputChange, 3000)[0];
     (0, react_1.useEffect)(function () {
-        if (debouncedValue !== value) {
+        if (debouncedText) {
             handleChange({
                 target: {
                     name: name,
-                    value: debouncedValue,
+                    value: debouncedText,
                 },
             });
         }
-    }, [debouncedValue]);
+    }, [debouncedText]);
     (0, react_1.useEffect)(function () {
         if (value !== text) {
             setText(value);
@@ -72,7 +74,7 @@ var TextInput = function (props) {
         react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, styles_1.sx.stack), (direction == 'row' && !multiline && styles_1.sx.stackVertical)), direction: direction, spacing: 0.5 },
             react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
             react_1.default.createElement(material_1.Box, { sx: styles_1.sx.inputContainer },
-                react_1.default.createElement(material_1.InputBase, { rows: rows, error: error ? true : false, sx: __assign(__assign(__assign({}, styles_1.sx.inputBase), ((error && styles_1.sx.inputError) || {})), styles), multiline: multiline, autoComplete: "off", fullWidth: true, type: type, name: name, margin: margin, disabled: disabled, placeholder: placeholder, onChange: debouncedChanged, value: text, onBlur: onBlur && onBlur, onFocus: onFocus && onFocus }),
+                react_1.default.createElement(material_1.InputBase, { rows: rows, error: error ? true : false, sx: __assign(__assign(__assign({}, styles_1.sx.inputBase), ((error && styles_1.sx.inputError) || {})), styles), multiline: multiline, autoComplete: "off", fullWidth: true, type: type, name: name, margin: margin, disabled: disabled, placeholder: placeholder, onChange: handleInputChange, value: text, onBlur: onBlur && onBlur, onFocus: onFocus && onFocus }),
                 react_1.default.createElement(components_1.ErrorText, { error: error })))));
 };
 exports.default = TextInput;

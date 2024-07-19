@@ -4,7 +4,7 @@ type MenuListProps = {
     id?: string;
     label?: string;
     icon?: React.ReactNode;
-    disableBorder?: boolean;
+    enableBorder?: boolean;
     disablePadding?: boolean;
     defaultClosed?: boolean;
 };

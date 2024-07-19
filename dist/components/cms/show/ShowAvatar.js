@@ -17,19 +17,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var ShowAvatar = function (props) {
     var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
-    var data = (resource || {}).data;
-    var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
+    var _c = resource || {}, title = _c.title, image = _c.image, description = _c.description;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", justifyContent: "center" },
         (actions || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: { sm: 'row', xs: 'column' }, spacing: 1 },
             react_1.default.createElement(__1.Actions, { actions: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
                     actions: actions,
-                }), resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "flex-end" }))),
+                }), resource: resource, justifyContent: "flex-end" }))),
         react_1.default.createElement(material_1.Box, { sx: sx.root },
             react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { sm: 'row', xs: 'column' }, spacing: 4 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.leftPanel, spacing: 2, direction: "column" },

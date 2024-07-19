@@ -20,7 +20,7 @@ var icons_material_1 = require("@mui/icons-material");
 var SortableListItem = function (props) {
     var title = props.title, subtitle = props.subtitle, isDragging = props.isDragging;
     return (react_1.default.createElement(material_1.ListItem, { disableGutters: true, sx: __assign(__assign({}, sx.item), (isDragging && sx.isDragging)) },
-        react_1.default.createElement(material_1.ListItemIcon, null,
+        react_1.default.createElement(material_1.ListItemIcon, { sx: sx.dragHandle },
             react_1.default.createElement(icons_material_1.DragIndicator, { sx: sx.icon })),
         react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: 'body1', color: 'text.primary' }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: 'body2', color: 'text.secondary' }, subtitle) })));
 };
@@ -31,4 +31,10 @@ var sx = {
         color: 'text.secondary',
     },
     isDragging: {},
+    dragHandle: {
+        cursor: 'grab',
+        '&:active': {
+            cursor: 'grabbing',
+        },
+    }
 };

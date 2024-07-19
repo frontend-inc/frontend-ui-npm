@@ -21,6 +21,7 @@ __exportStar(require("./links"), exports);
 __exportStar(require("./utils"), exports);
 __exportStar(require("./dragdrop"), exports);
 __exportStar(require("./filters"), exports);
+__exportStar(require("./fields"), exports);
 __exportStar(require("./payments"), exports);
 __exportStar(require("./social"), exports);
 __exportStar(require("./theme"), exports);

@@ -90,7 +90,7 @@ var hooks_1 = require("../../../hooks");
 var KanBanListList = function (props) {
     var headers = props.headers, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, _b = props.actions, actions = _b === void 0 ? [] : _b, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableSharing = props.enableSharing, enableUsers = props.enableUsers, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, rest = __rest(props, ["headers", "displayFields", "actions", "enableEdit", "enableDelete", "enableCreate", "enableComments", "enableFavorites", "enableLikes", "enableRatings", "enableSharing", "enableUsers", "enableGradient", "enableOverlay"]);
     var fieldName = 'status'; //Hard code the field as status
-    var _c = (0, frontend_js_2.useList)(), loading = _c.loading, resource = _c.resource, resources = _c.resources, update = _c.update, updatePositions = _c.updatePositions, setResource = _c.setResource, reloadMany = _c.reloadMany;
+    var _c = (0, frontend_js_2.useResourceContext)(), loading = _c.loading, resource = _c.resource, resources = _c.resources, update = _c.update, updatePositions = _c.updatePositions, setResource = _c.setResource, reloadMany = _c.reloadMany;
     var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
     var handleClick = function (resource) {
         setResource(resource);

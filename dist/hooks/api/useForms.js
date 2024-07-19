@@ -54,7 +54,7 @@ var useForms = function (params) {
     var parentResource = (params || {}).parentResource;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
-    var _a = (0, frontend_js_1.useList)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addLinks = _a.addLinks, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, setOpenShow = _a.setOpenShow, openDelete = _a.openDelete, setOpenDelete = _a.setOpenDelete, openEdit = _a.openEdit, setOpenEdit = _a.setOpenEdit;
+    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addReferences = _a.addReferences, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, setOpenShow = _a.setOpenShow, openDelete = _a.openDelete, setOpenDelete = _a.setOpenDelete, openEdit = _a.openEdit, setOpenEdit = _a.setOpenEdit;
     var reloadMany = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             if (parentResource === null || parentResource === void 0 ? void 0 : parentResource.id) {
@@ -102,7 +102,7 @@ var useForms = function (params) {
                 case 4:
                     resp = _a.sent();
                     if (!((parentResource === null || parentResource === void 0 ? void 0 : parentResource.id) && (resp === null || resp === void 0 ? void 0 : resp.id))) return [3 /*break*/, 6];
-                    return [4 /*yield*/, addLinks(resp.id, [parentResource === null || parentResource === void 0 ? void 0 : parentResource.id])];
+                    return [4 /*yield*/, addReferences(resp.id, [parentResource === null || parentResource === void 0 ? void 0 : parentResource.id])];
                 case 5:
                     _a.sent();
                     _a.label = 6;

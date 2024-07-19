@@ -8,7 +8,7 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var ShowVideoModal = function (props) {
     var _a;
-    var _b = (0, frontend_js_1.useList)(), resource = _b.resource, url = _b.url;
+    var _b = (0, frontend_js_1.useResourceContext)(), resource = _b.resource, url = _b.url;
     var _c = props || {}, open = _c.open, handleClose = _c.handleClose;
     if (!resource)
         return null;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormFieldType } from '../../../types';
 export type FormProps = {
-    loading: boolean;
+    loading?: boolean;
     errors: any;
     fields: FormFieldType[];
     resource: any;

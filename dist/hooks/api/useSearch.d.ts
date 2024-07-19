@@ -5,7 +5,7 @@ declare const useSearch: (props: any) => {
     delayedLoading: any;
     resources: any[];
     query: import("frontend-js").QueryParamsType;
-    findMany: (queryParams?: import("frontend-js").QueryParamsType, options?: import("frontend-js").FindManyOptionType) => Promise<any>;
+    findMany: (queryParams?: import("frontend-js").QueryParamsType) => void;
     reloadMany: () => Promise<any>;
     page: number;
     numPages: number;

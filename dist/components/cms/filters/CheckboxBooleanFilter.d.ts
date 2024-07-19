@@ -6,7 +6,6 @@ type CheckboxFilterProps = {
     values?: any;
     handleClick: (filter: FilterOptionType) => void;
     label?: string;
-    disableBorder?: boolean;
     disablePadding?: boolean;
 };
 declare const CheckboxFilter: React.FC<CheckboxFilterProps>;

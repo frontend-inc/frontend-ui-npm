@@ -9,7 +9,7 @@ var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var ShowImageModal = function (props) {
     var _a;
-    var resource = (0, frontend_js_1.useList)().resource;
+    var resource = (0, frontend_js_1.useResourceContext)().resource;
     var _b = props || {}, open = _b.open, handleClose = _b.handleClose, enableGradient = _b.enableGradient;
     if (!resource)
         return null;

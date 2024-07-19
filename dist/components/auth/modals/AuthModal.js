@@ -77,12 +77,12 @@ var router_1 = require("next/router");
 var material_1 = require("@mui/material");
 var context_1 = require("../../../context");
 var AuthModal = function (props) {
-    var _a = props.disableUsername, disableUsername = _a === void 0 ? false : _a, _b = props.enableTeams, enableTeams = _b === void 0 ? false : _b;
+    var _a = props.disableUsername, disableUsername = _a === void 0 ? false : _a;
     var router = (0, router_1.useRouter)();
     var appId = router.query.app_id;
-    var _c = (0, react_1.useContext)(context_1.AppContext), authOpen = _c.authOpen, setAuthOpen = _c.setAuthOpen;
-    var _d = (0, frontend_js_1.useAuth)(), errors = _d.errors, loading = _d.loading, user = _d.user, updateMe = _d.updateMe, handleChange = _d.handleChange, login = _d.login, signup = _d.signup, verifyPin = _d.verifyPin, sendPin = _d.sendPin;
-    var _e = (0, react_1.useState)(0), tab = _e[0], setTab = _e[1];
+    var _b = (0, react_1.useContext)(context_1.AppContext), authOpen = _b.authOpen, setAuthOpen = _b.setAuthOpen;
+    var _c = (0, frontend_js_1.useAuth)(), errors = _c.errors, loading = _c.loading, user = _c.user, updateMe = _c.updateMe, handleChange = _c.handleChange, login = _c.login, signup = _c.signup, verifyPin = _c.verifyPin, sendPin = _c.sendPin;
+    var _d = (0, react_1.useState)(0), tab = _d[0], setTab = _d[1];
     var handleTabChange = function (ev, newValue) {
         setTab(newValue);
     };

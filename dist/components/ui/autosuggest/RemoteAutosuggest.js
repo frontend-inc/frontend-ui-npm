@@ -107,8 +107,8 @@ var RemoteAutosuggest = function (props) {
     };
     var formatResources = function (resources) {
         return resources.map(function (resource) { return ({
-            label: resource[displayField],
-            value: resource[valueParam],
+            label: (0, lodash_1.get)(resource, displayField),
+            value: (0, lodash_1.get)(resource, valueParam),
             image: imageField ? (0, lodash_1.get)(resource, imageField) : null,
         }); });
     };
@@ -120,8 +120,8 @@ var RemoteAutosuggest = function (props) {
             resource = resources.find(function (resource) { return resource[displayField] == value; });
             if (resource) {
                 setOption({
-                    label: resource[displayField],
-                    value: resource[valueParam],
+                    label: (0, lodash_1.get)(resource, displayField),
+                    value: (0, lodash_1.get)(resource, valueParam),
                 });
             }
             return [2 /*return*/];
@@ -134,11 +134,11 @@ var RemoteAutosuggest = function (props) {
     }, [resources]);
     (0, react_1.useEffect)(function () {
         if (value && (resources === null || resources === void 0 ? void 0 : resources.length) > 0) {
-            var resource = resources.find(function (resource) { return resource[valueParam] == value; });
+            var resource = resources.find(function (resource) { return (0, lodash_1.get)(resource, valueParam) == value; });
             if (resource) {
                 setOption({
-                    label: resource[displayField],
-                    value: resource[valueParam],
+                    label: (0, lodash_1.get)(resource, displayField),
+                    value: (0, lodash_1.get)(resource, valueParam),
                 });
             }
         }

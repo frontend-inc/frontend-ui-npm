@@ -6,6 +6,7 @@ export type FieldElementProps = {
     color?: string;
     direction?: 'row' | 'column';
     variant?: TypographyVariantsType;
+    alignItems?: 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline';
     placeholder?: string;
     enableBorder?: boolean;
     disablePadding?: boolean;

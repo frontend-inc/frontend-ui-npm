@@ -8,7 +8,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var ShowModal = function (props) {
-    var _a = (0, frontend_js_1.useList)(), resource = _a.resource, url = _a.url;
+    var _a = (0, frontend_js_1.useResourceContext)(), resource = _a.resource, url = _a.url;
     var _b = props || {}, open = _b.open, handleClose = _b.handleClose, _c = _b.actions, actions = _c === void 0 ? [] : _c, _d = _b.displayFields, displayFields = _d === void 0 ? [] : _d, enableComments = _b.enableComments, enableRatings = _b.enableRatings, enableLikes = _b.enableLikes, enableFavorites = _b.enableFavorites, enableSharing = _b.enableSharing, enablePayments = _b.enablePayments, enableEdit = _b.enableEdit, handleEdit = _b.handleEdit;
     if (!resource)
         return null;

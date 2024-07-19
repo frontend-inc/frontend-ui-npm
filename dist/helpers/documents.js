@@ -10,19 +10,8 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.filterDocumentLinks = exports.flattenDocument = exports.flattenDocuments = exports.handleDocumentChange = void 0;
+exports.filterReferences = exports.handleDocumentChange = void 0;
 var index_1 = require("../constants/index");
 var handleDocumentChange = function (ev, resource) {
     var _a;
@@ -38,22 +27,13 @@ var handleDocumentChange = function (ev, resource) {
     return newResource;
 };
 exports.handleDocumentChange = handleDocumentChange;
-var flattenDocuments = function (resources) {
-    return resources.map(function (resource) { return (0, exports.flattenDocument)(resource); });
-};
-exports.flattenDocuments = flattenDocuments;
-var flattenDocument = function (resource) {
-    var _a = resource || {}, data = _a.data, rest = __rest(_a, ["data"]);
-    return __assign(__assign({}, data), rest);
-};
-exports.flattenDocument = flattenDocument;
-var filterDocumentLinks = function (document, contentType) {
+var filterReferences = function (document, contentType) {
     var _a, _b, _c;
-    if (!(document === null || document === void 0 ? void 0 : document.document_links) ||
-        ((_a = document === null || document === void 0 ? void 0 : document.document_links) === null || _a === void 0 ? void 0 : _a.length) == 0 ||
+    if (!(document === null || document === void 0 ? void 0 : document.references) ||
+        ((_a = document === null || document === void 0 ? void 0 : document.references) === null || _a === void 0 ? void 0 : _a.length) == 0 ||
         !contentType)
         return null;
-    var documents = (_c = (_b = document === null || document === void 0 ? void 0 : document.document_links) === null || _b === void 0 ? void 0 : _b.filter(function (docuLink) { var _a; return ((_a = docuLink === null || docuLink === void 0 ? void 0 : docuLink.target) === null || _a === void 0 ? void 0 : _a.content_type) == contentType; })) === null || _c === void 0 ? void 0 : _c.map(function (docuLink) { return docuLink === null || docuLink === void 0 ? void 0 : docuLink.target; });
+    var documents = (_c = (_b = document === null || document === void 0 ? void 0 : document.references) === null || _b === void 0 ? void 0 : _b.filter(function (reference) { var _a; return ((_a = reference === null || reference === void 0 ? void 0 : reference.target) === null || _a === void 0 ? void 0 : _a.content_type) == contentType; })) === null || _c === void 0 ? void 0 : _c.map(function (reference) { return reference === null || reference === void 0 ? void 0 : reference.target; });
     return documents;
 };
-exports.filterDocumentLinks = filterDocumentLinks;
+exports.filterReferences = filterReferences;

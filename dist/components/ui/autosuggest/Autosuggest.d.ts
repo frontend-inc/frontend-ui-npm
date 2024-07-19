@@ -15,6 +15,7 @@ type AutosuggestProps = {
     handleClear?: () => void;
     freeSolo?: boolean;
     enableClear?: boolean;
+    info?: string;
 };
 declare const Autosuggest: React.FC<AutosuggestProps>;
 export default Autosuggest;

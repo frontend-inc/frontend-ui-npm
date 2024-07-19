@@ -84,9 +84,10 @@ var IMAGE_WIDTH = 140;
 var RenderAttachment = function (props) {
     var src = props.src, _a = props.objectFit, objectFit = _a === void 0 ? 'cover' : _a, size = props.size, onDelete = props.onDelete, _b = props.variant, variant = _b === void 0 ? 'file' : _b, _c = props.alt, alt = _c === void 0 ? '' : _c;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        variant == 'image' && (react_1.default.createElement(image_1.default, { alt: alt, height: size, width: size, src: src, style: {
-                objectFit: objectFit,
-            } })),
+        variant == 'image' && (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.imageContainer), { height: size, width: size }) },
+            react_1.default.createElement(image_1.default, { alt: alt, height: size, width: size, src: src, style: {
+                    objectFit: objectFit,
+                } }))),
         variant == 'file' && (react_1.default.createElement(material_1.Avatar, { variant: "rounded", sx: sx.avatar },
             react_1.default.createElement(lucide_react_1.File, { size: 24 }))),
         react_1.default.createElement(material_1.Box, { width: 50 },
@@ -166,4 +167,8 @@ var sx = {
         left: 26,
         top: -10,
     },
+    imageContainer: {
+        borderRadius: 1,
+        overflow: 'hidden',
+    }
 };

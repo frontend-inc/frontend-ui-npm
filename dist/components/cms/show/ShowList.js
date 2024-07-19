@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var ShowList = function (props) {
     var _a = props || {}, actions = _a.actions, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, resource = _a.resource, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
@@ -17,11 +16,11 @@ var ShowList = function (props) {
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
                     actions: actions,
-                }), numVisible: 4, resource: (0, frontend_js_1.flattenDocument)(resource), justifyContent: "center" }))),
+                }), numVisible: 4, resource: resource, justifyContent: "center" }))),
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
             enableRatings == true && (react_1.default.createElement(__1.AvgRating, { justifyContent: "center", resource: resource, enableTotal: true })),
-            (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { alignItems: "center", fields: displayFields, resource: resource })),
+            react_1.default.createElement(__1.DisplayFields, { alignItems: "center", fields: displayFields, resource: resource }),
             enablePayments == true && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout", justifyContent: "center" }))),
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
             react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label })),

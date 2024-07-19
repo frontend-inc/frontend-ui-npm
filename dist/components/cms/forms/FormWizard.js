@@ -80,12 +80,7 @@ var FormWizard = function (props) {
     var _e = (0, frontend_js_1.useResource)({
         url: url,
         name: 'document',
-    }), loading = _e.loading, findOne = _e.findOne, resource = _e.resource, setResource = _e.setResource, update = _e.update, create = _e.create, removeAttachment = _e.removeAttachment;
-    var handleDataChange = function (ev) {
-        var name = ev.target.name;
-        var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-        setResource(function (prev) { return (0, frontend_js_1.changeDocumentValue)(prev, name, value); });
-    };
+    }), loading = _e.loading, findOne = _e.findOne, resource = _e.resource, setResource = _e.setResource, update = _e.update, create = _e.create, removeAttachment = _e.removeAttachment, handleChange = _e.handleChange;
     var _f = (0, react_1.useState)(), currentField = _f[0], setCurrentField = _f[1];
     var _g = (0, react_1.useState)(0), currentStep = _g[0], setCurrentStep = _g[1];
     var _h = (0, react_1.useState)(0), totalSteps = _h[0], setTotalSteps = _h[1];
@@ -192,7 +187,7 @@ var FormWizard = function (props) {
             react_1.default.createElement(FormWizardProgress_1.default, { currentStep: currentStep, totalSteps: totalSteps }),
             react_1.default.createElement(material_1.Box, { sx: sx.formContainer },
                 react_1.default.createElement(material_1.Box, { sx: sx.form },
-                    currentField && (react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleDataChange, handleRemove: handleRemove, resource: (0, frontend_js_1.flattenDocument)(resource), setResource: setResource })),
+                    currentField && (react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleChange, handleRemove: handleRemove, resource: resource, setResource: setResource })),
                     react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: buttonText }))))));
 };
 exports.default = FormWizard;

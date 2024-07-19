@@ -58,7 +58,7 @@ var AutocompletePaper = function (props) {
     return react_1.default.createElement(material_1.Paper, __assign({}, props, { elevation: 10, sx: sx.paper }));
 };
 var Autosuggest = function (props) {
-    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? 'column' : _a, options = props.options, label = props.label, name = props.name, _b = props.placeholder, placeholder = _b === void 0 ? 'Select' : _b, _c = props.multiselect, multiselect = _c === void 0 ? false : _c, handleChange = props.handleChange, handleInputChange = props.handleInputChange, handleClear = props.handleClear, _d = props.enableClear, enableClear = _d === void 0 ? false : _d, _e = props.freeSolo, freeSolo = _e === void 0 ? false : _e;
+    var errors = props.errors, value = props.value, _a = props.direction, direction = _a === void 0 ? 'column' : _a, options = props.options, label = props.label, name = props.name, _b = props.placeholder, placeholder = _b === void 0 ? 'Select' : _b, _c = props.multiselect, multiselect = _c === void 0 ? false : _c, handleChange = props.handleChange, handleInputChange = props.handleInputChange, handleClear = props.handleClear, _d = props.enableClear, enableClear = _d === void 0 ? false : _d, _e = props.freeSolo, freeSolo = _e === void 0 ? false : _e, info = props.info;
     var _f = (0, react_1.useState)({
         label: '',
         value: null,
@@ -104,8 +104,8 @@ var Autosuggest = function (props) {
     }, [value, options]);
     if (!options)
         return null;
-    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 1 },
-        label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.label }, label)),
+    return (react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), (direction == 'row' && sx.stackVertical)), direction: direction, spacing: 0.5 },
+        react_1.default.createElement(__1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.Box, { sx: sx.inputContainer },
             react_1.default.createElement(Autocomplete_1.default, { freeSolo: freeSolo, multiple: multiselect, disableCloseOnSelect: multiselect, sx: __assign(__assign({}, sx.autocomplete), { paper: sx.paper, option: sx.option, popperDisablePortal: sx.popperDisablePortal }), value: selected, onChange: function (event, newValue) {
                     handleOnChange(event, newValue);

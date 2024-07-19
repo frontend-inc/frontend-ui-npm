@@ -17,14 +17,11 @@ export type ResourceListProps = {
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
     enableSearch?: boolean;
-    enableFilters?: boolean;
-    enableSorting?: boolean;
     buttonText?: string;
-    enableBorder?: boolean;
-    enableGradient?: boolean;
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
+    sortable?: boolean;
     emptyIcon?: string;
     emptyTitle?: string;
     emptyDescription?: string;

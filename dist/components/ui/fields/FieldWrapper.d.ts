@@ -4,6 +4,7 @@ type FieldWrapperProps = {
     label?: string;
     icon?: string;
     color?: string;
+    alignItems?: 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline';
     disablePadding?: boolean;
     enableBorder?: boolean;
     children?: React.ReactNode;

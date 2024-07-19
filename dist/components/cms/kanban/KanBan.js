@@ -27,17 +27,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var frontend_js_1 = require("frontend-js");
 var Sortable_1 = __importDefault(require("./Sortable"));
 var utils_1 = require("../../../helpers/utils");
 var KanBan = function (props) {
     var loading = props.loading, actions = props.actions, headers = props.headers, fieldName = props.fieldName, resources = props.resources, activeResource = props.activeResource, handleClick = props.handleClick, handleDrop = props.handleDrop, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, enableOverlay = props.enableOverlay, enableGradient = props.enableGradient, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableRatings = props.enableRatings, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleAdd = props.handleAdd, handleComment = props.handleComment;
     var _b = (0, react_1.useState)({}), groupedResources = _b[0], setGroupedResources = _b[1];
     var handleGroupResources = function (resources, fieldName) {
-        var sortedDocuments = resources.sort(function (a, b) { return a.position - b.position; });
-        var flattenedResources = (0, frontend_js_1.flattenDocuments)(sortedDocuments);
+        var sortedResources = resources.sort(function (a, b) { return a.position - b.position; });
         var allowedOptions = headers.map(function (header) { return header.value; });
-        var grouped = (0, utils_1.groupResourcesByField)(flattenedResources, fieldName, allowedOptions);
+        var grouped = (0, utils_1.groupResourcesByField)(sortedResources, fieldName, allowedOptions);
         setGroupedResources(grouped);
     };
     (0, react_1.useEffect)(function () {

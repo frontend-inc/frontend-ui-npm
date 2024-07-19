@@ -39,7 +39,7 @@ var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var cookies_next_1 = require("cookies-next");
 var MenuList = function (props) {
-    var id = props.id, label = props.label, _a = props.defaultClosed, defaultClosed = _a === void 0 ? false : _a, children = props.children, _b = props.disableBorder, disableBorder = _b === void 0 ? false : _b;
+    var id = props.id, label = props.label, _a = props.defaultClosed, defaultClosed = _a === void 0 ? false : _a, children = props.children, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
     var _c = (0, react_1.useState)(!defaultClosed), open = _c[0], setOpen = _c[1];
     var handleToggleClick = function () {
         //setMenuCookie(!open)
@@ -66,7 +66,7 @@ var MenuList = function (props) {
             //handleReadCookieState(id)
         }
     }, [id]);
-    return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.root), (!disableBorder && sx.borderTop)) },
+    return (react_1.default.createElement(material_1.List, { disablePadding: true, sx: __assign(__assign({}, sx.root), (enableBorder && sx.border)) },
         label && (react_1.default.createElement(material_1.ListItem, { sx: sx.listItem, disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleToggleClick },
                 react_1.default.createElement(icons_material_1.ChevronRight, { sx: __assign(__assign({}, sx.icon), (open && sx.expandMore)) })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: handleToggleClick },
@@ -105,8 +105,8 @@ var sx = {
     expandMore: {
         transform: 'rotate(90deg)',
     },
-    borderTop: {
-        borderTop: '1px solid',
+    border: {
+        borderTop: '1px dotted',
         borderColor: 'divider',
     },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterOptionType, SearchFilterOptionType } from '../../..';
-type FilterButtonProps = {
+export type FilterButtonProps = {
     filters?: FilterOptionType[];
     loading?: boolean;
     filterOptions?: SearchFilterOptionType[];

@@ -1,11 +1,14 @@
 import React from 'react';
-type AccountFormProps = {
-    loading: boolean;
+import { MetafieldType } from '../../../types';
+type MyAccountFormProps = {
+    loading?: boolean;
+    errors?: any;
     user: any;
+    metafields?: MetafieldType[];
     handleChange: (ev: any) => void;
     handleSubmit: () => void;
     handleDeleteAvatar: () => void;
     handleLogout: () => void;
 };
-declare const MyAccountForm: React.FC<AccountFormProps>;
+declare const MyAccountForm: React.FC<MyAccountFormProps>;
 export default MyAccountForm;

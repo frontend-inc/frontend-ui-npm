@@ -1,12 +1,12 @@
 import React from 'react';
 import { DisplayFieldType } from '../../../types';
-export type ResourceListItemProps = {
+export type ResourceProps = {
     avatar?: React.ReactNode;
     icon?: string;
     color?: string;
-    title?: string;
-    description?: string;
     layout?: 'list' | 'grid';
+    title?: string | React.ReactNode;
+    description?: string;
     image?: string;
     resource: any;
     handleClick?: (resource: any) => void;
@@ -14,7 +14,9 @@ export type ResourceListItemProps = {
     handleDelete?: (resource: any) => void;
     secondaryActions?: React.ReactNode;
     menuActions?: any;
+    sortable?: boolean;
+    isDragging?: boolean;
     displayFields?: DisplayFieldType[];
 };
-declare const ResourceListItem: React.FC<ResourceListItemProps>;
-export default ResourceListItem;
+declare const Resource: React.FC<ResourceProps>;
+export default Resource;

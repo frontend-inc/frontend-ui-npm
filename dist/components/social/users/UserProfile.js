@@ -40,8 +40,8 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var UserProfile = function (props) {
-    var _a = props || {}, user = _a.user, href = _a.href, _b = _a.enableFollowing, enableFollowing = _b === void 0 ? false : _b, _c = _a.enableBorder, enableBorder = _c === void 0 ? false : _c;
-    var _d = user || {}, name = _d.name, username = _d.username, bio = _d.bio, avatar = _d.avatar;
+    var _a = props || {}, user = _a.user, href = _a.href, _b = _a.enableFollowing, enableFollowing = _b === void 0 ? false : _b, _c = _a.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = _a.displayFields, displayFields = _d === void 0 ? [] : _d;
+    var _e = user || {}, name = _e.name, username = _e.username, bio = _e.bio, avatar = _e.avatar;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var router = (0, router_1.useRouter)();
     var handleClick = function () {
@@ -53,19 +53,21 @@ var UserProfile = function (props) {
             router.push("".concat(clientUrl).concat(href, "/").concat(username));
         }
     };
-    if (!(user === null || user === void 0 ? void 0 : user.username)) {
+    if (!(user === null || user === void 0 ? void 0 : user.id)) {
         return (react_1.default.createElement(components_1.Placeholder, { icon: "UserCircle", title: "Please sign in", description: "Sign in to view the user profile" }));
     }
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.container), (enableBorder && sx.containerBorder)) },
         react_1.default.createElement(material_1.Stack, { sx: sx.profile, direction: { sm: 'row', xs: 'column' }, spacing: { sm: 4, xs: 0 }, alignItems: "flex-start" },
-            react_1.default.createElement(material_1.Box, { height: "100%", sx: sx.avatarContainer }, (avatar === null || avatar === void 0 ? void 0 : avatar.url) && react_1.default.createElement(components_1.UserAvatar, { user: user, size: 120 })),
+            react_1.default.createElement(material_1.Box, { height: "100%", sx: sx.avatarContainer }, (avatar === null || avatar === void 0 ? void 0 : avatar.url) && (react_1.default.createElement(components_1.UserAvatar, { user: user, size: 120, enableGradient: true }))),
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0 },
                 react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.username },
                     "@",
                     username),
                 react_1.default.createElement(material_1.Typography, { variant: "h6", color: "text.primary", sx: sx.name }, name),
-                enableFollowing == true && react_1.default.createElement(components_1.FollowCounts, { user: user }),
-                bio && react_1.default.createElement(components_1.ExpandableText, { text: bio, color: "text.secondary" })),
+                react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
+                    enableFollowing == true && (react_1.default.createElement(components_1.FollowButtonGroup, { user: user })),
+                    react_1.default.createElement(components_1.DisplayFields, { resource: user, fields: displayFields }),
+                    bio && (react_1.default.createElement(components_1.ExpandableText, { text: bio, color: "text.secondary" })))),
             react_1.default.createElement(material_1.Stack, { direction: "row", height: "100%", justifyContent: "flex-start" }, enableFollowing == true && react_1.default.createElement(components_1.FollowButton, { user: user })))));
 };
 exports.default = UserProfile;
@@ -100,11 +102,13 @@ var sx = {
         height: 110,
     },
     avatarContainer: {
-        height: 140,
+        bgcolor: 'common.white',
+        height: 126,
+        width: 126,
+        borderRadius: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '100%',
     },
     username: {
         boxShadow: 0,

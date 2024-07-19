@@ -17,7 +17,7 @@ var ShowItem = function (props) {
     if (handle == 'index')
         handle = undefined;
     var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'article' : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, fieldName = _a.fieldName, actions = _a.actions, enableOverlay = _a.enableOverlay, enableEdit = _a.enableEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
-    var resource = (0, frontend_js_1.useList)().resource;
+    var resource = (0, frontend_js_1.useResourceContext)().resource;
     var components = {
         list: ShowList_1.default,
         cover: ShowCover_1.default,

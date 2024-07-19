@@ -48,10 +48,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var shopify_1 = require("../../../components/shopify");
 var frontend_shopify_1 = require("frontend-shopify");
-var frontend_js_1 = require("frontend-js");
+var lodash_1 = require("lodash");
 var AddonShopifyProduct = function (props) {
     var _a = props || {}, resource = _a.resource, fieldName = _a.fieldName, rest = __rest(_a, ["resource", "fieldName"]);
-    var shopifyHandle = (0, frontend_js_1.flattenDocument)(resource)[fieldName];
+    var shopifyHandle = (0, lodash_1.get)(resource, fieldName);
     var _b = (0, frontend_shopify_1.useProducts)(), loading = _b.loading, product = _b.product, findProduct = _b.findProduct;
     (0, react_1.useEffect)(function () {
         if (shopifyHandle) {

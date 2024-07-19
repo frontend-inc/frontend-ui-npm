@@ -66,14 +66,14 @@ var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var frontend_js_1 = require("frontend-js");
-var SortableDocumentLinks_1 = __importDefault(require("./helpers/SortableDocumentLinks"));
+var SortableReferences_1 = __importDefault(require("./helpers/SortableReferences"));
 var ReferenceInput = function (props) {
     var _a;
     var _b = props || {}, label = _b.label, _resource = _b.resource, url = _b.url, foreignUrl = _b.foreignUrl, contentType = _b.contentType;
     var _c = (0, frontend_js_1.useResource)({
         url: url,
         name: 'document'
-    }), resource = _c.resource, setResource = _c.setResource, findOne = _c.findOne, addLinks = _c.addLinks, removeLinks = _c.removeLinks, updateLinkPositions = _c.updateLinkPositions;
+    }), resource = _c.resource, setResource = _c.setResource, findOne = _c.findOne, addReferences = _c.addReferences, removeReferences = _c.removeReferences, updateReferencePositions = _c.updateReferencePositions;
     var handleReload = function () {
         findOne(_resource === null || _resource === void 0 ? void 0 : _resource.id);
     };
@@ -88,7 +88,7 @@ var ReferenceInput = function (props) {
     }, [_resource]);
     var handleDrop = function (sorted) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            updateLinkPositions(resource === null || resource === void 0 ? void 0 : resource.id, sorted);
+            updateReferencePositions(resource === null || resource === void 0 ? void 0 : resource.id, sorted);
             return [2 /*return*/];
         });
     }); };
@@ -104,7 +104,7 @@ var ReferenceInput = function (props) {
     var handleDelete = function (res) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, removeLinks(resource === null || resource === void 0 ? void 0 : resource.id, [res.id])];
+                case 0: return [4 /*yield*/, removeReferences(resource === null || resource === void 0 ? void 0 : resource.id, [res.id])];
                 case 1:
                     _a.sent();
                     handleReload();
@@ -116,7 +116,7 @@ var ReferenceInput = function (props) {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, addLinks(resource === null || resource === void 0 ? void 0 : resource.id, [res === null || res === void 0 ? void 0 : res.id])];
+                case 0: return [4 /*yield*/, addReferences(resource === null || resource === void 0 ? void 0 : resource.id, [res === null || res === void 0 ? void 0 : res.id])];
                 case 1:
                     response = _a.sent();
                     if (response === null || response === void 0 ? void 0 : response.id) {
@@ -127,12 +127,12 @@ var ReferenceInput = function (props) {
             }
         });
     }); };
-    var documentLinks = (_a = resource === null || resource === void 0 ? void 0 : resource.document_links) === null || _a === void 0 ? void 0 : _a.filter(function (link) { var _a; return ((_a = link === null || link === void 0 ? void 0 : link.target) === null || _a === void 0 ? void 0 : _a.content_type) === contentType; });
+    var references = (_a = resource === null || resource === void 0 ? void 0 : resource.references) === null || _a === void 0 ? void 0 : _a.filter(function (reference) { var _a; return ((_a = reference === null || reference === void 0 ? void 0 : reference.target) === null || _a === void 0 ? void 0 : _a.content_type) === contentType; });
     if (!(resource === null || resource === void 0 ? void 0 : resource.id))
         return null;
     return (react_1.default.createElement(material_1.Stack, { direction: 'column', spacing: 0.5 },
         react_1.default.createElement(components_1.InputLabel, { label: label }),
-        react_1.default.createElement(SortableDocumentLinks_1.default, { documentLinks: documentLinks, handleDrop: handleDrop, handleEdit: handleEdit, handleDelete: handleDelete }),
+        react_1.default.createElement(SortableReferences_1.default, { references: references, handleDrop: handleDrop, handleEdit: handleEdit, handleDelete: handleDelete }),
         react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleAddClick, variant: 'contained', color: 'secondary', startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20, color: 'secondary.contrastText' }) },
             "Add ",
             contentType),

@@ -70,9 +70,9 @@ var components_2 = require("../../../components");
 var MyAccountTabs_1 = __importDefault(require("./MyAccountTabs"));
 var material_1 = require("@mui/material");
 var MyAccountModal = function (props) {
-    var _a = props || {}, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe;
+    var _a = props || {}, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe, metafields = _a.metafields;
     var _b = (0, react_1.useContext)(context_1.AppContext), myAccountOpen = _b.myAccountOpen, setMyAccountOpen = _b.setMyAccountOpen;
-    var _c = (0, frontend_js_1.useAuth)(), delayedLoading = _c.delayedLoading, user = _c.user, setUser = _c.setUser, fetchMe = _c.fetchMe, currentUser = _c.currentUser, updateMe = _c.updateMe, handleChange = _c.handleChange, deleteAvatar = _c.deleteAvatar, logout = _c.logout;
+    var _c = (0, frontend_js_1.useAuth)(), delayedLoading = _c.delayedLoading, user = _c.user, fetchMe = _c.fetchMe, currentUser = _c.currentUser, updateMe = _c.updateMe, handleChange = _c.handleChange, deleteAvatar = _c.deleteAvatar, logout = _c.logout;
     var _d = (0, react_1.useState)(0), currentTab = _d[0], setCurrentTab = _d[1];
     var handleLogout = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -118,7 +118,7 @@ var MyAccountModal = function (props) {
             : 'My Account' },
         react_1.default.createElement(MyAccountTabs_1.default, { tab: currentTab, enableTeams: enableTeams, enableStripe: enableStripe, handleChange: handleTabChange }),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
-            currentTab == 0 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout })),
+            currentTab == 0 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout, metafields: metafields })),
             currentTab == 1 && react_1.default.createElement(components_2.TeamList, null),
             currentTab == 2 && (react_1.default.createElement(components_2.TeamUsersList, { handleAddUser: function () { return setCurrentTab(3); } })),
             currentTab == 3 && (react_1.default.createElement(components_2.TeamUserInvite, { handleSuccess: function () { return setCurrentTab(2); }, handleCancel: function () { return setCurrentTab(2); } })),

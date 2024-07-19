@@ -20,6 +20,7 @@ type FieldProps = {
     disablePadding?: boolean;
     field: DisplayFieldType;
     resource?: any;
+    alignItems?: 'flex-start' | 'center' | 'flex-end';
 };
 declare const DisplayField: React.FC<FieldProps>;
 export default DisplayField;
