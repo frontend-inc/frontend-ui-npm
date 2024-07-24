@@ -49,15 +49,17 @@ var CardList = function (props) {
                 react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
                     react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay }))),
             react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.contentArea },
-                react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5, sx: sx.content },
-                    react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title)),
-                    enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
-                    react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
-                    (resource === null || resource === void 0 ? void 0 : resource.user) && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
+                react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.content },
+                    react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5 },
+                        react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title)),
+                        enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
+                        react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
+                        react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
+                    react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
+                        enableLikes == true && (react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                        enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                        enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource }))),
                 react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
-                    enableLikes == true && (react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                    enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                    enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource }),
                     react_1.default.createElement(__2.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
 };
 exports.default = CardList;
@@ -117,7 +119,7 @@ var sx = {
     },
     content: {
         width: '100%',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         alignItems: 'flex-start',
         height: '100%',
         py: {

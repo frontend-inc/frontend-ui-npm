@@ -56,19 +56,16 @@ var Card = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { ref: ref, spacing: 0, sx: __assign(__assign({}, sx.root), { width: '100%', minHeight: height + 80 }) },
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, alt: title, label: label, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleItemClick })),
+            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, alt: title, label: label, disableBorderRadius: true, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleItemClick })),
         react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.cardContent },
             react_1.default.createElement(material_1.Box, { sx: sx.content },
                 react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
                 enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
-                (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }))),
+                (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource })),
+                react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
             react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "space-between" },
-                react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 }, (resource === null || resource === void 0 ? void 0 : resource.user) && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
-                react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },
-                    enableLikes == true && (react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                    enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                    enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource }),
-                    (actions === null || actions === void 0 ? void 0 : actions.length) > 0 && (react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource })))))));
+                react_1.default.createElement(__1.SocialActions, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
+                (actions === null || actions === void 0 ? void 0 : actions.length) > 0 && (react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
 };
 exports.default = Card;
 var sx = {
@@ -104,6 +101,10 @@ var sx = {
             background: 'linear-gradient(to top, rgb(0,0,0,0.5), transparent)',
         },
     },
+    cardHeader: {
+        p: 1,
+        minHeight: 36
+    },
     cardHeaderBorder: {
         px: 1,
     },
@@ -122,4 +123,5 @@ var sx = {
     title: {
         width: '100%',
     },
+    user: {}
 };

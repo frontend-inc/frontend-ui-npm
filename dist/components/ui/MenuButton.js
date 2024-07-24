@@ -8,7 +8,7 @@ var material_1 = require("@mui/material");
 var hooks_1 = require("../../hooks");
 var components_1 = require("../../components");
 var MenuButton = function (props) {
-    var children = props.children, _a = props.icon, icon = _a === void 0 ? 'EllipsisVertical' : _a, color = props.color, _b = props.enableIcons, enableIcons = _b === void 0 ? false : _b, handleEdit = props.handleEdit, handleDelete = props.handleDelete, _c = props.size, size = _c === void 0 ? 'medium' : _c;
+    var children = props.children, _a = props.icon, icon = _a === void 0 ? 'Ellipsis' : _a, color = props.color, _b = props.enableIcons, enableIcons = _b === void 0 ? false : _b, handleEdit = props.handleEdit, handleDelete = props.handleDelete, _c = props.size, size = _c === void 0 ? 'medium' : _c;
     var _d = (0, hooks_1.useMenu)(), open = _d.open, anchorEl = _d.anchorEl, closeMenu = _d.closeMenu, toggleMenu = _d.toggleMenu;
     // Ensure menu closes after click
     var handleDefaultClick = function (e) {

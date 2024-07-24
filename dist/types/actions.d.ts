@@ -19,3 +19,7 @@ export type ActionType = {
         'content-type': string;
     };
 };
+export type SocialFieldType = {
+    provider: string;
+    name: string;
+};

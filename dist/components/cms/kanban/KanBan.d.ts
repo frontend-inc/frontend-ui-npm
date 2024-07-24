@@ -15,6 +15,7 @@ export type KanBanProps = {
     handleClick: (resource: any) => void;
     enableComments?: boolean;
     enableFavorites?: boolean;
+    enableLikes?: boolean;
     enableRatings?: boolean;
     enableOverlay?: boolean;
     enableGradient?: boolean;

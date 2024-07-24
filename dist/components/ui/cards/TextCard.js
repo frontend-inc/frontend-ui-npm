@@ -50,18 +50,18 @@ var CardList = function (props) {
                 enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
                 react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                 react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 200)),
-                enableUsers == true && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }))),
+                enableUsers == true && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }),
+                react_1.default.createElement(material_1.Stack, { direction: "row" },
+                    enableLikes == true && (react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                    enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                    enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource })))),
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end", sx: sx.actions },
-            enableLikes == true && (react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-            enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-            enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource }),
             react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource }))));
 };
 exports.default = CardList;
 var sx = {
     root: {
-        pt: 1,
-        pb: 2,
+        py: 1,
         minHeight: 140,
         position: 'relative',
         width: '100%',

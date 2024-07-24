@@ -34,6 +34,8 @@ var LucideIcon = function (props) {
     var name = props.name, _a = props.color, color = _a === void 0 ? 'text.primary' : _a, _b = props.size, size = _b === void 0 ? 24 : _b;
     var theme = (0, material_1.useTheme)();
     var Icon = icons[name];
-    return Icon && react_1.default.createElement(Icon, { color: (0, lodash_1.get)(theme.palette, color), size: size });
+    if (!Icon)
+        return null;
+    return (react_1.default.createElement(Icon, { color: (0, lodash_1.get)(theme.palette, color), size: size }));
 };
 exports.default = LucideIcon;

@@ -57,5 +57,5 @@ Object.defineProperty(exports, "ResourceTable", { enumerable: true, get: functio
 // Details
 var Details_1 = require("./details/Details");
 Object.defineProperty(exports, "Details", { enumerable: true, get: function () { return __importDefault(Details_1).default; } });
-var UserDetails_1 = require("../auth/users/UserDetails");
+var UserDetails_1 = require("../users/profile/UserDetails");
 Object.defineProperty(exports, "UserDetails", { enumerable: true, get: function () { return __importDefault(UserDetails_1).default; } });

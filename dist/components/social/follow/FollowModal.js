@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var FollowUser_1 = __importDefault(require("./FollowUser"));
+var UserListItem_1 = __importDefault(require("../../users/cards/UserListItem"));
 var FollowModal = function (props) {
     var _a = props || {}, open = _a.open, handleClose = _a.handleClose, user = _a.user;
     var _b = (0, react_1.useState)(0), currentTab = _b[0], setCurrentTab = _b[1];
@@ -41,8 +41,8 @@ var FollowModal = function (props) {
             react_1.default.createElement(material_1.Tab, { label: "Followers", value: 0 }),
             react_1.default.createElement(material_1.Tab, { label: "Following", value: 1 })),
         react_1.default.createElement(material_1.Box, { sx: sx.container },
-            currentTab == 0 && (react_1.default.createElement(__1.ResourceList, { name: "user", url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/followers"), enableSearch: true, component: FollowUser_1.default })),
-            currentTab == 1 && (react_1.default.createElement(__1.ResourceList, { name: "user", url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/following"), enableSearch: true, component: FollowUser_1.default })))));
+            currentTab == 0 && (react_1.default.createElement(__1.ResourceList, { name: "user", url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/followers"), enableSearch: true, component: UserListItem_1.default })),
+            currentTab == 1 && (react_1.default.createElement(__1.ResourceList, { name: "user", url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/following"), enableSearch: true, component: UserListItem_1.default })))));
 };
 exports.default = FollowModal;
 var sx = {

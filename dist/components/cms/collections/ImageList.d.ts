@@ -1,6 +1,5 @@
 import React from 'react';
-import { ListItemsProps } from './ListItems';
-import { ListContainerProps } from './ListContainer';
-export type ImageListProps = ListItemsProps & ListContainerProps;
+import { ListProps } from './List';
+export type ImageListProps = ListProps;
 declare const ImageList: React.FC<ImageListProps>;
 export default ImageList;

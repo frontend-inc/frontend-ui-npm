@@ -1,7 +1,4 @@
 import React from 'react';
-export type ShowVideoModalProps = {
-    open: boolean;
-    handleClose: () => void;
-};
+export type ShowVideoModalProps = {};
 declare const ShowVideoModal: React.FC<ShowVideoModalProps>;
 export default ShowVideoModal;

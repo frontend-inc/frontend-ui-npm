@@ -1,7 +1,6 @@
 import React from 'react';
-import { ListItemsProps } from './ListItems';
-import { ListContainerProps } from './ListContainer';
-export type KanBanListProps = ListItemsProps & ListContainerProps & {
+import { ListProps } from './List';
+export type KanBanListProps = ListProps & {
     headers: {
         label: string;
         value: string;

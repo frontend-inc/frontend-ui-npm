@@ -16,7 +16,7 @@ var FormFields = function (props) {
             if (!(0, helpers_1.validateFieldConditions)((field === null || field === void 0 ? void 0 : field.conditions) || [], resource)) {
                 return null;
             }
-            return (react_1.default.createElement(FormFieldInput_1.default, { key: index, resource: resource, errors: errors, field: field, value: (0, lodash_1.get)(resource, field.name), 
+            return (react_1.default.createElement(FormFieldInput_1.default, { key: index, resource: resource, errors: errors, field: field, value: (0, lodash_1.get)(resource, field.name) || (field === null || field === void 0 ? void 0 : field.default), 
                 //@ts-ignore
                 handleChange: handleChange, handleRemove: handleRemove }));
         }),

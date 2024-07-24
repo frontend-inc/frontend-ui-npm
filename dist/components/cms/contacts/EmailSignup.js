@@ -72,7 +72,7 @@ var EmailSignup = function (props) {
             label && (react_1.default.createElement(material_1.Typography, { variant: 'caption', color: "text.secondary", sx: sx.label }, label)),
             title && (react_1.default.createElement(material_1.Typography, { variant: 'h6', color: "text.primary", sx: sx.title }, title)),
             description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: sx.description }, description)),
-            react_1.default.createElement(material_1.Stack, { sx: sx.actions, direction: "row", spacing: 0 },
+            react_1.default.createElement(material_1.Stack, { sx: sx.inputContainer, direction: "row", spacing: 0 },
                 react_1.default.createElement(components_1.TextInput, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, handleChange: handleChange, placeholder: "Enter your email", type: "email", styles: sx.input }),
                 react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: delayedLoading }) }, buttonText)))));
 };
@@ -97,11 +97,13 @@ var sx = {
         textAlign: 'center',
         maxWidth: '600px',
     },
-    actions: {
+    inputContainer: {
         pt: 2,
         textAlign: 'center',
         width: '100%',
         maxWidth: 420,
+        display: 'flex',
+        alignItems: 'flex-end',
     },
     input: {
         '& .MuiInputBase-input': {
@@ -113,6 +115,7 @@ var sx = {
     button: {
         boxShadow: 1,
         minWidth: 120,
+        height: 42,
         borderRadius: function (theme) {
             return "0 ".concat(theme.shape.borderRadius, "px ").concat(theme.shape.borderRadius, "px 0");
         },

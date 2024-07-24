@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListItemCard = exports.TableCard = exports.VideoCard = exports.KanBanCard = exports.ImageCard = exports.TextCard = exports.ChipCard = exports.CoverCard = exports.Card = exports.AvatarCard = void 0;
+exports.SocialActions = exports.ListItemCard = exports.TableCard = exports.VideoCard = exports.KanBanCard = exports.ImageCard = exports.TextCard = exports.ChipCard = exports.CoverCard = exports.Card = exports.AvatarCard = void 0;
 var AvatarCard_1 = require("./AvatarCard");
 Object.defineProperty(exports, "AvatarCard", { enumerable: true, get: function () { return __importDefault(AvatarCard_1).default; } });
 var Card_1 = require("./Card");
@@ -24,3 +24,6 @@ var TableCard_1 = require("./TableCard");
 Object.defineProperty(exports, "TableCard", { enumerable: true, get: function () { return __importDefault(TableCard_1).default; } });
 var ListItemCard_1 = require("./ListItemCard");
 Object.defineProperty(exports, "ListItemCard", { enumerable: true, get: function () { return __importDefault(ListItemCard_1).default; } });
+// SocialActions 
+var SocialActions_1 = require("./actions/SocialActions");
+Object.defineProperty(exports, "SocialActions", { enumerable: true, get: function () { return __importDefault(SocialActions_1).default; } });

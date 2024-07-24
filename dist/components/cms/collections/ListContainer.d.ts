@@ -1,22 +1,8 @@
 import React from 'react';
-import { DisplayFieldType, FormFieldType } from '../../../types';
 export type ListContainerProps = {
-    resource?: any;
     url: string;
+    name: string;
     query?: any;
-    filterUser?: boolean;
-    filterTeam?: boolean;
-    filterRelated?: boolean;
-    filterGeo?: boolean;
-    filterSimilar?: boolean;
-    fields?: FormFieldType[];
-    displayFields?: DisplayFieldType[];
-    perPage?: number;
-    enableSearch?: boolean;
-    enableGeoSearch?: boolean;
-    enableCreate?: boolean;
-    enableFilters?: boolean;
-    enableSorting?: boolean;
     children: React.ReactNode;
 };
 declare const ListContainer: React.FC<ListContainerProps>;

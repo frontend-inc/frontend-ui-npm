@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SocialFollowing = exports.SocialFollowers = exports.SocialFeed = exports.SocialLikes = exports.SocialFavorites = exports.SocialReviews = exports.SocialComments = void 0;
+exports.SocialFeed = exports.SocialLikes = exports.SocialFavorites = exports.SocialReviews = exports.SocialComments = void 0;
 var SocialComments_1 = require("./SocialComments");
 Object.defineProperty(exports, "SocialComments", { enumerable: true, get: function () { return __importDefault(SocialComments_1).default; } });
 var SocialReviews_1 = require("./SocialReviews");
@@ -14,7 +14,3 @@ var SocialLikes_1 = require("./SocialLikes");
 Object.defineProperty(exports, "SocialLikes", { enumerable: true, get: function () { return __importDefault(SocialLikes_1).default; } });
 var SocialFeed_1 = require("./SocialFeed");
 Object.defineProperty(exports, "SocialFeed", { enumerable: true, get: function () { return __importDefault(SocialFeed_1).default; } });
-var SocialFollowers_1 = require("./SocialFollowers");
-Object.defineProperty(exports, "SocialFollowers", { enumerable: true, get: function () { return __importDefault(SocialFollowers_1).default; } });
-var SocialFollowing_1 = require("./SocialFollowing");
-Object.defineProperty(exports, "SocialFollowing", { enumerable: true, get: function () { return __importDefault(SocialFollowing_1).default; } });

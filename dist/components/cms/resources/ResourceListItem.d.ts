@@ -12,10 +12,12 @@ export type ResourceProps = {
     handleClick?: (resource: any) => void;
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;
+    secondary?: React.ReactNode;
     secondaryActions?: React.ReactNode;
     menuActions?: any;
     sortable?: boolean;
     isDragging?: boolean;
+    enableBorder?: boolean;
     displayFields?: DisplayFieldType[];
 };
 declare const Resource: React.FC<ResourceProps>;

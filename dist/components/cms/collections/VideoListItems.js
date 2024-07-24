@@ -32,7 +32,6 @@ var VideoListItems = function (props) {
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
             react_1.default.createElement(__1.ListLayout, { grid: true }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource) { return (react_1.default.createElement(__2.VideoCard, { key: resource.id, resource: resource, enableEdit: enableEdit, enableDelete: enableDelete, enableUsers: enableUsers, enableFavorites: enableFavorites, enableComments: enableComments, handleClick: function () { return handleClick(resource); }, handleDelete: function () { return handleDeleteClick(resource); } })); })),
             react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })),
-        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__2.Placeholder, { enableBorder: true, icon: emptyIcon, title: emptyTitle, description: emptyDescription })),
-        react_1.default.createElement(__2.ShowVideoModal, { open: openShow, handleClose: function () { return setOpenShow(false); } })));
+        !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__2.Placeholder, { enableBorder: true, icon: emptyIcon, title: emptyTitle, description: emptyDescription }))));
 };
 exports.default = VideoListItems;

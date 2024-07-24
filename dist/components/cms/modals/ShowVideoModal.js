@@ -8,11 +8,10 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var ShowVideoModal = function (props) {
     var _a;
-    var _b = (0, frontend_js_1.useResourceContext)(), resource = _b.resource, url = _b.url;
-    var _c = props || {}, open = _c.open, handleClose = _c.handleClose;
+    var _b = (0, frontend_js_1.useResourceContext)(), openShow = _b.openShow, setOpenShow = _b.setOpenShow, resource = _b.resource, url = _b.url;
     if (!resource)
         return null;
-    return (react_1.default.createElement(__1.MediaModal, { open: open, handleClose: handleClose },
+    return (react_1.default.createElement(__1.MediaModal, { open: openShow, handleClose: function () { return setOpenShow(false); } },
         react_1.default.createElement("video", { src: (_a = resource === null || resource === void 0 ? void 0 : resource.video) === null || _a === void 0 ? void 0 : _a.url, controls: true, height: 600, width: '100%' })));
 };
 exports.default = ShowVideoModal;

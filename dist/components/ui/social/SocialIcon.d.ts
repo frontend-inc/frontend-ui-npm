@@ -3,7 +3,7 @@ type SocialIconProps = {
     provider: string;
     url?: string;
     handleClick?: () => void;
-    bgColor?: string;
+    color?: string;
 };
 declare const SocialIcon: React.FC<SocialIconProps>;
 export default SocialIcon;

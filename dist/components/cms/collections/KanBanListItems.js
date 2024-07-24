@@ -83,24 +83,22 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
-var __2 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var frontend_js_2 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
-var KanBanListList = function (props) {
+var KanBanListItems = function (props) {
     var headers = props.headers, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, _b = props.actions, actions = _b === void 0 ? [] : _b, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableSharing = props.enableSharing, enableUsers = props.enableUsers, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, rest = __rest(props, ["headers", "displayFields", "actions", "enableEdit", "enableDelete", "enableCreate", "enableComments", "enableFavorites", "enableLikes", "enableRatings", "enableSharing", "enableUsers", "enableGradient", "enableOverlay"]);
     var fieldName = 'status'; //Hard code the field as status
-    var _c = (0, frontend_js_2.useResourceContext)(), loading = _c.loading, resource = _c.resource, resources = _c.resources, update = _c.update, updatePositions = _c.updatePositions, setResource = _c.setResource, reloadMany = _c.reloadMany;
-    var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
+    var _c = (0, frontend_js_2.useResourceContext)(), loading = _c.loading, resource = _c.resource, resources = _c.resources, update = _c.update, updatePositions = _c.updatePositions, setResource = _c.setResource, reloadMany = _c.reloadMany, setOpenShow = _c.setOpenShow;
     var handleClick = function (resource) {
         setResource(resource);
-        setOpen(true);
+        setOpenShow(true);
     };
     var handleComment = function (resource) {
         setResource(resource);
-        setOpen(true);
+        setOpenShow(true);
     };
-    var _e = (0, hooks_1.useForms)(), handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
+    var _d = (0, hooks_1.useForms)(), handleEdit = _d.handleEdit, handleDeleteClick = _d.handleDeleteClick;
     var setOpenEdit = (0, react_1.useContext)(frontend_js_1.ResourceContext).setOpenEdit;
     var handleAdd = function (header) {
         setResource({
@@ -135,8 +133,6 @@ var KanBanListList = function (props) {
     }); };
     if (!headers || !fieldName)
         return null;
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(__1.KanBan, { loading: loading, actions: actions, resources: resources, activeResource: resource, headers: headers, fieldName: fieldName, displayFields: displayFields, enableOverlay: enableOverlay, enableGradient: enableGradient, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, handleComment: handleComment }),
-        react_1.default.createElement(__2.ShowModal, { open: open, handleClose: function () { return setOpen(false); }, actions: actions, displayFields: displayFields, enableOverlay: enableOverlay, enableEdit: enableEdit, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, handleEdit: function () { return handleEdit(resource); } })));
+    return (react_1.default.createElement(__1.KanBan, { loading: loading, actions: actions, resources: resources, activeResource: resource, headers: headers, fieldName: fieldName, displayFields: displayFields, enableOverlay: enableOverlay, enableGradient: enableGradient, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, handleComment: handleComment }));
 };
-exports.default = KanBanListList;
+exports.default = KanBanListItems;

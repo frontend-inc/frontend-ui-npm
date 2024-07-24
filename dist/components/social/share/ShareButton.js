@@ -31,7 +31,7 @@ var icons_material_1 = require("@mui/icons-material");
 var ShareButton = function (props) {
     var url = props.url, _a = props.variant, variant = _a === void 0 ? 'icon' : _a;
     var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
-    var SOCIAL_PLATFORMS = [
+    var SOCIAL_PROVIDERS = [
         { label: 'Share to Instagram', value: 'instagram' },
         { label: 'Share to Facebook', value: 'facebook' },
         { label: 'Share to Twitter', value: 'twitter' },
@@ -80,7 +80,7 @@ var ShareButton = function (props) {
                     react_1.default.createElement(material_1.Box, { width: "100%" },
                         react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.primary", variant: "subtitle1" }, "Share to social media"),
                         react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.secondary", variant: "body1" }, "Select your social media platform")),
-                    react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.socialButtons }, SOCIAL_PLATFORMS.map(function (platform, index) { return (react_1.default.createElement(__1.SocialIcon, { key: index, provider: platform.value, handleClick: function () { return handleShareClick(platform.value); } })); })))))));
+                    react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.socialButtons }, SOCIAL_PROVIDERS.map(function (provider, index) { return (react_1.default.createElement(__1.SocialIcon, { key: index, provider: provider.value, handleClick: function () { return handleShareClick(provider.value); } })); })))))));
 };
 exports.default = ShareButton;
 var sx = {

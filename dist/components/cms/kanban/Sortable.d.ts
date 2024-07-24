@@ -14,6 +14,7 @@ type SortableProps = {
     columns: Record<string, any>;
     enableComments?: boolean;
     enableFavorites?: boolean;
+    enableLikes?: boolean;
     enableRatings?: boolean;
     enableOverlay?: boolean;
     enableGradient?: boolean;

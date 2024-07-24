@@ -1,8 +1,6 @@
 import React from 'react';
 import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
 export type ShowModalProps = {
-    open: boolean;
-    handleClose: () => void;
     handle?: string;
     enableBorder?: boolean;
     enableOverlay?: boolean;

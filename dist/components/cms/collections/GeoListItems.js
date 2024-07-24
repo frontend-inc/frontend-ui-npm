@@ -49,7 +49,7 @@ var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var GeoListList = function (props) {
+var GeoListItems = function (props) {
     var url = props.url, displayFields = props.displayFields, rest = __rest(props, ["url", "displayFields"]);
     var resources = (0, react_1.useContext)(frontend_js_1.ResourceContext).resources;
     return (react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 },
@@ -59,4 +59,4 @@ var GeoListList = function (props) {
             react_1.default.createElement(material_1.Hidden, { smDown: true },
                 react_1.default.createElement(__1.GoogleMap, { enableBorder: true, zoom: 15, height: 380, resources: resources, displayFields: displayFields })))));
 };
-exports.default = GeoListList;
+exports.default = GeoListItems;

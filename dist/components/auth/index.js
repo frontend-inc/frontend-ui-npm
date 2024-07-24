@@ -1,9 +1,23 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TeamListItem = exports.UserListItem = exports.TeamUserInvite = exports.TeamUserForm = exports.TeamUsersList = exports.TeamForm = exports.TeamList = exports.UserProfile = exports.UserDetails = exports.UserForm = exports.UserItem = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.MyAccountModal = exports.MyAccountForm = exports.MyAccount = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthButton = exports.AuthWall = exports.AuthGuard = void 0;
+exports.TeamListItem = exports.AuthUserListItem = exports.TeamUserInvite = exports.TeamUserForm = exports.TeamUsersList = exports.TeamForm = exports.TeamList = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.MyAccountUserItem = exports.MyAccountModal = exports.MyAccountForm = exports.MyAccount = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthButton = exports.AuthWall = exports.AuthGuard = void 0;
 var AuthGuard_1 = require("./AuthGuard");
 Object.defineProperty(exports, "AuthGuard", { enumerable: true, get: function () { return __importDefault(AuthGuard_1).default; } });
 var AuthWall_1 = require("./AuthWall");
@@ -38,6 +52,8 @@ var MyAccountForm_1 = require("./my-account/MyAccountForm");
 Object.defineProperty(exports, "MyAccountForm", { enumerable: true, get: function () { return __importDefault(MyAccountForm_1).default; } });
 var MyAccountModal_1 = require("./my-account/MyAccountModal");
 Object.defineProperty(exports, "MyAccountModal", { enumerable: true, get: function () { return __importDefault(MyAccountModal_1).default; } });
+var MyAccountUserItem_1 = require("./my-account/MyAccountUserItem");
+Object.defineProperty(exports, "MyAccountUserItem", { enumerable: true, get: function () { return __importDefault(MyAccountUserItem_1).default; } });
 var NewPassword_1 = require("./forgot-password/NewPassword");
 Object.defineProperty(exports, "NewPassword", { enumerable: true, get: function () { return __importDefault(NewPassword_1).default; } });
 var NewPasswordForm_1 = require("./forgot-password/NewPasswordForm");
@@ -68,15 +84,6 @@ var VerifyPinForm_1 = require("./verify/VerifyPinForm");
 Object.defineProperty(exports, "VerifyPinForm", { enumerable: true, get: function () { return __importDefault(VerifyPinForm_1).default; } });
 var VerifySendPinForm_1 = require("./verify/VerifySendPinForm");
 Object.defineProperty(exports, "VerifySendPinForm", { enumerable: true, get: function () { return __importDefault(VerifySendPinForm_1).default; } });
-// Users 
-var UserItem_1 = require("./users/UserItem");
-Object.defineProperty(exports, "UserItem", { enumerable: true, get: function () { return __importDefault(UserItem_1).default; } });
-var UserForm_1 = require("./users/UserForm");
-Object.defineProperty(exports, "UserForm", { enumerable: true, get: function () { return __importDefault(UserForm_1).default; } });
-var UserDetails_1 = require("./users/UserDetails");
-Object.defineProperty(exports, "UserDetails", { enumerable: true, get: function () { return __importDefault(UserDetails_1).default; } });
-var UserProfile_1 = require("./users/UserProfile");
-Object.defineProperty(exports, "UserProfile", { enumerable: true, get: function () { return __importDefault(UserProfile_1).default; } });
 // Teams
 var TeamList_1 = require("./teams/TeamList");
 Object.defineProperty(exports, "TeamList", { enumerable: true, get: function () { return __importDefault(TeamList_1).default; } });
@@ -88,8 +95,10 @@ var TeamUserInviteForm_1 = require("./teams/TeamUserInviteForm");
 Object.defineProperty(exports, "TeamUserForm", { enumerable: true, get: function () { return __importDefault(TeamUserInviteForm_1).default; } });
 var TeamUserInvite_1 = require("./teams/TeamUserInvite");
 Object.defineProperty(exports, "TeamUserInvite", { enumerable: true, get: function () { return __importDefault(TeamUserInvite_1).default; } });
+// Users 
+__exportStar(require("./users"), exports);
 // Lists
-var UserListItem_1 = require("./lists/UserListItem");
-Object.defineProperty(exports, "UserListItem", { enumerable: true, get: function () { return __importDefault(UserListItem_1).default; } });
+var AuthUserListItem_1 = require("./lists/AuthUserListItem");
+Object.defineProperty(exports, "AuthUserListItem", { enumerable: true, get: function () { return __importDefault(AuthUserListItem_1).default; } });
 var TeamListItem_1 = require("./lists/TeamListItem");
 Object.defineProperty(exports, "TeamListItem", { enumerable: true, get: function () { return __importDefault(TeamListItem_1).default; } });

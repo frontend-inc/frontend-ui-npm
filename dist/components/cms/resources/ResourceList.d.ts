@@ -1,6 +1,5 @@
 import React from 'react';
-import { FormFieldType } from '../../../types';
-import { SearchFilterOptionType } from '../../../types';
+import { FormFieldType, SearchFilterOptionType } from '../../../types';
 import { SortOptionType } from '../../../types';
 export type ResourceListProps = {
     url: string;
@@ -25,7 +24,7 @@ export type ResourceListProps = {
     emptyIcon?: string;
     emptyTitle?: string;
     emptyDescription?: string;
-    componentProps?: any;
+    itemProps?: any;
 };
 declare const ResourceList: React.FC<ResourceListProps>;
 export default ResourceList;

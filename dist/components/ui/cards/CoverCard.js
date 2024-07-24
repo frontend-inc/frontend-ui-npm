@@ -48,18 +48,16 @@ var CoverVert = function (props) {
                 react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: height, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },
                 react_1.default.createElement(material_1.Stack, { sx: sx.fullWidth, spacing: 1, direction: 'row', alignItems: "center" },
-                    react_1.default.createElement(material_1.Box, { sx: sx.content },
-                        react_1.default.createElement(material_1.Stack, { sx: sx.contentContainer, direction: "column", spacing: 0 },
+                    react_1.default.createElement(material_1.Box, { sx: sx.contentContainer },
+                        react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 0 },
                             react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
                                 react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title, 60)),
                                 enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
                                 react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
-                                enableUsers == true && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))))),
-            react_1.default.createElement(material_1.Box, { sx: sx.actions },
-                enableLikes == true && (react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, color: "common.white" })),
-                enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, color: "common.white" })),
-                enableComments == true && (react_1.default.createElement(__1.CommentButton, { resource: resource, color: "common.white" })),
-                react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, actions: actions })))));
+                                enableUsers == true && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }),
+                                react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.actions },
+                                    react_1.default.createElement(__1.SocialActions, { color: 'common.white', resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
+                                    react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, actions: actions }))))))))));
 };
 exports.default = CoverVert;
 var sx = {
@@ -93,25 +91,22 @@ var sx = {
     fullWidth: {
         width: '100%',
     },
-    content: {
-        px: 1,
+    contentContainer: {
+        px: 0,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'flex-start',
     },
-    contentContainer: {
+    content: {
         width: '100%',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
     },
     actions: {
         display: 'flex',
-        justifyContent: 'flex-end',
+        justifyContent: 'space-between',
         flexDirection: 'row',
-        position: 'absolute',
-        top: 0,
-        right: 10,
     },
 };

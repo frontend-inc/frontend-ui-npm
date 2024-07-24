@@ -22,7 +22,7 @@ var components_2 = require("../../../components");
 var sortable_1 = require("@dnd-kit/sortable");
 var helpers_2 = require("../../../helpers");
 var KanBanCard = function (props) {
-    var _a = props || {}, id = _a.id, loading = _a.loading, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, _c = _a.height, height = _c === void 0 ? 200 : _c, handleClick = _a.handleClick, _d = _a.enableDragging, enableDragging = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, enableComments = _a.enableComments, enableFavorites = _a.enableFavorites, enableRatings = _a.enableRatings, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, handleComment = _a.handleComment, enableUsers = _a.enableUsers;
+    var _a = props || {}, id = _a.id, loading = _a.loading, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, _c = _a.height, height = _c === void 0 ? 200 : _c, handleClick = _a.handleClick, _d = _a.enableDragging, enableDragging = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, enableComments = _a.enableComments, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableRatings = _a.enableRatings, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, enableUsers = _a.enableUsers;
     var _g = (0, sortable_1.useSortable)({
         id: id,
     }), attributes = _g.attributes, listeners = _g.listeners, setNodeRef = _g.setNodeRef;
@@ -40,8 +40,7 @@ var KanBanCard = function (props) {
         react_1.default.createElement(material_1.Box, { sx: sx.footer },
             react_1.default.createElement(material_1.Button, { onClick: handleClick, size: "small", variant: "contained", color: "secondary", sx: sx.button }, "Details"),
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-end" },
-                enableComments == true && react_1.default.createElement(components_1.CommentButton, { resource: resource }),
-                enableFavorites == true && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                react_1.default.createElement(components_1.SocialActions, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
                 react_1.default.createElement(components_2.Actions, { numVisible: 0, actions: (0, helpers_2.buildActions)({
                         enableEdit: enableEdit,
                         enableDelete: enableDelete,

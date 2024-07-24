@@ -18,4 +18,4 @@ export { default as ResourceList } from './resources/ResourceList';
 export { default as ResourceListItem } from './resources/ResourceListItem';
 export { default as ResourceTable } from './resources/ResourceTable';
 export { default as Details } from './details/Details';
-export { default as UserDetails } from '../auth/users/UserDetails';
+export { default as UserDetails } from '../users/profile/UserDetails';

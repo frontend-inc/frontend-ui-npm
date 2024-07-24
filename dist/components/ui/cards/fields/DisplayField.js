@@ -65,7 +65,7 @@ var DisplayField = function (props) {
             width: 64,
         },
     };
-    var Component = components[fieldVariant];
+    var Component = components[fieldVariant] || __1.FieldString;
     var componentProps = (variantProps === null || variantProps === void 0 ? void 0 : variantProps[fieldVariant]) || {};
     if (!value || value == '')
         return null;
