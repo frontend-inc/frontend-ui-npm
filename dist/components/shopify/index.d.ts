@@ -26,6 +26,7 @@ export { default as SearchButton } from './search/SearchButton';
 export { default as SearchModal } from './search/SearchModal';
 export { default as ProductVariantSelector } from './variants/ProductVariantSelector';
 export { default as Collections } from './collections/Collections';
+export { default as CollectionCard } from './collections/CollectionCard';
 export { default as CollectionCover } from './collections/CollectionCover';
 export { default as ProductCard } from './products/ProductCard';
 export { default as ProductCarousel } from './products/ProductCarousel';

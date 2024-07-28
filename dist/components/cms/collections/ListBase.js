@@ -7,10 +7,10 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var List = function (props) {
-    var url = props.url, name = props.name, query = props.query, header = props.header, list = props.list, show = props.show, edit = props.edit, destroy = props.destroy // delete is a reserved word
+    var url = props.url, name = props.name, query = props.query, header = props.header, _a = props.loadMore, loadMore = _a === void 0 ? true : _a, list = props.list, show = props.show, edit = props.edit, destroy = props.destroy // delete is a reserved word
     ;
     return (react_1.default.createElement(frontend_js_1.ResourceProvider, { name: name, url: url },
-        react_1.default.createElement(__1.Query, { query: query },
+        react_1.default.createElement(__1.Query, { query: query, loadMore: loadMore },
             header && header,
             list && list,
             show && show,

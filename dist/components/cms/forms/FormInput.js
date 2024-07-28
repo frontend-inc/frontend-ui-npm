@@ -17,8 +17,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var FormInput = function (props) {
-    var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove, resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, fields = props.fields, contentType = props.contentType;
+    var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove, resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, fields = props.fields, contentType = props.contentType, _a = props.query, query = _a === void 0 ? {} : _a, displayField = props.displayField;
     var componentMapper = {
+        autosuggest: components_1.RemoteAutosuggest,
         array: components_1.ArrayInput,
         string: components_1.TextInput,
         file: components_1.AttachmentInput,
@@ -36,9 +37,14 @@ var FormInput = function (props) {
         image: components_1.ImageInput,
         json: components_1.JSONInput,
         shopify: components_1.ShopifyProductInput,
-        habtm: components_1.ReferenceInput
+        habtm: components_1.ReferenceInput,
     };
     var inputProps = {
+        autosuggest: {
+            url: url,
+            displayField: displayField,
+            query: query
+        },
         text: {
             multiline: true,
             rows: 6,

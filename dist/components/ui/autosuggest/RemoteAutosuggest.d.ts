@@ -17,6 +17,7 @@ export type RemoteAutosuggestProps = {
     defaultOptions?: OptionType[];
     enableRemoteSearch?: boolean;
     enableClear?: boolean;
+    perPage?: number;
 };
 declare const RemoteAutosuggest: React.FC<RemoteAutosuggestProps>;
 export default RemoteAutosuggest;

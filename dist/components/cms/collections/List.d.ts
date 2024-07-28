@@ -28,10 +28,10 @@ export type ListProps = {
     enableOverlay?: boolean;
     filterUser?: boolean;
     filterTeam?: boolean;
-    filterRelated?: boolean;
     filterSimilar?: boolean;
     filterGeo?: boolean;
     perPage?: number;
+    loadMore?: boolean;
     list: React.FC<any>;
     header?: React.FC<any>;
     show?: React.FC<any>;

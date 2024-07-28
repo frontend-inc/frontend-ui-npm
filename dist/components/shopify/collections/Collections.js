@@ -25,14 +25,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
-var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var router_1 = require("next/router");
 var context_1 = require("../../../context");
+var components_1 = require("../../../components");
 var Collections = function (props) {
-    var href = props.href, _a = props.style, style = _a === void 0 ? 'card' : _a, buttonText = props.buttonText, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d;
+    var href = props.href, _a = props.enableGradient, enableGradient = _a === void 0 ? false : _a, _b = props.enableOverlay, enableOverlay = _b === void 0 ? false : _b;
     var router = (0, router_1.useRouter)();
-    var _e = (0, frontend_shopify_1.useCollections)(), loading = _e.loading, collections = _e.collections, findCollections = _e.findCollections;
+    var _c = (0, frontend_shopify_1.useCollections)(), loading = _c.loading, collections = _c.collections, findCollections = _c.findCollections;
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var handleClick = function (collection) {
         window.scrollTo({
@@ -46,8 +46,7 @@ var Collections = function (props) {
     (0, react_1.useEffect)(function () {
         findCollections();
     }, []);
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(components_1.ListCards, { actions: [], style: style, resources: collections, buttonText: buttonText, handleClick: handleClick, enableBorder: enableBorder, enableGradient: enableGradient, enableOverlay: enableOverlay, enableEdit: false, enableDelete: false, handleEdit: function () { return null; }, handleDelete: function () { return null; } })));
+    return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root }, collections === null || collections === void 0 ? void 0 : collections.map(function (collection, index) { return (react_1.default.createElement(components_1.CollectionCard, { key: index, collection: collection, handleClick: function () { return handleClick(collection); }, enableGradient: enableGradient, enableOverlay: enableOverlay })); })));
 };
 exports.default = Collections;
 var sx = {

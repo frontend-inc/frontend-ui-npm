@@ -49,7 +49,7 @@ var frontend_js_1 = require("frontend-js");
 var lodash_1 = require("lodash");
 var useActions = function (params) {
     var _a = (0, _1.useLoadingWrapper)(), loading = _a.loading, data = _a.data, errors = _a.errors, loadingWrapper = _a.loadingWrapper;
-    var action = params.action, resource = params.resource;
+    var _b = params || {}, action = _b.action, resource = _b.resource;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;

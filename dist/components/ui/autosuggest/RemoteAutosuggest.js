@@ -85,7 +85,7 @@ var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var lodash_1 = require("lodash");
 var RemoteAutosuggest = function (props) {
-    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, _a = props.displayField, displayField = _a === void 0 ? 'title' : _a, imageField = props.imageField, handleChange = props.handleChange, handleClear = props.handleClear, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, _d = props.defaultQuery, defaultQuery = _d === void 0 ? {} : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f, _g = props.enableRemoteSearch, enableRemoteSearch = _g === void 0 ? false : _g, _h = props.enableClear, enableClear = _h === void 0 ? false : _h;
+    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, displayField = props.displayField, imageField = props.imageField, handleChange = props.handleChange, handleClear = props.handleClear, _a = props.valueParam, valueParam = _a === void 0 ? 'id' : _a, _b = props.placeholder, placeholder = _b === void 0 ? 'Search' : _b, _c = props.defaultQuery, defaultQuery = _c === void 0 ? {} : _c, _d = props.direction, direction = _d === void 0 ? 'column' : _d, _e = props.defaultOptions, defaultOptions = _e === void 0 ? [] : _e, _f = props.enableRemoteSearch, enableRemoteSearch = _f === void 0 ? false : _f, _g = props.enableClear, enableClear = _g === void 0 ? false : _g, _h = props.perPage, perPage = _h === void 0 ? 100 : _h;
     var _j = (0, hooks_1.useError)({
         errors: errors,
         name: name,
@@ -106,6 +106,8 @@ var RemoteAutosuggest = function (props) {
         }
     };
     var formatResources = function (resources) {
+        if (!displayField)
+            return [];
         return resources.map(function (resource) { return ({
             label: (0, lodash_1.get)(resource, displayField),
             value: (0, lodash_1.get)(resource, valueParam),
@@ -146,16 +148,19 @@ var RemoteAutosuggest = function (props) {
     (0, react_1.useEffect)(function () {
         if (url) {
             //@ts-ignore
-            findMany(__assign(__assign({}, defaultQuery), { per_page: 100 }));
+            findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
     }, [url]);
     (0, react_1.useEffect)(function () {
         var _a;
         if (((_a = Object.keys(defaultQuery)) === null || _a === void 0 ? void 0 : _a.length) > 0 && url) {
             //@ts-ignore
-            findMany(__assign(__assign({}, defaultQuery), { per_page: 100 }));
+            findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
     }, [defaultQuery]);
+    console.log("Display Field", displayField);
+    if (!displayField)
+        return null;
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(__1.Autosuggest, { errors: errors, loading: delayedLoading, direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear, enableClear: enableClear })));
 };

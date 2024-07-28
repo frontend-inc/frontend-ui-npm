@@ -14,6 +14,8 @@ type FormInputProps = {
     url?: string;
     foreignUrl?: string;
     contentType?: string;
+    query?: any;
+    displayField?: string;
     fields?: FormFieldType[];
 };
 declare const FormInput: React.FC<FormInputProps>;

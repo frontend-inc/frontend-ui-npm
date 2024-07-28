@@ -80,7 +80,7 @@ var ShareButton = function (props) {
                     react_1.default.createElement(material_1.Box, { width: "100%" },
                         react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.primary", variant: "subtitle1" }, "Share to social media"),
                         react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.secondary", variant: "body1" }, "Select your social media platform")),
-                    react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.socialButtons }, SOCIAL_PROVIDERS.map(function (provider, index) { return (react_1.default.createElement(__1.SocialIcon, { key: index, provider: provider.value, handleClick: function () { return handleShareClick(provider.value); } })); })))))));
+                    react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.socialButtons }, SOCIAL_PROVIDERS.map(function (provider, index) { return (react_1.default.createElement(__1.SocialIcon, { key: index, provider: provider.value, handleClick: function () { return handleShareClick(provider.value); }, size: 36 })); })))))));
 };
 exports.default = ShareButton;
 var sx = {

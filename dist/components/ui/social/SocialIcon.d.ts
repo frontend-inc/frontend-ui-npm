@@ -4,6 +4,7 @@ type SocialIconProps = {
     url?: string;
     handleClick?: () => void;
     color?: string;
+    size?: number;
 };
 declare const SocialIcon: React.FC<SocialIconProps>;
 export default SocialIcon;

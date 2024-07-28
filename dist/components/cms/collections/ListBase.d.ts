@@ -3,6 +3,7 @@ export type ListProps = {
     query: any;
     url: string;
     name: string;
+    loadMore?: boolean;
     header: React.ReactNode;
     list: React.ReactNode;
     show: React.ReactNode;

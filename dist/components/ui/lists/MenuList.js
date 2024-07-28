@@ -39,8 +39,8 @@ var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var cookies_next_1 = require("cookies-next");
 var MenuList = function (props) {
-    var id = props.id, label = props.label, _a = props.defaultClosed, defaultClosed = _a === void 0 ? false : _a, children = props.children, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
-    var _c = (0, react_1.useState)(!defaultClosed), open = _c[0], setOpen = _c[1];
+    var id = props.id, label = props.label, _a = props.defaultClosed, defaultClosed = _a === void 0 ? false : _a, children = props.children, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c;
+    var _d = (0, react_1.useState)(!defaultClosed), open = _d[0], setOpen = _d[1];
     var handleToggleClick = function () {
         //setMenuCookie(!open)
         setOpen(!open);
@@ -72,7 +72,7 @@ var MenuList = function (props) {
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, disableRipple: true, onClick: handleToggleClick },
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.label, variant: 'overline' }, label) })))),
         react_1.default.createElement(material_1.Collapse, { in: open },
-            react_1.default.createElement(material_1.Box, { pb: 2, px: 2 }, children))));
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.content), (disablePadding && sx.contentDisablePadding)) }, children))));
 };
 exports.default = MenuList;
 var sx = {
@@ -81,12 +81,9 @@ var sx = {
         minWidth: 200,
         my: 0,
     },
-    listItem: {
-        borderRadius: 1,
-    },
+    listItem: {},
     listItemButton: {
         py: 0,
-        borderRadius: 1,
         height: '40px',
     },
     listItemIcon: {
@@ -106,7 +103,14 @@ var sx = {
         transform: 'rotate(90deg)',
     },
     border: {
-        borderTop: '1px dotted',
+        borderTop: '1px solid',
         borderColor: 'divider',
     },
+    content: {
+        pb: 2,
+        px: 2
+    },
+    contentDisablePadding: {
+        p: 0
+    }
 };

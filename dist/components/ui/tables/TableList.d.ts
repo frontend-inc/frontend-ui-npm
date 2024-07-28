@@ -9,9 +9,11 @@ type TableProps = {
     enableSelect?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;
-    handleClick?: (item: any) => void;
-    handleEdit?: (row: any) => void;
-    handleDelete?: (row: any) => void;
+    enableShow?: boolean;
+    handleClick?: (value: any, row: any, field: any) => void;
+    handleShow?: (resource: any) => void;
+    handleEdit?: (resource: any) => void;
+    handleDelete?: (resource: any) => void;
     page?: number;
     perPage?: number;
     numPages?: number;

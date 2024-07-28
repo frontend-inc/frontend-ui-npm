@@ -14,12 +14,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildSearchQuery = void 0;
 var buildSearchQuery = function (params) {
     var _a = (params || {}).query, query = _a === void 0 ? {} : _a;
-    var _b = params || {}, resource = _b.resource, perPage = _b.perPage, filterUser = _b.filterUser, filterTeam = _b.filterTeam, filterRelated = _b.filterRelated, filterGeo = _b.filterGeo, filterSimilar = _b.filterSimilar;
+    var _b = params || {}, resource = _b.resource, perPage = _b.perPage, filterUser = _b.filterUser, filterTeam = _b.filterTeam, filterReferences = _b.filterReferences, filterGeo = _b.filterGeo, filterSimilar = _b.filterSimilar;
     if (perPage) {
         query = __assign(__assign({}, query), { per_page: perPage });
     }
-    if (filterRelated == true && (resource === null || resource === void 0 ? void 0 : resource.id)) {
-        query = __assign(__assign({}, query), { method: 'related', resource_id: resource.id });
+    if (filterReferences == true && (resource === null || resource === void 0 ? void 0 : resource.id)) {
+        query = __assign(__assign({}, query), { method: 'references', resource_id: resource.id });
     }
     else {
         query = __assign(__assign({}, query), { resource_id: null });
