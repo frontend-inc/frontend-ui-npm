@@ -33,7 +33,7 @@ var List = function (props) {
     var searchQuery = (0, helpers_1.buildSearchQuery)({
         query: query,
         resource: resource,
-        perPage: 2,
+        perPage: perPage,
         filterUser: filterUser,
         filterTeam: filterTeam,
         filterSimilar: filterSimilar,
