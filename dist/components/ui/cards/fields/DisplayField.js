@@ -52,6 +52,8 @@ var DisplayField = function (props) {
         string: __1.FieldString,
         select: __1.FieldString,
         price: __1.FieldPrice,
+        email: __1.FieldString,
+        phone: __1.FieldString,
     };
     var variantProps = {
         string: {

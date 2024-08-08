@@ -95,7 +95,7 @@ var TeamUserInviteForm_1 = require("./teams/TeamUserInviteForm");
 Object.defineProperty(exports, "TeamUserForm", { enumerable: true, get: function () { return __importDefault(TeamUserInviteForm_1).default; } });
 var TeamUserInvite_1 = require("./teams/TeamUserInvite");
 Object.defineProperty(exports, "TeamUserInvite", { enumerable: true, get: function () { return __importDefault(TeamUserInvite_1).default; } });
-// Users 
+// Users
 __exportStar(require("./users"), exports);
 // Lists
 var AuthUserListItem_1 = require("./lists/AuthUserListItem");

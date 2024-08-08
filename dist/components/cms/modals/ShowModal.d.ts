@@ -1,10 +1,10 @@
 import React from 'react';
-import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
+import { ButtonType, FormFieldType, DisplayFieldType } from '../../../types';
 export type ShowModalProps = {
     handle?: string;
     enableBorder?: boolean;
     enableOverlay?: boolean;
-    actions: ActionType[];
+    buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     fields?: FormFieldType[];
     fieldName?: string;

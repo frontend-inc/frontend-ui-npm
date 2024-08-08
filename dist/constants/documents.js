@@ -26,6 +26,9 @@ exports.SYSTEM_FIELDS = [
     'file',
     'lat',
     'lng',
+    'email',
+    'phone',
+    'url',
 ];
 exports.ID_FIELD = {
     label: 'ID',

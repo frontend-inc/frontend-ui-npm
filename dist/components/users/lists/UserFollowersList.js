@@ -11,7 +11,7 @@ var UserFollowersList = function (props) {
     return (react_1.default.createElement(__1.ResourceList, { enableSearch: true, enableLoadMore: true, name: "user", url: "/api/v1/cms/users/".concat(user === null || user === void 0 ? void 0 : user.username, "/followers"), component: UserListItem_1.default, itemProps: {
             size: 72,
             displayFields: displayFields,
-            socialFields: socialFields
+            socialFields: socialFields,
         }, sortOptions: [
             { label: 'Username', name: 'username' },
             { label: 'Total followers', name: 'num_followers' },

@@ -47,7 +47,7 @@ var CarouselProgress = function (props) {
         react_1.default.createElement(material_1.Box, null, children[currentStep]),
         react_1.default.createElement(material_1.Box, { sx: sx.controls },
             react_1.default.createElement(material_1.LinearProgress, { color: "primary", variant: "determinate", value: 80 }),
-            react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            react_1.default.createElement(material_1.Box, { sx: sx.buttons },
                 react_1.default.createElement(material_1.IconButton, { onClick: handlePrevStep },
                     react_1.default.createElement(icons_material_1.ChevronLeft, null)),
                 react_1.default.createElement(material_1.IconButton, { onClick: handleNextStep },
@@ -55,7 +55,7 @@ var CarouselProgress = function (props) {
 };
 exports.default = CarouselProgress;
 var sx = {
-    actions: {
+    buttons: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

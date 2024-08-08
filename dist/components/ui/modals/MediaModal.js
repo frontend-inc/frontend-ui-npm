@@ -11,7 +11,7 @@ var MediaModal = function (props) {
     return (react_1.default.createElement(material_1.Backdrop, { open: open, onClick: handleClose, sx: sx.root },
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer }, children),
         react_1.default.createElement(material_1.IconButton, { sx: sx.closeButton, onClick: handleClose },
-            react_1.default.createElement(components_1.Icon, { name: "X", color: 'common.white' }))));
+            react_1.default.createElement(components_1.Icon, { name: "X", color: "common.white" }))));
 };
 exports.default = MediaModal;
 var sx = {
@@ -30,6 +30,6 @@ var sx = {
         maxWidth: 'calc(100vw - 50px)',
         maxHeight: 'calc(100vh - 50px)',
         position: 'relative',
-        zIndex: 999
-    }
+        zIndex: 999,
+    },
 };

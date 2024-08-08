@@ -141,14 +141,14 @@ var CreditCards = function () {
                     return (react_1.default.createElement(components_1.SelectableListItem, { key: creditCard.id, selected: selected, icon: 'CreditCard', title: creditCard.last4, description: creditCard.brand, handleClick: function () { return handleClick(creditCard); }, handleDelete: selected ? undefined : function () { return handleDeleteClick(creditCard); } }));
                 }))),
             !loading && !(creditCards === null || creditCards === void 0 ? void 0 : creditCards.length) && (react_1.default.createElement(components_1.Placeholder, { icon: "CreditCard", title: "No Credit Cards", description: "Add a credit card to get started" })),
-            react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            react_1.default.createElement(material_1.Box, { sx: sx.buttons },
                 react_1.default.createElement(material_1.Button, { variant: "contained", onClick: handleAddCreditCardClick }, "Add Credit Card")))) : (react_1.default.createElement(material_1.Box, { py: 2 },
             react_1.default.createElement(components_1.StripeCreditCard, { publishableKey: stripePublishableKey, handleSubmit: handleSubmit, handleCancel: function () { return setIsEditing(false); } }))),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, title: "Delete Credit Card", description: "Are you sure you want to delete this credit card?", handleConfirm: handleDelete, handleClose: function () { return setOpenDeleteModal(false); } })));
 };
 exports.default = CreditCards;
 var sx = {
-    actions: {
+    buttons: {
         width: '100%',
         display: 'flex',
         justifyContent: 'flex-end',

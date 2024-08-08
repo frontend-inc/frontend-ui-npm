@@ -77,7 +77,7 @@ var RemoteForm = function (props) {
     var _resource = props.resource, parentResource = props.parentResource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var fields = (0, hooks_1.useFetchForm)({
-        url: url
+        url: url,
     }).fields;
     var _d = (0, frontend_js_1.useResource)({
         name: 'document',
@@ -142,14 +142,14 @@ var RemoteForm = function (props) {
         }
         else {
             setResource({
-                title: ''
+                title: '',
             });
         }
     }, [_resource]);
     if (!fields || (fields === null || fields === void 0 ? void 0 : fields.length) == 0)
         return null;
     if ((_resource === null || _resource === void 0 ? void 0 : _resource.id) && !(resource === null || resource === void 0 ? void 0 : resource.id))
-        return (react_1.default.createElement(__1.Loader, { loading: true }));
+        return react_1.default.createElement(__1.Loader, { loading: true });
     return (react_1.default.createElement(__1.FormFields, { loading: loading, errors: errors, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = RemoteForm;

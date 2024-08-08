@@ -31,7 +31,7 @@ var router_1 = require("next/router");
 var __1 = require("../..");
 var CardList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.enableUsers, enableUsers = _c === void 0 ? false : _c, _d = _a.enableComments, enableComments = _d === void 0 ? false : _d, _e = _a.enableFavorites, enableFavorites = _e === void 0 ? false : _e, _f = _a.enableLikes, enableLikes = _f === void 0 ? false : _f, _g = _a.enableRatings, enableRatings = _g === void 0 ? false : _g;
+    var _a = props || {}, buttons = _a.buttons, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.enableUsers, enableUsers = _c === void 0 ? false : _c, _d = _a.enableComments, enableComments = _d === void 0 ? false : _d, _e = _a.enableFavorites, enableFavorites = _e === void 0 ? false : _e, _f = _a.enableLikes, enableLikes = _f === void 0 ? false : _f, _g = _a.enableRatings, enableRatings = _g === void 0 ? false : _g;
     var router = (0, router_1.useRouter)();
     var _h = resource || {}, title = _h.title, description = _h.description;
     var handleItemClick = function () {
@@ -46,17 +46,17 @@ var CardList = function (props) {
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.content },
                 react_1.default.createElement(material_1.Link, { sx: sx.link, onClick: handleItemClick },
-                    react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title))),
+                    react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "subtitle2" }, (0, helpers_1.truncate)(title))),
                 enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
                 react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                 react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2", sx: sx.description }, (0, helpers_1.truncate)(description, 200)),
                 enableUsers == true && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }),
                 react_1.default.createElement(material_1.Stack, { direction: "row" },
-                    enableLikes == true && (react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                    enableLikes == true && react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
                     enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
                     enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource })))),
-        react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end", sx: sx.actions },
-            react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource }))));
+        react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end", sx: sx.buttons },
+            react_1.default.createElement(__1.Actions, { numVisible: 0, buttons: buttons, resource: resource }))));
 };
 exports.default = CardList;
 var sx = {
@@ -83,7 +83,7 @@ var sx = {
     description: {
         maxWidth: '600px',
     },
-    actions: {
+    buttons: {
         position: 'absolute',
         top: 10,
         right: 10,

@@ -22,7 +22,7 @@ var components_2 = require("../../../components");
 var sortable_1 = require("@dnd-kit/sortable");
 var helpers_2 = require("../../../helpers");
 var KanBanCard = function (props) {
-    var _a = props || {}, id = _a.id, loading = _a.loading, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, _c = _a.height, height = _c === void 0 ? 200 : _c, handleClick = _a.handleClick, _d = _a.enableDragging, enableDragging = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, enableComments = _a.enableComments, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableRatings = _a.enableRatings, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, enableUsers = _a.enableUsers;
+    var _a = props || {}, id = _a.id, loading = _a.loading, buttons = _a.buttons, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, _c = _a.height, height = _c === void 0 ? 200 : _c, handleClick = _a.handleClick, _d = _a.enableDragging, enableDragging = _d === void 0 ? false : _d, _e = _a.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, enableComments = _a.enableComments, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableRatings = _a.enableRatings, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, enableUsers = _a.enableUsers;
     var _g = (0, sortable_1.useSortable)({
         id: id,
     }), attributes = _g.attributes, listeners = _g.listeners, setNodeRef = _g.setNodeRef;
@@ -33,7 +33,7 @@ var KanBanCard = function (props) {
                 react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, alt: title, disableBorderRadius: true, handleClick: handleClick, enableGradient: enableGradient, enableOverlay: enableOverlay }))),
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-start" },
                 react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5, sx: sx.content },
-                    react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title)),
+                    react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
                     enableRatings == true && (react_1.default.createElement(components_1.AvgRating, { resource: resource, size: "small" })),
                     react_1.default.createElement(components_1.DisplayFields, { fields: displayFields, resource: resource }),
                     enableUsers && react_1.default.createElement(components_1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))),
@@ -41,12 +41,12 @@ var KanBanCard = function (props) {
             react_1.default.createElement(material_1.Button, { onClick: handleClick, size: "small", variant: "contained", color: "secondary", sx: sx.button }, "Details"),
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-end" },
                 react_1.default.createElement(components_1.SocialActions, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
-                react_1.default.createElement(components_2.Actions, { numVisible: 0, actions: (0, helpers_2.buildActions)({
+                react_1.default.createElement(components_2.Actions, { numVisible: 0, buttons: (0, helpers_2.buildActions)({
                         enableEdit: enableEdit,
                         enableDelete: enableDelete,
                         handleEdit: handleEdit,
                         handleDelete: handleDelete,
-                        actions: actions,
+                        buttons: buttons,
                     }), resource: resource })))));
 };
 exports.default = KanBanCard;

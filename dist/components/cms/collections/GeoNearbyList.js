@@ -17,6 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var List_1 = __importDefault(require("./List"));
 var GeoNearbyList = function (props) {
-    return (react_1.default.createElement(List_1.default, __assign({}, props, { filterGeo: true })));
+    return react_1.default.createElement(List_1.default, __assign({}, props, { filterGeo: true }));
 };
 exports.default = GeoNearbyList;

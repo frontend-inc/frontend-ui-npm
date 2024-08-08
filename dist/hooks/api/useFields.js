@@ -7,7 +7,7 @@ var useFields = function (props) {
     var _a = (0, react_1.useState)([]), formFields = _a[0], setFormFields = _a[1];
     var dataFormFields = (0, frontend_js_1.useQuery)({
         url: "".concat(url, "/form_fields"),
-        query: {}
+        query: {},
     }).resources;
     (0, react_1.useEffect)(function () {
         if (dataFormFields) {

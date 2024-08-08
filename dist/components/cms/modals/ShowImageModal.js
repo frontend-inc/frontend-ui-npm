@@ -20,7 +20,7 @@ var ShowImageModal = function (props) {
 exports.default = ShowImageModal;
 var sx = {
     imageContainer: {
-        width: "100%",
+        width: '100%',
         minWidth: 'calc(50vw)',
-    }
+    },
 };

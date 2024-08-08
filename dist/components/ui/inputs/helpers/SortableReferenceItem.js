@@ -21,10 +21,10 @@ var SortableReferenceItem = function (props) {
     var image = props.image, title = props.title, isDragging = props.isDragging, handleDelete = props.handleDelete, handleEdit = props.handleEdit;
     return (react_1.default.createElement(material_1.ListItem, { disableGutters: true, sx: __assign(__assign({}, sx.item), (isDragging && sx.isDragging)), secondaryAction: react_1.default.createElement(__1.MenuButton, { handleDelete: handleDelete, handleEdit: handleEdit }) },
         react_1.default.createElement(material_1.ListItemIcon, { sx: sx.dragHandle },
-            react_1.default.createElement(__1.Icon, { name: "GripVertical", size: 20, color: 'text.secondary' })),
+            react_1.default.createElement(__1.Icon, { name: "GripVertical", size: 20, color: "text.secondary" })),
         react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
             react_1.default.createElement(__1.Image, { src: image, height: 32, width: 32 })),
-        react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: 'body1', color: 'text.primary' }, title) })));
+        react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, title) })));
 };
 exports.default = SortableReferenceItem;
 var sx = {
@@ -37,21 +37,21 @@ var sx = {
         borderRadius: 1,
         my: 0.5,
         '&:hover': {
-            boxShadow: 2
-        }
+            boxShadow: 2,
+        },
     },
     icon: {
         color: 'text.secondary',
     },
     isDragging: {
-        boxShadow: 2
+        boxShadow: 2,
     },
     listItemIcon: {
         mr: 2,
         width: 32,
-        height: 32
+        height: 32,
     },
     dragHandle: {
-        cursor: 'grab'
-    }
+        cursor: 'grab',
+    },
 };

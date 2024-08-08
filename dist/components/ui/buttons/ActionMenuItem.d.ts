@@ -1,7 +1,7 @@
 import React from 'react';
-import { ActionType } from '../../../types';
+import { ButtonType } from '../../../types';
 type ActionMenuItemProps = {
-    action: ActionType;
+    action: ButtonType;
     variant?: 'text' | 'outlined' | 'contained';
     color?: 'primary' | 'secondary';
     resource: any;

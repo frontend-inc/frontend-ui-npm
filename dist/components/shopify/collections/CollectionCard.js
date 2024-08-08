@@ -42,16 +42,16 @@ var CollectionCard = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    return (react_1.default.createElement(__1.LightDarkMode, { mode: 'dark' },
+    return (react_1.default.createElement(__1.LightDarkMode, { mode: "dark" },
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
             react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleItemClick },
-                react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: 300, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
+                react_1.default.createElement(__1.Image, { label: label, src: image === null || image === void 0 ? void 0 : image.url, height: 400, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cover },
                 react_1.default.createElement(material_1.Stack, { sx: sx.fullWidth, spacing: 1, direction: 'row', alignItems: "center" },
                     react_1.default.createElement(material_1.Box, { sx: sx.contentContainer },
                         react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 0 },
                             react_1.default.createElement(material_1.Box, { sx: sx.fullWidth },
-                                react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title, 60))))))))));
+                                react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "subtitle2" }, (0, helpers_1.truncate)(title, 60))))))))));
 };
 exports.default = CollectionCard;
 var sx = {
@@ -98,7 +98,7 @@ var sx = {
         justifyContent: 'space-between',
         alignItems: 'flex-end',
     },
-    actions: {
+    buttons: {
         display: 'flex',
         justifyContent: 'space-between',
         flexDirection: 'row',

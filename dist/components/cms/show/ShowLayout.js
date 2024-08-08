@@ -8,14 +8,14 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
 var ShowLayout = function (props) {
-    var _a = props || {}, actions = _a.actions, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, resource = _a.resource, children = _a.children, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
+    var _a = props || {}, buttons = _a.buttons, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, resource = _a.resource, children = _a.children, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
     var _c = resource || {}, title = _c.title, description = _c.description;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
-        (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            react_1.default.createElement(__1.Actions, { actions: (0, helpers_1.buildActions)({
+        (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
+            react_1.default.createElement(__1.Actions, { buttons: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
-                    actions: actions,
+                    buttons: buttons,
                 }), numVisible: 4, resource: resource, justifyContent: "center" }))),
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
@@ -57,7 +57,7 @@ var sx = {
     caption: {
         color: 'text.secondary',
     },
-    actions: {
+    buttons: {
         justifyContent: 'center',
         width: {
             sm: 'auto',

@@ -8,7 +8,7 @@ var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("..");
 var AuthGuard = function (props) {
-    var children = props.children, _a = props.requireAuth, requireAuth = _a === void 0 ? false : _a, _b = props.requireTeam, requireTeam = _b === void 0 ? false : _b, _c = props.requirePaid, requirePaid = _c === void 0 ? false : _c, _d = props.requireAdmin, requireAdmin = _d === void 0 ? false : _d;
+    var children = props.children, _a = props.roles, roles = _a === void 0 ? [] : _a, _b = props.requireAuth, requireAuth = _b === void 0 ? false : _b, _c = props.requireTeam, requireTeam = _c === void 0 ? false : _c, _d = props.requirePaid, requirePaid = _d === void 0 ? false : _d;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     if (requireAuth && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
         return react_1.default.createElement(__1.AuthWall, null);
@@ -17,12 +17,14 @@ var AuthGuard = function (props) {
         return (react_1.default.createElement(material_1.Box, { sx: sx.center },
             react_1.default.createElement(__1.Heading, { title: "Team required", description: "You must be a member of a team." })));
     }
+    if ((roles === null || roles === void 0 ? void 0 : roles.length) > 0 &&
+        !(roles === null || roles === void 0 ? void 0 : roles.includes(currentUser === null || currentUser === void 0 ? void 0 : currentUser.role)) &&
+        (currentUser === null || currentUser === void 0 ? void 0 : currentUser.role) !== 'admin') {
+        return (react_1.default.createElement(material_1.Box, { sx: sx.center },
+            react_1.default.createElement(__1.Heading, { title: "Unauthorized", description: "You are not authorized to access this page." })));
+    }
     if (requirePaid && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.paid)) {
         return react_1.default.createElement(__1.PayWall, null);
-    }
-    if (requireAdmin && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.role) != 'admin') {
-        return (react_1.default.createElement(material_1.Box, { sx: sx.center },
-            react_1.default.createElement(__1.Heading, { title: "Admin Required", description: "You must be an admin to access this page." })));
     }
     return children;
 };

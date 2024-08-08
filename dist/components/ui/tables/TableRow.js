@@ -12,16 +12,16 @@ var TableRow = function (props) {
     var selected = (selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(row === null || row === void 0 ? void 0 : row.id)) ? true : false;
     return (react_1.default.createElement(material_1.TableRow, { sx: sx.root, selected: selected },
         enableSelect && (react_1.default.createElement(components_1.TableCell, { small: true, align: 'center', sticky: true },
-            react_1.default.createElement(material_1.Checkbox, { checked: selected, onChange: function () { return handleSelect(row); }, value: "true" }))),
+            react_1.default.createElement(material_1.Checkbox, { checked: selected, onChange: handleSelect ? function () { return handleSelect(row); } : undefined, value: "true" }))),
         (enableEdit || enableDelete) && (react_1.default.createElement(components_1.TableCell, { small: true, align: "center" },
             react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
-                enableShow && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", onClick: function () { return handleShow(row); } }, "View")),
-                enableEdit && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", onClick: function () { return handleEdit(row); } }, "Edit")),
-                enableDelete && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", onClick: function () { return handleDelete(row); } }, "Delete"))))), fields === null || fields === void 0 ? void 0 :
+                enableShow && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", onClick: handleShow ? function () { return handleShow(row); } : undefined }, "View")),
+                enableEdit && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", onClick: handleEdit ? function () { return handleEdit(row); } : undefined }, "Edit")),
+                enableDelete && (react_1.default.createElement(material_1.Button, { size: "small", variant: "contained", color: "secondary", onClick: handleDelete ? function () { return handleDelete(row); } : undefined }, "Delete"))))), fields === null || fields === void 0 ? void 0 :
         fields.map(function (field, index) {
-            var value = (0, lodash_1.get)(row, 'field.name');
+            var value = (0, lodash_1.get)(row, field.name);
             return (react_1.default.createElement(components_1.TableCell, { key: index },
-                react_1.default.createElement(components_1.Cell, { row: row, field: field, value: value, handleClick: function () { return handleClick(value, row, field); } })));
+                react_1.default.createElement(components_1.Cell, { row: row, field: field, value: value, handleClick: handleClick ? function () { return handleClick(value, row, field); } : undefined })));
         })));
 };
 exports.default = TableRow;

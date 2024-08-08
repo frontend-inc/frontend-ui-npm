@@ -1,3 +1,9 @@
+export type MenuType = {
+    label: string;
+    name: string;
+    internal?: boolean;
+    links: MenuLinkType[];
+};
 export type MenuLinkTypes = 'dropdown' | 'link' | 'sublink' | 'shopify_collection' | 'shopify_product' | 'url';
 export type MenuLinkType = {
     name: string;

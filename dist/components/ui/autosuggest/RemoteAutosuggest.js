@@ -158,10 +158,8 @@ var RemoteAutosuggest = function (props) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
     }, [defaultQuery]);
-    console.log("Display Field", displayField);
     if (!displayField)
         return null;
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(__1.Autosuggest, { errors: errors, loading: delayedLoading, direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear, enableClear: enableClear })));
+    return (react_1.default.createElement(__1.Autosuggest, { errors: errors, loading: delayedLoading, direction: direction, label: label, name: name, value: option, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, handleClear: handleClear, enableClear: enableClear }));
 };
 exports.default = RemoteAutosuggest;

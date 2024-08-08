@@ -1,8 +1,8 @@
-export declare const ACTION_NAMES: {
+export declare const BUTTON_NAMES: {
     value: string;
     label: string;
 }[];
-export declare const ACTION_CMS_NAMES: {
+export declare const BUTTON_CMS_NAMES: {
     value: string;
     label: string;
 }[];

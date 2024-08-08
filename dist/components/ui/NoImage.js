@@ -29,7 +29,7 @@ var sx = {
         border: '1px solid',
         borderColor: 'divider',
         borderRadius: 1,
-        backgroundImage: 'linear-gradient(45deg, #666666, #222222,#000000)',
+        backgroundImage: 'linear-gradient(45deg, #666, #000)',
     },
     disableBorder: {
         border: 'none',

@@ -58,7 +58,7 @@ var ListItems = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = (0, frontend_js_1.useResourceContext)(), setResource = _a.setResource, loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, _b = _a.query, query = _b === void 0 ? {} : _b, setQuery = _a.setQuery, setOpenShow = _a.setOpenShow;
-    var _c = props.actions, actions = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'card' : _d, href = props.href, _e = props.displayFields, displayFields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableDelete, enableDelete = _j === void 0 ? false : _j, _k = props.enableFavorites, enableFavorites = _k === void 0 ? false : _k, _l = props.enableLikes, enableLikes = _l === void 0 ? false : _l, _m = props.enableUsers, enableUsers = _m === void 0 ? false : _m, _o = props.enableRatings, enableRatings = _o === void 0 ? false : _o, _p = props.enableComments, enableComments = _p === void 0 ? false : _p, emptyIcon = props.emptyIcon, _q = props.emptyTitle, emptyTitle = _q === void 0 ? 'No results found' : _q, _r = props.emptyDescription, emptyDescription = _r === void 0 ? 'Try changing your search or filters.' : _r, rest = __rest(props, ["actions", "style", "href", "displayFields", "enableGradient", "enableOverlay", "enableEdit", "enableDelete", "enableFavorites", "enableLikes", "enableUsers", "enableRatings", "enableComments", "emptyIcon", "emptyTitle", "emptyDescription"]);
+    var _c = props.buttons, buttons = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'card' : _d, href = props.href, _e = props.displayFields, displayFields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableDelete, enableDelete = _j === void 0 ? false : _j, _k = props.enableFavorites, enableFavorites = _k === void 0 ? false : _k, _l = props.enableLikes, enableLikes = _l === void 0 ? false : _l, _m = props.enableUsers, enableUsers = _m === void 0 ? false : _m, _o = props.enableRatings, enableRatings = _o === void 0 ? false : _o, _p = props.enableComments, enableComments = _p === void 0 ? false : _p, emptyIcon = props.emptyIcon, _q = props.emptyTitle, emptyTitle = _q === void 0 ? 'No results found' : _q, _r = props.emptyDescription, emptyDescription = _r === void 0 ? 'Try changing your search or filters.' : _r, rest = __rest(props, ["buttons", "style", "href", "displayFields", "enableGradient", "enableOverlay", "enableEdit", "enableDelete", "enableFavorites", "enableLikes", "enableUsers", "enableRatings", "enableComments", "emptyIcon", "emptyTitle", "emptyDescription"]);
     var handleNavigate = function (resource) {
         if (href) {
             if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
@@ -88,17 +88,17 @@ var ListItems = function (props) {
     };
     grid = LAYOUTS[style];
     var handleLoadMore = function () {
-        var newPage = (page + 1) || 2;
-        setQuery(__assign(__assign({}, query), { page: newPage }));
+        var perPage = ((query === null || query === void 0 ? void 0 : query.per_page) || 12) + 12;
+        setQuery(__assign(__assign({}, query), { per_page: perPage }));
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
-            react_1.default.createElement(__2.ListLayout, { grid: grid }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.ListCard, { key: index, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleClick(resource); }, actions: (0, helpers_1.buildActions)({
+            react_1.default.createElement(__2.ListLayout, { grid: grid }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.ListCard, { key: index, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleClick(resource); }, buttons: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     enableDelete: enableDelete,
                     handleEdit: function () { return handleEdit(resource); },
                     handleDelete: function () { return handleDeleteClick(resource); },
-                    actions: actions,
+                    buttons: buttons,
                 }), enableUsers: enableUsers, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay })); })),
             react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: handleLoadMore })),
         !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__2.Placeholder, { enableBorder: true, icon: emptyIcon, title: emptyTitle, description: emptyDescription }))));

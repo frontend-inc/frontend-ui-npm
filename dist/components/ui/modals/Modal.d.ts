@@ -5,7 +5,7 @@ type ModalProps = {
     handleClose: () => void;
     title?: string;
     subtitle?: string;
-    actions?: any;
+    buttons?: any;
     children?: any;
     maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     secondaryActions?: any;

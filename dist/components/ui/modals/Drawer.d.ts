@@ -5,7 +5,7 @@ type DrawerProps = {
     title?: string;
     anchor?: 'left' | 'right' | 'top' | 'bottom';
     handleClose: () => void;
-    actions?: any;
+    buttons?: any;
     children: React.ReactNode;
     closeIcon?: string;
     disablePadding?: boolean;

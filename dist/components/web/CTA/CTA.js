@@ -45,7 +45,7 @@ var CTA = function (props) {
             label && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption", sx: sx.label }, label)),
             title && (react_1.default.createElement(material_1.Typography, { variant: 'h3', color: "text.primary", sx: sx.title }, title)),
             description && (react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.secondary", sx: sx.description }, description)),
-            buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
                 react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))));
 };
 exports.default = CTA;
@@ -69,7 +69,7 @@ var sx = {
         textAlign: 'center',
         maxWidth: '600px',
     },
-    actions: {
+    buttons: {
         mt: 2,
         textAlign: 'center',
         width: '100%',

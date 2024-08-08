@@ -1,5 +1,5 @@
 export type ActionNamesType = 'webhook' | 'navigate' | 'url' | 'page' | 'email' | 'sms' | 'phone' | 'copy' | 'download' | 'link' | 'print' | 'share' | 'click' | 'stripe_payment_link';
-export type ActionType = {
+export type ButtonType = {
     id?: number;
     icon?: string;
     label: string;

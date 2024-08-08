@@ -44,13 +44,13 @@ var context_1 = require("../../context");
 var router_1 = require("next/router");
 var _1 = require(".");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
-var hooks_1 = require("../../hooks");
+var __1 = require("..");
 var frontend_js_1 = require("frontend-js");
 var lodash_1 = require("lodash");
-var useActions = function (params) {
+var useButtons = function (params) {
     var _a = (0, _1.useLoadingWrapper)(), loading = _a.loading, data = _a.data, errors = _a.errors, loadingWrapper = _a.loadingWrapper;
     var _b = params || {}, action = _b.action, resource = _b.resource;
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
+    var showAlertSuccess = (0, __1.useAlerts)().showAlertSuccess;
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
@@ -154,4 +154,4 @@ var useActions = function (params) {
         handleClick: handleClick,
     };
 };
-exports.default = useActions;
+exports.default = useButtons;

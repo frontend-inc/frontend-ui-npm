@@ -4,7 +4,7 @@ type ProfileDetailsProps = {
     title: string;
     description: string;
     label?: string;
-    actions?: React.ReactNode;
+    buttons?: React.ReactNode;
     disableRing?: boolean;
 };
 declare const ProfileDetails: React.FC<ProfileDetailsProps>;

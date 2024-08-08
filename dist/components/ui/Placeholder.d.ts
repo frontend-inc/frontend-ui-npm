@@ -3,7 +3,7 @@ type PlaceholderProps = {
     icon?: string;
     title?: string;
     description?: string;
-    actions?: any;
+    buttons?: any;
     color?: string;
     enableBorder?: boolean;
     enableAvatarBorder?: boolean;

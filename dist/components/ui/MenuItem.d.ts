@@ -4,8 +4,6 @@ type MenuItemProps = {
     handleClick: () => void;
     active?: boolean;
     depth?: number;
-    open?: boolean;
-    expandable?: boolean;
     icon?: React.ReactNode;
 };
 declare const MenuItem: React.FC<MenuItemProps>;

@@ -12,6 +12,6 @@ var ShowVideoModal = function (props) {
     if (!resource)
         return null;
     return (react_1.default.createElement(__1.MediaModal, { open: openShow, handleClose: function () { return setOpenShow(false); } },
-        react_1.default.createElement("video", { src: (_a = resource === null || resource === void 0 ? void 0 : resource.video) === null || _a === void 0 ? void 0 : _a.url, controls: true, height: 600, width: '100%' })));
+        react_1.default.createElement("video", { src: (_a = resource === null || resource === void 0 ? void 0 : resource.video) === null || _a === void 0 ? void 0 : _a.url, controls: true, height: 600, width: "100%" })));
 };
 exports.default = ShowVideoModal;

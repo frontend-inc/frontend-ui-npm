@@ -48,7 +48,7 @@ var TableToolbar = function (props) {
             react_1.default.createElement(material_1.Hidden, { mdDown: true },
                 react_1.default.createElement(material_1.Box, { sx: sx.toolbar },
                     react_1.default.createElement(components_2.TableFilterButton, { loading: loading, query: query, handleClick: handleFilter, badgeCount: badgeCount, handleClearFilters: handleClearQuery })))),
-        react_1.default.createElement(material_1.Box, { sx: sx.actions },
+        react_1.default.createElement(material_1.Box, { sx: sx.buttons },
             react_1.default.createElement(material_1.Box, { sx: sx.toolbar },
                 react_1.default.createElement(material_1.Hidden, { mdDown: true },
                     react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
@@ -122,7 +122,7 @@ var sx = {
     title: {
         lineHeight: 1.2,
     },
-    actions: {
+    buttons: {
         width: 240,
         display: 'flex',
         flexDirection: 'row',

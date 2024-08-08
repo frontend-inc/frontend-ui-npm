@@ -22,7 +22,7 @@ var SortableListItem = function (props) {
     return (react_1.default.createElement(material_1.ListItem, { disableGutters: true, sx: __assign(__assign({}, sx.item), (isDragging && sx.isDragging)) },
         react_1.default.createElement(material_1.ListItemIcon, { sx: sx.dragHandle },
             react_1.default.createElement(icons_material_1.DragIndicator, { sx: sx.icon })),
-        react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: 'body1', color: 'text.primary' }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: 'body2', color: 'text.secondary' }, subtitle) })));
+        react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, title), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, subtitle) })));
 };
 exports.default = SortableListItem;
 var sx = {
@@ -36,5 +36,5 @@ var sx = {
         '&:active': {
             cursor: 'grabbing',
         },
-    }
+    },
 };

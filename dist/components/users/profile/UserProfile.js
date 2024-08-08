@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var UserProfile = function (props) {
-    var _a = props || {}, user = _a.user, _b = _a.enableFollowers, enableFollowers = _b === void 0 ? false : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, _d = _a.socialFields, socialFields = _d === void 0 ? [] : _d, _e = _a.actions, actions = _e === void 0 ? [] : _e;
+    var _a = props || {}, user = _a.user, _b = _a.enableFollowers, enableFollowers = _b === void 0 ? false : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, _d = _a.socialFields, socialFields = _d === void 0 ? [] : _d, _e = _a.buttons, buttons = _e === void 0 ? [] : _e;
     var _f = user || {}, name = _f.name, username = _f.username, about_me = _f.about_me, avatar = _f.avatar;
     if (!(user === null || user === void 0 ? void 0 : user.id))
         return null;
@@ -22,12 +22,12 @@ var UserProfile = function (props) {
                     username),
                 react_1.default.createElement(material_1.Typography, { variant: "h6", color: "text.primary", sx: sx.name }, name),
                 react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-                    enableFollowers == true && (react_1.default.createElement(__1.FollowButtonGroup, { user: user })),
+                    enableFollowers == true && react_1.default.createElement(__1.FollowButtonGroup, { user: user }),
                     react_1.default.createElement(__1.DisplayFields, { resource: user, fields: displayFields }),
                     about_me && (react_1.default.createElement(__1.ExpandableText, { text: about_me, color: "text.secondary" })))),
             react_1.default.createElement(material_1.Stack, { direction: "row", height: "100%", justifyContent: "flex-start" }, enableFollowers == true && react_1.default.createElement(__1.FollowButton, { user: user })),
-            (actions === null || actions === void 0 ? void 0 : actions.length) > 0 && (react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.actions },
-                react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: user }))))));
+            (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.buttons },
+                react_1.default.createElement(__1.Actions, { numVisible: 0, buttons: buttons, resource: user }))))));
 };
 exports.default = UserProfile;
 var sx = {
@@ -44,7 +44,7 @@ var sx = {
         borderColor: 'divider',
     },
     userContainer: {
-        maxWidth: 600
+        maxWidth: 600,
     },
     button: {
         boxShadow: 0,
@@ -80,10 +80,10 @@ var sx = {
             xs: 'center',
         },
     },
-    actions: {
+    buttons: {
         width: '100%',
         display: 'flex',
         justifyContent: 'flex-end',
         alignItems: 'flex-start',
-    }
+    },
 };

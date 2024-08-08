@@ -9,7 +9,7 @@ var components_1 = require("../../../components");
 var RemoteFilterButton = function (props) {
     var _a = props || {}, url = _a.url, _b = _a.disableFilterCount, disableFilterCount = _b === void 0 ? false : _b, handleFilter = _a.handleFilter, handleClear = _a.handleClear;
     var _c = (0, hooks_1.useFetchFilters)({
-        url: url
+        url: url,
     }), loading = _c.loading, fields = _c.fields;
     return (react_1.default.createElement(components_1.FilterButton, { loading: loading, disableFilterCount: disableFilterCount, handleFilter: handleFilter, handleClear: handleClear, filterOptions: fields }));
 };

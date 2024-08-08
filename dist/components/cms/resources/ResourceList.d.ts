@@ -7,7 +7,7 @@ export type ResourceListProps = {
     component?: React.FC<any>;
     layout?: 'list' | 'grid';
     dense?: boolean;
-    handleClick?: (item: any) => void;
+    handleClick?: (resource: any) => void;
     enableInfiniteLoad?: boolean;
     enableLoadMore?: boolean;
     perPage?: number;
@@ -21,6 +21,8 @@ export type ResourceListProps = {
     enableCreate?: boolean;
     enableDelete?: boolean;
     sortable?: boolean;
+    enableBorder?: boolean;
+    direction?: 'row' | 'column';
     emptyIcon?: string;
     emptyTitle?: string;
     emptyDescription?: string;

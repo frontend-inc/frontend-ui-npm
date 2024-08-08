@@ -150,6 +150,6 @@ var Form = function (props) {
 exports.default = Form;
 var sx = {
     paper: {
-        p: 4
-    }
+        p: 4,
+    },
 };

@@ -81,14 +81,14 @@ var components_1 = require("../../../components");
 var __1 = require("../..");
 var ResourceListItem_1 = __importDefault(require("./ResourceListItem"));
 var ResourceList = function (props) {
-    var _a = props.layout, layout = _a === void 0 ? 'list' : _a, dense = props.dense, _b = props.component, Component = _b === void 0 ? ResourceListItem_1.default : _b, url = props.url, name = props.name, _c = props.fields, fields = _c === void 0 ? [] : _c, _d = props.filterOptions, filterOptions = _d === void 0 ? [] : _d, _e = props.sortOptions, sortOptions = _e === void 0 ? [] : _e, _f = props.query, defaultQuery = _f === void 0 ? {} : _f, _g = props.perPage, perPage = _g === void 0 ? 20 : _g, _h = props.enableSearch, enableSearch = _h === void 0 ? false : _h, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleClick = props.handleClick, _j = props.sortable, sortable = _j === void 0 ? false : _j, _k = props.emptyIcon, emptyIcon = _k === void 0 ? 'Search' : _k, _l = props.emptyTitle, emptyTitle = _l === void 0 ? 'No results found' : _l, _m = props.emptyDescription, emptyDescription = _m === void 0 ? 'Try adjusting your search or filters' : _m, _o = props.itemProps, itemProps = _o === void 0 ? {} : _o;
-    var _p = (0, react_1.useState)(false), openModal = _p[0], setOpenModal = _p[1];
-    var _q = (0, react_1.useState)(false), openDeleteModal = _q[0], setOpenDeleteModal = _q[1];
-    var _r = (0, frontend_js_1.useResource)({
+    var _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.component, Component = _b === void 0 ? ResourceListItem_1.default : _b, url = props.url, name = props.name, _c = props.fields, fields = _c === void 0 ? [] : _c, _d = props.filterOptions, filterOptions = _d === void 0 ? [] : _d, _e = props.sortOptions, sortOptions = _e === void 0 ? [] : _e, _f = props.query, defaultQuery = _f === void 0 ? {} : _f, _g = props.perPage, perPage = _g === void 0 ? 20 : _g, _h = props.enableSearch, enableSearch = _h === void 0 ? false : _h, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleClick = props.handleClick, _j = props.sortable, sortable = _j === void 0 ? false : _j, _k = props.enableBorder, enableBorder = _k === void 0 ? false : _k, _l = props.direction, direction = _l === void 0 ? 'row' : _l, _m = props.emptyIcon, emptyIcon = _m === void 0 ? 'Search' : _m, _o = props.emptyTitle, emptyTitle = _o === void 0 ? 'No results found' : _o, _p = props.emptyDescription, emptyDescription = _p === void 0 ? 'Try adjusting your search or filters' : _p, _q = props.itemProps, itemProps = _q === void 0 ? {} : _q;
+    var _r = (0, react_1.useState)(false), openModal = _r[0], setOpenModal = _r[1];
+    var _s = (0, react_1.useState)(false), openDeleteModal = _s[0], setOpenDeleteModal = _s[1];
+    var _t = (0, frontend_js_1.useResource)({
         name: name,
         url: url,
-    }), loading = _r.delayedLoading, errors = _r.errors, resource = _r.resource, resources = _r.resources, setResource = _r.setResource, update = _r.update, create = _r.create, destroy = _r.destroy, updatePositions = _r.updatePositions, handleChange = _r.handleChange, query = _r.query, findMany = _r.findMany, reloadMany = _r.reloadMany, removeAttachment = _r.removeAttachment, page = _r.page, numPages = _r.numPages, loadMore = _r.loadMore;
-    var _s = (0, react_1.useState)(''), keywords = _s[0], setKeywords = _s[1];
+    }), loading = _t.delayedLoading, errors = _t.errors, resource = _t.resource, resources = _t.resources, setResource = _t.setResource, update = _t.update, create = _t.create, destroy = _t.destroy, updatePositions = _t.updatePositions, handleChange = _t.handleChange, query = _t.query, findMany = _t.findMany, reloadMany = _t.reloadMany, removeAttachment = _t.removeAttachment, page = _t.page, numPages = _t.numPages, loadMore = _t.loadMore;
+    var _u = (0, react_1.useState)(''), keywords = _u[0], setKeywords = _u[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -101,9 +101,9 @@ var ResourceList = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _t = (0, hooks_1.useFilters)({
+    var _v = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _t.activeFilters, setActiveFilters = _t.setActiveFilters, handleAddFilter = _t.handleAddFilter, buildQueryFilters = _t.buildQueryFilters;
+    }), activeFilters = _v.activeFilters, setActiveFilters = _v.setActiveFilters, handleAddFilter = _v.handleAddFilter, buildQueryFilters = _v.buildQueryFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -209,24 +209,21 @@ var ResourceList = function (props) {
     var enableFilters = (filterOptions === null || filterOptions === void 0 ? void 0 : filterOptions.length) > 0;
     var enableSorting = (sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.length) > 0;
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, sx: sx.actions, spacing: 1 },
-            react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: 'row' }, spacing: 1 },
+        react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: direction }, sx: sx.buttons, spacing: 1 },
+            react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: direction }, spacing: 1 },
                 enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
                 enableFilters && (react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
                 enableSorting && (react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(components_1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSort, handleSortDirection: handleSortDirection })))),
-            enableCreate && (react_1.default.createElement(material_1.Box, null,
-                react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add")))),
+            enableCreate && (react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add"))),
         react_1.default.createElement(material_1.Box, { sx: __assign({}, (loading && sx.loading)) },
             react_1.default.createElement(material_1.Stack, { spacing: 2, sx: sx.fullWidth },
-                react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.layout), (layout == 'grid' ? sx.grid : sx.list)), (dense && sx.listDense)) },
-                    sortable && !loading && (resources === null || resources === void 0 ? void 0 : resources.length) > 0 && (react_1.default.createElement(components_1.SortableList, { droppableId: "resource-list", items: resources, handleDrop: handleDrop, renderItem: function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, sortable: true, layout: layout, resource: resource, handleClick: handleClick ? function () { return handleClick(resource); } : undefined, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, itemProps))); } })),
-                    !sortable && !loading && (resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, layout: layout, resource: resource, handleClick: handleClick ? function () { return handleClick(resource); } : undefined, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, itemProps))); }))))),
+                sortable && (resources === null || resources === void 0 ? void 0 : resources.length) > 0 && (react_1.default.createElement(components_1.SortableList, { droppableId: "resource-list", items: resources, handleDrop: handleDrop, renderItem: function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, sortable: true, layout: layout, resource: resource, enableBorder: enableBorder, handleClick: handleClick ? function () { return handleClick(resource); } : undefined, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, itemProps))); } })),
+                !sortable && (react_1.default.createElement(material_1.List, null, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, layout: layout, resource: resource, enableBorder: enableBorder, handleClick: handleClick ? function () { return handleClick(resource); } : undefined, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, itemProps))); }))))),
         !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: emptyIcon, title: emptyTitle, description: emptyDescription })),
-        react_1.default.createElement(components_1.Loader, { loading: loading }),
         react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore }),
-        react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
+        react_1.default.createElement(components_1.Drawer, { open: openModal, handleClose: function () { return setOpenModal(false); }, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
             react_1.default.createElement(components_1.FormFields, { errors: errors, loading: loading, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove })),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, handleClose: function () { return setOpenDeleteModal(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };
@@ -244,7 +241,7 @@ var sx = {
     list: {
         display: 'flex',
         flexDirection: 'column',
-        gap: '16px',
+        gap: '8px',
     },
     listDense: {
         gap: '8px',
@@ -282,12 +279,12 @@ var sx = {
             xs: 2,
         },
     },
-    actions: {
+    buttons: {
         width: '100%',
         justifyContent: 'space-between',
     },
     loading: {
-        opacity: 0.7,
+        opacity: 0.5,
     },
     circularProgress: {
         color: 'primary.main',

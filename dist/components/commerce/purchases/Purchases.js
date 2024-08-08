@@ -28,8 +28,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var Purchases = function (props) {
-    var _a = props.actions, actions = _a === void 0 ? [] : _a, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b, url = props.url, rest = __rest(props, ["actions", "displayFields", "url"]);
-    return (react_1.default.createElement(__1.ListItems, __assign({ actions: actions, displayFields: displayFields, url: "".concat(url, "/purchases"), 
+    var _a = props.buttons, buttons = _a === void 0 ? [] : _a, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b, url = props.url, rest = __rest(props, ["buttons", "displayFields", "url"]);
+    return (react_1.default.createElement(__1.ListItems, __assign({ buttons: buttons, displayFields: displayFields, url: "".concat(url, "/purchases"), 
         // Todo: Component errors without a default value
         query: {} }, rest)));
 };

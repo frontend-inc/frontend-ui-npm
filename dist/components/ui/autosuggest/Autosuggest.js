@@ -45,7 +45,7 @@ var Autocomplete_1 = __importDefault(require("@mui/material/Autocomplete"));
 var image_1 = __importDefault(require("next/image"));
 var AutocompleteOption = function (props) {
     var option = props.option;
-    return (react_1.default.createElement(material_1.ListItem, __assign({ sx: { mr: 2, flexShrink: 0 } }, props),
+    return (react_1.default.createElement(material_1.ListItem, __assign({}, props),
         (option === null || option === void 0 ? void 0 : option.icon) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
             react_1.default.createElement(__1.Icon, { name: option.icon, size: 20 }))),
         (option === null || option === void 0 ? void 0 : option.image) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },

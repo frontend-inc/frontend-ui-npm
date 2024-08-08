@@ -24,6 +24,6 @@ var TableCard_1 = require("./TableCard");
 Object.defineProperty(exports, "TableCard", { enumerable: true, get: function () { return __importDefault(TableCard_1).default; } });
 var ListItemCard_1 = require("./ListItemCard");
 Object.defineProperty(exports, "ListItemCard", { enumerable: true, get: function () { return __importDefault(ListItemCard_1).default; } });
-// SocialActions 
+// SocialActions
 var SocialActions_1 = require("./actions/SocialActions");
 Object.defineProperty(exports, "SocialActions", { enumerable: true, get: function () { return __importDefault(SocialActions_1).default; } });

@@ -32,7 +32,7 @@ var router_1 = require("next/router");
 var __2 = require("../..");
 var CardList = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 180 : _c, handleClick = _a.handleClick, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableComments, enableComments = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = _a.enableLikes, enableLikes = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j;
+    var _a = props || {}, buttons = _a.buttons, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 180 : _c, handleClick = _a.handleClick, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableComments, enableComments = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = _a.enableLikes, enableLikes = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j;
     var router = (0, router_1.useRouter)();
     var _k = resource || {}, label = _k.label, title = _k.title, image = _k.image;
     var handleItemClick = function () {
@@ -51,16 +51,16 @@ var CardList = function (props) {
             react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.contentArea },
                 react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.content },
                     react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5 },
-                        react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: 'subtitle2' }, (0, helpers_1.truncate)(title)),
+                        react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
                         enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
                         react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                         react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
                     react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
-                        enableLikes == true && (react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
+                        enableLikes == true && react_1.default.createElement(__1.LikeButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle }),
                         enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
                         enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource }))),
                 react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
-                    react_1.default.createElement(__2.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
+                    react_1.default.createElement(__2.Actions, { numVisible: 0, buttons: buttons, resource: resource }))))));
 };
 exports.default = CardList;
 var sx = {
@@ -136,11 +136,11 @@ var sx = {
     description: {
         maxWidth: '320px',
     },
-    actions: {
+    buttons: {
         display: 'flex',
         flexDirection: 'column',
     },
-    actionsBorder: {
+    buttonsBorder: {
         px: 1,
         pb: {
             sm: 0,

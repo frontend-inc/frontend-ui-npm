@@ -1,8 +1,8 @@
 import React from 'react';
-import { ActionType, FormFieldType, DisplayFieldType } from '../../../types';
+import { ButtonType, FormFieldType, DisplayFieldType } from '../../../types';
 export type ShowProps = {
     handle?: string;
-    actions: ActionType[];
+    buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     fieldName?: string;
     url?: string;

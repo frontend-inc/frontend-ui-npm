@@ -1,32 +1,6 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.filterReferences = exports.handleDocumentChange = void 0;
-var index_1 = require("../constants/index");
-var handleDocumentChange = function (ev, resource) {
-    var _a;
-    var name = ev.target.name;
-    var value = ev.target.type === 'checkbox' ? ev.target.checked : ev.target.value;
-    var newResource = __assign({}, resource);
-    if (index_1.SYSTEM_FIELDS.includes(name)) {
-        newResource[name] = value;
-    }
-    else {
-        newResource = __assign(__assign({}, newResource), { data: __assign(__assign({}, newResource.data), (_a = {}, _a[name] = value, _a)) });
-    }
-    return newResource;
-};
-exports.handleDocumentChange = handleDocumentChange;
+exports.filterReferences = void 0;
 var filterReferences = function (document, contentType) {
     var _a, _b, _c;
     if (!(document === null || document === void 0 ? void 0 : document.references) ||

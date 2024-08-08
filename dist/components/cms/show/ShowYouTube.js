@@ -30,9 +30,9 @@ var __1 = require("../..");
 var lodash_1 = require("lodash");
 var ShowLayout_1 = __importDefault(require("./ShowLayout"));
 var ShowYouTube = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, fieldName = _a.fieldName, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, rest = __rest(_a, ["actions", "resource", "fieldName", "displayFields"]);
+    var _a = props || {}, buttons = _a.buttons, resource = _a.resource, fieldName = _a.fieldName, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, rest = __rest(_a, ["buttons", "resource", "fieldName", "displayFields"]);
     var src = (0, lodash_1.get)(resource, fieldName);
-    return (react_1.default.createElement(ShowLayout_1.default, __assign({ actions: actions, resource: resource, displayFields: [] }, rest),
+    return (react_1.default.createElement(ShowLayout_1.default, __assign({ buttons: buttons, resource: resource, displayFields: [] }, rest),
         react_1.default.createElement(__1.YouTubeEmbed, { src: src })));
 };
 exports.default = ShowYouTube;

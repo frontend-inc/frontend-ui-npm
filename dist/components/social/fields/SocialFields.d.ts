@@ -1,5 +1,5 @@
 import React from 'react';
-import { SocialFieldType } from "../../../types";
+import { SocialFieldType } from '../../../types';
 export type SocialFieldsProps = {
     resource: any;
     fields: SocialFieldType[];

@@ -1,8 +1,8 @@
 import React from 'react';
-import { ActionType, DisplayFieldType } from '../../../types';
+import { ButtonType, DisplayFieldType } from '../../../types';
 type CardStyleTypes = 'list' | 'card' | 'avatar' | 'cover' | 'table' | 'text';
 type ListCardProps = {
-    actions: ActionType[];
+    buttons: ButtonType[];
     style: CardStyleTypes;
     displayFields: DisplayFieldType[];
     resource: any & {

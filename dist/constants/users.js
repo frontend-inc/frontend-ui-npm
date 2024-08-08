@@ -12,18 +12,32 @@ exports.USER_FORM_FIELDS = [
     { label: 'First name', name: 'first_name', variant: 'string' },
     { label: 'Last name', name: 'last_name', variant: 'string' },
     { label: 'About me', name: 'about_me', variant: 'text' },
-    { label: 'Address', name: 'address1', variant: 'string', placeholder: 'Street' },
-    { label: '', name: 'address2', variant: 'string', placeholder: 'Unit or Apartment' },
+    {
+        label: 'Address',
+        name: 'address1',
+        variant: 'string',
+        placeholder: 'Street',
+    },
+    {
+        label: '',
+        name: 'address2',
+        variant: 'string',
+        placeholder: 'Unit or Apartment',
+    },
     { label: 'City', name: 'city', variant: 'string' },
     {
         label: 'State',
         name: 'state',
         variant: 'select',
         options: states_1.STATES,
-        conditions: [
-            { name: 'country', operator: 'eq', value: 'US' }
-        ]
+        conditions: [{ name: 'country', operator: 'eq', value: 'US' }],
     },
-    { label: 'Country', name: 'country', variant: 'select', options: countries_1.COUNTRIES, default: 'US' },
+    {
+        label: 'Country',
+        name: 'country',
+        variant: 'select',
+        options: countries_1.COUNTRIES,
+        default: 'US',
+    },
     { label: 'Zipcode', name: 'zipcode', variant: 'string' },
 ];

@@ -14,7 +14,7 @@ var useFetchSort = function (props) {
     return {
         loading: isLoading,
         errors: error,
-        fields: data === null || data === void 0 ? void 0 : data.data
+        fields: data === null || data === void 0 ? void 0 : data.data,
     };
 };
 exports.default = useFetchSort;

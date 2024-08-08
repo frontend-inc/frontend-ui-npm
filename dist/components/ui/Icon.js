@@ -36,6 +36,6 @@ var LucideIcon = function (props) {
     var Icon = icons[name];
     if (!Icon)
         return null;
-    return (react_1.default.createElement(Icon, { color: (0, lodash_1.get)(theme.palette, color), size: size }));
+    return react_1.default.createElement(Icon, { color: (0, lodash_1.get)(theme.palette, color), size: size });
 };
 exports.default = LucideIcon;

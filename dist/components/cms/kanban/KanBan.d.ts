@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionType, DisplayFieldType } from '../../../types';
+import { ButtonType, DisplayFieldType } from '../../../types';
 export type KanBanProps = {
     loading?: boolean;
     resources: any;
@@ -9,7 +9,7 @@ export type KanBanProps = {
         label: string;
         value: string;
     }[];
-    actions: ActionType[];
+    buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     handleDrop: (movedItem: any, overContainer: string, columns: any[]) => void;
     handleClick: (resource: any) => void;

@@ -131,7 +131,7 @@ var sx = {
         p: 4,
         transition: 'box-shadow 0.3s',
         '&:hover': {
-            boxShadow: 2
-        }
-    }
+            boxShadow: 2,
+        },
+    },
 };

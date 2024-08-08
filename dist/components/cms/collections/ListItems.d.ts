@@ -1,10 +1,10 @@
 import React from 'react';
-import { ActionType, DisplayFieldType } from '../../../types';
+import { ButtonType, DisplayFieldType } from '../../../types';
 export type ListItemsProps = {
     url: string;
     href?: string;
     style: 'list' | 'avatar' | 'card' | 'cover' | 'text';
-    actions: ActionType[];
+    buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     handleClick?: (resource: any) => void;
     enableGradient?: boolean;

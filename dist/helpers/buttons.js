@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildActions = void 0;
 var buildActions = function (_a) {
-    var enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, actions = _a.actions;
+    var enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, buttons = _a.buttons;
     var EDIT_ACTION = {
         label: 'Edit',
         color: 'secondary',
@@ -16,8 +16,8 @@ var buildActions = function (_a) {
         onClick: handleDelete,
     };
     var newActions = [];
-    if (actions) {
-        newActions = newActions.concat(actions);
+    if (buttons) {
+        newActions = newActions.concat(buttons);
     }
     if (enableEdit && handleEdit) {
         //@ts-ignore

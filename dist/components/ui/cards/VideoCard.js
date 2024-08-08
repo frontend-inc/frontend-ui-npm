@@ -10,19 +10,19 @@ var helpers_1 = require("../../../helpers");
 var VideoCard = function (props) {
     var _a = props || {}, resource = _a.resource, handleClick = _a.handleClick, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, _b = _a.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = _a.enableOverlay, enableOverlay = _c === void 0 ? false : _c, _d = _a.enableFavorites, enableFavorites = _d === void 0 ? false : _d;
     var _e = resource || {}, title = _e.title, image = _e.image;
-    return (react_1.default.createElement(__1.LightDarkMode, { mode: 'dark' },
+    return (react_1.default.createElement(__1.LightDarkMode, { mode: "dark" },
         react_1.default.createElement(material_1.Box, { sx: sx.root },
             react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleClick },
                 react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: 360, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             react_1.default.createElement(material_1.IconButton, { sx: sx.playIcon, onClick: handleClick },
                 react_1.default.createElement(__1.Icon, { name: "Play", color: "common.white", size: 20 })),
-            react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            react_1.default.createElement(material_1.Box, { sx: sx.buttons },
                 enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                react_1.default.createElement(__1.Actions, { resource: resource, numVisible: 0, actions: (0, helpers_1.buildActions)({
+                react_1.default.createElement(__1.Actions, { resource: resource, numVisible: 0, buttons: (0, helpers_1.buildActions)({
                         enableEdit: enableEdit,
                         enableDelete: enableDelete,
                         handleEdit: handleEdit,
-                        handleDelete: handleDelete
+                        handleDelete: handleDelete,
                     }) })),
             react_1.default.createElement(material_1.Box, { sx: sx.userCard }, (resource === null || resource === void 0 ? void 0 : resource.user) && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))));
 };
@@ -49,7 +49,7 @@ var sx = {
             background: 'linear-gradient(to top, rgb(0,0,0,0.5), transparent)',
         },
     },
-    actions: {
+    buttons: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-end',

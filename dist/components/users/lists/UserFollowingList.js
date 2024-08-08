@@ -12,7 +12,7 @@ var UserFollowingList = function (props) {
             size: 72,
             displayFields: displayFields,
             socialFields: socialFields,
-            enableFollowers: enableFollowers
+            enableFollowers: enableFollowers,
         }, sortOptions: [
             { label: 'Username', name: 'username' },
             { label: 'First name', name: 'first_name' },

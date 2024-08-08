@@ -25,9 +25,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
-var material_1 = require("@mui/material");
 var router_1 = require("next/router");
 var context_1 = require("../../../context");
+var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var Collections = function (props) {
     var href = props.href, _a = props.enableGradient, enableGradient = _a === void 0 ? false : _a, _b = props.enableOverlay, enableOverlay = _b === void 0 ? false : _b;
@@ -46,11 +46,18 @@ var Collections = function (props) {
     (0, react_1.useEffect)(function () {
         findCollections();
     }, []);
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root }, collections === null || collections === void 0 ? void 0 : collections.map(function (collection, index) { return (react_1.default.createElement(components_1.CollectionCard, { key: index, collection: collection, handleClick: function () { return handleClick(collection); }, enableGradient: enableGradient, enableOverlay: enableOverlay })); })));
+    return (react_1.default.createElement(material_1.Box, { sx: sx.grid }, collections === null || collections === void 0 ? void 0 : collections.map(function (collection, index) { return (react_1.default.createElement(components_1.CollectionCard, { key: index, collection: collection, handleClick: function () { return handleClick(collection); }, enableGradient: enableGradient, enableOverlay: enableOverlay })); })));
 };
 exports.default = Collections;
 var sx = {
-    root: {
+    grid: {
         width: '100%',
+        display: 'grid',
+        gridTemplateColumns: {
+            md: '1fr 1fr 1fr',
+            xs: '1fr',
+        },
+        gap: '16px',
+        pb: 1,
     },
 };

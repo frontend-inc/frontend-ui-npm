@@ -58,9 +58,11 @@ var MultipleChoiceInput = function (props) {
     }, [selected]);
     return (react_1.default.createElement(material_1.Stack, { sx: sx.stack, direction: direction, spacing: 1 },
         react_1.default.createElement(material_1.Typography, { variant: "caption", sx: sx.label, gutterBottom: true }, label),
-        layout === 'list' && (react_1.default.createElement(material_1.List, { disablePadding: true, sx: sx.list }, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement(components_1.SelectableListItem, { key: idx, title: option.label, icon: option.icon, selected: Array.isArray(selected) && selected.find(function (i) { return i === option.value; }), handleClick: function () { return handleSelect(option === null || option === void 0 ? void 0 : option.value); } })); }))),
+        layout === 'list' && (react_1.default.createElement(material_1.List, { disablePadding: true, sx: sx.list }, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement(components_1.SelectableListItem, { key: idx, title: option.label, icon: option.icon, selected: Array.isArray(selected) &&
+                selected.find(function (i) { return i === option.value; }), handleClick: function () { return handleSelect(option === null || option === void 0 ? void 0 : option.value); } })); }))),
         layout == 'grid' && (react_1.default.createElement(material_1.Box, { sx: sx.grid }, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement(material_1.Box, { sx: sx.item, key: idx },
-            react_1.default.createElement(SelectableCardItem_1.default, { title: option.label, image: option.image, description: option.description, selected: Array.isArray(selected) && selected.find(function (i) { return i === option.value; }), handleClick: function () { return handleSelect(option === null || option === void 0 ? void 0 : option.value); } }))); })))));
+            react_1.default.createElement(SelectableCardItem_1.default, { title: option.label, image: option.image, description: option.description, selected: Array.isArray(selected) &&
+                    selected.find(function (i) { return i === option.value; }), handleClick: function () { return handleSelect(option === null || option === void 0 ? void 0 : option.value); } }))); })))));
 };
 exports.default = MultipleChoiceInput;
 var sx = {

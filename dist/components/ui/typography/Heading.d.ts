@@ -1,7 +1,7 @@
 import React from 'react';
 import { TypographyVariantsType } from '../../../types';
 type HeadingProps = {
-    actions?: React.ReactNode;
+    buttons?: React.ReactNode;
     label?: string;
     title?: string;
     description?: string;

@@ -18,12 +18,12 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ChipCard = function (props) {
-    var resource = props.resource, actions = props.actions, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, handleClick = props.handleClick, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, _d = props.enableUsers, enableUsers = _d === void 0 ? false : _d, _e = props.enableFavorites, enableFavorites = _e === void 0 ? false : _e, _f = props.enableRatings, enableRatings = _f === void 0 ? false : _f;
+    var resource = props.resource, buttons = props.buttons, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, handleClick = props.handleClick, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, _d = props.enableUsers, enableUsers = _d === void 0 ? false : _d, _e = props.enableFavorites, enableFavorites = _e === void 0 ? false : _e, _f = props.enableRatings, enableRatings = _f === void 0 ? false : _f;
     var _g = resource || {}, title = _g.title, image = _g.image;
     return (react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: sx.root },
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.actions },
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.buttons },
                 enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                react_1.default.createElement(__1.Actions, { numVisible: 0, actions: actions, resource: resource })) },
+                react_1.default.createElement(__1.Actions, { numVisible: 0, buttons: buttons, resource: resource })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
                 image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: image === null || image === void 0 ? void 0 : image.url, alt: title },
@@ -88,7 +88,7 @@ var sx = {
         height: '48px',
         width: '48px',
     },
-    actions: {
+    buttons: {
         px: 1,
         alignItems: 'center',
         justifyContent: 'center',

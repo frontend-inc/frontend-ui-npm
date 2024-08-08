@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ShowSnippet = function (props) {
-    var _a = props || {}, resource = _a.resource, url = _a.url, _b = _a.actions, actions = _b === void 0 ? [] : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing;
+    var _a = props || {}, resource = _a.resource, url = _a.url, _b = _a.buttons, buttons = _b === void 0 ? [] : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing;
     var _d = resource || {}, image = _d.image, label = _d.label, title = _d.title;
     if (!resource)
         return null;
@@ -52,7 +52,7 @@ var sx = {
         borderRadius: function (theme) {
             return "".concat(theme.shape.borderRadius, "px ").concat(theme.shape.borderRadius, "px 0 0");
         },
-        overflow: 'hidden'
+        overflow: 'hidden',
     },
     closeButton: {
         position: 'absolute',

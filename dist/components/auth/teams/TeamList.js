@@ -162,13 +162,13 @@ var TeamList = function (props) {
                 return (react_1.default.createElement(components_1.SelectableListItem, { key: team.id, selected: selected, avatar: react_1.default.createElement(components_1.TeamAvatar, { team: team }), title: team.name, handleClick: function () { return handleClick(team); }, handleEdit: selected ? function () { return handleEditClick(team); } : undefined, handleDelete: selected ? function () { return handleDeleteClick(team); } : undefined }));
             })),
             !(teams === null || teams === void 0 ? void 0 : teams.length) && (react_1.default.createElement(components_1.Placeholder, { icon: "Users", title: "No Teams", description: "Add a team to get started" })),
-            react_1.default.createElement(material_1.Box, { sx: sx.actions },
+            react_1.default.createElement(material_1.Box, { sx: sx.buttons },
                 react_1.default.createElement(material_1.Button, { variant: "contained", onClick: handleAddTeamClick }, "Add Team")))) : (react_1.default.createElement(components_1.TeamForm, { loading: loading, errors: errors, team: team, handleChange: handleChange, handleSubmit: handleSubmit, handleCancel: function () { return setIsEditing(false); }, handleSuccess: function () { return setIsEditing(false); }, handleDeleteImage: handleDeleteImage })),
         react_1.default.createElement(components_1.AlertModal, { open: openDeleteModal, title: "Delete Team", description: "Are you sure you want to delete this team?", handleConfirm: handleDelete, handleClose: function () { return setOpenDeleteModal(false); } })));
 };
 exports.default = TeamList;
 var sx = {
-    actions: {
+    buttons: {
         width: '100%',
         display: 'flex',
         justifyContent: 'flex-end',

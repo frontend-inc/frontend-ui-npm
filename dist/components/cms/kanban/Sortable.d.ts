@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionType, DisplayFieldType } from '../../../types';
+import { ButtonType, DisplayFieldType } from '../../../types';
 type SortableProps = {
     loading?: boolean;
     headers: {
@@ -7,7 +7,7 @@ type SortableProps = {
         value: string;
     }[];
     activeResource: any;
-    actions: ActionType[];
+    buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     handleClick: (resource: any) => void;
     handleDrop: (movedItem: any, overContainer: string, columns: any[]) => void;

@@ -72,14 +72,14 @@ var ReferenceInput = function (props) {
     var _b = props || {}, label = _b.label, _resource = _b.resource, url = _b.url, foreignUrl = _b.foreignUrl, contentType = _b.contentType;
     var _c = (0, frontend_js_1.useResource)({
         url: url,
-        name: 'document'
+        name: 'document',
     }), resource = _c.resource, setResource = _c.setResource, findOne = _c.findOne, addReferences = _c.addReferences, removeReferences = _c.removeReferences, updateReferencePositions = _c.updateReferencePositions;
     var handleReload = function () {
         findOne(_resource === null || _resource === void 0 ? void 0 : _resource.id);
     };
     var _d = (0, frontend_js_1.useResource)({
         url: foreignUrl,
-        name: 'document'
+        name: 'document',
     }), foreignResource = _d.resource, setForeignResource = _d.setResource;
     (0, react_1.useEffect)(function () {
         if (_resource) {
@@ -130,10 +130,10 @@ var ReferenceInput = function (props) {
     var references = (_a = resource === null || resource === void 0 ? void 0 : resource.references) === null || _a === void 0 ? void 0 : _a.filter(function (reference) { var _a; return ((_a = reference === null || reference === void 0 ? void 0 : reference.target) === null || _a === void 0 ? void 0 : _a.content_type) === contentType; });
     if (!(resource === null || resource === void 0 ? void 0 : resource.id))
         return null;
-    return (react_1.default.createElement(material_1.Stack, { direction: 'column', spacing: 0.5 },
+    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5 },
         react_1.default.createElement(components_1.InputLabel, { label: label }),
         react_1.default.createElement(SortableReferences_1.default, { references: references, handleDrop: handleDrop, handleEdit: handleEdit, handleDelete: handleDelete }),
-        react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleAddClick, variant: 'contained', color: 'secondary', startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20, color: 'secondary.contrastText' }) },
+        react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleAddClick, variant: "contained", color: "secondary", startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20, color: "secondary.contrastText" }) },
             "Add ",
             contentType),
         react_1.default.createElement(components_1.RemoteFormModal, { open: open, handleClose: function () { return setOpen(false); }, url: foreignUrl, resource: foreignResource, handleSuccess: handleSuccess })));

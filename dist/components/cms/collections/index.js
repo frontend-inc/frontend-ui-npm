@@ -38,7 +38,7 @@ var VideoList_1 = require("./VideoList");
 Object.defineProperty(exports, "VideoList", { enumerable: true, get: function () { return __importDefault(VideoList_1).default; } });
 var VideoListItems_1 = require("./VideoListItems");
 Object.defineProperty(exports, "VideoListItems", { enumerable: true, get: function () { return __importDefault(VideoListItems_1).default; } });
-// Modals 
+// Modals
 var ShowModal_1 = require("../modals/ShowModal");
 Object.defineProperty(exports, "ShowModal", { enumerable: true, get: function () { return __importDefault(ShowModal_1).default; } });
 var ShowImageModal_1 = require("../modals/ShowImageModal");

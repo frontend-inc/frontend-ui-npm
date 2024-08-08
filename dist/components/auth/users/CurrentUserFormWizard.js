@@ -173,7 +173,7 @@ var CurrentUserFormWizard = function (props) {
         }
     }, [currentUser]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Button, { onClick: handleStartClick, variant: 'contained', color: 'primary', size: 'large', sx: sx.button }, buttonText),
+        react_1.default.createElement(material_1.Button, { onClick: handleStartClick, variant: "contained", color: "primary", size: "large", sx: sx.button }, buttonText),
         react_1.default.createElement(__1.Modal, { fullScreen: true, disablePadding: true, open: open, handleClose: function () { return setOpen(false); } },
             react_1.default.createElement(FormWizardProgress_1.default, { currentStep: currentStep, totalSteps: totalSteps }),
             react_1.default.createElement(material_1.Box, { sx: sx.formContainer },
@@ -204,5 +204,5 @@ var sx = {
         width: '100%',
         maxWidth: '600px',
     },
-    button: {}
+    button: {},
 };

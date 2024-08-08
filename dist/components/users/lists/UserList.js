@@ -49,21 +49,21 @@ var UserList = function (props) {
                 label: 'City',
                 field: 'city',
                 variant: 'multiple_choice',
-                options: constants_1.STATES
+                options: constants_1.STATES,
             },
             //@ts-ignore
             {
                 label: 'Country',
                 field: 'country',
                 variant: 'multiple_choice',
-                options: constants_1.COUNTRIES
-            }
+                options: constants_1.COUNTRIES,
+            },
         ];
     }
     return (react_1.default.createElement(__1.ResourceList, { dense: true, enableSearch: true, enableLoadMore: true, name: "user", url: '/api/v1/cms/users', handleClick: handleClick, component: UserListItem_1.default, itemProps: {
             size: 72,
             displayFields: displayFields,
-            socialFields: socialFields
+            socialFields: socialFields,
         }, filterOptions: filterOptions, sortOptions: [
             { label: 'Username', name: 'username' },
             { label: 'First name', name: 'first_name' },

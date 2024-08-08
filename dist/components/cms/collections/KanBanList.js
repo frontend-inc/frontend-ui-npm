@@ -18,6 +18,6 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var KanBanListItems_1 = __importDefault(require("./KanBanListItems"));
 var KanBanList = function (props) {
-    return (react_1.default.createElement(__1.List, __assign({}, props, { enableSorting: false, list: KanBanListItems_1.default })));
+    return react_1.default.createElement(__1.List, __assign({}, props, { enableSorting: false, list: KanBanListItems_1.default }));
 };
 exports.default = KanBanList;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionType, DisplayFieldType, FormFieldType, QueryParamsType, SearchFilterOptionType, SortOptionType } from '../../../types';
+import { ButtonType, DisplayFieldType, FormFieldType, QueryParamsType, SearchFilterOptionType, SortOptionType } from '../../../types';
 export type ListProps = {
     url: string;
     name: string;
@@ -7,7 +7,7 @@ export type ListProps = {
     style: 'avatar' | 'card' | 'list' | 'cover';
     resource?: any;
     fields: FormFieldType[];
-    actions: ActionType[];
+    buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     filterOptions: SearchFilterOptionType[];
     sortOptions: SortOptionType[];

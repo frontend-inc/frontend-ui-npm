@@ -43,7 +43,7 @@ var router_1 = require("next/router");
 var components_1 = require("../../../components");
 var Card = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, ref = _a.ref, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? 240 : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableComments, enableComments = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = _a.enableLikes, enableLikes = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j;
+    var _a = props || {}, ref = _a.ref, buttons = _a.buttons, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? 240 : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableComments, enableComments = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = _a.enableLikes, enableLikes = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j;
     var _k = resource || {}, label = _k.label, title = _k.title, image = _k.image;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
@@ -65,7 +65,7 @@ var Card = function (props) {
                 react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
             react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "space-between" },
                 react_1.default.createElement(__1.SocialActions, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
-                (actions === null || actions === void 0 ? void 0 : actions.length) > 0 && (react_1.default.createElement(components_1.Actions, { numVisible: 0, actions: actions, resource: resource }))))));
+                (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(components_1.Actions, { numVisible: 0, buttons: buttons, resource: resource }))))));
 };
 exports.default = Card;
 var sx = {
@@ -103,7 +103,7 @@ var sx = {
     },
     cardHeader: {
         p: 1,
-        minHeight: 36
+        minHeight: 36,
     },
     cardHeaderBorder: {
         px: 1,
@@ -115,7 +115,7 @@ var sx = {
         height: '100%',
         justifyContent: 'space-between',
         alignItems: 'space-between',
-        bgcolor: 'background.default'
+        bgcolor: 'background.default',
     },
     content: {
         height: '100%',
@@ -123,5 +123,5 @@ var sx = {
     title: {
         width: '100%',
     },
-    user: {}
+    user: {},
 };

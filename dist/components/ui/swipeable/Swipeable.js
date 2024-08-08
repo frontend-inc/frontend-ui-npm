@@ -59,7 +59,7 @@ var Swipeable = function (props) {
         : react_swipeable_views_1.default;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(SwipeableComponent, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true }, children),
-        enableArrows && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
+        enableArrows && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
             react_1.default.createElement(material_1.IconButton, { onClick: handlePrev },
                 react_1.default.createElement(__1.Icon, { name: "ChevronLeft", size: 32 })),
             react_1.default.createElement(material_1.IconButton, { onClick: handleNext },
@@ -71,7 +71,7 @@ var sx = {
         width: '100%',
         position: 'relative',
     },
-    actions: {
+    buttons: {
         position: 'absolute',
         top: '50%',
         transform: 'translateY(-50%)',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionType } from '../../../types';
+import { ButtonType } from '../../../types';
 export type PageHeaderProps = {
     label?: string;
     title?: string;
@@ -9,7 +9,7 @@ export type PageHeaderProps = {
         path: string;
     }[];
     maxLinks?: number;
-    actions: ActionType[];
+    buttons: ButtonType[];
     resource?: any;
     enableBorder?: boolean;
 };

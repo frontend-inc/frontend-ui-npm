@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InputLabel = exports.DropZone = exports.TabsInput = exports.SearchInput = exports.SwitchInput = exports.SelectInput = exports.NoSpaceInput = exports.ReferenceInput = exports.RatingInput = exports.RadioInput = exports.TextInput = exports.PriceRangeInput = exports.NumberRangeInput = exports.NumberSliderInput = exports.JsonArrayInput = exports.JSONInput = exports.ImageInput = exports.HelperText = exports.FileInput = exports.ErrorInput = exports.ErrorText = exports.EditableTextInput = exports.EditableTypography = exports.DateInput = exports.ColorInput = exports.CheckboxInput = exports.CheckboxGroupInput = exports.BooleanInput = exports.AttachmentInput = exports.ArrayListInput = exports.ArrayInput = exports.AutocompleteInput = void 0;
+exports.InputLabel = exports.DropZone = exports.URLInput = exports.TabsInput = exports.SearchInput = exports.SwitchInput = exports.SelectInput = exports.NoSpaceInput = exports.ReferenceInput = exports.RatingInput = exports.RadioInput = exports.TextInput = exports.PriceRangeInput = exports.PhoneInput = exports.NumberRangeInput = exports.NumberSliderInput = exports.JsonArrayInput = exports.JSONInput = exports.ImageInput = exports.HelperText = exports.FileInput = exports.EmailInput = exports.ErrorInput = exports.ErrorText = exports.EditableTextInput = exports.EditableTypography = exports.DateInput = exports.ColorInput = exports.CheckboxInput = exports.CheckboxGroupInput = exports.BooleanInput = exports.AttachmentInput = exports.ArrayListInput = exports.ArrayInput = exports.AutocompleteInput = void 0;
 // Inputs
 var AutocompleteInput_1 = require("./AutocompleteInput");
 Object.defineProperty(exports, "AutocompleteInput", { enumerable: true, get: function () { return __importDefault(AutocompleteInput_1).default; } });
@@ -31,6 +31,8 @@ var ErrorText_1 = require("./helpers/ErrorText");
 Object.defineProperty(exports, "ErrorText", { enumerable: true, get: function () { return __importDefault(ErrorText_1).default; } });
 var ErrorInput_1 = require("./ErrorInput");
 Object.defineProperty(exports, "ErrorInput", { enumerable: true, get: function () { return __importDefault(ErrorInput_1).default; } });
+var EmailInput_1 = require("./EmailInput");
+Object.defineProperty(exports, "EmailInput", { enumerable: true, get: function () { return __importDefault(EmailInput_1).default; } });
 var FileInput_1 = require("./FileInput");
 Object.defineProperty(exports, "FileInput", { enumerable: true, get: function () { return __importDefault(FileInput_1).default; } });
 var HelperText_1 = require("./helpers/HelperText");
@@ -45,6 +47,8 @@ var NumberSliderInput_1 = require("./NumberSliderInput");
 Object.defineProperty(exports, "NumberSliderInput", { enumerable: true, get: function () { return __importDefault(NumberSliderInput_1).default; } });
 var NumberRangeInput_1 = require("./NumberRangeInput");
 Object.defineProperty(exports, "NumberRangeInput", { enumerable: true, get: function () { return __importDefault(NumberRangeInput_1).default; } });
+var PhoneInput_1 = require("./PhoneInput");
+Object.defineProperty(exports, "PhoneInput", { enumerable: true, get: function () { return __importDefault(PhoneInput_1).default; } });
 var PriceRangeInput_1 = require("./PriceRangeInput");
 Object.defineProperty(exports, "PriceRangeInput", { enumerable: true, get: function () { return __importDefault(PriceRangeInput_1).default; } });
 var TextInput_1 = require("./TextInput");
@@ -65,6 +69,8 @@ var SearchInput_1 = require("./SearchInput");
 Object.defineProperty(exports, "SearchInput", { enumerable: true, get: function () { return __importDefault(SearchInput_1).default; } });
 var TabsInput_1 = require("./TabsInput");
 Object.defineProperty(exports, "TabsInput", { enumerable: true, get: function () { return __importDefault(TabsInput_1).default; } });
+var URLInput_1 = require("./URLInput");
+Object.defineProperty(exports, "URLInput", { enumerable: true, get: function () { return __importDefault(URLInput_1).default; } });
 // Helpers
 var DropZone_1 = require("./helpers/DropZone");
 Object.defineProperty(exports, "DropZone", { enumerable: true, get: function () { return __importDefault(DropZone_1).default; } });

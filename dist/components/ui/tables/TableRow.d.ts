@@ -6,12 +6,12 @@ type TableRowProps = {
     enableDelete?: boolean;
     enableShow?: boolean;
     enableSelect?: boolean;
-    handleClick: (value: any, row: any, field: any) => void;
-    handleShow: (resource: any) => void;
-    handleEdit: (item: any) => void;
-    handleDelete: (item: any) => void;
     selectedIds?: Array<any>;
-    handleSelect: (item: any) => void;
+    handleClick?: (value: any, row: any, field: any) => void;
+    handleShow?: (resource: any) => void;
+    handleEdit?: (item: any) => void;
+    handleDelete?: (item: any) => void;
+    handleSelect?: (item: any) => void;
 };
 declare const TableRow: React.FC<TableRowProps>;
 export default TableRow;

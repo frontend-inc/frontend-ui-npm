@@ -83,7 +83,7 @@ var DataTableList = function (props) {
     var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.loading, resources = _a.resources, findMany = _a.findMany, paginate = _a.paginate, query = _a.query, page = _a.page, perPage = _a.perPage, numPages = _a.numPages, totalCount = _a.totalCount;
     var _b = props || {}, headers = _b.headers, href = _b.href, _c = _b.enableEdit, enableEdit = _c === void 0 ? false : _c, _d = _b.enableDelete, enableDelete = _d === void 0 ? false : _d, _e = _b.enableShow, enableShow = _e === void 0 ? false : _e;
     var handleCellClick = function (value, row, field) {
-        // Todo: manage cell actions
+        // Todo: manage cell buttons
     };
     var handleClick = function (resource) {
         if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {

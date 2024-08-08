@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActionType } from './actions';
+import { ButtonType } from './buttons';
 import { DisplayFieldType, FormFieldType } from './forms';
 export type HeadingProps = {
     label?: string;
@@ -17,7 +17,6 @@ export type SectionProps = {
     requireAuth?: boolean;
     requireTeam?: boolean;
     requirePaid?: boolean;
-    requireAdmin?: boolean;
 };
 export type FormProps = {
     fields: FormFieldType[];
@@ -31,7 +30,7 @@ export type ForeignProps = {
 };
 export type CardProps = {
     ref?: any;
-    actions: ActionType[];
+    buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     enableUsers?: boolean;
     enableComments?: boolean;

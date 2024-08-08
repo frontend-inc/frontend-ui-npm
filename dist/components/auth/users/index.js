@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CurrentUserEditModal = exports.CurrentUserFormWizard = exports.CurrentUserForm = exports.CurrentUserDetails = exports.CurrentUser = void 0;
-// Users 
+// Users
 var CurrentUser_1 = require("./CurrentUser");
 Object.defineProperty(exports, "CurrentUser", { enumerable: true, get: function () { return __importDefault(CurrentUser_1).default; } });
 var CurrentUserDetails_1 = require("./CurrentUserDetails");

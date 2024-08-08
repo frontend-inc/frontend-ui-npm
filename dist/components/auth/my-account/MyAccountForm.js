@@ -20,12 +20,16 @@ var MyAccountForm = function (props) {
     var loading = props.loading, errors = props.errors, user = props.user, _a = props.metafields, metafields = _a === void 0 ? [] : _a, handleSubmit = props.handleSubmit, handleChange = props.handleChange, handleLogout = props.handleLogout, handleDeleteAvatar = props.handleDeleteAvatar;
     var formFields = constants_1.USER_FORM_FIELDS;
     formFields = __spreadArray(__spreadArray([], formFields, true), [
-        { label: 'Accept email marketing', name: 'accepts_marketing', variant: 'boolean' },
+        {
+            label: 'Accept email marketing',
+            name: 'accepts_marketing',
+            variant: 'boolean',
+        },
     ], false);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(components_1.FormFields, { loading: loading, errors: errors, 
-            //@ts-ignore 
-            fields: formFields, resource: user, handleChange: handleChange, handleRemove: handleDeleteAvatar, handleSubmit: handleSubmit, buttonText: 'Save' }),
+            //@ts-ignore
+            fields: formFields, resource: user, handleChange: handleChange, handleRemove: handleDeleteAvatar, handleSubmit: handleSubmit, buttonText: "Save" }),
         react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleLogout }, "Logout")));
 };
 exports.default = MyAccountForm;

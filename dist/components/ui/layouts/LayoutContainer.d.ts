@@ -5,14 +5,14 @@ type LayoutContainerProps = {
     children: React.ReactNode;
     header?: React.ReactNode;
     footer?: React.ReactNode;
-    enableSideNav?: boolean;
+    sideNav?: boolean;
     notifications: NotificationType[];
     offsetY?: number;
     offsetX?: number;
+    roles?: string[];
     requireAuth?: boolean;
     requireTeam?: boolean;
     requirePaid?: boolean;
-    requireAdmin?: boolean;
 };
 declare const LayoutContainer: React.FC<LayoutContainerProps>;
 export default LayoutContainer;

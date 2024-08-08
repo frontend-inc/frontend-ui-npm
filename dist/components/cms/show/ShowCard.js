@@ -8,16 +8,16 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
 var ShowCard = function (props) {
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
+    var _a = props || {}, buttons = _a.buttons, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
     var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
     if (!resource)
         return null;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2 },
-        (actions || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
-            react_1.default.createElement(__1.Actions, { actions: (0, helpers_1.buildActions)({
+        (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
+            react_1.default.createElement(__1.Actions, { buttons: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
-                    actions: actions,
+                    buttons: buttons,
                 }), justifyContent: "flex-end", resource: resource }))),
         react_1.default.createElement(material_1.Box, { sx: sx.root },
             react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: {
@@ -84,7 +84,7 @@ var sx = {
     caption: {
         color: 'text.secondary',
     },
-    actions: {
+    buttons: {
         width: '100%',
     },
     imageContainer: {

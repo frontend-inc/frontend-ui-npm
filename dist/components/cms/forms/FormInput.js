@@ -23,7 +23,9 @@ var FormInput = function (props) {
         array: components_1.ArrayInput,
         string: components_1.TextInput,
         file: components_1.AttachmentInput,
-        url: components_1.TextInput,
+        email: components_1.EmailInput,
+        phone: components_1.PhoneInput,
+        url: components_1.URLInput,
         text: components_1.TextInput,
         nospace: components_1.NoSpaceInput,
         location: components_1.LocationInput,
@@ -43,7 +45,7 @@ var FormInput = function (props) {
         autosuggest: {
             url: url,
             displayField: displayField,
-            query: query
+            defaultQuery: query,
         },
         text: {
             multiline: true,
@@ -53,7 +55,7 @@ var FormInput = function (props) {
             // Handle both array of strings and array of objects
             options: options === null || options === void 0 ? void 0 : options.map(function (option) { return ({
                 label: option.label || option,
-                value: option.value || option
+                value: option.value || option,
             }); }),
         },
         number: {
@@ -83,8 +85,8 @@ var FormInput = function (props) {
             url: url,
             foreignUrl: foreignUrl,
             contentType: contentType,
-            fields: fields
-        }
+            fields: fields,
+        },
     };
     var InputComponent = componentMapper[variant] || components_1.TextInput;
     return (react_1.default.createElement(InputComponent, __assign({ errors: errors, label: label, name: name, value: value || '', handleChange: handleChange, placeholder: placeholder }, inputProps[variant])));

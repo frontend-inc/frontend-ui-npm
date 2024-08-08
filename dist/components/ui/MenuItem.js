@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var MenuItem = function (props) {
-    var handleClick = props.handleClick, _a = props.active, active = _a === void 0 ? false : _a, _b = props.depth, depth = _b === void 0 ? 0 : _b, open = props.open, _c = props.expandable, expandable = _c === void 0 ? false : _c, label = props.label, icon = props.icon;
+    var handleClick = props.handleClick, _a = props.active, active = _a === void 0 ? false : _a, _b = props.depth, depth = _b === void 0 ? 0 : _b, label = props.label, icon = props.icon;
     var paddingLeft = 18;
     if (depth > 0) {
         paddingLeft = 42 + 8 * depth;

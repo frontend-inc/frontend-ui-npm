@@ -174,7 +174,7 @@ var AuthModal = function (props) {
             setTab(0);
         }
     }, [authOpen]);
-    return (react_1.default.createElement(__1.Modal, { open: authOpen, handleClose: function () { return setAuthOpen(false); }, disablePadding: true },
+    return (react_1.default.createElement(__1.Modal, { open: authOpen, handleClose: function () { return setAuthOpen(false); } },
         react_1.default.createElement(material_1.Box, { sx: sx.tabsContainer },
             react_1.default.createElement(material_1.Tabs, { value: tab, onChange: handleTabChange },
                 react_1.default.createElement(material_1.Tab, { label: "Login", value: 0 }),

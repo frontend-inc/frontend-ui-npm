@@ -1,6 +1,6 @@
 import React from 'react';
 import { DisplayFieldType } from '../../../types';
-export type ResourceProps = {
+export type ResourceListItemProps = {
     avatar?: React.ReactNode;
     icon?: string;
     color?: string;
@@ -20,5 +20,5 @@ export type ResourceProps = {
     enableBorder?: boolean;
     displayFields?: DisplayFieldType[];
 };
-declare const Resource: React.FC<ResourceProps>;
-export default Resource;
+declare const ResourceListItem: React.FC<ResourceListItemProps>;
+export default ResourceListItem;

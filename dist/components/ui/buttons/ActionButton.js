@@ -28,18 +28,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
-var components_1 = require("../../../components");
+var __1 = require("../..");
 var ActionButton = function (props) {
     var action = props.action, resource = props.resource, rest = __rest(props, ["action", "resource"]);
     var _a = action || {}, icon = _a.icon, _b = _a.label, label = _b === void 0 ? 'View' : _b;
-    var handleClick = (0, hooks_1.useActions)({
+    var handleClick = (0, hooks_1.useButtons)({
         action: action,
         resource: resource,
     }).handleClick;
     var onClick = function (ev) {
         handleClick(ev);
     };
-    return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, startIcon: icon && (react_1.default.createElement(components_1.Icon, { name: icon, size: 20, color: (action === null || action === void 0 ? void 0 : action.color) == 'primary'
+    return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, startIcon: icon && (react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: (action === null || action === void 0 ? void 0 : action.color) == 'primary'
                 ? 'primary.contrastText'
                 : 'secondary.contrastText' })), onClick: onClick, variant: (action === null || action === void 0 ? void 0 : action.variant) || 'contained', color: (action === null || action === void 0 ? void 0 : action.color) || 'secondary' }, rest), label));
 };

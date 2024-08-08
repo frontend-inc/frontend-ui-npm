@@ -22,5 +22,6 @@ var AddonStripeBuyButton_1 = require("./AddonStripeBuyButton");
 Object.defineProperty(exports, "AddonStripeBuyButton", { enumerable: true, get: function () { return __importDefault(AddonStripeBuyButton_1).default; } });
 var AddonStripePricingTable_1 = require("./AddonStripePricingTable");
 Object.defineProperty(exports, "AddonStripePricingTable", { enumerable: true, get: function () { return __importDefault(AddonStripePricingTable_1).default; } });
+//export { default as AddonSwirlVideos } from './AddonSwirlVideos'
 var AddonTypeform_1 = require("./AddonTypeform");
 Object.defineProperty(exports, "AddonTypeform", { enumerable: true, get: function () { return __importDefault(AddonTypeform_1).default; } });

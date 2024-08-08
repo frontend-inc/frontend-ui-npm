@@ -108,9 +108,9 @@ var sx = {
     },
     content: {
         pb: 2,
-        px: 2
+        px: 2,
     },
     contentDisablePadding: {
-        p: 0
-    }
+        p: 0,
+    },
 };

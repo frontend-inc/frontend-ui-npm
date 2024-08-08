@@ -25,6 +25,7 @@ var OkendoScript_1 = require("./okendo/OkendoScript");
 Object.defineProperty(exports, "OkendoScript", { enumerable: true, get: function () { return __importDefault(OkendoScript_1).default; } });
 var RedditScript_1 = require("./reddit/RedditScript");
 Object.defineProperty(exports, "RedditScript", { enumerable: true, get: function () { return __importDefault(RedditScript_1).default; } });
+//export { default as SwirlVideos } from './swirl/SwirlVideos'
 var VisualWebsiteOptimizerScript_1 = require("./visual-website-optimizer/VisualWebsiteOptimizerScript");
 Object.defineProperty(exports, "VisualWebsiteOptimizerScript", { enumerable: true, get: function () { return __importDefault(VisualWebsiteOptimizerScript_1).default; } });
 //Embeds

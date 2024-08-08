@@ -64,7 +64,7 @@ var FeaturedCard = function (props) {
                 react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.textContent },
                     react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: 'subtitle1' }, title),
                     react_1.default.createElement(material_1.Typography, { variant: "body1", sx: sx.description }, (0, helpers_1.truncate)(description, 160)),
-                    buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.actions },
+                    buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
                         react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))))));
 };
 exports.default = FeaturedCard;
@@ -73,10 +73,6 @@ var sx = {
         width: '100%',
         display: 'flex',
         borderRadius: 1,
-        transition: 'box-shadow 0.3s',
-        '&:hover': {
-            boxShadow: 2,
-        },
     },
     imageContainer: {
         width: '100%',
@@ -100,7 +96,7 @@ var sx = {
             sm: '55%',
         },
     },
-    actions: {
+    buttons: {
         mt: 2,
         display: 'flex',
         justifyContent: {

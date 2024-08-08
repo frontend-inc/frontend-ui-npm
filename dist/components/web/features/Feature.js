@@ -34,10 +34,6 @@ var sx = {
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 1,
-        transition: 'box-shadow 0.3s',
-        '&:hover': {
-            boxShadow: 2,
-        },
     },
     avatar: {
         bgcolor: 'primary.main',

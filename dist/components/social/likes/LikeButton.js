@@ -122,13 +122,9 @@ var LikeButton = function (props) {
     }, [currentUser, handle]);
     return (react_1.default.createElement(material_1.Box, null, variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
                 color: color,
-            } }, sx.icon), (liked && sx.iconLiked)) }, liked ?
-        react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" }) :
-        react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" }))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
+            } }, sx.icon), (liked && sx.iconLiked)) }, liked ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
                 color: color,
-            } }, sx.button), (liked && sx.buttonLiked)) }, liked ?
-        react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" }) :
-        react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))));
+            } }, sx.button), (liked && sx.buttonLiked)) }, liked ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" }))))));
 };
 exports.default = LikeButton;
 var sx = {

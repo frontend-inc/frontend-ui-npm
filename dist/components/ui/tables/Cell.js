@@ -12,6 +12,8 @@ var Cell = function (props) {
         boolean: components_1.CellBoolean,
         date: components_1.CellDate,
         datetime: components_1.CellDate,
+        email: components_1.CellString,
+        phone: components_1.CellString,
         image: components_1.CellImage,
         video: components_1.CellVideo,
         json: components_1.CellJSON,

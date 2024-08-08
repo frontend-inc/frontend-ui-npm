@@ -170,5 +170,5 @@ var sx = {
     imageContainer: {
         borderRadius: 1,
         overflow: 'hidden',
-    }
+    },
 };

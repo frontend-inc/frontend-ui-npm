@@ -32,7 +32,7 @@ var router_1 = require("next/router");
 var __2 = require("../..");
 var TableCard = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, actions = _a.actions, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 100 : _c, handleClick = _a.handleClick, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableFavorites, enableFavorites = _f === void 0 ? false : _f, _g = _a.enableRatings, enableRatings = _g === void 0 ? false : _g, _h = _a.enableUsers, enableUsers = _h === void 0 ? false : _h;
+    var _a = props || {}, buttons = _a.buttons, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, _c = _a.height, height = _c === void 0 ? 100 : _c, handleClick = _a.handleClick, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableFavorites, enableFavorites = _f === void 0 ? false : _f, _g = _a.enableRatings, enableRatings = _g === void 0 ? false : _g, _h = _a.enableUsers, enableUsers = _h === void 0 ? false : _h;
     var router = (0, router_1.useRouter)();
     var _j = resource || {}, label = _j.label, title = _j.title, image = _j.image;
     var handleItemClick = function () {
@@ -59,7 +59,7 @@ var TableCard = function (props) {
                 react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))),
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
             enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-            react_1.default.createElement(__2.Actions, { numVisible: 0, actions: actions, resource: resource }))));
+            react_1.default.createElement(__2.Actions, { numVisible: 0, buttons: buttons, resource: resource }))));
 };
 exports.default = TableCard;
 var sx = {
@@ -133,11 +133,11 @@ var sx = {
     description: {
         maxWidth: '320px',
     },
-    actions: {
+    buttons: {
         display: 'flex',
         flexDirection: 'column',
     },
-    actionsBorder: {
+    buttonsBorder: {
         px: 1,
         pb: {
             sm: 0,

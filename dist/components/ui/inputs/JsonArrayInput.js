@@ -127,7 +127,7 @@ var JsonArrayInput = function (props) {
         react_1.default.createElement(components_1.SortableList, { droppableId: "json-array-".concat(name), handleDrop: handleDrop, items: items, renderItem: function (item, index) { return (react_1.default.createElement(JsonItem_1.default, { key: index, index: index, item: item, titleField: titleField, handleClick: handleEditClick, handleRemove: handleRemove })); } }),
         react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAddClick, startIcon: react_1.default.createElement(lucide_react_1.Plus, { size: 24 }) }, "Add")),
-        react_1.default.createElement(components_1.Drawer, { title: title, open: open, handleClose: closeMenu, actions: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit }, "Save") },
+        react_1.default.createElement(components_1.Drawer, { title: title, open: open, handleClose: closeMenu, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit }, "Save") },
             react_1.default.createElement(JsonForm_1.default, { index: currentIndex, item: activeItem, fields: fields, handleChange: handleInputChange, direction: "column" }))));
 };
 exports.default = JsonArrayInput;

@@ -56,7 +56,7 @@ var SocialCardButtons = function (props) {
 };
 exports.default = SocialCardButtons;
 var sx = {
-    actions: {
+    buttons: {
         alignItems: 'flex-end',
         justifyContent: 'space-between',
     },
