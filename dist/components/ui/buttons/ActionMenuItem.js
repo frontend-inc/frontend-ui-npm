@@ -29,10 +29,10 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var ActionMenuItem = function (props) {
-    var action = props.action, resource = props.resource, rest = __rest(props, ["action", "resource"]);
-    var _a = action || {}, icon = _a.icon, _b = _a.label, label = _b === void 0 ? 'View' : _b;
+    var button = props.button, resource = props.resource, rest = __rest(props, ["button", "resource"]);
+    var _a = button || {}, icon = _a.icon, _b = _a.label, label = _b === void 0 ? 'View' : _b;
     var handleClick = (0, hooks_1.useButtons)({
-        action: action,
+        button: button,
         resource: resource,
     }).handleClick;
     var onClick = function (ev) {

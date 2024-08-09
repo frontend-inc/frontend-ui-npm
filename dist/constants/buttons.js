@@ -1,11 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BUTTON_CMS_NAMES = exports.BUTTON_NAMES = void 0;
-exports.BUTTON_NAMES = [
+exports.BUTTON_TYPES_CMS = exports.BUTTON_TYPES = void 0;
+exports.BUTTON_TYPES = [
+    { value: 'action', label: 'Action' },
     { value: 'navigate', label: 'Go to page' },
     { value: 'url', label: 'Go to URL' },
 ];
-exports.BUTTON_CMS_NAMES = [
+exports.BUTTON_TYPES_CMS = [
+    { value: 'action', label: 'Action' },
     { value: 'navigate', label: 'Go to page' },
     { value: 'link', label: 'Go to link' },
     { value: 'stripe_payment_link', label: 'Stripe payment link' },

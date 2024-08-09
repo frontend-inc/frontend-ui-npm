@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonType } from '../../../types';
 type ActionProps = {
-    action: ButtonType;
+    button: ButtonType;
     resource: any;
     rest?: any;
 };

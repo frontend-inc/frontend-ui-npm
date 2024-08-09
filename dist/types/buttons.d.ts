@@ -1,9 +1,14 @@
-export type ActionNamesType = 'webhook' | 'navigate' | 'url' | 'page' | 'email' | 'sms' | 'phone' | 'copy' | 'download' | 'link' | 'print' | 'share' | 'click' | 'stripe_payment_link';
+export type ActionType = {
+    id: number;
+    label: string;
+    action_type: string;
+};
+export type ButtonTypeType = 'action' | 'navigate' | 'url' | 'page' | 'email' | 'sms' | 'phone' | 'copy' | 'download' | 'link' | 'stripe_payment_link';
 export type ButtonType = {
     id?: number;
     icon?: string;
     label: string;
-    name: ActionNamesType;
+    button_type: ButtonTypeType;
     color?: 'primary' | 'secondary';
     variant?: 'contained' | 'outlined' | 'text';
     page_id?: number;
@@ -12,6 +17,8 @@ export type ButtonType = {
     path?: string;
     onClick?: (ev: any) => void;
     fieldName?: string;
+    action_id?: number;
+    action?: ActionType;
     options?: {
         method: 'GET' | 'POST' | 'PUT' | 'DELETE';
         headers: Record<string, string>;

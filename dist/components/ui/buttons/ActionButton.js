@@ -30,18 +30,18 @@ var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
 var ActionButton = function (props) {
-    var action = props.action, resource = props.resource, rest = __rest(props, ["action", "resource"]);
-    var _a = action || {}, icon = _a.icon, _b = _a.label, label = _b === void 0 ? 'View' : _b;
+    var button = props.button, resource = props.resource, rest = __rest(props, ["button", "resource"]);
+    var _a = button || {}, icon = _a.icon, _b = _a.label, label = _b === void 0 ? 'View' : _b;
     var handleClick = (0, hooks_1.useButtons)({
-        action: action,
+        button: button,
         resource: resource,
     }).handleClick;
     var onClick = function (ev) {
         handleClick(ev);
     };
-    return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, startIcon: icon && (react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: (action === null || action === void 0 ? void 0 : action.color) == 'primary'
+    return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, startIcon: icon && (react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: (button === null || button === void 0 ? void 0 : button.color) == 'primary'
                 ? 'primary.contrastText'
-                : 'secondary.contrastText' })), onClick: onClick, variant: (action === null || action === void 0 ? void 0 : action.variant) || 'contained', color: (action === null || action === void 0 ? void 0 : action.color) || 'secondary' }, rest), label));
+                : 'secondary.contrastText' })), onClick: onClick, variant: (button === null || button === void 0 ? void 0 : button.variant) || 'contained', color: (button === null || button === void 0 ? void 0 : button.color) || 'secondary' }, rest), label));
 };
 exports.default = ActionButton;
 var sx = {

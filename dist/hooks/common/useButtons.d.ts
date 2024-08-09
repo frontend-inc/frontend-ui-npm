@@ -1,6 +1,6 @@
 import { ButtonType } from '../../types';
 type UseButtonParams = {
-    action: ButtonType;
+    button: ButtonType;
     resource?: any;
 };
 declare const useButtons: (params: UseButtonParams) => {
