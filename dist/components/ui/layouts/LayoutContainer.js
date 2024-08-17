@@ -55,7 +55,7 @@ var LayoutContainer = function (props) {
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (sideNav && sx.sideNav)) },
             header,
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (sideNav ? sx.contentSideNav : sx.contentTopNav)), (enableNotifications && sx.contentNotifications)) },
-                react_1.default.createElement(components_1.LayoutScroll, null,
+                react_1.default.createElement(components_1.AdminLayoutScroll, null,
                     react_1.default.createElement(components_1.AuthGuard, { roles: roles, requireAuth: requireAuth, requirePaid: requirePaid, requireTeam: requireTeam },
                         children,
                         footer))))));

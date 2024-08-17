@@ -23,7 +23,7 @@ var ChipCard = function (props) {
     return (react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: sx.root },
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.buttons },
                 enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                react_1.default.createElement(__1.Actions, { numVisible: 0, buttons: buttons, resource: resource })) },
+                react_1.default.createElement(__1.ActionButtons, { numVisible: 0, buttons: buttons, resource: resource })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
                 image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                     react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: image === null || image === void 0 ? void 0 : image.url, alt: title },

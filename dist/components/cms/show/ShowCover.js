@@ -13,9 +13,9 @@ var ShowCover = function (props) {
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
         react_1.default.createElement(__1.Cover, { image: image === null || image === void 0 ? void 0 : image.url, height: 400, title: title, enableOverlay: true }),
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
-            react_1.default.createElement(__1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
+            react_1.default.createElement(__1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
             (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
-                react_1.default.createElement(__1.Actions, { buttons: (0, helpers_1.buildActions)({
+                react_1.default.createElement(__1.ActionButtons, { buttons: (0, helpers_1.buildActions)({
                         enableEdit: enableEdit,
                         handleEdit: handleEdit,
                         buttons: buttons,

@@ -48,8 +48,8 @@ var __1 = require("..");
 var frontend_js_1 = require("frontend-js");
 var lodash_1 = require("lodash");
 var useButtons = function (params) {
-    var _a = (0, _1.useLoadingWrapper)(), loading = _a.loading, data = _a.data, errors = _a.errors, loadingWrapper = _a.loadingWrapper;
-    var _b = params || {}, button = _b.button, resource = _b.resource;
+    var _a = params || {}, button = _a.button, resource = _a.resource, user = _a.user;
+    var _b = (0, _1.useLoadingWrapper)(), loading = _b.loading, data = _b.data, errors = _b.errors, loadingWrapper = _b.loadingWrapper;
     var action_id = (button || {}).action_id;
     var showAlertSuccess = (0, __1.useAlerts)().showAlertSuccess;
     var api = (0, frontend_js_1.useApi)().api;
@@ -57,7 +57,7 @@ var useButtons = function (params) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var handleClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {
-        var value, _a, url, url_1;
+        var value, url, _a, url_1;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
@@ -67,78 +67,97 @@ var useButtons = function (params) {
                     _a = button === null || button === void 0 ? void 0 : button.button_type;
                     switch (_a) {
                         case 'navigate': return [3 /*break*/, 1];
-                        case 'copy': return [3 /*break*/, 2];
-                        case 'email': return [3 /*break*/, 3];
-                        case 'phone': return [3 /*break*/, 4];
-                        case 'sms': return [3 /*break*/, 5];
-                        case 'url': return [3 /*break*/, 6];
-                        case 'link': return [3 /*break*/, 7];
-                        case 'stripe_payment_link': return [3 /*break*/, 8];
-                        case 'download': return [3 /*break*/, 9];
-                        case 'action': return [3 /*break*/, 10];
+                        case 'navigate_user': return [3 /*break*/, 2];
+                        case 'navigate_cms': return [3 /*break*/, 3];
+                        case 'copy': return [3 /*break*/, 4];
+                        case 'email': return [3 /*break*/, 5];
+                        case 'phone': return [3 /*break*/, 6];
+                        case 'sms': return [3 /*break*/, 7];
+                        case 'click': return [3 /*break*/, 8];
+                        case 'url': return [3 /*break*/, 9];
+                        case 'link': return [3 /*break*/, 10];
+                        case 'stripe_payment_link': return [3 /*break*/, 11];
+                        case 'download': return [3 /*break*/, 12];
+                        case 'action': return [3 /*break*/, 13];
                     }
-                    return [3 /*break*/, 12];
+                    return [3 /*break*/, 15];
                 case 1:
                     url = "".concat(clientUrl).concat(button === null || button === void 0 ? void 0 : button.path);
+                    router.push(url);
+                    return [3 /*break*/, 16];
+                case 2:
+                    url = "".concat(clientUrl).concat(button === null || button === void 0 ? void 0 : button.path);
                     if (resource === null || resource === void 0 ? void 0 : resource.handle) {
-                        url = "".concat(clientUrl).concat(button === null || button === void 0 ? void 0 : button.path, "/").concat(resource.handle);
+                        url = "".concat(clientUrl).concat(button === null || button === void 0 ? void 0 : button.path, "/").concat(user.username);
                     }
                     router.push(url);
-                    return [3 /*break*/, 13];
-                case 2:
+                    return [3 /*break*/, 16];
+                case 3:
+                    url = "".concat(clientUrl).concat(button === null || button === void 0 ? void 0 : button.path);
+                    if (resource === null || resource === void 0 ? void 0 : resource.handle) {
+                        url = "".concat(clientUrl).concat(button === null || button === void 0 ? void 0 : button.path, "/").concat(resource === null || resource === void 0 ? void 0 : resource.handle);
+                    }
+                    router.push(url);
+                    return [3 /*break*/, 16];
+                case 4:
                     if (value) {
                         (0, copy_to_clipboard_1.default)(value);
                         showAlertSuccess('Copied to clipboard');
                     }
-                    return [3 /*break*/, 13];
-                case 3:
+                    return [3 /*break*/, 16];
+                case 5:
                     if (value) {
                         window.location.href = "mailto:".concat(value);
                     }
-                    return [3 /*break*/, 13];
-                case 4:
+                    return [3 /*break*/, 16];
+                case 6:
                     if (value) {
                         window.location.href = "tel:".concat(value);
                     }
-                    return [3 /*break*/, 13];
-                case 5:
+                    return [3 /*break*/, 16];
+                case 7:
                     if (value) {
                         window.location.href = "sms:".concat(value);
                     }
-                    return [3 /*break*/, 13];
-                case 6:
+                    return [3 /*break*/, 16];
+                case 8:
+                    if (button === null || button === void 0 ? void 0 : button.onClick) {
+                        button.onClick(resource);
+                    }
+                    return [3 /*break*/, 16];
+                case 9:
                     if (button === null || button === void 0 ? void 0 : button.path) {
                         window.open(button === null || button === void 0 ? void 0 : button.path, '_blank');
                     }
-                    return [3 /*break*/, 13];
-                case 7:
+                    return [3 /*break*/, 16];
+                case 10:
                     if (value) {
                         window.open(value, '_blank');
                     }
-                    return [3 /*break*/, 13];
-                case 8:
+                    return [3 /*break*/, 16];
+                case 11:
                     if (value) {
                         url_1 = "".concat(value, "?prefilled_email=").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.email, "&client_reference_id=").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.email);
                         window.open(url_1, '_blank');
                     }
-                    return [3 /*break*/, 13];
-                case 9:
+                    return [3 /*break*/, 16];
+                case 12:
                     if (value === null || value === void 0 ? void 0 : value.url) {
                         window.open(value.url, '_blank');
                     }
-                    return [3 /*break*/, 13];
-                case 10: return [4 /*yield*/, loadingWrapper(function () {
+                    return [3 /*break*/, 16];
+                case 13: return [4 /*yield*/, loadingWrapper(function () {
                         return api.post("/api/v1/actions/".concat(action_id, "/trigger"), {
                             app_action: {
                                 resource_id: resource === null || resource === void 0 ? void 0 : resource.id,
                             }
                         });
                     })];
-                case 11:
+                case 14:
                     _b.sent();
-                    return [3 /*break*/, 13];
-                case 12: return [3 /*break*/, 13];
-                case 13: return [2 /*return*/];
+                    return [3 /*break*/, 16];
+                case 15: return [3 /*break*/, 16];
+                case 16: return [2 /*return*/];
             }
         });
     }); };

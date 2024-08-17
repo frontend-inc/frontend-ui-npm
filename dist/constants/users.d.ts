@@ -6,23 +6,24 @@ export declare const USER_FORM_FIELDS: ({
     name: string;
     variant: string;
     label?: undefined;
-    placeholder?: undefined;
-    options?: undefined;
-    conditions?: undefined;
-    default?: undefined;
 } | {
     label: string;
     name: string;
     variant: string;
-    placeholder?: undefined;
-    options?: undefined;
-    conditions?: undefined;
-    default?: undefined;
-} | {
+})[];
+export declare const USER_ADDRESS_FIELDS: ({
     label: string;
     name: string;
     variant: string;
     placeholder: string;
+    options?: undefined;
+    conditions?: undefined;
+    default?: undefined;
+} | {
+    label: string;
+    name: string;
+    variant: string;
+    placeholder?: undefined;
     options?: undefined;
     conditions?: undefined;
     default?: undefined;

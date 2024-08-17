@@ -66,9 +66,7 @@ var TextInput = function (props) {
         }
     }, [debouncedText]);
     (0, react_1.useEffect)(function () {
-        if (value !== text) {
-            setText(value);
-        }
+        setText(value);
     }, [value]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, styles_1.sx.stack), (direction == 'row' && !multiline && styles_1.sx.stackVertical)), direction: direction, spacing: 0.5 },

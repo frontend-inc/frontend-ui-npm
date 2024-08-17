@@ -67,7 +67,7 @@ var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
-var MyAccountTabs_1 = __importDefault(require("./MyAccountTabs"));
+var MyAccountMenu_1 = __importDefault(require("./MyAccountMenu"));
 var material_1 = require("@mui/material");
 var MyAccountModal = function (props) {
     var _a = props || {}, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe, metafields = _a.metafields;
@@ -119,7 +119,8 @@ var MyAccountModal = function (props) {
     return (react_1.default.createElement(components_1.Modal, { disablePadding: true, open: myAccountOpen, handleClose: function () { return setMyAccountOpen(false); }, title: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
             ? "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name)
             : 'My Account' },
-        react_1.default.createElement(MyAccountTabs_1.default, { tab: currentTab, enableTeams: enableTeams, enableStripe: enableStripe, handleChange: handleTabChange }),
+        currentTab == null ? (react_1.default.createElement(MyAccountMenu_1.default, { tab: currentTab, enableTeams: enableTeams, enableStripe: enableStripe, handleChange: handleTabChange })) : (react_1.default.createElement(material_1.Box, { px: 1 },
+            react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", startIcon: react_1.default.createElement(components_1.Icon, { name: "ChevronLeft", color: 'text.primary', size: 32 }), onClick: function () { return setCurrentTab(null); } }, "Back"))),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
             currentTab == 0 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout, metafields: metafields })),
             currentTab == 1 && react_1.default.createElement(components_2.TeamList, null),
@@ -133,4 +134,14 @@ var sx = {
     content: {
         p: 2,
     },
+    button: {
+        color: 'text.primary',
+        bgcolor: 'background.paper',
+        boxShadow: 0,
+        '&:hover': {
+            color: 'text.primary',
+            boxShadow: 0,
+            bgcolor: 'background.paper',
+        }
+    }
 };

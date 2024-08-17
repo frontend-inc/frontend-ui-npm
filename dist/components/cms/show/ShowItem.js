@@ -17,7 +17,7 @@ var ShowItem = function (props) {
     if (handle == 'index')
         handle = undefined;
     var _a = props || {}, _b = _a.style, style = _b === void 0 ? 'article' : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, fieldName = _a.fieldName, buttons = _a.buttons, enableOverlay = _a.enableOverlay, enableEdit = _a.enableEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
-    var resource = (0, frontend_js_1.useResourceContext)().resource;
+    var _d = (0, frontend_js_1.useResourceContext)(), resource = _d.resource, openEdit = _d.openEdit;
     var components = {
         list: ShowList_1.default,
         cover: ShowCover_1.default,
@@ -26,7 +26,7 @@ var ShowItem = function (props) {
         youtube: ShowYouTube_1.default,
         vimeo: ShowVimeo_1.default,
     };
-    var Component = components[style];
+    var Component = components[style] || ShowList_1.default;
     var handleEdit = (0, hooks_1.useForms)().handleEdit;
     if (!(resource === null || resource === void 0 ? void 0 : resource.id))
         return null;

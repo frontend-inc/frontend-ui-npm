@@ -88,16 +88,6 @@ var Comments = function (props) {
         handle: handle,
     }), loading = _e.loading, errors = _e.errors, query = _e.query, comment = _e.comment, comments = _e.comments, setComment = _e.setComment, findComments = _e.findComments, handleChange = _e.handleChange, createComment = _e.createComment, deleteComment = _e.deleteComment, totalCount = _e.totalCount, page = _e.page, numPages = _e.numPages, loadMore = _e.loadMore;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
-    var handleToggleClick = function () {
-        if (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) {
-            setComment({});
-            setReply(!reply);
-            setOpenComment(!openComment);
-        }
-        else {
-            setAuthOpen(true);
-        }
-    };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -135,14 +125,14 @@ var Comments = function (props) {
         }
     }, [url, handle]);
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.commentHeader },
+        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.commentHeader },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "subtitle1" },
                 "Comments (",
                 totalCount,
-                ")"),
-            react_1.default.createElement(components_1.CommentReplyButton, { handleClick: handleToggleClick })),
-        react_1.default.createElement(material_1.Collapse, { in: openComment },
-            react_1.default.createElement(components_1.CommentForm, { pl: 0, errors: errors, loading: loading, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit })),
+                ")")),
+        react_1.default.createElement(components_1.AuthGuard, { requireAuth: true },
+            react_1.default.createElement(material_1.Collapse, { in: true },
+                react_1.default.createElement(components_1.CommentForm, { errors: errors, loading: loading, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit }))),
         react_1.default.createElement(material_1.List, { disablePadding: true }, comments === null || comments === void 0 ? void 0 : comments.map(function (comment, i) { return (react_1.default.createElement(components_1.Comment, { key: i, url: url, handle: handle, comment: comment, handleDelete: handleDeleteComment })); })),
         !loading && (comments === null || comments === void 0 ? void 0 : comments.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { enableBorder: true, icon: "MessageSquare", title: "There are no comments.", description: "Be the first to leave a comment." })),
         react_1.default.createElement(components_1.LoadMore, { loadMore: loadMore, page: page, numPages: numPages }),
@@ -154,7 +144,8 @@ var sx = {
         borderColor: 'divider',
     },
     commentHeader: {
-        alignItems: 'center',
+        width: '100%',
+        alignItems: 'flex-start',
         justifyContent: 'space-between',
     },
 };

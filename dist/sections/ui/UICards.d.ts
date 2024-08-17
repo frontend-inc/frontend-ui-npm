@@ -1,6 +1,6 @@
 import React from 'react';
-import { CardsProps } from '../../components/web/cards/Cards';
+import { SimpleCardsProps } from '../../components/web/cards/SimpleCards';
 import { SectionProps, HeadingProps } from '../../types';
-type UICardsProps = SectionProps & HeadingProps & CardsProps;
+type UICardsProps = SectionProps & HeadingProps & SimpleCardsProps;
 declare const UICards: React.FC<UICardsProps>;
 export default UICards;

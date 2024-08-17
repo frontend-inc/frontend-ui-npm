@@ -3,14 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SwipeableTestimonials = exports.TestimonialCard = exports.TestimonialsGrid = exports.Testimonials = exports.TabItem = exports.Tabs = exports.PriceTableCard = exports.PriceTable = exports.PageHeader = exports.Logos = exports.FeaturedCard = exports.Featured = exports.Features = exports.Feature = exports.CoverCarousel = exports.Cover = exports.CTA = exports.Cards = exports.AccordionItem = exports.Accordion = void 0;
+exports.SwipeableTestimonials = exports.SimpleCards = exports.SimpleCard = exports.TestimonialCard = exports.TestimonialsGrid = exports.Testimonials = exports.TabItem = exports.Tabs = exports.PriceTableCard = exports.PriceTable = exports.PageHeader = exports.Logos = exports.FeaturedCard = exports.Featured = exports.Features = exports.Feature = exports.CoverCarousel = exports.Cover = exports.CTA = exports.AccordionItem = exports.Accordion = void 0;
 // Web
 var Accordion_1 = require("./accordions/Accordion");
 Object.defineProperty(exports, "Accordion", { enumerable: true, get: function () { return __importDefault(Accordion_1).default; } });
 var AccordionItem_1 = require("./accordions/AccordionItem");
 Object.defineProperty(exports, "AccordionItem", { enumerable: true, get: function () { return __importDefault(AccordionItem_1).default; } });
-var Cards_1 = require("./cards/Cards");
-Object.defineProperty(exports, "Cards", { enumerable: true, get: function () { return __importDefault(Cards_1).default; } });
 var CTA_1 = require("./CTA/CTA");
 Object.defineProperty(exports, "CTA", { enumerable: true, get: function () { return __importDefault(CTA_1).default; } });
 var Cover_1 = require("./covers/Cover");
@@ -43,5 +41,9 @@ var TestimonialsGrid_1 = require("./testimonials/TestimonialsGrid");
 Object.defineProperty(exports, "TestimonialsGrid", { enumerable: true, get: function () { return __importDefault(TestimonialsGrid_1).default; } });
 var TestimonialCard_1 = require("./testimonials/TestimonialCard");
 Object.defineProperty(exports, "TestimonialCard", { enumerable: true, get: function () { return __importDefault(TestimonialCard_1).default; } });
+var SimpleCard_1 = require("./cards/SimpleCard");
+Object.defineProperty(exports, "SimpleCard", { enumerable: true, get: function () { return __importDefault(SimpleCard_1).default; } });
+var SimpleCards_1 = require("./cards/SimpleCards");
+Object.defineProperty(exports, "SimpleCards", { enumerable: true, get: function () { return __importDefault(SimpleCards_1).default; } });
 var SwipeableTestimonials_1 = require("./testimonials/SwipeableTestimonials");
 Object.defineProperty(exports, "SwipeableTestimonials", { enumerable: true, get: function () { return __importDefault(SwipeableTestimonials_1).default; } });

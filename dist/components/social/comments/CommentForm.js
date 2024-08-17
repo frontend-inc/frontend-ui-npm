@@ -7,10 +7,10 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var CommentForm = function (props) {
-    var _a = props || {}, _b = _a.pl, pl = _b === void 0 ? 0 : _b, loading = _a.loading, errors = _a.errors, comment = _a.comment, handleChange = _a.handleChange, handleSubmit = _a.handleSubmit;
+    var _a = props || {}, loading = _a.loading, errors = _a.errors, comment = _a.comment, handleChange = _a.handleChange, handleSubmit = _a.handleSubmit;
     return (react_1.default.createElement(components_1.AuthGuard, null,
         react_1.default.createElement(material_1.ListItem, { sx: {
-                pl: pl,
+                pl: 0
             } },
             react_1.default.createElement(material_1.Stack, { sx: sx.form, direction: "column", spacing: 1 },
                 react_1.default.createElement(components_1.TextInput, { errors: errors, multiline: true, rows: 4, name: "body", value: comment === null || comment === void 0 ? void 0 : comment.body, handleChange: handleChange, placeholder: "Leave a comment..." }),
@@ -22,8 +22,8 @@ var sx = {
         alignItems: 'flex-start',
     },
     form: {
-        p: 2,
-        px: 5,
+        p: 0,
+        px: 0,
         width: '100%',
         alignItems: 'flex-start',
     },

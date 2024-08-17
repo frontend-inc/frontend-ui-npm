@@ -60,7 +60,7 @@ var CardList = function (props) {
                         enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
                         enableComments == true && react_1.default.createElement(__1.CommentButton, { resource: resource }))),
                 react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
-                    react_1.default.createElement(__2.Actions, { numVisible: 0, buttons: buttons, resource: resource }))))));
+                    react_1.default.createElement(__2.ActionButtons, { numVisible: 0, buttons: buttons, resource: resource }))))));
 };
 exports.default = CardList;
 var sx = {

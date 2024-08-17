@@ -59,7 +59,7 @@ var TableCard = function (props) {
                 react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })))),
         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" },
             enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-            react_1.default.createElement(__2.Actions, { numVisible: 0, buttons: buttons, resource: resource }))));
+            react_1.default.createElement(__2.ActionButtons, { numVisible: 0, buttons: buttons, resource: resource }))));
 };
 exports.default = TableCard;
 var sx = {

@@ -82,16 +82,16 @@ var moment_1 = __importDefault(require("moment"));
 var CommentForm_1 = __importDefault(require("./CommentForm"));
 var Comment = function (props) {
     var _a, _b, _c, _d, _e;
-    var url = props.url, handle = props.handle, _f = props.level, level = _f === void 0 ? 0 : _f, parentComment = props.comment, handleDelete = props.handleDelete;
-    var _g = (0, react_1.useState)(false), openComment = _g[0], setOpenComment = _g[1];
-    var _h = (0, react_1.useState)(false), showReplies = _h[0], setShowReplies = _h[1];
+    var url = props.url, handle = props.handle, _f = props.reply, reply = _f === void 0 ? false : _f, _g = props.level, level = _g === void 0 ? 0 : _g, parentComment = props.comment, handleDelete = props.handleDelete;
+    var _h = (0, react_1.useState)(false), openComment = _h[0], setOpenComment = _h[1];
+    var _j = (0, react_1.useState)(false), showReplies = _j[0], setShowReplies = _j[1];
     var handleShowReplies = function () {
         setShowReplies(!showReplies);
     };
-    var _j = (0, hooks_1.useComments)({
+    var _k = (0, hooks_1.useComments)({
         url: url,
         handle: handle,
-    }), loading = _j.loading, delayedLoading = _j.delayedLoading, errors = _j.errors, comment = _j.comment, setComment = _j.setComment, handleChange = _j.handleChange, createComment = _j.createComment;
+    }), loading = _k.loading, delayedLoading = _k.delayedLoading, errors = _k.errors, comment = _k.comment, setComment = _k.setComment, handleChange = _k.handleChange, createComment = _k.createComment;
     var handleReply = function () {
         setOpenComment(!openComment);
     };
@@ -117,7 +117,7 @@ var Comment = function (props) {
         });
     }, [parentComment]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.ListItem, { sx: __assign(__assign({}, sx.listItem), { pl: Math.min(level * 7, 14) + 2 }), secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleReply },
+        react_1.default.createElement(material_1.ListItem, { sx: __assign({}, sx.listItem), secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleReply },
                 react_1.default.createElement(components_2.Icon, { name: "MessageSquare", size: 20 })) },
             react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(components_1.UserAvatar, { user: parentComment === null || parentComment === void 0 ? void 0 : parentComment.user })),
@@ -126,17 +126,15 @@ var Comment = function (props) {
                     ' ',
                     (0, moment_1.default)(parentComment === null || parentComment === void 0 ? void 0 : parentComment.created_at).fromNow()) })),
         react_1.default.createElement(material_1.Collapse, { in: openComment },
-            react_1.default.createElement(CommentForm_1.default, { pl: Math.min(level * 7, 14), loading: delayedLoading, errors: errors, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit })),
-        ((_b = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _b === void 0 ? void 0 : _b.length) > 0 && (react_1.default.createElement(react_1.default.Fragment, null, !showReplies && (react_1.default.createElement(material_1.Box, { sx: {
-                pl: Math.min(level * 7, 14),
-            } },
+            react_1.default.createElement(CommentForm_1.default, { loading: delayedLoading, errors: errors, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit })),
+        ((_b = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _b === void 0 ? void 0 : _b.length) > 0 && (react_1.default.createElement(react_1.default.Fragment, null, !showReplies && (react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.Link, { sx: sx.link, onClick: handleShowReplies },
                 "Show ", (_c = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _c === void 0 ? void 0 :
                 _c.length,
                 ' ',
                 ((_d = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _d === void 0 ? void 0 : _d.length) > 1 ? 'replies' : 'reply'))))),
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.divider), { ml: Math.min(level * 7, 14) }) }),
-        react_1.default.createElement(material_1.Collapse, { in: showReplies }, (_e = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _e === void 0 ? void 0 : _e.map(function (reply) { return (react_1.default.createElement(Comment, { key: reply.id, url: url, handle: handle, comment: reply, level: level + 1, handleDelete: handleDelete })); }))));
+        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.divider), { ml: reply ? 7 : 0 }) }),
+        react_1.default.createElement(material_1.Collapse, { in: showReplies }, (_e = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _e === void 0 ? void 0 : _e.map(function (reply) { return (react_1.default.createElement(Comment, { key: reply.id, reply: true, url: url, handle: handle, comment: reply, level: level + 1, handleDelete: handleDelete })); }))));
 };
 exports.default = Comment;
 var sx = {
@@ -188,4 +186,7 @@ var sx = {
         borderBottom: '1px solid',
         borderColor: 'divider',
     },
+    replyIcon: {
+        transform: 'rotate(180deg)',
+    }
 };

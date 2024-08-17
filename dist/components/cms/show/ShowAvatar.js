@@ -23,7 +23,7 @@ var ShowAvatar = function (props) {
     var _c = resource || {}, title = _c.title, image = _c.image, description = _c.description;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", justifyContent: "center" },
         (buttons || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.buttons, direction: { sm: 'row', xs: 'column' }, spacing: 1 },
-            react_1.default.createElement(__1.Actions, { buttons: (0, helpers_1.buildActions)({
+            react_1.default.createElement(__1.ActionButtons, { buttons: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
                     buttons: buttons,
@@ -34,7 +34,7 @@ var ShowAvatar = function (props) {
                     react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
                         react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign({}, sx.avatar), { height: 200, width: 200 }), src: image === null || image === void 0 ? void 0 : image.url, alt: title },
                             react_1.default.createElement(material_1.Box, null))),
-                    react_1.default.createElement(__1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
+                    react_1.default.createElement(__1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
                 react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
                     enableRatings && react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true }),

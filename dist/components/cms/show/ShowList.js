@@ -12,7 +12,7 @@ var ShowList = function (props) {
     var _c = resource || {}, label = _c.label, title = _c.title, image = _c.image, description = _c.description;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
         (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
-            react_1.default.createElement(__1.Actions, { buttons: (0, helpers_1.buildActions)({
+            react_1.default.createElement(__1.ActionButtons, { buttons: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
                     buttons: buttons,
@@ -24,7 +24,7 @@ var ShowList = function (props) {
             enablePayments == true && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout", justifyContent: "center" }))),
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
             react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400, label: label })),
-        react_1.default.createElement(__1.SocialButtons, { handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
+        react_1.default.createElement(__1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, description))));
 };

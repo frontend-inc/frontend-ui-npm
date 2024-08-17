@@ -1,7 +1,8 @@
-import { ButtonType } from '../../types';
+import { ButtonType, UserType } from '../../types';
 type UseButtonParams = {
     button: ButtonType;
     resource?: any;
+    user?: UserType;
 };
 declare const useButtons: (params: UseButtonParams) => {
     loading: boolean;

@@ -64,8 +64,8 @@ var Card = function (props) {
                 (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource })),
                 react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
             react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "space-between" },
-                react_1.default.createElement(__1.SocialActions, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
-                (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(components_1.Actions, { numVisible: 0, buttons: buttons, resource: resource }))))));
+                react_1.default.createElement(__1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
+                (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(components_1.ActionButtons, { numVisible: 0, buttons: buttons, resource: resource }))))));
 };
 exports.default = Card;
 var sx = {

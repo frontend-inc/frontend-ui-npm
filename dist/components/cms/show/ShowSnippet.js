@@ -11,12 +11,12 @@ var ShowSnippet = function (props) {
     var _d = resource || {}, image = _d.image, label = _d.label, title = _d.title;
     if (!resource)
         return null;
-    return (react_1.default.createElement(material_1.Paper, { elevation: 1, sx: sx.paper },
+    return (react_1.default.createElement(material_1.Paper, { elevation: 0, sx: sx.paper },
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0, sx: sx.header },
             react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-                react_1.default.createElement(__1.Image, { disableBorderRadius: true, label: label, src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 400 })),
+                react_1.default.createElement(__1.Image, { disableBorderRadius: true, label: label, src: image === null || image === void 0 ? void 0 : image.url, alt: title, height: 260 })),
             react_1.default.createElement(material_1.Stack, { spacing: 0.5, direction: "column", p: 2, width: "100%" },
-                (enableLikes || enableFavorites || enableSharing) && (react_1.default.createElement(__1.SocialButtons, { justifyContent: "center", handle: resource === null || resource === void 0 ? void 0 : resource.handle, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
+                (enableLikes || enableFavorites || enableSharing) && (react_1.default.createElement(__1.SocialButtons, { resource: resource, justifyContent: "center", enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
                 react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "text.primary" }, resource === null || resource === void 0 ? void 0 : resource.title),
                 enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true })),
                 react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
@@ -25,15 +25,7 @@ var ShowSnippet = function (props) {
 };
 exports.default = ShowSnippet;
 var sx = {
-    paper: {
-        border: '1px solid',
-        borderColor: 'divider',
-        my: 1,
-        transition: 'box-shadow 0.3s',
-        '&:hover': {
-            boxShadow: 2,
-        },
-    },
+    paper: {},
     container: {
         borderRadius: 1,
         overflow: 'hidden',

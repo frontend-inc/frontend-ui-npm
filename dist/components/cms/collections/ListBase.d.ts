@@ -9,5 +9,5 @@ export type ListProps = {
     edit: React.ReactNode;
     destroy: React.ReactNode;
 };
-declare const List: React.FC<ListProps>;
-export default List;
+declare const ListBase: React.FC<ListProps>;
+export default ListBase;

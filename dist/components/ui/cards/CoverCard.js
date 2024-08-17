@@ -29,7 +29,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
-var CoverVert = function (props) {
+var CoverCard = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = props || {}, buttons = _a.buttons, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? 400 : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableUsers, enableUsers = _e === void 0 ? false : _e, _f = _a.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = _a.enableComments, enableComments = _g === void 0 ? false : _g, _h = _a.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = _a.enableLikes, enableLikes = _j === void 0 ? false : _j, _k = _a.enableRatings, enableRatings = _k === void 0 ? false : _k;
     var _l = resource || {}, label = _l.label, title = _l.title, image = _l.image;
@@ -56,10 +56,10 @@ var CoverVert = function (props) {
                                 react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                                 enableUsers == true && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }),
                                 react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.buttons },
-                                    react_1.default.createElement(__1.SocialActions, { color: "common.white", resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
-                                    react_1.default.createElement(__1.Actions, { numVisible: 0, resource: resource, buttons: buttons }))))))))));
+                                    react_1.default.createElement(__1.SocialButtons, { color: "common.white", resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
+                                    react_1.default.createElement(__1.ActionButtons, { numVisible: 0, resource: resource, buttons: buttons }))))))))));
 };
-exports.default = CoverVert;
+exports.default = CoverCard;
 var sx = {
     root: {
         position: 'relative',

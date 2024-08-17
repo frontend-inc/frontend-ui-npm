@@ -20,7 +20,7 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var theme_1 = require("../../../theme");
 var Modal = function (props) {
-    var open = props.open, _a = props.loading, loading = _a === void 0 ? false : _a, handleClose = props.handleClose, title = props.title, subtitle = props.subtitle, buttons = props.buttons, children = props.children, _b = props.maxWidth, maxWidth = _b === void 0 ? 'sm' : _b, secondaryActions = props.secondaryActions, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, fullScreen = props.fullScreen, _d = props.enableCancel, enableCancel = _d === void 0 ? false : _d, _e = props.hideBackdrop, hideBackdrop = _e === void 0 ? false : _e, _f = props.disableClose, disableClose = _f === void 0 ? false : _f, _g = props.disableHeader, disableHeader = _g === void 0 ? false : _g;
+    var open = props.open, _a = props.loading, loading = _a === void 0 ? false : _a, handleClose = props.handleClose, avatar = props.avatar, title = props.title, subtitle = props.subtitle, buttons = props.buttons, children = props.children, _b = props.maxWidth, maxWidth = _b === void 0 ? 'sm' : _b, secondaryActions = props.secondaryActions, _c = props.disablePadding, disablePadding = _c === void 0 ? false : _c, fullScreen = props.fullScreen, _d = props.enableCancel, enableCancel = _d === void 0 ? false : _d, _e = props.hideBackdrop, hideBackdrop = _e === void 0 ? false : _e, _f = props.disableClose, disableClose = _f === void 0 ? false : _f, _g = props.disableHeader, disableHeader = _g === void 0 ? false : _g;
     var isMobile = (0, hooks_1.useResponsive)().isMobile;
     return (react_1.default.createElement(material_1.Dialog, { sx: __assign(__assign({}, sx.root), { 
             // Manually reset the maxWidth breakpoints
@@ -36,7 +36,9 @@ var Modal = function (props) {
             } }), fullWidth: true, fullScreen: isMobile || fullScreen === true, open: open, onClose: handleClose, hideBackdrop: hideBackdrop },
         !disableHeader && (react_1.default.createElement(material_1.DialogTitle, { sx: sx.dialogTitleContainer },
             react_1.default.createElement(material_1.Box, { sx: sx.dialogTitleContent },
-                react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "textPrimary", sx: sx.title }, title),
+                react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: 'center', spacing: 1 },
+                    avatar,
+                    react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "textPrimary", sx: sx.title }, title)),
                 !loading && (react_1.default.createElement(material_1.Box, { sx: sx.secondaryActions },
                     secondaryActions && secondaryActions,
                     !disableClose && (react_1.default.createElement(material_1.IconButton, { onClick: handleClose },
@@ -60,6 +62,8 @@ var sx = {
         px: 1,
         pl: 3,
         bgcolor: 'background.default',
+        borderBottom: '1px solid',
+        borderColor: "divider"
     },
     dialogTitleContent: {
         height: '50px',

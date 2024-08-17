@@ -1,10 +1,11 @@
-export type FieldVariantType = 'array' | 'audio' | 'habtm' | 'html' | 'string' | 'text' | 'number' | 'float' | 'boolean' | 'date' | 'datetime' | 'price' | 'url' | 'rating' | 'image' | 'video' | 'file' | 'json' | 'state' | 'country' | 'select' | 'shopify_product' | 'shopify_collection' | 'user' | 'team';
+export type FieldVariantTypes = 'array' | 'audio' | 'email' | 'habtm' | 'html' | 'string' | 'text' | 'number' | 'float' | 'boolean' | 'date' | 'datetime' | 'price' | 'phone' | 'url' | 'rating' | 'image' | 'video' | 'file' | 'json' | 'state' | 'country' | 'location' | 'select' | 'shopify_product' | 'shopify_collection' | 'user' | 'team';
 export type FieldDbType = 'string' | 'text' | 'integer' | 'float' | 'boolean' | 'date' | 'datetime' | 'jsonb' | 'habtm' | 'belongs_to';
-export type FieldVariant = {
+export type FieldCategoryType = 'Text' | 'Date' | 'Numbers' | 'Geographic' | 'Media' | 'Data' | 'Boolean' | 'Reference' | 'Shopify';
+export type FieldVariantType = {
     icon: string;
-    category: 'Text' | 'Dates' | 'Numbers' | 'Media' | 'Data' | 'Reference';
+    category: FieldCategoryType;
     db_type: FieldDbType;
-    variant: FieldVariantType;
+    variant: FieldVariantTypes;
     label: string;
     description: string;
     array: boolean;
@@ -14,7 +15,7 @@ export type FieldBase = {
     label?: string;
     name?: string;
     db_type?: FieldDbType;
-    variant?: FieldVariantType;
+    variant?: FieldVariantTypes;
     position: number;
     editable: boolean;
     visible: boolean;

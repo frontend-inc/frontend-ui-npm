@@ -27,7 +27,7 @@ var PageHeader = function (props) {
             }, spacing: 1, sx: __assign({}, sx.content) },
             react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: "left" }),
             (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
-                react_1.default.createElement(components_1.Actions, { buttons: buttons, resource: resource }))))));
+                react_1.default.createElement(components_1.ActionButtons, { buttons: buttons, resource: resource }))))));
 };
 exports.default = PageHeader;
 var sx = {

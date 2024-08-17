@@ -17,7 +17,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var constants_1 = require("../../../constants");
 var MyAccountForm = function (props) {
-    var loading = props.loading, errors = props.errors, user = props.user, _a = props.metafields, metafields = _a === void 0 ? [] : _a, handleSubmit = props.handleSubmit, handleChange = props.handleChange, handleLogout = props.handleLogout, handleDeleteAvatar = props.handleDeleteAvatar;
+    var loading = props.loading, errors = props.errors, user = props.user, handleSubmit = props.handleSubmit, handleChange = props.handleChange, handleLogout = props.handleLogout, handleDeleteAvatar = props.handleDeleteAvatar;
     var formFields = constants_1.USER_FORM_FIELDS;
     formFields = __spreadArray(__spreadArray([], formFields, true), [
         {

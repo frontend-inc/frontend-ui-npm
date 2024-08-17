@@ -1,19 +1,23 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SocialFields = exports.SocialField = exports.SocialButtons = exports.ShareButton = exports.ReviewForm = exports.ReviewButton = exports.Reviews = exports.Review = exports.AvgRating = exports.LikeButton = exports.Likes = exports.FollowButtonGroup = exports.FollowButton = exports.Feed = exports.FavoriteButton = exports.Favorites = exports.CommentForm = exports.CommentReplyButton = exports.CommentButton = exports.Comments = exports.Comment = void 0;
-var Comment_1 = require("./comments/Comment");
-Object.defineProperty(exports, "Comment", { enumerable: true, get: function () { return __importDefault(Comment_1).default; } });
-var Comments_1 = require("./comments/Comments");
-Object.defineProperty(exports, "Comments", { enumerable: true, get: function () { return __importDefault(Comments_1).default; } });
-var CommentButton_1 = require("./comments/CommentButton");
-Object.defineProperty(exports, "CommentButton", { enumerable: true, get: function () { return __importDefault(CommentButton_1).default; } });
-var CommentReplyButton_1 = require("./comments/CommentReplyButton");
-Object.defineProperty(exports, "CommentReplyButton", { enumerable: true, get: function () { return __importDefault(CommentReplyButton_1).default; } });
-var CommentForm_1 = require("./comments/CommentForm");
-Object.defineProperty(exports, "CommentForm", { enumerable: true, get: function () { return __importDefault(CommentForm_1).default; } });
+exports.SocialFields = exports.SocialField = exports.SocialButtons = exports.ShareButton = exports.ReviewForm = exports.ReviewButton = exports.Reviews = exports.Review = exports.AvgRating = exports.LikeButton = exports.Likes = exports.FollowButtonGroup = exports.FollowButton = exports.Feed = exports.FavoriteButton = exports.Favorites = void 0;
 var Favorites_1 = require("./favorites/Favorites");
 Object.defineProperty(exports, "Favorites", { enumerable: true, get: function () { return __importDefault(Favorites_1).default; } });
 var FavoriteButton_1 = require("./favorites/FavoriteButton");
@@ -46,3 +50,4 @@ var SocialField_1 = require("./fields/SocialField");
 Object.defineProperty(exports, "SocialField", { enumerable: true, get: function () { return __importDefault(SocialField_1).default; } });
 var SocialFields_1 = require("./fields/SocialFields");
 Object.defineProperty(exports, "SocialFields", { enumerable: true, get: function () { return __importDefault(SocialFields_1).default; } });
+__exportStar(require("./comments"), exports);

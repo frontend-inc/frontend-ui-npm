@@ -27,7 +27,7 @@ var UserProfile = function (props) {
                     about_me && (react_1.default.createElement(__1.ExpandableText, { text: about_me, color: "text.secondary" })))),
             react_1.default.createElement(material_1.Stack, { direction: "row", height: "100%", justifyContent: "flex-start" }, enableFollowers == true && react_1.default.createElement(__1.FollowButton, { user: user })),
             (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.buttons },
-                react_1.default.createElement(__1.Actions, { numVisible: 0, buttons: buttons, resource: user }))))));
+                react_1.default.createElement(__1.ActionButtons, { numVisible: 1, buttons: buttons, resource: user, user: user }))))));
 };
 exports.default = UserProfile;
 var sx = {

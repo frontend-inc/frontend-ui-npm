@@ -35,10 +35,6 @@ var sx = {
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        transition: 'box-shadow 0.3s',
-        '&:hover': {
-            boxShadow: 1,
-        },
     },
     rootBorder: {
         p: 2,

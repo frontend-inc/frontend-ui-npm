@@ -36,7 +36,8 @@ var TopNavMenuItem = function (props) {
         closeMenu();
     };
     var handleMenuClick = function (ev, menuItem) {
-        if ((menuItem === null || menuItem === void 0 ? void 0 : menuItem.children.length) > 0) {
+        var _a;
+        if (((_a = menuItem === null || menuItem === void 0 ? void 0 : menuItem.children) === null || _a === void 0 ? void 0 : _a.length) > 0) {
             toggleMenu(ev);
             return;
         }

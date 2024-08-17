@@ -35,7 +35,7 @@ var ResourceListItem = function (props) {
                 react_1.default.createElement(material_1.Avatar, { sx: {
                         bgcolor: color,
                     } },
-                    react_1.default.createElement(__1.Icon, { name: icon, size: 24 })))),
+                    react_1.default.createElement(__1.Icon, { name: icon, size: 24, color: 'primary.contrastText' })))),
             react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "body1" }, title), secondary: react_1.default.createElement(react_1.default.Fragment, null,
                     react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
                     secondary) }))));
@@ -45,6 +45,7 @@ var sx = {
     root: {
         p: 0,
         borderRadius: 1,
+        overflow: 'hidden',
     },
     rootBorder: {
         border: '1px solid',

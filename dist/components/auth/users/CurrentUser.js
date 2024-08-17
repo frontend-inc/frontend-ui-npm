@@ -40,7 +40,7 @@ var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../../helpers");
 var CurrentUser = function (props) {
     var _a = props || {}, enableEdit = _a.enableEdit, _b = _a.fields, fields = _b === void 0 ? [] : _b, _c = _a.buttons, buttons = _c === void 0 ? [] : _c;
-    var _d = (0, frontend_js_1.useAuth)(), user = _d.user, setUser = _d.setUser, currentUser = _d.currentUser, fetchMe = _d.fetchMe;
+    var _d = (0, frontend_js_1.useAuth)(), setUser = _d.setUser, currentUser = _d.currentUser, fetchMe = _d.fetchMe;
     var _e = (0, react_1.useState)(false), open = _e[0], setOpen = _e[1];
     var handleEdit = function () {
         setOpen(true);

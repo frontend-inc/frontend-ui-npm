@@ -16,7 +16,7 @@ var ImageCard = function (props) {
                 react_1.default.createElement(components_1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: 260, alt: title, enableGradient: enableGradient, enableOverlay: enableOverlay })),
             react_1.default.createElement(material_1.Box, { sx: sx.buttons },
                 enableFavorites == true && (react_1.default.createElement(components_1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                react_1.default.createElement(components_1.Actions, { resource: resource, numVisible: 0, buttons: (0, helpers_1.buildActions)({
+                react_1.default.createElement(components_1.ActionButtons, { resource: resource, numVisible: 0, buttons: (0, helpers_1.buildActions)({
                         enableEdit: enableEdit,
                         enableDelete: enableDelete,
                         handleEdit: handleEdit,

@@ -1,6 +1,5 @@
 import React from 'react';
 type CommentFormProps = {
-    pl?: number;
     loading: boolean;
     errors?: any;
     comment: any;

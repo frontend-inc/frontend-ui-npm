@@ -3,7 +3,7 @@ export type ActionType = {
     label: string;
     action_type: string;
 };
-export type ButtonTypeType = 'action' | 'navigate' | 'url' | 'page' | 'email' | 'sms' | 'phone' | 'copy' | 'download' | 'link' | 'stripe_payment_link';
+export type ButtonTypeType = 'action' | 'click' | 'navigate' | 'navigate_cms' | 'navigate_user' | 'url' | 'page' | 'email' | 'sms' | 'phone' | 'copy' | 'download' | 'link' | 'stripe_payment_link';
 export type ButtonType = {
     id?: number;
     icon?: string;

@@ -30,7 +30,7 @@ exports.palette = {
         main: COLORS.grey[900],
     },
     secondary: {
-        main: COLORS.grey[100],
+        main: COLORS.grey[50],
         contrastText: COLORS.grey[800],
     },
     accent: {

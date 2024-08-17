@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.USER_FORM_FIELDS = exports.USER_ROLES = void 0;
+exports.USER_ADDRESS_FIELDS = exports.USER_FORM_FIELDS = exports.USER_ROLES = void 0;
 var countries_1 = require("./countries");
 var states_1 = require("./states");
 exports.USER_ROLES = [
@@ -12,6 +12,8 @@ exports.USER_FORM_FIELDS = [
     { label: 'First name', name: 'first_name', variant: 'string' },
     { label: 'Last name', name: 'last_name', variant: 'string' },
     { label: 'About me', name: 'about_me', variant: 'text' },
+];
+exports.USER_ADDRESS_FIELDS = [
     {
         label: 'Address',
         name: 'address1',

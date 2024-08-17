@@ -40,8 +40,8 @@ var KanBanCard = function (props) {
         react_1.default.createElement(material_1.Box, { sx: sx.footer },
             react_1.default.createElement(material_1.Button, { onClick: handleClick, size: "small", variant: "contained", color: "secondary", sx: sx.button }, "Details"),
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-end" },
-                react_1.default.createElement(components_1.SocialActions, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
-                react_1.default.createElement(components_2.Actions, { numVisible: 0, buttons: (0, helpers_2.buildActions)({
+                react_1.default.createElement(components_1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
+                react_1.default.createElement(components_2.ActionButtons, { numVisible: 0, buttons: (0, helpers_2.buildActions)({
                         enableEdit: enableEdit,
                         enableDelete: enableDelete,
                         handleEdit: handleEdit,
