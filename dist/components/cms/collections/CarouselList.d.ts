@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListProps } from './List';
-export type CarouselListProps = ListProps;
+import { DataListProps } from './DataList';
+export type CarouselListProps = DataListProps;
 declare const CarouselList: React.FC<CarouselListProps>;
 export default CarouselList;

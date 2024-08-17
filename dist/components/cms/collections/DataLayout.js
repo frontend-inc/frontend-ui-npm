@@ -16,11 +16,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var ListLayout = function (props) {
+var DataLayout = function (props) {
     var _a = props.grid, grid = _a === void 0 ? false : _a, children = props.children;
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (grid ? sx.grid : sx.list)) }, children));
 };
-exports.default = ListLayout;
+exports.default = DataLayout;
 var sx = {
     root: {
         width: '100%',

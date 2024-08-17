@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListItemsProps } from './ListItems';
-export type GeoListListProps = ListItemsProps;
+import { DataListItemsProps } from './DataListItems';
+export type GeoListListProps = DataListItemsProps;
 declare const GeoListItems: React.FC<GeoListListProps>;
 export default GeoListItems;

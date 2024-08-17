@@ -1,7 +1,7 @@
 import React from 'react';
 import { TableHeaderType } from '../../../types';
-import { ListItemsProps } from './ListItems';
-export type DataTableListProps = ListItemsProps & {
+import { DataListItemsProps } from './DataListItems';
+export type DataTableListProps = DataListItemsProps & {
     headers: TableHeaderType[];
     enableShow?: boolean;
 };

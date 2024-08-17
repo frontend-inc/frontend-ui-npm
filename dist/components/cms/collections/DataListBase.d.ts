@@ -1,5 +1,5 @@
 import React from 'react';
-export type ListProps = {
+export type DataListProps = {
     query: any;
     url: string;
     name: string;
@@ -9,5 +9,5 @@ export type ListProps = {
     edit: React.ReactNode;
     destroy: React.ReactNode;
 };
-declare const ListBase: React.FC<ListProps>;
-export default ListBase;
+declare const DataListBase: React.FC<DataListProps>;
+export default DataListBase;

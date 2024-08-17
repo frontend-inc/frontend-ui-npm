@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionProps, HeadingProps } from '../../types';
-import { ListProps } from '../../components/cms/collections/List';
-type SocialFavoritesProps = SectionProps & HeadingProps & ListProps;
+import { DataListProps } from '../../components/cms/collections/DataList';
+type SocialFavoritesProps = SectionProps & HeadingProps & DataListProps;
 declare const SocialFavorites: React.FC<SocialFavoritesProps>;
 export default SocialFavorites;

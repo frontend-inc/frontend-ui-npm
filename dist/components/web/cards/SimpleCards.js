@@ -27,10 +27,10 @@ var SimpleCards = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Box, null,
-        react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 }, items === null || items === void 0 ? void 0 : items.map(function (card, i) { return (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, md: 4, key: i },
-            react_1.default.createElement(__1.SimpleCard, { item: __assign(__assign({}, card), { image: {
-                        url: card === null || card === void 0 ? void 0 : card.image,
-                    } }), handleClick: function () { return handleClick(card); }, enableGradient: enableGradient, enableOverlay: enableOverlay }))); })),
+        react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 }, items === null || items === void 0 ? void 0 : items.map(function (item, i) { return (react_1.default.createElement(material_1.Grid, { item: true, xs: 12, sm: 4, md: 4, key: i },
+            react_1.default.createElement(__1.SimpleCard, { item: __assign(__assign({}, item), { image: {
+                        url: item === null || item === void 0 ? void 0 : item.image,
+                    } }), handleClick: function () { return handleClick(item); }, enableGradient: enableGradient, enableOverlay: enableOverlay }))); })),
         (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Search", title: "No content yet.", description: "Your content will appear here." }))));
 };
 exports.default = SimpleCards;

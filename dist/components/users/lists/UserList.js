@@ -30,7 +30,6 @@ var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var __1 = require("../..");
 var UserListItem_1 = __importDefault(require("../cards/UserListItem"));
-var constants_1 = require("../../../constants");
 var router_1 = require("next/router");
 var UserList = function (props) {
     var router = (0, router_1.useRouter)();
@@ -41,30 +40,11 @@ var UserList = function (props) {
             router.push("".concat(clientUrl).concat(href, "/").concat(user === null || user === void 0 ? void 0 : user.username));
         }
     };
-    var filterOptions = [];
-    if (enableLocation) {
-        filterOptions = [
-            //@ts-ignore
-            {
-                label: 'City',
-                field: 'city',
-                variant: 'multiple_choice',
-                options: constants_1.STATES,
-            },
-            //@ts-ignore
-            {
-                label: 'Country',
-                field: 'country',
-                variant: 'multiple_choice',
-                options: constants_1.COUNTRIES,
-            },
-        ];
-    }
     return (react_1.default.createElement(__1.ResourceList, { dense: true, enableSearch: true, enableLoadMore: true, name: "user", url: '/api/v1/cms/users', handleClick: handleClick, component: UserListItem_1.default, itemProps: {
             size: 72,
             displayFields: displayFields,
             socialFields: socialFields,
-        }, filterOptions: filterOptions, sortOptions: [
+        }, filterOptions: [], sortOptions: [
             { label: 'Username', name: 'username' },
             { label: 'First name', name: 'first_name' },
             { label: 'Last name', name: 'last_name' },

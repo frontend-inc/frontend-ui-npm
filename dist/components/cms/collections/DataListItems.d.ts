@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
-export type ListItemsProps = {
+export type DataListItemsProps = {
     url: string;
     href?: string;
     style: 'list' | 'avatar' | 'card' | 'cover' | 'text';
@@ -21,5 +21,5 @@ export type ListItemsProps = {
     emptyTitle?: string;
     emptyDescription?: string;
 };
-declare const ListItems: React.FC<ListItemsProps>;
-export default ListItems;
+declare const DataListItems: React.FC<DataListItemsProps>;
+export default DataListItems;

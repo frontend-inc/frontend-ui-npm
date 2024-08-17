@@ -1,6 +1,6 @@
 import React from 'react';
-import { ListItemsProps } from './ListItems';
-export type CarouselListListProps = ListItemsProps & {
+import { DataListItemsProps } from './DataListItems';
+export type CarouselListListProps = DataListItemsProps & {
     enableAutoPlay?: boolean;
     enableArrows?: boolean;
     enableDots?: boolean;

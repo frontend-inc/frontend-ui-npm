@@ -42,15 +42,15 @@ var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
 var Card = function (props) {
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, href = _a.href, _b = _a.buttonText, buttonText = _b === void 0 ? '' : _b, item = _a.item, handleClick = _a.handleClick, _c = _a.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = _a.enableOverlay, enableOverlay = _d === void 0 ? false : _d;
-    var _e = item || {}, label = _e.label, title = _e.title, description = _e.description, image = _e.image;
+    var _a = props || {}, item = _a.item, handleClick = _a.handleClick, _b = _a.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = _a.enableOverlay, enableOverlay = _c === void 0 ? false : _c;
+    var _d = item || {}, label = _d.label, title = _d.title, description = _d.description, image = _d.image, url = _d.url;
     var router = (0, router_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
             handleClick();
         }
-        else if (href) {
-            router.push("".concat(clientUrl).concat(href));
+        else if (url) {
+            router.push("".concat(clientUrl).concat(url));
         }
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 0, sx: __assign(__assign({}, sx.root), { width: '100%', minHeight: 320 }) },
@@ -59,8 +59,7 @@ var Card = function (props) {
         react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.cardContent },
             react_1.default.createElement(material_1.Box, { sx: sx.content },
                 react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
-                react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.secondary", variant: "body2" }, (0, helpers_1.truncate)(description))),
-            react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "space-between" }, href && (buttonText === null || buttonText === void 0 ? void 0 : buttonText.length) > 0 && (react_1.default.createElement(material_1.Button, { variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))));
+                react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.secondary", variant: "body2" }, (0, helpers_1.truncate)(description))))));
 };
 exports.default = Card;
 var sx = {

@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserDetails = exports.Details = exports.ResourceTable = exports.ResourceListItem = exports.ResourceList = exports.Statistics = exports.Query = exports.SearchFilters = exports.RemoteFilterButton = exports.RemoteSortButton = exports.SortButton = exports.KanBan = exports.FilterButton = exports.LoadMore = exports.EmailSignup = exports.AddonShopifyProduct = exports.AddonGoogleMap = exports.AddonCalendly = void 0;
+exports.UserDetails = exports.Details = exports.ResourceTable = exports.ResourceListItem = exports.ResourceList = exports.Statistics = exports.SearchFilters = exports.RemoteFilterButton = exports.RemoteSortButton = exports.SortButton = exports.KanBan = exports.FilterButton = exports.LoadMore = exports.EmailSignup = exports.AddonShopifyProduct = exports.AddonGoogleMap = exports.AddonCalendly = void 0;
 __exportStar(require("./collections"), exports);
 __exportStar(require("./forms"), exports);
 __exportStar(require("./show"), exports);
@@ -43,8 +43,6 @@ var RemoteFilterButton_1 = require("./filters/RemoteFilterButton");
 Object.defineProperty(exports, "RemoteFilterButton", { enumerable: true, get: function () { return __importDefault(RemoteFilterButton_1).default; } });
 var SearchFilters_1 = require("../cms/filters/SearchFilters");
 Object.defineProperty(exports, "SearchFilters", { enumerable: true, get: function () { return __importDefault(SearchFilters_1).default; } });
-var Query_1 = require("./query/Query");
-Object.defineProperty(exports, "Query", { enumerable: true, get: function () { return __importDefault(Query_1).default; } });
 var Statistics_1 = require("./analytics/Statistics");
 Object.defineProperty(exports, "Statistics", { enumerable: true, get: function () { return __importDefault(Statistics_1).default; } });
 // Resources

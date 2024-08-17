@@ -1,12 +1,13 @@
 import React from 'react';
 import { ButtonType, UserType } from '../../../types';
-type ActionButtonsProps = {
+type ButtonActionsProps = {
     buttons: ButtonType[];
     resource: any;
     user?: UserType;
     numVisible?: number;
     color?: string;
+    size?: 'small' | 'medium' | 'large';
     justifyContent?: 'flex-start' | 'center' | 'flex-end';
 };
-declare const ActionButtons: React.FC<ActionButtonsProps>;
-export default ActionButtons;
+declare const ButtonActions: React.FC<ButtonActionsProps>;
+export default ButtonActions;

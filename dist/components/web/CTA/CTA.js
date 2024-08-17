@@ -1,52 +1,21 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
+var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var router_1 = require("next/router");
-var context_1 = require("../../../context");
+var components_1 = require("../../../components");
 // Call To Action
 var CTA = function (props) {
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, buttonText = _a.buttonText, href = _a.href, handleClick = _a.handleClick;
-    var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var handleItemClick = function () {
-        if (handleClick) {
-            return handleClick();
-        }
-        else if (href) {
-            router.push("".concat(clientUrl).concat(href));
-        }
-    };
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, buttons = _a.buttons;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 1 },
             label && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption", sx: sx.label }, label)),
             title && (react_1.default.createElement(material_1.Typography, { variant: 'h3', color: "text.primary", sx: sx.title }, title)),
             description && (react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.secondary", sx: sx.description }, description)),
-            buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
-                react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))));
+            (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
+                react_1.default.createElement(components_1.ButtonActions, { resource: [], buttons: buttons, size: 'large', justifyContent: 'center' }))))));
 };
 exports.default = CTA;
 var sx = {
@@ -70,7 +39,7 @@ var sx = {
         maxWidth: '600px',
     },
     buttons: {
-        mt: 2,
+        pt: 2,
         textAlign: 'center',
         width: '100%',
     },

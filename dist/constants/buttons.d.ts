@@ -1,8 +1,8 @@
-export declare const BUTTON_TYPES: {
+export declare const BUTTON_ACTIONS: {
     value: string;
     label: string;
 }[];
-export declare const BUTTON_TYPES_CMS: {
+export declare const BUTTON_ACTIONS_CMS: {
     value: string;
     label: string;
 }[];

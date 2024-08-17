@@ -27,7 +27,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
-var ListCard = function (props) {
+var DataListItem = function (props) {
     var _a = props.style, style = _a === void 0 ? 'card' : _a, rest = __rest(props, ["style"]);
     var COMPONENTS = {
         card: __1.Card,
@@ -41,4 +41,4 @@ var ListCard = function (props) {
     var Component = COMPONENTS[style] || __1.Card;
     return react_1.default.createElement(Component, __assign({}, rest));
 };
-exports.default = ListCard;
+exports.default = DataListItem;

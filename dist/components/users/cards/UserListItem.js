@@ -18,9 +18,8 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var UserListItem = function (props) {
-    var _a = props || {}, user = _a.resource, _b = _a.size, size = _b === void 0 ? 44 : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, _d = _a.socialFields, socialFields = _d === void 0 ? [] : _d, enableFollowers = _a.enableFollowers, handleClick = _a.handleClick;
-    return (react_1.default.createElement(__1.ResourceListItem, { enableBorder: true, handleClick: handleClick, resource: __assign(__assign({}, user), { title: user.name }), avatar: react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, alignItems: "center" },
-            react_1.default.createElement(__1.UserAvatar, { size: size, user: user }),
-            react_1.default.createElement(__1.SocialFields, { resource: user, fields: socialFields })), displayFields: displayFields, secondaryActions: enableFollowers && react_1.default.createElement(__1.FollowButton, { user: user }) }));
+    var _a = props || {}, user = _a.resource, _b = _a.size, size = _b === void 0 ? 44 : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, enableFollowers = _a.enableFollowers, handleClick = _a.handleClick;
+    return (react_1.default.createElement(__1.ResourceListItem, { handleClick: handleClick, resource: __assign(__assign({}, user), { title: user.name }), avatar: react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, alignItems: "center" },
+            react_1.default.createElement(__1.UserAvatar, { size: size, user: user })), displayFields: displayFields, secondaryActions: enableFollowers && react_1.default.createElement(__1.FollowButton, { user: user }) }));
 };
 exports.default = UserListItem;

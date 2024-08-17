@@ -6,13 +6,13 @@ var buildActions = function (_a) {
     var EDIT_ACTION = {
         label: 'Edit',
         color: 'secondary',
-        button_type: 'click',
+        action: 'click',
         onClick: handleEdit,
     };
     var DELETE_ACTION = {
         label: 'Delete',
         color: 'error',
-        button_type: 'click',
+        action: 'click',
         onClick: handleDelete,
     };
     var newActions = [];

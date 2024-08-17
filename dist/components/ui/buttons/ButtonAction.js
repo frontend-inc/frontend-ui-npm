@@ -29,24 +29,20 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
-var ActionButton = function (props) {
-    var button = props.button, user = props.user, resource = props.resource, rest = __rest(props, ["button", "user", "resource"]);
-    var _a = button || {}, icon = _a.icon, _b = _a.label, label = _b === void 0 ? 'View' : _b;
-    var _c = (0, hooks_1.useButtons)({
-        button: button,
-        resource: resource,
-        user: user
-    }), loading = _c.loading, handleClick = _c.handleClick;
-    var onClick = function (ev) {
-        handleClick(ev);
-    };
-    return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, startIcon: react_1.default.createElement(react_1.default.Fragment, null,
+var ButtonAction = function (props) {
+    var children = props.children, icon = props.icon, action = props.action, path = props.path, actionId = props.actionId, onClick = props.onClick, _a = props.color, color = _a === void 0 ? 'secondary' : _a, _b = props.variant, variant = _b === void 0 ? 'contained' : _b, _c = props.size, size = _c === void 0 ? "medium" : _c, rest = __rest(props, ["children", "icon", "action", "path", "actionId", "onClick", "color", "variant", "size"]);
+    var _d = (0, hooks_1.useButtons)({
+        action: action,
+        actionId: actionId,
+        path: path,
+    }), loading = _d.loading, handleClick = _d.handleClick;
+    return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, size: size, startIcon: react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(__1.IconLoading, { loading: loading }),
-            (!loading && icon) && (react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: (button === null || button === void 0 ? void 0 : button.color) == 'primary'
+            (!loading && icon) && (react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: color == 'primary'
                     ? 'primary.contrastText'
-                    : 'secondary.contrastText' }))), onClick: onClick, variant: (button === null || button === void 0 ? void 0 : button.variant) || 'contained', color: (button === null || button === void 0 ? void 0 : button.color) || 'secondary' }, rest), label));
+                    : 'secondary.contrastText' }))), onClick: onClick ? onClick : handleClick, variant: variant, color: color }, rest), children));
 };
-exports.default = ActionButton;
+exports.default = ButtonAction;
 var sx = {
     button: {
         width: {

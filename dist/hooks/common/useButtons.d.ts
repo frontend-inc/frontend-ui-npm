@@ -1,6 +1,10 @@
-import { ButtonType, UserType } from '../../types';
+import { ActionType, UserType } from '../../types';
 type UseButtonParams = {
-    button: ButtonType;
+    action: ActionType;
+    actionId?: number;
+    path?: string;
+    url?: string;
+    value?: any;
     resource?: any;
     user?: UserType;
 };

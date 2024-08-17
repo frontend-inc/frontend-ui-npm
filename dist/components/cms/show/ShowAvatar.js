@@ -23,7 +23,7 @@ var ShowAvatar = function (props) {
     var _c = resource || {}, title = _c.title, image = _c.image, description = _c.description;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", justifyContent: "center" },
         (buttons || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.buttons, direction: { sm: 'row', xs: 'column' }, spacing: 1 },
-            react_1.default.createElement(__1.ActionButtons, { buttons: (0, helpers_1.buildActions)({
+            react_1.default.createElement(__1.ButtonActions, { buttons: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: handleEdit,
                     buttons: buttons,

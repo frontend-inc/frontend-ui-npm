@@ -56,7 +56,7 @@ var TextInput = function (props) {
         }
     };
     (0, react_1.useEffect)(function () {
-        if (debouncedText) {
+        if (debouncedText !== value) {
             handleChange({
                 target: {
                     name: name,

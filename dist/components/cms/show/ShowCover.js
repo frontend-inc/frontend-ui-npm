@@ -15,7 +15,7 @@ var ShowCover = function (props) {
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(__1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
             (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
-                react_1.default.createElement(__1.ActionButtons, { buttons: (0, helpers_1.buildActions)({
+                react_1.default.createElement(__1.ButtonActions, { buttons: (0, helpers_1.buildActions)({
                         enableEdit: enableEdit,
                         handleEdit: handleEdit,
                         buttons: buttons,

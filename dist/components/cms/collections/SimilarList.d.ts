@@ -1,4 +1,4 @@
 import React from 'react';
-import { ListProps } from './List';
-declare const SimilarList: React.FC<ListProps>;
+import { DataListProps } from './DataList';
+declare const SimilarList: React.FC<DataListProps>;
 export default SimilarList;

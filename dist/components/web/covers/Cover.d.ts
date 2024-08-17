@@ -4,6 +4,7 @@ export type CoverProps = {
     title?: string;
     description?: string;
     buttonText?: string;
+    textVariant?: 'h1' | 'h2' | 'h3';
     image?: string;
     height?: number;
     width?: number;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
 type CardStyleTypes = 'list' | 'card' | 'avatar' | 'cover' | 'table' | 'text';
-type ListCardProps = {
+type DataListItemProps = {
     buttons: ButtonType[];
     style: CardStyleTypes;
     displayFields: DisplayFieldType[];
@@ -30,5 +30,5 @@ type ListCardProps = {
     enableLikes?: boolean;
     enableRatings?: boolean;
 };
-declare const ListCard: React.FC<ListCardProps>;
-export default ListCard;
+declare const DataListItem: React.FC<DataListItemProps>;
+export default DataListItem;

@@ -18,7 +18,7 @@ var VideoCard = function (props) {
                 react_1.default.createElement(__1.Icon, { name: "Play", color: "common.white", size: 20 })),
             react_1.default.createElement(material_1.Box, { sx: sx.buttons },
                 enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                react_1.default.createElement(__1.ActionButtons, { resource: resource, numVisible: 0, buttons: (0, helpers_1.buildActions)({
+                react_1.default.createElement(__1.ButtonActions, { resource: resource, numVisible: 0, buttons: (0, helpers_1.buildActions)({
                         enableEdit: enableEdit,
                         enableDelete: enableDelete,
                         handleEdit: handleEdit,

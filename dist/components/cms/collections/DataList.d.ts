@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonType, DisplayFieldType, FormFieldType, QueryParamsType, SearchFilterOptionType, SortOptionType } from '../../../types';
-export type ListProps = {
+export type DataListProps = {
     url: string;
     name: string;
     query?: QueryParamsType;
@@ -38,5 +38,5 @@ export type ListProps = {
     edit?: React.FC<any>;
     destroy?: React.FC<any>;
 };
-declare const List: React.FC<ListProps>;
-export default List;
+declare const DataList: React.FC<DataListProps>;
+export default DataList;

@@ -57,7 +57,7 @@ var CoverCard = function (props) {
                                 enableUsers == true && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user }),
                                 react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.buttons },
                                     react_1.default.createElement(__1.SocialButtons, { color: "common.white", resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
-                                    react_1.default.createElement(__1.ActionButtons, { numVisible: 0, resource: resource, buttons: buttons }))))))))));
+                                    react_1.default.createElement(__1.ButtonActions, { numVisible: 0, resource: resource, buttons: buttons }))))))))));
 };
 exports.default = CoverCard;
 var sx = {

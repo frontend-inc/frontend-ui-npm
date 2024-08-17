@@ -54,7 +54,7 @@ var GeoListItems = function (props) {
     var resources = (0, react_1.useContext)(frontend_js_1.ResourceContext).resources;
     return (react_1.default.createElement(material_1.Grid, { container: true, spacing: 2 },
         react_1.default.createElement(material_1.Grid, { item: true, sm: 12, md: 7 },
-            react_1.default.createElement(__1.ListItems, __assign({}, rest, { url: url, displayFields: displayFields, style: "list" }))),
+            react_1.default.createElement(__1.DataListItems, __assign({}, rest, { url: url, displayFields: displayFields, style: "list" }))),
         react_1.default.createElement(material_1.Grid, { item: true, sm: 12, md: 5 },
             react_1.default.createElement(material_1.Hidden, { smDown: true },
                 react_1.default.createElement(__1.GoogleMap, { enableBorder: true, zoom: 15, height: 380, resources: resources, displayFields: displayFields })))));

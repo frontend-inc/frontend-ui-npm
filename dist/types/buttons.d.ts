@@ -1,14 +1,9 @@
-export type ActionType = {
-    id: number;
-    label: string;
-    action_type: string;
-};
-export type ButtonTypeType = 'action' | 'click' | 'navigate' | 'navigate_cms' | 'navigate_user' | 'url' | 'page' | 'email' | 'sms' | 'phone' | 'copy' | 'download' | 'link' | 'stripe_payment_link';
+export type ActionType = 'action' | 'click' | 'navigate' | 'navigate_cms' | 'navigate_user' | 'url' | 'page' | 'email' | 'sms' | 'phone' | 'copy' | 'download' | 'link' | 'stripe_payment_link';
 export type ButtonType = {
     id?: number;
     icon?: string;
     label: string;
-    button_type: ButtonTypeType;
+    action_type: ActionType;
     color?: 'primary' | 'secondary';
     variant?: 'contained' | 'outlined' | 'text';
     page_id?: number;

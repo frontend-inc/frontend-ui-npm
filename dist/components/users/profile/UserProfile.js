@@ -14,7 +14,7 @@ var UserProfile = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: sx.container },
         react_1.default.createElement(material_1.Stack, { sx: sx.userContainer, direction: { sm: 'row', xs: 'column' }, spacing: { sm: 4, xs: 0 }, alignItems: "flex-start" },
             react_1.default.createElement(material_1.Stack, { direction: "column", alignItems: "center" },
-                react_1.default.createElement(material_1.Box, { height: "100%", sx: sx.avatarContainer }, (avatar === null || avatar === void 0 ? void 0 : avatar.url) && (react_1.default.createElement(__1.UserAvatar, { user: user, size: 120, enableGradient: true }))),
+                (avatar === null || avatar === void 0 ? void 0 : avatar.url) && (react_1.default.createElement(__1.UserAvatar, { user: user, size: 120, enableGradient: true })),
                 react_1.default.createElement(__1.SocialFields, { fields: socialFields, resource: user })),
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
                 react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.username },
@@ -27,7 +27,7 @@ var UserProfile = function (props) {
                     about_me && (react_1.default.createElement(__1.ExpandableText, { text: about_me, color: "text.secondary" })))),
             react_1.default.createElement(material_1.Stack, { direction: "row", height: "100%", justifyContent: "flex-start" }, enableFollowers == true && react_1.default.createElement(__1.FollowButton, { user: user })),
             (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.buttons },
-                react_1.default.createElement(__1.ActionButtons, { numVisible: 1, buttons: buttons, resource: user, user: user }))))));
+                react_1.default.createElement(__1.ButtonActions, { numVisible: 1, buttons: buttons, resource: user, user: user }))))));
 };
 exports.default = UserProfile;
 var sx = {

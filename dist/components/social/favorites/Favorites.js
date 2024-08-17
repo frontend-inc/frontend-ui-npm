@@ -30,6 +30,6 @@ var __1 = require("../..");
 var Favorites = function (props) {
     var _a = props.query, query = _a === void 0 ? {} : _a, rest = __rest(props, ["query"]);
     query = __assign(__assign({}, query), { method: 'favorites' });
-    return react_1.default.createElement(__1.List, __assign({ query: query }, rest));
+    return react_1.default.createElement(__1.DataList, __assign({ query: query }, rest));
 };
 exports.default = Favorites;

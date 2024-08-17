@@ -54,7 +54,7 @@ var router_1 = require("next/router");
 var __2 = require("../..");
 var hooks_1 = require("../../../hooks");
 var helpers_1 = require("../../../helpers");
-var ListItems = function (props) {
+var DataListItems = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
     var _a = (0, frontend_js_1.useResourceContext)(), setResource = _a.setResource, loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, _b = _a.query, query = _b === void 0 ? {} : _b, setQuery = _a.setQuery, setOpenShow = _a.setOpenShow;
@@ -93,7 +93,7 @@ var ListItems = function (props) {
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
-            react_1.default.createElement(__2.ListLayout, { grid: grid }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.ListCard, { key: index, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleClick(resource); }, buttons: (0, helpers_1.buildActions)({
+            react_1.default.createElement(__2.DataLayout, { grid: grid }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.DataListItem, { key: index, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleClick(resource); }, buttons: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     enableDelete: enableDelete,
                     handleEdit: function () { return handleEdit(resource); },
@@ -103,4 +103,4 @@ var ListItems = function (props) {
             react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: handleLoadMore })),
         !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__2.Placeholder, { enableBorder: true, icon: emptyIcon, title: emptyTitle, description: emptyDescription }))));
 };
-exports.default = ListItems;
+exports.default = DataListItems;

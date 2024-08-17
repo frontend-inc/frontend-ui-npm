@@ -210,7 +210,7 @@ var ResourceList = function (props) {
     var enableSorting = (sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.length) > 0;
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: direction }, sx: sx.buttons, spacing: 1 },
-            react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: direction }, spacing: 1 },
+            react_1.default.createElement(material_1.Stack, { alignItems: 'center', direction: { xs: 'column', sm: direction }, spacing: 1 },
                 enableSearch && (react_1.default.createElement(components_1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
                 enableFilters && (react_1.default.createElement(material_1.Box, null,
                     react_1.default.createElement(components_1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),

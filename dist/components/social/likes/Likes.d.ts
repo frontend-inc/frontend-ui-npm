@@ -1,4 +1,4 @@
 import React from 'react';
-import { ListProps } from '../../cms/collections/List';
-declare const Likes: React.FC<ListProps>;
+import { DataListProps } from '../../cms/collections/DataList';
+declare const Likes: React.FC<DataListProps>;
 export default Likes;

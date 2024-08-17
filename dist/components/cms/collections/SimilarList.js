@@ -15,8 +15,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var List_1 = __importDefault(require("./List"));
+var DataList_1 = __importDefault(require("./DataList"));
 var SimilarList = function (props) {
-    return react_1.default.createElement(List_1.default, __assign({}, props, { filterSimilar: true }));
+    return react_1.default.createElement(DataList_1.default, __assign({}, props, { filterSimilar: true }));
 };
 exports.default = SimilarList;

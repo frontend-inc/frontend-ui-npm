@@ -1,10 +1,9 @@
 import React from 'react';
-import { DisplayFieldType, SocialFieldType, UserType } from '../../../types';
+import { DisplayFieldType, UserType } from '../../../types';
 type UserListItemProps = {
     size?: number;
     resource: UserType;
     displayFields: DisplayFieldType[];
-    socialFields: SocialFieldType[];
     enableFollowers?: boolean;
     handleClick?: () => void;
 };

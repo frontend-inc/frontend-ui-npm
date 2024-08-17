@@ -43,7 +43,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var context_1 = require("../../../context");
 var router_1 = require("next/router");
-var ListCard_1 = __importDefault(require("./ListCard"));
+var DataListItem_1 = __importDefault(require("./DataListItem"));
 var hooks_1 = require("../../../hooks");
 var CarouselListList = function (props) {
     var router = (0, router_1.useRouter)();
@@ -68,7 +68,7 @@ var CarouselListList = function (props) {
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.root), (loading && sx.loading)) },
         react_1.default.createElement(__1.Carousel, { enableDots: enableDots, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(material_1.Box, { key: index, sx: __assign(__assign({}, sx.item), { pt: enableArrows ? 5 : 1, pb: enableDots ? 4 : 1 }) },
-            react_1.default.createElement(ListCard_1.default, { buttons: buttons, style: "card", resource: resource, displayFields: displayFields, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableFavorites: enableFavorites, enableRatings: enableRatings, enableUsers: enableUsers, enableLikes: enableLikes }))); }))));
+            react_1.default.createElement(DataListItem_1.default, { buttons: buttons, style: "card", resource: resource, displayFields: displayFields, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableFavorites: enableFavorites, enableRatings: enableRatings, enableUsers: enableUsers, enableLikes: enableLikes }))); }))));
 };
 exports.default = CarouselListList;
 var sx = {
