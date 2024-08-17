@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var Avatar = function (props) {
     var src = props.src, color = props.color, label = props.label, _a = props.enableGradient, enableGradient = _a === void 0 ? false : _a, _b = props.enableOverlay, enableOverlay = _b === void 0 ? false : _b, _c = props.size, size = _c === void 0 ? 40 : _c;
-    return (react_1.default.createElement(material_1.Avatar, { variant: "circular", src: src, sx: __assign(__assign(__assign(__assign({}, sx.avatar), { height: size, width: size, bgcolor: src ? 'common.white' : color }), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)) }, label ? (react_1.default.createElement(material_1.Typography, { variant: "button", color: "background.default", sx: sx.label }, label)) : (react_1.default.createElement(__1.Icon, { name: "User", color: "secondary.contrastText" }))));
+    return (react_1.default.createElement(material_1.Avatar, { variant: "rounded", src: src, sx: __assign(__assign(__assign(__assign({}, sx.avatar), { height: size, width: size, bgcolor: src ? 'common.white' : color }), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)) }, label ? (react_1.default.createElement(material_1.Typography, { variant: "button", color: "background.default", sx: sx.label }, label)) : (react_1.default.createElement(__1.Icon, { name: "User", color: "secondary.contrastText" }))));
 };
 exports.default = Avatar;
 var sx = {
@@ -27,11 +27,12 @@ var sx = {
         display: 'flex',
         pt: '2px',
         bgcolor: 'secondary.main',
+        borderRadius: 1
     },
     overlay: {
         '&::after': {
             content: '""',
-            borderRadius: '50%',
+            borderRadius: 1,
             position: 'absolute',
             bottom: 0,
             left: 0,
@@ -43,7 +44,7 @@ var sx = {
     gradient: {
         '&::after': {
             content: '""',
-            borderRadius: '50%',
+            borderRadius: 1,
             position: 'absolute',
             bottom: 0,
             left: 0,

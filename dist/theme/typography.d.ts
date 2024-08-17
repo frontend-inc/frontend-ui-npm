@@ -79,6 +79,7 @@ export declare const typography: {
         fontFamily: string;
         fontWeight: number;
         fontSize: number;
+        letterSpacing: string;
     };
     caption: {
         fontFamily: string;

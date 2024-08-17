@@ -12,7 +12,7 @@ var UserChip = function (props) {
         return null;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, direction: "row", spacing: 1 },
         react_1.default.createElement(__1.UserAvatar, { user: user, size: size }),
-        react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.primary" }, user === null || user === void 0 ? void 0 : user.name)));
+        react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, user === null || user === void 0 ? void 0 : user.name)));
 };
 exports.default = UserChip;
 var sx = {

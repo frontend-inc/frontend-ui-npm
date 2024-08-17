@@ -3,7 +3,7 @@ export declare const palette: {
         main: "#212121";
     };
     secondary: {
-        main: "#fafafa";
+        main: "#eeeeee";
         contrastText: "#424242";
     };
     accent: {
@@ -22,7 +22,7 @@ export declare const palette: {
     };
     text: {
         primary: string;
-        secondary: "#424242";
+        secondary: "#212121";
     };
     background: {
         default: string;

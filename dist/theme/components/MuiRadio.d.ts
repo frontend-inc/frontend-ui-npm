@@ -3,7 +3,7 @@ declare const _default: {
         root: {};
         input: {
             '&::placeholder': {
-                color: "#424242";
+                color: "#212121";
             };
         };
     };
