@@ -17,10 +17,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserDetails = exports.Details = exports.ResourceTable = exports.ResourceListItem = exports.ResourceList = exports.Statistics = exports.SearchFilters = exports.RemoteFilterButton = exports.RemoteSortButton = exports.SortButton = exports.KanBan = exports.FilterButton = exports.LoadMore = exports.EmailSignup = exports.AddonShopifyProduct = exports.AddonGoogleMap = exports.AddonCalendly = void 0;
+exports.UserDetails = exports.Details = exports.Statistics = exports.SearchFilters = exports.RemoteFilterButton = exports.RemoteSortButton = exports.SortButton = exports.KanBan = exports.FilterButton = exports.LoadMore = exports.EmailSignup = exports.AddonShopifyProduct = exports.AddonGoogleMap = exports.AddonCalendly = void 0;
 __exportStar(require("./collections"), exports);
 __exportStar(require("./forms"), exports);
 __exportStar(require("./show"), exports);
+__exportStar(require("./resources"), exports);
 var AddonCalendly_1 = require("./addons/AddonCalendly");
 Object.defineProperty(exports, "AddonCalendly", { enumerable: true, get: function () { return __importDefault(AddonCalendly_1).default; } });
 var AddonGoogleMap_1 = require("./addons/AddonGoogleMap");
@@ -45,13 +46,6 @@ var SearchFilters_1 = require("../cms/filters/SearchFilters");
 Object.defineProperty(exports, "SearchFilters", { enumerable: true, get: function () { return __importDefault(SearchFilters_1).default; } });
 var Statistics_1 = require("./analytics/Statistics");
 Object.defineProperty(exports, "Statistics", { enumerable: true, get: function () { return __importDefault(Statistics_1).default; } });
-// Resources
-var ResourceList_1 = require("./resources/ResourceList");
-Object.defineProperty(exports, "ResourceList", { enumerable: true, get: function () { return __importDefault(ResourceList_1).default; } });
-var ResourceListItem_1 = require("./resources/ResourceListItem");
-Object.defineProperty(exports, "ResourceListItem", { enumerable: true, get: function () { return __importDefault(ResourceListItem_1).default; } });
-var ResourceTable_1 = require("./resources/ResourceTable");
-Object.defineProperty(exports, "ResourceTable", { enumerable: true, get: function () { return __importDefault(ResourceTable_1).default; } });
 // Details
 var Details_1 = require("./details/Details");
 Object.defineProperty(exports, "Details", { enumerable: true, get: function () { return __importDefault(Details_1).default; } });

@@ -2,8 +2,8 @@ import React from 'react';
 type TableProps = {
     title?: string;
     loading: boolean;
-    fields: Array<any>;
-    rows: Array<any>;
+    headers: any[];
+    resources: any[];
     toolbar?: React.ReactNode;
     disableBorderRadius?: boolean;
     enableSelect?: boolean;

@@ -1,7 +1,7 @@
 import React from 'react';
 type TableProps = {
     loading: boolean;
-    fields: Array<any>;
+    headers: Array<any>;
     rows: Array<any>;
     enableSearch?: boolean;
     enableFilters?: boolean;

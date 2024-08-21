@@ -9,7 +9,7 @@ var hooks_1 = require("../../../hooks");
 var containers_1 = require("../../../containers");
 var AdminCommentsList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.ResourceList, { url: "".concat(apiUrl, "/comments"), name: "comment", enableSearch: true, enableDelete: true, filterOptions: [
+    return (react_1.default.createElement(components_1.Resources, { url: "".concat(apiUrl, "/comments"), name: "comment", enableSearch: true, enableDelete: true, filterOptions: [
             { field: 'flagged', label: 'Flagged', variant: 'boolean' },
         ], component: containers_1.AdminCommentItem, emptyIcon: "MessageSquare", emptyTitle: "No comments", emptyDescription: "No comments yet." }));
 };

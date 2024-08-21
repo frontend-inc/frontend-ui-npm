@@ -5,24 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var helpers_1 = require("../../../helpers");
-var AdminCommentItem = function (props) {
-    var comment = props.resource, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
-    var getCommentUserName = function (comment) {
-        var _a, _b;
-        return ((_a = comment === null || comment === void 0 ? void 0 : comment.user) === null || _a === void 0 ? void 0 : _a.first_name) + ' ' + ((_b = comment === null || comment === void 0 ? void 0 : comment.user) === null || _b === void 0 ? void 0 : _b.last_name);
-    };
-    return (react_1.default.createElement(components_1.ResourceListItem, { resource: comment, title: getCommentUserName(comment), displayFields: [
-            {
-                label: 'User',
-                name: 'user.username',
-                variant: 'string',
-            },
-            {
-                label: 'Description',
-                variant: 'text',
-                name: 'body',
-            },
-        ], description: (0, helpers_1.truncate)(comment === null || comment === void 0 ? void 0 : comment.body), avatar: react_1.default.createElement(components_1.UserAvatar, { user: comment === null || comment === void 0 ? void 0 : comment.user }), secondaryActions: (comment === null || comment === void 0 ? void 0 : comment.flagged) && react_1.default.createElement(components_1.Label, { label: "Flagged" }), handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete }));
+var AdminContactItem = function (props) {
+    var contact = props.resource, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+    return (react_1.default.createElement(components_1.ResourceListItem, { primary: contact === null || contact === void 0 ? void 0 : contact.name, secondary: contact === null || contact === void 0 ? void 0 : contact.email, avatar: react_1.default.createElement(components_1.UserAvatar, { user: contact }), handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete }));
 };
-exports.default = AdminCommentItem;
+exports.default = AdminContactItem;

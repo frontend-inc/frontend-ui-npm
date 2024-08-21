@@ -1,6 +1,7 @@
 import React from 'react';
 type TableFilterDrawerProps = {
     open: boolean;
+    loading: boolean;
     query: any;
     handleClose: () => void;
     fields: any[];

@@ -50,7 +50,7 @@ var icons_material_1 = require("@mui/icons-material");
 var lucide_react_1 = require("lucide-react");
 var __1 = require("../../..");
 var TableFilterForm = function (props) {
-    var query = props.query, fields = props.fields, handleChange = props.handleChange, handleSearch = props.handleSearch, handleClearFilters = props.handleClearFilters;
+    var loading = props.loading, query = props.query, fields = props.fields, handleChange = props.handleChange, handleSearch = props.handleSearch, handleClearFilters = props.handleClearFilters;
     var _a = (0, react_1.useState)([]), filterOptions = _a[0], setFilterOptions = _a[1];
     var _b = (0, react_1.useState)([]), sortOptions = _b[0], setSortOptions = _b[1];
     var _c = (0, react_1.useState)([]), activeFilters = _c[0], setActiveFilters = _c[1];
@@ -171,7 +171,9 @@ var TableFilterForm = function (props) {
             react_1.default.createElement(material_1.Box, { sx: sx.inputLabel }),
             react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", startIcon: react_1.default.createElement(lucide_react_1.Plus, null), onClick: handleAddFilter, sx: sx.addFilterButton }, "Filter"))),
-        react_1.default.createElement(material_1.Button, { sx: sx.button, startIcon: react_1.default.createElement(lucide_react_1.Search, { size: 20 }), onClick: handleFilterSearch, fullWidth: true, variant: "contained", color: "primary" }, "Search"),
+        react_1.default.createElement(material_1.Button, { sx: sx.button, startIcon: loading ?
+                react_1.default.createElement(__1.IconLoading, { loading: loading }) :
+                react_1.default.createElement(lucide_react_1.Search, { size: 20 }), onClick: handleFilterSearch, fullWidth: true, variant: "contained", color: "primary" }, "Search"),
         react_1.default.createElement(material_1.Button, { sx: sx.button, startIcon: react_1.default.createElement(icons_material_1.FilterList, null), onClick: handleClearFilters, fullWidth: true, variant: "contained", color: "secondary" }, "Reset filters")));
 };
 exports.default = TableFilterForm;

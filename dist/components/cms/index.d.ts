@@ -1,6 +1,7 @@
 export * from './collections';
 export * from './forms';
 export * from './show';
+export * from './resources';
 export { default as AddonCalendly } from './addons/AddonCalendly';
 export { default as AddonGoogleMap } from './addons/AddonGoogleMap';
 export { default as AddonShopifyProduct } from './addons/AddonShopifyProduct';
@@ -13,8 +14,5 @@ export { default as RemoteSortButton } from './sorts/RemoteSortButton';
 export { default as RemoteFilterButton } from './filters/RemoteFilterButton';
 export { default as SearchFilters } from '../cms/filters/SearchFilters';
 export { default as Statistics } from './analytics/Statistics';
-export { default as ResourceList } from './resources/ResourceList';
-export { default as ResourceListItem } from './resources/ResourceListItem';
-export { default as ResourceTable } from './resources/ResourceTable';
 export { default as Details } from './details/Details';
 export { default as UserDetails } from '../users/profile/UserDetails';

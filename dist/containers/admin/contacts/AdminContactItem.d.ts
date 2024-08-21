@@ -1,9 +1,9 @@
 import React from 'react';
-type AdminCommentItemProps = {
+type AdminContactItemProps = {
     resource: any;
     handleClick: () => void;
     handleEdit: () => void;
     handleDelete: () => void;
 };
-declare const AdminCommentItem: React.FC<AdminCommentItemProps>;
-export default AdminCommentItem;
+declare const AdminContactItem: React.FC<AdminContactItemProps>;
+export default AdminContactItem;

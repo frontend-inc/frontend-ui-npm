@@ -40,7 +40,7 @@ var UserList = function (props) {
             router.push("".concat(clientUrl).concat(href, "/").concat(user === null || user === void 0 ? void 0 : user.username));
         }
     };
-    return (react_1.default.createElement(__1.ResourceList, { dense: true, enableSearch: true, enableLoadMore: true, name: "user", url: '/api/v1/cms/users', handleClick: handleClick, component: UserListItem_1.default, itemProps: {
+    return (react_1.default.createElement(__1.Resources, { dense: true, enableSearch: true, enableLoadMore: true, name: "user", url: '/api/v1/cms/users', handleClick: handleClick, component: UserListItem_1.default, itemProps: {
             size: 72,
             displayFields: displayFields,
             socialFields: socialFields,

@@ -1,4 +1,4 @@
 import React from 'react';
-import { ResourceListItemProps } from '../../../components/cms/resources/ResourceListItem';
-declare const AdminMenuItem: React.FC<ResourceListItemProps>;
+import { ResourceProps } from '../../../components/cms/resources/Resource';
+declare const AdminMenuItem: React.FC<ResourceProps>;
 export default AdminMenuItem;

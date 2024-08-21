@@ -1,5 +1,6 @@
 import React from 'react';
 type TableFilterFormProps = {
+    loading: boolean;
     query: any;
     fields: any[];
     handleChange: (e: any) => void;

@@ -9,7 +9,7 @@ var hooks_1 = require("../../../hooks");
 var containers_1 = require("../../../containers");
 var AdminTeamsList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.ResourceList, { enableBorder: true, url: "".concat(apiUrl, "/teams"), name: "team", enableSearch: true, enableEdit: true, sortOptions: [
+    return (react_1.default.createElement(components_1.Resources, { enableBorder: true, url: "".concat(apiUrl, "/teams"), name: "team", enableSearch: true, enableEdit: true, sortOptions: [
             { name: 'name', label: 'Name' },
             { name: 'created_at', label: 'Date' },
         ], fields: [

@@ -9,7 +9,7 @@ var TableFilterForm_1 = __importDefault(require("./TableFilterForm"));
 var icons_material_1 = require("@mui/icons-material");
 var lucide_react_1 = require("lucide-react");
 var TableFilterMenu = function (props) {
-    var open = props.open, anchorEl = props.anchorEl, query = props.query, fields = props.fields, handleChange = props.handleChange, handleClearFilters = props.handleClearFilters, handleSearch = props.handleSearch;
+    var open = props.open, anchorEl = props.anchorEl, loading = props.loading, query = props.query, fields = props.fields, handleChange = props.handleChange, handleClearFilters = props.handleClearFilters, handleSearch = props.handleSearch;
     return (react_1.default.createElement(material_1.Popover, { id: 'filter-popover', open: open, anchorEl: anchorEl, onClose: handleSearch, sx: sx.popover, TransitionComponent: material_1.Fade, anchorOrigin: {
             vertical: 'bottom',
             horizontal: 'center',
@@ -23,7 +23,7 @@ var TableFilterMenu = function (props) {
                     react_1.default.createElement(icons_material_1.FilterList, { color: "primary", sx: sx.icon })),
                 react_1.default.createElement(material_1.Typography, { variant: "caption", color: "textSecondary" }, "Search filters")),
             react_1.default.createElement(material_1.Box, { sx: sx.content },
-                react_1.default.createElement(TableFilterForm_1.default, { query: query, fields: fields, handleChange: handleChange, handleClearFilters: handleClearFilters, handleSearch: handleSearch }),
+                react_1.default.createElement(TableFilterForm_1.default, { loading: loading, query: query, fields: fields, handleChange: handleChange, handleClearFilters: handleClearFilters, handleSearch: handleSearch }),
                 react_1.default.createElement(material_1.Button, { sx: sx.searchButton, startIcon: react_1.default.createElement(lucide_react_1.Search, null), onClick: handleSearch, fullWidth: true, variant: "contained", color: "primary" }, "Search")))));
 };
 exports.default = TableFilterMenu;

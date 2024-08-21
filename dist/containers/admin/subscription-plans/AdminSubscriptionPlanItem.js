@@ -29,15 +29,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var COLORS = __importStar(require("@mui/material/colors"));
-var material_1 = require("@mui/material");
 var AdminSubscriptionPlanItem = function (props) {
     var subscriptionPlan = props.resource, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
-    return (react_1.default.createElement(components_1.ResourceListItem, { icon: "CreditCard", title: react_1.default.createElement(material_1.Typography, { variant: "body1" }, subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.name), displayFields: [
-            {
-                label: 'Price',
-                variant: 'string',
-                name: 'display_price',
-            },
-        ], secondaryActions: (subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.label) && react_1.default.createElement(components_1.Label, { label: subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.label }), color: COLORS.amber[500], handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete, resource: subscriptionPlan }));
+    return (react_1.default.createElement(components_1.ResourceListItem, { icon: "CreditCard", primary: subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.name, secondary: subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.display_price, secondaryActions: (subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.label) && react_1.default.createElement(components_1.Label, { label: subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.label }), color: COLORS.amber[500], handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete }));
 };
 exports.default = AdminSubscriptionPlanItem;

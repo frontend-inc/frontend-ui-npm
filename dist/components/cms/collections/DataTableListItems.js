@@ -116,7 +116,7 @@ var DataTableList = function (props) {
     }); };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Box, { sx: __assign({}, (loading && sx.loading)) },
-            react_1.default.createElement(__1.TableList, { handleClick: handleCellClick, enableEdit: enableEdit, enableDelete: enableDelete, enableShow: enableShow, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleShow: handleClick, loading: resources && loading, fields: headers, rows: resources, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate }))));
+            react_1.default.createElement(__1.TableList, { handleClick: handleCellClick, enableEdit: enableEdit, enableDelete: enableDelete, enableShow: enableShow, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleShow: handleClick, loading: resources && loading, headers: headers, resources: resources, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate }))));
 };
 exports.default = DataTableList;
 var sx = {

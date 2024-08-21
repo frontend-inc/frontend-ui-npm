@@ -1,6 +1,7 @@
 import React from 'react';
 type TableFilterPopupProps = {
     open: boolean;
+    loading: boolean;
     anchorEl: any;
     query: any;
     handleClose: () => void;

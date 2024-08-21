@@ -41,13 +41,13 @@ var styles_1 = require("./helpers/styles");
 var hooks_1 = require("../../../hooks");
 var use_debounce_1 = require("use-debounce");
 var TextInput = function (props) {
-    var label = props.label, type = props.type, name = props.name, margin = props.margin, _a = props.value, value = _a === void 0 ? '' : _a, multiline = props.multiline, handleChange = props.handleChange, rows = props.rows, placeholder = props.placeholder, disabled = props.disabled, errors = props.errors, _b = props.direction, direction = _b === void 0 ? 'column' : _b, _c = props.styles, styles = _c === void 0 ? {} : _c, onBlur = props.onBlur, onFocus = props.onFocus, info = props.info, _d = props.disableDebounce, disableDebounce = _d === void 0 ? false : _d;
-    var _e = (0, react_1.useState)(value), text = _e[0], setText = _e[1];
-    var debouncedText = (0, use_debounce_1.useDebounce)(text, 500)[0];
-    var _f = (0, hooks_1.useError)({
+    var label = props.label, type = props.type, name = props.name, margin = props.margin, _a = props.value, value = _a === void 0 ? '' : _a, multiline = props.multiline, handleChange = props.handleChange, rows = props.rows, placeholder = props.placeholder, disabled = props.disabled, errors = props.errors, _b = props.direction, direction = _b === void 0 ? 'column' : _b, _c = props.styles, styles = _c === void 0 ? {} : _c, onBlur = props.onBlur, onFocus = props.onFocus, info = props.info, _d = props.debounceDelay, debounceDelay = _d === void 0 ? 1500 : _d, _e = props.disableDebounce, disableDebounce = _e === void 0 ? false : _e;
+    var _f = (0, react_1.useState)(value), text = _f[0], setText = _f[1];
+    var debouncedText = (0, use_debounce_1.useDebounce)(text, debounceDelay)[0];
+    var _g = (0, hooks_1.useError)({
         errors: errors,
         name: name,
-    }), error = _f.error, clearError = _f.clearError;
+    }), error = _g.error, clearError = _g.clearError;
     var handleInputChange = function (e) {
         clearError();
         setText(e.target.value);

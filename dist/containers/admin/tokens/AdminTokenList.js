@@ -7,26 +7,15 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var containers_1 = require("../../../containers");
+var AdminTokenForm_1 = __importDefault(require("./AdminTokenForm"));
 var AdminTokenList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.ResourceList, { url: "".concat(apiUrl, "/tokens"), name: "token", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, filterOptions: [
+    return (react_1.default.createElement(components_1.Resources, { url: "".concat(apiUrl, "/tokens"), name: "token", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, filterOptions: [
             {
                 label: 'Admin API Key',
                 field: 'admin',
                 variant: 'boolean',
             },
-        ], fields: [
-            {
-                label: 'Name',
-                name: 'name',
-                variant: 'string',
-                placeholder: 'Enter name ...',
-            },
-            {
-                label: 'Admin',
-                name: 'admin',
-                variant: 'boolean',
-            },
-        ], component: containers_1.AdminTokenItem, emptyIcon: "Key", emptyTitle: "No API Keys", emptyDescription: "No API keys yet." }));
+        ], edit: AdminTokenForm_1.default, create: AdminTokenForm_1.default, component: containers_1.AdminTokenItem, emptyIcon: "Key", emptyTitle: "No API Keys", emptyDescription: "No API keys yet." }));
 };
 exports.default = AdminTokenList;

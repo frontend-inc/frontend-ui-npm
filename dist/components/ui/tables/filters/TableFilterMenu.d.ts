@@ -1,6 +1,7 @@
 import React from 'react';
 import { SyntheticEventType } from '../../../../types';
 type FilterMenuProps = {
+    loading: boolean;
     open: boolean;
     anchorEl: HTMLElement | null;
     fields: any;

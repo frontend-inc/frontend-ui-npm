@@ -47,11 +47,11 @@ var hooks_1 = require("../../../hooks");
 // Call To Action
 var EmailSignup = function (props) {
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
-    var _c = (0, frontend_js_1.useResource)({
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.textVariant, textVariant = _b === void 0 ? 'h3' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Subscribe' : _c;
+    var _d = (0, frontend_js_1.useResource)({
         name: 'contact',
         url: "/api/v1/contacts",
-    }), errors = _c.errors, delayedLoading = _c.delayedLoading, contact = _c.resource, setContact = _c.setResource, handleChange = _c.handleChange, create = _c.create;
+    }), errors = _d.errors, delayedLoading = _d.delayedLoading, contact = _d.resource, setContact = _d.setResource, handleChange = _d.handleChange, create = _d.create;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -69,9 +69,7 @@ var EmailSignup = function (props) {
     }); };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 1 },
-            label && (react_1.default.createElement(material_1.Typography, { variant: 'caption', color: "text.secondary", sx: sx.label }, label)),
-            title && (react_1.default.createElement(material_1.Typography, { variant: 'h6', color: "text.primary", sx: sx.title }, title)),
-            description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: sx.description }, description)),
+            react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textVariant: textVariant, textAlign: "center" }),
             react_1.default.createElement(material_1.Stack, { sx: sx.inputContainer, direction: "row", spacing: 0 },
                 react_1.default.createElement(components_1.TextInput, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, handleChange: handleChange, placeholder: "Enter your email", type: "email", styles: sx.input }),
                 react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: delayedLoading }) }, buttonText)))));
@@ -98,7 +96,6 @@ var sx = {
         maxWidth: '600px',
     },
     inputContainer: {
-        pt: 2,
         textAlign: 'center',
         width: '100%',
         maxWidth: 420,

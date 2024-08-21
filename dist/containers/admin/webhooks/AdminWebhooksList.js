@@ -16,7 +16,7 @@ var WEBHOOK_EVENT_TYPES = [
 ];
 var AdminWebhooksList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.ResourceList, { url: "".concat(apiUrl, "/webhooks"), name: "webhook", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, query: {
+    return (react_1.default.createElement(components_1.Resources, { url: "".concat(apiUrl, "/webhooks"), name: "webhook", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, query: {
             sort_by: 'event_type',
             sort_direction: 'asc',
         }, filterOptions: [

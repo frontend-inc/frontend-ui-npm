@@ -3,6 +3,7 @@ import { TextInputPropsType } from '../../../types';
 type TextInputProps = TextInputPropsType & {
     onBlur?: () => void;
     onFocus?: () => void;
+    debounceDelay?: number;
     disableDebounce?: boolean;
 };
 declare const TextInput: React.FC<TextInputProps>;

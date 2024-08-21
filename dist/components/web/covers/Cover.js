@@ -42,7 +42,7 @@ var context_1 = require("../../../context");
 var Cover = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var title = props.title, description = props.description, _a = props.textVariant, textVariant = _a === void 0 ? 'h2' : _a, buttonText = props.buttonText, handleClick = props.handleClick, image = props.image, _b = props.height, height = _b === void 0 ? 520 : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.opacity, opacity = _f === void 0 ? 0.65 : _f, _g = props.alignItems, alignItems = _g === void 0 ? 'center' : _g, _h = props.overlayColor, overlayColor = _h === void 0 ? '#000000' : _h, href = props.href;
+    var title = props.title, description = props.description, _a = props.textVariant, textVariant = _a === void 0 ? 'h1' : _a, buttonText = props.buttonText, handleClick = props.handleClick, image = props.image, _b = props.height, height = _b === void 0 ? 520 : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.opacity, opacity = _f === void 0 ? 0.65 : _f, _g = props.alignItems, alignItems = _g === void 0 ? 'center' : _g, _h = props.overlayColor, overlayColor = _h === void 0 ? '#000000' : _h, href = props.href;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
