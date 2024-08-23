@@ -32,7 +32,7 @@ var Pagination = function (props) {
     var _g = (0, react_1.useState)(page), pageNumber = _g[0], setPageNumber = _g[1];
     var handleChangePage = function (event, nextPage) {
         setPageNumber(nextPage);
-        handlePaginate(event, nextPage);
+        handlePaginate(nextPage);
     };
     (0, react_1.useEffect)(function () {
         if (page && numPages && totalCount && perPage) {

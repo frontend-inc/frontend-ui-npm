@@ -44,6 +44,6 @@ var ImageListItems = function (props) {
                     },
                 }, handleClick: function () { return handleClick(resource); } }));
         })),
-        react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: loadMore })));
+        react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: loadMore })));
 };
 exports.default = ImageListItems;

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SortableResourceListItems = exports.SortableResourceList = exports.ResourceTable = exports.ResourceForm = exports.ResourceToolbar = exports.ResourceListItems = exports.ResourceListItem = exports.ResourceDetails = exports.ResourceShow = exports.ResourceList = exports.ResourceItem = void 0;
+exports.SortableListItems = exports.ResourceTable = exports.ResourceForm = exports.ResourceToolbar = exports.ResourceListItems = exports.ResourceListItem = exports.ResourceDetails = exports.ResourceShow = exports.ResourceList = exports.ResourceItem = void 0;
 // Resources
 var ResourceItem_1 = require("./ResourceItem");
 Object.defineProperty(exports, "ResourceItem", { enumerable: true, get: function () { return __importDefault(ResourceItem_1).default; } });
@@ -23,7 +23,5 @@ var ResourceForm_1 = require("./ResourceForm");
 Object.defineProperty(exports, "ResourceForm", { enumerable: true, get: function () { return __importDefault(ResourceForm_1).default; } });
 var ResourceTable_1 = require("./ResourceTable");
 Object.defineProperty(exports, "ResourceTable", { enumerable: true, get: function () { return __importDefault(ResourceTable_1).default; } });
-var SortableResourceList_1 = require("./SortableResourceList");
-Object.defineProperty(exports, "SortableResourceList", { enumerable: true, get: function () { return __importDefault(SortableResourceList_1).default; } });
-var SortableResourceListItems_1 = require("./SortableResourceListItems");
-Object.defineProperty(exports, "SortableResourceListItems", { enumerable: true, get: function () { return __importDefault(SortableResourceListItems_1).default; } });
+var SortableListItems_1 = require("./SortableListItems");
+Object.defineProperty(exports, "SortableListItems", { enumerable: true, get: function () { return __importDefault(SortableListItems_1).default; } });

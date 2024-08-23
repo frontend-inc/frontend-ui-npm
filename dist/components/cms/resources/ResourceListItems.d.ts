@@ -1,6 +1,6 @@
 import React from 'react';
 import { TableHeaderType, SortOptionType, QueryParamsType } from '../../../types';
-export type ResourceListProps = {
+export type ResourceListItemsProps = {
     query?: QueryParamsType;
     resources: any[];
     headers?: TableHeaderType[];
@@ -13,9 +13,9 @@ export type ResourceListProps = {
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;
     handleDrop?: (sorted: any[]) => void;
-    handleLoadMore: () => void;
-    handleSort: (field: SortOptionType) => void;
+    handlePaginate: (page: number) => void;
+    handleSort?: (field: SortOptionType) => void;
     renderItem: (resource: any, props: any) => React.ReactNode;
 };
-declare const ResourceList: React.FC<ResourceListProps>;
-export default ResourceList;
+declare const ResourceListItems: React.FC<ResourceListItemsProps>;
+export default ResourceListItems;

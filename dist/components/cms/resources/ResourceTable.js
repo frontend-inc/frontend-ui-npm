@@ -17,6 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var ResourceTable = function (props) {
-    return react_1.default.createElement(components_1.ResourceList, __assign({}, props, { list: components_1.TableList }));
+    return (react_1.default.createElement(components_1.ResourceList, __assign({}, props, { list: components_1.TableList, disableInfiniteLoad: true })));
 };
 exports.default = ResourceTable;

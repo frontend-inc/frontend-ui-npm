@@ -30,7 +30,7 @@ var TableList = function (props) {
                 !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(material_1.TableRow, null,
                     react_1.default.createElement(material_1.TableCell, { colSpan: (headers === null || headers === void 0 ? void 0 : headers.length) + 1 },
                         react_1.default.createElement(components_1.Placeholder, { icon: emptyIcon, title: emptyTitle, description: emptyDescription })))))),
-        react_1.default.createElement(components_1.Pagination, { page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, loading: loading, handlePaginate: handlePaginate })));
+        react_1.default.createElement(components_1.Pagination, { loading: loading, page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate })));
 };
 exports.default = TableList;
 var sx = {

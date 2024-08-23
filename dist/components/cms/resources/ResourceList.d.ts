@@ -2,11 +2,13 @@ import React from 'react';
 import { FormFieldType, SearchFilterOptionType, TableHeaderType, DisplayFieldType } from '../../../types';
 import { SortOptionType } from '../../../types';
 export type ResourceListProps = {
+    sortable?: boolean;
     toolbar?: React.FC<any>;
     list?: React.FC<any>;
     edit?: React.FC<any>;
     create?: React.FC<any>;
     show?: React.FC<any>;
+    pagination?: React.FC<any>;
     url: string;
     name: string;
     component?: React.FC<any>;
@@ -28,19 +30,20 @@ export type ResourceListProps = {
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
-    sortable?: boolean;
     enableBorder?: boolean;
     direction?: 'row' | 'column';
     emptyIcon?: string;
     emptyTitle?: string;
     emptyDescription?: string;
     itemProps?: any;
+    disableInfiniteLoad?: boolean;
     slots?: {
         list?: any;
         edit?: any;
         create?: any;
         show?: any;
         toolbar?: any;
+        pagination?: any;
     };
 };
 declare const ResourceList: React.FC<ResourceListProps>;

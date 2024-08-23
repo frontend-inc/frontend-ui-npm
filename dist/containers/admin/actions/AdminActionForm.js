@@ -32,7 +32,7 @@ var AdminActionForm = function (props) {
             variant: 'nospace',
         },
         {
-            label: 'Action',
+            label: 'Trigger',
             name: 'action_type',
             variant: 'select',
             options: constants_1.ACTION_TYPES,

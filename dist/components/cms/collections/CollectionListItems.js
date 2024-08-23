@@ -100,7 +100,7 @@ var CollectionListItems = function (props) {
                     handleDelete: function () { return handleDeleteClick(resource); },
                     buttons: buttons,
                 }), enableUsers: enableUsers, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay })); })),
-            react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, loadMore: handleLoadMore })),
+            react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handleLoadMore })),
         !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__2.Placeholder, { enableBorder: true, icon: emptyIcon, title: emptyTitle, description: emptyDescription }))));
 };
 exports.default = CollectionListItems;

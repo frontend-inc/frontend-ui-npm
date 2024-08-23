@@ -58,7 +58,7 @@ var AdminActionsList = function () {
                 },
             ], edit: AdminActionForm_1.default, create: AdminActionForm_1.default, handleClick: handleClick, component: containers_1.AdminActionItem, emptyIcon: "Hook", emptyTitle: "No actions", emptyDescription: "No actions yet." }),
         react_1.default.createElement(components_1.Drawer, { open: open, handleClose: handleClose },
-            react_1.default.createElement(components_1.SortableResourceList, { enableBorder: true, direction: "column", 
+            react_1.default.createElement(components_1.ResourceList, { sortable: true, enableBorder: true, direction: "column", 
                 //@ts-ignore
                 url: "".concat(apiUrl, "/actions/").concat(activeAction === null || activeAction === void 0 ? void 0 : activeAction.id, "/zaps"), name: "zap", enableSearch: true, enableCreate: true, enableEdit: true, enableDelete: true, query: {
                     sort_by: 'position',

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ZAP_TYPES = exports.WEBHOOK_EVENT_TYPES = exports.ACTION_TYPES = void 0;
 exports.ACTION_TYPES = [
+    { label: 'Manual', value: 'manual' },
     { label: 'Resource created', value: 'resources.create' },
     { label: 'Resource updated', value: 'resources.save' },
     { label: 'Resource deleted', value: 'resources.delete' },
