@@ -6,9 +6,9 @@ export type RemoteAutosuggestProps = {
     label?: string;
     name: string;
     url: string;
-    displayField?: string;
     handleChange: (event: SyntheticEventType) => void;
     handleClear?: () => void;
+    displayField?: string;
     valueParam?: string;
     placeholder?: string;
     imageField?: string;

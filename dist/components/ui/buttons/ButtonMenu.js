@@ -7,11 +7,12 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var ButtonMenu = function (props) {
-    var onClick = props.onClick, action = props.action, actionId = props.actionId, path = props.path, label = props.label;
+    var onClick = props.onClick, resource = props.resource, action = props.action, actionId = props.actionId, path = props.path, label = props.label;
     var handleClick = (0, hooks_1.useButtons)({
         action: action,
         actionId: actionId,
         path: path,
+        resource: resource,
     }).handleClick;
     return (react_1.default.createElement(material_1.MenuItem, { onClick: onClick ? onClick : handleClick }, label));
 };

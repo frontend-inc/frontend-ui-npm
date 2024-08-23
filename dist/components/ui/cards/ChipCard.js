@@ -16,23 +16,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
 var ChipCard = function (props) {
-    var resource = props.resource, buttons = props.buttons, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, handleClick = props.handleClick, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, _d = props.enableUsers, enableUsers = _d === void 0 ? false : _d, _e = props.enableFavorites, enableFavorites = _e === void 0 ? false : _e, _f = props.enableRatings, enableRatings = _f === void 0 ? false : _f;
-    var _g = resource || {}, title = _g.title, image = _g.image;
-    return (react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: sx.root },
-        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, sx: sx.buttons },
-                enableFavorites == true && (react_1.default.createElement(__1.FavoriteButton, { handle: resource === null || resource === void 0 ? void 0 : resource.handle })),
-                react_1.default.createElement(__1.ButtonActions, { numVisible: 0, buttons: buttons, resource: resource })) },
+    var _a, _b;
+    var primary = props.primary, secondary = props.secondary, secondaryAction = props.secondaryAction, handleClick = props.handleClick, image = props.image, _c = props.slots, slots = _c === void 0 ? {
+        item: {},
+        image: {}
+    } : _c;
+    return (react_1.default.createElement(material_1.List, __assign({ dense: true, disablePadding: true, sx: sx.root }, slots.item),
+        react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: secondaryAction },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
                 image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                    react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), src: image === null || image === void 0 ? void 0 : image.url, alt: title },
+                    react_1.default.createElement(material_1.Avatar, __assign({ sx: __assign(__assign(__assign({}, sx.avatar), (((_a = slots === null || slots === void 0 ? void 0 : slots.image) === null || _a === void 0 ? void 0 : _a.enableGradient) && sx.gradient)), (((_b = slots === null || slots === void 0 ? void 0 : slots.image) === null || _b === void 0 ? void 0 : _b.enableOverlay) && sx.overlay)), src: image, alt: primary }, slots.image),
                         react_1.default.createElement(material_1.Box, null)))),
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0 },
-                        react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, title),
-                        enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" }))), secondary: react_1.default.createElement(react_1.default.Fragment, null,
-                        react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
-                        enableUsers == true && react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })) })))));
+                react_1.default.createElement(material_1.ListItemText, { primary: primary, secondary: secondary })))));
 };
 exports.default = ChipCard;
 var sx = {

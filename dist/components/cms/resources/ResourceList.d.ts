@@ -10,12 +10,12 @@ export type ResourceListProps = {
     enableEdit?: boolean;
     enableDelete?: boolean;
     handleClick?: (resource: any) => void;
-    handleEdit: (resource: any) => void;
-    handleDelete: (resource: any) => void;
+    handleEdit?: (resource: any) => void;
+    handleDelete?: (resource: any) => void;
     handleDrop?: (sorted: any[]) => void;
     handleLoadMore: () => void;
     handleSort: (field: SortOptionType) => void;
-    component?: React.FC<any>;
+    renderItem: (resource: any, props: any) => React.ReactNode;
 };
 declare const ResourceList: React.FC<ResourceListProps>;
 export default ResourceList;

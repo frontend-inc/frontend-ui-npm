@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var FormInput = function (props) {
-    var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove, resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, fields = props.fields, contentType = props.contentType, _a = props.query, query = _a === void 0 ? {} : _a, displayField = props.displayField;
+    var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove, resource = props.resource, url = props.url, foreignUrl = props.foreignUrl, fields = props.fields, contentType = props.contentType, _a = props.query, query = _a === void 0 ? {} : _a, displayField = props.displayField, valueParam = props.valueParam;
     var componentMapper = {
         autosuggest: components_1.RemoteAutosuggest,
         array: components_1.ArrayInput,
@@ -45,6 +45,7 @@ var FormInput = function (props) {
         autosuggest: {
             url: url,
             displayField: displayField,
+            valueParam: valueParam,
             defaultQuery: query,
         },
         text: {

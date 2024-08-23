@@ -8,6 +8,7 @@ type ActionProps = {
     action: ActionType;
     actionId?: number;
     path?: string;
+    resource?: any;
     onClick?: () => void;
     children: React.ReactNode;
 };

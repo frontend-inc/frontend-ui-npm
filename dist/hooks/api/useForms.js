@@ -75,10 +75,10 @@ var useForms = function (params) {
         setOpenShow(false);
         setOpenEdit(true);
     };
-    var handleEdit = function (item) {
+    var handleEdit = function (resource) {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
-        setResource(item);
+        setResource(resource);
         setOpenShow(false);
         setOpenEdit(true);
     };
@@ -123,10 +123,10 @@ var useForms = function (params) {
             }
         });
     }); };
-    var handleDeleteClick = function (item) {
+    var handleDeleteClick = function (resource) {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
-        setResource(item);
+        setResource(resource);
         setOpenDelete(true);
     };
     var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {

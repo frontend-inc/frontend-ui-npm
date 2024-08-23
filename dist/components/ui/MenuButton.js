@@ -27,6 +27,6 @@ var MenuButton = function (props) {
             handleDelete && (react_1.default.createElement(material_1.MenuItem, { onClick: handleDelete },
                 enableIcons && (react_1.default.createElement(material_1.ListItemIcon, null,
                     react_1.default.createElement(components_1.Icon, { name: "Trash", size: 20 }))),
-                "Remove")))));
+                "Delete")))));
 };
 exports.default = MenuButton;

@@ -79,19 +79,28 @@ var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ResourceForm_1 = __importDefault(require("./ResourceForm"));
+var ResourceShow_1 = __importDefault(require("./ResourceShow"));
 var ResourceList_1 = __importDefault(require("./ResourceList"));
 var ResourceListItem_1 = __importDefault(require("./ResourceListItem"));
 var ResourceToolbar_1 = __importDefault(require("./ResourceToolbar"));
 var Resources = function (props) {
-    var _a = props.toolbar, Toolbar = _a === void 0 ? ResourceToolbar_1.default : _a, _b = props.list, List = _b === void 0 ? ResourceList_1.default : _b, _c = props.component, Component = _c === void 0 ? ResourceListItem_1.default : _c, _d = props.edit, EditForm = _d === void 0 ? ResourceForm_1.default : _d, _e = props.create, CreateForm = _e === void 0 ? ResourceForm_1.default : _e, url = props.url, name = props.name, _f = props.headers, headers = _f === void 0 ? [] : _f, _g = props.fields, fields = _g === void 0 ? [] : _g, _h = props.filterOptions, filterOptions = _h === void 0 ? [] : _h, _j = props.sortOptions, sortOptions = _j === void 0 ? [] : _j, _k = props.query, defaultQuery = _k === void 0 ? {} : _k, _l = props.perPage, perPage = _l === void 0 ? 20 : _l, _m = props.enableSearch, enableSearch = _m === void 0 ? false : _m, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleClick = props.handleClick, _o = props.enableBorder, enableBorder = _o === void 0 ? false : _o, _p = props.direction, direction = _p === void 0 ? 'row' : _p, _q = props.emptyIcon, emptyIcon = _q === void 0 ? 'Search' : _q, _r = props.emptyTitle, emptyTitle = _r === void 0 ? 'No results found' : _r, _s = props.emptyDescription, emptyDescription = _s === void 0 ? 'Try adjusting your search or filters' : _s;
-    var _t = (0, react_1.useState)(false), openCreate = _t[0], setOpenCreate = _t[1];
-    var _u = (0, react_1.useState)(false), openEdit = _u[0], setOpenEdit = _u[1];
-    var _v = (0, react_1.useState)(false), openDelete = _v[0], setOpenDelete = _v[1];
-    var _w = (0, frontend_js_1.useResource)({
+    var SLOT_PROPS = {
+        list: {},
+        edit: {},
+        create: {},
+        show: {},
+        toolbar: {}
+    };
+    var _a = props.toolbar, Toolbar = _a === void 0 ? ResourceToolbar_1.default : _a, _b = props.list, List = _b === void 0 ? ResourceList_1.default : _b, _c = props.component, Component = _c === void 0 ? ResourceListItem_1.default : _c, _d = props.edit, EditForm = _d === void 0 ? ResourceForm_1.default : _d, _e = props.create, CreateForm = _e === void 0 ? ResourceForm_1.default : _e, _f = props.show, ShowModal = _f === void 0 ? ResourceShow_1.default : _f, url = props.url, name = props.name, _g = props.headers, headers = _g === void 0 ? [] : _g, _h = props.fields, fields = _h === void 0 ? [] : _h, _j = props.filterOptions, filterOptions = _j === void 0 ? [] : _j, _k = props.sortOptions, sortOptions = _k === void 0 ? [] : _k, _l = props.displayFields, displayFields = _l === void 0 ? [] : _l, _m = props.query, defaultQuery = _m === void 0 ? {} : _m, _o = props.perPage, perPage = _o === void 0 ? 20 : _o, _p = props.enableSearch, enableSearch = _p === void 0 ? false : _p, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableShow = props.enableShow, handleClick = props.handleClick, _q = props.slots, slots = _q === void 0 ? SLOT_PROPS : _q, _r = props.enableBorder, enableBorder = _r === void 0 ? false : _r, _s = props.direction, direction = _s === void 0 ? 'row' : _s, _t = props.emptyIcon, emptyIcon = _t === void 0 ? 'Search' : _t, _u = props.emptyTitle, emptyTitle = _u === void 0 ? 'No results found' : _u, _v = props.emptyDescription, emptyDescription = _v === void 0 ? 'Try adjusting your search or filters' : _v;
+    var _w = (0, react_1.useState)(false), openShow = _w[0], setOpenShow = _w[1];
+    var _x = (0, react_1.useState)(false), openCreate = _x[0], setOpenCreate = _x[1];
+    var _y = (0, react_1.useState)(false), openEdit = _y[0], setOpenEdit = _y[1];
+    var _z = (0, react_1.useState)(false), openDelete = _z[0], setOpenDelete = _z[1];
+    var _0 = (0, frontend_js_1.useResource)({
         name: name,
         url: url,
-    }), loading = _w.delayedLoading, errors = _w.errors, resource = _w.resource, resources = _w.resources, setResource = _w.setResource, update = _w.update, create = _w.create, destroy = _w.destroy, updatePositions = _w.updatePositions, handleChange = _w.handleChange, query = _w.query, findMany = _w.findMany, reloadMany = _w.reloadMany, removeAttachment = _w.removeAttachment, page = _w.page, numPages = _w.numPages, loadMore = _w.loadMore;
-    var _x = (0, react_1.useState)(''), keywords = _x[0], setKeywords = _x[1];
+    }), loading = _0.delayedLoading, errors = _0.errors, resource = _0.resource, resources = _0.resources, setResource = _0.setResource, update = _0.update, create = _0.create, destroy = _0.destroy, updatePositions = _0.updatePositions, handleChange = _0.handleChange, query = _0.query, findOne = _0.findOne, findMany = _0.findMany, reloadMany = _0.reloadMany, removeAttachment = _0.removeAttachment, page = _0.page, numPages = _0.numPages, loadMore = _0.loadMore;
+    var _1 = (0, react_1.useState)(''), keywords = _1[0], setKeywords = _1[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -109,9 +118,9 @@ var Resources = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _y = (0, hooks_1.useFilters)({
+    var _2 = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _y.activeFilters, setActiveFilters = _y.setActiveFilters, handleAddFilter = _y.handleAddFilter, buildQueryFilters = _y.buildQueryFilters;
+    }), activeFilters = _2.activeFilters, setActiveFilters = _2.setActiveFilters, handleAddFilter = _2.handleAddFilter, buildQueryFilters = _2.buildQueryFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -129,11 +138,13 @@ var Resources = function (props) {
     };
     var handleAdd = function () {
         setResource({});
+        setOpenShow(false);
         setOpenEdit(false);
         setOpenCreate(true);
     };
     var handleEdit = function (resource) {
         setResource(resource);
+        setOpenShow(false);
         setOpenCreate(false);
         setOpenEdit(true);
     };
@@ -156,6 +167,7 @@ var Resources = function (props) {
                 case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setResource({});
+                        setOpenShow(false);
                         setOpenCreate(false);
                         setOpenEdit(false);
                         reloadMany();
@@ -166,6 +178,24 @@ var Resources = function (props) {
                     console.log('Error', err_1);
                     return [3 /*break*/, 6];
                 case 6: return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleShowClick = function (resource) { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!enableShow) return [3 /*break*/, 2];
+                    return [4 /*yield*/, findOne(resource === null || resource === void 0 ? void 0 : resource.id)];
+                case 1:
+                    resp = _a.sent();
+                    setResource(resp);
+                    setOpenShow(true);
+                    setOpenEdit(false);
+                    setOpenCreate(false);
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
             }
         });
     }); };
@@ -181,6 +211,8 @@ var Resources = function (props) {
                 case 0: return [4 /*yield*/, destroy(resource === null || resource === void 0 ? void 0 : resource.id)];
                 case 1:
                     _a.sent();
+                    setOpenShow(false);
+                    setOpenEdit(false);
                     setOpenDelete(false);
                     setResource({});
                     reloadMany();
@@ -221,12 +253,15 @@ var Resources = function (props) {
     var enableFilters = (filterOptions === null || filterOptions === void 0 ? void 0 : filterOptions.length) > 0;
     var enableSorting = (sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.length) > 0;
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(Toolbar, { direction: direction, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, enableCreate: enableCreate, handleSearch: handleSearch, handleKeywordChange: handleKeywordChange, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSort: handleSort, handleSortDirection: handleSortDirection, handleAdd: handleAdd, keywords: keywords, activeFilters: activeFilters, filterOptions: filterOptions, sortOptions: sortOptions, query: query }),
+        react_1.default.createElement(Toolbar, __assign({ direction: direction, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, enableCreate: enableCreate, handleSearch: handleSearch, handleKeywordChange: handleKeywordChange, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSort: handleSort, handleSortDirection: handleSortDirection, handleAdd: handleAdd, keywords: keywords, activeFilters: activeFilters, filterOptions: filterOptions, sortOptions: sortOptions, query: query }, slots.toolbar)),
         react_1.default.createElement(material_1.Box, { sx: __assign({}, (loading && sx.loading)) },
-            react_1.default.createElement(List, { query: query, headers: headers, resources: resources, page: page, numPages: numPages, enableBorder: enableBorder, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: handleClick ? handleClick : undefined, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleDrop: handleDrop, handleSort: handleSort, handleLoadMore: loadMore, component: Component }),
+            react_1.default.createElement(List, { query: query, headers: headers, resources: resources, page: page, numPages: numPages, handleDrop: handleDrop, handleSort: handleSort, handleLoadMore: loadMore, renderItem: function (resource, props) { return (react_1.default.createElement(Component, __assign({ key: resource === null || resource === void 0 ? void 0 : resource.id, resource: resource, enableBorder: enableBorder, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: handleClick ?
+                        function () { return handleClick(resource); } :
+                        function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); } }, props, slots.list))); } }),
             !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: emptyIcon, title: emptyTitle, description: emptyDescription }))),
-        react_1.default.createElement(CreateForm, { open: openCreate, handleClose: function () { return setOpenCreate(false); }, loading: loading, errors: errors, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, fields: fields }),
-        react_1.default.createElement(EditForm, { open: openEdit, handleClose: function () { return setOpenEdit(false); }, loading: loading, errors: errors, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, fields: fields }),
+        react_1.default.createElement(CreateForm, __assign({ open: openCreate, handleClose: function () { return setOpenCreate(false); }, loading: loading, errors: errors, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, fields: fields }, slots.create)),
+        react_1.default.createElement(EditForm, __assign({ open: openEdit, handleClose: function () { return setOpenEdit(false); }, loading: loading, errors: errors, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, fields: fields }, slots.edit)),
+        react_1.default.createElement(ShowModal, __assign({ loading: loading, open: openShow, handleClose: function () { return setOpenShow(false); }, fields: displayFields, resource: resource, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); } }, slots.show)),
         react_1.default.createElement(__1.AlertModal, { open: openDelete, handleClose: function () { return setOpenDelete(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };
 exports.default = Resources;

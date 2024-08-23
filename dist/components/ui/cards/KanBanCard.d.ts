@@ -1,13 +1,9 @@
 import React from 'react';
-import { CardProps } from '../../../types';
+import { CardProps } from './Card';
 type KanBanCardProps = CardProps & {
-    id: string;
     loading?: boolean;
-    ref?: any;
-    attributes?: any;
-    listeners?: any;
+    id: string;
     enableDragging?: boolean;
-    handleComment: () => void;
 };
 declare const KanBanCard: React.FC<KanBanCardProps>;
 export default KanBanCard;

@@ -62,91 +62,75 @@ var useButtons = function (params) {
                     _a = action;
                     switch (_a) {
                         case 'navigate': return [3 /*break*/, 1];
-                        case 'navigate_user': return [3 /*break*/, 2];
-                        case 'navigate_cms': return [3 /*break*/, 3];
-                        case 'copy': return [3 /*break*/, 4];
-                        case 'email': return [3 /*break*/, 5];
-                        case 'phone': return [3 /*break*/, 6];
-                        case 'sms': return [3 /*break*/, 7];
-                        case 'url': return [3 /*break*/, 8];
-                        case 'link': return [3 /*break*/, 9];
-                        case 'stripe_payment_link': return [3 /*break*/, 10];
-                        case 'download': return [3 /*break*/, 11];
-                        case 'action': return [3 /*break*/, 12];
+                        case 'copy': return [3 /*break*/, 2];
+                        case 'email': return [3 /*break*/, 3];
+                        case 'phone': return [3 /*break*/, 4];
+                        case 'sms': return [3 /*break*/, 5];
+                        case 'url': return [3 /*break*/, 6];
+                        case 'link': return [3 /*break*/, 7];
+                        case 'stripe_payment_link': return [3 /*break*/, 8];
+                        case 'download': return [3 /*break*/, 9];
+                        case 'action': return [3 /*break*/, 10];
                     }
-                    return [3 /*break*/, 14];
+                    return [3 /*break*/, 12];
                 case 1:
                     url = "".concat(clientUrl).concat(path);
                     router.push(url);
-                    return [3 /*break*/, 15];
+                    return [3 /*break*/, 13];
                 case 2:
-                    url = "".concat(clientUrl).concat(path);
-                    if (resource === null || resource === void 0 ? void 0 : resource.handle) {
-                        url = "".concat(clientUrl).concat(path, "/").concat(user.username);
-                    }
-                    router.push(url);
-                    return [3 /*break*/, 15];
-                case 3:
-                    url = "".concat(clientUrl).concat(path);
-                    if (resource === null || resource === void 0 ? void 0 : resource.handle) {
-                        url = "".concat(clientUrl).concat(path, "/").concat(resource === null || resource === void 0 ? void 0 : resource.handle);
-                    }
-                    router.push(url);
-                    return [3 /*break*/, 15];
-                case 4:
                     if (value) {
                         (0, copy_to_clipboard_1.default)(value);
                         showAlertSuccess('Copied to clipboard');
                     }
-                    return [3 /*break*/, 15];
-                case 5:
+                    return [3 /*break*/, 13];
+                case 3:
                     if (value) {
                         window.location.href = "mailto:".concat(value);
                     }
-                    return [3 /*break*/, 15];
-                case 6:
+                    return [3 /*break*/, 13];
+                case 4:
                     if (value) {
                         window.location.href = "tel:".concat(value);
                     }
-                    return [3 /*break*/, 15];
-                case 7:
+                    return [3 /*break*/, 13];
+                case 5:
                     if (value) {
                         window.location.href = "sms:".concat(value);
                     }
-                    return [3 /*break*/, 15];
-                case 8:
+                    return [3 /*break*/, 13];
+                case 6:
                     if (path) {
                         window.open(path, '_blank');
                     }
-                    return [3 /*break*/, 15];
-                case 9:
+                    return [3 /*break*/, 13];
+                case 7:
                     if (value) {
                         window.open(value, '_blank');
                     }
-                    return [3 /*break*/, 15];
-                case 10:
+                    return [3 /*break*/, 13];
+                case 8:
                     if (value) {
                         url_1 = "".concat(value, "?prefilled_email=").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.email, "&client_reference_id=").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.email);
                         window.open(url_1, '_blank');
                     }
-                    return [3 /*break*/, 15];
-                case 11:
+                    return [3 /*break*/, 13];
+                case 9:
                     if (path) {
                         window.open(path, '_blank');
                     }
-                    return [3 /*break*/, 15];
-                case 12: return [4 /*yield*/, loadingWrapper(function () {
+                    return [3 /*break*/, 13];
+                case 10: return [4 /*yield*/, loadingWrapper(function () {
                         return api.post("/api/v1/actions/".concat(actionId, "/trigger"), {
                             app_action: {
                                 resource_id: resource === null || resource === void 0 ? void 0 : resource.id,
                             }
                         });
                     })];
-                case 13:
+                case 11:
                     _b.sent();
-                    return [3 /*break*/, 15];
-                case 14: return [3 /*break*/, 15];
-                case 15: return [2 /*return*/];
+                    return [3 /*break*/, 13];
+                case 12: return [3 /*break*/, 13];
+                case 13: return [2 /*return*/];
             }
         });
     }); };

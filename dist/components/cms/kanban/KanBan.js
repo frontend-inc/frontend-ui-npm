@@ -28,10 +28,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
-var Sortable_1 = __importDefault(require("./Sortable"));
+var KanBanBoard_1 = __importDefault(require("./KanBanBoard"));
 var utils_1 = require("../../../helpers/utils");
 var KanBan = function (props) {
-    var loading = props.loading, buttons = props.buttons, headers = props.headers, fieldName = props.fieldName, resources = props.resources, activeResource = props.activeResource, handleClick = props.handleClick, handleDrop = props.handleDrop, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, enableOverlay = props.enableOverlay, enableGradient = props.enableGradient, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleAdd = props.handleAdd, handleComment = props.handleComment;
+    var loading = props.loading, buttons = props.buttons, headers = props.headers, fieldName = props.fieldName, resources = props.resources, activeResource = props.activeResource, handleClick = props.handleClick, handleDrop = props.handleDrop, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, enableOverlay = props.enableOverlay, enableGradient = props.enableGradient, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleAdd = props.handleAdd;
     var _b = (0, react_1.useState)({}), groupedResources = _b[0], setGroupedResources = _b[1];
     var handleGroupResources = function (resources, fieldName) {
         var sortedResources = resources.sort(function (a, b) { return a.position - b.position; });
@@ -47,6 +47,6 @@ var KanBan = function (props) {
     if (Object.keys(groupedResources).length == 0)
         return null;
     return (react_1.default.createElement(components_1.AuthGuard, { requireAuth: true },
-        react_1.default.createElement(Sortable_1.default, { loading: loading, buttons: buttons, headers: headers, columns: groupedResources, activeResource: activeResource, handleDrop: handleDrop, handleClick: handleClick, displayFields: displayFields, enableOverlay: enableOverlay, enableGradient: enableGradient, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableEdit: enableEdit, enableDelete: enableDelete, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDelete, handleAdd: handleAdd, handleComment: handleComment })));
+        react_1.default.createElement(KanBanBoard_1.default, { loading: loading, buttons: buttons, headers: headers, columns: groupedResources, activeResource: activeResource, handleDrop: handleDrop, handleClick: handleClick, displayFields: displayFields, enableOverlay: enableOverlay, enableGradient: enableGradient, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableEdit: enableEdit, enableDelete: enableDelete, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDelete, handleAdd: handleAdd })));
 };
 exports.default = KanBan;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataListProps } from './DataList';
-export type ImageListProps = DataListProps;
+import { CollectionListProps } from '../collections/CollectionList';
+export type ImageListProps = CollectionListProps;
 declare const ImageList: React.FC<ImageListProps>;
 export default ImageList;

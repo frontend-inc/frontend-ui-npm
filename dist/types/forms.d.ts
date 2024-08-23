@@ -25,6 +25,7 @@ export type FormFieldType = {
     fields?: FormFieldType[];
     contentType?: string;
     displayField?: string;
+    valueParam?: string;
     query?: any;
     default?: any;
 };

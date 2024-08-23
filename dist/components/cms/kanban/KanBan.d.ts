@@ -25,7 +25,6 @@ export type KanBanProps = {
     handleEdit: (resource: any) => void;
     handleDelete: (resource: any) => void;
     handleAdd: (status: string) => void;
-    handleComment: (resource: any) => void;
 };
 declare const KanBan: React.FC<KanBanProps>;
 export default KanBan;

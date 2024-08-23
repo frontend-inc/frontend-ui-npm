@@ -94,10 +94,6 @@ var KanBanListItems = function (props) {
         setResource(resource);
         setOpenShow(true);
     };
-    var handleComment = function (resource) {
-        setResource(resource);
-        setOpenShow(true);
-    };
     var _d = (0, hooks_1.useForms)(), handleEdit = _d.handleEdit, handleDeleteClick = _d.handleDeleteClick;
     var setOpenEdit = (0, react_1.useContext)(frontend_js_1.ResourceContext).setOpenEdit;
     var handleAdd = function (header) {
@@ -133,6 +129,6 @@ var KanBanListItems = function (props) {
     }); };
     if (!headers || !fieldName)
         return null;
-    return (react_1.default.createElement(__1.KanBan, { loading: loading, buttons: buttons, resources: resources, activeResource: resource, headers: headers, fieldName: fieldName, displayFields: displayFields, enableOverlay: enableOverlay, enableGradient: enableGradient, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings, handleComment: handleComment }));
+    return (react_1.default.createElement(__1.KanBan, { loading: loading, buttons: buttons, resources: resources, activeResource: resource, headers: headers, fieldName: fieldName, displayFields: displayFields, enableOverlay: enableOverlay, enableGradient: enableGradient, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings }));
 };
 exports.default = KanBanListItems;

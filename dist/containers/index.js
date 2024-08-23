@@ -26,5 +26,6 @@ __exportStar(require("./admin/roles"), exports);
 __exportStar(require("./admin/subscription-plans"), exports);
 __exportStar(require("./admin/teams"), exports);
 __exportStar(require("./admin/tokens"), exports);
+__exportStar(require("./admin/users"), exports);
 __exportStar(require("./admin/webhooks"), exports);
 __exportStar(require("./admin/zaps"), exports);

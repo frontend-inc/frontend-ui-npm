@@ -1,6 +1,7 @@
 import React from 'react';
 import { ActionType } from '../../../types';
 type ButtonMenuProps = {
+    resource: any;
     action: ActionType;
     actionId?: number;
     path?: string;

@@ -1,11 +1,12 @@
 import React from 'react';
-import { FormFieldType, SearchFilterOptionType, TableHeaderType } from '../../../types';
+import { FormFieldType, SearchFilterOptionType, TableHeaderType, DisplayFieldType } from '../../../types';
 import { SortOptionType } from '../../../types';
 export type ResourcesProps = {
     toolbar?: React.FC<any>;
     list?: React.FC<any>;
     edit?: React.FC<any>;
     create?: React.FC<any>;
+    show?: React.FC<any>;
     url: string;
     name: string;
     component?: React.FC<any>;
@@ -20,8 +21,10 @@ export type ResourcesProps = {
     fields?: FormFieldType[];
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
+    displayFields?: DisplayFieldType[];
     enableSearch?: boolean;
     buttonText?: string;
+    enableShow?: boolean;
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
@@ -32,6 +35,13 @@ export type ResourcesProps = {
     emptyTitle?: string;
     emptyDescription?: string;
     itemProps?: any;
+    slots?: {
+        list?: any;
+        edit?: any;
+        create?: any;
+        show?: any;
+        toolbar?: any;
+    };
 };
 declare const Resources: React.FC<ResourcesProps>;
 export default Resources;

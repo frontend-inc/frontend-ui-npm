@@ -1,4 +1,4 @@
 import React from 'react';
-import { CardProps } from '../../../types';
-declare const AvatarList: React.FC<CardProps>;
-export default AvatarList;
+import { CardProps } from './Card';
+declare const AvatarCard: React.FC<CardProps>;
+export default AvatarCard;

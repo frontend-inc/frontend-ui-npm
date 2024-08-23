@@ -1,9 +1,9 @@
 import React from 'react';
-import { DataListItemsProps } from './DataListItems';
-export type CarouselListListProps = DataListItemsProps & {
+import { CollectionListItemsProps } from '../collections/CollectionListItems';
+export type CarouselListItemsProps = CollectionListItemsProps & {
     enableAutoPlay?: boolean;
     enableArrows?: boolean;
     enableDots?: boolean;
 };
-declare const CarouselListList: React.FC<CarouselListListProps>;
-export default CarouselListList;
+declare const CarouselListItems: React.FC<CarouselListItemsProps>;
+export default CarouselListItems;

@@ -1,4 +1,4 @@
 import React from 'react';
-import { DataListProps } from './DataList';
-declare const GeoNearbyList: React.FC<DataListProps>;
+import { CollectionListProps } from '../collections/CollectionList';
+declare const GeoNearbyList: React.FC<CollectionListProps>;
 export default GeoNearbyList;

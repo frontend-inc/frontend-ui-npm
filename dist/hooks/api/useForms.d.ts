@@ -8,10 +8,10 @@ declare const useForms: (params?: FormParams) => {
     resource: any;
     setResource: (value: any) => void;
     handleAdd: () => any;
-    handleEdit: (item: any) => any;
+    handleEdit: (resource: any) => any;
     handleSubmit: () => Promise<any>;
     handleDelete: () => Promise<any>;
-    handleDeleteClick: (item: any) => any;
+    handleDeleteClick: (resource: any) => any;
     handleRemove: (name: any) => Promise<any>;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     openEdit: boolean;

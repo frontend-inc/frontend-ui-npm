@@ -15,13 +15,13 @@ var AuthGuard = function (props) {
     }
     if (requireTeam && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.team_id)) {
         return (react_1.default.createElement(material_1.Box, { sx: sx.center },
-            react_1.default.createElement(__1.Heading, { title: "Team required", description: "You must be a member of a team." })));
+            react_1.default.createElement(__1.Heading, { textAlign: 'center', title: "Team required", description: "You must be a member of a team." })));
     }
     if ((roles === null || roles === void 0 ? void 0 : roles.length) > 0 &&
         !(roles === null || roles === void 0 ? void 0 : roles.includes(currentUser === null || currentUser === void 0 ? void 0 : currentUser.role)) &&
         (currentUser === null || currentUser === void 0 ? void 0 : currentUser.role) !== 'admin') {
         return (react_1.default.createElement(material_1.Box, { sx: sx.center },
-            react_1.default.createElement(__1.Heading, { title: "Unauthorized", description: "You are not authorized to access this page." })));
+            react_1.default.createElement(__1.Heading, { textAlign: 'center', title: "Unauthorized", description: "You are not authorized to access this page." })));
     }
     if (requirePaid && !(currentUser === null || currentUser === void 0 ? void 0 : currentUser.paid)) {
         return react_1.default.createElement(__1.PayWall, null);
@@ -31,6 +31,7 @@ var AuthGuard = function (props) {
 exports.default = AuthGuard;
 var sx = {
     center: {
+        width: '100%',
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',

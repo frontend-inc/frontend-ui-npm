@@ -22,8 +22,8 @@ var Placeholder = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
         react_1.default.createElement(material_1.Stack, { spacing: 1, alignItems: "center" },
             icon && react_1.default.createElement(components_1.Icon, { name: icon, size: 24, color: color }),
-            react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: "subtitle2" }, title),
-            react_1.default.createElement(material_1.Typography, { sx: sx.description, variant: "body1", color: "textSecondary" }, description),
+            react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: "subtitle2", color: 'text.primary' }, title),
+            react_1.default.createElement(material_1.Typography, { sx: sx.description, variant: "body1", color: "text.secondary" }, description),
             buttons && react_1.default.createElement(material_1.Box, { sx: sx.buttons }, buttons))));
 };
 exports.default = Placeholder;

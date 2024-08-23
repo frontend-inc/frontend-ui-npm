@@ -1,4 +1,4 @@
 import React from 'react';
-import { CardProps } from '../../../types';
-declare const CardList: React.FC<CardProps>;
-export default CardList;
+import { CardProps } from './Card';
+declare const TextCard: React.FC<CardProps>;
+export default TextCard;

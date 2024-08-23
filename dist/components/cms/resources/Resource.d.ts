@@ -5,7 +5,7 @@ export type ResourceProps = {
     icon?: string;
     color?: string;
     layout?: 'list' | 'grid';
-    handleClick?: (resource: any) => void;
+    handleClick: (resource: any) => void;
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;
     secondaryActions?: React.ReactNode;

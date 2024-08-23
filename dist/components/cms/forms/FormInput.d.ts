@@ -16,6 +16,7 @@ type FormInputProps = {
     contentType?: string;
     query?: any;
     displayField?: string;
+    valueParam?: string;
     fields?: FormFieldType[];
 };
 declare const FormInput: React.FC<FormInputProps>;

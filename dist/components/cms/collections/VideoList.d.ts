@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataListProps } from './DataList';
-export type VideoListProps = DataListProps;
+import { CollectionListProps } from '../collections/CollectionList';
+export type VideoListProps = CollectionListProps;
 declare const VideoList: React.FC<VideoListProps>;
 export default VideoList;

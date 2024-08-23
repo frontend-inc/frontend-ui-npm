@@ -10,62 +10,28 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
+var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var helpers_1 = require("../../../helpers");
-var router_1 = require("next/router");
-var components_1 = require("../../../components");
 var Card = function (props) {
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = props || {}, ref = _a.ref, buttons = _a.buttons, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, href = _a.href, handleClick = _a.handleClick, _c = _a.height, height = _c === void 0 ? 240 : _c, _d = _a.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableComments, enableComments = _f === void 0 ? false : _f, _g = _a.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = _a.enableLikes, enableLikes = _h === void 0 ? false : _h, _j = _a.enableRatings, enableRatings = _j === void 0 ? false : _j;
-    var _k = resource || {}, label = _k.label, title = _k.title, image = _k.image;
-    var router = (0, router_1.useRouter)();
-    var handleItemClick = function () {
-        if (handleClick) {
-            handleClick();
-        }
-        else if (href) {
-            router.push("".concat(clientUrl).concat(href));
-        }
-    };
-    return (react_1.default.createElement(material_1.Stack, { ref: ref, spacing: 0, sx: __assign(__assign({}, sx.root), { width: '100%', minHeight: height + 80 }) },
+    var _a = props || {}, ref = _a.ref, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, _b = _a.height, height = _b === void 0 ? 240 : _b, _c = _a.slots, slots = _c === void 0 ? {
+        item: {},
+        image: {}
+    } : _c;
+    return (react_1.default.createElement(material_1.Stack, __assign({ ref: ref, spacing: 0, sx: __assign(__assign({}, sx.root), { width: '100%', minHeight: height + 80 }) }, slots.item),
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-            react_1.default.createElement(__1.Image, { src: image === null || image === void 0 ? void 0 : image.url, height: height, alt: title, label: label, disableBorderRadius: true, enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleItemClick })),
+            react_1.default.createElement(__1.Image, __assign({ src: image, height: height, alt: primary, label: label, handleClick: handleClick }, slots.image))),
         react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.cardContent },
             react_1.default.createElement(material_1.Box, { sx: sx.content },
-                react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "subtitle2" }, (0, helpers_1.truncate)(title)),
-                enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, size: "small" })),
-                (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource })),
-                react_1.default.createElement(__1.UserChip, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
+                react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "subtitle1" }, primary),
+                secondary && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2" }, secondary))),
             react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "space-between" },
-                react_1.default.createElement(__1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }),
-                (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(components_1.ButtonActions, { numVisible: 0, buttons: buttons, resource: resource }))))));
+                actions,
+                secondaryAction))));
 };
 exports.default = Card;
 var sx = {
@@ -89,24 +55,6 @@ var sx = {
         position: 'relative',
         flexDirection: 'column',
         overflow: 'hidden',
-    },
-    gradient: {
-        '&::after': {
-            content: '""',
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            width: '100%',
-            height: '50%',
-            background: 'linear-gradient(to top, rgb(0,0,0,0.5), transparent)',
-        },
-    },
-    cardHeader: {
-        p: 1,
-        minHeight: 36,
-    },
-    cardHeaderBorder: {
-        px: 1,
     },
     cardContent: {
         p: 1,

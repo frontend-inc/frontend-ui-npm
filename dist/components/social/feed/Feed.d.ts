@@ -1,4 +1,4 @@
 import React from 'react';
-import { DataListProps } from '../../cms/collections/DataList';
-declare const Feed: React.FC<DataListProps>;
+import { CollectionListProps } from '../../cms/collections/CollectionList';
+declare const Feed: React.FC<CollectionListProps>;
 export default Feed;

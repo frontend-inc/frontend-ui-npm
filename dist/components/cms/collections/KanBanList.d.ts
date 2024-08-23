@@ -1,6 +1,7 @@
 import React from 'react';
-import { DataListProps } from './DataList';
-export type KanBanListProps = DataListProps & {
+import { CollectionListProps } from '../collections/CollectionList';
+export type KanBanListProps = CollectionListProps & {
+    fieldName: string;
     headers: {
         label: string;
         value: string;

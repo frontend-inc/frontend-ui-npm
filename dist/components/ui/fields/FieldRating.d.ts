@@ -4,6 +4,7 @@ type FieldRatingProps = {
     label?: string;
     rest?: any;
     color?: string;
+    size?: 'small' | 'medium' | 'large';
 };
 declare const FieldRating: React.FC<FieldRatingProps>;
 export default FieldRating;

@@ -7,9 +7,10 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var containers_1 = require("../../../containers");
+var AdminReviewShow_1 = __importDefault(require("./AdminReviewShow"));
 var AdminReviewsList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.Resources, { enableBorder: false, url: "".concat(apiUrl, "/reviews"), name: "review", enableSearch: true, enableDelete: true, filterOptions: [
+    return (react_1.default.createElement(components_1.Resources, { enableBorder: false, url: "".concat(apiUrl, "/reviews"), name: "review", enableShow: true, enableSearch: true, enableDelete: true, filterOptions: [
             {
                 field: 'rating',
                 label: 'Rating',
@@ -20,6 +21,9 @@ var AdminReviewsList = function () {
                 label: 'Flagged',
                 variant: 'boolean',
             },
-        ], component: containers_1.AdminReviewItem, emptyIcon: "Star", emptyTitle: "No reviews found", emptyDescription: "No reviews found for this app" }));
+        ], displayFields: [
+            { name: 'rating', label: 'Rating', variant: 'rating' },
+            { name: 'body', label: 'Review', variant: 'text' },
+        ], component: containers_1.AdminReviewItem, show: AdminReviewShow_1.default, emptyIcon: "Star", emptyTitle: "No reviews found", emptyDescription: "No reviews found for this app" }));
 };
 exports.default = AdminReviewsList;

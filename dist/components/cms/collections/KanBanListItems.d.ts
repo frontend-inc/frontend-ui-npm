@@ -1,10 +1,11 @@
 import React from 'react';
-import { DataListItemsProps } from './DataListItems';
-export type KanBanListItemsProps = DataListItemsProps & {
+import { CollectionListProps } from '../collections/CollectionList';
+export type KanBanListItemsProps = CollectionListProps & {
     headers: {
         label: string;
         value: string;
     }[];
+    enableSharing?: boolean;
     enableCreate?: boolean;
 };
 declare const KanBanListItems: React.FC<KanBanListItemsProps>;

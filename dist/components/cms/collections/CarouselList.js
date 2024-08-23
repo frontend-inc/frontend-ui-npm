@@ -18,6 +18,6 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var CarouselListItems_1 = __importDefault(require("./CarouselListItems"));
 var CarouselList = function (props) {
-    return react_1.default.createElement(__1.DataList, __assign({}, props, { list: CarouselListItems_1.default }));
+    return (react_1.default.createElement(__1.CollectionList, __assign({}, props, { list: CarouselListItems_1.default })));
 };
 exports.default = CarouselList;

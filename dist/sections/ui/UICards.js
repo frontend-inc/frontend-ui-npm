@@ -34,6 +34,6 @@ var UICards = function (props) {
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(material_1.Stack, { spacing: 2 },
             react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: 'center', textVariant: 'h3' }),
-            react_1.default.createElement(components_2.SimpleCards, __assign({}, rest)))));
+            react_1.default.createElement(components_2.Cards, __assign({}, rest)))));
 };
 exports.default = UICards;

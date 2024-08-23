@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SubscriptionTableCard = exports.SubscriptionTable = exports.StripePaymentLink = exports.StripeCustomerPortalButton = exports.SubscriptionPlans = exports.StripeCreditCardElement = exports.StripeCreditCard = exports.Purchases = exports.PayWall = exports.CreditCards = exports.CreditCardModal = exports.BuyNowButton = void 0;
+exports.SubscriptionTableCard = exports.SubscriptionTable = exports.StripePaymentLink = exports.StripeCustomerPortalButton = exports.SubscriptionPlans = exports.StripeCreditCardElement = exports.StripeCreditCard = exports.PayWall = exports.CreditCards = exports.CreditCardModal = exports.BuyNowButton = void 0;
 var BuyNowButton_1 = require("./purchases/BuyNowButton");
 Object.defineProperty(exports, "BuyNowButton", { enumerable: true, get: function () { return __importDefault(BuyNowButton_1).default; } });
 var CreditCardModal_1 = require("./creditCards/CreditCardModal");
@@ -12,8 +12,6 @@ var CreditCards_1 = require("./creditCards/CreditCards");
 Object.defineProperty(exports, "CreditCards", { enumerable: true, get: function () { return __importDefault(CreditCards_1).default; } });
 var PayWall_1 = require("./subscriptions/PayWall");
 Object.defineProperty(exports, "PayWall", { enumerable: true, get: function () { return __importDefault(PayWall_1).default; } });
-var Purchases_1 = require("./purchases/Purchases");
-Object.defineProperty(exports, "Purchases", { enumerable: true, get: function () { return __importDefault(Purchases_1).default; } });
 var StripeCreditCard_1 = require("./creditCards/StripeCreditCard");
 Object.defineProperty(exports, "StripeCreditCard", { enumerable: true, get: function () { return __importDefault(StripeCreditCard_1).default; } });
 var StripeCreditCardElement_1 = require("./creditCards/StripeCreditCardElement");
