@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var AvatarImage = function (props) {
     var image = props.image, alt = props.alt, _a = props.height, height = _a === void 0 ? 64 : _a, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, _d = props.slots, slots = _d === void 0 ? {
-        image: {}
+        image: {},
     } : _d;
     return (react_1.default.createElement(material_1.Avatar, __assign({ sx: __assign(__assign(__assign(__assign({}, sx.avatar), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)), { height: "".concat(height, "px"), width: "".concat(height, "px") }), src: image, alt: alt }, slots.image),
         react_1.default.createElement(material_1.Box, null)));

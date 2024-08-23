@@ -20,7 +20,7 @@ var material_1 = require("@mui/material");
 var VideoCard = function (props) {
     var _a = props || {}, avatar = _a.avatar, primary = _a.primary, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, _b = _a.slots, slots = _b === void 0 ? {
         item: {},
-        image: {}
+        image: {},
     } : _b;
     return (react_1.default.createElement(__1.LightDarkMode, { mode: "dark" },
         react_1.default.createElement(material_1.Box, __assign({ sx: sx.root }, slots.item),
@@ -29,7 +29,7 @@ var VideoCard = function (props) {
             react_1.default.createElement(material_1.IconButton, { sx: sx.playIcon, onClick: handleClick },
                 react_1.default.createElement(__1.Icon, { name: "Play", color: "common.white", size: 20 })),
             react_1.default.createElement(material_1.Box, { sx: sx.buttons }, secondaryAction),
-            avatar && (react_1.default.createElement(material_1.Box, { sx: sx.avatar }, avatar)))));
+            avatar && react_1.default.createElement(material_1.Box, { sx: sx.avatar }, avatar))));
 };
 exports.default = VideoCard;
 var sx = {

@@ -20,7 +20,7 @@ var ChipCard = function (props) {
     var _a, _b;
     var primary = props.primary, secondary = props.secondary, secondaryAction = props.secondaryAction, handleClick = props.handleClick, image = props.image, _c = props.slots, slots = _c === void 0 ? {
         item: {},
-        image: {}
+        image: {},
     } : _c;
     return (react_1.default.createElement(material_1.List, __assign({ dense: true, disablePadding: true, sx: sx.root }, slots.item),
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: secondaryAction },

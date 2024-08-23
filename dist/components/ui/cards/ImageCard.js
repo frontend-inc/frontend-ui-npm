@@ -20,7 +20,7 @@ var material_1 = require("@mui/material");
 var ImageCard = function (props) {
     var _a = props || {}, primary = _a.primary, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, _b = _a.height, height = _b === void 0 ? 260 : _b, _c = _a.slots, slots = _c === void 0 ? {
         item: {},
-        image: {}
+        image: {},
     } : _c;
     return (react_1.default.createElement(components_1.LightDarkMode, { mode: "dark" },
         react_1.default.createElement(material_1.Box, __assign({ sx: sx.root }, slots.item),

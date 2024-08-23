@@ -20,7 +20,7 @@ var components_1 = require("../../../components");
 var AvatarCard = function (props) {
     var primary = props.primary, secondary = props.secondary, image = props.image, actions = props.actions, secondaryAction = props.secondaryAction, _a = props.height, height = _a === void 0 ? 128 : _a, handleClick = props.handleClick, _b = props.slots, slots = _b === void 0 ? {
         item: {},
-        image: {}
+        image: {},
     } : _b;
     return (react_1.default.createElement(material_1.List, __assign({ disablePadding: true, sx: sx.listItem }, slots.item),
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: secondaryAction },

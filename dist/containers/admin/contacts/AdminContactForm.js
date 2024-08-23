@@ -24,6 +24,6 @@ var AdminContactForm = function (props) {
         { name: 'company', label: 'Company', variant: 'string' },
         { name: 'message', label: 'Message', variant: 'text' },
     ];
-    return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: FORM_FIELDS })));
+    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: FORM_FIELDS }));
 };
 exports.default = AdminContactForm;

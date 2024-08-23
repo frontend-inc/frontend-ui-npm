@@ -1,5 +1,5 @@
-import React from "react";
-import { AdminMenusType } from "../../../types";
+import React from 'react';
+import { AdminMenusType } from '../../../types';
 export type AdminPageProps = {
     title: string;
     actions?: React.ReactNode;

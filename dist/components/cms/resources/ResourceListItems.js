@@ -15,7 +15,7 @@ var ResourceList = function (props) {
 exports.default = ResourceList;
 var sx = {
     fullWidth: {
-        width: '100%'
+        width: '100%',
     },
     list: {
         display: 'flex',

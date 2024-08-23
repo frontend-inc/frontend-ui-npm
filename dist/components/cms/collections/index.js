@@ -45,7 +45,7 @@ var CollectionDelete_1 = require("./CollectionDelete");
 Object.defineProperty(exports, "CollectionDelete", { enumerable: true, get: function () { return __importDefault(CollectionDelete_1).default; } });
 var CollectionToolbar_1 = require("./CollectionToolbar");
 Object.defineProperty(exports, "CollectionToolbar", { enumerable: true, get: function () { return __importDefault(CollectionToolbar_1).default; } });
-// Media 
+// Media
 var ShowImageModal_1 = require("../modals/ShowImageModal");
 Object.defineProperty(exports, "ShowImageModal", { enumerable: true, get: function () { return __importDefault(ShowImageModal_1).default; } });
 var ShowVideoModal_1 = require("../modals/ShowVideoModal");

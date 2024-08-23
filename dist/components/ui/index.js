@@ -178,7 +178,7 @@ var TextModal_1 = require("./TextModal");
 Object.defineProperty(exports, "TextModal", { enumerable: true, get: function () { return __importDefault(TextModal_1).default; } });
 var Swipeable_1 = require("./swipeable/Swipeable");
 Object.defineProperty(exports, "Swipeable", { enumerable: true, get: function () { return __importDefault(Swipeable_1).default; } });
-// Debug 
+// Debug
 var Debug_1 = require("./debug/Debug");
 Object.defineProperty(exports, "Debug", { enumerable: true, get: function () { return __importDefault(Debug_1).default; } });
 // Theme

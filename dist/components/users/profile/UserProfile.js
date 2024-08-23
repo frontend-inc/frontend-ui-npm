@@ -14,7 +14,7 @@ var UserProfile = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: sx.container },
         react_1.default.createElement(material_1.Stack, { sx: sx.userContainer, direction: { sm: 'row', xs: 'column' }, spacing: { sm: 4, xs: 0 }, alignItems: "flex-start" },
             react_1.default.createElement(material_1.Stack, { direction: "column", alignItems: "center" },
-                (avatar === null || avatar === void 0 ? void 0 : avatar.url) && (react_1.default.createElement(__1.UserAvatar, { user: user, size: 120, enableGradient: true })),
+                (avatar === null || avatar === void 0 ? void 0 : avatar.url) && react_1.default.createElement(__1.UserAvatar, { user: user, size: 120, enableGradient: true }),
                 react_1.default.createElement(__1.SocialFields, { fields: socialFields, resource: user })),
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
                 react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary", sx: sx.username },

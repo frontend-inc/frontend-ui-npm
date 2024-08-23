@@ -9,7 +9,7 @@ var __1 = require("../..");
 var Toolbar = function (props) {
     var _a = props || {}, _b = _a.direction, direction = _b === void 0 ? 'row' : _b, enableSearch = _a.enableSearch, enableFilters = _a.enableFilters, enableSorting = _a.enableSorting, enableCreate = _a.enableCreate, handleSearch = _a.handleSearch, handleKeywordChange = _a.handleKeywordChange, handleFilter = _a.handleFilter, handleClearFilters = _a.handleClearFilters, handleSort = _a.handleSort, handleSortDirection = _a.handleSortDirection, handleAdd = _a.handleAdd, keywords = _a.keywords, activeFilters = _a.activeFilters, filterOptions = _a.filterOptions, sortOptions = _a.sortOptions, _c = _a.query, query = _c === void 0 ? {} : _c;
     return (react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: direction }, sx: sx.buttons, spacing: 1 },
-        react_1.default.createElement(material_1.Stack, { alignItems: 'center', direction: { xs: 'column', sm: direction }, spacing: 1 },
+        react_1.default.createElement(material_1.Stack, { alignItems: "center", direction: { xs: 'column', sm: direction }, spacing: 1 },
             enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
             enableFilters && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(__1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),

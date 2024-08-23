@@ -53,8 +53,8 @@ var sx = {
     title: {
         width: '100%',
         '& span': {
-            color: 'primary.main'
-        }
+            color: 'primary.main',
+        },
     },
     description: {
         width: '100%',

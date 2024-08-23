@@ -10,7 +10,7 @@ var CommentForm = function (props) {
     var _a = props || {}, loading = _a.loading, errors = _a.errors, comment = _a.comment, handleChange = _a.handleChange, handleSubmit = _a.handleSubmit;
     return (react_1.default.createElement(components_1.AuthGuard, null,
         react_1.default.createElement(material_1.ListItem, { sx: {
-                pl: 0
+                pl: 0,
             } },
             react_1.default.createElement(material_1.Stack, { sx: sx.form, direction: "column", spacing: 1 },
                 react_1.default.createElement(components_1.TextInput, { errors: errors, multiline: true, rows: 4, name: "body", value: comment === null || comment === void 0 ? void 0 : comment.body, handleChange: handleChange, placeholder: "Leave a comment..." }),

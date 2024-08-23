@@ -36,7 +36,7 @@ var Modal = function (props) {
             } }), fullWidth: true, fullScreen: isMobile || fullScreen === true, open: open, onClose: handleClose, hideBackdrop: hideBackdrop },
         !disableHeader && (react_1.default.createElement(material_1.DialogTitle, { sx: sx.dialogTitleContainer },
             react_1.default.createElement(material_1.Box, { sx: sx.dialogTitleContent },
-                react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: 'center', spacing: 1 },
+                react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "center", spacing: 1 },
                     avatar,
                     react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "textPrimary", sx: sx.title }, title)),
                 !loading && (react_1.default.createElement(material_1.Box, { sx: sx.secondaryActions },
@@ -63,7 +63,7 @@ var sx = {
         pl: 3,
         bgcolor: 'background.default',
         borderBottom: '1px solid',
-        borderColor: "divider"
+        borderColor: 'divider',
     },
     dialogTitleContent: {
         height: '50px',

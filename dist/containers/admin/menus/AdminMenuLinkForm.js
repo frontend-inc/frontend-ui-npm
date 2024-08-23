@@ -33,16 +33,14 @@ var AdminMenuLinkForm = function (props) {
                 options: [
                     { value: 'page', label: 'Page', icon: 'StickyNote' },
                     { value: 'url', label: 'URL', icon: 'ExternalLink' },
-                ]
+                ],
             },
             {
                 label: 'URL',
                 name: 'url',
                 variant: 'string',
                 placeholder: 'URL',
-                conditions: [
-                    { name: 'variant', operator: 'eq', value: 'url' }
-                ]
+                conditions: [{ name: 'variant', operator: 'eq', value: 'url' }],
             },
             {
                 label: 'Page',
@@ -52,9 +50,7 @@ var AdminMenuLinkForm = function (props) {
                 displayField: 'title',
                 url: "".concat(apiUrl, "/pages"),
                 query: {},
-                conditions: [
-                    { name: 'variant', operator: 'eq', value: 'page' }
-                ]
+                conditions: [{ name: 'variant', operator: 'eq', value: 'page' }],
             },
         ] })));
 };

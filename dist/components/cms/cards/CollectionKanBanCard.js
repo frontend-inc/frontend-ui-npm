@@ -23,7 +23,7 @@ var CollectionKanBanCard = function (props) {
             image: {
                 enableGradient: enableGradient,
                 enableOverlay: enableOverlay,
-            }
+            },
         } }));
 };
 exports.default = CollectionKanBanCard;

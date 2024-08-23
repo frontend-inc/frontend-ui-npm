@@ -52,11 +52,11 @@ var CollectionListItem = function (props) {
     }[style] || {};
     var Component = COMPONENTS[style] || __1.Card;
     return (react_1.default.createElement(Component, __assign({}, rest, { label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.title, secondary: react_1.default.createElement(__2.SecondaryFields, { enableRatings: enableRatings, enableUsers: enableUsers, fields: displayFields, resource: resource }), actions: react_1.default.createElement(material_1.Box, null,
-            react_1.default.createElement(__2.SocialButtons, { spacing: 0, variant: 'icon', justifyContent: 'flex-start', resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments })), secondaryAction: react_1.default.createElement(__2.ButtonActions, { numVisible: 0, buttons: buttons, resource: resource }), slots: {
+            react_1.default.createElement(__2.SocialButtons, { spacing: 0, variant: "icon", justifyContent: "flex-start", resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments })), secondaryAction: react_1.default.createElement(__2.ButtonActions, { numVisible: 0, buttons: buttons, resource: resource }), slots: {
             image: {
                 enableGradient: enableGradient,
-                enableOverlay: enableOverlay
-            }
+                enableOverlay: enableOverlay,
+            },
         } }, itemProps)));
 };
 exports.default = CollectionListItem;

@@ -48,15 +48,11 @@ var AdminActionForm = function (props) {
                 {
                     name: 'action_type',
                     operator: 'in',
-                    value: [
-                        'resources.create',
-                        'resources.save',
-                        'resources.delete',
-                    ],
+                    value: ['resources.create', 'resources.save', 'resources.delete'],
                 },
             ],
         },
     ];
-    return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: FORM_FIELDS })));
+    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: FORM_FIELDS }));
 };
 exports.default = AdminActionForm;

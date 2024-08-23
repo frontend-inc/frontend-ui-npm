@@ -120,7 +120,7 @@ var MyAccountModal = function (props) {
             ? "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name)
             : 'My Account' },
         currentTab == null ? (react_1.default.createElement(MyAccountMenu_1.default, { tab: currentTab, enableTeams: enableTeams, enableStripe: enableStripe, handleChange: handleTabChange })) : (react_1.default.createElement(material_1.Box, { px: 1 },
-            react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", startIcon: react_1.default.createElement(components_1.Icon, { name: "ChevronLeft", color: 'text.primary', size: 32 }), onClick: function () { return setCurrentTab(null); } }, "Back"))),
+            react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", startIcon: react_1.default.createElement(components_1.Icon, { name: "ChevronLeft", color: "text.primary", size: 32 }), onClick: function () { return setCurrentTab(null); } }, "Back"))),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
             currentTab == 0 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout, metafields: metafields })),
             currentTab == 1 && react_1.default.createElement(components_2.TeamList, null),
@@ -142,6 +142,6 @@ var sx = {
             color: 'text.primary',
             boxShadow: 0,
             bgcolor: 'background.paper',
-        }
-    }
+        },
+    },
 };

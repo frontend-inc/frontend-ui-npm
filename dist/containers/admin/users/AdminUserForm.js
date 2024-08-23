@@ -39,9 +39,7 @@ var AdminUserForm = function (props) {
             label: 'Email',
             name: 'email',
             variant: 'string',
-            conditions: [
-                { name: 'id', operator: 'eq', value: undefined }
-            ]
+            conditions: [{ name: 'id', operator: 'eq', value: undefined }],
         },
         {
             label: 'Role',
@@ -58,6 +56,6 @@ var AdminUserForm = function (props) {
             variant: 'boolean',
         },
     ];
-    return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields })));
+    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields }));
 };
 exports.default = AdminUserForm;

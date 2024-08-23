@@ -19,6 +19,6 @@ var SortableResourceListItems_1 = __importDefault(require("./SortableResourceLis
 var __1 = require("../..");
 var SortableResourceList = function (props) {
     var _a = (props || {}).list, List = _a === void 0 ? SortableResourceListItems_1.default : _a;
-    return (react_1.default.createElement(__1.ResourceList, __assign({}, props, { list: List })));
+    return react_1.default.createElement(__1.ResourceList, __assign({}, props, { list: List }));
 };
 exports.default = SortableResourceList;

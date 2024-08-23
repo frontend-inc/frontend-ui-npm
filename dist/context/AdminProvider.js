@@ -59,6 +59,6 @@ var AdminProvider = function (props) {
         setOpenLayoutRight: setOpenLayoutRight,
         toggleLayoutRight: toggleLayoutRight,
     };
-    return (react_1.default.createElement(AdminContext_1.default.Provider, { value: value }, children));
+    return react_1.default.createElement(AdminContext_1.default.Provider, { value: value }, children);
 };
 exports.default = AdminProvider;

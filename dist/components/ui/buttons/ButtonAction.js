@@ -30,16 +30,16 @@ var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
 var ButtonAction = function (props) {
-    var children = props.children, icon = props.icon, action = props.action, path = props.path, actionId = props.actionId, onClick = props.onClick, _a = props.color, color = _a === void 0 ? 'secondary' : _a, _b = props.variant, variant = _b === void 0 ? 'contained' : _b, _c = props.size, size = _c === void 0 ? "medium" : _c, resource = props.resource, rest = __rest(props, ["children", "icon", "action", "path", "actionId", "onClick", "color", "variant", "size", "resource"]);
+    var children = props.children, icon = props.icon, action = props.action, path = props.path, actionId = props.actionId, onClick = props.onClick, _a = props.color, color = _a === void 0 ? 'secondary' : _a, _b = props.variant, variant = _b === void 0 ? 'contained' : _b, _c = props.size, size = _c === void 0 ? 'medium' : _c, resource = props.resource, rest = __rest(props, ["children", "icon", "action", "path", "actionId", "onClick", "color", "variant", "size", "resource"]);
     var _d = (0, hooks_1.useButtons)({
         action: action,
         actionId: actionId,
         path: path,
-        resource: resource
+        resource: resource,
     }), loading = _d.loading, handleClick = _d.handleClick;
     return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, size: size, startIcon: react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(__1.IconLoading, { loading: loading }),
-            (!loading && icon) && (react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: color == 'primary'
+            !loading && icon && (react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: color == 'primary'
                     ? 'primary.contrastText'
                     : 'secondary.contrastText' }))), onClick: onClick ? onClick : handleClick, variant: variant, color: color }, rest), children));
 };

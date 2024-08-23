@@ -21,7 +21,7 @@ var sortable_1 = require("@dnd-kit/sortable");
 var KanBanCard = function (props) {
     var _a = props || {}, id = _a.id, loading = _a.loading, label = _a.label, primary = _a.primary, secondary = _a.secondary, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, enableDragging = _a.enableDragging, _b = _a.height, height = _b === void 0 ? 240 : _b, _c = _a.slots, slots = _c === void 0 ? {
         item: {},
-        image: {}
+        image: {},
     } : _c;
     var _d = (0, sortable_1.useSortable)({
         id: id,

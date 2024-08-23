@@ -48,8 +48,8 @@ var UserList = function (props) {
             list: {
                 size: 72,
                 displayFields: displayFields,
-                socialFields: socialFields
-            }
+                socialFields: socialFields,
+            },
         } }));
 };
 exports.default = UserList;

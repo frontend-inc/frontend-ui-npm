@@ -161,7 +161,7 @@ var KanBanListItems = function (props) {
             enableFavorites: enableFavorites,
             enableLikes: enableLikes,
             enableRatings: enableRatings,
-        }
+        },
     };
     if (!headers || !fieldName || ((_a = Object.keys(columns)) === null || _a === void 0 ? void 0 : _a.length) == 0)
         return null;

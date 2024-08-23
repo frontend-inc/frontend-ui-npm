@@ -23,11 +23,11 @@ var AdminUsersList = function (props) {
             { name: 'name', label: 'Name', variant: 'string' },
         ], create: AdminUserForm_1.default, edit: AdminUserEditForm_1.default, show: AdminUserShow_1.default, component: AdminUserItem_1.default, slots: {
             edit: {
-                metafields: metafields
+                metafields: metafields,
             },
             show: {
-                metafields: metafields
-            }
+                metafields: metafields,
+            },
         } }));
 };
 exports.default = AdminUsersList;

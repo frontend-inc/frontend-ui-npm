@@ -39,9 +39,7 @@ var AdminMetafieldForm = function (props) {
                 label: 'Options',
                 name: 'options',
                 variant: 'array',
-                conditions: [
-                    { name: 'variant', operator: 'eq', value: 'select' },
-                ],
+                conditions: [{ name: 'variant', operator: 'eq', value: 'select' }],
             },
         ] })));
 };

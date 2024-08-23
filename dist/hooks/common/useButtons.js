@@ -123,7 +123,7 @@ var useButtons = function (params) {
                         return api.post("/api/v1/actions/".concat(actionId, "/trigger"), {
                             app_action: {
                                 resource_id: resource === null || resource === void 0 ? void 0 : resource.id,
-                            }
+                            },
                         });
                     })];
                 case 11:

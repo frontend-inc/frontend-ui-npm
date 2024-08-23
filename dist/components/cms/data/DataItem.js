@@ -20,7 +20,7 @@ var __1 = require("../..");
 var DataListItem = function (props) {
     var _a = props || {}, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, height = _a.height, image = _a.image, handleClick = _a.handleClick, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, _b = _a.slots, slots = _b === void 0 ? {
         item: {},
-        image: {}
+        image: {},
     } : _b;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },

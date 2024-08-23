@@ -27,7 +27,7 @@ var AdminHeader = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.container },
                     enableExpandLeftPanel && !openLayoutLeft && react_1.default.createElement(components_1.ExpandLeftButton, null),
                     primaryActions && primaryActions,
-                    title && (react_1.default.createElement(material_1.Typography, { variant: variant, sx: sx.title, color: 'text.primary' }, title)))),
+                    title && (react_1.default.createElement(material_1.Typography, { variant: variant, sx: sx.title, color: "text.primary" }, title)))),
             react_1.default.createElement(material_1.Grid, { item: true, xs: 4, sm: 4 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.secondaryActions, direction: "row", spacing: 1 }, secondaryActions && secondaryActions)),
             react_1.default.createElement(material_1.Grid, { item: true, xs: 4, sm: 4 },

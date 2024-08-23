@@ -48,9 +48,9 @@ var DataListItems = function (props) {
         setQuery(__assign(__assign({}, query), { per_page: perPage }));
     };
     return (react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { loading: loading }), resources === null || resources === void 0 ? void 0 :
-        resources.map(function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, resource: resource, handleClick: handleClick ?
-                function () { return handleClick(resource); } :
-                function () { return handleShowClick(resource); }, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, slots.item))); }),
+        resources.map(function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, resource: resource, handleClick: handleClick
+                ? function () { return handleClick(resource); }
+                : function () { return handleShowClick(resource); }, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, slots.item))); }),
         react_1.default.createElement(Pagination, { page: page, numPages: numPages, loadMore: handleLoadMore })));
 };
 exports.default = DataListItems;

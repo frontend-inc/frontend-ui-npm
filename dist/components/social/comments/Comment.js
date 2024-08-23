@@ -188,5 +188,5 @@ var sx = {
     },
     replyIcon: {
         transform: 'rotate(180deg)',
-    }
+    },
 };

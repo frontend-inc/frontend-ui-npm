@@ -20,7 +20,7 @@ var __1 = require("../..");
 var Card = function (props) {
     var _a = props || {}, ref = _a.ref, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, _b = _a.height, height = _b === void 0 ? 240 : _b, _c = _a.slots, slots = _c === void 0 ? {
         item: {},
-        image: {}
+        image: {},
     } : _c;
     return (react_1.default.createElement(material_1.Stack, __assign({ ref: ref, spacing: 0, sx: __assign(__assign({}, sx.root), { width: '100%', minHeight: height + 80 }) }, slots.item),
         react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },

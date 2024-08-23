@@ -44,11 +44,7 @@ var AdminWebhooksList = function () {
                     {
                         name: 'event_type',
                         operator: 'in',
-                        value: [
-                            'resources.create',
-                            'resources.save',
-                            'resources.delete',
-                        ],
+                        value: ['resources.create', 'resources.save', 'resources.delete'],
                     },
                 ],
             },

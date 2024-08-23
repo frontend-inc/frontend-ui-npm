@@ -48,6 +48,6 @@ var sx = {
         pb: 1,
     },
     loading: {
-        opacity: 0.5
-    }
+        opacity: 0.5,
+    },
 };

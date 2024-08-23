@@ -39,22 +39,22 @@ var MyAccountMenu = function (props) {
         react_1.default.createElement(material_1.Box, { sx: sx.avatar },
             react_1.default.createElement(components_1.UserAvatar, { user: currentUser, size: 96 })),
         react_1.default.createElement(material_1.List, { sx: sx.root }, tabs === null || tabs === void 0 ? void 0 : tabs.map(function (tab, index) { return (react_1.default.createElement(material_1.ListItem, { key: index, sx: sx.listItem, secondaryAction: react_1.default.createElement(material_1.IconButton, null,
-                react_1.default.createElement(components_1.Icon, { name: "ChevronRight", color: 'text.primary', size: 24 })) },
+                react_1.default.createElement(components_1.Icon, { name: "ChevronRight", color: "text.primary", size: 24 })) },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function (ev) { return handleChange(ev, tab === null || tab === void 0 ? void 0 : tab.value); } },
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.menuItem, variant: "body1", color: "text.primary" }, tab === null || tab === void 0 ? void 0 : tab.label) })))); }))));
 };
 exports.default = MyAccountMenu;
 var sx = {
     root: {
-        p: 0
+        p: 0,
     },
     listItem: {
         p: 0,
         borderBottom: '1px solid',
-        borderColor: 'divider'
+        borderColor: 'divider',
     },
     menuItem: {
-        pl: 2
+        pl: 2,
     },
     listItemButton: {
         py: 1,
@@ -63,6 +63,6 @@ var sx = {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        p: 2
-    }
+        p: 2,
+    },
 };

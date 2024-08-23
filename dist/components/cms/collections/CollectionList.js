@@ -48,6 +48,6 @@ var CollectionList = function (props) {
         toolbar: defaultSlots.toolbar,
         empty: defaultSlots.empty,
     };
-    return (react_1.default.createElement(components_1.DataList, { url: url, name: 'document', query: searchQuery, fields: fields, enableShow: enableShow, enableCreate: enableCreate, enableEdit: enableEdit, enableDelete: enableDelete, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, filterOptions: filterOptions, sortOptions: sortOptions, toolbar: Toolbar, list: List, show: Show, edit: Edit, create: Create, destroy: Destroy, empty: Empty, slots: slots }));
+    return (react_1.default.createElement(components_1.DataList, { url: url, name: "document", query: searchQuery, fields: fields, enableShow: enableShow, enableCreate: enableCreate, enableEdit: enableEdit, enableDelete: enableDelete, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, filterOptions: filterOptions, sortOptions: sortOptions, toolbar: Toolbar, list: List, show: Show, edit: Edit, create: Create, destroy: Destroy, empty: Empty, slots: slots }));
 };
 exports.default = CollectionList;

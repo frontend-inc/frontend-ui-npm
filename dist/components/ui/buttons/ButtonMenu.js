@@ -14,6 +14,6 @@ var ButtonMenu = function (props) {
         path: path,
         resource: resource,
     }).handleClick;
-    return (react_1.default.createElement(material_1.MenuItem, { onClick: onClick ? onClick : handleClick }, label));
+    return react_1.default.createElement(material_1.MenuItem, { onClick: onClick ? onClick : handleClick }, label);
 };
 exports.default = ButtonMenu;

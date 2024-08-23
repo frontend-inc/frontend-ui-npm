@@ -30,7 +30,7 @@ var components_1 = require("../../../components");
 var ExpandLeftButton = function () {
     var toggleLayoutLeft = (0, react_1.useContext)(context_1.AdminContext).toggleLayoutLeft;
     return (react_1.default.createElement(material_1.IconButton, { onClick: toggleLayoutLeft, sx: sx.button },
-        react_1.default.createElement(components_1.Icon, { name: 'Menu', color: 'text.secondary' })));
+        react_1.default.createElement(components_1.Icon, { name: 'Menu', color: "text.secondary" })));
 };
 exports.default = ExpandLeftButton;
 var sx = {

@@ -20,7 +20,7 @@ var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var DataToolbar = function (props) {
     var url = props.url, _a = props.query, defaultQuery = _a === void 0 ? {} : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.sortOptions, sortOptions = _c === void 0 ? [] : _c, _d = props.enableCreate, enableCreate = _d === void 0 ? false : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, _g = props.enableSorting, enableSorting = _g === void 0 ? false : _g, _h = props.buttonText, buttonText = _h === void 0 ? 'Add' : _h, _j = props.component, SearchComponent = _j === void 0 ? __1.SearchInput : _j, _k = props.slots, slots = _k === void 0 ? {
-        search: {}
+        search: {},
     } : _k;
     var _l = (0, hooks_1.useSearch)({
         url: url,

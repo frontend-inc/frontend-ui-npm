@@ -55,7 +55,7 @@ var __1 = require("../..");
 var KanBanBoard = function (props) {
     var loading = props.loading, _a = props.headers, headers = _a === void 0 ? [] : _a, handleDrop = props.handleDrop, _b = props.columns, initialColumns = _b === void 0 ? {} : _b, handleClick = props.handleClick, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleAdd = props.handleAdd, _c = props.component, Component = _c === void 0 ? __1.KanBanCard : _c, _d = props.slots, slots = _d === void 0 ? {
         list: {},
-        card: {}
+        card: {},
     } : _d;
     var _e = (0, react_1.useState)(null), activeId = _e[0], setActiveId = _e[1];
     var _f = (0, react_1.useState)(initialColumns), columns = _f[0], setColumns = _f[1];

@@ -27,7 +27,7 @@ var sx = {
         display: 'flex',
         pt: '2px',
         bgcolor: 'secondary.main',
-        borderRadius: 1
+        borderRadius: 1,
     },
     overlay: {
         '&::after': {

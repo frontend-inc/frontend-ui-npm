@@ -15,7 +15,7 @@ var CTA = function (props) {
             title && (react_1.default.createElement(material_1.Typography, { variant: 'h3', color: "text.primary", sx: sx.title }, title)),
             description && (react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.secondary", sx: sx.description }, description)),
             (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
-                react_1.default.createElement(components_1.ButtonActions, { resource: [], buttons: buttons, size: 'large', justifyContent: 'center' }))))));
+                react_1.default.createElement(components_1.ButtonActions, { resource: [], buttons: buttons, size: "large", justifyContent: "center" }))))));
 };
 exports.default = CTA;
 var sx = {

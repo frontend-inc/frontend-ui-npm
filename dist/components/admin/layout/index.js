@@ -22,7 +22,7 @@ var AdminLayoutScroll_1 = require("./AdminLayoutScroll");
 Object.defineProperty(exports, "AdminLayoutScroll", { enumerable: true, get: function () { return __importDefault(AdminLayoutScroll_1).default; } });
 var AdminMenu_1 = require("./AdminMenu");
 Object.defineProperty(exports, "AdminMenu", { enumerable: true, get: function () { return __importDefault(AdminMenu_1).default; } });
-// Expand buttons 
+// Expand buttons
 var ExpandLeftButton_1 = require("./ExpandLeftButton");
 Object.defineProperty(exports, "ExpandLeftButton", { enumerable: true, get: function () { return __importDefault(ExpandLeftButton_1).default; } });
 var ExpandRightButton_1 = require("./ExpandRightButton");

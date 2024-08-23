@@ -15,7 +15,7 @@ var AccordionItem = function (props) {
         react_1.default.createElement(material_2.AccordionDetails, { sx: sx.accordionDetails },
             react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 2 },
                 react_1.default.createElement(__1.Text, { variant: "body1", color: "text.primary" }, description),
-                image && (react_1.default.createElement(__1.Image, { src: image, height: 240 }))))));
+                image && react_1.default.createElement(__1.Image, { src: image, height: 240 })))));
 };
 exports.default = AccordionItem;
 var sx = {
@@ -24,7 +24,7 @@ var sx = {
         borderColor: 'divider',
         my: '0px !important',
         py: 1,
-        borderRadius: 0
+        borderRadius: 0,
     },
     imageContainer: {
         width: 256,

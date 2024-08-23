@@ -47,10 +47,8 @@ var AdminZapForm = function (props) {
             url: "".concat(apiUrl, "/emails"),
             query: {
                 filters: {
-                    AND: [
-                        { internal: { eq: false } },
-                    ]
-                }
+                    AND: [{ internal: { eq: false } }],
+                },
             },
             conditions: [
                 {
@@ -61,6 +59,6 @@ var AdminZapForm = function (props) {
             ],
         },
     ];
-    return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: FORM_FIELDS })));
+    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: FORM_FIELDS }));
 };
 exports.default = AdminZapForm;

@@ -25,7 +25,8 @@ var ReviewsList = function (props) {
         setQuery(__assign(__assign({}, query), { per_page: perPage }));
     };
     return (react_1.default.createElement(components_1.DataLayout, { loading: loading },
-        !loading && (resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(ReviewItem_1.default, { key: index, resource: resource })); })),
+        !loading &&
+            (resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(ReviewItem_1.default, { key: index, resource: resource })); })),
         react_1.default.createElement(components_1.LoadMore, { page: page, numPages: numPages, loadMore: handleLoadMore })));
 };
 exports.default = ReviewsList;
