@@ -10,7 +10,7 @@ var containers_1 = require("../../../containers");
 var AdminContactForm_1 = __importDefault(require("./AdminContactForm"));
 var AdminContactsList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.Resources, { enableBorder: false, url: "".concat(apiUrl, "/contacts"), name: "contact", enableSearch: true, enableCreate: true, enableEdit: true, enableShow: true, enableDelete: true, sortOptions: [
+    return (react_1.default.createElement(components_1.ResourceList, { enableBorder: false, url: "".concat(apiUrl, "/contacts"), name: "contact", enableSearch: true, enableCreate: true, enableEdit: true, enableShow: true, enableDelete: true, sortOptions: [
             { name: 'created_at', label: 'Date' },
             { name: 'name', label: 'Name' },
             { name: 'email', label: 'Email' },

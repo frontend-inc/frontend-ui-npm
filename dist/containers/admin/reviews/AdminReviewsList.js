@@ -10,7 +10,7 @@ var containers_1 = require("../../../containers");
 var AdminReviewShow_1 = __importDefault(require("./AdminReviewShow"));
 var AdminReviewsList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.Resources, { enableBorder: false, url: "".concat(apiUrl, "/reviews"), name: "review", enableShow: true, enableSearch: true, enableDelete: true, filterOptions: [
+    return (react_1.default.createElement(components_1.ResourceList, { enableBorder: false, url: "".concat(apiUrl, "/reviews"), name: "review", enableShow: true, enableSearch: true, enableDelete: true, filterOptions: [
             {
                 field: 'rating',
                 label: 'Rating',

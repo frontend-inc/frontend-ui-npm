@@ -10,7 +10,7 @@ var __1 = require("../..");
 var AdminMetafieldForm_1 = __importDefault(require("./AdminMetafieldForm"));
 var AdminMetafieldsList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.SortableResources, { sortable: true, url: "".concat(apiUrl, "/metafields"), name: "metafield", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, query: {
+    return (react_1.default.createElement(components_1.SortableResourceList, { sortable: true, url: "".concat(apiUrl, "/metafields"), name: "metafield", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, query: {
             sort_by: 'position',
             sort_direction: 'asc',
         }, filterOptions: [

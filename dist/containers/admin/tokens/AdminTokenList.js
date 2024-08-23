@@ -10,7 +10,7 @@ var containers_1 = require("../../../containers");
 var AdminTokenForm_1 = __importDefault(require("./AdminTokenForm"));
 var AdminTokenList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.Resources, { url: "".concat(apiUrl, "/tokens"), name: "token", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, filterOptions: [
+    return (react_1.default.createElement(components_1.ResourceList, { url: "".concat(apiUrl, "/tokens"), name: "token", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, filterOptions: [
             {
                 label: 'Admin API Key',
                 field: 'admin',

@@ -19,13 +19,14 @@ export type DataListProps = {
     enableSorting?: boolean;
     perPage?: number;
     loadMore?: boolean;
-    list: React.FC<any>;
+    list?: React.FC<any>;
     toolbar?: React.FC<any>;
     show?: React.FC<any>;
     edit?: React.FC<any>;
     empty?: React.FC<any>;
     create?: React.FC<any>;
     destroy?: React.FC<any>;
+    component?: React.FC<any>;
     slots?: {
         toolbar?: any;
         list?: any;

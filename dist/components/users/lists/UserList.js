@@ -40,7 +40,7 @@ var UserList = function (props) {
             router.push("".concat(clientUrl).concat(href, "/").concat(user === null || user === void 0 ? void 0 : user.username));
         }
     };
-    return (react_1.default.createElement(__1.Resources, { enableSearch: true, enableLoadMore: true, name: "user", url: '/api/v1/cms/users', handleClick: handleClick, filterOptions: [], sortOptions: [
+    return (react_1.default.createElement(__1.ResourceList, { enableSearch: true, enableLoadMore: true, name: "user", url: '/api/v1/cms/users', handleClick: handleClick, filterOptions: [], sortOptions: [
             { label: 'Username', name: 'username' },
             { label: 'First name', name: 'first_name' },
             { label: 'Last name', name: 'last_name' },

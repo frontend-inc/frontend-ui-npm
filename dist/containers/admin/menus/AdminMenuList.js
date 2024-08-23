@@ -40,7 +40,7 @@ var AdminMenuList = function () {
         setOpen(true);
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(components_1.SortableResources, { sortable: true, enableBorder: true, url: "".concat(apiUrl, "/menus"), name: "menu", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, handleClick: handleClick, query: {
+        react_1.default.createElement(components_1.SortableResourceList, { sortable: true, enableBorder: true, url: "".concat(apiUrl, "/menus"), name: "menu", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, handleClick: handleClick, query: {
                 sort_by: 'position',
                 sort_direction: 'asc',
             }, edit: AdminMenuForm_1.default, create: AdminMenuForm_1.default, component: containers_1.AdminMenuItem, emptyIcon: "FolderTree", emptyTitle: "No menus", emptyDescription: "No menus yet." }),

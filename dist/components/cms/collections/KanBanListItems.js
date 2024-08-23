@@ -82,19 +82,21 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
 var frontend_js_2 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
+var helpers_1 = require("../../../helpers");
 var KanBanListItems = function (props) {
-    var headers = props.headers, _a = props.displayFields, displayFields = _a === void 0 ? [] : _a, _b = props.buttons, buttons = _b === void 0 ? [] : _b, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableSharing = props.enableSharing, enableUsers = props.enableUsers, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, rest = __rest(props, ["headers", "displayFields", "buttons", "enableEdit", "enableDelete", "enableCreate", "enableComments", "enableFavorites", "enableLikes", "enableRatings", "enableSharing", "enableUsers", "enableGradient", "enableOverlay"]);
+    var _a;
+    var headers = props.headers, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableSharing = props.enableSharing, enableUsers = props.enableUsers, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, rest = __rest(props, ["headers", "displayFields", "buttons", "enableEdit", "enableDelete", "enableCreate", "enableComments", "enableFavorites", "enableLikes", "enableRatings", "enableSharing", "enableUsers", "enableGradient", "enableOverlay"]);
     var fieldName = 'status'; //Hard code the field as status
-    var _c = (0, frontend_js_2.useResourceContext)(), loading = _c.loading, resource = _c.resource, resources = _c.resources, update = _c.update, updatePositions = _c.updatePositions, setResource = _c.setResource, reloadMany = _c.reloadMany, setOpenShow = _c.setOpenShow;
+    var _d = (0, frontend_js_2.useResourceContext)(), loading = _d.loading, resource = _d.resource, resources = _d.resources, update = _d.update, updatePositions = _d.updatePositions, setResource = _d.setResource, reloadMany = _d.reloadMany, setOpenShow = _d.setOpenShow;
     var handleClick = function (resource) {
         setResource(resource);
         setOpenShow(true);
     };
-    var _d = (0, hooks_1.useForms)(), handleEdit = _d.handleEdit, handleDeleteClick = _d.handleDeleteClick;
+    var _e = (0, hooks_1.useForms)(), handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
     var setOpenEdit = (0, react_1.useContext)(frontend_js_1.ResourceContext).setOpenEdit;
     var handleAdd = function (header) {
         setResource({
@@ -127,8 +129,42 @@ var KanBanListItems = function (props) {
             }
         });
     }); };
-    if (!headers || !fieldName)
+    var _f = (0, react_1.useState)({}), columns = _f[0], setColumns = _f[1];
+    var handleGroupResources = function (resources, fieldName) {
+        var sortedResources = resources.sort(function (a, b) { return a.position - b.position; });
+        var allowedOptions = headers.map(function (header) { return header.value; });
+        var grouped = (0, helpers_1.groupResourcesByField)(sortedResources, fieldName, allowedOptions);
+        setColumns(grouped);
+    };
+    (0, react_1.useEffect)(function () {
+        if (resources) {
+            handleGroupResources(resources, fieldName);
+        }
+    }, [resources, fieldName, headers]);
+    var slots = {
+        list: {
+            enableOverlay: enableOverlay,
+            enableGradient: enableGradient,
+            buttons: buttons,
+            displayFields: displayFields,
+            enableComments: enableComments,
+            enableFavorites: enableFavorites,
+            enableLikes: enableLikes,
+            enableRatings: enableRatings,
+        },
+        card: {
+            enableOverlay: enableOverlay,
+            enableGradient: enableGradient,
+            buttons: buttons,
+            displayFields: displayFields,
+            enableComments: enableComments,
+            enableFavorites: enableFavorites,
+            enableLikes: enableLikes,
+            enableRatings: enableRatings,
+        }
+    };
+    if (!headers || !fieldName || ((_a = Object.keys(columns)) === null || _a === void 0 ? void 0 : _a.length) == 0)
         return null;
-    return (react_1.default.createElement(__1.KanBan, { loading: loading, buttons: buttons, resources: resources, activeResource: resource, headers: headers, fieldName: fieldName, displayFields: displayFields, enableOverlay: enableOverlay, enableGradient: enableGradient, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, enableComments: enableComments, enableFavorites: enableFavorites, enableRatings: enableRatings }));
+    return (react_1.default.createElement(components_1.KanBanBoard, { loading: loading, columns: columns, headers: headers, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, slots: slots, component: components_1.CollectionKanBanCard }));
 };
 exports.default = KanBanListItems;

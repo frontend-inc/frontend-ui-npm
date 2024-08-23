@@ -46,7 +46,7 @@ var AdminActionsList = function () {
         setOpen(false);
     };
     return (react_1.default.createElement(material_1.Stack, { p: 2, direction: "column", spacing: 2 },
-        react_1.default.createElement(components_1.Resources, { url: "".concat(apiUrl, "/actions"), name: "app_action", enableSearch: true, enableCreate: true, enableEdit: true, enableDelete: true, query: {
+        react_1.default.createElement(components_1.ResourceList, { url: "".concat(apiUrl, "/actions"), name: "app_action", enableSearch: true, enableCreate: true, enableEdit: true, enableDelete: true, query: {
                 sort_by: 'action_type',
                 sort_direction: 'asc',
             }, filterOptions: [
@@ -58,7 +58,7 @@ var AdminActionsList = function () {
                 },
             ], edit: AdminActionForm_1.default, create: AdminActionForm_1.default, handleClick: handleClick, component: containers_1.AdminActionItem, emptyIcon: "Hook", emptyTitle: "No actions", emptyDescription: "No actions yet." }),
         react_1.default.createElement(components_1.Drawer, { open: open, handleClose: handleClose },
-            react_1.default.createElement(components_1.SortableResources, { enableBorder: true, direction: "column", 
+            react_1.default.createElement(components_1.SortableResourceList, { enableBorder: true, direction: "column", 
                 //@ts-ignore
                 url: "".concat(apiUrl, "/actions/").concat(activeAction === null || activeAction === void 0 ? void 0 : activeAction.id, "/zaps"), name: "zap", enableSearch: true, enableCreate: true, enableEdit: true, enableDelete: true, query: {
                     sort_by: 'position',

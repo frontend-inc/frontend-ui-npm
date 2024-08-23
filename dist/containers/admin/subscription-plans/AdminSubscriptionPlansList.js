@@ -10,7 +10,7 @@ var containers_1 = require("../../../containers");
 var AdminSubscriptionPlanForm_1 = __importDefault(require("./AdminSubscriptionPlanForm"));
 var AdminSubscriptionPlansList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.Resources, { url: "".concat(apiUrl, "/subscription_plans"), name: "subscription_plan", enableSearch: true, enableCreate: true, enableEdit: true, enableDelete: true, sortOptions: [
+    return (react_1.default.createElement(components_1.ResourceList, { url: "".concat(apiUrl, "/subscription_plans"), name: "subscription_plan", enableSearch: true, enableCreate: true, enableEdit: true, enableDelete: true, sortOptions: [
             { name: 'name', label: 'Name' },
             { name: 'price', label: 'price' },
         ], edit: AdminSubscriptionPlanForm_1.default, create: AdminSubscriptionPlanForm_1.default, component: containers_1.AdminSubscriptionPlanItem }));
