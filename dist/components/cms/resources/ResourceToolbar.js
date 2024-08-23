@@ -15,7 +15,7 @@ var Toolbar = function (props) {
                 react_1.default.createElement(__1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions }))),
             enableSorting && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(__1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSort, handleSortDirection: handleSortDirection })))),
-        enableCreate && (react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add"))));
+        enableCreate && (react_1.default.createElement(material_1.Button, { sx: sx.button, color: "primary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", color: "primary.contrastText", size: 20 }) }, "Add"))));
 };
 exports.default = Toolbar;
 var sx = {
