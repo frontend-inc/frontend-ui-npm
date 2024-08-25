@@ -26,6 +26,7 @@ type CollectionListItemProps = {
     enableUsers?: boolean;
     enableComments?: boolean;
     enableFavorites?: boolean;
+    enableAddReference?: boolean;
     enableLikes?: boolean;
     enableRatings?: boolean;
 };

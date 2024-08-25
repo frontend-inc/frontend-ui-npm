@@ -15,6 +15,7 @@ export type CollectionListProps = {
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
+    enableAddReference?: boolean;
     fields?: FormFieldType[];
     headers?: {
         label: string;
@@ -35,6 +36,7 @@ export type CollectionListProps = {
     create?: React.FC<any>;
     destroy?: React.FC<any>;
     empty?: React.FC<any>;
+    references?: React.FC<any>;
     slots?: {
         toolbar?: any;
         list?: any;
@@ -43,9 +45,11 @@ export type CollectionListProps = {
         create?: any;
         destroy?: any;
         empty?: any;
+        references?: any;
         item?: any;
     };
     url: string;
+    foreignUrl?: string;
     query?: any;
     resource: any;
     filterUser?: boolean;

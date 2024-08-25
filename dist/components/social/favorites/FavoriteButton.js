@@ -122,14 +122,15 @@ var FavoriteButton = function (props) {
             }
         }
     }, [currentUser, handle]);
-    return (react_1.default.createElement(material_1.Box, null, variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
-                color: color,
-            } }, sx.icon), (isFavorite && sx.iconFavorited)) }, isFavorite ? (react_1.default.createElement(icons_material_1.Bookmark, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.BookmarkBorder, { fontSize: "small" })))) : (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.button), (isFavorite && sx.buttonFavorited)), onClick: handleClick }, isFavorite ? (react_1.default.createElement(icons_material_1.Bookmark, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.BookmarkBorder, { fontSize: "small" }))))));
+    return (react_1.default.createElement(material_1.Box, null,
+        react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign(__assign({ color: color, '&:hover': {
+                    color: color,
+                } }, (variant === 'icon' ? sx.icon : sx.button)), (isFavorite && sx.favorited)), ((isFavorite && variant === 'button') && sx.buttonFavorited)) }, isFavorite ? (react_1.default.createElement(icons_material_1.Bookmark, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.BookmarkBorder, { fontSize: "small" })))));
 };
 exports.default = FavoriteButton;
 var sx = {
     icon: {},
-    iconFavorited: {
+    favorited: {
         color: 'primary.main',
         '&:hover': {
             color: 'primary.dark',
@@ -147,9 +148,5 @@ var sx = {
     },
     buttonFavorited: {
         borderColor: 'primary.main',
-        color: 'primary.main',
-        '&:hover': {
-            color: 'primary.main',
-        },
     },
 };

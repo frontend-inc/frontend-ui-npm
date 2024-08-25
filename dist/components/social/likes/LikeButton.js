@@ -120,31 +120,26 @@ var LikeButton = function (props) {
             }
         }
     }, [currentUser, handle]);
-    return (react_1.default.createElement(material_1.Box, null, variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
-                color: color,
-            } }, sx.icon), (liked && sx.iconLiked)) }, liked ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
-                color: color,
-            } }, sx.button), (liked && sx.buttonLiked)) }, liked ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" }))))));
+    return (react_1.default.createElement(material_1.Box, null,
+        react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign(__assign({ color: color, '&:hover': {
+                    color: color,
+                } }, (variant == 'icon' ? sx.icon : sx.button)), (liked && sx.liked)), ((liked && variant == 'button') && sx.buttonLiked)) }, liked ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))));
 };
 exports.default = LikeButton;
 var sx = {
     icon: {},
-    iconLiked: {
+    liked: {
+        transition: 'transform 0.2s',
         color: 'primary.main',
         '&:hover': {
             color: 'primary.dark',
         },
     },
     button: {
-        transition: 'transform 0.2s',
         border: '1px solid',
         borderColor: 'divider',
     },
     buttonLiked: {
         borderColor: 'primary.main',
-        color: 'primary.main',
-        '&:hover': {
-            color: 'primary.dark',
-        },
     },
 };

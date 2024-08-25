@@ -1,10 +1,9 @@
 import React from 'react';
-import { ButtonType, FormFieldType, DisplayFieldType } from '../../../types';
+import { ButtonType, DisplayFieldType } from '../../../types';
 export type ShowProps = {
     handle?: string;
     buttons: ButtonType[];
     displayFields: DisplayFieldType[];
-    fieldName?: string;
     url?: string;
     resource: any;
     enableEdit?: boolean;
@@ -14,16 +13,20 @@ export type ShowProps = {
     enableSharing?: boolean;
     enableRatings?: boolean;
     enablePayments?: boolean;
+    enableAddReference?: boolean;
     enableUsers?: boolean;
+    enableGradient?: boolean;
     enableOverlay?: boolean;
     handleEdit?: (res: any) => void;
 };
 type ShowStyleTypes = 'card' | 'cover' | 'list' | 'avatar' | 'youtube' | 'vimeo';
 export type ShowItemProps = ShowProps & {
-    fieldName: string;
-    fields?: FormFieldType[];
     url: string;
     style: ShowStyleTypes;
+    slots: {
+        image?: any;
+        content?: any;
+    };
 };
 declare const ShowItem: React.FC<ShowItemProps>;
 export default ShowItem;

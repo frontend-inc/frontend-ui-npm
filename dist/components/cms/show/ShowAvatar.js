@@ -16,31 +16,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var __1 = require("../..");
-var helpers_1 = require("../../../helpers");
+var components_1 = require("../../../components");
 var ShowAvatar = function (props) {
-    var _a = props || {}, buttons = _a.buttons, resource = _a.resource, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
-    var _c = resource || {}, title = _c.title, image = _c.image, description = _c.description;
+    var _a = props || {}, image = _a.image, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, slots = _a.slots;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", justifyContent: "center" },
-        (buttons || enableEdit) && (react_1.default.createElement(material_1.Stack, { sx: sx.buttons, direction: { sm: 'row', xs: 'column' }, spacing: 1 },
-            react_1.default.createElement(__1.ButtonActions, { buttons: (0, helpers_1.buildActions)({
-                    enableEdit: enableEdit,
-                    handleEdit: handleEdit,
-                    buttons: buttons,
-                }), resource: resource, justifyContent: "flex-end" }))),
+        react_1.default.createElement(material_1.Stack, { sx: sx.buttons, direction: { sm: 'row', xs: 'column' }, spacing: 1 }, secondaryAction),
         react_1.default.createElement(material_1.Box, { sx: sx.root },
             react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { sm: 'row', xs: 'column' }, spacing: 4 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.leftPanel, spacing: 2, direction: "column" },
                     react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-                        react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign({}, sx.avatar), { height: 200, width: 200 }), src: image === null || image === void 0 ? void 0 : image.url, alt: title },
-                            react_1.default.createElement(material_1.Box, null))),
-                    react_1.default.createElement(__1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing })),
+                        react_1.default.createElement(components_1.AvatarImage, __assign({ image: image, alt: primary, height: 200 }, slots.image))),
+                    actions),
                 react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
-                    react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, title),
-                    enableRatings && react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true }),
-                    react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }),
-                    enablePayments && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout" })),
-                    react_1.default.createElement(__1.ExpandableText, { text: description }))))));
+                    react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, primary),
+                    secondary)))));
 };
 exports.default = ShowAvatar;
 var sx = {

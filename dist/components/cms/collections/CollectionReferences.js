@@ -15,10 +15,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var __1 = require("../..");
-var Show = function (props) {
-    var _a = props || {}, url = _a.url, foreignUrl = _a.foreignUrl, fields = _a.fields, resource = _a.resource;
-    return (react_1.default.createElement(__1.ShowContainer, { url: url, foreignUrl: foreignUrl, fields: fields, resource: resource },
-        react_1.default.createElement(__1.ShowItem, __assign({}, props, { url: url }))));
+var components_1 = require("../../../components");
+var CollectionReferences = function (props) {
+    var query = { current_user: true };
+    return react_1.default.createElement(components_1.DataReferences, __assign({ query: query }, props));
 };
-exports.default = Show;
+exports.default = CollectionReferences;

@@ -3,6 +3,7 @@ import { FormFieldType, QueryParamsType, SearchFilterOptionType, SortOptionType 
 export type DataListProps = {
     sortable?: boolean;
     url: string;
+    foreignUrl?: string;
     name: string;
     query?: QueryParamsType;
     resource?: any;
@@ -16,6 +17,7 @@ export type DataListProps = {
     enableCreate?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;
+    enableAddReference?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
     perPage?: number;
@@ -28,6 +30,7 @@ export type DataListProps = {
     empty?: React.FC<any>;
     create?: React.FC<any>;
     destroy?: React.FC<any>;
+    references?: React.FC<any>;
     component?: React.FC<any>;
     slots?: {
         toolbar?: any;
@@ -38,6 +41,7 @@ export type DataListProps = {
         create?: any;
         destroy?: any;
         empty?: any;
+        references?: any;
     };
     emptyIcon?: string;
     emptyTitle?: string;

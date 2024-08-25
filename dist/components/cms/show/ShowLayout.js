@@ -8,8 +8,8 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
 var ShowLayout = function (props) {
-    var _a = props || {}, buttons = _a.buttons, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, resource = _a.resource, children = _a.children, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments;
-    var _c = resource || {}, title = _c.title, description = _c.description;
+    var _a = props || {}, resource = _a.resource, children = _a.children, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, enablePayments = _a.enablePayments, _b = _a.buttons, buttons = _b === void 0 ? [] : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c;
+    var _d = resource || {}, title = _d.title, description = _d.description;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
         (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
             react_1.default.createElement(__1.ButtonActions, { buttons: (0, helpers_1.buildActions)({

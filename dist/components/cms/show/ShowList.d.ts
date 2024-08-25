@@ -1,4 +1,4 @@
 import React from 'react';
-import { ShowProps } from './ShowItem';
-declare const ShowList: React.FC<ShowProps>;
+import { ShowCardProps } from './ShowCard';
+declare const ShowList: React.FC<ShowCardProps>;
 export default ShowList;
