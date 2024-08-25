@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
-export type CollectionListItemsProps = {
+export type ReferenceCollectionListItemsProps = {
     href?: string;
     style?: 'list' | 'card' | 'avatar' | 'cover' | 'table' | 'text';
     buttons: ButtonType[];
@@ -21,5 +21,5 @@ export type CollectionListItemsProps = {
         item?: any;
     };
 };
-declare const CollectionListItems: React.FC<CollectionListItemsProps>;
-export default CollectionListItems;
+declare const ReferenceCollectionListItems: React.FC<ReferenceCollectionListItemsProps>;
+export default ReferenceCollectionListItems;

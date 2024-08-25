@@ -1,12 +1,11 @@
 import React from 'react';
-export type DataListItemsProps = {
-    href?: string;
+export type SortableReferenceListItemsProps = {
     enableShow?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;
-    handleClick?: (resource: any) => void;
+    handleClick: (resource: any) => void;
     pagination?: React.FC<any>;
     component?: React.FC<any>;
     slots?: {
@@ -14,5 +13,5 @@ export type DataListItemsProps = {
         list?: any;
     };
 };
-declare const DataListItems: React.FC<DataListItemsProps>;
-export default DataListItems;
+declare const SortableReferenceListItems: React.FC<SortableReferenceListItemsProps>;
+export default SortableReferenceListItems;

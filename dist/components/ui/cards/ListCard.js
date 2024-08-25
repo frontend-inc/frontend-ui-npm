@@ -17,16 +17,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var ListItemCard = function (props) {
-    var _a = props || {}, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, _b = _a.height, height = _b === void 0 ? 180 : _b, _c = _a.slots, slots = _c === void 0 ? {
+var ListCard = function (props) {
+    var _a = props || {}, _b = _a.sortable, sortable = _b === void 0 ? false : _b, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, _c = _a.height, height = _c === void 0 ? 180 : _c, _d = _a.slots, slots = _d === void 0 ? {
         item: {},
         image: {},
-    } : _c;
+    } : _d;
     return (react_1.default.createElement(material_1.Box, __assign({ sx: sx.root }, slots.item),
         react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
-            react_1.default.createElement(material_1.Box, { sx: sx.image },
-                react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleClick },
-                    react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: height, alt: primary }, slots.image)))),
+            react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: 'flex-start', spacing: 0 },
+                sortable && (react_1.default.createElement(__1.Icon, { name: "GripVertical", color: 'text.secondary' })),
+                react_1.default.createElement(material_1.Box, { sx: sx.image },
+                    react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleClick },
+                        react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: height, alt: primary }, slots.image))))),
             react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.contentArea },
                 react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.content },
                     react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5 },
@@ -35,7 +37,7 @@ var ListItemCard = function (props) {
                     react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" }, actions)),
                 react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" }, secondaryAction)))));
 };
-exports.default = ListItemCard;
+exports.default = ListCard;
 var sx = {
     root: {
         width: '100%',
@@ -46,6 +48,7 @@ var sx = {
         overflow: 'hidden',
         borderBottom: '1px solid',
         borderColor: 'divider',
+        bgcolor: 'background.main',
     },
     gradient: {
         '&::after': {

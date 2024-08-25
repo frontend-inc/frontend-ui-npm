@@ -42,29 +42,29 @@ var context_1 = require("../../../context");
 var router_1 = require("next/router");
 var __2 = require("../..");
 var hooks_1 = require("../../../hooks");
-var CollectionListItems = function (props) {
+var ReferenceCollectionListItems = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var _a = (0, frontend_js_1.useResourceContext)(), setResource = _a.setResource, loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, _b = _a.query, query = _b === void 0 ? {} : _b, setQuery = _a.setQuery, setOpenShow = _a.setOpenShow;
+    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.loading, setResource = _a.setResource, references = _a.resources, page = _a.page, numPages = _a.numPages, _b = _a.query, query = _b === void 0 ? {} : _b, setQuery = _a.setQuery, setOpenShow = _a.setOpenShow;
     var _c = props.buttons, buttons = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'card' : _d, href = props.href, handleClick = props.handleClick, _e = props.displayFields, displayFields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableDelete, enableDelete = _j === void 0 ? false : _j, _k = props.enableFavorites, enableFavorites = _k === void 0 ? false : _k, _l = props.enableLikes, enableLikes = _l === void 0 ? false : _l, _m = props.enableUsers, enableUsers = _m === void 0 ? false : _m, _o = props.enableRatings, enableRatings = _o === void 0 ? false : _o, _p = props.enableComments, enableComments = _p === void 0 ? false : _p, _q = props.slots, slots = _q === void 0 ? {
         list: {},
         item: {}
     } : _q;
-    var handleShowClick = function (resource) {
+    var handleShowClick = function (target) {
         if (handleClick) {
-            handleClick(resource);
+            handleClick(target);
         }
         else if (href) {
-            if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
+            if (clientUrl && href && (target === null || target === void 0 ? void 0 : target.handle)) {
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth',
                 });
-                router.push("".concat(clientUrl).concat(href, "/").concat(resource === null || resource === void 0 ? void 0 : resource.handle));
+                router.push("".concat(clientUrl).concat(href, "/").concat(target === null || target === void 0 ? void 0 : target.handle));
             }
         }
         else {
-            setResource(resource);
+            setResource(target);
             setOpenShow(true);
         }
     };
@@ -85,7 +85,10 @@ var CollectionListItems = function (props) {
         setQuery(__assign(__assign({}, query), { per_page: perPage }));
     };
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
-        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.CollectionListItem, __assign({}, slots.item, { key: index, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleShowClick(resource); }, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, buttons: buttons, enableUsers: enableUsers, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay }))); })),
+        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid }), references === null || references === void 0 ? void 0 : references.map(function (reference, index) {
+            var target = reference === null || reference === void 0 ? void 0 : reference.target;
+            return (react_1.default.createElement(__2.CollectionListItem, __assign({}, slots.item, { key: index, style: style, resource: target, displayFields: displayFields, handleClick: function () { return handleShowClick(target); }, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(target); }, handleDelete: function () { return handleDeleteClick(target); }, buttons: buttons, enableUsers: enableUsers, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay })));
+        })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };
-exports.default = CollectionListItems;
+exports.default = ReferenceCollectionListItems;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
 type CardStyleTypes = 'list' | 'card' | 'avatar' | 'cover' | 'table' | 'text';
-type DataListItemProps = {
+type CollectionListItemProps = {
     buttons: ButtonType[];
     style: CardStyleTypes;
     displayFields: DisplayFieldType[];
@@ -22,7 +22,6 @@ type DataListItemProps = {
     enableGradient?: boolean;
     enableOverlay?: boolean;
     enableEdit?: boolean;
-    enableCreate?: boolean;
     enableDelete?: boolean;
     enableUsers?: boolean;
     enableComments?: boolean;
@@ -30,5 +29,5 @@ type DataListItemProps = {
     enableLikes?: boolean;
     enableRatings?: boolean;
 };
-declare const CollectionListItem: React.FC<DataListItemProps>;
+declare const CollectionListItem: React.FC<CollectionListItemProps>;
 export default CollectionListItem;

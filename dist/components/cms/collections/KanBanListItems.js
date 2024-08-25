@@ -91,7 +91,7 @@ var KanBanListItems = function (props) {
     var _a;
     var headers = props.headers, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableSharing = props.enableSharing, enableUsers = props.enableUsers, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, rest = __rest(props, ["headers", "displayFields", "buttons", "enableEdit", "enableDelete", "enableCreate", "enableComments", "enableFavorites", "enableLikes", "enableRatings", "enableSharing", "enableUsers", "enableGradient", "enableOverlay"]);
     var fieldName = 'status'; //Hard code the field as status
-    var _d = (0, frontend_js_2.useResourceContext)(), loading = _d.loading, resource = _d.resource, resources = _d.resources, update = _d.update, updatePositions = _d.updatePositions, setResource = _d.setResource, reloadMany = _d.reloadMany, setOpenShow = _d.setOpenShow;
+    var _d = (0, frontend_js_2.useResourceContext)(), loading = _d.loading, resources = _d.resources, update = _d.update, updatePositions = _d.updatePositions, setResource = _d.setResource, reloadMany = _d.reloadMany, setOpenShow = _d.setOpenShow;
     var handleClick = function (resource) {
         setResource(resource);
         setOpenShow(true);
@@ -152,7 +152,7 @@ var KanBanListItems = function (props) {
             enableLikes: enableLikes,
             enableRatings: enableRatings,
         },
-        card: {
+        item: {
             enableOverlay: enableOverlay,
             enableGradient: enableGradient,
             buttons: buttons,

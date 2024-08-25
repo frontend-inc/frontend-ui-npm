@@ -1,8 +1,13 @@
 import React from 'react';
 type DataListItemProps = {
-    resource: any;
+    sortable?: boolean;
+    label?: string;
+    primary: string;
+    secondary?: string;
     actions?: React.ReactNode;
     secondaryAction?: React.ReactNode;
+    image?: string;
+    height?: number;
     handleClick?: () => void;
     handleEdit?: () => void;
     handleDelete?: () => void;

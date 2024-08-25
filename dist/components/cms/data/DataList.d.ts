@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormFieldType, QueryParamsType, SearchFilterOptionType, SortOptionType } from '../../../types';
 export type DataListProps = {
+    sortable?: boolean;
     url: string;
     name: string;
     query?: QueryParamsType;
@@ -20,6 +21,7 @@ export type DataListProps = {
     perPage?: number;
     loadMore?: boolean;
     list?: React.FC<any>;
+    sortableList?: React.FC<any>;
     toolbar?: React.FC<any>;
     show?: React.FC<any>;
     edit?: React.FC<any>;
@@ -30,6 +32,7 @@ export type DataListProps = {
     slots?: {
         toolbar?: any;
         list?: any;
+        item?: any;
         show?: any;
         edit?: any;
         create?: any;

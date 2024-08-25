@@ -55,7 +55,7 @@ var __1 = require("../..");
 var KanBanBoard = function (props) {
     var loading = props.loading, _a = props.headers, headers = _a === void 0 ? [] : _a, handleDrop = props.handleDrop, _b = props.columns, initialColumns = _b === void 0 ? {} : _b, handleClick = props.handleClick, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleAdd = props.handleAdd, _c = props.component, Component = _c === void 0 ? __1.KanBanCard : _c, _d = props.slots, slots = _d === void 0 ? {
         list: {},
-        card: {},
+        item: {},
     } : _d;
     var _e = (0, react_1.useState)(null), activeId = _e[0], setActiveId = _e[1];
     var _f = (0, react_1.useState)(initialColumns), columns = _f[0], setColumns = _f[1];
@@ -78,11 +78,11 @@ var KanBanBoard = function (props) {
                     react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.primary" }, header.label),
                     react_1.default.createElement(sortable_1.SortableContext, { key: header.value, items: (_a = columns[header.value]) === null || _a === void 0 ? void 0 : _a.map(function (res) { return res.id; }), strategy: sortable_1.verticalListSortingStrategy },
                         react_1.default.createElement(material_1.List, { sx: sx.cardList, disablePadding: true },
-                            columns[header.value].length > 0 ? ((_b = columns[header.value]) === null || _b === void 0 ? void 0 : _b.map(function (res) { return (react_1.default.createElement(Component, __assign({ loading: loading, key: res === null || res === void 0 ? void 0 : res.id, id: res === null || res === void 0 ? void 0 : res.id, resource: res, handleClick: function () { return handleClick(res); }, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(res); }, handleDelete: function () { return handleDelete(res); }, component: Component }, slots.card))); })) : (react_1.default.createElement(Droppable_1.default, { id: header.value })),
+                            columns[header.value].length > 0 ? ((_b = columns[header.value]) === null || _b === void 0 ? void 0 : _b.map(function (res) { return (react_1.default.createElement(Component, __assign({ loading: loading, key: res === null || res === void 0 ? void 0 : res.id, id: res === null || res === void 0 ? void 0 : res.id, resource: res, handleClick: function () { return handleClick(res); }, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(res); }, handleDelete: function () { return handleDelete(res); }, component: Component }, slots.item))); })) : (react_1.default.createElement(Droppable_1.default, { id: header.value })),
                             react_1.default.createElement(Droppable_1.default, { id: header.value })))),
                 enableCreate && (react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "secondary", onClick: function () { return handleAdd(header.value); }, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", color: "secondary.contrastText", size: 20 }) }, "Add"))));
         })),
-        react_1.default.createElement(core_1.DragOverlay, null, draggedResource ? (react_1.default.createElement(Component, __assign({ enableDragging: true, id: draggedResource === null || draggedResource === void 0 ? void 0 : draggedResource.id, resource: draggedResource }, slots.card))) : null)));
+        react_1.default.createElement(core_1.DragOverlay, null, draggedResource ? (react_1.default.createElement(Component, __assign({ enableDragging: true, id: draggedResource === null || draggedResource === void 0 ? void 0 : draggedResource.id, resource: draggedResource }, slots.item))) : null)));
     function handleDragStart(event) {
         var active = event.active;
         setActiveId(active.id);

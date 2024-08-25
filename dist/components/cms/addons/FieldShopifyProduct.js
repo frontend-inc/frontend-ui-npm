@@ -49,7 +49,7 @@ var react_1 = __importStar(require("react"));
 var shopify_1 = require("../../../components/shopify");
 var frontend_shopify_1 = require("frontend-shopify");
 var lodash_1 = require("lodash");
-var AddonShopifyProduct = function (props) {
+var FieldShopifyProduct = function (props) {
     var _a = props || {}, resource = _a.resource, fieldName = _a.fieldName, rest = __rest(_a, ["resource", "fieldName"]);
     var shopifyHandle = (0, lodash_1.get)(resource, fieldName);
     var _b = (0, frontend_shopify_1.useProducts)(), loading = _b.loading, product = _b.product, findProduct = _b.findProduct;
@@ -62,4 +62,4 @@ var AddonShopifyProduct = function (props) {
         return null;
     return react_1.default.createElement(shopify_1.ProductDetails, __assign({ shopifyProduct: product }, rest));
 };
-exports.default = AddonShopifyProduct;
+exports.default = FieldShopifyProduct;

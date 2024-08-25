@@ -27,13 +27,15 @@ var react_1 = __importStar(require("react"));
 var react_calendly_1 = require("react-calendly");
 var material_1 = require("@mui/material");
 var frontend_js_1 = require("frontend-js");
+var components_1 = require("../../../components");
 // https://www.npmjs.com/package/react-calendly
 var Calendly = function (props) {
-    var calendlyUrl = props.calendlyUrl;
+    var calendlyUrl = props.calendlyUrl, _a = props.buttonText, buttonText = _a === void 0 ? "Schedule time with me" : _a;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var theme = (0, material_1.useTheme)();
-    var _a = (0, react_1.useState)({}), prefill = _a[0], setPrefill = _a[1];
-    var _b = (0, react_1.useState)({}), pageSettings = _b[0], setPageSettings = _b[1];
+    var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
+    var _c = (0, react_1.useState)({}), prefill = _c[0], setPrefill = _c[1];
+    var _d = (0, react_1.useState)({}), pageSettings = _d[0], setPageSettings = _d[1];
     (0, react_1.useEffect)(function () {
         if (theme) {
             setPageSettings({
@@ -57,12 +59,33 @@ var Calendly = function (props) {
     }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.email]);
     if (!calendlyUrl)
         return null;
-    return (react_1.default.createElement(react_calendly_1.InlineWidget, { styles: styles.root, url: calendlyUrl, pageSettings: pageSettings, prefill: prefill }));
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: function () { return setOpen(true); } }, buttonText),
+        react_1.default.createElement(components_1.MediaModal, { open: open, handleClose: function () { return setOpen(false); } },
+            react_1.default.createElement(material_1.Box, { sx: sx.calendly },
+                react_1.default.createElement(react_calendly_1.InlineWidget, { styles: styles.root, url: calendlyUrl, pageSettings: pageSettings, prefill: prefill, "data-resize": "true" })))));
 };
 exports.default = Calendly;
+var sx = {
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    calendly: {
+        width: {
+            xs: '100%',
+            sm: 620,
+            md: 960,
+        },
+        height: '100%',
+    },
+};
 var styles = {
     root: {
-        height: '700px',
+        width: '100%',
         overflow: 'none',
+        height: '1200px',
     },
 };

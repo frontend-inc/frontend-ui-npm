@@ -28,6 +28,7 @@ export type CollectionListProps = {
     perPage?: number;
     loadMore?: boolean;
     list: React.FC<any>;
+    component?: React.FC<any>;
     toolbar?: React.FC<any>;
     show?: React.FC<any>;
     edit?: React.FC<any>;
@@ -42,6 +43,7 @@ export type CollectionListProps = {
         create?: any;
         destroy?: any;
         empty?: any;
+        item?: any;
     };
     url: string;
     query?: any;

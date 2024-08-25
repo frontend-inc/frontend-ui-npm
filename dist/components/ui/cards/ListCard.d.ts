@@ -1,4 +1,7 @@
 import React from 'react';
 import { CardProps } from './Card';
-declare const ListItemCard: React.FC<CardProps>;
-export default ListItemCard;
+export type ListCardProps = CardProps & {
+    sortable?: boolean;
+};
+declare const ListCard: React.FC<ListCardProps>;
+export default ListCard;

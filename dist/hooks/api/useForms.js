@@ -54,7 +54,7 @@ var useForms = function (params) {
     var parentResource = (params || {}).parentResource;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
-    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addReferences = _a.addReferences, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, setOpenShow = _a.setOpenShow, openDelete = _a.openDelete, setOpenDelete = _a.setOpenDelete, openEdit = _a.openEdit, setOpenEdit = _a.setOpenEdit;
+    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addReferences = _a.addReferences, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, openEdit = _a.openEdit, openDelete = _a.openDelete, openShow = _a.openShow, setOpenEdit = _a.setOpenEdit, setOpenDelete = _a.setOpenDelete, setOpenShow = _a.setOpenShow;
     var reloadMany = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             if (parentResource === null || parentResource === void 0 ? void 0 : parentResource.id) {
@@ -66,6 +66,10 @@ var useForms = function (params) {
             return [2 /*return*/];
         });
     }); };
+    var handleShow = function (resource) {
+        setResource(resource);
+        setOpenShow(true);
+    };
     var handleAdd = function () {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
             return setAuthOpen(true);
@@ -168,17 +172,20 @@ var useForms = function (params) {
         errors: errors,
         resource: resource,
         setResource: setResource,
+        handleChange: handleChange,
         handleAdd: handleAdd,
         handleEdit: handleEdit,
-        handleSubmit: handleSubmit,
         handleDelete: handleDelete,
         handleDeleteClick: handleDeleteClick,
         handleRemove: handleRemove,
-        handleChange: handleChange,
+        handleShow: handleShow,
+        handleSubmit: handleSubmit,
         openEdit: openEdit,
-        setOpenEdit: setOpenEdit,
         openDelete: openDelete,
+        openShow: openShow,
+        setOpenEdit: setOpenEdit,
         setOpenDelete: setOpenDelete,
+        setOpenShow: setOpenShow,
     };
 };
 exports.default = useForms;

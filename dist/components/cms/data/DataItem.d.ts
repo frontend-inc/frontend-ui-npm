@@ -1,12 +1,9 @@
 import React from 'react';
-type DataListItemProps = {
-    label?: string;
-    primary: string;
-    secondary?: string;
+type DataItemProps = {
+    sortable?: boolean;
+    resource: any;
     actions?: React.ReactNode;
     secondaryAction?: React.ReactNode;
-    image?: string;
-    height?: number;
     handleClick?: () => void;
     handleEdit?: () => void;
     handleDelete?: () => void;
@@ -15,5 +12,5 @@ type DataListItemProps = {
         image?: any;
     };
 };
-declare const DataListItem: React.FC<DataListItemProps>;
-export default DataListItem;
+declare const DataItem: React.FC<DataItemProps>;
+export default DataItem;

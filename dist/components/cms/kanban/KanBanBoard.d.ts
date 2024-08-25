@@ -17,7 +17,7 @@ type KanBanBoardProps = {
     component?: React.FC<any>;
     slots?: {
         list?: any;
-        card?: any;
+        item?: any;
     };
 };
 declare const KanBanBoard: React.FC<KanBanBoardProps>;
