@@ -46,7 +46,7 @@ var material_1 = require("@mui/material");
 var frontend_js_1 = require("frontend-js");
 var DataReferences = function (props) {
     var _a = props || {}, url = _a.url, _b = _a.query, query = _b === void 0 ? {} : _b;
-    var _c = (0, frontend_js_1.useResourceContext)(), resource = _c.resource, openReferences = _c.openReferences, setOpenReferences = _c.setOpenReferences;
+    var _c = (0, frontend_js_1.useResourceContext)(), selectedIds = _c.selectedIds, openReferences = _c.openReferences, setOpenReferences = _c.setOpenReferences;
     var _d = (0, frontend_js_1.useResource)({
         name: 'references',
         url: url
@@ -56,7 +56,7 @@ var DataReferences = function (props) {
             switch (_a.label) {
                 case 0:
                     if (!(parentResource === null || parentResource === void 0 ? void 0 : parentResource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, addReferences(parentResource === null || parentResource === void 0 ? void 0 : parentResource.id, [resource === null || resource === void 0 ? void 0 : resource.id])];
+                    return [4 /*yield*/, addReferences(parentResource === null || parentResource === void 0 ? void 0 : parentResource.id, selectedIds)];
                 case 1:
                     _a.sent();
                     setOpenReferences(false);
@@ -65,7 +65,7 @@ var DataReferences = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(__1.Modal, { loading: loading, open: openReferences, handleClose: function () { return setOpenReferences(false); }, title: resource === null || resource === void 0 ? void 0 : resource.title, maxWidth: "sm", buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", size: 20, color: "primary.contrastText" }) }, "Add") },
+    return (react_1.default.createElement(__1.Modal, { loading: loading, open: openReferences, handleClose: function () { return setOpenReferences(false); }, title: "Add", maxWidth: "sm", buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", size: 20, color: "primary.contrastText" }) }, "Add") },
         react_1.default.createElement(DataReferenceForm_1.default, { url: url, errors: errors, resource: parentResource, handleChange: handleChange, query: query })));
 };
 exports.default = DataReferences;

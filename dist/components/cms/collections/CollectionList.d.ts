@@ -2,6 +2,7 @@ import React from 'react';
 import { ButtonType, DisplayFieldType, FormFieldType, SearchFilterOptionType, SortOptionType } from '../../../types';
 export type CollectionListProps = {
     grid?: boolean;
+    selectable?: boolean;
     style: string;
     buttons: ButtonType[];
     displayFields: DisplayFieldType[];
@@ -16,7 +17,7 @@ export type CollectionListProps = {
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
-    enableAddReference?: boolean;
+    enableAddToList?: boolean;
     fields?: FormFieldType[];
     headers?: {
         label: string;
@@ -32,6 +33,7 @@ export type CollectionListProps = {
     list: React.FC<any>;
     component?: React.FC<any>;
     toolbar?: React.FC<any>;
+    toolbarModal?: React.FC<any>;
     show?: React.FC<any>;
     edit?: React.FC<any>;
     create?: React.FC<any>;

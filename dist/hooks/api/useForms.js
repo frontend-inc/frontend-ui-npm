@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -54,18 +43,7 @@ var useForms = function (params) {
     var parentResource = (params || {}).parentResource;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
-    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addReferences = _a.addReferences, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, openEdit = _a.openEdit, openDelete = _a.openDelete, openShow = _a.openShow, openReferences = _a.openReferences, setOpenEdit = _a.setOpenEdit, setOpenDelete = _a.setOpenDelete, setOpenShow = _a.setOpenShow, setOpenReferences = _a.setOpenReferences;
-    var reloadMany = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            if (parentResource === null || parentResource === void 0 ? void 0 : parentResource.id) {
-                findMany(__assign(__assign({}, query), { belongs_to: parentResource === null || parentResource === void 0 ? void 0 : parentResource.id }));
-            }
-            else {
-                findMany(query);
-            }
-            return [2 /*return*/];
-        });
-    }); };
+    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addReferences = _a.addReferences, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, reloadMany = _a.reloadMany, openEdit = _a.openEdit, openDelete = _a.openDelete, openShow = _a.openShow, openReferences = _a.openReferences, setOpenEdit = _a.setOpenEdit, setOpenDelete = _a.setOpenDelete, setOpenShow = _a.setOpenShow, setOpenReferences = _a.setOpenReferences;
     var handleShow = function (resource) {
         setResource(resource);
         setOpenReferences(false);

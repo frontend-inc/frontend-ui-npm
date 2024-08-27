@@ -2,6 +2,7 @@ import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
 export type CollectionListItemsProps = {
     grid?: boolean;
+    selectable?: boolean;
     href?: string;
     style?: 'list' | 'card' | 'avatar' | 'cover' | 'text';
     buttons: ButtonType[];
@@ -9,6 +10,7 @@ export type CollectionListItemsProps = {
     handleClick?: (resource: any) => void;
     enableGradient?: boolean;
     enableOverlay?: boolean;
+    enableAddToList?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;
     enableComments?: boolean;

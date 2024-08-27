@@ -29,5 +29,6 @@ export type ResourceButtonType = {
     color?: 'primary' | 'secondary';
     variant?: 'contained' | 'outlined';
     label: string;
+    icon: string;
     onClick: (selected: any[]) => void;
 };

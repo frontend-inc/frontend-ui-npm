@@ -12,7 +12,7 @@ export type ShowProps = {
     enableSharing?: boolean;
     enableRatings?: boolean;
     enablePayments?: boolean;
-    enableAddReference?: boolean;
+    enableAddToList?: boolean;
     enableUsers?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;

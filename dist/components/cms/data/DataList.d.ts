@@ -19,7 +19,7 @@ export type DataListProps = {
     enableCreate?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;
-    enableAddReference?: boolean;
+    enableAddToList?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
     perPage?: number;

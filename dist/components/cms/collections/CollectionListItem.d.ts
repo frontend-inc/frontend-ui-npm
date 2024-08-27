@@ -2,6 +2,7 @@ import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
 type CardStyleTypes = 'list' | 'avatar' | 'card' | 'cover' | 'text';
 type CollectionListItemProps = {
+    selectable?: boolean;
     buttons: ButtonType[];
     style: CardStyleTypes;
     displayFields: DisplayFieldType[];
@@ -26,7 +27,7 @@ type CollectionListItemProps = {
     enableUsers?: boolean;
     enableComments?: boolean;
     enableFavorites?: boolean;
-    enableAddReference?: boolean;
+    enableAddToList?: boolean;
     enableLikes?: boolean;
     enableRatings?: boolean;
 };

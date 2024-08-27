@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var ReferenceButton = function (props) {
+var AddToList = function (props) {
     var _a = props.variant, variant = _a === void 0 ? 'icon' : _a, resource = props.resource, _b = props.color, color = _b === void 0 ? 'text.secondary' : _b;
     var _c = (0, frontend_js_1.useResourceContext)(), openReferences = _c.openReferences, setOpenReferences = _c.setOpenReferences, setResource = _c.setResource;
     var handleClick = function () {
@@ -31,7 +31,7 @@ var ReferenceButton = function (props) {
                 } }, (variant == 'icon' ? sx.icon : sx.button)) },
             react_1.default.createElement(icons_material_1.PlaylistAdd, { fontSize: "small" }))));
 };
-exports.default = ReferenceButton;
+exports.default = AddToList;
 var sx = {
     icon: {},
     button: {

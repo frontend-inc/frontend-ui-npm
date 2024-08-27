@@ -23,7 +23,7 @@ var helpers_1 = require("../../../helpers");
 var material_1 = require("@mui/material");
 var ShowItem = function (props) {
     var _a, _b, _c;
-    var _d = props || {}, _e = _d.style, style = _e === void 0 ? 'article' : _e, _f = _d.displayFields, displayFields = _f === void 0 ? [] : _f, buttons = _d.buttons, enableEdit = _d.enableEdit, enableFavorites = _d.enableFavorites, enableLikes = _d.enableLikes, enableSharing = _d.enableSharing, enableRatings = _d.enableRatings, enableAddReference = _d.enableAddReference, enablePayments = _d.enablePayments, enableGradient = _d.enableGradient, enableOverlay = _d.enableOverlay, _g = _d.slots, defaultSlots = _g === void 0 ? {
+    var _d = props || {}, _e = _d.style, style = _e === void 0 ? 'article' : _e, _f = _d.displayFields, displayFields = _f === void 0 ? [] : _f, buttons = _d.buttons, enableEdit = _d.enableEdit, enableFavorites = _d.enableFavorites, enableLikes = _d.enableLikes, enableSharing = _d.enableSharing, enableRatings = _d.enableRatings, enableAddToList = _d.enableAddToList, enablePayments = _d.enablePayments, enableGradient = _d.enableGradient, enableOverlay = _d.enableOverlay, _g = _d.slots, defaultSlots = _g === void 0 ? {
         image: {},
         content: {}
     } : _g;
@@ -90,7 +90,7 @@ var ShowItem = function (props) {
                 enableRatings == true && (react_1.default.createElement(__1.AvgRating, { resource: resource, enableTotal: true })),
                 (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource })),
                 enablePayments == true && (react_1.default.createElement(__1.StripePaymentLink, { resource: resource, buttonText: "Checkout" }))),
-            react_1.default.createElement(__1.ExpandableText, { text: resource === null || resource === void 0 ? void 0 : resource.description })), actions: react_1.default.createElement(__1.SocialButtons, { justifyContent: 'center', resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing, enableAddReference: enableAddReference }), secondaryAction: (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
+            react_1.default.createElement(__1.ExpandableText, { text: resource === null || resource === void 0 ? void 0 : resource.description })), actions: react_1.default.createElement(__1.SocialButtons, { justifyContent: 'center', resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing, enableAddToList: enableAddToList }), secondaryAction: (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
             react_1.default.createElement(__1.ButtonActions, { justifyContent: (_c = slotProps === null || slotProps === void 0 ? void 0 : slotProps.secondaryAction) === null || _c === void 0 ? void 0 : _c.justifyContent, buttons: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: function () { return handleEdit(resource); },
