@@ -18,13 +18,19 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var DataListItem = function (props) {
-    var _a = props || {}, sortable = _a.sortable, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.height, height = _b === void 0 ? 180 : _b, image = _a.image, handleClick = _a.handleClick, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, _c = _a.slots, slots = _c === void 0 ? {
+    var _a = props || {}, sortable = _a.sortable, selectable = _a.selectable, selected = _a.selected, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.height, height = _b === void 0 ? 180 : _b, image = _a.image, handleClick = _a.handleClick, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, handleSelect = _a.handleSelect, _c = _a.slots, slots = _c === void 0 ? {
         item: {},
         image: {},
     } : _c;
+    var handleChange = function () {
+        if (handleSelect) {
+            handleSelect();
+        }
+    };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-start" },
+                selectable && (react_1.default.createElement(material_1.Checkbox, { checked: selected, onChange: handleChange, color: "primary", size: "small" })),
                 sortable && (react_1.default.createElement(__1.Icon, { name: "GripVertical", color: "text.secondary" })),
                 react_1.default.createElement(material_1.Box, { sx: sx.image },
                     react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleClick },

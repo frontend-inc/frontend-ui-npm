@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardProps } from '../../../types';
-type KanBanCardProps = CardProps & {
+export type KanBanCardProps = CardProps & {
     id: string;
     loading?: boolean;
     ref?: any;

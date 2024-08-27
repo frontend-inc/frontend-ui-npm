@@ -18,10 +18,18 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ResourceListItem = function (props) {
-    var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, secondaryActions = props.secondaryActions, menuActions = props.menuActions, sortable = props.sortable, _a = props.isDragging, isDragging = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
+    var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryActions = props.secondaryActions, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.isDragging, isDragging = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
+    var handleChange = function (event) {
+        console.log(event.target.checked);
+        if (handleSelect) {
+            handleSelect();
+        }
+    };
     return (react_1.default.createElement(material_1.ListItem, { sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), (isDragging && sx.isDragging)), disablePadding: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.buttons },
             secondaryActions,
             (menuActions || handleEdit || handleDelete) && (react_1.default.createElement(__1.MenuButton, { handleEdit: handleEdit, handleDelete: handleDelete }, menuActions))) },
+        selectable && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.checkbox },
+            react_1.default.createElement(material_1.Checkbox, { checked: selected, color: "primary", size: "small", onChange: handleChange }))),
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick ? handleClick : undefined },
             sortable && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.dragHandle },
                 react_1.default.createElement(__1.Icon, { name: "GripVertical", size: 20, color: "text.secondary" }))),
@@ -57,6 +65,9 @@ var sx = {
     },
     listItemIcon: {
         mr: 2,
+    },
+    checkbox: {
+        width: 24
     },
     dragHandle: {
         width: 24,

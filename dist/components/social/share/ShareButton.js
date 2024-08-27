@@ -86,13 +86,13 @@ exports.default = ShareButton;
 var sx = {
     iconButton: {
         border: '1px solid',
-        borderColor: 'primary.main',
-        color: 'primary.main',
+        borderColor: 'divider',
+        color: 'text.secondary',
     },
     button: {
         border: '1px solid',
-        borderColor: 'primary.main',
-        color: 'primary.main',
+        borderColor: 'divider',
+        color: 'text.secondary'
     },
     socialButtons: {
         width: '100%',

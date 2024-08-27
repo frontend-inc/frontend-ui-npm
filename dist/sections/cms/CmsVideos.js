@@ -32,6 +32,6 @@ var CmsVideos = function (props) {
     var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "mode", "py", "px", "maxWidth", "requireAuth", "requireTeam", "requirePaid"]);
     return (react_1.default.createElement(components_1.Section, { mode: mode, py: py, px: px, maxWidth: maxWidth, requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid },
         react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
-        react_1.default.createElement(components_2.VideoList, __assign({}, rest))));
+        react_1.default.createElement(components_2.VideoGrid, __assign({}, rest))));
 };
 exports.default = CmsVideos;

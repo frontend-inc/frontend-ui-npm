@@ -1,5 +1,5 @@
 import React from 'react';
-export type ListItemsImageProps = {
+export type ImageGridItemsProps = {
     url: string;
     enableGradient?: boolean;
     enableOverlay?: boolean;
@@ -14,5 +14,5 @@ export type ListItemsImageProps = {
     emptyTitle?: string;
     emptyDescription?: string;
 };
-declare const ImageListItems: React.FC<ListItemsImageProps>;
-export default ImageListItems;
+declare const ImageGridItems: React.FC<ImageGridItemsProps>;
+export default ImageGridItems;

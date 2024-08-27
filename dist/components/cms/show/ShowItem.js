@@ -15,10 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var ShowList_1 = __importDefault(require("./ShowList"));
-var ShowCard_1 = __importDefault(require("./ShowCard"));
-var ShowAvatar_1 = __importDefault(require("./ShowAvatar"));
-var ShowCover_1 = __importDefault(require("./ShowCover"));
+var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
@@ -32,12 +29,13 @@ var ShowItem = function (props) {
     } : _g;
     var resource = (0, frontend_js_1.useResourceContext)().resource;
     var components = {
-        list: ShowList_1.default,
-        cover: ShowCover_1.default,
-        card: ShowCard_1.default,
-        avatar: ShowAvatar_1.default,
+        list: components_1.Hero,
+        cover: components_1.HeroCover,
+        card: components_1.HeroCard,
+        avatar: components_1.HeroAvatar,
+        snippet: components_1.HeroSnippet
     };
-    var Component = components[style] || ShowList_1.default;
+    var Component = components[style] || components_1.Hero;
     var handleEdit = (0, hooks_1.useForms)().handleEdit;
     var slots = {
         image: __assign(__assign({}, defaultSlots.image), { enableGradient: enableGradient, enableOverlay: enableOverlay }),
@@ -69,6 +67,14 @@ var ShowItem = function (props) {
             }
         },
         avatar: {
+            secondary: {
+                alignItems: 'flex-start'
+            },
+            secondaryAction: {
+                justifyContent: 'flex-end'
+            }
+        },
+        snippet: {
             secondary: {
                 alignItems: 'flex-start'
             },

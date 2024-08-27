@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
-type CardStyleTypes = 'list' | 'card' | 'avatar' | 'cover' | 'table' | 'text';
+type CardStyleTypes = 'list' | 'avatar' | 'card' | 'cover' | 'text';
 type CollectionListItemProps = {
     buttons: ButtonType[];
     style: CardStyleTypes;

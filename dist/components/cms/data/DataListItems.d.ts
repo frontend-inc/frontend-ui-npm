@@ -1,5 +1,7 @@
 import React from 'react';
 export type DataListItemsProps = {
+    grid?: boolean;
+    selectable?: boolean;
     href?: string;
     enableShow?: boolean;
     enableEdit?: boolean;

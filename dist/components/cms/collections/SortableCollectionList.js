@@ -18,6 +18,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var SortableCollectionList = function (props) {
     var query = props.query, _a = props.slots, slots = _a === void 0 ? { item: {} } : _a;
-    return (react_1.default.createElement(components_1.CollectionList, __assign({}, props, { style: "list", list: components_1.SortableDataListItems, component: components_1.CollectionListItem, query: __assign(__assign({}, query), { sort_by: 'position', sort_direction: 'asc' }), slots: __assign(__assign({}, slots), { item: __assign(__assign({}, slots.item), { sortable: true }) }) })));
+    return (react_1.default.createElement(components_1.CollectionList, __assign({}, props, { style: "list", list: components_1.SortableDataListItems, component: components_1.CollectionListItem, query: __assign(__assign({}, query), { sort_by: 'position', sort_direction: 'asc' }), slots: __assign(__assign({}, slots), { list: {
+                sortable: true
+            }, item: __assign(__assign({}, slots.item), { sortable: true }) }) })));
 };
 exports.default = SortableCollectionList;

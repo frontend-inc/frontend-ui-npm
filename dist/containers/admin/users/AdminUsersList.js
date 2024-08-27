@@ -13,7 +13,7 @@ var AdminUserShow_1 = __importDefault(require("./AdminUserShow"));
 var AdminUsersList = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var _a = props.metafields, metafields = _a === void 0 ? [] : _a;
-    return (react_1.default.createElement(components_1.ResourceList, { enableBorder: true, url: "".concat(apiUrl, "/users"), name: "user", enableSearch: true, enableShow: true, enableEdit: true, enableDelete: true, enableCreate: true, sortOptions: [
+    return (react_1.default.createElement(components_1.ResourceList, { url: "".concat(apiUrl, "/users"), name: 'user', enableSearch: true, enableShow: true, enableEdit: true, enableDelete: true, enableCreate: true, sortOptions: [
             { name: 'first_name', label: 'First Name' },
             { name: 'last_name', label: 'Last Name' },
             { name: 'username', label: 'Username' },

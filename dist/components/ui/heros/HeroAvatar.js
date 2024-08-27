@@ -16,8 +16,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
-var ShowAvatar = function (props) {
+var __1 = require("../..");
+var HeroAvatar = function (props) {
     var _a = props || {}, image = _a.image, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, slots = _a.slots;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", justifyContent: "center" },
         react_1.default.createElement(material_1.Stack, { sx: sx.buttons, direction: { sm: 'row', xs: 'column' }, spacing: 1 }, secondaryAction),
@@ -25,13 +25,13 @@ var ShowAvatar = function (props) {
             react_1.default.createElement(material_1.Stack, { sx: sx.container, direction: { sm: 'row', xs: 'column' }, spacing: 4 },
                 react_1.default.createElement(material_1.Stack, { sx: sx.leftPanel, spacing: 2, direction: "column" },
                     react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-                        react_1.default.createElement(components_1.AvatarImage, __assign({ image: image, alt: primary, height: 200 }, slots.image))),
+                        react_1.default.createElement(__1.AvatarImage, __assign({ image: image, alt: primary, height: 200 }, slots.image))),
                     actions),
                 react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, primary),
                     secondary)))));
 };
-exports.default = ShowAvatar;
+exports.default = HeroAvatar;
 var sx = {
     root: {
         width: '100%',

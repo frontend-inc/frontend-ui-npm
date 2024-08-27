@@ -50,7 +50,7 @@ var FilterButton = function (props) {
         setOpen(true);
     };
     var handleClose = function () { return setOpen(false); };
-    return (react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Badge, { sx: sx.badge, badgeContent: disableFilterCount ? 0 : filters === null || filters === void 0 ? void 0 : filters.length, color: "primary", anchorOrigin: {
                 vertical: 'top',
                 horizontal: 'right',
@@ -71,9 +71,15 @@ var FilterButton = function (props) {
 };
 exports.default = FilterButton;
 var sx = {
+    root: {
+        width: {
+            sm: 'auto',
+            xs: '100%',
+        },
+    },
     button: {
         width: {
-            sm: '100%',
+            sm: 'auto',
             xs: '100%',
         },
     },

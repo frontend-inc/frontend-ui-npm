@@ -35,8 +35,7 @@ var useSearch = function (props) {
         else {
             searchQuery = __assign(__assign({}, searchQuery), { location: null });
         }
-        setQuery(searchQuery);
-        //findMany(searchQuery)
+        findMany(searchQuery);
     };
     var handleSortBy = function (field) {
         setQuery(__assign(__assign({}, query), { sort_by: field === null || field === void 0 ? void 0 : field.name }));

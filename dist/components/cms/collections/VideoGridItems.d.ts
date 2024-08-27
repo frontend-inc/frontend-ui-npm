@@ -1,5 +1,5 @@
 import React from 'react';
-export type VideoListItemsProps = {
+export type VideoGridItemsProps = {
     url: string;
     enableEdit?: boolean;
     enableDelete?: boolean;
@@ -11,5 +11,5 @@ export type VideoListItemsProps = {
     enableSharing?: boolean;
     enableUsers?: boolean;
 };
-declare const VideoListItems: React.FC<VideoListItemsProps>;
-export default VideoListItems;
+declare const VideoGridItems: React.FC<VideoGridItemsProps>;
+export default VideoGridItems;

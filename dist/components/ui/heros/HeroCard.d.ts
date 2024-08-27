@@ -1,5 +1,5 @@
 import React from 'react';
-export type ShowCardProps = {
+export type HeroCardProps = {
     label?: string;
     image?: string;
     primary?: string;
@@ -12,5 +12,5 @@ export type ShowCardProps = {
         content?: any;
     };
 };
-declare const ShowCard: React.FC<ShowCardProps>;
-export default ShowCard;
+declare const HeroCard: React.FC<HeroCardProps>;
+export default HeroCard;

@@ -15,8 +15,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var __1 = require("../..");
-var VideoList = function (props) {
-    return (react_1.default.createElement(__1.CollectionList, __assign({}, props, { list: __1.VideoListItems, show: __1.ShowVideoModal })));
+var CollectionList_1 = __importDefault(require("./CollectionList"));
+var SimilarGrid = function (props) {
+    return react_1.default.createElement(CollectionList_1.default, __assign({}, props, { filterSimilar: true }));
 };
-exports.default = VideoList;
+exports.default = SimilarGrid;

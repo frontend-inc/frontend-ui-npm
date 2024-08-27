@@ -6,6 +6,7 @@ export type ResourceListItemsProps = {
     headers?: TableHeaderType[];
     page: number;
     numPages: number;
+    totalCount?: number;
     enableBorder?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;

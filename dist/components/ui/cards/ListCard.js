@@ -18,17 +18,16 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ListCard = function (props) {
-    var _a = props || {}, _b = _a.sortable, sortable = _b === void 0 ? false : _b, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, _c = _a.height, height = _c === void 0 ? 180 : _c, _d = _a.slots, slots = _d === void 0 ? {
+    var _a = props || {}, _b = _a.circular, circular = _b === void 0 ? false : _b, _c = _a.sortable, sortable = _c === void 0 ? false : _c, _d = _a.selectable, selectable = _d === void 0 ? false : _d, _e = _a.selected, selected = _e === void 0 ? false : _e, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, handleSelect = _a.handleSelect, image = _a.image, _f = _a.height, height = _f === void 0 ? 160 : _f, disableImage = _a.disableImage, _g = _a.slots, slots = _g === void 0 ? {
         item: {},
         image: {},
-    } : _d;
+    } : _g;
     return (react_1.default.createElement(material_1.Box, __assign({ sx: sx.root }, slots.item),
         react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: 'flex-start', spacing: 0 },
+                selectable && (react_1.default.createElement(material_1.Checkbox, { checked: selected, onChange: handleSelect, color: "primary", size: "small" })),
                 sortable && (react_1.default.createElement(__1.Icon, { name: "GripVertical", color: 'text.secondary' })),
-                react_1.default.createElement(material_1.Box, { sx: sx.image },
-                    react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleClick },
-                        react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: height, alt: primary }, slots.image))))),
+                !disableImage && (react_1.default.createElement(material_1.Box, { sx: sx.image }, circular ? (react_1.default.createElement(__1.AvatarImage, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick }, slots.image))) : (react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick }, slots.image)))))),
             react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.contentArea },
                 react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.content },
                     react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5 },
@@ -69,23 +68,25 @@ var sx = {
         width: '100%',
     },
     image: {
-        pr: {
-            sm: 2,
-            xs: 0,
-        },
-        mr: {
-            sm: 2,
-            xs: 0,
-        },
         width: {
-            sm: 220,
+            sm: 180,
             xs: '100%',
         },
         minWidth: {
-            sm: 220,
+            sm: 180,
             xs: '100%',
         },
+        mr: {
+            sm: 2,
+            xs: 0
+        },
         height: '100%',
+        display: 'flex',
+        justifyContent: {
+            xs: 'center',
+            sm: 'flex-start',
+        },
+        alignItems: 'center',
     },
     contentArea: {
         width: '100%',

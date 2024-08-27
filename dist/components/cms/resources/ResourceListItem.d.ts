@@ -1,5 +1,7 @@
 import React from 'react';
 export type ResourceListItemProps = {
+    selectable?: boolean;
+    selected?: boolean;
     primary: React.ReactNode;
     secondary?: React.ReactNode;
     avatar?: React.ReactNode;
@@ -12,6 +14,7 @@ export type ResourceListItemProps = {
     handleClick?: (resource: any) => void;
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;
+    handleSelect?: () => void;
     secondaryActions?: React.ReactNode;
     menuActions?: any;
     sortable?: boolean;

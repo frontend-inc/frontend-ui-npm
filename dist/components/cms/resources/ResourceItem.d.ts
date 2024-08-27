@@ -1,5 +1,5 @@
 import React from 'react';
-export type ResourceProps = {
+export type ResourceItemProps = {
     resource: any;
     avatar?: React.ReactNode;
     icon?: string;
@@ -8,11 +8,14 @@ export type ResourceProps = {
     handleClick: (resource: any) => void;
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;
+    handleSelect?: () => void;
     secondaryActions?: React.ReactNode;
     menuActions?: any;
     sortable?: boolean;
+    selectable?: boolean;
+    selected?: boolean;
     isDragging?: boolean;
     enableBorder?: boolean;
 };
-declare const Resource: React.FC<ResourceProps>;
-export default Resource;
+declare const ResourceItem: React.FC<ResourceItemProps>;
+export default ResourceItem;

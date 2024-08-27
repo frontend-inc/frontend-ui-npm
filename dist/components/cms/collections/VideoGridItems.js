@@ -21,7 +21,7 @@ var frontend_js_1 = require("frontend-js");
 var __2 = require("../..");
 var hooks_1 = require("../../../hooks");
 var helpers_1 = require("../../../helpers");
-var VideoListItems = function (props) {
+var VideoGridItems = function (props) {
     var _a = (0, frontend_js_1.useResourceContext)(), setResource = _a.setResource, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, setOpenShow = _a.setOpenShow;
     var _b = props.enableEdit, enableEdit = _b === void 0 ? false : _b, _c = props.enableDelete, enableDelete = _c === void 0 ? false : _c, _d = props.enableFavorites, enableFavorites = _d === void 0 ? false : _d, _e = props.enableLikes, enableLikes = _e === void 0 ? false : _e, _f = props.enableUsers, enableUsers = _f === void 0 ? false : _f, _g = props.enableComments, enableComments = _g === void 0 ? false : _g, _h = props.enableGradient, enableGradient = _h === void 0 ? false : _h, _j = props.enableOverlay, enableOverlay = _j === void 0 ? false : _j, rest = __rest(props, ["enableEdit", "enableDelete", "enableFavorites", "enableLikes", "enableUsers", "enableComments", "enableGradient", "enableOverlay"]);
     var handleClick = function (resource) {
@@ -46,4 +46,4 @@ var VideoListItems = function (props) {
         })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: loadMore })));
 };
-exports.default = VideoListItems;
+exports.default = VideoGridItems;

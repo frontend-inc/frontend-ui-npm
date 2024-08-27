@@ -6,36 +6,31 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var ShowList = function (props) {
-    var _a = props || {}, image = _a.image, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, children = _a.children;
+var HeroCover = function (props) {
+    var _a = props || {}, image = _a.image, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
-        secondaryAction,
-        react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, primary),
-        react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
-            react_1.default.createElement(__1.Image, { src: image, alt: primary, height: 400, label: label })),
-        actions,
-        react_1.default.createElement(material_1.Box, { sx: sx.content }, secondary),
-        children));
+        react_1.default.createElement(__1.Cover, { image: image, height: 400, title: primary, enableOverlay: true }),
+        react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
+            actions,
+            secondaryAction,
+            secondary)));
 };
-exports.default = ShowList;
+exports.default = HeroCover;
 var sx = {
     root: {
         width: '100%',
         justifyContent: 'flex-start',
         alignItems: 'center',
     },
-    rootBorder: {
-        border: '1px solid',
-        borderColor: 'divider',
-        pb: 2,
-    },
     header: {
+        px: 2,
         maxWidth: 500,
         width: '100%',
-        textAlign: 'center',
     },
     content: {
+        px: 2,
         width: '100%',
+        pb: 4,
         maxWidth: {
             sm: 500,
             xs: '100%',

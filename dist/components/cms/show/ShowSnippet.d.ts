@@ -1,4 +1,4 @@
 import React from 'react';
-import { ShowProps } from './ShowItem';
-declare const ShowSnippet: React.FC<ShowProps>;
+import { ShowItemProps } from './ShowItem';
+declare const ShowSnippet: React.FC<ShowItemProps>;
 export default ShowSnippet;

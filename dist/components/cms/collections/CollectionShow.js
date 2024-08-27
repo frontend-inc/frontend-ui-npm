@@ -13,7 +13,7 @@ var ShowModal = function (props) {
     if (!resource)
         return null;
     return (react_1.default.createElement(__1.Drawer, { disablePadding: true, open: openShow, handleClose: function () { return setOpenShow(false); }, title: resource === null || resource === void 0 ? void 0 : resource.title },
-        react_1.default.createElement(__1.ShowSnippet, { resource: resource, enableEdit: enableEdit, buttons: buttons, displayFields: displayFields, enableRatings: enableRatings, enablePayments: enablePayments, handleEdit: handleEdit, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
+        react_1.default.createElement(__1.ShowItem, { style: "snippet", resource: resource, enableEdit: enableEdit, buttons: buttons, displayFields: displayFields, enableRatings: enableRatings, enablePayments: enablePayments, handleEdit: handleEdit, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),
         enableComments && (react_1.default.createElement(material_1.Box, { px: 2 },
             react_1.default.createElement(__1.Comments, { url: url, handle: resource === null || resource === void 0 ? void 0 : resource.handle })))));
 };

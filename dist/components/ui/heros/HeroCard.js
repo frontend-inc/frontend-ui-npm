@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var ShowCard = function (props) {
+var HeroCard = function (props) {
     var _a = props || {}, label = _a.label, image = _a.image, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.slots, slots = _b === void 0 ? {
         image: {},
         content: {},
@@ -37,7 +37,7 @@ var ShowCard = function (props) {
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, primary),
                     secondary)))));
 };
-exports.default = ShowCard;
+exports.default = HeroCard;
 var sx = {
     root: {
         width: '100%',

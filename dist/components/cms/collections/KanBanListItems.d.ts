@@ -5,6 +5,7 @@ export type KanBanListItemsProps = CollectionListProps & {
         label: string;
         value: string;
     }[];
+    component?: React.ReactNode;
     enableSharing?: boolean;
     enableCreate?: boolean;
 };

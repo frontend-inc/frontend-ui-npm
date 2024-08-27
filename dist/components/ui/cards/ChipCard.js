@@ -16,18 +16,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
+var __1 = require("../..");
 var ChipCard = function (props) {
-    var _a, _b;
-    var primary = props.primary, secondary = props.secondary, secondaryAction = props.secondaryAction, handleClick = props.handleClick, image = props.image, _c = props.slots, slots = _c === void 0 ? {
+    var primary = props.primary, secondary = props.secondary, secondaryAction = props.secondaryAction, handleClick = props.handleClick, image = props.image, _a = props.slots, slots = _a === void 0 ? {
         item: {},
         image: {},
-    } : _c;
+    } : _a;
     return (react_1.default.createElement(material_1.List, __assign({ dense: true, disablePadding: true, sx: sx.root }, slots.item),
         react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, secondaryAction: secondaryAction },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick && handleClick },
-                image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                    react_1.default.createElement(material_1.Avatar, __assign({ sx: __assign(__assign(__assign({}, sx.avatar), (((_a = slots === null || slots === void 0 ? void 0 : slots.image) === null || _a === void 0 ? void 0 : _a.enableGradient) && sx.gradient)), (((_b = slots === null || slots === void 0 ? void 0 : slots.image) === null || _b === void 0 ? void 0 : _b.enableOverlay) && sx.overlay)), src: image, alt: primary }, slots.image),
-                        react_1.default.createElement(material_1.Box, null)))),
+                react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
+                    react_1.default.createElement(__1.AvatarImage, __assign({ image: image, alt: primary, height: 44 }, slots.image))),
                 react_1.default.createElement(material_1.ListItemText, { primary: primary, secondary: secondary })))));
 };
 exports.default = ChipCard;

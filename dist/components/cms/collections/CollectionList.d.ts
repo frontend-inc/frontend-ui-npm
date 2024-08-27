@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonType, DisplayFieldType, FormFieldType, SearchFilterOptionType, SortOptionType } from '../../../types';
 export type CollectionListProps = {
+    grid?: boolean;
     style: string;
     buttons: ButtonType[];
     displayFields: DisplayFieldType[];
@@ -48,6 +49,8 @@ export type CollectionListProps = {
         references?: any;
         item?: any;
     };
+    circular?: boolean;
+    disableImage?: boolean;
     url: string;
     foreignUrl?: string;
     query?: any;

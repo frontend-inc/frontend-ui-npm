@@ -16,7 +16,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
-var ImageList = function (props) {
-    return (react_1.default.createElement(__1.CollectionList, __assign({}, props, { list: __1.ImageListItems, show: __1.ShowImageModal })));
+var ReferenceCollectionGrid = function (props) {
+    var url = props.url, resource = props.resource;
+    url = "".concat(url, "/").concat(resource === null || resource === void 0 ? void 0 : resource.id, "/references");
+    return (react_1.default.createElement(__1.CollectionGrid, __assign({}, props, { url: url, resource: resource, list: __1.ReferenceCollectionListItems })));
 };
-exports.default = ImageList;
+exports.default = ReferenceCollectionGrid;

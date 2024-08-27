@@ -1,6 +1,8 @@
 import React from 'react';
 type DataListItemProps = {
     sortable?: boolean;
+    selectable?: boolean;
+    selected?: boolean;
     label?: string;
     primary: string;
     secondary?: string;
@@ -11,6 +13,7 @@ type DataListItemProps = {
     handleClick?: () => void;
     handleEdit?: () => void;
     handleDelete?: () => void;
+    handleSelect?: () => void;
     handleAddReference?: () => void;
     slots?: {
         item?: any;

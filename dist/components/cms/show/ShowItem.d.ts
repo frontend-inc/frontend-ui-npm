@@ -4,7 +4,6 @@ export type ShowProps = {
     handle?: string;
     buttons: ButtonType[];
     displayFields: DisplayFieldType[];
-    url?: string;
     resource: any;
     enableEdit?: boolean;
     enableCreate?: boolean;
@@ -19,11 +18,11 @@ export type ShowProps = {
     enableOverlay?: boolean;
     handleEdit?: (res: any) => void;
 };
-type ShowStyleTypes = 'card' | 'cover' | 'list' | 'avatar' | 'youtube' | 'vimeo';
+type ShowStyleTypes = 'card' | 'cover' | 'list' | 'avatar' | 'snippet';
 export type ShowItemProps = ShowProps & {
-    url: string;
+    url?: string;
     style: ShowStyleTypes;
-    slots: {
+    slots?: {
         image?: any;
         content?: any;
     };

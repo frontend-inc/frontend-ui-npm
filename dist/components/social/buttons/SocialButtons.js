@@ -11,7 +11,7 @@ var SocialButtons = function (props) {
     var resource = props.resource, _a = props.direction, direction = _a === void 0 ? 'row' : _a, enableComments = props.enableComments, enableLikes = props.enableLikes, enableFavorites = props.enableFavorites, enableSharing = props.enableSharing, enableAddReference = props.enableAddReference, numLikes = props.numLikes, numFavorites = props.numFavorites, _b = props.variant, variant = _b === void 0 ? 'button' : _b, _c = props.justifyContent, justifyContent = _c === void 0 ? 'flex-start' : _c, _d = props.spacing, spacing = _d === void 0 ? 1 : _d, color = props.color;
     var router = (0, router_1.useRouter)();
     var currentPageUrl = router.asPath;
-    if (!enableLikes && !enableFavorites && !enableSharing)
+    if (!enableLikes && !enableFavorites && !enableSharing && !enableAddReference)
         return null;
     return (react_1.default.createElement(material_1.Stack, { direction: direction, justifyContent: justifyContent, spacing: spacing },
         enableLikes == true && (react_1.default.createElement(components_1.LikeButton, { variant: variant, color: color, handle: resource === null || resource === void 0 ? void 0 : resource.handle, numLikes: numLikes })),

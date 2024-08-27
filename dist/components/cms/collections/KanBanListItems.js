@@ -89,14 +89,17 @@ var hooks_1 = require("../../../hooks");
 var helpers_1 = require("../../../helpers");
 var KanBanListItems = function (props) {
     var _a;
-    var headers = props.headers, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableSharing = props.enableSharing, enableUsers = props.enableUsers, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, rest = __rest(props, ["headers", "displayFields", "buttons", "enableEdit", "enableDelete", "enableCreate", "enableComments", "enableFavorites", "enableLikes", "enableRatings", "enableSharing", "enableUsers", "enableGradient", "enableOverlay"]);
+    var headers = props.headers, _b = props.displayFields, displayFields = _b === void 0 ? [] : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableComments = props.enableComments, enableFavorites = props.enableFavorites, enableLikes = props.enableLikes, enableRatings = props.enableRatings, enableSharing = props.enableSharing, enableUsers = props.enableUsers, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, _d = props.slots, defaultSlots = _d === void 0 ? {
+        item: {},
+        list: {},
+    } : _d, rest = __rest(props, ["headers", "displayFields", "buttons", "enableEdit", "enableDelete", "enableCreate", "enableComments", "enableFavorites", "enableLikes", "enableRatings", "enableSharing", "enableUsers", "enableGradient", "enableOverlay", "slots"]);
     var fieldName = 'status'; //Hard code the field as status
-    var _d = (0, frontend_js_2.useResourceContext)(), loading = _d.loading, resources = _d.resources, update = _d.update, updatePositions = _d.updatePositions, setResource = _d.setResource, reloadMany = _d.reloadMany, setOpenShow = _d.setOpenShow;
+    var _e = (0, frontend_js_2.useResourceContext)(), loading = _e.loading, resources = _e.resources, update = _e.update, updatePositions = _e.updatePositions, setResource = _e.setResource, reloadMany = _e.reloadMany, setOpenShow = _e.setOpenShow;
     var handleClick = function (resource) {
         setResource(resource);
         setOpenShow(true);
     };
-    var _e = (0, hooks_1.useForms)(), handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
+    var _f = (0, hooks_1.useForms)(), handleEdit = _f.handleEdit, handleDeleteClick = _f.handleDeleteClick;
     var setOpenEdit = (0, react_1.useContext)(frontend_js_1.ResourceContext).setOpenEdit;
     var handleAdd = function (header) {
         setResource({
@@ -119,17 +122,12 @@ var KanBanListItems = function (props) {
                     columnItems = columnItems.map(function (item, index) {
                         return __assign(__assign({}, item), { position: index });
                     });
-                    return [4 /*yield*/, updatePositions(columnItems)];
-                case 2:
-                    _a.sent();
-                    return [4 /*yield*/, reloadMany()];
-                case 3:
-                    _a.sent();
+                    updatePositions(columnItems);
                     return [2 /*return*/];
             }
         });
     }); };
-    var _f = (0, react_1.useState)({}), columns = _f[0], setColumns = _f[1];
+    var _g = (0, react_1.useState)({}), columns = _g[0], setColumns = _g[1];
     var handleGroupResources = function (resources, fieldName) {
         var sortedResources = resources.sort(function (a, b) { return a.position - b.position; });
         var allowedOptions = headers.map(function (header) { return header.value; });
@@ -142,26 +140,8 @@ var KanBanListItems = function (props) {
         }
     }, [resources, fieldName, headers]);
     var slots = {
-        list: {
-            enableOverlay: enableOverlay,
-            enableGradient: enableGradient,
-            buttons: buttons,
-            displayFields: displayFields,
-            enableComments: enableComments,
-            enableFavorites: enableFavorites,
-            enableLikes: enableLikes,
-            enableRatings: enableRatings,
-        },
-        item: {
-            enableOverlay: enableOverlay,
-            enableGradient: enableGradient,
-            buttons: buttons,
-            displayFields: displayFields,
-            enableComments: enableComments,
-            enableFavorites: enableFavorites,
-            enableLikes: enableLikes,
-            enableRatings: enableRatings,
-        },
+        list: __assign({ enableOverlay: enableOverlay, enableGradient: enableGradient, buttons: buttons, displayFields: displayFields, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings }, defaultSlots.list),
+        item: __assign({ enableOverlay: enableOverlay, enableGradient: enableGradient, buttons: buttons, displayFields: displayFields, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings }, defaultSlots.item),
     };
     if (!headers || !fieldName || ((_a = Object.keys(columns)) === null || _a === void 0 ? void 0 : _a.length) == 0)
         return null;
