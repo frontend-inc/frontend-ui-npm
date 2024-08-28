@@ -1,17 +1,17 @@
 import React from 'react';
 import { FormFieldType, SearchFilterOptionType, TableHeaderType, DisplayFieldType } from '../../../types';
 import { SortOptionType } from '../../../types';
-import { MultiselectButtonType } from '../../../types';
+import { ToolbarButtonType } from '../../../types';
 export type ResourceListProps = {
     sortable?: boolean;
     selectable?: boolean;
-    toolbar?: React.FC<any>;
+    header?: React.FC<any>;
     list?: React.FC<any>;
     edit?: React.FC<any>;
     create?: React.FC<any>;
     show?: React.FC<any>;
     pagination?: React.FC<any>;
-    toolbarModal?: React.FC<any>;
+    toolbar?: React.FC<any>;
     url: string;
     name: string;
     component?: React.FC<any>;
@@ -40,14 +40,14 @@ export type ResourceListProps = {
     emptyDescription?: string;
     itemProps?: any;
     disableInfiniteLoad?: boolean;
-    buttons?: MultiselectButtonType[];
+    buttons?: ToolbarButtonType[];
     slots?: {
         list?: any;
         edit?: any;
         create?: any;
         show?: any;
+        header?: any;
         toolbar?: any;
-        toolbarModal?: any;
         pagination?: any;
     };
 };

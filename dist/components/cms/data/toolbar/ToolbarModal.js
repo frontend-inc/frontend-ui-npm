@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../../..");
 var frontend_js_1 = require("frontend-js");
-var DataToolbarModal = function (props) {
+var ToolbarModal = function (props) {
     var _a = (0, frontend_js_1.useResourceContext)(), _b = _a.selected, selected = _b === void 0 ? [] : _b, handleClear = _a.handleClear;
     var children = (props || {}).children;
     var open = selected.length > 0;
@@ -23,7 +23,7 @@ var DataToolbarModal = function (props) {
                             react_1.default.createElement(__1.Icon, { name: "X", size: 18 }))),
                     children)))));
 };
-exports.default = DataToolbarModal;
+exports.default = ToolbarModal;
 var sx = {
     root: {
         mb: 1,

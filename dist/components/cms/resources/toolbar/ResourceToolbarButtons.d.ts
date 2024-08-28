@@ -1,9 +1,14 @@
 import React from 'react';
-import { MultiselectButtonType } from '../../../../types';
 type ResourceToolbarButtonsProps = {
     selected: any[];
     selectedIds: number[] | string[];
-    buttons: MultiselectButtonType[];
+    buttons: {
+        color?: 'primary' | 'secondary';
+        variant?: 'contained' | 'outlined';
+        icon?: string;
+        label: string;
+        onClick: (selected: any[]) => void;
+    }[];
 };
 declare const ResourceToolbarButtons: React.FC<ResourceToolbarButtonsProps>;
 export default ResourceToolbarButtons;

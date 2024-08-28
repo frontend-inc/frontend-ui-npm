@@ -4,7 +4,6 @@ export type CollectionListProps = {
     grid?: boolean;
     selectable?: boolean;
     style: string;
-    buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     enableLikes?: boolean;
     enableFavorites?: boolean;
@@ -19,6 +18,7 @@ export type CollectionListProps = {
     enableDelete?: boolean;
     enableAddToList?: boolean;
     fields?: FormFieldType[];
+    buttons?: ButtonType[];
     toolbarButtons?: ToolbarButtonType[];
     headers?: {
         label: string;
@@ -33,16 +33,16 @@ export type CollectionListProps = {
     loadMore?: boolean;
     list: React.FC<any>;
     component?: React.FC<any>;
+    header?: React.FC<any>;
     toolbar?: React.FC<any>;
-    toolbarModal?: React.FC<any>;
     show?: React.FC<any>;
     edit?: React.FC<any>;
     create?: React.FC<any>;
     destroy?: React.FC<any>;
     empty?: React.FC<any>;
     slots?: {
+        header?: any;
         toolbar?: any;
-        toolbarModal?: any;
         list?: any;
         show?: any;
         edit?: any;

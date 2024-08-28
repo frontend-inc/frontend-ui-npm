@@ -1,30 +1,36 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var material_1 = require("@mui/material");
 var __1 = require("../..");
-var Toolbar = function (props) {
-    var _a = props || {}, _b = _a.direction, direction = _b === void 0 ? 'row' : _b, enableSearch = _a.enableSearch, enableFilters = _a.enableFilters, enableSorting = _a.enableSorting, enableCreate = _a.enableCreate, handleSearch = _a.handleSearch, handleKeywordChange = _a.handleKeywordChange, handleFilter = _a.handleFilter, handleClearFilters = _a.handleClearFilters, handleSort = _a.handleSort, handleSortDirection = _a.handleSortDirection, handleAdd = _a.handleAdd, keywords = _a.keywords, activeFilters = _a.activeFilters, filterOptions = _a.filterOptions, sortOptions = _a.sortOptions, _c = _a.query, query = _c === void 0 ? {} : _c;
-    return (react_1.default.createElement(material_1.Stack, { direction: { xs: 'column', sm: direction }, sx: sx.buttons, spacing: 1 },
-        react_1.default.createElement(material_1.Stack, { alignItems: "center", direction: { xs: 'column', sm: direction }, spacing: 1 },
-            enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
-            enableFilters && (react_1.default.createElement(__1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions })),
-            enableSorting && (react_1.default.createElement(__1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSort, handleSortDirection: handleSortDirection }))),
-        enableCreate && (react_1.default.createElement(material_1.Button, { sx: sx.button, color: "primary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", color: "primary.contrastText" }) }, "Add"))));
+var ResourceToolbarButtons_1 = __importDefault(require("./toolbar/ResourceToolbarButtons"));
+var ResourceToolbar = function (props) {
+    var _a = props || {}, open = _a.open, selected = _a.selected, selectedIds = _a.selectedIds, handleClose = _a.handleClose, buttons = _a.buttons, _b = _a.component, Component = _b === void 0 ? ResourceToolbarButtons_1.default : _b, rest = __rest(_a, ["open", "selected", "selectedIds", "handleClose", "buttons", "component"]);
+    return (react_1.default.createElement(__1.ResourceToolbarModal, { open: open, handleClose: handleClose },
+        react_1.default.createElement(Component, __assign({ selected: selected, selectedIds: selectedIds, buttons: buttons }, rest))));
 };
-exports.default = Toolbar;
-var sx = {
-    buttons: {
-        width: '100%',
-        justifyContent: 'space-between',
-    },
-    button: {
-        width: {
-            sm: 'auto',
-            xs: '100%',
-        },
-    },
-};
+exports.default = ResourceToolbar;

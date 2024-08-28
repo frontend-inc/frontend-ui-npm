@@ -1,23 +1,18 @@
 import React from 'react';
-import { SortOptionType, SearchFilterOptionType, FilterOptionType, SyntheticEventType } from '../../../types';
-type ToolbarProps = {
-    direction?: 'row' | 'column';
-    enableSearch: boolean;
-    enableFilters: boolean;
-    enableSorting: boolean;
-    enableCreate?: boolean;
-    handleSearch: (keywords: string) => void;
-    handleKeywordChange: (ev: SyntheticEventType) => void;
-    handleFilter: (filter: FilterOptionType) => void;
-    handleClearFilters: () => void;
-    handleSort: (field: any) => void;
-    handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
-    handleAdd: () => void;
-    keywords: string;
-    activeFilters: FilterOptionType[];
-    filterOptions: SearchFilterOptionType[];
-    sortOptions: SortOptionType[];
-    query: any;
+type ResourceToolbarModalProps = {
+    open: boolean;
+    handleClose: () => void;
+    actions: React.ReactNode;
+    selected: any[];
+    selectedIds: number[] | string[];
+    buttons: {
+        color?: 'primary' | 'secondary';
+        variant?: 'contained' | 'outlined';
+        icon?: string;
+        label: string;
+        onClick: (selected: any[]) => void;
+    }[];
+    component?: React.FC<any>;
 };
-declare const Toolbar: React.FC<ToolbarProps>;
-export default Toolbar;
+declare const ResourceToolbar: React.FC<ResourceToolbarModalProps>;
+export default ResourceToolbar;

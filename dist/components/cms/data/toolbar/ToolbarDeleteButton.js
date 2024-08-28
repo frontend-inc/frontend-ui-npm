@@ -60,33 +60,39 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var material_1 = require("@mui/material");
 var __1 = require("../../..");
 var frontend_js_1 = require("frontend-js");
-var DataMultiselectUpdateButton = function (props) {
-    var _a = props || {}, _b = _a.buttonText, buttonText = _b === void 0 ? 'Update' : _b, icon = _a.icon, _c = _a.fields, fields = _c === void 0 ? [] : _c;
-    var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
-    var handleClose = function () { return setOpen(false); };
-    var _e = (0, frontend_js_1.useResourceContext)(), loading = _e.loading, errors = _e.errors, selectedIds = _e.selectedIds, resource = _e.resource, handleChange = _e.handleChange, updateMany = _e.updateMany, reloadMany = _e.reloadMany;
-    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
+var hooks_1 = require("../../../../hooks");
+var frontend_js_2 = require("frontend-js");
+var material_1 = require("@mui/material");
+var ToolbarDeleteButton = function () {
+    var currentUser = (0, frontend_js_2.useAuth)().currentUser;
+    var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
+    var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
+    var _b = (0, frontend_js_1.useResourceContext)(), loading = _b.loading, selectedIds = _b.selectedIds, deleteMany = _b.deleteMany, reloadMany = _b.reloadMany;
+    var handleDeleteClick = function () {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
+        if (selectedIds.length > 0)
+            setOpen(true);
+    };
+    var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, updateMany(selectedIds, resource)];
+                case 0:
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
+                    return [4 /*yield*/, deleteMany(selectedIds)];
                 case 1:
                     _a.sent();
-                    return [4 /*yield*/, reloadMany()];
-                case 2:
-                    _a.sent();
-                    handleClose();
+                    reloadMany();
+                    setOpen(false);
                     return [2 /*return*/];
             }
         });
     }); };
-    var handleRemove = function () { return null; };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: function () { return setOpen(true); }, startIcon: icon && react_1.default.createElement(__1.Icon, { name: icon }) }, buttonText),
-        react_1.default.createElement(__1.Modal, { open: open, handleClose: handleClose, title: "Update selected (".concat(selectedIds.length, ")"), loading: loading },
-            react_1.default.createElement(material_1.Box, { py: 2 },
-                react_1.default.createElement(__1.FormFields, { errors: errors, fields: fields, resource: resource, handleChange: handleChange, buttonText: "Update All", handleRemove: handleRemove, handleSubmit: handleSubmit })))));
+        react_1.default.createElement(material_1.Button, { onClick: handleDeleteClick, variant: "contained", color: "secondary", startIcon: react_1.default.createElement(__1.Icon, { name: "Trash" }) }, "Delete"),
+        react_1.default.createElement(__1.AlertModal, { loading: loading, open: open, handleClose: function () { return setOpen(false); }, handleConfirm: handleDelete })));
 };
-exports.default = DataMultiselectUpdateButton;
+exports.default = ToolbarDeleteButton;

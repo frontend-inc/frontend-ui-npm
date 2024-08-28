@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SortableListItems = exports.ResourceTable = exports.ResourceForm = exports.ResourceToolbar = exports.ResourceListItems = exports.ResourceListItem = exports.ResourceDetails = exports.ResourceShow = exports.ResourceList = exports.ResourceItem = void 0;
+exports.ResourceToolbarModal = exports.ResourceToolbar = exports.SortableListItems = exports.ResourceTable = exports.ResourceForm = exports.ResourceHeader = exports.ResourceListItems = exports.ResourceListItem = exports.ResourceDetails = exports.ResourceShow = exports.ResourceList = exports.ResourceItem = void 0;
 // Resources
 var ResourceItem_1 = require("./ResourceItem");
 Object.defineProperty(exports, "ResourceItem", { enumerable: true, get: function () { return __importDefault(ResourceItem_1).default; } });
@@ -17,11 +17,15 @@ var ResourceListItem_1 = require("./ResourceListItem");
 Object.defineProperty(exports, "ResourceListItem", { enumerable: true, get: function () { return __importDefault(ResourceListItem_1).default; } });
 var ResourceListItems_1 = require("./ResourceListItems");
 Object.defineProperty(exports, "ResourceListItems", { enumerable: true, get: function () { return __importDefault(ResourceListItems_1).default; } });
-var ResourceToolbar_1 = require("./ResourceToolbar");
-Object.defineProperty(exports, "ResourceToolbar", { enumerable: true, get: function () { return __importDefault(ResourceToolbar_1).default; } });
+var ResourceHeader_1 = require("./ResourceHeader");
+Object.defineProperty(exports, "ResourceHeader", { enumerable: true, get: function () { return __importDefault(ResourceHeader_1).default; } });
 var ResourceForm_1 = require("./ResourceForm");
 Object.defineProperty(exports, "ResourceForm", { enumerable: true, get: function () { return __importDefault(ResourceForm_1).default; } });
 var ResourceTable_1 = require("./ResourceTable");
 Object.defineProperty(exports, "ResourceTable", { enumerable: true, get: function () { return __importDefault(ResourceTable_1).default; } });
 var SortableListItems_1 = require("./SortableListItems");
 Object.defineProperty(exports, "SortableListItems", { enumerable: true, get: function () { return __importDefault(SortableListItems_1).default; } });
+var ResourceToolbar_1 = require("./ResourceToolbar");
+Object.defineProperty(exports, "ResourceToolbar", { enumerable: true, get: function () { return __importDefault(ResourceToolbar_1).default; } });
+var ResourceToolbarModal_1 = require("./toolbar/ResourceToolbarModal");
+Object.defineProperty(exports, "ResourceToolbarModal", { enumerable: true, get: function () { return __importDefault(ResourceToolbarModal_1).default; } });
