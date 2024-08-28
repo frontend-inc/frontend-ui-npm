@@ -28,6 +28,6 @@ var CloudinaryImage = function (props) {
     var isImageOrVideo = index_1.IMAGE_OR_VIDEO_FORMATS.includes(fileExtension);
     return isImageOrVideo ? (react_1.default.createElement(components_1.Image, { src: resizedImageUrl, height: height, 
         //@ts-ignore
-        width: width })) : (react_1.default.createElement(lucide_react_1.File, { size: 20 }));
+        width: width })) : (react_1.default.createElement(lucide_react_1.File, null));
 };
 exports.default = CloudinaryImage;

@@ -80,7 +80,7 @@ var hooks_1 = require("../../../hooks");
 var components_2 = require("../../../components");
 var moment_1 = __importDefault(require("moment"));
 var CommentForm_1 = __importDefault(require("./CommentForm"));
-var Comment = function (props) {
+var CommentListItem = function (props) {
     var _a, _b, _c, _d, _e;
     var url = props.url, handle = props.handle, _f = props.reply, reply = _f === void 0 ? false : _f, _g = props.level, level = _g === void 0 ? 0 : _g, parentComment = props.comment, handleDelete = props.handleDelete;
     var _h = (0, react_1.useState)(false), openComment = _h[0], setOpenComment = _h[1];
@@ -118,7 +118,7 @@ var Comment = function (props) {
     }, [parentComment]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.ListItem, { sx: __assign({}, sx.listItem), secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleReply },
-                react_1.default.createElement(components_2.Icon, { name: "MessageSquare", size: 20 })) },
+                react_1.default.createElement(components_2.Icon, { name: "MessageSquare" })) },
             react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(components_1.UserAvatar, { user: parentComment === null || parentComment === void 0 ? void 0 : parentComment.user })),
             react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.commentText }, parentComment === null || parentComment === void 0 ? void 0 : parentComment.body), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: sx.caption }, "@".concat((_a = parentComment === null || parentComment === void 0 ? void 0 : parentComment.user) === null || _a === void 0 ? void 0 : _a.username),
@@ -134,9 +134,9 @@ var Comment = function (props) {
                 ' ',
                 ((_d = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _d === void 0 ? void 0 : _d.length) > 1 ? 'replies' : 'reply'))))),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.divider), { ml: reply ? 7 : 0 }) }),
-        react_1.default.createElement(material_1.Collapse, { in: showReplies }, (_e = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _e === void 0 ? void 0 : _e.map(function (reply) { return (react_1.default.createElement(Comment, { key: reply.id, reply: true, url: url, handle: handle, comment: reply, level: level + 1, handleDelete: handleDelete })); }))));
+        react_1.default.createElement(material_1.Collapse, { in: showReplies }, (_e = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _e === void 0 ? void 0 : _e.map(function (reply) { return (react_1.default.createElement(CommentListItem, { key: reply.id, reply: true, url: url, handle: handle, comment: reply, level: level + 1, handleDelete: handleDelete })); }))));
 };
-exports.default = Comment;
+exports.default = CommentListItem;
 var sx = {
     root: {
         py: 1,

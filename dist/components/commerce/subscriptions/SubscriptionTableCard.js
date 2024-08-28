@@ -29,7 +29,7 @@ var SubscriptionTableCard = function (props) {
             react_1.default.createElement(material_1.Divider, null),
             react_1.default.createElement(material_1.List, { dense: true, disablePadding: true }, (_a = subscriptionPlan === null || subscriptionPlan === void 0 ? void 0 : subscriptionPlan.features) === null || _a === void 0 ? void 0 : _a.map(function (feature, i) { return (react_1.default.createElement(material_1.ListItem, { key: i },
                 react_1.default.createElement(material_1.ListItemIcon, null,
-                    react_1.default.createElement(__1.Icon, { name: "Check", size: 20, color: "text.secondary" })),
+                    react_1.default.createElement(__1.Icon, { name: "Check", color: "text.secondary" })),
                 react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, feature) }))); }))),
         react_1.default.createElement(material_1.Button, { onClick: handleClick, variant: "contained", color: "primary", fullWidth: true }, buttonText)));
 };

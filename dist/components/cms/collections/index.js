@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShowVideoModal = exports.ShowImageModal = exports.SortableReferenceListItems = exports.SortableReferenceCollectionList = exports.SortableCollectionList = exports.ReferenceKanBanList = exports.ReferenceCollectionListItems = exports.ReferenceCollectionGrid = exports.ReferenceCollectionList = exports.CollectionReferences = exports.CollectionToolbarModal = exports.CollectionToolbar = exports.CollectionDelete = exports.CollectionForm = exports.CollectionShow = exports.CollectionGrid = exports.CollectionListItems = exports.CollectionListItem = exports.CollectionList = exports.CollectionEmpty = exports.VideoGridItems = exports.VideoGrid = exports.KanBanList = exports.SimilarGrid = exports.SimilarList = exports.GeoNearbyList = exports.ImageGridItems = exports.ImageGrid = exports.GeoToolbar = exports.GeoList = exports.CarouselList = exports.DataTableListItems = exports.DataTableList = void 0;
+exports.ShowVideoModal = exports.ShowImageModal = exports.SortableReferenceListItems = exports.SortableReferenceCollectionList = exports.SortableCollectionList = exports.ReferenceKanBanList = exports.ReferenceCollectionListItems = exports.ReferenceCollectionGrid = exports.ReferenceCollectionList = exports.CollectionToolbarModal = exports.CollectionToolbar = exports.CollectionDelete = exports.CollectionForm = exports.CollectionShow = exports.CollectionGrid = exports.CollectionListItems = exports.CollectionListItem = exports.CollectionList = exports.CollectionEmpty = exports.VideoGridItems = exports.VideoGrid = exports.KanBanList = exports.SimilarGrid = exports.SimilarList = exports.GeoNearbyList = exports.ImageGridItems = exports.ImageGrid = exports.GeoToolbar = exports.GeoList = exports.CarouselList = exports.DataTableListItems = exports.DataTableList = void 0;
 var DataTableList_1 = require("./DataTableList");
 Object.defineProperty(exports, "DataTableList", { enumerable: true, get: function () { return __importDefault(DataTableList_1).default; } });
 var DataTableListItems_1 = require("./DataTableListItems");
@@ -51,8 +51,6 @@ var CollectionToolbar_1 = require("./CollectionToolbar");
 Object.defineProperty(exports, "CollectionToolbar", { enumerable: true, get: function () { return __importDefault(CollectionToolbar_1).default; } });
 var CollectionToolbarModal_1 = require("./CollectionToolbarModal");
 Object.defineProperty(exports, "CollectionToolbarModal", { enumerable: true, get: function () { return __importDefault(CollectionToolbarModal_1).default; } });
-var CollectionReferences_1 = require("./CollectionReferences");
-Object.defineProperty(exports, "CollectionReferences", { enumerable: true, get: function () { return __importDefault(CollectionReferences_1).default; } });
 var ReferenceCollectionList_1 = require("./ReferenceCollectionList");
 Object.defineProperty(exports, "ReferenceCollectionList", { enumerable: true, get: function () { return __importDefault(ReferenceCollectionList_1).default; } });
 var ReferenceCollectionGrid_1 = require("./ReferenceCollectionGrid");

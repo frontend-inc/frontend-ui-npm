@@ -17,16 +17,16 @@ var MenuButton = function (props) {
     };
     return (react_1.default.createElement(material_1.Box, { onClick: handleDefaultClick },
         react_1.default.createElement(material_1.IconButton, { onClick: toggleMenu },
-            react_1.default.createElement(components_1.Icon, { name: icon, size: 20, color: color })),
+            react_1.default.createElement(components_1.Icon, { name: icon, color: color })),
         react_1.default.createElement(material_1.Menu, { open: open, anchorEl: anchorEl, onClose: closeMenu },
             children,
             handleEdit && (react_1.default.createElement(material_1.MenuItem, { onClick: handleEdit },
                 enableIcons && (react_1.default.createElement(material_1.ListItemIcon, null,
-                    react_1.default.createElement(components_1.Icon, { name: "Pencil", size: 20 }))),
+                    react_1.default.createElement(components_1.Icon, { name: "Pencil" }))),
                 "Edit")),
             handleDelete && (react_1.default.createElement(material_1.MenuItem, { onClick: handleDelete },
                 enableIcons && (react_1.default.createElement(material_1.ListItemIcon, null,
-                    react_1.default.createElement(components_1.Icon, { name: "Trash", size: 20 }))),
+                    react_1.default.createElement(components_1.Icon, { name: "Trash" }))),
                 "Delete")))));
 };
 exports.default = MenuButton;

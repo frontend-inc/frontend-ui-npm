@@ -40,7 +40,7 @@ var ResourceToolbarModal = function (props) {
                     react_1.default.createElement(Component, __assign({ selected: selected, selectedIds: selectedIds, buttons: buttons }, rest)),
                     react_1.default.createElement(material_2.Box, { sx: sx.iconButton },
                         react_1.default.createElement(material_2.IconButton, { onClick: handleClose },
-                            react_1.default.createElement(__1.Icon, { name: "X", size: 20 }))))))));
+                            react_1.default.createElement(__1.Icon, { name: "X" }))))))));
 };
 exports.default = ResourceToolbarModal;
 var sx = {
@@ -51,5 +51,5 @@ var sx = {
     iconButton: {
         width: '40px',
         height: '40px',
-    }
+    },
 };

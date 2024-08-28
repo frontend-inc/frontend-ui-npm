@@ -30,7 +30,7 @@ var components_1 = require("../../../components");
 var ExpandRightButton = function () {
     var toggleLayoutRight = (0, react_1.useContext)(context_1.AdminContext).toggleLayoutRight;
     return (react_1.default.createElement(material_1.IconButton, { onClick: toggleLayoutRight, sx: sx.button },
-        react_1.default.createElement(components_1.Icon, { name: "Menu", size: 20 })));
+        react_1.default.createElement(components_1.Icon, { name: "Menu" })));
 };
 exports.default = ExpandRightButton;
 var sx = {

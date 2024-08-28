@@ -1,3 +1,9 @@
 import React from 'react';
-declare const CollectionToolbarModal: React.FC;
+import { ToolbarButtonType } from '../../../types';
+type CollectionToolbarModalProps = {
+    enableDelete?: boolean;
+    enableAddToList?: boolean;
+    toolbarButtons?: ToolbarButtonType[];
+};
+declare const CollectionToolbarModal: React.FC<CollectionToolbarModalProps>;
 export default CollectionToolbarModal;

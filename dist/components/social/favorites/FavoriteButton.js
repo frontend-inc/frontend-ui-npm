@@ -125,7 +125,7 @@ var FavoriteButton = function (props) {
     return (react_1.default.createElement(material_1.Box, null,
         react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign(__assign({ color: color, '&:hover': {
                     color: color,
-                } }, (variant === 'icon' ? sx.icon : sx.button)), (isFavorite && sx.favorited)), ((isFavorite && variant === 'button') && sx.buttonFavorited)) }, isFavorite ? (react_1.default.createElement(icons_material_1.Bookmark, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.BookmarkBorder, { fontSize: "small" })))));
+                } }, (variant === 'icon' ? sx.icon : sx.button)), (isFavorite && sx.favorited)), (isFavorite && variant === 'button' && sx.buttonFavorited)) }, isFavorite ? (react_1.default.createElement(icons_material_1.Bookmark, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.BookmarkBorder, { fontSize: "small" })))));
 };
 exports.default = FavoriteButton;
 var sx = {

@@ -31,6 +31,6 @@ var lodash_1 = require("lodash");
 var FieldCalendly = function (props) {
     var _a = props || {}, resource = _a.resource, fieldName = _a.fieldName, buttonText = _a.buttonText, rest = __rest(_a, ["resource", "fieldName", "buttonText"]);
     var value = (0, lodash_1.get)(resource, fieldName);
-    return (react_1.default.createElement(__1.Calendly, __assign({ calendlyUrl: value, buttonText: buttonText }, rest)));
+    return react_1.default.createElement(__1.Calendly, __assign({ calendlyUrl: value, buttonText: buttonText }, rest));
 };
 exports.default = FieldCalendly;

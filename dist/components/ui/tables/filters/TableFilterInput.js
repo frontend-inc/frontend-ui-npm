@@ -27,7 +27,7 @@ var FilterFieldWrapper = function (props) {
             react_1.default.createElement(__1.Autosuggest, { name: 'operator', placeholder: "\u2026", options: operatorOptions, value: (filter === null || filter === void 0 ? void 0 : filter.operator) || '', handleChange: function (ev) { return handleChange(ev, index); } }))),
         react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.IconButton, { size: "small", onClick: function () { return handleRemove(index); } },
-                react_1.default.createElement(__1.Icon, { name: "X", size: 20 }))),
+                react_1.default.createElement(__1.Icon, { name: "X" }))),
         react_1.default.createElement(material_1.Box, { sx: sx.inputSpacer }),
         react_1.default.createElement(material_1.Box, { sx: sx.inputValue },
             index_1.BOOLEAN_FIELDS.includes(field === null || field === void 0 ? void 0 : field.db_type) && (react_1.default.createElement(__1.Autosuggest, { name: 'value', placeholder: "true or false", options: index_1.BOOLEAN_OPTIONS, value: (filter === null || filter === void 0 ? void 0 : filter.value) || '', handleChange: function (ev) { return handleChange(ev, index); } })),

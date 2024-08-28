@@ -23,7 +23,7 @@ var LocationOptionsList = function (props) {
         react_1.default.createElement(material_1.List, { dense: true, disablePadding: true, sx: sx.list }, options === null || options === void 0 ? void 0 : options.map(function (option, index) { return (react_1.default.createElement(material_1.ListItem, { sx: sx.listItem, disableGutters: true },
             react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleClick(option); } },
                 react_1.default.createElement(material_1.ListItemIcon, null,
-                    react_1.default.createElement(components_1.Icon, { name: "MapPin", size: 20 })),
+                    react_1.default.createElement(components_1.Icon, { name: "MapPin" })),
                 react_1.default.createElement(material_1.ListItemText, { primary: option.value })))); }))))));
 };
 exports.default = LocationOptionsList;

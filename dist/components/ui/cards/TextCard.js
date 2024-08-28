@@ -17,6 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var TextCard = function (props) {
-    return (react_1.default.createElement(components_1.ListCard, __assign({}, props, { disableImage: true })));
+    return react_1.default.createElement(components_1.ListCard, __assign({}, props, { disableImage: true }));
 };
 exports.default = TextCard;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormFieldType, SearchFilterOptionType, TableHeaderType, DisplayFieldType } from '../../../types';
 import { SortOptionType } from '../../../types';
-import { ResourceButtonType } from '../../../types';
+import { MultiselectButtonType } from '../../../types';
 export type ResourceListProps = {
     sortable?: boolean;
     selectable?: boolean;
@@ -40,7 +40,7 @@ export type ResourceListProps = {
     emptyDescription?: string;
     itemProps?: any;
     disableInfiniteLoad?: boolean;
-    buttons?: ResourceButtonType[];
+    buttons?: MultiselectButtonType[];
     slots?: {
         list?: any;
         edit?: any;

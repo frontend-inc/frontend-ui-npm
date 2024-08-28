@@ -123,7 +123,7 @@ var LikeButton = function (props) {
     return (react_1.default.createElement(material_1.Box, null,
         react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign(__assign({ color: color, '&:hover': {
                     color: color,
-                } }, (variant == 'icon' ? sx.icon : sx.button)), (liked && sx.liked)), ((liked && variant == 'button') && sx.buttonLiked)) }, liked ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))));
+                } }, (variant == 'icon' ? sx.icon : sx.button)), (liked && sx.liked)), (liked && variant == 'button' && sx.buttonLiked)) }, liked ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))));
 };
 exports.default = LikeButton;
 var sx = {

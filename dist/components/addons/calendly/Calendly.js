@@ -30,7 +30,7 @@ var frontend_js_1 = require("frontend-js");
 var components_1 = require("../../../components");
 // https://www.npmjs.com/package/react-calendly
 var Calendly = function (props) {
-    var calendlyUrl = props.calendlyUrl, _a = props.buttonText, buttonText = _a === void 0 ? "Schedule time with me" : _a;
+    var calendlyUrl = props.calendlyUrl, _a = props.buttonText, buttonText = _a === void 0 ? 'Schedule time with me' : _a;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var theme = (0, material_1.useTheme)();
     var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];

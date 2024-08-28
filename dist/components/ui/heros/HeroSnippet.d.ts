@@ -1,4 +1,11 @@
 import React from 'react';
 import { HeroCardProps } from './HeroCard';
-declare const HeroSnippet: React.FC<HeroCardProps>;
+type HeroSnippetProps = HeroCardProps & {
+    circular?: boolean;
+    disableImage?: boolean;
+    slots?: {
+        image?: any;
+    };
+};
+declare const HeroSnippet: React.FC<HeroSnippetProps>;
 export default HeroSnippet;

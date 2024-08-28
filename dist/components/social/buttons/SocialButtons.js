@@ -14,9 +14,9 @@ var SocialButtons = function (props) {
     if (!enableLikes && !enableFavorites && !enableSharing && !enableAddToList)
         return null;
     return (react_1.default.createElement(material_1.Stack, { direction: direction, justifyContent: justifyContent, spacing: spacing },
+        enableAddToList == true && (react_1.default.createElement(components_1.AddToListButton, { variant: variant, resource: resource, color: color })),
         enableLikes == true && (react_1.default.createElement(components_1.LikeButton, { variant: variant, color: color, handle: resource === null || resource === void 0 ? void 0 : resource.handle, numLikes: numLikes })),
         enableFavorites == true && (react_1.default.createElement(components_1.FavoriteButton, { variant: variant, handle: resource === null || resource === void 0 ? void 0 : resource.handle, numFavorites: numFavorites, color: color })),
-        enableAddToList == true && (react_1.default.createElement(components_1.AddToListButton, { variant: variant, resource: resource, color: color })),
         enableComments == true && (react_1.default.createElement(components_1.CommentButton, { resource: resource, color: color })),
         enableSharing == true && (react_1.default.createElement(components_1.ShareButton, { variant: variant, url: currentPageUrl }))));
 };

@@ -115,7 +115,7 @@ var GeoSearchInput = function (props) {
                 } }),
             react_1.default.createElement(Divider_1.default, { sx: sx.divider, orientation: "vertical" }),
             react_1.default.createElement(IconButton_1.default, { onClick: function () { return handleSearch(text, locationText); }, type: "button", sx: sx.iconButton, "aria-label": "search" },
-                react_1.default.createElement(__1.Icon, { name: "Search", size: 20, color: "text.secondary" }))),
+                react_1.default.createElement(__1.Icon, { name: "Search", color: "text.secondary" }))),
         react_1.default.createElement(LocationOptionsList_1.default, { open: open, options: placeOptions, handleClick: handleClick })));
 };
 exports.default = GeoSearchInput;

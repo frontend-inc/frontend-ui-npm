@@ -27,7 +27,7 @@ var ButtonTabs = function (props) {
                 minWidth: size == 'small' ? 44 : 64,
             } }), value: value, onChange: handleInputChange, indicatorColor: "primary", textColor: "inherit" }, options.map(function (tab, i) { return (react_1.default.createElement(material_1.Tab, { key: i, disableRipple: true, iconPosition: iconPosition, onClick: 
         //@ts-ignore
-        function () { return handleChange(tab.value); }, label: tab.label, value: tab.value, icon: tab.icon && (react_1.default.createElement(__1.Icon, { size: 20, color: "text.secondary", name: tab.icon })) })); })));
+        function () { return handleChange(tab.value); }, label: tab.label, value: tab.value, icon: tab.icon && react_1.default.createElement(__1.Icon, { color: "text.secondary", name: tab.icon }) })); })));
 };
 exports.default = ButtonTabs;
 var sx = {

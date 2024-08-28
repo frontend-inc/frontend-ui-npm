@@ -38,8 +38,8 @@ var CellHeader = function (props) {
         }
     }, [field, sortBy]);
     return (react_1.default.createElement(material_1.Button, { sx: sx.root, disableRipple: true, fullWidth: true, onClick: function () { return handleSort(field); }, endIcon: active && (react_1.default.createElement(react_1.default.Fragment, null,
-            sortDirection === 'asc' && react_1.default.createElement(components_1.Icon, { name: "ChevronUp", size: 20 }),
-            sortDirection === 'desc' && react_1.default.createElement(components_1.Icon, { name: "ChevronDown", size: 20 }))) },
+            sortDirection === 'asc' && react_1.default.createElement(components_1.Icon, { name: "ChevronUp" }),
+            sortDirection === 'desc' && react_1.default.createElement(components_1.Icon, { name: "ChevronDown" }))) },
         react_1.default.createElement(material_1.Typography, { variant: "overline", color: "text.primary" }, field === null || field === void 0 ? void 0 : field.label)));
 };
 exports.default = CellHeader;

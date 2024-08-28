@@ -71,12 +71,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("../../../components");
+var __1 = require("../..");
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
-var context_1 = require("../../../context");
-var Comments = function (props) {
+var CommentList = function (props) {
     var url = props.url, handle = props.handle;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var _a = (0, react_1.useState)(null), activeComment = _a[0], setActiveComment = _a[1];
@@ -87,7 +86,6 @@ var Comments = function (props) {
         url: url,
         handle: handle,
     }), loading = _e.loading, errors = _e.errors, query = _e.query, comment = _e.comment, comments = _e.comments, setComment = _e.setComment, findComments = _e.findComments, handleChange = _e.handleChange, createComment = _e.createComment, deleteComment = _e.deleteComment, totalCount = _e.totalCount, page = _e.page, numPages = _e.numPages, loadMore = _e.loadMore;
-    var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -130,15 +128,15 @@ var Comments = function (props) {
                 "Comments (",
                 totalCount,
                 ")")),
-        react_1.default.createElement(components_1.AuthGuard, { requireAuth: true },
+        react_1.default.createElement(__1.AuthGuard, { requireAuth: true },
             react_1.default.createElement(material_1.Collapse, { in: true },
-                react_1.default.createElement(components_1.CommentForm, { errors: errors, loading: loading, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit }))),
-        react_1.default.createElement(material_1.List, { disablePadding: true }, comments === null || comments === void 0 ? void 0 : comments.map(function (comment, i) { return (react_1.default.createElement(components_1.Comment, { key: i, url: url, handle: handle, comment: comment, handleDelete: handleDeleteComment })); })),
-        !loading && (comments === null || comments === void 0 ? void 0 : comments.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { enableBorder: true, icon: "MessageSquare", title: "There are no comments.", description: "Be the first to leave a comment." })),
-        react_1.default.createElement(components_1.LoadMore, { handlePaginate: loadMore, page: page, numPages: numPages }),
-        react_1.default.createElement(components_1.AlertModal, { loading: loading, open: openDelete, handleClose: function () { return setOpenDelete(false); }, handleConfirm: handleDelete })));
+                react_1.default.createElement(__1.CommentForm, { errors: errors, loading: loading, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit }))),
+        react_1.default.createElement(material_1.List, { disablePadding: true }, comments === null || comments === void 0 ? void 0 : comments.map(function (comment, i) { return (react_1.default.createElement(__1.CommentListItem, { key: i, url: url, handle: handle, comment: comment, handleDelete: handleDeleteComment })); })),
+        !loading && (comments === null || comments === void 0 ? void 0 : comments.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: "MessageSquare", title: "There are no comments.", description: "Be the first to leave a comment." })),
+        react_1.default.createElement(__1.LoadMore, { handlePaginate: loadMore, page: page, numPages: numPages }),
+        react_1.default.createElement(__1.AlertModal, { loading: loading, open: openDelete, handleClose: function () { return setOpenDelete(false); }, handleConfirm: handleDelete })));
 };
-exports.default = Comments;
+exports.default = CommentList;
 var sx = {
     root: {
         borderColor: 'divider',

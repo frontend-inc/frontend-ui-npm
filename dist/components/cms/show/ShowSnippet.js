@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var ShowSnippet = function (props) {
-    return (react_1.default.createElement(components_1.ShowItem, __assign({}, props, { style: "snippet" })));
+    return react_1.default.createElement(components_1.ShowItem, __assign({}, props, { style: "snippet" }));
 };
 exports.default = ShowSnippet;
 var sx = {

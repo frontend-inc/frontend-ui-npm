@@ -133,7 +133,7 @@ var ReferenceInput = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5 },
         react_1.default.createElement(components_1.InputLabel, { label: label }),
         react_1.default.createElement(SortableReferences_1.default, { references: references, handleDrop: handleDrop, handleEdit: handleEdit, handleDelete: handleDelete }),
-        react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleAddClick, variant: "contained", color: "secondary", startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", size: 20, color: "secondary.contrastText" }) },
+        react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleAddClick, variant: "contained", color: "secondary", startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText" }) },
             "Add ",
             contentType),
         react_1.default.createElement(components_1.RemoteFormModal, { open: open, handleClose: function () { return setOpen(false); }, url: foreignUrl, resource: foreignResource, handleSuccess: handleSuccess })));

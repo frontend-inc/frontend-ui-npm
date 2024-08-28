@@ -86,7 +86,7 @@ var SortableDataListItems = function (props) {
         });
     }); };
     return (react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { loading: loading }),
-        react_1.default.createElement(__1.SortableList, { droppableId: 'sortable', handleDrop: handleDrop, items: resources, renderItem: function (resource) { return (react_1.default.createElement(Component, __assign({ sortable: true, key: resource === null || resource === void 0 ? void 0 : resource.id, resource: resource, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: function () { return handleShowClick(resource); }, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, slots.item))); } }),
+        react_1.default.createElement(__1.SortableList, { droppableId: "sortable", handleDrop: handleDrop, items: resources, renderItem: function (resource) { return (react_1.default.createElement(Component, __assign({ sortable: true, key: resource === null || resource === void 0 ? void 0 : resource.id, resource: resource, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: function () { return handleShowClick(resource); }, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, slots.item))); } }),
         react_1.default.createElement(Pagination, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };
 exports.default = SortableDataListItems;

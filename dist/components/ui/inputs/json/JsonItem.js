@@ -20,12 +20,12 @@ var components_1 = require("../../../../components");
 var JsonItem = function (props) {
     var index = props.index, item = props.item, titleField = props.titleField, handleClick = props.handleClick, handleRemove = props.handleRemove;
     return (react_1.default.createElement(material_1.ListItem, { sx: __assign(__assign({}, sx.root), (item.isDragging && sx.isDragging)), disablePadding: true, secondaryAction: react_1.default.createElement(material_1.IconButton, { size: "small", onClick: function () { return handleRemove(index); } },
-            react_1.default.createElement(components_1.Icon, { name: "X", size: 20 })) },
+            react_1.default.createElement(components_1.Icon, { name: "X" })) },
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function (ev) { return handleClick(ev, item, index); } },
             react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                react_1.default.createElement(components_1.Icon, { name: "GripVertical", size: 20 })),
+                react_1.default.createElement(components_1.Icon, { name: "GripVertical" })),
             (item === null || item === void 0 ? void 0 : item.icon) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                react_1.default.createElement(components_1.Icon, { name: item.icon, size: 20 }))),
+                react_1.default.createElement(components_1.Icon, { name: item.icon }))),
             react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "body1" }, item[titleField]) }))));
 };
 exports.default = JsonItem;

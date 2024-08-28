@@ -46,7 +46,6 @@ var useForms = function (params) {
     var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addReferences = _a.addReferences, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, reloadMany = _a.reloadMany, openEdit = _a.openEdit, openDelete = _a.openDelete, openShow = _a.openShow, openReferences = _a.openReferences, setOpenEdit = _a.setOpenEdit, setOpenDelete = _a.setOpenDelete, setOpenShow = _a.setOpenShow, setOpenReferences = _a.setOpenReferences;
     var handleShow = function (resource) {
         setResource(resource);
-        setOpenReferences(false);
         setOpenEdit(false);
         setOpenShow(true);
     };
@@ -57,7 +56,6 @@ var useForms = function (params) {
             id: undefined,
         });
         setOpenShow(false);
-        setOpenReferences(false);
         setOpenEdit(true);
     };
     var handleEdit = function (resource) {
@@ -65,16 +63,7 @@ var useForms = function (params) {
             return setAuthOpen(true);
         setResource(resource);
         setOpenShow(false);
-        setOpenReferences(false);
         setOpenEdit(true);
-    };
-    var handleAddReference = function (resource) {
-        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
-            return setAuthOpen(true);
-        setResource(resource);
-        setOpenShow(false);
-        setOpenEdit(false);
-        setOpenReferences(true);
     };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp, err_1;
@@ -170,7 +159,6 @@ var useForms = function (params) {
         handleRemove: handleRemove,
         handleShow: handleShow,
         handleSubmit: handleSubmit,
-        handleAddReference: handleAddReference,
         openEdit: openEdit,
         openDelete: openDelete,
         openShow: openShow,
@@ -178,7 +166,7 @@ var useForms = function (params) {
         setOpenEdit: setOpenEdit,
         setOpenDelete: setOpenDelete,
         setOpenShow: setOpenShow,
-        setOpenReferences: setOpenReferences
+        setOpenReferences: setOpenReferences,
     };
 };
 exports.default = useForms;

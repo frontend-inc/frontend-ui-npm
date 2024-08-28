@@ -58,78 +58,41 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var react_dropzone_1 = __importDefault(require("react-dropzone"));
+var __1 = require("../../..");
+var frontend_js_1 = require("frontend-js");
+var hooks_1 = require("../../../../hooks");
+var frontend_js_2 = require("frontend-js");
 var material_1 = require("@mui/material");
-var icons_material_1 = require("@mui/icons-material");
-var FileInput = function (props) {
-    var fileUrl = props.fileUrl, handleUpload = props.handleUpload, handleDelete = props.handleDelete;
-    var _a = (0, react_1.useState)(false), editing = _a[0], setEditing = _a[1];
-    var _b = (0, react_1.useState)(), file = _b[0], setFile = _b[1];
-    var _c = (0, react_1.useState)([]), files = _c[0], setFiles = _c[1];
-    var _d = (0, react_1.useState)(false), isUploading = _d[0], setIsUploading = _d[1];
-    var _e = (0, react_1.useState)(false), isUploaded = _e[0], setIsUploaded = _e[1];
-    var _f = (0, react_1.useState)(false), dropzoneActive = _f[0], setDropzoneActive = _f[1];
-    var onDrop = function (files) { return __awaiter(void 0, void 0, void 0, function () {
+var DataMultiselectDelete = function () {
+    var currentUser = (0, frontend_js_2.useAuth)().currentUser;
+    var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
+    var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
+    var _b = (0, frontend_js_1.useResourceContext)(), loading = _b.loading, selectedIds = _b.selectedIds, deleteMany = _b.deleteMany, reloadMany = _b.reloadMany;
+    var handleDeleteClick = function () {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+            return setAuthOpen(true);
+        if (selectedIds.length > 0)
+            setOpen(true);
+    };
+    var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            setIsUploading(true);
-            setIsUploaded(false);
-            handleUpload(files[0]);
-            setEditing(false);
-            setIsUploading(false);
-            setIsUploaded(true);
-            setFiles([]);
-            setFile(null);
-            return [2 /*return*/];
+            switch (_a.label) {
+                case 0:
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                        return [2 /*return*/, setAuthOpen(true)];
+                    return [4 /*yield*/, deleteMany(selectedIds)];
+                case 1:
+                    _a.sent();
+                    reloadMany();
+                    setOpen(false);
+                    return [2 /*return*/];
+            }
         });
     }); };
-    var onDragEnter = function (files) {
-        setFiles(files);
-        setDropzoneActive(true);
-    };
-    var onDragLeave = function (files) {
-        setFiles(files);
-        setDropzoneActive(false);
-    };
-    var handleDownloadClick = function () { return window.open(fileUrl, '_blank'); };
-    return (react_1.default.createElement(material_1.Box, null,
-        fileUrl && !editing && (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(material_1.Button, { onClick: handleDownloadClick },
-                react_1.default.createElement(icons_material_1.InsertDriveFile, { sx: sx.icon })),
-            handleDelete && (react_1.default.createElement(material_1.Button, { sx: sx.button, size: "small", onClick: handleDelete }, "Remove")))),
-        editing ||
-            (!fileUrl && (
-            //@ts-ignore
-            react_1.default.createElement(react_dropzone_1.default, { sx: sx.dropZone, disableClick: false, onDrop: onDrop, onDragEnter: onDragEnter, onDragLeave: onDragLeave, multiple: false },
-                !isUploaded && !isUploading && !dropzoneActive && (react_1.default.createElement(material_1.Typography, { variant: "overline" }, "Upload file")),
-                isUploaded && (react_1.default.createElement(material_1.Typography, { variant: "overline" }, "Upload complete")),
-                !isUploaded && !isUploading && dropzoneActive && (react_1.default.createElement(material_1.Typography, { variant: "overline" }, "Drop file")),
-                !isUploaded && isUploading && (react_1.default.createElement(material_1.Typography, { variant: "overline" }, "Uploading ...")),
-                isUploading && react_1.default.createElement(material_1.LinearProgress, null))))));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(material_1.Button, { onClick: handleDeleteClick, variant: "contained", color: "secondary", startIcon: react_1.default.createElement(__1.Icon, { name: "Trash" }) }, "Delete"),
+        react_1.default.createElement(__1.AlertModal, { loading: loading, open: open, handleClose: function () { return setOpen(false); }, handleConfirm: handleDelete })));
 };
-exports.default = FileInput;
-var sx = {
-    icon: {
-        height: 48,
-        width: 48,
-        color: 'primary.main',
-    },
-    dropZone: {
-        m: 0,
-        height: 140,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        border: function (theme) { return "1px dotted ".concat(theme.palette.text.secondary); },
-        bgcolor: 'background.default',
-        textAlign: 'center',
-        mb: 2,
-    },
-    button: {
-        fontSize: 11,
-    },
-};
+exports.default = DataMultiselectDelete;

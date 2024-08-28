@@ -17,7 +17,7 @@ var TableFilterButton = function (props) {
             horizontal: 'right',
         } },
         react_1.default.createElement(material_1.ButtonGroup, null,
-            react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(components_1.IconLoading, { color: "secondary.contrastText", loading: true })) : (react_1.default.createElement(components_1.Icon, { name: "ListFilter", size: 20, color: "secondary.contrastText" })), onClick: handleClick }, "Filters"),
+            react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", startIcon: loading ? (react_1.default.createElement(components_1.IconLoading, { color: "secondary.contrastText", loading: true })) : (react_1.default.createElement(components_1.Icon, { name: "ListFilter", color: "secondary.contrastText" })), onClick: handleClick }, "Filters"),
             hasFilters && (react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", sx: sx.secondaryAction, onClick: handleClearFilters },
                 react_1.default.createElement(icons_material_1.Clear, null))))));
 };

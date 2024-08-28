@@ -32,7 +32,7 @@ var ResourceListItem = function (props) {
             react_1.default.createElement(material_1.Checkbox, { checked: selected, color: "primary", size: "small", onChange: handleChange }))),
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick ? handleClick : undefined },
             sortable && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.dragHandle },
-                react_1.default.createElement(__1.Icon, { name: "GripVertical", size: 20, color: "text.secondary" }))),
+                react_1.default.createElement(__1.Icon, { name: "GripVertical", color: "text.secondary" }))),
             avatar && react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon }, avatar),
             !avatar && image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(__1.Image, { src: image, width: 32, height: 32, alt: image }))),
@@ -67,7 +67,7 @@ var sx = {
         mr: 2,
     },
     checkbox: {
-        width: 24
+        width: 24,
     },
     dragHandle: {
         width: 24,

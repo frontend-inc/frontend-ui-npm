@@ -1,6 +1,6 @@
 import React from 'react';
-import { CommentsProps } from '../../components/social/comments/Comments';
+import { CommentListProps } from '../../components/social/comments/CommentList';
 import { SectionProps, HeadingProps } from '../../types';
-type SocialCommentsProps = SectionProps & HeadingProps & CommentsProps;
+type SocialCommentsProps = SectionProps & HeadingProps & CommentListProps;
 declare const SocialComments: React.FC<SocialCommentsProps>;
 export default SocialComments;

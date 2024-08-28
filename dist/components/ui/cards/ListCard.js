@@ -23,15 +23,15 @@ var ListCard = function (props) {
         image: {},
     } : _g;
     return (react_1.default.createElement(material_1.Box, __assign({ sx: sx.root }, slots.item),
-        react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: 'center', spacing: 0, width: '100%' },
+        react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "center", spacing: 0, width: "100%" },
             selectable && (react_1.default.createElement(material_1.Checkbox, { checked: selected, onChange: handleSelect, color: "primary" })),
-            sortable && (react_1.default.createElement(__1.Icon, { name: "GripVertical", color: 'text.secondary' })),
+            sortable && react_1.default.createElement(__1.Icon, { name: "GripVertical", color: "text.secondary" }),
             react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
-                react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: 'flex-start', spacing: 0 }, !disableImage && (react_1.default.createElement(material_1.Box, { sx: sx.image }, circular ? (react_1.default.createElement(__1.AvatarImage, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick }, slots.image))) : (react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick }, slots.image)))))),
+                react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-start", spacing: 0 }, !disableImage && (react_1.default.createElement(material_1.Box, { sx: sx.image }, circular ? (react_1.default.createElement(__1.AvatarImage, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick }, slots.image))) : (react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick }, slots.image)))))),
                 react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.contentArea },
                     react_1.default.createElement(material_1.Stack, { direction: "column", sx: sx.content },
                         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 0.5 },
-                            react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "subtitle1" }, primary),
+                            react_1.default.createElement(material_1.Link, { onClick: handleClick, sx: sx.link, color: "text.primary", variant: "subtitle1" }, primary),
                             react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2" }, secondary)),
                         react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" }, actions)),
                     react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "flex-end" }, secondaryAction))))));
@@ -78,7 +78,7 @@ var sx = {
         },
         mr: {
             sm: 2,
-            xs: 0
+            xs: 0,
         },
         height: '100%',
         display: 'flex',
@@ -123,5 +123,8 @@ var sx = {
             sm: 0,
             xs: 1,
         },
+    },
+    link: {
+        textDecoration: 'none',
     },
 };

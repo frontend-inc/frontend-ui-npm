@@ -5,22 +5,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var frontend_js_1 = require("frontend-js");
-var CollectionToolbarModal = function () {
-    var setOpenReferences = (0, frontend_js_1.useResourceContext)().setOpenReferences;
-    var handleAddReference = function (selected) {
-        setOpenReferences(true);
-    };
-    var buttons = [
-        {
-            label: 'Add to List',
-            icon: 'ListPlus',
-            color: 'secondary',
-            variant: 'contained',
-            onClick: handleAddReference
-        }
-    ];
+var CollectionToolbarModal = function (props) {
+    var _a = props || {}, enableDelete = _a.enableDelete, enableAddToList = _a.enableAddToList, _b = _a.toolbarButtons, toolbarButtons = _b === void 0 ? [] : _b;
     return (react_1.default.createElement(components_1.DataToolbarModal, null,
-        react_1.default.createElement(components_1.DataToolbarButtons, { buttons: buttons })));
+        enableAddToList && (react_1.default.createElement(components_1.DataMultiselectAddToListButton, { query: {
+                current_user: true,
+            } })),
+        enableDelete && react_1.default.createElement(components_1.DataMultiselectDeleteButton, null), toolbarButtons === null || toolbarButtons === void 0 ? void 0 :
+        toolbarButtons.map(function (button, index) { return (react_1.default.createElement(components_1.DataMultiselectUpdateButton, { key: index, icon: button === null || button === void 0 ? void 0 : button.icon, buttonText: button === null || button === void 0 ? void 0 : button.buttonText, fields: [
+                {
+                    label: button.label,
+                    name: button.name,
+                    variant: button.variant,
+                },
+            ] })); })));
 };
 exports.default = CollectionToolbarModal;

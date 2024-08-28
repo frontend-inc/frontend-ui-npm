@@ -43,7 +43,7 @@ var StripePaymentLink = function (props) {
     if (!(resource === null || resource === void 0 ? void 0 : resource.stripe_payment_link))
         return null;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, direction: "row", justifyContent: justifyContent, spacing: 1 },
-        react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "primary", onClick: handleClick, disabled: !stripe_payment_link, startIcon: react_1.default.createElement(__1.Icon, { name: "CreditCard", size: 20, color: "primary.contrastText" }) }, buttonText)));
+        react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "primary", onClick: handleClick, disabled: !stripe_payment_link, startIcon: react_1.default.createElement(__1.Icon, { name: "CreditCard", color: "primary.contrastText" }) }, buttonText)));
 };
 exports.default = StripePaymentLink;
 var sx = {

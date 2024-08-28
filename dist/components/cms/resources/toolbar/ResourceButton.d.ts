@@ -1,7 +1,7 @@
 import React from 'react';
-import { ResourceButtonType } from '../../../../types';
+import { MultiselectButtonType } from '../../../../types';
 export type ResourceButtonProps = {
-    button: ResourceButtonType;
+    button: MultiselectButtonType;
     selected: any[];
 };
 declare const ResourceButton: React.FC<ResourceButtonProps>;

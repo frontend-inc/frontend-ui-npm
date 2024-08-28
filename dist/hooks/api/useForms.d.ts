@@ -15,7 +15,6 @@ declare const useForms: (params?: FormParams) => {
     handleRemove: (name: any) => Promise<any>;
     handleShow: (resource: any) => void;
     handleSubmit: () => Promise<any>;
-    handleAddReference: (resource: any) => any;
     openEdit: boolean;
     openDelete: boolean;
     openShow: boolean;

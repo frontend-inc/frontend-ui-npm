@@ -18,7 +18,7 @@ var AuthMenu = function (props) {
         react_1.default.createElement(material_1.Divider, { sx: sx.divider }),
         react_1.default.createElement(material_1.MenuItem, { onClick: handleLogout },
             react_1.default.createElement(material_1.ListItemIcon, null,
-                react_1.default.createElement(components_1.Icon, { name: "LogOut", size: 20 })),
+                react_1.default.createElement(components_1.Icon, { name: "LogOut" })),
             "Logout"))) : (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.MenuItem, { onClick: handleLogin }, "Sign In"),
         react_1.default.createElement(material_1.MenuItem, { onClick: handleSignup }, "Sign Up")))));

@@ -1,4 +1,27 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,37 +58,35 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(require("react"));
-var __1 = require("../..");
-var DataReferenceForm_1 = __importDefault(require("./DataReferenceForm"));
+var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
+var __1 = require("../../..");
 var frontend_js_1 = require("frontend-js");
-var DataReferences = function (props) {
-    var _a = props || {}, url = _a.url, _b = _a.query, query = _b === void 0 ? {} : _b;
-    var _c = (0, frontend_js_1.useResourceContext)(), selectedIds = _c.selectedIds, openReferences = _c.openReferences, setOpenReferences = _c.setOpenReferences;
-    var _d = (0, frontend_js_1.useResource)({
-        name: 'references',
-        url: url
-    }), errors = _d.errors, loading = _d.loading, parentResource = _d.resource, handleChange = _d.handleChange, addReferences = _d.addReferences;
+var DataMultiselectUpdateButton = function (props) {
+    var _a = props || {}, _b = _a.buttonText, buttonText = _b === void 0 ? 'Update' : _b, icon = _a.icon, _c = _a.fields, fields = _c === void 0 ? [] : _c;
+    var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
+    var handleClose = function () { return setOpen(false); };
+    var _e = (0, frontend_js_1.useResourceContext)(), loading = _e.loading, errors = _e.errors, selectedIds = _e.selectedIds, resource = _e.resource, handleChange = _e.handleChange, updateMany = _e.updateMany, reloadMany = _e.reloadMany;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    if (!(parentResource === null || parentResource === void 0 ? void 0 : parentResource.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, addReferences(parentResource === null || parentResource === void 0 ? void 0 : parentResource.id, selectedIds)];
+                case 0: return [4 /*yield*/, updateMany(selectedIds, resource)];
                 case 1:
                     _a.sent();
-                    setOpenReferences(false);
-                    _a.label = 2;
-                case 2: return [2 /*return*/];
+                    return [4 /*yield*/, reloadMany()];
+                case 2:
+                    _a.sent();
+                    handleClose();
+                    return [2 /*return*/];
             }
         });
     }); };
-    return (react_1.default.createElement(__1.Modal, { loading: loading, open: openReferences, handleClose: function () { return setOpenReferences(false); }, title: "Add", maxWidth: "sm", buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", size: 20, color: "primary.contrastText" }) }, "Add") },
-        react_1.default.createElement(DataReferenceForm_1.default, { url: url, errors: errors, resource: parentResource, handleChange: handleChange, query: query })));
+    var handleRemove = function () { return null; };
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: function () { return setOpen(true); }, startIcon: icon && react_1.default.createElement(__1.Icon, { name: icon }) }, buttonText),
+        react_1.default.createElement(__1.Modal, { open: open, handleClose: handleClose, title: "Update selected (".concat(selectedIds.length, ")"), loading: loading },
+            react_1.default.createElement(material_1.Box, { py: 2 },
+                react_1.default.createElement(__1.FormFields, { errors: errors, fields: fields, resource: resource, handleChange: handleChange, buttonText: "Update All", handleRemove: handleRemove, handleSubmit: handleSubmit })))));
 };
-exports.default = DataReferences;
+exports.default = DataMultiselectUpdateButton;

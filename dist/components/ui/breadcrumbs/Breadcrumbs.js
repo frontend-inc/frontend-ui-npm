@@ -33,7 +33,7 @@ var Breadcrumbs = function (props) {
     if (links.length === 0)
         return null;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Breadcrumbs, { maxItems: maxLinks, "aria-label": "breadcrumb", separator: react_1.default.createElement(components_1.Icon, { color: "text.secondary", name: "ChevronRight", size: 20 }) }, links.map(function (link, index) { return (react_1.default.createElement(material_1.Link, { variant: "caption", sx: sx.link, key: index, href: "".concat(clientUrl).concat(link === null || link === void 0 ? void 0 : link.path) }, link === null || link === void 0 ? void 0 : link.label)); }))));
+        react_1.default.createElement(material_1.Breadcrumbs, { maxItems: maxLinks, "aria-label": "breadcrumb", separator: react_1.default.createElement(components_1.Icon, { color: "text.secondary", name: "ChevronRight" }) }, links.map(function (link, index) { return (react_1.default.createElement(material_1.Link, { variant: "caption", sx: sx.link, key: index, href: "".concat(clientUrl).concat(link === null || link === void 0 ? void 0 : link.path) }, link === null || link === void 0 ? void 0 : link.label)); }))));
 };
 exports.default = Breadcrumbs;
 var sx = {

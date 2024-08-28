@@ -31,7 +31,7 @@ var material_1 = require("@mui/material");
 var icons = __importStar(require("lucide-react"));
 var lodash_1 = require("lodash");
 var LucideIcon = function (props) {
-    var name = props.name, _a = props.color, color = _a === void 0 ? 'text.primary' : _a, _b = props.size, size = _b === void 0 ? 24 : _b;
+    var name = props.name, _a = props.color, color = _a === void 0 ? 'text.primary' : _a, _b = props.size, size = _b === void 0 ? 20 : _b;
     var theme = (0, material_1.useTheme)();
     var Icon = icons[name];
     if (!Icon)

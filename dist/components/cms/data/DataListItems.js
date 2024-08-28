@@ -61,7 +61,7 @@ var DataListItems = function (props) {
         item: {},
         list: {},
     } : _d;
-    var _e = (0, hooks_1.useForms)(), handleShow = _e.handleShow, handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick, handleAddReference = _e.handleAddReference;
+    var _e = (0, hooks_1.useForms)(), handleShow = _e.handleShow, handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
     var handleShowClick = function (resource) {
         if (handleClick) {
             handleClick(resource);
@@ -81,7 +81,7 @@ var DataListItems = function (props) {
         });
     }); };
     return (react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid, loading: loading }), resources === null || resources === void 0 ? void 0 :
-        resources.map(function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, selectable: selectable, selected: selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource.id), resource: resource, handleClick: function () { return handleShowClick(resource); }, handleSelect: function () { return handleSelect(resource); }, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, enableAddToList: enableAddToList, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined, handleAddReference: enableAddToList ? function () { return handleAddReference(resource); } : undefined }, slots.item))); }),
+        resources.map(function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, selectable: selectable, selected: selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource.id), resource: resource, handleClick: function () { return handleShowClick(resource); }, handleSelect: function () { return handleSelect(resource); }, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, enableAddToList: enableAddToList, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, slots.item))); }),
         react_1.default.createElement(Pagination, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };
 exports.default = DataListItems;

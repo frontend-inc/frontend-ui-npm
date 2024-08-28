@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormFieldType, QueryParamsType, ResourceButtonType, SearchFilterOptionType, SortOptionType } from '../../../types';
+import { FormFieldType, QueryParamsType, MultiselectButtonType, SearchFilterOptionType, SortOptionType } from '../../../types';
 export type DataListProps = {
     grid?: boolean;
     selectable?: boolean;
@@ -33,9 +33,8 @@ export type DataListProps = {
     empty?: React.FC<any>;
     create?: React.FC<any>;
     destroy?: React.FC<any>;
-    references?: React.FC<any>;
     component?: React.FC<any>;
-    buttons?: ResourceButtonType[];
+    buttons?: MultiselectButtonType[];
     slots?: {
         toolbar?: any;
         toolbarModal?: any;
@@ -46,7 +45,6 @@ export type DataListProps = {
         create?: any;
         destroy?: any;
         empty?: any;
-        references?: any;
     };
     emptyIcon?: string;
     emptyTitle?: string;

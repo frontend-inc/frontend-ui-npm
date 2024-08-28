@@ -70,11 +70,11 @@ var TableToolbar = function (props) {
                             enableDelete && (
                             //@ts-ignore
                             react_1.default.createElement(material_1.IconButton, { onClick: handleDelete },
-                                react_1.default.createElement(lucide_react_1.Trash, { size: 20 }))),
+                                react_1.default.createElement(lucide_react_1.Trash, null))),
                             enableEdit && (
                             //@ts-ignore
                             react_1.default.createElement(material_1.IconButton, { onClick: handleEdit },
-                                react_1.default.createElement(lucide_react_1.Edit, { size: 20 })))))))))));
+                                react_1.default.createElement(lucide_react_1.Edit, null)))))))))));
 };
 exports.default = TableToolbar;
 var sx = {

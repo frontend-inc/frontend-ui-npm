@@ -47,7 +47,7 @@ var AutocompleteOption = function (props) {
     var option = props.option;
     return (react_1.default.createElement(material_1.ListItem, __assign({}, props),
         (option === null || option === void 0 ? void 0 : option.icon) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-            react_1.default.createElement(__1.Icon, { name: option.icon, size: 20 }))),
+            react_1.default.createElement(__1.Icon, { name: option.icon }))),
         (option === null || option === void 0 ? void 0 : option.image) && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
             react_1.default.createElement(image_1.default, { src: option === null || option === void 0 ? void 0 : option.image, alt: option === null || option === void 0 ? void 0 : option.label, width: 32, height: 32, 
                 //@ts-ignore
@@ -117,7 +117,7 @@ var Autosuggest = function (props) {
                 //@ts-ignore
                 renderOption: function (props, option) { return (react_1.default.createElement(AutocompleteOption, __assign({}, props, { option: option }))); }, PaperComponent: AutocompletePaper, renderInput: function (params) { return (react_1.default.createElement(material_1.InputBase, { placeholder: placeholder, ref: params.InputProps.ref, inputProps: __assign(__assign({}, params.inputProps), { autoComplete: 'off' }), sx: __assign(__assign({}, sx.inputBase), (error && sx.inputError)), endAdornment: (enableClear || handleClear) && (react_1.default.createElement(material_1.InputAdornment, { position: "start", sx: sx.inputAdornment },
                         react_1.default.createElement(material_1.IconButton, { onClick: handleInputClear, size: "small" },
-                            react_1.default.createElement(__1.Icon, { name: "X", color: "text.secondary", size: 20 })))) })); } }),
+                            react_1.default.createElement(__1.Icon, { name: "X", color: "text.secondary" })))) })); } }),
             react_1.default.createElement(__1.ErrorText, { error: error }))));
 };
 exports.default = Autosuggest;

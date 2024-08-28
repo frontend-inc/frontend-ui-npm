@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InputLabel = exports.DropZone = exports.URLInput = exports.TabsInput = exports.SearchInput = exports.SwitchInput = exports.SelectInput = exports.NoSpaceInput = exports.ReferenceInput = exports.RatingInput = exports.RadioInput = exports.TextInput = exports.PriceRangeInput = exports.PhoneInput = exports.NumberRangeInput = exports.NumberSliderInput = exports.JsonArrayInput = exports.JSONInput = exports.ImageInput = exports.HelperText = exports.FileInput = exports.EmailInput = exports.ErrorInput = exports.ErrorText = exports.EditableTextInput = exports.EditableTypography = exports.DateInput = exports.ColorInput = exports.CheckboxInput = exports.CheckboxGroupInput = exports.BooleanInput = exports.AttachmentInput = exports.ArrayListInput = exports.ArrayInput = exports.AutocompleteInput = void 0;
+exports.InputLabel = exports.DropZone = exports.URLInput = exports.TabsInput = exports.SearchInput = exports.SwitchInput = exports.SelectInput = exports.NoSpaceInput = exports.ReferenceInput = exports.RatingInput = exports.RadioInput = exports.TextInput = exports.PriceRangeInput = exports.PhoneInput = exports.NumberRangeInput = exports.NumberSliderInput = exports.JsonArrayInput = exports.JSONInput = exports.Input = exports.ImageInput = exports.HelperText = exports.EmailInput = exports.ErrorInput = exports.ErrorText = exports.EditableTextInput = exports.EditableTypography = exports.DateInput = exports.ColorInput = exports.CheckboxInput = exports.CheckboxGroupInput = exports.BooleanInput = exports.AttachmentInput = exports.ArrayListInput = exports.ArrayInput = exports.AutocompleteInput = void 0;
 // Inputs
 var AutocompleteInput_1 = require("./AutocompleteInput");
 Object.defineProperty(exports, "AutocompleteInput", { enumerable: true, get: function () { return __importDefault(AutocompleteInput_1).default; } });
@@ -33,12 +33,12 @@ var ErrorInput_1 = require("./ErrorInput");
 Object.defineProperty(exports, "ErrorInput", { enumerable: true, get: function () { return __importDefault(ErrorInput_1).default; } });
 var EmailInput_1 = require("./EmailInput");
 Object.defineProperty(exports, "EmailInput", { enumerable: true, get: function () { return __importDefault(EmailInput_1).default; } });
-var FileInput_1 = require("./FileInput");
-Object.defineProperty(exports, "FileInput", { enumerable: true, get: function () { return __importDefault(FileInput_1).default; } });
 var HelperText_1 = require("./helpers/HelperText");
 Object.defineProperty(exports, "HelperText", { enumerable: true, get: function () { return __importDefault(HelperText_1).default; } });
 var ImageInput_1 = require("./ImageInput");
 Object.defineProperty(exports, "ImageInput", { enumerable: true, get: function () { return __importDefault(ImageInput_1).default; } });
+var Input_1 = require("./Input");
+Object.defineProperty(exports, "Input", { enumerable: true, get: function () { return __importDefault(Input_1).default; } });
 var JSONInput_1 = require("./JSONInput");
 Object.defineProperty(exports, "JSONInput", { enumerable: true, get: function () { return __importDefault(JSONInput_1).default; } });
 var JsonArrayInput_1 = require("./JsonArrayInput");

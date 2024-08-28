@@ -12,7 +12,7 @@ var CartText = function (props) {
         react_1.default.createElement(material_1.Typography, { variant: "body1", sx: sx.label }, label),
         react_1.default.createElement(material_1.Stack, { spacing: 0.5, direction: "row" },
             react_1.default.createElement(material_1.Typography, { variant: "body1", sx: sx.value }, value),
-            icon && react_1.default.createElement(components_1.Icon, { name: icon, size: 20 }))));
+            icon && react_1.default.createElement(components_1.Icon, { name: icon }))));
 };
 exports.default = CartText;
 var sx = {

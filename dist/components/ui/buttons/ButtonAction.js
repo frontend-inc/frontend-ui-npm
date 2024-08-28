@@ -39,7 +39,7 @@ var ButtonAction = function (props) {
     }), loading = _d.loading, handleClick = _d.handleClick;
     return (react_1.default.createElement(material_1.Button, __assign({ fullWidth: true, sx: sx.button, size: size, startIcon: react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(__1.IconLoading, { loading: loading }),
-            !loading && icon && (react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: color == 'primary'
+            !loading && icon && (react_1.default.createElement(__1.Icon, { name: icon, color: color == 'primary'
                     ? 'primary.contrastText'
                     : 'secondary.contrastText' }))), onClick: onClick ? onClick : handleClick, variant: variant, color: color }, rest), children));
 };

@@ -27,7 +27,7 @@ var VideoCard = function (props) {
             react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleClick },
                 react_1.default.createElement(__1.Image, __assign({ src: image, height: 360, alt: primary }, slots.image))),
             react_1.default.createElement(material_1.IconButton, { sx: sx.playIcon, onClick: handleClick },
-                react_1.default.createElement(__1.Icon, { name: "Play", color: "common.white", size: 20 })),
+                react_1.default.createElement(__1.Icon, { name: "Play", color: "common.white" })),
             react_1.default.createElement(material_1.Box, { sx: sx.buttons }, secondaryAction),
             avatar && react_1.default.createElement(material_1.Box, { sx: sx.avatar }, avatar))));
 };

@@ -18,9 +18,9 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var SortableListItems = function (props) {
-    var _a = props || {}, _b = _a.droppableId, droppableId = _b === void 0 ? "sortable" : _b, resources = _a.resources, page = _a.page, numPages = _a.numPages, handlePaginate = _a.handlePaginate, handleDrop = _a.handleDrop, renderItem = _a.renderItem, _c = _a.slots, slots = _c === void 0 ? {
+    var _a = props || {}, _b = _a.droppableId, droppableId = _b === void 0 ? 'sortable' : _b, resources = _a.resources, page = _a.page, numPages = _a.numPages, handlePaginate = _a.handlePaginate, handleDrop = _a.handleDrop, renderItem = _a.renderItem, _c = _a.slots, slots = _c === void 0 ? {
         list: {},
-        pagination: {}
+        pagination: {},
     } : _c;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2 },
         react_1.default.createElement(__1.SortableList, __assign({ droppableId: droppableId, items: resources, handleDrop: handleDrop, renderItem: renderItem }, slots.list)),

@@ -48,7 +48,7 @@ var CmsSimilarGrid_1 = require("./CmsSimilarGrid");
 Object.defineProperty(exports, "CmsSimilarGrid", { enumerable: true, get: function () { return __importDefault(CmsSimilarGrid_1).default; } });
 var CmsStatistics_1 = require("./CmsStatistics");
 Object.defineProperty(exports, "CmsStatistics", { enumerable: true, get: function () { return __importDefault(CmsStatistics_1).default; } });
-// Sortable 
+// Sortable
 var CmsReferenceList_1 = require("./CmsReferenceList");
 Object.defineProperty(exports, "CmsReferenceList", { enumerable: true, get: function () { return __importDefault(CmsReferenceList_1).default; } });
 var CmsReferenceGrid_1 = require("./CmsReferenceGrid");

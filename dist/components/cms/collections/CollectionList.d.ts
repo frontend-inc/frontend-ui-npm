@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonType, DisplayFieldType, FormFieldType, SearchFilterOptionType, SortOptionType } from '../../../types';
+import { ButtonType, DisplayFieldType, FormFieldType, SearchFilterOptionType, SortOptionType, ToolbarButtonType } from '../../../types';
 export type CollectionListProps = {
     grid?: boolean;
     selectable?: boolean;
@@ -19,6 +19,7 @@ export type CollectionListProps = {
     enableDelete?: boolean;
     enableAddToList?: boolean;
     fields?: FormFieldType[];
+    toolbarButtons?: ToolbarButtonType[];
     headers?: {
         label: string;
         value: string;
@@ -39,16 +40,15 @@ export type CollectionListProps = {
     create?: React.FC<any>;
     destroy?: React.FC<any>;
     empty?: React.FC<any>;
-    references?: React.FC<any>;
     slots?: {
         toolbar?: any;
+        toolbarModal?: any;
         list?: any;
         show?: any;
         edit?: any;
         create?: any;
         destroy?: any;
         empty?: any;
-        references?: any;
         item?: any;
     };
     circular?: boolean;

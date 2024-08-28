@@ -66,7 +66,7 @@ var AutocompleteInput = function (props) {
                     react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleClick(option); } },
                         react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                             (option === null || option === void 0 ? void 0 : option.image) && (react_1.default.createElement(material_1.Avatar, { alt: option.label, src: option.image, sx: sx.avatar })),
-                            (option === null || option === void 0 ? void 0 : option.icon) && react_1.default.createElement(__1.Icon, { name: option.icon, size: 20 })),
+                            (option === null || option === void 0 ? void 0 : option.icon) && react_1.default.createElement(__1.Icon, { name: option.icon })),
                         react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", sx: sx.label }, option.label) })))); }))))))));
 };
 exports.default = AutocompleteInput;

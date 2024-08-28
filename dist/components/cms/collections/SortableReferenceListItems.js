@@ -87,7 +87,7 @@ var SortableReferenceListItems = function (props) {
         });
     }); };
     return (react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { loading: loading }),
-        react_1.default.createElement(__1.SortableList, { droppableId: 'sortable', handleDrop: handleDrop, items: resources, renderItem: function (resource) {
+        react_1.default.createElement(__1.SortableList, { droppableId: "sortable", handleDrop: handleDrop, items: resources, renderItem: function (resource) {
                 var target = resource === null || resource === void 0 ? void 0 : resource.target;
                 return (react_1.default.createElement(Component, __assign({}, slots.item, { sortable: true, key: resource === null || resource === void 0 ? void 0 : resource.id, resource: target, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: function () { return handleShowClick(target); }, handleEdit: enableEdit ? function () { return handleEdit(target); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(target); } : undefined })));
             } }),

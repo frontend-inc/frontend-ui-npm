@@ -31,7 +31,7 @@ var DataListItem = function (props) {
         react_1.default.createElement(material_1.Stack, { sx: sx.container, spacing: 1, flexDirection: { xs: 'column', sm: 'row' } },
             react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "flex-start" },
                 selectable && (react_1.default.createElement(material_1.Checkbox, { checked: selected, onChange: handleChange, color: "primary", size: "small" })),
-                sortable && (react_1.default.createElement(__1.Icon, { name: "GripVertical", color: "text.secondary" })),
+                sortable && react_1.default.createElement(__1.Icon, { name: "GripVertical", color: "text.secondary" }),
                 react_1.default.createElement(material_1.Box, { sx: sx.image },
                     react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleClick },
                         react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: height, alt: primary }, slots.image))))),

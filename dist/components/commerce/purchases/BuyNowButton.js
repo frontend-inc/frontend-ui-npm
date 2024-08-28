@@ -107,8 +107,8 @@ var BuyNowButton = function (props) {
     return (react_1.default.createElement(material_1.Box, null,
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, alignItems: justifyContent },
             react_1.default.createElement(material_1.Button, { sx: sx.button, size: size, variant: "contained", color: "primary", onClick: handleClick, disabled: !availableForSale, startIcon: react_1.default.createElement(react_1.default.Fragment, null,
-                    purchased && (react_1.default.createElement(components_1.Icon, { name: "CheckCircle", size: 20, color: "primary.contrastText" })),
-                    !purchased && availableForSale == true && (react_1.default.createElement(components_1.Icon, { name: "CreditCard", size: 20, color: 'primary.contrastText' }))), endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, purchased
+                    purchased && (react_1.default.createElement(components_1.Icon, { name: "CheckCircle", color: "primary.contrastText" })),
+                    !purchased && availableForSale == true && (react_1.default.createElement(components_1.Icon, { name: "CreditCard", color: 'primary.contrastText' }))), endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, purchased
                 ? 'Purchased'
                 : "".concat(buttonText, " ").concat(displayAmount ? displayAmount : ''))),
         react_1.default.createElement(components_1.AlertModal, { loading: loading, open: purchaseModal, title: "Confirm Purchase", description: "Are you sure you want to purchase for ".concat(displayAmount, "?"), handleConfirm: handlePurchase, handleClose: function () { return setPurchaseModal(false); } })));

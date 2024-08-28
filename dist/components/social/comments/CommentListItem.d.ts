@@ -1,5 +1,5 @@
 import React from 'react';
-type CommentProps = {
+type CommentListItemProps = {
     url: string;
     handle: string;
     comment: any;
@@ -9,5 +9,5 @@ type CommentProps = {
     enableReply?: boolean;
     handleDelete?: (comment: any) => void;
 };
-declare const Comment: React.FC<CommentProps>;
-export default Comment;
+declare const CommentListItem: React.FC<CommentListItemProps>;
+export default CommentListItem;

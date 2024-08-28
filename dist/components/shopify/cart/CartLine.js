@@ -160,7 +160,7 @@ var CartLine = function (props) {
         }
     }, [price, sellingPlanAllocation]);
     return (react_1.default.createElement(material_1.ListItem, { disableGutters: true, sx: __assign(__assign({}, sx.root), (loading && sx.loading)), secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleRemoveLineItem, size: "small" },
-            react_1.default.createElement(components_1.Icon, { name: "X", size: 20 })) },
+            react_1.default.createElement(components_1.Icon, { name: "X" })) },
         react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
             react_1.default.createElement(material_1.Badge, { badgeContent: quantity, color: "secondary" },
                 react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleClick },

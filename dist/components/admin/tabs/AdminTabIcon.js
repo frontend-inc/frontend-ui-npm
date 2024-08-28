@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var LayoutTabIcon = function (props) {
     var icon = props.icon, _a = props.selected, selected = _a === void 0 ? false : _a, handleClick = props.handleClick;
-    return (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.root), (selected && sx.selected)), onClick: handleClick }, icon && react_1.default.createElement(components_1.Icon, { name: icon, size: 20 })));
+    return (react_1.default.createElement(material_1.IconButton, { sx: __assign(__assign({}, sx.root), (selected && sx.selected)), onClick: handleClick }, icon && react_1.default.createElement(components_1.Icon, { name: icon })));
 };
 exports.default = LayoutTabIcon;
 var sx = {

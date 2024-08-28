@@ -17,10 +17,11 @@ var DataToolbarModal = function (props) {
     return (react_1.default.createElement(material_1.Collapse, { in: open },
         react_1.default.createElement(material_1.Paper, { elevation: 0, sx: sx.root },
             react_1.default.createElement(material_1.Stack, { direction: "row", justifyContent: "space-between", alignItems: "center", width: "100%" },
-                react_1.default.createElement(material_1.Box, { width: "100%" }, children),
-                react_1.default.createElement(material_1.Box, { sx: sx.iconButton },
-                    react_1.default.createElement(material_1.IconButton, { onClick: handleClose },
-                        react_1.default.createElement(__1.Icon, { name: "X", size: 20 })))))));
+                react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
+                    react_1.default.createElement(material_1.Box, { display: "flex", alignItems: "center" },
+                        react_1.default.createElement(material_1.IconButton, { onClick: handleClose, sx: sx.closeButton },
+                            react_1.default.createElement(__1.Icon, { name: "X", size: 18 }))),
+                    children)))));
 };
 exports.default = DataToolbarModal;
 var sx = {
@@ -34,5 +35,8 @@ var sx = {
     iconButton: {
         width: '40px',
         height: '40px',
-    }
+    },
+    closeButton: {
+        bgcolor: 'secondary.light',
+    },
 };

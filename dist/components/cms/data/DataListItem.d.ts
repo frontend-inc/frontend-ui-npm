@@ -14,7 +14,6 @@ type DataListItemProps = {
     handleEdit?: () => void;
     handleDelete?: () => void;
     handleSelect?: () => void;
-    handleAddReference?: () => void;
     slots?: {
         item?: any;
         image?: any;

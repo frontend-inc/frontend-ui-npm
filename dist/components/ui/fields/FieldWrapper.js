@@ -24,7 +24,7 @@ var FieldWrapper = function (props) {
                 sx.labelRow)) },
             react_1.default.createElement(material_1.Typography, { variant: "caption", color: color }, label))),
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
-            icon && react_1.default.createElement(components_1.Icon, { name: icon, color: color, size: 20 }),
+            icon && react_1.default.createElement(components_1.Icon, { name: icon, color: color }),
             children)));
 };
 exports.default = FieldWrapper;
