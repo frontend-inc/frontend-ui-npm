@@ -27,7 +27,6 @@ var sx = {
         left: 0,
         p: 0,
         height: 44,
-        zIndex: function (theme) { return theme.zIndex.drawer - 1; },
     },
     item: {
         width: '100%',

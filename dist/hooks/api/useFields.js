@@ -6,7 +6,7 @@ var useFields = function (props) {
     var url = (props || {}).url;
     var _a = (0, frontend_js_1.useResource)({
         url: "".concat(url, "/form_fields"),
-        name: 'field'
+        name: 'field',
     }), loading = _a.loading, findMany = _a.findMany, formFields = _a.resources;
     (0, react_1.useEffect)(function () {
         if (url) {

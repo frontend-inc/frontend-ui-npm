@@ -10,6 +10,8 @@ type BooleanInputProps = {
     direction?: 'row' | 'column';
     size?: 'small' | 'large';
     info?: string;
+    debounceDelay?: number;
+    disableDebounce?: boolean;
 };
 declare const BooleanInput: React.FC<BooleanInputProps>;
 export default BooleanInput;

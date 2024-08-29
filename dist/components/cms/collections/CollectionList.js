@@ -50,7 +50,7 @@ var CollectionList = function (props) {
         header: defaultSlots.header,
         toolbar: __assign(__assign({}, defaultSlots.toolbar), { enableAddToList: enableAddToList, enableDelete: enableDelete, toolbarButtons: toolbarButtons }),
         empty: defaultSlots.empty,
-        item: __assign(__assign({}, defaultSlots.item), { href: href, circular: circular, disableImage: disableImage, style: style, buttons: buttons, displayFields: displayFields, enableLikes: enableLikes, enableFavorites: enableFavorites, enableRatings: enableRatings, enableComments: enableComments, enableAddToList: enableAddToList, enableUsers: enableUsers, enableGradient: enableGradient, enableOverlay: enableOverlay })
+        item: __assign(__assign({}, defaultSlots.item), { href: href, circular: circular, disableImage: disableImage, style: style, buttons: buttons, displayFields: displayFields, enableLikes: enableLikes, enableFavorites: enableFavorites, enableRatings: enableRatings, enableComments: enableComments, enableAddToList: enableAddToList, enableUsers: enableUsers, enableGradient: enableGradient, enableOverlay: enableOverlay }),
     };
     return (react_1.default.createElement(components_1.DataList, { selectable: selectable, grid: grid, url: url, foreignUrl: foreignUrl, name: "document", query: searchQuery, fields: fields, enableShow: enableShow, enableCreate: enableCreate, enableEdit: enableEdit, enableAddToList: enableAddToList, enableDelete: enableDelete, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, filterOptions: filterOptions, sortOptions: sortOptions, header: Header, toolbar: Toolbar, list: List, component: Component, show: Show, edit: Edit, create: Create, destroy: Destroy, empty: Empty, slots: slots }));
 };

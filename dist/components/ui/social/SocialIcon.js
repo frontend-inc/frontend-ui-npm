@@ -16,7 +16,7 @@ var SocialIcon = function (props) {
             /* @ts-ignore */
             network: provider, style: {
                 height: size,
-                width: size
+                width: size,
             } })));
 };
 exports.default = SocialIcon;

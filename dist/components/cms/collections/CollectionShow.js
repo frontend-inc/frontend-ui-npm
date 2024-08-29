@@ -16,7 +16,7 @@ var ShowModal = function (props) {
         react_1.default.createElement(__1.ShowItem, { style: "snippet", resource: resource, enableEdit: enableEdit, buttons: buttons, displayFields: displayFields, enableRatings: enableRatings, enablePayments: enablePayments, handleEdit: handleEdit, enableLikes: enableLikes, enableFavorites: enableFavorites, enableAddToList: enableAddToList, enableSharing: enableSharing, slots: {
                 image: {
                     disableBorderRadius: true,
-                }
+                },
             } }),
         enableComments && (react_1.default.createElement(material_1.Box, { px: 2 },
             react_1.default.createElement(__1.CommentList, { url: url, handle: resource === null || resource === void 0 ? void 0 : resource.handle })))));

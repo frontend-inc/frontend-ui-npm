@@ -1,6 +1,6 @@
 import React from 'react';
 type ButtonTabsProps = {
-    handleChange: (value: string | number) => void;
+    handleChange: (value: string | number | boolean) => void;
     options: {
         icon?: string;
         label?: string;
@@ -12,6 +12,8 @@ type ButtonTabsProps = {
     iconPosition?: 'start' | 'end' | 'top' | 'bottom';
     variant?: 'fullWidth' | 'scrollable';
     size?: 'small' | 'large';
+    debounceDelay?: number;
+    disableDebounce?: boolean;
 };
 declare const ButtonTabs: React.FC<ButtonTabsProps>;
 export default ButtonTabs;

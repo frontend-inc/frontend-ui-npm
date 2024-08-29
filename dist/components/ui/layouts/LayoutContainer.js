@@ -51,14 +51,13 @@ var LayoutContainer = function (props) {
                 xs: '100vh',
             } }) },
         react_1.default.createElement(components_1.Alert, null),
-        (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0 && (react_1.default.createElement(components_2.Notifications, { notifications: notifications })),
         react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (sideNav && sx.sideNav)) },
             header,
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (sideNav ? sx.contentSideNav : sx.contentTopNav)), (enableNotifications && sx.contentNotifications)) },
-                react_1.default.createElement(components_1.AdminLayoutScroll, null,
-                    react_1.default.createElement(components_1.AuthGuard, { roles: roles, requireAuth: requireAuth, requirePaid: requirePaid, requireTeam: requireTeam },
-                        children,
-                        footer))))));
+                react_1.default.createElement(components_1.AuthGuard, { roles: roles, requireAuth: requireAuth, requirePaid: requirePaid, requireTeam: requireTeam },
+                    (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0 && (react_1.default.createElement(components_2.Notifications, { notifications: notifications })),
+                    children,
+                    footer)))));
 };
 exports.default = LayoutContainer;
 var sx = {
@@ -90,6 +89,7 @@ var sx = {
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
+        overflowY: 'hidden',
     },
     contentNotifications: {
         pb: '45px',

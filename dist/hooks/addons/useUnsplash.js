@@ -47,10 +47,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var hooks_1 = require("../../hooks");
-var frontend_js_1 = require("frontend-js");
 var useUnsplash = function (params) {
     var apiKey = (params || {}).apiKey;
-    var api = (0, frontend_js_1.useApi)().api;
     var _a = (0, hooks_1.useLoadingWrapper)(), loading = _a.loading, loadingWrapper = _a.loadingWrapper;
     var _b = (0, react_1.useState)(1), page = _b[0], setPage = _b[1];
     var _c = (0, react_1.useState)([]), images = _c[0], setImages = _c[1];

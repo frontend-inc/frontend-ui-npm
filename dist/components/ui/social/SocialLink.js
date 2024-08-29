@@ -63,7 +63,7 @@ var SocialLink = function (props) {
     return (react_1.default.createElement(material_1.IconButton, { size: "small", onClick: handleClick },
         react_1.default.createElement(react_social_icons_1.SocialIcon, { fgColor: fgColor, network: provider, style: {
                 height: 32,
-                width: 32
+                width: 32,
             } })));
 };
 exports.default = SocialLink;

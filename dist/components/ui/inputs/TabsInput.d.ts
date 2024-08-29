@@ -17,6 +17,8 @@ type TabsInputProps = {
     size?: 'small' | 'large';
     direction?: 'row' | 'column';
     info?: string;
+    debounceDelay?: number;
+    disableDebounce?: boolean;
 };
 declare const TabsInput: React.FC<TabsInputProps>;
 export default TabsInput;

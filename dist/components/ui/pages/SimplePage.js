@@ -19,13 +19,13 @@ var material_1 = require("@mui/material");
 var SimplePage = function (props) {
     var _a = props || {}, title = _a.title, body = _a.body, publishedAt = _a.publishedAt, _b = _a.html, html = _b === void 0 ? false : _b, _c = _a.disablePadding, disablePadding = _c === void 0 ? false : _c;
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (disablePadding && sx.rootDisablePadding)) },
-        react_1.default.createElement(material_1.Stack, { direction: 'column', spacing: 2, sx: sx.content },
-            react_1.default.createElement(material_1.Typography, { variant: "h2", color: 'text.primary', sx: sx.title }, title),
+        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.content },
+            react_1.default.createElement(material_1.Typography, { variant: "h2", color: "text.primary", sx: sx.title }, title),
             react_1.default.createElement(material_1.Typography, { variant: "caption", sx: sx.caption },
                 "Last updated ",
                 publishedAt),
-            html ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.primary', sx: sx.text },
-                react_1.default.createElement("div", { dangerouslySetInnerHTML: { __html: body } }))) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.primary', sx: sx.text }, body)))));
+            html ? (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text },
+                react_1.default.createElement("div", { dangerouslySetInnerHTML: { __html: body } }))) : (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.text }, body)))));
 };
 exports.default = SimplePage;
 var sx = {
@@ -37,19 +37,19 @@ var sx = {
         alignItems: 'flex-start',
     },
     rootDisablePadding: {
-        p: 0
+        p: 0,
     },
     content: {
         width: '100%',
-        maxWidth: 800
+        maxWidth: 800,
     },
     title: {
-        textAlign: 'center'
+        textAlign: 'center',
     },
     caption: {
-        textAlign: 'center'
+        textAlign: 'center',
     },
     text: {
-        whiteSpace: 'pre-line'
-    }
+        whiteSpace: 'pre-line',
+    },
 };

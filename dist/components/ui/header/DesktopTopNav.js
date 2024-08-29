@@ -52,7 +52,7 @@ var sx = {
     },
     appBarNotifications: {
         position: 'absolute',
-        top: 40,
+        //top: 40,
     },
     desktopTopNav: {
         width: '100%',

@@ -31,7 +31,7 @@ var AdminSocialLinkForm = function (props) {
                     { label: 'TikTok', value: 'tiktok' },
                     { label: 'WhatsApp', value: 'whatsapp' },
                     { label: 'Github', value: 'github' },
-                ]
+                ],
             },
             {
                 label: 'URL',

@@ -8,7 +8,7 @@ type FooterProps = {
         url: string;
         position: number;
     }[];
-    handleClick: (MenuItem: MenuLinkType) => void;
+    handleClick: (path: string) => void;
 };
 declare const Footer: React.FC<FooterProps>;
 export default Footer;
