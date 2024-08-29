@@ -3,8 +3,10 @@ import { MenuLinkType } from '../../../types';
 type FooterProps = {
     menuLinks: MenuLinkType[];
     socialLinks: {
-        name: string;
+        label: string;
+        provider: string;
         url: string;
+        position: number;
     }[];
     handleClick: (MenuItem: MenuLinkType) => void;
 };

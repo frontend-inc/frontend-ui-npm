@@ -20,6 +20,11 @@ export type MenuLinkType = {
     shopify_handle?: string;
     children: MenuLinkType[] | [];
 };
+export type PolicyLinkType = {
+    name: string;
+    url: string;
+    position?: number;
+};
 export type NotificationTypes = 'text' | 'page' | 'document' | 'shopify_collection' | 'shopify_product' | 'url';
 export type NotificationType = {
     text: string;

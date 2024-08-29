@@ -20,7 +20,7 @@ var IconLoading = function (props) {
     var _a = props.loading, loading = _a === void 0 ? false : _a, _b = props.color, color = _b === void 0 ? 'primary.contrastText' : _b;
     if (!loading)
         return null;
-    return (react_1.default.createElement(material_1.CircularProgress, { disableShrink: true, sx: __assign(__assign({}, sx.loader), { color: color }) }));
+    return (react_1.default.createElement(material_1.CircularProgress, { disableShrink: true, sx: __assign(__assign({}, sx.loader), { color: color }), size: 20 }));
 };
 exports.default = IconLoading;
 var sx = {

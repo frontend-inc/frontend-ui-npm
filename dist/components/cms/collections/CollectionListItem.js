@@ -29,12 +29,11 @@ var CollectionListItem = function (props) {
         avatar: __1.AvatarCard,
         cover: __1.CoverCard,
         chip: __1.ChipCard,
-        table: __1.TableCard,
         text: __1.TextCard,
         list: __1.ListCard,
     };
     var Component = COMPONENTS[style] || __1.Card;
-    return (react_1.default.createElement(Component, { selectable: selectable, selected: selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource === null || resource === void 0 ? void 0 : resource.id), handleSelect: function () { return handleSelect(resource); }, label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.title, secondary: react_1.default.createElement(__2.SecondaryFields, { enableRatings: enableRatings, enableUsers: enableUsers, fields: displayFields, resource: resource }), actions: react_1.default.createElement(material_1.Box, null,
+    return (react_1.default.createElement(Component, { label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.title, handleClick: handleClick, selectable: selectable, selected: selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource === null || resource === void 0 ? void 0 : resource.id), handleSelect: function () { return handleSelect(resource); }, secondary: react_1.default.createElement(__2.SecondaryFields, { enableRatings: enableRatings, enableUsers: enableUsers, fields: displayFields, resource: resource }), actions: react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(__2.SocialButtons, { spacing: 0, variant: "icon", justifyContent: "flex-start", resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments, enableAddToList: enableAddToList })), secondaryAction: react_1.default.createElement(__2.ButtonActions, { numVisible: 0, buttons: (0, helpers_1.buildActions)({
                 enableEdit: enableEdit,
                 enableDelete: enableDelete,

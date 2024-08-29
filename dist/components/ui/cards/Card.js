@@ -40,8 +40,8 @@ var sx = {
         borderRadius: 1,
         width: '100%',
         minWidth: 280,
-        bgcolor: 'background.default',
         transition: 'box-shadow 0.3s',
+        bgcolor: 'background.paper',
         border: '1px solid',
         borderColor: 'divider',
         '&:hover': {
@@ -63,7 +63,6 @@ var sx = {
         height: '100%',
         justifyContent: 'space-between',
         alignItems: 'space-between',
-        bgcolor: 'background.default',
     },
     content: {
         height: '100%',

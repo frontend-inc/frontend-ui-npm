@@ -20,7 +20,7 @@ var ToolbarModal = function (props) {
                 react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
                     react_1.default.createElement(material_1.Box, { display: "flex", alignItems: "center" },
                         react_1.default.createElement(material_1.IconButton, { onClick: handleClose, sx: sx.closeButton },
-                            react_1.default.createElement(__1.Icon, { name: "X", size: 18 }))),
+                            react_1.default.createElement(__1.Icon, { name: "X", size: 18, color: "secondary.contrastText" }))),
                     children)))));
 };
 exports.default = ToolbarModal;

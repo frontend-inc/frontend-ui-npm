@@ -26,6 +26,7 @@ __exportStar(require("./forms"), exports);
 __exportStar(require("./inputs"), exports);
 __exportStar(require("./metafields"), exports);
 __exportStar(require("./payments"), exports);
+__exportStar(require("./policies"), exports);
 __exportStar(require("./router"), exports);
 __exportStar(require("./storage"), exports);
 __exportStar(require("./styles"), exports);

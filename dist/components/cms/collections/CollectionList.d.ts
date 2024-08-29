@@ -4,6 +4,7 @@ export type CollectionListProps = {
     grid?: boolean;
     selectable?: boolean;
     style: string;
+    href?: string;
     displayFields: DisplayFieldType[];
     enableLikes?: boolean;
     enableFavorites?: boolean;

@@ -132,7 +132,6 @@ var CommentList = function (props) {
             react_1.default.createElement(material_1.Collapse, { in: true },
                 react_1.default.createElement(__1.CommentForm, { errors: errors, loading: loading, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit }))),
         react_1.default.createElement(material_1.List, { disablePadding: true }, comments === null || comments === void 0 ? void 0 : comments.map(function (comment, i) { return (react_1.default.createElement(__1.CommentListItem, { key: i, url: url, handle: handle, comment: comment, handleDelete: handleDeleteComment })); })),
-        !loading && (comments === null || comments === void 0 ? void 0 : comments.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: "MessageSquare", title: "There are no comments.", description: "Be the first to leave a comment." })),
         react_1.default.createElement(__1.LoadMore, { handlePaginate: loadMore, page: page, numPages: numPages }),
         react_1.default.createElement(__1.AlertModal, { loading: loading, open: openDelete, handleClose: function () { return setOpenDelete(false); }, handleConfirm: handleDelete })));
 };

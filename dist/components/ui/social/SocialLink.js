@@ -7,8 +7,10 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 //@ts-ignore
 var react_social_icons_1 = require("react-social-icons");
+var material_2 = require("@mui/material");
+var lodash_1 = require("lodash");
 var SocialLink = function (props) {
-    var _a = props || {}, provider = _a.provider, url = _a.url, _b = _a.color, color = _b === void 0 ? 'text.primary' : _b;
+    var _a = props || {}, provider = _a.provider, _b = _a.size, size = _b === void 0 ? 24 : _b, url = _a.url, _c = _a.color, color = _c === void 0 ? 'primary.contrastText' : _c;
     var formatUrl = function (username) {
         switch (provider) {
             case 'facebook':
@@ -56,11 +58,12 @@ var SocialLink = function (props) {
             window.open(formatUrl(url), '_blank');
         }
     };
+    var theme = (0, material_2.useTheme)();
+    var fgColor = (0, lodash_1.get)(theme, "palette.".concat(color));
     return (react_1.default.createElement(material_1.IconButton, { size: "small", onClick: handleClick },
-        react_1.default.createElement(react_social_icons_1.SocialIcon, { network: provider, color: color, style: styles })));
+        react_1.default.createElement(react_social_icons_1.SocialIcon, { fgColor: fgColor, network: provider, style: {
+                height: 32,
+                width: 32
+            } })));
 };
 exports.default = SocialLink;
-var styles = {
-    height: 24,
-    width: 24,
-};

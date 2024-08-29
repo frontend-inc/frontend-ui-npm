@@ -38,7 +38,7 @@ var ShowItem = function (props) {
     var Component = components[style] || components_1.Hero;
     var handleEdit = (0, hooks_1.useForms)().handleEdit;
     var slots = {
-        image: __assign(__assign({}, defaultSlots.image), { enableGradient: enableGradient, enableOverlay: enableOverlay }),
+        image: __assign({ enableGradient: enableGradient, enableOverlay: enableOverlay }, defaultSlots.image),
         content: __assign({}, defaultSlots.content),
     };
     var slotProps = {

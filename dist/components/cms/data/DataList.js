@@ -45,10 +45,9 @@ var DataList = function (props) {
         react_1.default.createElement(__1.DataFetcher, { query: query },
             react_1.default.createElement(Header, __assign({ url: url, query: query, enableSearch: enableSearch, enableCreate: enableCreate, enableFilters: enableFilters, enableSorting: enableSorting, filterOptions: filterOptions, sortOptions: sortOptions }, slots.header)),
             react_1.default.createElement(Toolbar, __assign({}, slots.toolbar, { buttons: buttons })),
-            react_1.default.createElement(List, { grid: grid, selectable: selectable, href: href, enableEdit: enableEdit, enableDelete: enableDelete, enableAddToList: enableAddToList, component: Component, slots: {
-                    list: slots.list,
+            react_1.default.createElement(List, __assign({ grid: grid, selectable: selectable, href: href, enableEdit: enableEdit, enableDelete: enableDelete, enableAddToList: enableAddToList, component: Component }, slots.list, { slots: {
                     item: slots.item,
-                } }),
+                } })),
             react_1.default.createElement(Edit, __assign({ fields: fields, parentResource: resource }, slots.edit)),
             react_1.default.createElement(Create, __assign({ fields: fields, parentResource: resource }, slots.create)),
             react_1.default.createElement(Empty, __assign({ icon: emptyIcon, title: emptyTitle, description: emptyDescription }, slots.empty)),

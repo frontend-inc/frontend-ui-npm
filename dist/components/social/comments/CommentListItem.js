@@ -77,7 +77,6 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var components_2 = require("../../../components");
 var moment_1 = __importDefault(require("moment"));
 var CommentForm_1 = __importDefault(require("./CommentForm"));
 var CommentListItem = function (props) {
@@ -117,19 +116,20 @@ var CommentListItem = function (props) {
         });
     }, [parentComment]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.ListItem, { sx: __assign({}, sx.listItem), secondaryAction: react_1.default.createElement(material_1.IconButton, { onClick: handleReply },
-                react_1.default.createElement(components_2.Icon, { name: "MessageSquare" })) },
+        react_1.default.createElement(material_1.ListItem, { sx: __assign({}, sx.listItem) },
             react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(components_1.UserAvatar, { user: parentComment === null || parentComment === void 0 ? void 0 : parentComment.user })),
-            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.commentText }, parentComment === null || parentComment === void 0 ? void 0 : parentComment.body), secondary: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary", sx: sx.caption }, "@".concat((_a = parentComment === null || parentComment === void 0 ? void 0 : parentComment.user) === null || _a === void 0 ? void 0 : _a.username),
-                    " commented",
-                    ' ',
-                    (0, moment_1.default)(parentComment === null || parentComment === void 0 ? void 0 : parentComment.created_at).fromNow()) })),
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Stack, { spacing: 0.5 },
+                    react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, "@".concat((_a = parentComment === null || parentComment === void 0 ? void 0 : parentComment.user) === null || _a === void 0 ? void 0 : _a.username),
+                        " -",
+                        ' ',
+                        (0, moment_1.default)(parentComment === null || parentComment === void 0 ? void 0 : parentComment.created_at).fromNow()),
+                    react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.commentText }, parentComment === null || parentComment === void 0 ? void 0 : parentComment.body)), secondary: react_1.default.createElement(material_1.Link, { onClick: handleReply, sx: sx.link }, "reply") })),
         react_1.default.createElement(material_1.Collapse, { in: openComment },
             react_1.default.createElement(CommentForm_1.default, { loading: delayedLoading, errors: errors, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit })),
         ((_b = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _b === void 0 ? void 0 : _b.length) > 0 && (react_1.default.createElement(react_1.default.Fragment, null, !showReplies && (react_1.default.createElement(material_1.Box, null,
-            react_1.default.createElement(material_1.Link, { sx: sx.link, onClick: handleShowReplies },
-                "Show ", (_c = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _c === void 0 ? void 0 :
+            react_1.default.createElement(material_1.Link, { variant: "body1", sx: sx.link, onClick: handleShowReplies },
+                "show ", (_c = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _c === void 0 ? void 0 :
                 _c.length,
                 ' ',
                 ((_d = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _d === void 0 ? void 0 : _d.length) > 1 ? 'replies' : 'reply'))))),
@@ -174,15 +174,10 @@ var sx = {
             color: 'text.primary',
         },
     },
-    caption: {
-        fontSize: 14,
-    },
-    footerText: {},
     showReplyButton: {
         color: 'text.secondary',
     },
     divider: {
-        pb: 1,
         borderBottom: '1px solid',
         borderColor: 'divider',
     },

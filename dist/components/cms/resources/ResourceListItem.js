@@ -37,10 +37,8 @@ var ResourceListItem = function (props) {
             !avatar && image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(__1.Image, { src: image, width: 32, height: 32, alt: image }))),
             icon && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                react_1.default.createElement(material_1.Avatar, { sx: {
-                        bgcolor: color,
-                    } },
-                    react_1.default.createElement(__1.Icon, { name: icon, size: 24, color: 'primary.contrastText' })))),
+                react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign({}, sx.avatar), { bgcolor: color }) },
+                    react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: 'primary.contrastText' })))),
             react_1.default.createElement(material_1.ListItemText, { primary: primary, secondary: secondary }))));
 };
 exports.default = ResourceListItem;
@@ -58,6 +56,9 @@ var sx = {
     },
     listItemButton: {
         p: 1,
+        borderRadius: 1,
+    },
+    avatar: {
         borderRadius: 1,
     },
     buttons: {

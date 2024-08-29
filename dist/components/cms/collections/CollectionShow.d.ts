@@ -14,6 +14,7 @@ export type ShowModalProps = {
     enableLikes?: boolean;
     enableSharing?: boolean;
     enableRatings?: boolean;
+    enableAddToList?: boolean;
     enableUsers?: boolean;
     enablePayments?: boolean;
     handleEdit?: () => void;
