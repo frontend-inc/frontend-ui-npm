@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InputLabel = exports.DropZone = exports.URLInput = exports.TabsInput = exports.SearchInput = exports.SwitchInput = exports.SelectInput = exports.NoSpaceInput = exports.ReferenceInput = exports.RatingInput = exports.RadioInput = exports.TextInput = exports.PriceRangeInput = exports.PhoneInput = exports.NumberRangeInput = exports.NumberSliderInput = exports.JsonArrayInput = exports.JSONInput = exports.Input = exports.ImageInput = exports.HelperText = exports.EmailInput = exports.ErrorInput = exports.ErrorText = exports.EditableTextInput = exports.EditableTypography = exports.DateInput = exports.ColorInput = exports.CheckboxInput = exports.CheckboxGroupInput = exports.BooleanInput = exports.AttachmentInput = exports.ArrayListInput = exports.ArrayInput = exports.AutocompleteInput = void 0;
+exports.ShopifyProductsInput = exports.ShopifyProductInput = exports.LocationInput = exports.InputLabel = exports.DropZone = exports.URLInput = exports.TabsInput = exports.SearchInput = exports.SwitchInput = exports.SelectInput = exports.NoSpaceInput = exports.ReferenceInput = exports.RatingInput = exports.RadioInput = exports.TextInput = exports.PriceRangeInput = exports.PhoneInput = exports.NumberRangeInput = exports.NumberSliderInput = exports.JsonArrayInput = exports.JSONInput = exports.Input = exports.ImageInput = exports.HelperText = exports.EmailInput = exports.ErrorInput = exports.ErrorText = exports.EditableTextInput = exports.EditableTypography = exports.DateInput = exports.ColorInput = exports.CheckboxInput = exports.CheckboxGroupInput = exports.BooleanInput = exports.AttachmentInput = exports.ArrayListInput = exports.ArrayInput = exports.AutocompleteInput = void 0;
 // Inputs
 var AutocompleteInput_1 = require("./AutocompleteInput");
 Object.defineProperty(exports, "AutocompleteInput", { enumerable: true, get: function () { return __importDefault(AutocompleteInput_1).default; } });
@@ -76,3 +76,10 @@ var DropZone_1 = require("./helpers/DropZone");
 Object.defineProperty(exports, "DropZone", { enumerable: true, get: function () { return __importDefault(DropZone_1).default; } });
 var InputLabel_1 = require("./helpers/InputLabel");
 Object.defineProperty(exports, "InputLabel", { enumerable: true, get: function () { return __importDefault(InputLabel_1).default; } });
+// Addons
+var LocationInput_1 = require("./addons/LocationInput");
+Object.defineProperty(exports, "LocationInput", { enumerable: true, get: function () { return __importDefault(LocationInput_1).default; } });
+var ShopifyProductInput_1 = require("./addons/ShopifyProductInput");
+Object.defineProperty(exports, "ShopifyProductInput", { enumerable: true, get: function () { return __importDefault(ShopifyProductInput_1).default; } });
+var ShopifyProductsInput_1 = require("./addons/ShopifyProductsInput");
+Object.defineProperty(exports, "ShopifyProductsInput", { enumerable: true, get: function () { return __importDefault(ShopifyProductsInput_1).default; } });

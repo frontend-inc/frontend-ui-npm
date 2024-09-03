@@ -87,6 +87,7 @@ var ResourceToolbar_1 = __importDefault(require("./ResourceToolbar"));
 var ResourceList = function (props) {
     var SLOT_PROPS = {
         list: {},
+        item: {},
         edit: {},
         create: {},
         show: {},
@@ -102,7 +103,7 @@ var ResourceList = function (props) {
     var _5 = (0, frontend_js_1.useResource)({
         name: name,
         url: url,
-    }), loading = _5.delayedLoading, errors = _5.errors, resource = _5.resource, resources = _5.resources, setResource = _5.setResource, update = _5.update, create = _5.create, destroy = _5.destroy, updatePositions = _5.updatePositions, handleChange = _5.handleChange, query = _5.query, findOne = _5.findOne, findMany = _5.findMany, reloadMany = _5.reloadMany, removeAttachment = _5.removeAttachment, page = _5.page, numPages = _5.numPages, totalCount = _5.totalCount, loadMore = _5.loadMore, paginate = _5.paginate, selected = _5.selected, selectedIds = _5.selectedIds, handleSelect = _5.handleSelect, handleClear = _5.handleClear;
+    }), loading = _5.delayedLoading, errors = _5.errors, resource = _5.resource, resources = _5.resources, setResource = _5.setResource, update = _5.update, create = _5.create, destroy = _5.destroy, updatePositions = _5.updatePositions, handleChange = _5.handleChange, query = _5.query, findMany = _5.findMany, reloadMany = _5.reloadMany, removeAttachment = _5.removeAttachment, page = _5.page, numPages = _5.numPages, totalCount = _5.totalCount, loadMore = _5.loadMore, paginate = _5.paginate, reloadOne = _5.reloadOne, selected = _5.selected, selectedIds = _5.selectedIds, handleSelect = _5.handleSelect, handleClear = _5.handleClear;
     var _6 = (0, react_1.useState)(''), keywords = _6[0], setKeywords = _6[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
@@ -206,16 +207,20 @@ var ResourceList = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    if (!enableShow) return [3 /*break*/, 2];
-                    return [4 /*yield*/, findOne(resource === null || resource === void 0 ? void 0 : resource.id)];
+                    if (!handleClick) return [3 /*break*/, 1];
+                    handleClick(resource);
+                    return [3 /*break*/, 3];
                 case 1:
+                    if (!enableShow) return [3 /*break*/, 3];
+                    return [4 /*yield*/, reloadOne(resource === null || resource === void 0 ? void 0 : resource.id)];
+                case 2:
                     resp = _a.sent();
                     setResource(resp);
                     setOpenShow(true);
                     setOpenEdit(false);
                     setOpenCreate(false);
-                    _a.label = 2;
-                case 2: return [2 /*return*/];
+                    _a.label = 3;
+                case 3: return [2 /*return*/];
             }
         });
     }); };
@@ -284,21 +289,19 @@ var ResourceList = function (props) {
     var enableFilters = (filterOptions === null || filterOptions === void 0 ? void 0 : filterOptions.length) > 0;
     var enableSorting = (sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.length) > 0;
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
-        react_1.default.createElement(Header, __assign({ selected: selected, direction: direction, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, enableCreate: enableCreate, handleSearch: handleSearch, handleKeywordChange: handleKeywordChange, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSort: handleSort, handleSortDirection: handleSortDirection, handleAdd: handleAdd, keywords: keywords, activeFilters: activeFilters, filterOptions: filterOptions, sortOptions: sortOptions, query: query }, slots.header)),
-        react_1.default.createElement(Toolbar, __assign({ selected: selected, selectedIds: selectedIds, open: (selected === null || selected === void 0 ? void 0 : selected.length) > 0, handleClose: handleClear, buttons: buttons, onSuccess: handleSuccess }, slots.toolbar)),
+        react_1.default.createElement(Header, __assign({ selected: selected, direction: direction, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, enableCreate: enableCreate, handleSearch: handleSearch, handleKeywordChange: handleKeywordChange, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSort: handleSort, handleSortDirection: handleSortDirection, handleAdd: handleAdd, keywords: keywords, handleReload: reloadMany, activeFilters: activeFilters, filterOptions: filterOptions, sortOptions: sortOptions, query: query }, slots.header)),
+        react_1.default.createElement(Toolbar, __assign({ selected: selected, selectedIds: selectedIds, open: (selected === null || selected === void 0 ? void 0 : selected.length) > 0, handleClose: handleClear, buttons: buttons, onSuccess: handleSuccess, handleReload: reloadMany }, slots.toolbar)),
         react_1.default.createElement(material_1.Box, { sx: __assign({}, (loading && sx.loading)) },
-            !sortable ? (react_1.default.createElement(List, { query: query, headers: headers, page: page, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate, handleSort: handleSort, resources: resources, renderItem: function (resource, props) { return (react_1.default.createElement(Component, __assign({ key: resource === null || resource === void 0 ? void 0 : resource.id, selectable: selectable, resource: resource, selected: 
+            !sortable ? (react_1.default.createElement(List, __assign({ query: query, headers: headers, page: page, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate, handleSort: handleSort, resources: resources, renderItem: function (resource, props) { return (react_1.default.createElement(Component, __assign({ key: resource === null || resource === void 0 ? void 0 : resource.id, selectable: selectable, resource: resource, selected: 
                     //@ts-ignore
-                    selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource === null || resource === void 0 ? void 0 : resource.id), enableSelect: selectable, enableBorder: enableBorder, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: handleClick
-                        ? function () { return handleClick(resource); }
-                        : function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleSelect: function () { return handleSelect(resource); } }, props, slots.list))); } })) : (react_1.default.createElement(__1.SortableListItems, { droppableId: "sortable", resources: resources, handleDrop: handleDrop, page: page, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate, renderItem: function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, sortable: true, selectable: selectable, selected: 
+                    selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource === null || resource === void 0 ? void 0 : resource.id), enableSelect: selectable, enableBorder: enableBorder, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleSelect: function () { return handleSelect(resource); }, handleReload: reloadMany }, slots.item))); } }, slots.list))) : (react_1.default.createElement(__1.SortableListItems, __assign({ droppableId: "sortable", resources: resources, handleDrop: handleDrop, page: page, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate, handleReload: reloadMany, renderItem: function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, sortable: true, selectable: selectable, selected: 
                     // @ts-ignore
                     selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource === null || resource === void 0 ? void 0 : resource.id), resource: resource, enableBorder: enableBorder, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: handleClick
                         ? function () { return handleClick(resource); }
-                        : function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleSelect: function () { return handleSelect(resource); } }, slots.list))); } })),
+                        : function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleSelect: function () { return handleSelect(resource); }, handleReload: reloadMany }, slots.item))); } }, slots.list))),
             !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: emptyIcon, title: emptyTitle, description: emptyDescription }))),
-        react_1.default.createElement(CreateForm, __assign({ open: openCreate, handleClose: function () { return setOpenCreate(false); }, loading: loading, errors: errors, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, fields: fields }, slots.create)),
-        react_1.default.createElement(EditForm, __assign({ open: openEdit, handleClose: function () { return setOpenEdit(false); }, loading: loading, errors: errors, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, fields: fields }, slots.edit)),
+        react_1.default.createElement(CreateForm, __assign({ open: openCreate, handleClose: function () { return setOpenCreate(false); }, loading: loading, errors: errors, resource: resource, setResource: setResource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, fields: fields }, slots.create)),
+        react_1.default.createElement(EditForm, __assign({ open: openEdit, handleClose: function () { return setOpenEdit(false); }, loading: loading, errors: errors, resource: resource, setResource: setResource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, fields: fields }, slots.edit)),
         react_1.default.createElement(ShowModal, __assign({ loading: loading, open: openShow, handleClose: function () { return setOpenShow(false); }, fields: displayFields, resource: resource, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); } }, slots.show)),
         react_1.default.createElement(__1.AlertModal, { open: openDelete, handleClose: function () { return setOpenDelete(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };

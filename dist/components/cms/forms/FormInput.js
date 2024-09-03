@@ -39,6 +39,7 @@ var FormInput = function (props) {
         image: components_1.ImageInput,
         json: components_1.JSONInput,
         shopify: components_1.ShopifyProductInput,
+        shopify_products: components_1.ShopifyProductsInput,
         habtm: components_1.ReferenceInput,
     };
     var inputProps = {

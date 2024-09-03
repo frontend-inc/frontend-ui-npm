@@ -54,5 +54,6 @@ var sx = {
         '&::-webkit-scrollbar': {
             display: 'none',
         },
+        overflowY: 'hidden',
     },
 };

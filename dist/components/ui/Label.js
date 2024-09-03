@@ -20,7 +20,7 @@ var Label = function (props) {
     var label = props.label, _a = props.darkMode, darkMode = _a === void 0 ? false : _a, color = props.color, styles = props.styles;
     if (!label)
         return null;
-    return (react_1.default.createElement(material_1.Chip, { label: react_1.default.createElement(material_1.Typography, { variant: "overline" }, label), sx: __assign(__assign(__assign(__assign({}, sx.chip), (darkMode && sx.darkMode)), (color && { bgcolor: color })), styles), size: "small" }));
+    return (react_1.default.createElement(material_1.Chip, { label: label, sx: __assign(__assign(__assign(__assign({}, sx.chip), (darkMode && sx.darkMode)), (color && { bgcolor: color })), styles), size: "small" }));
 };
 exports.default = Label;
 var sx = {
@@ -30,6 +30,7 @@ var sx = {
         cursor: 'pointer',
         borderRadius: 0.5,
         boxShadow: '1px 0px 0 0 rgba(0,0,0,0.1)',
+        textTransform: 'uppercase',
     },
     darkMode: {
         bgcolor: 'background.paper',

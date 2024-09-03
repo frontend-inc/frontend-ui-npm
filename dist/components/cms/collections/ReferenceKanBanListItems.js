@@ -109,21 +109,21 @@ var ReferenceKanBanListItems = function (props) {
         setOpenEdit(true);
     };
     var handleDrop = function (movedItem, value, columns) { return __awaiter(void 0, void 0, void 0, function () {
-        var movedDocument, columnItems;
+        var columnItems, movedDocument;
         var _a;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     setResource(null);
-                    movedDocument = (0, frontend_js_2.changeDocumentValue)(movedItem, fieldName, value);
-                    return [4 /*yield*/, updateMany([movedDocument === null || movedDocument === void 0 ? void 0 : movedDocument.id], (_a = {}, _a[fieldName] = value, _a))];
-                case 1:
-                    _b.sent();
                     columnItems = Object.keys(columns).map(function (key) { return columns[key]; });
                     columnItems = columnItems.reduce(function (acc, val) { return acc.concat(val); }, []);
                     columnItems = columnItems.map(function (item, index) {
                         return __assign(__assign({}, item), { position: index });
                     });
+                    movedDocument = (0, frontend_js_2.changeDocumentValue)(movedItem, fieldName, value);
+                    return [4 /*yield*/, updateMany([movedDocument === null || movedDocument === void 0 ? void 0 : movedDocument.id], (_a = {}, _a[fieldName] = value, _a))];
+                case 1:
+                    _b.sent();
                     updatePositions(columnItems);
                     return [2 /*return*/];
             }

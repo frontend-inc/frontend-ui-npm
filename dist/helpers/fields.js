@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateFieldConditions = void 0;
 var validateFieldConditions = function (conditions, item) {
+    if (!item)
+        return;
     var isValid = true;
     if ((conditions === null || conditions === void 0 ? void 0 : conditions.length) > 0) {
         conditions.forEach(function (condition) {

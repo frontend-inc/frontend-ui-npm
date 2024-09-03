@@ -1,6 +1,7 @@
 import React from 'react';
 type AdminPolicyItemProps = {
     resource: any;
+    enableBorder?: boolean;
     sortable?: boolean;
     handleClick: () => void;
     handleEdit: () => void;

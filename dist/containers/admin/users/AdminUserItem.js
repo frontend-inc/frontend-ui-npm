@@ -28,10 +28,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
-var frontend_js_1 = require("frontend-js");
 var AdminUserItem = function (props) {
     var user = props.resource, selectable = props.selectable, selected = props.selected, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, rest = __rest(props, ["resource", "selectable", "selected", "handleClick", "handleEdit", "handleDelete", "handleSelect"]);
-    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     return (react_1.default.createElement(components_1.ResourceListItem, __assign({ selectable: selectable, selected: selected, primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, user === null || user === void 0 ? void 0 :
             user.name,
             " ",

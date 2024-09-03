@@ -43,6 +43,7 @@ export type ResourceListProps = {
     buttons?: ToolbarButtonType[];
     slots?: {
         list?: any;
+        item?: any;
         edit?: any;
         create?: any;
         show?: any;

@@ -30,6 +30,7 @@ var Cell = function (props) {
         user: components_1.CellUser,
         team: components_1.CellTeam,
         file: components_1.CellFile,
+        shopify_products: components_1.CellArray
     };
     var CellComponent = componentMapper[field.variant];
     return (react_1.default.createElement(CellComponent, { value: value, row: row, field: field, handleClick: handleClick }));

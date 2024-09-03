@@ -1,9 +1,9 @@
 import React from 'react';
-import { MetafieldIdentifierType, ProductType } from 'frontend-shopify';
+import { ShopifyMetafieldType, ProductType } from 'frontend-shopify';
 export type ProductDetailsProps = {
     shopifyProduct: ProductType;
     buttonText?: string;
-    metafields?: MetafieldIdentifierType[];
+    metafields?: ShopifyMetafieldType[];
     enableQuantity?: boolean;
     enableFavorites?: boolean;
     enableSubscription?: boolean;

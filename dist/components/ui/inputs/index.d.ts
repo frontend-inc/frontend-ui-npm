@@ -33,3 +33,6 @@ export { default as TabsInput } from './TabsInput';
 export { default as URLInput } from './URLInput';
 export { default as DropZone } from './helpers/DropZone';
 export { default as InputLabel } from './helpers/InputLabel';
+export { default as LocationInput } from './addons/LocationInput';
+export { default as ShopifyProductInput } from './addons/ShopifyProductInput';
+export { default as ShopifyProductsInput } from './addons/ShopifyProductsInput';

@@ -50,19 +50,24 @@ var shopify_1 = require("../../../shopify");
 var frontend_shopify_1 = require("frontend-shopify");
 var frontend_shopify_2 = require("frontend-shopify");
 var MetafieldProducts = function (props) {
-    var handle = props.handle, href = props.href, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, metafield = props.metafield, rest = __rest(props, ["handle", "href", "layout", "metafield"]);
+    var shopifyProduct = props.shopifyProduct, href = props.href, _a = props.layout, layout = _a === void 0 ? 'grid' : _a, metafield = props.metafield, rest = __rest(props, ["shopifyProduct", "href", "layout", "metafield"]);
     var _b = (0, frontend_shopify_2.useProducts)(), loading = _b.loading, product = _b.product, findProduct = _b.findProduct;
     var _c = (0, react_1.useState)(null), products = _c[0], setProducts = _c[1];
     (0, react_1.useEffect)(function () {
-        if (handle && metafield) {
-            findProduct(handle, [metafield]);
+        if (shopifyProduct && metafield) {
+            var metafieldIdentifier = {
+                namespace: metafield === null || metafield === void 0 ? void 0 : metafield.split('.')[0],
+                key: metafield === null || metafield === void 0 ? void 0 : metafield.split('.')[1],
+            };
+            findProduct(shopifyProduct === null || shopifyProduct === void 0 ? void 0 : shopifyProduct.handle, [metafieldIdentifier]);
         }
-    }, [handle, metafield]);
+    }, [shopifyProduct, metafield]);
     (0, react_1.useEffect)(function () {
-        if (product) {
-            setProducts((0, frontend_shopify_1.getMetafieldReferences)(product, metafield.key));
+        if (product && metafield) {
+            var key = metafield === null || metafield === void 0 ? void 0 : metafield.split('.')[1];
+            setProducts((0, frontend_shopify_1.getMetafieldReferences)(product, key));
         }
-    }, [product]);
+    }, [product, metafield]);
     if (!products)
         return null;
     return (react_1.default.createElement(react_1.default.Fragment, null,

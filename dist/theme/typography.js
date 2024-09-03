@@ -90,6 +90,9 @@ exports.typography = {
         textTransform: 'uppercase',
         fontSize: 12,
         letterSpacing: '0.05em',
+        '@media (max-width:600px)': {
+            fontSize: 12,
+        },
     },
     overline: {
         fontFamily: 'Inter',
@@ -98,5 +101,8 @@ exports.typography = {
         fontSize: 12,
         lineHeight: '1em',
         letterSpacing: '0.05em',
+        '@media (max-width:600px)': {
+            fontSize: 12,
+        },
     },
 };

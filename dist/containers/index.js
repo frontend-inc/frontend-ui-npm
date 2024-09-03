@@ -24,6 +24,7 @@ __exportStar(require("./admin/metafields"), exports);
 __exportStar(require("./admin/policies"), exports);
 __exportStar(require("./admin/reviews"), exports);
 __exportStar(require("./admin/roles"), exports);
+__exportStar(require("./admin/shopify-metafields"), exports);
 __exportStar(require("./admin/subscription-plans"), exports);
 __exportStar(require("./admin/social-links"), exports);
 __exportStar(require("./admin/teams"), exports);

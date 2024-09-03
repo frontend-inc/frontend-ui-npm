@@ -126,6 +126,8 @@ var styles = {
         borderRadius: '4px',
         objectFit: 'cover',
         marginRight: '0px',
+        height: '32px',
+        width: '32px',
     },
 };
 var sx = {

@@ -40,10 +40,10 @@ var __1 = require("../..");
 var use_debounce_1 = require("use-debounce");
 var ButtonTabs = function (props) {
     var _a = props.disablePadding, disablePadding = _a === void 0 ? false : _a, _b = props.disableBorder, disableBorder = _b === void 0 ? false : _b, handleChange = props.handleChange, options = props.options, initialValue = props.value, _c = props.iconPosition, iconPosition = _c === void 0 ? 'start' : _c, _d = props.variant, variant = _d === void 0 ? 'fullWidth' : _d, _e = props.size, size = _e === void 0 ? 'large' : _e, _f = props.debounceDelay, debounceDelay = _f === void 0 ? 500 : _f, _g = props.disableDebounce, disableDebounce = _g === void 0 ? false : _g;
-    var _h = (0, react_1.useState)(initialValue), value = _h[0], setvalue = _h[1];
+    var _h = (0, react_1.useState)(initialValue), value = _h[0], setValue = _h[1];
     var debouncedValue = (0, use_debounce_1.useDebounce)(value, debounceDelay)[0];
     var handleInputChange = function (ev, value) {
-        setvalue(value);
+        setValue(value);
         if (disableDebounce) {
             handleChange(value);
         }
@@ -53,6 +53,9 @@ var ButtonTabs = function (props) {
             handleChange(debouncedValue);
         }
     }, [debouncedValue]);
+    (0, react_1.useEffect)(function () {
+        setValue(initialValue);
+    }, [initialValue]);
     return (react_1.default.createElement(material_1.Tabs, { variant: variant, sx: __assign(__assign(__assign({}, sx.root), (!disableBorder && sx.rootBorder)), { p: disablePadding ? 0 : '3px', '& .MuiTab-root': {
                 height: size == 'small' ? 34 : 36,
                 minWidth: size == 'small' ? 44 : 64,
@@ -82,7 +85,7 @@ var sx = {
             minWidth: 44,
             px: 1,
             zIndex: 1,
-            color: 'common.white',
+            color: 'text.primary',
         },
         '& .MuiTabs-root': {
             minHeight: 34,
@@ -94,7 +97,7 @@ var sx = {
             color: 'text.secondary',
             '&.Mui-selected': {
                 borderRadius: 1,
-                color: 'common.white',
+                color: 'text.primary',
             },
         },
     },

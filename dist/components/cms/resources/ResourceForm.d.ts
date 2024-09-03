@@ -5,6 +5,7 @@ export type ResourceFormProps = {
     loading: boolean;
     errors: any;
     resource: any;
+    setResource: (resource: any) => void;
     handleChange: (ev: any) => void;
     handleRemove: (field: any) => void;
     handleSubmit: () => void;

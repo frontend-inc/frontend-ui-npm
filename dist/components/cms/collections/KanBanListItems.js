@@ -94,7 +94,7 @@ var KanBanListItems = function (props) {
         list: {},
     } : _d, rest = __rest(props, ["headers", "displayFields", "buttons", "enableEdit", "enableDelete", "enableCreate", "enableComments", "enableFavorites", "enableLikes", "enableRatings", "enableSharing", "enableUsers", "enableGradient", "enableOverlay", "slots"]);
     var fieldName = 'status'; //Hard code the field as status
-    var _e = (0, frontend_js_2.useResourceContext)(), loading = _e.loading, resources = _e.resources, update = _e.update, updatePositions = _e.updatePositions, setResource = _e.setResource, reloadMany = _e.reloadMany, setOpenShow = _e.setOpenShow;
+    var _e = (0, frontend_js_2.useResourceContext)(), loading = _e.loading, resources = _e.resources, update = _e.update, updatePositions = _e.updatePositions, updateMany = _e.updateMany, setResource = _e.setResource, reloadMany = _e.reloadMany, setOpenShow = _e.setOpenShow;
     var handleClick = function (resource) {
         setResource(resource);
         setOpenShow(true);
@@ -110,21 +110,16 @@ var KanBanListItems = function (props) {
     var handleDrop = function (movedItem, value, columns) { return __awaiter(void 0, void 0, void 0, function () {
         var movedDocument, columnItems;
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    setResource(null);
-                    movedDocument = (0, frontend_js_2.changeDocumentValue)(movedItem, fieldName, value);
-                    return [4 /*yield*/, update(movedDocument)];
-                case 1:
-                    _a.sent();
-                    columnItems = Object.keys(columns).map(function (key) { return columns[key]; });
-                    columnItems = columnItems.reduce(function (acc, val) { return acc.concat(val); }, []);
-                    columnItems = columnItems.map(function (item, index) {
-                        return __assign(__assign({}, item), { position: index });
-                    });
-                    updatePositions(columnItems);
-                    return [2 /*return*/];
-            }
+            setResource(null);
+            movedDocument = (0, frontend_js_2.changeDocumentValue)(movedItem, fieldName, value);
+            updateMany([movedDocument === null || movedDocument === void 0 ? void 0 : movedDocument.id], { status: value });
+            columnItems = Object.keys(columns).map(function (key) { return columns[key]; });
+            columnItems = columnItems.reduce(function (acc, val) { return acc.concat(val); }, []);
+            columnItems = columnItems.map(function (item, index) {
+                return __assign(__assign({}, item), { position: index });
+            });
+            updatePositions(columnItems);
+            return [2 /*return*/];
         });
     }); };
     var _g = (0, react_1.useState)({}), columns = _g[0], setColumns = _g[1];
@@ -145,6 +140,6 @@ var KanBanListItems = function (props) {
     };
     if (!headers || !fieldName || ((_a = Object.keys(columns)) === null || _a === void 0 ? void 0 : _a.length) == 0)
         return null;
-    return (react_1.default.createElement(components_1.KanBanBoard, { loading: loading, columns: columns, headers: headers, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, slots: slots, component: components_1.CollectionKanBanCard }));
+    return (react_1.default.createElement(components_1.KanBanBoard, { loading: loading, columns: columns, headers: headers, handleClick: handleClick, handleDrop: handleDrop, enableEdit: enableEdit, enableDelete: enableEdit, enableCreate: enableCreate, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleAdd: handleAdd, component: components_1.CollectionKanBanCard, slots: slots }));
 };
 exports.default = KanBanListItems;

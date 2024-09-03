@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FIELD_VARIANTS = exports.HABTM_FIELD = exports.FILE_FIELD = exports.VIDEO_FIELD = exports.TEXT_FIELD = exports.SHOPIFY_FIELD = exports.STRING_FIELD = exports.RATING_FIELD = exports.NUMBER_FIELD = exports.LOCATION_FIELD = exports.PRICE_FIELD = exports.IMAGE_FIELD = exports.JSON_FIELD = exports.FLOAT_FIELD = exports.SELECT_FIELD = exports.DATETIME_FIELD = exports.DATE_FIELD = exports.BOOLEAN_FIELD = exports.TAG_ARRAY_FIELD = exports.URL_FIELD = exports.PHONE_FIELD = exports.EMAIL_FIELD = exports.AUDIO_FIELD = void 0;
+exports.FIELD_VARIANTS = exports.SHOPIFY_PRODUCTS_FIELD = exports.HABTM_FIELD = exports.FILE_FIELD = exports.VIDEO_FIELD = exports.TEXT_FIELD = exports.SHOPIFY_FIELD = exports.STRING_FIELD = exports.RATING_FIELD = exports.NUMBER_FIELD = exports.LOCATION_FIELD = exports.PRICE_FIELD = exports.IMAGE_FIELD = exports.JSON_FIELD = exports.FLOAT_FIELD = exports.SELECT_FIELD = exports.DATETIME_FIELD = exports.DATE_FIELD = exports.BOOLEAN_FIELD = exports.TAG_ARRAY_FIELD = exports.URL_FIELD = exports.PHONE_FIELD = exports.EMAIL_FIELD = exports.AUDIO_FIELD = void 0;
 var COLORS = __importStar(require("@mui/material/colors"));
 exports.AUDIO_FIELD = {
     icon: 'Headphones',
@@ -245,6 +245,16 @@ exports.HABTM_FIELD = {
     array: false,
     color: COLORS.orange[500],
 };
+exports.SHOPIFY_PRODUCTS_FIELD = {
+    icon: 'Shirt',
+    category: 'Reference',
+    db_type: 'string',
+    variant: 'shopify_products',
+    label: 'Shopify products',
+    description: 'Array of Shopify products',
+    array: true,
+    color: COLORS.orange[500],
+};
 exports.FIELD_VARIANTS = [
     exports.STRING_FIELD,
     exports.TEXT_FIELD,
@@ -266,5 +276,6 @@ exports.FIELD_VARIANTS = [
     exports.IMAGE_FIELD,
     exports.VIDEO_FIELD,
     exports.FILE_FIELD,
+    exports.SHOPIFY_PRODUCTS_FIELD,
     exports.HABTM_FIELD,
 ];

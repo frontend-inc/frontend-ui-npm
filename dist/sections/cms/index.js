@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsSortableReferenceList = exports.CmsSortableList = exports.CmsReferenceKanBan = exports.CmsReferenceGrid = exports.CmsReferenceList = exports.CmsStatistics = exports.CmsSimilarGrid = exports.CmsSimilarList = exports.CmsYouTube = exports.CmsVimeo = exports.CmsUserDetails = exports.CmsUser = exports.CmsTable = exports.CmsGeoNearby = exports.CmsKanBan = exports.CmsVideos = exports.CmsImages = exports.CmsHeader = exports.CmsShow = exports.CmsList = exports.CmsGrid = exports.CmsGeoList = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsCarousel = void 0;
+exports.CmsShopifyProducts = exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsSortableReferenceList = exports.CmsSortableList = exports.CmsReferenceKanBan = exports.CmsReferenceGrid = exports.CmsReferenceList = exports.CmsStatistics = exports.CmsSimilarGrid = exports.CmsSimilarList = exports.CmsYouTube = exports.CmsVimeo = exports.CmsUserDetails = exports.CmsUser = exports.CmsTable = exports.CmsGeoNearby = exports.CmsKanBan = exports.CmsVideos = exports.CmsImages = exports.CmsHeader = exports.CmsShow = exports.CmsList = exports.CmsGrid = exports.CmsGeoList = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsCarousel = void 0;
 var CmsCarousel_1 = require("./CmsCarousel");
 Object.defineProperty(exports, "CmsCarousel", { enumerable: true, get: function () { return __importDefault(CmsCarousel_1).default; } });
 var CmsDetails_1 = require("./CmsDetails");
@@ -66,3 +66,5 @@ var CmsCalendly_1 = require("./addons/CmsCalendly");
 Object.defineProperty(exports, "CmsCalendly", { enumerable: true, get: function () { return __importDefault(CmsCalendly_1).default; } });
 var CmsShopifyProduct_1 = require("./addons/CmsShopifyProduct");
 Object.defineProperty(exports, "CmsShopifyProduct", { enumerable: true, get: function () { return __importDefault(CmsShopifyProduct_1).default; } });
+var CmsShopifyProducts_1 = require("./addons/CmsShopifyProducts");
+Object.defineProperty(exports, "CmsShopifyProducts", { enumerable: true, get: function () { return __importDefault(CmsShopifyProducts_1).default; } });

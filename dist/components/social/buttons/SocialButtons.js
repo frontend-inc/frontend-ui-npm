@@ -8,7 +8,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var SocialButtons = function (props) {
-    var resource = props.resource, _a = props.direction, direction = _a === void 0 ? 'row' : _a, enableComments = props.enableComments, enableLikes = props.enableLikes, enableFavorites = props.enableFavorites, enableSharing = props.enableSharing, enableAddToList = props.enableAddToList, numLikes = props.numLikes, numFavorites = props.numFavorites, _b = props.variant, variant = _b === void 0 ? 'button' : _b, _c = props.justifyContent, justifyContent = _c === void 0 ? 'flex-start' : _c, _d = props.spacing, spacing = _d === void 0 ? 1 : _d, color = props.color;
+    var resource = props.resource, _a = props.direction, direction = _a === void 0 ? 'row' : _a, enableComments = props.enableComments, enableLikes = props.enableLikes, enableFavorites = props.enableFavorites, enableSharing = props.enableSharing, enableAddToList = props.enableAddToList, numLikes = props.numLikes, numFavorites = props.numFavorites, _b = props.variant, variant = _b === void 0 ? 'icon' : _b, _c = props.justifyContent, justifyContent = _c === void 0 ? 'flex-start' : _c, _d = props.spacing, spacing = _d === void 0 ? 1 : _d, color = props.color;
     var router = (0, router_1.useRouter)();
     var currentPageUrl = router.asPath;
     if (!enableLikes && !enableFavorites && !enableSharing && !enableAddToList)

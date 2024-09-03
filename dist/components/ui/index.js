@@ -18,7 +18,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SocialIcon = exports.SocialLink = exports.Section = exports.RemoteAutosuggest = exports.ProgressLoader = exports.Placeholder = exports.Paper = exports.NotFound = exports.NoImage = exports.Loading = exports.TouchableOpacity = exports.PopupButton = exports.Popup = exports.SimplePage = exports.OnlineStatusBadge = exports.OnlineStatusAvatar = exports.Notifications = exports.Notification = exports.MediaModal = exports.Modal = exports.MobileButton = exports.MenuItem = exports.MenuButton = exports.Label = exports.IconLoading = exports.Icon = exports.CircularLoader = exports.Heading = exports.GeoSearchInput = exports.ExpandableText = exports.Drawer = exports.Divider = exports.Container = exports.ContextLoader = exports.CloudinaryImage = exports.Center = exports.CarouselImage = exports.CarouselDot = exports.Carousel = exports.Column = exports.Breadcrumbs = exports.ButtonTabs = exports.Button = exports.Autosuggest = exports.Alert = exports.AlertButton = exports.AlertModal = exports.Avatar = exports.ButtonAction = exports.ButtonActions = void 0;
-exports.LightDarkMode = exports.Debug = exports.Swipeable = exports.TextModal = exports.Logo = exports.ImageModal = exports.Image = exports.EmptyImage = exports.AttachmentImage = exports.AvatarImage = exports.Pagination = exports.SelectableListItem = exports.SortableListItem = exports.SortableList = exports.ShopifyProductInput = exports.LocationInput = exports.LayoutScroll = exports.Loader = exports.LayoutEmpty = exports.LayoutContainer = exports.Header = exports.Footer = exports.ProfileImage = exports.ProfileInfo = exports.ProfileDetails = exports.UserMenu = exports.UserAvatar = exports.TeamAvatar = exports.Toolbar = exports.Text = exports.Subheader = void 0;
+exports.LightDarkMode = exports.Debug = exports.Swipeable = exports.TextModal = exports.Logo = exports.ImageModal = exports.Image = exports.EmptyImage = exports.AttachmentImage = exports.AvatarImage = exports.Pagination = exports.SelectableListItem = exports.SortableListItem = exports.SortableList = exports.LayoutScroll = exports.Loader = exports.LayoutEmpty = exports.LayoutContainer = exports.Header = exports.Footer = exports.ProfileImage = exports.ProfileInfo = exports.ProfileDetails = exports.UserMenu = exports.UserAvatar = exports.TeamAvatar = exports.Toolbar = exports.Text = exports.Subheader = void 0;
 __exportStar(require("./inputs"), exports);
 __exportStar(require("./fields"), exports);
 __exportStar(require("./tables"), exports);
@@ -155,11 +155,6 @@ var Loader_2 = require("./loaders/Loader");
 Object.defineProperty(exports, "Loader", { enumerable: true, get: function () { return __importDefault(Loader_2).default; } });
 var LayoutScroll_1 = require("./layouts/LayoutScroll");
 Object.defineProperty(exports, "LayoutScroll", { enumerable: true, get: function () { return __importDefault(LayoutScroll_1).default; } });
-// Input addons
-var LocationInput_1 = require("./inputs/addons/LocationInput");
-Object.defineProperty(exports, "LocationInput", { enumerable: true, get: function () { return __importDefault(LocationInput_1).default; } });
-var ShopifyProductInput_1 = require("./inputs/addons/ShopifyProductInput");
-Object.defineProperty(exports, "ShopifyProductInput", { enumerable: true, get: function () { return __importDefault(ShopifyProductInput_1).default; } });
 var SortableList_1 = require("./lists/SortableList");
 Object.defineProperty(exports, "SortableList", { enumerable: true, get: function () { return __importDefault(SortableList_1).default; } });
 var SortableListItem_1 = require("./lists/SortableListItem");

@@ -21,4 +21,5 @@ export declare const TEXT_FIELD: FieldVariantType;
 export declare const VIDEO_FIELD: FieldVariantType;
 export declare const FILE_FIELD: FieldVariantType;
 export declare const HABTM_FIELD: FieldVariantType;
+export declare const SHOPIFY_PRODUCTS_FIELD: FieldVariantType;
 export declare const FIELD_VARIANTS: FieldVariantType[];

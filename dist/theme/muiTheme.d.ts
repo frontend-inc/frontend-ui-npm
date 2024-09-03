@@ -327,6 +327,9 @@ export declare const muiTheme: {
             textTransform: string;
             fontSize: number;
             letterSpacing: string;
+            '@media (max-width:600px)': {
+                fontSize: number;
+            };
         };
         overline: {
             fontFamily: string;
@@ -335,6 +338,9 @@ export declare const muiTheme: {
             fontSize: number;
             lineHeight: string;
             letterSpacing: string;
+            '@media (max-width:600px)': {
+                fontSize: number;
+            };
         };
     };
     shape: {

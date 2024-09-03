@@ -1,8 +1,7 @@
 import React from 'react';
-import { MetafieldIdentifierType } from 'frontend-shopify';
 export type MetafieldVideoProps = {
-    handle: string;
-    metafield: MetafieldIdentifierType;
+    shopifyProduct: any;
+    metafield: string;
     height?: number;
     controls?: boolean;
     autoPlay?: boolean;

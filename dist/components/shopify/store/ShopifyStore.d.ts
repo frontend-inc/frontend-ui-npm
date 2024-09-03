@@ -5,7 +5,7 @@ type ShopifyStoreProps = {
     storefrontAccessToken?: string;
     customerPortalUrl?: string;
     logo?: string;
-    shopUrl?: string;
+    shopUrl: string;
     children: any;
 };
 declare const ShopifyStore: React.FC<ShopifyStoreProps>;

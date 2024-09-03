@@ -327,6 +327,9 @@ export declare const getCarouselResponsive: (theme?: {
             textTransform: string;
             fontSize: number;
             letterSpacing: string;
+            '@media (max-width:600px)': {
+                fontSize: number;
+            };
         };
         overline: {
             fontFamily: string;
@@ -335,6 +338,9 @@ export declare const getCarouselResponsive: (theme?: {
             fontSize: number;
             lineHeight: string;
             letterSpacing: string;
+            '@media (max-width:600px)': {
+                fontSize: number;
+            };
         };
     };
     shape: {

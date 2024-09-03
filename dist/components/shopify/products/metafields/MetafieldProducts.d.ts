@@ -1,10 +1,9 @@
 import React from 'react';
-import { MetafieldIdentifierType } from 'frontend-shopify';
 export type MetafieldProductsProps = {
     layout?: 'grid' | 'carousel';
-    handle: string;
+    shopifyProduct: any;
     href: string;
-    metafield: MetafieldIdentifierType;
+    metafield: string;
 };
 declare const MetafieldProducts: React.FC<MetafieldProductsProps>;
 export default MetafieldProducts;

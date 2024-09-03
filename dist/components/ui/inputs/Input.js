@@ -51,6 +51,7 @@ var Input = function (props) {
         reference: index_1.ReferenceInput,
         search: index_1.SearchInput,
         select: index_1.SelectInput,
+        shopify_products: index_1.ShopifyProductsInput,
         switch: index_1.SwitchInput,
         ratings: index_1.RatingInput,
         tabs: index_1.TabsInput,

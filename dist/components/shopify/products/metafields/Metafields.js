@@ -32,22 +32,27 @@ var frontend_shopify_2 = require("frontend-shopify");
 var PLAIN_TEXT_TYPES = ['single_line_text_field', 'multi_line_text_field'];
 var RICH_TEXT_TYPES = ['rich_text_field'];
 var ProductMetafields = function (props) {
-    var handle = props.handle, metafields = props.metafields;
+    var shopifyProduct = props.shopifyProduct, metafields = props.metafields;
     var _a = (0, frontend_shopify_2.useProducts)(), product = _a.product, findProduct = _a.findProduct;
     (0, react_1.useEffect)(function () {
-        if (handle && metafields) {
-            findProduct(handle, metafields);
+        if (shopifyProduct && metafields) {
+            var metafieldIdentifiers = metafields === null || metafields === void 0 ? void 0 : metafields.map(function (metafield) { return ({
+                namespace: metafield.name.split('.')[0],
+                key: metafield.name.split('.')[1],
+            }); });
+            findProduct(shopifyProduct === null || shopifyProduct === void 0 ? void 0 : shopifyProduct.handle, metafieldIdentifiers);
         }
-    }, [handle, metafields]);
+    }, [shopifyProduct, metafields]);
     if (!product || !metafields)
         return null;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root }, product &&
         (metafields === null || metafields === void 0 ? void 0 : metafields.map(function (metafield, index) {
-            var label = metafield.label, key = metafield.key;
+            var label = metafield.label, name = metafield.name;
+            var key = name.split('.')[1];
             var type = (0, frontend_shopify_1.getMetafieldType)(product, key);
             var value = (0, frontend_shopify_1.getMetafieldValue)(product, key);
-            return (react_1.default.createElement(material_1.Accordion, { sx: sx.accordion, elevation: 0 },
-                react_1.default.createElement(material_1.AccordionSummary, { expandIcon: react_1.default.createElement(ui_1.Icon, { name: "Plus" }) },
+            return (react_1.default.createElement(material_1.Accordion, { sx: sx.accordion, elevation: 0, key: index },
+                react_1.default.createElement(material_1.AccordionSummary, { sx: sx.accordionSummary, expandIcon: react_1.default.createElement(ui_1.Icon, { name: "Plus" }) },
                     react_1.default.createElement(material_1.Typography, { variant: "subtitle2" }, label)),
                 react_1.default.createElement(material_1.AccordionDetails, null,
                     PLAIN_TEXT_TYPES.includes(type) && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "textSecondary" }, value)),
@@ -59,9 +64,13 @@ exports.default = ProductMetafields;
 var sx = {
     root: {
         my: 2,
+        borderRadius: 0,
+    },
+    accordionSummary: {
+        borderTop: '1px solid',
+        borderColor: 'divider',
     },
     accordion: {
-        borderTop: '1px solid',
         borderColor: 'divider',
         my: '0px !important',
     },

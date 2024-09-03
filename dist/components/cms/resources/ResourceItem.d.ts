@@ -9,6 +9,7 @@ export type ResourceItemProps = {
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;
     handleSelect?: () => void;
+    handleReload?: () => void;
     secondaryActions?: React.ReactNode;
     menuActions?: any;
     sortable?: boolean;

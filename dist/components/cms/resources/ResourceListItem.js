@@ -20,7 +20,6 @@ var __1 = require("../..");
 var ResourceListItem = function (props) {
     var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryActions = props.secondaryActions, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.isDragging, isDragging = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
     var handleChange = function (event) {
-        console.log(event.target.checked);
         if (handleSelect) {
             handleSelect();
         }
@@ -39,7 +38,7 @@ var ResourceListItem = function (props) {
             icon && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign({}, sx.avatar), { bgcolor: color }) },
                     react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: 'primary.contrastText' })))),
-            react_1.default.createElement(material_1.ListItemText, { primary: primary, secondary: secondary }))));
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, primary), secondary: secondary }))));
 };
 exports.default = ResourceListItem;
 var sx = {
@@ -47,11 +46,15 @@ var sx = {
         p: 0,
         borderRadius: 1,
         overflow: 'hidden',
+        bgcolor: 'background.paper',
     },
     rootBorder: {
         border: '1px solid',
         borderColor: 'divider',
-        bgcolor: 'background.paper',
+        transition: 'box-shadow 0.2s',
+        '&:hover': {
+            boxShadow: 1
+        },
         mb: 1,
     },
     listItemButton: {
@@ -78,6 +81,6 @@ var sx = {
         },
     },
     isDragging: {
-        border: '2px solid red',
-    },
+        boxShadow: 2,
+    }
 };
