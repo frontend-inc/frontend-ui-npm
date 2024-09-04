@@ -60,14 +60,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
+var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
-var hooks_1 = require("../../../hooks");
+var hooks_2 = require("../../../hooks");
 var router_1 = require("next/router");
 var RemoteForm = function (props) {
     var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var href = (props || {}).href;
     var onSuccess = function () {
         if (href) {
@@ -75,8 +75,8 @@ var RemoteForm = function (props) {
         }
     };
     var _resource = props.resource, parentResource = props.parentResource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c;
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var fields = (0, hooks_1.useFetchForm)({
+    var showAlertSuccess = (0, hooks_2.useAlerts)().showAlertSuccess;
+    var fields = (0, hooks_2.useFetchForm)({
         url: url,
     }).fields;
     var _d = (0, frontend_js_1.useResource)({

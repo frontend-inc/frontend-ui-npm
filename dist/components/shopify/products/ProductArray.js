@@ -27,8 +27,18 @@ var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
 var material_1 = require("@mui/material");
+var router_1 = require("next/router");
+var hooks_1 = require("../../../hooks");
 var ProductArray = function (props) {
-    var handles = props.handles, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableAddToCart, enableAddToCart = _b === void 0 ? false : _b, _c = props.enableQuickShop, enableQuickShop = _c === void 0 ? false : _c, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d, _e = props.enableOkendoStarRating, enableOkendoStarRating = _e === void 0 ? false : _e, buttonText = props.buttonText, handleClick = props.handleClick;
+    var href = props.href, handles = props.handles, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableAddToCart, enableAddToCart = _b === void 0 ? false : _b, _c = props.enableQuickShop, enableQuickShop = _c === void 0 ? false : _c, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d, _e = props.enableOkendoStarRating, enableOkendoStarRating = _e === void 0 ? false : _e, buttonText = props.buttonText;
+    var router = (0, router_1.useRouter)();
+    var clientUrl = (0, hooks_1.useApp)().clientUrl;
+    var handleClick = function (product) {
+        if (href) {
+            var url = "".concat(clientUrl).concat(href, "/").concat(product === null || product === void 0 ? void 0 : product.handle);
+            router.push(url);
+        }
+    };
     return (react_1.default.createElement(material_1.Box, { sx: sx.grid }, handles === null || handles === void 0 ? void 0 : handles.map(function (handle) {
         var _a = (0, frontend_shopify_1.useProducts)(), product = _a.product, findProduct = _a.findProduct;
         (0, react_1.useEffect)(function () {

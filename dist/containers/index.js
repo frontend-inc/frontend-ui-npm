@@ -19,6 +19,7 @@ __exportStar(require("./admin/comments"), exports);
 __exportStar(require("./admin/contacts"), exports);
 __exportStar(require("./admin/emails"), exports);
 __exportStar(require("./admin/fields"), exports);
+__exportStar(require("./admin/media"), exports);
 __exportStar(require("./admin/menus"), exports);
 __exportStar(require("./admin/metafields"), exports);
 __exportStar(require("./admin/policies"), exports);

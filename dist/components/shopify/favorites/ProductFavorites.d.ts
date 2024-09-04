@@ -1,6 +1,8 @@
 import React from 'react';
+import { UserType } from 'frontend-js';
 export type ProductFavoritesProps = {
     href: string;
+    user: UserType;
     perPage?: string;
     enableBorder?: boolean;
     enableAddToCart?: boolean;

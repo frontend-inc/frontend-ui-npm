@@ -7836,8 +7836,8 @@ from2@^2.1.0:
     readable-stream "^2.0.0"
 
 "frontend-js@git+https://github.com/frontend-inc/frontend-js.git":
-  version "0.0.178"
-  resolved "git+https://github.com/frontend-inc/frontend-js.git#442a3d2c1093b5ad33bf38058aa16fb897109915"
+  version "0.0.182"
+  resolved "git+https://github.com/frontend-inc/frontend-js.git#63d79c1ec1616c2588915c326abb4194de580ead"
   dependencies:
     "@tanstack/react-query" "^5.52.2"
     cookies-next "^2.1.1"

@@ -9,6 +9,7 @@ export type ResourceFormProps = {
     handleChange: (ev: any) => void;
     handleRemove: (field: any) => void;
     handleSubmit: () => void;
+    handleReload: () => void;
     fields: any[];
 };
 declare const ResourceForm: React.FC<ResourceFormProps>;

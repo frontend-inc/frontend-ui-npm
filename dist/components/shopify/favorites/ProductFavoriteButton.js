@@ -10,6 +10,29 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -46,25 +69,39 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(require("react"));
+var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var frontend_shopify_1 = require("frontend-shopify");
+var frontend_js_1 = require("frontend-js");
+var hooks_1 = require("../../../hooks");
+var helpers_1 = require("../../../helpers");
 var ProductFavoriteButton = function (props) {
     var product = props.product;
-    var _a = (0, frontend_shopify_1.useFavorites)({
-        product: product,
-    }), toggleFavorite = _a.toggleFavorite, isFavorite = _a.isFavorite;
+    var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
+    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
+    var _a = (0, react_1.useState)(false), isFavorite = _a[0], setIsFavorite = _a[1];
+    var _b = (0, hooks_1.useSocial)({
+        url: '/api/v1/social',
+    }), shopifyFavorite = _b.shopifyFavorite, shopifyUnfavorite = _b.shopifyUnfavorite;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            toggleFavorite();
+            if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+                return [2 /*return*/, setAuthOpen(true)];
+            if (isFavorite) {
+                setIsFavorite(false);
+                shopifyUnfavorite(product.handle);
+            }
+            else {
+                setIsFavorite(true);
+                shopifyFavorite(product.handle);
+            }
             return [2 /*return*/];
         });
     }); };
+    (0, react_1.useEffect)(function () {
+        setIsFavorite((0, helpers_1.isShopifyFavorite)(currentUser, product.handle));
+    }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement(material_1.Button, { size: "large", onClick: handleClick, variant: "contained", color: isFavorite ? 'primary' : 'secondary', sx: __assign({}, sx.button) },
         react_1.default.createElement(__1.Icon, { name: "Heart", color: isFavorite ? 'primary.contrastText' : 'secondary.contrastText' })));
 };

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isFollowing = exports.isFavorited = exports.isLiked = void 0;
+exports.isShopifyFavorite = exports.isFollowing = exports.isFavorited = exports.isLiked = void 0;
 var isLiked = function (user, documentId) {
     var _a;
     return ((_a = user === null || user === void 0 ? void 0 : user.likes) === null || _a === void 0 ? void 0 : _a.find(function (d) { return d.id == documentId || d.handle == documentId; }))
@@ -24,3 +24,8 @@ var isFollowing = function (user, followUser) {
         : false;
 };
 exports.isFollowing = isFollowing;
+var isShopifyFavorite = function (user, handle) {
+    var _a;
+    return ((_a = user === null || user === void 0 ? void 0 : user.shopify_favorites) === null || _a === void 0 ? void 0 : _a.includes(handle)) ? true : false;
+};
+exports.isShopifyFavorite = isShopifyFavorite;

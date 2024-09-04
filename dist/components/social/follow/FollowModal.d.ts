@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserType } from '../../../types';
+import { UserType } from 'frontend-js';
 type FollowModalProps = {
     open: boolean;
     handleClose: () => void;

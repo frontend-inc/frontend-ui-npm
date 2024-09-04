@@ -1,5 +1,6 @@
 import React from 'react';
 type ProductArrayProps = {
+    href?: string;
     handles: string[];
     enableBorder?: boolean;
     enableAddToCart?: boolean;
@@ -7,7 +8,6 @@ type ProductArrayProps = {
     enableQuantity?: boolean;
     enableOkendoStarRating?: boolean;
     buttonText?: string;
-    handleClick: (product: any) => void;
 };
 declare const ProductArray: React.FC<ProductArrayProps>;
 export default ProductArray;

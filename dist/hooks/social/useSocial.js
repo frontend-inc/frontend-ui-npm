@@ -90,6 +90,22 @@ var useSocial = function (params) {
             }
         });
     }); };
+    var shopifyFavorite = function (handle) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.shopifyFavorite(handle, params); })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
+    var shopifyUnfavorite = function (handle) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.shopifyUnfavorite(handle, params); })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
     return {
         loading: loading,
         like: like,
@@ -98,6 +114,8 @@ var useSocial = function (params) {
         unfavorite: unfavorite,
         follow: follow,
         unfollow: unfollow,
+        shopifyFavorite: shopifyFavorite,
+        shopifyUnfavorite: shopifyUnfavorite,
         loadingWrapper: loadingWrapper,
     };
 };

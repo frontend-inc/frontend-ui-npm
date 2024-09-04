@@ -39,8 +39,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = require("react");
-var context_1 = require("../../context");
+var hooks_1 = require("../../hooks");
 var router_1 = require("next/router");
 var _1 = require(".");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
@@ -52,7 +51,7 @@ var useButtons = function (params) {
     var showAlertSuccess = (0, __1.useAlerts)().showAlertSuccess;
     var api = (0, frontend_js_1.useApi)().api;
     var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var handleClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {
         var url, _a, url_1;

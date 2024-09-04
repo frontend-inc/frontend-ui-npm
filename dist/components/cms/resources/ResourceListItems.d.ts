@@ -1,6 +1,7 @@
 import React from 'react';
 import { TableHeaderType, SortOptionType, QueryParamsType } from '../../../types';
 export type ResourceListItemsProps = {
+    grid?: boolean;
     query?: QueryParamsType;
     resources: any[];
     headers?: TableHeaderType[];

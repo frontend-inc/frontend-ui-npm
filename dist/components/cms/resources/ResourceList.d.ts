@@ -3,6 +3,7 @@ import { FormFieldType, SearchFilterOptionType, TableHeaderType, DisplayFieldTyp
 import { SortOptionType } from '../../../types';
 import { ToolbarButtonType } from '../../../types';
 export type ResourceListProps = {
+    grid?: boolean;
     sortable?: boolean;
     selectable?: boolean;
     header?: React.FC<any>;

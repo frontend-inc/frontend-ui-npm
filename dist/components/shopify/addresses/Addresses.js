@@ -65,14 +65,14 @@ var lucide_react_1 = require("lucide-react");
 var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
-var context_1 = require("../../../context");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var frontend_shopify_2 = require("frontend-shopify");
 var Addresses = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = (0, react_1.useState)(null), activeAddress = _a[0], setActiveAddress = _a[1];
     var _b = (0, react_1.useState)(false), showDeleteModal = _b[0], setShowDeleteModal = _b[1];
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _c = props || {}, _d = _c.title, title = _d === void 0 ? 'Customer Addresses' : _d, _e = _c.subtitle, subtitle = _e === void 0 ? 'Manage your addresses' : _e;
     var _f = (0, frontend_shopify_1.useAddresses)(), loading = _f.loading, addresses = _f.addresses, deleteCustomerAddress = _f.deleteCustomerAddress, findCustomerAddresses = _f.findCustomerAddresses;
     var handleClick = function (addressGid) {

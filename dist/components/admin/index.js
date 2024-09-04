@@ -23,3 +23,4 @@ Object.defineProperty(exports, "AdminVideoModal", { enumerable: true, get: funct
 __exportStar(require("./layout"), exports);
 __exportStar(require("./tabs"), exports);
 __exportStar(require("./menus"), exports);
+__exportStar(require("./addons"), exports);

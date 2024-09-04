@@ -34,7 +34,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var __2 = require("..");
 var LoadMore_1 = __importDefault(require("../search/LoadMore"));
-var context_1 = require("../../../context");
+var hooks_1 = require("../../../hooks");
 var PER_PAGE = 48;
 var ProductSearch = function (props) {
     var href = props.href, options = props.options, priceOptions = props.priceOptions, _a = props.enableFilters, enableFilters = _a === void 0 ? false : _a, _b = props.enableSorting, enableSorting = _b === void 0 ? false : _b, _c = props.enableBorder, enableBorder = _c === void 0 ? false : _c, _d = props.enableAddToCart, enableAddToCart = _d === void 0 ? false : _d, _e = props.enableQuickShop, enableQuickShop = _e === void 0 ? false : _e, _f = props.enableQuantity, enableQuantity = _f === void 0 ? false : _f, _g = props.enableOkendoStarRating, enableOkendoStarRating = _g === void 0 ? false : _g;
@@ -46,7 +46,7 @@ var ProductSearch = function (props) {
     var _j = (0, react_1.useState)(handle), query = _j[0], setQuery = _j[1];
     var _k = (0, react_1.useState)(String(query).toLowerCase()), keywords = _k[0], setKeywords = _k[1];
     var first = PER_PAGE;
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _l = (0, frontend_shopify_1.useProducts)(), loading = _l.loading, errors = _l.errors, cursor = _l.cursor, hasNextPage = _l.hasNextPage, products = _l.products, findProducts = _l.findProducts, searchProducts = _l.searchProducts;
     var _m = (0, react_1.useState)('COLLECTION_DEFAULT'), sortKey = _m[0], setSortKey = _m[1];
     var _o = (0, react_1.useState)(false), reverse = _o[0], setReverse = _o[1];

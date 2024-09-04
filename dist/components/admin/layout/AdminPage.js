@@ -11,13 +11,14 @@ var router_1 = require("next/router");
 var AdminPage = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, hooks_1.useAdmin)().clientUrl;
-    var _a = props || {}, title = _a.title, actions = _a.actions, activeTab = _a.activeTab, activeMenu = _a.activeMenu, menuItems = _a.menuItems, _b = _a.disablePadding, disablePadding = _b === void 0 ? false : _b, children = _a.children;
+    var _a = props || {}, title = _a.title, actions = _a.actions, activeTab = _a.activeTab, activeMenu = _a.activeMenu, menuItems = _a.menuItems, enableEdit = _a.enableEdit, enableDelete = _a.enableDelete, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, _b = _a.disablePadding, disablePadding = _b === void 0 ? false : _b, children = _a.children;
     (0, hooks_1.useTabs)(activeTab);
     var handleClick = function (menuItem) {
         router.push("".concat(clientUrl).concat(menuItem.value));
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        menuItems && (react_1.default.createElement(components_1.AdminMenu, { activeMenu: activeMenu, menuItems: menuItems, handleClick: handleClick })),
+        menuItems && (react_1.default.createElement(components_1.AdminLayoutLeft, null,
+            react_1.default.createElement(components_1.AdminMenu, { enableEdit: enableEdit, enableDelete: enableDelete, activeMenu: activeMenu, menuItems: menuItems, handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete }))),
         react_1.default.createElement(components_1.AdminLayoutCenter, null,
             react_1.default.createElement(components_1.AdminHeader, { title: title, buttons: actions, enableExpandLeftPanel: true }),
             react_1.default.createElement(material_1.Box, { p: disablePadding ? 0 : 2 }, children))));

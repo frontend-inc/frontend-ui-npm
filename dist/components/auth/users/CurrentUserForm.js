@@ -60,14 +60,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
+var hooks_2 = require("../../../hooks");
 var UserForm = function (props) {
     var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var clientUrl = (0, hooks_2.useApp)().clientUrl;
     var href = (props || {}).href;
     var onSuccess = function () {
         if (href) {

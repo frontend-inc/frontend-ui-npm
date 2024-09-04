@@ -9,6 +9,7 @@ export type ResourceShowProps = {
     enableDelete?: boolean;
     handleEdit?: () => void;
     handleDelete?: () => void;
+    handleReload: () => void;
     fields: any[];
 };
 declare const ResourceShow: React.FC<ResourceShowProps>;

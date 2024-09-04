@@ -10,29 +10,6 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -44,26 +21,19 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
+var react_1 = __importDefault(require("react"));
 var shopify_1 = require("../../shopify");
-var router_1 = require("next/router");
 var lodash_1 = require("lodash");
 var FieldShopifyProducts = function (props) {
     var _a = props || {}, resource = _a.resource, _b = _a.href, href = _b === void 0 ? '/products' : _b, rest = __rest(_a, ["resource", "href"]);
     var fieldName = 'shopify_products';
     var shopifyHandles = (0, lodash_1.get)(resource, fieldName) || [];
-    var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
-    var handleClick = function (product) {
-        if (href) {
-            var url = "".concat(clientUrl).concat(href, "/").concat(product === null || product === void 0 ? void 0 : product.handle);
-            router.push(url);
-        }
-    };
     if ((shopifyHandles === null || shopifyHandles === void 0 ? void 0 : shopifyHandles.length) == 0)
         return null;
-    return (react_1.default.createElement(shopify_1.ProductArray, __assign({ handles: shopifyHandles, handleClick: handleClick }, rest)));
+    return (react_1.default.createElement(shopify_1.ProductArray, __assign({ href: href, handles: shopifyHandles }, rest)));
 };
 exports.default = FieldShopifyProducts;

@@ -63,7 +63,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
+var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
 var FormWizardProgress_1 = __importDefault(require("../../cms/forms/wizard/FormWizardProgress"));
 var FormWizardField_1 = __importDefault(require("../../cms/forms/wizard/FormWizardField"));
@@ -73,7 +73,7 @@ var router_1 = require("next/router");
 var frontend_js_1 = require("frontend-js");
 var CurrentUserFormWizard = function (props) {
     var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _a = props.fields, fields = _a === void 0 ? [] : _a, _b = props.buttonText, buttonText = _b === void 0 ? 'Update Profile' : _b, href = props.href;
     var _c = (0, frontend_js_1.useAuth)(), user = _c.user, setUser = _c.setUser, currentUser = _c.currentUser, updateMe = _c.updateMe, handleChange = _c.handleChange, fetchMe = _c.fetchMe, deleteAvatar = _c.deleteAvatar;
     var _d = (0, react_1.useState)(false), submitted = _d[0], setSubmitted = _d[1];

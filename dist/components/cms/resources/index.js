@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResourceToolbarModal = exports.ResourceToolbar = exports.SortableListItems = exports.ResourceTable = exports.ResourceForm = exports.ResourceHeader = exports.ResourceListItems = exports.ResourceListItem = exports.ResourceDetails = exports.ResourceShow = exports.ResourceList = exports.ResourceItem = void 0;
+exports.ResourceToolbarModal = exports.ResourceToolbar = exports.SortableListItems = exports.ResourceTable = exports.ResourceForm = exports.ResourceHeader = exports.ResourceListItems = exports.ResourceListItem = exports.ResourceGridItem = exports.ResourceDetails = exports.ResourceShow = exports.ResourceList = exports.ResourceItem = void 0;
 // Resources
 var ResourceItem_1 = require("./ResourceItem");
 Object.defineProperty(exports, "ResourceItem", { enumerable: true, get: function () { return __importDefault(ResourceItem_1).default; } });
@@ -13,6 +13,8 @@ var ResourceShow_1 = require("./ResourceShow");
 Object.defineProperty(exports, "ResourceShow", { enumerable: true, get: function () { return __importDefault(ResourceShow_1).default; } });
 var ResourceDetails_1 = require("./ResourceDetails");
 Object.defineProperty(exports, "ResourceDetails", { enumerable: true, get: function () { return __importDefault(ResourceDetails_1).default; } });
+var ResourceGridItem_1 = require("./ResourceGridItem");
+Object.defineProperty(exports, "ResourceGridItem", { enumerable: true, get: function () { return __importDefault(ResourceGridItem_1).default; } });
 var ResourceListItem_1 = require("./ResourceListItem");
 Object.defineProperty(exports, "ResourceListItem", { enumerable: true, get: function () { return __importDefault(ResourceListItem_1).default; } });
 var ResourceListItems_1 = require("./ResourceListItems");

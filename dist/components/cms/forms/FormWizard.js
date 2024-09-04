@@ -63,7 +63,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
+var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var FormWizardProgress_1 = __importDefault(require("./wizard/FormWizardProgress"));
@@ -74,7 +74,7 @@ var components_1 = require("../../../components");
 var router_1 = require("next/router");
 var FormWizard = function (props) {
     var router = (0, router_1.useRouter)();
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var handle = props.handle, _resource = props.resource, _a = props.fields, fields = _a === void 0 ? [] : _a, url = props.url, startTitle = props.startTitle, startDescription = props.startDescription, startImage = props.startImage, _b = props.startButtonText, startButtonText = _b === void 0 ? 'Start' : _b, _c = props.buttonText, buttonText = _c === void 0 ? 'Submit' : _c, endTitle = props.endTitle, endDescription = props.endDescription, endImage = props.endImage, endButtonText = props.endButtonText, href = props.href;
     var _d = (0, react_1.useState)(false), submitted = _d[0], setSubmitted = _d[1];
     var _e = (0, frontend_js_1.useResource)({

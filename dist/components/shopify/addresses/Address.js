@@ -64,7 +64,7 @@ var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
-var context_1 = require("../../../context");
+var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var Address = function (props) {
     var router = (0, router_1.useRouter)();
@@ -72,7 +72,7 @@ var Address = function (props) {
     if (addressId == 'new') {
         addressId = null;
     }
-    var clientUrl = (0, react_1.useContext)(context_1.AppContext).clientUrl;
+    var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _a = (0, react_1.useState)(false), showDeleteModal = _a[0], setShowDeleteModal = _a[1];
     var _b = props || {}, _c = _b.title, title = _c === void 0 ? 'Customer Addresses' : _c, _d = _b.subtitle, subtitle = _d === void 0 ? 'Manage your addresses' : _d;
     var _e = (0, frontend_shopify_1.useAddresses)(), loading = _e.loading, address = _e.address, handleChange = _e.handleChange, updateCustomerAddress = _e.updateCustomerAddress, createCustomerAddress = _e.createCustomerAddress, deleteCustomerAddress = _e.deleteCustomerAddress, findCustomerAddress = _e.findCustomerAddress;
