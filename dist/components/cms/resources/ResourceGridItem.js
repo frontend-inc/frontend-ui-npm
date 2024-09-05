@@ -25,7 +25,7 @@ var ResourceGridItem = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Card, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(material_1.CardHeader, { avatar: avatar, title: primary, subheader: secondary, action: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.buttons },
+        react_1.default.createElement(material_1.CardHeader, { avatar: avatar, title: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, primary), subheader: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, secondary), action: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.buttons },
                 secondaryActions,
                 (menuActions || handleEdit || handleDelete) && (react_1.default.createElement(__1.MenuButton, { handleEdit: handleEdit, handleDelete: handleDelete }, menuActions))) }),
         react_1.default.createElement(material_1.CardActionArea, { onClick: handleClick },

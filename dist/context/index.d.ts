@@ -8,3 +8,5 @@ export { default as ScriptContext } from './ScriptContext';
 export { default as ScriptProvider } from './ScriptProvider';
 export { default as StripeContext } from './StripeContext';
 export { default as StripeProvider } from './StripeProvider';
+export { default as UnsplashContext } from './UnsplashContext';
+export { default as UnsplashProvider } from './UnsplashProvider';

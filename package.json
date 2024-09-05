@@ -1,6 +1,6 @@
 {
     "name": "frontend-mui",
-    "version": "0.0.138",
+    "version": "0.0.139",
     "license": "MIT",
     "description": "A MUI library designed for Frontend.co",
     "homepage": "https://github.com/frontend-inc/frontend-mui",
@@ -87,7 +87,7 @@
         "@stripe/react-stripe-js": "^2.7.1",
         "@stripe/stripe-js": "^3.4.1",
         "@vis.gl/react-google-maps": "^1.0.2",
-        "ai": "^3.1.33",
+        "ai": "^3.3.27",
         "apollo-link-context": "^1.0.20",
         "apollo-link-http": "^1.5.17",
         "attr-accept": "^2.2.2",

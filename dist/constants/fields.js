@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DEFAULT_FIELDS = exports.USER_FIELD = exports.TAGS_FIELD = exports.LOCALE_FIELD = exports.PUBLISHED_FIELD = exports.SUBTITLE_FIELD = exports.TITLE_FIELD = exports.HANDLE_FIELD = exports.ID_FIELD = exports.SYSTEM_FIELDS = exports.ATTACHMENT_FIELDS = exports.REFERENCE_FIELDS = void 0;
+exports.DEFAULT_FIELDS = exports.TEAM_FIELD = exports.USER_FIELD = exports.TAGS_FIELD = exports.LOCALE_FIELD = exports.PUBLISHED_FIELD = exports.SUBTITLE_FIELD = exports.TITLE_FIELD = exports.HANDLE_FIELD = exports.ID_FIELD = exports.SYSTEM_FIELDS = exports.ATTACHMENT_FIELDS = exports.REFERENCE_FIELDS = void 0;
 exports.REFERENCE_FIELDS = ['habtm'];
 exports.ATTACHMENT_FIELDS = ['image', 'video', 'file'];
 exports.SYSTEM_FIELDS = [
@@ -31,6 +31,7 @@ exports.SYSTEM_FIELDS = [
     'phone',
     'url',
 ];
+/* SYSTEM FIELDS */
 exports.ID_FIELD = {
     label: 'ID',
     variant: 'number',
@@ -127,13 +128,25 @@ exports.USER_FIELD = {
     editable: false,
     reference: false,
 };
+exports.TEAM_FIELD = {
+    label: 'Team',
+    variant: 'team',
+    db_type: 'belongs_to',
+    name: 'team',
+    internal: true,
+    position: 8,
+    array: false,
+    visible: true,
+    editable: false,
+    reference: false,
+};
 exports.DEFAULT_FIELDS = [
     exports.ID_FIELD,
     exports.HANDLE_FIELD,
     exports.TITLE_FIELD,
-    exports.SUBTITLE_FIELD,
     exports.PUBLISHED_FIELD,
     exports.LOCALE_FIELD,
     exports.TAGS_FIELD,
     exports.USER_FIELD,
+    exports.TEAM_FIELD,
 ];

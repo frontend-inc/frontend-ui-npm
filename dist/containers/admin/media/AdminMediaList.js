@@ -8,22 +8,10 @@ var components_1 = require("../../../components");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var AdminMediaList = function (props) {
-    var unsplashApiKey = (props || {}).unsplashApiKey;
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    var slots = {
-        create: {
-            unsplashApiKey: unsplashApiKey
-        },
-        edit: {
-            unsplashApiKey: unsplashApiKey
-        },
-        list: {
-            unsplashApiKey: unsplashApiKey
-        }
-    };
     return (react_1.default.createElement(components_1.ResourceList, { grid: true, url: "".concat(apiUrl, "/storage"), name: "storage", enableCreate: true, enableDelete: true, enableShow: true, query: {
             sort_by: 'created_at',
             sort_direction: 'desc',
-        }, edit: __1.AdminMediaForm, create: __1.AdminMediaForm, component: __1.AdminMediaItem, show: __1.AdminMediaShow, emptyIcon: "Image", emptyTitle: "No uploads", emptyDescription: "No uploads yet.", slots: slots }));
+        }, edit: __1.AdminMediaForm, create: __1.AdminMediaForm, component: __1.AdminMediaItem, show: __1.AdminMediaShow, emptyIcon: "Image", emptyTitle: "No uploads", emptyDescription: "No uploads yet." }));
 };
 exports.default = AdminMediaList;

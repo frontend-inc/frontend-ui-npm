@@ -68,7 +68,7 @@ var material_1 = require("@mui/material");
 var MediaUploader_1 = __importDefault(require("./MediaUploader"));
 var components_2 = require("../../../components");
 var AdminMediaForm = function (props) {
-    var _a = props || {}, open = _a.open, handleClose = _a.handleClose, unsplashApiKey = _a.unsplashApiKey, handleReload = _a.handleReload;
+    var _a = props || {}, open = _a.open, handleClose = _a.handleClose, handleReload = _a.handleReload;
     var _b = (0, react_1.useState)(0), tab = _b[0], setTab = _b[1];
     var handleChange = function (newValue) {
         setTab(newValue);
@@ -87,7 +87,7 @@ var AdminMediaForm = function (props) {
                     { label: 'Unsplash', value: 1 },
                 ], value: tab, handleChange: handleChange })),
         tab == 0 && (react_1.default.createElement(MediaUploader_1.default, { onComplete: handleComplete })),
-        tab == 1 && (react_1.default.createElement(components_2.UnsplashList, { onComplete: handleComplete, apiKey: unsplashApiKey }))));
+        tab == 1 && (react_1.default.createElement(components_2.UnsplashList, { onComplete: handleComplete }))));
 };
 exports.default = AdminMediaForm;
 var sx = {

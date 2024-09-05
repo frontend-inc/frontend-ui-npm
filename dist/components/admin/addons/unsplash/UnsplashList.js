@@ -71,7 +71,7 @@ var UnsplashModal_1 = __importDefault(require("./UnsplashModal"));
 var icons_material_1 = require("@mui/icons-material");
 var PoweredByUnsplash_1 = __importDefault(require("./PoweredByUnsplash"));
 var UnsplashList = function (props) {
-    var onComplete = props.onComplete, apiKey = props.apiKey;
+    var onComplete = props.onComplete;
     var _a = (0, react_1.useState)(false), showModal = _a[0], setShowModal = _a[1];
     var _b = (0, react_1.useState)(''), keywords = _b[0], setKeywords = _b[1];
     //@ts-ignore
@@ -103,9 +103,7 @@ var UnsplashList = function (props) {
             }
         });
     }); };
-    var _e = (0, hooks_1.useUnsplash)({
-        apiKey: apiKey,
-    }), images = _e.images, search = _e.search, loadMore = _e.loadMore;
+    var _e = (0, hooks_1.useUnsplash)(), images = _e.images, search = _e.search, loadMore = _e.loadMore;
     var handleChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -139,7 +137,7 @@ var UnsplashList = function (props) {
         react_1.default.createElement(PoweredByUnsplash_1.default, null),
         react_1.default.createElement(material_1.Box, { sx: sx.grid }, images === null || images === void 0 ? void 0 : images.map(function (image, i) { return (react_1.default.createElement(UnsplashCard_1.default, { key: i, image: image, handleClick: handleImageClick })); })),
         (images === null || images === void 0 ? void 0 : images.length) > 0 && (images === null || images === void 0 ? void 0 : images.length) % 10 == 0 && (react_1.default.createElement(material_1.Button, { sx: sx.loadMore, fullWidth: true, color: "secondary", variant: "contained", endIcon: react_1.default.createElement(icons_material_1.ExpandMore, null), onClick: handleLoadMore }, "Load More")),
-        react_1.default.createElement(UnsplashModal_1.default, { loading: loading, open: showModal, image: image, handleClose: function () { return setShowModal(false); }, handleUpload: handleUpload, apiKey: apiKey })));
+        react_1.default.createElement(UnsplashModal_1.default, { loading: loading, open: showModal, image: image, handleClose: function () { return setShowModal(false); }, handleUpload: handleUpload })));
 };
 exports.default = UnsplashList;
 var sx = {

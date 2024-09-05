@@ -11,6 +11,7 @@ export type AdminPageProps = {
     handleEdit?: (menuItem: AdminMenuType) => void;
     handleDelete?: (menuItem: AdminMenuType) => void;
     disablePadding?: boolean;
+    leftPanel?: React.FC;
     children: React.ReactNode;
 };
 declare const AdminPage: React.FC<AdminPageProps>;

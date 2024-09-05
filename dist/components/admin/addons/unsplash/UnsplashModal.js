@@ -49,16 +49,14 @@ var PoweredByUnsplash_1 = __importDefault(require("./PoweredByUnsplash"));
 var hooks_2 = require("../../../../hooks");
 var UnsplashModal = function (props) {
     var _a, _b, _c, _d, _e, _f, _g;
-    var _h = props.loading, loading = _h === void 0 ? false : _h, open = props.open, image = props.image, handleClose = props.handleClose, handleUpload = props.handleUpload, apiKey = props.apiKey;
+    var _h = props.loading, loading = _h === void 0 ? false : _h, open = props.open, image = props.image, handleClose = props.handleClose, handleUpload = props.handleUpload;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var handleCopyUrlClick = function () {
         var _a;
         (0, copy_to_clipboard_1.default)((_a = image === null || image === void 0 ? void 0 : image.urls) === null || _a === void 0 ? void 0 : _a.regular);
         showAlertSuccess('Asset URL copied to clipboard');
     };
-    var fetchDownloadLocation = (0, hooks_2.useUnsplash)({
-        apiKey: apiKey
-    }).fetchDownloadLocation;
+    var fetchDownloadLocation = (0, hooks_2.useUnsplash)().fetchDownloadLocation;
     var handleDownloadClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         var downloadUrl;
         return __generator(this, function (_a) {

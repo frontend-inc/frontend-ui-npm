@@ -15,8 +15,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./admin/actions"), exports);
+__exportStar(require("./admin/collections"), exports);
 __exportStar(require("./admin/comments"), exports);
 __exportStar(require("./admin/contacts"), exports);
+__exportStar(require("./admin/documents"), exports);
 __exportStar(require("./admin/emails"), exports);
 __exportStar(require("./admin/fields"), exports);
 __exportStar(require("./admin/media"), exports);
@@ -31,5 +33,6 @@ __exportStar(require("./admin/social-links"), exports);
 __exportStar(require("./admin/teams"), exports);
 __exportStar(require("./admin/tokens"), exports);
 __exportStar(require("./admin/users"), exports);
+__exportStar(require("./admin/views"), exports);
 __exportStar(require("./admin/webhooks"), exports);
 __exportStar(require("./admin/zaps"), exports);

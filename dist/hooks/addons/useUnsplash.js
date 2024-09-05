@@ -46,9 +46,10 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
+var context_1 = require("../../context");
 var hooks_1 = require("../../hooks");
-var useUnsplash = function (params) {
-    var apiKey = (params || {}).apiKey;
+var useUnsplash = function () {
+    var apiKey = (0, react_1.useContext)(context_1.UnsplashContext).unsplashApiKey;
     var _a = (0, hooks_1.useLoadingWrapper)(), loading = _a.loading, loadingWrapper = _a.loadingWrapper;
     var _b = (0, react_1.useState)(1), page = _b[0], setPage = _b[1];
     var _c = (0, react_1.useState)([]), images = _c[0], setImages = _c[1];

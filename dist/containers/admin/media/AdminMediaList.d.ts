@@ -1,6 +1,3 @@
 import React from 'react';
-type AdminMediaListProps = {
-    unsplashApiKey: string;
-};
-declare const AdminMediaList: React.FC<AdminMediaListProps>;
+declare const AdminMediaList: React.FC;
 export default AdminMediaList;

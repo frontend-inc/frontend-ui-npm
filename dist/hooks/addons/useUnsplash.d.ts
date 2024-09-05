@@ -1,8 +1,5 @@
 import { UnsplashImageType } from '../../types';
-type UseUnsplashParams = {
-    apiKey: string;
-};
-declare const useUnsplash: (params: UseUnsplashParams) => {
+declare const useUnsplash: () => {
     loading: boolean;
     images: UnsplashImageType[];
     search: (keywords: any, page?: number) => Promise<any>;

@@ -1,10 +1,10 @@
 import React from 'react';
-type AdminMetafieldItemProps = {
+type AdminMediaItemProps = {
     resource: any;
     sortable?: boolean;
     handleClick: () => void;
     handleEdit: () => void;
     handleDelete: () => void;
 };
-declare const AdminMediaItem: React.FC<AdminMetafieldItemProps>;
+declare const AdminMediaItem: React.FC<AdminMediaItemProps>;
 export default AdminMediaItem;

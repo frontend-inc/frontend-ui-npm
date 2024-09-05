@@ -7,9 +7,9 @@ type TabsInputProps = {
     options: {
         icon?: string;
         label?: string;
-        value: number | string | boolean;
+        value: number;
     }[];
-    value: number | string | boolean;
+    value: number;
     disablePadding?: boolean;
     disableBorder?: boolean;
     iconPosition?: 'start' | 'end' | 'top' | 'bottom';

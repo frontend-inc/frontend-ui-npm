@@ -4,7 +4,6 @@ type UnsplashViewerModalProps = {
     open: boolean;
     loading: boolean;
     image: UnsplashImageType;
-    apiKey: string;
     handleUpload: (url: string, filename: string) => void;
     handleClose: () => void;
 };
