@@ -63,72 +63,69 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../hooks");
-var hooks_2 = require("../../../hooks");
-var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
-var icons_material_1 = require("@mui/icons-material");
-var DocumentListItem_1 = __importDefault(require("./DocumentListItem"));
-var DocumentListDrawer = function (props) {
-    var _a, _b, _c;
-    var open = props.open, field = props.field, handleSubmit = props.handleSubmit, handleClose = props.handleClose, _d = props.enableMultipleSelect, enableMultipleSelect = _d === void 0 ? false : _d;
-    var _e = (0, react_1.useState)(''), keywords = _e[0], setKeywords = _e[1];
-    var _f = (0, hooks_2.useSelected)(), selected = _f.selected, selectedIds = _f.selectedIds, setSelected = _f.setSelected, handleSelect = _f.handleSelect, handleClear = _f.handleClear;
-    var _g = (0, hooks_1.useDocuments)({
-        contentType: (_a = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _a === void 0 ? void 0 : _a.name,
-    }), loading = _g.loading, documents = _g.documents, findDocuments = _g.findDocuments, loadMore = _g.loadMore, page = _g.page, numPages = _g.numPages;
-    var handleSelectClick = function (document) {
-        if (enableMultipleSelect) {
-            handleSelect(document);
-        }
-        else {
-            setSelected([document]);
-        }
-    };
+var MediaImage_1 = __importDefault(require("./MediaImage"));
+var MediaModal_1 = __importDefault(require("./MediaModal"));
+var lucide_react_1 = require("lucide-react");
+var MediaInput = function (props) {
+    var name = props.name, value = props.value, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment;
+    var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
+    var _b = (0, react_1.useState)(false), openEdit = _b[0], setOpenEdit = _b[1];
+    var handleSubmit = function (resources) { return __awaiter(void 0, void 0, void 0, function () {
+        var resourceIds;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    resourceIds = resources.map(function (res) { return res === null || res === void 0 ? void 0 : res.id; });
+                    return [4 /*yield*/, handleAddAttachment(name, resourceIds[0])];
+                case 1:
+                    _a.sent();
+                    setOpen(false);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleRemove = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, handleRemoveAttachment(name)];
+                case 1:
+                    _a.sent();
+                    setOpen(false);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     var handleAddClick = function () {
-        handleSubmit(selected);
-        setKeywords('');
-        handleClear();
+        setOpenEdit(true);
     };
-    var handleKeywordChange = function (e) {
-        setKeywords(e.target.value);
-    };
-    var handleSearch = function () {
-        findDocuments({
-            keywords: keywords,
-            page: 1,
-        });
-    };
-    var handleLoadMore = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, loadMore()];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    }); };
-    var handleLoadDocuments = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, findDocuments({
-                        page: 1,
-                    })];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    }); };
-    (0, react_1.useEffect)(function () {
-        if (open && field) {
-            handleLoadDocuments();
-        }
-    }, [open, field]);
-    return (react_1.default.createElement(components_1.Drawer, { open: open, title: "Add ".concat((_b = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _b === void 0 ? void 0 : _b.singular_name), handleClose: handleClose, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", disabled: !selected, onClick: handleAddClick }, "Add") },
-        react_1.default.createElement(components_1.SearchInput, { name: "keywords", handleChange: handleKeywordChange, value: keywords, handleSearch: handleSearch, placeholder: "Search ".concat((_c = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _c === void 0 ? void 0 : _c.plural_name, "...") }),
-        react_1.default.createElement(material_1.List, null, documents === null || documents === void 0 ? void 0 : documents.map(function (document, idx) { return (react_1.default.createElement(DocumentListItem_1.default, { key: idx, document: document, selected: selectedIds.includes(document === null || document === void 0 ? void 0 : document.id), handleClick: function () { return handleSelectClick(document); } })); })),
-        numPages > page && (react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleLoadMore, endIcon: loading ? react_1.default.createElement(material_1.CircularProgress, { disableShrink: true }) : react_1.default.createElement(icons_material_1.ExpandMore, null) }, "Load More"))));
+    return (react_1.default.createElement(material_1.Stack, { spacing: 1 },
+        react_1.default.createElement(MediaImage_1.default, { image: value, handleRemove: handleRemove }),
+        react_1.default.createElement(material_1.Box, { sx: sx.buttons },
+            react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAddClick, startIcon: react_1.default.createElement(lucide_react_1.Search, null) }, "Browse")),
+        react_1.default.createElement(MediaModal_1.default, { open: openEdit, handleClose: function () { return setOpenEdit(false); }, handleSubmit: handleSubmit })));
 };
-exports.default = DocumentListDrawer;
+exports.default = MediaInput;
+var sx = {
+    root: {
+        height: '100%',
+    },
+    icon: {
+        color: 'icon',
+    },
+    content: {
+        overflow: 'hidden',
+    },
+    buttons: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: '5px',
+    },
+    emptyImage: {
+        borderRadius: 1,
+        width: '100px',
+        border: '1px solid',
+        borderColor: 'divider',
+        overflow: 'hidden',
+    },
+};

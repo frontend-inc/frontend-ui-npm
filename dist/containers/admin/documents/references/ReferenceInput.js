@@ -78,9 +78,9 @@ var hooks_1 = require("../../../../hooks");
 var components_1 = require("../../../../components");
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var DocumentListDrawer_1 = __importDefault(require("../DocumentListDrawer"));
-var DocumentEditDrawer_1 = __importDefault(require("../DocumentEditDrawer"));
-var SortableReferenceItem_1 = __importDefault(require("./SortableReferenceItem"));
+var DocumentList_1 = __importDefault(require("./DocumentList"));
+var DocumentEdit_1 = __importDefault(require("./DocumentEdit"));
+var ReferenceItem_1 = __importDefault(require("./ReferenceItem"));
 var helpers_1 = require("../../../../helpers");
 var ReferenceInput = function (props) {
     var _a, _b, _c;
@@ -90,7 +90,7 @@ var ReferenceInput = function (props) {
     var _g = (0, react_1.useState)(false), openEdit = _g[0], setOpenEdit = _g[1];
     var _h = (0, react_1.useState)({}), foreignDocument = _h[0], setForeignDocument = _h[1];
     var updateReferencePositions = (0, hooks_1.useDocuments)({
-        contentType: collection === null || collection === void 0 ? void 0 : collection.name,
+        collection: collection === null || collection === void 0 ? void 0 : collection.name,
     }).updateReferencePositions;
     var handleSubmit = function (resources) { return __awaiter(void 0, void 0, void 0, function () {
         var resourceIds;
@@ -143,7 +143,7 @@ var ReferenceInput = function (props) {
         }
     }, [field, document]);
     return (react_1.default.createElement(material_1.Box, null,
-        resources && field && (react_1.default.createElement(components_1.SortableList, { droppableId: 'sortable-documents', items: resources, handleDrop: handleDrop, renderItem: function (item, idx) { return (react_1.default.createElement(SortableReferenceItem_1.default, { key: idx, item: item, handleEditItem: handleEdit, handleRemoveItem: handleRemove })); } })),
+        resources && field && (react_1.default.createElement(components_1.SortableList, { droppableId: 'sortable-documents', items: resources, handleDrop: handleDrop, renderItem: function (item, idx) { return (react_1.default.createElement(ReferenceItem_1.default, { key: idx, item: item, handleEditItem: handleEdit, handleRemoveItem: handleRemove })); } })),
         react_1.default.createElement(material_1.Box, { sx: sx.buttons },
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: function () { return setOpen(true); }, startIcon: react_1.default.createElement(icons_material_1.Search, null) },
                 "Choose ", (_a = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _a === void 0 ? void 0 :
@@ -151,8 +151,8 @@ var ReferenceInput = function (props) {
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAddClick },
                 "Add ", (_b = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _b === void 0 ? void 0 :
                 _b.singular_name)),
-        react_1.default.createElement(DocumentListDrawer_1.default, { enableMultipleSelect: enableMultipleSelect, open: open, field: field, handleSubmit: handleSubmit, handleClose: function () { return setOpen(false); } }),
-        react_1.default.createElement(DocumentEditDrawer_1.default, { open: openEdit, handleClose: function () { return setOpenEdit(false); }, handleSubmit: handleSubmit, documentId: foreignDocument === null || foreignDocument === void 0 ? void 0 : foreignDocument.id, collectionId: (_c = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _c === void 0 ? void 0 : _c.name })));
+        react_1.default.createElement(DocumentList_1.default, { enableMultipleSelect: enableMultipleSelect, open: open, field: field, handleSubmit: handleSubmit, handleClose: function () { return setOpen(false); } }),
+        react_1.default.createElement(DocumentEdit_1.default, { open: openEdit, handleClose: function () { return setOpenEdit(false); }, handleSubmit: handleSubmit, documentId: foreignDocument === null || foreignDocument === void 0 ? void 0 : foreignDocument.id, collectionId: (_c = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _c === void 0 ? void 0 : _c.name })));
 };
 exports.default = ReferenceInput;
 var sx = {

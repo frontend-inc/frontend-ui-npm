@@ -95,7 +95,7 @@ var DocumentEdit = function (props) {
     var clientUrl = (0, hooks_1.useAdmin)().clientUrl;
     var _f = (0, hooks_1.useCollections)(), collection = _f.collection, findCollection = _f.findCollection;
     var _g = (0, hooks_1.useDocuments)({
-        contentType: collectionId,
+        collection: collectionId,
     }), loading = _g.loading, errors = _g.errors, document = _g.document, setDocument = _g.setDocument, findDocument = _g.findDocument, updateDocument = _g.updateDocument, createDocument = _g.createDocument, reloadDocument = _g.reloadDocument, addReferences = _g.addReferences, removeReferences = _g.removeReferences, addAttachment = _g.addAttachment, removeAttachment = _g.removeAttachment, updateDocuments = _g.updateDocuments, handleChange = _g.handleChange;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;

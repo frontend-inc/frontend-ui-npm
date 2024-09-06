@@ -1,10 +1,10 @@
 import React from 'react';
-type StorageItemProps = {
+type MediaItemProps = {
     item?: any;
     size?: number;
     selected?: boolean;
     handleClick?: (item: any) => void;
     handleRemoveItem?: (item: any) => void;
 };
-declare const StorageItem: React.FC<StorageItemProps>;
-export default StorageItem;
+declare const MediaItem: React.FC<MediaItemProps>;
+export default MediaItem;

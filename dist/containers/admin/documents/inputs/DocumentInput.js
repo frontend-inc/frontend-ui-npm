@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../../components");
 var ReferenceInput_1 = __importDefault(require("../references/ReferenceInput"));
-var StorageInput_1 = __importDefault(require("../storage/StorageInput"));
+var MediaInput_1 = __importDefault(require("../media/MediaInput"));
 var InputWrapper_1 = __importDefault(require("./InputWrapper"));
 var components_2 = require("../../../../components");
 var constants_1 = require("../../../../constants");
@@ -43,9 +43,9 @@ var DocumentInput = function (props) {
         json: components_1.JSONInput,
         shopify: components_1.ShopifyProductInput,
         shopify_products: components_1.ShopifyProductsInput,
-        file: StorageInput_1.default,
-        image: StorageInput_1.default,
-        video: StorageInput_1.default,
+        file: MediaInput_1.default,
+        image: MediaInput_1.default,
+        video: MediaInput_1.default,
         habtm: ReferenceInput_1.default
     };
     var Component = componentMapper[variant] || components_1.TextInput;

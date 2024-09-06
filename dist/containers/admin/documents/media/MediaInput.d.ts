@@ -1,10 +1,10 @@
 import React from 'react';
 import { ImageType } from '../../../../types';
-type StorageInputProps = {
+type MediaInputProps = {
     name: string;
     value: ImageType;
     handleAddAttachment: (field: string, id: number) => void;
     handleRemoveAttachment: (field: string) => void;
 };
-declare const StorageInput: React.FC<StorageInputProps>;
-export default StorageInput;
+declare const MediaInput: React.FC<MediaInputProps>;
+export default MediaInput;

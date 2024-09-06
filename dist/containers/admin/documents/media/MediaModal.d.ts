@@ -1,8 +1,8 @@
 import React from 'react';
-type StorageDrawerProps = {
+type MediaDrawerProps = {
     open: boolean;
     handleClose: () => void;
     handleSubmit: (items: any[]) => void;
 };
-declare const StorageDrawer: React.FC<StorageDrawerProps>;
-export default StorageDrawer;
+declare const MediaDrawer: React.FC<MediaDrawerProps>;
+export default MediaDrawer;

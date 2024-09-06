@@ -113,7 +113,7 @@ var AdminCollectionTable = function (props) {
     var _k = (0, react_1.useState)(), visibleFields = _k[0], setVisibleFields = _k[1];
     var _l = (0, hooks_2.useAdmin)(), openLayoutLeft = _l.openLayoutLeft, clientUrl = _l.clientUrl;
     var _m = (0, hooks_2.useDocuments)({
-        contentType: collectionId,
+        collection: collectionId,
     }), query = _m.query, setQuery = _m.setQuery, loading = _m.loading, delayedLoading = _m.delayedLoading, documents = _m.documents, findDocuments = _m.findDocuments, deleteDocument = _m.deleteDocument, deleteDocuments = _m.deleteDocuments, publish = _m.publish, unpublish = _m.unpublish, paginate = _m.paginate, page = _m.page, perPage = _m.perPage, numPages = _m.numPages, totalCount = _m.totalCount;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var handleDeleteSelectedClick = function (items) {

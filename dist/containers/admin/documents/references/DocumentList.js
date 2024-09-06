@@ -63,99 +63,72 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("../../../../components");
 var hooks_1 = require("../../../../hooks");
 var hooks_2 = require("../../../../hooks");
+var components_1 = require("../../../../components");
 var material_1 = require("@mui/material");
-var StorageItem_1 = __importDefault(require("./StorageItem"));
-var containers_1 = require("../../../../containers");
-var StorageList_1 = __importDefault(require("./StorageList"));
-var router_1 = require("next/router");
-var components_2 = require("../../../../components");
-var StorageDrawer = function (props) {
-    var open = props.open, handleClose = props.handleClose, handleSubmit = props.handleSubmit;
-    var router = (0, router_1.useRouter)();
-    var appId = (router === null || router === void 0 ? void 0 : router.query).app_id;
-    var _a = (0, react_1.useState)(0), tab = _a[0], setTab = _a[1];
-    var _b = (0, react_1.useState)(null), selected = _b[0], setSelected = _b[1];
-    var _c = (0, react_1.useState)(null), uploaded = _c[0], setUploaded = _c[1];
-    var showAlertError = (0, hooks_2.useAlerts)().showAlertError;
-    var deleteResource = (0, hooks_1.useMedia)().deleteResource;
-    var handleTabChange = function (value) {
-        setTab(value);
+var icons_material_1 = require("@mui/icons-material");
+var DocumentListItem_1 = __importDefault(require("./DocumentListItem"));
+var DocumentListDrawer = function (props) {
+    var _a, _b, _c;
+    var open = props.open, field = props.field, handleSubmit = props.handleSubmit, handleClose = props.handleClose, _d = props.enableMultipleSelect, enableMultipleSelect = _d === void 0 ? false : _d;
+    var _e = (0, react_1.useState)(''), keywords = _e[0], setKeywords = _e[1];
+    var _f = (0, hooks_2.useSelected)(), selected = _f.selected, selectedIds = _f.selectedIds, setSelected = _f.setSelected, handleSelect = _f.handleSelect, handleClear = _f.handleClear;
+    var _g = (0, hooks_1.useDocuments)({
+        collection: (_a = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _a === void 0 ? void 0 : _a.name,
+    }), loading = _g.loading, documents = _g.documents, findDocuments = _g.findDocuments, loadMore = _g.loadMore, page = _g.page, numPages = _g.numPages;
+    var handleSelectClick = function (document) {
+        if (enableMultipleSelect) {
+            handleSelect(document);
+        }
+        else {
+            setSelected([document]);
+        }
     };
-    var handleSelect = function (resource) {
-        setSelected(resource);
+    var handleAddClick = function () {
+        handleSubmit(selected);
+        setKeywords('');
+        handleClear();
     };
-    // Upload methods
-    var handleRemoveItem = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var handleKeywordChange = function (e) {
+        setKeywords(e.target.value);
+    };
+    var handleSearch = function () {
+        findDocuments({
+            keywords: keywords,
+            page: 1,
+        });
+    };
+    var handleLoadMore = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, deleteResource(uploaded.id)];
+                case 0: return [4 /*yield*/, loadMore()];
                 case 1:
                     _a.sent();
-                    setUploaded(null);
                     return [2 /*return*/];
             }
         });
     }); };
-    var handleComplete = function (resource) { return __awaiter(void 0, void 0, void 0, function () {
+    var handleLoadDocuments = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            setUploaded(resource);
-            setSelected(resource);
-            setTab(0);
-            return [2 /*return*/];
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, findDocuments({
+                        page: 1,
+                    })];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
         });
     }); };
-    var handleAttach = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            if (selected) {
-                handleSubmit([selected]);
-                handleClose();
-            }
-            else {
-                showAlertError('There was an error saving the document');
-            }
-            return [2 /*return*/];
-        });
-    }); };
-    var OPTIONS = [
-        {
-            label: 'Browse',
-            value: 0,
-        },
-        {
-            label: 'Upload',
-            value: 1,
-        },
-        {
-            label: 'Unsplash',
-            value: 2,
-        },
-    ];
-    return (react_1.default.createElement(components_1.Drawer, { disablePadding: true, open: open, handleClose: handleClose, title: 'Browse Media', buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleAttach }, "Save") },
-        react_1.default.createElement(material_1.Box, null,
-            react_1.default.createElement(material_1.Box, { p: 1 },
-                react_1.default.createElement(components_1.ButtonTabs, { disableBorder: true, disablePadding: true, options: OPTIONS, handleChange: handleTabChange, value: tab })),
-            react_1.default.createElement(material_1.Box, { sx: sx.content },
-                tab == 0 && (react_1.default.createElement(StorageList_1.default, { selectedIds: [selected === null || selected === void 0 ? void 0 : selected.id], handleSelect: handleSelect })),
-                tab == 1 && (react_1.default.createElement(react_1.default.Fragment, null,
-                    uploaded && (react_1.default.createElement(StorageItem_1.default, { item: uploaded, handleRemoveItem: handleRemoveItem })),
-                    react_1.default.createElement(containers_1.MediaUploader, { onComplete: handleComplete }))),
-                tab == 2 && (react_1.default.createElement(react_1.default.Fragment, null,
-                    uploaded && (react_1.default.createElement(StorageItem_1.default, { item: uploaded, handleRemoveItem: handleRemoveItem })),
-                    react_1.default.createElement(components_2.UnsplashList, { onComplete: handleComplete })))))));
+    (0, react_1.useEffect)(function () {
+        if (open && field) {
+            handleLoadDocuments();
+        }
+    }, [open, field]);
+    return (react_1.default.createElement(components_1.Drawer, { open: open, title: "Add ".concat((_b = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _b === void 0 ? void 0 : _b.singular_name), handleClose: handleClose, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", disabled: !selected, onClick: handleAddClick }, "Add") },
+        react_1.default.createElement(components_1.SearchInput, { name: "keywords", handleChange: handleKeywordChange, value: keywords, handleSearch: handleSearch, placeholder: "Search ".concat((_c = field === null || field === void 0 ? void 0 : field.foreign_collection) === null || _c === void 0 ? void 0 : _c.plural_name, "...") }),
+        react_1.default.createElement(material_1.List, null, documents === null || documents === void 0 ? void 0 : documents.map(function (document, idx) { return (react_1.default.createElement(DocumentListItem_1.default, { key: idx, document: document, selected: selectedIds.includes(document === null || document === void 0 ? void 0 : document.id), handleClick: function () { return handleSelectClick(document); } })); })),
+        numPages > page && (react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleLoadMore, endIcon: loading ? react_1.default.createElement(material_1.CircularProgress, { disableShrink: true }) : react_1.default.createElement(icons_material_1.ExpandMore, null) }, "Load More"))));
 };
-exports.default = StorageDrawer;
-var sx = {
-    icon: {
-        height: 28,
-        width: 28,
-    },
-    progressLoader: {
-        p: 0,
-    },
-    content: {
-        p: 2,
-    },
-};
+exports.default = DocumentListDrawer;

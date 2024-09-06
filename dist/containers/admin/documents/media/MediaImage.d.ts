@@ -1,8 +1,8 @@
 import React from 'react';
 import { ImageType } from '../../../../types';
-type StorageImageProps = {
+type MediaImageProps = {
     image?: ImageType;
     handleRemove: () => void;
 };
-declare const StorageImage: React.FC<StorageImageProps>;
-export default StorageImage;
+declare const MediaImage: React.FC<MediaImageProps>;
+export default MediaImage;

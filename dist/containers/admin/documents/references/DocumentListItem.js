@@ -16,9 +16,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
-var components_2 = require("../../../components");
-var helpers_1 = require("../../../helpers");
+var components_1 = require("../../../../components");
+var components_2 = require("../../../../components");
+var helpers_1 = require("../../../../helpers");
 var DocumentListItem = function (props) {
     var _a;
     var document = props.document, handleClick = props.handleClick, _b = props.selected, selected = _b === void 0 ? false : _b;

@@ -63,69 +63,43 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
+var hooks_1 = require("../../../../hooks");
 var material_1 = require("@mui/material");
-var StorageImage_1 = __importDefault(require("./StorageImage"));
-var StorageDrawer_1 = __importDefault(require("./StorageDrawer"));
-var lucide_react_1 = require("lucide-react");
-var StorageInput = function (props) {
-    var name = props.name, value = props.value, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment;
-    var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
-    var _b = (0, react_1.useState)(false), openEdit = _b[0], setOpenEdit = _b[1];
-    var handleSubmit = function (resources) { return __awaiter(void 0, void 0, void 0, function () {
-        var resourceIds;
+var icons_material_1 = require("@mui/icons-material");
+var MediaItem_1 = __importDefault(require("./MediaItem"));
+var router_1 = require("next/router");
+var components_1 = require("../../../../components");
+var MediaItemList = function (props) {
+    var selectedIds = props.selectedIds, handleSelect = props.handleSelect;
+    var router = (0, router_1.useRouter)();
+    var appId = (router === null || router === void 0 ? void 0 : router.query).app_id;
+    var _a = (0, hooks_1.useMedia)(), loading = _a.loading, resources = _a.resources, findResources = _a.findResources, loadMore = _a.loadMore, page = _a.page, numPages = _a.numPages;
+    var handleLoadMore = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    resourceIds = resources.map(function (res) { return res === null || res === void 0 ? void 0 : res.id; });
-                    return [4 /*yield*/, handleAddAttachment(name, resourceIds[0])];
+                case 0: return [4 /*yield*/, loadMore()];
                 case 1:
                     _a.sent();
-                    setOpen(false);
                     return [2 /*return*/];
             }
         });
     }); };
-    var handleRemove = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, handleRemoveAttachment(name)];
-                case 1:
-                    _a.sent();
-                    setOpen(false);
-                    return [2 /*return*/];
-            }
+    (0, react_1.useEffect)(function () {
+        findResources({
+            page: 1,
         });
-    }); };
-    var handleAddClick = function () {
-        setOpenEdit(true);
-    };
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1 },
-        react_1.default.createElement(StorageImage_1.default, { image: value, handleRemove: handleRemove }),
-        react_1.default.createElement(material_1.Box, { sx: sx.buttons },
-            react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAddClick, startIcon: react_1.default.createElement(lucide_react_1.Search, null) }, "Browse")),
-        react_1.default.createElement(StorageDrawer_1.default, { open: openEdit, handleClose: function () { return setOpenEdit(false); }, handleSubmit: handleSubmit })));
+    }, []);
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(material_1.Box, { sx: sx.list }, resources.map(function (item, idx) { return (react_1.default.createElement(MediaItem_1.default, { key: idx, item: item, size: 164, selected: selectedIds.includes(item === null || item === void 0 ? void 0 : item.id), handleClick: function () { return handleSelect(item); } })); })),
+        (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Image', title: "No media", description: "Upload or import media." })),
+        numPages > page && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleLoadMore, endIcon: loading ? react_1.default.createElement(material_1.CircularProgress, { disableShrink: true }) : react_1.default.createElement(icons_material_1.ExpandMore, null) }, "Load More"))));
 };
-exports.default = StorageInput;
+exports.default = MediaItemList;
 var sx = {
-    root: {
-        height: '100%',
-    },
-    icon: {
-        color: 'icon',
-    },
-    content: {
-        overflow: 'hidden',
-    },
-    buttons: {
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '5px',
-    },
-    emptyImage: {
-        borderRadius: 1,
-        width: '100px',
-        border: '1px solid',
-        borderColor: 'divider',
-        overflow: 'hidden',
+    list: {
+        mt: 2,
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '10px',
     },
 };

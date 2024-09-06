@@ -19,6 +19,7 @@ __exportStar(require("./buttons"), exports);
 __exportStar(require("./app"), exports);
 __exportStar(require("./client"), exports);
 __exportStar(require("./cms"), exports);
+__exportStar(require("./collections"), exports);
 __exportStar(require("./colors"), exports);
 __exportStar(require("./geo"), exports);
 __exportStar(require("./fields"), exports);

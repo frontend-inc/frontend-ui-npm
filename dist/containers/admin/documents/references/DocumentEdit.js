@@ -74,19 +74,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("../../../components");
-var hooks_1 = require("../../../hooks");
+var components_1 = require("../../../../components");
+var hooks_1 = require("../../../../hooks");
 var material_1 = require("@mui/material");
-var AdminDocumentForm_1 = __importDefault(require("./AdminDocumentForm"));
-var PublishButton_1 = __importDefault(require("./inputs/PublishButton"));
-var SaveButton_1 = __importDefault(require("./inputs/SaveButton"));
-var DocumentEditDrawer = function (props) {
+var AdminDocumentForm_1 = __importDefault(require("../AdminDocumentForm"));
+var PublishButton_1 = __importDefault(require("../inputs/PublishButton"));
+var SaveButton_1 = __importDefault(require("../inputs/SaveButton"));
+var DocumentEdit = function (props) {
     var open = props.open, handleClose = props.handleClose, documentId = props.documentId, collectionId = props.collectionId, handleSubmitItems = props.handleSubmit;
     var _a = (0, react_1.useState)(null), title = _a[0], setTitle = _a[1];
     var _b = (0, react_1.useState)(null), activeFields = _b[0], setActiveFields = _b[1];
     var _c = (0, hooks_1.useCollections)(), collection = _c.collection, findCollection = _c.findCollection;
     var _d = (0, hooks_1.useDocuments)({
-        contentType: collectionId,
+        collection: collectionId,
     }), loading = _d.loading, errors = _d.errors, document = _d.document, setDocument = _d.setDocument, findDocument = _d.findDocument, updateDocument = _d.updateDocument, createDocument = _d.createDocument, addAttachment = _d.addAttachment, removeAttachment = _d.removeAttachment, addReferences = _d.addReferences, removeReferences = _d.removeReferences, handleChange = _d.handleChange;
     var handleSubmit = function (document) { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
@@ -204,7 +204,7 @@ var DocumentEditDrawer = function (props) {
             react_1.default.createElement(SaveButton_1.default, { fullWidth: true, loading: loading, document: document, handleSubmit: function () { return handleSubmit(document); } }),
             react_1.default.createElement(PublishButton_1.default, { fullWidth: true, loading: loading, document: document, handleTogglePublish: handleSubmitAndPublish }))))));
 };
-exports.default = DocumentEditDrawer;
+exports.default = DocumentEdit;
 var sx = {
     container: {
         width: {

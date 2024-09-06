@@ -41,7 +41,7 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
 var components_1 = require("../../../../components");
-var StorageItem = function (props) {
+var MediaItem = function (props) {
     var _a;
     var item = props.item, _b = props.size, size = _b === void 0 ? 180 : _b, selected = props.selected, handleClick = props.handleClick, handleRemoveItem = props.handleRemoveItem;
     var _c = (0, react_1.useState)(''), contentType = _c[0], setContentType = _c[1];
@@ -57,7 +57,7 @@ var StorageItem = function (props) {
                 objectFit: 'cover',
             } })) : (react_1.default.createElement(components_1.AttachmentImage, { icon: "File", width: size, height: size })))));
 };
-exports.default = StorageItem;
+exports.default = MediaItem;
 var sx = {
     root: {
         borderRadius: 1,

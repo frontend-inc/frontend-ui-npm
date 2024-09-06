@@ -5,7 +5,6 @@ export declare const SYSTEM_FIELDS: string[];
 export declare const ID_FIELD: FieldBase;
 export declare const HANDLE_FIELD: FieldBase;
 export declare const TITLE_FIELD: FieldBase;
-export declare const SUBTITLE_FIELD: FieldBase;
 export declare const PUBLISHED_FIELD: FieldBase;
 export declare const LOCALE_FIELD: FieldBase;
 export declare const TAGS_FIELD: FieldBase;

@@ -1,6 +1,6 @@
 import React from 'react';
 type UseDocumentProps = {
-    contentType: string | number;
+    collection: string | number;
 };
 declare const useDocuments: (props: UseDocumentProps) => {
     paginate: (page: number) => Promise<any>;

@@ -63,43 +63,96 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../../hooks");
-var material_1 = require("@mui/material");
-var icons_material_1 = require("@mui/icons-material");
-var StorageItem_1 = __importDefault(require("./StorageItem"));
-var router_1 = require("next/router");
 var components_1 = require("../../../../components");
-var StorageItemList = function (props) {
-    var selectedIds = props.selectedIds, handleSelect = props.handleSelect;
-    var router = (0, router_1.useRouter)();
-    var appId = (router === null || router === void 0 ? void 0 : router.query).app_id;
-    var _a = (0, hooks_1.useMedia)(), loading = _a.loading, resources = _a.resources, findResources = _a.findResources, loadMore = _a.loadMore, page = _a.page, numPages = _a.numPages;
-    var handleLoadMore = function () { return __awaiter(void 0, void 0, void 0, function () {
+var hooks_1 = require("../../../../hooks");
+var hooks_2 = require("../../../../hooks");
+var material_1 = require("@mui/material");
+var MediaItem_1 = __importDefault(require("./MediaItem"));
+var __1 = require("../../..");
+var MediaList_1 = __importDefault(require("./MediaList"));
+var components_2 = require("../../../../components");
+var MediaDrawer = function (props) {
+    var open = props.open, handleClose = props.handleClose, handleSubmit = props.handleSubmit;
+    var _a = (0, react_1.useState)(0), tab = _a[0], setTab = _a[1];
+    var _b = (0, react_1.useState)(null), selected = _b[0], setSelected = _b[1];
+    var _c = (0, react_1.useState)(null), uploaded = _c[0], setUploaded = _c[1];
+    var showAlertError = (0, hooks_2.useAlerts)().showAlertError;
+    var deleteResource = (0, hooks_1.useMedia)().deleteResource;
+    var handleTabChange = function (value) {
+        setTab(value);
+    };
+    var handleSelect = function (resource) {
+        setSelected(resource);
+    };
+    // Upload methods
+    var handleRemoveItem = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadMore()];
+                case 0: return [4 /*yield*/, deleteResource(uploaded.id)];
                 case 1:
                     _a.sent();
+                    setUploaded(null);
                     return [2 /*return*/];
             }
         });
     }); };
-    (0, react_1.useEffect)(function () {
-        findResources({
-            page: 1,
+    var handleComplete = function (resource) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            setUploaded(resource);
+            setSelected(resource);
+            setTab(0);
+            return [2 /*return*/];
         });
-    }, []);
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Box, { sx: sx.list }, resources.map(function (item, idx) { return (react_1.default.createElement(StorageItem_1.default, { key: idx, item: item, size: 164, selected: selectedIds.includes(item === null || item === void 0 ? void 0 : item.id), handleClick: function () { return handleSelect(item); } })); })),
-        (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Image', title: "No media", description: "Upload or import media." })),
-        numPages > page && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleLoadMore, endIcon: loading ? react_1.default.createElement(material_1.CircularProgress, { disableShrink: true }) : react_1.default.createElement(icons_material_1.ExpandMore, null) }, "Load More"))));
+    }); };
+    var handleAttach = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            if (selected) {
+                handleSubmit([selected]);
+                handleClose();
+            }
+            else {
+                showAlertError('There was an error saving the document');
+            }
+            return [2 /*return*/];
+        });
+    }); };
+    var OPTIONS = [
+        {
+            label: 'Browse',
+            value: 0,
+        },
+        {
+            label: 'Upload',
+            value: 1,
+        },
+        {
+            label: 'Unsplash',
+            value: 2,
+        },
+    ];
+    return (react_1.default.createElement(components_1.Drawer, { disablePadding: true, open: open, handleClose: handleClose, title: 'Browse Media', buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleAttach }, "Save") },
+        react_1.default.createElement(material_1.Box, null,
+            react_1.default.createElement(material_1.Box, { p: 1 },
+                react_1.default.createElement(components_1.ButtonTabs, { disableBorder: true, disablePadding: true, options: OPTIONS, handleChange: handleTabChange, value: tab })),
+            react_1.default.createElement(material_1.Box, { sx: sx.content },
+                tab == 0 && (react_1.default.createElement(MediaList_1.default, { selectedIds: [selected === null || selected === void 0 ? void 0 : selected.id], handleSelect: handleSelect })),
+                tab == 1 && (react_1.default.createElement(react_1.default.Fragment, null,
+                    uploaded && (react_1.default.createElement(MediaItem_1.default, { item: uploaded, handleRemoveItem: handleRemoveItem })),
+                    react_1.default.createElement(__1.MediaUploader, { onComplete: handleComplete }))),
+                tab == 2 && (react_1.default.createElement(react_1.default.Fragment, null,
+                    uploaded && (react_1.default.createElement(MediaItem_1.default, { item: uploaded, handleRemoveItem: handleRemoveItem })),
+                    react_1.default.createElement(components_2.UnsplashList, { onComplete: handleComplete })))))));
 };
-exports.default = StorageItemList;
+exports.default = MediaDrawer;
 var sx = {
-    list: {
-        mt: 2,
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '10px',
+    icon: {
+        height: 28,
+        width: 28,
+    },
+    progressLoader: {
+        p: 0,
+    },
+    content: {
+        p: 2,
     },
 };

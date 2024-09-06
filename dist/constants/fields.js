@@ -1,18 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DEFAULT_FIELDS = exports.TEAM_FIELD = exports.USER_FIELD = exports.TAGS_FIELD = exports.LOCALE_FIELD = exports.PUBLISHED_FIELD = exports.SUBTITLE_FIELD = exports.TITLE_FIELD = exports.HANDLE_FIELD = exports.ID_FIELD = exports.SYSTEM_FIELDS = exports.ATTACHMENT_FIELDS = exports.REFERENCE_FIELDS = void 0;
+exports.DEFAULT_FIELDS = exports.TEAM_FIELD = exports.USER_FIELD = exports.TAGS_FIELD = exports.LOCALE_FIELD = exports.PUBLISHED_FIELD = exports.TITLE_FIELD = exports.HANDLE_FIELD = exports.ID_FIELD = exports.SYSTEM_FIELDS = exports.ATTACHMENT_FIELDS = exports.REFERENCE_FIELDS = void 0;
 exports.REFERENCE_FIELDS = ['habtm'];
 exports.ATTACHMENT_FIELDS = ['image', 'video', 'file'];
 exports.SYSTEM_FIELDS = [
     'id',
     'title',
-    'subtitle',
     'description',
     'handle',
     'user_id',
     'team_id',
     'label',
-    'shopify_handle',
     'shopify_products',
     'published',
     'status',
@@ -26,10 +24,7 @@ exports.SYSTEM_FIELDS = [
     'attachment',
     'file',
     'lat',
-    'lng',
-    'email',
-    'phone',
-    'url',
+    'lng'
 ];
 /* SYSTEM FIELDS */
 exports.ID_FIELD = {
@@ -63,18 +58,6 @@ exports.TITLE_FIELD = {
     db_type: 'string',
     name: 'title',
     position: 2,
-    array: false,
-    internal: true,
-    visible: true,
-    editable: true,
-};
-exports.SUBTITLE_FIELD = {
-    label: 'Subtitle',
-    variant: 'string',
-    reference: false,
-    db_type: 'string',
-    name: 'subtitle',
-    position: 3,
     array: false,
     internal: true,
     visible: true,

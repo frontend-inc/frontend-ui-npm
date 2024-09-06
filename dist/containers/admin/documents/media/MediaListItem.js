@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../../components");
 var material_1 = require("@mui/material");
 var image_1 = __importDefault(require("next/image"));
-var StorageListItem = function (props) {
+var MediaListItem = function (props) {
     var item = props.item, handleClick = props.handleClick, _a = props.selected, selected = _a === void 0 ? false : _a;
     return (react_1.default.createElement(material_1.ListItem, { sx: __assign(__assign({}, sx.listItem), (selected && sx.selected)), secondaryAction: react_1.default.createElement(components_1.Label, { label: "".concat(item === null || item === void 0 ? void 0 : item.width, "x").concat(item === null || item === void 0 ? void 0 : item.height) }) },
         react_1.default.createElement(material_1.ListItemButton, { onClick: handleClick },
@@ -29,7 +29,7 @@ var StorageListItem = function (props) {
                     } })),
             react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(components_1.Label, { label: item === null || item === void 0 ? void 0 : item.content_type }) }))));
 };
-exports.default = StorageListItem;
+exports.default = MediaListItem;
 var sx = {
     listItem: {
         borderRadius: 1,
