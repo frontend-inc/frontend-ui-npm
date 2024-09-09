@@ -24,7 +24,7 @@ exports.SYSTEM_FIELDS = [
     'attachment',
     'file',
     'lat',
-    'lng'
+    'lng',
 ];
 /* SYSTEM FIELDS */
 exports.ID_FIELD = {

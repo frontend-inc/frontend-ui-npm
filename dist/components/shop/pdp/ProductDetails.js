@@ -36,7 +36,7 @@ var ProductDetails = function (props) {
     if (!(product === null || product === void 0 ? void 0 : product.id))
         return null;
     return (react_1.default.createElement(__1.PDP, { image: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, primary: product === null || product === void 0 ? void 0 : product.title, secondary: react_1.default.createElement(material_1.Stack, { spacing: 2, sx: { width: '100%' } },
-            react_1.default.createElement(material_1.Stack, { spacing: 2, sx: { width: '100%' }, alignItems: 'flex-start' },
+            react_1.default.createElement(material_1.Stack, { spacing: 2, sx: { width: '100%' }, alignItems: "flex-start" },
                 enableRatings == true && (react_1.default.createElement(__2.AvgRating, { resource: product, enableTotal: true })),
                 (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__2.DisplayFields, { fields: displayFields, resource: product }))),
             react_1.default.createElement(__2.ExpandableText, { text: product === null || product === void 0 ? void 0 : product.description })), actions: react_1.default.createElement(__2.SocialButtons, { size: "large", justifyContent: 'center', resource: product, product: product, enableProductLikes: enableLikes, enableProductFavorites: enableFavorites, enableSharing: enableSharing, enableAddToList: enableAddToList }), secondaryAction: (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },

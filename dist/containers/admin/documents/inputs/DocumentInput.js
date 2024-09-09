@@ -46,7 +46,7 @@ var DocumentInput = function (props) {
         file: MediaInput_1.default,
         image: MediaInput_1.default,
         video: MediaInput_1.default,
-        habtm: ReferenceInput_1.default
+        habtm: ReferenceInput_1.default,
     };
     var Component = componentMapper[variant] || components_1.TextInput;
     var inputProps = {
@@ -99,26 +99,26 @@ var DocumentInput = function (props) {
             collection: collection,
             handleAddReferences: handleAddReferences,
             handleRemoveReferences: handleRemoveReferences,
-            enableMultipleSelect: true
+            enableMultipleSelect: true,
         },
         image: {
             field: field,
             collection: collection,
             handleAddAttachment: handleAddAttachment,
-            handleRemoveAttachment: handleRemoveAttachment
+            handleRemoveAttachment: handleRemoveAttachment,
         },
         file: {
             field: field,
             collection: collection,
             handleAddAttachment: handleAddAttachment,
-            handleRemoveAttachment: handleRemoveAttachment
+            handleRemoveAttachment: handleRemoveAttachment,
         },
         video: {
             field: field,
             collection: collection,
             handleAddAttachment: handleAddAttachment,
-            handleRemoveAttachment: handleRemoveAttachment
-        }
+            handleRemoveAttachment: handleRemoveAttachment,
+        },
     }[variant];
     return (react_1.default.createElement(InputWrapper_1.default, { title: label, label: variant },
         react_1.default.createElement(material_1.Stack, { sx: sx.stack, direction: "row", spacing: 1, alignItems: "center" },

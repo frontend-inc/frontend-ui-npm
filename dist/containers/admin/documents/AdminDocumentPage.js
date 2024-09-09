@@ -231,7 +231,7 @@ var DocumentEdit = function (props) {
     (0, react_1.useEffect)(function () {
         var _a, _b;
         if (router === null || router === void 0 ? void 0 : router.query) {
-            //@ts-ignore 
+            //@ts-ignore
             setDocumentIds(((_b = (_a = router.query) === null || _a === void 0 ? void 0 : _a.ids) === null || _b === void 0 ? void 0 : _b.split(',')) || []);
         }
     }, [router === null || router === void 0 ? void 0 : router.query]);

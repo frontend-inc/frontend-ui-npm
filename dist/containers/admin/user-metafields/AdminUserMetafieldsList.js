@@ -11,9 +11,7 @@ var AdminMetafieldsList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     return (react_1.default.createElement(components_1.ResourceList, { sortable: true, url: "".concat(apiUrl, "/metafields"), name: "metafield", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, query: {
             filters: {
-                AND: [
-                    { metafield_type: { eq: 'User' } },
-                ]
+                AND: [{ metafield_type: { eq: 'User' } }],
             },
             sort_by: 'position',
             sort_direction: 'asc',

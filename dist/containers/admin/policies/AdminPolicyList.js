@@ -15,8 +15,8 @@ var AdminPolicysList = function () {
             sort_direction: 'asc',
         }, create: AdminPolicyForm_1.default, edit: AdminPolicyForm_1.default, component: __1.AdminPolicyItem, emptyIcon: "FileText", emptyTitle: "No policies", emptyDescription: "No policies yet.", slots: {
             item: {
-                enableBorder: true
-            }
+                enableBorder: true,
+            },
         } }));
 };
 exports.default = AdminPolicysList;

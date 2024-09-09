@@ -130,5 +130,5 @@ var sx = {
     selected: {
         border: '1px solid',
         borderColor: 'primary.main',
-    }
+    },
 };

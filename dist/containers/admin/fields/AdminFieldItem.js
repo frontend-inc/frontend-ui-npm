@@ -80,7 +80,7 @@ var AdminFieldItem = function (props) {
     var url = props.url, resource = props.resource, sortable = props.sortable, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleReload = props.handleReload;
     var _a = (0, frontend_js_1.useResource)({
         url: url,
-        name: 'field'
+        name: 'field',
     }), loading = _a.loading, field = _a.resource, setField = _a.setResource, updateField = _a.update;
     var handleUpdateField = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         var newField;

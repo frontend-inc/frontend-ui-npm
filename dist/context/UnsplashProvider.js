@@ -8,7 +8,7 @@ var UnsplashContext_1 = __importDefault(require("./UnsplashContext"));
 var UnsplashProvider = function (props) {
     var _a = props || {}, children = _a.children, apiKey = _a.apiKey;
     var value = {
-        unsplashApiKey: apiKey
+        unsplashApiKey: apiKey,
     };
     return (react_1.default.createElement(UnsplashContext_1.default.Provider, { value: value }, children));
 };

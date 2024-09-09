@@ -32,9 +32,7 @@ var AdminProductItem = function (props) {
     var _a;
     var product = props.resource, selectable = props.selectable, selected = props.selected, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, rest = __rest(props, ["resource", "selectable", "selected", "handleClick", "handleEdit", "handleDelete", "handleSelect"]);
     return (react_1.default.createElement(components_1.ResourceListItem, __assign({ selectable: selectable, selected: selected, image: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, primary: product === null || product === void 0 ? void 0 : product.title, secondary: react_1.default.createElement(material_1.Stack, { spacing: 1 },
-            react_1.default.createElement(components_1.DisplayFields, { resource: product, fields: [
-                    { label: 'Price', name: 'price', variant: 'price' },
-                ] }),
+            react_1.default.createElement(components_1.DisplayFields, { resource: product, fields: [{ label: 'Price', name: 'price', variant: 'price' }] }),
             react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(components_1.PublishLabel, { published: product === null || product === void 0 ? void 0 : product.published }))), handleEdit: handleEdit, handleDelete: handleDelete, handleClick: handleClick, handleSelect: handleSelect }, rest)));
 };

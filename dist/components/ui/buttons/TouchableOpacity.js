@@ -38,6 +38,6 @@ var sx = {
         },
     },
     disableBorderRadius: {
-        borderRadius: 0
-    }
+        borderRadius: 0,
+    },
 };

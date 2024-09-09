@@ -16,12 +16,12 @@ var AdminCollectionProductsList = function (props) {
     return (react_1.default.createElement(components_1.ResourceList, { selectable: true, sortable: true, url: url, name: 'collection_products', enableSearch: true, enableDelete: true, enableCreate: true, toolbar: AdminCollectionProductToolbar_1.default, component: AdminCollectionProductItem_1.default, create: AdminCollectionProductsAdd_1.default, emptyIcon: "Shirt", emptyTitle: "No products", emptyDescription: "No products added yet.", slots: {
             toolbar: {
                 url: url,
-                productCollectionId: productCollectionId
+                productCollectionId: productCollectionId,
             },
             create: {
                 url: "".concat(apiUrl, "/product_collections"),
-                productCollectionId: productCollectionId
-            }
+                productCollectionId: productCollectionId,
+            },
         } }));
 };
 exports.default = AdminCollectionProductsList;

@@ -86,8 +86,8 @@ var AdminMediaForm = function (props) {
                     { label: 'Upload', value: 0 },
                     { label: 'Unsplash', value: 1 },
                 ], value: tab, handleChange: handleChange })),
-        tab == 0 && (react_1.default.createElement(MediaUploader_1.default, { onComplete: handleComplete })),
-        tab == 1 && (react_1.default.createElement(components_2.UnsplashList, { onComplete: handleComplete }))));
+        tab == 0 && react_1.default.createElement(MediaUploader_1.default, { onComplete: handleComplete }),
+        tab == 1 && react_1.default.createElement(components_2.UnsplashList, { onComplete: handleComplete })));
 };
 exports.default = AdminMediaForm;
 var sx = {

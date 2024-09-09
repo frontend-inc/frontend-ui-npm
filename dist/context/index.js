@@ -20,7 +20,7 @@ var ScriptContext_1 = require("./ScriptContext");
 Object.defineProperty(exports, "ScriptContext", { enumerable: true, get: function () { return __importDefault(ScriptContext_1).default; } });
 var ScriptProvider_1 = require("./ScriptProvider");
 Object.defineProperty(exports, "ScriptProvider", { enumerable: true, get: function () { return __importDefault(ScriptProvider_1).default; } });
-// Addons 
+// Addons
 var StripeContext_1 = require("./StripeContext");
 Object.defineProperty(exports, "StripeContext", { enumerable: true, get: function () { return __importDefault(StripeContext_1).default; } });
 var StripeProvider_1 = require("./StripeProvider");

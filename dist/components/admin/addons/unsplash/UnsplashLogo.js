@@ -41,6 +41,6 @@ var UnsplashLogoLight = function (props) {
 var UnsplashLogo = function (props) {
     var _a = props.width, width = _a === void 0 ? 80 : _a;
     var mode = (0, react_1.useContext)(context_1.ThemeContext).mode;
-    return (mode == 'light' ? (react_1.default.createElement(UnsplashLogoDark, { width: width })) : (react_1.default.createElement(UnsplashLogoLight, { width: width })));
+    return mode == 'light' ? (react_1.default.createElement(UnsplashLogoDark, { width: width })) : (react_1.default.createElement(UnsplashLogoLight, { width: width }));
 };
 exports.default = UnsplashLogo;

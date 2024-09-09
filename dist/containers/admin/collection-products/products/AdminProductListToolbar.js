@@ -48,9 +48,9 @@ var AdminProductToolbar = function (props) {
     var _b = props || {}, handleClose = _b.handleClose, selectedIds = _b.selectedIds;
     var addProducts = (0, frontend_js_1.useResource)({
         url: url,
-        name: 'products'
+        name: 'products',
     }).addProducts;
-    console.log("URL", url);
+    console.log('URL', url);
     var handleAddProducts = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

@@ -54,7 +54,7 @@ var sx = {
         borderColor: 'divider',
         transition: 'box-shadow 0.2s',
         '&:hover': {
-            boxShadow: 1
+            boxShadow: 1,
         },
         mb: 1,
     },
@@ -87,5 +87,5 @@ var sx = {
     },
     isDragging: {
         boxShadow: 2,
-    }
+    },
 };

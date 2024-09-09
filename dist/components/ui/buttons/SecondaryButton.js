@@ -17,6 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var SecondaryButton = function (props) {
-    return (react_1.default.createElement(__1.PrimaryButton, __assign({}, props, { color: 'secondary' })));
+    return react_1.default.createElement(__1.PrimaryButton, __assign({}, props, { color: "secondary" }));
 };
 exports.default = SecondaryButton;

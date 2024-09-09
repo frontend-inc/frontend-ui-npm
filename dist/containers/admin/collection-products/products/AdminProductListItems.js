@@ -11,12 +11,12 @@ var AdminProductListToolbar_1 = __importDefault(require("./AdminProductListToolb
 var AdminProductListItems = function (props) {
     var _a = props || {}, url = _a.url, handleSuccess = _a.handleSuccess, productCollectionId = _a.productCollectionId;
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.ResourceList, { direction: 'column', selectable: true, enableSearch: true, url: "".concat(apiUrl, "/products"), name: 'product', toolbar: AdminProductListToolbar_1.default, component: AdminProductListItem_1.default, emptyIcon: "Search", emptyTitle: "No products", emptyDescription: "No products yet.", slots: {
+    return (react_1.default.createElement(components_1.ResourceList, { direction: "column", selectable: true, enableSearch: true, url: "".concat(apiUrl, "/products"), name: 'product', toolbar: AdminProductListToolbar_1.default, component: AdminProductListItem_1.default, emptyIcon: "Search", emptyTitle: "No products", emptyDescription: "No products yet.", slots: {
             toolbar: {
                 url: url,
                 productCollectionId: productCollectionId,
-                handleSuccess: handleSuccess
-            }
+                handleSuccess: handleSuccess,
+            },
         } }));
 };
 exports.default = AdminProductListItems;

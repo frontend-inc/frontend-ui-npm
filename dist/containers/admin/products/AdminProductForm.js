@@ -45,11 +45,9 @@ var AdminProductForm = function (props) {
                 { label: 'Day', value: 'day' },
                 { label: 'Week', value: 'week' },
                 { label: 'Month', value: 'month' },
-                { label: 'Year', value: 'year' }
+                { label: 'Year', value: 'year' },
             ],
-            conditions: [
-                { name: 'recurring', operator: 'eq', value: true }
-            ]
+            conditions: [{ name: 'recurring', operator: 'eq', value: true }],
         }
     ], metafields, true);
     return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields }));

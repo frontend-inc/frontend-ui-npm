@@ -12,8 +12,8 @@ var BooleanInput = function (props) {
         handleChange({
             target: {
                 name: name,
-                value: newValue
-            }
+                value: newValue,
+            },
         });
     };
     return (react_1.default.createElement(__1.TabsInput, { name: name, label: label, info: info, size: size, direction: direction, disableBorder: disableBorder, disablePadding: disablePadding, options: [

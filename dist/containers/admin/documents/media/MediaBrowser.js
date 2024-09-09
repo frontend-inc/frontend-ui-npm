@@ -119,7 +119,7 @@ var MediaBrowser = function (props) {
     var OPTIONS = [
         { label: 'Browse', value: 0 },
         { label: 'Upload', value: 1 },
-        { label: 'Unsplash', value: 2 }
+        { label: 'Unsplash', value: 2 },
     ];
     return (react_1.default.createElement(components_1.Drawer, { disablePadding: true, open: open, handleClose: handleClose, title: 'Browse Media', buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleAttach }, "Save") },
         react_1.default.createElement(material_1.Box, null,

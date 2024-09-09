@@ -82,9 +82,9 @@ var AdminFieldForm = function (props) {
                                         'shopify_products',
                                         'url',
                                         'email',
-                                        'phone'
-                                    ]
-                                }
+                                        'phone',
+                                    ],
+                                },
                             ],
                         },
                         {
@@ -95,8 +95,8 @@ var AdminFieldForm = function (props) {
                                 {
                                     name: 'variant',
                                     operator: 'eq',
-                                    value: 'select'
-                                }
+                                    value: 'select',
+                                },
                             ],
                         },
                     ] }))),
@@ -104,32 +104,32 @@ var AdminFieldForm = function (props) {
                     {
                         label: 'Validate required',
                         name: 'validate_required',
-                        variant: 'boolean'
+                        variant: 'boolean',
                     },
                     {
                         label: 'Validate unique',
                         name: 'validate_unique',
-                        variant: 'boolean'
+                        variant: 'boolean',
                     },
                     {
                         label: 'Validate length',
                         name: 'validate_length',
-                        variant: 'boolean'
+                        variant: 'boolean',
                     },
                     {
                         label: 'Validate number range',
                         name: 'validate_numericality',
-                        variant: 'boolean'
+                        variant: 'boolean',
                     },
                     {
                         label: 'Validate inclusion',
                         name: 'validate_inclusion',
-                        variant: 'boolean'
+                        variant: 'boolean',
                     },
                     {
                         label: 'Validate format',
                         name: 'validate_format',
-                        variant: 'boolean'
+                        variant: 'boolean',
                     },
                     {
                         label: 'Minimum text length',
@@ -139,8 +139,8 @@ var AdminFieldForm = function (props) {
                             {
                                 name: 'validate_length',
                                 operator: 'eq',
-                                value: true
-                            }
+                                value: true,
+                            },
                         ],
                     },
                     {
@@ -151,8 +151,8 @@ var AdminFieldForm = function (props) {
                             {
                                 name: 'validate_length',
                                 operator: 'eq',
-                                value: true
-                            }
+                                value: true,
+                            },
                         ],
                     },
                     {
@@ -163,8 +163,8 @@ var AdminFieldForm = function (props) {
                             {
                                 name: 'validate_numericality',
                                 operator: 'eq',
-                                value: true
-                            }
+                                value: true,
+                            },
                         ],
                     },
                     {
@@ -175,8 +175,8 @@ var AdminFieldForm = function (props) {
                             {
                                 name: 'validate_numericality',
                                 operator: 'eq',
-                                value: true
-                            }
+                                value: true,
+                            },
                         ],
                     },
                     {
@@ -187,8 +187,8 @@ var AdminFieldForm = function (props) {
                             {
                                 name: 'validate_inclusion',
                                 operator: 'eq',
-                                value: true
-                            }
+                                value: true,
+                            },
                         ],
                     },
                     {
@@ -199,11 +199,11 @@ var AdminFieldForm = function (props) {
                             {
                                 name: 'validate_format',
                                 operator: 'eq',
-                                value: true
-                            }
+                                value: true,
+                            },
                         ],
                     },
-                ], handleRemove: function () { return (null); } })),
+                ], handleRemove: function () { return null; } })),
             tab == 3 && (react_1.default.createElement(components_1.FormFields, { errors: errors, resource: resource, handleChange: handleChange, fields: [
                     {
                         label: 'Display field',
@@ -213,9 +213,9 @@ var AdminFieldForm = function (props) {
                             {
                                 name: 'variant',
                                 operator: 'nin',
-                                value: ['habtm', 'file', 'audio', 'video', 'image']
+                                value: ['habtm', 'file', 'audio', 'video', 'image'],
                             },
-                        ]
+                        ],
                     },
                     {
                         label: 'Form field',
@@ -236,10 +236,10 @@ var AdminFieldForm = function (props) {
                                     'audio',
                                     'video',
                                     'image',
-                                    'shopify_products'
-                                ]
+                                    'shopify_products',
+                                ],
                             },
-                        ]
+                        ],
                     },
                     {
                         label: 'Search sort field',
@@ -255,10 +255,10 @@ var AdminFieldForm = function (props) {
                                     'audio',
                                     'video',
                                     'image',
-                                    'shopify_products'
-                                ]
+                                    'shopify_products',
+                                ],
                             },
-                        ]
+                        ],
                     },
                     {
                         label: 'Table header',
@@ -268,12 +268,9 @@ var AdminFieldForm = function (props) {
                             {
                                 name: 'variant',
                                 operator: 'nin',
-                                value: [
-                                    'habtm',
-                                    'shopify_products'
-                                ]
+                                value: ['habtm', 'shopify_products'],
                             },
-                        ]
+                        ],
                     },
                 ] })))));
 };

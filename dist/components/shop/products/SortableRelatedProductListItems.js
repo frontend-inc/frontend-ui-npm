@@ -89,7 +89,9 @@ var SortableRelatedListItems = function (props) {
     return (react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { loading: loading }),
         react_1.default.createElement(__1.SortableList, { droppableId: "sortable", handleDrop: handleDrop, items: resources, renderItem: function (resource) {
                 var relatedProduct = resource === null || resource === void 0 ? void 0 : resource.related_product;
-                return (react_1.default.createElement(Component, __assign({}, slots.item, { sortable: true, key: resource === null || resource === void 0 ? void 0 : resource.id, resource: relatedProduct, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: function () { return handleShowClick(relatedProduct); }, handleEdit: enableEdit ? function () { return handleEdit(relatedProduct); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(relatedProduct); } : undefined })));
+                return (react_1.default.createElement(Component, __assign({}, slots.item, { sortable: true, key: resource === null || resource === void 0 ? void 0 : resource.id, resource: relatedProduct, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: function () { return handleShowClick(relatedProduct); }, handleEdit: enableEdit ? function () { return handleEdit(relatedProduct); } : undefined, handleDelete: enableDelete
+                        ? function () { return handleDeleteClick(relatedProduct); }
+                        : undefined })));
             } }),
         react_1.default.createElement(Pagination, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };

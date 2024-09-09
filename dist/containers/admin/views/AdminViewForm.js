@@ -12,7 +12,7 @@ var AdminViewForm = function (props) {
                 label: 'Name',
                 name: 'name',
                 placeholder: 'Name',
-                variant: 'string'
+                variant: 'string',
             },
         ] }));
 };

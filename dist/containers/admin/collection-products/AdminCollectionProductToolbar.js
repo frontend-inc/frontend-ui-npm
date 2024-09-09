@@ -49,7 +49,7 @@ var AdminProductToolbar = function (props) {
     var _a = props || {}, open = _a.open, url = _a.url, resource = _a.resource, handleClose = _a.handleClose, selectedIds = _a.selectedIds, handleReload = _a.handleReload;
     var _b = (0, frontend_js_1.useResource)({
         url: url,
-        name: 'collection_product'
+        name: 'collection_product',
     }), publish = _b.publish, unpublish = _b.unpublish, deleteMany = _b.deleteMany;
     var handlePublish = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {

@@ -13,8 +13,8 @@ var AdminFieldsList = function (props) {
     var url = "".concat(apiUrl, "/collections/").concat(collectionId, "/fields");
     var slots = {
         item: {
-            url: url
-        }
+            url: url,
+        },
     };
     return (react_1.default.createElement(components_1.ResourceList, { sortable: true, url: url, name: "field", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, query: {
             sort_by: 'position',

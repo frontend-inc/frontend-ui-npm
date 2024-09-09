@@ -110,8 +110,8 @@ var ShopifyProductsInput = function (props) {
         handleChange({
             target: {
                 name: name,
-                value: newProducts || []
-            }
+                value: newProducts || [],
+            },
         });
     };
     if (!domain || !storefrontAccessToken) {
@@ -163,5 +163,5 @@ var sx = {
             bgcolor: 'background.default',
             opacity: 1,
         },
-    }
+    },
 };

@@ -11,6 +11,6 @@ var ProductAutosuggest = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     if (!apiUrl)
         return null;
-    return (react_1.default.createElement(__1.RemoteAutosuggest, { name: name, label: label, value: value, direction: direction, valueParam: valueParam, displayField: 'title', url: "".concat(apiUrl, "/products"), placeholder: placeholder, handleChange: handleChange, defaultQuery: query, defaultOptions: defaultOptions }));
+    return (react_1.default.createElement(__1.RemoteAutosuggest, { name: name, label: label, value: value, direction: direction, valueParam: valueParam, displayField: "title", url: "".concat(apiUrl, "/products"), placeholder: placeholder, handleChange: handleChange, defaultQuery: query, defaultOptions: defaultOptions }));
 };
 exports.default = ProductAutosuggest;

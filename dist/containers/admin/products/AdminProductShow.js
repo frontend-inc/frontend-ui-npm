@@ -34,11 +34,9 @@ var AdminProductShow = function (props) {
                 { label: 'Day', value: 'day' },
                 { label: 'Week', value: 'week' },
                 { label: 'Month', value: 'month' },
-                { label: 'Year', value: 'year' }
+                { label: 'Year', value: 'year' },
             ],
-            conditions: [
-                { name: 'recurring', operator: 'eq', value: true }
-            ]
+            conditions: [{ name: 'recurring', operator: 'eq', value: true }],
         }
     ], metafields, true);
     return (react_1.default.createElement(components_1.ResourceDetails, { loading: loading, open: open, handleClose: handleClose, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.title, secondary: resource === null || resource === void 0 ? void 0 : resource.description, label: resource === null || resource === void 0 ? void 0 : resource.display_price, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete, resource: resource, fields: fields, direction: "column" }));

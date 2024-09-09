@@ -19,10 +19,12 @@ var __1 = require("../..");
 var UserMetafieldAutosuggest = function (props) {
     return (react_1.default.createElement(__1.MetafieldAutosuggest, __assign({}, props, { query: {
             filters: {
-                AND: [{
-                        metafield_type: { eq: 'User' }
-                    }]
-            }
+                AND: [
+                    {
+                        metafield_type: { eq: 'User' },
+                    },
+                ],
+            },
         } })));
 };
 exports.default = UserMetafieldAutosuggest;

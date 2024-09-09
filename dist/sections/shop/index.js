@@ -14,7 +14,7 @@ var ShopProductLikesGrid_1 = require("./ShopProductLikesGrid");
 Object.defineProperty(exports, "ShopProductLikesGrid", { enumerable: true, get: function () { return __importDefault(ShopProductLikesGrid_1).default; } });
 var ShopProductFavoritesGrid_1 = require("./ShopProductFavoritesGrid");
 Object.defineProperty(exports, "ShopProductFavoritesGrid", { enumerable: true, get: function () { return __importDefault(ShopProductFavoritesGrid_1).default; } });
-// Product collections 
+// Product collections
 var ShopProductCollectionCover_1 = require("./ShopProductCollectionCover");
 Object.defineProperty(exports, "ShopProductCollectionCover", { enumerable: true, get: function () { return __importDefault(ShopProductCollectionCover_1).default; } });
 var ShopCollectionProductsGrid_1 = require("./ShopCollectionProductsGrid");

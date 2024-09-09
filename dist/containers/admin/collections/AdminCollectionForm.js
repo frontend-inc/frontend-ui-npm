@@ -18,13 +18,13 @@ var AdminCollectionForm = function (props) {
                         label: 'Name',
                         name: 'label',
                         placeholder: 'Name',
-                        variant: 'string'
+                        variant: 'string',
                     },
                     {
                         label: 'API name',
                         name: 'name',
                         placeholder: 'API name',
-                        variant: 'nospace'
+                        variant: 'nospace',
                     },
                 ] })),
         !(collection === null || collection === void 0 ? void 0 : collection.id) && (react_1.default.createElement(components_3.MenuList, { enableBorder: true, label: "Templates" },

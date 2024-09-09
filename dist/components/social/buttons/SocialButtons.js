@@ -11,9 +11,12 @@ var SocialButtons = function (props) {
     var resource = props.resource, product = props.product, _a = props.direction, direction = _a === void 0 ? 'row' : _a, enableComments = props.enableComments, enableLikes = props.enableLikes, enableFavorites = props.enableFavorites, enableSharing = props.enableSharing, enableAddToList = props.enableAddToList, enableProductLikes = props.enableProductLikes, enableProductFavorites = props.enableProductFavorites, numLikes = props.numLikes, numFavorites = props.numFavorites, _b = props.size, size = _b === void 0 ? 'small' : _b, _c = props.justifyContent, justifyContent = _c === void 0 ? 'flex-start' : _c, color = props.color;
     var router = (0, router_1.useRouter)();
     var currentPageUrl = router.asPath;
-    if (!enableLikes && !enableFavorites &&
-        !enableSharing && !enableAddToList &&
-        !enableProductFavorites && !enableProductLikes)
+    if (!enableLikes &&
+        !enableFavorites &&
+        !enableSharing &&
+        !enableAddToList &&
+        !enableProductFavorites &&
+        !enableProductLikes)
         return null;
     return (react_1.default.createElement(material_1.Stack, { direction: direction, justifyContent: justifyContent, spacing: size == 'small' ? 0 : 1 },
         enableAddToList == true && (react_1.default.createElement(components_1.AddToListButton, { size: size, resource: resource, color: color })),

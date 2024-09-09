@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var sortable_1 = require("@dnd-kit/sortable");
 var KanBanCard = function (props) {
-    var _a = props || {}, id = _a.id, loading = _a.loading, label = _a.label, primary = _a.primary, secondary = _a.secondary, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, actions = _a.actions, // Todo: rendering actions inteferes with drag/drop 
+    var _a = props || {}, id = _a.id, loading = _a.loading, label = _a.label, primary = _a.primary, secondary = _a.secondary, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, actions = _a.actions, // Todo: rendering actions inteferes with drag/drop
     enableDragging = _a.enableDragging, _b = _a.height, height = _b === void 0 ? 240 : _b, _c = _a.slots, slots = _c === void 0 ? {
         item: {},
         image: {},

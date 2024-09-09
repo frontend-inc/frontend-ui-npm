@@ -25,7 +25,7 @@ var ResourceGridItem = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Card, { sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.border)), (selected && sx.selected)) },
-        react_1.default.createElement(material_1.CardHeader, { sx: sx.cardHeader, avatar: avatar, title: selectable && (react_1.default.createElement(material_1.Checkbox, { size: 'small', checked: selected, onChange: handleChange, color: "primary", sx: sx.checkbox })), action: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.buttons },
+        react_1.default.createElement(material_1.CardHeader, { sx: sx.cardHeader, avatar: avatar, title: selectable && (react_1.default.createElement(material_1.Checkbox, { size: "small", checked: selected, onChange: handleChange, color: "primary", sx: sx.checkbox })), action: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.buttons },
                 secondaryAction,
                 (menuActions || handleEdit || handleDelete) && (react_1.default.createElement(__1.MenuButton, { size: "small", handleEdit: handleEdit, handleDelete: handleDelete }, menuActions))) }),
         react_1.default.createElement(material_1.CardActionArea, { onClick: handleClick },
@@ -53,7 +53,7 @@ var sx = {
         borderColor: 'divider',
         transition: 'box-shadow 0.2s',
         '&:hover': {
-            boxShadow: 1
+            boxShadow: 1,
         },
         mb: 1,
     },
@@ -62,7 +62,7 @@ var sx = {
         borderRadius: 1,
     },
     cardHeader: {
-        height: 50
+        height: 50,
     },
     avatar: {
         borderRadius: 1,
@@ -85,5 +85,5 @@ var sx = {
     },
     isDragging: {
         boxShadow: 2,
-    }
+    },
 };

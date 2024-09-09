@@ -31,7 +31,7 @@ var router_1 = require("next/router");
 var CollectionProductsGridByHandle = function (props) {
     var router = (0, router_1.useRouter)();
     var handle = router.query.handle;
-    console.log("Params", router.query);
+    console.log('Params', router.query);
     var _a = props.query, query = _a === void 0 ? {} : _a, rest = __rest(props, ["query"]);
     query = __assign(__assign({}, query), { method: 'collection_products', product_collection_id: handle });
     return react_1.default.createElement(__1.ProductGrid, __assign({ query: query }, rest));

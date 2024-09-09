@@ -72,6 +72,6 @@ var MediaUploader = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(components_1.DropZone, { label: "Drag-and-drop to upload.", onDrop: handleUpload }));
+    return react_1.default.createElement(components_1.DropZone, { label: "Drag-and-drop to upload.", onDrop: handleUpload });
 };
 exports.default = MediaUploader;
