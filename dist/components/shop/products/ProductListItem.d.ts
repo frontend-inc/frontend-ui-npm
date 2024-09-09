@@ -1,0 +1,27 @@
+import React from 'react';
+import { ButtonType, DisplayFieldType } from '../../../types';
+type CardStyleTypes = 'list' | 'card';
+type ProductListItemProps = {
+    selectable?: boolean;
+    buttons: ButtonType[];
+    style: CardStyleTypes;
+    displayFields: DisplayFieldType[];
+    resource: any;
+    buttonText?: string;
+    href?: string;
+    handleClick: () => void;
+    handleEdit?: (item: any) => void;
+    handleDelete?: (item: any) => void;
+    enableBorder?: boolean;
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
+    enableEdit?: boolean;
+    enableDelete?: boolean;
+    enableUsers?: boolean;
+    enableFavorites?: boolean;
+    enableAddToList?: boolean;
+    enableLikes?: boolean;
+    enableRatings?: boolean;
+};
+declare const ProductListItem: React.FC<ProductListItemProps>;
+export default ProductListItem;

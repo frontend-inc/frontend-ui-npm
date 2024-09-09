@@ -18,28 +18,37 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ResourceGridItem = function (props) {
-    var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryActions = props.secondaryActions, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.isDragging, isDragging = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
+    var icon = props.icon, avatar = props.avatar, color = props.color, label = props.label, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryAction = props.secondaryAction, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.isDragging, isDragging = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
     var handleChange = function (event) {
         if (handleSelect) {
             handleSelect();
         }
     };
-    return (react_1.default.createElement(material_1.Card, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(material_1.CardHeader, { avatar: avatar, title: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, primary), subheader: react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, secondary), action: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.buttons },
-                secondaryActions,
-                (menuActions || handleEdit || handleDelete) && (react_1.default.createElement(__1.MenuButton, { handleEdit: handleEdit, handleDelete: handleDelete }, menuActions))) }),
+    return (react_1.default.createElement(material_1.Card, { sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.border)), (selected && sx.selected)) },
+        react_1.default.createElement(material_1.CardHeader, { sx: sx.cardHeader, avatar: avatar, title: selectable && (react_1.default.createElement(material_1.Checkbox, { size: 'small', checked: selected, onChange: handleChange, color: "primary", sx: sx.checkbox })), action: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.buttons },
+                secondaryAction,
+                (menuActions || handleEdit || handleDelete) && (react_1.default.createElement(__1.MenuButton, { size: "small", handleEdit: handleEdit, handleDelete: handleDelete }, menuActions))) }),
         react_1.default.createElement(material_1.CardActionArea, { onClick: handleClick },
-            react_1.default.createElement(material_1.CardMedia, { sx: { height: 160 }, image: image }))));
+            react_1.default.createElement(__1.Image, { label: label, disableBorderRadius: true, height: 160, src: image })),
+        (primary || secondary) && (react_1.default.createElement(material_1.CardContent, null,
+            react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.primary" }, primary),
+            secondary && (react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, secondary))))));
 };
 exports.default = ResourceGridItem;
 var sx = {
     root: {
         p: 0,
+        border: '1px solid',
+        borderColor: 'transparent',
         borderRadius: 1,
         overflow: 'hidden',
         bgcolor: 'background.paper',
     },
-    rootBorder: {
+    selected: {
+        border: '1px solid',
+        borderColor: 'primary.main',
+    },
+    border: {
         border: '1px solid',
         borderColor: 'divider',
         transition: 'box-shadow 0.2s',
@@ -51,6 +60,9 @@ var sx = {
     listItemButton: {
         p: 1,
         borderRadius: 1,
+    },
+    cardHeader: {
+        height: 50
     },
     avatar: {
         borderRadius: 1,

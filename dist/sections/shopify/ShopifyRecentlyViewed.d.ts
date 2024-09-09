@@ -1,5 +1,5 @@
 import React from 'react';
-import { RecentlyViewedProps } from '../../components/shopify/recently-viewed/RecentlyViewed';
+import { ShopifyRecentlyViewedProps as RecentlyViewedProps } from '../../components/shopify/recently-viewed/ShopifyRecentlyViewed';
 import { SectionProps, HeadingProps } from '../../types';
 type ShopifyRecentlyViewedProps = SectionProps & HeadingProps & RecentlyViewedProps;
 declare const ShopifyRecentlyViewed: React.FC<ShopifyRecentlyViewedProps>;

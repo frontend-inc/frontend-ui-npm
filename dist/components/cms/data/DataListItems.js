@@ -56,7 +56,7 @@ var frontend_js_1 = require("frontend-js");
 var __2 = require("../..");
 var hooks_1 = require("../../../hooks");
 var DataListItems = function (props) {
-    var _a = (0, frontend_js_1.useResourceContext)(), setResource = _a.setResource, loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, selectedIds = _a.selectedIds, handleSelect = _a.handleSelect;
+    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, selectedIds = _a.selectedIds, handleSelect = _a.handleSelect;
     var grid = props.grid, selectable = props.selectable, enableShow = props.enableShow, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableAddToList = props.enableAddToList, handleClick = props.handleClick, _b = props.pagination, Pagination = _b === void 0 ? __1.LoadMore : _b, _c = props.component, Component = _c === void 0 ? __2.DataItem : _c, _d = props.slots, slots = _d === void 0 ? {
         item: {},
         list: {},

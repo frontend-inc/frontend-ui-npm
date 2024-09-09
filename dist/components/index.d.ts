@@ -6,6 +6,6 @@ export * from './cms';
 export * from './web';
 export * from './ui';
 export * from './users';
-export * from './commerce';
+export * from './shop';
 export * from './social';
 export * from './shopify';

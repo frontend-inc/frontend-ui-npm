@@ -10,7 +10,7 @@ type FormFieldInputProps = {
     contentType?: string;
     fields?: FormFieldType[];
     handleChange: (e: SyntheticEventType) => void;
-    handleRemove: (name: string) => void;
+    handleRemove?: (name: string) => void;
 };
 declare const FormFieldInput: React.FC<FormFieldInputProps>;
 export default FormFieldInput;

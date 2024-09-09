@@ -29,7 +29,7 @@ var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
 var icons_material_1 = require("@mui/icons-material");
 var ShareButton = function (props) {
-    var url = props.url, _a = props.variant, variant = _a === void 0 ? 'icon' : _a;
+    var url = props.url, _a = props.size, size = _a === void 0 ? 'small' : _a;
     var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
     var SOCIAL_PROVIDERS = [
         { label: 'Share to Instagram', value: 'instagram' },
@@ -71,8 +71,8 @@ var ShareButton = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Box, null,
-        variant == 'icon' ? (react_1.default.createElement(material_1.IconButton, { sx: sx.iconButton, onClick: handleClick },
-            react_1.default.createElement(icons_material_1.IosShare, { fontSize: "small" }))) : (react_1.default.createElement(material_1.IconButton, { sx: sx.button, onClick: handleClick },
+        size == 'small' ? (react_1.default.createElement(material_1.IconButton, { sx: sx.small, onClick: handleClick },
+            react_1.default.createElement(icons_material_1.IosShare, { fontSize: "small" }))) : (react_1.default.createElement(material_1.IconButton, { sx: sx.large, onClick: handleClick },
             react_1.default.createElement(icons_material_1.IosShare, { fontSize: "small" }))),
         react_1.default.createElement(__1.Modal, { open: open, handleClose: function () { return setOpen(false); } },
             react_1.default.createElement(material_1.Box, { p: 4 },
@@ -84,12 +84,10 @@ var ShareButton = function (props) {
 };
 exports.default = ShareButton;
 var sx = {
-    iconButton: {
-        border: '1px solid',
-        borderColor: 'divider',
+    small: {
         color: 'text.secondary',
     },
-    button: {
+    large: {
         border: '1px solid',
         borderColor: 'divider',
         color: 'text.secondary',

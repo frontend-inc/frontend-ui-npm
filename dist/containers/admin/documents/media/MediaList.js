@@ -66,13 +66,10 @@ var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../../hooks");
 var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
-var MediaItem_1 = __importDefault(require("./MediaItem"));
-var router_1 = require("next/router");
+var MediaListItem_1 = __importDefault(require("./MediaListItem"));
 var components_1 = require("../../../../components");
 var MediaItemList = function (props) {
     var selectedIds = props.selectedIds, handleSelect = props.handleSelect;
-    var router = (0, router_1.useRouter)();
-    var appId = (router === null || router === void 0 ? void 0 : router.query).app_id;
     var _a = (0, hooks_1.useMedia)(), loading = _a.loading, resources = _a.resources, findResources = _a.findResources, loadMore = _a.loadMore, page = _a.page, numPages = _a.numPages;
     var handleLoadMore = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -90,7 +87,7 @@ var MediaItemList = function (props) {
         });
     }, []);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(material_1.Box, { sx: sx.list }, resources.map(function (item, idx) { return (react_1.default.createElement(MediaItem_1.default, { key: idx, item: item, size: 164, selected: selectedIds.includes(item === null || item === void 0 ? void 0 : item.id), handleClick: function () { return handleSelect(item); } })); })),
+        react_1.default.createElement(material_1.Box, { sx: sx.list }, resources.map(function (item, idx) { return (react_1.default.createElement(MediaListItem_1.default, { key: item === null || item === void 0 ? void 0 : item.id, item: item, size: 164, selected: selectedIds.includes(item === null || item === void 0 ? void 0 : item.id), handleClick: function () { return handleSelect(item); } })); })),
         (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Image', title: "No media", description: "Upload or import media." })),
         numPages > page && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleLoadMore, endIcon: loading ? react_1.default.createElement(material_1.CircularProgress, { disableShrink: true }) : react_1.default.createElement(icons_material_1.ExpandMore, null) }, "Load More"))));
 };

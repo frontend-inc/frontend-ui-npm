@@ -34,6 +34,6 @@ var FieldShopifyProducts = function (props) {
     var shopifyHandles = (0, lodash_1.get)(resource, fieldName) || [];
     if ((shopifyHandles === null || shopifyHandles === void 0 ? void 0 : shopifyHandles.length) == 0)
         return null;
-    return (react_1.default.createElement(shopify_1.ProductArray, __assign({ href: href, handles: shopifyHandles }, rest)));
+    return (react_1.default.createElement(shopify_1.ShopifyProductArray, __assign({ href: href, handles: shopifyHandles }, rest)));
 };
 exports.default = FieldShopifyProducts;

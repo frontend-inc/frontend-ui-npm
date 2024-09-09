@@ -2,6 +2,7 @@ declare const useApp: () => {
     app: any;
     setApp: any;
     logo: any;
+    apiUrl: any;
     clientUrl: any;
     alert: any;
     setAlert: any;

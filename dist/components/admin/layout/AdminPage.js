@@ -21,6 +21,7 @@ var AdminPage = function (props) {
             react_1.default.createElement(components_1.AdminMenu, { enableEdit: enableEdit, enableDelete: enableDelete, activeMenu: activeMenu, menuItems: menuItems, handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete }))),
         react_1.default.createElement(components_1.AdminLayoutCenter, null,
             react_1.default.createElement(components_1.AdminHeader, { title: title, buttons: actions, enableExpandLeftPanel: true }),
-            react_1.default.createElement(material_1.Box, { p: disablePadding ? 0 : 2 }, children))));
+            react_1.default.createElement(components_1.AdminLayoutScroll, null,
+                react_1.default.createElement(material_1.Box, { p: disablePadding ? 0 : 2 }, children)))));
 };
 exports.default = AdminPage;

@@ -44,7 +44,7 @@ var AdminFieldVariantList_1 = __importDefault(require("./AdminFieldVariantList")
 var AdminFieldVariantListItem_1 = __importDefault(require("./AdminFieldVariantListItem"));
 var constants_1 = require("../../../constants");
 var AdminFieldForm = function (props) {
-    var _a = props || {}, loading = _a.loading, errors = _a.errors, open = _a.open, handleClose = _a.handleClose, resource = _a.resource, setResource = _a.setResource, handleChange = _a.handleChange, handleSubmit = _a.handleSubmit;
+    var _a = props || {}, loading = _a.loading, errors = _a.errors, open = _a.open, handleClose = _a.handleClose, resource = _a.resource, setResource = _a.setResource, handleChange = _a.handleChange, handleSubmit = _a.handleSubmit, handleRemove = _a.handleRemove;
     var handleClick = function (field) {
         setResource(__assign(__assign({}, resource), { db_type: field.db_type, variant: field.variant }));
         setTab(1);
@@ -63,7 +63,7 @@ var AdminFieldForm = function (props) {
         react_1.default.createElement(material_1.Box, { px: 2 },
             tab == 1 && (react_1.default.createElement(react_1.default.Fragment, null,
                 (resource === null || resource === void 0 ? void 0 : resource.variant) && (react_1.default.createElement(AdminFieldVariantListItem_1.default, { field: constants_1.FIELD_VARIANTS === null || constants_1.FIELD_VARIANTS === void 0 ? void 0 : constants_1.FIELD_VARIANTS.find(function (f) { return f.variant == resource.variant; }), handleClick: function () { return null; } })),
-                react_1.default.createElement(components_1.FormFields, { errors: errors, resource: resource, handleChange: handleChange, fields: [
+                react_1.default.createElement(components_1.FormFields, { errors: errors, resource: resource, handleChange: handleChange, handleRemove: handleRemove, fields: [
                         { label: 'Label', name: 'label', variant: 'string' },
                         {
                             label: 'API name',
@@ -99,7 +99,7 @@ var AdminFieldForm = function (props) {
                                 }
                             ],
                         },
-                    ], handleRemove: function () { return (null); } }))),
+                    ] }))),
             tab == 2 && (react_1.default.createElement(components_1.FormFields, { errors: errors, resource: resource, handleChange: handleChange, fields: [
                     {
                         label: 'Validate required',

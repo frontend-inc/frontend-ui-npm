@@ -22,7 +22,7 @@ var ListCard = function (props) {
         item: {},
         image: {},
     } : _g;
-    return (react_1.default.createElement(material_1.Box, __assign({ sx: sx.root }, slots.item),
+    return (react_1.default.createElement(material_1.Box, __assign({ sx: __assign(__assign({}, sx.root), (selected && sx.selected)) }, slots.item),
         react_1.default.createElement(material_1.Stack, { direction: "row", alignItems: "center", spacing: 0, width: "100%" },
             selectable && (react_1.default.createElement(material_1.Checkbox, { checked: selected, onChange: handleSelect, color: "primary" })),
             sortable && react_1.default.createElement(__1.Icon, { name: "GripVertical", color: "text.secondary" }),
@@ -127,4 +127,8 @@ var sx = {
     link: {
         textDecoration: 'none',
     },
+    selected: {
+        border: '1px solid',
+        borderColor: 'primary.main',
+    }
 };

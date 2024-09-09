@@ -36,11 +36,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("..");
-var useSocial = function (params) {
-    var api = (0, react_1.useContext)(frontend_js_1.ApiContext).api;
+var useSocial = function () {
+    var api = (0, frontend_js_1.useApi)().api;
+    var params = {
+        url: "/api/v1/social",
+    };
     var _a = (0, __1.useLoaders)(), loading = _a.loading, loadingWrapper = _a.loadingWrapper;
     var like = function (itemId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -90,6 +92,38 @@ var useSocial = function (params) {
             }
         });
     }); };
+    var likeProduct = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.likeProduct(productId, params); })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
+    var unlikeProduct = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.unlikeProduct(productId, params); })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
+    var favoriteProduct = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.favoriteProduct(productId, params); })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
+    var unfavoriteProduct = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.unfavoriteProduct(productId, params); })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
     var shopifyFavorite = function (handle) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -114,6 +148,10 @@ var useSocial = function (params) {
         unfavorite: unfavorite,
         follow: follow,
         unfollow: unfollow,
+        likeProduct: likeProduct,
+        unlikeProduct: unlikeProduct,
+        favoriteProduct: favoriteProduct,
+        unfavoriteProduct: unfavoriteProduct,
         shopifyFavorite: shopifyFavorite,
         shopifyUnfavorite: shopifyUnfavorite,
         loadingWrapper: loadingWrapper,

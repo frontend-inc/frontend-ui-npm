@@ -1,7 +1,7 @@
 import React from 'react';
 type FavoriteButtonProps = {
-    handle: string;
-    variant?: 'icon' | 'button';
+    resource: any;
+    size?: 'small' | 'large';
     color?: string;
     numFavorites?: number;
 };

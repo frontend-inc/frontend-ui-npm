@@ -1,7 +1,7 @@
 import React from 'react';
-import { ProductType } from 'frontend-shopify';
+import { ShopifyProductType } from 'frontend-shopify';
 type OkendoStarRatingProps = {
-    product?: ProductType;
+    product?: ShopifyProductType;
 };
 declare const OkendoStarRating: React.FC<OkendoStarRatingProps>;
 export default OkendoStarRating;

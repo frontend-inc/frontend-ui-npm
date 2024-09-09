@@ -7849,8 +7849,8 @@ from2@^2.1.0:
     swr "^2.2.5"
 
 "frontend-shopify@git+https://github.com/frontend-inc/frontend-shopify.git":
-  version "0.0.39"
-  resolved "git+https://github.com/frontend-inc/frontend-shopify.git#990d4fef18e94741e349d8945e1b3aa6c3cd85c0"
+  version "0.0.44"
+  resolved "git+https://github.com/frontend-inc/frontend-shopify.git#ae2cd2fa7cfa69763a526872a3b48d98014cb701"
   dependencies:
     "@apollo/client" "^3.8.9"
     apollo-link-context "^1.0.20"

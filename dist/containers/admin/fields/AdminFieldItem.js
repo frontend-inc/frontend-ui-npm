@@ -100,7 +100,7 @@ var AdminFieldItem = function (props) {
     (0, react_1.useEffect)(function () {
         setField(resource);
     }, [resource]);
-    return (react_1.default.createElement(components_1.ResourceListItem, { enableBorder: true, sortable: sortable, avatar: react_1.default.createElement(__1.FieldIcon, { variant: field === null || field === void 0 ? void 0 : field.variant }), primary: field === null || field === void 0 ? void 0 : field.label, secondary: field === null || field === void 0 ? void 0 : field.name, secondaryActions: react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement(components_1.ResourceListItem, { enableBorder: true, sortable: sortable, avatar: react_1.default.createElement(__1.FieldIcon, { variant: field === null || field === void 0 ? void 0 : field.variant }), primary: field === null || field === void 0 ? void 0 : field.label, secondary: field === null || field === void 0 ? void 0 : field.name, secondaryAction: react_1.default.createElement(react_1.default.Fragment, null,
             field.column && !field.array && (react_1.default.createElement(material_1.Tooltip, { title: "Search filter field" },
                 react_1.default.createElement(material_1.IconButton, { onClick: function () { return handleUpdateField('filter_field'); } }, field.filter_field ? (react_1.default.createElement(icons_material_1.FilterAltOutlined, { color: "primary" })) : (react_1.default.createElement(icons_material_1.FilterAltOffOutlined, null))))),
             field.column && !field.array && (react_1.default.createElement(material_1.Tooltip, { title: "Search sort field" },

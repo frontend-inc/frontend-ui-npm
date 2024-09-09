@@ -1,6 +1,6 @@
 import React from 'react';
 import { QueryParamsType, OptionType } from '../../../types';
-type MetafieldAutosuggestProps = {
+export type MetafieldAutosuggestProps = {
     value: any;
     name?: string;
     query?: QueryParamsType;

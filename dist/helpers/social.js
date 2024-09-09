@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isShopifyFavorite = exports.isFollowing = exports.isFavorited = exports.isLiked = void 0;
+exports.isShopifyFavorite = exports.isFollowing = exports.isFavorited = exports.isProductLiked = exports.isProductFavorited = exports.isLiked = void 0;
 var isLiked = function (user, documentId) {
     var _a;
     return ((_a = user === null || user === void 0 ? void 0 : user.likes) === null || _a === void 0 ? void 0 : _a.find(function (d) { return d.id == documentId || d.handle == documentId; }))
@@ -8,6 +8,20 @@ var isLiked = function (user, documentId) {
         : false;
 };
 exports.isLiked = isLiked;
+var isProductFavorited = function (user, productId) {
+    var _a;
+    return ((_a = user === null || user === void 0 ? void 0 : user.favorite_products) === null || _a === void 0 ? void 0 : _a.find(function (p) { return p.id == productId || p.handle == productId; }))
+        ? true
+        : false;
+};
+exports.isProductFavorited = isProductFavorited;
+var isProductLiked = function (user, productId) {
+    var _a;
+    return ((_a = user === null || user === void 0 ? void 0 : user.liked_products) === null || _a === void 0 ? void 0 : _a.find(function (p) { return p.id == productId || p.handle == productId; }))
+        ? true
+        : false;
+};
+exports.isProductLiked = isProductLiked;
 var isFavorited = function (user, documentId) {
     var _a;
     return ((_a = user === null || user === void 0 ? void 0 : user.favorites) === null || _a === void 0 ? void 0 : _a.find(function (d) { return d.id == documentId || d.handle == documentId; }))

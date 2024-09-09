@@ -22,9 +22,6 @@ var sx = {
         flexDirection: 'column',
         gap: '8px',
     },
-    listDense: {
-        gap: '8px',
-    },
     grid: {
         display: 'grid',
         gridTemplateColumns: {

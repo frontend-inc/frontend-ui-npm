@@ -27,7 +27,7 @@ var Image = function (props) {
             width: '100%',
             height: "".concat(height, "px"),
         } },
-        react_1.default.createElement(components_1.TouchableOpacity, { handleClick: handleClick ? handleClick : undefined },
+        react_1.default.createElement(components_1.TouchableOpacity, { disableBorderRadius: disableBorderRadius, handleClick: handleClick ? handleClick : undefined },
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.root), { height: "".concat(height, "px"), minWidth: width ? "".concat(width, "px") : '100%' }), (!disableBorderRadius && sx.borderRadius)), { '&::after': __assign(__assign(__assign(__assign(__assign(__assign({}, sx.afterBase), (enableOverlay && sx.overlay)), (!enableOverlay && enableGradient && sx.gradient)), (!disableBorderRadius && sx.borderRadius)), (!enableOverlay &&
                         !disableBorderRadius &&
                         enableGradient &&
@@ -41,7 +41,7 @@ var Image = function (props) {
                         : '0px',
                 } })) : (react_1.default.createElement(components_1.NoImage, { height: height, width: width, disableBorder: disableBorder, disableBorderRadius: disableBorderRadius })))),
         label && (react_1.default.createElement(material_1.Box, { sx: sx.label },
-            react_1.default.createElement(components_1.Label, { color: "common.white", label: (0, helpers_1.truncate)(label, 22) })))));
+            react_1.default.createElement(components_1.Label, { darkMode: true, label: (0, helpers_1.truncate)(label, 22) })))));
 };
 exports.default = Image;
 var sx = {

@@ -18,9 +18,9 @@ var FormFields = function (props) {
             }
             return (react_1.default.createElement(FormFieldInput_1.default, { key: index, resource: resource, errors: errors, field: field, value: (0, lodash_1.get)(resource, field.name) || (field === null || field === void 0 ? void 0 : field.default), 
                 //@ts-ignore
-                handleChange: handleChange, handleRemove: handleRemove ? handleRemove : undefined }));
+                handleChange: handleChange, handleRemove: handleRemove }));
         }),
-        handleSubmit && (react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", onClick: handleSubmit, disabled: loading, endIcon: react_1.default.createElement(__1.IconLoading, { color: "primary.contrastText", loading: loading }) }, buttonText))));
+        handleSubmit && (react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", onClick: handleSubmit, disabled: loading, endIcon: loading ? (react_1.default.createElement(__1.IconLoading, { color: "primary.contrastText", loading: loading })) : null }, buttonText))));
 };
 exports.default = FormFields;
 var sx = {

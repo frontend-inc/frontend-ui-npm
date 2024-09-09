@@ -31,6 +31,6 @@ var components_2 = require("../../components");
 var ShopifyMetafieldVideo = function (props) {
     var mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requireAuth", "requireTeam", "requirePaid"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_2.MetafieldVideo, __assign({}, rest))));
+        react_1.default.createElement(components_2.ShopifyMetafieldVideo, __assign({}, rest))));
 };
 exports.default = ShopifyMetafieldVideo;

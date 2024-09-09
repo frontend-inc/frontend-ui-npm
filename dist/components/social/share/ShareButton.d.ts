@@ -1,7 +1,7 @@
 import React from 'react';
 type ShareButtonProps = {
     url: string;
-    variant?: 'icon' | 'button';
+    size?: 'small' | 'large';
 };
 declare const ShareButton: React.FC<ShareButtonProps>;
 export default ShareButton;

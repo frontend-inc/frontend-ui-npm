@@ -1,8 +1,10 @@
 import React from 'react';
-type MediaListItemProps = {
+type MediaItemProps = {
     item?: any;
-    handleClick?: () => void;
+    size?: number;
     selected?: boolean;
+    handleClick?: (item: any) => void;
+    handleRemoveItem?: (item: any) => void;
 };
-declare const MediaListItem: React.FC<MediaListItemProps>;
-export default MediaListItem;
+declare const MediaItem: React.FC<MediaItemProps>;
+export default MediaItem;

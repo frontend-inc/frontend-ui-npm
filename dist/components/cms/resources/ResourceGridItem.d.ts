@@ -8,6 +8,7 @@ export type ResourceListItemProps = {
     icon?: string;
     color?: string;
     layout?: 'list' | 'grid';
+    label?: string;
     title?: string | React.ReactNode;
     description?: string;
     image?: string;
@@ -16,7 +17,7 @@ export type ResourceListItemProps = {
     handleDelete?: (resource: any) => void;
     handleSelect?: () => void;
     handleReload?: () => void;
-    secondaryActions?: React.ReactNode;
+    secondaryAction?: React.ReactNode;
     menuActions?: any;
     sortable?: boolean;
     isDragging?: boolean;

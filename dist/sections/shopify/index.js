@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShopifySearch = exports.ShopifyMetafieldVideo = exports.ShopifyMetafieldImage = exports.ShopifyMetafieldProducts = exports.ShopifyMetafields = exports.ShopifyProductRecommendations = exports.ShopifyProductDetails = exports.ShopifyProductsCarousel = exports.ShopifyProducts = exports.ShopifyRecentlyViewed = exports.ShopifyProductFeatured = exports.ShopifyFavorites = exports.ShopifyCollections = exports.ShopifyCollectionCoverImage = void 0;
-var ShopifyCollectionCoverImage_1 = require("./ShopifyCollectionCoverImage");
-Object.defineProperty(exports, "ShopifyCollectionCoverImage", { enumerable: true, get: function () { return __importDefault(ShopifyCollectionCoverImage_1).default; } });
+exports.ShopifySearch = exports.ShopifyMetafieldVideo = exports.ShopifyMetafieldImage = exports.ShopifyMetafieldProducts = exports.ShopifyMetafields = exports.ShopifyProductRecommendations = exports.ShopifyProductDetails = exports.ShopifyProductsCarousel = exports.ShopifyProducts = exports.ShopifyRecentlyViewed = exports.ShopifyProductFeatured = exports.ShopifyFavorites = exports.ShopifyCollections = exports.ShopifyCollectionCover = void 0;
+var ShopifyCollectionCover_1 = require("./ShopifyCollectionCover");
+Object.defineProperty(exports, "ShopifyCollectionCover", { enumerable: true, get: function () { return __importDefault(ShopifyCollectionCover_1).default; } });
 var ShopifyCollections_1 = require("./ShopifyCollections");
 Object.defineProperty(exports, "ShopifyCollections", { enumerable: true, get: function () { return __importDefault(ShopifyCollections_1).default; } });
 var ShopifyFavorites_1 = require("./ShopifyFavorites");

@@ -95,16 +95,16 @@ var ResourceList = function (props) {
         toolbar: {},
         pagination: {},
     };
-    var _a = props.grid, grid = _a === void 0 ? false : _a, _b = props.sortable, sortable = _b === void 0 ? false : _b, _c = props.selectable, selectable = _c === void 0 ? false : _c, _d = props.header, Header = _d === void 0 ? ResourceHeader_1.default : _d, _e = props.toolbar, Toolbar = _e === void 0 ? ResourceToolbar_1.default : _e, _f = props.list, List = _f === void 0 ? ResourceListItems_1.default : _f, _g = props.component, Component = _g === void 0 ? ResourceItem_1.default : _g, _h = props.edit, EditForm = _h === void 0 ? ResourceForm_1.default : _h, _j = props.create, CreateForm = _j === void 0 ? ResourceForm_1.default : _j, _k = props.show, ShowModal = _k === void 0 ? ResourceShow_1.default : _k, _l = props.disableInfiniteLoad, disableInfiniteLoad = _l === void 0 ? false : _l, url = props.url, name = props.name, _m = props.headers, headers = _m === void 0 ? [] : _m, _o = props.fields, fields = _o === void 0 ? [] : _o, _p = props.filterOptions, filterOptions = _p === void 0 ? [] : _p, _q = props.sortOptions, sortOptions = _q === void 0 ? [] : _q, _r = props.displayFields, displayFields = _r === void 0 ? [] : _r, _s = props.buttons, buttons = _s === void 0 ? [] : _s, _t = props.query, defaultQuery = _t === void 0 ? {} : _t, _u = props.perPage, perPage = _u === void 0 ? 20 : _u, _v = props.enableSearch, enableSearch = _v === void 0 ? false : _v, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableShow = props.enableShow, handleClick = props.handleClick, _w = props.slots, slots = _w === void 0 ? SLOT_PROPS : _w, _x = props.enableBorder, enableBorder = _x === void 0 ? false : _x, _y = props.direction, direction = _y === void 0 ? 'row' : _y, _z = props.emptyIcon, emptyIcon = _z === void 0 ? 'Search' : _z, _0 = props.emptyTitle, emptyTitle = _0 === void 0 ? 'No results found' : _0, _1 = props.emptyDescription, emptyDescription = _1 === void 0 ? 'Try adjusting your search or filters' : _1;
-    var _2 = (0, react_1.useState)(false), openShow = _2[0], setOpenShow = _2[1];
-    var _3 = (0, react_1.useState)(false), openCreate = _3[0], setOpenCreate = _3[1];
-    var _4 = (0, react_1.useState)(false), openEdit = _4[0], setOpenEdit = _4[1];
-    var _5 = (0, react_1.useState)(false), openDelete = _5[0], setOpenDelete = _5[1];
-    var _6 = (0, frontend_js_1.useResource)({
+    var _a = props.grid, grid = _a === void 0 ? false : _a, _b = props.sortable, sortable = _b === void 0 ? false : _b, _c = props.selectable, selectable = _c === void 0 ? false : _c, _d = props.header, Header = _d === void 0 ? ResourceHeader_1.default : _d, _e = props.toolbar, Toolbar = _e === void 0 ? ResourceToolbar_1.default : _e, _f = props.list, List = _f === void 0 ? ResourceListItems_1.default : _f, _g = props.component, Component = _g === void 0 ? ResourceItem_1.default : _g, _h = props.edit, EditForm = _h === void 0 ? ResourceForm_1.default : _h, _j = props.create, CreateForm = _j === void 0 ? ResourceForm_1.default : _j, _k = props.show, ShowModal = _k === void 0 ? ResourceShow_1.default : _k, _l = props.disableInfiniteLoad, disableInfiniteLoad = _l === void 0 ? false : _l, url = props.url, name = props.name, _m = props.headers, headers = _m === void 0 ? [] : _m, _o = props.fields, fields = _o === void 0 ? [] : _o, _p = props.filterOptions, filterOptions = _p === void 0 ? [] : _p, _q = props.sortOptions, sortOptions = _q === void 0 ? [] : _q, _r = props.displayFields, displayFields = _r === void 0 ? [] : _r, _s = props.buttons, buttons = _s === void 0 ? [] : _s, _t = props.query, defaultQuery = _t === void 0 ? {} : _t, _u = props.perPage, perPage = _u === void 0 ? 20 : _u, _v = props.enableSearch, enableSearch = _v === void 0 ? false : _v, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableShow = props.enableShow, handleClick = props.handleClick, _w = props.slots, slots = _w === void 0 ? SLOT_PROPS : _w, _x = props.enableBorder, enableBorder = _x === void 0 ? false : _x, _y = props.direction, direction = _y === void 0 ? 'row' : _y, _z = props.emptyIcon, emptyIcon = _z === void 0 ? 'Search' : _z, _0 = props.emptyTitle, emptyTitle = _0 === void 0 ? 'No results found' : _0, _1 = props.emptyDescription, emptyDescription = _1 === void 0 ? 'Try adjusting your search or filters' : _1, _2 = props.defaultValue, defaultValue = _2 === void 0 ? {} : _2;
+    var _3 = (0, react_1.useState)(false), openShow = _3[0], setOpenShow = _3[1];
+    var _4 = (0, react_1.useState)(false), openCreate = _4[0], setOpenCreate = _4[1];
+    var _5 = (0, react_1.useState)(false), openEdit = _5[0], setOpenEdit = _5[1];
+    var _6 = (0, react_1.useState)(false), openDelete = _6[0], setOpenDelete = _6[1];
+    var _7 = (0, frontend_js_1.useResource)({
         name: name,
         url: url,
-    }), loading = _6.delayedLoading, errors = _6.errors, resource = _6.resource, resources = _6.resources, setResource = _6.setResource, update = _6.update, create = _6.create, destroy = _6.destroy, updatePositions = _6.updatePositions, handleChange = _6.handleChange, query = _6.query, findMany = _6.findMany, reloadMany = _6.reloadMany, removeAttachment = _6.removeAttachment, page = _6.page, numPages = _6.numPages, totalCount = _6.totalCount, loadMore = _6.loadMore, paginate = _6.paginate, reloadOne = _6.reloadOne, selected = _6.selected, selectedIds = _6.selectedIds, handleSelect = _6.handleSelect, handleClear = _6.handleClear;
-    var _7 = (0, react_1.useState)(''), keywords = _7[0], setKeywords = _7[1];
+    }), loading = _7.delayedLoading, errors = _7.errors, resource = _7.resource, resources = _7.resources, setResource = _7.setResource, update = _7.update, create = _7.create, destroy = _7.destroy, updatePositions = _7.updatePositions, handleChange = _7.handleChange, query = _7.query, findMany = _7.findMany, reloadMany = _7.reloadMany, addAttachment = _7.addAttachment, removeAttachment = _7.removeAttachment, page = _7.page, numPages = _7.numPages, totalCount = _7.totalCount, loadMore = _7.loadMore, paginate = _7.paginate, reloadOne = _7.reloadOne, selected = _7.selected, selectedIds = _7.selectedIds, handleSelect = _7.handleSelect, handleClear = _7.handleClear;
+    var _8 = (0, react_1.useState)(''), keywords = _8[0], setKeywords = _8[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -139,9 +139,9 @@ var ResourceList = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _8 = (0, hooks_1.useFilters)({
+    var _9 = (0, hooks_1.useFilters)({
         query: query,
-    }), activeFilters = _8.activeFilters, setActiveFilters = _8.setActiveFilters, handleAddFilter = _8.handleAddFilter, buildQueryFilters = _8.buildQueryFilters;
+    }), activeFilters = _9.activeFilters, setActiveFilters = _9.setActiveFilters, handleAddFilter = _9.handleAddFilter, buildQueryFilters = _9.buildQueryFilters;
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
@@ -163,12 +163,21 @@ var ResourceList = function (props) {
         setOpenEdit(false);
         setOpenCreate(true);
     };
-    var handleEdit = function (resource) {
-        setResource(resource);
-        setOpenShow(false);
-        setOpenCreate(false);
-        setOpenEdit(true);
-    };
+    var handleEdit = function (resource) { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, reloadOne(resource === null || resource === void 0 ? void 0 : resource.id)];
+                case 1:
+                    resp = _a.sent();
+                    setResource(resp);
+                    setOpenShow(false);
+                    setOpenCreate(false);
+                    setOpenEdit(true);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp, err_1;
         return __generator(this, function (_a) {
@@ -181,7 +190,7 @@ var ResourceList = function (props) {
                 case 1:
                     resp = _a.sent();
                     return [3 /*break*/, 4];
-                case 2: return [4 /*yield*/, create(resource)];
+                case 2: return [4 /*yield*/, create(__assign(__assign({}, defaultValue), resource))];
                 case 3:
                     resp = _a.sent();
                     _a.label = 4;
@@ -257,6 +266,26 @@ var ResourceList = function (props) {
             }
         });
     }); };
+    var handleRemoveAttachment = function (name) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, removeAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleAddAttachment = function (name, attachmentId) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, addAttachment(resource === null || resource === void 0 ? void 0 : resource.id, name, attachmentId)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     var handleDrop = function (sorted) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -302,8 +331,8 @@ var ResourceList = function (props) {
                         ? function () { return handleClick(resource); }
                         : function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleSelect: function () { return handleSelect(resource); }, handleReload: reloadMany }, slots.item))); } }, slots.list))),
             !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__1.Placeholder, { icon: emptyIcon, title: emptyTitle, description: emptyDescription }))),
-        react_1.default.createElement(CreateForm, __assign({ open: openCreate, handleClose: function () { return setOpenCreate(false); }, loading: loading, errors: errors, resource: resource, setResource: setResource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, handleReload: reloadMany, fields: fields }, slots.create)),
-        react_1.default.createElement(EditForm, __assign({ open: openEdit, handleClose: function () { return setOpenEdit(false); }, loading: loading, errors: errors, resource: resource, setResource: setResource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, handleReload: reloadMany, fields: fields }, slots.edit)),
+        react_1.default.createElement(CreateForm, __assign({ open: openCreate, handleClose: function () { return setOpenCreate(false); }, loading: loading, errors: errors, resource: resource, setResource: setResource, handleChange: handleChange, handleRemove: handleRemove, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, handleSubmit: handleSubmit, handleReload: reloadMany, fields: fields }, slots.create)),
+        react_1.default.createElement(EditForm, __assign({ open: openEdit, handleClose: function () { return setOpenEdit(false); }, loading: loading, errors: errors, resource: resource, setResource: setResource, handleChange: handleChange, handleRemove: handleRemove, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, handleSubmit: handleSubmit, handleReload: reloadMany, handleReloadOne: reloadOne, fields: fields }, slots.edit)),
         react_1.default.createElement(ShowModal, __assign({ loading: loading, open: openShow, handleClose: function () { return setOpenShow(false); }, fields: displayFields, resource: resource, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleReload: reloadMany }, slots.show)),
         react_1.default.createElement(__1.AlertModal, { open: openDelete, handleClose: function () { return setOpenDelete(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete })));
 };

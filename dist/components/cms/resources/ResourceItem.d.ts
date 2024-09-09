@@ -10,7 +10,7 @@ export type ResourceItemProps = {
     handleDelete?: (resource: any) => void;
     handleSelect?: () => void;
     handleReload?: () => void;
-    secondaryActions?: React.ReactNode;
+    secondaryAction?: React.ReactNode;
     menuActions?: any;
     sortable?: boolean;
     selectable?: boolean;

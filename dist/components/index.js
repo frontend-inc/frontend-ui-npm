@@ -22,6 +22,6 @@ __exportStar(require("./cms"), exports);
 __exportStar(require("./web"), exports);
 __exportStar(require("./ui"), exports);
 __exportStar(require("./users"), exports);
-__exportStar(require("./commerce"), exports);
+__exportStar(require("./shop"), exports);
 __exportStar(require("./social"), exports);
 __exportStar(require("./shopify"), exports);

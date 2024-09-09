@@ -60,6 +60,6 @@ var FieldShopifyProduct = function (props) {
     }, [shopifyHandle]);
     if (!product)
         return null;
-    return react_1.default.createElement(shopify_1.ProductDetails, __assign({ shopifyProduct: product }, rest));
+    return react_1.default.createElement(shopify_1.ShopifyProductDetails, __assign({ shopifyProduct: product }, rest));
 };
 exports.default = FieldShopifyProduct;

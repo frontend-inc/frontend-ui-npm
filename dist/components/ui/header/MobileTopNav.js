@@ -55,7 +55,7 @@ var MobileNav = function (props) {
                             react_1.default.createElement(__1.Icon, { name: "Menu", size: 24 }))),
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu },
                         react_1.default.createElement(Logo_1.default, { handleClick: function () { return handleClick('/'); }, src: logo, width: logoWidth, height: logoHeight - 20 })),
-                    react_1.default.createElement(material_1.Box, { sx: sx.rightMenu }, enableShopify && react_1.default.createElement(shopify_1.CartButton, null)))))));
+                    react_1.default.createElement(material_1.Box, { sx: sx.rightMenu }, enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))));
 };
 exports.default = MobileNav;
 var sx = {

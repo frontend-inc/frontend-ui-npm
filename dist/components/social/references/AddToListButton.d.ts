@@ -1,6 +1,6 @@
 import React from 'react';
 type AddToListProps = {
-    variant?: 'icon' | 'button';
+    size?: 'small' | 'large';
     resource: any;
     color?: string;
 };

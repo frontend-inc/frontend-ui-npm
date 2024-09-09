@@ -1,6 +1,6 @@
 import React from 'react';
-import { ProductFavoritesProps } from '../../components/shopify/favorites/ProductFavorites';
+import { ShopifyProductFavoritesProps } from '../../components/shopify/favorites/ShopifyProductFavorites';
 import { SectionProps, HeadingProps } from '../../types';
-type ShopifyFavoritesProps = SectionProps & HeadingProps & ProductFavoritesProps;
+type ShopifyFavoritesProps = SectionProps & HeadingProps & ShopifyProductFavoritesProps;
 declare const ShopifyFavorites: React.FC<ShopifyFavoritesProps>;
 export default ShopifyFavorites;

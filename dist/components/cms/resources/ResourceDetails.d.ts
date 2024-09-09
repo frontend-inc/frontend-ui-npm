@@ -15,6 +15,7 @@ type ResourceDetailsProps = {
     handleEdit?: () => void;
     handleDelete?: () => void;
     fields: DisplayFieldType[];
+    direction?: 'row' | 'column';
 };
 declare const ResourceDetails: React.FC<ResourceDetailsProps>;
 export default ResourceDetails;

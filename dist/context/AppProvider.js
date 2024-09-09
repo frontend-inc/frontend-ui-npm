@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var AppContext_1 = __importDefault(require("./AppContext"));
 var AppProvider = function (props) {
-    var _a = props || {}, children = _a.children, clientUrl = _a.clientUrl, name = _a.name, logo = _a.logo;
+    var _a = props || {}, children = _a.children, apiUrl = _a.apiUrl, clientUrl = _a.clientUrl, name = _a.name, logo = _a.logo;
     var _b = (0, react_1.useState)(), alert = _b[0], setAlert = _b[1];
     var _c = (0, react_1.useState)(false), loading = _c[0], setLoading = _c[1];
     var _d = (0, react_1.useState)(false), loaded = _d[0], setLoaded = _d[1];
@@ -43,6 +43,7 @@ var AppProvider = function (props) {
         app: app,
         setApp: setApp,
         logo: logo,
+        apiUrl: apiUrl,
         clientUrl: clientUrl,
         alert: alert,
         setAlert: setAlert,

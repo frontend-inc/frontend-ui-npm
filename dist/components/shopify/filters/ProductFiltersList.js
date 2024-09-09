@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var __1 = require("..");
+var CheckboxGroupInput_1 = __importDefault(require("./CheckboxGroupInput"));
 var material_1 = require("@mui/material");
 var constants_1 = require("../../../constants");
 var RadioPriceRangeInput_1 = __importDefault(require("./RadioPriceRangeInput"));
@@ -18,7 +18,7 @@ var ProductFiltersList = function (props) {
             if (!option)
                 return null;
             return (react_1.default.createElement(components_1.MenuList, { enableBorder: true, disablePadding: true, label: filterType.label },
-                react_1.default.createElement(__1.CheckboxFilterList, { filters: activeFilters, option: option, handleClick: filterType.array ? handleFilterArray : handleFilter })));
+                react_1.default.createElement(CheckboxGroupInput_1.default, { filters: activeFilters, option: option, handleClick: filterType.array ? handleFilterArray : handleFilter })));
         }),
         (priceOptions === null || priceOptions === void 0 ? void 0 : priceOptions.length) > 0 && (react_1.default.createElement(components_1.MenuList, { enableBorder: true, disablePadding: true, label: "Price" },
             react_1.default.createElement(RadioPriceRangeInput_1.default, { filters: filters, options: priceOptions, handleClick: handleFilter })))));

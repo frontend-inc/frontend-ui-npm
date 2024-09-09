@@ -18,14 +18,14 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ResourceListItem = function (props) {
-    var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryActions = props.secondaryActions, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.isDragging, isDragging = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
+    var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryAction = props.secondaryAction, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.isDragging, isDragging = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b;
     var handleChange = function (event) {
         if (handleSelect) {
             handleSelect();
         }
     };
     return (react_1.default.createElement(material_1.ListItem, { sx: __assign(__assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)), (isDragging && sx.isDragging)), disablePadding: true, secondaryAction: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1, sx: sx.buttons },
-            secondaryActions,
+            secondaryAction,
             (menuActions || handleEdit || handleDelete) && (react_1.default.createElement(__1.MenuButton, { handleEdit: handleEdit, handleDelete: handleDelete }, menuActions))) },
         selectable && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.checkbox },
             react_1.default.createElement(material_1.Checkbox, { checked: selected, color: "primary", size: "small", onChange: handleChange }))),
@@ -33,8 +33,8 @@ var ResourceListItem = function (props) {
             sortable && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.dragHandle },
                 react_1.default.createElement(__1.Icon, { name: "GripVertical", color: "text.secondary" }))),
             avatar && react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon }, avatar),
-            !avatar && image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
-                react_1.default.createElement(__1.Image, { src: image, width: 32, height: 32, alt: image }))),
+            !avatar && image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemImage },
+                react_1.default.createElement(__1.Image, { src: image, width: 64, height: 64, alt: image }))),
             icon && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign({}, sx.avatar), { bgcolor: color }) },
                     react_1.default.createElement(__1.Icon, { name: icon, size: 20, color: 'primary.contrastText' })))),
@@ -43,6 +43,7 @@ var ResourceListItem = function (props) {
 exports.default = ResourceListItem;
 var sx = {
     root: {
+        my: 0.5,
         p: 0,
         borderRadius: 1,
         overflow: 'hidden',
@@ -69,6 +70,10 @@ var sx = {
     },
     listItemIcon: {
         mr: 2,
+    },
+    listItemImage: {
+        mr: 2,
+        minWidth: 64,
     },
     checkbox: {
         width: 24,

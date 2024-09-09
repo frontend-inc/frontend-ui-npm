@@ -1,7 +1,7 @@
 import React from 'react';
 type LikeButtonProps = {
-    handle: string | number;
-    variant?: 'icon' | 'button';
+    resource: any;
+    size?: 'small' | 'large';
     color?: string;
     numLikes?: number;
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 type AppProviderProps = {
-    clientUrl?: string;
+    apiUrl: string;
+    clientUrl: string;
     children: React.ReactNode;
     logo?: any;
     name: string;

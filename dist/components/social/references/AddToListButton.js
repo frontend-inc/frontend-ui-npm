@@ -79,7 +79,7 @@ var components_2 = require("../../../components");
 var frontend_js_2 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 var AddToList = function (props) {
-    var _a = props.variant, variant = _a === void 0 ? 'icon' : _a, selected = props.resource, _b = props.color, color = _b === void 0 ? 'text.secondary' : _b;
+    var _a = props.size, size = _a === void 0 ? 'small' : _a, selected = props.resource, _b = props.color, color = _b === void 0 ? 'text.secondary' : _b;
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
     var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
     var _c = (0, react_1.useState)(false), open = _c[0], setOpen = _c[1];
@@ -114,7 +114,7 @@ var AddToList = function (props) {
         react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign({ color: color, '&:hover': {
                         color: color,
-                    } }, (variant == 'icon' ? sx.icon : sx.button)) },
+                    } }, (size == 'small' ? sx.small : sx.large)) },
                 react_1.default.createElement(icons_material_1.PlaylistAdd, { fontSize: "small" }))),
         react_1.default.createElement(components_1.Modal, { title: "Add to List", loading: loading, open: open, handleClose: handleClose, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleSubmit, variant: "contained", color: "primary", startIcon: react_1.default.createElement(icons_material_1.PlaylistAdd, { fontSize: "small" }) }, "Add to List") },
             react_1.default.createElement(components_2.RemoteAutosuggest, { url: foreignUrl, name: "id", displayField: "title", value: resource === null || resource === void 0 ? void 0 : resource.id, handleChange: handleChange, defaultQuery: {
@@ -123,8 +123,8 @@ var AddToList = function (props) {
 };
 exports.default = AddToList;
 var sx = {
-    icon: {},
-    button: {
+    small: {},
+    large: {
         border: '1px solid',
         borderColor: 'divider',
         bgcolor: 'background.main',

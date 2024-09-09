@@ -47,7 +47,7 @@ var sx = {
     },
     rootBorder: {
         overflow: 'hidden',
-        borderRadius: function (theme) { return "".concat(theme.shape.borderRadius, "px"); },
+        borderRadius: 1,
         border: '1px solid',
         borderColor: 'divider',
     },

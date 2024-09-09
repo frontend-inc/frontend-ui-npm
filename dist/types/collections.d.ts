@@ -1,5 +1,5 @@
 import { FieldType } from '../types';
-export type CollectionType = {
+export type ShopifyCollectionType = {
     id: number;
     app_id: number;
     name: string;

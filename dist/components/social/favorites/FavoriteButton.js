@@ -75,35 +75,30 @@ var material_1 = require("@mui/material");
 var helpers_1 = require("../../../helpers");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
-var context_1 = require("../../../context");
 var icons_material_1 = require("@mui/icons-material");
 var FavoriteButton = function (props) {
-    var handle = props.handle, _a = props.variant, variant = _a === void 0 ? 'icon' : _a, _b = props.color, color = _b === void 0 ? 'text.secondary' : _b, numFavorites = props.numFavorites;
+    var resource = props.resource, _a = props.size, size = _a === void 0 ? 'small' : _a, _b = props.color, color = _b === void 0 ? 'text.secondary' : _b, numFavorites = props.numFavorites;
     var _c = (0, frontend_js_1.useAuth)(), fetchMe = _c.fetchMe, currentUser = _c.currentUser;
-    var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
+    var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
     var _d = (0, react_1.useState)(false), isFavorite = _d[0], setIsFavorite = _d[1];
-    var _e = (0, hooks_1.useSocial)({
-        url: '/api/v1/social',
-    }), loading = _e.loading, favorite = _e.favorite, unfavorite = _e.unfavorite;
+    var _e = (0, hooks_1.useSocial)(), favorite = _e.favorite, unfavorite = _e.unfavorite;
     var handleClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    ev.stopPropagation();
-                    ev.preventDefault();
                     if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
                         return [2 /*return*/, setAuthOpen(true)];
                     }
                     if (!isFavorite) return [3 /*break*/, 2];
                     setIsFavorite(false);
-                    return [4 /*yield*/, unfavorite(handle)];
+                    return [4 /*yield*/, unfavorite(resource === null || resource === void 0 ? void 0 : resource.handle)];
                 case 1:
                     _a.sent();
                     fetchMe();
                     return [3 /*break*/, 4];
                 case 2:
                     setIsFavorite(true);
-                    return [4 /*yield*/, favorite(handle)];
+                    return [4 /*yield*/, favorite(resource === null || resource === void 0 ? void 0 : resource.handle)];
                 case 3:
                     _a.sent();
                     fetchMe();
@@ -113,30 +108,31 @@ var FavoriteButton = function (props) {
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (currentUser && handle) {
-            if ((0, helpers_1.isFavorited)(currentUser, handle)) {
+        if (currentUser && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
+            if ((0, helpers_1.isFavorited)(currentUser, resource === null || resource === void 0 ? void 0 : resource.handle)) {
                 setIsFavorite(true);
             }
             else {
                 setIsFavorite(false);
             }
         }
-    }, [currentUser, handle]);
+    }, [currentUser, resource === null || resource === void 0 ? void 0 : resource.handle]);
     return (react_1.default.createElement(material_1.Box, null,
-        react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign(__assign({ color: color, '&:hover': {
+        react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
                     color: color,
-                } }, (variant === 'icon' ? sx.icon : sx.button)), (isFavorite && sx.favorited)), (isFavorite && variant === 'button' && sx.buttonFavorited)) }, isFavorite ? (react_1.default.createElement(icons_material_1.Bookmark, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.BookmarkBorder, { fontSize: "small" })))));
+                } }, (size === 'small' ? sx.small : sx.large)), (isFavorite && sx.selected)) }, isFavorite ? (react_1.default.createElement(icons_material_1.Bookmark, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.BookmarkBorder, { fontSize: "small" })))));
 };
 exports.default = FavoriteButton;
 var sx = {
-    icon: {},
-    favorited: {
+    small: {},
+    selected: {
         color: 'primary.main',
         '&:hover': {
             color: 'primary.dark',
         },
+        borderColor: 'primary.main',
     },
-    button: {
+    large: {
         border: '1px solid',
         borderColor: 'divider',
         bgcolor: 'background.main',
@@ -145,8 +141,5 @@ var sx = {
             bgcolor: 'background.main',
             color: 'text.secondary',
         },
-    },
-    buttonFavorited: {
-        borderColor: 'primary.main',
     },
 };

@@ -40,7 +40,7 @@ var DesktopTopNav = function (props) {
                         enableStripe && react_1.default.createElement(components_1.StripeCustomerPortalButton, null),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement(shopify_1.ShopifyAuth, null),
-                            react_1.default.createElement(shopify_1.CartButton, null)))))))));
+                            react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))))));
 };
 exports.default = DesktopTopNav;
 var sx = {

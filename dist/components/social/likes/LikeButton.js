@@ -76,33 +76,28 @@ var helpers_1 = require("../../../helpers");
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var icons_material_1 = require("@mui/icons-material");
-var context_1 = require("../../../context");
 var LikeButton = function (props) {
-    var handle = props.handle, _a = props.color, color = _a === void 0 ? 'text.secondary' : _a, _b = props.variant, variant = _b === void 0 ? 'icon' : _b, numLikes = props.numLikes;
+    var resource = props.resource, _a = props.color, color = _a === void 0 ? 'text.secondary' : _a, _b = props.size, size = _b === void 0 ? 'small' : _b;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
+    var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
     var _c = (0, react_1.useState)(false), liked = _c[0], setLiked = _c[1];
-    var _d = (0, hooks_1.useSocial)({
-        url: '/api/v1/social',
-    }), loading = _d.loading, like = _d.like, unlike = _d.unlike;
-    var handleClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {
+    var _d = (0, hooks_1.useSocial)(), like = _d.like, unlike = _d.unlike;
+    var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    ev.stopPropagation();
-                    ev.preventDefault();
                     if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
                         return [2 /*return*/, setAuthOpen(true)];
                     }
                     if (!liked) return [3 /*break*/, 2];
                     setLiked(false);
-                    return [4 /*yield*/, unlike(handle)];
+                    return [4 /*yield*/, unlike(resource === null || resource === void 0 ? void 0 : resource.handle)];
                 case 1:
                     _a.sent();
                     return [3 /*break*/, 4];
                 case 2:
                     setLiked(true);
-                    return [4 /*yield*/, like(handle)];
+                    return [4 /*yield*/, like(resource === null || resource === void 0 ? void 0 : resource.handle)];
                 case 3:
                     _a.sent();
                     _a.label = 4;
@@ -111,35 +106,33 @@ var LikeButton = function (props) {
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (currentUser && handle) {
-            if ((0, helpers_1.isLiked)(currentUser, handle)) {
+        if (currentUser && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
+            if ((0, helpers_1.isLiked)(currentUser, resource === null || resource === void 0 ? void 0 : resource.handle)) {
                 setLiked(true);
             }
             else {
                 setLiked(false);
             }
         }
-    }, [currentUser, handle]);
+    }, [currentUser, resource === null || resource === void 0 ? void 0 : resource.handle]);
     return (react_1.default.createElement(material_1.Box, null,
-        react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign(__assign({ color: color, '&:hover': {
+        react_1.default.createElement(material_1.IconButton, { onClick: handleClick, sx: __assign(__assign({ color: color, '&:hover': {
                     color: color,
-                } }, (variant == 'icon' ? sx.icon : sx.button)), (liked && sx.liked)), (liked && variant == 'button' && sx.buttonLiked)) }, liked ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))));
+                } }, (size == 'small' ? sx.small : sx.large)), (liked && sx.selected)) }, liked ? (react_1.default.createElement(icons_material_1.Favorite, { fontSize: "small" })) : (react_1.default.createElement(icons_material_1.FavoriteBorder, { fontSize: "small" })))));
 };
 exports.default = LikeButton;
 var sx = {
-    icon: {},
-    liked: {
+    small: {},
+    selected: {
         transition: 'transform 0.2s',
         color: 'primary.main',
         '&:hover': {
             color: 'primary.dark',
         },
+        borderColor: 'primary.main',
     },
-    button: {
+    large: {
         border: '1px solid',
         borderColor: 'divider',
-    },
-    buttonLiked: {
-        borderColor: 'primary.main',
     },
 };

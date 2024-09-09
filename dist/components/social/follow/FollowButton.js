@@ -70,15 +70,11 @@ var FollowButton = function (props) {
     var _a = (0, frontend_js_1.useAuth)(), fetchMe = _a.fetchMe, currentUser = _a.currentUser;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var _b = (0, react_1.useState)(false), following = _b[0], setFollowing = _b[1];
-    var _c = (0, hooks_1.useSocial)({
-        url: '/api/v1/social',
-    }), loading = _c.loading, follow = _c.follow, unfollow = _c.unfollow;
+    var _c = (0, hooks_1.useSocial)(), loading = _c.loading, follow = _c.follow, unfollow = _c.unfollow;
     var usernameClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    ev.stopPropagation();
-                    ev.preventDefault();
                     if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
                         return [2 /*return*/, setAuthOpen(true)];
                     }

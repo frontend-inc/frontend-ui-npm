@@ -42,6 +42,7 @@ export type ResourceListProps = {
     itemProps?: any;
     disableInfiniteLoad?: boolean;
     buttons?: ToolbarButtonType[];
+    defaultValue?: any;
     slots?: {
         list?: any;
         item?: any;

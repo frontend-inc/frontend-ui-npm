@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductMetafieldsProps } from '../../components/shopify/products/metafields/Metafields';
+import { ShopifyProductMetafieldsProps as ProductMetafieldsProps } from '../../components/shopify/products/metafields/ShopifyMetafields';
 import { SectionProps, HeadingProps } from '../../types';
 type ShopifyMetafieldsProps = SectionProps & HeadingProps & ProductMetafieldsProps;
 declare const ShopifyMetafields: React.FC<ShopifyMetafieldsProps>;

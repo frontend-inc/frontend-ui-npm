@@ -18,11 +18,11 @@ var react_1 = __importDefault(require("react"));
 var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
 var TouchableOpacity = function (props) {
-    var children = props.children, _a = props.justifyContent, justifyContent = _a === void 0 ? 'center' : _a, handleClick = props.handleClick, _b = props.disableRipple, disableRipple = _b === void 0 ? false : _b;
-    var _c = (0, hooks_1.useClickOrDrag)({
+    var children = props.children, _a = props.justifyContent, justifyContent = _a === void 0 ? 'center' : _a, handleClick = props.handleClick, _b = props.disableRipple, disableRipple = _b === void 0 ? false : _b, _c = props.disableBorderRadius, disableBorderRadius = _c === void 0 ? false : _c;
+    var _d = (0, hooks_1.useClickOrDrag)({
         onClick: handleClick,
-    }), onMouseDown = _c.onMouseDown, onMouseUp = _c.onMouseUp;
-    return (react_1.default.createElement(material_1.CardActionArea, { sx: __assign(__assign({}, sx.root), { justifyContent: justifyContent }), disableRipple: disableRipple, onMouseDown: onMouseDown, onMouseUp: onMouseUp }, children));
+    }), onMouseDown = _d.onMouseDown, onMouseUp = _d.onMouseUp;
+    return (react_1.default.createElement(material_1.CardActionArea, { sx: __assign(__assign(__assign({}, sx.root), (disableBorderRadius && sx.disableBorderRadius)), { justifyContent: justifyContent }), disableRipple: disableRipple, onMouseDown: onMouseDown, onMouseUp: onMouseUp }, children));
 };
 exports.default = TouchableOpacity;
 var sx = {
@@ -37,4 +37,7 @@ var sx = {
             background: 'transparent',
         },
     },
+    disableBorderRadius: {
+        borderRadius: 0
+    }
 };
