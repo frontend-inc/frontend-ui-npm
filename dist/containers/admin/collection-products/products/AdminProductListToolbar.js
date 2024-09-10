@@ -42,15 +42,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../../components");
 var material_1 = require("@mui/material");
-var frontend_js_1 = require("frontend-js");
+var hooks_1 = require("../../../../hooks");
 var AdminProductToolbar = function (props) {
     var _a = props || {}, productCollectionId = _a.productCollectionId, url = _a.url, handleSuccess = _a.handleSuccess;
     var _b = props || {}, handleClose = _b.handleClose, selectedIds = _b.selectedIds;
-    var addProducts = (0, frontend_js_1.useResource)({
-        url: url,
-        name: 'products',
-    }).addProducts;
-    console.log('URL', url);
+    var addProducts = (0, hooks_1.useProductCollections)().addProducts;
     var handleAddProducts = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

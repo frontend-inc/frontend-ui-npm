@@ -5,9 +5,9 @@ var __1 = require("..");
 var useProducts = function () {
     var apiUrl = (0, __1.useAdmin)().apiUrl;
     var _a = (0, frontend_js_1.useResource)({
-        url: "".concat(apiUrl, "/ecommerce/products"),
+        url: "".concat(apiUrl, "/shop/products"),
         name: 'product',
-    }), loading = _a.loading, delayedLoading = _a.delayedLoading, loaded = _a.loaded, errors = _a.errors, empty = _a.empty, editing = _a.editing, isValid = _a.isValid, document = _a.resource, documents = _a.resources, findProduct = _a.findOne, findProducts = _a.findMany, updateProduct = _a.update, updateProducts = _a.updateMany, createProduct = _a.create, saveProduct = _a.save, deleteProduct = _a.destroy, deleteProducts = _a.deleteMany, loadMore = _a.loadMore, publish = _a.publish, unpublish = _a.unpublish, handleChange = _a.handleChange, handleChangePage = _a.handleChangePage, updatePositions = _a.updatePositions, addRelatedProduct = _a.addRelatedProduct, removeRelatedProduct = _a.removeRelatedProduct, addAttachment = _a.addAttachment, removeAttachment = _a.removeAttachment, query = _a.query, setQuery = _a.setQuery, page = _a.page, numPages = _a.numPages, perPage = _a.perPage, totalCount = _a.totalCount, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort, updateRelatedProductPositions = _a.updateRelatedProductPositions, reloadProduct = _a.reloadOne, reloadProducts = _a.reloadMany, setProduct = _a.setResource, setProducts = _a.setResources, checkout = _a.checkout, startIndex = _a.startIndex, endIndex = _a.endIndex, paginate = _a.paginate;
+    }), loading = _a.loading, delayedLoading = _a.delayedLoading, loaded = _a.loaded, errors = _a.errors, empty = _a.empty, editing = _a.editing, isValid = _a.isValid, document = _a.resource, documents = _a.resources, findProduct = _a.findOne, findProducts = _a.findMany, updateProduct = _a.update, updateProducts = _a.updateMany, createProduct = _a.create, saveProduct = _a.save, deleteProduct = _a.destroy, deleteProducts = _a.deleteMany, loadMore = _a.loadMore, publish = _a.publish, unpublish = _a.unpublish, handleChange = _a.handleChange, handleChangePage = _a.handleChangePage, updatePositions = _a.updatePositions, addAttachment = _a.addAttachment, removeAttachment = _a.removeAttachment, query = _a.query, setQuery = _a.setQuery, page = _a.page, numPages = _a.numPages, perPage = _a.perPage, totalCount = _a.totalCount, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort, reloadProduct = _a.reloadOne, reloadProducts = _a.reloadMany, setProduct = _a.setResource, setProducts = _a.setResources, startIndex = _a.startIndex, endIndex = _a.endIndex, paginate = _a.paginate;
     return {
         paginate: paginate,
         loading: loading,
@@ -30,10 +30,6 @@ var useProducts = function () {
         loadMore: loadMore,
         publish: publish,
         unpublish: unpublish,
-        addRelatedProduct: addRelatedProduct,
-        removeRelatedProduct: removeRelatedProduct,
-        updateRelatedProductPositions: updateRelatedProductPositions,
-        checkout: checkout,
         addAttachment: addAttachment,
         removeAttachment: removeAttachment,
         handleChange: handleChange,

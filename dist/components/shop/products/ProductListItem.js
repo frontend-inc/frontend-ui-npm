@@ -20,6 +20,7 @@ var frontend_js_1 = require("frontend-js");
 var __2 = require("../..");
 var material_1 = require("@mui/material");
 var helpers_1 = require("../../../helpers");
+var components_1 = require("../../../components");
 var ProductListItem = function (props) {
     var _a;
     var _b = (0, frontend_js_1.useResourceContext)(), selectedIds = _b.selectedIds, handleSelect = _b.handleSelect;
@@ -36,7 +37,8 @@ var ProductListItem = function (props) {
                 handleEdit: handleEdit,
                 handleDelete: handleDelete,
                 buttons: buttons,
-            }), resource: resource }), slots: {
+            }), resource: resource }), addToCart: react_1.default.createElement(material_1.Box, null,
+            react_1.default.createElement(components_1.AddToCartButton, { availableForSale: true, productId: resource === null || resource === void 0 ? void 0 : resource.id })), slots: {
             image: {
                 enableGradient: enableGradient,
                 enableOverlay: enableOverlay,

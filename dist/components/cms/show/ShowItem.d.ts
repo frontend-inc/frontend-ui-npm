@@ -11,7 +11,6 @@ export type ShowProps = {
     enableLikes?: boolean;
     enableSharing?: boolean;
     enableRatings?: boolean;
-    enablePayments?: boolean;
     enableAddToList?: boolean;
     enableUsers?: boolean;
     enableGradient?: boolean;

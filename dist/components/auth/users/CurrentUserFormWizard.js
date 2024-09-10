@@ -168,9 +168,6 @@ var CurrentUserFormWizard = function (props) {
         if (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) {
             setUser(currentUser);
         }
-        else {
-            fetchMe();
-        }
     }, [currentUser]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Button, { onClick: handleStartClick, variant: "contained", color: "primary", size: "large", sx: sx.button }, buttonText),

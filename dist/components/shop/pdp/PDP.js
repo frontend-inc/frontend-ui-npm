@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var PDP = function (props) {
-    var _a = props || {}, label = _a.label, image = _a.image, primary = _a.primary, secondary = _a.secondary, price = _a.price, compareAtPrice = _a.compareAtPrice, availableForSale = _a.availableForSale, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.slots, slots = _b === void 0 ? {
+    var _a = props || {}, label = _a.label, image = _a.image, primary = _a.primary, secondary = _a.secondary, addToCart = _a.addToCart, price = _a.price, compareAtPrice = _a.compareAtPrice, availableForSale = _a.availableForSale, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.slots, slots = _b === void 0 ? {
         image: {},
         content: {},
     } : _b;
@@ -35,6 +35,9 @@ var PDP = function (props) {
                     actions),
                 react_1.default.createElement(material_1.Stack, __assign({ spacing: 2, sx: sx.content }, slots.content),
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, primary),
+                    react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
+                        react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "caption" }, price),
+                        compareAtPrice && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption", sx: sx.compareAtPrice }, compareAtPrice))),
                     secondary)))));
 };
 exports.default = PDP;
@@ -58,6 +61,9 @@ var sx = {
             md: 'flex-start',
             xs: 'center',
         },
+    },
+    compareAtPrice: {
+        textDecoration: 'line-through',
     },
     image: {
         height: {

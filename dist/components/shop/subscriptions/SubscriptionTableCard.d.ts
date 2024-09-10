@@ -1,10 +1,10 @@
 import React from 'react';
-import { SubscriptionPlanType } from '../../../types';
+import { SubscriptionType } from '../../../types';
 type SubscriptionTableCardProps = {
     selected?: boolean;
     buttonText?: string;
     handleClick: () => void;
-    subscriptionPlan: SubscriptionPlanType;
+    subscription: SubscriptionType;
 };
 declare const SubscriptionTableCard: React.FC<SubscriptionTableCardProps>;
 export default SubscriptionTableCard;

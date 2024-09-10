@@ -21,10 +21,6 @@ declare const useProducts: () => {
     loadMore: () => void;
     publish: (ids: import("frontend-js").ID[]) => Promise<any>;
     unpublish: (id: import("frontend-js").ID[]) => Promise<any>;
-    addRelatedProduct: any;
-    removeRelatedProduct: any;
-    updateRelatedProductPositions: any;
-    checkout: any;
     addAttachment: (id: import("frontend-js").ID, fieldName: string, attachmentId: import("frontend-js").ID) => any;
     removeAttachment: (id: import("frontend-js").ID, fieldName: string) => any;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

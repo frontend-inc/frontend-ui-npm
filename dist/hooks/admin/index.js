@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useProducts = exports.useViews = exports.useUsers = exports.useTabs = exports.useRoles = exports.useMedia = exports.useDocuments = exports.useCollections = exports.useAppAccounts = exports.useApps = exports.useAccounts = exports.useAdmin = void 0;
+exports.useProductCollections = exports.useProducts = exports.useViews = exports.useUsers = exports.useTabs = exports.useRoles = exports.useMedia = exports.useDocuments = exports.useCollections = exports.useAppAccounts = exports.useApps = exports.useAccounts = exports.useAdmin = void 0;
 var useAdmin_1 = require("./useAdmin");
 Object.defineProperty(exports, "useAdmin", { enumerable: true, get: function () { return __importDefault(useAdmin_1).default; } });
 var useAccounts_1 = require("./useAccounts");
@@ -28,3 +28,5 @@ var useViews_1 = require("./useViews");
 Object.defineProperty(exports, "useViews", { enumerable: true, get: function () { return __importDefault(useViews_1).default; } });
 var useProducts_1 = require("./useProducts");
 Object.defineProperty(exports, "useProducts", { enumerable: true, get: function () { return __importDefault(useProducts_1).default; } });
+var useProductCollections_1 = require("./useProductCollections");
+Object.defineProperty(exports, "useProductCollections", { enumerable: true, get: function () { return __importDefault(useProductCollections_1).default; } });

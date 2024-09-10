@@ -19,6 +19,6 @@ __exportStar(require("./analytics"), exports);
 __exportStar(require("./auth"), exports);
 __exportStar(require("./api"), exports);
 __exportStar(require("./addons"), exports);
-__exportStar(require("./payments"), exports);
+__exportStar(require("./shop"), exports);
 __exportStar(require("./social"), exports);
 __exportStar(require("./common"), exports);

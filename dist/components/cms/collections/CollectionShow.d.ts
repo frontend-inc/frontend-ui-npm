@@ -16,7 +16,6 @@ export type ShowModalProps = {
     enableRatings?: boolean;
     enableAddToList?: boolean;
     enableUsers?: boolean;
-    enablePayments?: boolean;
     handleEdit?: () => void;
     enableComments?: boolean;
 };

@@ -31,7 +31,7 @@ __exportStar(require("./admin/product-collections"), exports);
 __exportStar(require("./admin/reviews"), exports);
 __exportStar(require("./admin/roles"), exports);
 __exportStar(require("./admin/shopify-metafields"), exports);
-__exportStar(require("./admin/subscription-plans"), exports);
+__exportStar(require("./admin/subscriptions"), exports);
 __exportStar(require("./admin/social-links"), exports);
 __exportStar(require("./admin/teams"), exports);
 __exportStar(require("./admin/tokens"), exports);

@@ -4,7 +4,6 @@ type DocumentEditProps = {
     collectionId: string | number;
     documentId: string | number;
     errors?: any;
-    enablePayments?: boolean;
     enableUsers?: boolean;
     enableTeams?: boolean;
     enableShopify?: boolean;

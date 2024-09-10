@@ -40,6 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
+var components_1 = require("../../../components");
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
 var Logo_1 = __importDefault(require("./Logo"));
@@ -55,7 +56,9 @@ var MobileNav = function (props) {
                             react_1.default.createElement(__1.Icon, { name: "Menu", size: 24 }))),
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu },
                         react_1.default.createElement(Logo_1.default, { handleClick: function () { return handleClick('/'); }, src: logo, width: logoWidth, height: logoHeight - 20 })),
-                    react_1.default.createElement(material_1.Box, { sx: sx.rightMenu }, enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))));
+                    react_1.default.createElement(material_1.Box, { sx: sx.rightMenu },
+                        react_1.default.createElement(components_1.CartButton, null),
+                        enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))));
 };
 exports.default = MobileNav;
 var sx = {

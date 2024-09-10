@@ -8,6 +8,7 @@ export type PDPProps = {
     primary?: string;
     secondary?: React.ReactNode;
     actions?: React.ReactNode;
+    addToCart?: React.ReactNode;
     secondaryAction?: React.ReactNode;
     children?: React.ReactNode;
     slots?: {

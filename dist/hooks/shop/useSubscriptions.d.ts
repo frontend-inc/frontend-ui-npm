@@ -1,0 +1,26 @@
+import React from 'react';
+declare const useSubscriptions: () => {
+    loading: boolean;
+    delayedLoading: any;
+    errors: Record<string, any>;
+    subscription: any;
+    subscriptions: any[];
+    findSubscription: (id: import("frontend-js").ID) => any;
+    findSubscriptions: (queryParams?: import("frontend-js").QueryParamsType) => void;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleChangePage: any;
+    reloadSubscriptions: () => Promise<any>;
+    query: import("frontend-js").QueryParamsType;
+    setQuery: (params: import("frontend-js").QueryParamsType) => void;
+    page: number;
+    numPages: number;
+    perPage: number;
+    totalCount: number;
+    sortBy: any;
+    sortDirection: any;
+    handleSort: any;
+    loadMore: () => void;
+    loadingWrapper: (fn: () => void) => void;
+    paginate: (page: number) => Promise<any>;
+};
+export default useSubscriptions;

@@ -17,22 +17,15 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
 var MyAccountMenu = function (props) {
-    var _a = props || {}, tab = _a.tab, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe, handleChange = _a.handleChange;
+    var _a = props || {}, enableTeams = _a.enableTeams, handleChange = _a.handleChange;
     var TABS = [{ label: 'My Account', value: 0 }];
     var TEAM_TABS = [
         { label: 'Teams', value: 1 },
         { label: 'Members', value: 2 },
     ];
-    var STRIPE_TABS = [
-        { label: 'Payment', value: 4 },
-        { label: 'Subscription', value: 6 },
-    ];
     var tabs = TABS;
     if (enableTeams) {
         tabs = __spreadArray(__spreadArray([], tabs, true), TEAM_TABS, true);
-    }
-    if (enableStripe) {
-        tabs = __spreadArray(__spreadArray([], tabs, true), STRIPE_TABS, true);
     }
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     return (react_1.default.createElement(react_1.default.Fragment, null,

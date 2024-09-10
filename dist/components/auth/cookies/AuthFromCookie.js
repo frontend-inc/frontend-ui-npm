@@ -11,7 +11,7 @@ var AuthFromCookie = function () {
             if (authToken) {
                 authenticateFromToken(String(authToken));
                 if (!currentUser) {
-                    fetchMe();
+                    //fetchMe()
                 }
             }
         }

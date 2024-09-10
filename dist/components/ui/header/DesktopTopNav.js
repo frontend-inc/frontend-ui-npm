@@ -18,6 +18,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var Logo_1 = __importDefault(require("./Logo"));
+var components_2 = require("../../../components");
 var shopify_1 = require("../../shopify");
 var frontend_js_1 = require("frontend-js");
 var TopNavMenuItem_1 = __importDefault(require("./TopNavMenuItem"));
@@ -37,7 +38,9 @@ var DesktopTopNav = function (props) {
                     })) === null || _b === void 0 ? void 0 : _b.map(function (menuItem, index) { return (react_1.default.createElement(TopNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); })),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu },
                         enableAuth && react_1.default.createElement(components_1.AuthButton, { editing: editing }),
-                        enableStripe && react_1.default.createElement(components_1.StripeCustomerPortalButton, null),
+                        react_1.default.createElement(components_2.CartButton, null),
+                        enableStripe && (react_1.default.createElement(react_1.default.Fragment, null,
+                            react_1.default.createElement(components_1.StripeCustomerPortalButton, null))),
                         enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
                             react_1.default.createElement(shopify_1.ShopifyAuth, null),
                             react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))))));

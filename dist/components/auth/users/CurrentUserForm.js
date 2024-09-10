@@ -118,9 +118,6 @@ var UserForm = function (props) {
         if (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) {
             setUser(currentUser);
         }
-        else {
-            fetchMe();
-        }
     }, [currentUser]);
     return (react_1.default.createElement(__1.FormFields, { loading: delayedLoading, errors: errors, fields: fields, resource: user, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
 };

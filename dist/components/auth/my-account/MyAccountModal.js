@@ -70,7 +70,7 @@ var components_2 = require("../../../components");
 var MyAccountMenu_1 = __importDefault(require("./MyAccountMenu"));
 var material_1 = require("@mui/material");
 var MyAccountModal = function (props) {
-    var _a = props || {}, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe, metafields = _a.metafields;
+    var _a = props || {}, enableTeams = _a.enableTeams, metafields = _a.metafields;
     var _b = (0, react_1.useContext)(context_1.AppContext), myAccountOpen = _b.myAccountOpen, setMyAccountOpen = _b.setMyAccountOpen;
     var _c = (0, frontend_js_1.useAuth)(), delayedLoading = _c.delayedLoading, user = _c.user, setUser = _c.setUser, fetchMe = _c.fetchMe, currentUser = _c.currentUser, updateMe = _c.updateMe, handleChange = _c.handleChange, deleteAvatar = _c.deleteAvatar, logout = _c.logout;
     var _d = (0, react_1.useState)(0), currentTab = _d[0], setCurrentTab = _d[1];
@@ -108,26 +108,16 @@ var MyAccountModal = function (props) {
     var handleTabChange = function (ev, newValue) {
         setCurrentTab(newValue);
     };
-    (0, react_1.useEffect)(function () {
-        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
-            fetchMe();
-        }
-        else {
-            setUser(currentUser);
-        }
-    }, [currentUser]);
     return (react_1.default.createElement(components_1.Modal, { disablePadding: true, open: myAccountOpen, handleClose: function () { return setMyAccountOpen(false); }, title: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
             ? "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name)
             : 'My Account' },
-        currentTab == null ? (react_1.default.createElement(MyAccountMenu_1.default, { tab: currentTab, enableTeams: enableTeams, enableStripe: enableStripe, handleChange: handleTabChange })) : (react_1.default.createElement(material_1.Box, { px: 1 },
+        currentTab == null ? (react_1.default.createElement(MyAccountMenu_1.default, { tab: currentTab, enableTeams: enableTeams, handleChange: handleTabChange })) : (react_1.default.createElement(material_1.Box, { px: 1 },
             react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", startIcon: react_1.default.createElement(components_1.Icon, { name: "ChevronLeft", color: "text.primary", size: 32 }), onClick: function () { return setCurrentTab(null); } }, "Back"))),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
             currentTab == 0 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout, metafields: metafields })),
             currentTab == 1 && react_1.default.createElement(components_2.TeamList, null),
             currentTab == 2 && (react_1.default.createElement(components_2.TeamUsersList, { handleAddUser: function () { return setCurrentTab(3); } })),
-            currentTab == 3 && (react_1.default.createElement(components_2.TeamUserInvite, { handleSuccess: function () { return setCurrentTab(2); }, handleCancel: function () { return setCurrentTab(2); } })),
-            currentTab == 4 && react_1.default.createElement(components_2.CreditCards, null),
-            currentTab == 6 && react_1.default.createElement(components_2.SubscriptionPlans, null))));
+            currentTab == 3 && (react_1.default.createElement(components_2.TeamUserInvite, { handleSuccess: function () { return setCurrentTab(2); }, handleCancel: function () { return setCurrentTab(2); } })))));
 };
 exports.default = MyAccountModal;
 var sx = {

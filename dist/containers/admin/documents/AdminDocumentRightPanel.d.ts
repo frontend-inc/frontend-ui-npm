@@ -11,7 +11,6 @@ type AdminDocumentRightPanelProps = {
     handleChange: (e: SyntheticEventType) => void;
     handleSubmit: () => void;
     handleTogglePublish: () => void;
-    enablePayments?: boolean;
     enableUsers?: boolean;
     enableTeams?: boolean;
     enableStripe?: boolean;

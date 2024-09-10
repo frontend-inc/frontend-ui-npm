@@ -16,6 +16,7 @@ export type ProductCardProps = {
     handleClick?: () => void;
     handleSelect?: () => void;
     height?: number;
+    addToCart?: React.ReactNode;
     slots?: {
         item?: any;
         image?: any;
