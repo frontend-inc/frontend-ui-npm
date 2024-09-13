@@ -10,15 +10,10 @@ export type CollectionListItemsProps = {
     handleClick?: (resource: any) => void;
     enableGradient?: boolean;
     enableOverlay?: boolean;
-    enableAddToList?: boolean;
-    enableEdit?: boolean;
-    enableDelete?: boolean;
     enableComments?: boolean;
     enableFavorites?: boolean;
     enableLikes?: boolean;
-    enableRatings?: boolean;
     enableSharing?: boolean;
-    enableUsers?: boolean;
     slots?: {
         list?: any;
         item?: any;

@@ -9,7 +9,7 @@ var PublishButton_1 = __importDefault(require("./inputs/PublishButton"));
 var SaveButton_1 = __importDefault(require("./inputs/SaveButton"));
 var components_1 = require("../../../components");
 var AdminDocumentRightPanel = function (props) {
-    var loading = props.loading, publishLoading = props.publishLoading, errors = props.errors, document = props.document, handleChange = props.handleChange, handleSubmit = props.handleSubmit, handleTogglePublish = props.handleTogglePublish, enableUsers = props.enableUsers, enableTeams = props.enableTeams;
+    var loading = props.loading, publishLoading = props.publishLoading, errors = props.errors, document = props.document, handleChange = props.handleChange, handleSubmit = props.handleSubmit, handleTogglePublish = props.handleTogglePublish;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, sx: sx.rightContent },
         react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, "Publish"),
         react_1.default.createElement(PublishButton_1.default, { loading: publishLoading, document: document, handleTogglePublish: handleTogglePublish }),
@@ -18,8 +18,7 @@ var AdminDocumentRightPanel = function (props) {
             document.last_saved_at),
         react_1.default.createElement(SaveButton_1.default, { fullWidth: true, loading: loading, document: document, handleSubmit: handleSubmit }),
         react_1.default.createElement(material_1.Divider, null),
-        enableUsers && (react_1.default.createElement(components_1.UserAutosuggest, { direction: "row", label: "User", errors: errors, name: "user_id", value: document === null || document === void 0 ? void 0 : document.user_id, handleChange: handleChange })),
-        enableTeams && (react_1.default.createElement(components_1.TeamAutosuggest, { direction: "row", label: "Team", errors: errors, name: "team_id", value: document === null || document === void 0 ? void 0 : document.team_id, handleChange: handleChange }))));
+        react_1.default.createElement(components_1.UserAutosuggest, { direction: "row", label: "User", errors: errors, name: "user_id", value: document === null || document === void 0 ? void 0 : document.user_id, handleChange: handleChange })));
 };
 exports.default = AdminDocumentRightPanel;
 var sx = {

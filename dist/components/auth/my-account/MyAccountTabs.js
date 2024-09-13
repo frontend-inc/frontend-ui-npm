@@ -18,31 +18,24 @@ var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var MyAccountMenu = function (props) {
-    var _a = props || {}, enableTeams = _a.enableTeams, handleClick = _a.handleClick;
-    var _b = (0, hooks_1.useApp)(), app = _b.app, enableShopify = _b.enableShopify, enableStripe = _b.enableStripe;
+    var handleClick = (props || {}).handleClick;
+    var _a = (0, hooks_1.useApp)(), enableShopify = _a.enableShopify, enableStripe = _a.enableStripe;
     var TABS = [
         { label: 'My Account', value: 0 }
-    ];
-    var TEAM_TABS = [
-        { label: 'Teams', value: 1 },
-        { label: 'Members', value: 2 },
     ];
     var SUBSCRIPTION_TAB = [
         {
             label: 'Subscription',
-            value: 4,
+            value: 1,
         },
     ];
     var SHOPIFY_TAB = [
         {
             label: 'Order History',
-            value: 5,
+            value: 2,
         },
     ];
     var tabs = TABS;
-    if (enableTeams) {
-        tabs = __spreadArray(__spreadArray([], tabs, true), TEAM_TABS, true);
-    }
     if (enableStripe) {
         tabs = __spreadArray(__spreadArray([], tabs, true), SUBSCRIPTION_TAB, true);
     }

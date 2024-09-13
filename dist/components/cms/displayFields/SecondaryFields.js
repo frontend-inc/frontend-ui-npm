@@ -24,7 +24,7 @@ var SecondaryFields = function (props) {
         user: {},
     } : _c;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-        enableRatings == true && (react_1.default.createElement(__1.AvgRating, __assign({ size: "small", resource: resource }, slots.ratings))),
+        enableRatings == true && (react_1.default.createElement(__1.ProductRating, __assign({ size: "small", resource: resource }, slots.ratings))),
         react_1.default.createElement(__1.DisplayFields, __assign({ fields: fields, resource: resource }, slots.fields)),
         enableUsers && react_1.default.createElement(__1.UserChip, __assign({ user: resource === null || resource === void 0 ? void 0 : resource.user }, slots.user))));
 };

@@ -5,7 +5,6 @@ type DocumentEditProps = {
     documentId: string | number;
     errors?: any;
     enableUsers?: boolean;
-    enableTeams?: boolean;
     enableShopify?: boolean;
 };
 declare const DocumentEdit: React.FC<DocumentEditProps>;

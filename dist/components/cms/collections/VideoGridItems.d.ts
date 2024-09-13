@@ -9,7 +9,6 @@ export type VideoGridItemsProps = {
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;
-    enableUsers?: boolean;
 };
 declare const VideoGridItems: React.FC<VideoGridItemsProps>;
 export default VideoGridItems;

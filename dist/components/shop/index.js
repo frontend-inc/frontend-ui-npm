@@ -25,6 +25,7 @@ __exportStar(require("./stripe"), exports);
 __exportStar(require("./pdp"), exports);
 __exportStar(require("./products"), exports);
 __exportStar(require("./product-collections"), exports);
+__exportStar(require("./product-reviews"), exports);
 __exportStar(require("./subscriptions"), exports);
 var StripeCustomerPortalButton_1 = require("./customers/StripeCustomerPortalButton");
 Object.defineProperty(exports, "StripeCustomerPortalButton", { enumerable: true, get: function () { return __importDefault(StripeCustomerPortalButton_1).default; } });

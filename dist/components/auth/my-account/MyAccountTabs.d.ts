@@ -1,7 +1,6 @@
 import React from 'react';
 type MyAccountMenuProps = {
     tab?: number;
-    enableTeams?: boolean;
     enableStripe?: boolean;
     handleClick: (tab: any) => void;
 };

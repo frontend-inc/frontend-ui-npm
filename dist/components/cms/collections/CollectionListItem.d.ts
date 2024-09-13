@@ -2,7 +2,6 @@ import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
 type CardStyleTypes = 'list' | 'avatar' | 'card' | 'cover' | 'text';
 type CollectionListItemProps = {
-    selectable?: boolean;
     buttons: ButtonType[];
     style: CardStyleTypes;
     displayFields: DisplayFieldType[];
@@ -10,19 +9,12 @@ type CollectionListItemProps = {
     buttonText?: string;
     href?: string;
     handleClick: () => void;
-    handleEdit?: (item: any) => void;
-    handleDelete?: (item: any) => void;
     enableBorder?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
-    enableEdit?: boolean;
-    enableDelete?: boolean;
-    enableUsers?: boolean;
     enableComments?: boolean;
     enableFavorites?: boolean;
-    enableAddToList?: boolean;
     enableLikes?: boolean;
-    enableRatings?: boolean;
 };
 declare const CollectionListItem: React.FC<CollectionListItemProps>;
 export default CollectionListItem;

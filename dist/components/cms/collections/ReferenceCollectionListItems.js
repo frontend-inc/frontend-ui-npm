@@ -57,15 +57,14 @@ var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var __2 = require("../..");
-var hooks_2 = require("../../../hooks");
 var ReferenceCollectionListItems = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.loading, setResource = _a.setResource, references = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, setOpenShow = _a.setOpenShow;
-    var _b = props.grid, grid = _b === void 0 ? false : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'card' : _d, href = props.href, handleClick = props.handleClick, _e = props.displayFields, displayFields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableEdit, enableEdit = _h === void 0 ? false : _h, _j = props.enableDelete, enableDelete = _j === void 0 ? false : _j, _k = props.enableFavorites, enableFavorites = _k === void 0 ? false : _k, _l = props.enableLikes, enableLikes = _l === void 0 ? false : _l, _m = props.enableUsers, enableUsers = _m === void 0 ? false : _m, _o = props.enableRatings, enableRatings = _o === void 0 ? false : _o, _p = props.enableComments, enableComments = _p === void 0 ? false : _p, _q = props.slots, slots = _q === void 0 ? {
+    var _b = props.grid, grid = _b === void 0 ? false : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'card' : _d, href = props.href, handleClick = props.handleClick, _e = props.displayFields, displayFields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = props.enableLikes, enableLikes = _j === void 0 ? false : _j, _k = props.enableComments, enableComments = _k === void 0 ? false : _k, _l = props.slots, slots = _l === void 0 ? {
         list: {},
         item: {},
-    } : _q;
+    } : _l;
     var handleShowClick = function (target) {
         if (handleClick) {
             handleClick(target);
@@ -84,7 +83,6 @@ var ReferenceCollectionListItems = function (props) {
             setOpenShow(true);
         }
     };
-    var _r = (0, hooks_2.useForms)(), handleEdit = _r.handleEdit, handleDeleteClick = _r.handleDeleteClick;
     var handlePaginate = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -98,7 +96,7 @@ var ReferenceCollectionListItems = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
         react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid }), references === null || references === void 0 ? void 0 : references.map(function (reference, index) {
             var target = reference === null || reference === void 0 ? void 0 : reference.target;
-            return (react_1.default.createElement(__2.CollectionListItem, __assign({ key: index, style: style, resource: target, displayFields: displayFields, handleClick: function () { return handleShowClick(target); }, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(target); }, handleDelete: function () { return handleDeleteClick(target); }, buttons: buttons, enableUsers: enableUsers, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item)));
+            return (react_1.default.createElement(__2.CollectionListItem, __assign({ key: index, style: style, resource: target, displayFields: displayFields, handleClick: function () { return handleShowClick(target); }, buttons: buttons, enableFavorites: enableFavorites, enableLikes: enableLikes, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item)));
         })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };

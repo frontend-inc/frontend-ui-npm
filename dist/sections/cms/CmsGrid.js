@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var CmsGrid = function (props) {
-    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "mode", "py", "px", "maxWidth", "requireAuth", "requireTeam", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { mode: mode, py: py, px: px, maxWidth: maxWidth, requireAuth: requireAuth, requireTeam: requireTeam, requirePaid: requirePaid },
+    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
+    return (react_1.default.createElement(components_1.Section, { mode: mode, py: py, px: px, maxWidth: maxWidth, requireAuth: requireAuth, requirePaid: requirePaid },
         react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
         react_1.default.createElement(components_2.CollectionGrid, __assign({}, rest))));
 };

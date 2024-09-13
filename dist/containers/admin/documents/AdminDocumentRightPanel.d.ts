@@ -12,7 +12,6 @@ type AdminDocumentRightPanelProps = {
     handleSubmit: () => void;
     handleTogglePublish: () => void;
     enableUsers?: boolean;
-    enableTeams?: boolean;
     enableStripe?: boolean;
     enablePlaces?: boolean;
 };

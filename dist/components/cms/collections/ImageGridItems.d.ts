@@ -3,13 +3,10 @@ export type ImageGridItemsProps = {
     url: string;
     enableGradient?: boolean;
     enableOverlay?: boolean;
-    enableEdit?: boolean;
-    enableDelete?: boolean;
     enableComments?: boolean;
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;
-    enableUsers?: boolean;
     emptyIcon?: string;
     emptyTitle?: string;
     emptyDescription?: string;

@@ -18,6 +18,6 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var GeoListItems_1 = __importDefault(require("./GeoListItems"));
 var GeoList = function (props) {
-    return react_1.default.createElement(__1.CollectionList, __assign({}, props, { toolbar: __1.GeoToolbar, list: GeoListItems_1.default }));
+    return react_1.default.createElement(__1.CollectionList, __assign({}, props, { header: __1.GeoHeader, list: GeoListItems_1.default }));
 };
 exports.default = GeoList;

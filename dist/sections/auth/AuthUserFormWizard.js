@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var AuthUserFormWizard = function (props) {
-    var mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireTeam = props.requireTeam, requirePaid = props.requirePaid, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requireTeam", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: true, requireTeam: requireTeam, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
+    var mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requirePaid = props.requirePaid, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requirePaid"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: true, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_2.CurrentUserFormWizard, __assign({}, rest))));
 };
 exports.default = AuthUserFormWizard;

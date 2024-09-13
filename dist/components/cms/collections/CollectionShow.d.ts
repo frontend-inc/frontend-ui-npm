@@ -8,15 +8,9 @@ export type ShowModalProps = {
     displayFields: DisplayFieldType[];
     fields?: FormFieldType[];
     fieldName?: string;
-    enableEdit?: boolean;
-    enableCreate?: boolean;
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;
-    enableRatings?: boolean;
-    enableAddToList?: boolean;
-    enableUsers?: boolean;
-    handleEdit?: () => void;
     enableComments?: boolean;
 };
 declare const ShowModal: React.FC<ShowModalProps>;

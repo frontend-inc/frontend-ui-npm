@@ -86,7 +86,7 @@ var hooks_1 = require("../../../hooks");
 var helpers_1 = require("../../../helpers");
 var DocumentEdit = function (props) {
     var router = (0, router_1.useRouter)();
-    var appId = props.appId, documentId = props.documentId, collectionId = props.collectionId, enableUsers = props.enableUsers, enableTeams = props.enableTeams;
+    var appId = props.appId, documentId = props.documentId, collectionId = props.collectionId, enableUsers = props.enableUsers;
     var _a = (0, react_1.useState)(false), saveLoading = _a[0], setSaveLoading = _a[1];
     var _b = (0, react_1.useState)(false), publishLoading = _b[0], setPublishLoading = _b[1];
     var _c = (0, react_1.useState)(''), title = _c[0], setTitle = _c[1];
@@ -258,7 +258,7 @@ var DocumentEdit = function (props) {
                         handleChange: handleChange, handleAddReferences: handleAddReferences, handleRemoveReferences: handleRemoveReferences, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment })))),
         react_1.default.createElement(components_2.AdminLayoutRight, null,
             react_1.default.createElement(components_2.AdminHeader, { title: "Publish" }),
-            react_1.default.createElement(AdminDocumentRightPanel_1.default, { appId: appId, loading: loading, publishLoading: publishLoading, errors: errors, title: title, document: document, setDocument: setDocument, handleChange: handleChange, handleSubmit: handleSubmit, handleTogglePublish: handleTogglePublish, enableUsers: enableUsers, enableTeams: enableTeams }))));
+            react_1.default.createElement(AdminDocumentRightPanel_1.default, { appId: appId, loading: loading, publishLoading: publishLoading, errors: errors, title: title, document: document, setDocument: setDocument, handleChange: handleChange, handleSubmit: handleSubmit, handleTogglePublish: handleTogglePublish, enableUsers: enableUsers }))));
 };
 exports.default = DocumentEdit;
 var sx = {

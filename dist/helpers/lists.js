@@ -14,7 +14,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildSearchQuery = void 0;
 var buildSearchQuery = function (params) {
     var _a = (params || {}).query, query = _a === void 0 ? {} : _a;
-    var _b = params || {}, resource = _b.resource, perPage = _b.perPage, filterUser = _b.filterUser, filterTeam = _b.filterTeam, filterReferences = _b.filterReferences, filterGeo = _b.filterGeo, filterSimilar = _b.filterSimilar;
+    var _b = params || {}, resource = _b.resource, perPage = _b.perPage, filterReferences = _b.filterReferences, filterGeo = _b.filterGeo, filterSimilar = _b.filterSimilar;
     if (perPage) {
         query = __assign(__assign({}, query), { per_page: perPage });
     }
@@ -23,18 +23,6 @@ var buildSearchQuery = function (params) {
     }
     else {
         query = __assign(__assign({}, query), { resource_id: null });
-    }
-    if (filterUser == true) {
-        query = __assign(__assign({}, query), { current_user: true });
-    }
-    else {
-        query = __assign(__assign({}, query), { current_user: false });
-    }
-    if (filterTeam == true) {
-        query = __assign(__assign({}, query), { current_team: true });
-    }
-    else {
-        query = __assign(__assign({}, query), { current_team: false });
     }
     if (filterGeo == true && (resource === null || resource === void 0 ? void 0 : resource.location)) {
         query = __assign(__assign({}, query), { method: 'location', location: resource === null || resource === void 0 ? void 0 : resource.location });

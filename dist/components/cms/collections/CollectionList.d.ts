@@ -1,26 +1,18 @@
 import React from 'react';
-import { ButtonType, DisplayFieldType, FormFieldType, SearchFilterOptionType, SortOptionType, ToolbarButtonType } from '../../../types';
+import { ButtonType, DisplayFieldType, FormFieldType, SearchFilterOptionType, SortOptionType } from '../../../types';
 export type CollectionListProps = {
     grid?: boolean;
-    selectable?: boolean;
     style: string;
     href?: string;
     displayFields: DisplayFieldType[];
     enableLikes?: boolean;
     enableFavorites?: boolean;
-    enableRatings?: boolean;
     enableComments?: boolean;
-    enableUsers?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
     enableShow?: boolean;
-    enableEdit?: boolean;
-    enableCreate?: boolean;
-    enableDelete?: boolean;
-    enableAddToList?: boolean;
     fields?: FormFieldType[];
     buttons?: ButtonType[];
-    toolbarButtons?: ToolbarButtonType[];
     headers?: {
         label: string;
         value: string;
@@ -35,7 +27,6 @@ export type CollectionListProps = {
     list: React.FC<any>;
     component?: React.FC<any>;
     header?: React.FC<any>;
-    toolbar?: React.FC<any>;
     show?: React.FC<any>;
     edit?: React.FC<any>;
     create?: React.FC<any>;
@@ -58,8 +49,6 @@ export type CollectionListProps = {
     foreignUrl?: string;
     query?: any;
     resource: any;
-    filterUser?: boolean;
-    filterTeam?: boolean;
     filterSimilar?: boolean;
     filterGeo?: boolean;
 };

@@ -56,12 +56,11 @@ var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var __1 = require("../..");
-var hooks_2 = require("../../../hooks");
 var DataTableList = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.loading, resources = _a.resources, findMany = _a.findMany, paginate = _a.paginate, query = _a.query, page = _a.page, perPage = _a.perPage, numPages = _a.numPages, totalCount = _a.totalCount;
-    var _b = props || {}, headers = _b.headers, href = _b.href, _c = _b.enableEdit, enableEdit = _c === void 0 ? false : _c, _d = _b.enableDelete, enableDelete = _d === void 0 ? false : _d, _e = _b.enableShow, enableShow = _e === void 0 ? false : _e;
+    var _b = props || {}, headers = _b.headers, href = _b.href, _c = _b.enableShow, enableShow = _c === void 0 ? false : _c;
     var handleCellClick = function (value, row, field) {
         // Todo: manage cell buttons
     };
@@ -74,7 +73,6 @@ var DataTableList = function (props) {
             router.push("".concat(clientUrl).concat(href, "/").concat(resource === null || resource === void 0 ? void 0 : resource.handle));
         }
     };
-    var _f = (0, hooks_2.useForms)(), handleEdit = _f.handleEdit, handleDeleteClick = _f.handleDeleteClick;
     var handleSort = function (field) {
         var name = (field || {}).name;
         var sort_by = (query || {}).sort_by;
@@ -96,7 +94,7 @@ var DataTableList = function (props) {
     }); };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },
         react_1.default.createElement(material_1.Box, { sx: __assign({}, (loading && sx.loading)) },
-            react_1.default.createElement(__1.TableList, { handleClick: handleCellClick, enableEdit: enableEdit, enableDelete: enableDelete, enableShow: enableShow, handleEdit: handleEdit, handleDelete: handleDeleteClick, handleShow: handleClick, loading: resources && loading, headers: headers, resources: resources, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate }))));
+            react_1.default.createElement(__1.TableList, { handleClick: handleCellClick, enableShow: enableShow, handleShow: handleClick, loading: resources && loading, headers: headers, resources: resources, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate }))));
 };
 exports.default = DataTableList;
 var sx = {
