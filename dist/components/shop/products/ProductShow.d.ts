@@ -17,7 +17,6 @@ export type ShowModalProps = {
     enableAddToList?: boolean;
     enableUsers?: boolean;
     handleEdit?: () => void;
-    enableComments?: boolean;
 };
 declare const ShowModal: React.FC<ShowModalProps>;
 export default ShowModal;

@@ -1,7 +1,6 @@
 import React from 'react';
 import { MenuLinkType } from '../../..';
 type DesktopNavProps = {
-    editing?: boolean;
     logo: string;
     menuItems?: MenuLinkType[];
     enableAuth?: boolean;

@@ -37,16 +37,16 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var frontend_js_1 = require("frontend-js");
-var __1 = require("..");
+var hooks_1 = require("../../hooks");
 var useProductCollections = function () {
-    var apiUrl = (0, __1.useAdmin)().apiUrl;
+    var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var api = (0, frontend_js_1.useApi)().api;
     var url = "".concat(apiUrl, "/product_collections");
     var apiParams = {
         url: url,
         name: 'product_collection',
     };
-    var _a = (0, frontend_js_1.useResource)(apiParams), loading = _a.loading, delayedLoading = _a.delayedLoading, loaded = _a.loaded, errors = _a.errors, empty = _a.empty, editing = _a.editing, isValid = _a.isValid, document = _a.resource, documents = _a.resources, findProduct = _a.findOne, findProducts = _a.findMany, updateProduct = _a.update, updateProducts = _a.updateMany, createProduct = _a.create, saveProduct = _a.save, deleteProduct = _a.destroy, deleteProducts = _a.deleteMany, loadMore = _a.loadMore, publish = _a.publish, unpublish = _a.unpublish, handleChange = _a.handleChange, handleChangePage = _a.handleChangePage, updatePositions = _a.updatePositions, addAttachment = _a.addAttachment, removeAttachment = _a.removeAttachment, query = _a.query, setQuery = _a.setQuery, page = _a.page, numPages = _a.numPages, perPage = _a.perPage, totalCount = _a.totalCount, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort, reloadProduct = _a.reloadOne, reloadProducts = _a.reloadMany, setProduct = _a.setResource, setProducts = _a.setResources, startIndex = _a.startIndex, endIndex = _a.endIndex, paginate = _a.paginate, loadingWrapper = _a.loadingWrapper;
+    var _a = (0, frontend_js_1.useResource)(apiParams), loading = _a.loading, delayedLoading = _a.delayedLoading, loaded = _a.loaded, errors = _a.errors, empty = _a.empty, editing = _a.editing, isValid = _a.isValid, productCollection = _a.resource, productCollections = _a.resources, findProductCollection = _a.findOne, findProductCollections = _a.findMany, updateProductCollection = _a.update, updateProductCollections = _a.updateMany, createProductCollection = _a.create, saveProductCollection = _a.save, deleteProductCollection = _a.destroy, deleteProductCollections = _a.deleteMany, loadMore = _a.loadMore, publish = _a.publish, unpublish = _a.unpublish, handleChange = _a.handleChange, handleChangePage = _a.handleChangePage, updatePositions = _a.updatePositions, addAttachment = _a.addAttachment, removeAttachment = _a.removeAttachment, query = _a.query, setQuery = _a.setQuery, page = _a.page, numPages = _a.numPages, perPage = _a.perPage, totalCount = _a.totalCount, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort, reloadProductCollection = _a.reloadOne, reloadProductCollections = _a.reloadMany, setProductCollection = _a.setResource, setProductCollections = _a.setResources, startIndex = _a.startIndex, endIndex = _a.endIndex, paginate = _a.paginate, loadingWrapper = _a.loadingWrapper;
     var addProducts = function (productCollectionId, productIds) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -82,16 +82,16 @@ var useProductCollections = function () {
         empty: empty,
         editing: editing,
         isValid: isValid,
-        document: document,
-        documents: documents,
-        findProduct: findProduct,
-        findProducts: findProducts,
-        saveProduct: saveProduct,
-        updateProduct: updateProduct,
-        updateProducts: updateProducts,
-        createProduct: createProduct,
-        deleteProduct: deleteProduct,
-        deleteProducts: deleteProducts,
+        productCollection: productCollection,
+        productCollections: productCollections,
+        findProductCollection: findProductCollection,
+        findProductCollections: findProductCollections,
+        saveProductCollection: saveProductCollection,
+        updateProductCollection: updateProductCollection,
+        updateProductCollections: updateProductCollections,
+        createProductCollection: createProductCollection,
+        deleteProductCollection: deleteProductCollection,
+        deleteProductCollections: deleteProductCollections,
         loadMore: loadMore,
         publish: publish,
         unpublish: unpublish,
@@ -103,8 +103,8 @@ var useProductCollections = function () {
         handleChangePage: handleChangePage,
         query: query,
         setQuery: setQuery,
-        reloadProduct: reloadProduct,
-        reloadProducts: reloadProducts,
+        reloadProductCollection: reloadProductCollection,
+        reloadProductCollections: reloadProductCollections,
         page: page,
         numPages: numPages,
         perPage: perPage,
@@ -113,8 +113,8 @@ var useProductCollections = function () {
         sortBy: sortBy,
         sortDirection: sortDirection,
         handleSort: handleSort,
-        setProduct: setProduct,
-        setProducts: setProducts,
+        setProductCollection: setProductCollection,
+        setProductCollections: setProductCollections,
         startIndex: startIndex,
         endIndex: endIndex,
     };

@@ -253,7 +253,7 @@ exports.SHOPIFY_PRODUCTS_FIELD_VARIANT = {
     db_type: 'string',
     description: 'Shopify Products',
     array: true,
-    color: COLORS.pink[500],
+    color: COLORS.lightGreen[500],
 };
 exports.FIELD_VARIANTS = [
     exports.STRING_FIELD_VARIANT,
@@ -271,7 +271,6 @@ exports.FIELD_VARIANTS = [
     exports.LOCATION_FIELD_VARIANT,
     exports.RATING_FIELD_VARIANT,
     exports.PRICE_FIELD_VARIANT,
-    exports.SHOPIFY_FIELD_VARIANT,
     // Media fields
     exports.IMAGE_FIELD_VARIANT,
     exports.VIDEO_FIELD_VARIANT,

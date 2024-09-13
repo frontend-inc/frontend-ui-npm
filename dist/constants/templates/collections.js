@@ -32,15 +32,15 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.COLLECTION_TEMPLATES = exports.COLLECTION_PRODUCT = exports.COLLECTION_EVENT = exports.COLLECTION_COMPANY = exports.COLLECTION_PERSON = exports.COLLECTION_ARTICLE = exports.COLLECTION_ITEM = void 0;
+exports.COLLECTION_TEMPLATES = exports.COLLECTION_IMAGE = exports.COLLECTION_VIDEO = exports.COLLECTION_EVENT = exports.COLLECTION_PLACE = exports.COLLECTION_PERSON = exports.COLLECTION_ARTICLE = exports.COLLECTION_CUSTOM = void 0;
 var fields = __importStar(require("../../constants/templates/field-templates"));
 var COLORS = __importStar(require("@mui/material/colors"));
-exports.COLLECTION_ITEM = {
+exports.COLLECTION_CUSTOM = {
     icon: 'Box',
     name: 'items',
-    label: 'Blank',
+    label: 'Custom',
     color: COLORS.deepPurple[500],
-    description: 'An basic item',
+    description: 'Customize your collection',
     fields: __spreadArray([], fields.BASE_FIELD_TEMPLATES, true),
     data: [],
 };
@@ -49,7 +49,7 @@ exports.COLLECTION_ARTICLE = {
     name: 'articles',
     label: 'Article',
     color: COLORS.orange[500],
-    description: 'A blog post or article',
+    description: 'Blogs, articles, posts, etc.',
     fields: __spreadArray(__spreadArray([], fields.BASE_FIELD_TEMPLATES, true), [
         fields.PUBLISHED_AT_FIELD_TEMPLATE,
         fields.TOPICS_FIELD_TEMPLATE,
@@ -60,28 +60,29 @@ exports.COLLECTION_PERSON = {
     name: 'people',
     label: 'Person',
     color: COLORS.pink[500],
-    description: 'A person',
+    description: 'People, authors, influencers, etc.',
     fields: [
         fields.HANDLE_FIELD_TEMPLATE,
         fields.IMAGE_FIELD_TEMPLATE,
         fields.LABEL_FIELD_TEMPLATE,
-        fields.FULL_NAME_FIELD_TEMPLATE,
-        fields.BIO_FIELD_TEMPLATE,
+        fields.NAME_FIELD_TEMPLATE,
+        fields.ABOUT_ME_FIELD_TEMPLATE,
         fields.TAGS_FIELD_TEMPLATE,
     ],
 };
-exports.COLLECTION_COMPANY = {
-    icon: 'Building2',
-    name: 'companies',
-    label: 'Company',
+exports.COLLECTION_PLACE = {
+    icon: 'MapPin',
+    name: 'places',
+    label: 'Place',
     color: COLORS.blue[500],
-    description: 'A company',
+    description: 'Companies, restaurants, venues, etc.',
     fields: [
         fields.HANDLE_FIELD_TEMPLATE,
         fields.IMAGE_FIELD_TEMPLATE,
         fields.LABEL_FIELD_TEMPLATE,
-        fields.COMPANY_FIELD_TEMPLATE,
+        fields.NAME_FIELD_TEMPLATE,
         fields.DESCRIPTION_FIELD_TEMPLATE,
+        fields.LOCATION_FIELD_TEMPLATE,
         fields.TAGS_FIELD_TEMPLATE,
     ],
 };
@@ -90,29 +91,46 @@ exports.COLLECTION_EVENT = {
     name: 'events',
     label: 'Event',
     color: COLORS.amber[500],
-    description: 'An event with dates',
+    description: 'Meetups, events, conferences, etc.',
     fields: __spreadArray(__spreadArray([], fields.BASE_FIELD_TEMPLATES, true), [
         fields.START_DATE_FIELD_TEMPLATE,
         fields.END_DATE_FIELD_TEMPLATE,
         fields.DURATION_MINUTES_FIELD_TEMPLATE,
     ], false),
 };
-exports.COLLECTION_PRODUCT = {
-    icon: 'ShoppingBag',
-    name: 'products',
-    label: 'Product',
-    color: COLORS.lightGreen[500],
-    description: 'A product for sale',
-    fields: __spreadArray(__spreadArray([], fields.BASE_FIELD_TEMPLATES, true), [
-        fields.PRICE_FIELD_TEMPLATE,
-        fields.COMPARE_AT_PRICE_FIELD_TEMPLATE,
-    ], false),
+exports.COLLECTION_VIDEO = {
+    icon: 'Video',
+    name: 'videos',
+    label: 'Video',
+    color: COLORS.amber[500],
+    description: 'Short videos',
+    fields: [
+        fields.IMAGE_FIELD_TEMPLATE,
+        fields.VIDEO_FIELD_TEMPLATE,
+        fields.HANDLE_FIELD_TEMPLATE,
+        fields.TITLE_FIELD_TEMPLATE,
+        fields.DESCRIPTION_FIELD_TEMPLATE,
+    ],
+};
+exports.COLLECTION_IMAGE = {
+    icon: 'Image',
+    name: 'images',
+    label: 'Image',
+    color: COLORS.amber[500],
+    description: 'Photos, logos, etc.',
+    fields: [
+        fields.IMAGE_FIELD_TEMPLATE,
+        fields.HANDLE_FIELD_TEMPLATE,
+        fields.TITLE_FIELD_TEMPLATE,
+        fields.DESCRIPTION_FIELD_TEMPLATE,
+    ],
 };
 exports.COLLECTION_TEMPLATES = [
-    exports.COLLECTION_ITEM,
+    exports.COLLECTION_CUSTOM,
     exports.COLLECTION_ARTICLE,
-    exports.COLLECTION_PERSON,
-    exports.COLLECTION_COMPANY,
     exports.COLLECTION_EVENT,
-    exports.COLLECTION_PRODUCT,
+    exports.COLLECTION_PERSON,
+    exports.COLLECTION_PLACE,
+    exports.COLLECTION_VIDEO,
+    exports.COLLECTION_IMAGE,
 ];

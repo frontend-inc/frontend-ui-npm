@@ -65,7 +65,8 @@ var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
 var hooks_2 = require("../../../hooks");
 var router_1 = require("next/router");
-var RemoteForm = function (props) {
+var material_1 = require("@mui/material");
+var DocumentForm = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var href = (props || {}).href;
@@ -74,15 +75,12 @@ var RemoteForm = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    var _resource = props.resource, parentResource = props.parentResource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c;
+    var _resource = props.resource, parentResource = props.parentResource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c, inputOptions = props.inputOptions, inputParams = props.inputParams;
     var showAlertSuccess = (0, hooks_2.useAlerts)().showAlertSuccess;
-    var fields = (0, hooks_2.useFetchForm)({
-        url: url,
-    }).fields;
     var _d = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, findOne = _d.findOne, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment, addReferences = _d.addReferences, handleChange = _d.handleChange;
+    }), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment, addReferences = _d.addReferences, handleChange = _d.handleChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -137,8 +135,8 @@ var RemoteForm = function (props) {
         });
     }); };
     (0, react_1.useEffect)(function () {
-        if (_resource === null || _resource === void 0 ? void 0 : _resource.id) {
-            findOne(_resource === null || _resource === void 0 ? void 0 : _resource.id);
+        if (_resource) {
+            setResource(_resource);
         }
         else {
             setResource({
@@ -146,10 +144,12 @@ var RemoteForm = function (props) {
             });
         }
     }, [_resource]);
-    if (!fields || (fields === null || fields === void 0 ? void 0 : fields.length) == 0)
-        return null;
-    if ((_resource === null || _resource === void 0 ? void 0 : _resource.id) && !(resource === null || resource === void 0 ? void 0 : resource.id))
-        return react_1.default.createElement(__1.Loader, { loading: true });
-    return (react_1.default.createElement(__1.FormFields, { loading: loading, errors: errors, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
+    return (react_1.default.createElement(material_1.Paper, { sx: sx.paper, elevation: 2 },
+        react_1.default.createElement(__1.Form, { loading: loading, errors: errors, fields: fields, resource: resource, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText, inputOptions: inputOptions, inputParams: inputParams })));
 };
-exports.default = RemoteForm;
+exports.default = DocumentForm;
+var sx = {
+    paper: {
+        p: 4,
+    },
+};

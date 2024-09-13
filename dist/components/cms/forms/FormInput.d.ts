@@ -10,6 +10,8 @@ type FormInputProps = {
     placeholder?: string;
     handleChange: (e: SyntheticEventType) => void;
     handleRemove?: (name: string) => void;
+    handleAddAttachment?: (name: string, attachmentId: number) => void;
+    handleRemoveAttachment?: (name: string) => void;
     resource?: any;
     url?: string;
     foreignUrl?: string;
@@ -18,6 +20,8 @@ type FormInputProps = {
     displayField?: string;
     valueParam?: string;
     fields?: FormFieldType[];
+    inputOptions?: Record<string, React.FC>;
+    inputParams?: Record<string, any>;
 };
 declare const FormInput: React.FC<FormInputProps>;
 export default FormInput;

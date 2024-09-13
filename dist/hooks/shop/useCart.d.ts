@@ -6,7 +6,7 @@ declare const useCart: () => {
     cartOpen: any;
     setCartOpen: any;
     setCart: any;
-    addToCart: (productId: any) => Promise<void>;
+    addToCart: (productId: any, quantity?: number) => Promise<void>;
     removeFromCart: (productId: any) => Promise<void>;
     addQuantity: (productId: any) => Promise<void>;
     removeQuantity: (productId: any) => Promise<void>;

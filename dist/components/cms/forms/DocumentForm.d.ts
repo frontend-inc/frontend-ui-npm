@@ -1,13 +1,16 @@
 import React from 'react';
-export type RemoteFormProps = {
+export type DocumentFormProps = {
     loading?: boolean;
     resource: any;
     parentResource?: any;
     url: string;
     href?: string;
     buttonText?: string;
+    fields: any[];
     onSuccessMessage?: string;
     handleSuccess?: (resource: any) => void;
+    inputOptions?: Record<string, React.FC>;
+    inputParams?: Record<string, any>;
 };
-declare const RemoteForm: React.FC<RemoteFormProps>;
-export default RemoteForm;
+declare const DocumentForm: React.FC<DocumentFormProps>;
+export default DocumentForm;

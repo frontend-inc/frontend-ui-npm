@@ -7,8 +7,8 @@ export declare const BASE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const HANDLE_FIELD_TEMPLATE: {
     internal: boolean;
@@ -19,8 +19,8 @@ export declare const HANDLE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
     editable: boolean;
     visible: boolean;
     options: any[];
@@ -39,8 +39,8 @@ export declare const LABEL_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const TITLE_FIELD_TEMPLATE: {
     name: string;
@@ -55,8 +55,8 @@ export declare const TITLE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const SUBTITLE_FIELD_TEMPLATE: {
     name: string;
@@ -66,15 +66,15 @@ export declare const SUBTITLE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
     internal: boolean;
     editable: boolean;
     visible: boolean;
     options: any[];
     array: boolean;
 };
-export declare const FULL_NAME_FIELD_TEMPLATE: {
+export declare const NAME_FIELD_TEMPLATE: {
     name: string;
     label: string;
     db_type: string;
@@ -87,24 +87,8 @@ export declare const FULL_NAME_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
-};
-export declare const COMPANY_FIELD_TEMPLATE: {
-    name: string;
-    label: string;
-    db_type: string;
-    variant: string;
-    internal: boolean;
-    editable: boolean;
-    visible: boolean;
-    options: any[];
-    array: boolean;
-    filterable: boolean;
-    sortable: boolean;
-    table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const CAPTION_FIELD_TEMPLATE: {
     name: string;
@@ -119,8 +103,8 @@ export declare const CAPTION_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const STATUS_FIELD_TEMPLATE: {
     name: string;
@@ -135,15 +119,15 @@ export declare const STATUS_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
-export declare const BIO_FIELD_TEMPLATE: {
+export declare const ABOUT_ME_FIELD_TEMPLATE: {
     name: string;
     label: string;
     db_type: string;
     variant: string;
-    display_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
     internal: boolean;
     editable: boolean;
     visible: boolean;
@@ -152,14 +136,14 @@ export declare const BIO_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    form_field: boolean;
 };
 export declare const DESCRIPTION_FIELD_TEMPLATE: {
     name: string;
     label: string;
     db_type: string;
     variant: string;
-    display_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
     internal: boolean;
     editable: boolean;
     visible: boolean;
@@ -168,7 +152,7 @@ export declare const DESCRIPTION_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    form_field: boolean;
 };
 export declare const IMAGE_FIELD_TEMPLATE: {
     name: string;
@@ -178,8 +162,8 @@ export declare const IMAGE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
     internal: boolean;
     editable: boolean;
     visible: boolean;
@@ -195,12 +179,28 @@ export declare const FILE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
     editable: boolean;
     visible: boolean;
     options: any[];
     array: boolean;
+};
+export declare const LOCATION_FIELD_TEMPLATE: {
+    name: string;
+    label: string;
+    db_type: string;
+    variant: string;
+    internal: boolean;
+    editable: boolean;
+    visible: boolean;
+    options: any[];
+    array: boolean;
+    filterable: boolean;
+    sortable: boolean;
+    table_header: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const PUBLISHED_AT_FIELD_TEMPLATE: {
     name: string;
@@ -215,8 +215,8 @@ export declare const PUBLISHED_AT_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const TAGS_FIELD_TEMPLATE: {
     internal: boolean;
@@ -231,8 +231,8 @@ export declare const TAGS_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const TOPICS_FIELD_TEMPLATE: {
     internal: boolean;
@@ -247,8 +247,8 @@ export declare const TOPICS_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const START_DATE_FIELD_TEMPLATE: {
     internal: boolean;
@@ -263,8 +263,8 @@ export declare const START_DATE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const END_DATE_FIELD_TEMPLATE: {
     internal: boolean;
@@ -279,8 +279,8 @@ export declare const END_DATE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const DURATION_MINUTES_FIELD_TEMPLATE: {
     internal: boolean;
@@ -295,8 +295,8 @@ export declare const DURATION_MINUTES_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const DURATION_SECONDS_FIELD_TEMPLATE: {
     internal: boolean;
@@ -311,8 +311,8 @@ export declare const DURATION_SECONDS_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const PRICE_FIELD_TEMPLATE: {
     internal: boolean;
@@ -327,8 +327,8 @@ export declare const PRICE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const COMPARE_AT_PRICE_FIELD_TEMPLATE: {
     internal: boolean;
@@ -343,8 +343,8 @@ export declare const COMPARE_AT_PRICE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const VIDEO_FIELD_TEMPLATE: {
     internal: boolean;
@@ -359,8 +359,8 @@ export declare const VIDEO_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const ADDRESS1_FIELD_TEMPLATE: {
     internal: boolean;
@@ -375,8 +375,8 @@ export declare const ADDRESS1_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const ADDRESS2_FIELD_TEMPLATE: {
     internal: boolean;
@@ -391,8 +391,8 @@ export declare const ADDRESS2_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const CITY_FIELD_TEMPLATE: {
     internal: boolean;
@@ -407,8 +407,8 @@ export declare const CITY_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const STATE_FIELD_TEMPLATE: {
     internal: boolean;
@@ -423,8 +423,8 @@ export declare const STATE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const COUNTRY_FIELD_TEMPLATE: {
     internal: boolean;
@@ -439,8 +439,8 @@ export declare const COUNTRY_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
 export declare const ZIPCODE_FIELD_TEMPLATE: {
     internal: boolean;
@@ -455,40 +455,24 @@ export declare const ZIPCODE_FIELD_TEMPLATE: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
 };
-export declare const SHOPIFY_PRODUCT_FIELD_TEMPLATE: {
+export declare const SHOPIFY_PRODUCTS_FIELD_TEMPLATE: {
     internal: boolean;
     name: string;
     label: string;
     db_type: string;
+    array: boolean;
     variant: string;
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
     editable: boolean;
     visible: boolean;
     options: any[];
-    array: boolean;
-};
-export declare const SHOPIFY_COLLECTION_FIELD_TEMPLATE: {
-    internal: boolean;
-    name: string;
-    label: string;
-    db_type: string;
-    variant: string;
-    filterable: boolean;
-    sortable: boolean;
-    table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
-    editable: boolean;
-    visible: boolean;
-    options: any[];
-    array: boolean;
 };
 export declare const BASE_FIELD_TEMPLATES: {
     internal: boolean;
@@ -499,8 +483,8 @@ export declare const BASE_FIELD_TEMPLATES: {
     filterable: boolean;
     sortable: boolean;
     table_header: boolean;
-    display_FIELD_TEMPLATE: boolean;
-    form_FIELD_TEMPLATE: boolean;
+    display_field: boolean;
+    form_field: boolean;
     editable: boolean;
     visible: boolean;
     options: any[];

@@ -3,7 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AdminProductCollectionShow = exports.AdminProductCollectionItem = exports.AdminProductCollectionList = exports.AdminProductCollectionEdit = exports.AdminProductCollectionCreate = void 0;
+exports.AdminProductCollectionShow = exports.AdminProductCollectionItem = exports.AdminProductCollectionList = exports.AdminProductCollectionEdit = exports.AdminProductCollectionCreate = exports.AdminProductCollectionDetails = exports.AdminProductCollection = void 0;
+var AdminProductCollection_1 = require("./AdminProductCollection");
+Object.defineProperty(exports, "AdminProductCollection", { enumerable: true, get: function () { return __importDefault(AdminProductCollection_1).default; } });
+var AdminProductCollectionDetails_1 = require("./AdminProductCollectionDetails");
+Object.defineProperty(exports, "AdminProductCollectionDetails", { enumerable: true, get: function () { return __importDefault(AdminProductCollectionDetails_1).default; } });
 var AdminProductCollectionCreate_1 = require("./AdminProductCollectionCreate");
 Object.defineProperty(exports, "AdminProductCollectionCreate", { enumerable: true, get: function () { return __importDefault(AdminProductCollectionCreate_1).default; } });
 var AdminProductCollectionEdit_1 = require("./AdminProductCollectionEdit");

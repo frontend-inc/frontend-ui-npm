@@ -1,4 +1,4 @@
-export declare const COLLECTION_ITEM: {
+export declare const COLLECTION_CUSTOM: {
     icon: string;
     name: string;
     label: string;
@@ -13,8 +13,8 @@ export declare const COLLECTION_ITEM: {
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
@@ -37,8 +37,8 @@ export declare const COLLECTION_ARTICLE: {
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
@@ -60,15 +60,15 @@ export declare const COLLECTION_PERSON: {
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
         array: boolean;
     }[];
 };
-export declare const COLLECTION_COMPANY: {
+export declare const COLLECTION_PLACE: {
     icon: string;
     name: string;
     label: string;
@@ -83,8 +83,8 @@ export declare const COLLECTION_COMPANY: {
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
@@ -106,19 +106,19 @@ export declare const COLLECTION_EVENT: {
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
         array: boolean;
     }[];
 };
-export declare const COLLECTION_PRODUCT: {
+export declare const COLLECTION_VIDEO: {
     icon: string;
     name: string;
     label: string;
-    color: "#8bc34a";
+    color: "#ffc107";
     description: string;
     fields: {
         internal: boolean;
@@ -129,8 +129,31 @@ export declare const COLLECTION_PRODUCT: {
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
+        editable: boolean;
+        visible: boolean;
+        options: any[];
+        array: boolean;
+    }[];
+};
+export declare const COLLECTION_IMAGE: {
+    icon: string;
+    name: string;
+    label: string;
+    color: "#ffc107";
+    description: string;
+    fields: {
+        internal: boolean;
+        name: string;
+        label: string;
+        db_type: string;
+        variant: string;
+        filterable: boolean;
+        sortable: boolean;
+        table_header: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
@@ -152,8 +175,8 @@ export declare const COLLECTION_TEMPLATES: ({
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
@@ -175,8 +198,8 @@ export declare const COLLECTION_TEMPLATES: ({
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
@@ -197,8 +220,8 @@ export declare const COLLECTION_TEMPLATES: ({
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
@@ -219,8 +242,8 @@ export declare const COLLECTION_TEMPLATES: ({
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];
@@ -241,30 +264,8 @@ export declare const COLLECTION_TEMPLATES: ({
         filterable: boolean;
         sortable: boolean;
         table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
-        editable: boolean;
-        visible: boolean;
-        options: any[];
-        array: boolean;
-    }[];
-} | {
-    icon: string;
-    name: string;
-    label: string;
-    color: "#8bc34a";
-    description: string;
-    fields: {
-        internal: boolean;
-        name: string;
-        label: string;
-        db_type: string;
-        variant: string;
-        filterable: boolean;
-        sortable: boolean;
-        table_header: boolean;
-        display_FIELD_TEMPLATE: boolean;
-        form_FIELD_TEMPLATE: boolean;
+        display_field: boolean;
+        form_field: boolean;
         editable: boolean;
         visible: boolean;
         options: any[];

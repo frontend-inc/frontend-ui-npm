@@ -1,7 +1,7 @@
 import React from 'react';
 type CartButtonProps = {
     label?: string;
-    size?: 'small' | 'large';
+    variant?: 'icon' | 'button';
     icon?: string;
 };
 declare const CartButton: React.FC<CartButtonProps>;

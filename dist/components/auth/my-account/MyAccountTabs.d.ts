@@ -1,9 +1,9 @@
 import React from 'react';
-type MyAccountTabsProps = {
+type MyAccountMenuProps = {
     tab?: number;
     enableTeams?: boolean;
     enableStripe?: boolean;
-    handleChange?: (ev: any, newValue: number) => void;
+    handleClick: (tab: any) => void;
 };
-declare const MyAccountTabs: React.FC<MyAccountTabsProps>;
-export default MyAccountTabs;
+declare const MyAccountMenu: React.FC<MyAccountMenuProps>;
+export default MyAccountMenu;

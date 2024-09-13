@@ -46,7 +46,7 @@ var context_1 = require("../../../context");
 var Logo_1 = __importDefault(require("./Logo"));
 var MobileNav = function (props) {
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
-    var logo = props.logo, _a = props.logoWidth, logoWidth = _a === void 0 ? 120 : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? 50 : _b, handleClick = props.handleClick, _c = props.enableShopify, enableShopify = _c === void 0 ? false : _c, _d = props.enableNotifications, enableNotifications = _d === void 0 ? false : _d;
+    var logo = props.logo, _a = props.logoWidth, logoWidth = _a === void 0 ? 120 : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? 50 : _b, handleClick = props.handleClick, _c = props.enableStripe, enableStripe = _c === void 0 ? false : _c, _d = props.enableShopify, enableShopify = _d === void 0 ? false : _d, _e = props.enableNotifications, enableNotifications = _e === void 0 ? false : _e;
     return (react_1.default.createElement(material_1.Hidden, { mdUp: true },
         react_1.default.createElement(material_1.AppBar, { sx: __assign(__assign({}, sx.appBar), (enableNotifications && sx.appBarNotifications)), position: 'absolute', elevation: 0 },
             react_1.default.createElement(material_1.Toolbar, null,
@@ -57,7 +57,7 @@ var MobileNav = function (props) {
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu },
                         react_1.default.createElement(Logo_1.default, { handleClick: function () { return handleClick('/'); }, src: logo, width: logoWidth, height: logoHeight - 20 })),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu },
-                        react_1.default.createElement(components_1.CartButton, null),
+                        enableStripe && react_1.default.createElement(components_1.CartButton, null),
                         enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))));
 };
 exports.default = MobileNav;

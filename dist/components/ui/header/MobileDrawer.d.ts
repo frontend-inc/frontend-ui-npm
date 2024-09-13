@@ -1,7 +1,6 @@
 import React from 'react';
 import { MenuLinkType } from '../../..';
 type MobileDrawerProps = {
-    editing?: boolean;
     menuItems?: MenuLinkType[];
     handleClick: (path: string) => void;
     enableAuth?: boolean;

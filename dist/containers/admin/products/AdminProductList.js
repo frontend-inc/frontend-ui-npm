@@ -14,7 +14,7 @@ var AdminProductToolbar_1 = __importDefault(require("./AdminProductToolbar"));
 var AdminProductsList = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var _a = props.metafields, metafields = _a === void 0 ? [] : _a;
-    return (react_1.default.createElement(components_1.ResourceList, { grid: true, selectable: true, url: "".concat(apiUrl, "/products"), name: 'product', enableSearch: true, enableShow: true, enableEdit: true, enableDelete: true, enableCreate: true, sortOptions: [
+    return (react_1.default.createElement(components_1.ResourceList, { selectable: true, url: "".concat(apiUrl, "/products"), name: 'product', enableSearch: true, enableShow: true, enableEdit: true, enableDelete: true, enableCreate: true, sortOptions: [
             { name: 'price', label: 'Price' },
             { name: 'title', label: 'Title' },
             { name: 'created_at', label: 'Date' },

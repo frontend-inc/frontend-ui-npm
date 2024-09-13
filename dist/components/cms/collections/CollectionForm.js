@@ -55,6 +55,6 @@ var CollectionForm = function (props) {
             return [2 /*return*/];
         });
     }); };
-    return (react_1.default.createElement(__1.RemoteFormModal, { open: openEdit, handleClose: function () { return setOpenEdit(false); }, url: url, resource: resource, parentResource: parentResource, handleSuccess: handleSuccess }));
+    return (react_1.default.createElement(__1.DocumentFormRemoteModal, { open: openEdit, handleClose: function () { return setOpenEdit(false); }, url: url, resource: resource, parentResource: parentResource, handleSuccess: handleSuccess }));
 };
 exports.default = CollectionForm;

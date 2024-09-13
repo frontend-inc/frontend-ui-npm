@@ -25,7 +25,7 @@ var TopNavMenuItem_1 = __importDefault(require("./TopNavMenuItem"));
 var __1 = require("../../..");
 var DesktopTopNav = function (props) {
     var _a, _b;
-    var editing = props.editing, logo = props.logo, menuItems = props.menuItems, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableStripe, enableStripe = _d === void 0 ? false : _d, _e = props.enableShopify, enableShopify = _e === void 0 ? false : _e, _f = props.enableNotifications, enableNotifications = _f === void 0 ? false : _f, _g = props.position, position = _g === void 0 ? 'absolute' : _g;
+    var logo = props.logo, menuItems = props.menuItems, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableStripe, enableStripe = _d === void 0 ? false : _d, _e = props.enableShopify, enableShopify = _e === void 0 ? false : _e, _f = props.enableNotifications, enableNotifications = _f === void 0 ? false : _f, _g = props.position, position = _g === void 0 ? 'absolute' : _g;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     return (react_1.default.createElement(material_1.Hidden, { mdDown: true },
         react_1.default.createElement(material_1.AppBar, { sx: __assign(__assign({}, sx.appBar), (enableNotifications && sx.appBarNotifications)), position: position, elevation: 0 },
@@ -37,13 +37,9 @@ var DesktopTopNav = function (props) {
                         return (0, __1.filterLinkVisibility)(menuItem, currentUser);
                     })) === null || _b === void 0 ? void 0 : _b.map(function (menuItem, index) { return (react_1.default.createElement(TopNavMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); })),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu },
-                        enableAuth && react_1.default.createElement(components_1.AuthButton, { editing: editing }),
-                        react_1.default.createElement(components_2.CartButton, null),
-                        enableStripe && (react_1.default.createElement(react_1.default.Fragment, null,
-                            react_1.default.createElement(components_1.StripeCustomerPortalButton, null))),
-                        enableShopify && (react_1.default.createElement(react_1.default.Fragment, null,
-                            react_1.default.createElement(shopify_1.ShopifyAuth, null),
-                            react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))))));
+                        enableAuth && react_1.default.createElement(components_1.AuthButton, null),
+                        enableStripe && react_1.default.createElement(components_2.CartButton, null),
+                        enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))));
 };
 exports.default = DesktopTopNav;
 var sx = {

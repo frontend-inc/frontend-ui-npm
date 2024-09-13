@@ -56,8 +56,9 @@ var LayoutContainer = function (props) {
             react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.content), (sideNav ? sx.contentSideNav : sx.contentTopNav)), (enableNotifications && sx.contentNotifications)) },
                 react_1.default.createElement(components_1.AuthGuard, { roles: roles, requireAuth: requireAuth, requirePaid: requirePaid, requireTeam: requireTeam },
                     (notifications === null || notifications === void 0 ? void 0 : notifications.length) > 0 && (react_1.default.createElement(components_2.Notifications, { notifications: notifications })),
-                    children,
-                    footer)))));
+                    react_1.default.createElement(components_1.ViewScroll, null,
+                        children,
+                        footer))))));
 };
 exports.default = LayoutContainer;
 var sx = {
@@ -91,9 +92,7 @@ var sx = {
         width: '100%',
         overflowY: 'hidden',
     },
-    contentNotifications: {
-        pb: '45px',
-    },
+    contentNotifications: {},
     contentSideNav: {
         pt: {
             md: 0,
@@ -104,6 +103,10 @@ var sx = {
             xs: '100%',
         },
         height: '100%',
+        overflowY: 'scroll',
+        '&::-webkit-scrollbar': {
+            display: 'none',
+        },
     },
     contentTopNav: {
         pt: '60px',

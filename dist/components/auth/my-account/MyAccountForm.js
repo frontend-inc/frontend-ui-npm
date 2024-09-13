@@ -27,7 +27,7 @@ var MyAccountForm = function (props) {
         },
     ], false);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.FormFields, { loading: loading, errors: errors, 
+        react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, 
             //@ts-ignore
             fields: formFields, resource: user, handleChange: handleChange, handleRemove: handleDeleteAvatar, handleSubmit: handleSubmit, buttonText: "Save" }),
         react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleLogout }, "Logout")));

@@ -1,7 +1,7 @@
 import React from 'react';
 type ShopifyCartButtonProps = {
     icon?: string;
-    variant?: 'topNav' | 'sideNav';
+    variant?: 'icon' | 'button';
     editing?: boolean;
     label?: string;
 };

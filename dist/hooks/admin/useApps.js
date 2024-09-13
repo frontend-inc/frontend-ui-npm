@@ -37,9 +37,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var frontend_js_1 = require("frontend-js");
+var hooks_1 = require("../../hooks");
 function useApps() {
     var _this = this;
     var api = (0, frontend_js_1.useApi)().api;
+    var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var _a = (0, frontend_js_1.useResource)({
         url: "/api/v1/admin/apps",
         name: 'app',
@@ -48,7 +50,7 @@ function useApps() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.post("/api/v1/admin/apps/".concat(appId, "/publish"));
+                        return api.post("".concat(apiUrl, "/publish"));
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
@@ -58,7 +60,7 @@ function useApps() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.post("/api/v1/admin/apps/".concat(appId, "/build"));
+                        return api.post("".concat(apiUrl, "/build"));
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
             }

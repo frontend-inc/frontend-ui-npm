@@ -26,10 +26,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var __1 = require("../..");
-var RemoteFormModal = function (props) {
-    var title = props.title, open = props.open, handleClose = props.handleClose, rest = __rest(props, ["title", "open", "handleClose"]);
-    return (react_1.default.createElement(__1.Drawer, { open: open, handleClose: handleClose, title: title },
-        react_1.default.createElement(__1.RemoteForm, __assign({}, rest))));
+var components_1 = require("../../../components");
+var AdminShipment = function (props) {
+    var shipment = props.resource, selectable = props.selectable, selected = props.selected, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, rest = __rest(props, ["resource", "selectable", "selected", "handleClick", "handleEdit", "handleDelete", "handleSelect"]);
+    return (react_1.default.createElement(components_1.ResourceListItem, __assign({ selectable: selectable, selected: selected, color: "secondary.main", icon: "Package", primary: shipment.carrier, secondary: shipment.tracking_code, secondaryAction: react_1.default.createElement(components_1.Label, { label: shipment === null || shipment === void 0 ? void 0 : shipment.status }), handleEdit: handleEdit, handleDelete: handleDelete, handleClick: handleClick, handleSelect: handleSelect }, rest)));
 };
-exports.default = RemoteFormModal;
+exports.default = AdminShipment;
+var sx = {
+    image: {
+        height: 64,
+        width: 64,
+    }
+};

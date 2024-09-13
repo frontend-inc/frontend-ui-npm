@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var PDP = function (props) {
-    var _a = props || {}, label = _a.label, image = _a.image, primary = _a.primary, secondary = _a.secondary, addToCart = _a.addToCart, price = _a.price, compareAtPrice = _a.compareAtPrice, availableForSale = _a.availableForSale, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.slots, slots = _b === void 0 ? {
+    var _a = props || {}, label = _a.label, image = _a.image, primary = _a.primary, secondary = _a.secondary, addToCart = _a.addToCart, price = _a.price, compareAtPrice = _a.compareAtPrice, description = _a.description, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.slots, slots = _b === void 0 ? {
         image: {},
         content: {},
     } : _b;
@@ -36,9 +36,11 @@ var PDP = function (props) {
                 react_1.default.createElement(material_1.Stack, __assign({ spacing: 2, sx: sx.content }, slots.content),
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, primary),
                     react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
-                        react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "caption" }, price),
-                        compareAtPrice && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption", sx: sx.compareAtPrice }, compareAtPrice))),
-                    secondary)))));
+                        react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "subtitle1" }, price),
+                        compareAtPrice && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "subtitle2", sx: sx.compareAtPrice }, compareAtPrice))),
+                    secondary,
+                    addToCart,
+                    react_1.default.createElement(__1.ExpandableText, { text: description }))))));
 };
 exports.default = PDP;
 var sx = {
@@ -110,4 +112,7 @@ var sx = {
     leftPanelBorder: {
         pb: 2,
     },
+    description: {
+        whiteSpace: 'pre-line'
+    }
 };

@@ -7,6 +7,11 @@ declare const useSubscriptions: () => {
     subscriptions: any[];
     findSubscription: (id: import("frontend-js").ID) => any;
     findSubscriptions: (queryParams?: import("frontend-js").QueryParamsType) => void;
+    subscribe: (subscriptionId: any, options: {
+        success_url: string;
+        cancel_url: string;
+    }) => Promise<void>;
+    unsubscribe: () => Promise<void>;
     handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     handleChangePage: any;
     reloadSubscriptions: () => Promise<any>;

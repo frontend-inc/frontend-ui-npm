@@ -39,11 +39,7 @@ var sx = {
     },
     grid: {
         display: 'grid',
-        gridTemplateColumns: {
-            md: '1fr 1fr 1fr',
-            sm: '1fr 1fr',
-            xs: '1fr',
-        },
+        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
         gap: '16px',
         pb: 1,
     },

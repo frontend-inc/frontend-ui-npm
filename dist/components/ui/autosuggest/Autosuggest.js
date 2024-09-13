@@ -146,7 +146,7 @@ var sx = {
             borderRadius: 1,
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
-            bgcolor: 'background.main',
+            bgcolor: 'background.paper',
             border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
             '&:focus': {
                 border: function (theme) { return "1px solid ".concat(theme.palette.primary.light); },

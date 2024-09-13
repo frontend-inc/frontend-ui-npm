@@ -1,5 +1,5 @@
 import React from 'react';
-declare const useAccounts: (props: any) => {
+declare const useAccounts: () => {
     accountId: any;
     loading: boolean;
     loaded: any;

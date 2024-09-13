@@ -4,7 +4,7 @@ export type PDPProps = {
     image?: string;
     price?: string;
     compareAtPrice?: string;
-    availableForSale?: boolean;
+    description?: string;
     primary?: string;
     secondary?: React.ReactNode;
     actions?: React.ReactNode;

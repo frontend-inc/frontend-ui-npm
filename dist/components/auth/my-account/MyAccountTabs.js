@@ -14,41 +14,71 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var MyAccountTabs = function (props) {
-    var _a = props || {}, tab = _a.tab, enableTeams = _a.enableTeams, enableStripe = _a.enableStripe, handleChange = _a.handleChange;
-    var TABS = [{ label: 'Account', value: 0 }];
+var hooks_1 = require("../../../hooks");
+var __1 = require("../..");
+var frontend_js_1 = require("frontend-js");
+var MyAccountMenu = function (props) {
+    var _a = props || {}, enableTeams = _a.enableTeams, handleClick = _a.handleClick;
+    var _b = (0, hooks_1.useApp)(), app = _b.app, enableShopify = _b.enableShopify, enableStripe = _b.enableStripe;
+    var TABS = [
+        { label: 'My Account', value: 0 }
+    ];
     var TEAM_TABS = [
         { label: 'Teams', value: 1 },
         { label: 'Members', value: 2 },
     ];
-    var STRIPE_TABS = [
-        { label: 'Payment', value: 4 },
-        { label: 'Subscription', value: 6 },
+    var SUBSCRIPTION_TAB = [
+        {
+            label: 'Subscription',
+            value: 4,
+        },
+    ];
+    var SHOPIFY_TAB = [
+        {
+            label: 'Order History',
+            value: 5,
+        },
     ];
     var tabs = TABS;
     if (enableTeams) {
         tabs = __spreadArray(__spreadArray([], tabs, true), TEAM_TABS, true);
     }
     if (enableStripe) {
-        tabs = __spreadArray(__spreadArray([], tabs, true), STRIPE_TABS, true);
+        tabs = __spreadArray(__spreadArray([], tabs, true), SUBSCRIPTION_TAB, true);
     }
-    if (!enableTeams && !enableStripe)
-        return null;
-    return (react_1.default.createElement(material_1.Tabs, { value: tab, onChange: handleChange, color: "secondary", sx: sx.root, variant: "fullWidth" }, tabs === null || tabs === void 0 ? void 0 : tabs.map(function (tab, index) { return (react_1.default.createElement(material_1.Tab, { disableRipple: true, key: index, sx: sx.tab, label: tab.label, value: tab.value })); })));
+    if (enableShopify) {
+        tabs = __spreadArray(__spreadArray([], tabs, true), SHOPIFY_TAB, true);
+    }
+    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(material_1.Box, { sx: sx.avatar },
+            react_1.default.createElement(__1.UserAvatar, { user: currentUser, size: 96 })),
+        react_1.default.createElement(material_1.List, { sx: sx.root, disablePadding: true }, tabs === null || tabs === void 0 ? void 0 : tabs.map(function (tab, index) { return (react_1.default.createElement(material_1.ListItem, { disablePadding: true, disableGutters: true, key: index, sx: sx.listItem, secondaryAction: react_1.default.createElement(material_1.Box, { mr: 2 },
+                react_1.default.createElement(material_1.IconButton, null,
+                    react_1.default.createElement(__1.Icon, { name: "ChevronRight", color: "text.primary" }))) },
+            react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: function () { return handleClick(tab); } },
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { sx: sx.menuItem, variant: "body1", color: "text.primary" }, tab === null || tab === void 0 ? void 0 : tab.label) })))); }))));
 };
-exports.default = MyAccountTabs;
+exports.default = MyAccountMenu;
 var sx = {
     root: {
-        my: 0,
+        p: 0,
+    },
+    listItem: {
+        p: 0,
         borderBottom: '1px solid',
         borderColor: 'divider',
-        width: '100%',
-        '& .MuiTab-root': {
-            minWidth: '60px',
-            '&.Mui-selected': {
-                color: 'text.primary',
-            },
-        },
     },
-    tab: {},
+    menuItem: {
+        pl: 2,
+    },
+    listItemButton: {
+        py: 1,
+    },
+    avatar: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        p: 2,
+    },
 };

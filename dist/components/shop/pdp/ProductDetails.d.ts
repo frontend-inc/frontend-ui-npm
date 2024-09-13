@@ -18,7 +18,6 @@ export type ProductDetailsProps = {
     handleEdit?: (res: any) => void;
 };
 export type ProductProps = ProductDetailsProps & {
-    url?: string;
     slots?: {
         image?: any;
         content?: any;

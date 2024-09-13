@@ -8,8 +8,8 @@ declare const useProducts: () => {
     empty: any;
     editing: any;
     isValid: any;
-    document: any;
-    documents: any[];
+    product: any;
+    products: any[];
     findProduct: (id: import("frontend-js").ID) => any;
     findProducts: (queryParams?: import("frontend-js").QueryParamsType) => void;
     saveProduct: (resource: any) => any;

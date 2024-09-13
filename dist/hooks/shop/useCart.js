@@ -69,16 +69,19 @@ var useCart = function () {
             }
         });
     }); };
-    var addToCart = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.addToCart(productId, apiParams);
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
+    var addToCart = function (productId, quantity) {
+        if (quantity === void 0) { quantity = 1; }
+        return __awaiter(void 0, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, loadingWrapper(function () {
+                            return api.addToCart(productId, quantity, apiParams);
+                        })];
+                    case 1: return [2 /*return*/, _a.sent()];
+                }
+            });
         });
-    }); };
+    };
     var removeFromCart = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

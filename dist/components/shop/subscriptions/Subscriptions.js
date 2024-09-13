@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -64,45 +75,77 @@ var frontend_js_1 = require("frontend-js");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
+var router_1 = require("next/router");
 var SubscriptionList = function (props) {
-    var _a = (0, hooks_1.useSubscriptions)(), loading = _a.delayedLoading, subscriptions = _a.subscriptions, findSubscriptions = _a.findSubscriptions, reloadSubscriptions = _a.reloadSubscriptions;
+    var router = (0, router_1.useRouter)();
+    var _a = (0, hooks_1.useSubscriptions)(), loading = _a.delayedLoading, subscribe = _a.subscribe, unsubscribe = _a.unsubscribe, subscriptions = _a.subscriptions, findSubscriptions = _a.findSubscriptions;
     var _b = (0, frontend_js_1.useAuth)(), currentUser = _b.currentUser, fetchMe = _b.fetchMe;
     var _c = (0, react_1.useState)(false), openSubscribeModel = _c[0], setOpenSubscribeModal = _c[1];
     var _d = (0, react_1.useState)(false), openUnsubscribeModal = _d[0], setOpenUnsubscribeModal = _d[1];
     var _e = (0, react_1.useState)(null), activeSubscription = _e[0], setActiveSubscription = _e[1];
     var handleSubscribe = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var currentUrl, resp;
         return __generator(this, function (_a) {
-            return [2 /*return*/];
+            switch (_a.label) {
+                case 0:
+                    if (!(activeSubscription === null || activeSubscription === void 0 ? void 0 : activeSubscription.id)) return [3 /*break*/, 2];
+                    currentUrl = window.location.href;
+                    return [4 /*yield*/, subscribe(activeSubscription.id, {
+                            success_url: currentUrl,
+                            cancel_url: currentUrl
+                        })];
+                case 1:
+                    resp = _a.sent();
+                    if (resp === null || resp === void 0 ? void 0 : resp.url) {
+                        router.push(resp.url);
+                    }
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
+            }
         });
     }); };
     var handleUnsubscribe = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
         return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.stripe_subscription_id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, unsubscribe()];
+                case 1:
+                    resp = _a.sent();
+                    fetchMe();
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleSubscribeClick = function (subscription) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            setActiveSubscription(subscription);
+            setOpenSubscribeModal(true);
             return [2 /*return*/];
         });
     }); };
-    var handleSubscribeClick = function (subscription) {
-        setActiveSubscription(subscription);
-        setOpenSubscribeModal(true);
-    };
     var handleUnsubscribeClick = function () {
         setActiveSubscription(null);
         setOpenUnsubscribeModal(true);
     };
     (0, react_1.useEffect)(function () {
-        if (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) {
-            findSubscriptions();
-        }
-    }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
+        findSubscriptions();
+    }, []);
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(__1.Loading, { loading: loading }),
-        react_1.default.createElement(material_1.List, null, !loading &&
-            (subscriptions === null || subscriptions === void 0 ? void 0 : subscriptions.map(function (subscription) {
-                var selected = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.subscription_id) === subscription.id;
-                return (react_1.default.createElement(__1.SelectableListItem, { key: subscription.id, selected: selected, icon: "CreditCard", title: subscription.name, description: subscription.display_price, handleClick: function () { return handleSubscribeClick(subscription); } }));
-            }))),
+        react_1.default.createElement(material_1.List, { sx: __assign({}, (loading && sx.loading)) }, subscriptions === null || subscriptions === void 0 ? void 0 : subscriptions.map(function (subscription) {
+            var selected = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.subscription_id) === subscription.id;
+            return (react_1.default.createElement(__1.SelectableListItem, { key: subscription.id, selected: selected, icon: "CreditCard", title: subscription.name, description: subscription.display_price, handleClick: function () { return handleSubscribeClick(subscription); } }));
+        })),
         !loading && !(subscriptions === null || subscriptions === void 0 ? void 0 : subscriptions.length) && (react_1.default.createElement(__1.Placeholder, { icon: "CreditCard", title: "No subscription plans", description: "Subscription plans will appear here." })),
         !loading && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.stripe_subscription_id) && (react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "secondary", onClick: handleUnsubscribeClick }, "Cancel Subscription")),
-        react_1.default.createElement(__1.AlertModal, { loading: loading, open: openSubscribeModel, title: "Confirm Subscription", description: "Confirming your subscription will charge your card on file.", handleConfirm: handleSubscribe, handleClose: function () { return setOpenSubscribeModal(false); } }),
+        react_1.default.createElement(__1.AlertModal, { loading: loading, open: openSubscribeModel, title: "Confirm Subscription", description: "You will be redirected to make payment.", handleConfirm: handleSubscribe, handleClose: function () { return setOpenSubscribeModal(false); } }),
         react_1.default.createElement(__1.AlertModal, { loading: loading, open: openUnsubscribeModal, title: "Cancel Subscription", description: "Are you sure you want to cancel your plan?", handleConfirm: handleUnsubscribe, handleClose: function () { return setOpenUnsubscribeModal(false); } })));
 };
 exports.default = SubscriptionList;
+var sx = {
+    loading: {
+        opacity: 0.5
+    }
+};

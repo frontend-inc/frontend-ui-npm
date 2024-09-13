@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormFieldType, SyntheticEventType } from '../../../types';
-type FormFieldInputProps = {
+type FormFieldProps = {
     resource: any;
     field: FormFieldType;
     errors?: any;
@@ -11,6 +11,10 @@ type FormFieldInputProps = {
     fields?: FormFieldType[];
     handleChange: (e: SyntheticEventType) => void;
     handleRemove?: (name: string) => void;
+    handleAddAttachment?: (name: string, attachmentId: number) => void;
+    handleRemoveAttachment?: (name: string) => void;
+    inputOptions?: Record<string, React.FC>;
+    inputParams?: Record<string, any>;
 };
-declare const FormFieldInput: React.FC<FormFieldInputProps>;
-export default FormFieldInput;
+declare const FormField: React.FC<FormFieldProps>;
+export default FormField;

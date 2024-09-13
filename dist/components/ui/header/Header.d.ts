@@ -1,7 +1,6 @@
 import React from 'react';
 import { MenuLinkType } from '../../../types';
 type HeaderProps = {
-    editing?: boolean;
     sideNav?: boolean;
     mode?: 'accent' | 'light' | 'dark';
     logo?: string;

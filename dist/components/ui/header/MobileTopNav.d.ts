@@ -7,6 +7,7 @@ type MobileNavProps = {
     logoHeight?: number;
     menuItems?: MenuLinkType[];
     enableShopify?: boolean;
+    enableStripe?: boolean;
     enableNotifications?: boolean;
     handleClick: (path: string) => void;
     position?: 'fixed' | 'relative' | 'absolute';

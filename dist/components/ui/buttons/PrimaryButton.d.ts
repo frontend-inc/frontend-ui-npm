@@ -5,6 +5,7 @@ export type PrimaryButtonProps = {
     children: React.ReactNode;
     onClick: (ev: any) => void;
     icon?: string;
+    endIcon?: string;
     fullWidth?: boolean;
     size?: 'small' | 'medium' | 'large';
     disabled?: boolean;

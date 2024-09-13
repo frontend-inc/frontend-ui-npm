@@ -42,8 +42,7 @@ var sx = {
     root: {
         overflow: 'hidden',
         borderRadius: 1,
-        width: '100%',
-        minWidth: 280,
+        width: 280,
         transition: 'box-shadow 0.3s',
         bgcolor: 'background.paper',
         border: '1px solid',

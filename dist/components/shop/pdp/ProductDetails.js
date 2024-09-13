@@ -35,11 +35,11 @@ var ProductDetails = function (props) {
     };
     if (!(product === null || product === void 0 ? void 0 : product.id))
         return null;
-    return (react_1.default.createElement(__1.PDP, { image: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, primary: product === null || product === void 0 ? void 0 : product.title, secondary: react_1.default.createElement(material_1.Stack, { spacing: 2, sx: { width: '100%' } },
+    return (react_1.default.createElement(__1.PDP, { image: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, primary: product === null || product === void 0 ? void 0 : product.title, price: product === null || product === void 0 ? void 0 : product.display_price, compareAtPrice: product === null || product === void 0 ? void 0 : product.display_compare_at_price, description: product === null || product === void 0 ? void 0 : product.description, secondary: react_1.default.createElement(material_1.Stack, { spacing: 2, sx: { width: '100%' } },
             react_1.default.createElement(material_1.Stack, { spacing: 2, sx: { width: '100%' }, alignItems: "flex-start" },
                 enableRatings == true && (react_1.default.createElement(__2.AvgRating, { resource: product, enableTotal: true })),
-                (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__2.DisplayFields, { fields: displayFields, resource: product }))),
-            react_1.default.createElement(__2.ExpandableText, { text: product === null || product === void 0 ? void 0 : product.description })), actions: react_1.default.createElement(__2.SocialButtons, { size: "large", justifyContent: 'center', resource: product, product: product, enableProductLikes: enableLikes, enableProductFavorites: enableFavorites, enableSharing: enableSharing, enableAddToList: enableAddToList }), addToCart: react_1.default.createElement(__2.AddToCartButton, { availableForSale: true, productId: product === null || product === void 0 ? void 0 : product.id }), secondaryAction: (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
+                (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__2.DisplayFields, { fields: displayFields, resource: product })))), actions: react_1.default.createElement(__2.SocialButtons, { size: "large", justifyContent: 'center', resource: product, product: product, enableProductLikes: enableLikes, enableProductFavorites: enableFavorites, enableSharing: enableSharing, enableAddToList: enableAddToList }), addToCart: react_1.default.createElement(material_1.Box, { sx: sx.addToCart },
+            react_1.default.createElement(__2.AddToCartButton, { availableForSale: true, productId: product === null || product === void 0 ? void 0 : product.id })), secondaryAction: (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
             react_1.default.createElement(__2.ButtonActions, { justifyContent: 'flex-end', buttons: (0, helpers_1.buildActions)({
                     enableEdit: enableEdit,
                     handleEdit: function () { return handleEdit(product); },
@@ -51,4 +51,8 @@ var sx = {
     buttons: {
         width: '100%',
     },
+    addToCart: {
+        width: '100%',
+        maxWidth: '300px',
+    }
 };

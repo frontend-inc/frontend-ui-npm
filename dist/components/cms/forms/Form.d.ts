@@ -1,14 +1,18 @@
 import React from 'react';
+import { FormFieldType } from '../../../types';
 export type FormProps = {
     loading?: boolean;
+    errors: any;
+    fields: FormFieldType[];
     resource: any;
-    parentResource?: any;
-    url: string;
-    href?: string;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    handleRemove?: (name: string) => void;
+    handleAddAttachment?: (name: string, attachmentId: number) => void;
+    handleRemoveAttachment?: (name: string) => void;
+    handleSubmit: () => void;
     buttonText?: string;
-    fields: any[];
-    onSuccessMessage?: string;
-    handleSuccess?: (resource: any) => void;
+    inputOptions?: Record<string, React.FC>;
+    inputParams?: Record<string, any>;
 };
 declare const Form: React.FC<FormProps>;
 export default Form;

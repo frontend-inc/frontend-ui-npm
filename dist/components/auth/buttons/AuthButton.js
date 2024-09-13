@@ -65,13 +65,12 @@ var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var __1 = require("../..");
-var context_1 = require("../../../context");
 var AuthButton = function (props) {
-    var _a = props || {}, _b = _a.showLabel, showLabel = _b === void 0 ? false : _b, _c = _a.showIcon, showIcon = _c === void 0 ? true : _c, _d = _a.editing, editing = _d === void 0 ? false : _d;
+    var _a = props || {}, _b = _a.showLabel, showLabel = _b === void 0 ? false : _b, _c = _a.showIcon, showIcon = _c === void 0 ? true : _c;
     var router = (0, router_1.useRouter)();
-    var _e = (0, frontend_js_1.useAuth)(), logout = _e.logout, fetchMe = _e.fetchMe, currentUser = _e.currentUser;
-    var _f = (0, hooks_1.useMenu)(), open = _f.open, anchorEl = _f.anchorEl, closeMenu = _f.closeMenu, toggleMenu = _f.toggleMenu;
-    var _g = (0, react_1.useContext)(context_1.AppContext), clientUrl = _g.clientUrl, setAuthOpen = _g.setAuthOpen, setMyAccountOpen = _g.setMyAccountOpen;
+    var _d = (0, frontend_js_1.useAuth)(), logout = _d.logout, fetchMe = _d.fetchMe, currentUser = _d.currentUser;
+    var _e = (0, hooks_1.useMenu)(), open = _e.open, anchorEl = _e.anchorEl, closeMenu = _e.closeMenu, toggleMenu = _e.toggleMenu;
+    var _f = (0, hooks_1.useApp)(), clientUrl = _f.clientUrl, setAuthOpen = _f.setAuthOpen, setMyAccountOpen = _f.setMyAccountOpen;
     var handleLogin = function () {
         setAuthOpen(true);
         closeMenu();
@@ -101,14 +100,17 @@ var AuthButton = function (props) {
             top: 0,
             behavior: 'smooth',
         });
-        if (!editing) {
-            router.push(url);
-        }
+        router.push(url);
     };
+    (0, react_1.useEffect)(function () {
+        if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
+            fetchMe();
+        }
+    }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
     return (react_1.default.createElement(react_1.default.Fragment, null,
         !showLabel ? (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(material_1.IconButton, { onClick: toggleMenu },
             react_1.default.createElement(__1.UserAvatar, { user: currentUser }))) : (react_1.default.createElement(material_1.IconButton, { onClick: handleLogin },
-            react_1.default.createElement(__1.Icon, { color: "primary.contrastText", name: "User", size: 24 }))))) : (react_1.default.createElement(react_1.default.Fragment, null, currentUser ? (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: toggleMenu, startIcon: showIcon && react_1.default.createElement(__1.UserAvatar, { user: currentUser }), endIcon: react_1.default.createElement(material_1.Box, null,
+            react_1.default.createElement(__1.Icon, { color: "primary.contrastText", name: "User", size: 24 }))))) : (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: toggleMenu, startIcon: showIcon && react_1.default.createElement(__1.UserAvatar, { user: currentUser }), endIcon: react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(__1.Icon, { name: "MoreVertical" })) },
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary", sx: sx.username }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.username))) : (react_1.default.createElement(material_1.Button, { sx: sx.button, onClick: handleLogin, startIcon: showIcon && react_1.default.createElement(__1.Icon, { name: "User", size: 24 }) }, "Sign In")))),
         currentUser && (react_1.default.createElement(__1.AuthMenu, { open: open, anchorEl: anchorEl, toggleMenu: toggleMenu, handleLogin: handleLogin, handleSignup: handleSignup, handleMyAccount: handleMyAccount, handleLogout: handleLogout, handleClick: handleClick }))));

@@ -136,6 +136,6 @@ var ReferenceInput = function (props) {
         react_1.default.createElement(material_1.Button, { fullWidth: true, onClick: handleAddClick, variant: "contained", color: "secondary", startIcon: react_1.default.createElement(components_1.Icon, { name: "Plus", color: "secondary.contrastText" }) },
             "Add ",
             contentType),
-        react_1.default.createElement(components_1.RemoteFormModal, { open: open, handleClose: function () { return setOpen(false); }, url: foreignUrl, resource: foreignResource, handleSuccess: handleSuccess })));
+        react_1.default.createElement(components_1.DocumentFormRemoteModal, { open: open, handleClose: function () { return setOpen(false); }, url: foreignUrl, resource: foreignResource, handleSuccess: handleSuccess })));
 };
 exports.default = ReferenceInput;

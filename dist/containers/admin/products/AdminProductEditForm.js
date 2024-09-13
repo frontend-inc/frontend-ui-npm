@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -14,12 +25,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var material_1 = require("@mui/material");
 var containers_1 = require("../../../containers");
 var AdminProductForm = function (props) {
     var _a = (props || {}).metafields, metafields = _a === void 0 ? [] : _a;
-    var _b = props || {}, loading = _b.loading, errors = _b.errors, open = _b.open, handleClose = _b.handleClose, resource = _b.resource, handleChange = _b.handleChange, handleAddAttachment = _b.handleAddAttachment, handleRemoveAttachment = _b.handleRemoveAttachment, handleSubmit = _b.handleSubmit;
     var fields = __spreadArray([
+        { label: 'Image', name: 'image', variant: 'media' },
         { label: 'Handle', name: 'handle', variant: 'string' },
         { label: 'Title', name: 'title', variant: 'string' },
         { label: 'Description', name: 'description', variant: 'text' },
@@ -41,11 +51,9 @@ var AdminProductForm = function (props) {
             conditions: [{ name: 'recurring', operator: 'eq', value: true }],
         }
     ], metafields, true);
-    return (react_1.default.createElement(components_1.Drawer, { open: open, handleClose: handleClose, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
-        react_1.default.createElement(material_1.Stack, { spacing: 1 },
-            react_1.default.createElement(containers_1.MediaInput, { name: "image", value: resource === null || resource === void 0 ? void 0 : resource.image, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment }),
-            react_1.default.createElement(components_1.FormFields, { errors: errors, loading: loading, 
-                //@ts-ignore
-                fields: fields, resource: resource, handleChange: handleChange }))));
+    var inputOptions = {
+        media: containers_1.MediaInput
+    };
+    return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields, inputOptions: inputOptions })));
 };
 exports.default = AdminProductForm;

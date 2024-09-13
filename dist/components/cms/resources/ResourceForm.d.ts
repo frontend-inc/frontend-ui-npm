@@ -8,11 +8,15 @@ export type ResourceFormProps = {
     setResource: (resource: any) => void;
     handleChange: (ev: any) => void;
     handleRemove?: (string: any) => void;
-    handleAddAttachment: (name: string, attachmentId: number) => void;
-    handleRemoveAttachment: (name: string) => void;
+    handleAddAttachment?: (name: string, attachmentId: number) => void;
+    handleRemoveAttachment?: (name: string) => void;
     handleSubmit: () => void;
     handleReload: () => void;
+    inputOptions?: any;
+    inputParams?: any;
+};
+export type FormProps = ResourceFormProps & {
     fields: any[];
 };
-declare const ResourceForm: React.FC<ResourceFormProps>;
+declare const ResourceForm: React.FC<FormProps>;
 export default ResourceForm;

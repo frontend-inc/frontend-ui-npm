@@ -1,6 +1,6 @@
 import React from 'react';
-import { ProductContainerProps } from '../../components/shop/pdp/ProductContainer';
+import { ProductProps } from '../../components/shop/pdp/Product';
 import { SectionProps } from '../../types';
-type ShopProductDetailsProps = ProductContainerProps & SectionProps;
+type ShopProductDetailsProps = ProductProps & SectionProps;
 declare const ShopProductDetails: React.FC<ShopProductDetailsProps>;
 export default ShopProductDetails;

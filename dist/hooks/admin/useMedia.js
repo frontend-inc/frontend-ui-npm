@@ -35,16 +35,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var frontend_js_1 = require("frontend-js");
 var frontend_js_2 = require("frontend-js");
-var useAdmin_1 = __importDefault(require("./useAdmin"));
+var hooks_1 = require("../../hooks");
 var useMedia = function () {
     var api = (0, frontend_js_2.useApi)().api;
-    var apiUrl = (0, useAdmin_1.default)().apiUrl;
+    var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var _a = (0, frontend_js_1.useResource)({
         url: "".concat(apiUrl, "/storage"),
         name: 'storage',

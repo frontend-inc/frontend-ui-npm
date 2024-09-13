@@ -119,7 +119,7 @@ var UserForm = function (props) {
             setUser(currentUser);
         }
     }, [currentUser]);
-    return (react_1.default.createElement(__1.FormFields, { loading: delayedLoading, errors: errors, fields: fields, resource: user, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
+    return (react_1.default.createElement(__1.Form, { loading: delayedLoading, errors: errors, fields: fields, resource: user, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = UserForm;
 var sx = {

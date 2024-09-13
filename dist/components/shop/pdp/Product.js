@@ -17,10 +17,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var ProductContainer = function (props) {
-    var _a = props || {}, url = _a.url, foreignUrl = _a.foreignUrl, _b = _a.fields, fields = _b === void 0 ? [] : _b, product = _a.product;
+var Product = function (props) {
+    var _a = props || {}, _b = _a.url, url = _b === void 0 ? '/api/v1/shop/products' : _b, foreignUrl = _a.foreignUrl, _c = _a.fields, fields = _c === void 0 ? [] : _c, product = _a.product;
     return (react_1.default.createElement(frontend_js_1.ResourceProvider, { name: "product", resource: product, url: url, foreignUrl: foreignUrl },
-        react_1.default.createElement(__1.ProductDetails, __assign({}, props, { url: url })),
+        react_1.default.createElement(__1.ProductDetails, __assign({}, props)),
         react_1.default.createElement(__1.ProductForm, { fields: fields })));
 };
-exports.default = ProductContainer;
+exports.default = Product;

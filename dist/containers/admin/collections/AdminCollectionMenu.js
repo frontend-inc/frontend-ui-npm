@@ -163,7 +163,7 @@ var AdminCollectionMenu = function () {
         });
     }); };
     var handleTemplateClick = function (template) {
-        setCollection(__assign(__assign({}, collection), { template: template }));
+        setCollection(__assign(__assign({}, collection), { name: template.name, label: template.label, template: template }));
     };
     var handleViewClick = function (view) { return __awaiter(void 0, void 0, void 0, function () {
         var _a;

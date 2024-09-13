@@ -87,6 +87,6 @@ var ToolbarUpdateButton = function (props) {
         react_1.default.createElement(material_1.Button, { variant: "contained", color: "secondary", onClick: function () { return setOpen(true); }, startIcon: icon && react_1.default.createElement(__1.Icon, { name: icon }) }, buttonText),
         react_1.default.createElement(__1.Modal, { open: open, handleClose: handleClose, title: "Update selected (".concat(selectedIds.length, ")"), loading: loading },
             react_1.default.createElement(material_1.Box, { py: 2 },
-                react_1.default.createElement(__1.FormFields, { errors: errors, fields: fields, resource: resource, handleChange: handleChange, buttonText: "Update All", handleRemove: handleRemove, handleSubmit: handleSubmit })))));
+                react_1.default.createElement(__1.Form, { errors: errors, fields: fields, resource: resource, handleChange: handleChange, buttonText: "Update All", handleRemove: handleRemove, handleSubmit: handleSubmit })))));
 };
 exports.default = ToolbarUpdateButton;

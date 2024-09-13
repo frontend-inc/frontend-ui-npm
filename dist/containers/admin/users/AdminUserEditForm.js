@@ -71,6 +71,6 @@ var AdminUserForm = function (props) {
             variant: 'boolean',
         }
     ], metafields, true);
-    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields }));
+    return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields })));
 };
 exports.default = AdminUserForm;
