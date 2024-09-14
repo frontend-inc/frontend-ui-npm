@@ -51,7 +51,7 @@ var ShopifyProductRecommendations = function (props) {
         }
     }, [handle]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        layout == 'grid' && (react_1.default.createElement(shopify_1.ShopifyProductGrid, { href: href, loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText })),
+        layout == 'grid' && (react_1.default.createElement(shopify_1.ShopifyProducts, { href: href, loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText })),
         layout == 'carousel' && (react_1.default.createElement(shopify_1.ShopifyProductCarousel, { href: href, loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText }))));
 };
 exports.default = ShopifyProductRecommendations;

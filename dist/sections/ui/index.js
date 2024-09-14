@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UITestimonials = exports.UITabs = exports.UIPriceTable = exports.UIPageHeader = exports.UILogos = exports.UIFeatures = exports.UIFeatured = exports.UIImage = exports.UICTA = exports.UICoverCarousel = exports.UICover = exports.UICards = exports.UIAccordion = void 0;
+exports.UITestimonials = exports.UITabs = exports.UIProfile = exports.UIPriceTable = exports.UIPageHeader = exports.UILogos = exports.UIFeatures = exports.UIFeatured = exports.UIImage = exports.UICTA = exports.UICoverCarousel = exports.UICover = exports.UICards = exports.UIAccordion = void 0;
 var UIAccordion_1 = require("./UIAccordion");
 Object.defineProperty(exports, "UIAccordion", { enumerable: true, get: function () { return __importDefault(UIAccordion_1).default; } });
 var UICards_1 = require("./UICards");
@@ -26,6 +26,8 @@ var UIPageHeader_1 = require("./UIPageHeader");
 Object.defineProperty(exports, "UIPageHeader", { enumerable: true, get: function () { return __importDefault(UIPageHeader_1).default; } });
 var UIPriceTable_1 = require("./UIPriceTable");
 Object.defineProperty(exports, "UIPriceTable", { enumerable: true, get: function () { return __importDefault(UIPriceTable_1).default; } });
+var UIProfile_1 = require("./UIProfile");
+Object.defineProperty(exports, "UIProfile", { enumerable: true, get: function () { return __importDefault(UIProfile_1).default; } });
 var UITabs_1 = require("./UITabs");
 Object.defineProperty(exports, "UITabs", { enumerable: true, get: function () { return __importDefault(UITabs_1).default; } });
 var UITestimonials_1 = require("./UITestimonials");

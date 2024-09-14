@@ -65,6 +65,6 @@ var ShopifyProductCollection = function (props) {
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
             enableFilters && (react_1.default.createElement(__1.ShopifyProductFilterButton, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray })),
             enableSort && (react_1.default.createElement(__1.ShopifyProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick }))),
-        react_1.default.createElement(__1.ShopifyProductGrid, { href: href, loading: loading, products: products, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating })));
+        react_1.default.createElement(__1.ShopifyProducts, { href: String(href), loading: loading, products: products, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating })));
 };
 exports.default = ShopifyProductCollection;

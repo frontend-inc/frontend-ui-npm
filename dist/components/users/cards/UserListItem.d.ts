@@ -4,7 +4,6 @@ type UserListItemProps = {
     size?: number;
     resource: UserType;
     displayFields: DisplayFieldType[];
-    enableFollowers?: boolean;
     handleClick?: () => void;
 };
 declare const UserListItem: React.FC<UserListItemProps>;

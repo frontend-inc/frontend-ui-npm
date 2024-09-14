@@ -316,7 +316,7 @@ var AdminCollectionTable = function (props) {
         });
     }); };
     var handleSetVisibleFields = function (fields) {
-        var startFields = [constants_1.ID_FIELD, constants_1.USER_FIELD, constants_1.TEAM_FIELD];
+        var startFields = [constants_1.ID_FIELD, constants_1.USER_FIELD];
         var endFields = [constants_1.PUBLISHED_FIELD];
         var customFields = fields.filter(function (f) { return f.visible; });
         var allFields = __spreadArray(__spreadArray(__spreadArray([], startFields, true), customFields, true), endFields, true);

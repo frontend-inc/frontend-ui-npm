@@ -9,5 +9,3 @@ export declare const PUBLISHED_FIELD: FieldBase;
 export declare const LOCALE_FIELD: FieldBase;
 export declare const TAGS_FIELD: FieldBase;
 export declare const USER_FIELD: FieldBase;
-export declare const TEAM_FIELD: FieldBase;
-export declare const DEFAULT_FIELDS: FieldBase[];

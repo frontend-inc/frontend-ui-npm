@@ -71,7 +71,7 @@ var ShopifyMetafieldProducts = function (props) {
     if (!products)
         return null;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        layout == 'grid' && (react_1.default.createElement(shopify_1.ShopifyProductGrid, __assign({ href: href, products: products }, rest))),
+        layout == 'grid' && (react_1.default.createElement(shopify_1.ShopifyProducts, __assign({ href: href, products: products }, rest))),
         layout == 'carousel' && (react_1.default.createElement(shopify_1.ShopifyProductCarousel, __assign({ href: href, products: products }, rest)))));
 };
 exports.default = ShopifyMetafieldProducts;

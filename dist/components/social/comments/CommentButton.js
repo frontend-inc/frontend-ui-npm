@@ -34,7 +34,6 @@ var CommentButton = function (props) {
 exports.default = CommentButton;
 var sx = {
     icon: {
-        bgcolor: 'background.main',
         color: 'text.secondary',
         '&:hover': {
             bgcolor: 'background.main',

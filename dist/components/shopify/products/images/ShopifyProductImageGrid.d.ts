@@ -1,5 +1,5 @@
 import React from 'react';
-type ShopifyProductImageGridProps = {
+type ShopifyProductImageListProps = {
     images: any;
     loading?: boolean;
     handleClick: any;
@@ -11,5 +11,5 @@ type ShopifyProductImageGridProps = {
     md?: number;
     lg?: number;
 };
-declare const ShopifyProductImageGrid: React.FC<ShopifyProductImageGridProps>;
-export default ShopifyProductImageGrid;
+declare const ShopifyProductImageList: React.FC<ShopifyProductImageListProps>;
+export default ShopifyProductImageList;

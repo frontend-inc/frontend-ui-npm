@@ -7,8 +7,8 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var UserProfile = function (props) {
-    var _a = props || {}, user = _a.user, _b = _a.enableFollowers, enableFollowers = _b === void 0 ? false : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c, _d = _a.socialFields, socialFields = _d === void 0 ? [] : _d, _e = _a.buttons, buttons = _e === void 0 ? [] : _e;
-    var _f = user || {}, name = _f.name, username = _f.username, about_me = _f.about_me, avatar = _f.avatar;
+    var _a = props || {}, user = _a.user, _b = _a.displayFields, displayFields = _b === void 0 ? [] : _b, _c = _a.socialFields, socialFields = _c === void 0 ? [] : _c, _d = _a.buttons, buttons = _d === void 0 ? [] : _d;
+    var _e = user || {}, name = _e.name, username = _e.username, about_me = _e.about_me, avatar = _e.avatar;
     if (!(user === null || user === void 0 ? void 0 : user.id))
         return null;
     return (react_1.default.createElement(material_1.Box, { sx: sx.container },
@@ -22,10 +22,8 @@ var UserProfile = function (props) {
                     username),
                 react_1.default.createElement(material_1.Typography, { variant: "h6", color: "text.primary", sx: sx.name }, name),
                 react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
-                    enableFollowers == true && react_1.default.createElement(__1.FollowButtonGroup, { user: user }),
                     react_1.default.createElement(__1.DisplayFields, { resource: user, fields: displayFields }),
                     about_me && (react_1.default.createElement(__1.ExpandableText, { text: about_me, color: "text.secondary" })))),
-            react_1.default.createElement(material_1.Stack, { direction: "row", height: "100%", justifyContent: "flex-start" }, enableFollowers == true && react_1.default.createElement(__1.FollowButton, { user: user })),
             (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(material_1.Stack, { direction: "row", sx: sx.buttons },
                 react_1.default.createElement(__1.ButtonActions, { numVisible: 1, buttons: buttons, resource: user, user: user }))))));
 };

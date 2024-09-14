@@ -17,15 +17,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SocialFields = exports.SocialField = exports.SocialButtons = exports.ShareButton = exports.ProductFavoriteButton = exports.ProductLikeButton = exports.LikeButton = exports.FollowButtonGroup = exports.FollowButton = exports.FavoriteButton = exports.AddToListButton = void 0;
+exports.SocialFields = exports.SocialField = exports.SocialButtons = exports.ShareButton = exports.ProductFavoriteButton = exports.ProductLikeButton = exports.LikeButton = exports.FavoriteButton = exports.AddToListButton = void 0;
 var AddToListButton_1 = require("./references/AddToListButton");
 Object.defineProperty(exports, "AddToListButton", { enumerable: true, get: function () { return __importDefault(AddToListButton_1).default; } });
 var FavoriteButton_1 = require("./favorites/FavoriteButton");
 Object.defineProperty(exports, "FavoriteButton", { enumerable: true, get: function () { return __importDefault(FavoriteButton_1).default; } });
-var FollowButton_1 = require("./follow/FollowButton");
-Object.defineProperty(exports, "FollowButton", { enumerable: true, get: function () { return __importDefault(FollowButton_1).default; } });
-var FollowButtonGroup_1 = require("./follow/FollowButtonGroup");
-Object.defineProperty(exports, "FollowButtonGroup", { enumerable: true, get: function () { return __importDefault(FollowButtonGroup_1).default; } });
 var LikeButton_1 = require("./likes/LikeButton");
 Object.defineProperty(exports, "LikeButton", { enumerable: true, get: function () { return __importDefault(LikeButton_1).default; } });
 var ProductLikeButton_1 = require("./product-likes/ProductLikeButton");

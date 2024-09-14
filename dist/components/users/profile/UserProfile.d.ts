@@ -3,7 +3,6 @@ import { SocialFieldType, DisplayFieldType, ButtonType } from '../../../types';
 import { UserType } from 'frontend-js';
 export type UserProfileProps = {
     user: UserType;
-    enableFollowers?: boolean;
     displayFields?: DisplayFieldType[];
     socialFields?: SocialFieldType[];
     buttons?: ButtonType[];

@@ -18,7 +18,6 @@ var react_1 = __importDefault(require("react"));
 var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var helpers_1 = require("../../../helpers");
 var router_1 = require("next/router");
 var FeaturedCard = function (props) {
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
@@ -41,8 +40,8 @@ var FeaturedCard = function (props) {
                 react_1.default.createElement(__1.Image, { label: label, src: image, height: 320, objectFit: objectFit, alt: title, enableOverlay: enableOverlay, enableGradient: enableGradient, disableBorderRadius: enableBorder })),
             react_1.default.createElement(material_1.Box, { sx: sx.content },
                 react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.textContent },
-                    react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: 'subtitle1' }, title),
-                    react_1.default.createElement(material_1.Typography, { variant: "body1", sx: sx.description }, (0, helpers_1.truncate)(description, 160)),
+                    react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: 'h6' }, title),
+                    react_1.default.createElement(__1.ExpandableText, { text: description }),
                     buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
                         react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))))));
 };

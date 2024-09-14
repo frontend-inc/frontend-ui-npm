@@ -32,8 +32,8 @@ var ResourceListItem = function (props) {
         react_1.default.createElement(material_1.ListItemButton, { sx: sx.listItemButton, onClick: handleClick ? handleClick : undefined },
             sortable && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.dragHandle },
                 react_1.default.createElement(__1.Icon, { name: "GripVertical", color: "text.secondary" }))),
-            avatar && react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemImage }, avatar),
-            !avatar && image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemImage },
+            avatar && react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon }, avatar),
+            image && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemImage },
                 react_1.default.createElement(__1.Image, { src: image, width: 64, height: 64, alt: image }))),
             icon && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(material_1.Avatar, { sx: __assign(__assign({}, sx.avatar), { bgcolor: color }) },
@@ -74,6 +74,8 @@ var sx = {
     listItemImage: {
         mr: 2,
         minWidth: 64,
+        display: 'flex',
+        justifyContent: 'flex-end',
     },
     checkbox: {
         width: 24,

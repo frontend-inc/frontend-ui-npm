@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShopifyMetafieldVideo = exports.ShopifyMetafieldProducts = exports.ShopifyMetafieldRichText = exports.ShopifyMetafieldImage = exports.ShopifyMetafields = exports.ShopifyProductSearch = exports.ShopifyProductRecommendations = exports.ShopifyProductModal = exports.ShopifyProductMetafields = exports.ShopifyProductGrid = exports.ShopifyProductFeatured = exports.ShopifyProductDescription = exports.ShopifyProductDetails = exports.ShopifyProductInfo = exports.ShopifyProductCollectionCarousel = exports.ShopifyProductCollection = exports.ShopifyProductCarousel = exports.ShopifyProductCard = exports.ShopifyProductArray = void 0;
+exports.ShopifyMetafieldVideo = exports.ShopifyMetafieldProducts = exports.ShopifyMetafieldRichText = exports.ShopifyMetafieldImage = exports.ShopifyMetafields = exports.ShopifyProductSearch = exports.ShopifyProductRecommendations = exports.ShopifyProductModal = exports.ShopifyProductMetafields = exports.ShopifyProducts = exports.ShopifyProductFeatured = exports.ShopifyProductDescription = exports.ShopifyProductDetails = exports.ShopifyProductInfo = exports.ShopifyProductCollectionCarousel = exports.ShopifyProductCollection = exports.ShopifyProductCarousel = exports.ShopifyProductCard = exports.ShopifyProductArray = void 0;
 __exportStar(require("./images"), exports);
 // Products
 var ShopifyProductArray_1 = require("./ShopifyProductArray");
@@ -38,8 +38,8 @@ var ShopifyProductDescription_1 = require("./ShopifyProductDescription");
 Object.defineProperty(exports, "ShopifyProductDescription", { enumerable: true, get: function () { return __importDefault(ShopifyProductDescription_1).default; } });
 var ShopifyProductFeatured_1 = require("./ShopifyProductFeatured");
 Object.defineProperty(exports, "ShopifyProductFeatured", { enumerable: true, get: function () { return __importDefault(ShopifyProductFeatured_1).default; } });
-var ShopifyProductGrid_1 = require("./ShopifyProductGrid");
-Object.defineProperty(exports, "ShopifyProductGrid", { enumerable: true, get: function () { return __importDefault(ShopifyProductGrid_1).default; } });
+var ShopifyProducts_1 = require("./ShopifyProducts");
+Object.defineProperty(exports, "ShopifyProducts", { enumerable: true, get: function () { return __importDefault(ShopifyProducts_1).default; } });
 var ShopifyProductMetafields_1 = require("./ShopifyProductMetafields");
 Object.defineProperty(exports, "ShopifyProductMetafields", { enumerable: true, get: function () { return __importDefault(ShopifyProductMetafields_1).default; } });
 var ShopifyProductModal_1 = require("./ShopifyProductModal");

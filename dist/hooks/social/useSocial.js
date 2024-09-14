@@ -76,22 +76,6 @@ var useSocial = function () {
             }
         });
     }); };
-    var follow = function (username) { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.follow(username, params); })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
-        });
-    }); };
-    var unfollow = function (username) { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.unfollow(username, params); })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
-        });
-    }); };
     var likeProduct = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -146,8 +130,6 @@ var useSocial = function () {
         unlike: unlike,
         favorite: favorite,
         unfavorite: unfavorite,
-        follow: follow,
-        unfollow: unfollow,
         likeProduct: likeProduct,
         unlikeProduct: unlikeProduct,
         favoriteProduct: favoriteProduct,
