@@ -1,14 +1,10 @@
 import React from 'react';
 import { FormFieldType, SyntheticEventType } from '../../../types';
 type FormFieldProps = {
-    resource: any;
     field: FormFieldType;
     errors?: any;
     value?: any | any[];
     url?: string;
-    foreignUrl?: string;
-    contentType?: string;
-    fields?: FormFieldType[];
     handleChange: (e: SyntheticEventType) => void;
     handleRemove?: (name: string) => void;
     handleAddAttachment?: (name: string, attachmentId: number) => void;

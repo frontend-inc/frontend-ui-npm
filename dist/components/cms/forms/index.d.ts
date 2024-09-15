@@ -7,6 +7,4 @@ export { default as FormWizardModal } from './FormWizardModal';
 export { default as FormInput } from './FormInput';
 export { default as FormField } from './FormField';
 export { default as DocumentForm } from './DocumentForm';
-export { default as DocumentFormRemote } from './DocumentFormRemote';
-export { default as DocumentFormRemoteModal } from './DocumentFormRemoteModal';
 export { default as DocumentFormWizardModal } from './DocumentFormWizardModal';

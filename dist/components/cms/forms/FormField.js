@@ -6,10 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var FormInput_1 = __importDefault(require("./FormInput"));
 var FormField = function (props) {
-    var resource = props.resource, field = props.field, errors = props.errors, value = props.value, handleChange = props.handleChange, handleRemove = props.handleRemove, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment, inputOptions = props.inputOptions, inputParams = props.inputParams;
-    var name = field.name, label = field.label, placeholder = field.placeholder, variant = field.variant, options = field.options, url = field.url, foreignUrl = field.foreignUrl, contentType = field.contentType, displayField = field.displayField, valueParam = field.valueParam, fields = field.fields;
-    return (react_1.default.createElement(FormInput_1.default, { errors: errors, name: name, label: label, placeholder: placeholder, variant: variant, options: options, value: value, handleChange: handleChange, handleRemove: handleRemove, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, displayField: displayField, valueParam: valueParam, fields: fields, 
+    var field = props.field, errors = props.errors, value = props.value, handleChange = props.handleChange, handleRemove = props.handleRemove, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment, inputOptions = props.inputOptions, inputParams = props.inputParams;
+    var name = field.name, label = field.label, placeholder = field.placeholder, variant = field.variant, options = field.options, url = field.url, displayField = field.displayField, valueParam = field.valueParam;
+    return (react_1.default.createElement(FormInput_1.default, { errors: errors, name: name, label: label, placeholder: placeholder, variant: variant, options: options, value: value, handleChange: handleChange, handleRemove: handleRemove, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, displayField: displayField, valueParam: valueParam, 
         // Reference props
-        url: url, foreignUrl: foreignUrl, resource: resource, contentType: contentType, inputOptions: inputOptions, inputParams: inputParams }));
+        url: url, inputOptions: inputOptions, inputParams: inputParams }));
 };
 exports.default = FormField;

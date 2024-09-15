@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormFieldType, SyntheticEventType } from '../../../types';
+import { SyntheticEventType } from '../../../types';
 type FormInputProps = {
     variant: any;
     name: string;
@@ -12,14 +12,10 @@ type FormInputProps = {
     handleRemove?: (name: string) => void;
     handleAddAttachment?: (name: string, attachmentId: number) => void;
     handleRemoveAttachment?: (name: string) => void;
-    resource?: any;
     url?: string;
-    foreignUrl?: string;
-    contentType?: string;
     query?: any;
     displayField?: string;
     valueParam?: string;
-    fields?: FormFieldType[];
     inputOptions?: Record<string, React.FC>;
     inputParams?: Record<string, any>;
 };

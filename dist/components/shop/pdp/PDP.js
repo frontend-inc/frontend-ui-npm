@@ -40,7 +40,7 @@ var PDP = function (props) {
                         compareAtPrice && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "subtitle2", sx: sx.compareAtPrice }, compareAtPrice))),
                     secondary,
                     addToCart,
-                    react_1.default.createElement(__1.ExpandableText, { text: description }))))));
+                    react_1.default.createElement(__1.ExpandableText, { text: description || '' }))))));
 };
 exports.default = PDP;
 var sx = {

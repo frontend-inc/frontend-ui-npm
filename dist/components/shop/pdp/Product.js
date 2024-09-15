@@ -20,7 +20,6 @@ var frontend_js_1 = require("frontend-js");
 var Product = function (props) {
     var _a = props || {}, _b = _a.url, url = _b === void 0 ? '/api/v1/shop/products' : _b, foreignUrl = _a.foreignUrl, _c = _a.fields, fields = _c === void 0 ? [] : _c, product = _a.product;
     return (react_1.default.createElement(frontend_js_1.ResourceProvider, { name: "product", resource: product, url: url, foreignUrl: foreignUrl },
-        react_1.default.createElement(__1.ProductDetails, __assign({}, props)),
-        react_1.default.createElement(__1.ProductForm, { fields: fields })));
+        react_1.default.createElement(__1.ProductDetails, __assign({}, props))));
 };
 exports.default = Product;

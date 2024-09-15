@@ -12,8 +12,6 @@ export { default as LoadMore } from './collections/LoadMore';
 export { default as FilterButton } from './filters/FilterButton';
 export { default as KanBanBoard } from '../cms/kanban/KanBanBoard';
 export { default as SortButton } from './sorts/SortButton';
-export { default as RemoteSortButton } from './sorts/RemoteSortButton';
-export { default as RemoteFilterButton } from './filters/RemoteFilterButton';
 export { default as SearchFilters } from '../cms/filters/SearchFilters';
 export { default as Statistics } from './analytics/Statistics';
 export { default as Details } from './details/Details';

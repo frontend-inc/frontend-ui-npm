@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DocumentFormWizardModal = exports.DocumentFormRemoteModal = exports.DocumentFormRemote = exports.DocumentForm = exports.FormField = exports.FormInput = exports.FormWizardModal = exports.FormWizard = exports.FormFields = exports.Form = exports.FormModal = void 0;
+exports.DocumentFormWizardModal = exports.DocumentForm = exports.FormField = exports.FormInput = exports.FormWizardModal = exports.FormWizard = exports.FormFields = exports.Form = exports.FormModal = void 0;
 __exportStar(require("./wizard"), exports);
 var FormModal_1 = require("./FormModal");
 Object.defineProperty(exports, "FormModal", { enumerable: true, get: function () { return __importDefault(FormModal_1).default; } });
@@ -36,9 +36,5 @@ Object.defineProperty(exports, "FormField", { enumerable: true, get: function ()
 // Document forms
 var DocumentForm_1 = require("./DocumentForm");
 Object.defineProperty(exports, "DocumentForm", { enumerable: true, get: function () { return __importDefault(DocumentForm_1).default; } });
-var DocumentFormRemote_1 = require("./DocumentFormRemote");
-Object.defineProperty(exports, "DocumentFormRemote", { enumerable: true, get: function () { return __importDefault(DocumentFormRemote_1).default; } });
-var DocumentFormRemoteModal_1 = require("./DocumentFormRemoteModal");
-Object.defineProperty(exports, "DocumentFormRemoteModal", { enumerable: true, get: function () { return __importDefault(DocumentFormRemoteModal_1).default; } });
 var DocumentFormWizardModal_1 = require("./DocumentFormWizardModal");
 Object.defineProperty(exports, "DocumentFormWizardModal", { enumerable: true, get: function () { return __importDefault(DocumentFormWizardModal_1).default; } });

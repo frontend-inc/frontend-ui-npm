@@ -48,7 +48,6 @@ var Input = function (props) {
         phone: index_1.PhoneInput,
         priceRange: index_1.PriceRangeInput,
         radio: index_1.RadioInput,
-        reference: index_1.ReferenceInput,
         search: index_1.SearchInput,
         select: index_1.SelectInput,
         shopify_products: index_1.ShopifyProductsInput,
