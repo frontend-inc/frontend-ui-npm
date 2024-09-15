@@ -36,16 +36,14 @@ var AdminOrderForm = function (props) {
             label: 'State',
             name: 'state',
             variant: 'state',
-            conditions: [
-                { name: 'country', operator: 'eq', value: 'US' }
-            ]
+            conditions: [{ name: 'country', operator: 'eq', value: 'US' }],
         },
         { label: 'Country', name: 'country', variant: 'country' },
         { label: 'Zipcode', name: 'zipcode', variant: 'string' },
     ];
     var inputOptions = {
-        user: components_1.UserAutosuggest
+        user: components_1.UserAutosuggest,
     };
-    return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields, inputOptions: inputOptions })));
+    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields, inputOptions: inputOptions }));
 };
 exports.default = AdminOrderForm;

@@ -111,6 +111,21 @@ var CurrentUserFormWizard = function (props) {
             }
         });
     }); };
+    var handleRemoveAttachment = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, deleteAvatar()];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleAddAttachment = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/];
+        });
+    }); };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp, err_1;
         return __generator(this, function (_a) {
@@ -175,7 +190,7 @@ var CurrentUserFormWizard = function (props) {
             react_1.default.createElement(FormWizardProgress_1.default, { currentStep: currentStep, totalSteps: totalSteps }),
             react_1.default.createElement(material_1.Box, { sx: sx.formContainer },
                 react_1.default.createElement(material_1.Box, { sx: sx.form },
-                    currentField && (react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleChange, handleRemove: handleRemove, resource: user, setResource: setUser })),
+                    currentField && (react_1.default.createElement(FormWizardField_1.default, { fadeIn: fadeIn, field: currentField, handleChange: handleChange, handleRemove: handleRemove, resource: user, setResource: setUser, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment })),
                     react_1.default.createElement(FormWizardButtons_1.default, { currentStep: currentStep, totalSteps: totalSteps, handleNextStep: handleNextStep, handlePrevStep: handlePrevStep, handleSubmit: handleSubmit, buttonText: buttonText }))))));
 };
 exports.default = CurrentUserFormWizard;

@@ -8,7 +8,7 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var CartIconButton = function (props) {
-    var totalItems = props.totalItems, handleClick = props.handleClick, _a = props.icon, icon = _a === void 0 ? "ShoppingBag" : _a;
+    var totalItems = props.totalItems, handleClick = props.handleClick, _a = props.icon, icon = _a === void 0 ? 'ShoppingBag' : _a;
     return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
         react_1.default.createElement(material_1.Badge, { color: "primary", badgeContent: totalItems },
             react_1.default.createElement(components_1.Icon, { name: icon, size: 24 }))));
@@ -22,9 +22,9 @@ var CartBtn = function (props) {
             react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, label) }))));
 };
 var CartButton = function (props) {
-    var _a = props.variant, variant = _a === void 0 ? 'icon' : _a, label = props.label, _b = props.icon, icon = _b === void 0 ? "ShoppingBag" : _b;
+    var _a = props.variant, variant = _a === void 0 ? 'icon' : _a, label = props.label, _b = props.icon, icon = _b === void 0 ? 'ShoppingBag' : _b;
     var _c = (0, hooks_1.useCart)(), cart = _c.cart, cartOpen = _c.cartOpen, setCartOpen = _c.setCartOpen;
-    return (variant == "icon" ? (react_1.default.createElement(CartIconButton, { icon: icon, handleClick: function () { return setCartOpen(!cartOpen); }, totalItems: cart === null || cart === void 0 ? void 0 : cart.total_items })) : (react_1.default.createElement(CartBtn, { icon: icon, label: label, handleClick: function () { return setCartOpen(!cartOpen); }, totalItems: cart === null || cart === void 0 ? void 0 : cart.total_items })));
+    return variant == 'icon' ? (react_1.default.createElement(CartIconButton, { icon: icon, handleClick: function () { return setCartOpen(!cartOpen); }, totalItems: cart === null || cart === void 0 ? void 0 : cart.total_items })) : (react_1.default.createElement(CartBtn, { icon: icon, label: label, handleClick: function () { return setCartOpen(!cartOpen); }, totalItems: cart === null || cart === void 0 ? void 0 : cart.total_items }));
 };
 exports.default = CartButton;
 var sx = {

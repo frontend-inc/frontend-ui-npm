@@ -47,8 +47,8 @@ var AdminUserForm = function (props) {
             variant: 'select',
             options: [
                 { label: 'User', value: 'user' },
-                { label: 'Admin', value: 'admin' }
-            ]
+                { label: 'Admin', value: 'admin' },
+            ],
         },
         {
             label: 'Paid',

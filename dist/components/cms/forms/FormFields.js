@@ -40,5 +40,5 @@ var sx = {
     },
     loading: {
         opacity: 0.5,
-    }
+    },
 };

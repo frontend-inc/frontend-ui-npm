@@ -62,8 +62,8 @@ var AdminUserForm = function (props) {
             variant: 'select',
             options: [
                 { label: 'User', value: 'user' },
-                { label: 'Admin', value: 'admin' }
-            ]
+                { label: 'Admin', value: 'admin' },
+            ],
         },
         {
             label: 'Paid',
@@ -71,6 +71,6 @@ var AdminUserForm = function (props) {
             variant: 'boolean',
         }
     ], metafields, true);
-    return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields })));
+    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields }));
 };
 exports.default = AdminUserForm;

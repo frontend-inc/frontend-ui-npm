@@ -1,15 +1,13 @@
 import React from 'react';
 import { MenuLinkType } from '../../../types';
-type HeaderProps = {
-    sideNav?: boolean;
+export type HeaderProps = {
     mode?: 'accent' | 'light' | 'dark';
     logo?: string;
     enableAuth?: boolean;
     enableStripe?: boolean;
     enableShopify?: boolean;
     enableNotifications?: boolean;
-    bgcolor?: string;
-    menuItems: MenuLinkType[];
+    links?: MenuLinkType[];
     handleClick: (path: string) => void;
 };
 declare const Header: React.FC<HeaderProps>;

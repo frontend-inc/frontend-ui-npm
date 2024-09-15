@@ -10,7 +10,7 @@ var CartTotals = function () {
     var cart = (0, hooks_1.useCart)().cart;
     if ((cart === null || cart === void 0 ? void 0 : cart.total_items) === 0)
         return null;
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1, direction: "row", justifyContent: 'space-between' },
+    return (react_1.default.createElement(material_1.Stack, { spacing: 1, direction: "row", justifyContent: "space-between" },
         react_1.default.createElement(material_1.Typography, { variant: "caption" }, "Subtotal"),
         react_1.default.createElement(material_1.Typography, { variant: "subtitle2" }, cart === null || cart === void 0 ? void 0 : cart.display_subtotal)));
 };

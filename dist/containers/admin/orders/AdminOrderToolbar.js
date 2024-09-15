@@ -100,8 +100,8 @@ var AdminOrderToolbar = function (props) {
                         { label: 'Completed', value: 'completed' },
                         { label: 'Refunded', value: 'refunded' },
                         { label: 'Exchanged', value: 'exchanged' },
-                    ]
-                }
+                    ],
+                },
             ], resource: order, handleChange: handleChange, handleSubmit: handleSubmit })));
 };
 exports.default = AdminOrderToolbar;

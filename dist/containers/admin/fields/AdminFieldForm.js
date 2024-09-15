@@ -54,7 +54,6 @@ var AdminFieldForm = function (props) {
         { label: 'Field', value: 0 },
         { label: 'Settings', value: 1 },
         { label: 'Validate', value: 2 },
-        { label: 'UI', value: 3 },
     ];
     return (react_1.default.createElement(components_1.Drawer, { disablePadding: true, open: open, handleClose: handleClose, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
         react_1.default.createElement(material_1.Box, { p: 2 },
@@ -100,179 +99,119 @@ var AdminFieldForm = function (props) {
                             ],
                         },
                     ] })))),
-            react_1.default.createElement(material_1.Box, { px: 2 },
-                tab == 2 && (react_1.default.createElement(components_1.FormFields, { errors: errors, resource: resource, handleChange: handleChange, fields: [
-                        {
-                            label: 'Validate required',
-                            name: 'validate_required',
-                            variant: 'boolean',
-                        },
-                        {
-                            label: 'Validate unique',
-                            name: 'validate_unique',
-                            variant: 'boolean',
-                        },
-                        {
-                            label: 'Validate length',
-                            name: 'validate_length',
-                            variant: 'boolean',
-                        },
-                        {
-                            label: 'Minimum text length',
-                            name: 'validate_length_min',
-                            variant: 'number',
-                            conditions: [
-                                {
-                                    name: 'validate_length',
-                                    operator: 'eq',
-                                    value: true,
-                                },
-                            ],
-                        },
-                        {
-                            label: 'Maximum text length',
-                            name: 'validate_length_max',
-                            variant: 'number',
-                            conditions: [
-                                {
-                                    name: 'validate_length',
-                                    operator: 'eq',
-                                    value: true,
-                                },
-                            ],
-                        },
-                        {
-                            label: 'Validate number range',
-                            name: 'validate_numericality',
-                            variant: 'boolean',
-                        },
-                        {
-                            label: 'Minimum number',
-                            name: 'validate_length_min',
-                            variant: 'number',
-                            conditions: [
-                                {
-                                    name: 'validate_numericality',
-                                    operator: 'eq',
-                                    value: true,
-                                },
-                            ],
-                        },
-                        {
-                            label: 'Maximum number',
-                            name: 'validate_length_max',
-                            variant: 'number',
-                            conditions: [
-                                {
-                                    name: 'validate_numericality',
-                                    operator: 'eq',
-                                    value: true,
-                                },
-                            ],
-                        },
-                        {
-                            label: 'Validate format',
-                            name: 'validate_format',
-                            variant: 'boolean',
-                        },
-                        {
-                            label: 'Regex format',
-                            name: 'validate_format_regext',
-                            variant: 'string',
-                            conditions: [
-                                {
-                                    name: 'validate_format',
-                                    operator: 'eq',
-                                    value: true,
-                                },
-                            ],
-                        },
-                        {
-                            label: 'Validate inclusion',
-                            name: 'validate_inclusion',
-                            variant: 'boolean',
-                        },
-                        {
-                            label: 'Allowed values',
-                            name: 'validate_inclusion_options',
-                            variant: 'array',
-                            conditions: [
-                                {
-                                    name: 'validate_inclusion',
-                                    operator: 'eq',
-                                    value: true,
-                                },
-                            ],
-                        },
-                    ], handleRemove: function () { return null; } })),
-                tab == 3 && (react_1.default.createElement(components_1.FormFields, { errors: errors, resource: resource, handleChange: handleChange, fields: [
-                        {
-                            label: 'Display field',
-                            name: 'display_field',
-                            variant: 'boolean',
-                            conditions: [
-                                {
-                                    name: 'variant',
-                                    operator: 'nin',
-                                    value: ['habtm', 'file', 'audio', 'video', 'image'],
-                                },
-                            ],
-                        },
-                        {
-                            label: 'Form field',
-                            name: 'form_field',
-                            variant: 'boolean',
-                        },
-                        {
-                            label: 'Search filter field',
-                            name: 'filter_field',
-                            variant: 'boolean',
-                            conditions: [
-                                {
-                                    name: 'variant',
-                                    operator: 'nin',
-                                    value: [
-                                        'habtm',
-                                        'file',
-                                        'audio',
-                                        'video',
-                                        'image',
-                                        'shopify_products',
-                                    ],
-                                },
-                            ],
-                        },
-                        {
-                            label: 'Search sort field',
-                            name: 'sort_field',
-                            variant: 'boolean',
-                            conditions: [
-                                {
-                                    name: 'variant',
-                                    operator: 'nin',
-                                    value: [
-                                        'habtm',
-                                        'file',
-                                        'audio',
-                                        'video',
-                                        'image',
-                                        'shopify_products',
-                                    ],
-                                },
-                            ],
-                        },
-                        {
-                            label: 'Table header',
-                            name: 'table_header',
-                            variant: 'boolean',
-                            conditions: [
-                                {
-                                    name: 'variant',
-                                    operator: 'nin',
-                                    value: ['habtm', 'shopify_products'],
-                                },
-                            ],
-                        },
-                    ] }))))));
+            react_1.default.createElement(material_1.Box, { px: 2 }, tab == 2 && (react_1.default.createElement(components_1.FormFields, { errors: errors, resource: resource, handleChange: handleChange, fields: [
+                    {
+                        label: 'Validate required',
+                        name: 'validate_required',
+                        variant: 'boolean',
+                    },
+                    {
+                        label: 'Validate unique',
+                        name: 'validate_unique',
+                        variant: 'boolean',
+                    },
+                    {
+                        label: 'Validate email',
+                        name: 'validate_email',
+                        variant: 'boolean',
+                    },
+                    {
+                        label: 'Validate phone number',
+                        name: 'validate_phone',
+                        variant: 'boolean',
+                    },
+                    {
+                        label: 'Validate length',
+                        name: 'validate_length',
+                        variant: 'boolean',
+                    },
+                    {
+                        label: 'Minimum text length',
+                        name: 'validate_length_min',
+                        variant: 'number',
+                        conditions: [
+                            {
+                                name: 'validate_length',
+                                operator: 'eq',
+                                value: true,
+                            },
+                        ],
+                    },
+                    {
+                        label: 'Maximum text length',
+                        name: 'validate_length_max',
+                        variant: 'number',
+                        conditions: [
+                            {
+                                name: 'validate_length',
+                                operator: 'eq',
+                                value: true,
+                            },
+                        ],
+                    },
+                    {
+                        label: 'Validate number range',
+                        name: 'validate_numericality',
+                        variant: 'boolean',
+                    },
+                    {
+                        label: 'Minimum number',
+                        name: 'validate_length_min',
+                        variant: 'number',
+                        conditions: [
+                            {
+                                name: 'validate_numericality',
+                                operator: 'eq',
+                                value: true,
+                            },
+                        ],
+                    },
+                    {
+                        label: 'Maximum number',
+                        name: 'validate_length_max',
+                        variant: 'number',
+                        conditions: [
+                            {
+                                name: 'validate_numericality',
+                                operator: 'eq',
+                                value: true,
+                            },
+                        ],
+                    },
+                    {
+                        label: 'Validate format',
+                        name: 'validate_format',
+                        variant: 'boolean',
+                    },
+                    {
+                        label: 'Regex format',
+                        name: 'validate_format_regext',
+                        variant: 'string',
+                        conditions: [
+                            {
+                                name: 'validate_format',
+                                operator: 'eq',
+                                value: true,
+                            },
+                        ],
+                    },
+                    {
+                        label: 'Validate inclusion',
+                        name: 'validate_inclusion',
+                        variant: 'boolean',
+                    },
+                    {
+                        label: 'Allowed values',
+                        name: 'validate_inclusion_options',
+                        variant: 'array',
+                        conditions: [
+                            {
+                                name: 'validate_inclusion',
+                                operator: 'eq',
+                                value: true,
+                            },
+                        ],
+                    },
+                ], handleRemove: function () { return null; } }))))));
 };
 exports.default = AdminFieldForm;

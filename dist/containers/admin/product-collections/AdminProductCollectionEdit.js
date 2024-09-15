@@ -36,8 +36,8 @@ var AdminProductCollectionForm = function (props) {
         { label: 'Label', name: 'label', variant: 'string' }
     ], metafields, true);
     var inputOptions = {
-        media: containers_1.MediaInput
+        media: containers_1.MediaInput,
     };
-    return (react_1.default.createElement(components_1.ResourceForm, __assign({ fields: fields, inputOptions: inputOptions }, props)));
+    return react_1.default.createElement(components_1.ResourceForm, __assign({ fields: fields, inputOptions: inputOptions }, props));
 };
 exports.default = AdminProductCollectionForm;

@@ -1,8 +1,10 @@
 import React from 'react';
 import { MenuLinkType } from '../../../types';
-type FooterProps = {
-    menuLinks: MenuLinkType[];
-    socialLinks: {
+export type FooterProps = {
+    logo?: string;
+    links?: MenuLinkType[];
+    legalLinks?: MenuLinkType[];
+    socialLinks?: {
         label: string;
         provider: string;
         url: string;

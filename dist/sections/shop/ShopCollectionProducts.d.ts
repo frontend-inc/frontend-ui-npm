@@ -1,6 +1,6 @@
 import React from 'react';
-import { CollectionProductsGridProps } from '../../components/shop/collection-products/CollectionProductsGrid';
+import { CollectionProductsProps } from '../../components/shop/collection-products/CollectionProducts';
 import { SectionProps, HeadingProps } from '../../types';
-type ShopCollectionProductsProps = CollectionProductsGridProps & SectionProps & HeadingProps;
+type ShopCollectionProductsProps = CollectionProductsProps & SectionProps & HeadingProps;
 declare const ShopCollectionProducts: React.FC<ShopCollectionProductsProps>;
 export default ShopCollectionProducts;

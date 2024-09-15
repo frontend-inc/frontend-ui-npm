@@ -19,7 +19,7 @@ var ShowLayout = function (props) {
                 }), numVisible: 4, resource: resource, justifyContent: "center" }))),
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
-            enableRatings == true && react_1.default.createElement(__1.ProductRating, { resource: resource, enableTotal: true }),
+            enableRatings == true && (react_1.default.createElement(__1.ProductRating, { resource: resource, enableTotal: true })),
             (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }))),
         react_1.default.createElement(material_1.Box, { sx: sx.container }, children),
         react_1.default.createElement(__1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),

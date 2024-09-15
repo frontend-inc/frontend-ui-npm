@@ -157,5 +157,5 @@ var sx = {
     image: {
         width: 96,
         height: 96,
-    }
+    },
 };

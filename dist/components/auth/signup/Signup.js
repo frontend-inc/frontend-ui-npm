@@ -46,9 +46,9 @@ var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var Signup = function (props) {
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var href = props.href, loginUrl = props.loginUrl, _a = props.title, title = _a === void 0 ? 'Sign Up' : _a, _b = props.subtitle, subtitle = _b === void 0 ? 'Register your account' : _b;
+    var href = props.href, loginUrl = props.loginUrl, _a = props.title, title = _a === void 0 ? 'Sign Up' : _a, _b = props.subtitle, subtitle = _b === void 0 ? 'Register your account' : _b, _c = props.enableGoogle, enableGoogle = _c === void 0 ? false : _c;
     var router = (0, router_1.useRouter)();
-    var _c = (0, frontend_js_1.useAuth)(), loading = _c.loading, errors = _c.errors, user = _c.user, handleChange = _c.handleChange, signup = _c.signup;
+    var _d = (0, frontend_js_1.useAuth)(), loading = _d.loading, errors = _d.errors, user = _d.user, handleChange = _d.handleChange, signup = _d.signup;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -69,7 +69,10 @@ var Signup = function (props) {
             "".concat(clientUrl).concat(loginUrl);
         }
     };
+    var handleGoogleSuccess = function () {
+        router.push("".concat(clientUrl).concat(href));
+    };
     return (react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
-        react_1.default.createElement(components_1.SignupForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: loginUrl ? handleLogin : false })));
+        react_1.default.createElement(components_1.SignupForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleLogin: loginUrl ? handleLogin : false, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })));
 };
 exports.default = Signup;

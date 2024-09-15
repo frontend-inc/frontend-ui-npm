@@ -17,6 +17,6 @@ var StripeCustomerPortal = function () {
             showAlertError('Stripe Customer Portal not enabled.');
         }
     };
-    return (react_1.default.createElement(components_1.Placeholder, { icon: "CreditCard", title: "Stripe Customer Portal", description: "Manage your subscription and order history.", buttons: react_1.default.createElement(components_1.PrimaryButton, { onClick: handleClick, icon: 'ExternalLink' }, "Open Customer Portal") }));
+    return (react_1.default.createElement(components_1.Placeholder, { icon: "CreditCard", title: "Stripe Customer Portal", description: "Manage your subscription and order history.", buttons: react_1.default.createElement(components_1.PrimaryButton, { onClick: handleClick, icon: "ExternalLink" }, "Open Customer Portal") }));
 };
 exports.default = StripeCustomerPortal;

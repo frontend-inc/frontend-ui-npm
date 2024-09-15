@@ -29,7 +29,7 @@ var AdminShipmentForm = function (props) {
                     { label: 'UPS', value: 'ups' },
                     { label: 'USPS', value: 'usps' },
                     { label: 'Other', value: 'other' },
-                ]
+                ],
             },
             {
                 label: 'Tracking code',
@@ -44,7 +44,7 @@ var AdminShipmentForm = function (props) {
                 options: [
                     { label: 'Shipped', value: 'pending' },
                     { label: 'Delivered', value: 'delivered' },
-                ]
+                ],
             },
         ] })));
 };

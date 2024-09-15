@@ -55,7 +55,7 @@ var CollectionList = function (props) {
         list: false,
         text: false,
         card: true,
-        cover: true
+        cover: true,
     }[style] || false;
     return (react_1.default.createElement(components_1.DataList, { grid: grid, url: url, foreignUrl: foreignUrl, name: "document", query: searchQuery, fields: fields, enableShow: enableShow, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, filterOptions: filterOptions, sortOptions: sortOptions, header: Header, list: List, component: Component, show: Show, empty: Empty, slots: slots }));
 };

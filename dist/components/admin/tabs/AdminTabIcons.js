@@ -44,9 +44,10 @@ var TabIcons = function (props) {
         react_1.default.createElement(material_1.Box, { width: "100%" },
             react_1.default.createElement(material_1.Box, { sx: sx.menuItems },
                 logo && (react_1.default.createElement(material_1.Button, { sx: sx.logoButton, onClick: handleHomeClick },
-                    react_1.default.createElement(image_1.default, { src: logo, height: 24, width: 24, alt: "logo" }))), menuItems === null || menuItems === void 0 ? void 0 :
-                menuItems.map(function (item, index) { return (react_1.default.createElement(material_1.Box, { px: 1, key: index },
-                    react_1.default.createElement(AdminTabIcon_1.default, { selected: activeTab == item.id, icon: item.icon, handleClick: function () { return handleClick(item); } }))); }))),
+                    react_1.default.createElement(image_1.default, { src: logo, height: 24, width: 24, alt: "logo" }))),
+                Array.isArray(menuItems) &&
+                    (menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (item, index) { return (react_1.default.createElement(material_1.Box, { px: 1, key: index },
+                        react_1.default.createElement(AdminTabIcon_1.default, { selected: activeTab == item.id, icon: item.icon, handleClick: function () { return handleClick(item); } }))); })))),
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, divider: react_1.default.createElement(material_1.Divider, null), sx: sx.bottomTabs },
             secondaryActions,
             react_1.default.createElement(AdminTabAuth_1.default, null))));

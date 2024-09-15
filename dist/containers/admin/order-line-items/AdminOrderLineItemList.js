@@ -13,7 +13,7 @@ var AdminOrderLineItemsList = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     return (react_1.default.createElement(components_1.ResourceList, { selectable: true, url: "".concat(apiUrl, "/orders/").concat(orderId, "/order_line_items"), name: 'order', enableSearch: true, enableEdit: true, query: {
             sort_by: 'created_at',
-            sort_direction: 'desc'
+            sort_direction: 'desc',
         }, component: AdminOrderLineItem_1.default, toolbar: AdminOrderLineItemToolbar_1.default, emptyIcon: "Shirt", emptyTitle: "No order line items", emptyDescription: "No order line items." }));
 };
 exports.default = AdminOrderLineItemsList;

@@ -52,8 +52,8 @@ var AdminProductForm = function (props) {
         }
     ], metafields, true);
     var inputOptions = {
-        media: containers_1.MediaInput
+        media: containers_1.MediaInput,
     };
-    return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields, inputOptions: inputOptions })));
+    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields, inputOptions: inputOptions }));
 };
 exports.default = AdminProductForm;

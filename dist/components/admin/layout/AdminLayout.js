@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var AdminLayout = function (props) {
-    var logo = props.logo, children = props.children, handleClick = props.handleClick, menuItems = props.menuItems, secondaryActions = props.secondaryActions;
+    var logo = props.logo, children = props.children, handleClick = props.handleClick, _a = props.menuItems, menuItems = _a === void 0 ? [] : _a, secondaryActions = props.secondaryActions;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(components_1.Alert, { anchorBottom: true }),
         react_1.default.createElement(components_1.AdminLayoutTabs, null,

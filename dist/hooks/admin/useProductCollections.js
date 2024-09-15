@@ -53,7 +53,7 @@ var useProductCollections = function () {
                 case 0: return [4 /*yield*/, loadingWrapper(function () {
                         return api.addProducts(productCollectionId, productIds, {
                             url: url,
-                            name: 'products'
+                            name: 'products',
                         });
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
@@ -66,7 +66,7 @@ var useProductCollections = function () {
                 case 0: return [4 /*yield*/, loadingWrapper(function () {
                         return api.removeProducts(productCollectionId, productIds, {
                             url: url,
-                            name: 'products'
+                            name: 'products',
                         });
                     })];
                 case 1: return [2 /*return*/, _a.sent()];

@@ -53,7 +53,7 @@ var CheckoutButton = function () {
                     currentUrl = window.location.href;
                     return [4 /*yield*/, checkout({
                             success_url: currentUrl,
-                            cancel_url: currentUrl
+                            cancel_url: currentUrl,
                         })];
                 case 1:
                     resp = _b.sent();

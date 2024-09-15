@@ -64,7 +64,7 @@ var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
 var material_2 = require("@mui/material");
 var __1 = require("../..");
-var TopNavStripeCustomerPortalButton = function (props) {
+var TopStripeCustomerPortalButton = function (props) {
     var handleClick = props.handleClick, icon = props.icon;
     return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
         react_1.default.createElement(__1.Icon, { name: icon, size: 24 })));
@@ -90,7 +90,7 @@ var StripeCustomerPortalButton = function (props) {
     }); };
     if (!stripeCustomerPortalUrl)
         return null;
-    return variant == 'topNav' ? (react_1.default.createElement(TopNavStripeCustomerPortalButton, { icon: icon, handleClick: handleClick })) : (react_1.default.createElement(SideNavStripeCustomerPortalButton, { icon: icon, handleClick: handleClick }));
+    return variant == 'topNav' ? (react_1.default.createElement(TopStripeCustomerPortalButton, { icon: icon, handleClick: handleClick })) : (react_1.default.createElement(SideNavStripeCustomerPortalButton, { icon: icon, handleClick: handleClick }));
 };
 exports.default = StripeCustomerPortalButton;
 var sx = {

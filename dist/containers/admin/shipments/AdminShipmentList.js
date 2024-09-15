@@ -14,7 +14,7 @@ var AdminShipmentsList = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     return (react_1.default.createElement(components_1.ResourceList, { url: "".concat(apiUrl, "/orders/").concat(orderId, "/shipments"), name: 'shipment', enableSearch: true, enableCreate: true, enableEdit: true, query: {
             sort_by: 'created_at',
-            sort_direction: 'desc'
+            sort_direction: 'desc',
         }, component: AdminShipmentItem_1.default, edit: AdminShipmentForm_1.default, create: AdminShipmentForm_1.default, toolbar: AdminShipmentToolbar_1.default, emptyIcon: "Package", emptyTitle: "No shipments", emptyDescription: "No shipments yet." }));
 };
 exports.default = AdminShipmentsList;

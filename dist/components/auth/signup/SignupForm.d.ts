@@ -7,6 +7,8 @@ type SignupFormProps = {
     handleSubmit: () => void;
     handleLogin: false | (() => void);
     disableUsername?: boolean;
+    enableGoogle?: boolean;
+    handleGoogleSuccess?: () => void;
 };
 declare const SignupForm: React.FC<SignupFormProps>;
 export default SignupForm;

@@ -11,6 +11,8 @@ export type FormWizardProps = {
     };
     handleChange: (ev: any) => void;
     handleRemove: (name: string) => void;
+    handleAddAttachment: (field: string, attachmentId: number) => void;
+    handleRemoveAttachment: (field: string) => void;
     resource: any;
     fadeIn: boolean;
     setResource: (resource: any) => void;

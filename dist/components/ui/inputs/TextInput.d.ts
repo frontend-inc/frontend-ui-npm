@@ -5,6 +5,7 @@ type TextInputProps = TextInputPropsType & {
     onFocus?: () => void;
     debounceDelay?: number;
     disableDebounce?: boolean;
+    fontSize?: number;
 };
 declare const TextInput: React.FC<TextInputProps>;
 export default TextInput;

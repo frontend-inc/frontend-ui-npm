@@ -95,13 +95,13 @@ var SubscriptionTable = function () {
                     currentUrl = window.location.href;
                     return [4 /*yield*/, subscribe(subscription === null || subscription === void 0 ? void 0 : subscription.id, {
                             success_url: currentUrl,
-                            cancel_url: currentUrl
+                            cancel_url: currentUrl,
                         })
-                        //@ts-ignore   
+                        //@ts-ignore
                     ];
                 case 1:
                     resp = _a.sent();
-                    //@ts-ignore   
+                    //@ts-ignore
                     if (resp === null || resp === void 0 ? void 0 : resp.url) {
                         //@ts-ignore
                         router.push(resp.url);
@@ -130,7 +130,7 @@ var sx = {
         alignItems: 'center',
     },
     loading: {
-        opacity: 0.5
+        opacity: 0.5,
     },
     divider: {
         height: '100%',

@@ -18,7 +18,7 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var RelatedProductList = function (props) {
     var resource = props.resource;
-    var url = "/ecommerce/products/".concat(resource === null || resource === void 0 ? void 0 : resource.id, "/related_products");
+    var url = "/shop/products/".concat(resource === null || resource === void 0 ? void 0 : resource.id, "/related_products");
     return (react_1.default.createElement(__1.ProductList, __assign({}, props, { url: url, resource: resource, list: __1.RelatedProductListItems })));
 };
 exports.default = RelatedProductList;

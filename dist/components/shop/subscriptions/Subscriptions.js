@@ -92,7 +92,7 @@ var SubscriptionList = function (props) {
                     currentUrl = window.location.href;
                     return [4 /*yield*/, subscribe(activeSubscription.id, {
                             success_url: currentUrl,
-                            cancel_url: currentUrl
+                            cancel_url: currentUrl,
                         })];
                 case 1:
                     resp = _a.sent();
@@ -146,6 +146,6 @@ var SubscriptionList = function (props) {
 exports.default = SubscriptionList;
 var sx = {
     loading: {
-        opacity: 0.5
-    }
+        opacity: 0.5,
+    },
 };

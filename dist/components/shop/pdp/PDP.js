@@ -113,6 +113,6 @@ var sx = {
         pb: 2,
     },
     description: {
-        whiteSpace: 'pre-line'
-    }
+        whiteSpace: 'pre-line',
+    },
 };

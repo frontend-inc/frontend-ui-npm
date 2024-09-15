@@ -16,9 +16,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
+var frontend_js_1 = require("frontend-js");
 var Show = function (props) {
-    var _a = props || {}, url = _a.url, foreignUrl = _a.foreignUrl, fields = _a.fields, resource = _a.resource;
-    return (react_1.default.createElement(__1.ShowContainer, { url: url, foreignUrl: foreignUrl, fields: fields, resource: resource },
+    var _a = props || {}, url = _a.url, foreignUrl = _a.foreignUrl, resource = _a.resource;
+    return (react_1.default.createElement(frontend_js_1.ResourceProvider, { name: "document", url: url, foreignUrl: foreignUrl, resource: resource },
         react_1.default.createElement(__1.ShowItem, __assign({}, props, { url: url }))));
 };
 exports.default = Show;

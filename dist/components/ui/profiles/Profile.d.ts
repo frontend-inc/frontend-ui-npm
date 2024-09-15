@@ -1,16 +1,14 @@
 import React from 'react';
 export type ProfileProps = {
-    src: string;
-    title: string;
-    description: string;
+    image?: string;
     label?: string;
+    title?: string;
+    description?: string;
     socialLinks?: {
-        label: string;
         value: string;
+        provider: string;
         url: string;
     }[];
-    buttons?: React.ReactNode;
-    disableRing?: boolean;
 };
 declare const Profile: React.FC<ProfileProps>;
 export default Profile;

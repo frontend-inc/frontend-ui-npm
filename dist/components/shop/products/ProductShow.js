@@ -11,7 +11,7 @@ var ShowModal = function (props) {
     var _b = props || {}, _c = _b.buttons, buttons = _c === void 0 ? [] : _c, _d = _b.displayFields, displayFields = _d === void 0 ? [] : _d, enableRatings = _b.enableRatings, enableLikes = _b.enableLikes, enableFavorites = _b.enableFavorites, enableSharing = _b.enableSharing, enableAddToList = _b.enableAddToList, enableEdit = _b.enableEdit, handleEdit = _b.handleEdit;
     if (!resource)
         return null;
-    return (react_1.default.createElement(__1.Modal, { open: openShow, handleClose: function () { return setOpenShow(false); }, maxWidth: 'md', title: resource === null || resource === void 0 ? void 0 : resource.title },
+    return (react_1.default.createElement(__1.Modal, { open: openShow, handleClose: function () { return setOpenShow(false); }, maxWidth: "md", title: resource === null || resource === void 0 ? void 0 : resource.title },
         react_1.default.createElement(__1.ProductDetails, { product: resource, enableEdit: enableEdit, buttons: buttons, displayFields: displayFields, enableRatings: enableRatings, handleEdit: handleEdit, enableLikes: enableLikes, enableFavorites: enableFavorites, enableAddToList: enableAddToList, enableSharing: enableSharing, slots: {
                 image: {
                     disableBorderRadius: true,

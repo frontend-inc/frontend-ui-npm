@@ -31,6 +31,6 @@ var components_2 = require("../../components");
 var CmsFormWizard = function (props) {
     var mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requirePaid = props.requirePaid, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requirePaid"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: true, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_2.FormWizard, __assign({}, rest))));
+        react_1.default.createElement(components_2.DocumentFormWizardModal, __assign({}, rest))));
 };
 exports.default = CmsFormWizard;

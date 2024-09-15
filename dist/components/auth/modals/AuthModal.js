@@ -75,14 +75,14 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var router_1 = require("next/router");
 var material_1 = require("@mui/material");
-var context_1 = require("../../../context");
+var hooks_1 = require("../../../hooks");
 var AuthModal = function (props) {
-    var _a = props.disableUsername, disableUsername = _a === void 0 ? false : _a;
+    var _a = props.disableUsername, disableUsername = _a === void 0 ? false : _a, enableGoogle = props.enableGoogle, handleSuccess = props.handleSuccess;
     var router = (0, router_1.useRouter)();
     var appId = router.query.app_id;
-    var _b = (0, react_1.useContext)(context_1.AppContext), authOpen = _b.authOpen, setAuthOpen = _b.setAuthOpen;
+    var _b = (0, hooks_1.useApp)(), authOpen = _b.authOpen, setAuthOpen = _b.setAuthOpen;
     var _c = (0, frontend_js_1.useAuth)(), errors = _c.errors, loading = _c.loading, user = _c.user, updateMe = _c.updateMe, handleChange = _c.handleChange, login = _c.login, signup = _c.signup, verifyPin = _c.verifyPin, sendPin = _c.sendPin;
-    var _d = (0, react_1.useState)(0), tab = _d[0], setTab = _d[1];
+    var _d = (0, react_1.useState)(1), tab = _d[0], setTab = _d[1];
     var handleTabChange = function (ev, newValue) {
         setTab(newValue);
     };
@@ -95,7 +95,9 @@ var AuthModal = function (props) {
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setAuthOpen(false);
-                        //window.location.reload()
+                        if (handleSuccess) {
+                            handleSuccess();
+                        }
                     }
                     return [2 /*return*/];
             }
@@ -111,8 +113,17 @@ var AuthModal = function (props) {
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setAuthOpen(false);
                     }
+                    if (handleSuccess) {
+                        handleSuccess();
+                    }
                     return [2 /*return*/];
             }
+        });
+    }); };
+    var handleGoogleSuccess = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            setAuthOpen(false);
+            return [2 /*return*/];
         });
     }); };
     var handleSendPin = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -171,17 +182,17 @@ var AuthModal = function (props) {
     };
     (0, react_1.useEffect)(function () {
         if (authOpen) {
-            setTab(0);
+            setTab(1);
         }
     }, [authOpen]);
     return (react_1.default.createElement(__1.Modal, { open: authOpen, handleClose: function () { return setAuthOpen(false); } },
         react_1.default.createElement(material_1.Box, { sx: sx.tabsContainer },
-            react_1.default.createElement(material_1.Tabs, { value: tab, onChange: handleTabChange },
+            react_1.default.createElement(material_1.Tabs, { value: tab, onChange: handleTabChange, variant: "fullWidth" },
                 react_1.default.createElement(material_1.Tab, { label: "Login", value: 0 }),
                 react_1.default.createElement(material_1.Tab, { label: "Register", value: 1 }))),
         react_1.default.createElement(material_1.Box, { px: 4, sx: sx.content },
-            tab === 0 && (react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleLogin, handleSignup: handleSignupClick, handleForgotPassword: handleForgotPasswordClick })),
-            tab === 1 && (react_1.default.createElement(__1.SignupForm, { disableUsername: disableUsername, errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSignup, handleLogin: handleLoginClick })),
+            tab === 0 && (react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleLogin, handleSignup: handleSignupClick, handleForgotPassword: handleForgotPasswordClick, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })),
+            tab === 1 && (react_1.default.createElement(__1.SignupForm, { disableUsername: disableUsername, errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSignup, handleLogin: handleLoginClick, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })),
             tab === 2 && (react_1.default.createElement(__1.ForgotPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),
             tab === 3 && (react_1.default.createElement(__1.VerifyPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPinClick })),
             tab === 4 && (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),
@@ -194,6 +205,7 @@ var sx = {
         justifyContent: 'center',
     },
     content: {
+        mt: 1,
         width: '100%',
     },
     tabsContainer: {

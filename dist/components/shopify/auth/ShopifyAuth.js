@@ -66,7 +66,7 @@ var material_2 = require("@mui/material");
 var frontend_shopify_2 = require("frontend-shopify");
 var components_1 = require("../../../components");
 var router_1 = require("next/router");
-var TopNavShopifyAuthButton = function (props) {
+var TopShopifyAuthButton = function (props) {
     var handleClick = props.handleClick, icon = props.icon;
     return (react_1.default.createElement(material_1.IconButton, { onClick: handleClick },
         react_1.default.createElement(components_1.Icon, { name: icon, size: 24 })));
@@ -114,7 +114,7 @@ var ShopifyAuth = function (props) {
     }); };
     if (!customerPortalUrl)
         return null;
-    return variant == 'topNav' ? (react_1.default.createElement(TopNavShopifyAuthButton, { icon: icon, handleClick: handleClick })) : (react_1.default.createElement(SideNavShopifyAuthButton, { icon: icon, handleClick: handleClick }));
+    return variant == 'topNav' ? (react_1.default.createElement(TopShopifyAuthButton, { icon: icon, handleClick: handleClick })) : (react_1.default.createElement(SideNavShopifyAuthButton, { icon: icon, handleClick: handleClick }));
 };
 exports.default = ShopifyAuth;
 var sx = {

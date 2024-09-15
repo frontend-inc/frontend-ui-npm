@@ -82,3 +82,5 @@ export { default as TextModal } from './TextModal';
 export { default as Swipeable } from './swipeable/Swipeable';
 export { default as Debug } from './debug/Debug';
 export { default as LightDarkMode } from './theme/LightDarkMode';
+export { default as LightTheme } from './theme/LightTheme';
+export { default as DarkTheme } from './theme/DarkTheme';

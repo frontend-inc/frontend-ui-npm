@@ -54,5 +54,5 @@ var sx = {
     addToCart: {
         width: '100%',
         maxWidth: '300px',
-    }
+    },
 };

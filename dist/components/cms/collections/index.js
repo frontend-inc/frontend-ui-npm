@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShowVideoModal = exports.ShowImageModal = exports.ReferenceCollectionListItems = exports.ReferenceCollectionList = exports.CollectionHeader = exports.CollectionDelete = exports.CollectionForm = exports.CollectionShow = exports.CollectionListItems = exports.CollectionListItem = exports.CollectionList = exports.CollectionEmpty = exports.VideoListItems = exports.VideoList = exports.SimilarList = exports.LikesGrid = exports.ImageListItems = exports.ImageList = exports.GeoHeader = exports.GeoNearbyList = exports.GeoList = exports.FavoritesGrid = exports.CarouselList = exports.DataTableListItems = exports.DataTableList = void 0;
+exports.ShowVideoModal = exports.ShowImageModal = exports.ReferenceCollectionListItems = exports.ReferenceCollectionList = exports.CollectionHeader = exports.CollectionDelete = exports.CollectionShow = exports.CollectionListItems = exports.CollectionListItem = exports.CollectionList = exports.CollectionEmpty = exports.VideoListItems = exports.VideoList = exports.SimilarList = exports.LikesGrid = exports.ImageListItems = exports.ImageList = exports.GeoHeader = exports.GeoNearbyList = exports.GeoList = exports.FavoritesGrid = exports.CarouselList = exports.DataTableListItems = exports.DataTableList = void 0;
 var DataTableList_1 = require("./DataTableList");
 Object.defineProperty(exports, "DataTableList", { enumerable: true, get: function () { return __importDefault(DataTableList_1).default; } });
 var DataTableListItems_1 = require("./DataTableListItems");
@@ -41,8 +41,6 @@ var CollectionListItems_1 = require("./CollectionListItems");
 Object.defineProperty(exports, "CollectionListItems", { enumerable: true, get: function () { return __importDefault(CollectionListItems_1).default; } });
 var CollectionShow_1 = require("./CollectionShow");
 Object.defineProperty(exports, "CollectionShow", { enumerable: true, get: function () { return __importDefault(CollectionShow_1).default; } });
-var CollectionForm_1 = require("./CollectionForm");
-Object.defineProperty(exports, "CollectionForm", { enumerable: true, get: function () { return __importDefault(CollectionForm_1).default; } });
 var CollectionDelete_1 = require("./CollectionDelete");
 Object.defineProperty(exports, "CollectionDelete", { enumerable: true, get: function () { return __importDefault(CollectionDelete_1).default; } });
 var CollectionHeader_1 = require("./CollectionHeader");

@@ -42,5 +42,5 @@ var sx = {
     image: {
         height: 64,
         width: 64,
-    }
+    },
 };

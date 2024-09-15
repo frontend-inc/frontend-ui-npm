@@ -1,5 +1,6 @@
 import React from 'react';
 type FormWizardButtonsProps = {
+    loading?: boolean;
     currentStep: number;
     totalSteps: number;
     buttonText: string;

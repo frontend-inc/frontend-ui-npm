@@ -49,9 +49,7 @@ function useApps() {
     var publishApp = function (appId) { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.post("".concat(apiUrl, "/publish"));
-                    })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("".concat(apiUrl, "/publish")); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -59,9 +57,15 @@ function useApps() {
     var buildApp = function (appId) { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.post("".concat(apiUrl, "/build"));
-                    })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("".concat(apiUrl, "/build")); })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
+    var generateAI = function (appId) { return __awaiter(_this, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("".concat(apiUrl, "/generate_ai")); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -98,6 +102,7 @@ function useApps() {
         handleSort: handleSort,
         setApp: setApp,
         setApps: setApps,
+        generateAI: generateAI,
         publishApp: publishApp,
         buildApp: buildApp,
     };

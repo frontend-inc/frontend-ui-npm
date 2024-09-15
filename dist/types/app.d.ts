@@ -6,17 +6,12 @@ export type MenuType = {
 };
 export type MenuLinkTypes = 'dropdown' | 'link' | 'sublink' | 'shopify_collection' | 'shopify_product' | 'url';
 export type MenuLinkType = {
-    name: string;
+    label: string;
     path: string;
-    header?: boolean;
     url?: string;
     icon?: string;
     link_type?: MenuLinkTypes;
-    require_auth?: boolean;
     position: number;
-    document_id?: number;
-    collection_id?: number;
-    parent_id?: number | null;
     shopify_handle?: string;
     children: MenuLinkType[] | [];
 };

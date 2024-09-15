@@ -20,13 +20,13 @@ var containers_1 = require("../../../containers");
 var AdminSubscriptionForm = function (props) {
     var _a = props || {}, handleAddAttachment = _a.handleAddAttachment, handleRemoveAttachment = _a.handleRemoveAttachment;
     var inputOptions = {
-        media: containers_1.MediaInput
+        media: containers_1.MediaInput,
     };
     var inputParams = {
         media: {
             handleAddAttachment: handleAddAttachment,
             handleRemoveAttachment: handleRemoveAttachment,
-        }
+        },
     };
     return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { inputOptions: inputOptions, inputParams: inputParams, fields: [
             { name: 'label', label: 'Label', variant: 'string' },

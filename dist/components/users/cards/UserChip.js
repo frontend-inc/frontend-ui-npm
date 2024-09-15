@@ -14,7 +14,7 @@ var UserChip = function (props) {
         react_1.default.createElement(__1.UserAvatar, { user: user, size: size }),
         react_1.default.createElement(material_1.Stack, { sx: sx.root, direction: "column", spacing: 0 },
             react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, user === null || user === void 0 ? void 0 : user.name),
-            (enableEmail && (user === null || user === void 0 ? void 0 : user.email)) && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, user === null || user === void 0 ? void 0 : user.email)),
+            enableEmail && (user === null || user === void 0 ? void 0 : user.email) && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, user === null || user === void 0 ? void 0 : user.email)),
             enableUsername && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" },
                 "@", user === null || user === void 0 ? void 0 :
                 user.username)))));

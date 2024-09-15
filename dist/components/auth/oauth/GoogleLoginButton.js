@@ -71,7 +71,7 @@ var GoogleLoginButton = function (props) {
     var _b = (0, react_1.useState)(null), OAuthCredentials = _b[0], setOAuthCredentials = _b[1];
     var handleLogin = (0, google_1.useGoogleLogin)({
         onSuccess: function (codeResponse) { return setOAuthCredentials(codeResponse); },
-        onError: function (error) { return console.log('Login Failed:', error); },
+        onError: function (error) { return console.log('Google Error:', error); },
     });
     var handleGoogleLogin = function (accessToken) { return __awaiter(void 0, void 0, void 0, function () {
         var resp;

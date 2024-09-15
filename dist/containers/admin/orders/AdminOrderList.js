@@ -20,14 +20,14 @@ var AdminOrdersList = function (props) {
     };
     return (react_1.default.createElement(components_1.ResourceList, { selectable: true, url: "".concat(apiUrl, "/orders"), name: 'order', enableSearch: true, enableEdit: true, handleClick: handleClick, query: {
             sort_by: 'number',
-            sort_direction: 'desc'
+            sort_direction: 'desc',
         }, filterOptions: [
             {
                 label: 'Status',
                 field: 'status',
                 variant: 'multiple_choice',
-                options: constants_1.ORDER_STATES
-            }
+                options: constants_1.ORDER_STATES,
+            },
         ], edit: AdminOrderForm_1.default, toolbar: AdminOrderToolbar_1.default, component: AdminOrderItem_1.default, emptyIcon: "ShoppingCart", emptyTitle: "No orders", emptyDescription: "No orders added yet." }));
 };
 exports.default = AdminOrdersList;

@@ -31,6 +31,6 @@ var sx = {
         height: 96,
     },
     paper: {
-        p: 2
-    }
+        p: 2,
+    },
 };

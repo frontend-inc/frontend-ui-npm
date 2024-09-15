@@ -25,14 +25,14 @@ var AdminOrderDetails = function (props) {
     var handleCopyEmail = function () {
         if (order.customer_email) {
             (0, copy_to_clipboard_1.default)(order.customer_email);
-            showAlertSuccess("Email copied to clipboard");
+            showAlertSuccess('Email copied to clipboard');
         }
         else {
-            showAlertError("No email to copy");
+            showAlertError('No email to copy');
         }
     };
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.grid), (loading && sx.loading)) },
-        react_1.default.createElement(material_1.Stack, { spacing: 1, direction: 'row' },
+        react_1.default.createElement(material_1.Stack, { spacing: 1, direction: "row" },
             react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "text.primary" },
                 "Order ",
                 order.display_number),
@@ -79,7 +79,7 @@ var sx = {
         gap: '16px',
     },
     paper: {
-        p: 2
+        p: 2,
     },
     actions: {
         display: 'flex',
@@ -92,14 +92,14 @@ var sx = {
         alignItems: 'center',
         pb: 1,
         borderBottom: '1px solid',
-        borderColor: 'divider'
+        borderColor: 'divider',
     },
     emailButton: {
         mt: 1,
         p: '2px',
-        color: 'text.primary'
+        color: 'text.primary',
     },
     address: {
-        whiteSpace: 'pre-line'
-    }
+        whiteSpace: 'pre-line',
+    },
 };

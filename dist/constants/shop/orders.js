@@ -12,5 +12,5 @@ exports.ORDER_STATES = [
     { label: 'Exchanged', value: 'exchanged' },
     { label: 'Returned', value: 'returned' },
     { label: 'Lost', value: 'lost' },
-    { label: 'Other', value: 'other' }
+    { label: 'Other', value: 'other' },
 ];

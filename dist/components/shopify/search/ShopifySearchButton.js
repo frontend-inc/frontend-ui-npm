@@ -29,7 +29,7 @@ var material_2 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
 var __1 = require("../..");
-var TopNavSearchButton = function (props) {
+var TopSearchButton = function (props) {
     var handleClick = props.handleClick;
     return (react_1.default.createElement(material_1.IconButton, { sx: sx.root, onClick: handleClick },
         react_1.default.createElement(__1.Icon, { name: "Search", size: 24 })));
@@ -48,7 +48,7 @@ var ShopifySearchButton = function (props) {
         setMenuOpen(false);
         toggleSearch();
     };
-    return variant == 'topNav' ? (react_1.default.createElement(TopNavSearchButton, { handleClick: handleToggleSearch })) : (react_1.default.createElement(SideNavSearchButton, { handleClick: handleToggleSearch }));
+    return variant == 'topNav' ? (react_1.default.createElement(TopSearchButton, { handleClick: handleToggleSearch })) : (react_1.default.createElement(SideNavSearchButton, { handleClick: handleToggleSearch }));
 };
 exports.default = ShopifySearchButton;
 var sx = {

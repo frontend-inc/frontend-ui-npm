@@ -100,17 +100,14 @@ var AdminFieldItem = function (props) {
     (0, react_1.useEffect)(function () {
         setField(resource);
     }, [resource]);
-    return (react_1.default.createElement(components_1.ResourceListItem, { enableBorder: true, sortable: sortable, avatar: react_1.default.createElement(__1.FieldIcon, { variant: field === null || field === void 0 ? void 0 : field.variant }), primary: field === null || field === void 0 ? void 0 : field.label, secondary: field === null || field === void 0 ? void 0 : field.name, secondaryAction: react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement(components_1.ResourceListItem, { enableBorder: true, sortable: sortable, avatar: react_1.default.createElement(__1.FieldIcon, { variant: field === null || field === void 0 ? void 0 : field.variant }), primary: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
+            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, field === null || field === void 0 ? void 0 : field.label),
+            react_1.default.createElement(components_1.Label, { label: field.variant })), secondaryAction: react_1.default.createElement(react_1.default.Fragment, null,
             field.column && !field.array && (react_1.default.createElement(material_1.Tooltip, { title: "Search filter field" },
                 react_1.default.createElement(material_1.IconButton, { onClick: function () { return handleUpdateField('filter_field'); } }, field.filter_field ? (react_1.default.createElement(icons_material_1.FilterAltOutlined, { color: "primary" })) : (react_1.default.createElement(icons_material_1.FilterAltOffOutlined, null))))),
             field.column && !field.array && (react_1.default.createElement(material_1.Tooltip, { title: "Search sort field" },
                 react_1.default.createElement(material_1.IconButton, { onClick: function () { return handleUpdateField('sort_field'); } }, field.sort_field ? (react_1.default.createElement(icons_material_1.SortByAlpha, { color: "primary" })) : (react_1.default.createElement(icons_material_1.SortByAlpha, null))))),
             (field.column || field.attachment) && (field === null || field === void 0 ? void 0 : field.name) != 'title' && (react_1.default.createElement(material_1.Tooltip, { title: "Display in search results" },
-                react_1.default.createElement(material_1.IconButton, { onClick: function () { return handleUpdateField('display_field'); } }, field.display_field ? (react_1.default.createElement(icons_material_1.ManageSearch, { color: "primary" })) : (react_1.default.createElement(icons_material_1.ManageSearch, null))))),
-            react_1.default.createElement(material_1.Tooltip, { title: "Display in forms" },
-                react_1.default.createElement(material_1.IconButton, { onClick: function () { return handleUpdateField('form_field'); } }, field.form_field ? react_1.default.createElement(icons_material_1.EditNote, { color: "primary" }) : react_1.default.createElement(icons_material_1.EditNote, null))),
-            (field.column || field.attachment) && (react_1.default.createElement(material_1.Tooltip, { title: "Display as table header" },
-                react_1.default.createElement(material_1.IconButton, { onClick: function () { return handleUpdateField('table_header'); } }, field.table_header ? (react_1.default.createElement(icons_material_1.TableRowsOutlined, { fontSize: "small", color: "primary" })) : (react_1.default.createElement(icons_material_1.TableRowsOutlined, { fontSize: "small" }))))),
-            react_1.default.createElement(components_1.Label, { label: field === null || field === void 0 ? void 0 : field.variant })), handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete }));
+                react_1.default.createElement(material_1.IconButton, { onClick: function () { return handleUpdateField('display_field'); } }, field.display_field ? (react_1.default.createElement(icons_material_1.ManageSearch, { color: "primary" })) : (react_1.default.createElement(icons_material_1.ManageSearch, null)))))), handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete }));
 };
 exports.default = AdminFieldItem;

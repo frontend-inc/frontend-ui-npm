@@ -18,7 +18,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SocialIcon = exports.SocialLink = exports.Section = exports.RemoteAutosuggest = exports.ProgressLoader = exports.Placeholder = exports.Paper = exports.NotFound = exports.NoImage = exports.Loading = exports.TouchableOpacity = exports.PopupButton = exports.Popup = exports.SimplePage = exports.OnlineStatusBadge = exports.OnlineStatusAvatar = exports.Notifications = exports.Notification = exports.MediaModal = exports.Modal = exports.MobileButton = exports.MenuItem = exports.MenuButton = exports.Label = exports.IconLoading = exports.Icon = exports.CircularLoader = exports.Heading = exports.GeoSearchInput = exports.ExpandableText = exports.Drawer = exports.Divider = exports.Container = exports.ContextLoader = exports.CloudinaryImage = exports.Center = exports.CarouselImage = exports.CarouselDot = exports.Carousel = exports.Column = exports.Breadcrumbs = exports.ButtonTabs = exports.Button = exports.Autosuggest = exports.Alert = exports.AlertButton = exports.AlertModal = exports.Avatar = exports.ButtonAction = exports.ButtonActions = void 0;
-exports.LightDarkMode = exports.Debug = exports.Swipeable = exports.TextModal = exports.Logo = exports.ImageModal = exports.Image = exports.EmptyImage = exports.AttachmentImage = exports.AvatarImage = exports.Pagination = exports.SelectableListItem = exports.SortableListItem = exports.SortableList = exports.LayoutScroll = exports.Loader = exports.LayoutEmpty = exports.LayoutContainer = exports.Header = exports.Footer = exports.SecondaryButton = exports.PrimaryButton = exports.ViewScroll = exports.UserMenu = exports.UserAvatar = exports.Toolbar = exports.Text = exports.Subheader = void 0;
+exports.DarkTheme = exports.LightTheme = exports.LightDarkMode = exports.Debug = exports.Swipeable = exports.TextModal = exports.Logo = exports.ImageModal = exports.Image = exports.EmptyImage = exports.AttachmentImage = exports.AvatarImage = exports.Pagination = exports.SelectableListItem = exports.SortableListItem = exports.SortableList = exports.LayoutScroll = exports.Loader = exports.LayoutEmpty = exports.LayoutContainer = exports.Header = exports.Footer = exports.SecondaryButton = exports.PrimaryButton = exports.ViewScroll = exports.UserMenu = exports.UserAvatar = exports.Toolbar = exports.Text = exports.Subheader = void 0;
 __exportStar(require("./inputs"), exports);
 __exportStar(require("./fields"), exports);
 __exportStar(require("./tables"), exports);
@@ -186,3 +186,7 @@ Object.defineProperty(exports, "Debug", { enumerable: true, get: function () { r
 // Theme
 var LightDarkMode_1 = require("./theme/LightDarkMode");
 Object.defineProperty(exports, "LightDarkMode", { enumerable: true, get: function () { return __importDefault(LightDarkMode_1).default; } });
+var LightTheme_1 = require("./theme/LightTheme");
+Object.defineProperty(exports, "LightTheme", { enumerable: true, get: function () { return __importDefault(LightTheme_1).default; } });
+var DarkTheme_1 = require("./theme/DarkTheme");
+Object.defineProperty(exports, "DarkTheme", { enumerable: true, get: function () { return __importDefault(DarkTheme_1).default; } });

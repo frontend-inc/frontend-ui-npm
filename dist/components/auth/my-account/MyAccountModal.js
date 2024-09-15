@@ -120,8 +120,8 @@ var MyAccountModal = function (props) {
             react_1.default.createElement(material_1.Button, { sx: sx.button, color: "secondary", variant: "contained", startIcon: react_1.default.createElement(components_1.Icon, { name: "ChevronLeft", color: "text.primary", size: 24 }), onClick: function () { return setCurrentTab(null); } }, "Back"))),
         react_1.default.createElement(material_1.Box, { sx: sx.content },
             currentTab == 0 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout, metafields: metafields })),
-            currentTab == 1 && (react_1.default.createElement(components_2.StripeCustomerPortal, null)),
-            currentTab == 2 && (react_1.default.createElement(components_2.ShopifyCustomerPortal, null)))));
+            currentTab == 1 && react_1.default.createElement(components_2.StripeCustomerPortal, null),
+            currentTab == 2 && react_1.default.createElement(components_2.ShopifyCustomerPortal, null))));
 };
 exports.default = MyAccountModal;
 var sx = {

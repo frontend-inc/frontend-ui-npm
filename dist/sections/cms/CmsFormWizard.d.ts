@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormWizardProps } from '../../components/cms/forms/FormWizard';
+import { DocumentFormWizardModalProps } from '../../components/cms/forms/DocumentFormWizardModal';
 import { SectionProps } from '../../types';
-type CmsFormWizardProps = SectionProps & FormWizardProps;
+type CmsFormWizardProps = SectionProps & DocumentFormWizardModalProps;
 declare const CmsFormWizard: React.FC<CmsFormWizardProps>;
 export default CmsFormWizard;

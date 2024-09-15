@@ -6,7 +6,7 @@ var useStripe = function () {
     var _a = (0, react_1.useContext)(context_1.StripeContext), publishableKey = _a.publishableKey, stripeCustomerPortal = _a.stripeCustomerPortal;
     return {
         publishableKey: publishableKey,
-        stripeCustomerPortal: stripeCustomerPortal
+        stripeCustomerPortal: stripeCustomerPortal,
     };
 };
 exports.default = useStripe;

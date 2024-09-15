@@ -53,18 +53,16 @@ var useCart = function () {
         name: 'cart',
     };
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    var cacheKey = (cartOpen && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) ? true : false;
+    var cacheKey = cartOpen && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? true : false;
     var fetcher = function () { return loadingWrapper(function () { return api.fetchCart(apiParams); }); };
     (0, swr_1.default)([cacheKey], fetcher, {
         revalidateOnFocus: true,
-        revalidateOnReconnect: true
+        revalidateOnReconnect: true,
     });
     var fetchCart = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.fetchCart(apiParams);
-                    })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.fetchCart(apiParams); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -85,9 +83,7 @@ var useCart = function () {
     var removeFromCart = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.removeFromCart(productId, apiParams);
-                    })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.removeFromCart(productId, apiParams); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -95,9 +91,7 @@ var useCart = function () {
     var addQuantity = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.addQuantity(productId, apiParams);
-                    })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.addQuantity(productId, apiParams); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -105,9 +99,7 @@ var useCart = function () {
     var removeQuantity = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.removeQuantity(productId, apiParams);
-                    })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.removeQuantity(productId, apiParams); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
