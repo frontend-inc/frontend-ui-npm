@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AdminDocumentForm = exports.AdminDocumentRightPanel = exports.AdminDocumentPage = void 0;
+exports.AdminDocumentInput = exports.AdminDocumentForm = exports.AdminDocumentRightPanel = exports.AdminDocumentPage = void 0;
 __exportStar(require("./media"), exports);
 __exportStar(require("./references"), exports);
 __exportStar(require("./inputs"), exports);
@@ -27,3 +27,5 @@ var AdminDocumentRightPanel_1 = require("./AdminDocumentRightPanel");
 Object.defineProperty(exports, "AdminDocumentRightPanel", { enumerable: true, get: function () { return __importDefault(AdminDocumentRightPanel_1).default; } });
 var AdminDocumentForm_1 = require("./AdminDocumentForm");
 Object.defineProperty(exports, "AdminDocumentForm", { enumerable: true, get: function () { return __importDefault(AdminDocumentForm_1).default; } });
+var AdminDocumentInput_1 = require("./AdminDocumentInput");
+Object.defineProperty(exports, "AdminDocumentInput", { enumerable: true, get: function () { return __importDefault(AdminDocumentInput_1).default; } });

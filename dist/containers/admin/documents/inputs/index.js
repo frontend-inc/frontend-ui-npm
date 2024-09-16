@@ -3,9 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SaveButton = exports.PublishButton = exports.InputWrapper = exports.DocumentInput = void 0;
-var DocumentInput_1 = require("./DocumentInput");
-Object.defineProperty(exports, "DocumentInput", { enumerable: true, get: function () { return __importDefault(DocumentInput_1).default; } });
+exports.SaveButton = exports.PublishButton = exports.InputWrapper = void 0;
 var InputWrapper_1 = require("./InputWrapper");
 Object.defineProperty(exports, "InputWrapper", { enumerable: true, get: function () { return __importDefault(InputWrapper_1).default; } });
 var PublishButton_1 = require("./PublishButton");

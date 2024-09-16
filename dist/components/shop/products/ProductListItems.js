@@ -57,14 +57,13 @@ var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 var router_1 = require("next/router");
 var __2 = require("../..");
-var hooks_2 = require("../../../hooks");
 var ProductListItems = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _a = (0, frontend_js_1.useResourceContext)(), setResource = _a.setResource, loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, setOpenShow = _a.setOpenShow;
-    var _b = props.grid, grid = _b === void 0 ? false : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'list' : _d, href = props.href, handleClick = props.handleClick, _e = props.displayFields, displayFields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = props.enableLikes, enableLikes = _j === void 0 ? false : _j, _k = props.enableRatings, enableRatings = _k === void 0 ? false : _k, _l = props.enableComments, enableComments = _l === void 0 ? false : _l, _m = props.slots, slots = _m === void 0 ? {
+    var _b = props.grid, grid = _b === void 0 ? false : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'list' : _d, href = props.href, handleClick = props.handleClick, _e = props.displayFields, displayFields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = props.enableLikes, enableLikes = _j === void 0 ? false : _j, _k = props.enableRatings, enableRatings = _k === void 0 ? false : _k, _l = props.slots, slots = _l === void 0 ? {
         item: {},
-    } : _m;
+    } : _l;
     var handleShowClick = function (resource) {
         if (handleClick) {
             handleClick(resource);
@@ -83,7 +82,6 @@ var ProductListItems = function (props) {
             setOpenShow(true);
         }
     };
-    var _o = (0, hooks_2.useForms)(), handleEdit = _o.handleEdit, handleDeleteClick = _o.handleDeleteClick;
     var handlePaginate = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -95,7 +93,7 @@ var ProductListItems = function (props) {
         });
     }); };
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
-        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid, loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.ProductListItem, __assign({ key: index, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, buttons: buttons, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item))); })),
+        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid, loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.ProductListItem, __assign({ key: index, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item))); })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };
 exports.default = ProductListItems;

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TableFilterSortInput = exports.TableFilterKeywordsInput = exports.TableFilterInputs = exports.TableFilterInput = exports.TableFilterForm = exports.TableFilterPopup = exports.TableFilterDrawer = exports.TableFilterButton = exports.SortedDescIcon = exports.SortedAscIcon = exports.SortableTableHeader = exports.TableToolbar = exports.TableRowSkeleton = exports.TableRow = exports.TableContainer = exports.TableCell = exports.TableHeaders = exports.TableList = exports.Table = exports.CellUser = exports.CellHeader = exports.CellHABTM = exports.CellVideo = exports.CellBelongsTo = exports.CellRating = exports.CellPrice = exports.CellPublished = exports.CellText = exports.CellLocation = exports.CellLink = exports.CellLabel = exports.CellStringExpanded = exports.CellString = exports.CellShopify = exports.CellJSON = exports.CellImage = exports.CellExpand = exports.CellFile = exports.CellEnum = exports.CellDate = exports.CellButton = exports.CellBoolean = exports.CellArray = exports.Cell = void 0;
+exports.TableFilterSortInput = exports.TableFilterKeywordsInput = exports.TableFilterInputs = exports.TableFilterInput = exports.TableFilterForm = exports.TableFilterPopup = exports.TableFilterDrawer = exports.TableFilterButton = exports.SortedDescIcon = exports.SortedAscIcon = exports.SortableTableHeader = exports.TableToolbar = exports.TableRowSkeleton = exports.TableRow = exports.TableContainer = exports.TableCell = exports.TableHeaders = exports.TableList = exports.Table = exports.CellUser = exports.CellHeader = exports.CellHABTM = exports.CellVideo = exports.CellBelongsTo = exports.CellRating = exports.CellPrice = exports.CellProducts = exports.CellPublished = exports.CellText = exports.CellLocation = exports.CellLink = exports.CellLabel = exports.CellStringExpanded = exports.CellString = exports.CellShopify = exports.CellJSON = exports.CellImage = exports.CellExpand = exports.CellFile = exports.CellEnum = exports.CellDate = exports.CellButton = exports.CellBoolean = exports.CellArray = exports.Cell = void 0;
 var Cell_1 = require("./Cell");
 Object.defineProperty(exports, "Cell", { enumerable: true, get: function () { return __importDefault(Cell_1).default; } });
 var CellArray_1 = require("./CellArray");
@@ -40,6 +40,8 @@ var CellText_1 = require("./CellText");
 Object.defineProperty(exports, "CellText", { enumerable: true, get: function () { return __importDefault(CellText_1).default; } });
 var CellPublished_1 = require("./CellPublished");
 Object.defineProperty(exports, "CellPublished", { enumerable: true, get: function () { return __importDefault(CellPublished_1).default; } });
+var CellProducts_1 = require("./CellProducts");
+Object.defineProperty(exports, "CellProducts", { enumerable: true, get: function () { return __importDefault(CellProducts_1).default; } });
 var CellPrice_1 = require("./CellPrice");
 Object.defineProperty(exports, "CellPrice", { enumerable: true, get: function () { return __importDefault(CellPrice_1).default; } });
 var CellRating_1 = require("./CellRating");

@@ -15,7 +15,7 @@ export type FieldElementProps = {
 type FieldProps = {
     field: DisplayFieldType;
     resource?: any;
-    label?: string;
+    label?: string | null;
     color?: string;
     direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
     variant?: TypographyVariantsType;
@@ -23,6 +23,7 @@ type FieldProps = {
     enableBorder?: boolean;
     disablePadding?: boolean;
     dateFormat?: string;
+    disableLabel?: boolean;
 };
 declare const Field: React.FC<FieldProps>;
 export default Field;

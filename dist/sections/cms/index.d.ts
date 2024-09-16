@@ -18,6 +18,7 @@ export { default as CmsSimilarList } from './CmsSimilarList';
 export { default as CmsLikes } from './CmsLikes';
 export { default as CmsFavorites } from './CmsFavorites';
 export { default as CmsReferenceList } from './CmsReferenceList';
+export { default as CmsProductReferenceList } from './CmsProductReferenceList';
 export { default as CmsGoogleMap } from './addons/CmsGoogleMap';
 export { default as CmsCalendly } from './addons/CmsCalendly';
 export { default as CmsShopifyProduct } from './addons/CmsShopifyProduct';

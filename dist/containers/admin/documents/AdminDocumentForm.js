@@ -28,10 +28,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var DocumentInput_1 = __importDefault(require("./inputs/DocumentInput"));
+var AdminDocumentInput_1 = __importDefault(require("./AdminDocumentInput"));
 var lodash_1 = require("lodash");
 var AdminDocumentForm = function (props) {
-    var errors = props.errors, fields = props.fields, document = props.document, collection = props.collection, handleChange = props.handleChange, handleAddReferences = props.handleAddReferences, handleRemoveReferences = props.handleRemoveReferences, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment;
+    var errors = props.errors, fields = props.fields, document = props.document, collection = props.collection, handleChange = props.handleChange, handleAddReferences = props.handleAddReferences, handleRemoveReferences = props.handleRemoveReferences, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment, handleAddProducts = props.handleAddProducts, handleRemoveProducts = props.handleRemoveProducts, handleUpdateProductPositions = props.handleUpdateProductPositions;
     var _a = (0, react_1.useState)([]), editableFields = _a[0], setEditableFields = _a[1];
     (0, react_1.useEffect)(function () {
         if (fields) {
@@ -43,7 +43,7 @@ var AdminDocumentForm = function (props) {
         return null;
     return (react_1.default.createElement(material_1.Stack, { spacing: 0 }, editableFields === null || editableFields === void 0 ? void 0 : editableFields.map(function (field, i) {
         var _a;
-        return (react_1.default.createElement(DocumentInput_1.default, { key: i, errors: errors, field: field, value: (0, lodash_1.get)(document, field === null || field === void 0 ? void 0 : field.name), placeholder: (_a = field.label) === null || _a === void 0 ? void 0 : _a.toLowerCase(), handleChange: handleChange, document: document, collection: collection, handleAddReferences: handleAddReferences, handleRemoveReferences: handleRemoveReferences, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment }));
+        return (react_1.default.createElement(AdminDocumentInput_1.default, { key: i, errors: errors, field: field, value: (0, lodash_1.get)(document, field === null || field === void 0 ? void 0 : field.name), placeholder: (_a = field.label) === null || _a === void 0 ? void 0 : _a.toLowerCase(), handleChange: handleChange, document: document, collection: collection, handleAddReferences: handleAddReferences, handleRemoveReferences: handleRemoveReferences, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, handleAddProducts: handleAddProducts, handleRemoveProducts: handleRemoveProducts, handleUpdateProductPositions: handleUpdateProductPositions }));
     })));
 };
 exports.default = AdminDocumentForm;

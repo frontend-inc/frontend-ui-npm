@@ -36,7 +36,7 @@ var DocumentAutosuggest = function (props) {
             findCollection(collectionId);
         }
     }, [collectionId]);
-    if (!collection || apiUrl)
+    if (!collection || !apiUrl)
         return null;
     return (react_1.default.createElement(components_1.RemoteAutosuggest, { enableClear: true, direction: direction, errors: errors, name: name, label: label, value: value, displayField: "title", url: "".concat(apiUrl, "/cms/").concat(collection === null || collection === void 0 ? void 0 : collection.name), placeholder: placeholder, handleChange: handleChange }));
 };

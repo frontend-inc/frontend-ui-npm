@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FIELD_VARIANTS = exports.SHOPIFY_PRODUCTS_FIELD_VARIANT = exports.HABTM_FIELD_VARIANT = exports.FILE_FIELD_VARIANT = exports.VIDEO_FIELD_VARIANT = exports.TEXT_FIELD_VARIANT = exports.SHOPIFY_FIELD_VARIANT = exports.STRING_FIELD_VARIANT = exports.RATING_FIELD_VARIANT = exports.NUMBER_FIELD_VARIANT = exports.LOCATION_FIELD_VARIANT = exports.PRICE_FIELD_VARIANT = exports.IMAGE_FIELD_VARIANT = exports.JSON_FIELD_VARIANT = exports.FLOAT_FIELD_VARIANT = exports.SELECT_FIELD_VARIANT = exports.DATETIME_FIELD_VARIANT = exports.DATE_FIELD_VARIANT = exports.BOOLEAN_FIELD_VARIANT = exports.TAG_ARRAY_FIELD_VARIANT = exports.URL_FIELD_VARIANT = exports.PHONE_FIELD_VARIANT = exports.EMAIL_FIELD_VARIANT = exports.AUDIO_FIELD_VARIANT = void 0;
+exports.FIELD_VARIANTS = exports.SHOPIFY_PRODUCTS_FIELD_VARIANT = exports.SHOP_PRODUCTS_FIELD_VARIANT = exports.HABTM_FIELD_VARIANT = exports.FILE_FIELD_VARIANT = exports.VIDEO_FIELD_VARIANT = exports.TEXT_FIELD_VARIANT = exports.STRING_FIELD_VARIANT = exports.RATING_FIELD_VARIANT = exports.NUMBER_FIELD_VARIANT = exports.LOCATION_FIELD_VARIANT = exports.PRICE_FIELD_VARIANT = exports.IMAGE_FIELD_VARIANT = exports.JSON_FIELD_VARIANT = exports.FLOAT_FIELD_VARIANT = exports.SELECT_FIELD_VARIANT = exports.DATETIME_FIELD_VARIANT = exports.DATE_FIELD_VARIANT = exports.BOOLEAN_FIELD_VARIANT = exports.TAG_ARRAY_FIELD_VARIANT = exports.URL_FIELD_VARIANT = exports.PHONE_FIELD_VARIANT = exports.EMAIL_FIELD_VARIANT = exports.AUDIO_FIELD_VARIANT = void 0;
 var COLORS = __importStar(require("@mui/material/colors"));
 exports.AUDIO_FIELD_VARIANT = {
     icon: 'Headphones',
@@ -195,16 +195,6 @@ exports.STRING_FIELD_VARIANT = {
     array: false,
     color: COLORS.deepPurple[500],
 };
-exports.SHOPIFY_FIELD_VARIANT = {
-    icon: 'ShoppingCart',
-    category: 'Shopify',
-    variant: 'shopify',
-    db_type: 'string',
-    label: 'Shopify product',
-    description: 'Shopify product handle',
-    array: false,
-    color: COLORS.lightGreen[500],
-};
 exports.TEXT_FIELD_VARIANT = {
     icon: 'FileText',
     category: 'Text',
@@ -245,6 +235,16 @@ exports.HABTM_FIELD_VARIANT = {
     array: false,
     color: COLORS.orange[500],
 };
+exports.SHOP_PRODUCTS_FIELD_VARIANT = {
+    icon: 'Box',
+    category: 'Shop',
+    variant: 'products',
+    label: 'Products',
+    db_type: 'habtm',
+    description: 'Products from the shop',
+    array: true,
+    color: COLORS.lightGreen[500],
+};
 exports.SHOPIFY_PRODUCTS_FIELD_VARIANT = {
     icon: 'Shirt',
     category: 'Shopify',
@@ -271,10 +271,10 @@ exports.FIELD_VARIANTS = [
     exports.LOCATION_FIELD_VARIANT,
     exports.RATING_FIELD_VARIANT,
     exports.PRICE_FIELD_VARIANT,
-    // Media fields
     exports.IMAGE_FIELD_VARIANT,
     exports.VIDEO_FIELD_VARIANT,
     exports.FILE_FIELD_VARIANT,
     exports.HABTM_FIELD_VARIANT,
+    exports.SHOP_PRODUCTS_FIELD_VARIANT,
     exports.SHOPIFY_PRODUCTS_FIELD_VARIANT,
 ];

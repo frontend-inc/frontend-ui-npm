@@ -9,7 +9,6 @@ export type ProductListItemsProps = {
     handleClick?: (resource: any) => void;
     enableGradient?: boolean;
     enableOverlay?: boolean;
-    enableComments?: boolean;
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableRatings?: boolean;

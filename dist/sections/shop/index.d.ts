@@ -6,5 +6,6 @@ export { default as ShopProductFavorites } from './ShopProductFavorites';
 export { default as ShopProductReviews } from './ShopProductReviews';
 export { default as ShopProductsSimilar } from './ShopProductsSimilar';
 export { default as ShopProductCollectionCover } from './ShopProductCollectionCover';
+export { default as ShopProductCollections } from './ShopProductCollections';
 export { default as ShopCollectionProducts } from './ShopCollectionProducts';
 export { default as ShopCollectionProductsByHandle } from './ShopCollectionProductsByHandle';

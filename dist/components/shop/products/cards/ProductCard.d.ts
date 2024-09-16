@@ -1,9 +1,6 @@
 import React from 'react';
 export type ProductCardProps = {
     ref?: any;
-    sortable?: boolean;
-    selectable?: boolean;
-    selected?: boolean;
     avatar?: React.ReactNode;
     image: string;
     label?: string;
@@ -14,7 +11,6 @@ export type ProductCardProps = {
     price: string;
     compareAtPrice?: string;
     handleClick?: () => void;
-    handleSelect?: () => void;
     height?: number;
     addToCart?: React.ReactNode;
     slots?: {

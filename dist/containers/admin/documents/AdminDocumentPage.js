@@ -96,7 +96,7 @@ var DocumentEdit = function (props) {
     var _f = (0, hooks_1.useCollections)(), collection = _f.collection, findCollection = _f.findCollection;
     var _g = (0, hooks_1.useDocuments)({
         collection: collectionId,
-    }), loading = _g.loading, errors = _g.errors, document = _g.document, setDocument = _g.setDocument, findDocument = _g.findDocument, updateDocument = _g.updateDocument, createDocument = _g.createDocument, reloadDocument = _g.reloadDocument, addReferences = _g.addReferences, removeReferences = _g.removeReferences, addAttachment = _g.addAttachment, removeAttachment = _g.removeAttachment, updateDocuments = _g.updateDocuments, handleChange = _g.handleChange;
+    }), loading = _g.loading, errors = _g.errors, document = _g.document, setDocument = _g.setDocument, findDocument = _g.findDocument, updateDocument = _g.updateDocument, createDocument = _g.createDocument, reloadDocument = _g.reloadDocument, addReferences = _g.addReferences, removeReferences = _g.removeReferences, addProductReferences = _g.addProductReferences, removeProductReferences = _g.removeProductReferences, updateProductReferencePositions = _g.updateProductReferencePositions, addAttachment = _g.addAttachment, removeAttachment = _g.removeAttachment, updateDocuments = _g.updateDocuments, handleChange = _g.handleChange;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -169,6 +169,44 @@ var DocumentEdit = function (props) {
                     reloadDocument(document.id);
                     _a.label = 2;
                 case 2: return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleAddProducts = function (productIds) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!(document === null || document === void 0 ? void 0 : document.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, addProductReferences(document === null || document === void 0 ? void 0 : document.id, productIds)];
+                case 1:
+                    _a.sent();
+                    reloadDocument(document === null || document === void 0 ? void 0 : document.id);
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleRemoveProducts = function (productIds) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!(document === null || document === void 0 ? void 0 : document.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, removeProductReferences(document.id, productIds)];
+                case 1:
+                    _a.sent();
+                    reloadDocument(document.id);
+                    _a.label = 2;
+                case 2: return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleUpdateProductPositions = function (sorted) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, updateProductReferencePositions(document === null || document === void 0 ? void 0 : document.id, sorted)];
+                case 1:
+                    _a.sent();
+                    return [2 /*return*/];
             }
         });
     }); };
@@ -255,7 +293,7 @@ var DocumentEdit = function (props) {
                 react_1.default.createElement(material_1.Box, { sx: sx.container },
                     react_1.default.createElement(AdminDocumentForm_1.default, { errors: errors, document: document, fields: activeFields, collection: collection, 
                         //@ts-ignore
-                        handleChange: handleChange, handleAddReferences: handleAddReferences, handleRemoveReferences: handleRemoveReferences, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment })))),
+                        handleChange: handleChange, handleAddReferences: handleAddReferences, handleRemoveReferences: handleRemoveReferences, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, handleAddProducts: handleAddProducts, handleRemoveProducts: handleRemoveProducts, handleUpdateProductPositions: handleUpdateProductPositions })))),
         react_1.default.createElement(components_2.AdminLayoutRight, null,
             react_1.default.createElement(components_2.AdminHeader, { title: "Publish" }),
             react_1.default.createElement(AdminDocumentRightPanel_1.default, { appId: appId, loading: loading, publishLoading: publishLoading, errors: errors, title: title, document: document, setDocument: setDocument, handleChange: handleChange, handleSubmit: handleSubmit, handleTogglePublish: handleTogglePublish, enableUsers: enableUsers }))));

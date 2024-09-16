@@ -1,7 +1,7 @@
 import React from 'react';
 type SortableListItemProps = {
-    title?: string;
-    subtitle?: string;
+    primary?: string | React.ReactNode;
+    secondary?: string | React.ReactNode;
     isDragging?: boolean;
 };
 declare const SortableListItem: React.FC<SortableListItemProps>;

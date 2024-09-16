@@ -3,7 +3,6 @@ import { ButtonType, DisplayFieldType, FormFieldType, SearchFilterOptionType, So
 export type ProductListProps = {
     grid?: boolean;
     selectable?: boolean;
-    style: string;
     url?: string;
     href?: string;
     displayFields: DisplayFieldType[];
@@ -16,10 +15,6 @@ export type ProductListProps = {
     enableShow?: boolean;
     fields?: FormFieldType[];
     buttons?: ButtonType[];
-    headers?: {
-        label: string;
-        value: string;
-    }[];
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
@@ -39,8 +34,6 @@ export type ProductListProps = {
         empty?: any;
         item?: any;
     };
-    circular?: boolean;
-    disableImage?: boolean;
     foreignUrl?: string;
     query?: any;
     resource: any;

@@ -38,8 +38,8 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var dnd_1 = require("@hello-pangea/dnd");
 var SortableList = function (props) {
-    var items = props.items, droppableId = props.droppableId, renderItem = props.renderItem, handleDrop = props.handleDrop;
-    var _a = (0, react_1.useState)(items), sorted = _a[0], setSorted = _a[1];
+    var items = props.items, _a = props.droppableId, droppableId = _a === void 0 ? "sortable-list" : _a, renderItem = props.renderItem, handleDrop = props.handleDrop;
+    var _b = (0, react_1.useState)(items), sorted = _b[0], setSorted = _b[1];
     var reorder = function (items, startIndex, endIndex) {
         var removed = items.splice(startIndex, 1)[0];
         items.splice(endIndex, 0, removed);

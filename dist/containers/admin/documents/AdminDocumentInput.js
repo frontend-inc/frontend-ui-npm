@@ -15,20 +15,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../../components");
-var ReferenceInput_1 = __importDefault(require("../references/ReferenceInput"));
-var MediaInput_1 = __importDefault(require("../media/MediaInput"));
-var InputWrapper_1 = __importDefault(require("./InputWrapper"));
-var components_2 = require("../../../../components");
-var constants_1 = require("../../../../constants");
+var components_1 = require("../../../components");
+var ReferenceInput_1 = __importDefault(require("./references/ReferenceInput"));
+var ProductsInput_1 = __importDefault(require("./products/ProductsInput"));
+var MediaInput_1 = __importDefault(require("./media/MediaInput"));
+var InputWrapper_1 = __importDefault(require("./inputs/InputWrapper"));
+var components_2 = require("../../../components");
 var material_1 = require("@mui/material");
-var DocumentInput = function (props) {
-    var errors = props.errors, field = props.field, value = props.value, handleChange = props.handleChange, document = props.document, collection = props.collection, handleAddReferences = props.handleAddReferences, handleRemoveReferences = props.handleRemoveReferences, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment;
+var AdminDocumentInput = function (props) {
+    var errors = props.errors, field = props.field, value = props.value, handleChange = props.handleChange, document = props.document, collection = props.collection, handleAddReferences = props.handleAddReferences, handleRemoveReferences = props.handleRemoveReferences, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment, handleAddProducts = props.handleAddProducts, handleRemoveProducts = props.handleRemoveProducts, handleUpdateProductPositions = props.handleUpdateProductPositions;
     var _a = field || {}, variant = _a.variant, name = _a.name, label = _a.label, options = _a.options;
     var componentMapper = {
         array: components_1.ArrayInput,
-        country: components_1.Autosuggest,
-        state: components_1.Autosuggest,
+        country: components_1.CountryInput,
+        state: components_1.StateInput,
         string: components_1.TextInput,
         url: components_1.TextInput,
         text: components_1.TextInput,
@@ -41,7 +41,7 @@ var DocumentInput = function (props) {
         select: components_1.Autosuggest,
         rating: components_1.RatingInput,
         json: components_1.JSONInput,
-        shopify: components_1.ShopifyProductInput,
+        products: ProductsInput_1.default,
         shopify_products: components_1.ShopifyProductsInput,
         file: MediaInput_1.default,
         image: MediaInput_1.default,
@@ -67,12 +67,6 @@ var DocumentInput = function (props) {
             width: 180,
             zoom: 15,
         },
-        country: {
-            options: constants_1.COUNTRIES,
-        },
-        state: {
-            options: constants_1.STATES,
-        },
         tags: {
             value: value || [],
             freeSolo: true,
@@ -86,6 +80,13 @@ var DocumentInput = function (props) {
                 value: opt,
                 label: opt,
             }); })) || [],
+        },
+        products: {
+            document: document,
+            value: value || [],
+            handleAddProducts: handleAddProducts,
+            handleRemoveProducts: handleRemoveProducts,
+            handleUpdateProductPositions: handleUpdateProductPositions
         },
         number: {
             type: 'number',
@@ -125,7 +126,7 @@ var DocumentInput = function (props) {
             react_1.default.createElement(Component, __assign({ errors: errors, name: name, value: value, handleChange: handleChange }, inputProps)),
             ['string', 'text'].includes(variant) && name !== 'handle' && (react_1.default.createElement(components_2.AiChatModal, { name: name, value: value, handleChange: handleChange })))));
 };
-exports.default = DocumentInput;
+exports.default = AdminDocumentInput;
 var sx = {
     stack: {
         width: '100%',

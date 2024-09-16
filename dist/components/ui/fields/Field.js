@@ -30,7 +30,7 @@ var components_1 = require("../../../components");
 var lodash_1 = require("lodash");
 var moment_1 = __importDefault(require("moment"));
 var Field = function (props) {
-    var field = props.field, resource = props.resource, _a = props.dateFormat, dateFormat = _a === void 0 ? 'MM/DD/YYYYY' : _a, rest = __rest(props, ["field", "resource", "dateFormat"]);
+    var field = props.field, resource = props.resource, disableLabel = props.disableLabel, _a = props.dateFormat, dateFormat = _a === void 0 ? 'MM/DD/YYYYY' : _a, rest = __rest(props, ["field", "resource", "disableLabel", "dateFormat"]);
     var fieldVariant = field.variant, label = field.label;
     var value = (0, lodash_1.get)(resource, field === null || field === void 0 ? void 0 : field.name);
     if (!value) {
@@ -64,7 +64,10 @@ var Field = function (props) {
         select: components_1.FieldString,
         price: components_1.FieldPrice,
     };
-    var Component = components[fieldVariant];
+    if (disableLabel) {
+        label = null;
+    }
+    var Component = components[fieldVariant] || components_1.FieldString;
     return react_1.default.createElement(Component, __assign({ value: value, label: label }, rest));
 };
 exports.default = Field;

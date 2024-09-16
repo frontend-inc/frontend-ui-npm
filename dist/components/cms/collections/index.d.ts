@@ -11,6 +11,8 @@ export { default as LikesGrid } from './LikesList';
 export { default as SimilarList } from './SimilarList';
 export { default as VideoList } from './VideoList';
 export { default as VideoListItems } from './VideoListItems';
+export { default as ProductReferenceList } from './ProductReferenceList';
+export { default as ProductReferenceListItems } from './ProductReferenceListItems';
 export { default as CollectionEmpty } from './CollectionEmpty';
 export { default as CollectionList } from './CollectionList';
 export { default as CollectionListItem } from './CollectionListItem';

@@ -1,9 +1,11 @@
 import React from 'react';
 type AccordionProps = {
-    title: string;
-    description: string;
+    primary: string;
+    secondary: React.ReactNode;
     image?: string;
-    icon?: 'Plus' | 'ChevronDown';
+    icon?: string;
+    startIcon?: string;
+    disablePadding?: boolean;
 };
 declare const AccordionItem: React.FC<AccordionProps>;
 export default AccordionItem;

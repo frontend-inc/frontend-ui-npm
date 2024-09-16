@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CmsShopifyProducts = exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsReferenceList = exports.CmsFavorites = exports.CmsLikes = exports.CmsSimilarList = exports.CmsYouTube = exports.CmsVimeo = exports.CmsGeoNearby = exports.CmsVideos = exports.CmsImages = exports.CmsHeader = exports.CmsShow = exports.CmsList = exports.CmsGeoList = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsContactForm = exports.CmsComments = exports.CmsCarousel = void 0;
+exports.CmsShopifyProducts = exports.CmsShopifyProduct = exports.CmsCalendly = exports.CmsGoogleMap = exports.CmsProductReferenceList = exports.CmsReferenceList = exports.CmsFavorites = exports.CmsLikes = exports.CmsSimilarList = exports.CmsYouTube = exports.CmsVimeo = exports.CmsGeoNearby = exports.CmsVideos = exports.CmsImages = exports.CmsHeader = exports.CmsShow = exports.CmsList = exports.CmsGeoList = exports.CmsFormWizard = exports.CmsForm = exports.CmsEmailSignup = exports.CmsDetails = exports.CmsContactForm = exports.CmsComments = exports.CmsCarousel = void 0;
 var CmsCarousel_1 = require("./CmsCarousel");
 Object.defineProperty(exports, "CmsCarousel", { enumerable: true, get: function () { return __importDefault(CmsCarousel_1).default; } });
 var CmsComments_1 = require("./CmsComments");
@@ -42,9 +42,10 @@ var CmsLikes_1 = require("./CmsLikes");
 Object.defineProperty(exports, "CmsLikes", { enumerable: true, get: function () { return __importDefault(CmsLikes_1).default; } });
 var CmsFavorites_1 = require("./CmsFavorites");
 Object.defineProperty(exports, "CmsFavorites", { enumerable: true, get: function () { return __importDefault(CmsFavorites_1).default; } });
-// Sortable
 var CmsReferenceList_1 = require("./CmsReferenceList");
 Object.defineProperty(exports, "CmsReferenceList", { enumerable: true, get: function () { return __importDefault(CmsReferenceList_1).default; } });
+var CmsProductReferenceList_1 = require("./CmsProductReferenceList");
+Object.defineProperty(exports, "CmsProductReferenceList", { enumerable: true, get: function () { return __importDefault(CmsProductReferenceList_1).default; } });
 // Cms Addons
 var CmsGoogleMap_1 = require("./addons/CmsGoogleMap");
 Object.defineProperty(exports, "CmsGoogleMap", { enumerable: true, get: function () { return __importDefault(CmsGoogleMap_1).default; } });

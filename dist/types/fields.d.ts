@@ -1,6 +1,6 @@
-export type FieldVariantTypes = 'array' | 'audio' | 'email' | 'habtm' | 'html' | 'string' | 'text' | 'number' | 'float' | 'boolean' | 'date' | 'datetime' | 'price' | 'phone' | 'url' | 'rating' | 'image' | 'video' | 'file' | 'json' | 'state' | 'country' | 'location' | 'select' | 'shopify' | 'shopify_products' | 'shopify_collection' | 'user' | 'team';
+export type FieldVariantTypes = 'array' | 'audio' | 'email' | 'habtm' | 'html' | 'string' | 'text' | 'number' | 'float' | 'boolean' | 'date' | 'datetime' | 'price' | 'phone' | 'url' | 'rating' | 'image' | 'video' | 'file' | 'json' | 'state' | 'country' | 'location' | 'select' | 'products' | 'shopify_products' | 'user' | 'team';
 export type FieldDbType = 'string' | 'text' | 'integer' | 'float' | 'boolean' | 'date' | 'datetime' | 'jsonb' | 'habtm' | 'belongs_to';
-export type FieldCategoryType = 'Text' | 'Date' | 'Numbers' | 'Geographic' | 'Media' | 'Data' | 'Boolean' | 'Reference' | 'Shopify';
+export type FieldCategoryType = 'Text' | 'Date' | 'Numbers' | 'Geographic' | 'Media' | 'Data' | 'Boolean' | 'Reference' | 'Shop' | 'Shopify';
 export type FieldVariantType = {
     icon: string;
     category: FieldCategoryType;

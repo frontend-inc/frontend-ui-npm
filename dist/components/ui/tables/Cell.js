@@ -29,6 +29,7 @@ var Cell = function (props) {
         select: components_1.CellEnum,
         user: components_1.CellUser,
         file: components_1.CellFile,
+        products: components_1.CellProducts,
         shopify_products: components_1.CellArray,
     };
     var CellComponent = componentMapper[field.variant];

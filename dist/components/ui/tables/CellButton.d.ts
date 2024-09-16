@@ -1,6 +1,6 @@
 import React from 'react';
 type CellButtonProps = {
-    children: string;
+    children: string | number;
     icon: string;
     handleClick?: (value: any, row?: any, field?: any) => void;
 };

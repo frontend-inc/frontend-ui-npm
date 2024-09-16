@@ -1,4 +1,5 @@
 import React from 'react';
+import { ProductType } from '../../../types';
 type DocumentInputProps = {
     errors?: any;
     field: any;
@@ -11,6 +12,9 @@ type DocumentInputProps = {
     handleRemoveReferences?: (items: any[]) => void;
     handleAddAttachment?: (field: any, file: any) => void;
     handleRemoveAttachment?: (field: any, file: any) => void;
+    handleAddProducts?: (products: ProductType[]) => void;
+    handleRemoveProducts?: (products: ProductType[]) => void;
+    handleUpdateProductPositions?: (sorted: number[]) => void;
 };
-declare const DocumentInput: React.FC<DocumentInputProps>;
-export default DocumentInput;
+declare const AdminDocumentInput: React.FC<DocumentInputProps>;
+export default AdminDocumentInput;

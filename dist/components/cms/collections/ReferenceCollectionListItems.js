@@ -96,7 +96,7 @@ var ReferenceCollectionListItems = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
         react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid }), references === null || references === void 0 ? void 0 : references.map(function (reference, index) {
             var target = reference === null || reference === void 0 ? void 0 : reference.target;
-            return (react_1.default.createElement(__2.CollectionListItem, __assign({ key: index, style: style, resource: target, displayFields: displayFields, handleClick: function () { return handleShowClick(target); }, buttons: buttons, enableFavorites: enableFavorites, enableLikes: enableLikes, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item)));
+            return (react_1.default.createElement(__2.CollectionListItem, __assign({ key: index, style: style, resource: target, displayFields: displayFields, handleClick: function () { return handleShowClick(target); }, buttons: buttons, enableFavorites: enableFavorites, enableComments: enableComments, enableLikes: enableLikes, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item)));
         })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };

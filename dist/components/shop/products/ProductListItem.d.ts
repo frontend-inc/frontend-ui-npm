@@ -1,9 +1,7 @@
 import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
-type CardStyleTypes = 'list' | 'card';
 type ProductListItemProps = {
     buttons: ButtonType[];
-    style: CardStyleTypes;
     displayFields: DisplayFieldType[];
     resource: any;
     buttonText?: string;

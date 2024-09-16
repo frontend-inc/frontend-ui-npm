@@ -87,7 +87,7 @@ var DocumentEdit = function (props) {
     var _c = (0, hooks_1.useCollections)(), collection = _c.collection, findCollection = _c.findCollection;
     var _d = (0, hooks_1.useDocuments)({
         collection: collectionId,
-    }), loading = _d.loading, errors = _d.errors, document = _d.document, setDocument = _d.setDocument, findDocument = _d.findDocument, updateDocument = _d.updateDocument, createDocument = _d.createDocument, addAttachment = _d.addAttachment, removeAttachment = _d.removeAttachment, addReferences = _d.addReferences, removeReferences = _d.removeReferences, handleChange = _d.handleChange;
+    }), loading = _d.loading, errors = _d.errors, document = _d.document, setDocument = _d.setDocument, findDocument = _d.findDocument, updateDocument = _d.updateDocument, createDocument = _d.createDocument, addAttachment = _d.addAttachment, removeAttachment = _d.removeAttachment, addReferences = _d.addReferences, removeReferences = _d.removeReferences, addProductReferences = _d.addProductReferences, removeProductReferences = _d.removeProductReferences, updateProductReferencePositions = _d.updateProductReferencePositions, handleChange = _d.handleChange;
     var handleSubmit = function (document) { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         var _a;
@@ -148,6 +148,39 @@ var DocumentEdit = function (props) {
             }
         });
     }); };
+    var handleAddProducts = function (productIds) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, addProductReferences(document === null || document === void 0 ? void 0 : document.id, productIds)];
+                case 1:
+                    _a.sent();
+                    findDocument(document === null || document === void 0 ? void 0 : document.id);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleRemoveProducts = function (productIds) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, removeProductReferences(document === null || document === void 0 ? void 0 : document.id, productIds)];
+                case 1:
+                    _a.sent();
+                    findDocument(document === null || document === void 0 ? void 0 : document.id);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleUpdateProductPositions = function (productIds) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, updateProductReferencePositions(document === null || document === void 0 ? void 0 : document.id, productIds)];
+                case 1:
+                    _a.sent();
+                    findDocument(document === null || document === void 0 ? void 0 : document.id);
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     var handleAddAttachment = function (contentType, documentId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -199,7 +232,7 @@ var DocumentEdit = function (props) {
     }, [open, collection === null || collection === void 0 ? void 0 : collection.name, documentId]);
     return (react_1.default.createElement(components_1.Drawer, { open: open, handleClose: handleClose, title: title }, document && activeFields && (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.Box, { sx: sx.container },
-            react_1.default.createElement(AdminDocumentForm_1.default, { errors: errors, document: document, fields: activeFields, collection: collection, handleChange: handleChange, handleAddReferences: handleAddReferences, handleRemoveReferences: handleRemoveReferences, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment })),
+            react_1.default.createElement(AdminDocumentForm_1.default, { errors: errors, document: document, fields: activeFields, collection: collection, handleChange: handleChange, handleAddReferences: handleAddReferences, handleRemoveReferences: handleRemoveReferences, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, handleAddProducts: handleAddProducts, handleRemoveProducts: handleRemoveProducts, handleUpdateProductPositions: handleUpdateProductPositions })),
         react_1.default.createElement(material_1.Stack, { spacing: 2 },
             react_1.default.createElement(SaveButton_1.default, { fullWidth: true, loading: loading, document: document, handleSubmit: function () { return handleSubmit(document); } }),
             react_1.default.createElement(PublishButton_1.default, { fullWidth: true, loading: loading, document: document, handleTogglePublish: handleSubmitAndPublish }))))));

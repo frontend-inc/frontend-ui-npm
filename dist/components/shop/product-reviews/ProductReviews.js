@@ -8,8 +8,8 @@ var __1 = require("../..");
 var __2 = require("../..");
 var ProductReviewsList_1 = __importDefault(require("./ProductReviewsList"));
 var ProductReviews = function (props) {
-    var url = props.url, handle = props.handle;
-    return (react_1.default.createElement(__2.DataList, { url: "".concat(url, "/").concat(handle, "/reviews"), name: "review", enableSearch: true, enableSorting: true, enableFilters: true, fields: [], sortOptions: [
+    var handle = props.handle;
+    return (react_1.default.createElement(__2.DataList, { url: "/api/v1/shop/products/".concat(handle, "/reviews"), name: "review", enableSearch: true, enableSorting: true, enableFilters: true, fields: [], sortOptions: [
             {
                 label: 'Date',
                 name: 'created_at',
@@ -28,7 +28,7 @@ var ProductReviews = function (props) {
             toolbar: {
                 buttonText: 'Add Product Review',
             },
-        } }));
+        }, emptyTitle: 'No reviews yet', emptyDescription: 'Be the first to leave a review' }));
 };
 exports.default = ProductReviews;
 var sx = {
