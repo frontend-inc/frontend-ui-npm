@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ViewAutosuggest = exports.UserMetafieldAutosuggest = exports.UserAutosuggest = exports.ShopifyCollectionAutosuggest = exports.ShopifyProductAutosuggest = exports.ShopifyMetafieldAutosuggest = exports.SubscriptionAutosuggest = exports.ProductMetafieldAutosuggest = exports.ProductCollectionAutosuggest = exports.ProductAutosuggest = exports.PolicyAutosuggest = exports.MetafieldAutosuggest = exports.FieldAutosuggest = exports.DocumentAutosuggest = exports.CollectionAutosuggest = exports.ActionAutosuggest = void 0;
-var ActionAutosuggest_1 = require("./ActionAutosuggest");
-Object.defineProperty(exports, "ActionAutosuggest", { enumerable: true, get: function () { return __importDefault(ActionAutosuggest_1).default; } });
+exports.ViewAutosuggest = exports.UserMetafieldAutosuggest = exports.UserAutosuggest = exports.ShopifyCollectionAutosuggest = exports.ShopifyProductAutosuggest = exports.ShopifyMetafieldAutosuggest = exports.SubscriptionAutosuggest = exports.ProductMetafieldAutosuggest = exports.ProductCollectionAutosuggest = exports.ProductAutosuggest = exports.PolicyAutosuggest = exports.MetafieldAutosuggest = exports.FieldAutosuggest = exports.DocumentAutosuggest = exports.CollectionAutosuggest = exports.ZapAutosuggest = void 0;
+var ZapAutosuggest_1 = require("./ZapAutosuggest");
+Object.defineProperty(exports, "ZapAutosuggest", { enumerable: true, get: function () { return __importDefault(ZapAutosuggest_1).default; } });
 var CollectionAutosuggest_1 = require("./CollectionAutosuggest");
 Object.defineProperty(exports, "CollectionAutosuggest", { enumerable: true, get: function () { return __importDefault(CollectionAutosuggest_1).default; } });
 var DocumentAutosuggest_1 = require("./DocumentAutosuggest");

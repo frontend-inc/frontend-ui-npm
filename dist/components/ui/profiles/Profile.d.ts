@@ -5,7 +5,6 @@ export type ProfileProps = {
     title?: string;
     description?: string;
     socialLinks?: {
-        value: string;
         provider: string;
         url: string;
     }[];

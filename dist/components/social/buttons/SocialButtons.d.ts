@@ -6,7 +6,6 @@ type SocialButtonsProps = {
     enableComments?: boolean;
     enableLikes?: boolean;
     enableFavorites?: boolean;
-    enableAddToList?: boolean;
     enableSharing?: boolean;
     enableProductLikes?: boolean;
     enableProductFavorites?: boolean;

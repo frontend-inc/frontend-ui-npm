@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -51,37 +40,66 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
+var material_1 = require("@mui/material");
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var __2 = require("../..");
 var hooks_1 = require("../../../hooks");
-var DataListItems = function (props) {
-    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, selectedIds = _a.selectedIds, handleSelect = _a.handleSelect;
-    var grid = props.grid, selectable = props.selectable, enableShow = props.enableShow, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleClick = props.handleClick, _b = props.pagination, Pagination = _b === void 0 ? __1.LoadMore : _b, _c = props.component, Component = _c === void 0 ? __2.DataItem : _c, _d = props.slots, slots = _d === void 0 ? {
-        item: {},
-        list: {},
-    } : _d;
-    var _e = (0, hooks_1.useForms)(), handleShow = _e.handleShow, handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
-    var handleShowClick = function (resource) {
-        if (handleClick) {
-            handleClick(resource);
-        }
-        else if (enableShow) {
-            handleShow(resource);
-        }
-    };
-    var handlePaginate = function () { return __awaiter(void 0, void 0, void 0, function () {
+// Call To Action
+var ContactForm = function (props) {
+    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.textVariant, textVariant = _b === void 0 ? 'h3' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
+    var _d = (0, frontend_js_1.useResource)({
+        name: 'lead',
+        url: "/api/v1/leads",
+    }), errors = _d.errors, delayedLoading = _d.delayedLoading, lead = _d.resource, setLead = _d.setResource, handleChange = _d.handleChange, create = _d.create;
+    var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadMore()];
+                case 0: return [4 /*yield*/, create(lead)];
                 case 1:
-                    _a.sent();
+                    resp = _a.sent();
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setLead({});
+                        showAlertSuccess('Thank you for contacting us!');
+                    }
                     return [2 /*return*/];
             }
         });
     }); };
-    return (react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid, loading: loading }), resources === null || resources === void 0 ? void 0 :
-        resources.map(function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, selectable: selectable, selected: selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource.id), resource: resource, handleClick: function () { return handleShowClick(resource); }, handleSelect: function () { return handleSelect(resource); }, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, slots.item))); }),
-        react_1.default.createElement(Pagination, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
+    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
+        react_1.default.createElement(material_1.Container, { maxWidth: "sm" },
+            react_1.default.createElement(__1.Heading, { label: label, title: title, description: description, textVariant: textVariant, textAlign: "center" }),
+            react_1.default.createElement(__1.Form, { loading: delayedLoading, fields: [
+                    { label: 'Name', name: 'name', variant: 'string' },
+                    { label: 'Email', name: 'email', variant: 'string' },
+                    { label: 'Phone', name: 'phone', variant: 'string' },
+                    { label: 'Company', name: 'company', variant: 'string' },
+                    { label: 'Message', name: 'message', variant: 'text' },
+                ], resource: lead, handleChange: handleChange, errors: errors, handleSubmit: handleSubmit, buttonText: buttonText }))));
 };
-exports.default = DataListItems;
+exports.default = ContactForm;
+var sx = {
+    root: {
+        width: '100%',
+    },
+    content: {
+        width: '100%',
+        alignItems: 'center',
+    },
+    label: {
+        textAlign: 'center',
+    },
+    title: {
+        textAlign: 'center',
+        color: 'text.primary',
+    },
+    description: {
+        color: 'text.secondary',
+        textAlign: 'center',
+        maxWidth: '600px',
+    },
+    paper: {
+        p: 3,
+    }
+};

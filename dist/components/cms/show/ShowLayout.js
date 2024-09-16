@@ -6,20 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
-var helpers_1 = require("../../../helpers");
 var ShowLayout = function (props) {
-    var _a = props || {}, resource = _a.resource, children = _a.children, enableEdit = _a.enableEdit, handleEdit = _a.handleEdit, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, enableRatings = _a.enableRatings, _b = _a.buttons, buttons = _b === void 0 ? [] : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c;
+    var _a = props || {}, resource = _a.resource, children = _a.children, enableFavorites = _a.enableFavorites, enableLikes = _a.enableLikes, enableSharing = _a.enableSharing, _b = _a.buttons, buttons = _b === void 0 ? [] : _b, _c = _a.displayFields, displayFields = _c === void 0 ? [] : _c;
     var _d = resource || {}, title = _d.title, description = _d.description;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
-        (buttons || enableEdit) && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
-            react_1.default.createElement(__1.ButtonActions, { buttons: (0, helpers_1.buildActions)({
-                    enableEdit: enableEdit,
-                    handleEdit: handleEdit,
-                    buttons: buttons,
-                }), numVisible: 4, resource: resource, justifyContent: "center" }))),
+        buttons && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
+            react_1.default.createElement(__1.ButtonActions, { buttons: buttons, numVisible: 4, resource: resource, justifyContent: "center" }))),
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h3" }, title),
-            enableRatings == true && (react_1.default.createElement(__1.ProductRating, { resource: resource, enableTotal: true })),
             (displayFields === null || displayFields === void 0 ? void 0 : displayFields.length) > 0 && (react_1.default.createElement(__1.DisplayFields, { fields: displayFields, resource: resource }))),
         react_1.default.createElement(material_1.Box, { sx: sx.container }, children),
         react_1.default.createElement(__1.SocialButtons, { resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }),

@@ -6,7 +6,6 @@ export type DataListItemsProps = {
     enableShow?: boolean;
     enableEdit?: boolean;
     enableDelete?: boolean;
-    enableAddToList?: boolean;
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;
     handleClick?: (resource: any) => void;

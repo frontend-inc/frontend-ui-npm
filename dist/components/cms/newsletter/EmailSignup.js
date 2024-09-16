@@ -41,7 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var components_1 = require("../../../components");
+var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 // Call To Action
@@ -69,10 +69,10 @@ var EmailSignup = function (props) {
     }); };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Stack, { sx: sx.content, direction: "column", spacing: 1 },
-            react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textVariant: textVariant, textAlign: "center" }),
+            react_1.default.createElement(__1.Heading, { label: label, title: title, description: description, textVariant: textVariant, textAlign: "center" }),
             react_1.default.createElement(material_1.Stack, { sx: sx.inputContainer, direction: "row", spacing: 0 },
-                react_1.default.createElement(components_1.TextInput, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, handleChange: handleChange, placeholder: "Enter your email", type: "email", styles: sx.input }),
-                react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: delayedLoading }) }, buttonText)))));
+                react_1.default.createElement(__1.TextInput, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, handleChange: handleChange, placeholder: "Enter your email", type: "email", styles: sx.input }),
+                react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(__1.IconLoading, { loading: delayedLoading }) }, buttonText)))));
 };
 exports.default = EmailSignup;
 var sx = {

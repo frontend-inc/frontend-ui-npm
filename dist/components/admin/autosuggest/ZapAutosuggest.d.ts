@@ -1,5 +1,5 @@
 import React from 'react';
-type ActionAutosuggestProps = {
+type ZapAutosuggestProps = {
     errors?: any;
     value: any;
     name?: string;
@@ -9,5 +9,5 @@ type ActionAutosuggestProps = {
     direction?: 'row' | 'column';
     placeholder?: string;
 };
-declare const ActionAutosuggest: React.FC<ActionAutosuggestProps>;
-export default ActionAutosuggest;
+declare const ZapAutosuggest: React.FC<ZapAutosuggestProps>;
+export default ZapAutosuggest;

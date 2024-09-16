@@ -10,7 +10,7 @@ var react_social_icons_1 = require("react-social-icons");
 var material_2 = require("@mui/material");
 var lodash_1 = require("lodash");
 var SocialLink = function (props) {
-    var _a = props || {}, provider = _a.provider, _b = _a.size, size = _b === void 0 ? 32 : _b, url = _a.url, _c = _a.color, color = _c === void 0 ? 'primary.contrastText' : _c;
+    var _a = props || {}, provider = _a.provider, _b = _a.size, size = _b === void 0 ? 32 : _b, url = _a.url, color = _a.color;
     var formatUrl = function (username) {
         switch (provider) {
             case 'facebook':

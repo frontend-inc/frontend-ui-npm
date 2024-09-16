@@ -5,17 +5,12 @@ export type ShowProps = {
     buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     resource: any;
-    enableEdit?: boolean;
-    enableCreate?: boolean;
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;
-    enableRatings?: boolean;
-    enableAddToList?: boolean;
     enableUsers?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
-    handleEdit?: (res: any) => void;
 };
 type ShowStyleTypes = 'card' | 'cover' | 'list' | 'avatar' | 'snippet';
 export type ShowItemProps = ShowProps & {

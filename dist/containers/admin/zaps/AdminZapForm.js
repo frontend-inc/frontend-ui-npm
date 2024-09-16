@@ -22,6 +22,11 @@ var AdminZapForm = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var FORM_FIELDS = [
         {
+            label: 'Name',
+            name: 'name',
+            variant: 'string',
+        },
+        {
             label: 'Zap',
             name: 'zap_type',
             variant: 'select',

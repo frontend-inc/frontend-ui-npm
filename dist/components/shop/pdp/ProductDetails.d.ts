@@ -5,14 +5,10 @@ export type ProductDetailsProps = {
     buttons: ButtonType[];
     displayFields: DisplayFieldType[];
     product: any;
-    enableEdit?: boolean;
-    enableCreate?: boolean;
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;
     enableRatings?: boolean;
-    enableAddToList?: boolean;
-    enableUsers?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
     handleEdit?: (res: any) => void;
