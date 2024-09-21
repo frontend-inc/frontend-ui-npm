@@ -25,9 +25,7 @@ var AccordionItem = function (props) {
                 startIcon && react_1.default.createElement(__1.Icon, { name: startIcon, size: 20 }),
                 react_1.default.createElement(material_1.Typography, { variant: "subtitle1" }, primary))),
         react_1.default.createElement(material_1.AccordionDetails, { sx: sx.accordionDetails },
-            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 2 },
-                secondary,
-                image && react_1.default.createElement(__1.Image, { src: image, height: 240 })))));
+            react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 2 }, secondary))));
 };
 exports.default = AccordionItem;
 var sx = {
@@ -49,4 +47,8 @@ var sx = {
     accordionDetails: {
         bgcolor: 'background.default',
     },
+    image: {
+        width: 160,
+        height: 160,
+    }
 };

@@ -12,7 +12,7 @@ var CellVideo = function (props) {
     if (!(value === null || value === void 0 ? void 0 : value.url))
         return react_1.default.createElement(components_1.NoImage, { height: size, width: size });
     return (react_1.default.createElement(material_1.Button, { sx: sx.root, onClick: handleClick },
-        react_1.default.createElement(components_1.Image, { src: (0, helpers_1.imageFromVideoUrl)(value === null || value === void 0 ? void 0 : value.url), 
+        react_1.default.createElement(components_1.Image, { src: (0, helpers_1.cloudinaryImageFromVideoUrl)(value === null || value === void 0 ? void 0 : value.url), 
             // @ts-ignore
             width: size, height: size })));
 };

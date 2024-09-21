@@ -6,6 +6,7 @@ declare const _default: {
             textTransform: string;
             fontWeight: number;
             fontSize: number;
+            lineHeight: string;
             '@media (max-width:600px)': {
                 fontSize: number;
             };

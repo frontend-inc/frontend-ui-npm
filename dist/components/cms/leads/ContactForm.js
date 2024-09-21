@@ -35,6 +35,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -47,7 +56,7 @@ var hooks_1 = require("../../../hooks");
 // Call To Action
 var ContactForm = function (props) {
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.textVariant, textVariant = _b === void 0 ? 'h3' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, textVariant = _a.textVariant, _b = _a.metafields, metafields = _b === void 0 ? [] : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
     var _d = (0, frontend_js_1.useResource)({
         name: 'lead',
         url: "/api/v1/leads",
@@ -70,13 +79,12 @@ var ContactForm = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Container, { maxWidth: "sm" },
             react_1.default.createElement(__1.Heading, { label: label, title: title, description: description, textVariant: textVariant, textAlign: "center" }),
-            react_1.default.createElement(__1.Form, { loading: delayedLoading, fields: [
-                    { label: 'Name', name: 'name', variant: 'string' },
-                    { label: 'Email', name: 'email', variant: 'string' },
-                    { label: 'Phone', name: 'phone', variant: 'string' },
-                    { label: 'Company', name: 'company', variant: 'string' },
-                    { label: 'Message', name: 'message', variant: 'text' },
-                ], resource: lead, handleChange: handleChange, errors: errors, handleSubmit: handleSubmit, buttonText: buttonText }))));
+            react_1.default.createElement(__1.Form, { loading: delayedLoading, fields: __spreadArray(__spreadArray([
+                    { label: 'Name', name: 'name', placeholder: 'Full name', variant: 'string' },
+                    { label: 'Email', name: 'email', placeholder: 'Email', variant: 'string' }
+                ], metafields, true), [
+                    { label: 'Message', name: 'message', placeholder: 'Leave a message', variant: 'text' },
+                ], false), resource: lead, handleChange: handleChange, errors: errors, handleSubmit: handleSubmit, buttonText: buttonText }))));
 };
 exports.default = ContactForm;
 var sx = {

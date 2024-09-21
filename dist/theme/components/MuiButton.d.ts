@@ -7,7 +7,9 @@ declare const _default: {
         root: {
             whiteSpace: string;
         };
-        sizeSmall: {};
+        sizeSmall: {
+            height: number;
+        };
         sizeLarge: {};
         outlined: {};
         contained: {};

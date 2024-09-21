@@ -1,7 +1,8 @@
 import React from 'react';
+import { TestimonialType } from '../../../types';
 export type TestimonialsProps = {
     layout?: 'grid' | 'carousel';
-    items: Record<string, any>[];
+    items: TestimonialType[];
     enableAutoPlay?: boolean;
     enableArrows?: boolean;
 };

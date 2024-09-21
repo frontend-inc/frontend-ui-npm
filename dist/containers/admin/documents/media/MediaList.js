@@ -86,10 +86,10 @@ var MediaItemList = function (props) {
             page: 1,
         });
     }, []);
-    return (react_1.default.createElement(react_1.default.Fragment, null,
+    return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, width: '100%' },
         react_1.default.createElement(material_1.Box, { sx: sx.list }, resources.map(function (item, idx) { return (react_1.default.createElement(MediaListItem_1.default, { key: item === null || item === void 0 ? void 0 : item.id, item: item, size: 164, selected: selectedIds.includes(item === null || item === void 0 ? void 0 : item.id), handleClick: function () { return handleSelect(item); } })); })),
         (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Image', title: "No media", description: "Upload or import media." })),
-        numPages > page && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleLoadMore, endIcon: loading ? react_1.default.createElement(material_1.CircularProgress, { disableShrink: true }) : react_1.default.createElement(icons_material_1.ExpandMore, null) }, "Load More"))));
+        numPages > page && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleLoadMore, endIcon: loading ? react_1.default.createElement(components_1.IconLoading, { loading: true }) : react_1.default.createElement(icons_material_1.ExpandMore, null) }, "Load More"))));
 };
 exports.default = MediaItemList;
 var sx = {

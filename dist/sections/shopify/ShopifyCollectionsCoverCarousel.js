@@ -27,11 +27,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
-var shop_1 = require("../../components/shop");
-var ShopProductsSimilar = function (props) {
-    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
-        react_1.default.createElement(shop_1.ProductSimilarList, __assign({}, rest))));
+var shopify_1 = require("../../components/shopify");
+var ShopifyCollectionsCoverCarousel = function (props) {
+    var _a = props.mode, mode = _a === void 0 ? 'dark' : _a, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, mode: 'dark', py: 0, px: 0 },
+        react_1.default.createElement(shopify_1.ShopifyCollectionsCoverCarousel, __assign({}, rest))));
 };
-exports.default = ShopProductsSimilar;
+exports.default = ShopifyCollectionsCoverCarousel;

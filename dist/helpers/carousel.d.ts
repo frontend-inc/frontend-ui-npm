@@ -33,7 +33,9 @@ export declare const getCarouselResponsive: (theme?: {
                 root: {
                     whiteSpace: string;
                 };
-                sizeSmall: {};
+                sizeSmall: {
+                    height: number;
+                };
                 sizeLarge: {};
                 outlined: {};
                 contained: {};
@@ -163,6 +165,7 @@ export declare const getCarouselResponsive: (theme?: {
                     textTransform: string;
                     fontWeight: number;
                     fontSize: number;
+                    lineHeight: string;
                     '@media (max-width:600px)': {
                         fontSize: number;
                     };
@@ -302,6 +305,7 @@ export declare const getCarouselResponsive: (theme?: {
             textTransform: string;
             fontWeight: number;
             fontSize: number;
+            lineHeight: string;
             '@media (max-width:600px)': {
                 fontSize: number;
             };
@@ -311,6 +315,7 @@ export declare const getCarouselResponsive: (theme?: {
             textTransform: string;
             fontWeight: number;
             fontSize: number;
+            lineHeight: string;
             '@media (max-width:600px)': {
                 fontSize: number;
             };

@@ -50,13 +50,13 @@ exports.typography = {
     subtitle1: {
         fontFamily: 'Instrument Sans',
         fontSize: 17,
-        fontWeight: 600,
+        fontWeight: 500,
         lineHeight: '1.5em',
         textTransform: 'none',
     },
     subtitle2: {
         fontFamily: 'Instrument Sans',
-        fontWeight: 600,
+        fontWeight: 500,
         fontSize: 16,
         lineHeight: '1.5em',
     },
@@ -65,6 +65,7 @@ exports.typography = {
         textTransform: 'none',
         fontWeight: 500,
         fontSize: 15,
+        lineHeight: '2.0em',
         '@media (max-width:600px)': {
             fontSize: 15,
         },
@@ -74,6 +75,7 @@ exports.typography = {
         textTransform: 'none',
         fontWeight: 500,
         fontSize: 14,
+        lineHeight: '2.0em',
         '@media (max-width:600px)': {
             fontSize: 16,
         },

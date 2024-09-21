@@ -95,7 +95,7 @@ var AdminCollectionPage = function () {
     var _b = (0, react_1.useState)(false), openAiModal = _b[0], setOpenAiModal = _b[1];
     var _c = (0, react_1.useState)(false), showViewModal = _c[0], setShowViewModal = _c[1];
     var _d = (0, hooks_1.useViews)(), viewLoading = _d.loading, viewErrors = _d.errors, view = _d.view, findViews = _d.findViews, createView = _d.createView, handleChangeView = _d.handleChange, setView = _d.setView;
-    var _e = (0, hooks_1.useCollections)(), loading = _e.loading, collection = _e.collection, findCollection = _e.findCollection, aiGenerateMockData = _e.aiGenerateMockData;
+    var _e = (0, hooks_1.useCollections)(), loading = _e.loading, collection = _e.collection, findCollection = _e.findCollection, aiGenerateData = _e.aiGenerateData;
     var handleSaveView = function () { return __awaiter(void 0, void 0, void 0, function () {
         var viewQuery;
         return __generator(this, function (_a) {
@@ -137,13 +137,11 @@ var AdminCollectionPage = function () {
     var handleAiGenerateMockData = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, aiGenerateMockData(collectionId)];
+                case 0: return [4 /*yield*/, aiGenerateData(collectionId)];
                 case 1:
                     _a.sent();
                     setOpenAiModal(false);
-                    return [4 /*yield*/, findCollection(collectionId)];
-                case 2:
-                    _a.sent();
+                    router.push("".concat(clientUrl, "/collections/").concat(collectionId, "?page=1&per_page=10"));
                     return [2 /*return*/];
             }
         });

@@ -1,15 +1,4 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -31,19 +20,20 @@ var FeaturedCard = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.root), (enableBorder && sx.rootBorder)) },
-        react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.imageContainer), { flexDirection: {
-                    sm: flexDirection,
-                    xs: 'column',
-                } }) },
-            react_1.default.createElement(material_1.Box, { sx: sx.image },
-                react_1.default.createElement(__1.Image, { label: label, src: image, height: 320, objectFit: objectFit, alt: title, enableOverlay: enableOverlay, enableGradient: enableGradient, disableBorderRadius: enableBorder })),
-            react_1.default.createElement(material_1.Box, { sx: sx.content },
-                react_1.default.createElement(material_1.Stack, { spacing: 0, sx: sx.textContent },
-                    react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: 'h6' }, title),
-                    react_1.default.createElement(__1.ExpandableText, { text: description }),
-                    buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
-                        react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))))));
+    return (react_1.default.createElement(material_1.Stack, { direction: {
+            sm: flexDirection,
+            xs: 'column',
+        }, alignItems: 'center', spacing: {
+            sm: 4,
+            xs: 1
+        } },
+        react_1.default.createElement(material_1.Box, { sx: sx.image },
+            react_1.default.createElement(__1.Image, { label: label, src: image, height: 320, objectFit: objectFit, alt: title, enableOverlay: enableOverlay, enableGradient: enableGradient, disableBorderRadius: enableBorder })),
+        react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.content },
+            react_1.default.createElement(material_1.Typography, { sx: sx.title, variant: 'h6' }, title),
+            description && react_1.default.createElement(__1.ExpandableText, { text: description }),
+            buttonText && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
+                react_1.default.createElement(material_1.Button, { size: "large", variant: "contained", color: "primary", onClick: handleItemClick }, buttonText))))));
 };
 exports.default = FeaturedCard;
 var sx = {
@@ -71,11 +61,10 @@ var sx = {
         height: '100%',
         width: {
             xs: '100%',
-            sm: '55%',
+            sm: '50%',
         },
     },
     buttons: {
-        mt: 2,
         display: 'flex',
         justifyContent: {
             sm: 'flex-start',
@@ -84,29 +73,26 @@ var sx = {
         width: '100%',
     },
     content: {
-        display: 'flex',
         justifyContent: {
             sm: 'flex-start',
             xs: 'center',
         },
         width: {
-            sm: '45%',
+            sm: '50%',
             xs: '100%',
         },
-        alignItems: 'center',
+        alignItems: 'flex-start',
         height: '100%',
     },
     textContent: {
-        p: 2,
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         height: '100%',
         width: '100%',
     },
     title: {
         width: '100%',
         color: 'text.primary',
-        my: 1,
         textAlign: {
             sm: 'left',
             xs: 'center',

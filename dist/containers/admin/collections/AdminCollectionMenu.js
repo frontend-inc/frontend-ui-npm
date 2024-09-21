@@ -89,7 +89,7 @@ var AdminCollectionMenu = function () {
     var _b = (0, react_1.useState)(false), showDeleteModal = _b[0], setShowDeleteModal = _b[1];
     var _c = (0, react_1.useState)(false), showViewModal = _c[0], setShowViewModal = _c[1];
     var _d = (0, react_1.useState)(false), showDeleteViewModal = _d[0], setShowDeleteViewModal = _d[1];
-    var _e = (0, hooks_1.useCollections)(), loading = _e.loading, errors = _e.errors, collection = _e.collection, collections = _e.collections, deleteCollection = _e.deleteCollection, findCollections = _e.findCollections, setCollection = _e.setCollection, handleChange = _e.handleChange, updateCollection = _e.updateCollection, createCollection = _e.createCollection, reloadCollections = _e.reloadCollections;
+    var _e = (0, hooks_1.useCollections)(), loading = _e.loading, errors = _e.errors, collection = _e.collection, collections = _e.collections, deleteCollection = _e.deleteCollection, findCollections = _e.findCollections, setCollection = _e.setCollection, setCollections = _e.setCollections, handleChange = _e.handleChange, updateCollection = _e.updateCollection, createCollection = _e.createCollection, reloadCollections = _e.reloadCollections;
     var _f = (0, hooks_1.useViews)(), viewLoading = _f.loading, viewErrors = _f.errors, view = _f.view, views = _f.views, findViews = _f.findViews, updateView = _f.updateView, deleteView = _f.deleteView, handleChangeView = _f.handleChange, setView = _f.setView;
     (0, react_1.useEffect)(function () {
         if (collectionId == 'index' && collections.length > 0) {
@@ -142,17 +142,21 @@ var AdminCollectionMenu = function () {
         setShowDeleteModal(true);
     };
     var handleDeleteCollection = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var e_1;
+        var nextCollection, e_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
+                    setCollection({});
                     return [4 /*yield*/, deleteCollection(activeCollection.id)];
                 case 1:
                     _a.sent();
+                    setCollections(collections.filter(function (c) { return c.id !== activeCollection.id; }));
+                    if (collectionId == activeCollection.name) {
+                        nextCollection = collections.filter(function (c) { return c.name !== activeCollection.name; })[0];
+                        router.push("/admin/".concat(appId, "/collections/").concat(nextCollection === null || nextCollection === void 0 ? void 0 : nextCollection.name));
+                    }
                     setShowDeleteModal(false);
-                    setCollection({});
-                    findCollections();
                     return [3 /*break*/, 3];
                 case 2:
                     e_1 = _a.sent();
@@ -163,7 +167,7 @@ var AdminCollectionMenu = function () {
         });
     }); };
     var handleTemplateClick = function (template) {
-        setCollection(__assign(__assign({}, collection), { name: template.name, label: template.label, template: template }));
+        setCollection(__assign(__assign({}, collection), { name: collection.name || template.name, label: collection.label || template.label, template: template }));
     };
     var handleViewClick = function (view) { return __awaiter(void 0, void 0, void 0, function () {
         var _a;
@@ -237,11 +241,6 @@ var AdminCollectionMenu = function () {
             findViews();
         }
     }, [viewId]);
-    (0, react_1.useEffect)(function () {
-        if (!(collection === null || collection === void 0 ? void 0 : collection.collection_type)) {
-            setCollection(__assign(__assign({}, collection), { collection_type: 'post' }));
-        }
-    }, [collection]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(components_1.MenuList, { label: 'Collections' }, collections.map(function (collection) { return (react_1.default.createElement(components_2.MenuListItem, { key: collection.id, title: collection === null || collection === void 0 ? void 0 : collection.label, icon: "Database", selected: !viewId && collectionId == (collection === null || collection === void 0 ? void 0 : collection.name), handleClick: function () { return handleClick(collection); }, handleEdit: function () { return handleEditCollectionClick(collection); }, handleDelete: function () { return handleDeleteCollectionClick(collection); } })); })),
         react_1.default.createElement(material_1.Box, { sx: sx.buttonContainer },

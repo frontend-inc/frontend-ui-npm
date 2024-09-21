@@ -24,14 +24,12 @@ var ProductCollectionListItem = function (props) {
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var router = (0, router_1.useRouter)();
     var handleShowClick = function () {
-        if (href) {
-            if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth',
-                });
-                router.push("".concat(clientUrl).concat(href, "/").concat(resource === null || resource === void 0 ? void 0 : resource.handle));
-            }
+        if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+            router.push("".concat(clientUrl).concat(href, "/").concat(resource === null || resource === void 0 ? void 0 : resource.handle));
         }
         else if (handleClick) {
             handleClick();

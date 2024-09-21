@@ -32,11 +32,9 @@ var __1 = require("../..");
 var shopify_1 = require("../../shopify");
 var context_1 = require("../../../context");
 var SideMenuItem_1 = __importDefault(require("./SideMenuItem"));
-var frontend_js_1 = require("frontend-js");
 var MobileDrawer = function (props) {
     var _a = (0, react_1.useContext)(context_1.AppContext), menuOpen = _a.menuOpen, setMenuOpen = _a.setMenuOpen;
     var links = props.links, handleClick = props.handleClick, enableAuth = props.enableAuth, enableStripe = props.enableStripe, enableShopify = props.enableShopify;
-    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var handleMenuClick = function (path) {
         setMenuOpen(false);
         handleClick(path);

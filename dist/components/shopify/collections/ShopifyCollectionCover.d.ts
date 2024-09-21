@@ -12,6 +12,7 @@ export type ShopifyCollectionCoverProps = {
     opacity?: number;
     overlayColor?: string;
     href?: string;
+    buttonText?: string;
 };
 declare const ShopifyCollectionCover: React.FC<ShopifyCollectionCoverProps>;
 export default ShopifyCollectionCover;

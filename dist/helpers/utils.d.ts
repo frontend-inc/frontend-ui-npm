@@ -4,11 +4,11 @@ export declare const truncate: (str: any, length?: number) => any;
 export declare function getInitials(name: any): any;
 export declare const groupBy: (arr: any, name: any) => {};
 export declare const groupResourcesByField: (resources: any, fieldName: any, allowedValues: any) => {};
-export declare const resize: (src: any, { width, height, transform }: {
+export declare const resizeCloudinaryImage: (src: any, { width, height, transform }: {
     width: any;
     height: any;
     transform?: string;
 }) => string;
-export declare const imageFromVideoUrl: (url: any) => any;
+export declare const cloudinaryImageFromVideoUrl: (url: any) => any;
 export declare const scrollTo: (domId: any) => void;
 export declare const formatCurrency: (amount: any, currency?: string) => string;

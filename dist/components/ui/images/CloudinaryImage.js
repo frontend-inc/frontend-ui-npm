@@ -14,13 +14,13 @@ var CloudinaryImage = function (props) {
     var imageUrl = src;
     //@ts-ignore
     if (index_1.VIDEO_FORMATS.includes(fileExtension)) {
-        imageUrl = (0, helpers_1.imageFromVideoUrl)(src);
+        imageUrl = (0, helpers_1.cloudinaryImageFromVideoUrl)(src);
     }
     else {
         // convert all images to jpg to ensure that they render correctly
-        imageUrl = src.substr(0, src.lastIndexOf('.')) + '.jpg';
+        imageUrl = src.slice(0, src.lastIndexOf('.')) + '.jpg';
     }
-    var resizedImageUrl = (0, helpers_1.resize)(imageUrl, {
+    var resizedImageUrl = (0, helpers_1.resizeCloudinaryImage)(imageUrl, {
         width: width,
         height: height,
     });

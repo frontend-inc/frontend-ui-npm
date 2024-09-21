@@ -46,7 +46,7 @@ function useApps() {
         url: "/api/v1/admin/apps",
         name: 'app',
     }), errors = _a.errors, loading = _a.loading, delayedLoading = _a.delayedLoading, loaded = _a.loaded, empty = _a.empty, editing = _a.editing, isValid = _a.isValid, app = _a.resource, apps = _a.resources, findApp = _a.findOne, findApps = _a.findMany, updateApp = _a.update, createApp = _a.create, saveApp = _a.save, deleteApp = _a.destroy, handleChange = _a.handleChange, handleChangeApp = _a.handleChangeApp, reloadApp = _a.reloadOne, reloadApps = _a.reloadMany, query = _a.query, currentApp = _a.app, numApps = _a.numApps, perApp = _a.perApp, totalCount = _a.totalCount, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort, addAttachment = _a.addAttachment, removeAttachment = _a.removeAttachment, setApp = _a.setResource, setApps = _a.setResources, loadingWrapper = _a.loadingWrapper;
-    var publishApp = function (appId) { return __awaiter(_this, void 0, void 0, function () {
+    var publishApp = function () { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("".concat(apiUrl, "/publish")); })];
@@ -54,7 +54,7 @@ function useApps() {
             }
         });
     }); };
-    var buildApp = function (appId) { return __awaiter(_this, void 0, void 0, function () {
+    var buildApp = function () { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("".concat(apiUrl, "/build")); })];
@@ -62,7 +62,7 @@ function useApps() {
             }
         });
     }); };
-    var generateAI = function (appId) { return __awaiter(_this, void 0, void 0, function () {
+    var generateAI = function () { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, loadingWrapper(function () { return api.post("".concat(apiUrl, "/generate_ai")); })];

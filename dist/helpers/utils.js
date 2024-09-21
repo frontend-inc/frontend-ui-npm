@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatCurrency = exports.scrollTo = exports.imageFromVideoUrl = exports.resize = exports.groupResourcesByField = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
+exports.formatCurrency = exports.scrollTo = exports.cloudinaryImageFromVideoUrl = exports.resizeCloudinaryImage = exports.groupResourcesByField = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
 var isEmptyObject = function (object) {
     if (Object.values(object).every(function (x) { return x === null || x === ''; })) {
         return false;
@@ -81,12 +81,12 @@ var groupResourcesByField = function (resources, fieldName, allowedValues) {
 };
 exports.groupResourcesByField = groupResourcesByField;
 // https://cloudinary.com/documentation/resizing_and_cropping
-var resize = function (src, _a) {
+var resizeCloudinaryImage = function (src, _a) {
     var width = _a.width, height = _a.height, _b = _a.transform, transform = _b === void 0 ? 'fill' : _b;
     if (!src)
         return null;
     var index = src.indexOf('/upload') + 7; // 7 is number of chars in '/upload'
-    var params = ["/c_".concat(transform)];
+    var params = ["/c_".concat(transform, ",q_auto")];
     if (width && width > 0)
         params.push("w_".concat(width));
     if (height && height > 0)
@@ -94,13 +94,13 @@ var resize = function (src, _a) {
     var transformedUrl = src.substring(0, index) + params.join(',') + src.substring(index);
     return transformedUrl;
 };
-exports.resize = resize;
-var imageFromVideoUrl = function (url) {
+exports.resizeCloudinaryImage = resizeCloudinaryImage;
+var cloudinaryImageFromVideoUrl = function (url) {
     if (!url)
         return null;
     return url === null || url === void 0 ? void 0 : url.replace(/mp4|mpeg|ogg|mkv|mov/i, 'jpg');
 };
-exports.imageFromVideoUrl = imageFromVideoUrl;
+exports.cloudinaryImageFromVideoUrl = cloudinaryImageFromVideoUrl;
 var scrollTo = function (domId) {
     var elem = document.getElementById(domId);
     elem === null || elem === void 0 ? void 0 : elem.scrollIntoView({ behavior: 'smooth' });

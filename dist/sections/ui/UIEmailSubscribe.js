@@ -28,9 +28,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
-var UICTA = function (props) {
+var UIEmailSubscribe = function (props) {
     var mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_2.CTA, __assign({}, rest))));
+        react_1.default.createElement(components_2.EmailSubscribe, __assign({}, rest))));
 };
-exports.default = UICTA;
+exports.default = UIEmailSubscribe;

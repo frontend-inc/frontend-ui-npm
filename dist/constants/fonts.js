@@ -21,6 +21,8 @@ exports.FONTS = [
     { label: 'Raleway', value: 'Raleway' },
     { label: 'Roboto', value: 'Roboto' },
     { label: 'Roboto Slab', value: 'Roboto Slab' },
+    { label: 'Roboto Flex', value: 'Roboto Flex' },
+    { label: 'Roboto Mono', value: 'Roboto Mono' },
     { label: 'Rubik', value: 'Rubik' },
     { label: 'Space Grotesk', value: 'Space Grotesk' },
     { label: 'Space Mono', value: 'Space Mono' },

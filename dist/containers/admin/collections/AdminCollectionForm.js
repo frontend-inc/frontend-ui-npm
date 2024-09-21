@@ -26,6 +26,12 @@ var AdminCollectionForm = function (props) {
                         placeholder: 'API name',
                         variant: 'nospace',
                     },
+                    {
+                        label: 'Description',
+                        name: 'description',
+                        placeholder: 'Description',
+                        variant: 'text',
+                    },
                 ] })),
         !(collection === null || collection === void 0 ? void 0 : collection.id) && (react_1.default.createElement(components_3.MenuList, { enableBorder: true, label: "Templates" },
             react_1.default.createElement(material_1.List, { sx: { my: 0 } }, constants_1.COLLECTION_TEMPLATES.map(function (template) { return (react_1.default.createElement(components_2.MenuListItem, { selected: collection.template == template, title: template.label, description: template.description, icon: template.icon, color: template.color, handleClick: function () { return handleTemplateClick(template); } })); })))),

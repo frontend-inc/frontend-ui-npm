@@ -41,16 +41,8 @@ var PriceCard = function (props) {
             setAuthOpen(true);
             return;
         }
-        if (!price.url)
-            return;
-        switch (price === null || price === void 0 ? void 0 : price.price_type) {
-            case 'stripe_payment_link':
-                var url = "".concat(price.stripe_payment_url, "?client_reference_id=").concat(currentUser.id, "&email=").concat(currentUser.email);
-                window.open(url, '_blank');
-                break;
-            case 'url':
-                router.push(price.url);
-                break;
+        if (price.url) {
+            router.push(price.url);
         }
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
@@ -58,14 +50,10 @@ var PriceCard = function (props) {
             (price === null || price === void 0 ? void 0 : price.label) && (react_1.default.createElement(material_1.Box, null,
                 react_1.default.createElement(__1.Label, { label: price.label }))),
             react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, price.title),
-            react_1.default.createElement(material_1.Typography, { variant: "h5", color: "text.primary" },
-                (0, frontend_shopify_1.formatCurrency)(price.price, 0),
-                price.recurring &&
-                    price.recurring_rate &&
-                    "/".concat(price.recurring_rate)),
+            react_1.default.createElement(material_1.Typography, { variant: "h5", color: "text.primary" }, (0, frontend_shopify_1.formatCurrency)(price.price, 0)),
             react_1.default.createElement(material_1.Divider, null),
             react_1.default.createElement(material_1.List, { disablePadding: true }, (_a = price === null || price === void 0 ? void 0 : price.features) === null || _a === void 0 ? void 0 : _a.map(function (feature, i) { return (react_1.default.createElement(material_1.ListItem, { key: i },
-                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, feature === null || feature === void 0 ? void 0 : feature.label) }))); }))),
+                react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.primary" }, feature) }))); }))),
         react_1.default.createElement(material_1.Button, { onClick: handleClick, variant: "contained", color: "primary", fullWidth: true }, price.buttonText)));
 };
 exports.default = PriceCard;

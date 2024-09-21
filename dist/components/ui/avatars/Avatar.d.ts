@@ -1,7 +1,7 @@
 import React from 'react';
 type UserAvatarProps = {
     src?: string;
-    variant?: 'circular' | 'rounded' | 'square';
+    variant?: 'circular' | 'rounded';
     label?: string;
     size?: number;
     color?: string;

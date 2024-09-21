@@ -43,7 +43,7 @@ var ProductList = function (props) {
         item: __assign(__assign({}, defaultSlots.item), { href: href, buttons: buttons, displayFields: displayFields, enableLikes: enableLikes, enableFavorites: enableFavorites, enableRatings: enableRatings, enableUsers: enableUsers, enableGradient: enableGradient, enableOverlay: enableOverlay }),
     };
     if (!url) {
-        url = "/".concat(apiUrl, "/shop/products");
+        url = "".concat(apiUrl, "/shop/products");
     }
     return (react_1.default.createElement(components_1.DataList, { selectable: selectable, grid: grid, url: url, foreignUrl: foreignUrl, name: "product", query: searchQuery, fields: fields, enableShow: enableShow, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, filterOptions: filterOptions, sortOptions: sortOptions, header: Header, list: List, component: Component, show: Show, empty: Empty, slots: slots }));
 };

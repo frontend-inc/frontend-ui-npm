@@ -27,10 +27,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
-var components_2 = require("../../components");
-var CmsEmailSignup = function (props) {
-    var mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
+var shop_1 = require("../../components/shop");
+var ShopProductRecommendations = function (props) {
+    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_2.EmailSignup, __assign({}, rest))));
+        react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
+        react_1.default.createElement(shop_1.ProductSimilarList, __assign({}, rest))));
 };
-exports.default = CmsEmailSignup;
+exports.default = ShopProductRecommendations;

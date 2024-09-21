@@ -55,7 +55,7 @@ var useCollections = function () {
             }
         });
     }); };
-    var aiGenerateMockData = function (collectionId) { return __awaiter(void 0, void 0, void 0, function () {
+    var aiGenerateData = function (collectionId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, loadingWrapper(function () {
@@ -95,7 +95,7 @@ var useCollections = function () {
         setCollection: setCollection,
         setCollections: setCollections,
         exportCSV: exportCSV,
-        aiGenerateMockData: aiGenerateMockData,
+        aiGenerateData: aiGenerateData,
     };
 };
 exports.default = useCollections;

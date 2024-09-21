@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonType, TypographyVariantsType } from '../../../types';
-export type CTAProps = {
+export type CallToActionProps = {
     label?: string;
     title: string;
     description: string;
@@ -8,5 +8,5 @@ export type CTAProps = {
     buttons: ButtonType[];
     direction?: string;
 };
-declare const CTA: React.FC<CTAProps>;
-export default CTA;
+declare const CallToAction: React.FC<CallToActionProps>;
+export default CallToAction;

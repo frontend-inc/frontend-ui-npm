@@ -29,6 +29,6 @@ declare const useCollections: () => {
     setCollection: (value: any) => void;
     setCollections: (value: any[]) => void;
     exportCSV: (collectionId: any) => Promise<void>;
-    aiGenerateMockData: (collectionId: any) => Promise<void>;
+    aiGenerateData: (collectionId: any) => Promise<void>;
 };
 export default useCollections;

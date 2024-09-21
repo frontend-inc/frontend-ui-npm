@@ -23,7 +23,9 @@ declare const _default: {
             root: {
                 whiteSpace: string;
             };
-            sizeSmall: {};
+            sizeSmall: {
+                height: number;
+            };
             sizeLarge: {};
             outlined: {};
             contained: {};
@@ -153,6 +155,7 @@ declare const _default: {
                 textTransform: string;
                 fontWeight: number;
                 fontSize: number;
+                lineHeight: string;
                 '@media (max-width:600px)': {
                     fontSize: number;
                 };

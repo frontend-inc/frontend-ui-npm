@@ -17,10 +17,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var IconLoading = function (props) {
-    var _a = props.loading, loading = _a === void 0 ? false : _a, _b = props.color, color = _b === void 0 ? 'primary.contrastText' : _b;
+    var _a = props.loading, loading = _a === void 0 ? false : _a, _b = props.size, size = _b === void 0 ? 20 : _b, _c = props.color, color = _c === void 0 ? 'primary.contrastText' : _c;
     if (!loading)
         return null;
-    return (react_1.default.createElement(material_1.CircularProgress, { disableShrink: true, sx: __assign(__assign({}, sx.loader), { color: color }), size: 20 }));
+    return (react_1.default.createElement(material_1.CircularProgress, { disableShrink: true, sx: __assign(__assign({}, sx.loader), { color: color }), size: size }));
 };
 exports.default = IconLoading;
 var sx = {

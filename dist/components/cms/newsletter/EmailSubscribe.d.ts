@@ -1,6 +1,6 @@
 import React from 'react';
 import { TypographyVariantsType } from '../../../types';
-export type EmailSignupProps = {
+export type EmailSubscribeProps = {
     label?: string;
     title: string;
     description: string;
@@ -10,5 +10,5 @@ export type EmailSignupProps = {
     handleClick?: () => void;
     direction?: string;
 };
-declare const EmailSignup: React.FC<EmailSignupProps>;
-export default EmailSignup;
+declare const EmailSubscribe: React.FC<EmailSubscribeProps>;
+export default EmailSubscribe;

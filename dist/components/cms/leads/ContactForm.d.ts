@@ -1,5 +1,5 @@
 import React from 'react';
-import { TypographyVariantsType } from '../../../types';
+import { FormFieldType, TypographyVariantsType } from '../../../types';
 export type ContactFormProps = {
     label?: string;
     title: string;
@@ -7,6 +7,7 @@ export type ContactFormProps = {
     buttonText?: string;
     textVariant?: TypographyVariantsType;
     href?: string;
+    metafields?: FormFieldType[];
     handleClick?: () => void;
 };
 declare const ContactForm: React.FC<ContactFormProps>;

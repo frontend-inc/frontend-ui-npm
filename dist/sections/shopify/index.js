@@ -3,11 +3,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShopifySearch = exports.ShopifyMetafieldVideo = exports.ShopifyMetafieldImage = exports.ShopifyMetafieldProducts = exports.ShopifyMetafields = exports.ShopifyProductRecommendations = exports.ShopifyProductDetails = exports.ShopifyProductsCarousel = exports.ShopifyProducts = exports.ShopifyRecentlyViewed = exports.ShopifyProductFeatured = exports.ShopifyFavorites = exports.ShopifyCollections = exports.ShopifyCollectionCover = void 0;
+exports.ShopifySearch = exports.ShopifyMetafieldVideo = exports.ShopifyMetafieldImage = exports.ShopifyMetafieldProducts = exports.ShopifyMetafields = exports.ShopifyProductRecommendations = exports.ShopifyProductDetails = exports.ShopifyProductsCarousel = exports.ShopifyProducts = exports.ShopifyRecentlyViewed = exports.ShopifyProductFeatured = exports.ShopifyFavorites = exports.ShopifyCollectionsCoverCarousel = exports.ShopifyCollections = exports.ShopifyCollectionCover = void 0;
 var ShopifyCollectionCover_1 = require("./ShopifyCollectionCover");
 Object.defineProperty(exports, "ShopifyCollectionCover", { enumerable: true, get: function () { return __importDefault(ShopifyCollectionCover_1).default; } });
 var ShopifyCollections_1 = require("./ShopifyCollections");
 Object.defineProperty(exports, "ShopifyCollections", { enumerable: true, get: function () { return __importDefault(ShopifyCollections_1).default; } });
+var ShopifyCollectionsCoverCarousel_1 = require("./ShopifyCollectionsCoverCarousel");
+Object.defineProperty(exports, "ShopifyCollectionsCoverCarousel", { enumerable: true, get: function () { return __importDefault(ShopifyCollectionsCoverCarousel_1).default; } });
 var ShopifyFavorites_1 = require("./ShopifyFavorites");
 Object.defineProperty(exports, "ShopifyFavorites", { enumerable: true, get: function () { return __importDefault(ShopifyFavorites_1).default; } });
 var ShopifyProductFeatured_1 = require("./ShopifyProductFeatured");
