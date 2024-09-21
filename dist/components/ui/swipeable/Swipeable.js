@@ -33,8 +33,8 @@ var react_swipeable_views_utils_1 = require("react-swipeable-views-utils");
 var material_1 = require("@mui/material");
 var AutoPlaySwipeableViews = (0, react_swipeable_views_utils_1.autoPlay)(react_swipeable_views_1.default);
 var Swipeable = function (props) {
-    var _a = props.children, children = _a === void 0 ? [] : _a, _b = props.enableArrows, enableArrows = _b === void 0 ? false : _b, _c = props.enableAutoPlay, enableAutoPlay = _c === void 0 ? false : _c;
-    var _d = (0, react_1.useState)(0), activeStep = _d[0], setActiveStep = _d[1];
+    var _a = props.children, children = _a === void 0 ? [] : _a, _b = props.interval, interval = _b === void 0 ? 5000 : _b, _c = props.enableArrows, enableArrows = _c === void 0 ? false : _c, _d = props.enableAutoPlay, enableAutoPlay = _d === void 0 ? false : _d;
+    var _e = (0, react_1.useState)(0), activeStep = _e[0], setActiveStep = _e[1];
     var handleStepChange = function (step) {
         setActiveStep(step);
     };
@@ -58,7 +58,7 @@ var Swipeable = function (props) {
         ? AutoPlaySwipeableViews
         : react_swipeable_views_1.default;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(SwipeableComponent, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true }, children),
+        react_1.default.createElement(SwipeableComponent, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true, interval: interval }, children),
         enableArrows && (react_1.default.createElement(material_1.Box, { sx: sx.buttons },
             react_1.default.createElement(material_1.IconButton, { onClick: handlePrev },
                 react_1.default.createElement(__1.Icon, { name: "ChevronLeft", size: 32 })),

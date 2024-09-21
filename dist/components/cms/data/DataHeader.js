@@ -18,8 +18,8 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
-var DataToolbar = function (props) {
-    var url = props.url, _a = props.query, defaultQuery = _a === void 0 ? {} : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.sortOptions, sortOptions = _c === void 0 ? [] : _c, _d = props.enableCreate, enableCreate = _d === void 0 ? false : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, _g = props.enableSorting, enableSorting = _g === void 0 ? false : _g, _h = props.buttonText, buttonText = _h === void 0 ? 'Add' : _h, _j = props.component, SearchComponent = _j === void 0 ? __1.SearchInput : _j, _k = props.slots, slots = _k === void 0 ? {
+var DataHeader = function (props) {
+    var url = props.url, _a = props.query, defaultQuery = _a === void 0 ? {} : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.sortOptions, sortOptions = _c === void 0 ? [] : _c, _d = props.enableCreate, enableCreate = _d === void 0 ? false : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, _g = props.enableSorting, enableSorting = _g === void 0 ? false : _g, _h = props.buttonText, buttonText = _h === void 0 ? 'Add' : _h, secondaryAction = props.secondaryAction, _j = props.component, SearchComponent = _j === void 0 ? __1.SearchInput : _j, _k = props.slots, slots = _k === void 0 ? {
         search: {},
     } : _k;
     var _l = (0, hooks_1.useSearch)({
@@ -38,10 +38,10 @@ var DataToolbar = function (props) {
                     react_1.default.createElement(__1.FilterButton, { filterOptions: filterOptions, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters }))),
                 enableSorting && (react_1.default.createElement(material_1.Box, { sx: sx.buttonContainer },
                     react_1.default.createElement(__1.SortButton, { sortOptions: sortOptions, sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
-            enableCreate && (react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' }, alignItems: "center" },
+            (enableCreate || secondaryAction) && (react_1.default.createElement(material_1.Stack, { spacing: 1, direction: { xs: 'column', sm: 'row' }, alignItems: "center" },
                 react_1.default.createElement(material_1.Button, { sx: sx.button, color: "primary", variant: "contained", onClick: handleAdd, startIcon: react_1.default.createElement(__1.Icon, { name: "Plus", color: "primary.contrastText" }) }, buttonText))))));
 };
-exports.default = DataToolbar;
+exports.default = DataHeader;
 var sx = {
     root: {
         width: '100%',

@@ -9,6 +9,9 @@ export type PrimaryButtonProps = {
     fullWidth?: boolean;
     size?: 'small' | 'medium' | 'large';
     disabled?: boolean;
+    alert?: boolean;
+    title?: string;
+    description?: string;
 };
 declare const PrimaryButton: React.FC<PrimaryButtonProps>;
 export default PrimaryButton;

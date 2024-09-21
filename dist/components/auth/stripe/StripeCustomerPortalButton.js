@@ -40,57 +40,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
-var material_1 = require("@mui/material");
-var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
-var AdminProductToolbar = function (props) {
-    var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    var _a = props || {}, open = _a.open, handleClose = _a.handleClose, selectedIds = _a.selectedIds, handleReload = _a.handleReload;
-    var _b = (0, frontend_js_1.useResource)({
-        url: "".concat(apiUrl, "/products"),
-        name: 'product',
-    }), publish = _b.publish, unpublish = _b.unpublish, deleteMany = _b.deleteMany;
-    var handlePublish = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, publish(selectedIds)];
+var material_1 = require("@mui/material");
+var StripeCustomerPortalButton = function () {
+    var _a = (0, hooks_1.useStripeCustomerPortal)(), loading = _a.loading, stripeCustomerPortal = _a.stripeCustomerPortal;
+    var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var url, resp;
+        var _a, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    url = window.location.href;
+                    return [4 /*yield*/, stripeCustomerPortal(url)];
                 case 1:
-                    _a.sent();
-                    handleReload();
-                    handleClose();
+                    resp = _c.sent();
+                    if ((_a = resp === null || resp === void 0 ? void 0 : resp.data) === null || _a === void 0 ? void 0 : _a.url) {
+                        window.open((_b = resp === null || resp === void 0 ? void 0 : resp.data) === null || _b === void 0 ? void 0 : _b.url, '_blank');
+                    }
                     return [2 /*return*/];
             }
         });
     }); };
-    var handleUnpublish = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, unpublish(selectedIds)];
-                case 1:
-                    _a.sent();
-                    handleReload();
-                    handleClose();
-                    return [2 /*return*/];
-            }
-        });
-    }); };
-    var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, deleteMany(selectedIds)];
-                case 1:
-                    _a.sent();
-                    handleReload();
-                    handleClose();
-                    return [2 /*return*/];
-            }
-        });
-    }); };
-    return (react_1.default.createElement(components_1.ResourceToolbarModal, { open: open, handleClose: handleClose },
-        react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
-            react_1.default.createElement(components_1.PrimaryButton, { onClick: handlePublish }, "Publish"),
-            react_1.default.createElement(components_1.SecondaryButton, { onClick: handleUnpublish }, "Unpublish"),
-            react_1.default.createElement(components_1.SecondaryButton, { alert: true, onClick: handleDelete }, "Delete"))));
+    return (react_1.default.createElement(material_1.Button, { variant: "contained", color: "primary", onClick: handleClick }, loading ? 'Connecting...' : 'Manage Payments with Stripe'));
 };
-exports.default = AdminProductToolbar;
+exports.default = StripeCustomerPortalButton;

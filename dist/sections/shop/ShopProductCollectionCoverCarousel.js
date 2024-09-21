@@ -28,9 +28,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
-var ShopProductCollectionsCoverCarousel = function (props) {
+var ShopProductCollectionCoverCarousel = function (props) {
     var _a = props.mode, mode = _a === void 0 ? 'dark' : _a, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { mode: mode, py: 0, px: 0, requireAuth: requireAuth, requirePaid: requirePaid },
-        react_1.default.createElement(components_2.ProductCollectionCarouselCoverList, __assign({}, rest))));
+    return (react_1.default.createElement(components_1.Section, { mode: 'dark', py: 0, px: 0, requireAuth: requireAuth, requirePaid: requirePaid },
+        react_1.default.createElement(components_2.ProductCollectionCoverCarouselList, __assign({}, rest))));
 };
-exports.default = ShopProductCollectionsCoverCarousel;
+exports.default = ShopProductCollectionCoverCarousel;

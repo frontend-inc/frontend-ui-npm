@@ -23,7 +23,7 @@ var MyAccountMenu = function (props) {
     var TABS = [{ label: 'My Account', value: 0 }];
     var SUBSCRIPTION_TAB = [
         {
-            label: 'Subscription',
+            label: 'Manage Billing',
             value: 1,
         },
     ];

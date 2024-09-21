@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthUserListItem = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthButton = exports.AuthWall = exports.AuthGuard = void 0;
+exports.AuthUserListItem = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.StripeCustomerPortalButton = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthFromCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthIconButton = exports.AuthButton = exports.AuthWall = exports.AuthGuard = void 0;
 __exportStar(require("./my-account"), exports);
 var AuthGuard_1 = require("./AuthGuard");
 Object.defineProperty(exports, "AuthGuard", { enumerable: true, get: function () { return __importDefault(AuthGuard_1).default; } });
@@ -71,6 +71,8 @@ var Signup_1 = require("./signup/Signup");
 Object.defineProperty(exports, "Signup", { enumerable: true, get: function () { return __importDefault(Signup_1).default; } });
 var SignupForm_1 = require("./signup/SignupForm");
 Object.defineProperty(exports, "SignupForm", { enumerable: true, get: function () { return __importDefault(SignupForm_1).default; } });
+var StripeCustomerPortalButton_1 = require("./stripe/StripeCustomerPortalButton");
+Object.defineProperty(exports, "StripeCustomerPortalButton", { enumerable: true, get: function () { return __importDefault(StripeCustomerPortalButton_1).default; } });
 var VerifyPin_1 = require("./verify/VerifyPin");
 Object.defineProperty(exports, "VerifyPin", { enumerable: true, get: function () { return __importDefault(VerifyPin_1).default; } });
 var VerifyPinForm_1 = require("./verify/VerifyPinForm");

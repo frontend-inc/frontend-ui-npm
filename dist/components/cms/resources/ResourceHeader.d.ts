@@ -1,6 +1,6 @@
 import React from 'react';
 import { SortOptionType, SearchFilterOptionType, FilterOptionType, SyntheticEventType } from '../../../types';
-type ResourceHeaderProps = {
+export type ResourceHeaderProps = {
     direction?: 'row' | 'column';
     enableSearch: boolean;
     enableFilters: boolean;
@@ -13,11 +13,13 @@ type ResourceHeaderProps = {
     handleSort: (field: any) => void;
     handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
     handleAdd: () => void;
+    handleReload?: () => void;
     keywords: string;
     activeFilters: FilterOptionType[];
     filterOptions: SearchFilterOptionType[];
     sortOptions: SortOptionType[];
     query: any;
+    secondaryAction?: React.ReactNode;
 };
 declare const ResourceHeader: React.FC<ResourceHeaderProps>;
 export default ResourceHeader;

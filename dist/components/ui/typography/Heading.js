@@ -17,15 +17,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Heading = function (props) {
-    var _a = props || {}, buttons = _a.buttons, label = _a.label, title = _a.title, description = _a.description, _b = _a.textAlign, textAlign = _b === void 0 ? 'left' : _b, _c = _a.textVariant, textVariant = _c === void 0 ? 'h6' : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d;
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.textAlign, textAlign = _b === void 0 ? 'left' : _b, _c = _a.textVariant, textVariant = _c === void 0 ? 'h6' : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, secondaryAction = _a.secondaryAction;
     if (!title && !description && !label)
         return null;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Stack, { sx: __assign(__assign(__assign({}, sx.stack), (enableBorder && sx.border)), { alignItems: textAlign }), direction: 'column', spacing: 0 },
-            label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label)),
-            title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", sx: __assign(__assign({}, sx.title), { textAlign: textAlign }) }, title)),
-            description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: __assign(__assign({}, sx.description), { textAlign: textAlign }) }, description)),
-            buttons)));
+        react_1.default.createElement(material_1.Stack, { sx: sx.toolbar, direction: { sm: 'row', xs: 'column' } },
+            react_1.default.createElement(material_1.Stack, { sx: __assign(__assign(__assign({}, sx.stack), (enableBorder && sx.border)), { alignItems: textAlign }), direction: 'column', spacing: 0 },
+                label && (react_1.default.createElement(material_1.Typography, { variant: "caption", color: "text.secondary" }, label)),
+                title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "text.primary", sx: __assign(__assign({}, sx.title), { textAlign: textAlign }) }, title)),
+                description && (react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary", sx: __assign(__assign({}, sx.description), { textAlign: textAlign }) }, description))),
+            secondaryAction)));
 };
 exports.default = Heading;
 var sx = {
@@ -60,4 +61,9 @@ var sx = {
         width: '100%',
         whiteSpace: 'pre-line',
     },
+    toolbar: {
+        width: '100%',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    }
 };

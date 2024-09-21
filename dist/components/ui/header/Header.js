@@ -10,8 +10,8 @@ var MobileHeader_1 = __importDefault(require("./MobileHeader"));
 var DesktopHeader_1 = __importDefault(require("./DesktopHeader"));
 var hooks_1 = require("../../../hooks");
 var Header = function (props) {
-    var _a = (0, hooks_1.useApp)(), appLogo = _a.logo, enableStripe = _a.enableStripe, enableShopify = _a.enableShopify;
-    var logo = props.logo, _b = props.links, links = _b === void 0 ? [] : _b, handleClick = props.handleClick, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c;
+    var appLogo = (0, hooks_1.useApp)().logo;
+    var logo = props.logo, _a = props.links, links = _a === void 0 ? [] : _a, handleClick = props.handleClick, enableStripe = props.enableStripe, enableShopify = props.enableShopify, _b = props.enableAuth, enableAuth = _b === void 0 ? false : _b;
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(DesktopHeader_1.default, { logo: logo || appLogo, enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, links: links, handleClick: handleClick }),
         react_1.default.createElement(MobileHeader_1.default, { logo: logo || appLogo, enableStripe: enableStripe, enableShopify: enableShopify, enableNotifications: true, links: links, handleClick: handleClick }),

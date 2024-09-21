@@ -1,6 +1,6 @@
 import React from 'react';
 import { SortOptionType, SearchFilterOptionType } from '../../../types';
-export type DataToolbarProps = {
+export type DataHeaderProps = {
     query: any;
     url: string;
     enableSearch?: boolean;
@@ -12,9 +12,10 @@ export type DataToolbarProps = {
     handleAdd?: () => void;
     component?: React.FC<any>;
     buttonText?: string;
+    secondaryAction?: React.ReactNode;
     slots?: {
         search?: any;
     };
 };
-declare const DataToolbar: React.FC<DataToolbarProps>;
-export default DataToolbar;
+declare const DataHeader: React.FC<DataHeaderProps>;
+export default DataHeader;

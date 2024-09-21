@@ -28,7 +28,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var router_1 = require("next/router");
-var Footer = function (props) {
+var AppFooter = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = props || {}, mode = _a.mode, _b = _a.links, links = _b === void 0 ? [] : _b, rest = __rest(_a, ["mode", "links"]);
     var handleClick = function (path) {
@@ -37,4 +37,4 @@ var Footer = function (props) {
     return (react_1.default.createElement(components_1.LightDarkMode, { mode: mode },
         react_1.default.createElement(components_1.Footer, __assign({}, rest, { links: links, handleClick: handleClick }))));
 };
-exports.default = Footer;
+exports.default = AppFooter;

@@ -11,6 +11,7 @@ var AdminProductForm_1 = __importDefault(require("./AdminProductForm"));
 var AdminProductEditForm_1 = __importDefault(require("./AdminProductEditForm"));
 var AdminProductShow_1 = __importDefault(require("./AdminProductShow"));
 var AdminProductToolbar_1 = __importDefault(require("./AdminProductToolbar"));
+var AdminProductHeader_1 = __importDefault(require("./AdminProductHeader"));
 var AdminProductsList = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var _a = props.metafields, metafields = _a === void 0 ? [] : _a;
@@ -18,7 +19,7 @@ var AdminProductsList = function (props) {
             { name: 'price', label: 'Price' },
             { name: 'title', label: 'Title' },
             { name: 'created_at', label: 'Date' },
-        ], create: AdminProductForm_1.default, edit: AdminProductEditForm_1.default, show: AdminProductShow_1.default, toolbar: AdminProductToolbar_1.default, component: AdminProductItem_1.default, slots: {
+        ], create: AdminProductForm_1.default, edit: AdminProductEditForm_1.default, show: AdminProductShow_1.default, header: AdminProductHeader_1.default, toolbar: AdminProductToolbar_1.default, component: AdminProductItem_1.default, slots: {
             edit: {
                 metafields: metafields,
             },

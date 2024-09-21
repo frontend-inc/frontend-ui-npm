@@ -29,7 +29,7 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var router_1 = require("next/router");
 var hooks_1 = require("../../hooks");
-var Header = function (props) {
+var AppHeader = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = props || {}, mode = _a.mode, rest = __rest(_a, ["mode"]);
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
@@ -43,4 +43,4 @@ var Header = function (props) {
     return (react_1.default.createElement(components_1.LightDarkMode, { mode: mode },
         react_1.default.createElement(components_1.Header, __assign({}, rest, { handleClick: handleClick }))));
 };
-exports.default = Header;
+exports.default = AppHeader;

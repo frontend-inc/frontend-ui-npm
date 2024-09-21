@@ -50,7 +50,7 @@ var AdminProductCollectionToolbar = function (props) {
     var _b = (0, frontend_js_1.useResource)({
         url: "".concat(apiUrl, "/product_collections"),
         name: 'product_collection',
-    }), publish = _b.publish, unpublish = _b.unpublish;
+    }), publish = _b.publish, unpublish = _b.unpublish, deleteMany = _b.deleteMany;
     var handlePublish = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -75,9 +75,22 @@ var AdminProductCollectionToolbar = function (props) {
             }
         });
     }); };
+    var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, deleteMany(selectedIds)];
+                case 1:
+                    _a.sent();
+                    handleReload();
+                    handleClose();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     return (react_1.default.createElement(components_1.ResourceToolbarModal, { open: open, handleClose: handleClose },
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
             react_1.default.createElement(components_1.PrimaryButton, { onClick: handlePublish }, "Publish"),
-            react_1.default.createElement(components_1.SecondaryButton, { onClick: handleUnpublish }, "Unpublish"))));
+            react_1.default.createElement(components_1.SecondaryButton, { onClick: handleUnpublish }, "Unpublish"),
+            react_1.default.createElement(components_1.SecondaryButton, { alert: true, onClick: handleDelete }, "Delete"))));
 };
 exports.default = AdminProductCollectionToolbar;

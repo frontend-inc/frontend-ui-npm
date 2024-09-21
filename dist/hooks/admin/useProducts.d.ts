@@ -18,6 +18,7 @@ declare const useProducts: () => {
     createProduct: (resource: any) => any;
     deleteProduct: (id: import("frontend-js").ID) => Promise<any>;
     deleteProducts: (ids: import("frontend-js").ID[]) => void;
+    generateAiProducts: () => Promise<void>;
     loadMore: () => void;
     publish: (ids: import("frontend-js").ID[]) => Promise<any>;
     unpublish: (id: import("frontend-js").ID[]) => Promise<any>;

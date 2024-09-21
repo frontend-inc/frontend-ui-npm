@@ -1,10 +1,5 @@
 import React from 'react';
-export type SecondaryButtonProps = {
-    loading?: boolean;
-    children: string;
-    icon?: string;
-    onClick: (ev: any) => void;
-    fullWidth?: boolean;
-};
+import { PrimaryButtonProps } from './PrimaryButton';
+export type SecondaryButtonProps = PrimaryButtonProps;
 declare const SecondaryButton: React.FC<SecondaryButtonProps>;
 export default SecondaryButton;
