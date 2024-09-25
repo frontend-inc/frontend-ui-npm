@@ -10,13 +10,11 @@ var FormWizardInput_1 = __importDefault(require("./FormWizardInput"));
 var lodash_1 = require("lodash");
 var WIZARD_FIELD_VARIENTS = [
     'multiple_choice',
-    'multiple_choice_images',
     'single_choice',
-    'single_choice_image',
 ];
 var FormWizardField = function (props) {
     var field = props.field, fadeIn = props.fadeIn, resource = props.resource, handleChange = props.handleChange, handleRemove = props.handleRemove;
-    return (react_1.default.createElement(FormWizardInputWrapper_1.default, { fadeIn: fadeIn, title: field.title, description: field.description }, field && (react_1.default.createElement(react_1.default.Fragment, null, WIZARD_FIELD_VARIENTS.includes(field.variant) ? (react_1.default.createElement(FormWizardInput_1.default, { name: field.name, label: field.label, placeholder: field.placeholder, variant: field.variant, options: field.options, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange })) : (react_1.default.createElement(FormInput_1.default, { name: field.name, label: field.label, placeholder: field.placeholder, variant: field.variant, options: field.options, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove }))))));
+    return (react_1.default.createElement(FormWizardInputWrapper_1.default, { fadeIn: fadeIn, title: field.title, description: field.description }, field && (react_1.default.createElement(react_1.default.Fragment, null, WIZARD_FIELD_VARIENTS.includes(field.variant) ? (react_1.default.createElement(FormWizardInput_1.default, { name: field.name, label: field.label, placeholder: field.placeholder, variant: field.variant, options: field.options, answers: field.answers, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange })) : (react_1.default.createElement(FormInput_1.default, { name: field.name, label: field.label, placeholder: field.placeholder, variant: field.variant, options: field.options, value: (0, lodash_1.get)(resource, field.name), handleChange: handleChange, handleRemove: handleRemove }))))));
 };
 exports.default = FormWizardField;
 var sx = {

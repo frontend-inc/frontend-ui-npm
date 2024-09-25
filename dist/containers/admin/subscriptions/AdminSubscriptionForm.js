@@ -16,11 +16,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var containers_1 = require("../../../containers");
+var components_2 = require("../../../components");
 var AdminSubscriptionForm = function (props) {
     var _a = props || {}, handleAddAttachment = _a.handleAddAttachment, handleRemoveAttachment = _a.handleRemoveAttachment;
     var inputOptions = {
-        media: containers_1.MediaInput,
+        media: components_2.MediaInput,
     };
     var inputParams = {
         media: {

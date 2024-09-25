@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ViewAutosuggest = exports.UserMetafieldAutosuggest = exports.UserAutosuggest = exports.ShopifyCollectionAutosuggest = exports.ShopifyProductAutosuggest = exports.ShopifyMetafieldAutosuggest = exports.SubscriptionAutosuggest = exports.ProductMetafieldAutosuggest = exports.ProductCollectionAutosuggest = exports.ProductAutosuggest = exports.PolicyAutosuggest = exports.MetafieldAutosuggest = exports.FieldAutosuggest = exports.DocumentAutosuggest = exports.CollectionAutosuggest = exports.ZapAutosuggest = void 0;
+exports.ViewAutosuggest = exports.UserMetafieldAutosuggest = exports.UserAutosuggest = exports.ShopifyCollectionAutosuggest = exports.ShopifyProductAutosuggest = exports.ShopifyMetafieldAutosuggest = exports.SubscriptionAutosuggest = exports.ProductMetafieldAutosuggest = exports.ProductCollectionAutosuggest = exports.ProductAutosuggest = exports.PolicyAutosuggest = exports.MetafieldAutosuggest = exports.FormAutosuggest = exports.FieldAutosuggest = exports.DocumentAutosuggest = exports.CollectionAutosuggest = exports.ZapAutosuggest = void 0;
 var ZapAutosuggest_1 = require("./ZapAutosuggest");
 Object.defineProperty(exports, "ZapAutosuggest", { enumerable: true, get: function () { return __importDefault(ZapAutosuggest_1).default; } });
 var CollectionAutosuggest_1 = require("./CollectionAutosuggest");
@@ -12,6 +12,8 @@ var DocumentAutosuggest_1 = require("./DocumentAutosuggest");
 Object.defineProperty(exports, "DocumentAutosuggest", { enumerable: true, get: function () { return __importDefault(DocumentAutosuggest_1).default; } });
 var FieldAutosuggest_1 = require("./FieldAutosuggest");
 Object.defineProperty(exports, "FieldAutosuggest", { enumerable: true, get: function () { return __importDefault(FieldAutosuggest_1).default; } });
+var FormAutosuggest_1 = require("./FormAutosuggest");
+Object.defineProperty(exports, "FormAutosuggest", { enumerable: true, get: function () { return __importDefault(FormAutosuggest_1).default; } });
 var MetafieldAutosuggest_1 = require("./MetafieldAutosuggest");
 Object.defineProperty(exports, "MetafieldAutosuggest", { enumerable: true, get: function () { return __importDefault(MetafieldAutosuggest_1).default; } });
 var PolicyAutosuggest_1 = require("./PolicyAutosuggest");

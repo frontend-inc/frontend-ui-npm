@@ -21,6 +21,9 @@ export type ResourceListItemProps = {
     sortable?: boolean;
     isDragging?: boolean;
     enableBorder?: boolean;
+    slots?: {
+        image?: any;
+    };
 };
 declare const ResourceListItem: React.FC<ResourceListItemProps>;
 export default ResourceListItem;

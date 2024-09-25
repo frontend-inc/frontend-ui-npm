@@ -36,7 +36,9 @@ export declare const getCarouselResponsive: (theme?: {
                 sizeSmall: {
                     height: number;
                 };
-                sizeLarge: {};
+                sizeMedium: {
+                    height: number;
+                };
                 outlined: {};
                 contained: {};
             };

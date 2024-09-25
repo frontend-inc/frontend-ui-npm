@@ -1,6 +1,7 @@
 import React from 'react';
 import { SortOptionType, SearchFilterOptionType, FilterOptionType, SyntheticEventType } from '../../../types';
 export type ResourceHeaderProps = {
+    buttonText?: string;
     direction?: 'row' | 'column';
     enableSearch: boolean;
     enableFilters: boolean;

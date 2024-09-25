@@ -1,6 +1,3 @@
 import React from 'react';
-type TabAuthProps = {
-    loginUrl?: string;
-};
-declare const TabAuth: React.FC<TabAuthProps>;
+declare const TabAuth: React.FC;
 export default TabAuth;

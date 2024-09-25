@@ -94,7 +94,7 @@ var GoogleLoginButton = function (props) {
     }, [OAuthCredentials]);
     return (
     //@ts-ignore
-    react_1.default.createElement(material_1.Button, { sx: sx.button, size: "large", variant: "contained", color: "secondary", onClick: handleLogin, startIcon: loading ? (react_1.default.createElement(__1.IconLoading, { color: "secondary.contrastText", loading: loading })) : (react_1.default.createElement(material_1.Box, { sx: sx.icon, dangerouslySetInnerHTML: { __html: GoogleIcon } })) }, "Sign In with Google"));
+    react_1.default.createElement(material_1.Button, { sx: sx.button, variant: "contained", color: "secondary", onClick: handleLogin, startIcon: loading ? (react_1.default.createElement(__1.IconLoading, { color: "secondary.contrastText", loading: loading })) : (react_1.default.createElement(material_1.Box, { sx: sx.icon, dangerouslySetInnerHTML: { __html: GoogleIcon } })) }, "Sign In with Google"));
 };
 exports.default = GoogleLoginButton;
 var sx = {

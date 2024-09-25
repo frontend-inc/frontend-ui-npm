@@ -1,5 +1,6 @@
 import React from 'react';
 export type ResourceFormProps = {
+    title?: string;
     open: boolean;
     handleClose: () => void;
     loading: boolean;

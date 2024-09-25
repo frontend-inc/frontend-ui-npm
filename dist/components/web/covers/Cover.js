@@ -32,7 +32,7 @@ var Cover = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(__1.Image, { src: image, alt: alt, height: height, disableBorderRadius: true, bgcolor: overlayColor, enableGradient: enableGradient, enableOverlay: enableOverlay, opacity: opacity }),
+        react_1.default.createElement(__1.Image, { disableBorderRadius: true, src: image, alt: alt, height: height, bgcolor: overlayColor, enableGradient: enableGradient, enableOverlay: enableOverlay, opacity: opacity }),
         react_1.default.createElement(material_1.Stack, { sx: __assign(__assign({}, sx.stack), { height: "".concat(height, "px") }) },
             react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, alignItems: alignItems, sx: sx.content },
                 title && (react_1.default.createElement(material_1.Typography, { variant: textVariant, color: "common.white", sx: {

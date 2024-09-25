@@ -10,10 +10,9 @@ var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
 var router_1 = require("next/router");
 var TabAuth = function (props) {
-    var _a = (props || {}).loginUrl, loginUrl = _a === void 0 ? '/login' : _a;
     var router = (0, router_1.useRouter)();
-    var _b = (0, frontend_js_1.useAuth)(), logout = _b.logout, currentUser = _b.currentUser;
-    var _c = (0, hooks_1.useMenu)(), open = _c.open, anchorEl = _c.anchorEl, closeMenu = _c.closeMenu, toggleMenu = _c.toggleMenu;
+    var _a = (0, frontend_js_1.useAuth)(), logout = _a.logout, currentUser = _a.currentUser;
+    var _b = (0, hooks_1.useMenu)(), open = _b.open, anchorEl = _b.anchorEl, closeMenu = _b.closeMenu, toggleMenu = _b.toggleMenu;
     var handleClick = function (url) {
         closeMenu();
         window.scrollTo({
@@ -24,7 +23,7 @@ var TabAuth = function (props) {
     };
     var handleLogoutClick = function () {
         logout();
-        router.push(loginUrl);
+        router.push('/');
     };
     if (!currentUser)
         return null;

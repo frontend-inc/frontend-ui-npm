@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnswerType } from '../../../../types';
 export type FormWizardProps = {
     field: {
         variant: string;
@@ -8,6 +9,7 @@ export type FormWizardProps = {
         placeholder: string;
         name: string;
         options: any;
+        answers?: AnswerType[];
     };
     handleChange: (ev: any) => void;
     handleRemove: (name: string) => void;

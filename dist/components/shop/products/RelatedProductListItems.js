@@ -84,7 +84,7 @@ var RelatedProductListItems = function (props) {
             setOpenShow(true);
         }
     };
-    var _r = (0, hooks_2.useForms)(), handleEdit = _r.handleEdit, handleDeleteClick = _r.handleDeleteClick;
+    var _r = (0, hooks_2.useCollectionForms)(), handleEdit = _r.handleEdit, handleDeleteClick = _r.handleDeleteClick;
     var handlePaginate = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

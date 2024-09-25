@@ -8,6 +8,7 @@ type UserAutosuggestProps = {
     placeholder?: string;
     direction?: 'row' | 'column';
     displayField?: string;
+    valueParam?: string;
     handleChange: (ev: SyntheticEventType) => void;
 };
 declare const UserAutosuggest: React.FC<UserAutosuggestProps>;

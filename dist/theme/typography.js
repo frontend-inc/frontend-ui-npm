@@ -4,16 +4,16 @@ exports.typography = void 0;
 exports.typography = {
     h1: {
         fontFamily: 'Instrument Sans',
-        fontWeight: 700,
-        fontSize: 46,
+        fontWeight: 600,
+        fontSize: 54,
         lineHeight: '1.1em',
         '@media (max-width:600px)': {
-            fontSize: 40,
+            fontSize: 46,
         },
     },
     h2: {
         fontFamily: 'Instrument Sans',
-        fontWeight: 700,
+        fontWeight: 600,
         fontSize: 38,
         '@media (max-width:600px)': {
             fontSize: 32,
@@ -21,7 +21,7 @@ exports.typography = {
     },
     h3: {
         fontFamily: 'Instrument Sans',
-        fontWeight: 700,
+        fontWeight: 600,
         textIndent: 0,
         fontSize: 34,
         '@media (max-width:600px)': {
@@ -32,19 +32,19 @@ exports.typography = {
     h4: {
         fontFamily: 'Instrument Sans',
         fontSize: 28,
-        fontWeight: 700,
+        fontWeight: 500,
         '@media (max-width:600px)': {
             fontSize: 22,
         },
     },
     h5: {
         fontFamily: 'Instrument Sans',
-        fontWeight: 700,
+        fontWeight: 500,
         fontSize: 26,
     },
     h6: {
         fontFamily: 'Instrument Sans',
-        fontWeight: 700,
+        fontWeight: 500,
         fontSize: 24,
     },
     subtitle1: {

@@ -58,15 +58,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var material_1 = require("@mui/material");
-var MediaUploader_1 = __importDefault(require("./MediaUploader"));
 var components_2 = require("../../../components");
+var components_3 = require("../../../components");
 var AdminMediaForm = function (props) {
     var _a = props || {}, open = _a.open, handleClose = _a.handleClose, handleReload = _a.handleReload;
     var _b = (0, react_1.useState)(0), tab = _b[0], setTab = _b[1];
@@ -86,8 +83,8 @@ var AdminMediaForm = function (props) {
                     { label: 'Upload', value: 0 },
                     { label: 'Unsplash', value: 1 },
                 ], value: tab, handleChange: handleChange })),
-        tab == 0 && react_1.default.createElement(MediaUploader_1.default, { onComplete: handleComplete }),
-        tab == 1 && react_1.default.createElement(components_2.UnsplashList, { onComplete: handleComplete })));
+        tab == 0 && react_1.default.createElement(components_2.MediaUploader, { onComplete: handleComplete }),
+        tab == 1 && react_1.default.createElement(components_3.UnsplashList, { onComplete: handleComplete })));
 };
 exports.default = AdminMediaForm;
 var sx = {

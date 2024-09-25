@@ -13,6 +13,7 @@ var AdminProductShow = function (props) {
         { label: 'Subtotal', name: 'display_subtotal', variant: 'string' },
         { label: 'Total', name: 'display_total', variant: 'string' },
     ];
-    return (react_1.default.createElement(components_1.ResourceDetails, { loading: loading, open: open, handleClose: handleClose, image: (_b = (_a = resource === null || resource === void 0 ? void 0 : resource.product) === null || _a === void 0 ? void 0 : _a.image) === null || _b === void 0 ? void 0 : _b.url, primary: resource === null || resource === void 0 ? void 0 : resource.display_number, secondary: resource === null || resource === void 0 ? void 0 : resource.display_total, label: resource === null || resource === void 0 ? void 0 : resource.status, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete, resource: resource, fields: fields, direction: "column" }));
+    return (react_1.default.createElement(components_1.ResourceModal, { loading: loading, open: open, handleClose: handleClose, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete },
+        react_1.default.createElement(components_1.ResourceDetails, { image: (_b = (_a = resource === null || resource === void 0 ? void 0 : resource.product) === null || _a === void 0 ? void 0 : _a.image) === null || _b === void 0 ? void 0 : _b.url, primary: resource === null || resource === void 0 ? void 0 : resource.display_number, secondary: resource === null || resource === void 0 ? void 0 : resource.display_total, label: resource === null || resource === void 0 ? void 0 : resource.status, resource: resource, fields: fields, direction: "column" })));
 };
 exports.default = AdminProductShow;

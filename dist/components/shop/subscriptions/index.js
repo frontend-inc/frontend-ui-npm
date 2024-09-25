@@ -3,11 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SubscriptionTableCard = exports.SubscriptionTable = exports.Subscriptions = exports.PayWall = void 0;
+exports.SubscriptionTableCard = exports.SubscriptionTable = exports.PayWall = void 0;
 var PayWall_1 = require("./PayWall");
 Object.defineProperty(exports, "PayWall", { enumerable: true, get: function () { return __importDefault(PayWall_1).default; } });
-var Subscriptions_1 = require("./Subscriptions");
-Object.defineProperty(exports, "Subscriptions", { enumerable: true, get: function () { return __importDefault(Subscriptions_1).default; } });
 var SubscriptionTable_1 = require("./SubscriptionTable");
 Object.defineProperty(exports, "SubscriptionTable", { enumerable: true, get: function () { return __importDefault(SubscriptionTable_1).default; } });
 var SubscriptionTableCard_1 = require("./SubscriptionTableCard");

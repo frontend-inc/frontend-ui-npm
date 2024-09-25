@@ -25,7 +25,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var containers_1 = require("../../../containers");
+var components_2 = require("../../../components");
 var AdminProductForm = function (props) {
     var _a = (props || {}).metafields, metafields = _a === void 0 ? [] : _a;
     var fields = __spreadArray([
@@ -52,7 +52,7 @@ var AdminProductForm = function (props) {
         }
     ], metafields, true);
     var inputOptions = {
-        media: containers_1.MediaInput,
+        media: components_2.MediaInput,
     };
     return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields, inputOptions: inputOptions }));
 };

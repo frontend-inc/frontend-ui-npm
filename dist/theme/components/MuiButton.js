@@ -12,7 +12,9 @@ exports.default = {
         sizeSmall: {
             height: 40
         },
-        sizeLarge: {},
+        sizeMedium: {
+            height: 44
+        },
         outlined: {},
         contained: {},
     },

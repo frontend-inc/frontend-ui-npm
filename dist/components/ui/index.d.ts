@@ -70,7 +70,6 @@ export { default as Loader } from './loaders/Loader';
 export { default as LayoutScroll } from './layouts/LayoutScroll';
 export { default as SortableList } from './lists/SortableList';
 export { default as SortableListItem } from './lists/SortableListItem';
-export { default as SelectableListItem } from './lists/SelectableListItem';
 export { default as Pagination } from './Pagination';
 export { default as AvatarImage } from './images/AvatarImage';
 export { default as AttachmentImage } from './images/AttachmentImage';

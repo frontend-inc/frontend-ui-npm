@@ -27,7 +27,7 @@ var ImageListItems = function (props) {
         setResource(resource);
         setOpenShow(true);
     };
-    var _h = (0, hooks_1.useForms)(), handleEdit = _h.handleEdit, handleDeleteClick = _h.handleDeleteClick;
+    var _h = (0, hooks_1.useCollectionForms)(), handleEdit = _h.handleEdit, handleDeleteClick = _h.handleDeleteClick;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
         react_1.default.createElement(__1.DataLayout, { grid: true }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource) {
             var _a;

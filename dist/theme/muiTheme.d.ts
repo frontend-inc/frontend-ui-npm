@@ -36,7 +36,9 @@ export declare const muiTheme: {
                 sizeSmall: {
                     height: number;
                 };
-                sizeLarge: {};
+                sizeMedium: {
+                    height: number;
+                };
                 outlined: {};
                 contained: {};
             };

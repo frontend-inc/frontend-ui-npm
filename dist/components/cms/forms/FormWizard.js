@@ -34,9 +34,9 @@ var FormWizardButtons_1 = __importDefault(require("./wizard/FormWizardButtons"))
 var FormWizard = function (props) {
     var resource = props.resource, setResource = props.setResource, _a = props.fields, fields = _a === void 0 ? [] : _a, handleChange = props.handleChange, handleSubmit = props.handleSubmit, handleRemove = props.handleRemove, _b = props.buttonText, buttonText = _b === void 0 ? 'Submit' : _b, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment;
     var _c = (0, react_1.useState)(), currentField = _c[0], setCurrentField = _c[1];
-    var _d = (0, react_1.useState)(0), currentStep = _d[0], setCurrentStep = _d[1];
+    var _d = (0, react_1.useState)(1), currentStep = _d[0], setCurrentStep = _d[1];
     var _e = (0, react_1.useState)(0), totalSteps = _e[0], setTotalSteps = _e[1];
-    var _f = (0, react_1.useState)(false), fadeIn = _f[0], setFadeIn = _f[1];
+    var _f = (0, react_1.useState)(true), fadeIn = _f[0], setFadeIn = _f[1];
     var handleNextStep = function () {
         setFadeIn(false);
         var nextStep = currentStep + 1;
@@ -50,7 +50,7 @@ var FormWizard = function (props) {
     };
     var handlePrevStep = function () {
         var nextStep = currentStep - 1;
-        if (nextStep < 0) {
+        if (nextStep < 1) {
             return;
         }
         setCurrentStep(nextStep);
@@ -62,7 +62,7 @@ var FormWizard = function (props) {
     }, [fields]);
     (0, react_1.useEffect)(function () {
         if (fields) {
-            setCurrentField(fields[currentStep]);
+            setCurrentField(fields[currentStep - 1]);
         }
     }, [fields, currentStep]);
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormWizardProgress = exports.FormWizardInputWrapper = exports.FormWizardInput = exports.FormWizardField = exports.FormCard = exports.FormWizardButtons = void 0;
+exports.SingleChoiceAnswerInput = exports.MultipleChoiceAnswerInput = exports.FormWizardProgress = exports.FormWizardInputWrapper = exports.FormWizardInput = exports.FormWizardField = exports.FormCard = exports.FormWizardButtons = void 0;
 var FormWizardButtons_1 = require("./FormWizardButtons");
 Object.defineProperty(exports, "FormWizardButtons", { enumerable: true, get: function () { return __importDefault(FormWizardButtons_1).default; } });
 var FormCard_1 = require("./FormCard");
@@ -16,3 +16,8 @@ var FormWizardInputWrapper_1 = require("./FormWizardInputWrapper");
 Object.defineProperty(exports, "FormWizardInputWrapper", { enumerable: true, get: function () { return __importDefault(FormWizardInputWrapper_1).default; } });
 var FormWizardProgress_1 = require("./FormWizardProgress");
 Object.defineProperty(exports, "FormWizardProgress", { enumerable: true, get: function () { return __importDefault(FormWizardProgress_1).default; } });
+// Inputs
+var MultipleChoiceAnswerInput_1 = require("./MultipleChoiceAnswerInput");
+Object.defineProperty(exports, "MultipleChoiceAnswerInput", { enumerable: true, get: function () { return __importDefault(MultipleChoiceAnswerInput_1).default; } });
+var SingleChoiceAnswerInput_1 = require("./SingleChoiceAnswerInput");
+Object.defineProperty(exports, "SingleChoiceAnswerInput", { enumerable: true, get: function () { return __importDefault(SingleChoiceAnswerInput_1).default; } });

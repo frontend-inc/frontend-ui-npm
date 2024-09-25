@@ -7,13 +7,12 @@ var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var __1 = require("../..");
 var HeroCover = function (props) {
-    var _a = props || {}, image = _a.image, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction;
+    var _a = props || {}, image = _a.image, primary = _a.primary, actions = _a.actions, secondaryAction = _a.secondaryAction;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
         react_1.default.createElement(__1.Cover, { image: image, height: 400, title: primary, enableOverlay: true }),
         react_1.default.createElement(material_1.Stack, { spacing: 3, sx: sx.header },
             actions,
-            secondaryAction,
-            secondary)));
+            secondaryAction)));
 };
 exports.default = HeroCover;
 var sx = {

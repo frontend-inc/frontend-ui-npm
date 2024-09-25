@@ -21,6 +21,7 @@ exports.PublishLabel = exports.AdminVideoModal = void 0;
 __exportStar(require("./addons"), exports);
 __exportStar(require("./autosuggest"), exports);
 __exportStar(require("./ai"), exports);
+__exportStar(require("./inputs"), exports);
 __exportStar(require("./layout"), exports);
 __exportStar(require("./tabs"), exports);
 __exportStar(require("./menus"), exports);

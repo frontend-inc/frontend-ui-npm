@@ -27,7 +27,7 @@ var ProductDetails = function (props) {
         content: {},
     } : _d;
     var product = (0, frontend_js_1.useResourceContext)().resource;
-    var handleEdit = (0, hooks_1.useForms)().handleEdit;
+    var handleEdit = (0, hooks_1.useCollectionForms)().handleEdit;
     var slots = {
         image: __assign({ enableGradient: enableGradient, enableOverlay: enableOverlay }, defaultSlots.image),
         content: __assign({}, defaultSlots.content),

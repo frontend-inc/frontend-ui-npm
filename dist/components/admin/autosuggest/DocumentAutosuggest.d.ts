@@ -9,6 +9,7 @@ type DocumentAutosuggestProps = {
     query?: any;
     placeholder?: string;
     enableSearchRemote?: boolean;
+    valueParam?: string;
     direction?: 'row' | 'column';
 };
 declare const DocumentAutosuggest: React.FC<DocumentAutosuggestProps>;

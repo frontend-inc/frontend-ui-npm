@@ -13,7 +13,7 @@ var ProductHeader = function (props) {
         url: url,
         query: defaultQuery,
     }), query = _k.query, keywords = _k.keywords, handleKeywordChange = _k.handleKeywordChange, location = _k.location, handleLocationChange = _k.handleLocationChange, handleSearch = _k.handleSearch, handleSortBy = _k.handleSortBy, handleSortDirection = _k.handleSortDirection, activeFilters = _k.activeFilters, handleFilter = _k.handleFilter, handleClearFilters = _k.handleClearFilters;
-    var handleAdd = (0, hooks_1.useForms)().handleAdd;
+    var handleAdd = (0, hooks_1.useCollectionForms)().handleAdd;
     if (!enableSearch && !enableFilters && !enableSorting && !enableCreate) {
         return null;
     }

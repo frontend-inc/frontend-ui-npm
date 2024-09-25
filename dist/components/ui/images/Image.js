@@ -24,17 +24,17 @@ var Image = function (props) {
     var theme = (0, material_1.useTheme)();
     return (react_1.default.createElement(material_1.Box, { sx: {
             position: 'relative',
-            width: '100%',
-            height: "".concat(height, "px"),
+            maxWidth: width ? "".concat(width, "px") : '100%',
+            height: objectFit == 'cover' ? "".concat(height, "px") : 'auto',
         } },
         react_1.default.createElement(components_1.TouchableOpacity, { disableBorderRadius: disableBorderRadius, handleClick: handleClick ? handleClick : undefined },
-            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.root), { height: "".concat(height, "px"), minWidth: width ? "".concat(width, "px") : '100%' }), (!disableBorderRadius && sx.borderRadius)), { '&::after': __assign(__assign(__assign(__assign(__assign(__assign({}, sx.afterBase), (enableOverlay && sx.overlay)), (!enableOverlay && enableGradient && sx.gradient)), (!disableBorderRadius && sx.borderRadius)), (!enableOverlay &&
+            react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign(__assign({}, sx.root), { height: objectFit == 'cover' ? "".concat(height, "px") : 'auto', minWidth: width ? "".concat(width, "px") : '100%' }), (!disableBorderRadius && sx.borderRadius)), { '&::after': __assign(__assign(__assign(__assign(__assign(__assign({}, sx.afterBase), (enableOverlay && sx.overlay)), (!enableOverlay && enableGradient && sx.gradient)), (!disableBorderRadius && sx.borderRadius)), (!enableOverlay &&
                         !disableBorderRadius &&
                         enableGradient &&
                         sx.borderRadius)), { bgcolor: bgcolor, opacity: opacity }) }) }, src ? (react_1.default.createElement(image_1.default, { src: src, alt: alt, height: 1600, width: 1600, layout: "responsive", style: {
-                    height: "".concat(height, "px"),
+                    height: objectFit == 'cover' ? "".concat(height, "px") : 'auto',
+                    minHeight: objectFit == 'cover' ? "".concat(height, "px") : 'auto',
                     width: width ? "min(".concat(width, "px, 100vw)") : '100%',
-                    minHeight: "".concat(height, "px"),
                     objectFit: objectFit,
                     borderRadius: !disableBorderRadius
                         ? "".concat(theme.shape.borderRadius, "px")

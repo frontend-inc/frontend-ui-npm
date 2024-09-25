@@ -35,6 +35,7 @@ var DataShow = function (props) {
             findOne(resource === null || resource === void 0 ? void 0 : resource.handle);
         }
     }, [openShow]);
-    return (react_1.default.createElement(components_1.ResourceDetails, { loading: loading, open: openShow, handleClose: function () { return setOpenShow(false); }, label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.title, secondary: resource === null || resource === void 0 ? void 0 : resource.description, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete, resource: resource, fields: fields }));
+    return (react_1.default.createElement(components_1.ResourceModal, { loading: loading, open: openShow, handleClose: function () { return setOpenShow(false); }, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete },
+        react_1.default.createElement(components_1.ResourceDetails, { label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.title, secondary: resource === null || resource === void 0 ? void 0 : resource.description, resource: resource, fields: fields })));
 };
 exports.default = DataShow;

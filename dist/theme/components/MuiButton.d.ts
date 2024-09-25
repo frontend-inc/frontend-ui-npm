@@ -10,7 +10,9 @@ declare const _default: {
         sizeSmall: {
             height: number;
         };
-        sizeLarge: {};
+        sizeMedium: {
+            height: number;
+        };
         outlined: {};
         contained: {};
     };

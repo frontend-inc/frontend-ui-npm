@@ -13,7 +13,7 @@ var GeoHeader = function (props) {
         url: url,
         query: defaultQuery,
     }), query = _g.query, keywords = _g.keywords, handleKeywordChange = _g.handleKeywordChange, location = _g.location, handleLocationChange = _g.handleLocationChange, handleSearch = _g.handleSearch, handleSortBy = _g.handleSortBy, handleSortDirection = _g.handleSortDirection, activeFilters = _g.activeFilters, handleFilter = _g.handleFilter, handleClearFilters = _g.handleClearFilters;
-    var handleAdd = (0, hooks_1.useForms)().handleAdd;
+    var handleAdd = (0, hooks_1.useCollectionForms)().handleAdd;
     if (!enableSearch && !enableFilters && !enableSorting) {
         return null;
     }

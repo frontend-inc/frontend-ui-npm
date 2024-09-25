@@ -18,7 +18,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AdminDocumentInput = exports.AdminDocumentForm = exports.AdminDocumentRightPanel = exports.AdminDocumentPage = void 0;
-__exportStar(require("./media"), exports);
 __exportStar(require("./references"), exports);
 __exportStar(require("./inputs"), exports);
 var AdminDocumentPage_1 = require("./AdminDocumentPage");

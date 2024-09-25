@@ -27,13 +27,13 @@ var ShowItem = function (props) {
     } : _g;
     var resource = (0, frontend_js_1.useResourceContext)().resource;
     var components = {
-        list: components_1.Hero,
+        list: components_1.HeroList,
         cover: components_1.HeroCover,
         card: components_1.HeroCard,
         avatar: components_1.HeroAvatar,
         snippet: components_1.HeroSnippet,
     };
-    var Component = components[style] || components_1.Hero;
+    var Component = components[style] || components_1.HeroList;
     var slots = {
         image: __assign({ enableGradient: enableGradient, enableOverlay: enableOverlay }, defaultSlots.image),
         content: __assign({}, defaultSlots.content),

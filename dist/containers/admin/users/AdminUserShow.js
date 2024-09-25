@@ -21,6 +21,7 @@ var AdminUserShow = function (props) {
         { label: 'Last name', name: 'last_name', variant: 'string' },
         { label: 'Email', name: 'email', variant: 'string' }
     ], metafields, true);
-    return (react_1.default.createElement(components_1.ResourceDetails, { loading: loading, open: open, handleClose: handleClose, avatar: react_1.default.createElement(components_1.UserAvatar, { user: resource, size: 96 }), primary: resource === null || resource === void 0 ? void 0 : resource.name, secondary: "@".concat(resource === null || resource === void 0 ? void 0 : resource.username), label: resource === null || resource === void 0 ? void 0 : resource.role, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete, resource: resource, fields: fields }));
+    return (react_1.default.createElement(components_1.ResourceModal, { loading: loading, open: open, handleClose: handleClose, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete },
+        react_1.default.createElement(components_1.ResourceDetails, { avatar: react_1.default.createElement(components_1.UserAvatar, { user: resource, size: 96 }), primary: resource === null || resource === void 0 ? void 0 : resource.name, secondary: "@".concat(resource === null || resource === void 0 ? void 0 : resource.username), label: resource === null || resource === void 0 ? void 0 : resource.role, resource: resource, fields: fields })));
 };
 exports.default = AdminUserShow;

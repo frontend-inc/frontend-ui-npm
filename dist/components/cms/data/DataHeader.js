@@ -26,7 +26,7 @@ var DataHeader = function (props) {
         url: url,
         query: defaultQuery,
     }), query = _l.query, keywords = _l.keywords, handleKeywordChange = _l.handleKeywordChange, handleSearch = _l.handleSearch, handleSortBy = _l.handleSortBy, handleSortDirection = _l.handleSortDirection, activeFilters = _l.activeFilters, handleFilter = _l.handleFilter, handleClearFilters = _l.handleClearFilters;
-    var handleAdd = (0, hooks_1.useForms)().handleAdd;
+    var handleAdd = (0, hooks_1.useCollectionForms)().handleAdd;
     if (!enableSearch && !enableFilters && !enableSorting && !enableCreate) {
         return null;
     }

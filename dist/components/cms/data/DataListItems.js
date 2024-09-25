@@ -61,7 +61,7 @@ var DataListItems = function (props) {
         item: {},
         list: {},
     } : _d;
-    var _e = (0, hooks_1.useForms)(), handleShow = _e.handleShow, handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
+    var _e = (0, hooks_1.useCollectionForms)(), handleShow = _e.handleShow, handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
     var handleShowClick = function (resource) {
         if (handleClick) {
             handleClick(resource);

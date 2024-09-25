@@ -18,7 +18,6 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var ReferenceInput_1 = __importDefault(require("./references/ReferenceInput"));
 var ProductsInput_1 = __importDefault(require("./products/ProductsInput"));
-var MediaInput_1 = __importDefault(require("./media/MediaInput"));
 var InputWrapper_1 = __importDefault(require("./inputs/InputWrapper"));
 var components_2 = require("../../../components");
 var material_1 = require("@mui/material");
@@ -43,9 +42,9 @@ var AdminDocumentInput = function (props) {
         json: components_1.JSONInput,
         products: ProductsInput_1.default,
         shopify_products: components_1.ShopifyProductsInput,
-        file: MediaInput_1.default,
-        image: MediaInput_1.default,
-        video: MediaInput_1.default,
+        file: components_2.MediaInput,
+        image: components_2.MediaInput,
+        video: components_2.MediaInput,
         habtm: ReferenceInput_1.default,
     };
     var Component = componentMapper[variant] || components_1.TextInput;
