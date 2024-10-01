@@ -55,7 +55,7 @@ var AdminFieldForm = function (props) {
         { label: 'Settings', value: 1 },
         { label: 'Validate', value: 2 },
     ];
-    return (react_1.default.createElement(components_1.Drawer, { disablePadding: true, open: open, handleClose: handleClose, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
+    return (react_1.default.createElement(components_1.Drawer, { disablePadding: true, open: open, handleClose: handleClose, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: loading && react_1.default.createElement(components_1.IconLoading, null) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
         react_1.default.createElement(material_1.Box, { p: 2 },
             react_1.default.createElement(components_1.ButtonTabs, { value: tab, options: TABS, handleChange: setTab })),
         tab == 0 && (react_1.default.createElement(AdminFieldVariantList_1.default, { field: resource, handleClick: handleClick })),

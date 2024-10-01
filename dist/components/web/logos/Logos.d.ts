@@ -1,9 +1,9 @@
 import React from 'react';
 export type LogosProps = {
     title?: string;
-    items?: {
+    logos: {
         image: string;
-        title?: string;
+        title: string;
     }[];
 };
 declare const Logos: React.FC<LogosProps>;

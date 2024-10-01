@@ -8,11 +8,13 @@ export type ImageProps = {
     alt?: string;
     bgcolor?: string;
     opacity?: number;
+    enableDelete?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
     disableBorder?: boolean;
     disableBorderRadius?: boolean;
     handleClick?: () => void;
+    handleDelete?: () => void;
 };
 declare const Image: React.FC<ImageProps>;
 export default Image;

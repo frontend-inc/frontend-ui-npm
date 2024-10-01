@@ -136,6 +136,7 @@ var sx = {
     },
     button: {
         px: 0,
+        height: '28px',
         color: 'text.primary',
         border: 'none !important',
         fontSize: function (theme) { return theme.typography.overline.fontSize; },

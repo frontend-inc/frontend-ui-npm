@@ -29,9 +29,9 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UIHero = function (props) {
-    var mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, style = props.style, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requireAuth", "requirePaid", "style"]);
+    var bgColor = props.bgColor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, style = props.style, rest = __rest(props, ["bgColor", "py", "px", "maxWidth", "requireAuth", "requirePaid", "style"]);
     var fullWidth = style == 'spotlight' || style == 'cover' ? true : false;
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, mode: fullWidth ? 'dark' : mode, py: fullWidth ? 0 : py, px: fullWidth ? 0 : px, maxWidth: maxWidth },
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, bgColor: fullWidth ? '#000000' : bgColor, py: fullWidth ? 0 : py, px: fullWidth ? 0 : px, maxWidth: maxWidth },
         react_1.default.createElement(components_2.Hero, __assign({}, rest, { style: style }))));
 };
 exports.default = UIHero;

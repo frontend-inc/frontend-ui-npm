@@ -21,7 +21,12 @@ var AdminContactForm = function (props) {
         { name: 'name', label: 'Name', variant: 'string' },
         { name: 'email', label: 'Email', variant: 'string' },
         { name: 'phone', label: 'Phone', variant: 'string' },
-        { name: 'company', label: 'Company', variant: 'string' }
+        { name: 'company', label: 'Company', variant: 'string' },
+        {
+            name: 'accepts_marketing',
+            label: 'Accepts marketing',
+            variant: 'boolean',
+        },
     ];
     return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: FORM_FIELDS }));
 };

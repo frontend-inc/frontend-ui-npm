@@ -1,10 +1,11 @@
 import React from 'react';
 type CardType = {
     label?: string;
-    title?: string;
+    title: string;
     description: string;
     image: string;
     buttonText?: string;
+    path?: string;
     url?: string;
 };
 export type CardsProps = {

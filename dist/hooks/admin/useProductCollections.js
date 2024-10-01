@@ -73,6 +73,17 @@ var useProductCollections = function () {
             }
         });
     }); };
+    var aiGenerate = function (prompt) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            return [2 /*return*/, loadingWrapper(function () {
+                    return api.post("".concat(apiUrl, "/product_collections/ai_generate"), {
+                        ai: {
+                            prompt: prompt
+                        }
+                    });
+                })];
+        });
+    }); };
     return {
         paginate: paginate,
         loading: loading,
@@ -117,6 +128,7 @@ var useProductCollections = function () {
         setProductCollections: setProductCollections,
         startIndex: startIndex,
         endIndex: endIndex,
+        aiGenerate: aiGenerate
     };
 };
 exports.default = useProductCollections;

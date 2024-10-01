@@ -22,6 +22,6 @@ var AdminLeadsList = function () {
             { name: 'phone', label: 'Phone', variant: 'string' },
             { name: 'company', label: 'Company', variant: 'string' },
             { name: 'message', label: 'Message', variant: 'text' },
-        ], edit: AdminLeadForm_1.default, create: AdminLeadForm_1.default, component: __1.AdminLeadItem, emptyIcon: 'Users', emptyTitle: "No leads", emptyDescription: 'No leads have been submitted yet.' }));
+        ], edit: AdminLeadForm_1.default, create: AdminLeadForm_1.default, component: __1.AdminLeadItem, emptyIcon: "Users", emptyTitle: "No leads", emptyDescription: "No leads have been submitted yet." }));
 };
 exports.default = AdminLeadsList;

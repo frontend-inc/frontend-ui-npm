@@ -45,10 +45,14 @@ var useProducts = function () {
         url: "".concat(apiUrl, "/products"),
         name: 'product',
     }), loading = _a.loading, delayedLoading = _a.delayedLoading, loaded = _a.loaded, errors = _a.errors, empty = _a.empty, editing = _a.editing, isValid = _a.isValid, product = _a.resource, products = _a.resources, findProduct = _a.findOne, findProducts = _a.findMany, updateProduct = _a.update, updateProducts = _a.updateMany, createProduct = _a.create, saveProduct = _a.save, deleteProduct = _a.destroy, deleteProducts = _a.deleteMany, loadMore = _a.loadMore, publish = _a.publish, unpublish = _a.unpublish, handleChange = _a.handleChange, handleChangePage = _a.handleChangePage, updatePositions = _a.updatePositions, addAttachment = _a.addAttachment, removeAttachment = _a.removeAttachment, query = _a.query, setQuery = _a.setQuery, page = _a.page, numPages = _a.numPages, perPage = _a.perPage, totalCount = _a.totalCount, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort, reloadProduct = _a.reloadOne, reloadProducts = _a.reloadMany, setProduct = _a.setResource, setProducts = _a.setResources, startIndex = _a.startIndex, endIndex = _a.endIndex, paginate = _a.paginate, loadingWrapper = _a.loadingWrapper;
-    var generateAiProducts = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var aiGenerate = function (prompt) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             return [2 /*return*/, loadingWrapper(function () {
-                    return api.post("".concat(apiUrl, "/products/generate_ai_products"));
+                    return api.post("".concat(apiUrl, "/products/ai_generate"), {
+                        ai: {
+                            prompt: prompt
+                        }
+                    });
                 })];
         });
     }); };
@@ -71,7 +75,7 @@ var useProducts = function () {
         createProduct: createProduct,
         deleteProduct: deleteProduct,
         deleteProducts: deleteProducts,
-        generateAiProducts: generateAiProducts,
+        aiGenerate: aiGenerate,
         loadMore: loadMore,
         publish: publish,
         unpublish: unpublish,

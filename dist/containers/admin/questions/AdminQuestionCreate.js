@@ -22,9 +22,16 @@ var AdminQuestionCreate = function (props) {
         { label: 'Question', name: 'title', variant: 'string' },
         { label: 'Description', name: 'description', variant: 'text' },
         { label: 'API name', name: 'name', variant: 'nospace' },
-        { label: 'Question type', name: 'variant', variant: 'select',
+        {
+            label: 'Question type',
+            name: 'variant',
+            variant: 'select',
             options: [
-                { icon: 'ListChecks', value: 'multiple_choice', label: 'Multiple choice' },
+                {
+                    icon: 'ListChecks',
+                    value: 'multiple_choice',
+                    label: 'Multiple choice',
+                },
                 { icon: 'ListTodo', value: 'single_choice', label: 'Single choice' },
                 { icon: 'List', value: 'array', label: 'Array' },
                 { icon: 'MenuSquare', value: 'select', label: 'Select' },
@@ -38,17 +45,15 @@ var AdminQuestionCreate = function (props) {
                 { icon: 'Link', value: 'url', label: 'URL' },
                 { icon: 'Image', value: 'image', label: 'Image' },
                 { icon: 'File', value: 'file', label: 'File' },
-            ]
+            ],
         },
         {
             label: 'Options',
             name: 'options',
             variant: 'array',
-            conditions: [
-                { name: 'variant', operator: 'eq', value: 'select' }
-            ],
-            default: []
-        }
+            conditions: [{ name: 'variant', operator: 'eq', value: 'select' }],
+            default: [],
+        },
     ];
     return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { title: "Add Question", fields: fields }));
 };

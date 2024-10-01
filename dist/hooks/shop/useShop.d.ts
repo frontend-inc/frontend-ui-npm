@@ -3,5 +3,6 @@ declare const useShop: () => {
     setCart: any;
     cartOpen: any;
     setCartOpen: any;
+    cartCookie: any;
 };
 export default useShop;

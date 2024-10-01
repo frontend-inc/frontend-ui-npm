@@ -4,7 +4,8 @@ type UserMenuProps = {
     anchorEl: HTMLElement | null;
     toggleMenu: (ev: any) => void;
     handleLogoutClick: () => void;
-    handleClick: (path: string) => void;
+    children?: React.ReactNode;
+    handleClick: () => void;
 };
 declare const UserMenu: React.FC<UserMenuProps>;
 export default UserMenu;

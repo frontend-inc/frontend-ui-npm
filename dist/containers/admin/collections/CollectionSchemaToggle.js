@@ -23,7 +23,7 @@ var CollectionSchemaToggle = function (props) {
     var _a = router === null || router === void 0 ? void 0 : router.query, appId = _a.app_id, collectionId = _a.collection_id;
     var _b = props.tab, tab = _b === void 0 ? 0 : _b;
     var handleClick = function (path) {
-        router.push("/admin/".concat(appId, "/").concat(path, "/").concat(collectionId));
+        router.push("/dashboard/".concat(appId, "/").concat(path, "/").concat(collectionId));
     };
     return (react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0.5 },
         react_1.default.createElement(material_1.Hidden, { smDown: true },

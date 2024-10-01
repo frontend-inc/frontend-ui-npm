@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UICover = function (props) {
-    var enableTransitions = props.enableTransitions, mode = props.mode, px = props.px, py = props.py, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["enableTransitions", "mode", "px", "py", "maxWidth", "requireAuth", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { enableTransitions: enableTransitions, mode: 'dark', py: 0, px: 0, maxWidth: maxWidth },
+    var enableTransitions = props.enableTransitions, bgColor = props.bgColor, px = props.px, py = props.py, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["enableTransitions", "bgColor", "px", "py", "maxWidth", "requireAuth", "requirePaid"]);
+    return (react_1.default.createElement(components_1.Section, { enableTransitions: enableTransitions, bgColor: '#000000', py: 0, px: 0, maxWidth: maxWidth },
         react_1.default.createElement(components_2.Cover, __assign({}, rest))));
 };
 exports.default = UICover;

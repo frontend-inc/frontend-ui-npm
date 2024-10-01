@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -58,18 +69,18 @@ var ContactForm = function (props) {
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
     var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, textVariant = _a.textVariant, _b = _a.metafields, metafields = _b === void 0 ? [] : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
     var _d = (0, frontend_js_1.useResource)({
-        name: 'lead',
-        url: "/api/v1/leads",
-    }), errors = _d.errors, delayedLoading = _d.delayedLoading, lead = _d.resource, setLead = _d.setResource, handleChange = _d.handleChange, create = _d.create;
+        name: 'contact',
+        url: "/api/v1/contacts",
+    }), errors = _d.errors, delayedLoading = _d.delayedLoading, contact = _d.resource, setContact = _d.setResource, handleChange = _d.handleChange, create = _d.create;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, create(lead)];
+                case 0: return [4 /*yield*/, create(__assign(__assign({}, contact), { source: 'contact' }))];
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        setLead({});
+                        setContact({});
                         showAlertSuccess('Thank you for contacting us!');
                     }
                     return [2 /*return*/];
@@ -80,11 +91,31 @@ var ContactForm = function (props) {
         react_1.default.createElement(material_1.Container, { maxWidth: "sm" },
             react_1.default.createElement(__1.Heading, { label: label, title: title, description: description, textVariant: textVariant, textAlign: "center" }),
             react_1.default.createElement(__1.Form, { loading: delayedLoading, fields: __spreadArray(__spreadArray([
-                    { label: 'Name', name: 'name', placeholder: 'Full name', variant: 'string' },
-                    { label: 'Email', name: 'email', placeholder: 'Email', variant: 'string' }
+                    {
+                        label: 'Name',
+                        name: 'name',
+                        placeholder: 'Full name',
+                        variant: 'string',
+                    },
+                    {
+                        label: 'Email',
+                        name: 'email',
+                        placeholder: 'Email',
+                        variant: 'string',
+                    }
                 ], metafields, true), [
-                    { label: 'Message', name: 'message', placeholder: 'Leave a message', variant: 'text' },
-                ], false), resource: lead, handleChange: handleChange, errors: errors, handleSubmit: handleSubmit, buttonText: buttonText }))));
+                    {
+                        label: 'Message',
+                        name: 'message',
+                        placeholder: 'Leave a message',
+                        variant: 'text',
+                    },
+                    {
+                        label: 'Join our newsletter',
+                        name: 'accepts_marketing',
+                        variant: 'boolean',
+                    },
+                ], false), resource: contact, handleChange: handleChange, errors: errors, handleSubmit: handleSubmit, buttonText: buttonText }))));
 };
 exports.default = ContactForm;
 var sx = {
@@ -109,5 +140,5 @@ var sx = {
     },
     paper: {
         p: 3,
-    }
+    },
 };

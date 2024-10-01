@@ -19,9 +19,10 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../../components");
 var PublishButton = function (props) {
     var loading = props.loading, document = props.document, handleTogglePublish = props.handleTogglePublish, _a = props.fullWidth, fullWidth = _a === void 0 ? false : _a;
-    return (react_1.default.createElement(material_1.Button, { variant: "contained", sx: __assign(__assign(__assign(__assign({}, sx.root), ((document === null || document === void 0 ? void 0 : document.published) && sx.published)), (loading && sx.loading)), (fullWidth && sx.fullWidth)), onClick: handleTogglePublish, startIcon: react_1.default.createElement(react_1.default.Fragment, null, (document === null || document === void 0 ? void 0 : document.published) && (react_1.default.createElement(components_1.Icon, { name: "CheckCircle", color: "success.contrastText" }))), endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading, color: (document === null || document === void 0 ? void 0 : document.published)
-                ? 'success.contrastText'
-                : 'primary.contrastText' }) }, (document === null || document === void 0 ? void 0 : document.published) ? 'Published' : 'Publish'));
+    return (react_1.default.createElement(material_1.Button, { variant: "contained", sx: __assign(__assign(__assign(__assign({}, sx.root), ((document === null || document === void 0 ? void 0 : document.published) && sx.published)), (loading && sx.loading)), (fullWidth && sx.fullWidth)), onClick: handleTogglePublish, startIcon: react_1.default.createElement(react_1.default.Fragment, null, (document === null || document === void 0 ? void 0 : document.published) && (react_1.default.createElement(components_1.Icon, { name: "CheckCircle", color: "success.contrastText" }))), endIcon: loading &&
+            react_1.default.createElement(components_1.IconLoading, { color: (document === null || document === void 0 ? void 0 : document.published)
+                    ? 'success.contrastText'
+                    : 'primary.contrastText' }) }, (document === null || document === void 0 ? void 0 : document.published) ? 'Published' : 'Publish'));
 };
 exports.default = PublishButton;
 var sx = {

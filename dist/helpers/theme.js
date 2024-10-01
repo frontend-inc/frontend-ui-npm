@@ -16,9 +16,9 @@ var material_1 = require("@mui/material");
 var buildMuiPalette = function (palette) {
     var bgColor = palette.background.default;
     var contrast = (0, material_1.getContrastRatio)(bgColor, '#000000');
-    var paper = (0, material_1.lighten)(bgColor, 0.02);
+    var paper = (0, material_1.lighten)(bgColor, 0.05);
     var primaryText = contrast > 10 ? (0, material_1.darken)(bgColor, 0.9) : (0, material_1.lighten)(bgColor, 0.9);
-    var secondaryText = contrast > 10 ? (0, material_1.darken)(bgColor, 0.7) : (0, material_1.lighten)(bgColor, 0.7);
+    var secondaryText = contrast > 10 ? (0, material_1.darken)(bgColor, 0.7) : (0, material_1.lighten)(bgColor, 1.0);
     var divider = contrast > 10 ? (0, material_1.darken)(bgColor, 0.12) : (0, material_1.lighten)(bgColor, 0.12);
     var muiPalette = __assign(__assign({}, palette), { background: {
             default: bgColor,

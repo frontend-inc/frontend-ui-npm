@@ -1,6 +1,7 @@
 import React from 'react';
 type DateInputProps = {
     errors?: any;
+    direction?: 'row' | 'column';
     required?: boolean;
     label?: string;
     name: string;

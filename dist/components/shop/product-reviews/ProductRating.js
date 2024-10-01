@@ -9,12 +9,12 @@ var ProductRating = function (props) {
     var _a = props || {}, resource = _a.resource, _b = _a.justifyContent, justifyContent = _b === void 0 ? 'flex-start' : _b, _c = _a.size, size = _c === void 0 ? 'medium' : _c, _d = _a.enableTotal, enableTotal = _d === void 0 ? false : _d;
     var _e = resource || {}, rating = _e.avg_rating, numReviews = _e.num_reviews;
     return (react_1.default.createElement(material_1.Stack, { alignItems: "center", justifyContent: justifyContent, direction: "row", spacing: 1 },
-        react_1.default.createElement(material_1.Rating, { size: size, value: rating, readOnly: true, sx: {
+        rating > 0 ? (react_1.default.createElement(material_1.Rating, { size: size, value: rating, readOnly: true, sx: {
                 color: 'primary.main',
                 '& .MuiRating-iconEmpty': {
                     color: 'text.secondary',
                 },
-            } }),
+            } })) : (react_1.default.createElement(material_1.Typography, { color: 'text.secondary', variant: "body2", sx: sx.noReviews }, "No reviews yet")),
         rating > 0 && (react_1.default.createElement(material_1.Typography, { color: 'text.secondary', variant: "caption" },
             "(",
             rating,
@@ -24,3 +24,8 @@ var ProductRating = function (props) {
             " reviews"))));
 };
 exports.default = ProductRating;
+var sx = {
+    noReviews: {
+        fontStyle: 'italic',
+    }
+};

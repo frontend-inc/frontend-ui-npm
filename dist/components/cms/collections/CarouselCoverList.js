@@ -23,9 +23,9 @@ var CarouselCoverList = function (props) {
         list: {
             enableAutoPlay: enableAutoPlay,
             enableArrows: enableArrows,
-            buttonText: buttonText
-        }
+            buttonText: buttonText,
+        },
     };
-    return react_1.default.createElement(__1.CollectionList, __assign({}, props, { slots: slots, list: CarouselCoverListItems_1.default }));
+    return (react_1.default.createElement(__1.CollectionList, __assign({}, props, { slots: slots, list: CarouselCoverListItems_1.default })));
 };
 exports.default = CarouselCoverList;

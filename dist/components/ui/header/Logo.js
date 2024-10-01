@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var image_1 = __importDefault(require("next/image"));
 var LOGO_WIDTH = 120;
 var LOGO_HEIGHT = 60;
 var Logo = function (props) {
@@ -13,9 +12,7 @@ var Logo = function (props) {
     return (
     // @ts-ignore
     react_1.default.createElement(material_1.Button, { disableRipple: true, sx: sx.root, onClick: handleClick },
-        src && (react_1.default.createElement(image_1.default, { src: src, alt: "logo", width: 160, height: 160, style: {
-                maxHeight: '50px',
-                maxWidth: '120px',
+        src && (react_1.default.createElement("img", { src: src, alt: "logo", height: height, style: {
                 objectFit: 'contain',
             } })),
         !src && (react_1.default.createElement("svg", { width: "62", height: "24", viewBox: "0 0 62 24", fill: "none", xmlns: "http://www.w3.org/2000/svg" },

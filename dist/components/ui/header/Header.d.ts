@@ -1,8 +1,9 @@
 import React from 'react';
-import { MenuLinkType } from '../../../types';
+import { ButtonType, MenuLinkType } from '../../../types';
 export type HeaderProps = {
     mode?: 'accent' | 'light' | 'dark';
     logo?: string;
+    buttons?: ButtonType[];
     enableAuth?: boolean;
     enableStripe?: boolean;
     enableShopify?: boolean;

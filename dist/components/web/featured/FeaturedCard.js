@@ -23,9 +23,9 @@ var FeaturedCard = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: {
             sm: flexDirection,
             xs: 'column',
-        }, alignItems: 'center', spacing: {
+        }, alignItems: "center", spacing: {
             sm: 4,
-            xs: 1
+            xs: 1,
         } },
         react_1.default.createElement(material_1.Box, { sx: sx.image },
             react_1.default.createElement(__1.Image, { label: label, src: image, height: 320, objectFit: objectFit, alt: title, enableOverlay: enableOverlay, enableGradient: enableGradient, disableBorderRadius: enableBorder })),

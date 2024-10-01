@@ -18,13 +18,14 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var ProductCollectionCoverCarouselListItems_1 = __importDefault(require("./ProductCollectionCoverCarouselListItems"));
 var ProductCollectionCoverCarouselList = function (props) {
-    var _a = props || {}, enableArrows = _a.enableArrows, enableAutoPlay = _a.enableAutoPlay, buttonText = _a.buttonText;
+    var _a = props || {}, enableArrows = _a.enableArrows, enableAutoPlay = _a.enableAutoPlay, height = _a.height, buttonText = _a.buttonText;
     var slots = {
         list: {
             enableArrows: enableArrows,
             enableAutoPlay: enableAutoPlay,
-            buttonText: buttonText
-        }
+            buttonText: buttonText,
+            height: height
+        },
     };
     return (react_1.default.createElement(__1.ProductCollectionList, __assign({}, props, { list: ProductCollectionCoverCarouselListItems_1.default, slots: slots })));
 };

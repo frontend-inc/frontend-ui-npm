@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var shop_1 = require("../../components/shop");
 var ShopProductFavoritesGrid = function (props) {
-    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
+    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgColor = props.bgColor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "bgColor", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: true, requirePaid: requirePaid, bgColor: bgColor, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
         react_1.default.createElement(shop_1.ProductFavorites, __assign({}, rest))));
 };

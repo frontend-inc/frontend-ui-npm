@@ -68,9 +68,9 @@ var useMedia = function () {
         });
     }); };
     var uploadFromUrl = function (url, name) {
-        if (name === void 0) { name = 'unsplash-photo'; }
+        if (name === void 0) { name = 'photo'; }
         return __awaiter(void 0, void 0, void 0, function () {
-            var resp, e_2;
+            var e_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -83,9 +83,7 @@ var useMedia = function () {
                                     },
                                 });
                             })];
-                    case 1:
-                        resp = _a.sent();
-                        return [3 /*break*/, 3];
+                    case 1: return [2 /*return*/, _a.sent()];
                     case 2:
                         e_2 = _a.sent();
                         console.log(e_2);

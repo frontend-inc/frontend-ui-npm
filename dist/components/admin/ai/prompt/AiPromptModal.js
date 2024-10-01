@@ -41,7 +41,7 @@ var AiPromptModal = function (props) {
         react_1.default.createElement(material_1.Tooltip, { title: "Use AI to generate text" },
             react_1.default.createElement(material_1.IconButton, { size: "small", onClick: function () { return setOpen(!open); } },
                 react_1.default.createElement(components_1.Icon, { name: "Sparkles", color: "text.primary" }))),
-        react_1.default.createElement(components_1.Drawer, { title: label, open: open, handleClose: function () { return setOpen(false); }, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: loading ? (react_1.default.createElement(components_1.IconLoading, { loading: loading })) : (react_1.default.createElement(components_1.Icon, { name: "Sparkles", color: "primary.contrastText" })) }, !loading && "Generate") },
+        react_1.default.createElement(components_1.Drawer, { title: label, open: open, handleClose: function () { return setOpen(false); }, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, startIcon: loading ? (loading && react_1.default.createElement(components_1.IconLoading, null)) : (react_1.default.createElement(components_1.Icon, { name: "Sparkles", color: "primary.contrastText" })) }, !loading && "Generate") },
             react_1.default.createElement(AiPromptForm_1.default, { open: open, value: prompt, handleChange: handleChange }))));
 };
 exports.default = AiPromptModal;

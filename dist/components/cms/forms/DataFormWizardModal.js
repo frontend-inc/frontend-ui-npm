@@ -1,4 +1,15 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -64,48 +75,62 @@ var __1 = require("../..");
 var material_1 = require("@mui/material");
 var hooks_1 = require("../../../hooks");
 var DataFormWizard = function (props) {
-    var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
-    var _b = props || {}, formId = _b.formId, _c = _b.buttonText, buttonText = _c === void 0 ? "Start" : _c, handleSuccess = _b.handleSuccess;
+    var _a;
+    var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
+    var _c = (0, react_1.useState)(false), submitted = _c[0], setSubmitted = _c[1];
+    var formId = (props || {}).formId;
     var _d = (0, hooks_1.useForms)(), loading = _d.loading, form = _d.form, findForm = _d.findForm;
-    var _e = (0, hooks_1.useFormResponse)({
-        formId: formId
-    }), responseLoading = _e.loading, formResponse = _e.formResponse, setFormResponse = _e.setFormResponse, handleChange = _e.handleChange, createFormResponse = _e.createFormResponse, updateFormResponse = _e.updateFormResponse, removeAttachment = _e.removeAttachment, addAttachment = _e.addAttachment;
+    var _e = (0, hooks_1.useContacts)({
+        formId: formId,
+    }), responseLoading = _e.loading, contact = _e.contact, setContact = _e.setContact, handleChange = _e.handleChange, updateContact = _e.updateContact, removeAttachment = _e.removeAttachment, addAttachment = _e.addAttachment, submitForm = _e.submitForm;
+    var handleSuccess = function () {
+        setOpen(false);
+        setSubmitted(true);
+    };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    if (!(formResponse === null || formResponse === void 0 ? void 0 : formResponse.id)) return [3 /*break*/, 2];
-                    return [4 /*yield*/, updateFormResponse(formResponse)];
+                    if (!(contact === null || contact === void 0 ? void 0 : contact.id)) return [3 /*break*/, 2];
+                    return [4 /*yield*/, updateContact(__assign(__assign({}, contact), { form_id: form === null || form === void 0 ? void 0 : form.id }))];
                 case 1:
                     resp = _a.sent();
                     return [3 /*break*/, 4];
-                case 2: return [4 /*yield*/, createFormResponse(formResponse)];
+                case 2: return [4 /*yield*/, submitForm(contact)];
                 case 3:
                     resp = _a.sent();
                     _a.label = 4;
                 case 4:
-                    if ((resp === null || resp === void 0 ? void 0 : resp.id) && handleSuccess) {
-                        handleSuccess(resp);
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        handleSuccess();
+                        setOpen(false);
+                        setSubmitted(true);
                     }
                     return [2 /*return*/];
             }
         });
     }); };
     var handleRemove = function (name) {
-        removeAttachment(formResponse === null || formResponse === void 0 ? void 0 : formResponse.id, name);
+        removeAttachment(contact === null || contact === void 0 ? void 0 : contact.id, name);
     };
     var handleAddAttachment = function (name, attachmentId) {
-        addAttachment(formResponse === null || formResponse === void 0 ? void 0 : formResponse.id, name, attachmentId);
+        addAttachment(contact === null || contact === void 0 ? void 0 : contact.id, name, attachmentId);
+    };
+    var handleResetForm = function () {
+        setContact({});
+        setOpen(false);
+        setSubmitted(false);
     };
     (0, react_1.useEffect)(function () {
         if (formId) {
             findForm(formId);
         }
     }, [formId]);
-    return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(material_1.Button, { onClick: function () { return setOpen(true); }, variant: "contained", color: "primary", size: "large" }, buttonText),
-        react_1.default.createElement(__1.FormWizardModal, { open: open, handleClose: function () { return setOpen(false); }, loading: loading || responseLoading, resource: formResponse, setResource: setFormResponse, handleChange: handleChange, handleSubmit: handleSubmit, fields: form === null || form === void 0 ? void 0 : form.questions, handleRemove: handleRemove, handleRemoveAttachment: handleRemove, handleAddAttachment: handleAddAttachment })));
+    return (react_1.default.createElement(__1.Container, { maxWidth: "md" },
+        react_1.default.createElement(material_1.Box, { sx: sx.root },
+            !submitted ? (react_1.default.createElement(__1.FormCard, { image: (_a = form === null || form === void 0 ? void 0 : form.image) === null || _a === void 0 ? void 0 : _a.url, title: form === null || form === void 0 ? void 0 : form.title, description: form === null || form === void 0 ? void 0 : form.description, buttonText: (form === null || form === void 0 ? void 0 : form.button_text) || 'Get Started', handleClick: function () { return setOpen(true); } })) : (react_1.default.createElement(__1.FormCard, { checkMark: true, title: form === null || form === void 0 ? void 0 : form.end_title, description: form === null || form === void 0 ? void 0 : form.end_description, buttonText: form === null || form === void 0 ? void 0 : form.end_button_text, handleClick: handleResetForm })),
+            react_1.default.createElement(__1.FormWizardModal, { open: open, handleClose: function () { return setOpen(false); }, loading: loading || responseLoading, resource: contact, setResource: setContact, handleChange: handleChange, handleSubmit: handleSubmit, fields: form === null || form === void 0 ? void 0 : form.questions, handleRemove: handleRemove, handleRemoveAttachment: handleRemove, handleAddAttachment: handleAddAttachment }))));
 };
 exports.default = DataFormWizard;
 var sx = {
@@ -114,6 +139,14 @@ var sx = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 2
-    }
+    },
+    iconContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    avatar: {
+        bgcolor: 'primary.main',
+    },
 };

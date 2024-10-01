@@ -27,7 +27,7 @@ var ProductCard = function (props) {
             react_1.default.createElement(__1.Image, __assign({ src: image, height: height, alt: primary, label: label, handleClick: handleClick }, slots.image))),
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.cardContent },
             react_1.default.createElement(material_1.Box, { sx: sx.content },
-                react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "subtitle1" }, primary),
+                react_1.default.createElement(material_1.Typography, { sx: sx.title, color: "text.primary", variant: "body1" }, primary),
                 react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "caption" }, price),
                     compareAtPrice && (react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "caption", sx: sx.compareAtPrice }, compareAtPrice))),

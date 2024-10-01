@@ -11,6 +11,7 @@ var AdminProductCollectionCreate_1 = __importDefault(require("./AdminProductColl
 var AdminProductCollectionEdit_1 = __importDefault(require("./AdminProductCollectionEdit"));
 var AdminProductCollectionShow_1 = __importDefault(require("./AdminProductCollectionShow"));
 var AdminProductCollectionToolbar_1 = __importDefault(require("./AdminProductCollectionToolbar"));
+var AdminProductCollectionHeader_1 = __importDefault(require("./AdminProductCollectionHeader"));
 var router_1 = require("next/router");
 var AdminProductCollectionsList = function () {
     var router = (0, router_1.useRouter)();
@@ -22,6 +23,6 @@ var AdminProductCollectionsList = function () {
     return (react_1.default.createElement(components_1.ResourceList, { selectable: true, sortable: true, url: "".concat(apiUrl, "/product_collections"), name: 'product_collection', enableSearch: true, enableEdit: true, enableDelete: true, enableCreate: true, handleClick: handleClick, sortOptions: [
             { name: 'title', label: 'Title' },
             { name: 'created_at', label: 'Date' },
-        ], create: AdminProductCollectionCreate_1.default, edit: AdminProductCollectionEdit_1.default, show: AdminProductCollectionShow_1.default, toolbar: AdminProductCollectionToolbar_1.default, component: AdminProductCollectionItem_1.default, emptyIcon: "ShoppingCard", emptyTitle: "No product collections", emptyDescription: "No products collections added yet." }));
+        ], create: AdminProductCollectionCreate_1.default, edit: AdminProductCollectionEdit_1.default, show: AdminProductCollectionShow_1.default, header: AdminProductCollectionHeader_1.default, toolbar: AdminProductCollectionToolbar_1.default, component: AdminProductCollectionItem_1.default, emptyIcon: "ShoppingCard", emptyTitle: "No product collections", emptyDescription: "No products collections added yet." }));
 };
 exports.default = AdminProductCollectionsList;

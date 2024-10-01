@@ -21,13 +21,13 @@ var AdminMenuLinkForm = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     return (react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: [
             {
-                label: 'Name',
-                name: 'name',
+                label: 'Label',
+                name: 'label',
                 variant: 'string',
-                placeholder: 'Link name',
+                placeholder: 'Label',
             },
             {
-                label: 'Link type',
+                label: 'Goto',
                 name: 'variant',
                 variant: 'select',
                 options: [

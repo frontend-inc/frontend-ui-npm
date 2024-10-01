@@ -39,7 +39,7 @@ var SaveButton = function (props) {
     var _c = (0, hooks_1.useMenu)(), open = _c.open, anchorEl = _c.anchorEl, toggleMenu = _c.toggleMenu, closeMenu = _c.closeMenu;
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(material_1.ButtonGroup, { variant: "contained", color: "primary", fullWidth: true, sx: __assign(__assign(__assign({}, sx.saveButton), (loading && sx.loading)), (fullWidth && sx.fullWidth)) },
-            react_1.default.createElement(material_1.Button, { endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }), sx: sx.button, onClick: handleSubmit }, (document === null || document === void 0 ? void 0 : document.id) ? 'Save' : 'Create'),
+            react_1.default.createElement(material_1.Button, { endIcon: loading && react_1.default.createElement(components_1.IconLoading, null), sx: sx.button, onClick: handleSubmit }, (document === null || document === void 0 ? void 0 : document.id) ? 'Save' : 'Create'),
             react_1.default.createElement(material_1.Button, { sx: sx.expandMore, onClick: toggleMenu },
                 react_1.default.createElement(icons_material_1.ExpandMore, null))),
         react_1.default.createElement(material_1.Menu, { open: open, anchorEl: anchorEl, onClose: closeMenu },

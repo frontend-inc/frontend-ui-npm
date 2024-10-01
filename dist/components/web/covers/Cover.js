@@ -22,13 +22,13 @@ var hooks_1 = require("../../../hooks");
 var Cover = function (props) {
     var router = (0, router_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var title = props.title, description = props.description, _a = props.textVariant, textVariant = _a === void 0 ? 'h2' : _a, buttonText = props.buttonText, handleClick = props.handleClick, image = props.image, _b = props.height, height = _b === void 0 ? 520 : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.opacity, opacity = _f === void 0 ? 0.65 : _f, _g = props.alignItems, alignItems = _g === void 0 ? 'center' : _g, _h = props.overlayColor, overlayColor = _h === void 0 ? '#000000' : _h, href = props.href;
+    var title = props.title, description = props.description, _a = props.textVariant, textVariant = _a === void 0 ? 'h2' : _a, handleClick = props.handleClick, image = props.image, _b = props.height, height = _b === void 0 ? 520 : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.opacity, opacity = _f === void 0 ? 0.65 : _f, _g = props.alignItems, alignItems = _g === void 0 ? 'center' : _g, _h = props.overlayColor, overlayColor = _h === void 0 ? '#000000' : _h, buttonText = props.buttonText, path = props.path;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
         }
-        else if (href) {
-            router.push("".concat(clientUrl).concat(href));
+        else if (path) {
+            router.push("".concat(clientUrl).concat(path));
         }
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },

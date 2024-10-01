@@ -13,7 +13,7 @@ var hooks_1 = require("../../../hooks");
 var TopMenuItem_1 = __importDefault(require("./TopMenuItem"));
 var MAX_LINKS = 5;
 var DesktopHeader = function (props) {
-    var logo = props.logo, links = props.links, handleClick = props.handleClick, _a = props.enableAuth, enableAuth = _a === void 0 ? false : _a, _b = props.enableStripe, enableStripe = _b === void 0 ? false : _b, _c = props.enableShopify, enableShopify = _c === void 0 ? false : _c;
+    var logo = props.logo, links = props.links, buttons = props.buttons, handleClick = props.handleClick, _a = props.enableAuth, enableAuth = _a === void 0 ? false : _a, _b = props.enableStripe, enableStripe = _b === void 0 ? false : _b, _c = props.enableShopify, enableShopify = _c === void 0 ? false : _c;
     var setMenuOpen = (0, hooks_1.useApp)().setMenuOpen;
     return (react_1.default.createElement(material_1.Hidden, { mdDown: true },
         react_1.default.createElement(material_1.Box, { sx: sx.appBar },
@@ -27,9 +27,11 @@ var DesktopHeader = function (props) {
                     react_1.default.createElement(material_1.Box, { sx: sx.centerMenu }, (links === null || links === void 0 ? void 0 : links.length) <= MAX_LINKS &&
                         (links === null || links === void 0 ? void 0 : links.map(function (menuItem, index) { return (react_1.default.createElement(TopMenuItem_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); }))),
                     react_1.default.createElement(material_1.Box, { sx: sx.rightMenu },
-                        enableAuth && react_1.default.createElement(__1.AuthButton, null),
-                        enableStripe && react_1.default.createElement(__2.CartButton, null),
-                        enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))));
+                        (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(material_1.Box, { sx: { pr: 1 } },
+                            react_1.default.createElement(__1.ButtonActions, { size: "small", buttons: buttons }))),
+                        enableAuth == true && react_1.default.createElement(__1.AuthButton, null),
+                        enableStripe == true && react_1.default.createElement(__2.CartButton, null),
+                        enableShopify == true && react_1.default.createElement(shopify_1.ShopifyCartButton, null)))))));
 };
 exports.default = DesktopHeader;
 var sx = {
@@ -60,6 +62,7 @@ var sx = {
         height: '60px',
     },
     rightMenu: {
+        pr: 1,
         width: '200px',
         display: 'flex',
         flexDirection: 'row',

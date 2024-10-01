@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var HeroAvatar = function (props) {
     var _a = props || {}, image = _a.image, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.slots, slots = _b === void 0 ? {
-        image: {}
+        image: {},
     } : _b;
     return (react_1.default.createElement(material_1.Stack, { spacing: 2, direction: "column", justifyContent: "center" },
         react_1.default.createElement(material_1.Stack, { sx: sx.buttons, direction: { sm: 'row', xs: 'column' }, spacing: 1 }, secondaryAction),

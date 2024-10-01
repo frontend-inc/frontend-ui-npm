@@ -7,7 +7,7 @@ var react_1 = __importDefault(require("react"));
 var CellButton_1 = __importDefault(require("./CellButton"));
 var CellProducts = function (props) {
     var value = props.value;
-    console.log("CellProducts", value);
-    return (react_1.default.createElement(CellButton_1.default, { icon: 'Box' }, "Products"));
+    console.log('CellProducts', value);
+    return react_1.default.createElement(CellButton_1.default, { icon: "Box" }, "Products");
 };
 exports.default = CellProducts;

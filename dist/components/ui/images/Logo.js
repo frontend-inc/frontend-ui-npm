@@ -14,6 +14,6 @@ var Logo = function (props) {
             minHeight: "".concat(height, "px"),
             objectFit: 'contain',
             borderRadius: theme.shape.borderRadius,
-        } })) : (react_1.default.createElement(components_1.EmptyImage, { height: height }));
+        } })) : (react_1.default.createElement(components_1.NoImage, { height: height }));
 };
 exports.default = Logo;

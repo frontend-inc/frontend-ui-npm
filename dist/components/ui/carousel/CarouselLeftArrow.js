@@ -19,18 +19,28 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var CarouselLeftArrow = function (props) {
     return (react_1.default.createElement(material_1.IconButton, __assign({}, props, { sx: sx.root }),
-        react_1.default.createElement(__1.Icon, { name: "ChevronLeft" })));
+        react_1.default.createElement(__1.Icon, { name: "ChevronLeft", color: 'text.primary' })));
 };
 exports.default = CarouselLeftArrow;
 var sx = {
     root: {
         position: 'absolute',
-        left: 0,
-        top: 20,
-        transform: 'translateY(-50%)',
-        bgcolor: 'secondary.main',
+        left: 20,
+        top: '28%',
+        height: {
+            sm: 48,
+            xs: 32
+        },
+        width: {
+            sm: 48,
+            xs: 32
+        },
+        boxShadow: 4,
+        opacity: 0.8,
+        bgcolor: 'background.paper',
         '&:hover': {
-            bgcolor: 'secondary.dark',
+            opacity: 0.9,
+            bgcolor: 'background.paper',
         },
     },
 };

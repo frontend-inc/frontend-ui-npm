@@ -20,7 +20,7 @@ var material_1 = require("@mui/material");
 var Feature = function (props) {
     var _a = props || {}, icon = _a.icon, title = _a.title, description = _a.description, _b = _a.enableBorder, enableBorder = _b === void 0 ? false : _b;
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: __assign(__assign({}, sx.root), (enableBorder && sx.enableBorder)) },
-        icon && (react_1.default.createElement(__1.Icon, { name: icon, color: "primary.main", size: 24 })),
+        icon && react_1.default.createElement(__1.Icon, { name: icon, color: "primary.main", size: 24 }),
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
             react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.primary", variant: "subtitle1" }, title),
             react_1.default.createElement(material_1.Typography, { sx: sx.text, color: "text.secondary", variant: "body1" }, description))));

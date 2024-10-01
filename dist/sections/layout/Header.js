@@ -31,7 +31,7 @@ var router_1 = require("next/router");
 var hooks_1 = require("../../hooks");
 var AppHeader = function (props) {
     var router = (0, router_1.useRouter)();
-    var _a = props || {}, mode = _a.mode, rest = __rest(_a, ["mode"]);
+    var _a = props || {}, bgColor = _a.bgColor, rest = __rest(_a, ["bgColor"]);
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var handleClick = function (path) {
         window.scrollTo({
@@ -40,7 +40,7 @@ var AppHeader = function (props) {
         });
         router.push("".concat(clientUrl).concat(path));
     };
-    return (react_1.default.createElement(components_1.LightDarkMode, { mode: mode },
+    return (react_1.default.createElement(components_1.BackgroundColor, { bgColor: bgColor },
         react_1.default.createElement(components_1.Header, __assign({}, rest, { handleClick: handleClick }))));
 };
 exports.default = AppHeader;

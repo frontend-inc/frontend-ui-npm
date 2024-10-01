@@ -29,6 +29,8 @@ var Cell = function (props) {
         select: components_1.CellEnum,
         user: components_1.CellUser,
         file: components_1.CellFile,
+        multiple_choice: components_1.CellArray,
+        single_choice: components_1.CellString,
         products: components_1.CellProducts,
         shopify_products: components_1.CellArray,
     };

@@ -30,18 +30,21 @@ var react_1 = __importStar(require("react"));
 var AdminContext_1 = __importDefault(require("./AdminContext"));
 var AdminProvider = function (props) {
     var children = props.children, apiUrl = props.apiUrl, clientUrl = props.clientUrl;
-    var _a = (0, react_1.useState)(false), loading = _a[0], setLoading = _a[1];
-    var _b = (0, react_1.useState)(false), openMenu = _b[0], setOpenMenu = _b[1];
-    var _c = (0, react_1.useState)(true), openLayoutLeft = _c[0], setOpenLayoutLeft = _c[1];
-    var _d = (0, react_1.useState)(true), openLayoutRight = _d[0], setOpenLayoutRight = _d[1];
-    var _e = (0, react_1.useState)(false), activeTab = _e[0], setActiveTab = _e[1];
-    var _f = (0, react_1.useState)(0), leftTab = _f[0], setLeftTab = _f[1];
-    var _g = (0, react_1.useState)(0), rightTab = _g[0], setRightTab = _g[1];
+    var _a = (0, react_1.useState)(), app = _a[0], setApp = _a[1];
+    var _b = (0, react_1.useState)(false), loading = _b[0], setLoading = _b[1];
+    var _c = (0, react_1.useState)(false), openMenu = _c[0], setOpenMenu = _c[1];
+    var _d = (0, react_1.useState)(true), openLayoutLeft = _d[0], setOpenLayoutLeft = _d[1];
+    var _e = (0, react_1.useState)(true), openLayoutRight = _e[0], setOpenLayoutRight = _e[1];
+    var _f = (0, react_1.useState)(false), activeTab = _f[0], setActiveTab = _f[1];
+    var _g = (0, react_1.useState)(0), leftTab = _g[0], setLeftTab = _g[1];
+    var _h = (0, react_1.useState)(0), rightTab = _h[0], setRightTab = _h[1];
     var toggleLayoutLeft = function () { return setOpenLayoutLeft(!openLayoutLeft); };
     var toggleLayoutRight = function () { return setOpenLayoutRight(!openLayoutRight); };
     var value = {
         loading: loading,
         setLoading: setLoading,
+        app: app,
+        setApp: setApp,
         apiUrl: apiUrl,
         clientUrl: clientUrl,
         activeTab: activeTab,

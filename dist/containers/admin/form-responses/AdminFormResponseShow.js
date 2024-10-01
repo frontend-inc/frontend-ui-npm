@@ -40,17 +40,12 @@ var hooks_1 = require("../../../hooks");
 var AdminFormResponseShow = function (props) {
     var _a;
     var formId = props.formId, form_response = props.resource, loading = props.loading, open = props.open, handleClose = props.handleClose, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
-    var _b = (0, hooks_1.useFormBuilder)(), formLoading = _b.loading, form = _b.form, findForm = _b.findForm;
+    var _b = (0, hooks_1.useAdminForms)(), formLoading = _b.loading, form = _b.form, findForm = _b.findForm;
     (0, react_1.useEffect)(function () {
         if (formId) {
             findForm(formId);
         }
     }, [formId]);
-    (0, react_1.useEffect)(function () {
-        if (form) {
-            console.log(form);
-        }
-    }, [form]);
     return (react_1.default.createElement(components_1.ResourceModal, { loading: loading, open: open, handleClose: handleClose, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete },
         react_1.default.createElement(components_1.ResourceDetails, __assign({}, props, { image: (_a = form_response === null || form_response === void 0 ? void 0 : form_response.image) === null || _a === void 0 ? void 0 : _a.url, primary: form_response === null || form_response === void 0 ? void 0 : form_response.name, secondary: form_response === null || form_response === void 0 ? void 0 : form_response.email, fields: form === null || form === void 0 ? void 0 : form.questions }))));
 };

@@ -29,16 +29,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var context_1 = require("../../../context");
 var material_1 = require("@mui/material");
-var AdminTabAuth_1 = __importDefault(require("./AdminTabAuth"));
 var AdminTabIcon_1 = __importDefault(require("./AdminTabIcon"));
 var image_1 = __importDefault(require("next/image"));
 var router_1 = require("next/router");
+var _1 = require(".");
 var TabIcons = function (props) {
     var logo = props.logo, menuItems = props.menuItems, handleClick = props.handleClick, secondaryActions = props.secondaryActions;
     var activeTab = (0, react_1.useContext)(context_1.AdminContext).activeTab;
     var router = (0, router_1.useRouter)();
     var handleHomeClick = function () {
-        router.push('/admin');
+        router.push('/dashboard');
+    };
+    var handleMyAccountClick = function () {
+        router.push('/my-account');
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
         react_1.default.createElement(material_1.Box, { width: "100%" },
@@ -50,7 +53,7 @@ var TabIcons = function (props) {
                         react_1.default.createElement(AdminTabIcon_1.default, { selected: activeTab == item.id, icon: item.icon, handleClick: function () { return handleClick(item); } }))); })))),
         react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, divider: react_1.default.createElement(material_1.Divider, null), sx: sx.bottomTabs },
             secondaryActions,
-            react_1.default.createElement(AdminTabAuth_1.default, null))));
+            react_1.default.createElement(_1.AdminAuthIconButton, { handleClick: handleMyAccountClick }))));
 };
 exports.default = TabIcons;
 var sx = {

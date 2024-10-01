@@ -66,7 +66,7 @@ var __1 = require("../..");
 var AdminForm = function (props) {
     var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
     var formId = (props || {}).formId;
-    var _b = (0, hooks_1.useFormBuilder)(), loading = _b.loading, errors = _b.errors, form = _b.form, setForm = _b.setForm, handleChange = _b.handleChange, updateForm = _b.updateForm, findForm = _b.findForm, reloadForm = _b.reloadForm, addAttachment = _b.addAttachment, removeAttachment = _b.removeAttachment;
+    var _b = (0, hooks_1.useAdminForms)(), loading = _b.loading, errors = _b.errors, form = _b.form, setForm = _b.setForm, handleChange = _b.handleChange, updateForm = _b.updateForm, findForm = _b.findForm, reloadForm = _b.reloadForm, addAttachment = _b.addAttachment, removeAttachment = _b.removeAttachment;
     var handleEdit = function () {
         setOpen(true);
     };

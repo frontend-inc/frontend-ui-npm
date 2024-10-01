@@ -51,7 +51,7 @@ var sx = {
     footerMenu: {
         py: 6,
         width: '100%',
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
     },
     logo: {
         width: {
@@ -112,20 +112,20 @@ var sx = {
         display: 'flex',
         justifyContent: {
             sm: 'center',
-            xs: 'flex-start'
-        }
+            xs: 'flex-start',
+        },
     },
     grid: {
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: {
             sm: 'row',
-            xs: 'column'
+            xs: 'column',
         },
         gap: '16px',
         pl: {
             sm: 3,
             xs: 0,
-        }
-    }
+        },
+    },
 };

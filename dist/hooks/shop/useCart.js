@@ -35,34 +35,33 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../hooks");
-var swr_1 = __importDefault(require("swr"));
+var cookies_next_1 = require("cookies-next");
 var useCart = function () {
     var api = (0, frontend_js_1.useApi)().api;
-    var _a = (0, hooks_1.useShop)(), cart = _a.cart, setCart = _a.setCart, cartOpen = _a.cartOpen, setCartOpen = _a.setCartOpen;
+    var _a = (0, hooks_1.useShop)(), cartCookie = _a.cartCookie, cart = _a.cart, setCart = _a.setCart, cartOpen = _a.cartOpen, setCartOpen = _a.setCartOpen;
     var _b = (0, react_1.useState)(false), loading = _b[0], setLoading = _b[1];
     var _c = (0, react_1.useState)(null), errors = _c[0], setErrors = _c[1];
     var apiParams = {
         url: '/api/v1/shop/carts',
         name: 'cart',
     };
-    var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    var cacheKey = cartOpen && (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? true : false;
-    var fetcher = function () { return loadingWrapper(function () { return api.fetchCart(apiParams); }); };
-    (0, swr_1.default)([cacheKey], fetcher, {
-        revalidateOnFocus: true,
-        revalidateOnReconnect: true,
-    });
-    var fetchCart = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var _d = (0, react_1.useState)((0, cookies_next_1.getCookie)(cartCookie)), cartId = _d[0], setCartId = _d[1];
+    var fetchCart = function (cartId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.fetchCart(apiParams); })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.fetchCart(cartId, apiParams); })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
+    var createCart = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.createCart(apiParams); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -72,9 +71,12 @@ var useCart = function () {
         return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, loadingWrapper(function () {
-                            return api.addToCart(productId, quantity, apiParams);
-                        })];
+                    case 0:
+                        if (!cartId)
+                            return [2 /*return*/, "Cart not found"];
+                        return [4 /*yield*/, loadingWrapper(function () {
+                                return api.addToCart(cartId, productId, quantity, apiParams);
+                            })];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -83,7 +85,10 @@ var useCart = function () {
     var removeFromCart = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.removeFromCart(productId, apiParams); })];
+                case 0:
+                    if (!cartId)
+                        return [2 /*return*/, "Cart not found"];
+                    return [4 /*yield*/, loadingWrapper(function () { return api.removeFromCart(cartId, productId, apiParams); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -91,7 +96,10 @@ var useCart = function () {
     var addQuantity = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.addQuantity(productId, apiParams); })];
+                case 0:
+                    if (!cartId)
+                        return [2 /*return*/, "Cart not found"];
+                    return [4 /*yield*/, loadingWrapper(function () { return api.addQuantity(cartId, productId, apiParams); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -99,7 +107,10 @@ var useCart = function () {
     var removeQuantity = function (productId) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.removeQuantity(productId, apiParams); })];
+                case 0:
+                    if (!cartId)
+                        return [2 /*return*/, "Cart not found"];
+                    return [4 /*yield*/, loadingWrapper(function () { return api.removeQuantity(cartId, productId, apiParams); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -110,8 +121,10 @@ var useCart = function () {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, 3, 4]);
+                    if (!cartId)
+                        return [2 /*return*/, "Cart not found"];
                     setLoading(true);
-                    return [4 /*yield*/, api.checkout(cart === null || cart === void 0 ? void 0 : cart.id, options, apiParams)];
+                    return [4 /*yield*/, api.checkout(cartId, options, apiParams)];
                 case 1: return [2 /*return*/, _a.sent()];
                 case 2:
                     error_1 = _a.sent();
@@ -122,6 +135,22 @@ var useCart = function () {
                     setLoading(false);
                     return [7 /*endfinally*/];
                 case 4: return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleCreateCart = function () { return __awaiter(void 0, void 0, void 0, function () {
+        var resp;
+        var _a, _b, _c;
+        return __generator(this, function (_d) {
+            switch (_d.label) {
+                case 0: return [4 /*yield*/, createCart()];
+                case 1:
+                    resp = _d.sent();
+                    if ((_a = resp === null || resp === void 0 ? void 0 : resp.data) === null || _a === void 0 ? void 0 : _a.uid) {
+                        setCartId((_b = resp === null || resp === void 0 ? void 0 : resp.data) === null || _b === void 0 ? void 0 : _b.uid);
+                        (0, cookies_next_1.setCookie)(cartCookie, (_c = resp === null || resp === void 0 ? void 0 : resp.data) === null || _c === void 0 ? void 0 : _c.uid);
+                    }
+                    return [2 /*return*/];
             }
         });
     }); };
@@ -153,9 +182,20 @@ var useCart = function () {
             }
         });
     }); };
+    (0, react_1.useEffect)(function () {
+        var cartUid = (0, cookies_next_1.getCookie)(cartCookie);
+        if (!cartUid) {
+            handleCreateCart();
+        }
+        else {
+            setCartId(cartUid);
+        }
+    }, [cartCookie]);
     return {
+        cartCookie: cartCookie,
         loading: loading,
         errors: errors,
+        createCart: createCart,
         fetchCart: fetchCart,
         cart: cart,
         cartOpen: cartOpen,

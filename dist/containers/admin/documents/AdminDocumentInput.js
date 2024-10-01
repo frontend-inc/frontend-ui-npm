@@ -85,7 +85,7 @@ var AdminDocumentInput = function (props) {
             value: value || [],
             handleAddProducts: handleAddProducts,
             handleRemoveProducts: handleRemoveProducts,
-            handleUpdateProductPositions: handleUpdateProductPositions
+            handleUpdateProductPositions: handleUpdateProductPositions,
         },
         number: {
             type: 'number',

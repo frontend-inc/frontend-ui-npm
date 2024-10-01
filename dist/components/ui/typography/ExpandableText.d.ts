@@ -1,6 +1,8 @@
 import React from 'react';
+import { TypographyVariantsType } from '../../../types';
 type ExpandableTextProps = {
     text: string;
+    variant?: TypographyVariantsType;
     maxChars?: number;
     color?: string;
 };

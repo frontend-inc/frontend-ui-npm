@@ -27,7 +27,7 @@ var UnplashCard = function (props) {
     };
     return (react_1.default.createElement(material_1.Card, { sx: __assign(__assign({}, sx.root), (selected && sx.selected)) },
         react_1.default.createElement(material_1.CardActionArea, { onClick: function () { return (handleClick ? handleClick(image) : null); } },
-            react_1.default.createElement(components_1.Image, { height: 164, width: 164, src: (_a = image === null || image === void 0 ? void 0 : image.urls) === null || _a === void 0 ? void 0 : _a.small, alt: image === null || image === void 0 ? void 0 : image.alt_description, objectFit: "cover", disableBorderRadius: true })),
+            react_1.default.createElement(components_1.Image, { height: 120, width: 180, src: (_a = image === null || image === void 0 ? void 0 : image.urls) === null || _a === void 0 ? void 0 : _a.small, alt: image === null || image === void 0 ? void 0 : image.alt_description, objectFit: "cover", disableBorderRadius: true })),
         react_1.default.createElement(material_1.CardHeader, { sx: sx.cardHeader, title: react_1.default.createElement(material_1.Button, { startIcon: react_1.default.createElement(material_1.Avatar, { sx: sx.avatar, src: (_c = (_b = image === null || image === void 0 ? void 0 : image.user) === null || _b === void 0 ? void 0 : _b.profile_image) === null || _c === void 0 ? void 0 : _c.medium }), sx: sx.button, onClick: function () { return handleProfileClick(image === null || image === void 0 ? void 0 : image.user); } }, (_d = image === null || image === void 0 ? void 0 : image.user) === null || _d === void 0 ? void 0 : _d.name) })));
 };
 exports.default = UnplashCard;

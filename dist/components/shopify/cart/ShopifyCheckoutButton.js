@@ -42,6 +42,6 @@ var ShopifyCheckoutButton = function (props) {
         window.location = cart === null || cart === void 0 ? void 0 : cart.checkoutUrl;
         setLoading(false);
     };
-    return (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "primary", onClick: handleCheckoutClick, variant: "contained", size: size, endIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Checkout"));
+    return (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "primary", onClick: handleCheckoutClick, variant: "contained", size: size, endIcon: loading && react_1.default.createElement(components_1.IconLoading, null) }, "Checkout"));
 };
 exports.default = ShopifyCheckoutButton;

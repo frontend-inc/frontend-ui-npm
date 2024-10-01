@@ -85,7 +85,7 @@ var PrimaryButton = function (props) {
         react_1.default.createElement(material_1.Button, { fullWidth: fullWidth, color: color, variant: "contained", onClick: handleClick, disabled: disabled, size: size, endIcon: endIcon && (react_1.default.createElement(components_1.Icon, { name: endIcon, color: color == 'primary'
                     ? 'primary.contrastText'
                     : 'secondary.contrastText' })), startIcon: react_1.default.createElement(react_1.default.Fragment, null,
-                loading && react_1.default.createElement(components_1.IconLoading, { loading: loading }),
+                loading && react_1.default.createElement(components_1.IconLoading, null),
                 icon && (react_1.default.createElement(components_1.Icon, { name: icon, color: color == 'primary'
                         ? 'primary.contrastText'
                         : 'secondary.contrastText' }))) }, children),

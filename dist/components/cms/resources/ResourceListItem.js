@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ResourceListItem = function (props) {
     var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryAction = props.secondaryAction, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.isDragging, isDragging = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = props.slots, slots = _c === void 0 ? {
-        image: {}
+        image: {},
     } : _c;
     var handleChange = function (event) {
         if (handleSelect) {
@@ -47,6 +47,8 @@ var sx = {
     root: {
         my: 0.5,
         p: 0,
+        border: '1px solid',
+        borderColor: 'transparent',
         borderRadius: 1,
         overflow: 'hidden',
         bgcolor: 'background.paper',

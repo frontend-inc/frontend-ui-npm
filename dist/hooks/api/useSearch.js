@@ -38,10 +38,10 @@ var useSearch = function (props) {
         findMany(searchQuery);
     };
     var handleSortBy = function (field) {
-        setQuery(__assign(__assign({}, query), { sort_by: field === null || field === void 0 ? void 0 : field.name }));
+        findMany(__assign(__assign({}, query), { sort_by: field === null || field === void 0 ? void 0 : field.name }));
     };
     var handleSortDirection = function (sortDirection) {
-        setQuery(__assign(__assign({}, query), { sort_direction: sortDirection }));
+        findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
     var _e = (0, __1.useFilters)({
         query: query,

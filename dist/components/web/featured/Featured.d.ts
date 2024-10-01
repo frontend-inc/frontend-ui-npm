@@ -7,6 +7,7 @@ export type FeaturedProps = {
         description?: string;
         image?: string;
         buttonText?: string;
+        path?: string;
         url?: string;
     }[];
     enableGradient?: boolean;

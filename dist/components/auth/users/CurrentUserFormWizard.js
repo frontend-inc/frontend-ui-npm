@@ -121,11 +121,9 @@ var CurrentUserFormWizard = function (props) {
             }
         });
     }); };
-    var handleAddAttachment = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            return [2 /*return*/];
-        });
-    }); };
+    var handleAddAttachment = function () { return __awaiter(void 0, void 0, void 0, function () { return __generator(this, function (_a) {
+        return [2 /*return*/];
+    }); }); };
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp, err_1;
         return __generator(this, function (_a) {

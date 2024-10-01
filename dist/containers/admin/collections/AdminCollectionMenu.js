@@ -100,7 +100,7 @@ var AdminCollectionMenu = function () {
     var _h = (0, react_1.useState)(false), showModal = _h[0], setShowModal = _h[1];
     var handleClick = function (collection) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
-            router.push("/admin/".concat(appId, "/collections/").concat(collection === null || collection === void 0 ? void 0 : collection.name));
+            router.push("/dashboard/".concat(appId, "/collections/").concat(collection === null || collection === void 0 ? void 0 : collection.name));
             return [2 /*return*/];
         });
     }); };
@@ -129,7 +129,7 @@ var AdminCollectionMenu = function () {
                 case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         reloadCollections();
-                        router.push("/admin/".concat(appId, "/collections/").concat(resp === null || resp === void 0 ? void 0 : resp.name));
+                        router.push("/dashboard/".concat(appId, "/collections/").concat(resp === null || resp === void 0 ? void 0 : resp.name));
                         setCollection({});
                         setShowModal(false);
                     }
@@ -154,7 +154,7 @@ var AdminCollectionMenu = function () {
                     setCollections(collections.filter(function (c) { return c.id !== activeCollection.id; }));
                     if (collectionId == activeCollection.name) {
                         nextCollection = collections.filter(function (c) { return c.name !== activeCollection.name; })[0];
-                        router.push("/admin/".concat(appId, "/collections/").concat(nextCollection === null || nextCollection === void 0 ? void 0 : nextCollection.name));
+                        router.push("/dashboard/".concat(appId, "/collections/").concat(nextCollection === null || nextCollection === void 0 ? void 0 : nextCollection.name));
                     }
                     setShowDeleteModal(false);
                     return [3 /*break*/, 3];
@@ -173,7 +173,7 @@ var AdminCollectionMenu = function () {
         var _a;
         return __generator(this, function (_b) {
             apiQuery.where(view === null || view === void 0 ? void 0 : view.query);
-            router.push("/admin/".concat(appId, "/collections/").concat((_a = view === null || view === void 0 ? void 0 : view.collection) === null || _a === void 0 ? void 0 : _a.name, "?").concat(apiQuery.url(), "&view_id=").concat(view === null || view === void 0 ? void 0 : view.id));
+            router.push("/dashboard/".concat(appId, "/collections/").concat((_a = view === null || view === void 0 ? void 0 : view.collection) === null || _a === void 0 ? void 0 : _a.name, "?").concat(apiQuery.url(), "&view_id=").concat(view === null || view === void 0 ? void 0 : view.id));
             return [2 /*return*/];
         });
     }); };

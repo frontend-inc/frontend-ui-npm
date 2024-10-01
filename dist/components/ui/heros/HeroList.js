@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var HeroList = function (props) {
     var _a = props || {}, image = _a.image, label = _a.label, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, children = _a.children, _b = _a.slots, slots = _b === void 0 ? {
-        image: {}
+        image: {},
     } : _b;
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root, spacing: 4 },
         secondaryAction,

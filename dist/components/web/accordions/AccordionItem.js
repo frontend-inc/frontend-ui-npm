@@ -50,5 +50,5 @@ var sx = {
     image: {
         width: 160,
         height: 160,
-    }
+    },
 };

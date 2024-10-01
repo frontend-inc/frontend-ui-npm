@@ -93,7 +93,7 @@ var ProductListItems = function (props) {
         });
     }); };
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
-        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid, loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.ProductListItem, __assign({ key: index, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item))); })),
+        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid, loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.ProductListItem, __assign({ key: resource === null || resource === void 0 ? void 0 : resource.id, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item))); })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };
 exports.default = ProductListItems;

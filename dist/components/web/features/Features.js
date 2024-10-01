@@ -22,7 +22,7 @@ var sx = {
     },
     item: {
         p: 2,
-        maxWidth: 280
+        maxWidth: 280,
     },
     grid: {
         display: 'grid',
@@ -32,5 +32,5 @@ var sx = {
             xs: '1fr',
         },
         gap: 2,
-    }
+    },
 };

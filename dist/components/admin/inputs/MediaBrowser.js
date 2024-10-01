@@ -83,10 +83,10 @@ var MediaBrowser = function (props) {
         setSelected(resource);
     };
     // Upload methods
-    var handleRemoveItem = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var handleRemove = function (item) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, deleteResource(uploaded.id)];
+                case 0: return [4 /*yield*/, deleteResource(item.id)];
                 case 1:
                     _a.sent();
                     setUploaded(null);
@@ -118,19 +118,22 @@ var MediaBrowser = function (props) {
         { label: 'Browse', value: 0 },
         { label: 'Upload', value: 1 },
         { label: 'Unsplash', value: 2 },
+        { label: 'Logos', value: 3 },
     ];
-    return (react_1.default.createElement(components_1.Drawer, { disablePadding: true, open: open, handleClose: handleClose, title: 'Browse Media', buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleAttach }, "Save") },
+    return (react_1.default.createElement(components_1.Modal, { maxWidth: "md", disablePadding: true, open: open, handleClose: handleClose, title: 'Browse Media', buttons: react_1.default.createElement(material_1.Button, { variant: "contained", color: "primary", onClick: handleAttach }, "Save Media") },
         react_1.default.createElement(material_1.Box, null,
-            react_1.default.createElement(material_1.Box, { p: 1 },
-                react_1.default.createElement(components_1.ButtonTabs, { disableBorder: true, disablePadding: true, options: OPTIONS, handleChange: handleTabChange, value: tab })),
+            react_1.default.createElement(material_1.Box, { sx: sx.buttonsContainer },
+                react_1.default.createElement(material_1.Box, { sx: sx.buttonTabs },
+                    react_1.default.createElement(components_1.ButtonTabs, { disableBorder: true, disablePadding: true, options: OPTIONS, handleChange: handleTabChange, value: tab }))),
             react_1.default.createElement(material_1.Box, { sx: sx.content },
                 tab == 0 && (react_1.default.createElement(MediaList_1.default, { selectedIds: [selected === null || selected === void 0 ? void 0 : selected.id], handleSelect: handleSelect })),
                 tab == 1 && (react_1.default.createElement(react_1.default.Fragment, null,
-                    uploaded && (react_1.default.createElement(MediaListItem_1.default, { item: uploaded, handleRemoveItem: handleRemoveItem })),
+                    uploaded && (react_1.default.createElement(MediaListItem_1.default, { item: uploaded, handleRemove: function () { return handleRemove(uploaded); } })),
                     react_1.default.createElement(components_1.MediaUploader, { onComplete: handleComplete }))),
                 tab == 2 && (react_1.default.createElement(react_1.default.Fragment, null,
-                    uploaded && (react_1.default.createElement(MediaListItem_1.default, { item: uploaded, handleRemoveItem: handleRemoveItem })),
-                    react_1.default.createElement(components_1.UnsplashList, { onComplete: handleComplete })))))));
+                    uploaded && (react_1.default.createElement(MediaListItem_1.default, { item: uploaded, handleRemove: function () { return handleRemove(uploaded); } })),
+                    react_1.default.createElement(components_1.UnsplashList, { onComplete: handleComplete }))),
+                tab == 3 && react_1.default.createElement(components_1.BrandfetchInput, { onComplete: handleComplete })))));
 };
 exports.default = MediaBrowser;
 var sx = {
@@ -143,5 +146,16 @@ var sx = {
     },
     content: {
         p: 2,
+        minHeight: '50vh',
     },
+    buttonsContainer: {
+        px: 2,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buttonTabs: {
+        width: '100%',
+        maxWidth: 600
+    }
 };

@@ -1,8 +1,9 @@
 import React from 'react';
-import { MenuLinkType } from '../../..';
+import { ButtonType, MenuLinkType } from '../../..';
 type DesktopHeaderProps = {
     logo: string;
     links: MenuLinkType[];
+    buttons: ButtonType[];
     enableAuth?: boolean;
     enableShopify?: boolean;
     enableStripe?: boolean;

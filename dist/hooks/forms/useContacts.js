@@ -38,37 +38,27 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var frontend_js_1 = require("frontend-js");
 var __1 = require("..");
-var useFormBuilder = function () {
-    var apiUrl = (0, __1.useAdmin)().apiUrl;
-    var api = (0, frontend_js_1.useApi)().api;
-    var url = "".concat(apiUrl, "/forms");
+var frontend_js_2 = require("frontend-js");
+var useContacts = function (params) {
+    var formId = (params || {}).formId;
+    var apiUrl = (0, __1.useApp)().apiUrl;
+    var api = (0, frontend_js_2.useApi)().api;
+    var url = "".concat(apiUrl, "/cms/contacts");
     var apiParams = {
         url: url,
-        name: 'form',
+        name: 'contact',
     };
-    var _a = (0, frontend_js_1.useResource)(apiParams), loading = _a.loading, delayedLoading = _a.delayedLoading, loaded = _a.loaded, errors = _a.errors, empty = _a.empty, editing = _a.editing, isValid = _a.isValid, form = _a.resource, forms = _a.resources, findForm = _a.findOne, findForms = _a.findMany, updateForm = _a.update, updateForms = _a.updateMany, createForm = _a.create, saveForm = _a.save, deleteForm = _a.destroy, deleteForms = _a.deleteMany, loadMore = _a.loadMore, publish = _a.publish, unpublish = _a.unpublish, handleChange = _a.handleChange, handleChangePage = _a.handleChangePage, updatePositions = _a.updatePositions, addAttachment = _a.addAttachment, removeAttachment = _a.removeAttachment, query = _a.query, setQuery = _a.setQuery, page = _a.page, numPages = _a.numPages, perPage = _a.perPage, totalCount = _a.totalCount, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort, reloadForm = _a.reloadOne, reloadForms = _a.reloadMany, setForm = _a.setResource, setForms = _a.setResources, startIndex = _a.startIndex, endIndex = _a.endIndex, paginate = _a.paginate, loadingWrapper = _a.loadingWrapper;
-    var addQuestions = function (formId, questionIds) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a = (0, frontend_js_1.useResource)(apiParams), loading = _a.loading, delayedLoading = _a.delayedLoading, loaded = _a.loaded, errors = _a.errors, empty = _a.empty, editing = _a.editing, isValid = _a.isValid, handleChange = _a.handleChange, contact = _a.resource, contacts = _a.resources, findContact = _a.findOne, findContacts = _a.findMany, updateContact = _a.update, updateContacts = _a.updateMany, createContact = _a.create, saveContact = _a.save, deleteContact = _a.destroy, deleteContacts = _a.deleteMany, loadMore = _a.loadMore, handleChangePage = _a.handleChangePage, updatePositions = _a.updatePositions, addAttachment = _a.addAttachment, removeAttachment = _a.removeAttachment, query = _a.query, setQuery = _a.setQuery, page = _a.page, numPages = _a.numPages, perPage = _a.perPage, totalCount = _a.totalCount, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort, reloadContact = _a.reloadOne, reloadContacts = _a.reloadMany, setContact = _a.setResource, setContacts = _a.setResources, startIndex = _a.startIndex, endIndex = _a.endIndex, paginate = _a.paginate, loadingWrapper = _a.loadingWrapper;
+    var submitForm = function (contact) { return __awaiter(void 0, void 0, void 0, function () {
+        var url, payload;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.addQuestions(formId, questionIds, {
-                            url: url,
-                            name: 'questions',
-                        });
-                    })];
-                case 1: return [2 /*return*/, _a.sent()];
-            }
-        });
-    }); };
-    var removeQuestions = function (formId, questionIds) { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.removeQuestions(formId, questionIds, {
-                            url: url,
-                            name: 'questions',
-                        });
-                    })];
+                case 0:
+                    url = "".concat(apiUrl, "/cms/forms/").concat(formId, "/form_responses");
+                    payload = {
+                        contact: contact,
+                    };
+                    return [4 /*yield*/, loadingWrapper(function () { return api.post(url, payload); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -82,29 +72,26 @@ var useFormBuilder = function () {
         empty: empty,
         editing: editing,
         isValid: isValid,
-        form: form,
-        forms: forms,
-        findForm: findForm,
-        findForms: findForms,
-        saveForm: saveForm,
-        updateForm: updateForm,
-        updateForms: updateForms,
-        createForm: createForm,
-        deleteForm: deleteForm,
-        deleteForms: deleteForms,
+        contact: contact,
+        contacts: contacts,
+        findContact: findContact,
+        findContacts: findContacts,
+        saveContact: saveContact,
+        updateContact: updateContact,
+        updateContacts: updateContacts,
+        createContact: createContact,
+        deleteContact: deleteContact,
+        deleteContacts: deleteContacts,
+        submitForm: submitForm,
         loadMore: loadMore,
-        publish: publish,
-        unpublish: unpublish,
-        addQuestions: addQuestions,
-        removeQuestions: removeQuestions,
         addAttachment: addAttachment,
         removeAttachment: removeAttachment,
         handleChange: handleChange,
         handleChangePage: handleChangePage,
         query: query,
         setQuery: setQuery,
-        reloadForm: reloadForm,
-        reloadForms: reloadForms,
+        reloadContact: reloadContact,
+        reloadContacts: reloadContacts,
         page: page,
         numPages: numPages,
         perPage: perPage,
@@ -113,10 +100,11 @@ var useFormBuilder = function () {
         sortBy: sortBy,
         sortDirection: sortDirection,
         handleSort: handleSort,
-        setForm: setForm,
-        setForms: setForms,
+        setContact: setContact,
+        setContacts: setContacts,
         startIndex: startIndex,
         endIndex: endIndex,
+        loadingWrapper: loadingWrapper,
     };
 };
-exports.default = useFormBuilder;
+exports.default = useContacts;

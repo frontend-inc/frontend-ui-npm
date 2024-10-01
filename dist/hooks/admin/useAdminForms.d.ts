@@ -1,5 +1,5 @@
 import React from 'react';
-declare const useFormBuilder: () => {
+declare const useAdminForms: () => {
     paginate: (page: number) => Promise<any>;
     loading: boolean;
     loaded: any;
@@ -44,4 +44,4 @@ declare const useFormBuilder: () => {
     startIndex: any;
     endIndex: any;
 };
-export default useFormBuilder;
+export default useAdminForms;

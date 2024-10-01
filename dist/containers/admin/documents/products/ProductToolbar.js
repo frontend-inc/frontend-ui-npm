@@ -63,6 +63,6 @@ var ProductToolbar = function (props) {
 exports.default = ProductToolbar;
 var sx = {
     toolbar: {
-        width: '100%'
-    }
+        width: '100%',
+    },
 };

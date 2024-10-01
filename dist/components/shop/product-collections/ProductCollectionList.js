@@ -20,7 +20,6 @@ var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var ProductCollectionList = function (props) {
     var apiUrl = (0, hooks_1.useApp)().apiUrl;
-    var url = (props || {}).url;
     var _a = props || {}, foreignUrl = _a.foreignUrl, query = _a.query, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, href = _a.href, _b = _a.buttons, buttons = _b === void 0 ? [] : _b, enableSearch = _a.enableSearch, enableFilters = _a.enableFilters, enableSorting = _a.enableSorting, _c = _a.filterOptions, filterOptions = _c === void 0 ? [] : _c, _d = _a.sortOptions, sortOptions = _d === void 0 ? [] : _d, _e = _a.list, List = _e === void 0 ? components_1.DataList : _e, _f = _a.component, Component = _f === void 0 ? __1.ProductCollectionListItem : _f, _g = _a.slots, defaultSlots = _g === void 0 ? {
         header: {},
         list: {},

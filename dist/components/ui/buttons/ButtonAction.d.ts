@@ -1,15 +1,11 @@
 import React from 'react';
-import { ActionType } from '../../../types';
 type ActionProps = {
     icon?: string;
     color?: 'primary' | 'secondary';
     size?: 'small' | 'medium' | 'large';
     variant?: 'text' | 'outlined' | 'contained';
-    action: ActionType;
-    actionId?: number;
+    url?: string;
     path?: string;
-    resource?: any;
-    onClick?: () => void;
     children: React.ReactNode;
 };
 declare const ButtonAction: React.FC<ActionProps>;

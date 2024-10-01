@@ -96,7 +96,7 @@ var ProductsInput = function (props) {
         react_1.default.createElement(material_1.Collapse, { in: (products === null || products === void 0 ? void 0 : products.length) > 0 },
             react_1.default.createElement(material_1.Box, { sx: sx.carouselContainer },
                 react_1.default.createElement(material_1.Box, { sx: sx.carousel }, products === null || products === void 0 ? void 0 : products.map(function (product) { return (react_1.default.createElement(ProductImage, { key: product === null || product === void 0 ? void 0 : product.id, product: product, handleDelete: function () { return handleDelete(product === null || product === void 0 ? void 0 : product.id); } })); })))),
-        react_1.default.createElement(components_1.ProductAutosuggest, { name: name, label: label, value: productId, valueParam: 'id', handleChange: handleInputChange, placeholder: placeholder })));
+        react_1.default.createElement(components_1.ProductAutosuggest, { name: name, label: label, value: productId, valueParam: "id", handleChange: handleInputChange, placeholder: placeholder })));
 };
 exports.default = ProductsInput;
 var sx = {

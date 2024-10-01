@@ -1,14 +1,9 @@
 import React from 'react';
-import { ActionType } from '../../../types';
 type ButtonMenuProps = {
-    resource: any;
-    action: ActionType;
-    actionId?: number;
-    path?: string;
+    path: string;
+    url: string;
     icon?: string;
     label: string;
-    variant?: 'text' | 'outlined' | 'contained';
-    color?: 'primary' | 'secondary';
     onClick?: (ev: any) => void;
 };
 declare const ButtonMenu: React.FC<ButtonMenuProps>;

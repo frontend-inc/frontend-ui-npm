@@ -1,6 +1,5 @@
 import React from 'react';
 type IconLoadingProps = {
-    loading: boolean;
     color?: string;
     size?: number;
 };

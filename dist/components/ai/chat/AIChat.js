@@ -46,6 +46,6 @@ var AIChat = function (props) {
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2 },
         react_1.default.createElement(AIChatMessages_1.default, { avatar: avatar, messages: messages }),
         react_1.default.createElement(AIChatForm_1.default, { label: label, prompt: prompt, setMessages: setMessages, input: input, handleInputChange: handleInputChange }),
-        react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleChatSubmit, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, !loading && buttonText)));
+        react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleChatSubmit, startIcon: loading && react_1.default.createElement(components_1.IconLoading, null) }, !loading && buttonText)));
 };
 exports.default = AIChat;

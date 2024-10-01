@@ -28,10 +28,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var shop_1 = require("../../components/shop");
+var material_1 = require("@mui/material");
 var ShopCollectionProducts = function (props) {
-    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
-        react_1.default.createElement(shop_1.CollectionProducts, __assign({}, rest))));
+    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgColor = props.bgColor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "bgColor", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, bgColor: bgColor, py: py, px: px, maxWidth: maxWidth },
+        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1 },
+            react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
+            react_1.default.createElement(shop_1.CollectionProducts, __assign({}, rest)))));
 };
 exports.default = ShopCollectionProducts;

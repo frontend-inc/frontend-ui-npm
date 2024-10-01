@@ -39,6 +39,9 @@ export declare const muiTheme: {
                 sizeMedium: {
                     height: number;
                 };
+                sizeLarge: {
+                    height: number;
+                };
                 outlined: {};
                 contained: {};
             };
@@ -283,11 +286,17 @@ export declare const muiTheme: {
             fontFamily: string;
             fontWeight: number;
             fontSize: number;
+            '@media (max-width:600px)': {
+                fontSize: number;
+            };
         };
         h6: {
             fontFamily: string;
             fontWeight: number;
             fontSize: number;
+            '@media (max-width:600px)': {
+                fontSize: number;
+            };
         };
         subtitle1: {
             fontFamily: string;
@@ -327,13 +336,12 @@ export declare const muiTheme: {
             fontWeight: number;
             fontSize: number;
             letterSpacing: string;
+            textTransform: string;
         };
         caption: {
             fontFamily: string;
             fontWeight: number;
-            textTransform: string;
             fontSize: number;
-            letterSpacing: string;
             '@media (max-width:600px)': {
                 fontSize: number;
             };

@@ -30,6 +30,6 @@ var __1 = require("../..");
 var ProductFavorites = function (props) {
     var _a = props.query, query = _a === void 0 ? {} : _a, rest = __rest(props, ["query"]);
     query = __assign(__assign({}, query), { method: 'favorites' });
-    return react_1.default.createElement(__1.ProductList, __assign({ query: query }, rest));
+    return (react_1.default.createElement(__1.ProductList, __assign({ query: query }, rest)));
 };
 exports.default = ProductFavorites;

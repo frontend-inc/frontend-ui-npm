@@ -1,8 +1,8 @@
 import React from 'react';
-type UseFormResponseParams = {
-    formId: number | string;
+type UseContactParams = {
+    formId?: number | string;
 };
-declare const useFormResponse: (params: UseFormResponseParams) => {
+declare const useContacts: (params: UseContactParams) => {
     paginate: (page: number) => Promise<any>;
     loading: boolean;
     loaded: any;
@@ -11,16 +11,17 @@ declare const useFormResponse: (params: UseFormResponseParams) => {
     empty: any;
     editing: any;
     isValid: any;
-    formResponse: any;
-    formResponses: any[];
-    findFormResponse: (id: import("frontend-js").ID) => any;
-    findFormResponses: (queryParams?: import("frontend-js").QueryParamsType) => void;
-    saveFormResponse: (resource: any) => any;
-    updateFormResponse: (resource: any) => any;
-    updateFormResponses: (ids: import("frontend-js").ID[], data: any) => Promise<any>;
-    createFormResponse: (resource: any) => any;
-    deleteFormResponse: (id: import("frontend-js").ID) => Promise<any>;
-    deleteFormResponses: (ids: import("frontend-js").ID[]) => void;
+    contact: any;
+    contacts: any[];
+    findContact: (id: import("frontend-js").ID) => any;
+    findContacts: (queryParams?: import("frontend-js").QueryParamsType) => void;
+    saveContact: (resource: any) => any;
+    updateContact: (resource: any) => any;
+    updateContacts: (ids: import("frontend-js").ID[], data: any) => Promise<any>;
+    createContact: (resource: any) => any;
+    deleteContact: (id: import("frontend-js").ID) => Promise<any>;
+    deleteContacts: (ids: import("frontend-js").ID[]) => void;
+    submitForm: (contact: any) => Promise<void>;
     loadMore: () => void;
     addAttachment: (id: import("frontend-js").ID, fieldName: string, attachmentId: import("frontend-js").ID) => any;
     removeAttachment: (id: import("frontend-js").ID, fieldName: string) => any;
@@ -28,8 +29,8 @@ declare const useFormResponse: (params: UseFormResponseParams) => {
     handleChangePage: any;
     query: import("frontend-js").QueryParamsType;
     setQuery: (params: import("frontend-js").QueryParamsType) => void;
-    reloadFormResponse: any;
-    reloadFormResponses: () => Promise<any>;
+    reloadContact: any;
+    reloadContacts: () => Promise<any>;
     page: number;
     numPages: number;
     perPage: number;
@@ -38,10 +39,10 @@ declare const useFormResponse: (params: UseFormResponseParams) => {
     sortBy: any;
     sortDirection: any;
     handleSort: any;
-    setFormResponse: (value: any) => void;
-    setFormResponses: (value: any[]) => void;
+    setContact: (value: any) => void;
+    setContacts: (value: any[]) => void;
     startIndex: any;
     endIndex: any;
     loadingWrapper: (fn: () => void) => void;
 };
-export default useFormResponse;
+export default useContacts;

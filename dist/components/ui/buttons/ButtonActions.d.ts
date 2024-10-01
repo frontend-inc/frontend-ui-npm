@@ -3,7 +3,7 @@ import { ButtonType } from '../../../types';
 import { UserType } from 'frontend-js';
 type ButtonActionsProps = {
     buttons: ButtonType[];
-    resource: any;
+    resource?: any;
     user?: UserType;
     numVisible?: number;
     color?: string;

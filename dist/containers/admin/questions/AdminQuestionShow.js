@@ -14,8 +14,8 @@ var AdminQuestionShow = function (props) {
         react_1.default.createElement(components_1.ResourceDetails, { direction: "row", label: (_a = resource === null || resource === void 0 ? void 0 : resource.question) === null || _a === void 0 ? void 0 : _a.variant, image: (_c = (_b = resource === null || resource === void 0 ? void 0 : resource.question) === null || _b === void 0 ? void 0 : _b.image) === null || _c === void 0 ? void 0 : _c.url, primary: (_d = resource === null || resource === void 0 ? void 0 : resource.question) === null || _d === void 0 ? void 0 : _d.title, secondary: (_e = resource === null || resource === void 0 ? void 0 : resource.question) === null || _e === void 0 ? void 0 : _e.description, resource: resource === null || resource === void 0 ? void 0 : resource.question, fields: [] }),
         react_1.default.createElement(material_1.Stack, { direction: "column", width: '100%', spacing: 2 },
             react_1.default.createElement(material_1.Box, { sx: sx.divider }),
-            react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: 'text.primary' }, "Answer Choices"),
-            react_1.default.createElement(material_1.Typography, { variant: "body2", color: 'text.secondary' }, "For single choice and multiple choice questions"),
+            react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "text.primary" }, "Answer Choices"),
+            react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, "For single choice and multiple choice questions"),
             react_1.default.createElement(containers_1.AdminAnswerList, { direction: "column", questionId: resource === null || resource === void 0 ? void 0 : resource.question_id }))));
 };
 exports.default = AdminQuestionShow;
@@ -24,6 +24,6 @@ var sx = {
         borderBottom: '1px solid',
         borderColor: 'divider',
         pt: 2,
-        my: 2
-    }
+        my: 2,
+    },
 };

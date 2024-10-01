@@ -13,7 +13,7 @@ var LoginForm = function (props) {
         react_1.default.createElement(material_1.Stack, { spacing: 1.5 },
             react_1.default.createElement(__1.TextInput, { errors: errors, label: "Email", name: "email", value: user === null || user === void 0 ? void 0 : user.email, placeholder: "Email", handleChange: handleChange }),
             react_1.default.createElement(__1.TextInput, { errors: errors, label: "Password", name: "password", value: user === null || user === void 0 ? void 0 : user.password, type: "password", placeholder: "Password", handleChange: handleChange }),
-            react_1.default.createElement(material_1.Button, { fullWidth: true, size: "large", color: "primary", onClick: handleSubmit, variant: "contained", endIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, "Sign In"),
+            react_1.default.createElement(material_1.Button, { fullWidth: true, size: "large", color: "primary", onClick: handleSubmit, variant: "contained", endIcon: loading && react_1.default.createElement(__1.IconLoading, null) }, "Sign In"),
             handleSignup && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleSignup }, "No account? Sign up")),
             handleForgotPassword && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleForgotPassword }, "Forgot password?")),
             handleOneTimePassword && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleOneTimePassword }, "One-time password")))));

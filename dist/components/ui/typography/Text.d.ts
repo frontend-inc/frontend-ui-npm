@@ -1,9 +1,12 @@
 import React from 'react';
-type TextProps = {
-    children: string;
-    variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'subtitle1' | 'subtitle2' | 'body1' | 'body2' | 'caption' | 'button' | 'overline' | undefined;
-    color?: string;
-    textAlign?: 'left' | 'center' | 'right' | 'justify' | undefined;
+import { TypographyVariantsType } from '../../../types';
+export type TextProps = {
+    title: string;
+    description: string;
+    label?: string;
+    textAlign?: 'center' | 'left';
+    textVariant?: TypographyVariantsType;
+    html?: boolean;
 };
 declare const Text: React.FC<TextProps>;
 export default Text;

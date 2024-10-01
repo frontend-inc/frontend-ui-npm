@@ -38,8 +38,9 @@ var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
 var theme_1 = require("../../theme");
 var components_1 = require("../../components");
+var context_1 = require("../../context");
 var Section = function (props) {
-    var _a = props.enableTransitions, enableTransitions = _a === void 0 ? false : _a, _b = props.requireAuth, requireAuth = _b === void 0 ? false : _b, _c = props.requirePaid, requirePaid = _c === void 0 ? false : _c, children = props.children, _d = props.mode, mode = _d === void 0 ? 'light' : _d, maxWidth = props.maxWidth, _e = props.py, py = _e === void 0 ? 9 : _e, _f = props.px, px = _f === void 0 ? 3 : _f;
+    var _a = props.enableTransitions, enableTransitions = _a === void 0 ? false : _a, _b = props.requireAuth, requireAuth = _b === void 0 ? false : _b, _c = props.requirePaid, requirePaid = _c === void 0 ? false : _c, children = props.children, _d = props.bgColor, bgColor = _d === void 0 ? '#ffffff' : _d, maxWidth = props.maxWidth, _e = props.py, py = _e === void 0 ? 6 : _e, _f = props.px, px = _f === void 0 ? 3 : _f;
     var _g = (0, react_1.useState)(theme_1.muiTheme.breakpoints.values.md), width = _g[0], setWidth = _g[1];
     // Since breakpoints are modified to
     // to compensate for the extra width of the Editor
@@ -57,7 +58,7 @@ var Section = function (props) {
                 break;
         }
     }, [maxWidth]);
-    return (react_1.default.createElement(components_1.LightDarkMode, { mode: mode },
+    return (react_1.default.createElement(context_1.ThemeProvider, { muiTheme: theme_1.muiTheme, bgcolor: bgColor },
         react_1.default.createElement(material_1.Fade, { in: true, timeout: 1000 },
             react_1.default.createElement(material_1.Box, { sx: sx.root },
                 react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.container), (enableTransitions && sx.containerTransitions)), { py: py, px: px, maxWidth: width }) },

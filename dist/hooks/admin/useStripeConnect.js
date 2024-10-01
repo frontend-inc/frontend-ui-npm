@@ -48,8 +48,8 @@ var useStripeConnect = function () {
                 case 0: return [4 /*yield*/, loadingWrapper(function () {
                         return api.post("".concat(apiUrl, "/stripe/connect"), {
                             stripe: {
-                                return_url: returnUrl
-                            }
+                                return_url: returnUrl,
+                            },
                         });
                     })];
                 case 1: return [2 /*return*/, _a.sent()];

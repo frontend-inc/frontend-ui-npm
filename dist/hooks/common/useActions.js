@@ -39,19 +39,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var hooks_1 = require("../../hooks");
+var __1 = require("..");
 var router_1 = require("next/router");
 var _1 = require(".");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
-var __1 = require("..");
+var __2 = require("..");
 var frontend_js_1 = require("frontend-js");
 var useButtons = function (params) {
     var _a = params || {}, action = _a.action, actionId = _a.actionId, value = _a.value, path = _a.path, resource = _a.resource, user = _a.user;
     var _b = (0, _1.useLoadingWrapper)(), loading = _b.loading, data = _b.data, errors = _b.errors, loadingWrapper = _b.loadingWrapper;
-    var showAlertSuccess = (0, __1.useAlerts)().showAlertSuccess;
+    var showAlertSuccess = (0, __2.useAlerts)().showAlertSuccess;
     var api = (0, frontend_js_1.useApi)().api;
     var router = (0, router_1.useRouter)();
-    var clientUrl = (0, hooks_1.useApp)().clientUrl;
+    var clientUrl = (0, __1.useApp)().clientUrl;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var handleClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {
         var url, _a, url_1;

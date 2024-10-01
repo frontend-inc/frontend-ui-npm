@@ -15,14 +15,10 @@ var ShopifyAuthButton = function () {
     var router = (0, router_1.useRouter)();
     var _a = (0, frontend_shopify_1.useAuth)(), logout = _a.logout, customer = _a.customer;
     var _b = (0, hooks_1.useMenu)(), open = _b.open, anchorEl = _b.anchorEl, closeMenu = _b.closeMenu, toggleMenu = _b.toggleMenu;
-    var clientUrl = (0, hooks_2.useApp)().clientUrl;
-    var handleClick = function (path) {
+    var _c = (0, hooks_2.useApp)(), clientUrl = _c.clientUrl, setMyAccountOpen = _c.setMyAccountOpen;
+    var handleClick = function () {
         closeMenu();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
-        router.push("".concat(clientUrl, "/").concat(path));
+        setMyAccountOpen(true);
     };
     var handleLogoutClick = function () {
         logout();

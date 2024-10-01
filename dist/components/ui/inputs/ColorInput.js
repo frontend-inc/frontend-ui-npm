@@ -90,18 +90,6 @@ var ColorInput = function (props) {
             });
         }
     };
-    (0, react_1.useEffect)(function () {
-        if (value) {
-            setHex(value);
-            setText(value);
-            handleChange({
-                target: {
-                    name: name,
-                    value: value,
-                },
-            });
-        }
-    }, [value]);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, sx: sx.root },
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, variant: "contained", color: "secondary", endIcon: react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0 },

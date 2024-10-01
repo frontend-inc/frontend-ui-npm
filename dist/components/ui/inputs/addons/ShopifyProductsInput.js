@@ -39,7 +39,6 @@ var frontend_shopify_1 = require("frontend-shopify");
 var frontend_shopify_2 = require("frontend-shopify");
 var material_1 = require("@mui/material");
 var lodash_1 = require("lodash");
-var components_1 = require("../../../../components");
 var ShopifyProductImage = function (props) {
     var _a, _b, _c, _d;
     var handle = props.handle, handleDelete = props.handleDelete, _e = props.height, height = _e === void 0 ? 160 : _e, _f = props.width, width = _f === void 0 ? 160 : _f;
@@ -53,9 +52,7 @@ var ShopifyProductImage = function (props) {
         return null;
     return (react_1.default.createElement(material_1.Fade, { in: true, timeout: 350 },
         react_1.default.createElement(material_1.Box, { sx: sx.productCard },
-            react_1.default.createElement(__2.Image, { enableGradient: true, disableBorder: true, src: (_d = (_c = (_b = (_a = product === null || product === void 0 ? void 0 : product.images) === null || _a === void 0 ? void 0 : _a.edges) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.node) === null || _d === void 0 ? void 0 : _d.url, alt: product === null || product === void 0 ? void 0 : product.title, height: height, width: width }),
-            react_1.default.createElement(material_1.IconButton, { size: "small", onClick: handleDelete, sx: sx.deleteButton },
-                react_1.default.createElement(components_1.Icon, { name: "X" })))));
+            react_1.default.createElement(__2.Image, { enableGradient: true, disableBorder: true, src: (_d = (_c = (_b = (_a = product === null || product === void 0 ? void 0 : product.images) === null || _a === void 0 ? void 0 : _a.edges) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.node) === null || _d === void 0 ? void 0 : _d.url, alt: product === null || product === void 0 ? void 0 : product.title, height: height, width: width, enableDelete: true, handleDelete: handleDelete }))));
 };
 var ShopifyProductsInput = function (props) {
     var value = props.value, label = props.label, _a = props.direction, direction = _a === void 0 ? 'column' : _a, placeholder = props.placeholder, _b = props.name, name = _b === void 0 ? 'shopify_handle' : _b, handleChange = props.handleChange, height = props.height, width = props.width;
@@ -152,16 +149,5 @@ var sx = {
         flexDirection: 'row',
         flexWrap: 'wrap',
         gap: '10px',
-    },
-    deleteButton: {
-        position: 'absolute',
-        top: 2,
-        right: 2,
-        bgcolor: 'background.default',
-        opacity: 0.5,
-        '&:hover': {
-            bgcolor: 'background.default',
-            opacity: 1,
-        },
     },
 };

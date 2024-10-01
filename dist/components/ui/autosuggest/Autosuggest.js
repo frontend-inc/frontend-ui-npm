@@ -144,10 +144,11 @@ var sx = {
             height: 20,
             color: 'text.secondary',
             borderRadius: 1,
+            border: '1px solid',
+            borderColor: 'divider',
             fontSize: function (theme) { return theme.typography.body2.fontSize; },
             fontFamily: function (theme) { return theme.typography.body2.fontFamily; },
             bgcolor: 'background.paper',
-            border: function (theme) { return "1px solid ".concat(theme.palette.divider); },
             '&:focus': {
                 border: function (theme) { return "1px solid ".concat(theme.palette.primary.light); },
             },

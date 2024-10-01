@@ -59,8 +59,8 @@ var MultipleChoiceAnswerInput = function (props) {
             return (react_1.default.createElement(__1.ResourceListItem, { enableBorder: true, selected: selected === null || selected === void 0 ? void 0 : selected.includes(answer.value), image: (_a = answer === null || answer === void 0 ? void 0 : answer.image) === null || _a === void 0 ? void 0 : _a.url, primary: answer.title, secondary: answer.description, handleClick: function () { return handleSelect(answer.value); }, slots: {
                     image: {
                         height: 120,
-                        width: 120
-                    }
+                        width: 120,
+                    },
                 } }));
         }))),
         layout == 'grid' && (react_1.default.createElement(material_1.Box, { sx: sx.grid }, answers === null || answers === void 0 ? void 0 : answers.map(function (answer, idx) {
@@ -69,8 +69,8 @@ var MultipleChoiceAnswerInput = function (props) {
                 react_1.default.createElement(__1.ResourceGridItem, { enableBorder: true, selected: selected === null || selected === void 0 ? void 0 : selected.includes(answer.value), image: (_a = answer === null || answer === void 0 ? void 0 : answer.image) === null || _a === void 0 ? void 0 : _a.url, primary: answer.title, secondary: answer.description, handleClick: function () { return handleSelect(answer.value); }, slots: {
                         image: {
                             height: 120,
-                            width: 120
-                        }
+                            width: 120,
+                        },
                     } })));
         })))));
 };

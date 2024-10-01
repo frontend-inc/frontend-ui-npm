@@ -1,5 +1,6 @@
 import React from 'react';
 type AddToCartButtonProps = {
+    size?: 'small' | 'medium' | 'large';
     productId: string;
     availableForSale?: boolean;
 };

@@ -33,7 +33,7 @@ var FormInput_1 = require("./FormInput");
 Object.defineProperty(exports, "FormInput", { enumerable: true, get: function () { return __importDefault(FormInput_1).default; } });
 var FormField_1 = require("./FormField");
 Object.defineProperty(exports, "FormField", { enumerable: true, get: function () { return __importDefault(FormField_1).default; } });
-// Data Forms 
+// Data Forms
 var DataFormWizardModal_1 = require("./DataFormWizardModal");
 Object.defineProperty(exports, "DataFormWizard", { enumerable: true, get: function () { return __importDefault(DataFormWizardModal_1).default; } });
 // Document forms

@@ -28,7 +28,7 @@ var ProductReviews = function (props) {
             toolbar: {
                 buttonText: 'Add Product Review',
             },
-        }, emptyTitle: 'No reviews yet', emptyDescription: 'Be the first to leave a review' }));
+        }, emptyTitle: "No reviews yet", emptyDescription: "Be the first to leave a review" }));
 };
 exports.default = ProductReviews;
 var sx = {

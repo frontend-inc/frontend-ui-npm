@@ -132,9 +132,9 @@ var UnsplashList = function (props) {
         setShowModal(true);
     };
     return (react_1.default.createElement(material_1.Box, { sx: sx.root },
-        react_1.default.createElement(components_1.TextInput, { name: "keywords", value: keywords, placeholder: "Search unsplash...", handleChange: handleChange }),
-        react_1.default.createElement(material_1.Button, { sx: sx.button, fullWidth: true, onClick: handleSearch, variant: "contained", color: "secondary", endIcon: react_1.default.createElement(components_1.Icon, { name: "Search", color: "secondary.contrastText" }) }, "Search"),
-        react_1.default.createElement(PoweredByUnsplash_1.default, null),
+        react_1.default.createElement(material_1.Stack, { spacing: 1 },
+            react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, placeholder: "Search unsplash...", handleChange: handleChange, handleSearch: handleSearch }),
+            react_1.default.createElement(PoweredByUnsplash_1.default, null)),
         react_1.default.createElement(material_1.Box, { sx: sx.grid }, images === null || images === void 0 ? void 0 : images.map(function (image, i) { return (react_1.default.createElement(UnsplashCard_1.default, { key: i, image: image, handleClick: handleImageClick })); })),
         (images === null || images === void 0 ? void 0 : images.length) > 0 && (images === null || images === void 0 ? void 0 : images.length) % 10 == 0 && (react_1.default.createElement(material_1.Button, { sx: sx.loadMore, fullWidth: true, color: "secondary", variant: "contained", endIcon: react_1.default.createElement(icons_material_1.ExpandMore, null), onClick: handleLoadMore }, "Load More")),
         react_1.default.createElement(UnsplashModal_1.default, { loading: loading, open: showModal, image: image, handleClose: function () { return setShowModal(false); }, handleUpload: handleUpload })));
@@ -150,7 +150,7 @@ var sx = {
     grid: {
         mt: 2,
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(164px, 1fr))',
         gap: '10px',
     },
     unsplashLogo: {

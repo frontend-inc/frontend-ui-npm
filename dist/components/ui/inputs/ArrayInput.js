@@ -41,7 +41,7 @@ var ArrayInput = function (props) {
         });
     };
     //if (!Array.isArray(value)) return null
-    return (react_1.default.createElement(material_1.Stack, { sx: exports.sx.root, direction: direction, spacing: 0 },
+    return (react_1.default.createElement(material_1.Stack, { sx: exports.sx.root, direction: direction, spacing: 0.5 },
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(material_1.Autocomplete, { multiple: true, freeSolo: freeSolo, value: value, onChange: handleInputChange, options: options || [], getOptionLabel: function (option) { return option; }, PopperComponent: CustomPopper, clearIcon: react_1.default.createElement(lucide_react_1.X, null), renderTags: function (tagValue, getTagProps) {
                 return Array.isArray(tagValue) &&

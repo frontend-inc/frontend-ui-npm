@@ -1,7 +1,7 @@
 import React from 'react';
-type MediaItemListProps = {
+type MediaListProps = {
     selectedIds: number[];
     handleSelect: (item: any) => void;
 };
-declare const MediaItemList: React.FC<MediaItemListProps>;
-export default MediaItemList;
+declare const MediaList: React.FC<MediaListProps>;
+export default MediaList;

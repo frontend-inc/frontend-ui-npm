@@ -59,7 +59,7 @@ var useCollections = function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.post("".concat(apiUrl, "/collections/").concat(collectionId, "/ai_generate_data"));
+                        return api.post("".concat(apiUrl, "/collections/").concat(collectionId, "/ai_generate"));
                     })];
                 case 1: return [2 /*return*/, _a.sent()];
             }

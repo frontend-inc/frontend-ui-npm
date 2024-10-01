@@ -3,6 +3,7 @@ type ModalProps = {
     open: boolean;
     loading?: boolean;
     handleClose: () => void;
+    icon?: string;
     avatar?: React.ReactNode;
     title?: string | React.ReactNode;
     subtitle?: string;

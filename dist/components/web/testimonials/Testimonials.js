@@ -25,9 +25,6 @@ var sx = {
             display: 'none',
         },
     },
-    title: {
-        textAlign: 'center',
-    },
     item: {
         p: 2,
         height: '100%',
@@ -36,15 +33,5 @@ var sx = {
         flexDirection: 'column',
         justifyContent: 'flex-end',
         alignItems: 'center',
-    },
-    testimonials: {
-        overflowX: 'scroll',
-        '&::-webkit-scrollbar': {
-            display: 'none',
-        },
-        justifyContent: {
-            sm: 'center',
-            xs: 'flex-start',
-        },
     },
 };

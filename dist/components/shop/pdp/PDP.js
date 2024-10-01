@@ -33,7 +33,7 @@ var PDP = function (props) {
                     react_1.default.createElement(material_1.Box, { sx: sx.imageContainer },
                         react_1.default.createElement(__1.Image, __assign({ src: image, alt: primary, height: 400, label: label }, slots.image))),
                     actions),
-                react_1.default.createElement(material_1.Stack, __assign({ spacing: 2, sx: sx.content }, slots.content),
+                react_1.default.createElement(material_1.Stack, __assign({ spacing: 2, sx: sx.rightPanel }, slots.content),
                     react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "h4" }, primary),
                     react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 1 },
                         react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "subtitle1" }, price),
@@ -81,8 +81,17 @@ var sx = {
         width: '100%',
         textAlign: 'center',
     },
-    content: {
-        width: '100%',
+    leftPanel: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    rightPanel: {
+        width: {
+            sm: '100%',
+            xs: '100%',
+        },
         maxWidth: {
             sm: 500,
             xs: '100%',
@@ -98,19 +107,16 @@ var sx = {
         width: '100%',
     },
     imageContainer: {
-        transition: 'all 0.5s ease-in-out',
         borderRadius: 1,
         width: '100%',
         minWidth: {
             sm: 420,
             xs: '100%',
         },
-    },
-    leftPanel: {
-        width: '100%',
-    },
-    leftPanelBorder: {
-        pb: 2,
+        maxWidth: {
+            sm: 640,
+            xs: '100%',
+        }
     },
     description: {
         whiteSpace: 'pre-line',

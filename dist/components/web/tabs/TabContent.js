@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
-var index_1 = require("../../index");
 var TabItem = function (props) {
     var title = props.title, description = props.description, image = props.image, _a = props.active, active = _a === void 0 ? false : _a;
     if (!active)
@@ -21,7 +20,7 @@ var TabItem = function (props) {
                 } }))),
         react_1.default.createElement(material_1.Stack, { sx: sx.content, spacing: 1 },
             react_1.default.createElement(material_1.Typography, { variant: "subtitle1", color: "text.primary" }, title),
-            react_1.default.createElement(index_1.Text, { variant: "body1", color: "text.secondary" }, description))));
+            react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, description))));
 };
 exports.default = TabItem;
 var sx = {

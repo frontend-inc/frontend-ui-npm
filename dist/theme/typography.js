@@ -5,10 +5,10 @@ exports.typography = {
     h1: {
         fontFamily: 'Instrument Sans',
         fontWeight: 600,
-        fontSize: 54,
+        fontSize: 56,
         lineHeight: '1.1em',
         '@media (max-width:600px)': {
-            fontSize: 46,
+            fontSize: 48,
         },
     },
     h2: {
@@ -23,15 +23,15 @@ exports.typography = {
         fontFamily: 'Instrument Sans',
         fontWeight: 600,
         textIndent: 0,
-        fontSize: 34,
+        fontSize: 32,
         '@media (max-width:600px)': {
-            fontSize: 30,
+            fontSize: 28,
         },
         lineHeight: '1.3em',
     },
     h4: {
         fontFamily: 'Instrument Sans',
-        fontSize: 28,
+        fontSize: 26,
         fontWeight: 500,
         '@media (max-width:600px)': {
             fontSize: 22,
@@ -40,12 +40,18 @@ exports.typography = {
     h5: {
         fontFamily: 'Instrument Sans',
         fontWeight: 500,
-        fontSize: 26,
+        fontSize: 24,
+        '@media (max-width:600px)': {
+            fontSize: 20,
+        },
     },
     h6: {
         fontFamily: 'Instrument Sans',
         fontWeight: 500,
-        fontSize: 24,
+        fontSize: 20,
+        '@media (max-width:600px)': {
+            fontSize: 18,
+        },
     },
     subtitle1: {
         fontFamily: 'Instrument Sans',
@@ -61,43 +67,42 @@ exports.typography = {
         lineHeight: '1.5em',
     },
     body1: {
-        fontFamily: 'Inter',
+        fontFamily: 'Roboto',
         textTransform: 'none',
         fontWeight: 500,
-        fontSize: 15,
+        fontSize: 14,
         lineHeight: '2.0em',
         '@media (max-width:600px)': {
             fontSize: 15,
         },
     },
     body2: {
-        fontFamily: 'Inter',
+        fontFamily: 'Roboto',
         textTransform: 'none',
         fontWeight: 500,
-        fontSize: 14,
+        fontSize: 13,
         lineHeight: '2.0em',
         '@media (max-width:600px)': {
             fontSize: 16,
         },
     },
     button: {
-        fontFamily: 'Inter',
+        fontFamily: 'Roboto',
         fontWeight: 600,
-        fontSize: 12,
+        fontSize: 14,
         letterSpacing: '0.03em',
+        textTransform: 'none',
     },
     caption: {
-        fontFamily: 'Inter',
-        fontWeight: 600,
-        textTransform: 'uppercase',
-        fontSize: 12,
-        letterSpacing: '0.05em',
+        fontFamily: 'Roboto',
+        fontWeight: 500,
+        fontSize: 15,
         '@media (max-width:600px)': {
-            fontSize: 12,
+            fontSize: 15,
         },
     },
     overline: {
-        fontFamily: 'Inter',
+        fontFamily: 'Roboto',
         fontWeight: 500,
         textTransform: 'uppercase',
         fontSize: 12,

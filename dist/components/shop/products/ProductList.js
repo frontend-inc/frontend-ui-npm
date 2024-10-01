@@ -22,13 +22,13 @@ var hooks_1 = require("../../../hooks");
 var ProductList = function (props) {
     var apiUrl = (0, hooks_1.useApp)().apiUrl;
     var url = (props || {}).url;
-    var _a = props || {}, _b = _a.grid, grid = _b === void 0 ? true : _b, _c = _a.selectable, selectable = _c === void 0 ? false : _c, foreignUrl = _a.foreignUrl, query = _a.query, resource = _a.resource, _d = _a.perPage, perPage = _d === void 0 ? 9 : _d, filterSimilar = _a.filterSimilar, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableRatings = _a.enableRatings, enableUsers = _a.enableUsers, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, href = _a.href, _e = _a.buttons, buttons = _e === void 0 ? [] : _e, _f = _a.displayFields, displayFields = _f === void 0 ? [] : _f, enableShow = _a.enableShow, _g = _a.fields, fields = _g === void 0 ? [] : _g, enableSearch = _a.enableSearch, enableFilters = _a.enableFilters, enableSorting = _a.enableSorting, _h = _a.filterOptions, filterOptions = _h === void 0 ? [] : _h, _j = _a.sortOptions, sortOptions = _j === void 0 ? [] : _j, _k = _a.header, Header = _k === void 0 ? __1.ProductHeader : _k, _l = _a.list, List = _l === void 0 ? __1.ProductListItems : _l, _m = _a.component, Component = _m === void 0 ? __1.ProductListItem : _m, _o = _a.show, Show = _o === void 0 ? __1.ProductShow : _o, _p = _a.empty, Empty = _p === void 0 ? __1.ProductEmpty : _p, _q = _a.slots, defaultSlots = _q === void 0 ? {
+    var _a = props || {}, _b = _a.grid, grid = _b === void 0 ? true : _b, _c = _a.selectable, selectable = _c === void 0 ? false : _c, foreignUrl = _a.foreignUrl, query = _a.query, resource = _a.resource, _d = _a.perPage, perPage = _d === void 0 ? 9 : _d, filterSimilar = _a.filterSimilar, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableRatings = _a.enableRatings, enableUsers = _a.enableUsers, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, href = _a.href, _e = _a.buttons, buttons = _e === void 0 ? [] : _e, _f = _a.displayFields, displayFields = _f === void 0 ? [] : _f, enableShow = _a.enableShow, _g = _a.fields, fields = _g === void 0 ? [] : _g, enableSearch = _a.enableSearch, enableFilters = _a.enableFilters, enableSorting = _a.enableSorting, _h = _a.header, Header = _h === void 0 ? __1.ProductHeader : _h, _j = _a.list, List = _j === void 0 ? __1.ProductListItems : _j, _k = _a.component, Component = _k === void 0 ? __1.ProductListItem : _k, _l = _a.show, Show = _l === void 0 ? __1.ProductShow : _l, _m = _a.empty, Empty = _m === void 0 ? __1.ProductEmpty : _m, _o = _a.slots, defaultSlots = _o === void 0 ? {
         header: {},
         list: {},
         item: {},
         show: {},
         empty: {},
-    } : _q;
+    } : _o;
     var searchQuery = (0, helpers_1.buildSearchQuery)({
         query: query,
         resource: resource,
@@ -45,6 +45,20 @@ var ProductList = function (props) {
     if (!url) {
         url = "".concat(apiUrl, "/shop/products");
     }
-    return (react_1.default.createElement(components_1.DataList, { selectable: selectable, grid: grid, url: url, foreignUrl: foreignUrl, name: "product", query: searchQuery, fields: fields, enableShow: enableShow, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, filterOptions: filterOptions, sortOptions: sortOptions, header: Header, list: List, component: Component, show: Show, empty: Empty, slots: slots }));
+    var filterOptions = [
+        {
+            field: 'average_rating',
+            label: 'Rating',
+            variant: 'ratings_scale'
+        }
+    ];
+    var sortOptions = [
+        { name: 'created_at', label: 'Newest' },
+        { name: 'price', label: 'Price' },
+        { name: 'title', label: 'Title' },
+    ];
+    return (react_1.default.createElement(components_1.DataList, { selectable: selectable, grid: grid, url: url, foreignUrl: foreignUrl, name: "product", query: searchQuery, fields: fields, enableShow: enableShow, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, sortOptions: sortOptions, 
+        //@ts-ignore
+        filterOptions: filterOptions, header: Header, list: List, component: Component, show: Show, empty: Empty, slots: slots }));
 };
 exports.default = ProductList;

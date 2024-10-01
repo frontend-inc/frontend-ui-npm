@@ -20,7 +20,7 @@ var __1 = require("../..");
 var helpers_1 = require("../../../helpers");
 var ProductCollectionCard = function (props) {
     var _a = props || {}, label = _a.label, primary = _a.primary, image = _a.image, handleClick = _a.handleClick, _b = _a.slots, slots = _b === void 0 ? {
-        image: {}
+        image: {},
     } : _b;
     return (react_1.default.createElement(__1.LightDarkMode, { mode: "dark" },
         react_1.default.createElement(material_1.Stack, { spacing: 1, sx: sx.root },

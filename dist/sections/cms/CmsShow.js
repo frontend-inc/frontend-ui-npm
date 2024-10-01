@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var CmsShow = function (props) {
-    var mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, style = props.style, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requireAuth", "requirePaid", "style"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, mode: mode, py: style == 'cover' ? 0 : py, px: style == 'cover' ? 0 : px, maxWidth: maxWidth },
+    var bgColor = props.bgColor, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, style = props.style, rest = __rest(props, ["bgColor", "py", "px", "maxWidth", "requireAuth", "requirePaid", "style"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, bgColor: bgColor, py: style == 'cover' ? 0 : py, px: style == 'cover' ? 0 : px, maxWidth: maxWidth },
         react_1.default.createElement(components_2.Show, __assign({}, rest, { style: style }))));
 };
 exports.default = CmsShow;

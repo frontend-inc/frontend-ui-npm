@@ -56,7 +56,7 @@ var AiChatModal = function (props) {
         react_1.default.createElement(material_1.Tooltip, { title: "Use AI to generate text" },
             react_1.default.createElement(material_1.IconButton, { size: "small", sx: sx.iconButton, onClick: function () { return setOpen(!open); } },
                 react_1.default.createElement(components_1.Icon, { name: "Sparkles", color: "text.primary" }))),
-        react_1.default.createElement(components_1.Drawer, { title: label, open: open, handleClose: function () { return setOpen(false); }, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleChatSubmit, startIcon: loading ? (react_1.default.createElement(components_1.IconLoading, { loading: loading })) : (react_1.default.createElement(components_1.Icon, { name: "Sparkles", color: "primary.contrastText" })) }, !loading && "Generate") },
+        react_1.default.createElement(components_1.Drawer, { title: label, open: open, handleClose: function () { return setOpen(false); }, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleChatSubmit, startIcon: loading ? (loading && react_1.default.createElement(components_1.IconLoading, null)) : (react_1.default.createElement(components_1.Icon, { name: "Sparkles", color: "primary.contrastText" })) }, !loading && "Generate") },
             react_1.default.createElement(AiChatForm_1.default, { open: open, prompt: prompt, handleClick: handleClick, messages: messages, setMessages: setMessages, input: input, handleInputChange: handleInputChange }))));
 };
 exports.default = AiChatModal;

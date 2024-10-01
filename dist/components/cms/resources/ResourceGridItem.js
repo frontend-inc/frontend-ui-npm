@@ -19,7 +19,7 @@ var material_1 = require("@mui/material");
 var __1 = require("../..");
 var ResourceGridItem = function (props) {
     var icon = props.icon, avatar = props.avatar, color = props.color, label = props.label, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryAction = props.secondaryAction, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.isDragging, isDragging = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = props.slots, slots = _c === void 0 ? {
-        image: {}
+        image: {},
     } : _c;
     var handleChange = function (event) {
         if (handleSelect) {
@@ -31,7 +31,8 @@ var ResourceGridItem = function (props) {
                 secondaryAction,
                 (menuActions || handleEdit || handleDelete) && (react_1.default.createElement(__1.MenuButton, { size: "small", handleEdit: handleEdit, handleDelete: handleDelete }, menuActions))) }),
         react_1.default.createElement(material_1.CardActionArea, { onClick: handleClick },
-            react_1.default.createElement(__1.Image, __assign({ label: label, disableBorderRadius: true, height: 160, src: image }, slots.image))),
+            react_1.default.createElement(material_1.Box, { sx: sx.image },
+                react_1.default.createElement(__1.Image, __assign({ label: label, disableBorderRadius: true, height: 160, src: image }, slots.image)))),
         (primary || secondary) && (react_1.default.createElement(material_1.CardContent, null,
             react_1.default.createElement(material_1.Typography, { variant: "subtitle2", color: "text.primary" }, primary),
             secondary && (react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, secondary))))));
@@ -88,4 +89,11 @@ var sx = {
     isDragging: {
         boxShadow: 2,
     },
+    image: {
+        overflow: 'hidden',
+        height: 160,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
 };

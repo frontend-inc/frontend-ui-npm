@@ -18,10 +18,6 @@ var AdminProductShow = function (props) {
     var _a;
     var _b = props || {}, resource = _b.resource, loading = _b.loading, open = _b.open, handleClose = _b.handleClose, _c = _b.metafields, metafields = _c === void 0 ? [] : _c, enableEdit = _b.enableEdit, enableDelete = _b.enableDelete, handleDelete = _b.handleDelete, handleEdit = _b.handleEdit;
     var fields = __spreadArray([
-        { label: 'Handle', name: 'handle', variant: 'string' },
-        { label: 'Title', name: 'title', variant: 'string' },
-        { label: 'Description', name: 'description', variant: 'text' },
-        { label: 'Label', name: 'label', variant: 'string' },
         { label: 'Price', name: 'price', variant: 'number' },
         { label: 'Compare at price', name: 'compare_at_price', variant: 'number' },
         { label: 'SKU', name: 'sku', variant: 'string' },
@@ -40,6 +36,6 @@ var AdminProductShow = function (props) {
         }
     ], metafields, true);
     return (react_1.default.createElement(components_1.ResourceModal, { loading: loading, open: open, handleClose: handleClose, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: handleEdit, handleDelete: handleDelete },
-        react_1.default.createElement(components_1.ResourceDetails, { image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.title, secondary: resource === null || resource === void 0 ? void 0 : resource.description, label: resource === null || resource === void 0 ? void 0 : resource.display_price, resource: resource, fields: fields, direction: "column" })));
+        react_1.default.createElement(components_1.ResourceDetails, { label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.title, secondary: resource === null || resource === void 0 ? void 0 : resource.description, resource: resource, fields: fields, direction: "column" })));
 };
 exports.default = AdminProductShow;

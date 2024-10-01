@@ -39,35 +39,39 @@ var material_1 = require("@mui/material");
 var components_1 = require("../../../components");
 var MediaItem = function (props) {
     var _a;
-    var item = props.item, _b = props.size, size = _b === void 0 ? 180 : _b, selected = props.selected, handleClick = props.handleClick, handleRemoveItem = props.handleRemoveItem;
+    var item = props.item, _b = props.size, size = _b === void 0 ? 180 : _b, selected = props.selected, handleClick = props.handleClick, handleRemove = props.handleRemove;
     var _c = (0, react_1.useState)(''), contentType = _c[0], setContentType = _c[1];
     (0, react_1.useEffect)(function () {
         var _a;
         setContentType((_a = item === null || item === void 0 ? void 0 : item.content_type) === null || _a === void 0 ? void 0 : _a.split('/')[0]);
     }, [item]);
     return (react_1.default.createElement(material_1.Card, { sx: __assign(__assign({}, sx.root), (selected && sx.selected)) },
-        react_1.default.createElement(material_1.CardHeader, { sx: sx.header, title: react_1.default.createElement(components_1.Label, { label: (_a = item === null || item === void 0 ? void 0 : item.content_type) === null || _a === void 0 ? void 0 : _a.split('/')[1] }), action: handleRemoveItem && (react_1.default.createElement(components_1.MenuButton, null,
-                react_1.default.createElement(material_1.MenuItem, { onClick: function () { return handleRemoveItem(item); } },
+        react_1.default.createElement(material_1.CardHeader, { sx: sx.header, title: react_1.default.createElement(components_1.Label, { label: (_a = item === null || item === void 0 ? void 0 : item.content_type) === null || _a === void 0 ? void 0 : _a.split('/')[1] }), action: handleRemove && (react_1.default.createElement(components_1.MenuButton, null,
+                react_1.default.createElement(material_1.MenuItem, { onClick: handleRemove },
                     react_1.default.createElement(material_1.Typography, { variant: "body2", color: "textPrimary" }, "Remove")))) }),
-        react_1.default.createElement(material_1.CardActionArea, { onClick: function () { return (handleClick ? handleClick(item) : null); } }, contentType == 'image' || contentType == 'video' ? (react_1.default.createElement(components_1.Image, { disableBorderRadius: true, height: size, width: size, src: item === null || item === void 0 ? void 0 : item.url, alt: item === null || item === void 0 ? void 0 : item.content_type, objectFit: 'cover' })) : (react_1.default.createElement(components_1.AttachmentImage, { icon: "File", width: size, height: size })))));
+        contentType == 'image' || contentType == 'video' ? (react_1.default.createElement(components_1.TouchableOpacity, { handleClick: function () { return (handleClick ? handleClick(item) : null); } },
+            react_1.default.createElement(material_1.Box, { sx: sx.image },
+                react_1.default.createElement(components_1.Image, { disableBorderRadius: true, height: size, width: size, src: item === null || item === void 0 ? void 0 : item.url, alt: item === null || item === void 0 ? void 0 : item.content_type, objectFit: 'contain' })))) : (react_1.default.createElement(components_1.AttachmentImage, { icon: "File", width: size, height: size }))));
 };
 exports.default = MediaItem;
 var sx = {
     root: {
         borderRadius: 1,
         bgcolor: 'background.paper',
-        border: '1px solid',
-        borderColor: 'divider',
         p: 0,
         minWidth: '120px',
         height: 200,
+        border: '1px solid',
+        borderColor: 'transparent',
     },
     selected: {
+        border: '1px solid',
         borderColor: 'primary.main',
     },
     header: {
         py: 0,
         px: 1,
+        alignItems: 'center',
     },
     gradient: {
         backgroundImage: 'linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73))',
@@ -76,6 +80,10 @@ var sx = {
         backgroundSize: 'cover',
     },
     image: {
-        objectFit: 'cover',
+        height: 160,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
     },
 };

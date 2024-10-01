@@ -13,8 +13,7 @@ var Hero = function (props) {
         cover: components_1.HeroCover,
         list: components_1.HeroList,
         avatar: components_1.HeroAvatar,
-        spotlight: components_1.HeroSpotlight
     }[style] || components_1.HeroList;
-    return (react_1.default.createElement(Component, { primary: title, secondary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: 'text.secondary' }, description), image: image, secondaryAction: buttons && (react_1.default.createElement(components_1.ButtonActions, { resource: {}, buttons: buttons })) }));
+    return (react_1.default.createElement(Component, { primary: title, secondary: react_1.default.createElement(material_1.Typography, { variant: "body1", color: "text.secondary" }, description), image: image, secondaryAction: buttons && react_1.default.createElement(components_1.ButtonActions, { resource: {}, buttons: buttons }) }));
 };
 exports.default = Hero;

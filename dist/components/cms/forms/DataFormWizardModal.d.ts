@@ -1,6 +1,6 @@
 import React from 'react';
-export type DataFormWizardProps = {
-    buttonText?: string;
+import { HeadingProps } from '../../../types';
+export type DataFormWizardProps = HeadingProps & {
     formId: number;
     handleSuccess?: (resource: any) => void;
 };

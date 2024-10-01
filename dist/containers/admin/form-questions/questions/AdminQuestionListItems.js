@@ -23,7 +23,7 @@ var AdminQuestionListToolbar_1 = __importDefault(require("./AdminQuestionListToo
 var AdminQuestionListItems = function (props) {
     var _a = props || {}, url = _a.url, handleSuccess = _a.handleSuccess, formId = _a.formId, rest = __rest(_a, ["url", "handleSuccess", "formId"]);
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    return (react_1.default.createElement(components_1.ResourceList, { direction: "column", selectable: true, enableSearch: true, enableCreate: true, enableDelete: true, url: "".concat(apiUrl, "/questions"), name: 'question', toolbar: AdminQuestionListToolbar_1.default, component: AdminQuestionListItem_1.default, create: containers_1.AdminQuestionCreate, emptyIcon: "Search", emptyTitle: "No questions", emptyDescription: "No questions yet.", slots: {
+    return (react_1.default.createElement(components_1.ResourceList, { direction: "column", selectable: true, enableSearch: true, enableCreate: true, enableDelete: true, url: "".concat(apiUrl, "/questions"), name: "question", toolbar: AdminQuestionListToolbar_1.default, component: AdminQuestionListItem_1.default, create: containers_1.AdminQuestionCreate, emptyIcon: "Search", emptyTitle: "No questions", emptyDescription: "No questions yet.", slots: {
             toolbar: {
                 url: url,
                 formId: formId,
@@ -31,7 +31,7 @@ var AdminQuestionListItems = function (props) {
             },
             header: {
                 buttonText: 'New Question',
-            }
+            },
         } }));
 };
 exports.default = AdminQuestionListItems;

@@ -44,8 +44,8 @@ var material_1 = require("@mui/material");
 var frontend_shopify_1 = require("frontend-shopify");
 var SwipeableShopifyProductImages = function (props) {
     var _a, _b;
-    var product = props.product, _c = props.height, height = _c === void 0 ? 320 : _c, handleClick = props.handleClick, _d = props.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = props.disableBorderRadius, disableBorderRadius = _e === void 0 ? false : _e, _f = props.responsiveHeight, responsiveHeight = _f === void 0 ? false : _f;
-    var _g = (0, react_1.useState)(0), activeStep = _g[0], setActiveStep = _g[1];
+    var product = props.product, _c = props.height, height = _c === void 0 ? 320 : _c, handleClick = props.handleClick, _d = props.disableBorderRadius, disableBorderRadius = _d === void 0 ? false : _d, _e = props.responsiveHeight, responsiveHeight = _e === void 0 ? false : _e;
+    var _f = (0, react_1.useState)(0), activeStep = _f[0], setActiveStep = _f[1];
     // @ts-ignore
     var maxSteps = (_a = product === null || product === void 0 ? void 0 : product.images) === null || _a === void 0 ? void 0 : _a.edges.length;
     var handleStepChange = function (step) {

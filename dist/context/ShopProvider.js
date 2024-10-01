@@ -29,14 +29,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var ShopContext_1 = __importDefault(require("./ShopContext"));
 var ShopProvider = function (props) {
-    var children = (props || {}).children;
-    var _a = (0, react_1.useState)(false), cartOpen = _a[0], setCartOpen = _a[1];
-    var _b = (0, react_1.useState)(), cart = _b[0], setCart = _b[1];
+    var _a = props || {}, children = _a.children, cartCookie = _a.cartCookie;
+    var _b = (0, react_1.useState)(false), cartOpen = _b[0], setCartOpen = _b[1];
+    var _c = (0, react_1.useState)(), cart = _c[0], setCart = _c[1];
     var value = {
         cart: cart,
         setCart: setCart,
         cartOpen: cartOpen,
         setCartOpen: setCartOpen,
+        cartCookie: cartCookie,
     };
     return react_1.default.createElement(ShopContext_1.default.Provider, { value: value }, children);
 };

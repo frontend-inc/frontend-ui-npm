@@ -68,7 +68,7 @@ var ProductReviewForm = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(__1.Drawer, { title: "Leave a review", open: openEdit, handleClose: function () { return setOpenEdit(false); }, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", onClick: handleSubmit, disabled: loading, startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, "Submit") },
+    return (react_1.default.createElement(__1.Drawer, { title: "Leave a review", open: openEdit, handleClose: function () { return setOpenEdit(false); }, buttons: react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", onClick: handleSubmit, disabled: loading, startIcon: loading && react_1.default.createElement(__1.IconLoading, null) }, "Submit") },
         react_1.default.createElement(__1.AuthGuard, null,
             react_1.default.createElement(material_1.ListItem, { disableGutters: true },
                 react_1.default.createElement(material_1.Stack, { sx: sx.form, direction: "column", spacing: 1 },

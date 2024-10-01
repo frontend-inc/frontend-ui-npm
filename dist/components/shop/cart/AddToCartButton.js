@@ -44,8 +44,8 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var material_1 = require("@mui/material");
 var AddToCartButton = function (props) {
-    var productId = props.productId, availableForSale = props.availableForSale;
-    var _a = (0, hooks_1.useCart)(), loading = _a.loading, setCartOpen = _a.setCartOpen, addToCart = _a.addToCart;
+    var productId = props.productId, _a = props.size, size = _a === void 0 ? "medium" : _a, availableForSale = props.availableForSale;
+    var _b = (0, hooks_1.useCart)(), loading = _b.loading, setCartOpen = _b.setCartOpen, addToCart = _b.addToCart;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -58,11 +58,11 @@ var AddToCartButton = function (props) {
         });
     }); };
     return (react_1.default.createElement(material_1.Box, { sx: sx.button },
-        react_1.default.createElement(components_1.PrimaryButton, { loading: loading, onClick: handleClick, disabled: !availableForSale, size: "large" }, "Add to Cart")));
+        react_1.default.createElement(components_1.PrimaryButton, { loading: loading, onClick: handleClick, disabled: !availableForSale, size: size }, "Add to Cart")));
 };
 exports.default = AddToCartButton;
 var sx = {
     button: {
         maxWidth: '300px',
-    }
+    },
 };

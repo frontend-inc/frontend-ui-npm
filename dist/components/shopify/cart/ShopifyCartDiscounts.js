@@ -84,7 +84,8 @@ var ShopifyCartDiscountCodeInput = function () {
     return (react_1.default.createElement(material_1.Stack, null,
         react_1.default.createElement(material_1.Stack, { direction: "row", spacing: 0, alignItems: "center" },
             react_1.default.createElement(components_1.TextInput, { name: "discountCode", value: discountCode, handleChange: handleChange, placeholder: "Enter discount code", styles: sx.input }),
-            react_1.default.createElement(material_1.Button, { onClick: handleSubmit, color: "secondary", variant: "contained", sx: sx.button, endIcon: react_1.default.createElement(components_1.IconLoading, { color: "secondary.contrastText", loading: loading }) }, "Apply"))));
+            react_1.default.createElement(material_1.Button, { onClick: handleSubmit, color: "secondary", variant: "contained", sx: sx.button, endIcon: loading &&
+                    react_1.default.createElement(components_1.IconLoading, { color: "secondary.contrastText" }) }, "Apply"))));
 };
 exports.default = ShopifyCartDiscountCodeInput;
 var sx = {

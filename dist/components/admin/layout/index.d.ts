@@ -7,5 +7,6 @@ export { default as AdminLayoutLeft } from './AdminLayoutLeft';
 export { default as AdminLayoutRight } from './AdminLayoutRight';
 export { default as AdminLayoutScroll } from './AdminLayoutScroll';
 export { default as AdminMenu } from './AdminMenu';
+export { default as AdminShopifyPage } from './AdminShopifyPage';
 export { default as ExpandLeftButton } from './ExpandLeftButton';
 export { default as ExpandRightButton } from './ExpandRightButton';

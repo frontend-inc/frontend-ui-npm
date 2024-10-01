@@ -42,7 +42,7 @@ var ProductCarouselListItems = function (props) {
         }
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: __assign(__assign({}, sx.root), (loading && sx.loading)) },
-        react_1.default.createElement(__1.Carousel, { enableDots: enableDots, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(material_1.Box, { key: index, sx: __assign(__assign({}, sx.item), { pt: enableArrows ? 5 : 1, pb: enableDots ? 4 : 1 }) },
+        react_1.default.createElement(__1.Carousel, { enableDots: enableDots, enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(material_1.Box, { key: index, sx: __assign(__assign({}, sx.item), { pb: enableDots ? 4 : 1 }) },
             react_1.default.createElement(ProductListItem_1.default, { buttons: buttons, resource: resource, displayFields: displayFields, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableRatings: enableRatings, enableLikes: enableLikes }))); }))));
 };
 exports.default = ProductCarouselListItems;
@@ -56,7 +56,7 @@ var sx = {
     grid: {
         display: 'grid',
         gridTemplateColumns: {
-            md: '1fr 1fr 1fr',
+            md: 'repeat(auto-fill, minmax(160px, 1fr))',
             xs: '1fr',
         },
         gap: '16px',

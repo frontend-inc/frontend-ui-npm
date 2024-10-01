@@ -25,12 +25,22 @@ exports.default = CarouselRightArrow;
 var sx = {
     root: {
         position: 'absolute',
-        right: 0,
-        top: 20,
-        transform: 'translateY(-50%)',
-        bgcolor: 'secondary.main',
+        right: 20,
+        top: '28%',
+        height: {
+            sm: 48,
+            xs: 32
+        },
+        width: {
+            sm: 48,
+            xs: 32
+        },
+        boxShadow: 4,
+        opacity: 0.8,
+        bgcolor: 'background.paper',
         '&:hover': {
-            bgcolor: 'secondary.dark',
+            opacity: 1.0,
+            bgcolor: 'background.paper',
         },
     },
 };

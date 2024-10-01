@@ -4,7 +4,7 @@ type MediaItemProps = {
     size?: number;
     selected?: boolean;
     handleClick?: (item: any) => void;
-    handleRemoveItem?: (item: any) => void;
+    handleRemove?: () => void;
 };
 declare const MediaItem: React.FC<MediaItemProps>;
 export default MediaItem;

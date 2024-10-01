@@ -13,6 +13,9 @@ declare const _default: {
         sizeMedium: {
             height: number;
         };
+        sizeLarge: {
+            height: number;
+        };
         outlined: {};
         contained: {};
     };

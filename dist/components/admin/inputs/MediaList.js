@@ -68,9 +68,20 @@ var material_1 = require("@mui/material");
 var icons_material_1 = require("@mui/icons-material");
 var MediaListItem_1 = __importDefault(require("./MediaListItem"));
 var components_1 = require("../../../components");
-var MediaItemList = function (props) {
+var MediaList = function (props) {
     var selectedIds = props.selectedIds, handleSelect = props.handleSelect;
-    var _a = (0, hooks_1.useMedia)(), loading = _a.loading, resources = _a.resources, findResources = _a.findResources, loadMore = _a.loadMore, page = _a.page, numPages = _a.numPages;
+    var _a = (0, hooks_1.useMedia)(), loading = _a.loading, resources = _a.resources, findResources = _a.findResources, deleteResource = _a.deleteResource, reloadResources = _a.reloadResources, loadMore = _a.loadMore, page = _a.page, numPages = _a.numPages;
+    var handleRemove = function (resource) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, deleteResource(resource.id)];
+                case 1:
+                    _a.sent();
+                    reloadResources();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
     var handleLoadMore = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -87,16 +98,16 @@ var MediaItemList = function (props) {
         });
     }, []);
     return (react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 1, width: '100%' },
-        react_1.default.createElement(material_1.Box, { sx: sx.list }, resources.map(function (item, idx) { return (react_1.default.createElement(MediaListItem_1.default, { key: item === null || item === void 0 ? void 0 : item.id, item: item, size: 164, selected: selectedIds.includes(item === null || item === void 0 ? void 0 : item.id), handleClick: function () { return handleSelect(item); } })); })),
+        react_1.default.createElement(material_1.Box, { sx: sx.list }, resources.map(function (item, idx) { return (react_1.default.createElement(MediaListItem_1.default, { key: item === null || item === void 0 ? void 0 : item.id, item: item, size: 164, selected: selectedIds.includes(item === null || item === void 0 ? void 0 : item.id), handleClick: function () { return handleSelect(item); }, handleRemove: function () { return handleRemove(item); } })); })),
         (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Image', title: "No media", description: "Upload or import media." })),
-        numPages > page && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleLoadMore, endIcon: loading ? react_1.default.createElement(components_1.IconLoading, { loading: true }) : react_1.default.createElement(icons_material_1.ExpandMore, null) }, "Load More"))));
+        numPages > page && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "contained", onClick: handleLoadMore, endIcon: loading ? react_1.default.createElement(components_1.IconLoading, null) : react_1.default.createElement(icons_material_1.ExpandMore, null) }, "Load More"))));
 };
-exports.default = MediaItemList;
+exports.default = MediaList;
 var sx = {
     list: {
         mt: 2,
         display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(164px, 1fr))',
         gap: '10px',
     },
 };

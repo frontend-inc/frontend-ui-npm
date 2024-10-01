@@ -41,7 +41,7 @@ var sx = {
         borderRadius: 1,
         bgcolor: 'secondary.main',
         '&:hover': {
-            bgcolor: 'secondary.dark'
+            bgcolor: 'secondary.dark',
         },
-    }
+    },
 };

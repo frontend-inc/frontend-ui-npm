@@ -1,4 +1,5 @@
 export { default as ProductCarouselList } from './ProductCarouselList';
+export { default as ProductCarouselListItems } from './ProductCarouselListItems';
 export { default as ProductSimilarList } from './ProductSimilarList';
 export { default as ProductEmpty } from './ProductEmpty';
 export { default as ProductFavorites } from './ProductFavorites';

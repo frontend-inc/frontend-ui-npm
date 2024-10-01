@@ -123,6 +123,9 @@ var AuthModal = function (props) {
     var handleGoogleSuccess = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             setAuthOpen(false);
+            if (handleSuccess) {
+                handleSuccess();
+            }
             return [2 /*return*/];
         });
     }); };
@@ -186,11 +189,8 @@ var AuthModal = function (props) {
         }
     }, [authOpen]);
     return (react_1.default.createElement(__1.Modal, { open: authOpen, handleClose: function () { return setAuthOpen(false); } },
-        react_1.default.createElement(material_1.Box, { sx: sx.tabsContainer },
-            react_1.default.createElement(material_1.Tabs, { value: tab, onChange: handleTabChange, variant: "fullWidth" },
-                react_1.default.createElement(material_1.Tab, { label: "Login", value: 0 }),
-                react_1.default.createElement(material_1.Tab, { label: "Register", value: 1 }))),
-        react_1.default.createElement(material_1.Box, { px: 4, sx: sx.content },
+        react_1.default.createElement(material_1.Stack, { direction: "column", spacing: 2, px: 4 },
+            react_1.default.createElement(material_1.Typography, { variant: "h4", color: 'text.primary' }, tab == 0 ? 'Login' : tab == 1 ? 'Signup' : tab == 2 ? 'Forgot Password' : tab == 3 ? 'Verify Pin' : tab == 4 ? 'Resend Pin' : 'Reset Password'),
             tab === 0 && (react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleLogin, handleSignup: handleSignupClick, handleForgotPassword: handleForgotPasswordClick, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })),
             tab === 1 && (react_1.default.createElement(__1.SignupForm, { disableUsername: disableUsername, errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSignup, handleLogin: handleLoginClick, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })),
             tab === 2 && (react_1.default.createElement(__1.ForgotPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),

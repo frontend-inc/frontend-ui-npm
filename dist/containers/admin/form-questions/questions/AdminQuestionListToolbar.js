@@ -46,7 +46,7 @@ var hooks_1 = require("../../../../hooks");
 var AdminProductToolbar = function (props) {
     var _a = props || {}, formId = _a.formId, handleSuccess = _a.handleSuccess;
     var _b = props || {}, open = _b.open, handleClose = _b.handleClose, selectedIds = _b.selectedIds;
-    var addQuestions = (0, hooks_1.useFormBuilder)().addQuestions;
+    var addQuestions = (0, hooks_1.useAdminForms)().addQuestions;
     var handleAddQuestions = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

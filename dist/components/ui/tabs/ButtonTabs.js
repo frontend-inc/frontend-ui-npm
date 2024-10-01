@@ -49,7 +49,7 @@ var ButtonTabs = function (props) {
         }
     };
     (0, react_1.useEffect)(function () {
-        if (!disableDebounce) {
+        if (debouncedValue != initialValue && !disableDebounce) {
             handleChange(debouncedValue);
         }
     }, [debouncedValue]);

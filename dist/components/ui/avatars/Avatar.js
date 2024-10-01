@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var material_1 = require("@mui/material");
 var Avatar = function (props) {
-    var src = props.src, _a = props.color, color = _a === void 0 ? '#333333' : _a, label = props.label, _b = props.variant, variant = _b === void 0 ? 'circular' : _b, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d, _e = props.size, size = _e === void 0 ? 40 : _e;
+    var src = props.src, _a = props.color, color = _a === void 0 ? '#333333' : _a, label = props.label, _b = props.variant, variant = _b === void 0 ? 'rounded' : _b, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d, _e = props.size, size = _e === void 0 ? 40 : _e;
     return (react_1.default.createElement(material_1.Avatar, { src: src, variant: variant, sx: __assign(__assign(__assign(__assign({}, sx.avatar), { height: size, width: size, bgcolor: src ? 'common.white' : color }), (enableGradient && sx.gradient)), (enableOverlay && sx.overlay)) }, label ? (react_1.default.createElement(material_1.Typography, { variant: "button", color: "background.default", sx: sx.label }, label)) : (react_1.default.createElement(material_1.Box, null))));
 };
 exports.default = Avatar;

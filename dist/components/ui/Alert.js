@@ -52,8 +52,12 @@ var Alert = function (props) {
         }
     }, [alert]);
     (0, react_1.useEffect)(function () {
-        if (open)
-            setTimeout(function () { return setOpen(false); }, 2500);
+        if (open) {
+            setTimeout(function () {
+                setOpen(false);
+                setAlert(null);
+            }, 10000);
+        }
     }, [open]);
     return (react_1.default.createElement(material_1.Fade, { in: open },
         react_1.default.createElement(material_1.Slide, { direction: anchorBottom ? 'up' : 'down', in: open },

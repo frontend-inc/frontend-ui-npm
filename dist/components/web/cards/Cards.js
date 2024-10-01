@@ -11,8 +11,8 @@ var Cards = function (props) {
     var router = (0, router_1.useRouter)();
     var _a = props || {}, items = _a.items, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay;
     var handleClick = function (card) {
-        if (card === null || card === void 0 ? void 0 : card.url) {
-            router.push(card.url);
+        if (card === null || card === void 0 ? void 0 : card.path) {
+            router.push(card.path);
         }
     };
     return (react_1.default.createElement(material_1.Box, null,

@@ -14,7 +14,7 @@ var CommentForm = function (props) {
             } },
             react_1.default.createElement(material_1.Stack, { sx: sx.form, direction: "column", spacing: 1 },
                 react_1.default.createElement(components_1.TextInput, { errors: errors, multiline: true, rows: 4, name: "body", value: comment === null || comment === void 0 ? void 0 : comment.body, handleChange: handleChange, placeholder: "Leave a comment..." }),
-                react_1.default.createElement(material_1.Button, { variant: "contained", onClick: handleSubmit, disabled: loading, startIcon: react_1.default.createElement(components_1.IconLoading, { loading: loading }) }, "Submit")))));
+                react_1.default.createElement(material_1.Button, { variant: "contained", onClick: handleSubmit, disabled: loading, startIcon: loading && react_1.default.createElement(components_1.IconLoading, null) }, "Submit")))));
 };
 exports.default = CommentForm;
 var sx = {

@@ -45,19 +45,19 @@ var ProductsInput = function (props) {
         handleRemoveProducts([(_a = reference === null || reference === void 0 ? void 0 : reference.product) === null || _a === void 0 ? void 0 : _a.id]);
     };
     return (react_1.default.createElement(material_1.Stack, { sx: sx.root },
-        react_1.default.createElement(components_1.SortableList, { handleDrop: handleUpdateProductPositions, items: (0, lodash_1.sortBy)(document === null || document === void 0 ? void 0 : document.product_references, 'position'), renderItem: function (reference) { return (react_1.default.createElement(ProductListItem_1.default, { sortable: true, enableDelete: true, key: reference === null || reference === void 0 ? void 0 : reference.id, resource: reference === null || reference === void 0 ? void 0 : reference.product, handleClick: function () { return (null); }, handleDelete: function () { return handleDelete(reference); } })); } }),
+        react_1.default.createElement(components_1.SortableList, { handleDrop: handleUpdateProductPositions, items: (0, lodash_1.sortBy)(document === null || document === void 0 ? void 0 : document.product_references, 'position'), renderItem: function (reference) { return (react_1.default.createElement(ProductListItem_1.default, { sortable: true, enableDelete: true, key: reference === null || reference === void 0 ? void 0 : reference.id, resource: reference === null || reference === void 0 ? void 0 : reference.product, handleClick: function () { return null; }, handleDelete: function () { return handleDelete(reference); } })); } }),
         react_1.default.createElement(material_1.Box, null,
             react_1.default.createElement(components_1.SecondaryButton, { onClick: handleAddClick }, "Add Products")),
         react_1.default.createElement(components_1.Drawer, { open: open, handleClose: function () { return setOpen(false); } },
-            react_1.default.createElement(components_1.ResourceList, { selectable: true, enableSearch: true, url: "".concat(apiUrl, "/products"), name: 'product', component: ProductListItem_1.default, toolbar: ProductToolbar_1.default, slots: {
+            react_1.default.createElement(components_1.ResourceList, { selectable: true, enableSearch: true, url: "".concat(apiUrl, "/products"), name: "product", component: ProductListItem_1.default, toolbar: ProductToolbar_1.default, slots: {
                     toolbar: {
-                        handleAddProducts: handleAddProducts
-                    }
+                        handleAddProducts: handleAddProducts,
+                    },
                 } }))));
 };
 exports.default = ProductsInput;
 var sx = {
     root: {
-        width: "100%"
-    }
+        width: '100%',
+    },
 };

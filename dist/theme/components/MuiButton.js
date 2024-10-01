@@ -10,10 +10,13 @@ exports.default = {
             whiteSpace: 'nowrap',
         },
         sizeSmall: {
-            height: 40
+            height: 40,
         },
         sizeMedium: {
-            height: 44
+            height: 44,
+        },
+        sizeLarge: {
+            height: 48
         },
         outlined: {},
         contained: {},

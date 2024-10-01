@@ -43,5 +43,6 @@ declare const useProductCollections: () => {
     setProductCollections: (value: any[]) => void;
     startIndex: any;
     endIndex: any;
+    aiGenerate: (prompt: any) => Promise<void>;
 };
 export default useProductCollections;

@@ -33,7 +33,7 @@ var ProductCollectionCoverCarouselListItems = function (props) {
     return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign(__assign({}, sx.root), (loading && sx.loading)), { height: height }) },
         react_1.default.createElement(__1.Swipeable, { enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) {
             var _a;
-            return (react_1.default.createElement(__1.Cover, { key: index, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, title: resource === null || resource === void 0 ? void 0 : resource.title, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableOverlay: enableOverlay, buttonText: buttonText }));
+            return (react_1.default.createElement(__1.Cover, { key: index, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, height: height, title: resource === null || resource === void 0 ? void 0 : resource.title, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableOverlay: enableOverlay, buttonText: buttonText }));
         }))));
 };
 exports.default = ProductCollectionCoverCarouselListItems;

@@ -12,8 +12,8 @@ var ResourceDetails = function (props) {
         image && (react_1.default.createElement(material_1.Box, { sx: sx.image },
             react_1.default.createElement(components_1.Image, { height: 220, src: image, label: label }))),
         avatar && avatar,
-        react_1.default.createElement(material_1.Typography, { variant: "h5", color: 'text.primary' }, primary),
-        secondary && (react_1.default.createElement(material_1.Typography, { variant: "body2", color: 'text.secondary' }, secondary)), fields === null || fields === void 0 ? void 0 :
+        react_1.default.createElement(material_1.Typography, { variant: "h5", color: "text.primary" }, primary),
+        secondary && (react_1.default.createElement(material_1.Typography, { variant: "body2", color: "text.secondary" }, secondary)), fields === null || fields === void 0 ? void 0 :
         fields.map(function (field, index) { return (react_1.default.createElement(components_1.Field, { enableBorder: true, key: index, 
             //@ts-ignore
             field: field, resource: resource, direction: direction })); })));

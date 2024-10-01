@@ -68,9 +68,9 @@ var MediaImage_1 = __importDefault(require("./MediaImage"));
 var MediaBrowser_1 = __importDefault(require("./MediaBrowser"));
 var lucide_react_1 = require("lucide-react");
 var MediaInput = function (props) {
-    var name = props.name, value = props.value, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment;
-    var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
-    var _b = (0, react_1.useState)(false), openEdit = _b[0], setOpenEdit = _b[1];
+    var name = props.name, value = props.value, _a = props.objectFit, objectFit = _a === void 0 ? 'cover' : _a, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment;
+    var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
+    var _c = (0, react_1.useState)(false), openEdit = _c[0], setOpenEdit = _c[1];
     var handleSubmit = function (resources) { return __awaiter(void 0, void 0, void 0, function () {
         var resourceIds;
         return __generator(this, function (_a) {
@@ -100,7 +100,7 @@ var MediaInput = function (props) {
         setOpenEdit(true);
     };
     return (react_1.default.createElement(material_1.Stack, { spacing: 1 },
-        react_1.default.createElement(MediaImage_1.default, { image: value, handleRemove: handleRemove }),
+        react_1.default.createElement(MediaImage_1.default, { image: value, handleRemove: handleRemove, objectFit: objectFit }),
         react_1.default.createElement(material_1.Box, { sx: sx.buttons },
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAddClick, startIcon: react_1.default.createElement(lucide_react_1.Search, null) }, "Browse")),
         react_1.default.createElement(MediaBrowser_1.default, { open: openEdit, handleClose: function () { return setOpenEdit(false); }, handleSubmit: handleSubmit })));

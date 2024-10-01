@@ -29,8 +29,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var ShopProductCollectionCoverCarousel = function (props) {
-    var _a = props.mode, mode = _a === void 0 ? 'dark' : _a, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { mode: 'dark', py: 0, px: 0, requireAuth: requireAuth, requirePaid: requirePaid },
+    var _a = props.bgColor, bgColor = _a === void 0 ? '#000000' : _a, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["bgColor", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
+    return (react_1.default.createElement(components_1.Section, { bgColor: '#000000', py: 0, px: 0, requireAuth: requireAuth, requirePaid: requirePaid },
         react_1.default.createElement(components_2.ProductCollectionCoverCarouselList, __assign({}, rest))));
 };
 exports.default = ShopProductCollectionCoverCarousel;

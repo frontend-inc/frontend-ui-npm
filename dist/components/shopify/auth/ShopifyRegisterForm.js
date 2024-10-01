@@ -14,7 +14,7 @@ var ShopifyRegisterForm = function (props) {
         react_1.default.createElement(__1.TextInput, { errors: errors, name: "email", value: customer === null || customer === void 0 ? void 0 : customer.email, placeholder: "Email", handleChange: handleChange }),
         react_1.default.createElement(__1.TextInput, { errors: errors, name: "password", value: customer === null || customer === void 0 ? void 0 : customer.password, type: "password", placeholder: "Password", handleChange: handleChange }),
         react_1.default.createElement(__1.SwitchInput, { errors: errors, name: "acceptsMarketing", value: customer === null || customer === void 0 ? void 0 : customer.acceptsMarketing, placeholder: "Accept marketing communication", handleChange: handleChange }),
-        react_1.default.createElement(material_1.Button, { fullWidth: true, color: "primary", onClick: handleSubmit, variant: "contained", startIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, "Register"),
+        react_1.default.createElement(material_1.Button, { fullWidth: true, color: "primary", onClick: handleSubmit, variant: "contained", startIcon: loading && react_1.default.createElement(__1.IconLoading, null) }, "Register"),
         react_1.default.createElement(material_1.Button, { fullWidth: true, color: "secondary", variant: "outlined", onClick: handleLogin }, "Already have an account? Sign in")));
 };
 exports.default = ShopifyRegisterForm;

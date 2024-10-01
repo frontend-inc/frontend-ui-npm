@@ -11,7 +11,7 @@ var NewPasswordForm = function (props) {
     return (react_1.default.createElement(material_1.Stack, { spacing: 1 },
         react_1.default.createElement(__1.TextInput, { errors: errors, name: "password", value: user === null || user === void 0 ? void 0 : user.password, handleChange: handleChange, type: "password", placeholder: "New password" }),
         react_1.default.createElement(__1.TextInput, { errors: errors, name: "password_confirmation", value: user === null || user === void 0 ? void 0 : user.password_confirmation, handleChange: handleChange, type: "password", placeholder: "Confirm password" }),
-        react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, endIcon: react_1.default.createElement(__1.IconLoading, { loading: loading }) }, "Save and Continue"),
+        react_1.default.createElement(material_1.Button, { fullWidth: true, variant: "contained", color: "primary", onClick: handleSubmit, endIcon: loading && react_1.default.createElement(__1.IconLoading, null) }, "Save and Continue"),
         handleLogin && (react_1.default.createElement(material_1.Button, { fullWidth: true, color: "primary", onClick: handleLogin }, "Back to Login"))));
 };
 exports.default = NewPasswordForm;

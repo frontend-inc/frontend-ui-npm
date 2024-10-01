@@ -81,7 +81,8 @@ var groupResourcesByField = function (resources, fieldName, allowedValues) {
 };
 exports.groupResourcesByField = groupResourcesByField;
 // https://cloudinary.com/documentation/resizing_and_cropping
-var resizeCloudinaryImage = function (src, _a) {
+var resizeCloudinaryImage = function (src, _a // fit | fill | crop | scale | pad | lfill | limit
+) {
     var width = _a.width, height = _a.height, _b = _a.transform, transform = _b === void 0 ? 'fill' : _b;
     if (!src)
         return null;
