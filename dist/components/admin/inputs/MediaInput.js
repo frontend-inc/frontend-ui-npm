@@ -64,7 +64,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var material_1 = require("@mui/material");
-var MediaImage_1 = __importDefault(require("./MediaImage"));
 var MediaBrowser_1 = __importDefault(require("./MediaBrowser"));
 var lucide_react_1 = require("lucide-react");
 var MediaInput = function (props) {
@@ -99,8 +98,7 @@ var MediaInput = function (props) {
     var handleAddClick = function () {
         setOpenEdit(true);
     };
-    return (react_1.default.createElement(material_1.Stack, { spacing: 1 },
-        react_1.default.createElement(MediaImage_1.default, { image: value, handleRemove: handleRemove, objectFit: objectFit }),
+    return (react_1.default.createElement(material_1.Stack, { spacing: 1, sx: { width: "100%" } },
         react_1.default.createElement(material_1.Box, { sx: sx.buttons },
             react_1.default.createElement(material_1.Button, { color: "secondary", variant: "contained", onClick: handleAddClick, startIcon: react_1.default.createElement(lucide_react_1.Search, null) }, "Browse")),
         react_1.default.createElement(MediaBrowser_1.default, { open: openEdit, handleClose: function () { return setOpenEdit(false); }, handleSubmit: handleSubmit })));

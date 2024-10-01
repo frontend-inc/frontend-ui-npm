@@ -20,10 +20,7 @@ var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var LayoutContainer = function (props) {
     var children = props.children, notifications = props.notifications, _a = props.offsetY, offsetY = _a === void 0 ? 0 : _a, requireAuth = props.requireAuth, requirePaid = props.requirePaid, _b = props.roles, roles = _b === void 0 ? [] : _b;
-    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.layout), { height: {
-                sm: "calc(100vh - ".concat(offsetY, "px)"),
-                xs: '100vh',
-            } }) },
+    return (react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.layout), { height: '100%' }) },
         react_1.default.createElement(components_1.Alert, null),
         react_1.default.createElement(material_1.Box, { sx: __assign({}, sx.root) },
             react_1.default.createElement(material_1.Box, { sx: sx.content },
@@ -35,7 +32,6 @@ exports.default = LayoutContainer;
 var sx = {
     layout: {
         width: '100%',
-        overflowY: 'hidden',
     },
     root: {
         width: '100%',
@@ -50,7 +46,6 @@ var sx = {
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        overflowY: 'hidden',
     },
     page: {
         width: '100%',

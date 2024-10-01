@@ -9,7 +9,7 @@ var components_1 = require("../../../components");
 var MediaImage = function (props) {
     var image = props.image, _a = props.objectFit, objectFit = _a === void 0 ? 'cover' : _a, handleRemove = props.handleRemove;
     return (react_1.default.createElement(material_1.Card, { sx: sx.root },
-        react_1.default.createElement(components_1.Image, { disableBorderRadius: true, height: 160, width: 160, src: image === null || image === void 0 ? void 0 : image.url, alt: 'media', objectFit: objectFit }),
+        react_1.default.createElement(components_1.Image, { disableBorderRadius: true, height: 160, src: image === null || image === void 0 ? void 0 : image.url, alt: 'media', objectFit: objectFit }),
         (image === null || image === void 0 ? void 0 : image.url) && (react_1.default.createElement(material_1.IconButton, { size: "small", sx: sx.iconButton, onClick: handleRemove },
             react_1.default.createElement(components_1.Icon, { name: "X" })))));
 };
@@ -21,7 +21,6 @@ var sx = {
         border: '1px solid',
         borderColor: 'divider',
         p: 0,
-        width: 160,
         height: 160,
         position: 'relative',
     },
