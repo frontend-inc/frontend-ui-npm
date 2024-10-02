@@ -28,7 +28,7 @@ var AdminMenuLinkForm = function (props) {
             },
             {
                 label: 'Goto',
-                name: 'variant',
+                name: 'link_type',
                 variant: 'select',
                 options: [
                     { value: 'page', label: 'Page', icon: 'StickyNote' },
@@ -40,7 +40,7 @@ var AdminMenuLinkForm = function (props) {
                 name: 'url',
                 variant: 'string',
                 placeholder: 'URL',
-                conditions: [{ name: 'variant', operator: 'eq', value: 'url' }],
+                conditions: [{ name: 'link_type', operator: 'eq', value: 'url' }],
             },
             {
                 label: 'Page',
@@ -50,7 +50,7 @@ var AdminMenuLinkForm = function (props) {
                 displayField: 'title',
                 url: "".concat(apiUrl, "/pages"),
                 query: {},
-                conditions: [{ name: 'variant', operator: 'eq', value: 'page' }],
+                conditions: [{ name: 'link_type', operator: 'eq', value: 'page' }],
             },
         ] })));
 };

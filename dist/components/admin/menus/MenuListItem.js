@@ -27,7 +27,7 @@ var MenuListItem = function (props) {
             icon && (react_1.default.createElement(material_1.ListItemIcon, { sx: sx.listItemIcon },
                 react_1.default.createElement(material_1.Box, { sx: __assign(__assign({}, sx.iconContainer), { bgcolor: color }) },
                     react_1.default.createElement(components_1.Icon, { name: icon })))),
-            react_1.default.createElement(material_1.ListItemText, { primary: title, secondary: description }))));
+            react_1.default.createElement(material_1.ListItemText, { primary: react_1.default.createElement(material_1.Typography, { color: "text.primary", variant: "body1" }, title), secondary: react_1.default.createElement(material_1.Typography, { color: "text.secondary", variant: "body2" }, description) }))));
 };
 exports.default = MenuListItem;
 var sx = {
