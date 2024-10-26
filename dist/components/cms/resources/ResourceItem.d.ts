@@ -1,0 +1,22 @@
+import React from 'react';
+export type ResourceItemProps = {
+    resource: any;
+    avatar?: React.ReactNode;
+    icon?: string;
+    color?: string;
+    layout?: 'list' | 'grid';
+    handleClick: (resource: any) => void;
+    handleEdit?: (resource: any) => void;
+    handleDelete?: (resource: any) => void;
+    handleSelect?: () => void;
+    handleReload?: () => void;
+    secondaryAction?: React.ReactNode;
+    menuActions?: any;
+    sortable?: boolean;
+    selectable?: boolean;
+    selected?: boolean;
+    isDragging?: boolean;
+    enableBorder?: boolean;
+};
+declare const ResourceItem: React.FC<ResourceItemProps>;
+export default ResourceItem;

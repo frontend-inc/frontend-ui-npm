@@ -1,0 +1,20 @@
+import React from 'react';
+import { ButtonType, DisplayFieldType } from '../../../types';
+type CardStyleTypes = 'list' | 'avatar' | 'card' | 'cover' | 'text';
+type CollectionListItemProps = {
+    buttons: ButtonType[];
+    style: CardStyleTypes;
+    displayFields: DisplayFieldType[];
+    resource: any;
+    buttonText?: string;
+    href?: string;
+    handleClick: () => void;
+    enableBorder?: boolean;
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
+    enableComments?: boolean;
+    enableFavorites?: boolean;
+    enableLikes?: boolean;
+};
+declare const CollectionListItem: React.FC<CollectionListItemProps>;
+export default CollectionListItem;

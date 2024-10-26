@@ -1,0 +1,26 @@
+import React from 'react';
+import { SortOptionType, FilterOptionType, SyntheticEventType } from '../../types';
+declare const useSearch: (props: any) => {
+    loading: boolean;
+    delayedLoading: any;
+    resources: any[];
+    query: import("frontend-js").QueryParamsType;
+    findMany: (queryParams?: import("frontend-js").QueryParamsType) => void;
+    reloadMany: () => Promise<any>;
+    page: number;
+    numPages: number;
+    loadMore: () => void;
+    keywords: string;
+    setKeywords: React.Dispatch<React.SetStateAction<string>>;
+    handleKeywordChange: (ev: SyntheticEventType) => void;
+    location: string;
+    setLocation: React.Dispatch<React.SetStateAction<string>>;
+    handleLocationChange: (ev: SyntheticEventType) => void;
+    handleSearch: (keywords?: string, location?: string) => void;
+    handleSortBy: (field: SortOptionType) => void;
+    handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
+    activeFilters: any[];
+    handleFilter: (filter: FilterOptionType) => void;
+    handleClearFilters: () => void;
+};
+export default useSearch;

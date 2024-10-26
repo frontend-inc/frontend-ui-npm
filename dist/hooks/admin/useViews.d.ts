@@ -1,0 +1,34 @@
+/// <reference types="react" />
+declare const useViews: () => {
+    loading: boolean;
+    loaded: any;
+    errors: Record<string, any>;
+    empty: any;
+    editing: any;
+    isValid: any;
+    view: any;
+    views: any[];
+    findView: (id: import("frontend-js").ID) => any;
+    findViews: (queryParams?: import("frontend-js").QueryParamsType) => void;
+    saveView: (resource: any) => any;
+    updateView: (resource: any) => any;
+    createView: (resource: any) => any;
+    deleteView: (id: import("frontend-js").ID) => Promise<any>;
+    updateViewPositions: (sorted: any[]) => Promise<any>;
+    handleChange: (e: import("react").ChangeEvent<HTMLInputElement>) => void;
+    handleChangePage: any;
+    meta: Record<string, any>;
+    query: import("frontend-js").QueryParamsType;
+    page: number;
+    numPages: number;
+    perPage: number;
+    totalCount: number;
+    reloadView: any;
+    reloadViews: () => Promise<any>;
+    sortBy: any;
+    sortDirection: any;
+    handleSort: any;
+    setView: (value: any) => void;
+    setViews: (value: any[]) => void;
+};
+export default useViews;

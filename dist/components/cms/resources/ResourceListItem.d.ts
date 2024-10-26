@@ -1,0 +1,22 @@
+import React from 'react';
+export type ResourceListItemProps = {
+    selectable?: boolean;
+    selected?: boolean;
+    primary: React.ReactNode;
+    secondary?: React.ReactNode;
+    avatar?: React.ReactNode;
+    icon?: string;
+    color?: string;
+    image?: string;
+    handleClick?: (resource: any) => void;
+    handleEdit?: (resource: any) => void;
+    handleDelete?: (resource: any) => void;
+    handleSelect?: () => void;
+    handleReload?: () => void;
+    secondaryAction?: React.ReactNode;
+    menuActions?: React.ReactNode;
+    sortable?: boolean;
+    isDragging?: boolean;
+    enableBorder?: boolean;
+};
+export default function ResourceListItem({ icon, avatar, color, primary, secondary, image, handleClick, handleEdit, handleDelete, handleSelect, secondaryAction, menuActions, sortable, selectable, selected, enableBorder, }: ResourceListItemProps): React.JSX.Element;
