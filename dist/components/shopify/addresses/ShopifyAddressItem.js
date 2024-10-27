@@ -20,9 +20,9 @@ var ShopifyAddressItem = function (props) {
                     address.firstName,
                     " ", address === null || address === void 0 ? void 0 :
                     address.lastName),
-                react_1.default.createElement(core_1.Typography, { variant: "body2", color: "textSecondary" }, address.address1),
-                address.address2 && (react_1.default.createElement(core_1.Typography, { variant: "body2", color: "textSecondary" }, address.address2)),
-                react_1.default.createElement(core_1.Typography, { variant: "body2", color: "textSecondary" }, address === null || address === void 0 ? void 0 :
+                react_1.default.createElement(core_1.Typography, { variant: "body2" }, address.address1),
+                address.address2 && (react_1.default.createElement(core_1.Typography, { variant: "body2" }, address.address2)),
+                react_1.default.createElement(core_1.Typography, { variant: "body2" }, address === null || address === void 0 ? void 0 :
                     address.city,
                     ", ", address === null || address === void 0 ? void 0 :
                     address.province,

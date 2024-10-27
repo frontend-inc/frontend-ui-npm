@@ -33,6 +33,6 @@ var helpers_1 = require("../../../helpers");
 var FieldString = function (props) {
     var value = props.value, label = props.label, placeholder = props.placeholder, alignItems = props.alignItems, _a = props.disableLabel, disableLabel = _a === void 0 ? false : _a, className = props.className, rest = __rest(props, ["value", "label", "placeholder", "alignItems", "disableLabel", "className"]);
     return (react_1.default.createElement(components_1.FieldWrapper, __assign({ alignItems: alignItems, label: label, disableLabel: disableLabel }, rest),
-        react_1.default.createElement(core_1.Typography, { variant: "body1", color: "text-foreground", className: className }, (0, helpers_1.truncate)(value || placeholder, 50))));
+        react_1.default.createElement(core_1.Typography, { variant: "body1", className: className }, (0, helpers_1.truncate)(value || placeholder, 50))));
 };
 exports.default = FieldString;

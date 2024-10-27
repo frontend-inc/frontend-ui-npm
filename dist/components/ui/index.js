@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Swipeable = exports.Pagination = exports.SortableListItem = exports.SortableList = exports.Loader = exports.LayoutContainer = exports.SecondaryButton = exports.PrimaryButton = exports.UserMenu = exports.UserAvatar = exports.SocialIcon = exports.SocialLink = exports.Section = exports.ProgressLoader = exports.Placeholder = exports.NotFound = exports.NoImage = exports.Loading = exports.TouchableOpacity = exports.Notifications = exports.Notification = exports.MediaModal = exports.Modal = exports.MenuButton = exports.Label = exports.IconLoading = exports.Icon = exports.Sheet = exports.Heading = exports.GeoSearchInput = exports.FontLoader = exports.ExpandableText = exports.Drawer = exports.CircularLoader = exports.CarouselImage = exports.CarouselDot = exports.Carousel = exports.Breadcrumbs = exports.ButtonTabs = exports.Alert = exports.AlertModal = exports.Avatar = void 0;
+exports.Swipeable = exports.Pagination = exports.SortableListItem = exports.SortableList = exports.Loader = exports.LayoutContainer = exports.UserMenu = exports.UserAvatar = exports.SocialIcon = exports.SocialLink = exports.Section = exports.ProgressLoader = exports.Placeholder = exports.NotFound = exports.NoImage = exports.Loading = exports.TouchableOpacity = exports.Notifications = exports.Notification = exports.MediaModal = exports.Modal = exports.MenuButton = exports.Label = exports.IconLoading = exports.Icon = exports.Sheet = exports.Heading = exports.GeoSearchInput = exports.FontLoader = exports.ExpandableText = exports.Drawer = exports.CircularLoader = exports.CarouselImage = exports.CarouselDot = exports.Carousel = exports.Breadcrumbs = exports.ButtonTabs = exports.Alert = exports.AlertModal = exports.Avatar = void 0;
 __exportStar(require("./buttons"), exports);
 __exportStar(require("./inputs"), exports);
 __exportStar(require("./images"), exports);
@@ -95,11 +95,6 @@ var UserAvatar_1 = require("./avatars/UserAvatar");
 Object.defineProperty(exports, "UserAvatar", { enumerable: true, get: function () { return __importDefault(UserAvatar_1).default; } });
 var UserMenu_1 = require("./UserMenu");
 Object.defineProperty(exports, "UserMenu", { enumerable: true, get: function () { return __importDefault(UserMenu_1).default; } });
-// Buttons
-var PrimaryButton_1 = require("./buttons/PrimaryButton");
-Object.defineProperty(exports, "PrimaryButton", { enumerable: true, get: function () { return __importDefault(PrimaryButton_1).default; } });
-var SecondaryButton_1 = require("./buttons/SecondaryButton");
-Object.defineProperty(exports, "SecondaryButton", { enumerable: true, get: function () { return __importDefault(SecondaryButton_1).default; } });
 // Layouts
 var LayoutContainer_1 = require("./layouts/LayoutContainer");
 Object.defineProperty(exports, "LayoutContainer", { enumerable: true, get: function () { return __importDefault(LayoutContainer_1).default; } });

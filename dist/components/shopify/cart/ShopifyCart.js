@@ -41,7 +41,7 @@ var ShopifyCart = function (props) {
             trackCartViewed(cart);
         }
     }, [cartOpen, cart]);
-    return (react_1.default.createElement(__1.Sheet, { anchor: "right", open: cartOpen, handleClose: toggleCart, title: title, buttons: react_1.default.createElement(__2.ShopifyCheckoutButton, null) }, ((_b = (_a = cart === null || cart === void 0 ? void 0 : cart.lines) === null || _a === void 0 ? void 0 : _a.edges) === null || _b === void 0 ? void 0 : _b.length) > 0 ? (react_1.default.createElement("div", { className: "flex flex-col justify-between h-full" },
+    return (react_1.default.createElement(__1.Sheet, { side: "right", open: cartOpen, handleClose: toggleCart, title: title, buttons: react_1.default.createElement(__2.ShopifyCheckoutButton, null) }, ((_b = (_a = cart === null || cart === void 0 ? void 0 : cart.lines) === null || _a === void 0 ? void 0 : _a.edges) === null || _b === void 0 ? void 0 : _b.length) > 0 ? (react_1.default.createElement("div", { className: "flex flex-col justify-between h-full" },
         react_1.default.createElement("div", { className: "flex flex-col space-y-4" },
             react_1.default.createElement(__2.ShopifyCartLines, null),
             react_1.default.createElement(__2.ShopifyCartDiscounts, null)),

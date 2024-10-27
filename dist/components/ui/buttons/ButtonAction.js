@@ -31,7 +31,7 @@ var core_1 = require("../../core");
 var __1 = require("../..");
 var navigation_1 = require("next/navigation");
 var ButtonAction = function (props) {
-    var children = props.children, icon = props.icon, url = props.url, path = props.path, _a = props.color, color = _a === void 0 ? 'secondary' : _a, _b = props.size, size = _b === void 0 ? 'medium' : _b, rest = __rest(props, ["children", "icon", "url", "path", "color", "size"]);
+    var children = props.children, icon = props.icon, url = props.url, path = props.path, _a = props.variant, variant = _a === void 0 ? 'secondary' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, rest = __rest(props, ["children", "icon", "url", "path", "variant", "size"]);
     var router = (0, navigation_1.useRouter)();
     var handleClick = function () {
         if (url) {
@@ -41,8 +41,8 @@ var ButtonAction = function (props) {
             router.push(path);
         }
     };
-    return (react_1.default.createElement(core_1.Button, __assign({ fullWidth: true, size: size, startIcon: icon && (react_1.default.createElement(__1.Icon, { name: icon, color: color == 'primary'
-                ? 'primary.contrastText'
-                : 'secondary.contrastText' })), onClick: handleClick, color: color }, rest), children));
+    return (react_1.default.createElement(core_1.Button, __assign({ fullWidth: true, size: size, startIcon: icon && (react_1.default.createElement(__1.Icon, { name: icon, color: variant == 'default'
+                ? 'text-primary-foreground'
+                : 'text-secondary-foreground' })), onClick: handleClick, variant: variant }, rest), children));
 };
 exports.default = ButtonAction;

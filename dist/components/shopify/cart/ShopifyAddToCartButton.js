@@ -72,7 +72,7 @@ var ShopifyAddToCartButton = function (props) {
     var trackAddToCart = (0, addons_1.useSegment)().trackAddToCart;
     var toggleCart = (0, react_1.useContext)(frontend_shopify_2.ShopifyContext).toggleCart;
     var _a = (0, frontend_shopify_1.useCart)(), loading = _a.loading, cartLineAdd = _a.cartLineAdd;
-    var _b = props.label, label = _b === void 0 ? 'Add to Cart' : _b, product = props.product, variant = props.variant, _c = props.buttonVariant, buttonVariant = _c === void 0 ? 'contained' : _c, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d, _e = props.enableSubscription, enableSubscription = _e === void 0 ? false : _e, _f = props.enableFavorites, enableFavorites = _f === void 0 ? false : _f;
+    var _b = props.label, label = _b === void 0 ? 'Add to Cart' : _b, product = props.product, variant = props.variant, _c = props.buttonVariant, buttonVariant = _c === void 0 ? 'default' : _c, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d, _e = props.enableSubscription, enableSubscription = _e === void 0 ? false : _e, _f = props.enableFavorites, enableFavorites = _f === void 0 ? false : _f;
     var _g = (0, react_1.useState)(1), quantity = _g[0], setQuantity = _g[1];
     var _h = (0, react_1.useState)(null), activeSellingPlanId = _h[0], setActiveSellingPlanId = _h[1];
     var handleSellingPlanChange = function (ev) {

@@ -47,7 +47,7 @@ var ProductsInput = function (props) {
     return (react_1.default.createElement("div", { className: "w-full" },
         react_1.default.createElement(components_1.SortableList, { handleDrop: handleUpdateProductPositions, items: (0, lodash_1.sortBy)(document === null || document === void 0 ? void 0 : document.product_references, 'position'), renderItem: function (reference) { return (react_1.default.createElement(ProductListItem_1.default, { sortable: true, enableDelete: true, key: reference === null || reference === void 0 ? void 0 : reference.id, resource: reference === null || reference === void 0 ? void 0 : reference.product, handleClick: function () { return null; }, handleDelete: function () { return handleDelete(reference); } })); } }),
         react_1.default.createElement("div", null,
-            react_1.default.createElement(components_1.SecondaryButton, { onClick: handleAddClick }, "Add Products")),
+            react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handleAddClick }, "Add Products")),
         react_1.default.createElement(components_1.Sheet, { open: open, handleClose: function () { return setOpen(false); } },
             react_1.default.createElement(components_1.ResourceList, { selectable: true, enableSearch: true, url: "".concat(apiUrl, "/products"), name: "product", component: ProductListItem_1.default, toolbar: ProductToolbar_1.default, slots: {
                     toolbar: {

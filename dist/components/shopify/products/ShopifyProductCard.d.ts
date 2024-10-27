@@ -12,7 +12,7 @@ type ShopifyProductCardProps = {
     enableQuickShop?: boolean;
     enableOkendoStarRating?: boolean;
     disableBorder?: boolean;
-    buttonVariant?: 'contained' | 'outlined' | 'text';
+    buttonVariant?: 'default' | 'secondary' | 'ghost';
 };
 export default function ShopifyProductCard({ product, handleClick, height, enableBorder, enableAddToCart, enableQuantity, enableQuickShop, enableOkendoStarRating, buttonVariant, buttonText, disableBorder, }: ShopifyProductCardProps): React.JSX.Element;
 export {};

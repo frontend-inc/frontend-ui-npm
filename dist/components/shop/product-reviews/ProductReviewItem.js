@@ -19,7 +19,7 @@ function ProductReviewItem(_a) {
             react_1.default.createElement("div", { className: "space-y-3" },
                 react_1.default.createElement(core_1.Typography, { variant: "body1" }, resource === null || resource === void 0 ? void 0 : resource.title),
                 react_1.default.createElement(core_1.Typography, { variant: "body1" }, resource.body),
-                react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground", className: "text-sm" }, "@".concat((_b = resource === null || resource === void 0 ? void 0 : resource.user) === null || _b === void 0 ? void 0 : _b.username),
+                react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground text-sm" }, "@".concat((_b = resource === null || resource === void 0 ? void 0 : resource.user) === null || _b === void 0 ? void 0 : _b.username),
                     " reviewed",
                     ' ',
                     (0, moment_1.default)(resource === null || resource === void 0 ? void 0 : resource.created_at).fromNow())))));

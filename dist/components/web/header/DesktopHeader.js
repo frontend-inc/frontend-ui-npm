@@ -28,7 +28,7 @@ var DesktopHeader = function (props) {
                     (links === null || links === void 0 ? void 0 : links.map(function (menuItem, index) { return (react_1.default.createElement(DesktopLink_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); }))),
                 react_1.default.createElement("div", { className: "w-[200px] flex flex-row items-center justify-end h-[60px] pr-1" },
                     (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement("div", { className: "pr-1" },
-                        react_1.default.createElement(__1.ButtonActions, { size: "small", buttons: buttons }))),
+                        react_1.default.createElement(__1.ButtonActions, { size: "sm", buttons: buttons }))),
                     enableAuth && react_1.default.createElement(__1.AuthButton, null),
                     enableStripe && react_1.default.createElement(__2.CartButton, null),
                     enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null))))));

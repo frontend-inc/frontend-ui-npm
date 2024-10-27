@@ -116,7 +116,7 @@ var Addresses = function (props) {
         react_1.default.createElement(components_1.Loader, { loading: loading }),
         react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(shopify_1.ShopifyAddressList, { addresses: addresses, handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
-            react_1.default.createElement(core_1.Button, { fullWidth: true, variant: "outlined", onClick: handleAddAddress, startIcon: react_1.default.createElement(lucide_react_1.Plus, null) }, "Add Address"),
+            react_1.default.createElement(core_1.Button, { fullWidth: true, variant: "ghost", onClick: handleAddAddress, startIcon: react_1.default.createElement(lucide_react_1.Plus, null) }, "Add Address"),
             react_1.default.createElement(components_1.AlertModal, { open: showDeleteModal, handleClose: function () { return setShowDeleteModal(false); }, handleConfirm: handleDelete }))));
 };
 exports.default = Addresses;

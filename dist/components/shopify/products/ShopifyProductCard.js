@@ -39,7 +39,7 @@ var addons_1 = require("../../addons");
 var frontend_shadcn_2 = require("frontend-shadcn");
 function ShopifyProductCard(_a) {
     var _b, _c, _d, _e;
-    var product = _a.product, handleClick = _a.handleClick, _f = _a.height, height = _f === void 0 ? 320 : _f, _g = _a.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = _a.enableAddToCart, enableAddToCart = _h === void 0 ? false : _h, _j = _a.enableQuantity, enableQuantity = _j === void 0 ? false : _j, _k = _a.enableQuickShop, enableQuickShop = _k === void 0 ? false : _k, _l = _a.enableOkendoStarRating, enableOkendoStarRating = _l === void 0 ? false : _l, _m = _a.buttonVariant, buttonVariant = _m === void 0 ? 'contained' : _m, buttonText = _a.buttonText, _o = _a.disableBorder, disableBorder = _o === void 0 ? false : _o;
+    var product = _a.product, handleClick = _a.handleClick, _f = _a.height, height = _f === void 0 ? 320 : _f, _g = _a.enableBorder, enableBorder = _g === void 0 ? false : _g, _h = _a.enableAddToCart, enableAddToCart = _h === void 0 ? false : _h, _j = _a.enableQuantity, enableQuantity = _j === void 0 ? false : _j, _k = _a.enableQuickShop, enableQuickShop = _k === void 0 ? false : _k, _l = _a.enableOkendoStarRating, enableOkendoStarRating = _l === void 0 ? false : _l, _m = _a.buttonVariant, buttonVariant = _m === void 0 ? 'default' : _m, buttonText = _a.buttonText, _o = _a.disableBorder, disableBorder = _o === void 0 ? false : _o;
     var _p = (0, react_1.useState)(false), open = _p[0], setOpen = _p[1];
     var setSearchOpen = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext).setSearchOpen;
     var handleQuickShop = function () {

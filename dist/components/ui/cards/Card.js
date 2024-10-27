@@ -31,7 +31,7 @@ var Card = react_1.default.forwardRef(function (props, ref) {
             react_1.default.createElement(__1.Image, __assign({ src: image, height: size, alt: primary, label: label, handleClick: handleClick, aspectRatio: 4 / 3, disableBorderRadius: true }, slots.image))),
         react_1.default.createElement(frontend_shadcn_2.CardContent, { className: 'px-4 pt-3' },
             react_1.default.createElement(core_1.Typography, { variant: "body1" }, primary),
-            secondary && (react_1.default.createElement(core_1.Typography, { variant: "body2", color: "text-muted-foreground" }, secondary))),
+            secondary && (react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, secondary))),
         react_1.default.createElement(frontend_shadcn_2.CardFooter, { className: "flex justify-between" },
             actions,
             secondaryAction)));

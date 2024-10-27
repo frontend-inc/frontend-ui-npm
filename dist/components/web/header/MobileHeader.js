@@ -21,7 +21,7 @@ var MobileHeader = function (_a) {
                 react_1.default.createElement(Logo_1.default, { handleClick: function () { return handleClick('/'); }, src: logo, width: logoWidth, height: logoHeight - 20 })),
             react_1.default.createElement("div", { className: "flex items-center" },
                 (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement("div", { className: "mr-2" },
-                    react_1.default.createElement(__1.ButtonActions, { size: "small", buttons: buttons }))),
+                    react_1.default.createElement(__1.ButtonActions, { size: "sm", buttons: buttons }))),
                 enableAuth && react_1.default.createElement(__1.AuthButton, null),
                 enableStripe && react_1.default.createElement(__1.CartButton, null),
                 enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null)))));

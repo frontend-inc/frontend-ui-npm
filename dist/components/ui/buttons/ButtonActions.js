@@ -8,7 +8,7 @@ var react_1 = __importDefault(require("react"));
 var ButtonAction_1 = __importDefault(require("./ButtonAction"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var ButtonActions = function (_a) {
-    var buttons = _a.buttons, size = _a.size, _b = _a.justifyContent, justifyContent = _b === void 0 ? 'start' : _b, color = _a.color;
+    var buttons = _a.buttons, size = _a.size, _b = _a.justifyContent, justifyContent = _b === void 0 ? 'start' : _b;
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-row', {
             'justify-start': justifyContent === 'start',
             'justify-center': justifyContent === 'center',

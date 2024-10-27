@@ -86,6 +86,6 @@ var AdminFormQuestionToolbar = function (props) {
         });
     }); };
     return (react_1.default.createElement(components_1.ResourceToolbarModal, { open: open, handleClose: handleClose },
-        react_1.default.createElement(components_1.SecondaryButton, { onClick: handleDelete }, "Remove")));
+        react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handleDelete }, "Remove")));
 };
 exports.default = AdminFormQuestionToolbar;

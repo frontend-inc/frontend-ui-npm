@@ -65,6 +65,6 @@ var AdminAnswerToolbar = function (props) {
     }); };
     return (react_1.default.createElement(components_1.ResourceToolbarModal, { open: open, handleClose: handleClose },
         react_1.default.createElement("div", { className: "flex flex-row space-x-1" },
-            react_1.default.createElement(components_1.SecondaryButton, { alert: true, onClick: handleDelete }, "Delete"))));
+            react_1.default.createElement(components_1.AlertButton, { variant: "secondary", onClick: handleDelete }, "Delete"))));
 };
 exports.default = AdminAnswerToolbar;

@@ -17,6 +17,6 @@ var ShopifyProductDetails = function (props) {
         enableOkendoStarRating && react_1.default.createElement(addons_1.OkendoStarRating, { product: product }),
         react_1.default.createElement("div", { className: "flex flex-row space-x-2" },
             react_1.default.createElement(core_1.Typography, { variant: "h6" }, price && (0, frontend_shopify_1.formatCurrency)(price)),
-            compareAtPrice && (react_1.default.createElement(core_1.Typography, { variant: "subtitle2", className: "text-muted-foreground", className: "line-through" }, (0, frontend_shopify_1.formatCurrency)(compareAtPrice))))));
+            compareAtPrice && (react_1.default.createElement(core_1.Typography, { variant: "subtitle2", className: "text-muted-foreground line-through" }, (0, frontend_shopify_1.formatCurrency)(compareAtPrice))))));
 };
 exports.default = ShopifyProductDetails;

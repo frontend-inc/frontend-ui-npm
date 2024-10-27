@@ -1,11 +1,11 @@
 import React from 'react';
-type ActionProps = {
+type ButtonActionProps = {
     icon?: string;
-    color?: 'primary' | 'secondary';
-    size?: 'small' | 'medium' | 'large';
+    variant?: 'default' | 'secondary' | 'ghost';
+    size?: 'sm' | 'default' | 'lg';
     url?: string;
     path?: string;
     children: React.ReactNode;
 };
-declare const ButtonAction: React.FC<ActionProps>;
+declare const ButtonAction: React.FC<ButtonActionProps>;
 export default ButtonAction;

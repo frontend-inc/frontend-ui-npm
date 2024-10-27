@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonProps as ShadcnButtonProps } from 'frontend-shadcn';
 type ButtonSize = 'sm' | 'default' | 'lg' | 'icon';
 type ButtonVariant = 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
-interface ButtonProps extends ShadcnButtonProps {
+interface AlertButtonProps extends ShadcnButtonProps {
     size?: ButtonSize;
     fullWidth?: boolean;
     variant?: ButtonVariant;
@@ -12,8 +12,9 @@ interface ButtonProps extends ShadcnButtonProps {
     children?: React.ReactNode;
     disabled?: boolean;
     loading?: boolean;
+    onClick?: () => void;
     displayAlertWarning?: boolean;
 }
-declare const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
-export { Button };
-export type { ButtonProps };
+declare const AlertButton: React.ForwardRefExoticComponent<AlertButtonProps & React.RefAttributes<HTMLButtonElement>>;
+export { AlertButton };
+export type { AlertButtonProps };

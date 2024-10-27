@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var lucide_react_1 = require("lucide-react");
 var TableFilterForm_1 = __importDefault(require("./TableFilterForm"));
-var components_1 = require("../../../components");
+var components_1 = require("../../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var TableFilterMenu = function (_a) {
     var loading = _a.loading, query = _a.query, fields = _a.fields, handleChange = _a.handleChange, handleClearFilters = _a.handleClearFilters, handleSearch = _a.handleSearch;

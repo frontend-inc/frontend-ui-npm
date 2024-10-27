@@ -89,8 +89,8 @@ var AdminProductToolbar = function (props) {
     }); };
     return (react_1.default.createElement(components_1.ResourceToolbarModal, { open: open, handleClose: handleClose },
         react_1.default.createElement("div", { className: "flex flex-row justify-center items-center space-x-2" },
-            react_1.default.createElement(components_1.PrimaryButton, { onClick: handlePublish }, "Publish"),
-            react_1.default.createElement(components_1.SecondaryButton, { onClick: handleUnpublish }, "Unpublish"),
-            react_1.default.createElement(components_1.SecondaryButton, { alert: true, onClick: handleDelete }, "Delete"))));
+            react_1.default.createElement(components_1.Button, { onClick: handlePublish }, "Publish"),
+            react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handleUnpublish }, "Unpublish"),
+            react_1.default.createElement(components_1.AlertButton, { variant: "secondary", onClick: handleDelete }, "Delete"))));
 };
 exports.default = AdminProductToolbar;

@@ -27,7 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var shopify_1 = require("../../../components/shopify");
-var core_1 = require("../../core");
+var components_2 = require("../../../components");
 var frontend_shopify_1 = require("frontend-shopify");
 var frontend_shopify_2 = require("frontend-shopify");
 var addons_1 = require("../../../hooks/addons");
@@ -63,7 +63,7 @@ var ShopifySearchModal = function (props) {
             setProducts(null);
         }
     }, [keywords]);
-    return (react_1.default.createElement(core_1.Sheet, { open: searchOpen, onClose: handleClose, anchor: "top" },
+    return (react_1.default.createElement(components_2.Drawer, { open: searchOpen, handleClose: handleClose },
         react_1.default.createElement("div", { className: "w-full flex flex-row justify-center" },
             react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, handleChange: handleChange, handleSearch: handleSearch, placeholder: 'Search...' })),
         react_1.default.createElement(shopify_1.ShopifyProducts, { href: href, loading: loading, products: products }),

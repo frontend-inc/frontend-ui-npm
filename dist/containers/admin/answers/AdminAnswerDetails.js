@@ -19,6 +19,6 @@ var AdminAnswerDetails = function (props) {
                     react_1.default.createElement(core_1.Typography, { variant: "subtitle1" }, question === null || question === void 0 ? void 0 : question.title),
                     react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, question === null || question === void 0 ? void 0 : question.description))),
             react_1.default.createElement("div", null,
-                react_1.default.createElement(components_1.PrimaryButton, { onClick: handleEdit }, "Edit")))));
+                react_1.default.createElement(components_1.Button, { onClick: handleEdit }, "Edit")))));
 };
 exports.default = AdminAnswerDetails;

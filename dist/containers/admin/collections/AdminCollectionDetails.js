@@ -9,7 +9,6 @@ var core_1 = require("../../../components/core");
 var components_1 = require("../../../components");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
 var hooks_1 = require("../../../hooks");
-var components_2 = require("../../../components");
 var AdminOrderDetails = function (props) {
     var _a = props || {}, order = _a.order, handleEdit = _a.handleEdit, loading = _a.loading;
     var _b = (0, hooks_1.useAlerts)(), showAlertSuccess = _b.showAlertSuccess, showAlertError = _b.showAlertError;
@@ -29,16 +28,16 @@ var AdminOrderDetails = function (props) {
                 order.display_number),
             react_1.default.createElement(components_1.Label, { label: order === null || order === void 0 ? void 0 : order.status })),
         react_1.default.createElement("div", { className: "flex justify-end items-start" },
-            react_1.default.createElement(components_1.PrimaryButton, { onClick: handleEdit }, "Edit")),
+            react_1.default.createElement(components_1.Button, { onClick: handleEdit }, "Edit")),
         react_1.default.createElement("div", { className: "bg-card p-4 rounded-lg shadow" },
             react_1.default.createElement("div", { className: "flex flex-col" },
                 react_1.default.createElement("div", { className: "flex justify-start items-center pb-1 border-b border-border" },
                     react_1.default.createElement(components_1.UserChip, { user: order === null || order === void 0 ? void 0 : order.user, size: 44, enableUsername: true, enableEmail: true })),
                 react_1.default.createElement("div", null,
-                    react_1.default.createElement(components_2.Button, { variant: "ghost", className: "mt-1 p-0.5 text-foreground", onClick: handleCopyEmail },
+                    react_1.default.createElement(components_1.Button, { variant: "ghost", className: "mt-1 p-0.5 text-foreground", onClick: handleCopyEmail },
                         react_1.default.createElement(components_1.Icon, { name: "Mail", size: 20, className: "mr-2" }),
                         order.customer_name)),
-                react_1.default.createElement(core_1.Typography, { variant: "overline", className: "text-muted-foreground", className: "whitespace-pre-line" }, order.shipping_address))),
+                react_1.default.createElement(core_1.Typography, { variant: "overline", className: "text-muted-foreground whitespace-pre-line" }, order.shipping_address))),
         react_1.default.createElement("div", { className: "bg-card p-4 rounded-lg shadow" },
             react_1.default.createElement("div", { className: "flex flex-col" },
                 react_1.default.createElement(core_1.Typography, { variant: "overline", className: "text-muted-foreground" },

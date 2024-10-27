@@ -41,8 +41,6 @@ export { default as SocialLink } from './social/SocialLink';
 export { default as SocialIcon } from './social/SocialIcon';
 export { default as UserAvatar } from './avatars/UserAvatar';
 export { default as UserMenu } from './UserMenu';
-export { default as PrimaryButton } from './buttons/PrimaryButton';
-export { default as SecondaryButton } from './buttons/SecondaryButton';
 export { default as LayoutContainer } from './layouts/LayoutContainer';
 export { default as Loader } from './loaders/Loader';
 export { default as SortableList } from './lists/SortableList';

@@ -38,7 +38,7 @@ var frontend_shadcn_1 = require("frontend-shadcn");
 var ShopifyProductFeatured = function (_a) {
     var _b, _c, _d, _e;
     var handle = _a.handle, _f = _a.height, height = _f === void 0 ? 360 : _f, _g = _a.width, width = _g === void 0 ? 360 : _g, _h = _a.buttonText, buttonText = _h === void 0 ? 'Add to Cart' : _h, _j = _a.quickShopButtonText, quickShopButtonText = _j === void 0 ? 'Quick Shop' : _j, handleClick = _a.handleClick, _k = _a.enableAddToCart, enableAddToCart = _k === void 0 ? false : _k, _l = _a.enableQuantity, enableQuantity = _l === void 0 ? false : _l, _m = _a.enableQuickShop, enableQuickShop = _m === void 0 ? false : _m;
-    var _o = (0, frontend_shopify_2.useProducts)(), loading = _o.loading, product = _o.product, findProduct = _o.findProduct;
+    var _o = (0, frontend_shopify_2.useProducts)(), product = _o.product, findProduct = _o.findProduct;
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();
@@ -58,7 +58,7 @@ var ShopifyProductFeatured = function (_a) {
             react_1.default.createElement("div", { className: "w-full flex flex-row justify-center items-start h-full" },
                 react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
                     react_1.default.createElement(core_1.Typography, { variant: "h3" }, product === null || product === void 0 ? void 0 : product.title),
-                    react_1.default.createElement(core_1.Typography, { className: "text-muted-foreground", variant: "body2", className: "max-w-[320px]" }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.description, 60)),
+                    react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground max-w-[320px]" }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.description, 60)),
                     react_1.default.createElement(core_1.Typography, { className: "text-muted-foreground", variant: "body2" }, (0, frontend_shopify_1.formatCurrency)((_c = (_b = product === null || product === void 0 ? void 0 : product.priceRange) === null || _b === void 0 ? void 0 : _b.minVariantPrice) === null || _c === void 0 ? void 0 : _c.amount))),
                 react_1.default.createElement("div", { className: "flex flex-col space-y-3" },
                     enableAddToCart && (react_1.default.createElement(__1.ShopifyAddToCartButton, { product: product, variant: (_e = (_d = product === null || product === void 0 ? void 0 : product.variants) === null || _d === void 0 ? void 0 : _d.edges[0]) === null || _e === void 0 ? void 0 : _e.node, enableQuantity: enableQuantity, label: buttonText })),

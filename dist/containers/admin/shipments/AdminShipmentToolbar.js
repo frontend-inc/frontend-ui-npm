@@ -84,7 +84,7 @@ var AdminShipmentToolbar = function (props) {
     }); };
     return (react_1.default.createElement(components_1.ResourceToolbarModal, { open: open, handleClose: handleClose },
         react_1.default.createElement("div", null,
-            react_1.default.createElement(components_1.PrimaryButton, { onClick: handleUpdateClick }, "Update")),
+            react_1.default.createElement(components_1.Button, { onClick: handleUpdateClick }, "Update")),
         react_1.default.createElement(components_1.FormModal, { errors: errors, open: openModal, handleClose: function () { return setOpenModal(false); }, title: "Update Orders", fields: [
                 {
                     label: 'Status',

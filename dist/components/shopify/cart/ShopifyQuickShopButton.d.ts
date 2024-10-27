@@ -1,6 +1,6 @@
 import React from 'react';
 type ShopifyQuickShopButtonProps = {
-    size?: 'small' | 'medium' | 'large';
+    size?: 'sm' | 'default' | 'lg';
     color?: 'primary' | 'secondary';
     buttonText?: string;
     quickShopButtonText?: string;

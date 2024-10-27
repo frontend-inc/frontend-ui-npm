@@ -324,6 +324,7 @@ var AdminCollectionTable = function (props) {
                 queryObject_1[key] = value;
             });
             var parsedQuery = apiQuery.parseURL(queryObject_1).query();
+            //@ts-ignore
             findDocuments(parsedQuery);
         }
     }, [searchParams]);
