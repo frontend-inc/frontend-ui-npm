@@ -16,6 +16,6 @@ var MobileDrawerLink = function (props) {
             handleClick(menuItem.path);
         }
     };
-    return (react_1.default.createElement(core_1.Button, { fullWidth: true, variant: "ghost", className: "justify-start", onClick: function () { return handleMenuClick(menuItem); } }, menuItem.label));
+    return (react_1.default.createElement(core_1.Button, { fullWidth: true, variant: "ghost", className: "justify-start text-foreground", onClick: function () { return handleMenuClick(menuItem); } }, menuItem.label));
 };
 exports.default = MobileDrawerLink;

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductCollectionCoverCarouselListItems = exports.ProductCollectionCoverCarouselList = exports.ProductCollectionListItems = exports.ProductCollectionListItem = exports.ProductCollectionList = exports.ProductCollectionCover = exports.ProductCollectionCard = void 0;
+exports.ProductCollectionCoverCarouselListItems = exports.ProductCollectionCoverCarouselList = exports.ProductCollectionShow = exports.ProductCollectionListItems = exports.ProductCollectionListItem = exports.ProductCollectionList = exports.ProductCollectionCover = exports.ProductCollectionCard = void 0;
 var ProductCollectionCard_1 = require("./ProductCollectionCard");
 Object.defineProperty(exports, "ProductCollectionCard", { enumerable: true, get: function () { return __importDefault(ProductCollectionCard_1).default; } });
 var ProductCollectionCover_1 = require("./ProductCollectionCover");
@@ -14,6 +14,8 @@ var ProductCollectionListItem_1 = require("./ProductCollectionListItem");
 Object.defineProperty(exports, "ProductCollectionListItem", { enumerable: true, get: function () { return __importDefault(ProductCollectionListItem_1).default; } });
 var ProductCollectionListItems_1 = require("./ProductCollectionListItems");
 Object.defineProperty(exports, "ProductCollectionListItems", { enumerable: true, get: function () { return __importDefault(ProductCollectionListItems_1).default; } });
+var ProductCollectionShow_1 = require("./ProductCollectionShow");
+Object.defineProperty(exports, "ProductCollectionShow", { enumerable: true, get: function () { return __importDefault(ProductCollectionShow_1).default; } });
 var ProductCollectionCoverCarouselList_1 = require("./ProductCollectionCoverCarouselList");
 Object.defineProperty(exports, "ProductCollectionCoverCarouselList", { enumerable: true, get: function () { return __importDefault(ProductCollectionCoverCarouselList_1).default; } });
 var ProductCollectionCoverCarouselListItems_1 = require("./ProductCollectionCoverCarouselListItems");

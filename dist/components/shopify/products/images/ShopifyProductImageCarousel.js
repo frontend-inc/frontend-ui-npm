@@ -11,7 +11,7 @@ var image_1 = __importDefault(require("next/image"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var ShopifyProductImageCarousel = function () {
     var _a = (0, frontend_shopify_1.useProductContext)(), images = _a.images, handleImageClick = _a.handleImageClick;
-    return (react_1.default.createElement(__1.CarouselImage, null, images === null || images === void 0 ? void 0 : images.map(function (image) {
+    return (react_1.default.createElement("div", null, images === null || images === void 0 ? void 0 : images.map(function (image) {
         var _a;
         return (react_1.default.createElement("div", { className: "w-full h-full pb-1", key: image.id },
             react_1.default.createElement(__1.TouchableOpacity, { handleClick: function () { return handleImageClick(image); } },

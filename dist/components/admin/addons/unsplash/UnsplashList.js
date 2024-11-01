@@ -68,7 +68,6 @@ var hooks_1 = require("../../../../hooks");
 var components_1 = require("../../../../components");
 var UnsplashCard_1 = __importDefault(require("./UnsplashCard"));
 var UnsplashModal_1 = __importDefault(require("./UnsplashModal"));
-var PoweredByUnsplash_1 = __importDefault(require("./PoweredByUnsplash"));
 var components_2 = require("../../../../components");
 var lucide_react_1 = require("lucide-react");
 var UnsplashList = function (_a) {
@@ -76,7 +75,7 @@ var UnsplashList = function (_a) {
     var _b = (0, react_1.useState)(false), showModal = _b[0], setShowModal = _b[1];
     var _c = (0, react_1.useState)(''), keywords = _c[0], setKeywords = _c[1];
     var _d = (0, react_1.useState)(), image = _d[0], setImage = _d[1];
-    var _e = (0, hooks_1.useMedia)(), loading = _e.loading, uploadFromUrl = _e.uploadFromUrl;
+    var _e = (0, hooks_1.useAdminMedia)(), loading = _e.loading, uploadFromUrl = _e.uploadFromUrl;
     var _f = (0, hooks_1.useUnsplash)(), images = _f.images, search = _f.search, loadMore = _f.loadMore;
     var handleUpload = function (url, name) { return __awaiter(void 0, void 0, void 0, function () {
         var resp, e_1;
@@ -131,10 +130,9 @@ var UnsplashList = function (_a) {
         setImage(image);
         setShowModal(true);
     };
-    return (react_1.default.createElement("div", { className: "w-full" },
-        react_1.default.createElement("div", { className: "space-y-4" },
-            react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, placeholder: "Search unsplash...", handleChange: handleChange, handleSearch: handleSearch }),
-            react_1.default.createElement(PoweredByUnsplash_1.default, null)),
+    return (react_1.default.createElement("div", { className: "w-full flex flex-col justify-center items-center" },
+        react_1.default.createElement("div", { className: "space-y-4 w-full flex justify-center items-center" },
+            react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, placeholder: "Search unsplash...", handleChange: handleChange, handleSearch: handleSearch })),
         react_1.default.createElement("div", { className: "mt-4 grid grid-cols-2 gap-4" }, images === null || images === void 0 ? void 0 : images.map(function (image, i) { return (react_1.default.createElement(UnsplashCard_1.default, { key: i, image: image, handleClick: handleImageClick })); })),
         (images === null || images === void 0 ? void 0 : images.length) > 0 && (images === null || images === void 0 ? void 0 : images.length) % 10 === 0 && (react_1.default.createElement("div", { className: "mt-4 flex justify-center" },
             react_1.default.createElement(components_2.Button, { variant: "outline", className: "my-2 text-foreground", onClick: handleLoadMore },

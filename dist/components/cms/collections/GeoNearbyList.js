@@ -18,6 +18,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var GeoNearbyList = function (props) {
-    return react_1.default.createElement(components_1.CollectionList, __assign({}, props, { filterGeo: true }));
+    var _a = props || {}, url = _a.url, documentId = _a.documentId;
+    var geosearchUrl = "".concat(url, "/").concat(documentId, "/geonearby");
+    return react_1.default.createElement(components_1.CollectionList, __assign({}, props, { url: geosearchUrl }));
 };
 exports.default = GeoNearbyList;

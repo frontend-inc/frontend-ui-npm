@@ -64,28 +64,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var context_1 = require("../../../context");
+var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var MyAccountTabs_1 = __importDefault(require("./MyAccountTabs"));
-var core_1 = require("../../core");
 var MyAccountModal = function (props) {
-    var _a = props || {}, enableStripe = _a.enableStripe, metafields = _a.metafields;
-    var _b = (0, react_1.useContext)(context_1.AppContext), myAccountOpen = _b.myAccountOpen, setMyAccountOpen = _b.setMyAccountOpen;
-    var _c = (0, frontend_js_1.useAuth)(), delayedLoading = _c.delayedLoading, user = _c.user, currentUser = _c.currentUser, updateMe = _c.updateMe, handleChange = _c.handleChange, deleteAvatar = _c.deleteAvatar, logout = _c.logout;
-    var _d = (0, react_1.useState)(), currentTab = _d[0], setCurrentTab = _d[1];
-    var handleLogout = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, logout()];
-                case 1:
-                    _a.sent();
-                    setMyAccountOpen(false);
-                    return [2 /*return*/];
-            }
-        });
-    }); };
+    var enableStripe = (props || {}).enableStripe;
+    var _a = (0, hooks_1.useApp)(), myAccountOpen = _a.myAccountOpen, setMyAccountOpen = _a.setMyAccountOpen;
+    var _b = (0, frontend_js_1.useAuth)(), delayedLoading = _b.delayedLoading, user = _b.user, updateMe = _b.updateMe, handleChange = _b.handleChange, deleteAvatar = _b.deleteAvatar, logout = _b.logout;
+    var _c = (0, react_1.useState)(0), currentTab = _c[0], setCurrentTab = _c[1];
     var handleDeleteAvatar = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -106,22 +94,32 @@ var MyAccountModal = function (props) {
             }
         });
     }); };
-    var handleClick = function (tab) {
-        if (tab.url) {
-            window.open(tab.url, '_blank');
-        }
-        else {
-            setCurrentTab(tab.value);
-        }
-    };
-    return (react_1.default.createElement(components_1.Modal, { open: myAccountOpen, handleClose: function () { return setMyAccountOpen(false); }, title: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
-            ? "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name)
-            : 'My Account' },
-        currentTab == null ? (react_1.default.createElement(MyAccountTabs_1.default, { tab: currentTab, enableStripe: enableStripe, handleClick: handleClick })) : (react_1.default.createElement("div", { className: "p-1" },
-            react_1.default.createElement(core_1.Button, { color: "secondary", startIcon: react_1.default.createElement(components_1.Icon, { name: "ChevronLeft", size: 24 }), onClick: function () { return setCurrentTab(null); } }, "Back"))),
-        react_1.default.createElement("div", { className: "p-2" },
-            currentTab == 0 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout, metafields: metafields })),
-            currentTab == 1 && react_1.default.createElement(components_2.StripeCustomerPortal, null),
-            currentTab == 2 && react_1.default.createElement(components_2.ShopifyCustomerPortal, null))));
+    var handleClick = function (tab) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    if (!tab.url) return [3 /*break*/, 1];
+                    window.open(tab.url, '_blank');
+                    return [3 /*break*/, 4];
+                case 1:
+                    if (!(tab.value == 4)) return [3 /*break*/, 3];
+                    setCurrentTab(0);
+                    setMyAccountOpen(false);
+                    return [4 /*yield*/, logout()];
+                case 2:
+                    _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    setCurrentTab(tab.value);
+                    _a.label = 4;
+                case 4: return [2 /*return*/];
+            }
+        });
+    }); };
+    return (react_1.default.createElement(components_1.Modal, { open: myAccountOpen, handleClose: currentTab != 0 ? function () { return setCurrentTab(0); } : function () { return setMyAccountOpen(false); } },
+        currentTab == 0 && (react_1.default.createElement(MyAccountTabs_1.default, { tab: currentTab, enableStripe: enableStripe, handleClick: handleClick })),
+        currentTab == 1 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar })),
+        currentTab == 2 && react_1.default.createElement(components_2.StripeCustomerPortal, null),
+        currentTab == 3 && react_1.default.createElement(components_2.ShopifyCustomerPortal, null)));
 };
 exports.default = MyAccountModal;

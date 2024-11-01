@@ -4,7 +4,7 @@ type ThemeProviderProps = {
     primaryColor?: string;
     headerFont?: string;
     bodyFont?: string;
-    borderRadius?: number;
+    borderRadius: number;
     children: React.ReactNode;
 };
 declare const ThemeProvider: (props: ThemeProviderProps) => React.JSX.Element;

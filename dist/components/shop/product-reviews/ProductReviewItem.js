@@ -11,7 +11,7 @@ var moment_1 = __importDefault(require("moment"));
 function ProductReviewItem(_a) {
     var _b;
     var resource = _a.resource;
-    return (react_1.default.createElement("div", { className: "flex items-start py-4 border-b border-divider hover:bg-gray-50" },
+    return (react_1.default.createElement("div", { className: "w-full flex items-start py-4 border-b border-divider hover:bg-muted/50" },
         react_1.default.createElement("div", { className: "mr-4 mt-1" },
             react_1.default.createElement(__1.UserAvatar, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
         react_1.default.createElement("div", { className: "flex-grow" },

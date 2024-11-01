@@ -105,7 +105,9 @@ function FavoriteButton(_a) {
         }
     }, [currentUser, resource === null || resource === void 0 ? void 0 : resource.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider', 'transition-transform duration-200', isFavorite && 'transform scale-110') },
-            react_1.default.createElement(lucide_react_1.Bookmark, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', isFavorite ? 'fill-current' : 'stroke-current') }))));
+        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider', 'transition-transform duration-200') },
+            react_1.default.createElement(lucide_react_1.Bookmark, { className: (0, frontend_shadcn_1.cn)('w-5 h-5', isFavorite
+                    ? 'fill-primary stroke-primary'
+                    : 'stroke-current fill-none') }))));
 }
 exports.default = FavoriteButton;

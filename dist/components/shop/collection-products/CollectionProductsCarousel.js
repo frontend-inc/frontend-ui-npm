@@ -28,15 +28,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
+var hooks_1 = require("../../../hooks");
 var CollectionProductsCarousel = function (props) {
-    var _a = props.query, query = _a === void 0 ? {} : _a, productCollectionId = props.productCollectionId, enableArrows = props.enableArrows, enableAutoplay = props.enableAutoplay, rest = __rest(props, ["query", "productCollectionId", "enableArrows", "enableAutoplay"]);
-    query = __assign(__assign({}, query), { method: 'collection_products', product_collection_id: productCollectionId });
+    var apiUrl = (0, hooks_1.useApp)().apiUrl;
+    var productCollectionId = props.productCollectionId, enableArrows = props.enableArrows, enableAutoplay = props.enableAutoplay, rest = __rest(props, ["productCollectionId", "enableArrows", "enableAutoplay"]);
     var slots = {
         list: {
             enableArrows: enableArrows,
             enableAutoplay: enableAutoplay,
         },
     };
-    return (react_1.default.createElement(__1.ProductList, __assign({}, rest, { query: query, list: __1.ProductCarouselListItems, slots: slots })));
+    var url = "".concat(apiUrl, "/shop/product_collections/").concat(productCollectionId, "/products");
+    return (react_1.default.createElement(__1.ProductList, __assign({}, rest, { url: url, list: __1.ProductCarouselListItems, slots: slots })));
 };
 exports.default = CollectionProductsCarousel;

@@ -25,7 +25,7 @@ var ProductReviewsList = function (props) {
         var perPage = ((query === null || query === void 0 ? void 0 : query.per_page) || 12) + 12;
         setQuery(__assign(__assign({}, query), { per_page: perPage }));
     };
-    return (react_1.default.createElement(__1.DataLayout, { loading: loading },
+    return (react_1.default.createElement(__1.DataLayout, { layout: "list", loading: loading },
         !loading &&
             (resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(ProductReviewItem_1.default, { key: index, resource: resource })); })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handleLoadMore })));

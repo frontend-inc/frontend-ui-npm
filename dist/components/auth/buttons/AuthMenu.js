@@ -10,9 +10,9 @@ var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var AuthMenu = function (_a) {
-    var open = _a.open, anchorEl = _a.anchorEl, toggleMenu = _a.toggleMenu, handleLogout = _a.handleLogout, handleLogin = _a.handleLogin, handleSignup = _a.handleSignup, handleMyAccount = _a.handleMyAccount;
+    var handleLogout = _a.handleLogout, handleLogin = _a.handleLogin, handleSignup = _a.handleSignup, handleMyAccount = _a.handleMyAccount;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    return (react_1.default.createElement(frontend_shadcn_1.DropdownMenu, { open: open, onOpenChange: function (isOpen) { return !isOpen && toggleMenu(null); } },
+    return (react_1.default.createElement(frontend_shadcn_1.DropdownMenu, null,
         react_1.default.createElement(frontend_shadcn_1.DropdownMenuTrigger, { asChild: true },
             react_1.default.createElement(components_2.Button, { variant: "ghost", className: "h-8 w-8 rounded-full" },
                 react_1.default.createElement(components_1.UserAvatar, { size: 32, user: currentUser }))),

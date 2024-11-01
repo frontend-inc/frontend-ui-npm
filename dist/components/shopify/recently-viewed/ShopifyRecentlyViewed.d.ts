@@ -1,6 +1,5 @@
 import React from 'react';
 export type ShopifyRecentlyViewedProps = {
-    href: string;
     layout?: 'grid' | 'carousel';
     perPage?: string;
     enableBorder?: boolean;

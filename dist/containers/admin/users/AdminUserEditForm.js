@@ -11,15 +11,6 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -29,8 +20,7 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var AdminUserForm = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
-    var _a = (props || {}).metafields, metafields = _a === void 0 ? [] : _a;
-    var fields = __spreadArray([
+    var fields = [
         {
             label: 'Avatar',
             name: 'avatar',
@@ -70,8 +60,8 @@ var AdminUserForm = function (props) {
             label: 'Paid',
             name: 'paid',
             variant: 'boolean',
-        }
-    ], metafields, true);
+        },
+    ];
     return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields }));
 };
 exports.default = AdminUserForm;

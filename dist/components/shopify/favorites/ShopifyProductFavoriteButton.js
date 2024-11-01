@@ -92,6 +92,6 @@ var ShopifyProductFavoriteButton = function (_a) {
         setIsFavorite((0, helpers_1.isShopifyFavorite)(currentUser, product.handle));
     }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)('min-w-[40px]', variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider', 'transition-transform duration-200', isFavorite && 'transform scale-110') },
-        react_1.default.createElement(lucide_react_1.Heart, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', isFavorite ? 'fill-current' : 'stroke-current') })));
+        react_1.default.createElement(lucide_react_1.Heart, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', isFavorite ? 'fill-primary' : 'stroke-current') })));
 };
 exports.default = ShopifyProductFavoriteButton;

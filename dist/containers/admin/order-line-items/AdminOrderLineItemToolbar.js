@@ -66,7 +66,7 @@ var hooks_1 = require("../../../hooks");
 var AdminOrderLineItemToolbar = function (props) {
     var _a = props || {}, open = _a.open, handleClose = _a.handleClose, selectedIds = _a.selectedIds, handleReload = _a.handleReload;
     var _b = (0, react_1.useState)(false), openModal = _b[0], setOpenModal = _b[1];
-    var _c = (0, hooks_1.useOrders)(), loading = _c.loading, errors = _c.errors, order = _c.order, handleChange = _c.handleChange, updateOrders = _c.updateOrders;
+    var _c = (0, hooks_1.useAdminOrders)(), loading = _c.loading, errors = _c.errors, order = _c.order, handleChange = _c.handleChange, updateOrders = _c.updateOrders;
     var handleUpdateClick = function () { return __awaiter(void 0, void 0, void 0, function () { return __generator(this, function (_a) {
         return [2 /*return*/];
     }); }); };

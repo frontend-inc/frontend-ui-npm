@@ -1,9 +1,24 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FieldVideo = exports.FieldPrice = exports.FieldText = exports.FieldShopify = exports.FieldReference = exports.FieldRating = exports.FieldURL = exports.FieldString = exports.FieldLocation = exports.FieldJSON = exports.FieldImageThumbnail = exports.FieldImage = exports.FieldWrapper = exports.FieldFile = exports.FieldDate = exports.FieldBoolean = exports.FieldArray = exports.Field = void 0;
+__exportStar(require("./addons"), exports);
 var Field_1 = require("./Field");
 Object.defineProperty(exports, "Field", { enumerable: true, get: function () { return __importDefault(Field_1).default; } });
 var FieldArray_1 = require("./FieldArray");

@@ -17,9 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var hooks_1 = require("../../../hooks");
 var AdminUserForm = function (props) {
-    var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var fields = [
         {
             label: 'First name',

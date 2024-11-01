@@ -48,7 +48,7 @@ var BrandfetchInput = function (props) {
     var _a;
     var onComplete = (props || {}).onComplete;
     var _b = (0, hooks_1.useBrandfetch)(), resizeLogo = _b.resizeLogo, brand = _b.brand, fetchBrand = _b.fetchBrand;
-    var _c = (0, hooks_1.useMedia)(), loading = _c.loading, uploadFromUrl = _c.uploadFromUrl;
+    var _c = (0, hooks_1.useAdminMedia)(), loading = _c.loading, uploadFromUrl = _c.uploadFromUrl;
     var handleBrandChange = function (ev) {
         var value = ev.target.value;
         fetchBrand(value);
@@ -72,8 +72,9 @@ var BrandfetchInput = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement("div", { className: "flex flex-col space-y-4" },
-        react_1.default.createElement(__1.BrandfetchAutosuggest, { handleChange: handleBrandChange }),
+    return (react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full" },
+        react_1.default.createElement("div", { className: "w-full flex flex-row justify-center items-center" },
+            react_1.default.createElement(__1.BrandfetchAutosuggest, { handleChange: handleBrandChange })),
         react_1.default.createElement(PoweredByBrandfetch_1.default, null),
         loading && react_1.default.createElement(__1.CircularLoader, null),
         react_1.default.createElement("div", { className: "grid grid-cols-[repeat(auto-fill,minmax(164px,1fr))] gap-4" }, !loading &&

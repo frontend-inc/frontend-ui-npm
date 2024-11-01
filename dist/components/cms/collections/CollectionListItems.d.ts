@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonType, DisplayFieldType } from '../../../types';
 export type CollectionListItemsProps = {
-    grid?: boolean;
+    layout?: 'list' | 'grid' | 'slider';
     selectable?: boolean;
     href?: string;
     style?: 'list' | 'card' | 'avatar' | 'cover' | 'text';

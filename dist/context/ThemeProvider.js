@@ -46,7 +46,7 @@ var ThemeProvider = function (props) {
         if (bodyFont) {
             document.documentElement.style.setProperty('--font-body', bodyFont);
         }
-        if (borderRadius) {
+        if (borderRadius >= 0) {
             document.documentElement.style.setProperty('--radius', "".concat(borderRadius, "px"));
         }
     }, [headerFont, bodyFont, borderRadius]);

@@ -48,7 +48,7 @@ var AdminFieldForm = function (props) {
     var _a = props || {}, loading = _a.loading, errors = _a.errors, open = _a.open, handleClose = _a.handleClose, resource = _a.resource, setResource = _a.setResource, handleChange = _a.handleChange, handleSubmit = _a.handleSubmit, handleRemove = _a.handleRemove;
     var handleClick = function (field) {
         setResource(__assign(__assign({}, resource), { db_type: field.db_type, variant: field.variant }));
-        setTab(1);
+        setTab('settings');
     };
     var _b = (0, react_1.useState)('field'), tab = _b[0], setTab = _b[1];
     var TABS = [

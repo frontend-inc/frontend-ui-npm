@@ -28,9 +28,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
+var hooks_1 = require("../../../hooks");
 var CollectionProducts = function (props) {
-    var _a = props.query, query = _a === void 0 ? {} : _a, productCollectionId = props.productCollectionId, rest = __rest(props, ["query", "productCollectionId"]);
-    query = __assign(__assign({}, query), { method: 'collection_products', product_collection_id: productCollectionId });
-    return react_1.default.createElement(__1.ProductList, __assign({ query: query }, rest));
+    var productCollectionId = props.productCollectionId, rest = __rest(props, ["productCollectionId"]);
+    var apiUrl = (0, hooks_1.useApp)().apiUrl;
+    var url = "".concat(apiUrl, "/shop/product_collections/").concat(productCollectionId, "/products");
+    return (react_1.default.createElement(__1.ProductList, __assign({}, props, { url: url })));
 };
 exports.default = CollectionProducts;

@@ -118,7 +118,7 @@ var CommentList = function (props) {
     }, [url, handle]);
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-4 border-divider" },
         react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full items-start justify-between" },
-            react_1.default.createElement("div", { className: "text-lg font-semibold text-primary" },
+            react_1.default.createElement("div", { className: "text-lg font-semibold text-foreground" },
                 "Comments (",
                 totalCount,
                 ")")),

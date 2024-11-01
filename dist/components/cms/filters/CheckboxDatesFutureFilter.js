@@ -8,7 +8,7 @@ var react_1 = __importDefault(require("react"));
 var CheckboxFilterItem_1 = __importDefault(require("./CheckboxFilterItem"));
 var __1 = require("../..");
 var CheckboxDatesFutureFilter = function (props) {
-    var label = props.label, field = props.field, values = props.values, handleClick = props.handleClick, _a = props.disablePadding, disablePadding = _a === void 0 ? false : _a;
+    var label = props.label, field = props.field, values = props.values, handleClick = props.handleClick;
     var OPTIONS = [
         { label: 'Next day', value: '1_day' },
         { label: 'Next 7 days ', value: '7_days' },

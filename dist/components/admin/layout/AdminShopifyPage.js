@@ -33,8 +33,8 @@ var AdminShopifyPage = function (props) {
     var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useAdmin)().clientUrl;
     var appId = (0, navigation_1.useParams)().app_id;
-    var _a = (0, hooks_1.useApps)(), loading = _a.loading, app = _a.app, findApp = _a.findApp;
-    var _b = props || {}, title = _b.title, actions = _b.actions, activeTab = _b.activeTab, activeMenu = _b.activeMenu, menuItems = _b.menuItems, enableEdit = _b.enableEdit, enableDelete = _b.enableDelete, handleEdit = _b.handleEdit, handleDelete = _b.handleDelete, _c = _b.disablePadding, disablePadding = _c === void 0 ? false : _c, children = _b.children;
+    var _a = (0, hooks_1.useAdminApps)(), loading = _a.loading, app = _a.app, findApp = _a.findApp;
+    var _b = props || {}, title = _b.title, actions = _b.actions, activeTab = _b.activeTab, activeMenu = _b.activeMenu, menuItems = _b.menuItems, enableEdit = _b.enableEdit, enableDelete = _b.enableDelete, handleEdit = _b.handleEdit, handleDelete = _b.handleDelete, children = _b.children;
     (0, hooks_1.useTabs)(activeTab);
     var handleClick = function (menuItem) {
         router.push("".concat(clientUrl).concat(menuItem.value));
@@ -45,7 +45,7 @@ var AdminShopifyPage = function (props) {
         }
     }, [appId]);
     if (loading) {
-        return react_1.default.createElement(__1.CircularLoader, { size: 64 });
+        return react_1.default.createElement(__1.CircularLoader, null);
     }
     if (!(app === null || app === void 0 ? void 0 : app.shopify_domain) || !(app === null || app === void 0 ? void 0 : app.shopify_storefront_access_token)) {
         return (react_1.default.createElement(__1.Placeholder, { title: "Please connect your Shopify store", description: "You need to connect your Shopify store to use this feature" }));

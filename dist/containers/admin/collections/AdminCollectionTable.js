@@ -110,7 +110,7 @@ var AdminCollectionTable = function (props) {
     var _g = (0, react_1.useState)(false), showFilters = _g[0], setShowFilters = _g[1];
     var _h = (0, react_1.useState)(), visibleFields = _h[0], setVisibleFields = _h[1];
     var clientUrl = (0, hooks_2.useAdmin)().clientUrl;
-    var _j = (0, hooks_2.useDocuments)({
+    var _j = (0, hooks_2.useAdminDocuments)({
         collection: collectionId,
     }), query = _j.query, setQuery = _j.setQuery, loading = _j.loading, delayedLoading = _j.delayedLoading, documents = _j.documents, findDocuments = _j.findDocuments, deleteDocument = _j.deleteDocument, deleteDocuments = _j.deleteDocuments, publish = _j.publish, unpublish = _j.unpublish, paginate = _j.paginate, page = _j.page, perPage = _j.perPage, numPages = _j.numPages, totalCount = _j.totalCount;
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;

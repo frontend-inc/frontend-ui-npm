@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShopifyMetafieldVideo = exports.ShopifyMetafieldProducts = exports.ShopifyMetafieldRichText = exports.ShopifyMetafieldImage = exports.ShopifyMetafields = exports.ShopifyProductSearch = exports.ShopifyProductRecommendations = exports.ShopifyProductModal = exports.ShopifyProductMetafields = exports.ShopifyProducts = exports.ShopifyProductFeatured = exports.ShopifyProductDescription = exports.ShopifyProductDetails = exports.ShopifyProductInfo = exports.ShopifyProductCollectionCarousel = exports.ShopifyProductCollection = exports.ShopifyProductCarousel = exports.ShopifyProductCard = exports.ShopifyProductArray = void 0;
+exports.ShopifyProductSearch = exports.ShopifyProductRecommendations = exports.ShopifyProductModal = exports.ShopifyProducts = exports.ShopifyProductDescription = exports.ShopifyProductDetails = exports.ShopifyProductInfo = exports.ShopifyProductCollectionCarousel = exports.ShopifyProductCollection = exports.ShopifyProductCarousel = exports.ShopifyProductCard = exports.ShopifyProductArray = void 0;
 __exportStar(require("./images"), exports);
 // Products
 var ShopifyProductArray_1 = require("./ShopifyProductArray");
@@ -36,26 +36,11 @@ var ShopifyProductDetails_1 = require("./ShopifyProductDetails");
 Object.defineProperty(exports, "ShopifyProductDetails", { enumerable: true, get: function () { return __importDefault(ShopifyProductDetails_1).default; } });
 var ShopifyProductDescription_1 = require("./ShopifyProductDescription");
 Object.defineProperty(exports, "ShopifyProductDescription", { enumerable: true, get: function () { return __importDefault(ShopifyProductDescription_1).default; } });
-var ShopifyProductFeatured_1 = require("./ShopifyProductFeatured");
-Object.defineProperty(exports, "ShopifyProductFeatured", { enumerable: true, get: function () { return __importDefault(ShopifyProductFeatured_1).default; } });
 var ShopifyProducts_1 = require("./ShopifyProducts");
 Object.defineProperty(exports, "ShopifyProducts", { enumerable: true, get: function () { return __importDefault(ShopifyProducts_1).default; } });
-var ShopifyProductMetafields_1 = require("./ShopifyProductMetafields");
-Object.defineProperty(exports, "ShopifyProductMetafields", { enumerable: true, get: function () { return __importDefault(ShopifyProductMetafields_1).default; } });
 var ShopifyProductModal_1 = require("./ShopifyProductModal");
 Object.defineProperty(exports, "ShopifyProductModal", { enumerable: true, get: function () { return __importDefault(ShopifyProductModal_1).default; } });
 var ShopifyProductRecommendations_1 = require("./ShopifyProductRecommendations");
 Object.defineProperty(exports, "ShopifyProductRecommendations", { enumerable: true, get: function () { return __importDefault(ShopifyProductRecommendations_1).default; } });
 var ShopifyProductSearch_1 = require("./ShopifyProductSearch");
 Object.defineProperty(exports, "ShopifyProductSearch", { enumerable: true, get: function () { return __importDefault(ShopifyProductSearch_1).default; } });
-// Metafields
-var ShopifyMetafields_1 = require("./metafields/ShopifyMetafields");
-Object.defineProperty(exports, "ShopifyMetafields", { enumerable: true, get: function () { return __importDefault(ShopifyMetafields_1).default; } });
-var ShopifyMetafieldImage_1 = require("./metafields/ShopifyMetafieldImage");
-Object.defineProperty(exports, "ShopifyMetafieldImage", { enumerable: true, get: function () { return __importDefault(ShopifyMetafieldImage_1).default; } });
-var ShopifyMetafieldRichText_1 = require("./metafields/ShopifyMetafieldRichText");
-Object.defineProperty(exports, "ShopifyMetafieldRichText", { enumerable: true, get: function () { return __importDefault(ShopifyMetafieldRichText_1).default; } });
-var ShopifyMetafieldProducts_1 = require("./metafields/ShopifyMetafieldProducts");
-Object.defineProperty(exports, "ShopifyMetafieldProducts", { enumerable: true, get: function () { return __importDefault(ShopifyMetafieldProducts_1).default; } });
-var ShopifyMetafieldVideo_1 = require("./metafields/ShopifyMetafieldVideo");
-Object.defineProperty(exports, "ShopifyMetafieldVideo", { enumerable: true, get: function () { return __importDefault(ShopifyMetafieldVideo_1).default; } });

@@ -56,7 +56,7 @@ var SearchInput = function (_a) {
         react_1.default.createElement("form", { onSubmit: function (e) {
                 e.preventDefault();
                 handleSearch(text);
-            }, className: (0, frontend_shadcn_1.cn)('flex items-center w-full border border-input rounded-md transition-shadow hover:shadow-md', fullWidth ? 'w-full' : 'max-w-[400px] min-w-[320px] sm:min-w-full') },
+            }, className: (0, frontend_shadcn_1.cn)('flex items-center w-full border border-input rounded-md transition-shadow hover:shadow-md', fullWidth ? 'w-full' : 'max-w-[400px] min-w-[280px] sm:min-w-full') },
             react_1.default.createElement(frontend_shadcn_2.Input, { type: "text", placeholder: placeholder, value: text, onChange: handleInputChange, className: "text-foreground flex-grow border-none focus-visible:ring-0 focus-visible:ring-offset-0" }),
             react_1.default.createElement("div", { className: "h-7 border-l border-input" }),
             react_1.default.createElement(core_1.IconButton, { className: "m-1", onClick: function () { return handleSearch(text); } },

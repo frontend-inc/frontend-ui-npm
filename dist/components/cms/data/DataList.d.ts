@@ -1,11 +1,10 @@
 import React from 'react';
 import { ToolbarButtonType, FormFieldType, QueryParamsType, SearchFilterOptionType, SortOptionType, ButtonType } from '../../../types';
 export type DataListProps = {
-    grid?: boolean;
+    layout?: 'grid' | 'list' | 'slider';
     selectable?: boolean;
     sortable?: boolean;
     url: string;
-    foreignUrl?: string;
     name: string;
     query?: QueryParamsType;
     resource?: any;
@@ -13,7 +12,6 @@ export type DataListProps = {
     filterOptions: SearchFilterOptionType[];
     sortOptions: SortOptionType[];
     buttons?: ButtonType[];
-    href?: string;
     enableSearch?: boolean;
     enableShow?: boolean;
     enableCreate?: boolean;

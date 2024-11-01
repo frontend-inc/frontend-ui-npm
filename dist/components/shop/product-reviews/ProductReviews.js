@@ -9,8 +9,10 @@ var __1 = require("../..");
 var __2 = require("../..");
 var ProductReviewsList_1 = __importDefault(require("./ProductReviewsList"));
 var ProductReviews = function (props) {
-    var handle = props.handle;
-    return (react_1.default.createElement(__2.DataList, { url: "/api/v1/shop/products/".concat(handle, "/reviews"), name: "review", enableSearch: true, enableSorting: true, enableFilters: true, fields: [], sortOptions: [
+    var productId = props.productId, enableSearch = props.enableSearch, enableFilters = props.enableFilters, enableSorting = props.enableSorting, enableCreate = props.enableCreate;
+    if (!productId)
+        return null;
+    return (react_1.default.createElement(__2.DataList, { url: "/api/v1/shop/products/".concat(productId, "/reviews"), name: "review", enableSearch: enableSearch, enableSorting: enableSorting, enableFilters: enableFilters, enableCreate: enableCreate, fields: [], sortOptions: [
             {
                 label: 'Date',
                 name: 'created_at',
@@ -25,7 +27,7 @@ var ProductReviews = function (props) {
                 field: 'rating',
                 variant: 'ratings_scale',
             },
-        ], enableCreate: true, enableEdit: true, enableDelete: true, list: ProductReviewsList_1.default, edit: __1.ProductReviewForm, create: __1.ProductReviewForm, slots: {
+        ], list: ProductReviewsList_1.default, edit: __1.ProductReviewForm, create: __1.ProductReviewForm, slots: {
             toolbar: {
                 buttonText: 'Add Product Review',
             },

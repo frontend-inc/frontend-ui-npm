@@ -10,7 +10,6 @@ export type ProductCollectionCardProps = {
     secondaryAction?: React.ReactNode;
     compareAtPrice?: string;
     handleClick?: () => void;
-    height?: number;
     addToCart?: React.ReactNode;
     disableBorder?: boolean;
     slots?: {

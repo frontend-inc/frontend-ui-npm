@@ -11,6 +11,6 @@ var FieldArray = function (props) {
     var values = props.value, disableLabel = props.disableLabel, label = props.label, direction = props.direction;
     return (react_1.default.createElement(components_1.FieldWrapper, { disableLabel: disableLabel, label: label, direction: direction },
         react_1.default.createElement("div", { className: "flex flex-row gap-2" }, Array.isArray(values) &&
-            (values === null || values === void 0 ? void 0 : values.map(function (value, index) { return (react_1.default.createElement(frontend_shadcn_1.Badge, { variant: "secondary", className: "px-3 py-1 rounded-full", key: index }, value)); })))));
+            (values === null || values === void 0 ? void 0 : values.map(function (value, index) { return (react_1.default.createElement(frontend_shadcn_1.Badge, { variant: "secondary", className: "px-2 rounded-full whitespace-nowrap truncate", key: index }, value)); })))));
 };
 exports.default = FieldArray;

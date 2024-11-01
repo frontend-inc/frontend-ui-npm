@@ -26,3 +26,4 @@ __exportStar(require("./users"), exports);
 __exportStar(require("./shop"), exports);
 __exportStar(require("./social"), exports);
 __exportStar(require("./shopify"), exports);
+__exportStar(require("./theme"), exports);

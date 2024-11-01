@@ -1,11 +1,9 @@
 import React from 'react';
-import { ButtonType, SearchFilterOptionType, SortOptionType } from '../../../types';
+import { SearchFilterOptionType, SortOptionType } from '../../../types';
 export type ProductCollectionListProps = {
     url?: string;
-    href?: string;
     enableGradient?: boolean;
     enableOverlay?: boolean;
-    buttons?: ButtonType[];
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
@@ -22,7 +20,6 @@ export type ProductCollectionListProps = {
         empty?: any;
         item?: any;
     };
-    foreignUrl?: string;
     query?: any;
     resource: any;
 };

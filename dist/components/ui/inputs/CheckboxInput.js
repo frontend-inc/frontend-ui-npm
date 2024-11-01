@@ -22,7 +22,7 @@ function CheckboxInput(_a) {
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)('flex flex-col text-sm', !disableBorder && 'border border-input shadow-sm rounded-md p-2') },
             react_1.default.createElement("div", { className: "flex items-center space-x-2" },
-                react_1.default.createElement(frontend_shadcn_1.Checkbox, { id: name, checked: value, onCheckedChange: handleCheckboxChange, className: "border-secondary" }),
+                react_1.default.createElement(frontend_shadcn_1.Checkbox, { id: name, checked: value, onCheckedChange: handleCheckboxChange }),
                 react_1.default.createElement("label", { htmlFor: name, className: "text-sm text-muted-foreground leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" }, placeholder)))));
 }
 exports.default = CheckboxInput;

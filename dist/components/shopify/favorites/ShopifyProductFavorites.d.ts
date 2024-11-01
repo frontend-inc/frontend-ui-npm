@@ -1,7 +1,6 @@
 import React from 'react';
 import { UserType } from 'frontend-js';
 export type ShopifyProductFavoritesProps = {
-    href: string;
     user: UserType;
     perPage?: string;
     enableBorder?: boolean;

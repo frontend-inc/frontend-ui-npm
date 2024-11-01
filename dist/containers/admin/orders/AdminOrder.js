@@ -67,7 +67,7 @@ var containers_1 = require("../../../containers");
 var AdminOrder = function (props) {
     var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
     var orderId = (props || {}).orderId;
-    var _b = (0, hooks_1.useOrders)(), loading = _b.loading, errors = _b.errors, order = _b.order, setOrder = _b.setOrder, handleChange = _b.handleChange, updateOrder = _b.updateOrder, findOrder = _b.findOrder, reloadOrder = _b.reloadOrder;
+    var _b = (0, hooks_1.useAdminOrders)(), loading = _b.loading, errors = _b.errors, order = _b.order, setOrder = _b.setOrder, handleChange = _b.handleChange, updateOrder = _b.updateOrder, findOrder = _b.findOrder, reloadOrder = _b.reloadOrder;
     var handleEdit = function () {
         setOpen(true);
     };

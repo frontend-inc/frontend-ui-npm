@@ -39,9 +39,9 @@ var MediaItem = function (_a) {
         var _a;
         setContentType((_a = item === null || item === void 0 ? void 0 : item.content_type) === null || _a === void 0 ? void 0 : _a.split('/')[0]);
     }, [item]);
-    return (react_1.default.createElement(frontend_shadcn_1.Card, { className: (0, frontend_shadcn_3.cn)('rounded-md bg-background p-0 min-w-[120px] h-[208px] border border-transparent', selected && 'border-primary') },
+    return (react_1.default.createElement(frontend_shadcn_1.Card, { className: (0, frontend_shadcn_3.cn)('rounded-md bg-background p-0 min-w-[160px] h-[208px] border border-transparent', selected && 'border-primary') },
         react_1.default.createElement(frontend_shadcn_1.CardHeader, { className: "py-1 px-1 flex flex-row justify-between items-center" },
-            react_1.default.createElement(components_1.Label, { variant: "outline", label: (_b = item === null || item === void 0 ? void 0 : item.content_type) === null || _b === void 0 ? void 0 : _b.split('/')[1] }),
+            react_1.default.createElement(components_1.Badge, null, (_b = item === null || item === void 0 ? void 0 : item.content_type) === null || _b === void 0 ? void 0 : _b.split('/')[1]),
             handleRemove && (react_1.default.createElement(frontend_shadcn_2.DropdownMenu, null,
                 react_1.default.createElement(frontend_shadcn_2.DropdownMenuTrigger, { asChild: true },
                     react_1.default.createElement(components_2.Button, { variant: "ghost", className: "h-8 w-8 p-0" },
@@ -49,7 +49,7 @@ var MediaItem = function (_a) {
                 react_1.default.createElement(frontend_shadcn_2.DropdownMenuContent, { align: "end" },
                     react_1.default.createElement(frontend_shadcn_2.DropdownMenuItem, { onClick: handleRemove }, "Remove"))))),
         contentType === 'image' || contentType === 'video' ? (react_1.default.createElement(components_1.TouchableOpacity, { handleClick: function () { return handleClick && handleClick(item); } },
-            react_1.default.createElement("div", { className: "h-[160px] w-[180px] flex items-center justify-center overflow-hidden" },
+            react_1.default.createElement("div", { className: "h-[160px] w-[205px] flex items-center justify-center overflow-hidden" },
                 react_1.default.createElement(components_1.Image, { disableBorderRadius: true, aspectRatio: 4 / 3, src: item === null || item === void 0 ? void 0 : item.url, alt: item === null || item === void 0 ? void 0 : item.content_type })))) : (react_1.default.createElement(components_1.AttachmentImage, { icon: "File", width: 64, height: 64 }))));
 };
 exports.default = MediaItem;

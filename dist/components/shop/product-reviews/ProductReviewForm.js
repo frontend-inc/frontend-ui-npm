@@ -69,20 +69,19 @@ var ProductReviewForm = function () {
             }
         });
     }); };
-    return (react_1.default.createElement(__1.Sheet, { title: "Leave a review", open: openEdit, handleClose: function () { return setOpenEdit(false); }, buttons: react_1.default.createElement(components_1.Button, { className: "w-full", variant: "default", onClick: handleSubmit, disabled: loading },
+    return (react_1.default.createElement(__1.Drawer, { title: "Leave a review", open: openEdit, handleClose: function () { return setOpenEdit(false); }, buttons: react_1.default.createElement(components_1.Button, { className: "w-full", variant: "default", onClick: handleSubmit, disabled: loading },
             loading && react_1.default.createElement(__1.IconLoading, { className: "mr-2 h-4 w-4" }),
             "Submit") },
-        react_1.default.createElement(__1.AuthGuard, null,
-            react_1.default.createElement("div", { className: "p-4" },
-                react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full items-start" },
-                    react_1.default.createElement(__1.RatingInput, { errors: errors, name: "rating", value: resource === null || resource === void 0 ? void 0 : resource.rating, 
-                        /* @ts-ignore */
-                        handleChange: handleChange }),
-                    react_1.default.createElement(__1.TextInput, { errors: errors, name: "title", value: resource === null || resource === void 0 ? void 0 : resource.title, 
-                        /* @ts-ignore */
-                        handleChange: handleChange, placeholder: "Review summary..." }),
-                    react_1.default.createElement(__1.TextArea, { errors: errors, name: "body", value: resource === null || resource === void 0 ? void 0 : resource.body, 
-                        /* @ts-ignore */
-                        handleChange: handleChange, placeholder: "Leave a review..." }))))));
+        react_1.default.createElement("div", { className: "p-4" },
+            react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full items-start" },
+                react_1.default.createElement(__1.RatingInput, { errors: errors, name: "rating", value: resource === null || resource === void 0 ? void 0 : resource.rating, 
+                    /* @ts-ignore */
+                    handleChange: handleChange }),
+                react_1.default.createElement(__1.TextInput, { errors: errors, name: "title", value: resource === null || resource === void 0 ? void 0 : resource.title, 
+                    /* @ts-ignore */
+                    handleChange: handleChange, placeholder: "Review summary..." }),
+                react_1.default.createElement(__1.TextArea, { errors: errors, name: "body", value: resource === null || resource === void 0 ? void 0 : resource.body, 
+                    /* @ts-ignore */
+                    handleChange: handleChange, placeholder: "Leave a review..." })))));
 };
 exports.default = ProductReviewForm;

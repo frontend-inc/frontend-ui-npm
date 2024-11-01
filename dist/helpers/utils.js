@@ -34,7 +34,7 @@ function getInitials(name) {
     if (!name)
         return '';
     // Trim any extra spaces and split the name into parts based on spaces
-    var parts = name.trim().split(/\s+/);
+    var parts = name.toUpperCase().trim().split(/\s+/);
     // Check if we have at least two parts (multiple words)
     if (parts.length >= 2) {
         // Use the first letter of the first two parts

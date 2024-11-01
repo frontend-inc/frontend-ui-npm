@@ -27,18 +27,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var __1 = require("..");
-var navigation_1 = require("next/navigation");
-var hooks_1 = require("../../../hooks");
 var ProductArray = function (_a) {
-    var href = _a.href, handles = _a.handles, _b = _a.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = _a.enableAddToCart, enableAddToCart = _c === void 0 ? false : _c, _d = _a.enableQuickShop, enableQuickShop = _d === void 0 ? false : _d, _e = _a.enableQuantity, enableQuantity = _e === void 0 ? false : _e, _f = _a.enableOkendoStarRating, enableOkendoStarRating = _f === void 0 ? false : _f, buttonText = _a.buttonText;
-    var router = (0, navigation_1.useRouter)();
-    var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var handleClick = function (product) {
-        if (href) {
-            var url = "".concat(clientUrl).concat(href, "/").concat(product === null || product === void 0 ? void 0 : product.handle);
-            router.push(url);
-        }
-    };
+    var handles = _a.handles, _b = _a.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = _a.enableAddToCart, enableAddToCart = _c === void 0 ? false : _c, _d = _a.enableQuickShop, enableQuickShop = _d === void 0 ? false : _d, _e = _a.enableQuantity, enableQuantity = _e === void 0 ? false : _e, buttonText = _a.buttonText;
     return (react_1.default.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-full" }, handles === null || handles === void 0 ? void 0 : handles.map(function (handle) {
         var _a = (0, frontend_shopify_1.useProducts)(), product = _a.product, findProduct = _a.findProduct;
         (0, react_1.useEffect)(function () {
@@ -47,7 +37,7 @@ var ProductArray = function (_a) {
         if (!product)
             return null;
         return (react_1.default.createElement("div", { key: product === null || product === void 0 ? void 0 : product.id, className: "p-1" },
-            react_1.default.createElement(__1.ShopifyProductCard, { product: product, handleClick: function () { return handleClick(product); }, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText })));
+            react_1.default.createElement(__1.ShopifyProductCard, { product: product, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity, buttonText: buttonText })));
     })));
 };
 exports.default = ProductArray;

@@ -1,10 +1,9 @@
 import React from 'react';
-import { ButtonType, DisplayFieldType } from '../../../types';
+import { ProductType } from '../../../types';
 export type ProductDetailsProps = {
     handle?: string;
-    buttons: ButtonType[];
-    displayFields: DisplayFieldType[];
-    product: any;
+    direction?: 'row' | 'column';
+    product: ProductType;
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;

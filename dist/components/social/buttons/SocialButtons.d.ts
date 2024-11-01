@@ -11,7 +11,6 @@ type SocialButtonsProps = {
     enableProductFavorites?: boolean;
     justifyContent?: 'flex-start' | 'center' | 'flex-end';
     size?: 'small' | 'large';
-    color?: string;
 };
 declare const SocialButtons: React.FC<SocialButtonsProps>;
 export default SocialButtons;

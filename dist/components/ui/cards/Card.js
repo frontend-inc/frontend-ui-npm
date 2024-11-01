@@ -22,16 +22,17 @@ var frontend_shadcn_2 = require("frontend-shadcn");
 var __1 = require("../..");
 // @ts-ignore
 var Card = react_1.default.forwardRef(function (props, ref) {
-    var label = props.label, primary = props.primary, secondary = props.secondary, actions = props.actions, secondaryAction = props.secondaryAction, handleClick = props.handleClick, image = props.image, _a = props.size, size = _a === void 0 ? 240 : _a, _b = props.slots, slots = _b === void 0 ? {
+    var label = props.label, primary = props.primary, secondary = props.secondary, tertiary = props.tertiary, actions = props.actions, secondaryAction = props.secondaryAction, handleClick = props.handleClick, image = props.image, _a = props.size, size = _a === void 0 ? 240 : _a, _b = props.slots, slots = _b === void 0 ? {
         item: {},
         image: {},
     } : _b;
-    return (react_1.default.createElement(frontend_shadcn_2.Card, __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)('w-full overflow-hidden transition-shadow duration-300 ') }, slots.item),
-        react_1.default.createElement("div", { className: "w-full relative overflow-hidden" },
+    return (react_1.default.createElement(frontend_shadcn_2.Card, __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)('w-full overflow-hidden') }, slots.item),
+        react_1.default.createElement("div", { className: 'w-full relative overflow-hidden' },
             react_1.default.createElement(__1.Image, __assign({ src: image, height: size, alt: primary, label: label, handleClick: handleClick, aspectRatio: 4 / 3, disableBorderRadius: true }, slots.image))),
-        react_1.default.createElement(frontend_shadcn_2.CardContent, { className: 'px-4 pt-3' },
+        react_1.default.createElement(frontend_shadcn_2.CardContent, { className: 'px-4 pt-3 overflow-hidden' },
             react_1.default.createElement(core_1.Typography, { variant: "body1" }, primary),
-            secondary && (react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, secondary))),
+            secondary && (react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, secondary)),
+            tertiary && (react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, tertiary))),
         react_1.default.createElement(frontend_shadcn_2.CardFooter, { className: "flex justify-between" },
             actions,
             secondaryAction)));

@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var AdminProductCollectionItem_1 = __importDefault(require("./AdminProductCollectionItem"));
+var AdminProductCollectionListItem_1 = __importDefault(require("./AdminProductCollectionListItem"));
 var AdminProductCollectionCreate_1 = __importDefault(require("./AdminProductCollectionCreate"));
 var AdminProductCollectionEdit_1 = __importDefault(require("./AdminProductCollectionEdit"));
 var AdminProductCollectionShow_1 = __importDefault(require("./AdminProductCollectionShow"));
@@ -24,6 +24,6 @@ var AdminProductCollectionsList = function () {
     return (react_1.default.createElement(components_1.ResourceList, { selectable: true, sortable: true, url: "".concat(apiUrl, "/product_collections"), name: 'product_collection', enableSearch: true, enableEdit: true, enableDelete: true, enableCreate: true, handleClick: handleClick, sortOptions: [
             { name: 'title', label: 'Title' },
             { name: 'created_at', label: 'Date' },
-        ], create: AdminProductCollectionCreate_1.default, edit: AdminProductCollectionEdit_1.default, show: AdminProductCollectionShow_1.default, header: AdminProductCollectionHeader_1.default, toolbar: AdminProductCollectionToolbar_1.default, component: AdminProductCollectionItem_1.default, emptyIcon: "ShoppingCard", emptyTitle: "No product collections", emptyDescription: "No products collections added yet." }));
+        ], create: AdminProductCollectionCreate_1.default, edit: AdminProductCollectionEdit_1.default, show: AdminProductCollectionShow_1.default, header: AdminProductCollectionHeader_1.default, toolbar: AdminProductCollectionToolbar_1.default, component: AdminProductCollectionListItem_1.default, emptyIcon: "ShoppingCard", emptyTitle: "No product collections", emptyDescription: "No products collections added yet." }));
 };
 exports.default = AdminProductCollectionsList;

@@ -64,7 +64,7 @@ var DisplayField = function (props) {
             value: (0, helpers_1.truncate)(value),
         },
         text: {
-            variant: 'body1',
+            variant: 'body2',
         },
         image: {
             height: 64,

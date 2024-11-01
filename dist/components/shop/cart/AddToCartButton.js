@@ -44,8 +44,8 @@ var react_1 = __importDefault(require("react"));
 var core_1 = require("../../core");
 var hooks_1 = require("../../../hooks");
 var AddToCartButton = function (props) {
-    var productId = props.productId, _a = props.size, size = _a === void 0 ? 'default' : _a, fullWidth = props.fullWidth, availableForSale = props.availableForSale;
-    var _b = (0, hooks_1.useCart)(), loading = _b.loading, setCartOpen = _b.setCartOpen, addToCart = _b.addToCart;
+    var productId = props.productId, _a = props.buttonText, buttonText = _a === void 0 ? 'Add to Cart' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, fullWidth = props.fullWidth, availableForSale = props.availableForSale;
+    var _c = (0, hooks_1.useCart)(), loading = _c.loading, setCartOpen = _c.setCartOpen, addToCart = _c.addToCart;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -57,6 +57,6 @@ var AddToCartButton = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(core_1.Button, { fullWidth: fullWidth, loading: loading, onClick: handleClick, disabled: !availableForSale, size: size }, "Add to Cart"));
+    return (react_1.default.createElement(core_1.Button, { fullWidth: fullWidth, loading: loading, onClick: handleClick, disabled: !availableForSale, size: size, className: "w-full min-w-[160px]" }, buttonText));
 };
 exports.default = AddToCartButton;

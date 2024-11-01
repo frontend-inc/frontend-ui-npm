@@ -17,9 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SocialFields = exports.SocialField = exports.SocialButtons = exports.ShareButton = exports.ProductFavoriteButton = exports.ProductLikeButton = exports.LikeButton = exports.FavoriteButton = exports.AddToListButton = void 0;
-var AddToListButton_1 = require("./references/AddToListButton");
-Object.defineProperty(exports, "AddToListButton", { enumerable: true, get: function () { return __importDefault(AddToListButton_1).default; } });
+exports.SocialFields = exports.SocialField = exports.SocialButtons = exports.ShareButton = exports.ProductFavoriteButton = exports.ProductLikeButton = exports.LikeButton = exports.FavoriteButton = void 0;
 var FavoriteButton_1 = require("./favorites/FavoriteButton");
 Object.defineProperty(exports, "FavoriteButton", { enumerable: true, get: function () { return __importDefault(FavoriteButton_1).default; } });
 var LikeButton_1 = require("./likes/LikeButton");

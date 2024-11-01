@@ -1,11 +1,7 @@
 import React from 'react';
-import { ButtonType, DisplayFieldType } from '../../../types';
 export type ShowModalProps = {
     handle?: string;
     enableBorder?: boolean;
-    buttons: ButtonType[];
-    displayFields: DisplayFieldType[];
-    fieldName?: string;
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;

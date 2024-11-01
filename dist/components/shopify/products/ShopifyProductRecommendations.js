@@ -28,7 +28,7 @@ var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
 var ShopifyProductRecommendations = function (props) {
-    var _a = props || {}, handle = _a.handle, href = _a.href, _b = _a.layout, layout = _b === void 0 ? 'grid' : _b, _c = _a.perPage, perPage = _c === void 0 ? 12 : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.buttonText, buttonText = _e === void 0 ? 'Add to cart' : _e, enableAddToCart = _a.enableAddToCart, enableQuantity = _a.enableQuantity, enableQuickShop = _a.enableQuickShop, enableOkendoStarRating = _a.enableOkendoStarRating;
+    var _a = props || {}, handle = _a.handle, _b = _a.layout, layout = _b === void 0 ? 'grid' : _b, _c = _a.perPage, perPage = _c === void 0 ? 12 : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.buttonText, buttonText = _e === void 0 ? 'Add to cart' : _e, enableAddToCart = _a.enableAddToCart, enableQuantity = _a.enableQuantity, enableQuickShop = _a.enableQuickShop;
     var _f = (0, react_1.useState)(), similarProducts = _f[0], setSimilarProducts = _f[1];
     var _g = (0, frontend_shopify_1.useProducts)(), loading = _g.loading, findProduct = _g.findProduct, product = _g.product, products = _g.products, findProductRecommendations = _g.findProductRecommendations;
     (0, react_1.useEffect)(function () {
@@ -51,7 +51,7 @@ var ShopifyProductRecommendations = function (props) {
         }
     }, [handle]);
     return (react_1.default.createElement("div", { className: "w-full" },
-        layout == 'grid' && (react_1.default.createElement(shopify_1.ShopifyProducts, { href: href, loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText })),
-        layout == 'carousel' && (react_1.default.createElement(shopify_1.ShopifyProductCarousel, { href: href, loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, enableOkendoStarRating: enableOkendoStarRating, buttonText: buttonText }))));
+        layout == 'grid' && (react_1.default.createElement(shopify_1.ShopifyProducts, { loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, buttonText: buttonText })),
+        layout == 'carousel' && (react_1.default.createElement(shopify_1.ShopifyProductCarousel, { loading: loading, products: similarProducts, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableQuickShop: enableQuickShop, buttonText: buttonText }))));
 };
 exports.default = ShopifyProductRecommendations;

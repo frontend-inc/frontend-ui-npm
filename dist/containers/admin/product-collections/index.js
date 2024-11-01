@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AdminProductCollectionShow = exports.AdminProductCollectionItem = exports.AdminProductCollectionList = exports.AdminProductCollectionEdit = exports.AdminProductCollectionCreate = exports.AdminProductCollectionDetails = exports.AdminProductCollection = void 0;
+exports.AdminProductCollectionShow = exports.AdminProductCollectionListItem = exports.AdminProductCollectionList = exports.AdminProductCollectionEdit = exports.AdminProductCollectionCreate = exports.AdminProductCollectionDetails = exports.AdminProductCollection = void 0;
 var AdminProductCollection_1 = require("./AdminProductCollection");
 Object.defineProperty(exports, "AdminProductCollection", { enumerable: true, get: function () { return __importDefault(AdminProductCollection_1).default; } });
 var AdminProductCollectionDetails_1 = require("./AdminProductCollectionDetails");
@@ -14,7 +14,7 @@ var AdminProductCollectionEdit_1 = require("./AdminProductCollectionEdit");
 Object.defineProperty(exports, "AdminProductCollectionEdit", { enumerable: true, get: function () { return __importDefault(AdminProductCollectionEdit_1).default; } });
 var AdminProductCollectionList_1 = require("./AdminProductCollectionList");
 Object.defineProperty(exports, "AdminProductCollectionList", { enumerable: true, get: function () { return __importDefault(AdminProductCollectionList_1).default; } });
-var AdminProductCollectionItem_1 = require("./AdminProductCollectionItem");
-Object.defineProperty(exports, "AdminProductCollectionItem", { enumerable: true, get: function () { return __importDefault(AdminProductCollectionItem_1).default; } });
+var AdminProductCollectionListItem_1 = require("./AdminProductCollectionListItem");
+Object.defineProperty(exports, "AdminProductCollectionListItem", { enumerable: true, get: function () { return __importDefault(AdminProductCollectionListItem_1).default; } });
 var AdminProductCollectionShow_1 = require("./AdminProductCollectionShow");
 Object.defineProperty(exports, "AdminProductCollectionShow", { enumerable: true, get: function () { return __importDefault(AdminProductCollectionShow_1).default; } });

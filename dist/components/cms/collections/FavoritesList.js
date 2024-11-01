@@ -28,9 +28,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
-var FavoritesGrid = function (props) {
-    var _a = props.query, query = _a === void 0 ? {} : _a, rest = __rest(props, ["query"]);
-    query = __assign(__assign({}, query), { method: 'favorites' });
-    return react_1.default.createElement(__1.CollectionList, __assign({ query: query }, rest));
+var FavoritesList = function (props) {
+    var url = props.url, rest = __rest(props, ["url"]);
+    var favoritesUrl = "".concat(url, "/favorites");
+    return react_1.default.createElement(__1.CollectionList, __assign({}, rest, { url: favoritesUrl }));
 };
-exports.default = FavoritesGrid;
+exports.default = FavoritesList;

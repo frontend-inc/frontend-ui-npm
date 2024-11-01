@@ -48,7 +48,7 @@ var lucide_react_1 = require("lucide-react");
 function AdminProductToolbar(_a) {
     var _this = this;
     var productCollectionId = _a.productCollectionId, handleSuccess = _a.handleSuccess, handleClose = _a.handleClose, _b = _a.selectedIds, selectedIds = _b === void 0 ? [] : _b;
-    var addProducts = (0, hooks_1.useProductCollections)().addProducts;
+    var addProducts = (0, hooks_1.useAdminProductCollections)().addProducts;
     var handleAddProducts = function () { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

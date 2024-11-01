@@ -2,7 +2,6 @@ import React from 'react';
 export type DocumentFormProps = {
     loading?: boolean;
     resource: any;
-    parentResource?: any;
     url: string;
     href?: string;
     buttonText?: string;

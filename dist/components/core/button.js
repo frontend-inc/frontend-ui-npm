@@ -56,7 +56,7 @@ var Button = (0, react_1.forwardRef)(function (_a, ref) {
     return (react_1.default.createElement(frontend_shadcn_1.Button, __assign({ ref: ref, size: size, variant: variant, className: (0, frontend_shadcn_2.cn)(fullWidth && 'w-full', className), disabled: disabled || loading }, props),
         loading ? (react_1.default.createElement(lucide_react_1.Loader2, { className: "h-4 w-4 mr-2 animate-spin" })) : (startIcon && react_1.default.createElement("span", { className: "mr-2" }, startIcon)),
         children,
-        !loading && endIcon && react_1.default.createElement("span", { className: "w-full flex flex-row justify-end ml-2" }, endIcon)));
+        !loading && endIcon && react_1.default.createElement("span", { className: "ml-2" }, endIcon)));
 });
 exports.Button = Button;
 Button.displayName = 'Button';

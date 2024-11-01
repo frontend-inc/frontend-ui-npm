@@ -67,7 +67,7 @@ var containers_1 = require("../../../containers");
 var AdminProductCollection = function (props) {
     var _a = (0, react_1.useState)(false), open = _a[0], setOpen = _a[1];
     var productCollectionId = (props || {}).productCollectionId;
-    var _b = (0, hooks_1.useProductCollections)(), loading = _b.loading, errors = _b.errors, productCollection = _b.productCollection, setProductCollection = _b.setProductCollection, handleChange = _b.handleChange, updateProductCollection = _b.updateProductCollection, findProductCollection = _b.findProductCollection, reloadProductCollection = _b.reloadProductCollection, addAttachment = _b.addAttachment, removeAttachment = _b.removeAttachment;
+    var _b = (0, hooks_1.useAdminProductCollections)(), loading = _b.loading, errors = _b.errors, productCollection = _b.productCollection, setProductCollection = _b.setProductCollection, handleChange = _b.handleChange, updateProductCollection = _b.updateProductCollection, findProductCollection = _b.findProductCollection, reloadProductCollection = _b.reloadProductCollection, addAttachment = _b.addAttachment, removeAttachment = _b.removeAttachment;
     var handleEdit = function () {
         setOpen(true);
     };

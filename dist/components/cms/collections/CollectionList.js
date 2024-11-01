@@ -20,9 +20,9 @@ var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
 var __1 = require("../..");
 var CollectionList = function (props) {
-    var _a = props || {}, url = _a.url, foreignUrl = _a.foreignUrl, query = _a.query, resource = _a.resource, _b = _a.perPage, perPage = _b === void 0 ? 12 : _b, filterSimilar = _a.filterSimilar, filterGeo = _a.filterGeo, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableComments = _a.enableComments, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, _c = _a.style, style = _c === void 0 ? 'card' : _c, href = _a.href, _d = _a.buttons, buttons = _d === void 0 ? [] : _d, _e = _a.displayFields, displayFields = _e === void 0 ? [] : _e, circular = _a.circular, disableImage = _a.disableImage, enableShow = _a.enableShow, _f = _a.fields, fields = _f === void 0 ? [] : _f, enableSearch = _a.enableSearch, enableFilters = _a.enableFilters, enableSorting = _a.enableSorting, _g = _a.filterOptions, filterOptions = _g === void 0 ? [] : _g, _h = _a.sortOptions, sortOptions = _h === void 0 ? [] : _h, _j = _a.headers, headers = _j === void 0 ? [] : _j, // Used by KanBan
-    _k = _a.header, // Used by KanBan
-    Header = _k === void 0 ? __1.CollectionHeader : _k, _l = _a.list, List = _l === void 0 ? __1.CollectionListItems : _l, _m = _a.component, Component = _m === void 0 ? __1.CollectionListItem : _m, _o = _a.show, Show = _o === void 0 ? __1.CollectionShow : _o, _p = _a.empty, Empty = _p === void 0 ? __1.CollectionEmpty : _p, _q = _a.slots, defaultSlots = _q === void 0 ? {
+    var _a = props || {}, url = _a.url, query = _a.query, _b = _a.perPage, perPage = _b === void 0 ? 12 : _b, displaySubtitle = _a.displaySubtitle, displayCategory = _a.displayCategory, displayLocation = _a.displayLocation, displayDescription = _a.displayDescription, displayTags = _a.displayTags, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableComments = _a.enableComments, sortTitle = _a.sortTitle, sortPosition = _a.sortPosition, sortDate = _a.sortDate, sortPublished = _a.sortPublished, sortPrice = _a.sortPrice, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, _c = _a.style, style = _c === void 0 ? 'card' : _c, href = _a.href, _d = _a.buttons, buttons = _d === void 0 ? [] : _d, circular = _a.circular, disableImage = _a.disableImage, enableShow = _a.enableShow, _e = _a.fields, fields = _e === void 0 ? [] : _e, enableSearch = _a.enableSearch, enableFilters = _a.enableFilters, enableSorting = _a.enableSorting, _f = _a.filterChoices, filterChoices = _f === void 0 ? [] : _f, _g = _a.headers, headers = _g === void 0 ? [] : _g, // Used by KanBan
+    _h = _a.header, // Used by KanBan
+    Header = _h === void 0 ? __1.CollectionHeader : _h, _j = _a.list, List = _j === void 0 ? __1.CollectionListItems : _j, _k = _a.component, Component = _k === void 0 ? __1.CollectionListItem : _k, _l = _a.show, Show = _l === void 0 ? __1.CollectionShow : _l, _m = _a.empty, Empty = _m === void 0 ? __1.CollectionEmpty : _m, _o = _a.slots, defaultSlots = _o === void 0 ? {
         header: {},
         toolbar: {},
         list: {},
@@ -32,13 +32,24 @@ var CollectionList = function (props) {
         create: {},
         destroy: {},
         empty: {},
-    } : _q;
-    var searchQuery = (0, helpers_1.buildSearchQuery)({
-        query: query,
-        resource: resource,
-        perPage: perPage,
-        filterSimilar: filterSimilar,
-        filterGeo: filterGeo,
+    } : _o;
+    var searchQuery = __assign({ sort_by: 'position', sort_direction: 'asc', per_page: perPage }, query);
+    var displayFields = (0, helpers_1.buildDisplayFields)({
+        displaySubtitle: displaySubtitle,
+        displayCategory: displayCategory,
+        displayLocation: displayLocation,
+        displayDescription: displayDescription,
+        displayTags: displayTags,
+    });
+    var sortOptions = (0, helpers_1.buildSortFields)({
+        sortTitle: sortTitle,
+        sortPosition: sortPosition,
+        sortDate: sortDate,
+        sortPublished: sortPublished,
+        sortPrice: sortPrice,
+    });
+    var filterOptions = (0, helpers_1.buildFilterFields)({
+        filterChoices: filterChoices,
     });
     var slots = {
         list: __assign(__assign({}, defaultSlots.list), { headers: headers, style: style, href: href, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments, enableGradient: enableGradient, enableOverlay: enableOverlay }),
@@ -51,13 +62,19 @@ var CollectionList = function (props) {
         empty: defaultSlots.empty,
         item: __assign(__assign({}, defaultSlots.item), { href: href, circular: circular, disableImage: disableImage, style: style, buttons: buttons, displayFields: displayFields, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments, enableGradient: enableGradient, enableOverlay: enableOverlay }),
     };
-    var grid = {
-        avatar: false,
-        list: false,
-        text: false,
-        card: true,
-        cover: true,
-    }[style] || false;
-    return (react_1.default.createElement(components_1.DataList, { grid: grid, url: url, foreignUrl: foreignUrl, name: "document", query: searchQuery, fields: fields, enableShow: enableShow, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, filterOptions: filterOptions, sortOptions: sortOptions, header: Header, list: List, component: Component, show: Show, empty: Empty, slots: slots }));
+    var layout = {
+        avatar: 'list',
+        list: 'list',
+        text: 'list',
+        card: 'grid',
+        cover: 'grid',
+    }[style] || 'list';
+    return (react_1.default.createElement(components_1.DataList
+    //@ts-ignore
+    , { 
+        //@ts-ignore
+        layout: layout, url: url, name: "document", fields: fields, query: searchQuery, enableShow: enableShow, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, 
+        //@ts-ignore
+        filterOptions: filterOptions, sortOptions: sortOptions, header: Header, list: List, component: Component, show: Show, empty: Empty, slots: slots }));
 };
 exports.default = CollectionList;

@@ -78,7 +78,7 @@ var components_2 = require("../../../components");
 var core_1 = require("../../../components/core");
 var AdminProductHeader = function (props) {
     var handleReload = (props || {}).handleReload;
-    var _a = (0, hooks_1.useProducts)(), loading = _a.loading, aiGenerate = _a.aiGenerate;
+    var _a = (0, hooks_1.useAdminProducts)(), loading = _a.loading, aiGenerate = _a.aiGenerate;
     var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
     var _c = (0, react_1.useState)({ text: '' }), prompt = _c[0], setPrompt = _c[1];
     var handleChange = function (ev) {

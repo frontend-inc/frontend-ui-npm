@@ -31,14 +31,14 @@ var hooks_2 = require("../../../hooks");
 var DocumentAutosuggest = function (props) {
     var errors = props.errors, value = props.value, _a = props.name, name = _a === void 0 ? 'document_id' : _a, collectionId = props.collectionId, label = props.label, handleChange = props.handleChange, _b = props.valueParam, valueParam = _b === void 0 ? 'id' : _b, _c = props.placeholder, placeholder = _c === void 0 ? 'Select' : _c, _d = props.direction, direction = _d === void 0 ? 'column' : _d;
     var apiUrl = (0, hooks_2.useAdmin)().apiUrl;
-    var _e = (0, hooks_1.useCollections)(), collection = _e.collection, findCollection = _e.findCollection;
+    var _e = (0, hooks_1.useAdminCollections)(), collection = _e.collection, findCollection = _e.findCollection;
     (0, react_1.useEffect)(function () {
         if (collectionId) {
             findCollection(collectionId);
         }
     }, [collectionId]);
-    if (!collection || !apiUrl)
+    if (!(collection === null || collection === void 0 ? void 0 : collection.name) || !apiUrl)
         return null;
-    return (react_1.default.createElement(components_1.RemoteAutosuggest, { enableClear: true, direction: direction, errors: errors, name: name, label: label, value: value, displayField: "title", valueParam: valueParam, url: "".concat(apiUrl, "/cms/").concat(collection === null || collection === void 0 ? void 0 : collection.name), placeholder: placeholder, handleChange: handleChange }));
+    return (react_1.default.createElement(components_1.RemoteAutosuggest, { enableClear: true, direction: direction, errors: errors, name: name, label: label, value: value, displayField: "title", valueParam: valueParam, url: "".concat(apiUrl, "/").concat(collection === null || collection === void 0 ? void 0 : collection.name), placeholder: placeholder, handleChange: handleChange }));
 };
 exports.default = DocumentAutosuggest;

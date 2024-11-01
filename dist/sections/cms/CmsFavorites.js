@@ -33,6 +33,6 @@ var CmsFavorites = function (props) {
     var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
-        react_1.default.createElement(components_2.FavoritesGrid, __assign({}, rest))));
+        react_1.default.createElement(components_2.FavoritesList, __assign({}, rest))));
 };
 exports.default = CmsFavorites;

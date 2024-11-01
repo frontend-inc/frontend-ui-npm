@@ -29,7 +29,7 @@ var HeroList = function (props) {
             react_1.default.createElement("div", { className: "w-full rounded py-10" },
                 react_1.default.createElement(__1.Image, __assign({ src: image, alt: primary, height: 400, label: label }, slots.image))),
             actions,
-            react_1.default.createElement("div", { className: "w-full max-w-[500px] sm:max-w-full" }, secondary),
+            react_1.default.createElement("div", { className: "w-full max-w-[500px] sm:max-w-screen-sm" }, secondary),
             children)));
 };
 exports.default = HeroList;

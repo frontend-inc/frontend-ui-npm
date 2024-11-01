@@ -75,7 +75,7 @@ var MediaBrowser = function (_a) {
     var _c = (0, react_1.useState)(null), selected = _c[0], setSelected = _c[1];
     var _d = (0, react_1.useState)(null), uploaded = _d[0], setUploaded = _d[1];
     var showAlertError = (0, hooks_2.useAlerts)().showAlertError;
-    var deleteResource = (0, hooks_1.useMedia)().deleteResource;
+    var deleteResource = (0, hooks_1.useAdminMedia)().deleteResource;
     var handleTabChange = function (value) {
         setTab(value);
     };
@@ -119,11 +119,10 @@ var MediaBrowser = function (_a) {
         { label: 'Unsplash', value: '2' },
         { label: 'Logos', value: '3' },
     ];
-    return (react_1.default.createElement(components_1.Sheet, { open: open, handleClose: handleClose, title: 'Browse Media', buttons: react_1.default.createElement(components_2.Button, { variant: "default", onClick: handleAttach }, "Save Media") },
-        react_1.default.createElement("div", { className: "flex flex-col space-y-3 h-full" },
-            react_1.default.createElement("div", { className: "flex justify-center items-center" },
-                react_1.default.createElement("div", { className: "w-full max-w-[600px]" },
-                    react_1.default.createElement(components_1.ButtonTabs, { fullWidth: true, options: OPTIONS, handleChange: handleTabChange, value: tab }))),
+    return (react_1.default.createElement(components_1.Modal, { open: open, handleClose: handleClose, title: 'Browse Media', buttons: react_1.default.createElement(components_2.Button, { variant: "default", onClick: handleAttach }, "Save Media") },
+        react_1.default.createElement("div", { className: "w-full flex flex-col items-center space-y-3 h-full min-h-[420px]" },
+            react_1.default.createElement("div", { className: "w-full" },
+                react_1.default.createElement(components_1.ButtonTabs, { fullWidth: true, options: OPTIONS, handleChange: handleTabChange, value: tab })),
             tab === '0' && (react_1.default.createElement(MediaList_1.default, { selectedIds: [selected === null || selected === void 0 ? void 0 : selected.id], handleSelect: handleSelect })),
             tab === '1' && react_1.default.createElement(components_1.MediaUploader, { onComplete: handleComplete }),
             tab === '2' && react_1.default.createElement(components_1.UnsplashList, { onComplete: handleComplete }),

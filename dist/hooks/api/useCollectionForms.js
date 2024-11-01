@@ -40,11 +40,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var context_1 = require("../../context");
 var frontend_js_1 = require("frontend-js");
-var useCollectionForms = function (params) {
-    var parentResource = (params || {}).parentResource;
+var useCollectionForms = function () {
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
-    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.delayedLoading, errors = _a.errors, _b = _a.query, query = _b === void 0 ? {} : _b, findMany = _a.findMany, resource = _a.resource, setResource = _a.setResource, addReferences = _a.addReferences, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, reloadMany = _a.reloadMany, openEdit = _a.openEdit, openDelete = _a.openDelete, openShow = _a.openShow, openReferences = _a.openReferences, setOpenEdit = _a.setOpenEdit, setOpenDelete = _a.setOpenDelete, setOpenShow = _a.setOpenShow, setOpenReferences = _a.setOpenReferences;
+    var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.delayedLoading, errors = _a.errors, resource = _a.resource, setResource = _a.setResource, addReferences = _a.addReferences, create = _a.create, update = _a.update, destroy = _a.destroy, handleChange = _a.handleChange, removeAttachment = _a.removeAttachment, reloadMany = _a.reloadMany, openEdit = _a.openEdit, openDelete = _a.openDelete, openShow = _a.openShow, openReferences = _a.openReferences, setOpenEdit = _a.setOpenEdit, setOpenDelete = _a.setOpenDelete, setOpenShow = _a.setOpenShow, setOpenReferences = _a.setOpenReferences;
     var handleShow = function (resource) {
         setResource(resource);
         setOpenEdit(false);
@@ -75,35 +74,29 @@ var useCollectionForms = function (params) {
                         return [2 /*return*/, setAuthOpen(true)];
                     _a.label = 1;
                 case 1:
-                    _a.trys.push([1, 8, , 9]);
+                    _a.trys.push([1, 6, , 7]);
                     resp = void 0;
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 3];
                     return [4 /*yield*/, update(resource)];
                 case 2:
                     resp = _a.sent();
-                    return [3 /*break*/, 7];
+                    return [3 /*break*/, 5];
                 case 3: return [4 /*yield*/, create(resource)];
                 case 4:
                     resp = _a.sent();
-                    if (!((parentResource === null || parentResource === void 0 ? void 0 : parentResource.id) && (resp === null || resp === void 0 ? void 0 : resp.id))) return [3 /*break*/, 6];
-                    return [4 /*yield*/, addReferences(resp.id, [parentResource === null || parentResource === void 0 ? void 0 : parentResource.id])];
-                case 5:
-                    _a.sent();
-                    _a.label = 6;
-                case 6:
                     setResource({});
-                    _a.label = 7;
-                case 7:
+                    _a.label = 5;
+                case 5:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setOpenEdit(false);
                         reloadMany();
                     }
-                    return [3 /*break*/, 9];
-                case 8:
+                    return [3 /*break*/, 7];
+                case 6:
                     err_1 = _a.sent();
                     console.log('Error', err_1);
-                    return [3 /*break*/, 9];
-                case 9: return [2 /*return*/];
+                    return [3 /*break*/, 7];
+                case 7: return [2 /*return*/];
             }
         });
     }); };

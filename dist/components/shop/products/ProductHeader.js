@@ -16,9 +16,9 @@ var ProductHeader = function (props) {
     if (!enableSearch && !enableFilters && !enableSorting) {
         return null;
     }
-    return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 mb-4" },
-        react_1.default.createElement("div", { className: "flex flex-row justify-between items-center space-x-1" },
-            react_1.default.createElement("div", { className: "flex flex-row justify-center items-center" },
+    return (react_1.default.createElement("div", { className: "flex flex-col space-y-1 mb-1" },
+        react_1.default.createElement("div", { className: "flex flex-col sm:flex-row justify-between space-y-1 sm:space-y-0 sm:space-x-1" },
+            react_1.default.createElement("div", { className: "flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1" },
                 enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
                 enableFilters && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
                     react_1.default.createElement(__1.FilterButton, { filterOptions: filterOptions, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters }))),

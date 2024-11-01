@@ -110,7 +110,7 @@ var CartLineItem = function (props) {
                 react_1.default.createElement(core_1.Typography, { variant: "body1" }, product === null || product === void 0 ? void 0 : product.title),
                 react_1.default.createElement(core_1.Typography, { className: "text-muted-foreground", variant: "body2" }, product === null || product === void 0 ? void 0 : product.display_price),
                 react_1.default.createElement(CartQuantityInput, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity }))),
-        react_1.default.createElement("button", { onClick: handleRemoveFromCart, className: "text-sm font-medium text-indigo-600 hover:text-indigo-500" },
-            react_1.default.createElement(components_1.Icon, { name: "X", className: "h-4 w-4 text-muted-foreground" }))));
+        react_1.default.createElement("button", { onClick: handleRemoveFromCart, className: 'focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm p-1 mr-1' },
+            react_1.default.createElement(components_1.Icon, { name: "X", className: "h-4 w-4 text-muted-foreground hover:text-foreground" }))));
 };
 exports.default = CartLineItem;

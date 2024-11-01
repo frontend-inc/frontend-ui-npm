@@ -1,8 +1,4 @@
 import React from 'react';
 import { ResourceFormProps } from '../../../components/cms/resources/ResourceForm';
-import { MetafieldType } from '../../../types';
-type AdminProductCreateFormProps = ResourceFormProps & {
-    metafields: MetafieldType[];
-};
-declare const AdminProductCreateForm: React.FC<AdminProductCreateFormProps>;
+declare const AdminProductCreateForm: React.FC<ResourceFormProps>;
 export default AdminProductCreateForm;

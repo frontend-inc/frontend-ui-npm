@@ -1,4 +1,7 @@
 import React from 'react';
 import { CollectionListProps } from '../collections/CollectionList';
-declare const GeoNearbyList: React.FC<CollectionListProps>;
+export type GeoNearbyListProps = CollectionListProps & {
+    documentId: string;
+};
+declare const GeoNearbyList: React.FC<GeoNearbyListProps>;
 export default GeoNearbyList;

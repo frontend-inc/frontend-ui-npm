@@ -3,5 +3,5 @@ interface UseDelayedLoadingProps {
     delay?: number;
     callback?: () => void;
 }
-declare function useDelayedLoading({ loading, delay, callback, }: UseDelayedLoadingProps): Record<any, boolean>;
+declare function useDelayedLoading({ loading, delay, }: UseDelayedLoadingProps): Record<any, boolean>;
 export default useDelayedLoading;

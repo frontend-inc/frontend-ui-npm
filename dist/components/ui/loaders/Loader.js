@@ -12,6 +12,6 @@ function Loader(_a) {
     if (!loading)
         return null;
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col items-center justify-center', 'w-full h-full min-h-[200px]') },
-        react_1.default.createElement(lucide_react_1.Loader2, { className: "text-foreground w-12 h-12 animate-spin text-primary" })));
+        react_1.default.createElement(lucide_react_1.Loader2, { className: "w-12 h-12 animate-spin text-primary" })));
 }
 exports.default = Loader;

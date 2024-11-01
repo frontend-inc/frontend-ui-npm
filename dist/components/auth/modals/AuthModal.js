@@ -1,16 +1,5 @@
 'use client';
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -74,20 +63,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../../hooks");
 var AuthModal = function (props) {
-    var _a = props.disableUsername, disableUsername = _a === void 0 ? false : _a, enableGoogle = props.enableGoogle, handleSuccess = props.handleSuccess;
-    var router = (0, navigation_1.useRouter)();
-    var appId = (0, navigation_1.useParams)().app_id;
-    var _b = (0, hooks_1.useApp)(), authOpen = _b.authOpen, setAuthOpen = _b.setAuthOpen;
-    var _c = (0, frontend_js_1.useAuth)(), errors = _c.errors, loading = _c.loading, user = _c.user, updateMe = _c.updateMe, handleChange = _c.handleChange, login = _c.login, signup = _c.signup, verifyPin = _c.verifyPin, sendPin = _c.sendPin;
-    var _d = (0, react_1.useState)(1), tab = _d[0], setTab = _d[1];
+    var enableGoogle = props.enableGoogle, handleSuccess = props.handleSuccess;
+    var _a = (0, hooks_1.useApp)(), authOpen = _a.authOpen, setAuthOpen = _a.setAuthOpen;
+    var _b = (0, frontend_js_1.useAuth)(), errors = _b.errors, loading = _b.loading, user = _b.user, updateMe = _b.updateMe, handleChange = _b.handleChange, login = _b.login, signup = _b.signup, verifyPin = _b.verifyPin, sendPin = _b.sendPin;
+    var _c = (0, react_1.useState)(1), tab = _c[0], setTab = _c[1];
     var handleLogin = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, login(__assign(__assign({}, user), { app_id: appId }))];
+                case 0: return [4 /*yield*/, login(user)];
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
@@ -104,7 +90,7 @@ var AuthModal = function (props) {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, signup(__assign(__assign({}, user), { app_id: appId }))];
+                case 0: return [4 /*yield*/, signup(user)];
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
@@ -129,7 +115,7 @@ var AuthModal = function (props) {
     var handleSendPin = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, sendPin(__assign(__assign({}, user), { app_id: appId }))];
+                case 0: return [4 /*yield*/, sendPin(user)];
                 case 1:
                     _a.sent();
                     setTab(3);
@@ -168,11 +154,11 @@ var AuthModal = function (props) {
             }
         });
     }); };
-    var handleSignupClick = function () {
-        setTab(1);
-    };
     var handleLoginClick = function () {
         setTab(0);
+    };
+    var handleSignupClick = function () {
+        setTab(1);
     };
     var handleForgotPasswordClick = function () {
         setTab(2);
@@ -180,11 +166,6 @@ var AuthModal = function (props) {
     var handleResendPinClick = function () {
         setTab(4);
     };
-    (0, react_1.useEffect)(function () {
-        if (authOpen) {
-            setTab(1);
-        }
-    }, [authOpen]);
     return (react_1.default.createElement(__1.Modal, { title: tab == 0
             ? 'Login'
             : tab == 1
@@ -198,7 +179,7 @@ var AuthModal = function (props) {
                             : 'Reset Password', description: "Register or login", open: authOpen, handleClose: function () { return setAuthOpen(false); } },
         react_1.default.createElement("div", { className: "flex flex-col space-y-3" },
             tab === 0 && (react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleLogin, handleSignup: handleSignupClick, handleForgotPassword: handleForgotPasswordClick, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })),
-            tab === 1 && (react_1.default.createElement(__1.SignupForm, { disableUsername: disableUsername, errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSignup, handleLogin: handleLoginClick, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })),
+            tab === 1 && (react_1.default.createElement(__1.SignupForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSignup, handleLogin: handleLoginClick, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })),
             tab === 2 && (react_1.default.createElement(__1.ForgotPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),
             tab === 3 && (react_1.default.createElement(__1.VerifyPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPinClick })),
             tab === 4 && (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),

@@ -5,5 +5,5 @@ type ProductLikeButtonProps = {
     color?: string;
     numLikes?: number;
 };
-export default function ProductLikeButton({ product, color, size, numLikes, }: ProductLikeButtonProps): React.JSX.Element;
+export default function ProductLikeButton({ product, size, }: ProductLikeButtonProps): React.JSX.Element;
 export {};

@@ -5,24 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
-var navigation_1 = require("next/navigation");
 var CoverCarousel = function (props) {
-    var router = (0, navigation_1.useRouter)();
-    var _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.items, items = _b === void 0 ? [] : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, _d = props.opacity, opacity = _d === void 0 ? 0.5 : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = props.enableArrows, enableArrows = _f === void 0 ? false : _f, _g = props.enableAutoPlay, enableAutoPlay = _g === void 0 ? false : _g, _h = props.alignItems, alignItems = _h === void 0 ? 'center' : _h;
-    var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var handleClick = function (item) {
-        if (!editing && (item === null || item === void 0 ? void 0 : item.url)) {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth',
-            });
-            router.push("".concat(clientUrl).concat(item === null || item === void 0 ? void 0 : item.url));
-        }
-    };
+    var _a = props.items, items = _a === void 0 ? [] : _a, _b = props.enableOverlay, enableOverlay = _b === void 0 ? false : _b, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableArrows, enableArrows = _d === void 0 ? false : _d, _e = props.enableAutoPlay, enableAutoPlay = _e === void 0 ? false : _e, _f = props.alignItems, alignItems = _f === void 0 ? 'center' : _f;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(__1.Swipeable, { enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, items === null || items === void 0 ? void 0 : items.map(function (item, index) { return (react_1.default.createElement(__1.Cover, { key: index, editing: editing, title: item === null || item === void 0 ? void 0 : item.title, description: item === null || item === void 0 ? void 0 : item.description, image: item === null || item === void 0 ? void 0 : item.image, buttonText: item === null || item === void 0 ? void 0 : item.buttonText, enableOverlay: enableOverlay, enableGradient: enableGradient, opacity: opacity, handleClick: function () { return handleClick(item); }, alignItems: alignItems })); })),
+        react_1.default.createElement(__1.Swipeable, { enableAutoPlay: enableAutoPlay, enableArrows: enableArrows }, items === null || items === void 0 ? void 0 : items.map(function (item, index) { return (react_1.default.createElement(__1.Cover, { key: index, title: item === null || item === void 0 ? void 0 : item.title, description: item === null || item === void 0 ? void 0 : item.description, image: item === null || item === void 0 ? void 0 : item.image, buttonText: item === null || item === void 0 ? void 0 : item.buttonText, path: item === null || item === void 0 ? void 0 : item.path, enableOverlay: enableOverlay, enableGradient: enableGradient, alignItems: alignItems })); })),
         (items === null || items === void 0 ? void 0 : items.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: "Image", title: "No cover images", description: "Cover images will appear here." }))));
 };
 exports.default = CoverCarousel;

@@ -6,12 +6,13 @@ exports.ATTACHMENT_FIELDS = ['image', 'video', 'file'];
 exports.SYSTEM_FIELDS = [
     'id',
     'title',
+    'subtitle',
+    'category',
     'description',
     'handle',
     'user_id',
     'team_id',
     'label',
-    'shopify_products',
     'published',
     'status',
     'locale',
@@ -25,6 +26,11 @@ exports.SYSTEM_FIELDS = [
     'file',
     'lat',
     'lng',
+    'youtube_video',
+    'vimeo_video',
+    'soundcloud_audio',
+    'calendly_url',
+    'shopify_product'
 ];
 /* SYSTEM FIELDS */
 exports.ID_FIELD = {

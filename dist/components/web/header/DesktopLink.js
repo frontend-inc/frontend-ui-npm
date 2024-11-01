@@ -16,6 +16,6 @@ var DesktopLink = function (props) {
             handleClick(menuItem.path);
         }
     };
-    return (react_1.default.createElement(core_1.Button, { variant: "ghost", onClick: handleMenuClick }, menuItem.label));
+    return (react_1.default.createElement(core_1.Button, { variant: "ghost", className: 'text-foreground', onClick: handleMenuClick }, menuItem.label));
 };
 exports.default = DesktopLink;

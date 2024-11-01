@@ -18,6 +18,6 @@ function CommentButton(_a) {
     };
     return (react_1.default.createElement("div", null,
         react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' && 'border border-divider') },
-            react_1.default.createElement(lucide_react_1.MessageCircle, { className: "text-foreground w-4 h-4" }))));
+            react_1.default.createElement(lucide_react_1.MessageSquare, { className: "text-foreground w-5 h-5" }))));
 }
 exports.default = CommentButton;

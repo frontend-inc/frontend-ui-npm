@@ -18,20 +18,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var core_1 = require("../../core");
 var __1 = require("../..");
+var frontend_shadcn_1 = require("frontend-shadcn");
 var PDP = function (props) {
-    var _a = props || {}, label = _a.label, image = _a.image, primary = _a.primary, secondary = _a.secondary, addToCart = _a.addToCart, price = _a.price, compareAtPrice = _a.compareAtPrice, description = _a.description, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.slots, slots = _b === void 0 ? {
+    var _a = props || {}, _b = _a.direction, direction = _b === void 0 ? 'row' : _b, label = _a.label, image = _a.image, primary = _a.primary, secondary = _a.secondary, addToCart = _a.addToCart, price = _a.price, compareAtPrice = _a.compareAtPrice, description = _a.description, actions = _a.actions, secondaryAction = _a.secondaryAction, _c = _a.slots, slots = _c === void 0 ? {
         image: {},
         content: {},
-    } : _b;
+    } : _c;
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
         secondaryAction,
         react_1.default.createElement("div", { className: "w-full flex justify-center items-center" },
-            react_1.default.createElement("div", { className: "flex flex-col space-y-3 sm:flex-row sm:space-x-10 sm:space-y-0 w-full" },
-                react_1.default.createElement("div", { className: "w-full md:w-1/2 flex flex-col space-y-5 justify-center items-center" },
+            react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)("flex flex-col space-y-3 w-full", direction == "row" && "sm:flex-row sm:space-x-10 sm:space-y-0") },
+                react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)("w-full flex flex-col space-y-5 justify-center items-center", direction == "row" && "md:w-1/2") },
                     react_1.default.createElement("div", { className: "rounded-lg w-full" },
                         react_1.default.createElement(__1.Image, __assign({ src: image, alt: primary, height: 400, aspectRatio: 4 / 3, label: label }, slots.image))),
                     actions),
-                react_1.default.createElement("div", { className: "w-full md:w-1/2 flex flex-col space-y-3" },
+                react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)("w-full flex flex-col space-y-3", direction == "row" && "md:w-1/2") },
                     react_1.default.createElement(core_1.Typography, { variant: "h3" }, primary),
                     react_1.default.createElement("div", { className: "flex flex-row space-x-2" },
                         react_1.default.createElement(core_1.Typography, { variant: "h6" }, price),

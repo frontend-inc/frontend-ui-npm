@@ -47,7 +47,7 @@ var constants_1 = require("../../../constants");
 var MediaUploader = function (props) {
     var onComplete = props.onComplete;
     var showAlertError = (0, hooks_1.useAlerts)().showAlertError;
-    var uploadFile = (0, hooks_1.useMedia)().uploadFile;
+    var uploadFile = (0, hooks_1.useAdminMedia)().uploadFile;
     var handleUpload = function (file) { return __awaiter(void 0, void 0, void 0, function () {
         var resp, e_1;
         return __generator(this, function (_a) {

@@ -69,11 +69,11 @@ var core_1 = require("../../core");
 var frontend_shadcn_1 = require("frontend-shadcn");
 function ProductFavoriteButton(_a) {
     var _this = this;
-    var product = _a.product, _b = _a.size, size = _b === void 0 ? 'small' : _b, _c = _a.color, color = _c === void 0 ? 'text-secondary' : _c, numFavorites = _a.numFavorites;
-    var _d = (0, frontend_js_1.useAuth)(), fetchMe = _d.fetchMe, currentUser = _d.currentUser;
+    var product = _a.product, _b = _a.size, size = _b === void 0 ? 'small' : _b;
+    var _c = (0, frontend_js_1.useAuth)(), fetchMe = _c.fetchMe, currentUser = _c.currentUser;
     var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
-    var _e = (0, react_1.useState)(false), isFavorite = _e[0], setIsFavorite = _e[1];
-    var _f = (0, hooks_1.useSocial)(), favoriteProduct = _f.favoriteProduct, unfavoriteProduct = _f.unfavoriteProduct;
+    var _d = (0, react_1.useState)(false), isFavorite = _d[0], setIsFavorite = _d[1];
+    var _e = (0, hooks_1.useSocial)(), favoriteProduct = _e.favoriteProduct, unfavoriteProduct = _e.unfavoriteProduct;
     var handleClick = function (ev) { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -105,8 +105,8 @@ function ProductFavoriteButton(_a) {
         }
     }, [currentUser, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(color, "hover:".concat(color), size === 'large' &&
-                'border border-divider bg-background text-secondary hover:bg-background hover:text-secondary', isFavorite && 'text-primary hover:text-primary-dark border-primary', 'transition-transform duration-200', isFavorite && 'transform scale-110') },
-            react_1.default.createElement(lucide_react_1.Bookmark, { className: (0, frontend_shadcn_1.cn)('w-4 h-4 text-foreground', isFavorite ? 'fill-current ' : 'stroke-current') }))));
+        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' &&
+                'border border-divider bg-background text-secondary hover:bg-background hover:text-secondary', isFavorite && 'text-primary hover:text-primary-dark border-primary ring-offset-2 ring-2 ring-ring') },
+            react_1.default.createElement(lucide_react_1.Bookmark, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', isFavorite ? 'fill-primary' : 'fill-none ') }))));
 }
 exports.default = ProductFavoriteButton;

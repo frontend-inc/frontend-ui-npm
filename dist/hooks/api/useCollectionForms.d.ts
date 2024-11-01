@@ -1,8 +1,5 @@
 import React from 'react';
-type CollectionFormParams = {
-    parentResource?: any;
-};
-declare const useCollectionForms: (params?: CollectionFormParams) => {
+declare const useCollectionForms: () => {
     loading: any;
     errors: Record<string, any>;
     resource: any;

@@ -69,11 +69,11 @@ var core_1 = require("../../core");
 var frontend_shadcn_1 = require("frontend-shadcn");
 function ProductLikeButton(_a) {
     var _this = this;
-    var product = _a.product, _b = _a.color, color = _b === void 0 ? 'text-secondary' : _b, _c = _a.size, size = _c === void 0 ? 'small' : _c, numLikes = _a.numLikes;
+    var product = _a.product, _b = _a.size, size = _b === void 0 ? 'small' : _b;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
-    var _d = (0, react_1.useState)(false), liked = _d[0], setLiked = _d[1];
-    var _e = (0, hooks_1.useSocial)(), likeProduct = _e.likeProduct, unlikeProduct = _e.unlikeProduct;
+    var _c = (0, react_1.useState)(false), liked = _c[0], setLiked = _c[1];
+    var _d = (0, hooks_1.useSocial)(), likeProduct = _d.likeProduct, unlikeProduct = _d.unlikeProduct;
     var handleClick = function () { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -103,7 +103,7 @@ function ProductLikeButton(_a) {
         }
     }, [currentUser, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' && 'border border-divider', size === 'large' && liked && 'bg-primary hover:bg-primary-dark', 'transition-transform duration-200', liked && 'transform scale-110') },
-            react_1.default.createElement(lucide_react_1.Heart, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', liked ? 'fill-current' : 'stroke-current') }))));
+        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' && 'border border-divider', 'transition-transform duration-200') },
+            react_1.default.createElement(lucide_react_1.Heart, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', liked ? 'fill-primary stroke-primary' : 'fill-none stroke-current') }))));
 }
 exports.default = ProductLikeButton;

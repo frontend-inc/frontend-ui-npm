@@ -25,7 +25,7 @@ var ListCard = function (props) {
         item: {},
         image: {},
     } : _g;
-    return (react_1.default.createElement("div", { className: "p-4 border-b border-border last:border-b-0 hover:bg-gray-50 transition-colors duration-200" },
+    return (react_1.default.createElement("div", { className: "p-4 border-b border-border last:border-b-0 hover:bg-muted/50 transition-colors duration-200" },
         react_1.default.createElement("div", { className: "flex flex-row items-center w-full" },
             selectable && (react_1.default.createElement("div", { className: "mr-2" },
                 react_1.default.createElement(frontend_shadcn_1.Checkbox, { checked: selected, onCheckedChange: handleSelect }))),

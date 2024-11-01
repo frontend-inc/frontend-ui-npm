@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useSelected = exports.useScrollPosition = exports.usePrevious = exports.usePageNavigate = exports.useOAuth = exports.useNavigation = exports.useMenu = exports.useTheme = exports.useLoadingWrapper = exports.useLoaders = exports.useError = exports.useEscapeKey = exports.useEnterKey = exports.useDelayedLoading = exports.useDragDrop = exports.useClickOrDrag = exports.useApp = exports.useAlerts = exports.useActions = void 0;
+exports.useTabs = exports.useSelected = exports.useScrollPosition = exports.useOAuth = exports.useNavigate = exports.useMenu = exports.useTheme = exports.useLoadingWrapper = exports.useLoaders = exports.useError = exports.useEscapeKey = exports.useEnterKey = exports.useDelayedLoading = exports.useDragDrop = exports.useClickOrDrag = exports.useApp = exports.useAlerts = exports.useActions = void 0;
 // Common
 var useActions_1 = require("./useActions");
 Object.defineProperty(exports, "useActions", { enumerable: true, get: function () { return __importDefault(useActions_1).default; } });
@@ -31,15 +31,13 @@ var useTheme_1 = require("./useTheme");
 Object.defineProperty(exports, "useTheme", { enumerable: true, get: function () { return __importDefault(useTheme_1).default; } });
 var useMenu_1 = require("./useMenu");
 Object.defineProperty(exports, "useMenu", { enumerable: true, get: function () { return __importDefault(useMenu_1).default; } });
-var useNavigation_1 = require("./useNavigation");
-Object.defineProperty(exports, "useNavigation", { enumerable: true, get: function () { return __importDefault(useNavigation_1).default; } });
+var useNavigate_1 = require("./useNavigate");
+Object.defineProperty(exports, "useNavigate", { enumerable: true, get: function () { return __importDefault(useNavigate_1).default; } });
 var useOAuth_1 = require("./useOAuth");
 Object.defineProperty(exports, "useOAuth", { enumerable: true, get: function () { return __importDefault(useOAuth_1).default; } });
-var usePageNavigate_1 = require("./usePageNavigate");
-Object.defineProperty(exports, "usePageNavigate", { enumerable: true, get: function () { return __importDefault(usePageNavigate_1).default; } });
-var usePrevious_1 = require("./usePrevious");
-Object.defineProperty(exports, "usePrevious", { enumerable: true, get: function () { return __importDefault(usePrevious_1).default; } });
 var useScrollPosition_1 = require("./useScrollPosition");
 Object.defineProperty(exports, "useScrollPosition", { enumerable: true, get: function () { return __importDefault(useScrollPosition_1).default; } });
 var useSelected_1 = require("./useSelected");
 Object.defineProperty(exports, "useSelected", { enumerable: true, get: function () { return __importDefault(useSelected_1).default; } });
+var useTabs_1 = require("./useTabs");
+Object.defineProperty(exports, "useTabs", { enumerable: true, get: function () { return __importDefault(useTabs_1).default; } });

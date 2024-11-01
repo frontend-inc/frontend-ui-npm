@@ -6,7 +6,6 @@ type SignupFormProps = {
     handleChange: (ev: any) => void;
     handleSubmit: () => void;
     handleLogin: false | (() => void);
-    disableUsername?: boolean;
     enableGoogle?: boolean;
     handleGoogleSuccess?: () => void;
 };

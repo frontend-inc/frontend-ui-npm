@@ -38,13 +38,10 @@ var FilterButton = function (props) {
     var _a = props || {}, _b = _a.loading, loading = _b === void 0 ? false : _b, _c = _a.filters, filters = _c === void 0 ? [] : _c, _d = _a.filterOptions, filterOptions = _d === void 0 ? [] : _d, handleFilter = _a.handleFilter, _e = _a.disableFilterCount, disableFilterCount = _e === void 0 ? false : _e;
     var _f = (0, react_1.useState)(false), open = _f[0], setOpen = _f[1];
     return (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
-        react_1.default.createElement(frontend_shadcn_2.Popover, null,
-            react_1.default.createElement(frontend_shadcn_2.PopoverTrigger, { asChild: true },
-                react_1.default.createElement(components_1.Button, { variant: "secondary", className: "relative w-full sm:w-auto ".concat((filters === null || filters === void 0 ? void 0 : filters.length) > 0 ? 'border-r-0' : '') },
-                    loading ? (react_1.default.createElement(__1.IconLoading, { className: "mr-2" })) : (react_1.default.createElement(__1.Icon, { name: "SlidersHorizontal", className: "mr-2 text-secondary-foreground" })),
-                    "Filters",
-                    !disableFilterCount && (filters === null || filters === void 0 ? void 0 : filters.length) > 0 && (react_1.default.createElement(frontend_shadcn_1.Badge, { className: "absolute -top-1 -right-1" }, filters.length)))),
-            react_1.default.createElement(frontend_shadcn_2.PopoverContent, { className: "w-80 p-0" },
+        react_1.default.createElement(frontend_shadcn_1.Popover, null,
+            react_1.default.createElement(frontend_shadcn_1.PopoverTrigger, { asChild: true },
+                react_1.default.createElement(components_1.Button, { variant: "secondary", loading: loading, className: (0, frontend_shadcn_2.cn)('relative w-full sm:w-auto', (filters === null || filters === void 0 ? void 0 : filters.length) > 0 && 'border-r-0'), startIcon: react_1.default.createElement(__1.Icon, { name: "SlidersHorizontal", className: "text-secondary-foreground" }) }, "Filters")),
+            react_1.default.createElement(frontend_shadcn_1.PopoverContent, { className: "w-80 p-0" },
                 react_1.default.createElement(FilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter }))),
         react_1.default.createElement(core_1.Hidden, { smUp: true },
             react_1.default.createElement(__1.Sheet, { open: open, handleClose: function () { return setOpen(false); }, title: "Search", disablePadding: true },

@@ -1,7 +1,3 @@
 import React from 'react';
-import { MetafieldType } from '../../../types';
-type AdminProductListProps = {
-    metafields?: MetafieldType[];
-};
-declare const AdminProductsList: React.FC<AdminProductListProps>;
+declare const AdminProductsList: React.FC;
 export default AdminProductsList;

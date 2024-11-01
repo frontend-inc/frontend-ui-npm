@@ -76,12 +76,12 @@ var DocumentForm = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    var _resource = props.resource, parentResource = props.parentResource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c, inputOptions = props.inputOptions, inputParams = props.inputParams;
+    var _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c, inputOptions = props.inputOptions, inputParams = props.inputParams;
     var showAlertSuccess = (0, hooks_2.useAlerts)().showAlertSuccess;
     var _d = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
-    }), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment, addReferences = _d.addReferences, handleChange = _d.handleChange;
+    }), loading = _d.delayedLoading, errors = _d.errors, resource = _d.resource, setResource = _d.setResource, update = _d.update, create = _d.create, removeAttachment = _d.removeAttachment, handleChange = _d.handleChange;
     var handleRemove = function (name) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -100,24 +100,18 @@ var DocumentForm = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 6, , 7]);
+                    _a.trys.push([0, 5, , 6]);
                     resp = void 0;
                     if (!(resource === null || resource === void 0 ? void 0 : resource.id)) return [3 /*break*/, 2];
                     return [4 /*yield*/, update(resource)];
                 case 1:
                     resp = _a.sent();
-                    return [3 /*break*/, 5];
-                case 2: return [4 /*yield*/, create(resource)
-                    // Handle associated resources
-                ];
+                    return [3 /*break*/, 4];
+                case 2: return [4 /*yield*/, create(resource)];
                 case 3:
                     resp = _a.sent();
-                    if (!(parentResource === null || parentResource === void 0 ? void 0 : parentResource.id)) return [3 /*break*/, 5];
-                    return [4 /*yield*/, addReferences(resp.id, [parentResource.id])];
+                    _a.label = 4;
                 case 4:
-                    _a.sent();
-                    _a.label = 5;
-                case 5:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         if (onSuccessMessage) {
                             showAlertSuccess(onSuccessMessage);
@@ -126,12 +120,12 @@ var DocumentForm = function (props) {
                             handleSuccess(resp);
                         }
                     }
-                    return [3 /*break*/, 7];
-                case 6:
+                    return [3 /*break*/, 6];
+                case 5:
                     err_1 = _a.sent();
                     console.log('Error', err_1);
-                    return [3 /*break*/, 7];
-                case 7: return [2 /*return*/];
+                    return [3 /*break*/, 6];
+                case 6: return [2 /*return*/];
             }
         });
     }); };

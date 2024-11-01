@@ -5,7 +5,7 @@ export type CoverCarouselProps = {
         description?: string;
         image: string;
         buttonText?: string;
-        url?: string;
+        path?: string;
     }[];
     editing?: boolean;
     enableAutoPlay?: boolean;

@@ -58,11 +58,11 @@ var __2 = require("../..");
 var hooks_1 = require("../../../hooks");
 var DataListItems = function (props) {
     var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, selectedIds = _a.selectedIds, handleSelect = _a.handleSelect;
-    var grid = props.grid, selectable = props.selectable, enableShow = props.enableShow, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleClick = props.handleClick, _b = props.pagination, Pagination = _b === void 0 ? __1.LoadMore : _b, _c = props.component, Component = _c === void 0 ? __2.DataItem : _c, _d = props.slots, slots = _d === void 0 ? {
+    var _b = props.layout, layout = _b === void 0 ? 'list' : _b, selectable = props.selectable, enableShow = props.enableShow, enableEdit = props.enableEdit, enableDelete = props.enableDelete, handleClick = props.handleClick, _c = props.pagination, Pagination = _c === void 0 ? __1.LoadMore : _c, _d = props.component, Component = _d === void 0 ? __2.DataItem : _d, _e = props.slots, slots = _e === void 0 ? {
         item: {},
         list: {},
-    } : _d;
-    var _e = (0, hooks_1.useCollectionForms)(), handleShow = _e.handleShow, handleEdit = _e.handleEdit, handleDeleteClick = _e.handleDeleteClick;
+    } : _e;
+    var _f = (0, hooks_1.useCollectionForms)(), handleShow = _f.handleShow, handleEdit = _f.handleEdit, handleDeleteClick = _f.handleDeleteClick;
     var handleShowClick = function (resource) {
         if (handleClick) {
             handleClick(resource);
@@ -81,7 +81,7 @@ var DataListItems = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { grid: grid, loading: loading }), resources === null || resources === void 0 ? void 0 :
+    return (react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { layout: layout, loading: loading }), resources === null || resources === void 0 ? void 0 :
         resources.map(function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, selectable: selectable, selected: selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource.id), resource: resource, handleClick: function () { return handleShowClick(resource); }, handleSelect: function () { return handleSelect(resource); }, enableShow: enableShow, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: enableEdit ? function () { return handleEdit(resource); } : undefined, handleDelete: enableDelete ? function () { return handleDeleteClick(resource); } : undefined }, slots.item))); }),
         react_1.default.createElement(Pagination, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 export type PDPProps = {
+    direction?: 'row' | 'column';
     label?: string;
     image?: string;
     price?: string;

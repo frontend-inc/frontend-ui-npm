@@ -10,7 +10,7 @@ var hooks_1 = require("../../../hooks");
 var FieldAutosuggest = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var value = props.value, _a = props.query, query = _a === void 0 ? {} : _a, _b = props.name, name = _b === void 0 ? 'field_id' : _b, collectionId = props.collectionId, label = props.label, _c = props.placeholder, placeholder = _c === void 0 ? 'Select field' : _c, handleChange = props.handleChange, _d = props.valueParam, valueParam = _d === void 0 ? 'id' : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, _f = props.defaultOptions, defaultOptions = _f === void 0 ? [] : _f;
-    if (!collectionId || apiUrl)
+    if (!collectionId || !apiUrl)
         return null;
     return (react_1.default.createElement(components_1.RemoteAutosuggest, { name: name, label: label, value: value, direction: direction, valueParam: valueParam, displayField: 'label', url: "".concat(apiUrl, "/collections/").concat(collectionId, "/fields"), placeholder: placeholder, handleChange: handleChange, defaultQuery: query, defaultOptions: defaultOptions }));
 };

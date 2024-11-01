@@ -80,26 +80,20 @@ var core_1 = require("../../../components/core");
 var components_2 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var AdminCollectionEdit_1 = __importDefault(require("./AdminCollectionEdit"));
-var AdminViewEdit_1 = __importDefault(require("../views/AdminViewEdit"));
-var frontend_js_1 = require("frontend-js");
 var navigation_1 = require("next/navigation");
 var lucide_react_1 = require("lucide-react");
 var AdminCollectionMenu = function () {
     var router = (0, navigation_1.useRouter)();
     var _a = (0, navigation_1.useParams)(), appId = _a.app_id, viewId = _a.view_id, collectionId = _a.collection_id;
-    var apiQuery = new frontend_js_1.ApiQuery();
     var _b = (0, react_1.useState)(false), showDeleteModal = _b[0], setShowDeleteModal = _b[1];
-    var _c = (0, react_1.useState)(false), showViewModal = _c[0], setShowViewModal = _c[1];
-    var _d = (0, react_1.useState)(false), showDeleteViewModal = _d[0], setShowDeleteViewModal = _d[1];
-    var _e = (0, hooks_1.useCollections)(), loading = _e.loading, errors = _e.errors, collection = _e.collection, collections = _e.collections, deleteCollection = _e.deleteCollection, findCollections = _e.findCollections, setCollection = _e.setCollection, setCollections = _e.setCollections, handleChange = _e.handleChange, updateCollection = _e.updateCollection, createCollection = _e.createCollection, reloadCollections = _e.reloadCollections;
-    var _f = (0, hooks_1.useViews)(), viewLoading = _f.loading, viewErrors = _f.errors, view = _f.view, views = _f.views, findViews = _f.findViews, updateView = _f.updateView, deleteView = _f.deleteView, handleChangeView = _f.handleChange, setView = _f.setView;
+    var _c = (0, hooks_1.useAdminCollections)(), loading = _c.loading, errors = _c.errors, collection = _c.collection, collections = _c.collections, deleteCollection = _c.deleteCollection, findCollections = _c.findCollections, setCollection = _c.setCollection, setCollections = _c.setCollections, handleChange = _c.handleChange, updateCollection = _c.updateCollection, createCollection = _c.createCollection, reloadCollections = _c.reloadCollections;
     (0, react_1.useEffect)(function () {
         if (collectionId == 'index' && collections.length > 0) {
             handleClick(collections[0]);
         }
     }, [collectionId, collections]);
-    var _g = (0, react_1.useState)(null), activeCollection = _g[0], setActiveCollection = _g[1];
-    var _h = (0, react_1.useState)(false), showModal = _h[0], setShowModal = _h[1];
+    var _d = (0, react_1.useState)(null), activeCollection = _d[0], setActiveCollection = _d[1];
+    var _e = (0, react_1.useState)(false), showModal = _e[0], setShowModal = _e[1];
     var handleClick = function (collection) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             router.push("/dashboard/".concat(appId, "/collections/").concat(collection === null || collection === void 0 ? void 0 : collection.name));
@@ -148,110 +142,50 @@ var AdminCollectionMenu = function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 2, , 3]);
+                    _a.trys.push([0, 3, , 4]);
                     setCollection({});
-                    return [4 /*yield*/, deleteCollection(activeCollection.id)];
+                    if (!activeCollection) return [3 /*break*/, 2];
+                    //@ts-ignore
+                    return [4 /*yield*/, deleteCollection(activeCollection.id)
+                        //@ts-ignore
+                    ];
                 case 1:
+                    //@ts-ignore
                     _a.sent();
+                    //@ts-ignore
                     setCollections(collections.filter(function (c) { return c.id !== activeCollection.id; }));
+                    //@ts-ignore
                     if (collectionId == activeCollection.name) {
-                        nextCollection = collections.filter(function (c) { return c.name !== activeCollection.name; })[0];
+                        nextCollection = collections.filter(
+                        //@ts-ignore
+                        function (c) { return c.name !== activeCollection.name; })[0];
                         router.push("/dashboard/".concat(appId, "/collections/").concat(nextCollection === null || nextCollection === void 0 ? void 0 : nextCollection.name));
                     }
                     setShowDeleteModal(false);
-                    return [3 /*break*/, 3];
-                case 2:
+                    _a.label = 2;
+                case 2: return [3 /*break*/, 4];
+                case 3:
                     e_1 = _a.sent();
                     console.log(e_1);
-                    return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
             }
         });
     }); };
     var handleTemplateClick = function (template) {
         setCollection(__assign(__assign({}, collection), { name: collection.name || template.name, label: collection.label || template.label, template: template }));
     };
-    var handleViewClick = function (view) { return __awaiter(void 0, void 0, void 0, function () {
-        var _a;
-        return __generator(this, function (_b) {
-            apiQuery.where(view === null || view === void 0 ? void 0 : view.query);
-            router.push("/dashboard/".concat(appId, "/collections/").concat((_a = view === null || view === void 0 ? void 0 : view.collection) === null || _a === void 0 ? void 0 : _a.name, "?").concat(apiQuery.url(), "&view_id=").concat(view === null || view === void 0 ? void 0 : view.id));
-            return [2 /*return*/];
-        });
-    }); };
-    var handleEditView = function (view) {
-        setView(view);
-        setShowViewModal(true);
-    };
-    var handleUpdateView = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var resp, e_2;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, updateView(view)];
-                case 1:
-                    resp = _a.sent();
-                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
-                        setShowViewModal(false);
-                        findViews();
-                        setView({});
-                    }
-                    return [3 /*break*/, 3];
-                case 2:
-                    e_2 = _a.sent();
-                    console.log(e_2);
-                    return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
-            }
-        });
-    }); };
-    var handleDeleteViewClick = function (view) {
-        setView(view);
-        setShowDeleteViewModal(true);
-    };
-    var handleDeleteView = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var e_3;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, deleteView(view.id)];
-                case 1:
-                    _a.sent();
-                    setShowDeleteViewModal(false);
-                    setView({});
-                    findViews();
-                    return [3 /*break*/, 3];
-                case 2:
-                    e_3 = _a.sent();
-                    console.log(e_3);
-                    return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
-            }
-        });
-    }); };
     (0, react_1.useEffect)(function () {
         if (appId) {
             findCollections();
-            findViews();
         }
     }, [appId]);
-    (0, react_1.useEffect)(function () {
-        // Reload views after creating a new view
-        if (viewId) {
-            findViews();
-        }
-    }, [viewId]);
     return (react_1.default.createElement("div", { className: "flex flex-col" },
         react_1.default.createElement(components_1.MenuList, { label: 'Collections' }, collections.map(function (collection) { return (react_1.default.createElement(components_2.MenuListItem, { key: collection.id, title: collection === null || collection === void 0 ? void 0 : collection.label, selected: !viewId && collectionId == (collection === null || collection === void 0 ? void 0 : collection.name), handleClick: function () { return handleClick(collection); }, handleEdit: function () { return handleEditCollectionClick(collection); }, handleDelete: function () { return handleDeleteCollectionClick(collection); } })); })),
         react_1.default.createElement("div", { className: "px-4" },
             react_1.default.createElement(core_1.Button, { color: "secondary", onClick: handleCreateCollectionClick, className: "group", startIcon: react_1.default.createElement("div", { className: "group-hover:rotate-180 transition-transform duration-300 ease-in-out" },
                     react_1.default.createElement(lucide_react_1.Plus, { className: "text-primary-foreground h-5 w-5" })) }, "Collection")),
-        views.length > 0 && (react_1.default.createElement(components_1.MenuList, { label: "Views", enableBorder: true }, views === null || views === void 0 ? void 0 : views.map(function (view) { return (react_1.default.createElement(components_2.MenuListItem, { key: view.id, title: view === null || view === void 0 ? void 0 : view.name, selected: viewId == (view === null || view === void 0 ? void 0 : view.id), icon: "Search", handleClick: function () { return handleViewClick(view); }, handleDelete: function () { return handleDeleteViewClick(view); }, handleEdit: function () { return handleEditView(view); } })); }))),
         react_1.default.createElement(AdminCollectionEdit_1.default, { errors: errors, loading: loading, open: showModal, collection: collection, handleClose: function () { return setShowModal(false); }, handleChange: handleChange, handleSubmit: handleSubmitCollection, handleTemplateClick: handleTemplateClick }),
-        react_1.default.createElement(AdminViewEdit_1.default, { loading: viewLoading, errors: viewErrors, open: showViewModal, handleClose: function () { return setShowViewModal(false); }, view: view, handleSubmit: handleUpdateView, handleChange: handleChangeView }),
-        react_1.default.createElement(components_1.AlertModal, { loading: viewLoading, open: showDeleteViewModal, title: "Delete view", description: "Are you sure you want to delete this view?", handleClose: function () { return setShowDeleteViewModal(false); }, handleConfirm: handleDeleteView }),
         react_1.default.createElement(components_1.AlertModal, { loading: loading, open: showDeleteModal, handleClose: function () { return setShowDeleteModal(false); }, handleConfirm: handleDeleteCollection })));
 };
 exports.default = AdminCollectionMenu;

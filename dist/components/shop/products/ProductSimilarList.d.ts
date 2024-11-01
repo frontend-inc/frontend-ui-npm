@@ -1,4 +1,7 @@
 import React from 'react';
 import { ProductListProps } from '../products/ProductList';
-declare const ProductSimilarList: React.FC<ProductListProps>;
+export type ProductSimilarListProps = ProductListProps & {
+    productId: string | number;
+};
+declare const ProductSimilarList: React.FC<ProductSimilarListProps>;
 export default ProductSimilarList;

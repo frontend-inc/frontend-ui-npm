@@ -17,8 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserDetails = exports.Details = exports.Statistics = exports.SearchFilters = exports.SortButton = exports.KanBanBoard = exports.FilterButton = exports.LoadMore = exports.ContactForm = exports.EmailSubscribe = exports.DisplayFields = exports.DisplayField = void 0;
-__exportStar(require("./addons"), exports);
+exports.UserDetails = exports.Details = exports.SearchFilters = exports.SortButton = exports.KanBanBoard = exports.FilterButton = exports.LoadMore = exports.ContactForm = exports.EmailSubscribe = exports.DisplayFields = exports.DisplayField = void 0;
 __exportStar(require("./collections"), exports);
 __exportStar(require("./data"), exports);
 __exportStar(require("./forms"), exports);
@@ -42,8 +41,6 @@ var SortButton_1 = require("./sorts/SortButton");
 Object.defineProperty(exports, "SortButton", { enumerable: true, get: function () { return __importDefault(SortButton_1).default; } });
 var SearchFilters_1 = require("../cms/filters/SearchFilters");
 Object.defineProperty(exports, "SearchFilters", { enumerable: true, get: function () { return __importDefault(SearchFilters_1).default; } });
-var Statistics_1 = require("./analytics/Statistics");
-Object.defineProperty(exports, "Statistics", { enumerable: true, get: function () { return __importDefault(Statistics_1).default; } });
 // Details
 var Details_1 = require("./details/Details");
 Object.defineProperty(exports, "Details", { enumerable: true, get: function () { return __importDefault(Details_1).default; } });

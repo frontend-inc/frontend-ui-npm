@@ -27,7 +27,7 @@ var ImageListItems = function (props) {
         setOpenShow(true);
     };
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
-        react_1.default.createElement(__1.DataLayout, { grid: true }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource) {
+        react_1.default.createElement(__1.DataLayout, { layout: "grid" }, resources === null || resources === void 0 ? void 0 : resources.map(function (resource) {
             var _a;
             return (react_1.default.createElement(__2.ImageCard, { key: resource.id, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.title, slots: {
                     image: {

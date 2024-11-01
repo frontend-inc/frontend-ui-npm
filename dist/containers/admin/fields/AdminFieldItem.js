@@ -74,10 +74,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var __1 = require("../..");
-var core_1 = require("../../../components/core");
-var lucide_react_1 = require("lucide-react");
 var frontend_js_1 = require("frontend-js");
-var frontend_shadcn_1 = require("frontend-shadcn");
 var AdminFieldItem = function (props) {
     var url = props.url, resource = props.resource, sortable = props.sortable, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleReload = props.handleReload;
     var _a = (0, frontend_js_1.useResource)({
@@ -102,35 +99,6 @@ var AdminFieldItem = function (props) {
     (0, react_1.useEffect)(function () {
         setField(resource);
     }, [resource]);
-    return (react_1.default.createElement(components_1.ResourceListItem, { enableBorder: true, sortable: sortable, avatar: react_1.default.createElement(__1.FieldIcon, { variant: field === null || field === void 0 ? void 0 : field.variant }), primary: react_1.default.createElement("div", { className: "flex flex-row space-x-1" },
-            react_1.default.createElement(core_1.Typography, { variant: "body1" }, field === null || field === void 0 ? void 0 : field.label),
-            react_1.default.createElement(components_1.Label, { label: field.variant })), secondaryAction: react_1.default.createElement(react_1.default.Fragment, null,
-            field.column && !field.array && (react_1.default.createElement(frontend_shadcn_1.TooltipProvider, null,
-                react_1.default.createElement(frontend_shadcn_1.Tooltip, null,
-                    react_1.default.createElement(frontend_shadcn_1.TooltipTrigger, { asChild: true },
-                        react_1.default.createElement(core_1.IconButton, { onClick: function () { return handleUpdateField('filter_field'); } },
-                            react_1.default.createElement(lucide_react_1.FilterIcon, { className: field.filter_field
-                                    ? 'text-foreground'
-                                    : 'text-muted-foreground' }))),
-                    react_1.default.createElement(frontend_shadcn_1.TooltipContent, null,
-                        react_1.default.createElement("p", null, "Search filter field"))))),
-            field.column && !field.array && (react_1.default.createElement(frontend_shadcn_1.TooltipProvider, null,
-                react_1.default.createElement(frontend_shadcn_1.Tooltip, null,
-                    react_1.default.createElement(frontend_shadcn_1.TooltipTrigger, { asChild: true },
-                        react_1.default.createElement(core_1.IconButton, { onClick: function () { return handleUpdateField('sort_field'); } },
-                            react_1.default.createElement(lucide_react_1.SortAsc, { className: field.sort_field
-                                    ? 'text-foreground'
-                                    : 'text-muted-foreground' }))),
-                    react_1.default.createElement(frontend_shadcn_1.TooltipContent, null,
-                        react_1.default.createElement("p", null, "Search sort field"))))),
-            (field.column || field.attachment) && (field === null || field === void 0 ? void 0 : field.name) != 'title' && (react_1.default.createElement(frontend_shadcn_1.TooltipProvider, null,
-                react_1.default.createElement(frontend_shadcn_1.Tooltip, null,
-                    react_1.default.createElement(frontend_shadcn_1.TooltipTrigger, { asChild: true },
-                        react_1.default.createElement(core_1.IconButton, { onClick: function () { return handleUpdateField('display_field'); } },
-                            react_1.default.createElement(lucide_react_1.Search, { className: field.display_field
-                                    ? 'text-foreground'
-                                    : 'text-muted-foreground' }))),
-                    react_1.default.createElement(frontend_shadcn_1.TooltipContent, null,
-                        react_1.default.createElement("p", null, "Display in search results")))))), handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete }));
+    return (react_1.default.createElement(components_1.ResourceListItem, { enableBorder: true, sortable: sortable, avatar: react_1.default.createElement(__1.FieldIcon, { variant: field === null || field === void 0 ? void 0 : field.variant }), primary: field === null || field === void 0 ? void 0 : field.label, secondaryAction: react_1.default.createElement(components_1.Label, { label: field.variant }), handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDelete }));
 };
 exports.default = AdminFieldItem;

@@ -6,8 +6,5 @@ export { default as ProductFavorites } from './ProductFavorites';
 export { default as ProductList } from './ProductList';
 export { default as ProductListItem } from './ProductListItem';
 export { default as ProductListItems } from './ProductListItems';
-export { default as ProductLikes } from './ProductLikes';
 export { default as ProductShow } from './ProductShow';
 export { default as ProductHeader } from './ProductHeader';
-export { default as RelatedProductList } from './RelatedProductList';
-export { default as RelatedProductListItems } from './RelatedProductListItems';

@@ -116,7 +116,7 @@ var DropZone = function (_a) {
     var _e = (0, react_dropzone_1.useDropzone)({
         onDrop: handleOnDrop,
     }), getRootProps = _e.getRootProps, getInputProps = _e.getInputProps, isDragActive = _e.isDragActive;
-    return (react_1.default.createElement("div", __assign({}, getRootProps(), { className: " bg-background m-px p-4 flex flex-col justify-center items-center rounded border-2 border-border text-center hover:border-2 hover:border-primary hover:cursor-pointer transition-all duration-300" }),
+    return (react_1.default.createElement("div", __assign({}, getRootProps(), { className: "w-full bg-background m-px p-4 flex flex-col justify-center items-center rounded border-2 border-border text-center hover:border-2 hover:border-primary hover:cursor-pointer transition-all duration-300" }),
         react_1.default.createElement("input", __assign({}, getInputProps())),
         loading ? (react_1.default.createElement("div", { className: "animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500" })) : (react_1.default.createElement(react_1.default.Fragment, null,
             isDragActive ? (react_1.default.createElement(lucide_react_1.DownloadCloud, { className: "text-foreground w-5 h-5" })) : (react_1.default.createElement(lucide_react_1.UploadCloud, { className: "text-foreground w-5 h-5" })),

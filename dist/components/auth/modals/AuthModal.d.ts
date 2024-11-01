@@ -1,6 +1,5 @@
 import React from 'react';
 type AuthModalProps = {
-    disableUsername?: boolean;
     enableGoogle?: boolean;
     handleSuccess?: () => void;
 };

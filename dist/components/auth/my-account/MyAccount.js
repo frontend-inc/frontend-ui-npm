@@ -88,17 +88,6 @@ var MyAccount = function (props) {
             }
         });
     }); };
-    var handleLogout = function () { return __awaiter(void 0, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, logout()];
-                case 1:
-                    _a.sent();
-                    router.push(redirectUrl);
-                    return [2 /*return*/];
-            }
-        });
-    }); };
     (0, react_1.useEffect)(function () {
         if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)) {
             fetchMe();
@@ -107,6 +96,6 @@ var MyAccount = function (props) {
     return (react_1.default.createElement(react_1.default.Fragment, null, currentUser && (react_1.default.createElement(__1.AuthScreen, { title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
             ? "@".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
             : 'Update account' },
-        react_1.default.createElement(__1.MyAccountForm, { loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar, handleLogout: handleLogout })))));
+        react_1.default.createElement(__1.MyAccountForm, { loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar })))));
 };
 exports.default = MyAccount;

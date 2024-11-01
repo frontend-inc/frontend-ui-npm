@@ -1,7 +1,10 @@
 import React from 'react';
 export type ProductReviewsProps = {
-    handle: string;
-    url: string;
+    productId: string;
+    enableSearch?: boolean;
+    enableSorting?: boolean;
+    enableFilters?: boolean;
+    enableCreate?: boolean;
 };
 declare const ProductReviews: React.FC<ProductReviewsProps>;
 export default ProductReviews;

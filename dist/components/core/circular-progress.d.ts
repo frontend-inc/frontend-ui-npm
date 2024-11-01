@@ -1,6 +1,6 @@
 import React from 'react';
 interface CircularProgressProps {
-    size?: 'sm' | 'md' | 'lg';
+    size?: 'sm' | 'md' | 'lg' | 'xl';
     color?: 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info';
     thickness?: number;
     value?: number;

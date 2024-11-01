@@ -16,7 +16,7 @@ var Heading = function (props) {
         react_1.default.createElement("div", { className: "w-full flex flex-col justify-between" },
             react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
                 label && (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(textAlign === 'center' && 'text-center', textAlign === 'right' && 'text-right') },
-                    react_1.default.createElement(components_1.Label, { variant: "outline", label: label }))),
+                    react_1.default.createElement(components_1.Label, { label: label }))),
                 title && (react_1.default.createElement(core_1.Typography, { variant: textVariant, textAlign: textAlign }, title)),
                 description && (react_1.default.createElement(core_1.Typography, { variant: "body1", className: "text-muted-foreground", textAlign: textAlign }, description))),
             secondaryAction)));
