@@ -1,7 +1,6 @@
 import React from 'react';
-import { ShopifyCollectionType } from 'frontend-shopify';
 export type ShopifyCollectionCoverProps = {
-    shopifyCollection: ShopifyCollectionType;
+    shopifyCollection: string;
     editing?: boolean;
     alignItems?: 'flex-start' | 'center' | 'flex-end';
     alt?: string;

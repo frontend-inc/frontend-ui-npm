@@ -9,6 +9,7 @@ export declare const resizeCloudinaryImage: (src: any, { width, height, transfor
     height: any;
     transform?: string;
 }) => string;
+export declare const cloudinaryConvertToJpeg: (url: any) => any;
 export declare const cloudinaryImageFromVideoUrl: (url: any) => any;
 export declare const scrollTo: (domId: any) => void;
 export declare const formatCurrency: (amount: any, currency?: string) => string;

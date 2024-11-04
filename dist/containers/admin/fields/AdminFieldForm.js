@@ -56,6 +56,11 @@ var AdminFieldForm = function (props) {
         { label: 'Settings', value: 'settings' },
         { label: 'Validate', value: 'validate' },
     ];
+    (0, react_1.useEffect)(function () {
+        if (open) {
+            setTab('field');
+        }
+    }, [open]);
     return (react_1.default.createElement(components_1.Sheet, { disablePadding: true, open: open, handleClose: handleClose, title: (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Edit' : 'Add', buttons: react_1.default.createElement(core_1.Button, { fullWidth: true, onClick: handleSubmit, startIcon: loading && react_1.default.createElement(components_1.IconLoading, null) }, (resource === null || resource === void 0 ? void 0 : resource.id) ? 'Update' : 'Save') },
         react_1.default.createElement("div", { className: "p-2" },
             react_1.default.createElement(components_1.ButtonTabs, { fullWidth: true, value: tab, options: TABS, handleChange: setTab })),
@@ -68,7 +73,7 @@ var AdminFieldForm = function (props) {
                         {
                             label: 'API name',
                             name: 'name',
-                            variant: 'snake_case',
+                            variant: 'slug',
                             conditions: [
                                 {
                                     name: 'variant',

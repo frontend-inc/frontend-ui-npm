@@ -1,7 +1,6 @@
 import React from 'react';
-import { ShopifyProductType } from 'frontend-shopify';
 export type ShopifyProductDetailsProps = {
-    shopifyProduct: ShopifyProductType;
+    shopifyProduct: string;
     buttonText?: string;
     enableQuantity?: boolean;
     enableFavorites?: boolean;

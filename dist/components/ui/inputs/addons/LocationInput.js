@@ -64,7 +64,7 @@ function LocationInput(_a) {
     (0, use_click_outside_1.useClickOutside)(wrapperRef, function () { return setOpen(false); });
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full', direction === 'column' ? 'space-y-4' : 'space-x-4 flex') },
         enablePosition && lat && lng && (react_1.default.createElement("div", { className: "overflow-hidden", style: { height: height, width: width } },
-            react_1.default.createElement(__1.GoogleMap, { enableBorder: true, darkTheme: darkTheme, height: height, width: width, zoom: zoom, resources: [{ lat: lat, lng: lng }] }))),
+            react_1.default.createElement(__1.GoogleMaps, { enableBorder: true, darkTheme: darkTheme, height: height, width: width, zoom: zoom, resources: [{ lat: lat, lng: lng }] }))),
         react_1.default.createElement("div", { className: "flex-grow relative", ref: wrapperRef },
             react_1.default.createElement(__1.TextInput, { name: name, label: label, value: keywords, handleChange: handleKeywordChange, direction: direction, placeholder: placeholder }),
             open && (react_1.default.createElement("div", { className: "absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg" }, placeOptions.length > 0 ? (react_1.default.createElement("ul", { className: "max-h-[300px] overflow-auto" }, placeOptions.map(function (option, index) { return (react_1.default.createElement("li", { key: index, className: "px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center", onClick: function () { return handleClick(option); } },

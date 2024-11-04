@@ -15,6 +15,6 @@ var Header = function (props) {
     return (react_1.default.createElement("header", { className: "h-[64px] w-full" },
         react_1.default.createElement(DesktopHeader_1.default, { logo: logo || appLogo, enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, links: links, buttons: buttons, handleClick: handleClick }),
         react_1.default.createElement(MobileHeader_1.default, { logo: logo || appLogo, enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, enableNotifications: true, links: links, buttons: buttons, handleClick: handleClick }),
-        react_1.default.createElement(MobileDrawer_1.default, { enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, links: links, handleClick: handleClick })));
+        react_1.default.createElement(MobileDrawer_1.default, { links: links, handleClick: handleClick })));
 };
 exports.default = Header;

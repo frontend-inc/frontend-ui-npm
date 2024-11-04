@@ -2,7 +2,7 @@ import React from 'react';
 type HeroCardProps = {
     label: string;
     image: string;
-    primary: string;
+    primary?: string;
     secondary: React.ReactNode;
     actions?: React.ReactNode;
 };

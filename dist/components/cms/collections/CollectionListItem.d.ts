@@ -1,10 +1,10 @@
 import React from 'react';
-import { ButtonType, DisplayFieldType } from '../../../types';
+import { ButtonType, MetafieldType } from '../../../types';
 type CardStyleTypes = 'list' | 'avatar' | 'card' | 'cover' | 'text';
 type CollectionListItemProps = {
     buttons: ButtonType[];
     style: CardStyleTypes;
-    displayFields: DisplayFieldType[];
+    listFields: MetafieldType[];
     resource: any;
     buttonText?: string;
     href?: string;

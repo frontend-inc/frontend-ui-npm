@@ -32,7 +32,6 @@ var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var navigation_1 = require("next/navigation");
-var CollectionSchemaToggle_1 = __importDefault(require("./CollectionSchemaToggle"));
 var AdminCollectionMenu_1 = __importDefault(require("./AdminCollectionMenu"));
 var documents_1 = require("../documents");
 var frontend_shadcn_1 = require("frontend-shadcn");
@@ -51,8 +50,8 @@ var AdminCollectionPage = function () {
         react_1.default.createElement(components_1.AdminLayoutLeft, null,
             react_1.default.createElement(AdminCollectionMenu_1.default, null)),
         react_1.default.createElement(components_1.AdminLayoutCenter, null,
-            react_1.default.createElement(components_1.AdminHeader, { enableExpandLeftPanel: true, primaryActions: collectionId && (react_1.default.createElement(CollectionSchemaToggle_1.default, { tab: "content" })) }),
+            react_1.default.createElement(components_1.AdminHeader, { enableExpandLeftPanel: true }),
             react_1.default.createElement(frontend_shadcn_1.ScrollArea, null,
-                react_1.default.createElement("div", { className: "w-full p-4" }, collection ? (react_1.default.createElement(documents_1.AdminDocumentsList, { fields: collection === null || collection === void 0 ? void 0 : collection.fields, collectionId: collectionId })) : (react_1.default.createElement(components_2.Placeholder, { icon: "Database", title: "No collection.", description: "Select or create a CMS collection." })))))));
+                react_1.default.createElement("div", { className: "w-full p-4" }, collection ? (react_1.default.createElement(documents_1.AdminDocumentsList, { documentType: collection === null || collection === void 0 ? void 0 : collection.document_type, metafields: collection === null || collection === void 0 ? void 0 : collection.fields, collectionId: collectionId })) : (react_1.default.createElement(components_2.Placeholder, { icon: "Database", title: "No collection.", description: "Select or create a CMS collection." })))))));
 };
 exports.default = AdminCollectionPage;

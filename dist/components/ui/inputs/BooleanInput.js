@@ -9,7 +9,7 @@ var __1 = require("../..");
 var BooleanInput = function (props) {
     var name = props.name, value = props.value, handleChange = props.handleChange, label = props.label, info = props.info;
     var handleTabChange = function (ev) {
-        var newValue = ev.target.value == 'yes' ? true : false;
+        var newValue = ev.target.value == 'true' ? true : false;
         handleChange({
             target: {
                 name: name,
@@ -18,8 +18,8 @@ var BooleanInput = function (props) {
         });
     };
     return (react_1.default.createElement(__1.TabsInput, { name: name, label: label, info: info, options: [
-            { label: 'No', value: 'no' },
-            { label: 'Yes', value: 'yes' },
-        ], value: value == true ? 'yes' : 'no', handleChange: handleTabChange }));
+            { label: 'No', value: 'false' },
+            { label: 'Yes', value: 'true' },
+        ], value: value == true ? 'true' : 'false', handleChange: handleTabChange }));
 };
 exports.default = BooleanInput;

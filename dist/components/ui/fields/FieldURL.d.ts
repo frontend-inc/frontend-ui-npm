@@ -1,4 +1,7 @@
 import React from 'react';
 import { FieldElementProps } from './Field';
-declare const FieldURL: React.FC<FieldElementProps>;
+type FieldURLProps = FieldElementProps & {
+    buttonText?: string;
+};
+declare const FieldURL: React.FC<FieldURLProps>;
 export default FieldURL;

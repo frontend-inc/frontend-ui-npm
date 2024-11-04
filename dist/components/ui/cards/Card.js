@@ -29,7 +29,7 @@ var Card = react_1.default.forwardRef(function (props, ref) {
     return (react_1.default.createElement(frontend_shadcn_2.Card, __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)('w-full overflow-hidden') }, slots.item),
         react_1.default.createElement("div", { className: 'w-full relative overflow-hidden' },
             react_1.default.createElement(__1.Image, __assign({ src: image, height: size, alt: primary, label: label, handleClick: handleClick, aspectRatio: 4 / 3, disableBorderRadius: true }, slots.image))),
-        react_1.default.createElement(frontend_shadcn_2.CardContent, { className: 'px-4 pt-3 overflow-hidden' },
+        react_1.default.createElement(frontend_shadcn_2.CardContent, { className: 'mx-3 pt-3 flex flex-col space-y-2 overflow-hidden' },
             react_1.default.createElement(core_1.Typography, { variant: "body1" }, primary),
             secondary && (react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, secondary)),
             tertiary && (react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, tertiary))),

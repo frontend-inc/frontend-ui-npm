@@ -17,7 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./alert-button"), exports);
 __exportStar(require("./autocomplete"), exports);
 __exportStar(require("./backdrop"), exports);
-__exportStar(require("./badge"), exports);
 __exportStar(require("./button"), exports);
 __exportStar(require("./checkbox"), exports);
 __exportStar(require("./collapse"), exports);

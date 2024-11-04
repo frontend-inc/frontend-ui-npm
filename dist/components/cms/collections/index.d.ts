@@ -11,6 +11,7 @@ export { default as ImageListItems } from './ImageListItems';
 export { default as SimilarList } from './SimilarList';
 export { default as VideoList } from './VideoList';
 export { default as VideoListItems } from './VideoListItems';
+export { default as CollectionDetails } from './CollectionDetails';
 export { default as CollectionEmpty } from './CollectionEmpty';
 export { default as CollectionList } from './CollectionList';
 export { default as CollectionListItem } from './CollectionListItem';

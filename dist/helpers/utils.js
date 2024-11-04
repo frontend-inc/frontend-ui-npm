@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatCurrency = exports.scrollTo = exports.cloudinaryImageFromVideoUrl = exports.resizeCloudinaryImage = exports.groupResourcesByField = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
+exports.formatCurrency = exports.scrollTo = exports.cloudinaryImageFromVideoUrl = exports.cloudinaryConvertToJpeg = exports.resizeCloudinaryImage = exports.groupResourcesByField = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
 var isEmptyObject = function (object) {
     if (Object.values(object).every(function (x) { return x === null || x === ''; })) {
         return false;
@@ -96,6 +96,10 @@ var resizeCloudinaryImage = function (src, _a // fit | fill | crop | scale | pad
     return transformedUrl;
 };
 exports.resizeCloudinaryImage = resizeCloudinaryImage;
+var cloudinaryConvertToJpeg = function (url) {
+    return url.replace(/\.\w+$/, '.jpg');
+};
+exports.cloudinaryConvertToJpeg = cloudinaryConvertToJpeg;
 var cloudinaryImageFromVideoUrl = function (url) {
     if (!url)
         return null;

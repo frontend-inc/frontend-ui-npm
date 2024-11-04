@@ -39,11 +39,15 @@ var AdminDocumentInput = function (props) {
         select: components_1.Autosuggest,
         rating: components_1.RatingInput,
         products: ProductsInput_1.default,
-        shopify_products: components_1.ShopifyProductsInput,
         file: components_2.MediaInput,
         image: components_2.MediaInput,
         video: components_2.MediaInput,
         habtm: ReferenceInput_1.default,
+        youtube_video: components_1.TextInput,
+        vimeo_video: components_1.TextInput,
+        soundcloud_audio: components_1.TextInput,
+        calendly_url: components_1.TextInput,
+        shopify_product: components_1.ShopifyProductInput,
     };
     var Component = componentMapper[variant] || components_1.TextInput;
     var inputProps = {

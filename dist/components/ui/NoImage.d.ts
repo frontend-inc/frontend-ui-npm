@@ -1,7 +1,8 @@
 import React from 'react';
 type NoImageProps = {
+    aspectRatio?: number;
     height?: number;
-    width?: number;
+    icon?: string;
     disableBorder?: boolean;
     disableBorderRadius?: boolean;
 };

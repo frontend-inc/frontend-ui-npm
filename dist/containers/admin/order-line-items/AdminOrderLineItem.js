@@ -28,13 +28,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var core_1 = require("../../../components/core");
+var frontend_shadcn_1 = require("frontend-shadcn");
 var AdminOrderLineItem = function (props) {
     var _a, _b, _c, _d;
     var orderLineItem = props.resource, selectable = props.selectable, selected = props.selected, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, rest = __rest(props, ["resource", "selectable", "selected", "handleClick", "handleEdit", "handleDelete", "handleSelect"]);
-    return (react_1.default.createElement(components_1.ResourceListItem, __assign({ selectable: selectable, selected: selected, image: (_a = orderLineItem === null || orderLineItem === void 0 ? void 0 : orderLineItem.product_data) === null || _a === void 0 ? void 0 : _a.image_url, avatar: react_1.default.createElement(core_1.Badge, { badgeContent: 2 },
-            react_1.default.createElement("div", { className: "w-[64px] h-[64px]" },
-                react_1.default.createElement(components_1.Image, { alt: ((_b = orderLineItem === null || orderLineItem === void 0 ? void 0 : orderLineItem.product_data) === null || _b === void 0 ? void 0 : _b.title) || '', src: (_c = orderLineItem === null || orderLineItem === void 0 ? void 0 : orderLineItem.product_data) === null || _c === void 0 ? void 0 : _c.image_url, height: 64, width: 64 }))), primary: (_d = orderLineItem.product_data) === null || _d === void 0 ? void 0 : _d.title, secondary: react_1.default.createElement(components_1.DisplayFields, { disableBorder: true, disableLabel: true, resource: orderLineItem, fields: [
+    return (react_1.default.createElement(components_1.ResourceListItem, __assign({ selectable: selectable, selected: selected, image: (_a = orderLineItem === null || orderLineItem === void 0 ? void 0 : orderLineItem.product_data) === null || _a === void 0 ? void 0 : _a.image_url, avatar: react_1.default.createElement("div", { className: "relative w-[64px] h-[64px]" },
+            react_1.default.createElement(components_1.Image, { alt: ((_b = orderLineItem === null || orderLineItem === void 0 ? void 0 : orderLineItem.product_data) === null || _b === void 0 ? void 0 : _b.title) || '', src: (_c = orderLineItem === null || orderLineItem === void 0 ? void 0 : orderLineItem.product_data) === null || _c === void 0 ? void 0 : _c.image_url, height: 64, width: 64 }),
+            react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, orderLineItem === null || orderLineItem === void 0 ? void 0 : orderLineItem.quantity)), primary: (_d = orderLineItem.product_data) === null || _d === void 0 ? void 0 : _d.title, secondary: react_1.default.createElement(components_1.ListFields, { resource: orderLineItem, fields: [
                 { label: 'Price', name: 'product_data.price', variant: 'price' },
             ] }), secondaryAction: react_1.default.createElement(components_1.Label, { label: orderLineItem === null || orderLineItem === void 0 ? void 0 : orderLineItem.status }), handleEdit: handleEdit, handleClick: handleClick, handleSelect: handleSelect }, rest)));
 };

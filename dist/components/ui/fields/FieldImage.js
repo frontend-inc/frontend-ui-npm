@@ -6,15 +6,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
+var frontend_shadcn_1 = require("frontend-shadcn");
 var FieldImage = function (props) {
-    var label = props.label, value = props.value, _a = props.height, height = _a === void 0 ? 140 : _a, width = props.width, color = props.color, disableLabel = props.disableLabel;
-    if (!value)
-        return null;
-    return (react_1.default.createElement(components_1.FieldWrapper, { color: color, label: label, disableLabel: disableLabel },
-        react_1.default.createElement("div", { style: {
-                height: "".concat(height, "px"),
-                width: width ? "".concat(width, "px") : 'auto',
+    var label = props.label, value = props.value, className = props.className, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, _a = props.height, height = _a === void 0 ? 140 : _a;
+    return (react_1.default.createElement(components_1.FieldWrapper, null,
+        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)("w-full max-w-screen-md", className), style: {
+                width: '100%',
+                height: height
             } },
-            react_1.default.createElement(components_1.Image, { aspectRatio: 1.0, alt: label || 'Image', src: (value === null || value === void 0 ? void 0 : value.url) || value, height: height }))));
+            react_1.default.createElement(components_1.Image, { label: label, alt: label, src: value === null || value === void 0 ? void 0 : value.url, height: height, enableGradient: enableGradient, enableOverlay: enableOverlay }))));
 };
 exports.default = FieldImage;

@@ -1,7 +1,5 @@
 import React from 'react';
-import { DisplayFieldType } from '../../../types';
 type ProductListItemProps = {
-    displayFields: DisplayFieldType[];
     resource: any;
     buttonText?: string;
     handleClick: () => void;

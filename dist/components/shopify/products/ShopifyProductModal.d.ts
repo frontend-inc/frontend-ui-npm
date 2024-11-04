@@ -1,7 +1,6 @@
 import React from 'react';
-import { ShopifyProductType } from 'frontend-shopify';
 type ShopifyProductModalProps = {
-    shopifyProduct: ShopifyProductType;
+    shopifyProduct: string;
     enableQuantity?: boolean;
     open?: boolean;
     buttonText?: string;

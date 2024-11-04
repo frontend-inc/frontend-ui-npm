@@ -55,7 +55,7 @@ var MediaUploader = function (props) {
                 case 0:
                     _a.trys.push([0, 2, , 3]);
                     if ((file === null || file === void 0 ? void 0 : file.size) > constants_1.MAX_FILE_SIZE) {
-                        showAlertError('File size must be less than 5MB.');
+                        showAlertError('File size must be less than 10MB.');
                         return [2 /*return*/];
                     }
                     return [4 /*yield*/, uploadFile(file)];

@@ -25,7 +25,7 @@ var frontend_shadcn_2 = require("frontend-shadcn");
 var CarouselListItems = function (props) {
     var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var buttons = props.buttons, href = props.href, displayFields = props.displayFields, _a = props.enableGradient, enableGradient = _a === void 0 ? false : _a, _b = props.enableOverlay, enableOverlay = _b === void 0 ? false : _b, _c = props.enableFavorites, enableFavorites = _c === void 0 ? false : _c, _d = props.enableLikes, enableLikes = _d === void 0 ? false : _d, _e = props.slots, slots = _e === void 0 ? {
+    var buttons = props.buttons, href = props.href, metafields = props.metafields, _a = props.enableGradient, enableGradient = _a === void 0 ? false : _a, _b = props.enableOverlay, enableOverlay = _b === void 0 ? false : _b, _c = props.enableFavorites, enableFavorites = _c === void 0 ? false : _c, _d = props.enableLikes, enableLikes = _d === void 0 ? false : _d, _e = props.slots, slots = _e === void 0 ? {
         item: {},
         image: {},
     } : _e;
@@ -47,7 +47,7 @@ var CarouselListItems = function (props) {
         react_1.default.createElement(frontend_shadcn_2.Carousel, null,
             react_1.default.createElement(frontend_shadcn_2.CarouselContent, null, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(frontend_shadcn_2.CarouselItem, { className: "sm:basis-1/2 lg:basis-1/3", key: index },
                 react_1.default.createElement("div", { className: 'p-1' },
-                    react_1.default.createElement(CollectionListItem_1.default, __assign({ buttons: buttons, style: "card", resource: resource, displayFields: displayFields, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableLikes: enableLikes }, slots.item))))); })),
+                    react_1.default.createElement(CollectionListItem_1.default, __assign({ buttons: buttons, style: "card", resource: resource, metafields: metafields, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableLikes: enableLikes }, slots.item))))); })),
             react_1.default.createElement(frontend_shadcn_2.CarouselPrevious, { className: "hidden sm:flex" }),
             react_1.default.createElement(frontend_shadcn_2.CarouselNext, { className: "hidden sm:flex" }))));
 };

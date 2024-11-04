@@ -13,6 +13,6 @@ var AdminMediaList = function (props) {
     return (react_1.default.createElement(components_1.ResourceList, { grid: true, url: "".concat(apiUrl, "/storage"), name: "storage", enableCreate: true, enableDelete: true, enableShow: true, query: {
             sort_by: 'created_at',
             sort_direction: 'desc',
-        }, edit: __1.AdminMediaForm, create: __1.AdminMediaForm, component: __1.AdminMediaItem, show: __1.AdminMediaShow, emptyIcon: "Image", emptyTitle: "No uploads", emptyDescription: "No uploads yet." }));
+        }, edit: __1.AdminMediaForm, create: __1.AdminMediaForm, component: __1.AdminMediaListItem, show: __1.AdminMediaShow, emptyIcon: "Image", emptyTitle: "No uploads", emptyDescription: "No uploads yet." }));
 };
 exports.default = AdminMediaList;

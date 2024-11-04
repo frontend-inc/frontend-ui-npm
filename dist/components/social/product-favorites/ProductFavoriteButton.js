@@ -106,7 +106,7 @@ function ProductFavoriteButton(_a) {
     }, [currentUser, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement("div", null,
         react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' &&
-                'border border-divider bg-background text-secondary hover:bg-background hover:text-secondary', isFavorite && 'text-primary hover:text-primary-dark border-primary ring-offset-2 ring-2 ring-ring') },
+                'border border-divider bg-background text-secondary hover:bg-background hover:text-secondary', isFavorite && 'text-primary hover:text-primary-dark') },
             react_1.default.createElement(lucide_react_1.Bookmark, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', isFavorite ? 'fill-primary' : 'fill-none ') }))));
 }
 exports.default = ProductFavoriteButton;

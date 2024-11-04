@@ -3,11 +3,6 @@ import { ShopifyProductType } from 'frontend-shopify';
 type ShopifyProductsProps = {
     loading?: boolean;
     products: ShopifyProductType[];
-    xs?: number;
-    sm?: number;
-    md?: number;
-    lg?: number;
-    xl?: number;
     buttonText?: string;
     enableBorder?: boolean;
     enableAddToCart?: boolean;

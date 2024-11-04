@@ -154,7 +154,7 @@ var ShopifyCartLine = function (_a) {
         }
     }, [price, sellingPlanAllocation]);
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex items-start space-x-4 py-4', loading && 'opacity-30') },
-        react_1.default.createElement(core_1.Badge, { badgeContent: quantity },
+        react_1.default.createElement("div", { className: "relative" },
             react_1.default.createElement(image_1.default, { alt: ((_c = (_b = line === null || line === void 0 ? void 0 : line.merchandise) === null || _b === void 0 ? void 0 : _b.product) === null || _c === void 0 ? void 0 : _c.title) || '', src: url, height: 96, width: 96, className: "rounded-md", onClick: handleClick })),
         react_1.default.createElement("div", { className: "flex-grow" },
             react_1.default.createElement(core_1.Typography, { variant: "body1" }, (_e = (_d = line === null || line === void 0 ? void 0 : line.merchandise) === null || _d === void 0 ? void 0 : _d.product) === null || _e === void 0 ? void 0 : _e.title),

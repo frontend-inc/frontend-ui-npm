@@ -28,7 +28,7 @@ var AdminMenuForm = function (props) {
             {
                 label: 'API name',
                 name: 'name',
-                variant: 'snake_case',
+                variant: 'slug',
                 placeholder: 'Name',
             },
         ] })));

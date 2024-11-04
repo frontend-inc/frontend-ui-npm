@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisplayFieldType, TypographyVariantsType } from '../../../types';
+import { MetafieldType, TypographyVariantsType } from '../../../types';
 export type FieldElementProps = {
     label?: string;
     value: any;
@@ -8,12 +8,11 @@ export type FieldElementProps = {
     variant?: TypographyVariantsType;
     alignItems?: 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline';
     placeholder?: string;
-    disableLabel?: boolean;
     dateFormat?: string;
     className?: string;
 };
 type FieldProps = {
-    field: DisplayFieldType;
+    field: MetafieldType;
     resource?: any;
     label?: string | null;
     color?: string;
@@ -23,7 +22,6 @@ type FieldProps = {
     enableBorder?: boolean;
     disablePadding?: boolean;
     dateFormat?: string;
-    disableLabel?: boolean;
 };
 declare const Field: React.FC<FieldProps>;
 export default Field;

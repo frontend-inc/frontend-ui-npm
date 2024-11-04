@@ -50,13 +50,13 @@ var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
 function GeoListItems(_a) {
-    var url = _a.url, displayFields = _a.displayFields, rest = __rest(_a, ["url", "displayFields"]);
+    var url = _a.url, metafields = _a.metafields, rest = __rest(_a, ["url", "metafields"]);
     var resources = (0, react_1.useContext)(frontend_js_1.ResourceContext).resources;
     return (react_1.default.createElement("div", { className: "flex flex-col md:flex-row -mx-2" },
         react_1.default.createElement("div", { className: "w-full md:w-7/12 px-2 mb-4 md:mb-0" },
-            react_1.default.createElement(__1.CollectionListItems, __assign({}, rest, { displayFields: displayFields, style: "list" }))),
+            react_1.default.createElement(__1.CollectionListItems, __assign({}, rest, { metafields: metafields, style: "list" }))),
         react_1.default.createElement("div", { className: "w-full md:w-5/12 px-2" },
             react_1.default.createElement("div", { className: "hidden md:block" },
-                react_1.default.createElement(__1.GoogleMap, { enableBorder: true, zoom: 15, height: 380, resources: resources, displayFields: displayFields })))));
+                react_1.default.createElement(__1.GoogleMaps, { enableBorder: true, zoom: 15, height: 380, resources: resources })))));
 }
 exports.default = GeoListItems;

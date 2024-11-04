@@ -10,14 +10,15 @@ var frontend_js_1 = require("frontend-js");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var frontend_shadcn_2 = require("frontend-shadcn");
 var ProductCarouselListItems = function (props) {
-    var displayFields = props.displayFields, _a = props.enableGradient, enableGradient = _a === void 0 ? false : _a, _b = props.enableOverlay, enableOverlay = _b === void 0 ? false : _b, _c = props.enableRatings, enableRatings = _c === void 0 ? false : _c, _d = props.enableFavorites, enableFavorites = _d === void 0 ? false : _d, _e = props.enableLikes, enableLikes = _e === void 0 ? false : _e;
+    var handleClick = props.handleClick, _a = props.enableGradient, enableGradient = _a === void 0 ? false : _a, _b = props.enableOverlay, enableOverlay = _b === void 0 ? false : _b, _c = props.enableRatings, enableRatings = _c === void 0 ? false : _c, _d = props.enableFavorites, enableFavorites = _d === void 0 ? false : _d, _e = props.enableLikes, enableLikes = _e === void 0 ? false : _e;
     var _f = (0, frontend_js_1.useResourceContext)(), setOpenShow = _f.setOpenShow, loading = _f.loading, resources = _f.resources, setResource = _f.setResource;
-    var handleClick = function (resource) {
+    var handleShowClick = function (product) {
         if (handleClick) {
-            handleClick(resource);
+            handleClick(product);
+            return;
         }
         else {
-            setResource(resource);
+            setResource(product);
             setOpenShow(true);
         }
     };
@@ -25,7 +26,7 @@ var ProductCarouselListItems = function (props) {
         react_1.default.createElement(frontend_shadcn_2.Carousel, null,
             react_1.default.createElement(frontend_shadcn_2.CarouselContent, null, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(frontend_shadcn_2.CarouselItem, { className: "sm:basis-1/2 lg:basis-1/3", key: index },
                 react_1.default.createElement("div", { className: 'p-1' },
-                    react_1.default.createElement(ProductListItem_1.default, { resource: resource, displayFields: displayFields, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableRatings: enableRatings, enableLikes: enableLikes })))); })),
+                    react_1.default.createElement(ProductListItem_1.default, { resource: resource, handleClick: function () { return handleShowClick(resource); }, enableGradient: enableGradient, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableRatings: enableRatings, enableLikes: enableLikes })))); })),
             react_1.default.createElement(frontend_shadcn_2.CarouselPrevious, { className: "hidden sm:flex" }),
             react_1.default.createElement(frontend_shadcn_2.CarouselNext, { className: "hidden sm:flex" }))));
 };

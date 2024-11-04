@@ -1,8 +1,9 @@
 import React from 'react';
-import { GoogleMarkerType, DisplayFieldType } from '../../../types';
-export type GoogleMarkerProps = {
-    marker: GoogleMarkerType;
-    displayFields: DisplayFieldType[];
+export type GoogleMarkerType = {
+    label?: string;
+    image?: string;
+    lat: number;
+    lng: number;
 };
-declare const GoogleMarker: React.FC<GoogleMarkerProps>;
+declare const GoogleMarker: React.FC<GoogleMarkerType>;
 export default GoogleMarker;

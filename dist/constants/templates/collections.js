@@ -1,135 +1,89 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.COLLECTION_TEMPLATES = exports.COLLECTION_IMAGE = exports.COLLECTION_VIDEO = exports.COLLECTION_EVENT = exports.COLLECTION_PLACE = exports.COLLECTION_PERSON = exports.COLLECTION_ARTICLE = exports.COLLECTION_CUSTOM = void 0;
-var fields = __importStar(require("../../constants/templates/field-templates"));
-exports.COLLECTION_CUSTOM = {
-    icon: 'Box',
-    name: 'items',
-    label: 'Custom',
+exports.COLLECTION_TEMPLATES = exports.COLLECTION_SHOPIFY = exports.COLLECTION_SOUNDCLOUD = exports.COLLECTION_VIMEO = exports.COLLECTION_YOUTUBE = exports.COLLECTION_FILE = exports.COLLECTION_IMAGE = exports.COLLECTION_VIDEO = exports.COLLECTION_EVENT = exports.COLLECTION_PLACE = exports.COLLECTION_PERSON = exports.COLLECTION_ARTICLE = exports.COLLECTION_POST = void 0;
+exports.COLLECTION_POST = {
+    icon: 'LayoutPanelTop',
+    document_type: 'post',
+    label: 'Post',
     color: 'bg-purple-500',
-    description: 'Customize your collection',
-    fields: __spreadArray([], fields.BASE_FIELD_TEMPLATES, true),
-    data: [],
 };
 exports.COLLECTION_ARTICLE = {
     icon: 'FileText',
-    name: 'articles',
+    document_type: 'article',
     label: 'Article',
     color: 'bg-orange-500',
-    description: 'Blogs, articles, posts, etc.',
-    fields: __spreadArray(__spreadArray([], fields.BASE_FIELD_TEMPLATES, true), [
-        fields.PUBLISHED_AT_FIELD_TEMPLATE,
-        fields.TOPICS_FIELD_TEMPLATE,
-    ], false),
 };
 exports.COLLECTION_PERSON = {
     icon: 'User',
-    name: 'people',
+    document_type: 'person',
     label: 'Person',
     color: 'bg-pink-500',
-    description: 'People, authors, influencers, etc.',
-    fields: [
-        fields.HANDLE_FIELD_TEMPLATE,
-        fields.IMAGE_FIELD_TEMPLATE,
-        fields.LABEL_FIELD_TEMPLATE,
-        fields.NAME_FIELD_TEMPLATE,
-        fields.ABOUT_ME_FIELD_TEMPLATE,
-        fields.TAGS_FIELD_TEMPLATE,
-    ],
 };
 exports.COLLECTION_PLACE = {
     icon: 'MapPin',
-    name: 'places',
+    document_type: 'place',
     label: 'Place',
     color: 'bg-blue-500',
-    description: 'Companies, restaurants, venues, etc.',
-    fields: [
-        fields.HANDLE_FIELD_TEMPLATE,
-        fields.IMAGE_FIELD_TEMPLATE,
-        fields.LABEL_FIELD_TEMPLATE,
-        fields.NAME_FIELD_TEMPLATE,
-        fields.DESCRIPTION_FIELD_TEMPLATE,
-        fields.LOCATION_FIELD_TEMPLATE,
-        fields.TAGS_FIELD_TEMPLATE,
-    ],
 };
 exports.COLLECTION_EVENT = {
     icon: 'Calendar',
-    name: 'events',
+    document_type: 'event',
     label: 'Event',
-    color: 'bg-amber-500',
-    description: 'Meetups, events, conferences, etc.',
-    fields: __spreadArray(__spreadArray([], fields.BASE_FIELD_TEMPLATES, true), [
-        fields.START_DATE_FIELD_TEMPLATE,
-        fields.END_DATE_FIELD_TEMPLATE,
-        fields.DURATION_MINUTES_FIELD_TEMPLATE,
-    ], false),
+    color: 'bg-amber-500'
 };
 exports.COLLECTION_VIDEO = {
     icon: 'Video',
-    name: 'videos',
+    document_type: 'video',
     label: 'Video',
-    color: 'bg-amber-500',
-    description: 'Short videos',
-    fields: [
-        fields.IMAGE_FIELD_TEMPLATE,
-        fields.VIDEO_FIELD_TEMPLATE,
-        fields.HANDLE_FIELD_TEMPLATE,
-        fields.TITLE_FIELD_TEMPLATE,
-        fields.DESCRIPTION_FIELD_TEMPLATE,
-    ],
+    color: 'bg-purple-500',
 };
 exports.COLLECTION_IMAGE = {
     icon: 'Image',
-    name: 'images',
+    document_type: 'image',
     label: 'Image',
+    color: 'bg-purple-500',
+};
+exports.COLLECTION_FILE = {
+    icon: 'File',
+    document_type: 'file',
+    label: 'File',
+    color: 'bg-purple-500',
+};
+exports.COLLECTION_YOUTUBE = {
+    icon: 'Youtube',
+    document_type: 'youtube',
+    label: 'YouTube Videos',
+    color: 'bg-red-500',
+};
+exports.COLLECTION_VIMEO = {
+    icon: 'Play',
+    document_type: 'vimeo',
+    label: 'Vimeo Videos',
+    color: 'bg-sky-500',
+};
+exports.COLLECTION_SOUNDCLOUD = {
+    icon: 'AudioLines',
+    document_type: 'soundcloud',
+    label: 'Soundcloud Audio',
     color: 'bg-amber-500',
-    description: 'Photos, logos, etc.',
-    fields: [
-        fields.IMAGE_FIELD_TEMPLATE,
-        fields.HANDLE_FIELD_TEMPLATE,
-        fields.TITLE_FIELD_TEMPLATE,
-        fields.DESCRIPTION_FIELD_TEMPLATE,
-    ],
+};
+exports.COLLECTION_SHOPIFY = {
+    icon: 'ShoppingCart',
+    document_type: 'shopify',
+    label: 'Shopify Products',
+    color: 'bg-lime-500',
 };
 exports.COLLECTION_TEMPLATES = [
-    exports.COLLECTION_CUSTOM,
+    exports.COLLECTION_POST,
     exports.COLLECTION_ARTICLE,
     exports.COLLECTION_EVENT,
     exports.COLLECTION_PERSON,
     exports.COLLECTION_PLACE,
     exports.COLLECTION_VIDEO,
     exports.COLLECTION_IMAGE,
+    exports.COLLECTION_FILE,
+    exports.COLLECTION_YOUTUBE,
+    exports.COLLECTION_VIMEO,
+    exports.COLLECTION_SOUNDCLOUD,
+    exports.COLLECTION_SHOPIFY
 ];

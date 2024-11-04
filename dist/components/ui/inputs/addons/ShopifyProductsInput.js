@@ -91,7 +91,7 @@ var ShopifyProductImage = function (_a) {
             react_1.default.createElement(lucide_react_1.X, { className: "w-4 h-4 text-gray-600" }))));
 };
 var ShopifyProductsInput = function (_a) {
-    var _b = _a.value, value = _b === void 0 ? [] : _b, label = _a.label, _c = _a.direction, direction = _c === void 0 ? 'column' : _c, placeholder = _a.placeholder, _d = _a.name, name = _d === void 0 ? 'shopify_handle' : _d, handleChange = _a.handleChange, height = _a.height, width = _a.width;
+    var _b = _a.value, value = _b === void 0 ? [] : _b, label = _a.label, _c = _a.direction, direction = _c === void 0 ? 'column' : _c, placeholder = _a.placeholder, _d = _a.name, name = _d === void 0 ? 'shopify_products' : _d, handleChange = _a.handleChange, height = _a.height, width = _a.width;
     var _e = (0, react_1.useState)(''), currentValue = _e[0], setCurrentValue = _e[1];
     var _f = (0, react_1.useState)(value), shopifyProducts = _f[0], setShopifyProducts = _f[1];
     var _g = (0, react_1.useContext)(frontend_shopify_2.ShopifyContext), domain = _g.domain, storefrontAccessToken = _g.storefrontAccessToken;

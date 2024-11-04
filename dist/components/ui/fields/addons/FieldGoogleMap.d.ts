@@ -1,11 +1,11 @@
 import React from 'react';
-import { DisplayFieldType } from '../../../../types';
 export type FieldGoogleMapProps = {
-    fieldName: string;
-    resource: any;
+    value: string;
+    lat: number;
+    lng: number;
+    label: string;
+    image?: string;
     zoom?: number;
-    displayFields?: DisplayFieldType[];
-    darkTheme?: boolean;
 };
 declare const FieldGoogleMap: React.FC<FieldGoogleMapProps>;
 export default FieldGoogleMap;

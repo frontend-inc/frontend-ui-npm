@@ -23,5 +23,4 @@ export declare const SHOPIFY_PRODUCT_FIELD_VARIANT: FieldVariantType;
 export declare const YOUTUBE_VIDEO_FIELD_VARIANT: FieldVariantType;
 export declare const VIMEO_VIDEO_FIELD_VARIANT: FieldVariantType;
 export declare const SOUNDCLOUND_AUDIO_FIELD_VARIANT: FieldVariantType;
-export declare const CALENDLY_URL_FIELD_VARIANT: FieldVariantType;
 export declare const FIELD_VARIANTS: FieldVariantType[];

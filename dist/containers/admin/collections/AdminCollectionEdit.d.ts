@@ -7,7 +7,7 @@ type AdminCollectionEditProps = {
     handleClose: () => void;
     handleChange: (e: any) => void;
     handleSubmit: (collection: any) => void;
-    handleTemplateClick: (template: any) => void;
+    handleClick: (template: any) => void;
 };
 declare const AdminCollectionEdit: React.FC<AdminCollectionEditProps>;
 export default AdminCollectionEdit;

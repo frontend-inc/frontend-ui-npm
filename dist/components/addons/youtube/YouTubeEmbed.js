@@ -6,11 +6,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var YouTubeEmbed = function (props) {
-    var src = props.src, _a = props.height, height = _a === void 0 ? 315 : _a, _b = props.width, width = _b === void 0 ? 560 : _b;
-    return (react_1.default.createElement("div", null,
-        react_1.default.createElement("iframe", { width: width, height: height, src: src, frameBorder: "0", allowFullScreen: true, title: "Embedded YouTube video", style: {
-                aspectRatio: '16 / 9',
-                width: '100%',
-            } })));
+    var src = props.src;
+    return (react_1.default.createElement("div", { className: "relative overflow-hidden pb-[56.25%] w-full max-w-full" },
+        react_1.default.createElement("iframe", { className: "absolute top-0 left-0 w-full h-full", src: src, 
+            //@ts-ignore     
+            frameborder: "0", allowfullscreen: true })));
 };
 exports.default = YouTubeEmbed;

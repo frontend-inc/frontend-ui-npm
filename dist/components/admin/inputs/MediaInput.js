@@ -105,7 +105,7 @@ var MediaInput = function (_a) {
         react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
             react_1.default.createElement(components_2.InputLabel, { label: label }),
             react_1.default.createElement("div", { className: "w-[140px] h-[140px]" },
-                react_1.default.createElement(components_2.Image, { alt: label, src: value === null || value === void 0 ? void 0 : value.url, aspectRatio: 1.0, objectFit: objectFit })),
+                react_1.default.createElement(components_2.Image, { alt: label, src: value === null || value === void 0 ? void 0 : value.thumbnail_url, aspectRatio: 1.0, objectFit: objectFit })),
             react_1.default.createElement("div", { className: "flex flex-row" },
                 react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handleAddClick, className: (0, frontend_shadcn_1.cn)('flex items-center rounded-lg rounded-r-none') },
                     react_1.default.createElement(lucide_react_1.Search, { className: "mr-2 h-4 w-4" }),

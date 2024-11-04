@@ -19,6 +19,12 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var AdminDocumentCreateForm = function (props) {
     var _a = (props || {}).fields, fields = _a === void 0 ? [] : _a;
-    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields }));
+    var inputOptions = {
+        youtube_video: components_1.TextInput,
+        vimeo_video: components_1.TextInput,
+        soundcloud_audio: components_1.TextInput,
+        calendly_url: components_1.TextInput,
+    };
+    return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { inputOptions: inputOptions, fields: fields }));
 };
 exports.default = AdminDocumentCreateForm;

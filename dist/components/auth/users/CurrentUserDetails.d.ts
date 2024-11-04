@@ -1,8 +1,8 @@
 import React from 'react';
 import { DetailsProps } from '../../cms/details/Details';
-import { DisplayFieldType } from '../../../types';
+import { MetafieldType } from '../../../types';
 export type CurrentUserDetailsProps = DetailsProps & {
-    displayFields: DisplayFieldType[];
+    displayFields: MetafieldType[];
     url: string;
     enableBorder?: boolean;
 };

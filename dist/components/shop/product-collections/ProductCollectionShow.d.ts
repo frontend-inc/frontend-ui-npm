@@ -1,5 +1,5 @@
 import React from 'react';
-export type ShowModalProps = {
+export type ProductCollectionShowProps = {
     handle?: string;
     enableFavorites?: boolean;
     enableLikes?: boolean;
@@ -7,5 +7,5 @@ export type ShowModalProps = {
     enableGradient?: boolean;
     enableOverlay?: boolean;
 };
-declare const ShowModal: React.FC<ShowModalProps>;
-export default ShowModal;
+declare const ProductCollectionShow: React.FC<ProductCollectionShowProps>;
+export default ProductCollectionShow;

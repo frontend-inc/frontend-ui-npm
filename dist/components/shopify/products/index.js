@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShopifyProductSearch = exports.ShopifyProductRecommendations = exports.ShopifyProductModal = exports.ShopifyProducts = exports.ShopifyProductDescription = exports.ShopifyProductDetails = exports.ShopifyProductInfo = exports.ShopifyProductCollectionCarousel = exports.ShopifyProductCollection = exports.ShopifyProductCarousel = exports.ShopifyProductCard = exports.ShopifyProductArray = void 0;
+exports.ShopifyProductSearch = exports.ShopifyProductRecommendations = exports.ShopifyProductModal = exports.ShopifyProducts = exports.ShopifyProductDescription = exports.ShopifyProductDetails = exports.ShopifyProductInfo = exports.ShopifyProductCollectionCarousel = exports.ShopifyProductCollectionModal = exports.ShopifyProductCollection = exports.ShopifyProductCarousel = exports.ShopifyProductCard = exports.ShopifyProductArray = void 0;
 __exportStar(require("./images"), exports);
 // Products
 var ShopifyProductArray_1 = require("./ShopifyProductArray");
@@ -28,6 +28,8 @@ var ShopifyProductCarousel_1 = require("./ShopifyProductCarousel");
 Object.defineProperty(exports, "ShopifyProductCarousel", { enumerable: true, get: function () { return __importDefault(ShopifyProductCarousel_1).default; } });
 var ShopifyProductCollection_1 = require("./ShopifyProductCollection");
 Object.defineProperty(exports, "ShopifyProductCollection", { enumerable: true, get: function () { return __importDefault(ShopifyProductCollection_1).default; } });
+var ShopifyProductCollectionModal_1 = require("./ShopifyProductCollectionModal");
+Object.defineProperty(exports, "ShopifyProductCollectionModal", { enumerable: true, get: function () { return __importDefault(ShopifyProductCollectionModal_1).default; } });
 var ShopifyProductCollectionCarousel_1 = require("./ShopifyProductCollectionCarousel");
 Object.defineProperty(exports, "ShopifyProductCollectionCarousel", { enumerable: true, get: function () { return __importDefault(ShopifyProductCollectionCarousel_1).default; } });
 var ShopifyProductInfo_1 = require("./ShopifyProductInfo");

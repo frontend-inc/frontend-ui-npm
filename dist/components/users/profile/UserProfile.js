@@ -23,7 +23,7 @@ var UserProfile = function (props) {
                     username),
                 react_1.default.createElement(core_1.Typography, { variant: "h6", className: "w-full min-w-[200px] text-center sm:text-left" }, name),
                 react_1.default.createElement("div", { className: "flex flex-col space-y-1" },
-                    react_1.default.createElement(__1.DisplayFields, { resource: user, fields: displayFields }),
+                    react_1.default.createElement(__1.ListFields, { resource: user, fields: displayFields }),
                     about_me && (react_1.default.createElement(__1.ExpandableText, { text: about_me, className: "text-muted-foreground" })))),
             (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement("div", { className: "w-full flex justify-end items-start" },
                 react_1.default.createElement(__1.ButtonActions, { buttons: buttons }))))));

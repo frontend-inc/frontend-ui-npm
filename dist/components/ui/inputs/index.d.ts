@@ -29,7 +29,7 @@ export { default as ThemeInput } from './ThemeInput';
 export { default as RadioInput } from './RadioInput';
 export { default as RatingInput } from './RatingInput';
 export { default as RemoteAutosuggest } from './RemoteAutosuggest';
-export { default as SnakeCaseInput } from './SnakeCaseInput';
+export { default as SlugInput } from './SlugInput';
 export { default as SelectInput } from './SelectInput';
 export { default as StateInput } from './StateInput';
 export { default as SwitchInput } from './SwitchInput';

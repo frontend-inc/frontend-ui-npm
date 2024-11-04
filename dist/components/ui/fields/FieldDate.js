@@ -8,8 +8,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var moment_1 = __importDefault(require("moment"));
 var FieldDate = function (props) {
-    var value = props.value, label = props.label, disableLabel = props.disableLabel;
+    var value = props.value, label = props.label;
     var formattedValue = (0, moment_1.default)(value).format('MM/DD/YYYY');
-    return (react_1.default.createElement(components_1.FieldString, { label: label, value: formattedValue, disableLabel: disableLabel }));
+    return (react_1.default.createElement(components_1.FieldString, { label: label, value: formattedValue }));
 };
 exports.default = FieldDate;

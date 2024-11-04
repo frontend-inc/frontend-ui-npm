@@ -29,6 +29,7 @@ var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
 var components_1 = require("../../../components");
 var core_1 = require("../../core");
+var frontend_shadcn_1 = require("frontend-shadcn");
 function ShopifyCartButton(_a) {
     var _b = _a.icon, icon = _b === void 0 ? 'ShoppingCart' : _b;
     var _c = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext), cart = _c.cart, toggleCart = _c.toggleCart;
@@ -37,8 +38,9 @@ function ShopifyCartButton(_a) {
         setMenuOpen(false);
         toggleCart();
     };
-    return (react_1.default.createElement(core_1.IconButton, { onClick: handleCartClick },
-        react_1.default.createElement(core_1.Badge, { badgeContent: cart === null || cart === void 0 ? void 0 : cart.totalQuantity },
-            react_1.default.createElement(components_1.Icon, { name: icon, size: 24 }))));
+    return (react_1.default.createElement("div", { className: "relative" },
+        react_1.default.createElement(core_1.IconButton, { onClick: handleCartClick },
+            react_1.default.createElement(components_1.Icon, { name: icon, size: 24 })),
+        react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, cart === null || cart === void 0 ? void 0 : cart.totalQuantity)));
 }
 exports.default = ShopifyCartButton;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormFieldType, SearchFilterOptionType, TableHeaderType, DisplayFieldType } from '../../../types';
+import { FormFieldType, SearchFilterOptionType, TableHeaderType, MetafieldType } from '../../../types';
 import { SortOptionType } from '../../../types';
 import { ToolbarButtonType } from '../../../types';
 export type ResourceListProps = {
@@ -27,7 +27,7 @@ export type ResourceListProps = {
     fields?: FormFieldType[];
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
-    displayFields?: DisplayFieldType[];
+    displayFields?: MetafieldType[];
     enableSearch?: boolean;
     buttonText?: string;
     enableShow?: boolean;

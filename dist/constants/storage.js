@@ -10,7 +10,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IMAGE_OR_VIDEO_FORMATS = exports.VIDEO_FORMATS = exports.IMAGE_FORMATS = exports.MAX_FILE_SIZE = void 0;
-exports.MAX_FILE_SIZE = 5000000;
+exports.MAX_FILE_SIZE = 10000000;
 exports.IMAGE_FORMATS = [
     'jpg',
     'jpeg',

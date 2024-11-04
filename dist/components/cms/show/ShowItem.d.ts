@@ -1,9 +1,9 @@
 import React from 'react';
-import { ButtonType, DisplayFieldType } from '../../../types';
+import { ButtonType, MetafieldType } from '../../../types';
 export type ShowProps = {
     handle?: string;
     buttons: ButtonType[];
-    displayFields: DisplayFieldType[];
+    displayFields: MetafieldType[];
     resource: any;
     enableFavorites?: boolean;
     enableLikes?: boolean;

@@ -43,7 +43,7 @@ var Input = function (props) {
         error: index_1.ErrorInput,
         image: index_1.ImageInput,
         jsonArray: index_1.JsonArrayInput,
-        noSpace: index_1.SnakeCaseInput,
+        noSpace: index_1.SlugInput,
         numberRange: index_1.NumberRangeInput,
         numberSlider: index_1.NumberSliderInput,
         phone: index_1.PhoneInput,

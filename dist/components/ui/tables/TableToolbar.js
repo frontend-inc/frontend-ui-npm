@@ -32,7 +32,7 @@ var components_1 = require("../../../components");
 var core_1 = require("../../core");
 var lucide_react_1 = require("lucide-react");
 var components_2 = require("../../../components");
-var core_2 = require("../../core");
+var frontend_shadcn_1 = require("frontend-shadcn");
 var TableFilterButton_1 = __importDefault(require("./filters/TableFilterButton"));
 var TableToolbar = function (props) {
     var loading = props.loading, selected = props.selected, query = props.query, _a = props.enableDelete, enableDelete = _a === void 0 ? false : _a, _b = props.enableEdit, enableEdit = _b === void 0 ? false : _b, handleKeywordChange = props.handleKeywordChange, handleKeywordSearch = props.handleKeywordSearch, handleFilter = props.handleFilter, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handlePublish = props.handlePublish, handleUnpublish = props.handleUnpublish, handleClearQuery = props.handleClearQuery, secondaryActions = props.secondaryActions, fields = props.fields, handleSearch = props.handleSearch, handleChange = props.handleChange, handleClearFilters = props.handleClearFilters;
@@ -64,9 +64,10 @@ var TableToolbar = function (props) {
                         secondaryActions && secondaryActions)),
                 react_1.default.createElement(core_1.Hidden, { mdUp: true },
                     react_1.default.createElement("div", { className: "flex flex-row justify-start items-center" },
-                        react_1.default.createElement(core_2.Badge, { badgeContent: badgeCount },
+                        react_1.default.createElement("div", { className: "relative" },
                             react_1.default.createElement(core_1.IconButton, { onClick: handleFilter },
-                                react_1.default.createElement(lucide_react_1.Filter, { className: "w-5 h-5 text-foreground" }))),
+                                react_1.default.createElement(lucide_react_1.Filter, { className: "w-5 h-5 text-foreground" })),
+                            react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, badgeCount)),
                         (selected === null || selected === void 0 ? void 0 : selected.length) > 0 && (react_1.default.createElement(react_1.default.Fragment, null,
                             enableDelete && (react_1.default.createElement(core_1.IconButton, { onClick: function () { return handleDelete(selected); } },
                                 react_1.default.createElement(lucide_react_1.Trash, { className: "w-5 h-5 text-foreground" }))),

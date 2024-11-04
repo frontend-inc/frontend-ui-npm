@@ -28,10 +28,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../../..");
-var lodash_1 = require("lodash");
 var FieldCalendly = function (props) {
-    var _a = props || {}, resource = _a.resource, fieldName = _a.fieldName, buttonText = _a.buttonText, rest = __rest(_a, ["resource", "fieldName", "buttonText"]);
-    var value = (0, lodash_1.get)(resource, fieldName);
-    return react_1.default.createElement(__1.Calendly, __assign({ calendlyUrl: value, buttonText: buttonText }, rest));
+    var _a = props || {}, value = _a.value, label = _a.label, rest = __rest(_a, ["value", "label"]);
+    return react_1.default.createElement(__1.Calendly, __assign({ calendlyUrl: value, buttonText: label }, rest));
 };
 exports.default = FieldCalendly;

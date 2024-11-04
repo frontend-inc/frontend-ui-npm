@@ -88,7 +88,7 @@ var ShopifyProductSearch = function (_a) {
             react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('col-span-1', enableFilters ? 'md:col-span-9' : 'md:col-span-12') },
                 react_1.default.createElement("div", { className: "mb-2" },
                     react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch, placeholder: 'Search' })),
-                (products === null || products === void 0 ? void 0 : products.length) > 0 && (react_1.default.createElement(__2.ShopifyProducts, { loading: loading, products: products, xs: 12, sm: 6, md: enableFilters ? 6 : 4, lg: 4, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity })),
+                (products === null || products === void 0 ? void 0 : products.length) > 0 && (react_1.default.createElement(__2.ShopifyProducts, { loading: loading, products: products, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity })),
                 !loading && (!products || (products === null || products === void 0 ? void 0 : products.length) == 0) && (react_1.default.createElement(__1.Placeholder, { icon: "Search", title: "No search results", description: "Try another search term" })),
                 react_1.default.createElement(LoadMore_1.default, { loading: loading, hasNextPage: hasNextPage, handleSearch: function () { return handleLoadMore(cursor); } })))));
 };

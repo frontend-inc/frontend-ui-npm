@@ -5,9 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var frontend_shadcn_1 = require("frontend-shadcn");
 var CellBoolean = function (props) {
     var value = props.value;
-    return (react_1.default.createElement(components_1.Badge, null, value ? 'True' : 'False'));
+    return (react_1.default.createElement(frontend_shadcn_1.Badge, { className: "px-3 py-1" }, value ? 'True' : 'False'));
 };
 exports.default = CellBoolean;

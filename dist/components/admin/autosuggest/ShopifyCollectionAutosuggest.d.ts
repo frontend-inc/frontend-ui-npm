@@ -1,6 +1,6 @@
 import React from 'react';
 import { SyntheticEventType } from '../../../types';
-type AutosuggestProps = {
+type ShopifyAutosuggestProps = {
     value?: any;
     name?: string;
     label?: string;
@@ -9,5 +9,5 @@ type AutosuggestProps = {
     enableDelete?: boolean;
     direction?: 'row' | 'column';
 };
-declare const CollectionAutosuggest: React.FC<AutosuggestProps>;
-export default CollectionAutosuggest;
+declare const ShopifyCollectionAutosuggest: React.FC<ShopifyAutosuggestProps>;
+export default ShopifyCollectionAutosuggest;

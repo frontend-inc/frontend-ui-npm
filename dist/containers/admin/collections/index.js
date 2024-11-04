@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CollectionSchemaToggle = exports.AdminCollectionTable = exports.AdminToolbarMenu = exports.AdminCollectionPage = exports.AdminCollectionMenu = exports.AdminCollectionForm = exports.AdminCollectionEdit = void 0;
+exports.AdminCollectionPage = exports.AdminCollectionMenu = exports.AdminCollectionForm = exports.AdminCollectionEdit = void 0;
 var AdminCollectionEdit_1 = require("./AdminCollectionEdit");
 Object.defineProperty(exports, "AdminCollectionEdit", { enumerable: true, get: function () { return __importDefault(AdminCollectionEdit_1).default; } });
 var AdminCollectionForm_1 = require("./AdminCollectionForm");
@@ -12,9 +12,3 @@ var AdminCollectionMenu_1 = require("./AdminCollectionMenu");
 Object.defineProperty(exports, "AdminCollectionMenu", { enumerable: true, get: function () { return __importDefault(AdminCollectionMenu_1).default; } });
 var AdminCollectionPage_1 = require("./AdminCollectionPage");
 Object.defineProperty(exports, "AdminCollectionPage", { enumerable: true, get: function () { return __importDefault(AdminCollectionPage_1).default; } });
-var AdminToolbarMenu_1 = require("./AdminToolbarMenu");
-Object.defineProperty(exports, "AdminToolbarMenu", { enumerable: true, get: function () { return __importDefault(AdminToolbarMenu_1).default; } });
-var AdminCollectionTable_1 = require("./AdminCollectionTable");
-Object.defineProperty(exports, "AdminCollectionTable", { enumerable: true, get: function () { return __importDefault(AdminCollectionTable_1).default; } });
-var CollectionSchemaToggle_1 = require("./CollectionSchemaToggle");
-Object.defineProperty(exports, "CollectionSchemaToggle", { enumerable: true, get: function () { return __importDefault(CollectionSchemaToggle_1).default; } });

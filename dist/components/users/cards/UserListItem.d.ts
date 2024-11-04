@@ -1,9 +1,9 @@
 import React from 'react';
-import { DisplayFieldType, UserType } from '../../../types';
+import { MetafieldType, UserType } from '../../../types';
 type UserListItemProps = {
     size?: number;
     resource: UserType;
-    displayFields: DisplayFieldType[];
+    displayFields: MetafieldType[];
     handleClick?: () => void;
 };
 declare const UserListItem: React.FC<UserListItemProps>;

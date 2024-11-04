@@ -28,31 +28,29 @@ var react_1 = __importStar(require("react"));
 var core_1 = require("../../core");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var components_1 = require("../../../components");
-var helpers_1 = require("../../../helpers");
 var components_2 = require("../../../components");
+var helpers_1 = require("../../../helpers");
+var components_3 = require("../../../components");
 function ShopifyCollectionCard(_a) {
-    var collection = _a.collection, handleClick = _a.handleClick, buttonText = _a.buttonText, _b = _a.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = _a.enableOverlay, enableOverlay = _c === void 0 ? false : _c;
-    var _d = collection || {}, label = _d.label, title = _d.title, image = _d.image;
+    var collection = _a.collection, buttonText = _a.buttonText, _b = _a.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = _a.enableOverlay, enableOverlay = _c === void 0 ? false : _c;
+    var _d = collection || {}, handle = _d.handle, title = _d.title, image = _d.image;
     var _e = (0, react_1.useState)(false), open = _e[0], setOpen = _e[1];
-    var handleItemClick = function () {
-        if (handleClick) {
-            handleClick();
-        }
-        else {
-            setOpen(true);
-        }
+    var handleShowClick = function () {
+        setOpen(true);
     };
-    return (react_1.default.createElement(frontend_shadcn_1.Card, { className: "relative w-full rounded-lg" },
-        react_1.default.createElement("div", { className: "relative w-full h-full" },
-            react_1.default.createElement(components_2.Image
-            // @ts-ignore
-            , { 
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(frontend_shadcn_1.Card, { className: "relative w-full rounded-lg" },
+            react_1.default.createElement("div", { className: "relative w-full h-full" },
+                react_1.default.createElement(components_3.Image
                 // @ts-ignore
-                src: image === null || image === void 0 ? void 0 : image.url, alt: title || 'Collection image', label: label, aspectRatio: 1.0, objectFit: "cover", enableGradient: enableGradient, enableOverlay: enableOverlay })),
-        react_1.default.createElement("div", { className: "dark absolute bottom-0 left-0 w-full p-4 z-10" },
-            react_1.default.createElement("div", { className: "flex items-center justify-between w-full" },
-                react_1.default.createElement("div", { className: "flex flex-col items-start justify-center" },
-                    react_1.default.createElement(core_1.Typography, { variant: "body1", className: "font-bold" }, (0, helpers_1.truncate)(title || '', 60))),
-                buttonText && (react_1.default.createElement(components_1.Button, { variant: "secondary", size: "sm", onClick: handleItemClick, className: "bg-white text-black hover:bg-white/90" }, "Browse"))))));
+                , { 
+                    // @ts-ignore
+                    src: image === null || image === void 0 ? void 0 : image.url, alt: title || 'Collection image', aspectRatio: 1.0, objectFit: "cover", enableGradient: enableGradient, enableOverlay: enableOverlay })),
+            react_1.default.createElement("div", { className: "dark absolute bottom-0 left-0 w-full p-4 z-10" },
+                react_1.default.createElement("div", { className: "flex items-center justify-between w-full" },
+                    react_1.default.createElement("div", { className: "flex flex-col items-start justify-center" },
+                        react_1.default.createElement(core_1.Typography, { variant: "body1", className: "font-bold" }, (0, helpers_1.truncate)(title || '', 60))),
+                    buttonText && (react_1.default.createElement(components_1.Button, { variant: "secondary", size: "sm", onClick: handleShowClick, className: "bg-white text-black hover:bg-white/90" }, "Browse"))))),
+        react_1.default.createElement(components_2.ShopifyProductCollectionModal, { open: open, handleClose: function () { return setOpen(false); }, collection: collection })));
 }
 exports.default = ShopifyCollectionCard;

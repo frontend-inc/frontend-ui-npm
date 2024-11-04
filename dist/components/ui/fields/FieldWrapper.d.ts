@@ -3,9 +3,7 @@ type FieldWrapperProps = {
     direction?: 'row' | 'column';
     label?: string;
     icon?: string;
-    color?: string;
     alignItems?: 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline';
-    disableLabel?: boolean;
     children?: React.ReactNode;
     className?: string;
 };

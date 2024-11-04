@@ -15,6 +15,7 @@ export type CoverProps = {
     enableOverlay?: boolean;
     opacity?: number;
     path?: string;
+    actions?: React.ReactNode;
 };
 declare const Cover: React.FC<CoverProps>;
 export default Cover;

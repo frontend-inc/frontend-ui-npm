@@ -1,9 +1,8 @@
 import React from 'react';
-import { ButtonType, FormFieldType } from '../../../types';
+import { ButtonType, MetafieldType, FormFieldType } from '../../../types';
 export type CollectionListProps = {
-    grid?: boolean;
+    layout?: 'list' | 'grid' | 'slider';
     style: string;
-    href?: string;
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
@@ -26,6 +25,7 @@ export type CollectionListProps = {
     enableShow?: boolean;
     fields?: FormFieldType[];
     buttons?: ButtonType[];
+    displayFields?: MetafieldType[];
     headers?: {
         label: string;
         value: string;

@@ -8,8 +8,8 @@ var react_1 = __importDefault(require("react"));
 var core_1 = require("../../core");
 var components_1 = require("../../../components");
 var FieldRating = function (props) {
-    var value = props.value, label = props.label, _a = props.size, size = _a === void 0 ? 'md' : _a, color = props.color, disableLabel = props.disableLabel;
-    return (react_1.default.createElement(components_1.FieldWrapper, { label: label, color: color, disableLabel: disableLabel },
+    var value = props.value, label = props.label, _a = props.size, size = _a === void 0 ? 'md' : _a;
+    return (react_1.default.createElement(components_1.FieldWrapper, { label: label },
         react_1.default.createElement(core_1.Rating, { size: size, readOnly: true, value: value })));
 };
 exports.default = FieldRating;

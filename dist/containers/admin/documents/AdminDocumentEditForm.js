@@ -21,7 +21,12 @@ var components_2 = require("../../../components");
 var AdminDocumentEditForm = function (props) {
     var _a = (props || {}).fields, fields = _a === void 0 ? [] : _a;
     var inputOptions = {
-        image: components_2.MediaInput
+        image: components_2.MediaInput,
+        video: components_2.MediaInput,
+        youtube_video: components_1.TextInput,
+        vimeo_video: components_1.TextInput,
+        soundcloud_audio: components_1.TextInput,
+        calendly_url: components_1.TextInput,
     };
     return react_1.default.createElement(components_1.ResourceForm, __assign({}, props, { fields: fields, inputOptions: inputOptions }));
 };

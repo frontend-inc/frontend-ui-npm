@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.buildFilterFields = exports.buildSortFields = exports.buildDisplayFields = void 0;
-var buildDisplayFields = function (params) {
+exports.buildFilterFields = exports.buildSortFields = exports.buildListFields = void 0;
+var buildListFields = function (params) {
     var _a = params || {}, displaySubtitle = _a.displaySubtitle, displayCategory = _a.displayCategory, displayDescription = _a.displayDescription, displayLocation = _a.displayLocation, displayTags = _a.displayTags;
     var displayFields = [];
     var categoryField = {
@@ -46,7 +46,7 @@ var buildDisplayFields = function (params) {
         displayFields.push(tagsField);
     return displayFields;
 };
-exports.buildDisplayFields = buildDisplayFields;
+exports.buildListFields = buildListFields;
 var buildSortFields = function (params) {
     var _a = params || {}, sortPosition = _a.sortPosition, sortTitle = _a.sortTitle, sortName = _a.sortName, sortDate = _a.sortDate, sortPublished = _a.sortPublished, sortPrice = _a.sortPrice;
     var positionField = {

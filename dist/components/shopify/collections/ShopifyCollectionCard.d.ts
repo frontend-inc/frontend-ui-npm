@@ -1,15 +1,9 @@
 import React from 'react';
-export type ShopifyCardProps = {
-    collection?: {
-        label?: string;
-        title?: string;
-        image?: {
-            url: string;
-        };
-    };
+import { ShopifyCollectionType } from 'frontend-shopify';
+export type ShopifyCollectionCardProps = {
+    collection: ShopifyCollectionType;
     buttonText?: string;
-    handleClick?: () => void;
     enableGradient?: boolean;
     enableOverlay?: boolean;
 };
-export default function ShopifyCollectionCard({ collection, handleClick, buttonText, enableGradient, enableOverlay, }: ShopifyCardProps): React.JSX.Element;
+export default function ShopifyCollectionCard({ collection, buttonText, enableGradient, enableOverlay, }: ShopifyCollectionCardProps): React.JSX.Element;

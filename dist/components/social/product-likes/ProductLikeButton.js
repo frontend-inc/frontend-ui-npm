@@ -103,7 +103,7 @@ function ProductLikeButton(_a) {
         }
     }, [currentUser, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' && 'border border-divider', 'transition-transform duration-200') },
+        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' && 'border border-divider', 'transition-transform duration-200', liked && 'text-primary hover:text-primary-dark') },
             react_1.default.createElement(lucide_react_1.Heart, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', liked ? 'fill-primary stroke-primary' : 'fill-none stroke-current') }))));
 }
 exports.default = ProductLikeButton;

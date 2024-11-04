@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonType } from './buttons';
-import { DisplayFieldType, FormFieldType } from './forms';
+import { MetafieldType, FormFieldType } from './forms';
 export type HeadingProps = {
     label?: string;
     title?: string;
@@ -26,7 +26,7 @@ export type FormProps = {
 export type CardProps = {
     ref?: any;
     buttons: ButtonType[];
-    displayFields: DisplayFieldType[];
+    displayFields: MetafieldType[];
     enableUsers?: boolean;
     enableComments?: boolean;
     enableFavorites?: boolean;

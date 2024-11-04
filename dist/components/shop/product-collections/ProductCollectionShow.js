@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var ShowModal = function (props) {
+var ProductCollectionShow = function (props) {
     var _a = (0, frontend_js_1.useResourceContext)(), openShow = _a.openShow, setOpenShow = _a.setOpenShow, resource = _a.resource;
     var _b = props || {}, enableLikes = _b.enableLikes, enableFavorites = _b.enableFavorites, enableGradient = _b.enableGradient, enableOverlay = _b.enableOverlay;
     if (!resource)
@@ -19,4 +19,4 @@ var ShowModal = function (props) {
                     react_1.default.createElement(__1.Typography, { variant: "body1", className: "text-muted-foreground" }, resource === null || resource === void 0 ? void 0 : resource.description)),
                 react_1.default.createElement(__1.CollectionProducts, { enableGradient: enableGradient, enableOverlay: enableOverlay, enableLikes: enableLikes, enableFavorites: enableFavorites, productCollectionId: resource.id })))));
 };
-exports.default = ShowModal;
+exports.default = ProductCollectionShow;

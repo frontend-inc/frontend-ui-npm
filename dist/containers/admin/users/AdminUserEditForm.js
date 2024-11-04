@@ -39,7 +39,7 @@ var AdminUserForm = function (props) {
         {
             label: 'Username',
             name: 'username',
-            variant: 'snake_cases',
+            variant: 'slugs',
         },
         {
             label: 'Email',

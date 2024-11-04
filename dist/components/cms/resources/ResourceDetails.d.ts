@@ -1,13 +1,14 @@
 import React from 'react';
-import { DisplayFieldType } from '../../../types';
+import { MetafieldType } from '../../../types';
 type ResourceDetailsProps = {
-    avatar?: React.ReactNode;
+    hero?: React.ReactNode;
+    actions?: React.ReactNode;
     resource: any;
     primary: string;
     secondary?: string;
     label?: string;
-    image?: string;
-    fields: DisplayFieldType[];
+    image: string;
+    fields: MetafieldType[];
     direction?: 'row' | 'column';
 };
 declare const ResourceDetails: React.FC<ResourceDetailsProps>;

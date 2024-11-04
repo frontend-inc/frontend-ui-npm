@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FIELD_VARIANTS = exports.CALENDLY_URL_FIELD_VARIANT = exports.SOUNDCLOUND_AUDIO_FIELD_VARIANT = exports.VIMEO_VIDEO_FIELD_VARIANT = exports.YOUTUBE_VIDEO_FIELD_VARIANT = exports.SHOPIFY_PRODUCT_FIELD_VARIANT = exports.FILE_FIELD_VARIANT = exports.VIDEO_FIELD_VARIANT = exports.TEXT_FIELD_VARIANT = exports.STRING_FIELD_VARIANT = exports.RATING_FIELD_VARIANT = exports.NUMBER_FIELD_VARIANT = exports.LOCATION_FIELD_VARIANT = exports.PRICE_FIELD_VARIANT = exports.IMAGE_FIELD_VARIANT = exports.JSON_FIELD_VARIANT = exports.FLOAT_FIELD_VARIANT = exports.SELECT_FIELD_VARIANT = exports.DATETIME_FIELD_VARIANT = exports.DATE_FIELD_VARIANT = exports.BOOLEAN_FIELD_VARIANT = exports.TAG_ARRAY_FIELD_VARIANT = exports.URL_FIELD_VARIANT = exports.PHONE_FIELD_VARIANT = exports.EMAIL_FIELD_VARIANT = exports.AUDIO_FIELD_VARIANT = void 0;
+exports.FIELD_VARIANTS = exports.SOUNDCLOUND_AUDIO_FIELD_VARIANT = exports.VIMEO_VIDEO_FIELD_VARIANT = exports.YOUTUBE_VIDEO_FIELD_VARIANT = exports.SHOPIFY_PRODUCT_FIELD_VARIANT = exports.FILE_FIELD_VARIANT = exports.VIDEO_FIELD_VARIANT = exports.TEXT_FIELD_VARIANT = exports.STRING_FIELD_VARIANT = exports.RATING_FIELD_VARIANT = exports.NUMBER_FIELD_VARIANT = exports.LOCATION_FIELD_VARIANT = exports.PRICE_FIELD_VARIANT = exports.IMAGE_FIELD_VARIANT = exports.JSON_FIELD_VARIANT = exports.FLOAT_FIELD_VARIANT = exports.SELECT_FIELD_VARIANT = exports.DATETIME_FIELD_VARIANT = exports.DATE_FIELD_VARIANT = exports.BOOLEAN_FIELD_VARIANT = exports.TAG_ARRAY_FIELD_VARIANT = exports.URL_FIELD_VARIANT = exports.PHONE_FIELD_VARIANT = exports.EMAIL_FIELD_VARIANT = exports.AUDIO_FIELD_VARIANT = void 0;
 exports.AUDIO_FIELD_VARIANT = {
     icon: 'Headphones',
     category: 'Media',
@@ -212,7 +212,7 @@ exports.SHOPIFY_PRODUCT_FIELD_VARIANT = {
     color: 'bg-lime-500',
 };
 exports.YOUTUBE_VIDEO_FIELD_VARIANT = {
-    icon: 'Video',
+    icon: 'Youtube',
     category: 'Addon',
     variant: 'youtube_video',
     label: 'YouTube Video',
@@ -222,7 +222,7 @@ exports.YOUTUBE_VIDEO_FIELD_VARIANT = {
     color: 'bg-pink-500',
 };
 exports.VIMEO_VIDEO_FIELD_VARIANT = {
-    icon: 'Video',
+    icon: 'PlayCircle',
     category: 'Addon',
     variant: 'vimeo_video',
     label: 'Vimeo Video',
@@ -232,7 +232,7 @@ exports.VIMEO_VIDEO_FIELD_VARIANT = {
     color: 'bg-pink-500',
 };
 exports.SOUNDCLOUND_AUDIO_FIELD_VARIANT = {
-    icon: 'Song',
+    icon: 'AudioLines',
     category: 'Addon',
     variant: 'soundcloud_audio',
     label: 'Soundcloud Audio',
@@ -241,38 +241,17 @@ exports.SOUNDCLOUND_AUDIO_FIELD_VARIANT = {
     array: true,
     color: 'bg-pink-500',
 };
-exports.CALENDLY_URL_FIELD_VARIANT = {
-    icon: 'Clock',
-    category: 'Addon',
-    variant: 'calendly_url',
-    label: 'Calendly URL',
-    db_type: 'string',
-    description: 'Calendly URL',
-    array: true,
-    color: 'bg-pink-500',
-};
 exports.FIELD_VARIANTS = [
     exports.STRING_FIELD_VARIANT,
     exports.TEXT_FIELD_VARIANT,
     exports.SELECT_FIELD_VARIANT,
     exports.TAG_ARRAY_FIELD_VARIANT,
-    exports.EMAIL_FIELD_VARIANT,
-    exports.PHONE_FIELD_VARIANT,
     exports.URL_FIELD_VARIANT,
     exports.BOOLEAN_FIELD_VARIANT,
     exports.DATE_FIELD_VARIANT,
     exports.DATETIME_FIELD_VARIANT,
     exports.FLOAT_FIELD_VARIANT,
     exports.NUMBER_FIELD_VARIANT,
-    exports.LOCATION_FIELD_VARIANT,
     exports.RATING_FIELD_VARIANT,
     exports.PRICE_FIELD_VARIANT,
-    exports.IMAGE_FIELD_VARIANT,
-    exports.VIDEO_FIELD_VARIANT,
-    exports.FILE_FIELD_VARIANT,
-    exports.SHOPIFY_PRODUCT_FIELD_VARIANT,
-    exports.YOUTUBE_VIDEO_FIELD_VARIANT,
-    exports.VIMEO_VIDEO_FIELD_VARIANT,
-    exports.SOUNDCLOUND_AUDIO_FIELD_VARIANT,
-    exports.CALENDLY_URL_FIELD_VARIANT
 ];

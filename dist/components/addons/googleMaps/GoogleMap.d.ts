@@ -1,12 +1,13 @@
 import React from 'react';
-import { DisplayFieldType } from '../../../types';
 export type GoogleMapProps = {
     darkTheme?: boolean;
-    resources: any[];
+    lat: number;
+    lng: number;
+    label: string;
+    image?: string;
     height?: number;
     width?: number | string;
     zoom?: number;
     enableBorder?: boolean;
-    displayFields?: DisplayFieldType[];
 };
-export default function GoogleMap({ darkTheme, height, width, resources, zoom, enableBorder, displayFields, }: GoogleMapProps): React.JSX.Element;
+export default function GoogleMap({ darkTheme, height, width, lat, lng, label, image, zoom, enableBorder, }: GoogleMapProps): React.JSX.Element;

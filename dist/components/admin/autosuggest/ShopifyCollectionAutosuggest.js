@@ -27,10 +27,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var frontend_shopify_1 = require("frontend-shopify");
-var CollectionAutosuggest = function (props) {
-    var value = props.value, label = props.label, _a = props.name, name = _a === void 0 ? 'shopify_handle' : _a, placeholder = props.placeholder, handleChange = props.handleChange, _b = props.direction, direction = _b === void 0 ? 'column' : _b;
-    var _c = (0, react_1.useState)([]), options = _c[0], setOptions = _c[1];
-    var _d = (0, frontend_shopify_1.useCollections)(), collections = _d.collections, findCollections = _d.findCollections;
+var ShopifyCollectionAutosuggest = function (props) {
+    var value = props.value, label = props.label, _a = props.name, name = _a === void 0 ? 'shopify_collection' : _a, placeholder = props.placeholder, handleChange = props.handleChange;
+    var _b = (0, react_1.useState)([]), options = _b[0], setOptions = _b[1];
+    var _c = (0, frontend_shopify_1.useCollections)(), collections = _c.collections, findCollections = _c.findCollections;
     (0, react_1.useEffect)(function () {
         if (collections) {
             setOptions(collections === null || collections === void 0 ? void 0 : collections.map(function (collection) {
@@ -48,4 +48,4 @@ var CollectionAutosuggest = function (props) {
     }, []);
     return (react_1.default.createElement(components_1.Autosuggest, { label: label, name: name, value: value, options: options, placeholder: placeholder, handleChange: handleChange, enableClear: true }));
 };
-exports.default = CollectionAutosuggest;
+exports.default = ShopifyCollectionAutosuggest;

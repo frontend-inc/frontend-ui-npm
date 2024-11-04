@@ -57,7 +57,7 @@ var frontend_js_1 = require("frontend-js");
 var __2 = require("../..");
 var CollectionListItems = function (props) {
     var _a = (0, frontend_js_1.useResourceContext)(), setResource = _a.setResource, loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, setOpenShow = _a.setOpenShow;
-    var selectable = props.selectable, _b = props.layout, layout = _b === void 0 ? 'list' : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'list' : _d, handleClick = props.handleClick, _e = props.displayFields, displayFields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = props.enableLikes, enableLikes = _j === void 0 ? false : _j, _k = props.enableComments, enableComments = _k === void 0 ? false : _k, _l = props.slots, slots = _l === void 0 ? {
+    var selectable = props.selectable, _b = props.layout, layout = _b === void 0 ? 'list' : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'list' : _d, handleClick = props.handleClick, _e = props.metafields, metafields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = props.enableLikes, enableLikes = _j === void 0 ? false : _j, _k = props.enableComments, enableComments = _k === void 0 ? false : _k, _l = props.slots, slots = _l === void 0 ? {
         item: {},
     } : _l;
     var handleShowClick = function (resource) {
@@ -80,7 +80,7 @@ var CollectionListItems = function (props) {
         });
     }); };
     return (react_1.default.createElement("div", { className: "flex flex-col w-full space-y-2" },
-        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { layout: layout, loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.CollectionListItem, __assign({ key: index, style: style, selectable: selectable, resource: resource, displayFields: displayFields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item))); })),
+        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { layout: layout, loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.CollectionListItem, __assign({ key: index, style: style, selectable: selectable, resource: resource, metafields: metafields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item))); })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };
 exports.default = CollectionListItems;

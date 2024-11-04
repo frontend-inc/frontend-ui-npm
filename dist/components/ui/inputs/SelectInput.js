@@ -17,7 +17,7 @@ function SelectInput(_a) {
         react_1.default.createElement(frontend_shadcn_1.Select, { value: value, onValueChange: function (newValue) {
                 return handleChange({ target: { name: name, value: newValue } });
             } },
-            react_1.default.createElement(frontend_shadcn_1.SelectTrigger, { className: "w-full min-w-[165px] h-10 bg-background border border-input shadow-none rounded" },
+            react_1.default.createElement(frontend_shadcn_1.SelectTrigger, { className: "w-full min-w-[165px] h-10 bg-background border border-input shadow-none rounded text-foreground" },
                 react_1.default.createElement(frontend_shadcn_1.SelectValue, { placeholder: "Select an option" })),
             react_1.default.createElement(frontend_shadcn_1.SelectContent, { className: "bg-background min-w-[165px]" }, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement(frontend_shadcn_1.SelectItem, { key: idx, 
                 // @ts-ignore

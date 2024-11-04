@@ -1,10 +1,10 @@
 import React from 'react';
 import { DetailsProps } from '../../cms/details/Details';
 import { UserType } from 'frontend-js';
-import { DisplayFieldType } from '../../../types';
+import { MetafieldType } from '../../../types';
 export type UserDetailsProps = DetailsProps & {
     user: UserType;
-    displayFields: DisplayFieldType[];
+    displayFields: MetafieldType[];
     url: string;
     enableBorder?: boolean;
 };

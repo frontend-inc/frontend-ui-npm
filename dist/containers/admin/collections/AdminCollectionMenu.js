@@ -100,6 +100,9 @@ var AdminCollectionMenu = function () {
             return [2 /*return*/];
         });
     }); };
+    var handleSettingsClick = function (collection) {
+        router.push("/dashboard/".concat(appId, "/schema/").concat(collection === null || collection === void 0 ? void 0 : collection.name));
+    };
     var handleEditCollectionClick = function (collection) {
         setCollection(collection);
         setShowModal(true);
@@ -173,7 +176,7 @@ var AdminCollectionMenu = function () {
         });
     }); };
     var handleTemplateClick = function (template) {
-        setCollection(__assign(__assign({}, collection), { name: collection.name || template.name, label: collection.label || template.label, template: template }));
+        setCollection(__assign(__assign({}, collection), { name: collection.name || template.name, label: collection.label || template.label, document_type: template.document_type, template: template }));
     };
     (0, react_1.useEffect)(function () {
         if (appId) {
@@ -181,11 +184,12 @@ var AdminCollectionMenu = function () {
         }
     }, [appId]);
     return (react_1.default.createElement("div", { className: "flex flex-col" },
-        react_1.default.createElement(components_1.MenuList, { label: 'Collections' }, collections.map(function (collection) { return (react_1.default.createElement(components_2.MenuListItem, { key: collection.id, title: collection === null || collection === void 0 ? void 0 : collection.label, selected: !viewId && collectionId == (collection === null || collection === void 0 ? void 0 : collection.name), handleClick: function () { return handleClick(collection); }, handleEdit: function () { return handleEditCollectionClick(collection); }, handleDelete: function () { return handleDeleteCollectionClick(collection); } })); })),
+        react_1.default.createElement(components_1.MenuList, { label: 'Collections' }, collections.map(function (collection) { return (react_1.default.createElement(components_2.MenuListItem, { key: collection.id, title: collection === null || collection === void 0 ? void 0 : collection.label, selected: !viewId && collectionId == (collection === null || collection === void 0 ? void 0 : collection.name), handleClick: function () { return handleClick(collection); }, handleEdit: function () { return handleEditCollectionClick(collection); }, handleDelete: function () { return handleDeleteCollectionClick(collection); }, secondaryAction: react_1.default.createElement(components_2.IconButton, { onClick: function () { return handleSettingsClick(collection); } },
+                react_1.default.createElement(lucide_react_1.Settings, { className: "h-5 w-4" })) })); })),
         react_1.default.createElement("div", { className: "px-4" },
             react_1.default.createElement(core_1.Button, { color: "secondary", onClick: handleCreateCollectionClick, className: "group", startIcon: react_1.default.createElement("div", { className: "group-hover:rotate-180 transition-transform duration-300 ease-in-out" },
                     react_1.default.createElement(lucide_react_1.Plus, { className: "text-primary-foreground h-5 w-5" })) }, "Collection")),
-        react_1.default.createElement(AdminCollectionEdit_1.default, { errors: errors, loading: loading, open: showModal, collection: collection, handleClose: function () { return setShowModal(false); }, handleChange: handleChange, handleSubmit: handleSubmitCollection, handleTemplateClick: handleTemplateClick }),
+        react_1.default.createElement(AdminCollectionEdit_1.default, { errors: errors, loading: loading, open: showModal, collection: collection, handleClose: function () { return setShowModal(false); }, handleChange: handleChange, handleSubmit: handleSubmitCollection, handleClick: handleTemplateClick }),
         react_1.default.createElement(components_1.AlertModal, { loading: loading, open: showDeleteModal, handleClose: function () { return setShowDeleteModal(false); }, handleConfirm: handleDeleteCollection })));
 };
 exports.default = AdminCollectionMenu;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { DisplayFieldType } from '../../../types';
+import { MetafieldType } from '../../../types';
 export type DetailsProps = {
-    displayFields: DisplayFieldType[];
+    displayFields: MetafieldType[];
     url: string;
     resource: any;
     enableBorder?: boolean;

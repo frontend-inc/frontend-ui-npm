@@ -5,14 +5,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../../components");
 // @ts-ignore
 var react_medium_image_zoom_1 = __importDefault(require("react-medium-image-zoom"));
 var image_1 = __importDefault(require("next/image"));
+var frontend_shadcn_1 = require("frontend-shadcn");
 var Thumbnail = function (props) {
     var image = props.image, active = props.active, handleClick = props.handleClick;
-    return (react_1.default.createElement(components_1.Button, { variant: "ghost", className: "p-0 w-24 h-24 overflow-hidden rounded ".concat(active ? 'ring-2 ring-primary' : 'ring-2 ring-transparent'), onClick: function () { return handleClick(image); } },
-        react_1.default.createElement(image_1.default, { src: image.url, width: 96, height: 96, alt: (image === null || image === void 0 ? void 0 : image.altText) || '', className: "object-cover w-full h-full" })));
+    return (react_1.default.createElement("button", { className: (0, frontend_shadcn_1.cn)("p-0 m-2 w-[96px] h-[96px] overflow-hidden rounded hover:bg-muted/20", active ?
+            'ring-2 ring-offset-2 ring-primary' :
+            'ring-2 ring-transparent'), onClick: function () { return handleClick(image); } },
+        react_1.default.createElement(image_1.default, { src: image.url, width: 96, height: 96, alt: (image === null || image === void 0 ? void 0 : image.altText) || '', className: "object-cover" })));
 };
 var ShopifyProductImageSlider = function (props) {
     var image = props.image, images = props.images, handleClick = props.handleClick, _a = props.thumbnailSize, thumbnailSize = _a === void 0 ? 80 : _a;

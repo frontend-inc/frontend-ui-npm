@@ -5,10 +5,10 @@ interface SidebarMenuItemProps {
     color?: string;
     selected?: boolean;
     description?: string;
-    secondaryActions?: React.ReactNode;
+    secondaryAction?: React.ReactNode;
     handleClick: () => void;
     handleEdit?: () => void;
     handleDelete?: () => void;
 }
-export default function SidebarMenuItem({ selected, title, color, icon, secondaryActions, handleClick, handleEdit, handleDelete, }: SidebarMenuItemProps): React.JSX.Element;
+export default function SidebarMenuItem({ selected, title, color, icon, secondaryAction, handleClick, handleEdit, handleDelete, }: SidebarMenuItemProps): React.JSX.Element;
 export {};

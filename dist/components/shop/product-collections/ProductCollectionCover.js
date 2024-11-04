@@ -27,6 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
+var frontend_js_1 = require("frontend-js");
 var ProductCollectionCover = function (props) {
     var _a;
     var handleClick = props.handleClick, _b = props.height, height = _b === void 0 ? 400 : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? true : _e, _f = props.alignItems, alignItems = _f === void 0 ? 'center' : _f, productCollectionId = props.productCollectionId;
@@ -38,8 +39,10 @@ var ProductCollectionCover = function (props) {
     }, [productCollectionId]);
     if (!productCollection)
         return null;
-    return (react_1.default.createElement(__1.Cover, { height: height, title: productCollection === null || productCollection === void 0 ? void 0 : productCollection.title, description: productCollection === null || productCollection === void 0 ? void 0 : productCollection.description, 
-        //@ts-ignore
-        image: (_a = productCollection === null || productCollection === void 0 ? void 0 : productCollection.image) === null || _a === void 0 ? void 0 : _a.url, alt: alt, alignItems: alignItems, handleClick: handleClick, enableOverlay: enableOverlay, enableGradient: enableGradient }));
+    return (react_1.default.createElement(frontend_js_1.ResourceProvider, { name: 'product_collection', url: "/shop/product_collections/".concat(productCollectionId), resource: productCollection },
+        react_1.default.createElement(__1.Cover, { height: height, title: productCollection === null || productCollection === void 0 ? void 0 : productCollection.title, description: productCollection === null || productCollection === void 0 ? void 0 : productCollection.description, 
+            //@ts-ignore
+            image: (_a = productCollection === null || productCollection === void 0 ? void 0 : productCollection.image) === null || _a === void 0 ? void 0 : _a.url, alt: alt, alignItems: alignItems, handleClick: handleClick, enableOverlay: enableOverlay, enableGradient: enableGradient, actions: react_1.default.createElement(__1.ShowButton, null, "Browse") }),
+        react_1.default.createElement(__1.ProductCollectionShow, null)));
 };
 exports.default = ProductCollectionCover;

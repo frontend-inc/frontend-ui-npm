@@ -1,9 +1,9 @@
 import React from 'react';
-import { SocialFieldType, DisplayFieldType, ButtonType } from '../../../types';
+import { SocialFieldType, MetafieldType, ButtonType } from '../../../types';
 import { UserType } from 'frontend-js';
 export type UserProfileProps = {
     user: UserType;
-    displayFields?: DisplayFieldType[];
+    displayFields?: MetafieldType[];
     socialFields?: SocialFieldType[];
     buttons?: ButtonType[];
 };

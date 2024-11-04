@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Swipeable = exports.Pagination = exports.SortableListItem = exports.SortableList = exports.Loader = exports.LayoutContainer = exports.UserMenu = exports.UserAvatar = exports.SocialIcon = exports.SocialLink = exports.Section = exports.ProgressLoader = exports.Placeholder = exports.NotFound = exports.NoImage = exports.Loading = exports.TouchableOpacity = exports.Notifications = exports.Notification = exports.MediaModal = exports.Modal = exports.MenuButton = exports.Label = exports.IconLoading = exports.Icon = exports.Sheet = exports.Heading = exports.GeoSearchInput = exports.ExpandableText = exports.Drawer = exports.CircularLoader = exports.Breadcrumbs = exports.ButtonTabs = exports.Alert = exports.AlertModal = exports.Avatar = void 0;
+exports.Swipeable = exports.Pagination = exports.SortableListItem = exports.SortableList = exports.Loader = exports.LayoutContainer = exports.UserMenu = exports.UserAvatar = exports.SocialIcon = exports.SocialLink = exports.Section = exports.ProgressLoader = exports.Placeholder = exports.NotFound = exports.NoImage = exports.Loading = exports.TouchableOpacity = exports.Notifications = exports.Notification = exports.MediaModal = exports.Modal = exports.MenuButton = exports.Label = exports.IconLoading = exports.Icon = exports.SquareButton = exports.Sheet = exports.Heading = exports.GeoSearchInput = exports.ExpandableText = exports.Drawer = exports.CircularLoader = exports.Breadcrumbs = exports.ButtonTabs = exports.Alert = exports.AlertModal = exports.Avatar = void 0;
 __exportStar(require("./buttons"), exports);
 __exportStar(require("./inputs"), exports);
 __exportStar(require("./images"), exports);
@@ -49,6 +49,8 @@ var Heading_1 = require("./typography/Heading");
 Object.defineProperty(exports, "Heading", { enumerable: true, get: function () { return __importDefault(Heading_1).default; } });
 var Sheet_1 = require("./modals/Sheet");
 Object.defineProperty(exports, "Sheet", { enumerable: true, get: function () { return __importDefault(Sheet_1).default; } });
+var SquareButton_1 = require("./SquareButton");
+Object.defineProperty(exports, "SquareButton", { enumerable: true, get: function () { return __importDefault(SquareButton_1).default; } });
 var Icon_1 = require("./Icon");
 Object.defineProperty(exports, "Icon", { enumerable: true, get: function () { return __importDefault(Icon_1).default; } });
 var IconLoading_1 = require("./loaders/IconLoading");

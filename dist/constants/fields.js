@@ -1,119 +1,262 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.USER_FIELD = exports.TAGS_FIELD = exports.LOCALE_FIELD = exports.PUBLISHED_FIELD = exports.TITLE_FIELD = exports.HANDLE_FIELD = exports.ID_FIELD = exports.SYSTEM_FIELDS = exports.ATTACHMENT_FIELDS = exports.REFERENCE_FIELDS = void 0;
-exports.REFERENCE_FIELDS = ['habtm'];
-exports.ATTACHMENT_FIELDS = ['image', 'video', 'file'];
-exports.SYSTEM_FIELDS = [
-    'id',
-    'title',
-    'subtitle',
-    'category',
-    'description',
-    'handle',
-    'user_id',
-    'team_id',
-    'label',
-    'published',
-    'status',
-    'locale',
-    'location',
-    'tags',
-    'habtm',
-    'image',
-    'video',
-    'audio',
-    'attachment',
-    'file',
-    'lat',
-    'lng',
-    'youtube_video',
-    'vimeo_video',
-    'soundcloud_audio',
-    'calendly_url',
-    'shopify_product'
-];
-/* SYSTEM FIELDS */
-exports.ID_FIELD = {
-    label: 'ID',
-    variant: 'number',
-    db_type: 'integer',
-    name: 'id',
-    internal: true,
-    position: 0,
-    array: false,
-    visible: true,
-    editable: false,
-    reference: false,
+exports.DOCUMENT_SHOW_FIELDS = exports.DOCUMENT_FORM_FIELDS = exports.SOUNDCLOUD_AUDIO = exports.VIMEO_VIDEO = exports.YOUTUBE_VIDEO = exports.SHOPIFY_PRODUCT = exports.LOCATION = exports.PRICE = exports.END_DATE = exports.START_DATE = exports.PUBLISHED_AT = exports.FILE = exports.AUDIO = exports.VIDEO = exports.IMAGE = exports.TAGS = exports.CATEGORY = exports.LABEL = exports.ABOUT = exports.NAME = exports.DESCRIPTION = exports.SUBTITLE = exports.TITLE = exports.HANDLE = void 0;
+exports.HANDLE = { label: 'Handle', name: 'handle', variant: 'slug' };
+exports.TITLE = { label: 'Title', name: 'title', variant: 'string' };
+exports.SUBTITLE = { label: 'Subtitle', name: 'subtitle', variant: 'string' };
+exports.DESCRIPTION = { label: 'Description', name: 'description', variant: 'text' };
+exports.NAME = { label: 'Name', name: 'name', variant: 'string' };
+exports.ABOUT = { label: 'About', name: 'about', variant: 'text' };
+exports.LABEL = { label: 'Label', name: 'label', variant: 'string' };
+exports.CATEGORY = { label: 'Category', name: 'category', variant: 'string' };
+exports.TAGS = { label: 'Tags', name: 'tags', variant: 'array' };
+exports.IMAGE = { label: 'Image', name: 'image', variant: 'image' };
+exports.VIDEO = { label: 'Video', name: 'video', variant: 'video' };
+exports.AUDIO = { label: 'Audio', name: 'audio', variant: 'audio' };
+exports.FILE = { label: 'File', name: 'file', variant: 'file' };
+exports.PUBLISHED_AT = { label: 'Published At', name: 'published_at', variant: 'date' };
+exports.START_DATE = { label: 'Start Date', name: 'start_date', variant: 'datetime' };
+exports.END_DATE = { label: 'End Date', name: 'end_date', variant: 'datetime' };
+exports.PRICE = { label: 'Price', name: 'price', variant: 'number' };
+exports.LOCATION = { label: 'Location', name: 'location', variant: 'string' };
+exports.SHOPIFY_PRODUCT = { label: 'Shopify Product', name: 'shopify_product', variant: 'shopify_product' };
+exports.YOUTUBE_VIDEO = { label: 'Youtube Video', name: 'youtube_video', variant: 'youtube_video' };
+exports.VIMEO_VIDEO = { label: 'Vimeo Video', name: 'vimeo_video', variant: 'vimeo_video' };
+exports.SOUNDCLOUD_AUDIO = { label: 'Soundcloud Audio', name: 'soundcloud_audio', variant: 'soundcloud_audio' };
+exports.DOCUMENT_FORM_FIELDS = {
+    post: [
+        exports.IMAGE,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    article: [
+        exports.IMAGE,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.PUBLISHED_AT,
+        exports.TAGS,
+    ],
+    place: [
+        exports.IMAGE,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.LOCATION,
+        exports.TAGS,
+    ],
+    event: [
+        exports.IMAGE,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.START_DATE,
+        exports.END_DATE,
+        exports.LOCATION,
+        exports.TAGS,
+    ],
+    product: [
+        exports.IMAGE,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.PRICE,
+        exports.TAGS,
+    ],
+    image: [
+        exports.IMAGE,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.TAGS,
+    ],
+    video: [
+        exports.IMAGE,
+        exports.VIDEO,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    audio: [
+        exports.IMAGE,
+        exports.AUDIO,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    file: [
+        exports.FILE,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    youtube: [
+        exports.IMAGE,
+        exports.YOUTUBE_VIDEO,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    vimeo: [
+        exports.IMAGE,
+        exports.VIMEO_VIDEO,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    soundcloud: [
+        exports.IMAGE,
+        exports.SOUNDCLOUD_AUDIO,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    shopify: [
+        exports.IMAGE,
+        exports.SHOPIFY_PRODUCT,
+        exports.HANDLE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.PRICE,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ]
 };
-exports.HANDLE_FIELD = {
-    label: 'Handle',
-    variant: 'string',
-    reference: false,
-    db_type: 'string',
-    name: 'handle',
-    position: 1,
-    array: false,
-    internal: true,
-    visible: true,
-    editable: true,
-};
-exports.TITLE_FIELD = {
-    label: 'Title',
-    variant: 'string',
-    reference: false,
-    db_type: 'string',
-    name: 'title',
-    position: 2,
-    array: false,
-    internal: true,
-    visible: true,
-    editable: true,
-};
-exports.PUBLISHED_FIELD = {
-    label: 'Published',
-    variant: 'boolean',
-    reference: false,
-    db_type: 'boolean',
-    name: 'published',
-    position: 4,
-    array: false,
-    internal: true,
-    visible: true,
-    editable: true,
-};
-exports.LOCALE_FIELD = {
-    label: 'locale',
-    variant: 'string',
-    reference: false,
-    db_type: 'string',
-    name: 'locale',
-    position: 5,
-    array: false,
-    internal: true,
-    visible: true,
-    editable: true,
-};
-exports.TAGS_FIELD = {
-    label: 'Tags',
-    variant: 'array',
-    reference: false,
-    db_type: 'string',
-    name: 'tags',
-    position: 6,
-    array: true,
-    internal: true,
-    editable: true,
-    visible: false,
-};
-exports.USER_FIELD = {
-    label: 'User',
-    variant: 'user',
-    db_type: 'belongs_to',
-    name: 'user',
-    internal: true,
-    position: 7,
-    array: false,
-    visible: true,
-    editable: false,
-    reference: false,
+exports.DOCUMENT_SHOW_FIELDS = {
+    post: [
+        exports.IMAGE,
+        exports.TITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    article: [
+        exports.IMAGE,
+        exports.LABEL,
+        exports.TITLE,
+        exports.PUBLISHED_AT,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    place: [
+        exports.IMAGE,
+        exports.TITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+        exports.LOCATION,
+    ],
+    event: [
+        exports.IMAGE,
+        exports.LABEL,
+        exports.TITLE,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+        exports.START_DATE,
+        exports.END_DATE,
+        exports.LOCATION,
+    ],
+    product: [
+        exports.IMAGE,
+        exports.LABEL,
+        exports.TITLE,
+        exports.PRICE,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    image: [
+        exports.IMAGE,
+        exports.LABEL,
+        exports.TITLE,
+        exports.DESCRIPTION,
+    ],
+    video: [
+        exports.VIDEO,
+        exports.LABEL,
+        exports.TITLE,
+        exports.DESCRIPTION
+    ],
+    audio: [
+        exports.IMAGE,
+        exports.AUDIO,
+        exports.TITLE,
+        exports.DESCRIPTION,
+    ],
+    file: [
+        exports.FILE,
+        exports.TITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    youtube: [
+        exports.YOUTUBE_VIDEO,
+        exports.TITLE,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    vimeo: [
+        exports.VIMEO_VIDEO,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    soundcloud: [
+        exports.SOUNDCLOUD_AUDIO,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    shopify: [
+        exports.SHOPIFY_PRODUCT,
+        exports.TAGS
+    ]
 };

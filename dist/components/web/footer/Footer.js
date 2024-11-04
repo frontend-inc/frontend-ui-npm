@@ -17,8 +17,8 @@ var Footer = function (props) {
         handleClick('/');
     };
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 py-2 w-full bg-background min-h-[80px]" },
-        react_1.default.createElement("div", { className: "flex flex-row space-x-10 w-full px-3 items-center justify-between border-b border-divider" },
-            react_1.default.createElement("div", { className: "flex flex-row space-x-4 py-6 w-full items-start" },
+        react_1.default.createElement("div", { className: "flex flex-row space-x-10 w-full items-center justify-between border-b border-divider" },
+            react_1.default.createElement("div", { className: "flex flex-row space-x-4 p-6 w-full items-start" },
                 react_1.default.createElement("div", { className: "w-full sm:w-[160px] flex justify-start" },
                     react_1.default.createElement(Logo_1.default, { handleClick: handleLogoClick, src: logo || appLogo, width: 100, height: 50 })),
                 react_1.default.createElement("div", { className: "w-full flex justify-start sm:justify-center sm:pl-3" },

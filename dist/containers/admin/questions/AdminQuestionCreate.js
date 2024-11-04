@@ -22,7 +22,7 @@ var AdminQuestionCreate = function (props) {
         { label: 'Image', name: 'image', variant: 'image' },
         { label: 'Question', name: 'title', variant: 'string' },
         { label: 'Description', name: 'description', variant: 'text' },
-        { label: 'API name', name: 'name', variant: 'snake_case' },
+        { label: 'API name', name: 'name', variant: 'slug' },
         {
             label: 'Question type',
             name: 'variant',

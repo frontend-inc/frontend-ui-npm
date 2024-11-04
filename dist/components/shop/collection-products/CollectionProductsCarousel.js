@@ -31,10 +31,9 @@ var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var CollectionProductsCarousel = function (props) {
     var apiUrl = (0, hooks_1.useApp)().apiUrl;
-    var productCollectionId = props.productCollectionId, enableArrows = props.enableArrows, enableAutoplay = props.enableAutoplay, rest = __rest(props, ["productCollectionId", "enableArrows", "enableAutoplay"]);
+    var productCollectionId = props.productCollectionId, enableAutoplay = props.enableAutoplay, rest = __rest(props, ["productCollectionId", "enableAutoplay"]);
     var slots = {
         list: {
-            enableArrows: enableArrows,
             enableAutoplay: enableAutoplay,
         },
     };

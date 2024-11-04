@@ -1,3 +1,4 @@
+export * from './googleMaps';
 export { default as GoogleAnalyticsScript } from './google/GoogleAnalyticsScript';
 export { default as GoogleTagManagerScript } from './google/GoogleTagManagerScript';
 export { default as GorgiasContactForm } from './gorgias/GorgiasContactForm';
@@ -8,10 +9,10 @@ export { default as KlaviyoScript } from './klaviyo/KlaviyoScript';
 export { default as KlaviyoSubscribe } from './klaviyo/KlaviyoSubscribe';
 export { default as OkendoScript } from './okendo/OkendoScript';
 export { default as RedditScript } from './reddit/RedditScript';
+export { default as SoundcloudEmbed } from './soundcloud/SoundcloudEmbed';
 export { default as VisualWebsiteOptimizerScript } from './visual-website-optimizer/VisualWebsiteOptimizerScript';
 export { default as Calendly } from './calendly/Calendly';
 export { default as GiftUp } from './giftup/GiftUp';
-export { default as GoogleMap } from './googleMaps/GoogleMap';
 export { default as GorgiasChat } from './gorgias/GorgiasChat';
 export { default as MailchimpSubscribe } from './mailchimp/MailchimpSubscribe';
 export { default as Typeform } from './typeform/Typeform';

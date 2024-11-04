@@ -1,185 +1,78 @@
-export declare const COLLECTION_CUSTOM: {
+export declare const COLLECTION_POST: {
     icon: string;
-    name: string;
+    document_type: string;
     label: string;
     color: string;
-    description: string;
-    fields: {
-        internal: boolean;
-        name: string;
-        label: string;
-        db_type: string;
-        variant: string;
-        filterable: boolean;
-        sortable: boolean;
-        table_header: boolean;
-        display_field: boolean;
-        form_field: boolean;
-        editable: boolean;
-        visible: boolean;
-        options: any[];
-        array: boolean;
-    }[];
-    data: any[];
 };
 export declare const COLLECTION_ARTICLE: {
     icon: string;
-    name: string;
+    document_type: string;
     label: string;
     color: string;
-    description: string;
-    fields: {
-        internal: boolean;
-        name: string;
-        label: string;
-        db_type: string;
-        variant: string;
-        filterable: boolean;
-        sortable: boolean;
-        table_header: boolean;
-        display_field: boolean;
-        form_field: boolean;
-        editable: boolean;
-        visible: boolean;
-        options: any[];
-        array: boolean;
-    }[];
 };
 export declare const COLLECTION_PERSON: {
     icon: string;
-    name: string;
+    document_type: string;
     label: string;
     color: string;
-    description: string;
-    fields: {
-        internal: boolean;
-        name: string;
-        label: string;
-        db_type: string;
-        variant: string;
-        filterable: boolean;
-        sortable: boolean;
-        table_header: boolean;
-        display_field: boolean;
-        form_field: boolean;
-        editable: boolean;
-        visible: boolean;
-        options: any[];
-        array: boolean;
-    }[];
 };
 export declare const COLLECTION_PLACE: {
     icon: string;
-    name: string;
+    document_type: string;
     label: string;
     color: string;
-    description: string;
-    fields: {
-        internal: boolean;
-        name: string;
-        label: string;
-        db_type: string;
-        variant: string;
-        filterable: boolean;
-        sortable: boolean;
-        table_header: boolean;
-        display_field: boolean;
-        form_field: boolean;
-        editable: boolean;
-        visible: boolean;
-        options: any[];
-        array: boolean;
-    }[];
 };
 export declare const COLLECTION_EVENT: {
     icon: string;
-    name: string;
+    document_type: string;
     label: string;
     color: string;
-    description: string;
-    fields: {
-        internal: boolean;
-        name: string;
-        label: string;
-        db_type: string;
-        variant: string;
-        filterable: boolean;
-        sortable: boolean;
-        table_header: boolean;
-        display_field: boolean;
-        form_field: boolean;
-        editable: boolean;
-        visible: boolean;
-        options: any[];
-        array: boolean;
-    }[];
 };
 export declare const COLLECTION_VIDEO: {
     icon: string;
-    name: string;
+    document_type: string;
     label: string;
     color: string;
-    description: string;
-    fields: {
-        internal: boolean;
-        name: string;
-        label: string;
-        db_type: string;
-        variant: string;
-        filterable: boolean;
-        sortable: boolean;
-        table_header: boolean;
-        display_field: boolean;
-        form_field: boolean;
-        editable: boolean;
-        visible: boolean;
-        options: any[];
-        array: boolean;
-    }[];
 };
 export declare const COLLECTION_IMAGE: {
     icon: string;
-    name: string;
+    document_type: string;
     label: string;
     color: string;
-    description: string;
-    fields: {
-        internal: boolean;
-        name: string;
-        label: string;
-        db_type: string;
-        variant: string;
-        filterable: boolean;
-        sortable: boolean;
-        table_header: boolean;
-        display_field: boolean;
-        form_field: boolean;
-        editable: boolean;
-        visible: boolean;
-        options: any[];
-        array: boolean;
-    }[];
+};
+export declare const COLLECTION_FILE: {
+    icon: string;
+    document_type: string;
+    label: string;
+    color: string;
+};
+export declare const COLLECTION_YOUTUBE: {
+    icon: string;
+    document_type: string;
+    label: string;
+    color: string;
+};
+export declare const COLLECTION_VIMEO: {
+    icon: string;
+    document_type: string;
+    label: string;
+    color: string;
+};
+export declare const COLLECTION_SOUNDCLOUD: {
+    icon: string;
+    document_type: string;
+    label: string;
+    color: string;
+};
+export declare const COLLECTION_SHOPIFY: {
+    icon: string;
+    document_type: string;
+    label: string;
+    color: string;
 };
 export declare const COLLECTION_TEMPLATES: {
     icon: string;
-    name: string;
+    document_type: string;
     label: string;
     color: string;
-    description: string;
-    fields: {
-        internal: boolean;
-        name: string;
-        label: string;
-        db_type: string;
-        variant: string;
-        filterable: boolean;
-        sortable: boolean;
-        table_header: boolean;
-        display_field: boolean;
-        form_field: boolean;
-        editable: boolean;
-        visible: boolean;
-        options: any[];
-        array: boolean;
-    }[];
 }[];
