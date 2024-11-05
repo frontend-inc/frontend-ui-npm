@@ -44,13 +44,11 @@ var react_1 = __importDefault(require("react"));
 var core_1 = require("../../core");
 var hooks_1 = require("../../../hooks");
 var hooks_2 = require("../../../hooks");
-var navigation_1 = require("next/navigation");
 var CheckoutButton = function () {
     var _a = (0, hooks_1.useCart)(), loading = _a.loading, cart = _a.cart, checkout = _a.checkout;
-    var router = (0, navigation_1.useRouter)();
     var showAlertError = (0, hooks_2.useAlerts)().showAlertError;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var currentUrl, resp, url;
+        var currentUrl, stripe, url;
         var _a;
         return __generator(this, function (_b) {
             switch (_b.label) {
@@ -61,13 +59,18 @@ var CheckoutButton = function () {
                             cancel_url: currentUrl,
                         })];
                 case 1:
-                    resp = _b.sent();
-                    if (resp === null || resp === void 0 ? void 0 : resp.errors) {
-                        showAlertError(resp.errors);
+                    stripe = _b.sent();
+                    if (stripe === null || stripe === void 0 ? void 0 : stripe.errors) {
+                        showAlertError(stripe.errors);
                     }
                     else {
-                        url = (_a = resp === null || resp === void 0 ? void 0 : resp.data) === null || _a === void 0 ? void 0 : _a.url;
-                        router.push(url);
+                        url = (_a = stripe === null || stripe === void 0 ? void 0 : stripe.data) === null || _a === void 0 ? void 0 : _a.url;
+                        if (window.parent === window) {
+                            window.open(url, '_blank');
+                        }
+                        else {
+                            parent.window.open(url, '_blank');
+                        }
                     }
                     return [2 /*return*/];
             }

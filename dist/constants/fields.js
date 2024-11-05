@@ -67,6 +67,16 @@ exports.DOCUMENT_FORM_FIELDS = {
         exports.LOCATION,
         exports.TAGS,
     ],
+    person: [
+        exports.IMAGE,
+        exports.HANDLE,
+        exports.NAME,
+        exports.ABOUT,
+        exports.SUBTITLE,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
     product: [
         exports.IMAGE,
         exports.HANDLE,
@@ -191,6 +201,15 @@ exports.DOCUMENT_SHOW_FIELDS = {
         exports.DESCRIPTION,
         exports.TAGS,
         exports.LOCATION,
+    ],
+    person: [
+        exports.IMAGE,
+        exports.LABEL,
+        exports.NAME,
+        exports.CATEGORY,
+        exports.SUBTITLE,
+        exports.ABOUT,
+        exports.TAGS,
     ],
     event: [
         exports.IMAGE,

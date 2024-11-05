@@ -5,8 +5,6 @@ export type ShopifyRecentlyViewedProps = {
     enableBorder?: boolean;
     enableAddToCart?: boolean;
     enableQuantity?: boolean;
-    enableQuickShop?: boolean;
-    buttonText?: string;
     emptyIcon?: string;
     emptyTitle?: string;
     emptyDescription?: string;

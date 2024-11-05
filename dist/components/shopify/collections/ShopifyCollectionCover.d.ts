@@ -1,7 +1,6 @@
 import React from 'react';
 export type ShopifyCollectionCoverProps = {
     shopifyCollection: string;
-    editing?: boolean;
     alignItems?: 'flex-start' | 'center' | 'flex-end';
     alt?: string;
     handleClick?: () => void;
@@ -9,6 +8,8 @@ export type ShopifyCollectionCoverProps = {
     enableOverlay?: boolean;
     overlayColor?: string;
     buttonText?: string;
+    enableQuantity?: boolean;
+    enableAddToCart?: boolean;
 };
 declare const ShopifyCollectionCover: React.FC<ShopifyCollectionCoverProps>;
 export default ShopifyCollectionCover;

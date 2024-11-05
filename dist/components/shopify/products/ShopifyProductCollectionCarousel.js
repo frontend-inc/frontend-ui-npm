@@ -28,13 +28,13 @@ var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
 var ShopifyProductCollectionCarousel = function (props) {
-    var handle = props.handle, _a = props.enableAutoPlay, enableAutoPlay = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = props.enableAddToCart, enableAddToCart = _c === void 0 ? false : _c, _d = props.enableQuickShop, enableQuickShop = _d === void 0 ? false : _d, _e = props.enableQuantity, enableQuantity = _e === void 0 ? false : _e;
-    var _f = (0, frontend_shopify_1.useCollections)(), loading = _f.loading, products = _f.products, findCollection = _f.findCollection;
+    var handle = props.handle, _a = props.enableAutoPlay, enableAutoPlay = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = props.enableAddToCart, enableAddToCart = _c === void 0 ? false : _c, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d;
+    var _e = (0, frontend_shopify_1.useCollections)(), loading = _e.loading, products = _e.products, findCollection = _e.findCollection;
     (0, react_1.useEffect)(function () {
         if (handle) {
             findCollection(handle);
         }
     }, [handle]);
-    return (react_1.default.createElement(shopify_1.ShopifyProductCarousel, { loading: loading, products: products, enableAutoPlay: enableAutoPlay, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity }));
+    return (react_1.default.createElement(shopify_1.ShopifyProductCarousel, { loading: loading, products: products, enableAutoPlay: enableAutoPlay, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity }));
 };
 exports.default = ShopifyProductCollectionCarousel;

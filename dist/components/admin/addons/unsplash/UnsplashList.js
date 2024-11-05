@@ -68,6 +68,7 @@ var hooks_1 = require("../../../../hooks");
 var components_1 = require("../../../../components");
 var UnsplashCard_1 = __importDefault(require("./UnsplashCard"));
 var UnsplashModal_1 = __importDefault(require("./UnsplashModal"));
+var PoweredByUnsplash_1 = __importDefault(require("./PoweredByUnsplash"));
 var components_2 = require("../../../../components");
 var lucide_react_1 = require("lucide-react");
 var UnsplashList = function (_a) {
@@ -131,9 +132,10 @@ var UnsplashList = function (_a) {
         setShowModal(true);
     };
     return (react_1.default.createElement("div", { className: "w-full flex flex-col justify-center items-center" },
-        react_1.default.createElement("div", { className: "space-y-4 w-full flex justify-center items-center" },
-            react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, placeholder: "Search unsplash...", handleChange: handleChange, handleSearch: handleSearch })),
-        react_1.default.createElement("div", { className: "mt-4 grid grid-cols-2 gap-4" }, images === null || images === void 0 ? void 0 : images.map(function (image, i) { return (react_1.default.createElement(UnsplashCard_1.default, { key: i, image: image, handleClick: handleImageClick })); })),
+        react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full justify-center items-center" },
+            react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, placeholder: "Search unsplash...", handleChange: handleChange, handleSearch: handleSearch }),
+            react_1.default.createElement(PoweredByUnsplash_1.default, null)),
+        react_1.default.createElement("div", { className: "mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4" }, images === null || images === void 0 ? void 0 : images.map(function (image, i) { return (react_1.default.createElement(UnsplashCard_1.default, { key: i, image: image, handleClick: handleImageClick })); })),
         (images === null || images === void 0 ? void 0 : images.length) > 0 && (images === null || images === void 0 ? void 0 : images.length) % 10 === 0 && (react_1.default.createElement("div", { className: "mt-4 flex justify-center" },
             react_1.default.createElement(components_2.Button, { variant: "outline", className: "my-2 text-foreground", onClick: handleLoadMore },
                 "Load More",

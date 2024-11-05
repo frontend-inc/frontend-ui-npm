@@ -8,7 +8,6 @@ type ShopifyProductCollectionModalProps = {
     enableSort?: boolean;
     enableBorder?: boolean;
     enableAddToCart?: boolean;
-    enableQuickShop?: boolean;
     enableQuantity?: boolean;
 };
 declare const ShopifyProductCollectionModal: React.FC<ShopifyProductCollectionModalProps>;

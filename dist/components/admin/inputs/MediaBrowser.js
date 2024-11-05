@@ -119,7 +119,7 @@ var MediaBrowser = function (_a) {
         { label: 'Unsplash', value: '2' },
         { label: 'Logos', value: '3' },
     ];
-    return (react_1.default.createElement(components_1.Drawer, { open: open, handleClose: handleClose, title: 'Browse Media', buttons: react_1.default.createElement(components_2.Button, { variant: "default", onClick: handleAttach }, "Save Media") },
+    return (react_1.default.createElement(components_1.Drawer, { open: open, handleClose: handleClose, title: 'Browse Media', buttons: react_1.default.createElement(components_2.Button, { fullWidth: true, variant: "default", onClick: handleAttach }, "Save Media") },
         react_1.default.createElement("div", { className: "w-full flex flex-col items-center space-y-3 h-full min-h-[420px]" },
             react_1.default.createElement("div", { className: "w-full" },
                 react_1.default.createElement(components_1.ButtonTabs, { fullWidth: true, options: OPTIONS, handleChange: handleTabChange, value: tab })),

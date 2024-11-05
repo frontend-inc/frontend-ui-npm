@@ -7,9 +7,8 @@ type ShopifyProductCardProps = {
     enableBorder?: boolean;
     enableAddToCart?: boolean;
     enableQuantity?: boolean;
-    enableQuickShop?: boolean;
     disableBorder?: boolean;
     buttonVariant?: 'default' | 'secondary' | 'ghost';
 };
-export default function ShopifyProductCard({ product, handleClick, enableBorder, enableAddToCart, enableQuantity, enableQuickShop, buttonVariant, buttonText, disableBorder, }: ShopifyProductCardProps): React.JSX.Element;
+export default function ShopifyProductCard({ product, handleClick, enableBorder, enableAddToCart, enableQuantity, buttonVariant, buttonText, disableBorder, }: ShopifyProductCardProps): React.JSX.Element;
 export {};

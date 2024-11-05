@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShopifyQuickShopButton = exports.ShopifyCheckoutButton = exports.ShopifyCartText = exports.ShopifyCartTotals = exports.ShopifyCartLines = exports.ShopifyCartLine = exports.ShopifyCartDiscountCode = exports.ShopifyCartDiscounts = exports.ShopifyCartButton = exports.ShopifyCart = exports.ShopifyAddToCartButton = void 0;
+exports.ShopifyCheckoutButton = exports.ShopifyCartText = exports.ShopifyCartTotals = exports.ShopifyCartLines = exports.ShopifyCartLine = exports.ShopifyCartDiscountCode = exports.ShopifyCartDiscounts = exports.ShopifyCartButton = exports.ShopifyCart = exports.ShopifyAddToCartButton = void 0;
 var ShopifyAddToCartButton_1 = require("./ShopifyAddToCartButton");
 Object.defineProperty(exports, "ShopifyAddToCartButton", { enumerable: true, get: function () { return __importDefault(ShopifyAddToCartButton_1).default; } });
 var ShopifyCart_1 = require("./ShopifyCart");
@@ -24,5 +24,3 @@ var ShopifyCartText_1 = require("./ShopifyCartText");
 Object.defineProperty(exports, "ShopifyCartText", { enumerable: true, get: function () { return __importDefault(ShopifyCartText_1).default; } });
 var ShopifyCheckoutButton_1 = require("./ShopifyCheckoutButton");
 Object.defineProperty(exports, "ShopifyCheckoutButton", { enumerable: true, get: function () { return __importDefault(ShopifyCheckoutButton_1).default; } });
-var ShopifyQuickShopButton_1 = require("./ShopifyQuickShopButton");
-Object.defineProperty(exports, "ShopifyQuickShopButton", { enumerable: true, get: function () { return __importDefault(ShopifyQuickShopButton_1).default; } });

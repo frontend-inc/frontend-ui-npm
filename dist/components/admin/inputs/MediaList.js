@@ -99,7 +99,7 @@ var MediaList = function (_a) {
         });
     }, []);
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full" },
-        react_1.default.createElement("div", { className: "mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4" }, resources.map(function (item) { return (react_1.default.createElement(MediaListItem_1.default, { key: item === null || item === void 0 ? void 0 : item.id, item: item, selected: selectedIds.includes(item === null || item === void 0 ? void 0 : item.id), handleClick: function () { return handleSelect(item); }, handleRemove: function () { return handleRemove(item); } })); })),
+        react_1.default.createElement("div", { className: "mt-2 grid grid-cols-1 sm:grid-cols-3 gap-4" }, resources.map(function (item) { return (react_1.default.createElement(MediaListItem_1.default, { key: item === null || item === void 0 ? void 0 : item.id, item: item, selected: selectedIds.includes(item === null || item === void 0 ? void 0 : item.id), handleClick: function () { return handleSelect(item); }, handleRemove: function () { return handleRemove(item); } })); })),
         (resources === null || resources === void 0 ? void 0 : resources.length) === 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'Image', title: "No media", description: "Upload or import media." })),
         numPages > page && (react_1.default.createElement(components_2.Button, { variant: "secondary", className: "w-full", onClick: handleLoadMore },
             loading ? (react_1.default.createElement(components_1.IconLoading, { className: "mr-2 h-4 w-4" })) : (react_1.default.createElement(lucide_react_1.ChevronDown, { className: "mr-2 h-4 w-4" })),

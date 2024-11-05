@@ -3,7 +3,7 @@ export type LineItemType = {
     id?: number;
     cart_id?: number;
     product_id: number;
-    product?: ProductType;
+    product: ProductType;
     quantity: number;
 };
 export type CartType = {

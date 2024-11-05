@@ -1,28 +1,5 @@
 'use client';
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -63,48 +40,48 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
-var frontend_js_1 = require("frontend-js");
-var __1 = require("../..");
-var SubscriptionTableCard_1 = __importDefault(require("./SubscriptionTableCard"));
+var react_1 = __importDefault(require("react"));
+var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var navigation_1 = require("next/navigation");
-var frontend_shadcn_1 = require("frontend-shadcn");
-function SubscriptionTable() {
+var frontend_js_1 = require("frontend-js");
+function SubscribeCard() {
     var _this = this;
-    var router = (0, navigation_1.useRouter)();
-    var _a = (0, hooks_1.useSubscriptions)(), loading = _a.delayedLoading, subscribe = _a.subscribe, subscriptions = _a.subscriptions, findSubscriptions = _a.findSubscriptions;
+    var _a = (0, hooks_1.useApp)(), logo = _a.logo, name = _a.name, description = _a.description, setAuthOpen = _a.setAuthOpen;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
-    var handleSubscribe = function (subscription) { return __awaiter(_this, void 0, void 0, function () {
-        var currentUrl, resp;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
+    var subscriptionPrice = (0, hooks_1.useShop)().subscriptionPrice;
+    var _b = (0, hooks_1.useSubscription)(), loading = _b.loading, subscribe = _b.subscribe;
+    var showAlertError = (0, hooks_1.useAlerts)().showAlertError;
+    var handleSubscribe = function () { return __awaiter(_this, void 0, void 0, function () {
+        var currentUrl, stripe;
+        var _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
                 case 0:
                     if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
                         return [2 /*return*/, setAuthOpen(true)];
                     currentUrl = window.location.href;
-                    return [4 /*yield*/, subscribe(subscription === null || subscription === void 0 ? void 0 : subscription.id, {
+                    return [4 /*yield*/, subscribe({
                             success_url: currentUrl,
                             cancel_url: currentUrl,
                         })];
                 case 1:
-                    resp = (_a.sent());
-                    if (resp === null || resp === void 0 ? void 0 : resp.url) {
-                        router.push(resp.url);
+                    stripe = _b.sent();
+                    if (stripe === null || stripe === void 0 ? void 0 : stripe.errors) {
+                        showAlertError(stripe.errors);
+                    }
+                    else if ((_a = stripe === null || stripe === void 0 ? void 0 : stripe.data) === null || _a === void 0 ? void 0 : _a.url) {
+                        if (window.parent === window) {
+                            window.open(stripe.data.url, '_blank');
+                        }
+                        else {
+                            parent.window.open(stripe.data.url, '_blank');
+                        }
                     }
                     return [2 /*return*/];
             }
         });
     }); };
-    (0, react_1.useEffect)(function () {
-        findSubscriptions();
-    }, []);
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full flex justify-center items-center', 'sm:flex-row flex-col space-y-2 sm:space-y-0 sm:space-x-2', loading && 'opacity-50') }, subscriptions === null || subscriptions === void 0 ? void 0 : subscriptions.map(function (subscription) {
-            var selected = (currentUser === null || currentUser === void 0 ? void 0 : currentUser.subscription_id) === subscription.id;
-            return (react_1.default.createElement(SubscriptionTableCard_1.default, { key: subscription.id, selected: selected, subscription: subscription, handleClick: function () { return handleSubscribe(subscription); } }));
-        })),
-        !loading && !(subscriptions === null || subscriptions === void 0 ? void 0 : subscriptions.length) && (react_1.default.createElement(__1.Placeholder, { icon: "CreditCard", title: "No subscription plans", description: "Subscription plans will appear here." }))));
+    return (react_1.default.createElement("div", { className: "w-full flex items-center justify-center" },
+        react_1.default.createElement(components_1.SubscriptionPlan, { loading: loading, label: "Subscribe", title: "Upgrade to premium", subtitle: "To continue please subscribe to our premium plan", price: subscriptionPrice, description: description, handleClick: handleSubscribe })));
 }
-exports.default = SubscriptionTable;
+exports.default = SubscribeCard;

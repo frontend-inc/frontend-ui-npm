@@ -3,7 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShopifyCheckboxFilterList = exports.ShopifyProductSearchFilters = exports.ShopifyProductFiltersList = exports.ShopifyProductFilterButton = exports.ShopifyProductSortButton = void 0;
+exports.ShopifyCheckboxFilterList = exports.ShopifyProductSearchFilters = exports.ShopifyProductFiltersList = exports.ShopifyProductFilterButton = exports.ShopifyProductSortButton = exports.ShopifyCollectionSortButton = void 0;
+var ShopifyCollectionSortButton_1 = require("./ShopifyCollectionSortButton");
+Object.defineProperty(exports, "ShopifyCollectionSortButton", { enumerable: true, get: function () { return __importDefault(ShopifyCollectionSortButton_1).default; } });
 var ShopifyProductSortButton_1 = require("./ShopifyProductSortButton");
 Object.defineProperty(exports, "ShopifyProductSortButton", { enumerable: true, get: function () { return __importDefault(ShopifyProductSortButton_1).default; } });
 var ShopifyProductFilterButton_1 = require("./ShopifyProductFilterButton");

@@ -5,6 +5,7 @@ export type ShopifyProductDetailsProps = {
     enableQuantity?: boolean;
     enableFavorites?: boolean;
     enableSubscription?: boolean;
+    disableZoom?: boolean;
 };
 declare const ShopifyProductDetails: React.FC<ShopifyProductDetailsProps>;
 export default ShopifyProductDetails;

@@ -4,7 +4,6 @@ export type ShopifyProductCollectionCarouselProps = {
     enableAutoPlay?: boolean;
     enableBorder?: boolean;
     enableAddToCart?: boolean;
-    enableQuickShop?: boolean;
     enableQuantity?: boolean;
 };
 declare const ShopifyProductCollectionCarousel: React.FC<ShopifyProductCollectionCarouselProps>;

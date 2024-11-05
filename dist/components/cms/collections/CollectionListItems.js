@@ -55,14 +55,19 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var __2 = require("../..");
+var hooks_1 = require("../../../hooks");
 var CollectionListItems = function (props) {
     var _a = (0, frontend_js_1.useResourceContext)(), setResource = _a.setResource, loading = _a.loading, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, setOpenShow = _a.setOpenShow;
     var selectable = props.selectable, _b = props.layout, layout = _b === void 0 ? 'list' : _b, _c = props.buttons, buttons = _c === void 0 ? [] : _c, _d = props.style, style = _d === void 0 ? 'list' : _d, handleClick = props.handleClick, _e = props.metafields, metafields = _e === void 0 ? [] : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.enableOverlay, enableOverlay = _g === void 0 ? false : _g, _h = props.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = props.enableLikes, enableLikes = _j === void 0 ? false : _j, _k = props.enableComments, enableComments = _k === void 0 ? false : _k, _l = props.slots, slots = _l === void 0 ? {
         item: {},
     } : _l;
+    var setSubscribeOpen = (0, hooks_1.useShop)().setSubscribeOpen;
     var handleShowClick = function (resource) {
         if (handleClick) {
             handleClick(resource);
+        }
+        else if (resource === null || resource === void 0 ? void 0 : resource.premium) {
+            setSubscribeOpen(true);
         }
         else {
             setResource(resource);

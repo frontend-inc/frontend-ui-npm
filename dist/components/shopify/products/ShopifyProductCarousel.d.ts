@@ -8,7 +8,6 @@ type ShopifyProductCarouselProps = {
     maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | false;
     enableBorder?: boolean;
     enableAddToCart?: boolean;
-    enableQuickShop?: boolean;
     enableQuantity?: boolean;
 };
 declare const ShopifyProductCarousel: React.FC<ShopifyProductCarouselProps>;

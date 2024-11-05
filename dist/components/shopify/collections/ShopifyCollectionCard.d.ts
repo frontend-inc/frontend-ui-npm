@@ -5,5 +5,8 @@ export type ShopifyCollectionCardProps = {
     buttonText?: string;
     enableGradient?: boolean;
     enableOverlay?: boolean;
+    enableAddToCart?: boolean;
+    enableQuantity?: boolean;
+    enableSorting?: boolean;
 };
-export default function ShopifyCollectionCard({ collection, buttonText, enableGradient, enableOverlay, }: ShopifyCollectionCardProps): React.JSX.Element;
+export default function ShopifyCollectionCard(props: ShopifyCollectionCardProps): React.JSX.Element;

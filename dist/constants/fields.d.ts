@@ -129,6 +129,11 @@ export declare const DOCUMENT_FORM_FIELDS: {
         name: string;
         variant: string;
     }[];
+    person: {
+        label: string;
+        name: string;
+        variant: string;
+    }[];
     product: {
         label: string;
         name: string;
@@ -187,6 +192,11 @@ export declare const DOCUMENT_SHOW_FIELDS: {
         variant: string;
     }[];
     place: {
+        label: string;
+        name: string;
+        variant: string;
+    }[];
+    person: {
         label: string;
         name: string;
         variant: string;

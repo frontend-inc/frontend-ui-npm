@@ -38,19 +38,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var frontend_js_1 = require("frontend-js");
-var useSubscriptions = function () {
+var useSubscription = function () {
     var api = (0, frontend_js_1.useApi)().api;
+    var _a = (0, frontend_js_1.useLoadingWrapper)(), errors = _a.errors, loading = _a.loading, delayedLoading = _a.delayedLoading, loadingWrapper = _a.loadingWrapper;
     var apiParams = {
         name: 'subscription',
         url: '/api/v1/shop/subscriptions',
     };
-    var _a = (0, frontend_js_1.useResource)(apiParams), loading = _a.loading, delayedLoading = _a.delayedLoading, errors = _a.errors, subscription = _a.resource, subscriptions = _a.resources, findSubscription = _a.findOne, findSubscriptions = _a.findMany, handleChange = _a.handleChange, handleChangePage = _a.handleChangePage, reloadSubscriptions = _a.reloadMany, query = _a.query, setQuery = _a.setQuery, page = _a.page, numPages = _a.numPages, perPage = _a.perPage, totalCount = _a.totalCount, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort, loadMore = _a.loadMore, loadingWrapper = _a.loadingWrapper, paginate = _a.paginate;
-    var subscribe = function (subscriptionId, options) { return __awaiter(void 0, void 0, void 0, function () {
+    var subscribe = function (options) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, loadingWrapper(function () {
-                        return api.subscribe(subscriptionId, options, apiParams);
-                    })];
+                case 0: return [4 /*yield*/, loadingWrapper(function () { return api.subscribe(options, apiParams); })];
                 case 1: return [2 /*return*/, _a.sent()];
             }
         });
@@ -67,27 +65,8 @@ var useSubscriptions = function () {
         loading: loading,
         delayedLoading: delayedLoading,
         errors: errors,
-        subscription: subscription,
-        subscriptions: subscriptions,
-        findSubscription: findSubscription,
-        findSubscriptions: findSubscriptions,
         subscribe: subscribe,
         unsubscribe: unsubscribe,
-        handleChange: handleChange,
-        handleChangePage: handleChangePage,
-        reloadSubscriptions: reloadSubscriptions,
-        query: query,
-        setQuery: setQuery,
-        page: page,
-        numPages: numPages,
-        perPage: perPage,
-        totalCount: totalCount,
-        sortBy: sortBy,
-        sortDirection: sortDirection,
-        handleSort: handleSort,
-        loadMore: loadMore,
-        loadingWrapper: loadingWrapper,
-        paginate: paginate,
     };
 };
-exports.default = useSubscriptions;
+exports.default = useSubscription;

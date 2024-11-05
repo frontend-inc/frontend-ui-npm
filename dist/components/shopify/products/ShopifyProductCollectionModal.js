@@ -31,7 +31,10 @@ var __1 = require("../..");
 var __2 = require("..");
 var ShopifyProductCollectionModal = function (props) {
     var collection = props.collection, _a = props.open, open = _a === void 0 ? false : _a, handleClose = props.handleClose, rest = __rest(props, ["collection", "open", "handleClose"]);
-    return (react_1.default.createElement(__1.Drawer, { title: collection === null || collection === void 0 ? void 0 : collection.title, open: open, handleClose: handleClose },
-        react_1.default.createElement(__2.ShopifyProductCollection, __assign({}, rest, { shopifyCollection: collection === null || collection === void 0 ? void 0 : collection.handle }))));
+    console.log('collection', collection);
+    return (react_1.default.createElement(__1.Drawer, { title: collection === null || collection === void 0 ? void 0 : collection.title, open: open, handleClose: handleClose, maxWidth: 'lg' },
+        react_1.default.createElement("div", { className: "w-full flex flex-col space-y-6" },
+            react_1.default.createElement("div", { className: 'px-[40px] text-base text-muted-foreground' }, collection === null || collection === void 0 ? void 0 : collection.description),
+            react_1.default.createElement(__2.ShopifyProductCollection, __assign({}, rest, { shopifyCollection: collection === null || collection === void 0 ? void 0 : collection.handle })))));
 };
 exports.default = ShopifyProductCollectionModal;

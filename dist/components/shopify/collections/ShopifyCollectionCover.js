@@ -30,7 +30,7 @@ var frontend_shopify_1 = require("frontend-shopify");
 var components_1 = require("../../../components");
 var ShopifyCollectionCover = function (props) {
     var _a;
-    var shopifyCollection = props.shopifyCollection, _b = props.alt, alt = _b === void 0 ? 'image' : _b, handleClick = props.handleClick, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d, _e = props.alignItems, alignItems = _e === void 0 ? 'center' : _e, buttonText = props.buttonText;
+    var shopifyCollection = props.shopifyCollection, _b = props.alt, alt = _b === void 0 ? 'image' : _b, handleClick = props.handleClick, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d, _e = props.alignItems, alignItems = _e === void 0 ? 'center' : _e, buttonText = props.buttonText, enableQuantity = props.enableQuantity, enableAddToCart = props.enableAddToCart;
     var _f = (0, react_1.useState)(false), open = _f[0], setOpen = _f[1];
     var _g = (0, frontend_shopify_1.useCollections)(), collection = _g.collection, findCollection = _g.findCollection;
     var handleShowClick = function () {
@@ -52,6 +52,6 @@ var ShopifyCollectionCover = function (props) {
         react_1.default.createElement(__1.Cover, { enableOverlay: enableOverlay, enableGradient: enableGradient, title: collection === null || collection === void 0 ? void 0 : collection.title, 
             // @ts-ignore
             image: (_a = collection === null || collection === void 0 ? void 0 : collection.image) === null || _a === void 0 ? void 0 : _a.url, alt: alt, alignItems: alignItems, handleClick: handleShowClick, buttonText: buttonText }),
-        react_1.default.createElement(components_1.ShopifyProductCollectionModal, { collection: collection, open: open, handleClose: function () { return setOpen(false); } })));
+        react_1.default.createElement(components_1.ShopifyProductCollectionModal, { collection: collection, open: open, handleClose: function () { return setOpen(false); }, enableQuantity: enableQuantity, enableAddToCart: enableAddToCart })));
 };
 exports.default = ShopifyCollectionCover;

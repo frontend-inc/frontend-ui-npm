@@ -38,8 +38,8 @@ var __1 = require("..");
 var frontend_shadcn_2 = require("frontend-shadcn");
 function ShopifyProductCard(_a) {
     var _b, _c, _d, _e;
-    var product = _a.product, handleClick = _a.handleClick, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableAddToCart, enableAddToCart = _g === void 0 ? false : _g, _h = _a.enableQuantity, enableQuantity = _h === void 0 ? false : _h, _j = _a.enableQuickShop, enableQuickShop = _j === void 0 ? false : _j, _k = _a.buttonVariant, buttonVariant = _k === void 0 ? 'default' : _k, buttonText = _a.buttonText, _l = _a.disableBorder, disableBorder = _l === void 0 ? false : _l;
-    var _m = (0, react_1.useState)(false), open = _m[0], setOpen = _m[1];
+    var product = _a.product, handleClick = _a.handleClick, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableAddToCart, enableAddToCart = _g === void 0 ? false : _g, _h = _a.enableQuantity, enableQuantity = _h === void 0 ? false : _h, _j = _a.buttonVariant, buttonVariant = _j === void 0 ? 'default' : _j, buttonText = _a.buttonText, _k = _a.disableBorder, disableBorder = _k === void 0 ? false : _k;
+    var _l = (0, react_1.useState)(false), open = _l[0], setOpen = _l[1];
     var setSearchOpen = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext).setSearchOpen;
     var handleQuickShop = function () {
         setOpen(true);
@@ -55,7 +55,8 @@ function ShopifyProductCard(_a) {
         }
     };
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)(!disableBorder && 'border border-border hover:shadow-md', 'w-full overflow-hidden rounded-lg transition-shadow duration-300 bg-background') },
-        react_1.default.createElement(SwipeableShopifyProductImages_1.default, { product: product, height: 320, handleClick: handleItemClick, disableBorderRadius: enableBorder }),
+        react_1.default.createElement("div", { className: "w-full h-full min-h-[320px]" },
+            react_1.default.createElement(SwipeableShopifyProductImages_1.default, { product: product, height: 320, handleClick: handleItemClick, disableBorderRadius: enableBorder })),
         react_1.default.createElement(frontend_shadcn_1.CardContent, { className: "p-3" },
             react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
                 react_1.default.createElement("div", { className: "flex flex-col space-y-2 min-h-[80px]" },
@@ -63,8 +64,7 @@ function ShopifyProductCard(_a) {
                     react_1.default.createElement(core_1.Typography, { className: "text-muted-foreground", variant: "body2" }, (0, frontend_shopify_2.formatCurrency)((_c = (_b = product === null || product === void 0 ? void 0 : product.priceRange) === null || _b === void 0 ? void 0 : _b.minVariantPrice) === null || _c === void 0 ? void 0 : _c.amount))),
                 enableAddToCart && (react_1.default.createElement(__1.ShopifyAddToCartButton, { product: product, 
                     /* @ts-ignore */
-                    variant: (_e = (_d = product === null || product === void 0 ? void 0 : product.variants) === null || _d === void 0 ? void 0 : _d.edges[0]) === null || _e === void 0 ? void 0 : _e.node, label: buttonText, enableQuantity: enableQuantity, buttonVariant: buttonVariant, size: "small" })),
-                enableQuickShop && (react_1.default.createElement(core_1.Button, { color: "secondary", onClick: handleQuickShop, className: "w-full" }, "Quick Shop")))),
+                    variant: (_e = (_d = product === null || product === void 0 ? void 0 : product.variants) === null || _d === void 0 ? void 0 : _d.edges[0]) === null || _e === void 0 ? void 0 : _e.node, label: buttonText, enableQuantity: enableQuantity, buttonVariant: buttonVariant, size: "small" })))),
         react_1.default.createElement(__1.ShopifyProductModal, { open: open, handleClose: function () { return setOpen(false); }, shopifyProduct: product === null || product === void 0 ? void 0 : product.handle, enableQuantity: enableQuantity, buttonText: buttonText })));
 }
 exports.default = ShopifyProductCard;

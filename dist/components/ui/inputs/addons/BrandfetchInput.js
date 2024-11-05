@@ -42,6 +42,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var hooks_1 = require("../../../../hooks");
+var frontend_shadcn_1 = require("frontend-shadcn");
 var __1 = require("../../..");
 var PoweredByBrandfetch_1 = __importDefault(require("./PoweredByBrandfetch"));
 var BrandfetchInput = function (props) {
@@ -77,15 +78,16 @@ var BrandfetchInput = function (props) {
             react_1.default.createElement(__1.BrandfetchAutosuggest, { handleChange: handleBrandChange })),
         react_1.default.createElement(PoweredByBrandfetch_1.default, null),
         loading && react_1.default.createElement(__1.CircularLoader, null),
-        react_1.default.createElement("div", { className: "grid grid-cols-[repeat(auto-fill,minmax(164px,1fr))] gap-4" }, !loading &&
+        react_1.default.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-4" }, !loading &&
             ((_a = brand === null || brand === void 0 ? void 0 : brand.logos) === null || _a === void 0 ? void 0 : _a.map(function (logo) {
                 var _a;
-                return (react_1.default.createElement(react_1.default.Fragment, { key: logo.domain }, (_a = logo === null || logo === void 0 ? void 0 : logo.formats) === null || _a === void 0 ? void 0 : _a.filter(function (f) { return f.format != 'svg'; }).map(function (format, index) { return (react_1.default.createElement("div", { key: "".concat(logo.domain, "-").concat(index), className: "flex flex-col space-y-4 bg-background p-4 rounded transition-shadow duration-300 hover:shadow-md" },
-                    react_1.default.createElement(__1.TouchableOpacity, { handleClick: function () { return handleClick(format, logo); } },
-                        react_1.default.createElement("div", { className: "relative rounded overflow-hidden h-[164px] w-[164px] flex items-center justify-center" },
-                            react_1.default.createElement(__1.Image, { src: format === null || format === void 0 ? void 0 : format.src, height: 164, width: 164, alt: logo === null || logo === void 0 ? void 0 : logo.domain, objectFit: "contain" }))),
-                    react_1.default.createElement("div", null,
-                        react_1.default.createElement(__1.Label, { label: format.format })))); })));
+                return (react_1.default.createElement(react_1.default.Fragment, { key: logo.domain }, (_a = logo === null || logo === void 0 ? void 0 : logo.formats) === null || _a === void 0 ? void 0 : _a.filter(function (f) { return f.format != 'svg'; }).map(function (format, index) { return (react_1.default.createElement(frontend_shadcn_1.Card, { key: "".concat(logo.domain, "-").concat(index), className: "flex flex-col space-y-4 bg-muted/20 hover:bg-muted/50 p-4 hover:border-primary overflow-hidden" },
+                    react_1.default.createElement(frontend_shadcn_1.CardContent, null,
+                        react_1.default.createElement(__1.TouchableOpacity, { handleClick: function () { return handleClick(format, logo); } },
+                            react_1.default.createElement("div", { className: "relative rounded overflow-hidden h-[160px] w-[200px] flex items-center justify-center" },
+                                react_1.default.createElement(__1.Image, { src: format === null || format === void 0 ? void 0 : format.src, height: 220, width: 200, alt: logo === null || logo === void 0 ? void 0 : logo.domain, objectFit: "contain" }))),
+                        react_1.default.createElement("div", null,
+                            react_1.default.createElement(__1.Label, { label: format.format }))))); })));
             })))));
 };
 exports.default = BrandfetchInput;

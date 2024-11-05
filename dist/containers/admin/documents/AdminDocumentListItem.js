@@ -28,10 +28,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
+var frontend_shadcn_1 = require("frontend-shadcn");
 var AdminDocumentListItem = function (props) {
     var _a;
     var resource = props.resource, selectable = props.selectable, selected = props.selected, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, rest = __rest(props, ["resource", "selectable", "selected", "handleClick", "handleEdit", "handleDelete", "handleSelect"]);
     return (react_1.default.createElement(components_1.ResourceListItem, __assign({ sortable: true, selectable: selectable, selected: selected, avatar: react_1.default.createElement("div", { className: "h-[72px] w-[72px]" },
-            react_1.default.createElement(components_1.Image, { src: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, aspectRatio: 1.0, alt: resource === null || resource === void 0 ? void 0 : resource.title })), primary: resource === null || resource === void 0 ? void 0 : resource.title, secondary: react_1.default.createElement(components_1.ListFields, { resource: resource, fields: [{ label: 'Handle', name: 'handle', variant: 'string' }] }), secondaryAction: react_1.default.createElement(components_1.PublishLabel, { published: resource === null || resource === void 0 ? void 0 : resource.published }), handleEdit: handleEdit, handleDelete: handleDelete, handleClick: handleClick, handleSelect: handleSelect }, rest)));
+            react_1.default.createElement(components_1.Image, { src: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, aspectRatio: 1.0, alt: resource === null || resource === void 0 ? void 0 : resource.title })), primary: resource === null || resource === void 0 ? void 0 : resource.title, secondary: react_1.default.createElement(components_1.ListFields, { resource: resource, fields: [{ label: 'Handle', name: 'handle', variant: 'string' }] }), secondaryAction: react_1.default.createElement("div", { className: "flex flex-row space-x-2" },
+            react_1.default.createElement(components_1.PublishLabel, { published: resource === null || resource === void 0 ? void 0 : resource.published }),
+            (resource === null || resource === void 0 ? void 0 : resource.premium) && (react_1.default.createElement(frontend_shadcn_1.Badge, { className: "px-3 py-1" }, "Premium"))), handleEdit: handleEdit, handleDelete: handleDelete, handleClick: handleClick, handleSelect: handleSelect }, rest)));
 };
 exports.default = AdminDocumentListItem;

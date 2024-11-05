@@ -1,4 +1,6 @@
 declare const useApp: () => {
+    name: any;
+    description: any;
     app: any;
     setApp: any;
     logo: any;
@@ -6,6 +8,7 @@ declare const useApp: () => {
     clientUrl: any;
     enableShopify: any;
     enableStripe: any;
+    enableSubscription: any;
     alert: any;
     setAlert: any;
     authOpen: any;

@@ -4,9 +4,11 @@ type AppProviderProps = {
     clientUrl: string;
     children: React.ReactNode;
     logo?: any;
+    name: string;
+    description: string;
     enableShopify?: boolean;
     enableStripe?: boolean;
-    name: string;
+    enableSubscription: boolean;
 };
 declare const AppProvider: (props: AppProviderProps) => React.JSX.Element;
 export default AppProvider;

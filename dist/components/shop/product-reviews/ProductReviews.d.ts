@@ -1,6 +1,6 @@
 import React from 'react';
 export type ProductReviewsProps = {
-    productId: string;
+    productId: string | number;
     enableSearch?: boolean;
     enableSorting?: boolean;
     enableFilters?: boolean;

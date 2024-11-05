@@ -10,10 +10,11 @@ var components_1 = require("../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var Placeholder = function (props) {
     var icon = props.icon, title = props.title, description = props.description, buttons = props.buttons, _a = props.color, color = _a === void 0 ? 'text-foreground' : _a;
-    return (react_1.default.createElement("div", { className: "w-full rounded-lg p-6 flex flex-col space-y-1 justify-center items-center" },
+    return (react_1.default.createElement("div", { className: "w-full rounded-lg p-6 flex flex-col space-y-6 justify-center items-center" },
         icon && react_1.default.createElement(components_1.Icon, { name: icon, className: (0, frontend_shadcn_1.cn)(color, 'w-5 h-5') }),
-        react_1.default.createElement(core_1.Typography, { variant: "body1" }, title),
-        react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, description),
+        react_1.default.createElement("div", { className: "w-full flex flex-col space-y-2 items-center" },
+            react_1.default.createElement(core_1.Typography, { variant: "body1" }, title),
+            react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, description)),
         buttons && (react_1.default.createElement("div", { className: "flex flex-row space-x-2 justify-center items-center" }, buttons))));
 };
 exports.default = Placeholder;

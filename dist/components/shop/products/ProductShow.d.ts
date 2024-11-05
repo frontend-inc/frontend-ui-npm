@@ -1,7 +1,6 @@
 import React from 'react';
 export type ShowModalProps = {
     handle?: string;
-    enableBorder?: boolean;
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;

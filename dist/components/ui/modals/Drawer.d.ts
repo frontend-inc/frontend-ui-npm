@@ -7,8 +7,7 @@ type CustomDrawerProps = {
     description?: string;
     buttons?: React.ReactNode;
     children: React.ReactNode;
-    footer?: React.ReactNode;
-    disablePadding?: boolean;
+    maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
 };
-export default function CustomDrawer({ open, handleClose, loading, title, description, children, buttons, }: CustomDrawerProps): React.JSX.Element;
+export default function CustomDrawer({ open, handleClose, loading, title, description, children, buttons, maxWidth, }: CustomDrawerProps): React.JSX.Element;
 export {};

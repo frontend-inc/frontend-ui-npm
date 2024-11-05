@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductHeader = exports.ProductShow = exports.ProductListItems = exports.ProductListItem = exports.ProductList = exports.ProductFavorites = exports.ProductEmpty = exports.ProductSimilarList = exports.ProductCarouselListItems = exports.ProductCarouselList = void 0;
+exports.ProductModal = exports.ProductHeader = exports.ProductShow = exports.ProductListItems = exports.ProductListItem = exports.ProductList = exports.ProductFavorites = exports.ProductEmpty = exports.ProductSimilarList = exports.ProductCarouselListItems = exports.ProductCarouselList = void 0;
 var ProductCarouselList_1 = require("./ProductCarouselList");
 Object.defineProperty(exports, "ProductCarouselList", { enumerable: true, get: function () { return __importDefault(ProductCarouselList_1).default; } });
 var ProductCarouselListItems_1 = require("./ProductCarouselListItems");
@@ -25,3 +25,5 @@ var ProductShow_1 = require("./ProductShow");
 Object.defineProperty(exports, "ProductShow", { enumerable: true, get: function () { return __importDefault(ProductShow_1).default; } });
 var ProductHeader_1 = require("./ProductHeader");
 Object.defineProperty(exports, "ProductHeader", { enumerable: true, get: function () { return __importDefault(ProductHeader_1).default; } });
+var ProductModal_1 = require("./ProductModal");
+Object.defineProperty(exports, "ProductModal", { enumerable: true, get: function () { return __importDefault(ProductModal_1).default; } });

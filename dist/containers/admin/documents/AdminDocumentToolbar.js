@@ -42,15 +42,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 var AdminDocumentToolbar = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var _a = props || {}, open = _a.open, collectionId = _a.collectionId, handleClose = _a.handleClose, selectedIds = _a.selectedIds, handleReload = _a.handleReload;
-    var _b = (0, frontend_js_1.useResource)({
-        url: "".concat(apiUrl, "/").concat(collectionId),
-        name: 'document',
-    }), publish = _b.publish, unpublish = _b.unpublish, deleteMany = _b.deleteMany;
+    var _b = (0, hooks_1.useAdminDocuments)({
+        collection: collectionId
+    }), publish = _b.publish, unpublish = _b.unpublish, updateDocuments = _b.updateDocuments, deleteDocuments = _b.deleteDocuments;
     var handlePublish = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -78,7 +76,31 @@ var AdminDocumentToolbar = function (props) {
     var handleDelete = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, deleteMany(selectedIds)];
+                case 0: return [4 /*yield*/, deleteDocuments(selectedIds)];
+                case 1:
+                    _a.sent();
+                    handleReload();
+                    handleClose();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handlePremium = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, updateDocuments(selectedIds, { premium: true })];
+                case 1:
+                    _a.sent();
+                    handleReload();
+                    handleClose();
+                    return [2 /*return*/];
+            }
+        });
+    }); };
+    var handleFree = function () { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, updateDocuments(selectedIds, { premium: false })];
                 case 1:
                     _a.sent();
                     handleReload();
@@ -91,6 +113,8 @@ var AdminDocumentToolbar = function (props) {
         react_1.default.createElement("div", { className: "flex flex-row justify-center items-center space-x-2" },
             react_1.default.createElement(components_1.Button, { onClick: handlePublish }, "Publish"),
             react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handleUnpublish }, "Unpublish"),
+            react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handlePremium }, "Premium"),
+            react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handleFree }, "Free"),
             react_1.default.createElement(components_1.AlertButton, { variant: "secondary", onClick: handleDelete }, "Delete"))));
 };
 exports.default = AdminDocumentToolbar;

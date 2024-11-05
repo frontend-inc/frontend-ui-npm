@@ -31,26 +31,26 @@ var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var helpers_1 = require("../../../helpers");
 var components_3 = require("../../../components");
-function ShopifyCollectionCard(_a) {
-    var collection = _a.collection, buttonText = _a.buttonText, _b = _a.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = _a.enableOverlay, enableOverlay = _c === void 0 ? false : _c;
-    var _d = collection || {}, handle = _d.handle, title = _d.title, image = _d.image;
-    var _e = (0, react_1.useState)(false), open = _e[0], setOpen = _e[1];
+function ShopifyCollectionCard(props) {
+    var collection = props.collection, buttonText = props.buttonText, _a = props.enableGradient, enableGradient = _a === void 0 ? false : _a, _b = props.enableOverlay, enableOverlay = _b === void 0 ? false : _b, _c = props.enableAddToCart, enableAddToCart = _c === void 0 ? false : _c, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d, _e = props.enableSorting, enableSorting = _e === void 0 ? false : _e;
+    var _f = collection || {}, handle = _f.handle, title = _f.title, image = _f.image;
+    var _g = (0, react_1.useState)(false), open = _g[0], setOpen = _g[1];
     var handleShowClick = function () {
         setOpen(true);
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement(frontend_shadcn_1.Card, { className: "relative w-full rounded-lg" },
-            react_1.default.createElement("div", { className: "relative w-full h-full" },
+            react_1.default.createElement("div", { className: "relative cursor-pointer w-full h-full" },
                 react_1.default.createElement(components_3.Image
                 // @ts-ignore
                 , { 
                     // @ts-ignore
-                    src: image === null || image === void 0 ? void 0 : image.url, alt: title || 'Collection image', aspectRatio: 1.0, objectFit: "cover", enableGradient: enableGradient, enableOverlay: enableOverlay })),
+                    src: image === null || image === void 0 ? void 0 : image.url, alt: title || 'Collection image', aspectRatio: 1.0, objectFit: "cover", enableGradient: enableGradient, enableOverlay: enableOverlay, handleClick: handleShowClick })),
             react_1.default.createElement("div", { className: "dark absolute bottom-0 left-0 w-full p-4 z-10" },
                 react_1.default.createElement("div", { className: "flex items-center justify-between w-full" },
                     react_1.default.createElement("div", { className: "flex flex-col items-start justify-center" },
                         react_1.default.createElement(core_1.Typography, { variant: "body1", className: "font-bold" }, (0, helpers_1.truncate)(title || '', 60))),
                     buttonText && (react_1.default.createElement(components_1.Button, { variant: "secondary", size: "sm", onClick: handleShowClick, className: "bg-white text-black hover:bg-white/90" }, "Browse"))))),
-        react_1.default.createElement(components_2.ShopifyProductCollectionModal, { open: open, handleClose: function () { return setOpen(false); }, collection: collection })));
+        react_1.default.createElement(components_2.ShopifyProductCollectionModal, { open: open, handleClose: function () { return setOpen(false); }, collection: collection, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableSort: enableSorting })));
 }
 exports.default = ShopifyCollectionCard;

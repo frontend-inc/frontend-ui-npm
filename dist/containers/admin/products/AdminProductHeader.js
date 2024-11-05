@@ -76,6 +76,7 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var components_2 = require("../../../components");
 var core_1 = require("../../../components/core");
+var lucide_react_1 = require("lucide-react");
 var AdminProductHeader = function (props) {
     var handleReload = (props || {}).handleReload;
     var _a = (0, hooks_1.useAdminProducts)(), loading = _a.loading, aiGenerate = _a.aiGenerate;
@@ -101,8 +102,7 @@ var AdminProductHeader = function (props) {
         });
     }); };
     return (react_1.default.createElement(components_1.ResourceHeader, __assign({}, props, { secondaryAction: react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(core_1.IconButton, { onClick: function () { return setOpen(true); } },
-                react_1.default.createElement(components_2.Icon, { name: "Wand" })),
+            react_1.default.createElement(core_1.Button, { className: "bg-sky-500 hover:bg-sky-700 text-white", onClick: function () { return setOpen(true); }, startIcon: react_1.default.createElement(lucide_react_1.Zap, { className: "h-4 w-4" }) }, "Generate"),
             react_1.default.createElement(components_2.Modal, { icon: "Wand", title: "Generate Products", loading: loading, open: open, handleClose: function () { return setOpen(false); } },
                 react_1.default.createElement(components_2.Form, { errors: {}, resource: prompt, handleChange: handleChange, fields: [
                         {

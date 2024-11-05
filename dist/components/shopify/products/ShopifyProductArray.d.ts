@@ -3,7 +3,6 @@ type ProductArrayProps = {
     handles: string[];
     enableBorder?: boolean;
     enableAddToCart?: boolean;
-    enableQuickShop?: boolean;
     enableQuantity?: boolean;
     buttonText?: string;
 };

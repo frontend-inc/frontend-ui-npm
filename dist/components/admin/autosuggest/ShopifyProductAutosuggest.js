@@ -28,9 +28,9 @@ var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var frontend_shopify_1 = require("frontend-shopify");
 var ShopifyProductAutosuggest = function (props) {
-    var value = props.value, label = props.label, placeholder = props.placeholder, _a = props.name, name = _a === void 0 ? 'shopify_product' : _a, handleChange = props.handleChange;
-    var _b = (0, frontend_shopify_1.useProducts)(), products = _b.products, findProducts = _b.findProducts;
-    var _c = (0, react_1.useState)([]), options = _c[0], setOptions = _c[1];
+    var value = props.value, label = props.label, placeholder = props.placeholder, handleChange = props.handleChange;
+    var _a = (0, frontend_shopify_1.useProducts)(), products = _a.products, findProducts = _a.findProducts;
+    var _b = (0, react_1.useState)([]), options = _b[0], setOptions = _b[1];
     var handleInputChange = function (keywords) {
         findProducts(keywords);
     };
@@ -51,6 +51,6 @@ var ShopifyProductAutosuggest = function (props) {
             first: 5,
         });
     }, []);
-    return (react_1.default.createElement(components_1.Autosuggest, { label: label, name: name, value: value, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, enableClear: true }));
+    return (react_1.default.createElement(components_1.Autosuggest, { label: label, name: 'shopify_product', value: value, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, enableClear: true }));
 };
 exports.default = ShopifyProductAutosuggest;

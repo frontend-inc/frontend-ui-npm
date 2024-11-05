@@ -6,8 +6,6 @@ export type ShopifyProductFavoritesProps = {
     enableBorder?: boolean;
     enableAddToCart?: boolean;
     enableQuantity?: boolean;
-    enableQuickShop?: boolean;
-    buttonText?: string;
 };
 declare const ShopifyProductFavorites: React.FC<ShopifyProductFavoritesProps>;
 export default ShopifyProductFavorites;

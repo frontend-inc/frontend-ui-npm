@@ -1,5 +1,5 @@
 import React from 'react';
-type SortListProps = {
+type ShopifySortListProps = {
     enableIcons?: boolean;
     value: string;
     reverse?: boolean;
@@ -10,5 +10,5 @@ type SortListProps = {
     }>;
     handleClick: (value: string, reverse?: boolean) => void;
 };
-declare const SortList: React.FC<SortListProps>;
-export default SortList;
+declare const ShopifySortList: React.FC<ShopifySortListProps>;
+export default ShopifySortList;

@@ -8,7 +8,6 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var maxWidthClasses = {
-    xs: 'container mx-auto max-w-screen-xs',
     sm: 'container mx-auto max-w-screen-sm',
     md: 'container mx-auto max-w-screen-md',
     lg: 'container mx-auto max-w-screen-lg',

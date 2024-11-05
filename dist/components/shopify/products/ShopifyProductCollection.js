@@ -28,11 +28,11 @@ var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var __1 = require("..");
 var ShopifyProductCollection = function (props) {
-    var shopifyCollection = props.shopifyCollection, _a = props.options, options = _a === void 0 ? [] : _a, _b = props.priceOptions, priceOptions = _b === void 0 ? [] : _b, _c = props.enableFilters, enableFilters = _c === void 0 ? false : _c, _d = props.enableSort, enableSort = _d === void 0 ? false : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableAddToCart, enableAddToCart = _f === void 0 ? false : _f, _g = props.enableQuickShop, enableQuickShop = _g === void 0 ? false : _g, _h = props.enableQuantity, enableQuantity = _h === void 0 ? false : _h;
-    var _j = (0, react_1.useState)('COLLECTION_DEFAULT'), sortKey = _j[0], setSortKey = _j[1];
-    var _k = (0, react_1.useState)(false), reverse = _k[0], setReverse = _k[1];
-    var _l = (0, frontend_shopify_1.useCollections)(), loading = _l.loading, products = _l.products, findCollection = _l.findCollection;
-    var _m = (0, frontend_shopify_1.useSearchFilters)(), filters = _m.filters, handleFilter = _m.handleFilter, handleFilterArray = _m.handleFilterArray, formatProductFilters = _m.formatProductFilters;
+    var shopifyCollection = props.shopifyCollection, _a = props.options, options = _a === void 0 ? [] : _a, _b = props.priceOptions, priceOptions = _b === void 0 ? [] : _b, _c = props.enableFilters, enableFilters = _c === void 0 ? false : _c, _d = props.enableSort, enableSort = _d === void 0 ? false : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e, _f = props.enableAddToCart, enableAddToCart = _f === void 0 ? false : _f, _g = props.enableQuantity, enableQuantity = _g === void 0 ? false : _g;
+    var _h = (0, react_1.useState)('COLLECTION_DEFAULT'), sortKey = _h[0], setSortKey = _h[1];
+    var _j = (0, react_1.useState)(false), reverse = _j[0], setReverse = _j[1];
+    var _k = (0, frontend_shopify_1.useCollections)(), loading = _k.loading, products = _k.products, findCollection = _k.findCollection;
+    var _l = (0, frontend_shopify_1.useSearchFilters)(), filters = _l.filters, handleFilter = _l.handleFilter, handleFilterArray = _l.handleFilterArray, formatProductFilters = _l.formatProductFilters;
     var handleSortClick = function (sortKey, reverse) {
         if (reverse === void 0) { reverse = false; }
         setSortKey(sortKey);
@@ -48,10 +48,13 @@ var ShopifyProductCollection = function (props) {
             });
         }
     }, [shopifyCollection, filters, sortKey, reverse]);
+    (0, react_1.useEffect)(function () {
+        console.log("PROPS", props);
+    }, [props]);
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
         react_1.default.createElement("div", { className: "flex flex-row space-x-2" },
             enableFilters && (react_1.default.createElement(__1.ShopifyProductFilterButton, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray })),
-            enableSort && (react_1.default.createElement(__1.ShopifyProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick }))),
-        react_1.default.createElement(__1.ShopifyProducts, { loading: loading, products: products, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuickShop: enableQuickShop, enableQuantity: enableQuantity })));
+            enableSort && (react_1.default.createElement(__1.ShopifyCollectionSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick }))),
+        react_1.default.createElement(__1.ShopifyProducts, { loading: loading, products: products, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity })));
 };
 exports.default = ShopifyProductCollection;

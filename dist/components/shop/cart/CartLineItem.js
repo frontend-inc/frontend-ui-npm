@@ -1,5 +1,28 @@
 'use client';
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -40,11 +63,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(require("react"));
+var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../hooks");
 var components_1 = require("../../../components");
+var image_1 = __importDefault(require("next/image"));
 var core_1 = require("../../core");
-var navigation_1 = require("next/navigation");
 var components_2 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var lucide_react_1 = require("lucide-react");
@@ -60,11 +83,10 @@ var CartQuantityInput = function (props) {
 var CartLineItem = function (props) {
     var _a;
     var lineItem = props.lineItem;
-    var router = (0, navigation_1.useRouter)();
-    var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var _b = (0, hooks_1.useCart)(), loading = _b.loading, addQuantity = _b.addQuantity, removeQuantity = _b.removeQuantity, removeFromCart = _b.removeFromCart;
+    var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
+    var _c = (0, hooks_1.useCart)(), loading = _c.loading, addQuantity = _c.addQuantity, removeQuantity = _c.removeQuantity, removeFromCart = _c.removeFromCart;
     var setCartOpen = (0, hooks_1.useCart)().setCartOpen;
-    var _c = lineItem || {}, id = _c.id, quantity = _c.quantity, product = _c.product;
+    var _d = lineItem || {}, id = _d.id, quantity = _d.quantity, product = _d.product;
     var handleAddQuantity = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -96,21 +118,27 @@ var CartLineItem = function (props) {
         });
     }); };
     var handleClick = function () {
-        router.push("".concat(clientUrl, "/products/").concat(product === null || product === void 0 ? void 0 : product.handle));
-        setCartOpen(false);
+        setOpen(true);
+        //setCartOpen(false)
     };
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex items-center justify-between py-2', loading && 'opacity-30') },
-        react_1.default.createElement("div", { className: "flex items-center pt-1" },
-            react_1.default.createElement("div", { className: "relative mr-4 w-24 h-24" },
-                react_1.default.createElement("span", { className: "absolute bg-primary text-primary-foreground top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none z-50 transform translate-x-1/2 -translate-y-1/2 rounded-full" }, quantity),
-                react_1.default.createElement(components_1.Image, { alt: (product === null || product === void 0 ? void 0 : product.title) || '', 
-                    // @ts-ignore
-                    src: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, height: 96, width: 96, aspectRatio: 1.0, handleClick: handleClick, className: "cursor-pointer" })),
-            react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
-                react_1.default.createElement(core_1.Typography, { variant: "body1" }, product === null || product === void 0 ? void 0 : product.title),
-                react_1.default.createElement(core_1.Typography, { className: "text-muted-foreground", variant: "body2" }, product === null || product === void 0 ? void 0 : product.display_price),
-                react_1.default.createElement(CartQuantityInput, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity }))),
-        react_1.default.createElement("button", { onClick: handleRemoveFromCart, className: 'focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm p-1 mr-1' },
-            react_1.default.createElement(components_1.Icon, { name: "X", className: "h-4 w-4 text-muted-foreground hover:text-foreground" }))));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex items-center justify-between py-2', loading && 'opacity-30') },
+            react_1.default.createElement("div", { className: "flex items-center pt-1" },
+                react_1.default.createElement("div", { className: "relative mr-4 w-24 h-24" },
+                    react_1.default.createElement("span", { className: "absolute bg-primary text-primary-foreground top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none z-50 transform translate-x-1/2 -translate-y-1/2 rounded-full" }, quantity),
+                    react_1.default.createElement("div", { className: "rounded-lg flex items-center justify-center min-w-[96px] h-[96px] overflow-hidden" },
+                        react_1.default.createElement("button", { className: "p-0", onClick: handleClick },
+                            react_1.default.createElement(image_1.default, { alt: (product === null || product === void 0 ? void 0 : product.title) || '', 
+                                // @ts-ignore
+                                src: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, height: 72, width: 72, style: {
+                                    objectFit: 'cover'
+                                }, className: "w-full cursor-pointer object-cover" })))),
+                react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
+                    react_1.default.createElement(core_1.Typography, { variant: "body1" }, product === null || product === void 0 ? void 0 : product.title),
+                    react_1.default.createElement(core_1.Typography, { className: "text-muted-foreground", variant: "body2" }, product === null || product === void 0 ? void 0 : product.display_price),
+                    react_1.default.createElement(CartQuantityInput, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity }))),
+            react_1.default.createElement("button", { onClick: handleRemoveFromCart, className: 'focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm p-1 mr-1' },
+                react_1.default.createElement(components_1.Icon, { name: "X", className: "h-4 w-4 text-muted-foreground hover:text-foreground" }))),
+        react_1.default.createElement(components_2.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, productId: product === null || product === void 0 ? void 0 : product.handle })));
 };
 exports.default = CartLineItem;

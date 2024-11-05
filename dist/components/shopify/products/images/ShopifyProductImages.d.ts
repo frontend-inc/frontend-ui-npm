@@ -5,6 +5,7 @@ type ShopifyProductImagesProps = {
     image: ShopifyImageType;
     images: ShopifyImageType[];
     handleClick: (img: ShopifyImageType) => void;
+    disableZoom?: boolean;
 };
 declare const ShopifyProductImages: React.FC<ShopifyProductImagesProps>;
 export default ShopifyProductImages;
