@@ -26,7 +26,7 @@ var DataHeader = function (props) {
     var _l = (0, hooks_1.useSearch)({
         url: url,
         query: defaultQuery,
-    }), query = _l.query, keywords = _l.keywords, handleKeywordChange = _l.handleKeywordChange, handleSearch = _l.handleSearch, handleSortBy = _l.handleSortBy, handleSortDirection = _l.handleSortDirection, activeFilters = _l.activeFilters, handleFilter = _l.handleFilter, handleClearFilters = _l.handleClearFilters;
+    }), query = _l.query, keywords = _l.keywords, handleKeywordChange = _l.handleKeywordChange, handleSearch = _l.handleSearch, handleSortBy = _l.handleSortBy, handleSortDirection = _l.handleSortDirection, activeFilters = _l.activeFilters, handleAddFilter = _l.handleAddFilter, handleClearFilters = _l.handleClearFilters;
     var handleAdd = (0, hooks_1.useCollectionForms)().handleAdd;
     if (!enableSearch && !enableFilters && !enableSorting && !enableCreate) {
         return null;
@@ -36,7 +36,7 @@ var DataHeader = function (props) {
             react_1.default.createElement("div", { className: "flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1" },
                 enableSearch && (react_1.default.createElement(SearchComponent, __assign({ value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch }, slots.search))),
                 enableFilters && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
-                    react_1.default.createElement(__1.FilterButton, { filterOptions: filterOptions, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters }))),
+                    react_1.default.createElement(__1.FilterButton, { filterOptions: filterOptions, filters: activeFilters, handleFilter: handleAddFilter }))),
                 enableSorting && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
                     react_1.default.createElement(__1.SortButton, { sortOptions: sortOptions, sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
             (enableCreate || secondaryAction) && (react_1.default.createElement("div", { className: "flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1" },

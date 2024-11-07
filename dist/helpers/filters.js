@@ -16,42 +16,34 @@ exports.formatFilterArray = exports.mergeAllFilters = exports.mergeFilters = voi
 // The app uses syntax like this to pass filters in the URL:
 // ?filters=()
 var mergeFilters = function (filters, newFilters) {
-    if (!filters)
-        return newFilters;
-    if (!newFilters)
-        return filters;
-    var mergedFilters = {
-        AND: __spreadArray(__spreadArray([], ((filters === null || filters === void 0 ? void 0 : filters.AND) || []), true), ((newFilters === null || newFilters === void 0 ? void 0 : newFilters.AND) || []), true),
-        OR: __spreadArray(__spreadArray([], (filters.OR || []), true), (newFilters.OR || []), true),
-    };
+    if (filters === void 0) { filters = []; }
+    if (newFilters === void 0) { newFilters = []; }
+    var mergedFilters = __spreadArray(__spreadArray([], filters, true), newFilters, true);
     return mergedFilters;
 };
 exports.mergeFilters = mergeFilters;
 var mergeAllFilters = function (filters) {
     if (filters.length === 0) {
-        return {};
+        return [];
     }
     return filters.reduce(function (mergedFilter, currentFilter) {
         return (0, exports.mergeFilters)(mergedFilter, currentFilter);
-    }, {});
+    }, []);
 };
 exports.mergeAllFilters = mergeAllFilters;
 // Convert the query object into an array of filter options
 var formatFilterArray = function (filters) {
     var formattedFilters = [];
-    if (typeof filters === 'object') {
-        Object.keys(filters).forEach(function (where) {
-            filters[where].forEach(function (filter) {
-                var field = Object.keys(filter)[0];
-                var operator = Object.keys(filter[field])[0];
-                var value = filter[field][operator];
-                //@ts-ignore
-                formattedFilters.push({
-                    where: where,
-                    field: field,
-                    operator: operator,
-                    value: value,
-                });
+    if (Array.isArray(filters)) {
+        filters.forEach(function (filter) {
+            var name = Object.keys(filter)[0];
+            var operator = Object.keys(filter[name])[0];
+            var value = filter[name][operator];
+            //@ts-ignore
+            formattedFilters.push({
+                name: name,
+                operator: operator,
+                value: value,
             });
         });
     }

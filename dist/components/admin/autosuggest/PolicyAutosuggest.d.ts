@@ -4,9 +4,9 @@ type PolicyAutosuggestProps = {
     value: any;
     name?: string;
     label?: string;
+    valueParam?: string;
     handleChange: any;
     query?: any;
-    valueParam?: string;
     direction?: 'row' | 'column';
     placeholder?: string;
 };

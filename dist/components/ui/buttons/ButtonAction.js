@@ -29,20 +29,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var core_1 = require("../../core");
 var __1 = require("../..");
-var navigation_1 = require("next/navigation");
+var hooks_1 = require("../../../hooks");
 var ButtonAction = function (props) {
     var children = props.children, icon = props.icon, url = props.url, path = props.path, _a = props.variant, variant = _a === void 0 ? 'secondary' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, rest = __rest(props, ["children", "icon", "url", "path", "variant", "size"]);
-    var router = (0, navigation_1.useRouter)();
-    var handleClick = function () {
-        if (url) {
-            window.open(url, '_blank');
-        }
-        else if (path) {
-            router.push(path);
-        }
-    };
+    var onClick = (0, hooks_1.useNavigate)({
+        url: url,
+        path: path
+    });
     return (react_1.default.createElement(core_1.Button, __assign({ fullWidth: true, size: size, startIcon: icon && (react_1.default.createElement(__1.Icon, { name: icon, color: variant == 'default'
                 ? 'text-primary-foreground'
-                : 'text-secondary-foreground' })), onClick: handleClick, variant: variant }, rest), children));
+                : 'text-secondary-foreground' })), 
+        /* @ts-ignore */
+        onClick: onClick, variant: variant }, rest), children));
 };
 exports.default = ButtonAction;

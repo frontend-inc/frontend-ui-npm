@@ -3,13 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Logo = exports.ImageModal = exports.Image = exports.CloudinaryImage = exports.BrandLogos = exports.AttachmentImage = exports.AvatarImage = void 0;
+exports.Logo = exports.ImageModal = exports.Image = exports.CloudinaryImage = exports.AttachmentImage = exports.AvatarImage = void 0;
 var AvatarImage_1 = require("./AvatarImage");
 Object.defineProperty(exports, "AvatarImage", { enumerable: true, get: function () { return __importDefault(AvatarImage_1).default; } });
 var AttachmentImage_1 = require("./AttachmentImage");
 Object.defineProperty(exports, "AttachmentImage", { enumerable: true, get: function () { return __importDefault(AttachmentImage_1).default; } });
-var BrandLogos_1 = require("./BrandLogos");
-Object.defineProperty(exports, "BrandLogos", { enumerable: true, get: function () { return __importDefault(BrandLogos_1).default; } });
 var CloudinaryImage_1 = require("./CloudinaryImage");
 Object.defineProperty(exports, "CloudinaryImage", { enumerable: true, get: function () { return __importDefault(CloudinaryImage_1).default; } });
 var Image_1 = require("./Image");

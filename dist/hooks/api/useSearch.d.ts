@@ -1,5 +1,5 @@
 import React from 'react';
-import { SortOptionType, FilterOptionType, SyntheticEventType } from '../../types';
+import { SortOptionType, SyntheticEventType } from '../../types';
 declare const useSearch: (props: any) => {
     loading: boolean;
     delayedLoading: any;
@@ -20,7 +20,8 @@ declare const useSearch: (props: any) => {
     handleSortBy: (field: SortOptionType) => void;
     handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
     activeFilters: any[];
-    handleFilter: (filter: FilterOptionType) => void;
+    setActiveFilters: React.Dispatch<React.SetStateAction<any[]>>;
+    handleAddFilter: (filter: any) => any[];
     handleClearFilters: () => void;
 };
 export default useSearch;

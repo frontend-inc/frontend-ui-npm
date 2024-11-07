@@ -32,7 +32,7 @@ var ListCard = function (props) {
             sortable && (react_1.default.createElement(__1.Icon, { name: "GripVertical", className: "text-muted-foreground" })),
             react_1.default.createElement("div", { className: "flex flex-row justify-start items-start space-x-4 flex-grow" },
                 !disableImage && (react_1.default.createElement("div", { className: "flex-shrink-0 w-[180px]" },
-                    react_1.default.createElement("div", { className: "w-full pr-2 h-full flex justify-center sm:justify-start items-center" }, circular ? (react_1.default.createElement(__1.AvatarImage, __assign({ label: label, src: image, height: size, alt: primary, onClick: handleClick }, slots.image))) : (react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: size, alt: primary, aspectRatio: 1.0, onClick: handleClick }, slots.image)))))),
+                    react_1.default.createElement("div", { className: "w-full pr-2 h-full flex justify-center sm:justify-start items-center" }, circular ? (react_1.default.createElement(__1.AvatarImage, __assign({ label: label, src: image, size: size, alt: primary, onClick: handleClick }, slots.image))) : (react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: size, alt: primary, aspectRatio: 1.0, onClick: handleClick }, slots.image)))))),
                 react_1.default.createElement("div", { className: "flex flex-col justify-between h-[140px] flex-grow" },
                     react_1.default.createElement("div", { className: "flex flex-col space-y-1" },
                         react_1.default.createElement(link_1.default, { href: "#", onClick: handleClick, className: "text-foreground no-underline" },

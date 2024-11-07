@@ -1,5 +1,16 @@
 'use client';
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -13,10 +24,10 @@ var ButtonActions = function (_a) {
             'justify-start': justifyContent === 'start',
             'justify-center': justifyContent === 'center',
             'justify-end': justifyContent === 'end',
-        }) }, (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full flex flex-col sm:flex-row gap-1', {
+        }) }, (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full flex flex-col sm:flex-row sm:space-x-3', {
             'justify-start': justifyContent === 'start',
             'justify-center': justifyContent === 'center',
             'justify-end': justifyContent === 'end',
-        }) }, buttons.map(function (button, index) { return (react_1.default.createElement(ButtonAction_1.default, { key: index, icon: button === null || button === void 0 ? void 0 : button.icon, path: button === null || button === void 0 ? void 0 : button.path, url: button === null || button === void 0 ? void 0 : button.url, size: size }, button === null || button === void 0 ? void 0 : button.label)); })))));
+        }) }, buttons.map(function (button, index) { return (react_1.default.createElement(ButtonAction_1.default, __assign({ key: index, size: size }, button), button === null || button === void 0 ? void 0 : button.label)); })))));
 };
 exports.default = ButtonActions;

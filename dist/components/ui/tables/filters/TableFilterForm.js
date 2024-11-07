@@ -57,7 +57,6 @@ function TableFilterForm(_a) {
     var _c = (0, react_1.useState)([]), sortOptions = _c[0], setSortOptions = _c[1];
     var _d = (0, react_1.useState)([]), activeFilters = _d[0], setActiveFilters = _d[1];
     var defaultFilter = {
-        where: 'AND',
         field: 'id',
         operator: 'eq',
         value: '',

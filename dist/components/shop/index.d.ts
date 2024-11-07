@@ -6,4 +6,4 @@ export * from './products';
 export * from './product-collections';
 export * from './product-reviews';
 export * from './stripe';
-export * from './subscriptions';
+export * from './subscribe';

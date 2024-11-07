@@ -21,16 +21,16 @@ var HeroAvatar = function (props) {
     var _a = props || {}, image = _a.image, primary = _a.primary, secondary = _a.secondary, actions = _a.actions, secondaryAction = _a.secondaryAction, _b = _a.slots, slots = _b === void 0 ? {
         image: {},
     } : _b;
-    return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 justify-center overflow-hidden" },
-        react_1.default.createElement("div", { className: "w-full flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-1 justify-center sm:justify-end" }, secondaryAction),
-        react_1.default.createElement("div", { className: "w-full flex justify-center items-center rounded" },
-            react_1.default.createElement("div", { className: "w-full flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-start items-center sm:items-start" },
-                react_1.default.createElement("div", { className: "w-full sm:w-[200px] flex flex-col space-y-4" },
+    return (react_1.default.createElement("div", { className: "w-full flex flex-row justify-center" },
+        react_1.default.createElement("div", { className: "container mx-auto w-full max-w-screen-sm flex flex-col space-y-2 justify-center overflow-hidden" },
+            react_1.default.createElement("div", { className: "w-full flex flex-col space-y-1 justify-center" }, secondaryAction),
+            react_1.default.createElement("div", { className: "w-full flex flex-col space-y-6 justify-start items-center" },
+                react_1.default.createElement("div", { className: "w-full sm:w-[160px] flex flex-col space-y-3" },
                     react_1.default.createElement("div", { className: "w-full h-full rounded flex justify-center items-center" },
-                        react_1.default.createElement(__1.AvatarImage, __assign({ image: image, alt: typeof primary === 'string' ? primary : 'Avatar', height: 200 }, slots.image))),
+                        react_1.default.createElement(__1.AvatarImage, __assign({ src: image, alt: typeof primary === 'string' ? primary : 'Avatar', size: 160 }, slots.image))),
                     actions),
                 react_1.default.createElement("div", { className: "w-full flex flex-col space-y-1" },
-                    react_1.default.createElement("h4", { className: "text-foreground text-2xl font-bold" }, primary),
-                    secondary)))));
+                    react_1.default.createElement(__1.Typography, { variant: "h3", className: "text-center" }, primary),
+                    react_1.default.createElement(__1.Typography, { variant: "body1", className: "text-center" }, secondary))))));
 };
 exports.default = HeroAvatar;

@@ -120,7 +120,7 @@ function AttachmentInput(_a) {
             return [2 /*return*/];
         });
     }); };
-    return (react_1.default.createElement("div", { className: "flex flex-col w-full" },
+    return (react_1.default.createElement("div", { className: "flex flex-col space-y-3 w-full" },
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         (attachment === null || attachment === void 0 ? void 0 : attachment.url) && (react_1.default.createElement(RenderAttachment, { variant: variant, src: attachment.url, size: size, objectFit: objectFit, onDelete: function () { return handleDelete(name); } })),
         !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && src && (react_1.default.createElement(RenderAttachment, { src: src, size: size, variant: variant, objectFit: objectFit, onDelete: onRemove })),

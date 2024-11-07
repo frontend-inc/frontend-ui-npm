@@ -1,6 +1,6 @@
 import React from 'react';
 import { FilterOptionType, SyntheticEventType } from '../../../../types';
-type FilterFieldProps = {
+type FilternameProps = {
     index: number;
     filter: FilterOptionType;
     fieldOptions: {
@@ -10,5 +10,5 @@ type FilterFieldProps = {
     handleChange: (e: SyntheticEventType, index: number) => void;
     handleRemove: (index: number) => void;
 };
-declare const FilterFieldWrapper: React.FC<FilterFieldProps>;
-export default FilterFieldWrapper;
+declare const FilternameWrapper: React.FC<FilternameProps>;
+export default FilternameWrapper;

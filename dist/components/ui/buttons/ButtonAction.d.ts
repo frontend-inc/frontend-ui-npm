@@ -1,7 +1,7 @@
 import React from 'react';
 type ButtonActionProps = {
     icon?: string;
-    variant?: 'default' | 'secondary' | 'ghost';
+    variant?: 'default' | 'secondary' | 'outline' | 'ghost' | 'link';
     size?: 'sm' | 'default' | 'lg';
     url?: string;
     path?: string;

@@ -105,7 +105,7 @@ var AdminDocumentHeader = function (props) {
     }); };
     return (react_1.default.createElement(components_1.ResourceHeader, __assign({}, props, { secondaryAction: react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(core_1.Button, { className: "bg-blue-500 text-white hover:bg-blue-700 hover:text-white", onClick: function () { return setOpen(true); }, startIcon: react_1.default.createElement(components_2.Icon, { name: "Zap" }) }, "Generate"),
-            react_1.default.createElement(components_2.Modal, { icon: "Zap", title: "Generate Data", open: open, handleClose: function () { return setOpen(false); }, loading: collectionLoading },
+            react_1.default.createElement(components_2.Modal, { icon: "Zap", title: "Generate Content", open: open, handleClose: function () { return setOpen(false); }, loading: collectionLoading },
                 react_1.default.createElement(components_2.Form, { errors: {}, resource: prompt, handleChange: handleChange, fields: [
                         {
                             name: 'prompt',

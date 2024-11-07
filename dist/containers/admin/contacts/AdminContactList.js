@@ -13,9 +13,8 @@ var AdminContactList = function () {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     return (react_1.default.createElement(components_1.ResourceList, { enableBorder: false, url: "".concat(apiUrl, "/contacts"), name: "contact", enableSearch: true, enableCreate: true, enableEdit: true, enableShow: true, enableDelete: true, filterOptions: [
             {
-                field: 'source',
+                name: 'source',
                 label: 'Source',
-                variant: 'multiple_choice',
                 options: [
                     { label: 'Newsletter', value: 'newsletter' },
                     { label: 'Contact Us', value: 'contact' },

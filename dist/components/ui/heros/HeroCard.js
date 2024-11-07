@@ -30,7 +30,7 @@ var HeroCard = function (props) {
                     react_1.default.createElement(__1.Image, __assign({ src: image, alt: typeof primary === 'string' ? primary : 'Hero image', label: label, aspectRatio: 4 / 3 }, slots.image)),
                     actions),
                 react_1.default.createElement("div", { className: "w-full md:w-1/2 max-w-full md:max-w-[500px] flex flex-col space-y-2" },
-                    react_1.default.createElement(core_1.Typography, { variant: "h4" }, primary),
-                    secondary)))));
+                    react_1.default.createElement(core_1.Typography, { variant: "h3" }, primary),
+                    react_1.default.createElement(core_1.Typography, { variant: "body1" }, secondary))))));
 };
 exports.default = HeroCard;

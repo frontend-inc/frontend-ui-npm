@@ -14,5 +14,6 @@ declare const useCart: () => {
     addQuantity: (productId: any) => Promise<any>;
     removeQuantity: (productId: any) => Promise<any>;
     checkout: (options: any) => Promise<any>;
+    subscribe: (productId: any, options: any) => Promise<any>;
 };
 export default useCart;

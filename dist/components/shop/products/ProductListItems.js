@@ -55,6 +55,7 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var __2 = require("../..");
+var components_1 = require("../../../components");
 var ProductListItems = function (props) {
     var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.loading, setResource = _a.setResource, resources = _a.resources, page = _a.page, numPages = _a.numPages, loadMore = _a.loadMore, setOpenShow = _a.setOpenShow;
     var _b = props.buttons, buttons = _b === void 0 ? [] : _b, _c = props.style, style = _c === void 0 ? 'list' : _c, handleClick = props.handleClick, _d = props.displayFields, displayFields = _d === void 0 ? [] : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = props.enableOverlay, enableOverlay = _f === void 0 ? false : _f, _g = props.enableFavorites, enableFavorites = _g === void 0 ? false : _g, _h = props.enableLikes, enableLikes = _h === void 0 ? false : _h, _j = props.enableRatings, enableRatings = _j === void 0 ? false : _j, _k = props.slots, slots = _k === void 0 ? {
@@ -81,7 +82,8 @@ var ProductListItems = function (props) {
         });
     }); };
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
-        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { layout: 'grid', loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(__2.ProductListItem, __assign({ key: resource === null || resource === void 0 ? void 0 : resource.id, style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item))); })),
+        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { layout: 'grid', loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, idx) { return (react_1.default.createElement(components_1.BlurFade, { delay: 0.25 + idx * 0.05, inView: true, key: resource === null || resource === void 0 ? void 0 : resource.id },
+            react_1.default.createElement(__2.ProductListItem, __assign({ style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item)))); })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };
 exports.default = ProductListItems;

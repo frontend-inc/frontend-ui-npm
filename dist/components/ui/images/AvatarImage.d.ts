@@ -1,8 +1,8 @@
 import React from 'react';
 export type AvatarImageProps = {
-    image: string;
+    src: string;
     alt: string;
-    height?: number;
+    size?: number;
     enableGradient?: boolean;
     enableOverlay?: boolean;
 };

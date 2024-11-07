@@ -4,8 +4,5 @@ declare const useShop: () => {
     cartOpen: any;
     setCartOpen: any;
     cartCookie: any;
-    subscribeOpen: any;
-    setSubscribeOpen: any;
-    subscriptionPrice: any;
 };
 export default useShop;

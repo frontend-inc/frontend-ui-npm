@@ -13,7 +13,7 @@ var ResourceHeader = function (props) {
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col space-y-2 w-full align-center justify-between', direction == 'row' && 'sm:flex-row sm:space-x-2 sm:space-y-0') },
         react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full flex flex-col space-y-2 items-center justify-start', direction == 'row' && 'sm:flex-row sm:space-x-2 sm:space-y-0') },
             enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
-            enableFilters && (react_1.default.createElement(__1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters, filterOptions: filterOptions })),
+            enableFilters && (react_1.default.createElement(__1.FilterButton, { filters: activeFilters, handleFilter: handleFilter, filterOptions: filterOptions })),
             enableSorting && (react_1.default.createElement(__1.SortButton, { sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', sortOptions: sortOptions, handleSortBy: handleSort, handleSortDirection: handleSortDirection }))),
         react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col space-y-2 w-full align-center justify-end', direction == 'row' && 'sm:flex-row sm:space-x-2 sm:space-y-0') },
             secondaryAction,

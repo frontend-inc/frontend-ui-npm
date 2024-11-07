@@ -16,14 +16,23 @@ var AdminReviewsList = function () {
             { name: 'rating', label: 'Rating' },
         ], filterOptions: [
             {
-                field: 'rating',
                 label: 'Rating',
-                variant: 'ratings_scale',
+                name: 'rating',
+                options: [
+                    { label: '1 Star', value: 1 },
+                    { label: '2 Stars', value: 2 },
+                    { label: '3 Stars', value: 3 },
+                    { label: '4 Stars', value: 4 },
+                    { label: '5 Stars', value: 5 }
+                ]
             },
             {
-                field: 'flagged',
                 label: 'Flagged',
-                variant: 'boolean',
+                name: 'flagged',
+                options: [
+                    { label: 'Flagged', value: true },
+                    { label: 'Not flagged', value: false }
+                ]
             },
         ], displayFields: [
             { name: 'rating', label: 'Rating', variant: 'rating' },

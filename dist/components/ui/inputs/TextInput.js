@@ -61,7 +61,7 @@ function TextInput(_a) {
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)('flex flex-col w-full space-y-2', direction === 'row' && 'sm:flex-row sm:items-center') },
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement("div", { className: "relative w-full" },
-            react_1.default.createElement(frontend_shadcn_1.Input, { className: (0, frontend_shadcn_2.cn)('focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2', error && 'border-2 border-destructive', className), type: type, name: name, disabled: disabled, placeholder: placeholder, onChange: handleInputChange, value: text, autoComplete: "off" }),
+            react_1.default.createElement(frontend_shadcn_1.Input, { className: (0, frontend_shadcn_2.cn)('focus-visible:outline-none focus-visible:ring-0', error && 'border-2 border-destructive', className), type: type, name: name, disabled: disabled, placeholder: placeholder, onChange: handleInputChange, value: text, autoComplete: "off" }),
             react_1.default.createElement(components_1.ErrorText, { error: error }))));
 }
 exports.default = TextInput;

@@ -22,12 +22,12 @@ var FeaturedCard = function (props) {
             router.push("".concat(clientUrl).concat(href));
         }
     };
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex items-center gap-6 flex-wrap md:flex-nowrap', flexDirection === 'row-reverse' ? 'flex-row-reverse' : 'flex-row') },
+    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex items-center gap-10 flex-wrap md:flex-nowrap', flexDirection === 'row-reverse' ? 'flex-row-reverse' : 'flex-row') },
         react_1.default.createElement("div", { className: "w-full md:w-1/2" },
-            react_1.default.createElement(__1.Image, { label: label, src: image, height: 320, objectFit: objectFit, alt: title, enableOverlay: enableOverlay, enableGradient: enableGradient, disableBorderRadius: enableBorder })),
+            react_1.default.createElement(__1.Image, { label: label, src: image, height: 320, aspectRatio: 1.5, objectFit: objectFit, alt: title, enableOverlay: enableOverlay, enableGradient: enableGradient, disableBorderRadius: enableBorder })),
         react_1.default.createElement("div", { className: "flex flex-col gap-4 w-full md:w-1/2" },
-            react_1.default.createElement(core_1.Typography, { variant: 'h6' }, title),
-            description && react_1.default.createElement(__1.ExpandableText, { text: description }),
+            react_1.default.createElement(core_1.Typography, { variant: 'h3' }, title),
+            react_1.default.createElement(core_1.Typography, { variant: 'subtitle2', className: "text-muted-foreground" }, description),
             buttonText && (react_1.default.createElement("div", { className: "flex flex-row gap-4" },
                 react_1.default.createElement(core_1.Button, { size: "lg", onClick: handleItemClick }, buttonText))))));
 };

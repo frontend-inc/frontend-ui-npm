@@ -27,9 +27,10 @@ var HeroList = function (props) {
             secondaryAction,
             react_1.default.createElement(core_1.Typography, { variant: "h3" }, primary),
             react_1.default.createElement("div", { className: "w-full rounded py-10" },
-                react_1.default.createElement(__1.Image, __assign({ src: image, alt: primary, height: 400, label: label }, slots.image))),
+                react_1.default.createElement(__1.Image, __assign({ aspectRatio: 2.0, src: image, alt: primary, height: 400, label: label }, slots.image))),
             actions,
-            react_1.default.createElement("div", { className: "w-full max-w-[500px] sm:max-w-screen-sm" }, secondary),
+            react_1.default.createElement("div", { className: "w-full max-w-[500px] sm:max-w-screen-sm" },
+                react_1.default.createElement(core_1.Typography, { variant: "subtitle2", className: "text-muted-foreground" }, secondary)),
             children)));
 };
 exports.default = HeroList;

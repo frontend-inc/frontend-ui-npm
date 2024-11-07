@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserDetails = exports.Details = exports.SearchFilters = exports.SortButton = exports.KanBanBoard = exports.FilterButton = exports.LoadMore = exports.ContactForm = exports.EmailSubscribe = void 0;
+exports.UserDetails = exports.Details = exports.SortButton = exports.KanBanBoard = exports.FilterButton = exports.LoadMore = exports.ContactForm = exports.EmailSubscribe = exports.PolicyLink = void 0;
 __exportStar(require("./collections"), exports);
 __exportStar(require("./data"), exports);
 __exportStar(require("./forms"), exports);
@@ -26,6 +26,8 @@ __exportStar(require("./resources"), exports);
 __exportStar(require("./list-fields"), exports);
 __exportStar(require("./display-fields"), exports);
 __exportStar(require("./show-fields"), exports);
+var PolicyLink_1 = require("./policies/PolicyLink");
+Object.defineProperty(exports, "PolicyLink", { enumerable: true, get: function () { return __importDefault(PolicyLink_1).default; } });
 var EmailSubscribe_1 = require("./newsletter/EmailSubscribe");
 Object.defineProperty(exports, "EmailSubscribe", { enumerable: true, get: function () { return __importDefault(EmailSubscribe_1).default; } });
 var ContactForm_1 = require("./leads/ContactForm");
@@ -38,8 +40,6 @@ var KanBanBoard_1 = require("../cms/kanban/KanBanBoard");
 Object.defineProperty(exports, "KanBanBoard", { enumerable: true, get: function () { return __importDefault(KanBanBoard_1).default; } });
 var SortButton_1 = require("./sorts/SortButton");
 Object.defineProperty(exports, "SortButton", { enumerable: true, get: function () { return __importDefault(SortButton_1).default; } });
-var SearchFilters_1 = require("../cms/filters/SearchFilters");
-Object.defineProperty(exports, "SearchFilters", { enumerable: true, get: function () { return __importDefault(SearchFilters_1).default; } });
 // Details
 var Details_1 = require("./details/Details");
 Object.defineProperty(exports, "Details", { enumerable: true, get: function () { return __importDefault(Details_1).default; } });

@@ -8,6 +8,6 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var HeroCover = function (props) {
     var _a = props || {}, image = _a.image, primary = _a.primary;
-    return react_1.default.createElement(__1.Cover, { image: image, height: 400, title: primary, enableOverlay: true });
+    return (react_1.default.createElement(__1.Cover, { textVariant: "h4", image: image, height: 400, title: primary, enableOverlay: true }));
 };
 exports.default = HeroCover;

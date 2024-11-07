@@ -6,9 +6,8 @@ type LayoutContainerProps = {
     header?: React.ReactNode;
     footer?: React.ReactNode;
     notifications: NotificationType[];
-    roles?: string[];
     requireAuth?: boolean;
     requirePaid?: boolean;
 };
-export default function LayoutContainer({ children, notifications, requireAuth, requirePaid, roles, }: LayoutContainerProps): React.JSX.Element;
+export default function LayoutContainer({ children, notifications, requireAuth, requirePaid, }: LayoutContainerProps): React.JSX.Element;
 export {};

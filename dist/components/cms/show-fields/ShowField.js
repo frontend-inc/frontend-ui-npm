@@ -34,8 +34,6 @@ var ShowField = function (props) {
     var field = props.field, resource = props.resource, rest = __rest(props, ["field", "resource"]);
     var name = field.name, label = field.label, fieldVariant = field.variant, icon = field.icon;
     var value = (0, lodash_1.get)(resource, name);
-    if (!value || (value === null || value === void 0 ? void 0 : value.length) == 0)
-        return null;
     var components = {
         boolean: __1.FieldBoolean,
         date: __1.FieldDate,

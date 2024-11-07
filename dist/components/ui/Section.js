@@ -18,6 +18,6 @@ var Section = function (props) {
     return (react_1.default.createElement("section", { className: (0, frontend_shadcn_1.cn)(mode == 'dark' && 'dark', 'w-full bg-background', py > 0 && 'py-[60px]', px && "px-".concat(px)), style: { backgroundColor: bgColor } },
         react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(maxWidth && maxWidthClasses[maxWidth], 'w-full mx-auto min-h-[60px] flex flex-row justify-center items-center') },
             react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full overflow-x-hidden', 'transition-all duration-300 ease-in-out') },
-                react_1.default.createElement(components_1.AuthGuard, { requireAuth: requireAuth, requirePaid: requirePaid }, children)))));
+                react_1.default.createElement(components_1.AuthGuard, { requireAuth: requireAuth }, children)))));
 };
 exports.default = Section;

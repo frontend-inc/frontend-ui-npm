@@ -31,7 +31,7 @@ var Spotlight = function (props) {
                     react_1.default.createElement(core_1.Typography, { variant: "h2", textAlign: "center", className: "tracking-tight" }, primary),
                     secondary && secondary,
                     actions && actions,
-                    (logos === null || logos === void 0 ? void 0 : logos.length) > 0 && react_1.default.createElement(__1.BrandLogos, { logos: logos }),
+                    (logos === null || logos === void 0 ? void 0 : logos.length) > 0 && react_1.default.createElement(__1.Logos, { logos: logos }),
                     react_1.default.createElement("div", { className: "relative shadow-xl rounded-lg overflow-hidden" },
                         react_1.default.createElement(__1.Image, __assign({ src: image, alt: primary, height: 600, objectFit: "cover" }, slots.image))))))));
 };

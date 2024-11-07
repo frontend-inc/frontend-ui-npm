@@ -23,28 +23,38 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.FilterGroup = void 0;
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
-var FilterList_1 = __importDefault(require("./FilterList"));
 var core_1 = require("../../core");
 var components_1 = require("../../../components");
+var components_2 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var frontend_shadcn_2 = require("frontend-shadcn");
+var FilterGroup = function (props) {
+    var _a;
+    var _b = props || {}, filters = _b.filters, filterOption = _b.filterOption, handleFilter = _b.handleFilter;
+    return (react_1.default.createElement("div", { className: "w-full p-4 rounded-lg" },
+        react_1.default.createElement(components_1.Typography, { variant: "body1", className: "font-medium" }, filterOption === null || filterOption === void 0 ? void 0 : filterOption.label), (_a = filterOption === null || filterOption === void 0 ? void 0 : filterOption.options) === null || _a === void 0 ? void 0 :
+        _a.map(function (option, index) {
+            var selected = filters === null || filters === void 0 ? void 0 : filters.find(function (f) { return (f === null || f === void 0 ? void 0 : f.name) === (filterOption === null || filterOption === void 0 ? void 0 : filterOption.name) && (f === null || f === void 0 ? void 0 : f.value) === (option === null || option === void 0 ? void 0 : option.value); });
+            return (react_1.default.createElement("li", { className: "list-none" },
+                react_1.default.createElement(components_2.Button, { fullWidth: true, variant: "ghost", className: "justify-between items-center", onClick: function () { return handleFilter(filterOption === null || filterOption === void 0 ? void 0 : filterOption.name, option === null || option === void 0 ? void 0 : option.value); }, endIcon: selected && react_1.default.createElement(__1.Icon, { name: "Check", className: "ml-2" }) }, option === null || option === void 0 ? void 0 : option.label)));
+        })));
+};
+exports.FilterGroup = FilterGroup;
 var FilterButton = function (props) {
-    var _a = props || {}, _b = _a.loading, loading = _b === void 0 ? false : _b, _c = _a.filters, filters = _c === void 0 ? [] : _c, _d = _a.filterOptions, filterOptions = _d === void 0 ? [] : _d, handleFilter = _a.handleFilter, _e = _a.disableFilterCount, disableFilterCount = _e === void 0 ? false : _e;
-    var _f = (0, react_1.useState)(false), open = _f[0], setOpen = _f[1];
+    var _a = props || {}, _b = _a.loading, loading = _b === void 0 ? false : _b, _c = _a.filters, filters = _c === void 0 ? [] : _c, _d = _a.filterOptions, filterOptions = _d === void 0 ? [] : _d, handleFilter = _a.handleFilter;
+    var _e = (0, react_1.useState)(false), open = _e[0], setOpen = _e[1];
     return (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
         react_1.default.createElement(frontend_shadcn_1.Popover, null,
             react_1.default.createElement(frontend_shadcn_1.PopoverTrigger, { asChild: true },
-                react_1.default.createElement(components_1.Button, { variant: "secondary", loading: loading, className: (0, frontend_shadcn_2.cn)('relative w-full sm:w-auto', (filters === null || filters === void 0 ? void 0 : filters.length) > 0 && 'border-r-0'), startIcon: react_1.default.createElement(__1.Icon, { name: "SlidersHorizontal", className: "text-secondary-foreground" }) }, "Filters")),
+                react_1.default.createElement(components_2.Button, { variant: "secondary", loading: loading, className: (0, frontend_shadcn_2.cn)('relative w-full sm:w-auto', (filters === null || filters === void 0 ? void 0 : filters.length) > 0 && 'border-r-0'), startIcon: react_1.default.createElement(__1.Icon, { name: "SlidersHorizontal", className: "text-secondary-foreground" }) }, "Filters")),
             react_1.default.createElement(frontend_shadcn_1.PopoverContent, { className: "w-80 p-0" },
-                react_1.default.createElement(FilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter }))),
+                react_1.default.createElement("ul", { className: "w-full p-0" }, filterOptions.map(function (filterOption, index) { return (react_1.default.createElement(exports.FilterGroup, { key: index, filters: filters, filterOption: filterOption, handleFilter: handleFilter })); })))),
         react_1.default.createElement(core_1.Hidden, { smUp: true },
-            react_1.default.createElement(__1.Sheet, { open: open, handleClose: function () { return setOpen(false); }, title: "Search", disablePadding: true },
-                react_1.default.createElement(FilterList_1.default, { filters: filters, filterOptions: filterOptions, handleFilter: handleFilter })))));
+            react_1.default.createElement(__1.Sheet, { open: open, handleClose: function () { return setOpen(false); }, title: "Search" },
+                react_1.default.createElement("ul", { className: "w-full p-0" }, filterOptions.map(function (filterOption, index) { return (react_1.default.createElement(exports.FilterGroup, { key: index, filters: filters, filterOption: filterOption, handleFilter: handleFilter })); }))))));
 };
 exports.default = FilterButton;

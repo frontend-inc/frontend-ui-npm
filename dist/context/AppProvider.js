@@ -30,7 +30,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var AppContext_1 = __importDefault(require("./AppContext"));
 var AppProvider = function (props) {
-    var _a = props || {}, name = _a.name, description = _a.description, logo = _a.logo, apiUrl = _a.apiUrl, clientUrl = _a.clientUrl, enableShopify = _a.enableShopify, enableStripe = _a.enableStripe, enableSubscription = _a.enableSubscription, children = _a.children;
+    var _a = props || {}, name = _a.name, logo = _a.logo, apiUrl = _a.apiUrl, clientUrl = _a.clientUrl, enableShopify = _a.enableShopify, enableStripe = _a.enableStripe, children = _a.children;
     var _b = (0, react_1.useState)(), alert = _b[0], setAlert = _b[1];
     var _c = (0, react_1.useState)(false), loading = _c[0], setLoading = _c[1];
     var _d = (0, react_1.useState)(false), loaded = _d[0], setLoaded = _d[1];
@@ -40,7 +40,6 @@ var AppProvider = function (props) {
     var _h = (0, react_1.useState)(), app = _h[0], setApp = _h[1];
     var value = {
         name: name,
-        description: description,
         app: app,
         setApp: setApp,
         logo: logo,
@@ -56,7 +55,6 @@ var AppProvider = function (props) {
         setMenuOpen: setMenuOpen,
         enableShopify: enableShopify,
         enableStripe: enableStripe,
-        enableSubscription: enableSubscription,
         loading: loading,
         loaded: loaded,
         setLoaded: setLoaded,

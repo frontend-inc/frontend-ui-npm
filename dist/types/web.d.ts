@@ -51,10 +51,12 @@ export type PriceType = {
     description?: string;
     price: number;
     features: string[];
-    recurring?: boolean;
     interval?: string;
+    recurring?: boolean;
+    popular?: boolean;
     buttonText: string;
     url?: string;
+    path?: string;
 };
 export type TestimonialType = {
     rating: number;

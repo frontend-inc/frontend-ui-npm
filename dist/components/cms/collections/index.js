@@ -48,7 +48,7 @@ Object.defineProperty(exports, "CollectionDelete", { enumerable: true, get: func
 var CollectionHeader_1 = require("./CollectionHeader");
 Object.defineProperty(exports, "CollectionHeader", { enumerable: true, get: function () { return __importDefault(CollectionHeader_1).default; } });
 // Media
-var ShowImageModal_1 = require("../modals/ShowImageModal");
-Object.defineProperty(exports, "ShowImageModal", { enumerable: true, get: function () { return __importDefault(ShowImageModal_1).default; } });
-var ShowVideoModal_1 = require("../modals/ShowVideoModal");
-Object.defineProperty(exports, "ShowVideoModal", { enumerable: true, get: function () { return __importDefault(ShowVideoModal_1).default; } });
+var ImageModal_1 = require("../modals/ImageModal");
+Object.defineProperty(exports, "ShowImageModal", { enumerable: true, get: function () { return __importDefault(ImageModal_1).default; } });
+var VideoModal_1 = require("../modals/VideoModal");
+Object.defineProperty(exports, "ShowVideoModal", { enumerable: true, get: function () { return __importDefault(VideoModal_1).default; } });

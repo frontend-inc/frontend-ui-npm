@@ -27,3 +27,4 @@ __exportStar(require("./shop"), exports);
 __exportStar(require("./social"), exports);
 __exportStar(require("./shopify"), exports);
 __exportStar(require("./theme"), exports);
+__exportStar(require("./magic-ui"), exports);

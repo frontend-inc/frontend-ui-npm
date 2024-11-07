@@ -1,9 +1,9 @@
 import React from 'react';
-import { MenuLinkType } from '../../../types';
+import { MenuLinkType, PolicyLinkType } from '../../../types';
 export type FooterProps = {
     logo?: string;
     links?: MenuLinkType[];
-    legalLinks?: MenuLinkType[];
+    policies?: PolicyLinkType[];
     socialLinks?: {
         label: string;
         provider: string;

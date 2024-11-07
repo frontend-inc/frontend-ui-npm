@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var core_1 = require("../../core");
 //@ts-ignore
 var react_social_icons_1 = require("react-social-icons");
 var SocialLink = function (props) {
@@ -57,7 +56,7 @@ var SocialLink = function (props) {
             window.open(formatUrl(url), '_blank');
         }
     };
-    return (react_1.default.createElement(core_1.IconButton, { className: "p-2", onClick: handleClick },
+    return (react_1.default.createElement("button", { className: "p-1 rounded-full hover:bg-muted", onClick: handleClick },
         react_1.default.createElement(react_social_icons_1.SocialIcon, { network: provider, style: {
                 height: size,
                 width: size,

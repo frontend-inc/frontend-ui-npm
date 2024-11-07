@@ -20,7 +20,7 @@ var SpotlightCard = function (props) {
                     react_1.default.createElement(core_1.Typography, { variant: "h2", className: "md:text-left xs:text-center" }, primary),
                     secondary && secondary,
                     actions && actions,
-                    (logos === null || logos === void 0 ? void 0 : logos.length) > 0 && react_1.default.createElement(__1.BrandLogos, { logos: logos })),
+                    (logos === null || logos === void 0 ? void 0 : logos.length) > 0 && react_1.default.createElement(__1.Logos, { logos: logos })),
                 react_1.default.createElement("div", { className: "md:w-1/2 w-full p-2 flex flex-col justify-center" },
                     react_1.default.createElement(__1.Image, { src: image, alt: typeof primary === 'string' ? primary : 'Spotlight image', height: 400, aspectRatio: 3 / 2, objectFit: "cover" }))))));
 };

@@ -38,13 +38,12 @@ function SortButton(_a) {
     var _b = (0, react_1.useState)(false), isOpen = _b[0], setIsOpen = _b[1];
     var toggleOpen = function () { return setIsOpen(!isOpen); };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: "hidden sm:block" },
-            react_1.default.createElement(frontend_shadcn_2.Popover, { open: isOpen, onOpenChange: setIsOpen },
-                react_1.default.createElement(frontend_shadcn_2.PopoverTrigger, { asChild: true },
-                    react_1.default.createElement(components_1.Button, { variant: "secondary", className: (0, frontend_shadcn_1.cn)('w-full sm:w-auto border-r-0', 'hover:border-r-0'), onClick: toggleOpen },
-                        "Sort",
-                        sortDirection === 'asc' ? (react_1.default.createElement(lucide_react_1.ArrowUp, { className: "ml-2 h-4 w-4" })) : (react_1.default.createElement(lucide_react_1.ArrowDown, { className: "ml-2 h-4 w-4" })))),
-                react_1.default.createElement(frontend_shadcn_2.PopoverContent, { className: "bg-background w-80 p-0" },
-                    react_1.default.createElement(SortList_1.default, { sortOptions: sortOptions, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection }))))));
+        react_1.default.createElement(frontend_shadcn_2.Popover, { open: isOpen, onOpenChange: setIsOpen },
+            react_1.default.createElement(frontend_shadcn_2.PopoverTrigger, { asChild: true },
+                react_1.default.createElement(components_1.Button, { variant: "secondary", className: (0, frontend_shadcn_1.cn)('w-full sm:w-auto border-r-0', 'hover:border-r-0'), onClick: toggleOpen },
+                    "Sort",
+                    sortDirection === 'asc' ? (react_1.default.createElement(lucide_react_1.ArrowUp, { className: "ml-2 h-4 w-4" })) : (react_1.default.createElement(lucide_react_1.ArrowDown, { className: "ml-2 h-4 w-4" })))),
+            react_1.default.createElement(frontend_shadcn_2.PopoverContent, { className: "bg-background w-80 p-0" },
+                react_1.default.createElement(SortList_1.default, { sortOptions: sortOptions, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))));
 }
 exports.default = SortButton;

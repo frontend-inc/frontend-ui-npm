@@ -30,10 +30,10 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UISwipeableTestimonials = function (props) {
-    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
+    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, _a = props.maxWidth, maxWidth = _a === void 0 ? "md" : _a, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
-            react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: 'center' }),
+        react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full" },
+            react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: 'center', textVariant: "h3" }),
             react_1.default.createElement(components_2.Testimonials, __assign({}, rest, { layout: "carousel" })))));
 };
 exports.default = UISwipeableTestimonials;

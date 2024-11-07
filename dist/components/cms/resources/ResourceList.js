@@ -70,12 +70,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
 var ResourceForm_1 = __importDefault(require("./ResourceForm"));
@@ -140,23 +148,30 @@ var ResourceList = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _9 = (0, hooks_1.useFilters)({
-        query: query,
-    }), activeFilters = _9.activeFilters, setActiveFilters = _9.setActiveFilters, handleAddFilter = _9.handleAddFilter, buildQueryFilters = _9.buildQueryFilters;
+    var _9 = (0, react_1.useState)([]), activeFilters = _9[0], setActiveFilters = _9[1];
+    var handleFilter = function (name, value) {
+        var _a;
+        var newFilters = [];
+        if (activeFilters.find(function (f) { return Object.keys(f)[0] == name; })) {
+            newFilters = newFilters.filter(function (f) { return Object.keys(f)[0] != name; });
+        }
+        else {
+            // @ts-ignore
+            newFilters = __spreadArray(__spreadArray([], activeFilters, true), [(_a = {}, _a[name] = { eq: value }, _a)], false);
+        }
+        setActiveFilters(newFilters);
+    };
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
         findMany({
-            filters: __assign({}, defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters),
+            filters: __spreadArray([], defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, true),
             sort_by: 'id',
             sort_direction: 'desc',
             keywords: '',
             page: 1,
             per_page: perPage,
         });
-    };
-    var handleFilter = function (filter) {
-        handleAddFilter(filter);
     };
     var handleAdd = function () {
         setResource({});
@@ -310,9 +325,9 @@ var ResourceList = function (props) {
     }); };
     (0, react_1.useEffect)(function () {
         if (activeFilters) {
-            findMany(__assign(__assign(__assign({}, query), { filters: buildQueryFilters(activeFilters) }), defaultQuery));
+            findMany(__assign(__assign({}, query), { filters: __spreadArray(__spreadArray([], (activeFilters || []), true), ((defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters) || []), true) }));
         }
-    }, [activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.length]);
+    }, [activeFilters]);
     (0, react_1.useEffect)(function () {
         if (url && name && perPage) {
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));

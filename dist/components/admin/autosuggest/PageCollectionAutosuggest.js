@@ -13,14 +13,12 @@ var PageCollectionAutosuggest = function (props) {
     if (!collectionId)
         return null;
     return (react_1.default.createElement(components_1.RemoteAutosuggest, { direction: direction, errors: errors, name: name, label: label, value: value || '', displayField: "title", valueParam: valueParam, url: "".concat(apiUrl, "/pages"), placeholder: "Select page", handleChange: handleChange, defaultQuery: {
-            filters: {
-                AND: [
-                    { collection_id: { eq: collectionId } },
-                    {
-                        page_type: { eq: 'cms' },
-                    },
-                ],
-            },
+            filters: [
+                { collection_id: { eq: collectionId } },
+                {
+                    page_type: { eq: 'cms' },
+                },
+            ],
         }, enableClear: true }));
 };
 exports.default = PageCollectionAutosuggest;

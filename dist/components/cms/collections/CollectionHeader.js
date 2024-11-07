@@ -14,7 +14,14 @@ var CollectionHeader = function (props) {
     var _k = (0, hooks_1.useSearch)({
         url: url,
         query: defaultQuery,
-    }), query = _k.query, keywords = _k.keywords, handleKeywordChange = _k.handleKeywordChange, location = _k.location, handleLocationChange = _k.handleLocationChange, handleSearch = _k.handleSearch, handleSortBy = _k.handleSortBy, handleSortDirection = _k.handleSortDirection, activeFilters = _k.activeFilters, handleFilter = _k.handleFilter, handleClearFilters = _k.handleClearFilters;
+    }), query = _k.query, keywords = _k.keywords, handleKeywordChange = _k.handleKeywordChange, location = _k.location, handleLocationChange = _k.handleLocationChange, handleSearch = _k.handleSearch, handleSortBy = _k.handleSortBy, handleSortDirection = _k.handleSortDirection, activeFilters = _k.activeFilters, handleAddFilter = _k.handleAddFilter;
+    var handleFilterClick = function (name, value) {
+        handleAddFilter({
+            name: name,
+            value: value,
+            operator: 'eq',
+        });
+    };
     var handleAdd = (0, hooks_1.useCollectionForms)().handleAdd;
     if (!enableSearch && !enableFilters && !enableSorting && !enableCreate) {
         return null;
@@ -25,7 +32,7 @@ var CollectionHeader = function (props) {
                 enableSearch && !enableGeoSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
                 enableGeoSearch && !enableSearch && (react_1.default.createElement(__1.GeoSearchInput, { value: keywords, location: location, handleChange: handleKeywordChange, handleLocationChange: handleLocationChange, handleSearch: handleSearch })),
                 enableFilters && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
-                    react_1.default.createElement(__1.FilterButton, { filterOptions: filterOptions, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters }))),
+                    react_1.default.createElement(__1.FilterButton, { filterOptions: filterOptions, filters: activeFilters, handleFilter: handleFilterClick }))),
                 enableSorting && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
                     react_1.default.createElement(__1.SortButton, { sortOptions: sortOptions, sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
             enableCreate && (react_1.default.createElement("div", { className: "flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1" },

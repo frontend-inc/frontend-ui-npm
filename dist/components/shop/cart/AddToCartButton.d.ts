@@ -5,6 +5,7 @@ type AddToCartButtonProps = {
     fullWidth?: boolean;
     buttonText?: string;
     availableForSale?: boolean;
+    price?: string;
     className?: string;
 };
 declare const AddToCartButton: (props: AddToCartButtonProps) => React.JSX.Element;

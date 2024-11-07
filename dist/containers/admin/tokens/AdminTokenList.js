@@ -14,8 +14,11 @@ var AdminTokenList = function () {
     return (react_1.default.createElement(components_1.ResourceList, { url: "".concat(apiUrl, "/tokens"), name: "token", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, filterOptions: [
             {
                 label: 'Admin API Key',
-                field: 'admin',
-                variant: 'boolean',
+                name: 'admin',
+                options: [
+                    { label: 'Admin Key', value: true },
+                    { label: 'Public Key', value: false },
+                ]
             },
         ], edit: AdminTokenForm_1.default, create: AdminTokenForm_1.default, component: containers_1.AdminTokenItem, emptyIcon: "Key", emptyTitle: "No API Keys", emptyDescription: "No API keys yet." }));
 };

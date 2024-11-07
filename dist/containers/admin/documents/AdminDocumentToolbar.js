@@ -113,8 +113,6 @@ var AdminDocumentToolbar = function (props) {
         react_1.default.createElement("div", { className: "flex flex-row justify-center items-center space-x-2" },
             react_1.default.createElement(components_1.Button, { onClick: handlePublish }, "Publish"),
             react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handleUnpublish }, "Unpublish"),
-            react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handlePremium }, "Premium"),
-            react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handleFree }, "Free"),
             react_1.default.createElement(components_1.AlertButton, { variant: "secondary", onClick: handleDelete }, "Delete"))));
 };
 exports.default = AdminDocumentToolbar;

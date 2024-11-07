@@ -2,7 +2,7 @@ import React from 'react';
 export type ProfileProps = {
     image: string;
     label?: string;
-    title?: string;
+    title: string;
     description?: string;
     socialLinks?: {
         provider: string;

@@ -10,18 +10,18 @@ var frontend_shadcn_1 = require("frontend-shadcn");
 var Typography = function (_a) {
     var variant = _a.variant, _b = _a.textAlign, textAlign = _b === void 0 ? 'left' : _b, className = _a.className, children = _a.children;
     var variantClasses = {
-        h1: 'text-5xl font-semibold tracking-tight',
-        h2: 'text-4xl font-semibold tracking-tight',
-        h3: 'text-3xl font-medium',
-        h4: 'text-2xl font-medium',
-        h5: 'text-xl font-medium',
-        h6: 'text-lg font-medium',
-        subtitle1: 'text-lg',
-        subtitle2: 'text-md',
+        h1: 'text-6xl font-semibold tracking-tight',
+        h2: 'text-5xl font-semibold tracking-tight',
+        h3: 'text-4xl font-semibold tracking-tight',
+        h4: 'text-3xl font-semibold tracking-tight',
+        h5: 'text-2xl font-medium tracking-tight',
+        h6: 'text-1xl font-medium tracking-tight',
+        subtitle1: 'text-xl font-normal tracking-tight leading-8',
+        subtitle2: 'text-lg leading-8',
         button: 'text-base',
-        body1: 'text-base',
-        body2: 'text-sm',
-        caption: 'text-sm',
+        body1: 'text-md leading-normal',
+        body2: 'text-sm leading-normal',
+        caption: 'text-xs',
         overline: 'text-xs uppercase tracking-widest',
     };
     var fontFamily = {

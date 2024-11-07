@@ -1,6 +1,6 @@
 import React from 'react';
 export interface ResponsiveImageProps {
-    src: string;
+    src: string | null;
     alt?: string;
     width?: number;
     height?: number;

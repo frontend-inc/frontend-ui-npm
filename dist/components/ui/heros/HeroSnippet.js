@@ -23,7 +23,7 @@ function HeroSnippet(_a) {
         image: {},
     } : _d;
     return (react_1.default.createElement("div", { className: "flex flex-col w-full" },
-        !disableImage && (react_1.default.createElement("div", { className: "w-full overflow-hidden rounded-t-[inherit]" }, circular ? (react_1.default.createElement(__1.AvatarImage, __assign({ label: label, src: image, height: 180, alt: primary }, slots.image))) : (react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: 220, alt: primary }, slots.image))))),
+        !disableImage && (react_1.default.createElement("div", { className: "w-full overflow-hidden rounded-t-[inherit]" }, circular ? (react_1.default.createElement(__1.AvatarImage, __assign({ label: label, src: image, size: 180, alt: primary }, slots.image))) : (react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: 220, alt: primary }, slots.image))))),
         react_1.default.createElement("div", { className: "flex flex-col space-y-2 p-4 w-full" },
             actions,
             react_1.default.createElement(core_1.Typography, { variant: "subtitle1" }, primary),

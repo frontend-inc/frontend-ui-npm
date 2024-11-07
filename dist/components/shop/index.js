@@ -22,4 +22,4 @@ __exportStar(require("./products"), exports);
 __exportStar(require("./product-collections"), exports);
 __exportStar(require("./product-reviews"), exports);
 __exportStar(require("./stripe"), exports);
-__exportStar(require("./subscriptions"), exports);
+__exportStar(require("./subscribe"), exports);

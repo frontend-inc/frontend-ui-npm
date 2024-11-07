@@ -144,6 +144,16 @@ var useCart = function () {
             }
         });
     }); };
+    var subscribe = function (productId, options) { return __awaiter(void 0, void 0, void 0, function () {
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, loadingWrapper(function () {
+                        return api.subscribe(productId, options, apiParams);
+                    })];
+                case 1: return [2 /*return*/, _a.sent()];
+            }
+        });
+    }); };
     var loadingWrapper = function (fn) { return __awaiter(void 0, void 0, void 0, function () {
         var resp, error_2;
         var _a, _b;
@@ -194,6 +204,7 @@ var useCart = function () {
         addQuantity: addQuantity,
         removeQuantity: removeQuantity,
         checkout: checkout,
+        subscribe: subscribe
     };
 };
 exports.default = useCart;

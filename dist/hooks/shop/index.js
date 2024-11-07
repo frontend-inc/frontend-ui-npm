@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useStripe = exports.useReviews = exports.useProductCollections = exports.useProducts = exports.useShop = exports.useSubscription = exports.useCart = void 0;
+exports.useStripe = exports.useReviews = exports.useProductCollections = exports.useProducts = exports.useShop = exports.useSubscribe = exports.useCart = void 0;
 var useCart_1 = require("./useCart");
 Object.defineProperty(exports, "useCart", { enumerable: true, get: function () { return __importDefault(useCart_1).default; } });
-var useSubscription_1 = require("./useSubscription");
-Object.defineProperty(exports, "useSubscription", { enumerable: true, get: function () { return __importDefault(useSubscription_1).default; } });
+var useSubscribe_1 = require("./useSubscribe");
+Object.defineProperty(exports, "useSubscribe", { enumerable: true, get: function () { return __importDefault(useSubscribe_1).default; } });
 var useShop_1 = require("./useShop");
 Object.defineProperty(exports, "useShop", { enumerable: true, get: function () { return __importDefault(useShop_1).default; } });
 var useProducts_1 = require("./useProducts");

@@ -1,12 +1,9 @@
-import { ActionType, UserType } from '../../types';
+import { ActionType } from '../../types';
 type UseButtonParams = {
     action: ActionType;
-    actionId?: number;
     path?: string;
     url?: string;
     value?: any;
-    resource?: any;
-    user?: UserType;
 };
 declare const useButtons: (params: UseButtonParams) => {
     loading: boolean;

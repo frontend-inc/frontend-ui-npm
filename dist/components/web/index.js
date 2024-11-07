@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TabItem = exports.Tabs = exports.Spotlight = exports.PriceTableCard = exports.PriceTable = exports.SimplePage = exports.PageHeader = exports.Logos = exports.Header = exports.Footer = exports.FeaturedCard = exports.Featured = exports.Features = exports.Feature = exports.CoverCarousel = exports.Cover = exports.CallToAction = exports.Cards = exports.AccordionItem = exports.Accordion = void 0;
+exports.TabItem = exports.Tabs = exports.Spotlight = exports.PriceCard = exports.Pricing = exports.SimplePage = exports.PageHeader = exports.Logos = exports.Header = exports.Footer = exports.FeaturedCard = exports.Featured = exports.Features = exports.Feature = exports.CoverCarousel = exports.Cover = exports.CallToAction = exports.Cards = exports.AccordionItem = exports.Accordion = void 0;
 __exportStar(require("./testimonials"), exports);
 // Web
 var Accordion_1 = require("./accordions/Accordion");
@@ -50,10 +50,10 @@ var PageHeader_1 = require("./pages/PageHeader");
 Object.defineProperty(exports, "PageHeader", { enumerable: true, get: function () { return __importDefault(PageHeader_1).default; } });
 var SimplePage_1 = require("./pages/SimplePage");
 Object.defineProperty(exports, "SimplePage", { enumerable: true, get: function () { return __importDefault(SimplePage_1).default; } });
-var PriceTable_1 = require("./prices/PriceTable");
-Object.defineProperty(exports, "PriceTable", { enumerable: true, get: function () { return __importDefault(PriceTable_1).default; } });
-var PriceTableCard_1 = require("./prices/PriceTableCard");
-Object.defineProperty(exports, "PriceTableCard", { enumerable: true, get: function () { return __importDefault(PriceTableCard_1).default; } });
+var Pricing_1 = require("./prices/Pricing");
+Object.defineProperty(exports, "Pricing", { enumerable: true, get: function () { return __importDefault(Pricing_1).default; } });
+var PricingCard_1 = require("./prices/PricingCard");
+Object.defineProperty(exports, "PriceCard", { enumerable: true, get: function () { return __importDefault(PricingCard_1).default; } });
 var Spotlight_1 = require("./spotlights/Spotlight");
 Object.defineProperty(exports, "Spotlight", { enumerable: true, get: function () { return __importDefault(Spotlight_1).default; } });
 var Tabs_1 = require("./tabs/Tabs");

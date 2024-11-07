@@ -12,7 +12,7 @@ var ProductHeader = function (props) {
     var _g = (0, hooks_1.useSearch)({
         url: url,
         query: defaultQuery,
-    }), query = _g.query, keywords = _g.keywords, handleKeywordChange = _g.handleKeywordChange, handleSearch = _g.handleSearch, handleSortBy = _g.handleSortBy, handleSortDirection = _g.handleSortDirection, activeFilters = _g.activeFilters, handleFilter = _g.handleFilter, handleClearFilters = _g.handleClearFilters;
+    }), query = _g.query, keywords = _g.keywords, handleKeywordChange = _g.handleKeywordChange, handleSearch = _g.handleSearch, handleSortBy = _g.handleSortBy, handleSortDirection = _g.handleSortDirection, activeFilters = _g.activeFilters, handleAddFilter = _g.handleAddFilter, handleClearFilters = _g.handleClearFilters;
     if (!enableSearch && !enableFilters && !enableSorting) {
         return null;
     }
@@ -21,7 +21,7 @@ var ProductHeader = function (props) {
             react_1.default.createElement("div", { className: "flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1" },
                 enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch })),
                 enableFilters && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
-                    react_1.default.createElement(__1.FilterButton, { filterOptions: filterOptions, filters: activeFilters, handleFilter: handleFilter, handleClear: handleClearFilters }))),
+                    react_1.default.createElement(__1.FilterButton, { filterOptions: filterOptions, filters: activeFilters, handleFilter: handleAddFilter }))),
                 enableSorting && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
                     react_1.default.createElement(__1.SortButton, { sortOptions: sortOptions, sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))))));
 };

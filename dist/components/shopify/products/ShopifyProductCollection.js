@@ -48,9 +48,6 @@ var ShopifyProductCollection = function (props) {
             });
         }
     }, [shopifyCollection, filters, sortKey, reverse]);
-    (0, react_1.useEffect)(function () {
-        console.log("PROPS", props);
-    }, [props]);
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
         react_1.default.createElement("div", { className: "flex flex-row space-x-2" },
             enableFilters && (react_1.default.createElement(__1.ShopifyProductFilterButton, { filters: filters, options: options, priceOptions: priceOptions, handleFilter: handleFilter, handleFilterArray: handleFilterArray })),

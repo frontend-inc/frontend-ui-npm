@@ -13,7 +13,7 @@ var ChipCard = function (props) {
         react_1.default.createElement("li", { className: "p-0" },
             react_1.default.createElement(components_1.Button, { variant: "ghost", className: "w-full justify-start p-1 min-h-[48px] hover:bg-transparent", onClick: handleClick },
                 react_1.default.createElement("div", { className: "mr-2 h-12 w-12" },
-                    react_1.default.createElement(__1.AvatarImage, { image: image, alt: primary })),
+                    react_1.default.createElement(__1.AvatarImage, { src: image, alt: primary })),
                 react_1.default.createElement("div", { className: "flex flex-col items-start" },
                     react_1.default.createElement("span", { className: "text-sm font-medium" }, primary),
                     secondary && (react_1.default.createElement("span", { className: "text-xs text-muted-foreground" }, secondary)))),

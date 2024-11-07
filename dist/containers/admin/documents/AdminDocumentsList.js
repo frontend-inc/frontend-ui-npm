@@ -27,7 +27,7 @@ var AdminDocumentsList = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var collectionId = props.collectionId, _a = props.documentType, documentType = _a === void 0 ? 'post' : _a, _b = props.metafields, metafields = _b === void 0 ? [] : _b;
     var formFields = __spreadArray(__spreadArray([], constants_1.DOCUMENT_FORM_FIELDS[documentType], true), metafields, true);
-    var showFields = __spreadArray(__spreadArray([], constants_1.DOCUMENT_SHOW_FIELDS[documentType], true), metafields, true);
+    var showFields = __spreadArray(__spreadArray([], constants_1.DOCUMENT_FORM_FIELDS[documentType], true), metafields, true);
     return (react_1.default.createElement(components_1.ResourceList, { selectable: true, sortable: true, url: "".concat(apiUrl, "/").concat(collectionId), name: 'document', enableSearch: true, enableShow: true, enableEdit: true, enableDelete: true, enableCreate: true, sortOptions: [
             { name: 'position', label: 'Position' },
             { name: 'title', label: 'Title' },

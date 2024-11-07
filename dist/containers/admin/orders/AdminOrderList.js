@@ -25,8 +25,7 @@ var AdminOrdersList = function (props) {
         }, filterOptions: [
             {
                 label: 'Status',
-                field: 'status',
-                variant: 'multiple_choice',
+                name: 'status',
                 options: constants_1.ORDER_STATES,
             },
         ], edit: AdminOrderForm_1.default, toolbar: AdminOrderToolbar_1.default, component: AdminOrderItem_1.default, emptyIcon: "ShoppingCart", emptyTitle: "No orders", emptyDescription: "No orders added yet." }));

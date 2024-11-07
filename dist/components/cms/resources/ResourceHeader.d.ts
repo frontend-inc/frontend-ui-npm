@@ -9,7 +9,7 @@ export type ResourceHeaderProps = {
     enableCreate?: boolean;
     handleSearch: (keywords: string) => void;
     handleKeywordChange: (ev: SyntheticEventType) => void;
-    handleFilter: (filter: FilterOptionType) => void;
+    handleFilter: (name: string, value: string | number | boolean) => void;
     handleClearFilters: () => void;
     handleSort: (field: any) => void;
     handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
