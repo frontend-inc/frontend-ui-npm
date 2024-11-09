@@ -18,6 +18,6 @@ function TabsWhereInput(_a) {
         });
     };
     return (react_1.default.createElement(frontend_shadcn_1.Tabs, { defaultValue: value.toString(), onValueChange: handleInputChange, className: "rounded-md w-full" },
-        react_1.default.createElement(frontend_shadcn_1.TabsList, { className: (0, frontend_shadcn_2.cn)('w-full') }, ["AND", "OR"].map(function (option) { return (react_1.default.createElement(frontend_shadcn_1.TabsTrigger, { key: option, value: option.toString(), className: (0, frontend_shadcn_2.cn)('w-full flex items-center text-sm') }, option)); }))));
+        react_1.default.createElement(frontend_shadcn_1.TabsList, { className: (0, frontend_shadcn_2.cn)('w-full') }, ['AND', 'OR'].map(function (option) { return (react_1.default.createElement(frontend_shadcn_1.TabsTrigger, { key: option, value: option.toString(), className: (0, frontend_shadcn_2.cn)('w-full flex items-center text-sm') }, option)); }))));
 }
 exports.default = TabsWhereInput;

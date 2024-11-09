@@ -17,7 +17,7 @@ exports.GOOGLE_FONTS = [
     {
         name: 'Hedvig',
         url: 'https://fonts.googleapis.com/css2?family=Hedvig&display=swap',
-    }, // Ensure this exists in Google Fonts or replace
+    },
     {
         name: 'IBM Plex Sans',
         url: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap',
@@ -31,6 +31,10 @@ exports.GOOGLE_FONTS = [
         url: 'https://fonts.googleapis.com/css2?family=Inter&display=swap',
     },
     {
+        name: 'Jakarta',
+        url: 'https://fonts.googleapis.com/css2?family=Jakarta&display=swap',
+    },
+    {
         name: 'Lato',
         url: 'https://fonts.googleapis.com/css2?family=Lato&display=swap',
     },
@@ -41,6 +45,10 @@ exports.GOOGLE_FONTS = [
     {
         name: 'Manrope',
         url: 'https://fonts.googleapis.com/css2?family=Manrope&display=swap',
+    },
+    {
+        name: 'Outfit',
+        url: 'https://fonts.googleapis.com/css2?family=Outfit&display=swap',
     },
     {
         name: 'Open Sans',

@@ -4,8 +4,8 @@ export type ProductCardProps = {
     avatar?: React.ReactNode;
     image: string;
     label?: string;
-    primary: string;
-    secondary?: string | React.ReactNode;
+    title: string;
+    subtitle?: string | React.ReactNode;
     actions?: React.ReactNode;
     secondaryAction?: React.ReactNode;
     price: string;
@@ -13,11 +13,8 @@ export type ProductCardProps = {
     handleClick?: () => void;
     height?: number;
     addToCart?: React.ReactNode;
-    disableBorder?: boolean;
-    slots?: {
-        item?: any;
-        image?: any;
-    };
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
 };
 declare const ProductCard: React.ForwardRefExoticComponent<Omit<ProductCardProps, "ref"> & React.RefAttributes<HTMLDivElement>>;
 export default ProductCard;

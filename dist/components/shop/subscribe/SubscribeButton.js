@@ -59,7 +59,7 @@ var SusbcribeButton = function (props) {
                             cancel_url: currentUrl,
                         })];
                 case 1:
-                    stripe = _d.sent();
+                    stripe = (_d.sent());
                     if (stripe === null || stripe === void 0 ? void 0 : stripe.error) {
                         showAlertError(stripe === null || stripe === void 0 ? void 0 : stripe.error);
                     }
@@ -75,6 +75,6 @@ var SusbcribeButton = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(core_1.Button, { fullWidth: fullWidth, loading: loading, onClick: handleClick, disabled: !availableForSale, size: size, className: "w-full min-w-[160px]" }, buttonText));
+    return (react_1.default.createElement(core_1.Button, { fullWidth: fullWidth, loading: loading, onClick: handleClick, disabled: !availableForSale, size: size, className: 'w-full min-w-[160px]' }, buttonText));
 };
 exports.default = SusbcribeButton;

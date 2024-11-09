@@ -14,7 +14,7 @@ var ResourceDetails = function (props) {
         imageField && (react_1.default.createElement("div", { className: "w-full h-[240px]" },
             react_1.default.createElement(components_1.Image, { alt: label, src: image, label: label }))),
         actions && (react_1.default.createElement("div", { className: "flex flex-row items-center justify-center w-full" }, actions)),
-        primary && react_1.default.createElement(core_1.Typography, { variant: "h4", className: "px-2" }, primary),
+        primary && (react_1.default.createElement(core_1.Typography, { variant: "h4", className: "px-2" }, primary)),
         secondary && (react_1.default.createElement(core_1.Typography, { variant: "body1", className: "px-2 text-lg italic text-muted-foreground" }, secondary)),
         react_1.default.createElement(components_1.ShowFields, { fields: fields, resource: resource })));
 };

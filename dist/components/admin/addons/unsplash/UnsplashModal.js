@@ -84,7 +84,7 @@ var UnsplashModal = function (_a) {
     };
     return (react_1.default.createElement(components_1.Modal, { open: open, loading: loading, handleClose: handleClose, title: react_1.default.createElement(PoweredByUnsplash_1.default, null), maxWidth: "md", buttons: react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(components_2.Button, { variant: "secondary", onClick: handleUnsplashClick, className: "flex items-center", endIcon: react_1.default.createElement(components_1.Icon, { name: "ExternalLink", className: "text-secondary-foreground" }) },
-                react_1.default.createElement(UnsplashLogo_1.default, { className: 'fill-white' })),
+                react_1.default.createElement(UnsplashLogo_1.default, { className: "fill-white" })),
             react_1.default.createElement(components_2.Button, { variant: "secondary", onClick: handleCopyUrlClick, className: "flex items-center" },
                 react_1.default.createElement(components_1.Icon, { name: "Copy", className: "text-secondary-foreground mr-2" }),
                 "Copy URL"),
@@ -100,7 +100,7 @@ var UnsplashModal = function (_a) {
                         // @ts-ignore
                         , { 
                             // @ts-ignore
-                            src: (_d = (_c = image === null || image === void 0 ? void 0 : image.user) === null || _c === void 0 ? void 0 : _c.profile_image) === null || _d === void 0 ? void 0 : _d.small, alt: (_e = image === null || image === void 0 ? void 0 : image.user) === null || _e === void 0 ? void 0 : _e.name, layout: "fill", className: 'object-cover rounded-full' })),
+                            src: (_d = (_c = image === null || image === void 0 ? void 0 : image.user) === null || _c === void 0 ? void 0 : _c.profile_image) === null || _d === void 0 ? void 0 : _d.small, alt: (_e = image === null || image === void 0 ? void 0 : image.user) === null || _e === void 0 ? void 0 : _e.name, layout: "fill", className: "object-cover rounded-full" })),
                     react_1.default.createElement("div", null,
                         react_1.default.createElement(link_1.default, { href: "".concat((_g = (_f = image === null || image === void 0 ? void 0 : image.user) === null || _f === void 0 ? void 0 : _f.links) === null || _g === void 0 ? void 0 : _g.html, "?utm_source=frontend.co&utm_medium=referral"), target: "_blank", rel: "noopener noreferrer", className: "text-sm text-foreground hover:text-foreground/90" }, (_h = image === null || image === void 0 ? void 0 : image.user) === null || _h === void 0 ? void 0 : _h.name),
                         react_1.default.createElement(components_2.Typography, { variant: "body2", className: "text-gray-500 w-full" }, image === null || image === void 0 ? void 0 : image.description))))))) : (react_1.default.createElement("div", { className: "p-6 flex justify-center items-center w-full" },

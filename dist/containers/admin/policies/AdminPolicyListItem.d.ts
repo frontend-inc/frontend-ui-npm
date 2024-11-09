@@ -1,5 +1,5 @@
 import React from 'react';
-type AdminPolicyItemProps = {
+type AdminPolicyListItemProps = {
     resource: any;
     enableBorder?: boolean;
     sortable?: boolean;
@@ -7,5 +7,5 @@ type AdminPolicyItemProps = {
     handleEdit: () => void;
     handleDelete: () => void;
 };
-declare const AdminPolicyItem: React.FC<AdminPolicyItemProps>;
-export default AdminPolicyItem;
+declare const AdminPolicyListItem: React.FC<AdminPolicyListItemProps>;
+export default AdminPolicyListItem;

@@ -47,7 +47,7 @@ var AdminDocumentToolbar = function (props) {
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var _a = props || {}, open = _a.open, collectionId = _a.collectionId, handleClose = _a.handleClose, selectedIds = _a.selectedIds, handleReload = _a.handleReload;
     var _b = (0, hooks_1.useAdminDocuments)({
-        collection: collectionId
+        collection: collectionId,
     }), publish = _b.publish, unpublish = _b.unpublish, updateDocuments = _b.updateDocuments, deleteDocuments = _b.deleteDocuments;
     var handlePublish = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {

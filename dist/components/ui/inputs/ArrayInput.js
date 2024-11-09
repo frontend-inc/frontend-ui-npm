@@ -80,10 +80,11 @@ function ArrayInput(_a) {
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement("div", { className: "relative w-full" },
             react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-wrap gap-2 p-1 border rounded-md min-h-[42px]', error && 'border-red-500') },
-                Array.isArray(value) && (value === null || value === void 0 ? void 0 : value.map(function (tag) { return (react_1.default.createElement(frontend_shadcn_3.Badge, { key: tag, variant: "secondary", className: "px-2 py-1 text-sm" },
-                    tag,
-                    react_1.default.createElement("button", { type: "button", className: "ml-1 hover:bg-secondary rounded-full", onClick: function () { return removeTag(tag); } },
-                        react_1.default.createElement(lucide_react_1.X, { className: "h-4 w-4" })))); })),
+                Array.isArray(value) &&
+                    (value === null || value === void 0 ? void 0 : value.map(function (tag) { return (react_1.default.createElement(frontend_shadcn_3.Badge, { key: tag, variant: "secondary", className: "px-2 py-1 text-sm" },
+                        tag,
+                        react_1.default.createElement("button", { type: "button", className: "ml-1 hover:bg-secondary rounded-full", onClick: function () { return removeTag(tag); } },
+                            react_1.default.createElement(lucide_react_1.X, { className: "h-4 w-4" })))); })),
                 react_1.default.createElement(frontend_shadcn_2.Input, { type: "text", placeholder: placeholder, value: inputValue, onChange: function (e) { return setInputValue(e.target.value); }, onKeyDown: handleKeyDown, onBlur: function () { return addTag(inputValue); }, className: "text-foreground flex-1 px-0 py-0 text-sm border-0 focus-visible:ring-0 focus-visible:ring-offset-0" })),
             react_1.default.createElement(components_1.ErrorText, { error: error }))));
 }

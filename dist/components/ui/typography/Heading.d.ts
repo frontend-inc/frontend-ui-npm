@@ -1,12 +1,11 @@
 import React from 'react';
-import { TypographyVariantsType } from '../../../types';
 type HeadingProps = {
     label?: string;
     title?: string;
-    description?: string;
+    subtitle?: string;
     textAlign?: 'left' | 'center' | 'right';
-    textVariant?: TypographyVariantsType;
-    enableBorder?: boolean;
+    size?: 'sm' | 'md' | 'lg' | 'xl';
+    className?: string;
     secondaryAction?: React.ReactNode;
 };
 declare const Heading: React.FC<HeadingProps>;

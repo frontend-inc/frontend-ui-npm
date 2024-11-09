@@ -2,12 +2,11 @@ import React from 'react';
 export type CoverCarouselProps = {
     items: {
         title?: string;
-        description?: string;
+        subtitle?: string;
         image: string;
         buttonText?: string;
         path?: string;
     }[];
-    editing?: boolean;
     enableAutoPlay?: boolean;
     showDots?: boolean;
     enableOverlay?: boolean;

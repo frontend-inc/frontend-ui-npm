@@ -56,17 +56,17 @@ var DisplayField = function (props) {
         phone: __1.FieldString,
         shopify_product: __1.FieldShopify,
         vimeo_video: __1.FieldVimeo,
-        youtube_video: __1.FieldYouTube
+        youtube_video: __1.FieldYouTube,
     };
     var variantProps = {
         array: {
             className: 'px-[40px] sm:px-[100px] py-1 text-sm font-medium',
         },
         email: {
-            className: 'w-full text-center text-xs',
+            className: 'w-full text-center text-sm italic',
         },
         string: {
-            className: 'uppercase w-full text-center text-xs font-medium tracking-widest',
+            className: 'w-full text-center text-md font-normal tracking-wide',
         },
         text: {
             className: 'px-[40px] sm:px-[100px] italic text-lg',
@@ -76,15 +76,15 @@ var DisplayField = function (props) {
         },
         video: {
             height: 450,
-            width: 800
+            width: 800,
         },
         youtube_video: {
             height: 450,
-            width: 800
+            width: 800,
         },
         vimeo_video: {
             height: 450,
-            width: 800
+            width: 800,
         },
         location: {
             lat: resource === null || resource === void 0 ? void 0 : resource.lat,
@@ -92,14 +92,14 @@ var DisplayField = function (props) {
             label: resource === null || resource === void 0 ? void 0 : resource.title,
             image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url,
             zoom: 16,
-            darkTheme: false
-        }
+            darkTheme: false,
+        },
     };
     var Component = components[fieldVariant] || __1.FieldString;
     var componentProps = (variantProps === null || variantProps === void 0 ? void 0 : variantProps[fieldVariant]) || {};
     if (!value || value == '')
         return null;
-    return (react_1.default.createElement("div", { className: 'max-w-screen-lg w-full min-w-[280px] sm:min-w-[640px] md:min-w-[768px]' },
+    return (react_1.default.createElement("div", { className: "max-w-screen-lg w-full min-w-[280px] sm:min-w-[640px] md:min-w-[768px]" },
         react_1.default.createElement("div", { className: "container justify-center items-center" },
             react_1.default.createElement(Component, __assign({ icon: icon, variant: "caption", value: value }, componentProps)))));
 };

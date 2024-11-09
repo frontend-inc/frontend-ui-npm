@@ -3,7 +3,7 @@ export type FeaturesProps = {
     items: {
         icon?: any;
         title?: string;
-        description?: string;
+        subtitle?: string;
     }[];
 };
 declare const Features: React.FC<FeaturesProps>;

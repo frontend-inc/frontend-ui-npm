@@ -9,7 +9,6 @@ type ProductListItemProps = {
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableRatings?: boolean;
-    disableBorder?: boolean;
 };
 declare const ProductListItem: React.FC<ProductListItemProps>;
 export default ProductListItem;

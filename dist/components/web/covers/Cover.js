@@ -10,9 +10,9 @@ var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var Cover = function (props) {
-    var title = props.title, description = props.description, _a = props.textVariant, textVariant = _a === void 0 ? 'h3' : _a, handleClick = props.handleClick, image = props.image, _b = props.height, height = _b === void 0 ? 400 : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.alignItems, alignItems = _f === void 0 ? 'center' : _f, buttonText = props.buttonText, actions = props.actions, path = props.path;
+    var label = props.label, title = props.title, subtitle = props.subtitle, handleClick = props.handleClick, image = props.image, _a = props.height, height = _a === void 0 ? 400 : _a, _b = props.alt, alt = _b === void 0 ? 'image' : _b, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d, _e = props.alignItems, alignItems = _e === void 0 ? 'center' : _e, buttonText = props.buttonText, actions = props.actions, path = props.path;
     var onClick = (0, hooks_1.useNavigate)({
-        handleClick: handleClick
+        handleClick: handleClick,
     });
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('dark relative w-full') },
         react_1.default.createElement("div", { className: "hidden sm:block" },
@@ -21,8 +21,7 @@ var Cover = function (props) {
             react_1.default.createElement(__1.Image, { disableBorderRadius: true, src: image, alt: alt, aspectRatio: 1.0, enableGradient: enableGradient, enableOverlay: enableOverlay })),
         react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col items-center justify-center', height && "h-[".concat(height, "px]"), "absolute top-0 left-0 w-full h-full px-3 sm:px-0") },
             react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col', alignItems === 'flex-start' && 'items-start', alignItems === 'center' && 'items-center', alignItems === 'flex-end' && 'items-end', 'space-y-4') },
-                title && (react_1.default.createElement(components_1.Typography, { className: "text-foreground", variant: textVariant, textAlign: alignItems === 'center' ? 'center' : 'left' }, title)),
-                description && (react_1.default.createElement(components_1.Typography, { className: "text-foreground", variant: "subtitle2", textAlign: alignItems === 'center' ? 'center' : 'left' }, description)),
+                react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: alignItems === 'center' ? 'center' : 'left', size: "lg" }),
                 actions,
                 buttonText && (react_1.default.createElement("div", { className: "py-2" },
                     react_1.default.createElement(components_1.Button, { size: "lg", onClick: function () { return onClick(path); }, variant: "default" }, buttonText)))))));

@@ -1,11 +1,9 @@
 import React from 'react';
-import { TypographyVariantsType } from '../../../types';
 export type EmailSubscribeProps = {
     label?: string;
     title: string;
-    description: string;
+    subtitle: string;
     buttonText?: string;
-    textVariant?: TypographyVariantsType;
     href?: string;
     handleClick?: () => void;
     direction?: string;

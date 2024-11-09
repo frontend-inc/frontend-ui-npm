@@ -1,7 +1,7 @@
 import React from 'react';
 type AccordionItemProps = {
-    primary: string;
-    secondary: React.ReactNode;
+    title: string;
+    subtitle: string;
 };
 declare const AccordionItemComponent: React.FC<AccordionItemProps>;
 export default AccordionItemComponent;

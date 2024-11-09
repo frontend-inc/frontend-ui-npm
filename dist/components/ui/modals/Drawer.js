@@ -25,19 +25,19 @@ function CustomDrawer(_a) {
                 react_1.default.createElement(frontend_shadcn_1.DrawerHeader, null,
                     react_1.default.createElement("div", { className: "flex w-full justify-end" },
                         react_1.default.createElement(frontend_shadcn_1.DrawerClose, null,
-                            react_1.default.createElement(components_1.Button, { variant: "ghost", size: "icon", className: 'focus:ring-2 focus:ring-ring focus:ring-offset-2' },
+                            react_1.default.createElement(components_1.Button, { variant: "ghost", size: "icon", className: "focus:ring-2 focus:ring-ring focus:ring-offset-2" },
                                 react_1.default.createElement(lucide_react_1.X, { className: "h-5 w-5" }),
                                 react_1.default.createElement("span", { className: "sr-only" }, "Close")))),
                     title && (react_1.default.createElement(frontend_shadcn_1.DrawerTitle, null,
                         react_1.default.createElement("span", { className: "flex font-semibold justify-center w-full text-3xl text-foreground" }, title))),
                     description && (react_1.default.createElement(frontend_shadcn_1.DrawerDescription, null,
                         react_1.default.createElement("div", { className: "flex flex-row justify-center w-full" },
-                            react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)(maxWidthClasses[maxWidth], "w-full") },
+                            react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)(maxWidthClasses[maxWidth], 'w-full') },
                                 react_1.default.createElement("div", { className: "text-lg text-primary" }, description)))))),
                 react_1.default.createElement(frontend_shadcn_1.ScrollArea, null,
                     react_1.default.createElement("div", { className: "flex justify-center w-full py-6 px-6 sm:px-0" },
-                        react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)(maxWidthClasses[maxWidth], "w-full min-h-[50vh] max-h-[75vh]") }, children))),
-                !loading && buttons && (react_1.default.createElement(frontend_shadcn_1.DrawerFooter, { className: 'w-full flex items-center justify-center' },
+                        react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)(maxWidthClasses[maxWidth], 'w-full min-h-[50vh] max-h-[75vh]') }, children))),
+                !loading && buttons && (react_1.default.createElement(frontend_shadcn_1.DrawerFooter, { className: "w-full flex items-center justify-center" },
                     react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)(maxWidthClasses[maxWidth], 'w-full') }, buttons)))))));
 }
 exports.default = CustomDrawer;

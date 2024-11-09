@@ -1,25 +1,19 @@
 import React from 'react';
 import { ButtonType, MetafieldType } from '../../../types';
 export type ShowProps = {
-    handle?: string;
-    buttons: ButtonType[];
-    displayFields: MetafieldType[];
     resource: any;
+    displayFields: MetafieldType[];
+    buttons: ButtonType[];
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;
-    enableUsers?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
 };
-type ShowStyleTypes = 'card' | 'cover' | 'list' | 'avatar' | 'snippet';
+type ShowStyleTypes = 'card' | 'cover' | 'list' | 'avatar';
 export type ShowItemProps = ShowProps & {
     url?: string;
     style: ShowStyleTypes;
-    slots?: {
-        image?: any;
-        content?: any;
-    };
 };
 declare const ShowItem: React.FC<ShowItemProps>;
 export default ShowItem;

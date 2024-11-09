@@ -16,7 +16,7 @@ var AlertModal = function (_a) {
                 react_1.default.createElement(frontend_shadcn_1.AlertDialogTitle, null, title),
                 react_1.default.createElement(frontend_shadcn_1.AlertDialogDescription, null, description)),
             loading && (react_1.default.createElement("div", { className: "flex flex-col items-center justify-center" },
-                react_1.default.createElement(components_1.CircularLoader, { size: 'lg' }))),
+                react_1.default.createElement(components_1.CircularLoader, { size: "lg" }))),
             react_1.default.createElement(frontend_shadcn_1.AlertDialogFooter, null,
                 react_1.default.createElement(frontend_shadcn_1.AlertDialogCancel, { asChild: true },
                     react_1.default.createElement(components_1.Button, { variant: "secondary", onClick: handleClose }, "Cancel")),

@@ -14,7 +14,7 @@ var ShopifyProductDetails = function (props) {
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
         react_1.default.createElement(core_1.Typography, { variant: "h4" }, product.title),
         react_1.default.createElement("div", { className: "flex flex-row space-x-2 items-center" },
-            react_1.default.createElement("div", { className: 'text-lg font-normal' }, price && (0, frontend_shopify_1.formatCurrency)(price)),
+            react_1.default.createElement("div", { className: "text-lg font-normal" }, price && (0, frontend_shopify_1.formatCurrency)(price)),
             compareAtPrice && (react_1.default.createElement("div", { className: "text-md text-muted-foreground line-through" }, (0, frontend_shopify_1.formatCurrency)(compareAtPrice))))));
 };
 exports.default = ShopifyProductDetails;

@@ -1,10 +1,10 @@
 import React from 'react';
-import { ButtonType, TypographyVariantsType } from '../../../types';
+import { ButtonType } from '../../../types';
 export type CallToActionProps = {
     label?: string;
     title: string;
-    description: string;
-    textVariant?: TypographyVariantsType;
+    subtitle: string;
+    size?: 'sm' | 'md' | 'lg' | 'xl';
     buttons: ButtonType[];
     direction?: string;
 };

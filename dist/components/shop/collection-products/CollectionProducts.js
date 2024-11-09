@@ -33,6 +33,6 @@ var CollectionProducts = function (props) {
     var productCollectionId = props.productCollectionId, rest = __rest(props, ["productCollectionId"]);
     var apiUrl = (0, hooks_1.useApp)().apiUrl;
     var url = "".concat(apiUrl, "/shop/product_collections/").concat(productCollectionId, "/products");
-    return (react_1.default.createElement(__1.ProductList, __assign({}, props, { url: url })));
+    return react_1.default.createElement(__1.ProductList, __assign({}, props, { url: url }));
 };
 exports.default = CollectionProducts;

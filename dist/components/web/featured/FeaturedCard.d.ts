@@ -2,7 +2,7 @@ import React from 'react';
 export type FeaturedCardProps = {
     label?: string;
     title?: string;
-    description?: string;
+    subtitle?: string;
     image?: string;
     buttonText?: string;
     href?: string;

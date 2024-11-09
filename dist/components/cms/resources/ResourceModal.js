@@ -12,6 +12,6 @@ var ResourceModal = function (props) {
     return (react_1.default.createElement(__1.Drawer, { open: open, handleClose: handleClose, title: title, buttons: (enableEdit || enableDelete) && (react_1.default.createElement("div", { className: "w-fill flex flex-row space-x-2" },
             enableEdit && (react_1.default.createElement(core_1.Button, { fullWidth: true, onClick: handleEdit }, "Edit")),
             enableDelete && (react_1.default.createElement(core_1.Button, { fullWidth: true, color: "secondary", onClick: handleDelete }, "Delete")))) }, loading == true ? (react_1.default.createElement("div", { className: "min-h-[400px] flex flex-col items-center justify-center" },
-        react_1.default.createElement(__1.CircularLoader, { size: 'lg' }))) : children));
+        react_1.default.createElement(__1.CircularLoader, { size: "lg" }))) : (children)));
 };
 exports.default = ResourceModal;

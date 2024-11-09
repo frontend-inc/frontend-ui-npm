@@ -21,7 +21,7 @@ var DesktopHeader = function (props) {
             react_1.default.createElement("div", { className: "w-full flex flex-row" },
                 (links === null || links === void 0 ? void 0 : links.length) > MAX_LINKS && (react_1.default.createElement("div", { className: "pl-1 flex items-center justify-center h-[60px]" },
                     react_1.default.createElement(core_1.IconButton, { color: "ghost", onClick: function () { return setMenuOpen(true); } },
-                        react_1.default.createElement(__1.Icon, { name: "Menu", size: 24 })))),
+                        react_1.default.createElement(__1.Icon, { name: "Menu" })))),
                 react_1.default.createElement("div", { className: "w-[200px] h-[60px] mx-4 flex flex-row items-center justify-start" },
                     react_1.default.createElement(Logo_1.default, { src: logo, width: 120, height: 40, handleClick: function () { return handleClick('/'); } })),
                 react_1.default.createElement("div", { className: "flex flex-row items-center justify-center w-full h-[60px]" }, (links === null || links === void 0 ? void 0 : links.length) <= MAX_LINKS &&

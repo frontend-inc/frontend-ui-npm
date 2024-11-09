@@ -4,7 +4,6 @@ type ProductArrayProps = {
     enableBorder?: boolean;
     enableAddToCart?: boolean;
     enableQuantity?: boolean;
-    buttonText?: string;
 };
 declare const ProductArray: React.FC<ProductArrayProps>;
 export default ProductArray;

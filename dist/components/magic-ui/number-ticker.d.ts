@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 export default function NumberTicker({ value, direction, delay, className, decimalPlaces, }: {
     value: number;
-    direction?: "up" | "down";
+    direction?: 'up' | 'down';
     className?: string;
     delay?: number;
     decimalPlaces?: number;

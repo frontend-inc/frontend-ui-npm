@@ -2,15 +2,14 @@ import React from 'react';
 export type HeroCardProps = {
     label?: string;
     image: string;
-    primary: string | React.ReactNode;
-    secondary?: React.ReactNode;
+    title: string;
+    subtitle?: string;
+    description?: string;
     actions?: React.ReactNode;
     secondaryAction?: React.ReactNode;
     children?: React.ReactNode;
-    slots?: {
-        image?: any;
-        content?: any;
-    };
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
 };
 declare const HeroCard: React.FC<HeroCardProps>;
 export default HeroCard;

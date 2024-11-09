@@ -7,18 +7,17 @@ export type CardProps = {
     avatar?: React.ReactNode;
     image?: string;
     label?: string;
-    primary: string | React.ReactNode;
-    secondary?: string | React.ReactNode;
-    tertiary?: string | React.ReactNode;
+    title: string;
+    subtitle?: string;
+    description?: string;
     actions?: React.ReactNode;
     secondaryAction?: React.ReactNode;
     handleClick?: () => void;
     handleSelect?: () => void;
     size?: number;
-    slots?: {
-        item?: any;
-        image?: any;
-    };
+    enableOverlay?: boolean;
+    enableGradient?: boolean;
+    classNames?: string;
 };
 declare const Card: React.FC<CardProps>;
 export default Card;

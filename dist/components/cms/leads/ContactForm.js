@@ -67,7 +67,7 @@ var hooks_1 = require("../../../hooks");
 // Call To Action
 var ContactForm = function (props) {
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, textVariant = _a.textVariant, _b = _a.metafields, metafields = _b === void 0 ? [] : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
+    var _a = props || {}, label = _a.label, title = _a.title, subtitle = _a.subtitle, _b = _a.metafields, metafields = _b === void 0 ? [] : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
     var _d = (0, frontend_js_1.useResource)({
         name: 'contact',
         url: "/api/v1/contacts",
@@ -90,7 +90,7 @@ var ContactForm = function (props) {
     }); };
     return (react_1.default.createElement("div", { className: "w-full" },
         react_1.default.createElement("div", { className: "container mx-auto max-w-screen-md" },
-            react_1.default.createElement(__1.Heading, { label: label, title: title, description: description, textVariant: textVariant, textAlign: "center" }),
+            react_1.default.createElement(__1.Heading, { label: label, title: title, subtitle: subtitle, size: "lg", textAlign: "center" }),
             react_1.default.createElement(__1.Form, { loading: delayedLoading, fields: __spreadArray(__spreadArray([
                     {
                         label: 'Name',

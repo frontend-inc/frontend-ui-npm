@@ -42,7 +42,7 @@ function GoogleMap(_a) {
     }, [darkTheme]);
     var center = {
         lat: lat,
-        lng: lng
+        lng: lng,
     };
     var map = (0, react_google_maps_1.useMap)();
     (0, react_1.useEffect)(function () {

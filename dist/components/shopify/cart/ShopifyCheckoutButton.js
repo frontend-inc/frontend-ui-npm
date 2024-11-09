@@ -38,7 +38,12 @@ var ShopifyCheckoutButton = function (props) {
     };
     var redirectToWebUrl = function () {
         trackCheckoutStarted(cart);
-        window.location = cart === null || cart === void 0 ? void 0 : cart.checkoutUrl;
+        if (window.parent === window) {
+            window.location = cart === null || cart === void 0 ? void 0 : cart.checkoutUrl;
+        }
+        else {
+            parent.window.location = cart === null || cart === void 0 ? void 0 : cart.checkoutUrl;
+        }
         setLoading(false);
     };
     return (react_1.default.createElement(core_1.Button, { fullWidth: true, onClick: handleCheckoutClick, size: "lg", loading: loading }, "Checkout"));

@@ -29,16 +29,16 @@ var react_1 = __importDefault(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 function Marquee(_a) {
     var className = _a.className, reverse = _a.reverse, _b = _a.pauseOnHover, pauseOnHover = _b === void 0 ? false : _b, children = _a.children, _c = _a.vertical, vertical = _c === void 0 ? false : _c, _d = _a.repeat, repeat = _d === void 0 ? 4 : _d, props = __rest(_a, ["className", "reverse", "pauseOnHover", "children", "vertical", "repeat"]);
-    return (react_1.default.createElement("div", __assign({}, props, { className: (0, frontend_shadcn_1.cn)("group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]", {
-            "flex-row": !vertical,
-            "flex-col": vertical,
+    return (react_1.default.createElement("div", __assign({}, props, { className: (0, frontend_shadcn_1.cn)('group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]', {
+            'flex-row': !vertical,
+            'flex-col': vertical,
         }, className) }), Array(repeat)
         .fill(0)
-        .map(function (_, i) { return (react_1.default.createElement("div", { key: i, className: (0, frontend_shadcn_1.cn)("flex shrink-0 justify-around [gap:var(--gap)]", {
-            "animate-marquee flex-row": !vertical,
-            "animate-marquee-vertical flex-col": vertical,
-            "group-hover:[animation-play-state:paused]": pauseOnHover,
-            "[animation-direction:reverse]": reverse,
+        .map(function (_, i) { return (react_1.default.createElement("div", { key: i, className: (0, frontend_shadcn_1.cn)('flex shrink-0 justify-around [gap:var(--gap)]', {
+            'animate-marquee flex-row': !vertical,
+            'animate-marquee-vertical flex-col': vertical,
+            'group-hover:[animation-play-state:paused]': pauseOnHover,
+            '[animation-direction:reverse]': reverse,
         }) }, children)); })));
 }
 exports.default = Marquee;

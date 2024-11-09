@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 type TColorProp = string | string[];
 interface ShineBorderProps {
     borderRadius?: number;

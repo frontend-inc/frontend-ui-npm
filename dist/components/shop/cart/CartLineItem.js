@@ -131,13 +131,13 @@ var CartLineItem = function (props) {
                             react_1.default.createElement(image_1.default, { alt: (product === null || product === void 0 ? void 0 : product.title) || '', 
                                 // @ts-ignore
                                 src: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, height: 72, width: 72, style: {
-                                    objectFit: 'cover'
+                                    objectFit: 'cover',
                                 }, className: "w-full cursor-pointer object-cover" })))),
                 react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
                     react_1.default.createElement(core_1.Typography, { variant: "body1" }, product === null || product === void 0 ? void 0 : product.title),
                     react_1.default.createElement(core_1.Typography, { className: "text-muted-foreground", variant: "body2" }, product === null || product === void 0 ? void 0 : product.display_price),
                     react_1.default.createElement(CartQuantityInput, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity }))),
-            react_1.default.createElement("button", { onClick: handleRemoveFromCart, className: 'focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm p-1 mr-1' },
+            react_1.default.createElement("button", { onClick: handleRemoveFromCart, className: "focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm p-1 mr-1" },
                 react_1.default.createElement(components_1.Icon, { name: "X", className: "h-4 w-4 text-muted-foreground hover:text-foreground" }))),
         react_1.default.createElement(components_2.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, productId: product === null || product === void 0 ? void 0 : product.handle })));
 };

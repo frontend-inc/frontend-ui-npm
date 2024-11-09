@@ -1,10 +1,9 @@
 import React from 'react';
 export type CoverProps = {
-    editing?: boolean;
-    title?: string | React.ReactNode;
-    description?: string;
+    label?: string;
+    title: string;
+    subtitle?: string;
     buttonText?: string;
-    textVariant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     image: string;
     height?: number;
     width?: number;
@@ -13,7 +12,6 @@ export type CoverProps = {
     handleClick?: () => void;
     enableGradient?: boolean;
     enableOverlay?: boolean;
-    opacity?: number;
     path?: string;
     actions?: React.ReactNode;
 };

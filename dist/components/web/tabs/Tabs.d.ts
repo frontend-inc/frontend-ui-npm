@@ -7,7 +7,6 @@ export type TabsProps = {
         description: string;
         image?: string;
     }[];
-    editing?: boolean;
 };
 declare const CustomTabs: React.FC<TabsProps>;
 export default CustomTabs;

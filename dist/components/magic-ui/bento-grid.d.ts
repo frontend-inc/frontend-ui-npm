@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode } from 'react';
 declare const BentoGrid: ({ children, className, }: {
     children: ReactNode;
     className?: string;

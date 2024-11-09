@@ -14,7 +14,7 @@ var AdminPolicysList = function () {
     return (react_1.default.createElement(components_1.ResourceList, { sortable: true, enableBorder: true, url: "".concat(apiUrl, "/policies"), name: "policy", enableCreate: true, enableEdit: true, enableSearch: true, enableDelete: true, query: {
             sort_by: 'position',
             sort_direction: 'asc',
-        }, create: AdminPolicyForm_1.default, edit: AdminPolicyForm_1.default, component: __1.AdminPolicyItem, emptyIcon: "FileText", emptyTitle: "No policies", emptyDescription: "No policies yet.", slots: {
+        }, create: AdminPolicyForm_1.default, edit: AdminPolicyForm_1.default, component: __1.AdminPolicyListItem, emptyIcon: "FileText", emptyTitle: "No policies", emptyDescription: "No policies yet.", slots: {
             item: {
                 enableBorder: true,
             },

@@ -30,8 +30,8 @@ var ProductReviews = function (props) {
                     { label: '2 Stars', value: 2 },
                     { label: '3 Stars', value: 3 },
                     { label: '4 Stars', value: 4 },
-                    { label: '5 Stars', value: 5 }
-                ]
+                    { label: '5 Stars', value: 5 },
+                ],
             },
         ], list: ProductReviewsList_1.default, edit: __1.ProductReviewForm, create: __1.ProductReviewForm, slots: {
             toolbar: {

@@ -29,7 +29,7 @@ exports.COLLECTION_EVENT = {
     icon: 'Calendar',
     document_type: 'event',
     label: 'Event',
-    color: 'bg-amber-500'
+    color: 'bg-amber-500',
 };
 exports.COLLECTION_VIDEO = {
     icon: 'Video',
@@ -85,5 +85,5 @@ exports.COLLECTION_TEMPLATES = [
     exports.COLLECTION_YOUTUBE,
     exports.COLLECTION_VIMEO,
     exports.COLLECTION_SOUNDCLOUD,
-    exports.COLLECTION_SHOPIFY
+    exports.COLLECTION_SHOPIFY,
 ];

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SparklesText = exports.ShineBorder = exports.ShimmerButton = exports.RainbowButton = exports.NumberTicker = exports.Marquee = exports.Iphone15Pro = exports.BorderBeam = exports.BlurIn = exports.BlurFade = exports.BentoGrid = exports.BentoCard = exports.AnimatedSubscribeButton = exports.AnimatedShinyText = exports.AnimatedGradientText = exports.AnimatedCircularProgressBar = void 0;
+exports.SparklesText = exports.ShineBorder = exports.ShimmerButton = exports.Safari = exports.RainbowButton = exports.NumberTicker = exports.Marquee = exports.Iphone15Pro = exports.BorderBeam = exports.BlurIn = exports.BlurFade = exports.BentoGrid = exports.BentoCard = exports.AnimatedSubscribeButton = exports.AnimatedShinyText = exports.AnimatedGradientText = exports.AnimatedCircularProgressBar = void 0;
 var animated_circular_progress_bar_1 = require("./animated-circular-progress-bar");
 Object.defineProperty(exports, "AnimatedCircularProgressBar", { enumerable: true, get: function () { return __importDefault(animated_circular_progress_bar_1).default; } });
 var animated_gradient_text_1 = require("./animated-gradient-text");
@@ -29,6 +29,8 @@ var number_ticker_1 = require("./number-ticker");
 Object.defineProperty(exports, "NumberTicker", { enumerable: true, get: function () { return __importDefault(number_ticker_1).default; } });
 var rainbow_button_1 = require("./rainbow-button");
 Object.defineProperty(exports, "RainbowButton", { enumerable: true, get: function () { return rainbow_button_1.RainbowButton; } });
+var safari_1 = require("./safari");
+Object.defineProperty(exports, "Safari", { enumerable: true, get: function () { return __importDefault(safari_1).default; } });
 var shimmer_button_1 = require("./shimmer-button");
 Object.defineProperty(exports, "ShimmerButton", { enumerable: true, get: function () { return __importDefault(shimmer_button_1).default; } });
 var shine_border_1 = require("./shine-border");

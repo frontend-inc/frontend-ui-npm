@@ -1,11 +1,10 @@
 import React from 'react';
-import { FormFieldType, TypographyVariantsType } from '../../../types';
+import { FormFieldType } from '../../../types';
 export type ContactFormProps = {
     label?: string;
     title: string;
-    description: string;
+    subtitle: string;
     buttonText?: string;
-    textVariant?: TypographyVariantsType;
     href?: string;
     metafields?: FormFieldType[];
     handleClick?: () => void;

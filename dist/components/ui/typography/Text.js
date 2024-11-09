@@ -9,10 +9,10 @@ var core_1 = require("../../core");
 var __1 = require("../..");
 // Call To Action
 var Text = function (props) {
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, textAlign = _a.textAlign, textVariant = _a.textVariant, _b = _a.html, html = _b === void 0 ? false : _b;
+    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, textAlign = _a.textAlign, _b = _a.size, size = _b === void 0 ? 'lg' : _b, _c = _a.html, html = _c === void 0 ? false : _c;
     return (react_1.default.createElement("div", { className: "container max-w-screen-lg mx-auto" },
         react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
-            react_1.default.createElement(__1.Heading, { label: label, title: title, textAlign: textAlign, textVariant: textVariant }),
+            react_1.default.createElement(__1.Heading, { label: label, title: title, textAlign: textAlign, size: size }),
             html ? (react_1.default.createElement(core_1.Typography, { variant: "body1" },
                 react_1.default.createElement("div", { dangerouslySetInnerHTML: { __html: description } }))) : (react_1.default.createElement(core_1.Typography, { variant: "body1" }, description)))));
 };

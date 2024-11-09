@@ -1,4 +1,4 @@
-"use client";
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -50,7 +50,7 @@ var react_1 = __importStar(require("react"));
 var framer_motion_1 = require("framer-motion");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var SparklesText = function (_a) {
-    var text = _a.text, _b = _a.colors, colors = _b === void 0 ? { first: "#9E7AFF", second: "#FE8BBB" } : _b, className = _a.className, _c = _a.sparklesCount, sparklesCount = _c === void 0 ? 10 : _c, props = __rest(_a, ["text", "colors", "className", "sparklesCount"]);
+    var text = _a.text, _b = _a.colors, colors = _b === void 0 ? { first: '#9E7AFF', second: '#FE8BBB' } : _b, className = _a.className, _c = _a.sparklesCount, sparklesCount = _c === void 0 ? 10 : _c, props = __rest(_a, ["text", "colors", "className", "sparklesCount"]);
     var _d = (0, react_1.useState)([]), sparkles = _d[0], setSparkles = _d[1];
     (0, react_1.useEffect)(function () {
         var generateStar = function () {
@@ -83,9 +83,9 @@ var SparklesText = function (_a) {
         var interval = setInterval(updateStars, 100);
         return function () { return clearInterval(interval); };
     }, [colors.first, colors.second]);
-    return (react_1.default.createElement("div", __assign({ className: (0, frontend_shadcn_1.cn)("text-6xl font-bold", className) }, props, { style: {
-            "--sparkles-first-color": "".concat(colors.first),
-            "--sparkles-second-color": "".concat(colors.second),
+    return (react_1.default.createElement("div", __assign({ className: (0, frontend_shadcn_1.cn)('text-6xl font-bold', className) }, props, { style: {
+            '--sparkles-first-color': "".concat(colors.first),
+            '--sparkles-second-color': "".concat(colors.second),
         } }),
         react_1.default.createElement("span", { className: "relative inline-block" },
             sparkles.map(function (sparkle) { return (react_1.default.createElement(Sparkle, __assign({ key: sparkle.id }, sparkle))); }),

@@ -48,6 +48,6 @@ var Product = function (props) {
     }, [productId]);
     if (!(product === null || product === void 0 ? void 0 : product.id))
         return null;
-    return (react_1.default.createElement(__1.ProductDetails, __assign({}, props, { product: product })));
+    return react_1.default.createElement(__1.ProductDetails, __assign({}, props, { product: product }));
 };
 exports.default = Product;

@@ -103,8 +103,8 @@ var buildFilterFields = function (params) {
         variant: 'multiple_choice',
         options: filterChoices === null || filterChoices === void 0 ? void 0 : filterChoices.map(function (option) { return ({
             label: option,
-            value: option
-        }); })
+            value: option,
+        }); }),
     };
     return [categoryFilter];
 };

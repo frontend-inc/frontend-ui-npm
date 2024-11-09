@@ -30,7 +30,7 @@ var DataToolbar_1 = require("./DataToolbar");
 Object.defineProperty(exports, "DataToolbar", { enumerable: true, get: function () { return __importDefault(DataToolbar_1).default; } });
 var SortableDataListItems_1 = require("./SortableDataListItems");
 Object.defineProperty(exports, "SortableDataListItems", { enumerable: true, get: function () { return __importDefault(SortableDataListItems_1).default; } });
-// Buttons 
+// Buttons
 var ShowButton_1 = require("./buttons/ShowButton");
 Object.defineProperty(exports, "ShowButton", { enumerable: true, get: function () { return __importDefault(ShowButton_1).default; } });
 // Toolbar Modal

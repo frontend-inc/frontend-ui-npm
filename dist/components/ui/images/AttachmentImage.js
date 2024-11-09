@@ -15,6 +15,6 @@ var AttachmentImage = function (_a) {
             width: "".concat(width, "px"),
         } },
         react_1.default.createElement(frontend_shadcn_1.AvatarFallback, { className: "bg-primary" },
-            react_1.default.createElement(components_1.Icon, { name: icon, size: 24, className: "bg-primary-foreground" }))));
+            react_1.default.createElement(components_1.Icon, { name: icon, className: "bg-primary-foreground" }))));
 };
 exports.default = AttachmentImage;

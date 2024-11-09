@@ -13,11 +13,11 @@ var ShowModal = function (props) {
     var _b = props || {}, enableRatings = _b.enableRatings, enableLikes = _b.enableLikes, enableFavorites = _b.enableFavorites, enableGradient = _b.enableGradient, enableOverlay = _b.enableOverlay;
     if (!resource)
         return null;
-    return (react_1.default.createElement(__1.Drawer, { open: openShow, handleClose: function () { return setOpenShow(false); } },
+    return (react_1.default.createElement(__1.Drawer, { open: openShow, handleClose: function () { return setOpenShow(false); }, maxWidth: "lg" },
         react_1.default.createElement("div", { className: "w-full flex flex-row justify-center pb-10" },
-            react_1.default.createElement(components_1.BlurFade, { delay: 0.25, inView: true, className: 'w-full' },
+            react_1.default.createElement(components_1.BlurFade, { delay: 0.25, inView: true, className: "w-full" },
                 react_1.default.createElement("div", { className: "w-full flex flex-col space-y-[20px]" },
-                    react_1.default.createElement(__1.ProductDetails, { direction: "column", product: resource, enableGradient: enableGradient, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings }),
-                    enableRatings && (react_1.default.createElement(__1.ProductReviews, { productId: resource === null || resource === void 0 ? void 0 : resource.id })))))));
+                    react_1.default.createElement(__1.ProductDetails, { direction: "row", product: resource, enableGradient: enableGradient, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings }),
+                    enableRatings && react_1.default.createElement(__1.ProductReviews, { productId: resource === null || resource === void 0 ? void 0 : resource.id }))))));
 };
 exports.default = ShowModal;

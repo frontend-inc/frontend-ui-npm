@@ -28,9 +28,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var QuestionIcon_1 = __importDefault(require("./QuestionIcon"));
-var AdminQuestionItem = function (props) {
-    var question = props.resource, sortable = props.sortable, selectable = props.selectable, selected = props.selected, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, rest = __rest(props, ["resource", "sortable", "selectable", "selected", "handleClick", "handleEdit", "handleDelete", "handleSelect"]);
-    return (react_1.default.createElement(components_1.ResourceListItem, __assign({ sortable: sortable, selectable: selectable, selected: selected, avatar: react_1.default.createElement(QuestionIcon_1.default, { variant: question === null || question === void 0 ? void 0 : question.variant }), primary: question === null || question === void 0 ? void 0 : question.title, handleEdit: handleEdit, handleDelete: handleDelete, handleClick: handleClick, handleSelect: handleSelect }, rest)));
+var AdminFormResponseItem = function (props) {
+    var _a;
+    var resource = props.resource, selectable = props.selectable, selected = props.selected, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, rest = __rest(props, ["resource", "selectable", "selected", "handleClick", "handleEdit", "handleDelete", "handleSelect"]);
+    return (react_1.default.createElement(components_1.ResourceListItem, __assign({ disableImage: true, selectable: selectable, selected: selected, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: resource === null || resource === void 0 ? void 0 : resource.name, secondary: resource === null || resource === void 0 ? void 0 : resource.email, handleDelete: handleDelete, handleClick: handleClick, handleSelect: handleSelect }, rest)));
 };
-exports.default = AdminQuestionItem;
+exports.default = AdminFormResponseItem;

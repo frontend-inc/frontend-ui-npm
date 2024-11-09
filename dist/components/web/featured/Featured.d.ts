@@ -4,7 +4,7 @@ export type FeaturedProps = {
         icon?: string;
         label?: string;
         title?: string;
-        description?: string;
+        subtitle?: string;
         image?: string;
         buttonText?: string;
         path?: string;

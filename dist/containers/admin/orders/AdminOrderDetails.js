@@ -34,7 +34,7 @@ var AdminOrderDetails = function (props) {
                 react_1.default.createElement("div", { className: "flex justify-start items-center pb-1 border-b border-gray-200" },
                     react_1.default.createElement(components_1.UserChip, { user: order === null || order === void 0 ? void 0 : order.user, size: 44, enableUsername: true, enableEmail: true })),
                 react_1.default.createElement("div", null,
-                    react_1.default.createElement(components_1.Button, { startIcon: react_1.default.createElement(components_1.Icon, { name: "Mail", size: 20 }), className: "mt-1 p-0.5 text-primary", onClick: handleCopyEmail }, order.customer_name)),
+                    react_1.default.createElement(components_1.Button, { startIcon: react_1.default.createElement(components_1.Icon, { name: "Mail" }), className: "mt-1 p-0.5 text-primary", onClick: handleCopyEmail }, order.customer_name)),
                 react_1.default.createElement(core_1.Typography, { variant: "overline", className: "text-muted-foreground whitespace-pre-line" }, order.shipping_address))),
         react_1.default.createElement("div", { className: "bg-white p-4 rounded-lg shadow" },
             react_1.default.createElement("div", { className: "flex flex-col" },

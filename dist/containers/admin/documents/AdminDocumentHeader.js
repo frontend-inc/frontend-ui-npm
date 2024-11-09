@@ -79,7 +79,7 @@ var core_1 = require("../../../components/core");
 var AdminDocumentHeader = function (props) {
     var _a = props || {}, handleReload = _a.handleReload, collectionId = _a.collectionId;
     var loading = (0, hooks_1.useAdminDocuments)({
-        collection: collectionId
+        collection: collectionId,
     }).loading;
     var _b = (0, hooks_1.useAdminCollections)(), collectionLoading = _b.loading, aiGenerate = _b.aiGenerate;
     var _c = (0, react_1.useState)(false), open = _c[0], setOpen = _c[1];

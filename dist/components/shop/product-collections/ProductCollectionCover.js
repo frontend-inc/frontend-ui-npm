@@ -39,10 +39,8 @@ var ProductCollectionCover = function (props) {
     }, [productCollectionId]);
     if (!productCollection)
         return null;
-    return (react_1.default.createElement(frontend_js_1.ResourceProvider, { name: 'product_collection', url: "/shop/product_collections/".concat(productCollectionId), resource: productCollection },
-        react_1.default.createElement(__1.Cover, { height: height, title: productCollection === null || productCollection === void 0 ? void 0 : productCollection.title, description: productCollection === null || productCollection === void 0 ? void 0 : productCollection.description, 
-            //@ts-ignore
-            image: (_a = productCollection === null || productCollection === void 0 ? void 0 : productCollection.image) === null || _a === void 0 ? void 0 : _a.url, alt: alt, alignItems: alignItems, handleClick: handleClick, enableOverlay: enableOverlay, enableGradient: enableGradient, actions: react_1.default.createElement(__1.ShowButton, null, "Browse") }),
+    return (react_1.default.createElement(frontend_js_1.ResourceProvider, { name: "product_collection", url: "/shop/product_collections/".concat(productCollectionId), resource: productCollection },
+        react_1.default.createElement(__1.Cover, { height: height, title: productCollection === null || productCollection === void 0 ? void 0 : productCollection.title, subtitle: productCollection === null || productCollection === void 0 ? void 0 : productCollection.description, image: (_a = productCollection === null || productCollection === void 0 ? void 0 : productCollection.image) === null || _a === void 0 ? void 0 : _a.url, alt: alt, alignItems: alignItems, handleClick: handleClick, enableOverlay: enableOverlay, enableGradient: enableGradient, actions: react_1.default.createElement(__1.ShowButton, null, "Browse") }),
         react_1.default.createElement(__1.ProductCollectionShow, null)));
 };
 exports.default = ProductCollectionCover;

@@ -4,19 +4,17 @@ import { MetafieldType, FormFieldType } from './forms';
 export type HeadingProps = {
     label?: string;
     title?: string;
-    description?: string;
+    subtitle?: string;
     textAlign?: 'left' | 'center';
 };
 export type SectionProps = {
     children?: React.ReactNode;
-    enableTransitions?: boolean;
     bgColor?: string;
     mode?: 'dark' | 'light';
     maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | false;
     py?: number;
     px?: number;
     requireAuth?: boolean;
-    requirePaid?: boolean;
 };
 export type FormProps = {
     fields: FormFieldType[];

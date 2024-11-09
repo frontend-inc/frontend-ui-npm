@@ -10,6 +10,6 @@ var Label = function (props) {
     var label = props.label, className = props.className;
     if (!label)
         return null;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('text-xs font-medium uppercase tracking-widest', className) }, label));
+    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('text-xs text-foreground font-medium uppercase tracking-widest', className) }, label));
 };
 exports.default = Label;

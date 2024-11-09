@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var AdminOrderItem_1 = __importDefault(require("./AdminOrderItem"));
+var AdminOrderListItem_1 = __importDefault(require("./AdminOrderListItem"));
 var AdminOrderForm_1 = __importDefault(require("./AdminOrderForm"));
 var AdminOrderToolbar_1 = __importDefault(require("./AdminOrderToolbar"));
 var navigation_1 = require("next/navigation");
@@ -28,6 +28,6 @@ var AdminOrdersList = function (props) {
                 name: 'status',
                 options: constants_1.ORDER_STATES,
             },
-        ], edit: AdminOrderForm_1.default, toolbar: AdminOrderToolbar_1.default, component: AdminOrderItem_1.default, emptyIcon: "ShoppingCart", emptyTitle: "No orders", emptyDescription: "No orders added yet." }));
+        ], edit: AdminOrderForm_1.default, toolbar: AdminOrderToolbar_1.default, component: AdminOrderListItem_1.default, emptyIcon: "ShoppingCart", emptyTitle: "No orders", emptyDescription: "No orders added yet." }));
 };
 exports.default = AdminOrdersList;

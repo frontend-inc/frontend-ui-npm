@@ -18,7 +18,7 @@ function SidebarMenuItem(_a) {
             icon && (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(color, 'h-8 w-8 rounded-md flex items-center justify-center') },
                 react_1.default.createElement(components_3.Icon, { name: icon, className: "w-5 h-5 text-foreground" }))),
             react_1.default.createElement(components_2.Typography, { variant: "body2" }, title)),
-        (selected && secondaryAction) ? secondaryAction : null,
+        selected && secondaryAction ? secondaryAction : null,
         (handleEdit || handleDelete) && (react_1.default.createElement(frontend_shadcn_2.DropdownMenu, null,
             react_1.default.createElement(frontend_shadcn_2.DropdownMenuTrigger, { asChild: true },
                 react_1.default.createElement(components_1.Button, { variant: "ghost", className: "h-8 w-8 p-0" },

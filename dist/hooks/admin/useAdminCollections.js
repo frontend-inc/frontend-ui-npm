@@ -61,7 +61,7 @@ var useAdminCollections = function () {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, loadingWrapper(function () {
                         return api.post("".concat(apiUrl, "/collections/").concat(collectionId, "/ai_generate"), {
-                            prompt: prompt
+                            prompt: prompt,
                         });
                     })];
                 case 1: return [2 /*return*/, _a.sent()];

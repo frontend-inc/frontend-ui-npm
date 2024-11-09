@@ -59,7 +59,7 @@ var hooks_1 = require("../../../hooks");
 // Call To Action
 var EmailSubscribe = function (props) {
     var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, textVariant = _a.textVariant, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
+    var _a = props || {}, label = _a.label, title = _a.title, subtitle = _a.subtitle, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
     var _c = (0, frontend_js_1.useResource)({
         name: 'contact',
         url: "/api/v1/contacts",
@@ -81,10 +81,12 @@ var EmailSubscribe = function (props) {
     }); };
     return (react_1.default.createElement("div", { className: "container mx-auto max-w-screen-md" },
         react_1.default.createElement("div", { className: "flex flex-col space-y-1" },
-            react_1.default.createElement(__1.Heading, { label: label, title: title, description: description, textVariant: textVariant, textAlign: "center" }),
+            react_1.default.createElement(__1.Heading, { label: label, title: title, subtitle: subtitle, size: "lg", textAlign: "center" }),
             react_1.default.createElement("div", { className: "flex flex-row justify-center items-center" },
                 react_1.default.createElement("div", { className: "max-w-[360px] w-full p-1 flex flex-row justify-center items-center" },
-                    react_1.default.createElement(__1.InputBase, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, handleChange: handleChange, placeholder: "Enter your email", type: "email", className: "rounded-l-md rounded-r-none border-r-0" }),
+                    react_1.default.createElement(__1.InputBase, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, 
+                        //@ts-ignore
+                        handleChange: handleChange, placeholder: "Enter your email", type: "email", className: "rounded-l-md rounded-r-none border-r-0" }),
                     react_1.default.createElement(core_1.Button, { onClick: handleSubmit, className: "rounded-l-none rounded-r-md", loading: delayedLoading }, buttonText))))));
 };
 exports.default = EmailSubscribe;

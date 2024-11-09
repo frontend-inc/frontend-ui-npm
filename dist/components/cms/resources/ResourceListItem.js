@@ -13,15 +13,16 @@ var frontend_shadcn_4 = require("frontend-shadcn");
 var lucide_react_1 = require("lucide-react");
 var core_1 = require("../../core");
 var components_2 = require("../../../components");
-function ResourceListItem(_a) {
-    var icon = _a.icon, avatar = _a.avatar, color = _a.color, primary = _a.primary, secondary = _a.secondary, image = _a.image, handleClick = _a.handleClick, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete, handleSelect = _a.handleSelect, secondaryAction = _a.secondaryAction, menuActions = _a.menuActions, sortable = _a.sortable, selectable = _a.selectable, selected = _a.selected, _b = _a.enableBorder, enableBorder = _b === void 0 ? true : _b;
+function ResourceListItem(props) {
+    var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryAction = props.secondaryAction, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.disableImage, disableImage = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? true : _b;
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('bg-background border border-border hover:bg-muted/50 p-1 rounded-lg overflow-hidden ', enableBorder &&
             'border-border hover:shadow-md mb-1 transition-shadow duration-200', selected && 'border-primary') },
         react_1.default.createElement("div", { className: "flex items-center p-1 rounded space-x-4" },
             sortable && (react_1.default.createElement(lucide_react_1.GripVertical, { className: "w-5 h-5 text-muted-foreground cursor-grab active:cursor-grabbing" })),
             selectable && (react_1.default.createElement(frontend_shadcn_3.Checkbox, { className: "text-foreground", checked: selected, onCheckedChange: handleSelect })),
-            avatar ? (react_1.default.createElement("div", { className: "mr-2" },
-                react_1.default.createElement("button", { className: "w-full h-full focus:outline-none focus:ring-2", onClick: handleClick }, avatar))) : (react_1.default.createElement("div", { className: "mr-2 w-[72px] h-[72px]" },
+            avatar && (react_1.default.createElement("div", { className: "mr-2" },
+                react_1.default.createElement("button", { className: "w-full h-full focus:outline-none focus:ring-2", onClick: handleClick }, avatar))),
+            !disableImage && (react_1.default.createElement("div", { className: "mr-2 w-[72px] h-[72px]" },
                 react_1.default.createElement("button", { className: "w-full h-full focus:outline-none focus:ring-2", onClick: handleClick },
                     react_1.default.createElement(components_2.Image, { src: image || null, aspectRatio: 1.0, alt: image })))),
             icon && (react_1.default.createElement("button", { className: "focus:outline-none focus:ring-2", onClick: handleClick },

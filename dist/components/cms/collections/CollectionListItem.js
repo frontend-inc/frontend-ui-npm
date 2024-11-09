@@ -36,17 +36,14 @@ var CollectionListItem = function (props) {
         cover: 'body1',
         chip: 'body1',
         text: 'h5',
-        list: 'body1'
+        list: 'body1',
     };
-    return (react_1.default.createElement(Component, { label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, primary: 
+    return (react_1.default.createElement(Component, { label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, 
+        // @ts-ignore
+        title: 
         //@ts-ignore
         react_1.default.createElement(__1.Typography, { variant: typographyVariants[style] }, resource === null || resource === void 0 ? void 0 : resource.title), handleClick: handleClick, 
         // @ts-ignore
-        secondary: react_1.default.createElement(__2.ListFields, { fields: listFields, resource: resource }), actions: react_1.default.createElement(__2.SocialButtons, { size: "small", justifyContent: "flex-start", resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }), slots: {
-            image: {
-                enableGradient: enableGradient,
-                enableOverlay: enableOverlay,
-            },
-        } }));
+        subtitle: react_1.default.createElement(__2.ListFields, { fields: listFields, resource: resource }), actions: react_1.default.createElement(__2.SocialButtons, { size: "small", justifyContent: "flex-start", resource: resource, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }), enableGradient: enableGradient, enableOverlay: enableOverlay }));
 };
 exports.default = CollectionListItem;

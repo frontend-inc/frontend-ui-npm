@@ -12,10 +12,10 @@ var DesktopLink = function (props) {
     var onClick = (0, hooks_1.useNavigate)({
         url: menuItem.url,
         path: menuItem.path,
-        handleClick: handleClick
+        handleClick: handleClick,
     });
     return (
-    //@ts-ignore 
-    react_1.default.createElement(core_1.Button, { variant: "ghost", className: 'text-foreground', onClick: onClick }, menuItem.label));
+    //@ts-ignore
+    react_1.default.createElement(core_1.Button, { variant: "ghost", className: "text-foreground", onClick: onClick }, menuItem.label));
 };
 exports.default = DesktopLink;

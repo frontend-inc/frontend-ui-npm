@@ -18,6 +18,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var AvatarCard = function (props) {
-    return react_1.default.createElement(components_1.ListCard, __assign({}, props, { size: 120, circular: true }));
+    return react_1.default.createElement(components_1.ListCard, __assign({}, props, { size: 140, circular: true }));
 };
 exports.default = AvatarCard;

@@ -21,6 +21,6 @@ function SortList(_a) {
         react_1.default.createElement(components_1.Typography, { variant: "body1", className: "text-primary font-medium" }, "Direction"),
         react_1.default.createElement("ul", { className: "space-y-1" }, SORT_DIRECTIONS.map(function (direction) { return (react_1.default.createElement(components_1.Button, { key: direction.value, variant: "ghost", fullWidth: true, onClick: function () {
                 return handleSortDirection(direction.value);
-            }, className: (0, frontend_shadcn_1.cn)("justify-between", sortDirection === direction.value && 'bg-muted'), endIcon: sortDirection === direction.value && (react_1.default.createElement(lucide_react_1.Check, { className: "w-4 h-4 ml-2" })) }, direction.label)); }))));
+            }, className: (0, frontend_shadcn_1.cn)('justify-between', sortDirection === direction.value && 'bg-muted'), endIcon: sortDirection === direction.value && (react_1.default.createElement(lucide_react_1.Check, { className: "w-4 h-4 ml-2" })) }, direction.label)); }))));
 }
 exports.default = SortList;

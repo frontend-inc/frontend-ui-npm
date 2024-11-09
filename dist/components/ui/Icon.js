@@ -31,12 +31,18 @@ var react_1 = __importDefault(require("react"));
 var icons = __importStar(require("lucide-react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var LucideIcon = function (_a) {
-    var name = _a.name, color = _a.color, className = _a.className, _b = _a.size, size = _b === void 0 ? 20 : _b;
+    var name = _a.name, className = _a.className, _b = _a.size, size = _b === void 0 ? 'md' : _b;
     var Icon = icons[name];
     if (!Icon)
         return null;
+    var sizeClasses = {
+        sm: 'w-4 h-4',
+        md: 'w-5 h-5',
+        lg: 'w-6 h-6',
+        xl: 'w-8 h-8',
+    };
     return (
     //@ts-ignore
-    react_1.default.createElement(Icon, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', color, className), size: size }));
+    react_1.default.createElement(Icon, { className: (0, frontend_shadcn_1.cn)('text-foreground', sizeClasses[size], className), size: size }));
 };
 exports.default = LucideIcon;

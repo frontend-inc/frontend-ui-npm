@@ -35,20 +35,16 @@ var AdminProductEditForm = function (props) {
                 { label: 'Day', value: 'day' },
                 { label: 'Week', value: 'week' },
                 { label: 'Month', value: 'month' },
-                { label: 'Year', value: 'year' }
+                { label: 'Year', value: 'year' },
             ],
-            conditions: [
-                { name: 'recurring', operator: 'eq', value: true },
-            ]
+            conditions: [{ name: 'recurring', operator: 'eq', value: true }],
         },
         {
             label: 'Free trial days',
             name: 'free_trial_days',
             variant: 'number',
-            conditions: [
-                { name: 'recurring', operator: 'eq', value: true },
-            ]
-        }
+            conditions: [{ name: 'recurring', operator: 'eq', value: true }],
+        },
     ];
     var inputOptions = {
         media: components_2.MediaInput,

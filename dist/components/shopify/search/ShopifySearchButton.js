@@ -37,6 +37,6 @@ var ShopifySearchButton = function () {
         toggleSearch();
     };
     return (react_1.default.createElement(core_1.IconButton, { onClick: handleToggleSearch },
-        react_1.default.createElement(__1.Icon, { name: "Search", size: 24 })));
+        react_1.default.createElement(__1.Icon, { name: "Search" })));
 };
 exports.default = ShopifySearchButton;

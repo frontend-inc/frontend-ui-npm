@@ -30,9 +30,9 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var shopify_1 = require("../../components/shopify");
 var ShopifyFavorites = function (props) {
-    var label = props.label, title = props.title, description = props.description, textAlign = props.textAlign, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["label", "title", "description", "textAlign", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: true, requirePaid: requirePaid, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_1.Heading, { label: label, title: title, description: description, textAlign: textAlign }),
+    var label = props.label, title = props.title, subtitle = props.subtitle, textAlign = props.textAlign, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["label", "title", "subtitle", "textAlign", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: true, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
+        react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: textAlign }),
         react_1.default.createElement(shopify_1.ShopifyProductFavorites, __assign({}, rest))));
 };
 exports.default = ShopifyFavorites;

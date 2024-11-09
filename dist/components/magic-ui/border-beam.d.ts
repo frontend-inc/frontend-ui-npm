@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 interface BorderBeamProps {
     className?: string;
     size?: number;

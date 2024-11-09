@@ -247,7 +247,6 @@ exports.TAILWIND_COLOR_PICKER_MAP = {
 };
 exports.TAILWIND_COLORS = [
     'light',
-    'dark',
     'slate',
     'gray',
     'zinc',
@@ -273,7 +272,6 @@ exports.TAILWIND_COLORS = [
 ];
 exports.TAILWIND_COLOR_MAP = {
     light: '#ffffff',
-    dark: '#000000',
     slate: '#64748b',
     gray: '#6b7280',
     zinc: '#71717a',

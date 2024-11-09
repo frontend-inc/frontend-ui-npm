@@ -40,7 +40,7 @@ var MyAccountTabs = function (_a) {
         {
             label: 'Logout',
             value: 4,
-        }
+        },
     ];
     var tabs = TABS;
     if (enableStripe) {

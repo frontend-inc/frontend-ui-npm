@@ -78,10 +78,10 @@ var ShopifyCartQuantityInput = function (_a) {
     var quantity = _a.quantity, handleAddQuantity = _a.handleAddQuantity, handleRemoveQuantity = _a.handleRemoveQuantity;
     return (react_1.default.createElement("div", { className: "inline-flex rounded-md shadow-sm", role: "group" },
         react_1.default.createElement(components_1.Button, { variant: "secondary", size: "sm", className: "px-2 rounded-r-none", onClick: handleRemoveQuantity },
-            react_1.default.createElement(components_2.Icon, { name: "Minus", size: 16 })),
+            react_1.default.createElement(components_2.Icon, { name: "Minus", size: "sm" })),
         react_1.default.createElement(components_1.Button, { variant: "secondary", size: "sm", className: "px-2 rounded-none" }, quantity),
         react_1.default.createElement(components_1.Button, { variant: "secondary", size: "sm", className: "px-2 rounded-l-none", onClick: handleAddQuantity },
-            react_1.default.createElement(components_2.Icon, { name: "Plus", size: 16 }))));
+            react_1.default.createElement(components_2.Icon, { name: "Plus", size: "sm" }))));
 };
 var ShopifyCartLine = function (_a) {
     var _b, _c, _d, _e, _f, _g, _h, _j;

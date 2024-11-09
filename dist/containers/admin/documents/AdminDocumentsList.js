@@ -33,27 +33,27 @@ var AdminDocumentsList = function (props) {
             { name: 'title', label: 'Title' },
         ], query: {
             sort_by: 'position',
-            sort_direction: 'asc'
+            sort_direction: 'asc',
         }, create: AdminDocumentCreateForm_1.default, edit: AdminDocumentEditForm_1.default, show: AdminDocumentShow_1.default, header: AdminDocumentHeader_1.default, toolbar: AdminDocumentToolbar_1.default, component: AdminDocumentListItem_1.default, slots: {
             create: {
                 fields: formFields,
-                collectionId: collectionId
+                collectionId: collectionId,
             },
             edit: {
                 fields: formFields,
-                collectionId: collectionId
+                collectionId: collectionId,
             },
             show: {
                 fields: showFields,
                 documentType: documentType,
-                collectionId: collectionId
+                collectionId: collectionId,
             },
             header: {
-                collectionId: collectionId
+                collectionId: collectionId,
             },
             toolbar: {
-                collectionId: collectionId
-            }
+                collectionId: collectionId,
+            },
         }, emptyIcon: "Box", emptyTitle: "No content", emptyDescription: "No content added yet." }));
 };
 exports.default = AdminDocumentsList;

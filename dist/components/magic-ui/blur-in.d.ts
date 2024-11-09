@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 interface BlurIntProps {
     children: React.ReactNode;
     className?: string;
@@ -14,5 +14,5 @@ interface BlurIntProps {
     };
     duration?: number;
 }
-declare const BlurIn: ({ children, className, variant, duration }: BlurIntProps) => React.JSX.Element;
+declare const BlurIn: ({ children, className, variant, duration, }: BlurIntProps) => React.JSX.Element;
 export default BlurIn;

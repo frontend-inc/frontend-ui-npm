@@ -30,8 +30,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var CmsUser = function (props) {
-    var bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, requirePaid = props.requirePaid, rest = __rest(props, ["bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "requirePaid"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, requirePaid: requirePaid, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
+    var bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["bgColor", "mode", "py", "px", "maxWidth", "requireAuth"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_2.UserProfile, __assign({}, rest))));
 };
 exports.default = CmsUser;

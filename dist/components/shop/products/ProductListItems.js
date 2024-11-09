@@ -82,7 +82,7 @@ var ProductListItems = function (props) {
         });
     }); };
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
-        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { layout: 'grid', loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, idx) { return (react_1.default.createElement(components_1.BlurFade, { delay: 0.25 + idx * 0.05, inView: true, key: resource === null || resource === void 0 ? void 0 : resource.id },
+        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { layout: "grid", loading: loading }), resources === null || resources === void 0 ? void 0 : resources.map(function (resource, idx) { return (react_1.default.createElement(components_1.BlurFade, { delay: 0.25 + idx * 0.05, inView: true, key: resource === null || resource === void 0 ? void 0 : resource.id },
             react_1.default.createElement(__2.ProductListItem, __assign({ style: style, resource: resource, displayFields: displayFields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item)))); })),
         react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };

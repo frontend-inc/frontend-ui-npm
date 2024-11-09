@@ -1,7 +1,9 @@
 import React from 'react';
 import { ButtonType } from '../../../types';
 export type HeroProps = {
+    label?: string;
     title?: string;
+    subtitle?: string;
     description?: string;
     image?: string;
     style?: 'card' | 'cover' | 'list' | 'avatar' | 'spotlight';

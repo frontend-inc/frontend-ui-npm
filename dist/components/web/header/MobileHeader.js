@@ -17,7 +17,7 @@ var MobileHeader = function (_a) {
         react_1.default.createElement("div", { className: "flex justify-between items-center h-full px-4" },
             react_1.default.createElement("div", { className: "flex items-center" },
                 react_1.default.createElement(components_1.Button, { variant: "ghost", size: "icon", className: "mr-2", onClick: function () { return setMenuOpen(true); } },
-                    react_1.default.createElement(__1.Icon, { name: "Menu", size: 24 })),
+                    react_1.default.createElement(__1.Icon, { name: "Menu" })),
                 react_1.default.createElement(Logo_1.default, { handleClick: function () { return handleClick('/'); }, src: logo, width: logoWidth, height: logoHeight - 20 })),
             react_1.default.createElement("div", { className: "flex items-center" },
                 (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement("div", { className: "mr-2" },

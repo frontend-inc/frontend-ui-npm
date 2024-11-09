@@ -1,11 +1,11 @@
 import React from 'react';
-export type Breadcrumb = {
+export type BreadcrumbType = {
+    icon?: string;
     label: string;
     path: string;
 };
 export type BreadcrumbsProps = {
-    links: Breadcrumb[];
-    maxLinks?: number;
+    links: BreadcrumbType[];
     className?: string;
 };
 declare const Breadcrumbs: React.FC<BreadcrumbsProps>;

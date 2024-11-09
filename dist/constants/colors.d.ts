@@ -245,7 +245,6 @@ export declare const TAILWIND_COLOR_PICKER_MAP: {
 export declare const TAILWIND_COLORS: string[];
 export declare const TAILWIND_COLOR_MAP: {
     light: string;
-    dark: string;
     slate: string;
     gray: string;
     zinc: string;

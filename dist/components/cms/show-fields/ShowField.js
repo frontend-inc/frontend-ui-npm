@@ -55,7 +55,7 @@ var ShowField = function (props) {
         calendly_url: __1.FieldURL,
         soundcloud_audio: __1.FieldURL,
         vimeo_video: __1.FieldURL,
-        youtube_video: __1.FieldURL
+        youtube_video: __1.FieldURL,
     };
     var variantProps = {
         array: {
@@ -75,15 +75,15 @@ var ShowField = function (props) {
         },
         video: {
             height: 450,
-            width: 800
+            width: 800,
         },
         youtube_video: {
             height: 450,
-            width: 800
+            width: 800,
         },
         vimeo_video: {
             height: 450,
-            width: 800
+            width: 800,
         },
         location: {
             lat: resource === null || resource === void 0 ? void 0 : resource.lat,
@@ -91,14 +91,14 @@ var ShowField = function (props) {
             label: resource === null || resource === void 0 ? void 0 : resource.title,
             image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url,
             zoom: 16,
-            darkTheme: false
-        }
+            darkTheme: false,
+        },
     };
     var Component = components[fieldVariant] || __1.FieldString;
     var componentProps = (variantProps === null || variantProps === void 0 ? void 0 : variantProps[fieldVariant]) || {};
     if (!value || value == '')
         return null;
-    return (react_1.default.createElement("div", { className: 'w-full p-3 rounded-lg bg-muted/40 hover:bg-muted/60' },
+    return (react_1.default.createElement("div", { className: "w-full p-3 rounded-lg bg-muted/40 hover:bg-muted/60" },
         react_1.default.createElement(Component, __assign({ icon: icon, variant: "caption", value: value, label: label }, componentProps))));
 };
 exports.default = ShowField;

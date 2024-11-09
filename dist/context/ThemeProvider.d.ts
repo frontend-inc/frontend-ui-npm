@@ -1,6 +1,7 @@
 import React from 'react';
 type ThemeProviderProps = {
-    mode?: string;
+    mode?: 'light' | 'dark';
+    theme?: string;
     primaryColor?: string;
     headerFont?: string;
     bodyFont?: string;

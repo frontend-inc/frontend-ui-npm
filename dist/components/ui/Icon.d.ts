@@ -1,8 +1,7 @@
 import React from 'react';
 type LucideIconProps = {
     name: string;
-    color?: string;
-    size?: number;
+    size?: 'sm' | 'md' | 'lg' | 'xl';
     className?: string;
 };
 declare const LucideIcon: React.FC<LucideIconProps>;

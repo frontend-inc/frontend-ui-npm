@@ -24,7 +24,7 @@ var AdminCollectionForm = function (props) {
                         name: 'name',
                         placeholder: 'API name',
                         variant: 'slug',
-                    }
+                    },
                 ] })),
         !(collection === null || collection === void 0 ? void 0 : collection.id) && (react_1.default.createElement("div", { className: "px-4 grid grid-cols-2 md:grid-cols-3 gap-4" }, constants_1.COLLECTION_TEMPLATES.map(function (template, index) { return (react_1.default.createElement(components_2.SquareButton, { key: index, selected: collection.document_type == template.document_type, label: template.label, icon: template.icon, color: template.color, handleClick: function () { return handleClick(template); } })); }))),
         react_1.default.createElement(components_1.ErrorText, { error: (errors === null || errors === void 0 ? void 0 : errors.collection_type) && "collection type ".concat(errors.collection_type) })));

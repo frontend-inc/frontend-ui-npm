@@ -164,7 +164,9 @@ var DocumentFormWizardModal = function (props) {
         }
     }, [_resource, handle, url]);
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
-        !submitted ? (react_1.default.createElement(FormCard_1.default, { title: startTitle, description: startDescription, image: startImage, buttonText: startButtonText, handleClick: handleStartClick })) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, description: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleSuccess })),
-        react_1.default.createElement(FormWizardModal_1.default, { open: open, handleClose: function () { return setOpen(false); }, resource: resource, setResource: setResource, fields: fields, handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, buttonText: buttonText })));
+        !submitted ? (react_1.default.createElement(FormCard_1.default, { title: startTitle, subtitle: startDescription, image: startImage, buttonText: startButtonText, handleClick: handleStartClick })) : (react_1.default.createElement(FormCard_1.default, { title: endTitle, subtitle: endDescription, image: endImage, buttonText: endButtonText, handleClick: handleSuccess })),
+        react_1.default.createElement(FormWizardModal_1.default, { open: open, handleClose: function () { return setOpen(false); }, resource: resource, setResource: setResource, fields: fields, 
+            // @ts-ignore
+            handleChange: handleChange, handleRemove: handleRemove, handleSubmit: handleSubmit, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, buttonText: buttonText })));
 };
 exports.default = DocumentFormWizardModal;

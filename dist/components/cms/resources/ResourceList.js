@@ -149,17 +149,14 @@ var ResourceList = function (props) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
     var _9 = (0, react_1.useState)([]), activeFilters = _9[0], setActiveFilters = _9[1];
+    var _10 = (0, react_1.useState)([]), queryFilters = _10[0], setQueryFilters = _10[1];
     var handleFilter = function (name, value) {
-        var _a;
-        var newFilters = [];
-        if (activeFilters.find(function (f) { return Object.keys(f)[0] == name; })) {
-            newFilters = newFilters.filter(function (f) { return Object.keys(f)[0] != name; });
+        if (activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.find(function (f) { return f.name === name && f.value === value; })) {
+            setActiveFilters([]);
         }
         else {
-            // @ts-ignore
-            newFilters = __spreadArray(__spreadArray([], activeFilters, true), [(_a = {}, _a[name] = { eq: value }, _a)], false);
+            setActiveFilters([{ name: name, operator: 'eq', value: value }]);
         }
-        setActiveFilters(newFilters);
     };
     // Filter methods
     var handleClearFilters = function () {
@@ -324,8 +321,18 @@ var ResourceList = function (props) {
         });
     }); };
     (0, react_1.useEffect)(function () {
+        if (queryFilters) {
+            findMany(__assign(__assign({}, query), { filters: __spreadArray(__spreadArray([], (queryFilters || []), true), ((defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters) || []), true) }));
+        }
+    }, [queryFilters]);
+    (0, react_1.useEffect)(function () {
         if (activeFilters) {
-            findMany(__assign(__assign({}, query), { filters: __spreadArray(__spreadArray([], (activeFilters || []), true), ((defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters) || []), true) }));
+            setQueryFilters(activeFilters.map(function (f) {
+                var _a, _b;
+                return (_a = {},
+                    _a[f.name] = (_b = {}, _b[f.operator] = f.value, _b),
+                    _a);
+            }));
         }
     }, [activeFilters]);
     (0, react_1.useEffect)(function () {

@@ -22,7 +22,7 @@ var AdminProductsList = function () {
             { name: 'created_at', label: 'Date' },
         ], query: {
             sort_by: 'position',
-            sort_direction: 'asc'
+            sort_direction: 'asc',
         }, create: AdminProductCreateForm_1.default, edit: AdminProductEditForm_1.default, show: AdminProductShow_1.default, header: AdminProductHeader_1.default, toolbar: AdminProductToolbar_1.default, component: AdminProductItem_1.default, emptyIcon: "Shirt", emptyTitle: "No products", emptyDescription: "No products added yet." }));
 };
 exports.default = AdminProductsList;

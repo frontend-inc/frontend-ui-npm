@@ -1,4 +1,4 @@
-import React, { SVGProps } from "react";
+import React, { SVGProps } from 'react';
 export interface Iphone15ProProps extends SVGProps<SVGSVGElement> {
     width?: number;
     height?: number;

@@ -64,8 +64,8 @@ var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var core_1 = require("../../core");
 var ShopifyCartDiscountCodeInput = function () {
-    var _a = (0, react_1.useState)(null), discountCode = _a[0], setDiscountCode = _a[1];
-    var _b = (0, frontend_shopify_1.useCart)(), loading = _b.loading, cartApplyDiscountCode = _b.cartApplyDiscountCode;
+    var _a = (0, react_1.useState)(null), _b = _a[0], discountCode = _b === void 0 ? '' : _b, setDiscountCode = _a[1];
+    var _c = (0, frontend_shopify_1.useCart)(), loading = _c.loading, cartApplyDiscountCode = _c.cartApplyDiscountCode;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {

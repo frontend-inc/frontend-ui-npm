@@ -11,7 +11,7 @@ var frontend_shadcn_2 = require("frontend-shadcn");
 var NoImage = function (props) {
     var _a = props.height, height = _a === void 0 ? 240 : _a, _b = props.icon, icon = _b === void 0 ? 'Play' : _b, _c = props.aspectRatio, aspectRatio = _c === void 0 ? 1.0 : _c, disableBorderRadius = props.disableBorderRadius;
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(!disableBorderRadius && 'rounded-lg', 'relative h-full w-full overflow-hidden'), style: {
-            maxHeight: "".concat(height, "px")
+            maxHeight: "".concat(height, "px"),
         } },
         react_1.default.createElement(frontend_shadcn_2.AspectRatio, { ratio: aspectRatio },
             react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(!disableBorderRadius && 'rounded-lg', 'h-full w-full bg-gradient-to-br from-black to-gray-600') })),

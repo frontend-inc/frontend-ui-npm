@@ -67,6 +67,6 @@ function ShopifyCartDiscountCode(_a) {
         react_1.default.createElement("div", { className: "flex flex-row items-center space-x-2" },
             react_1.default.createElement(components_2.Label, { label: discountCode.code }),
             react_1.default.createElement(core_1.IconButton, { onClick: handleDelete },
-                react_1.default.createElement(components_1.Icon, { name: "Trash", size: 20 })))));
+                react_1.default.createElement(components_1.Icon, { name: "Trash", size: "sm" })))));
 }
 exports.default = ShopifyCartDiscountCode;

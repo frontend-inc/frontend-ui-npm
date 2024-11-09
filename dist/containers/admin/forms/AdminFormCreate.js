@@ -20,7 +20,6 @@ var components_1 = require("../../../components");
 var AdminFormCreate = function (props) {
     var fields = [
         { label: 'Image', name: 'image', variant: 'image' },
-        { label: 'Handle', name: 'handle', variant: 'slug' },
         { label: 'Label', name: 'label', variant: 'string' },
         { label: 'Title', name: 'title', variant: 'string' },
         { label: 'Description', name: 'description', variant: 'text' },

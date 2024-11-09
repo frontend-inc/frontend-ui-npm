@@ -47,7 +47,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var core_1 = require("../../core");
 var lucide_react_1 = require("lucide-react");
-var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
 var __2 = require("../..");
 var JsonbField = function (props) {
@@ -82,7 +81,9 @@ function JsonbItem(_a) {
 }
 var JsonbInput = function (props) {
     var title = props.title, name = props.name, label = props.label, _a = props.fields, fields = _a === void 0 ? [] : _a, _b = props.value, items = _b === void 0 ? [] : _b, handleChange = props.handleChange, info = props.info;
-    var _c = (0, hooks_1.useMenu)(), open = _c.open, openMenu = _c.openMenu, closeMenu = _c.closeMenu;
+    var _c = (0, react_1.useState)(false), open = _c[0], setOpen = _c[1];
+    var openMenu = function () { return setOpen(true); };
+    var closeMenu = function () { return setOpen(false); };
     var _d = (0, react_1.useState)({}), activeItem = _d[0], setActiveItem = _d[1];
     var _e = (0, react_1.useState)(0), currentIndex = _e[0], setCurrentIndex = _e[1];
     var _f = (0, react_1.useState)('title'), titleField = _f[0], setTitleField = _f[1];
@@ -94,14 +95,14 @@ var JsonbInput = function (props) {
         return emptyItem || {};
     };
     var handleEditClick = function (ev, value, index) {
-        openMenu(ev);
+        openMenu();
         setActiveItem(value);
         setCurrentIndex(index);
     };
     var handleAddClick = function (ev) {
         setActiveItem(buildEmptyItem(fields));
         setCurrentIndex(-1);
-        openMenu(ev);
+        openMenu();
     };
     var handleSubmit = function () {
         var newItems = __spreadArray([], items, true);

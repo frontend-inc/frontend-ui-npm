@@ -204,7 +204,7 @@ var useCart = function () {
         addQuantity: addQuantity,
         removeQuantity: removeQuantity,
         checkout: checkout,
-        subscribe: subscribe
+        subscribe: subscribe,
     };
 };
 exports.default = useCart;

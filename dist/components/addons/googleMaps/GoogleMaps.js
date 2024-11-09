@@ -60,7 +60,7 @@ function GoogleMap(_a) {
                 lat: res === null || res === void 0 ? void 0 : res.lat,
                 lng: res === null || res === void 0 ? void 0 : res.lng,
                 label: res === null || res === void 0 ? void 0 : res.title,
-                image: (_a = res === null || res === void 0 ? void 0 : res.image) === null || _a === void 0 ? void 0 : _a.url
+                image: (_a = res === null || res === void 0 ? void 0 : res.image) === null || _a === void 0 ? void 0 : _a.url,
             });
         });
         setGoogleMarkers((markers === null || markers === void 0 ? void 0 : markers.length) ? markers : []);

@@ -70,7 +70,7 @@ var navigation_1 = require("next/navigation");
 var DesktopAuthButton = function (props) {
     var handleClick = props.handleClick, icon = props.icon;
     return (react_1.default.createElement(components_1.Button, { variant: "ghost", size: "icon", onClick: handleClick, className: "p-0" },
-        react_1.default.createElement(components_2.Icon, { name: icon, size: 24 })));
+        react_1.default.createElement(components_2.Icon, { name: icon })));
 };
 var MobileShopifyAuthButton = function (props) {
     var handleClick = props.handleClick, icon = props.icon;

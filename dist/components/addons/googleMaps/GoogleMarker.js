@@ -36,7 +36,7 @@ var GoogleMarker = function (props) {
     var label = props.label, image = props.image, _a = props.lat, lat = _a === void 0 ? NYC_LAT : _a, _b = props.lng, lng = _b === void 0 ? NYC_LNG : _b;
     var position = {
         lat: lat,
-        lng: lng
+        lng: lng,
     };
     var _c = (0, react_google_maps_1.useAdvancedMarkerRef)(), markerRef = _c[0], setMarkerRef = _c[1];
     var _d = (0, react_1.useState)(false), infoWindowShown = _d[0], setInfoWindowShown = _d[1];

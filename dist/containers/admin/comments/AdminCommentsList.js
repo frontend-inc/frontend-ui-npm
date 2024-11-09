@@ -18,7 +18,7 @@ var AdminCommentsList = function () {
                 options: [
                     { label: 'Flagged', value: true },
                     { label: 'Not Flagged', value: false },
-                ]
+                ],
             },
         ], component: containers_1.AdminCommentItem, show: AdminCommentShow_1.default, emptyIcon: "MessageSquare", emptyTitle: "No comments", emptyDescription: "No comments yet." }));
 };

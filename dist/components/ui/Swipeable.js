@@ -63,8 +63,8 @@ var Swipeable = function (props) {
         react_1.default.createElement(SwipeableComponent, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true, interval: interval }, children),
         enableArrows && (react_1.default.createElement("div", { className: "absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full z-10" },
             react_1.default.createElement(core_1.IconButton, { color: "ghost", onClick: handlePrev, className: "ml-2" },
-                react_1.default.createElement(__1.Icon, { name: "ChevronLeft", size: 32 })),
+                react_1.default.createElement(__1.Icon, { name: "ChevronLeft", size: "xl" })),
             react_1.default.createElement(core_1.IconButton, { color: "ghost", onClick: handleNext, className: "mr-2" },
-                react_1.default.createElement(__1.Icon, { name: "ChevronRight", size: 32 }))))));
+                react_1.default.createElement(__1.Icon, { name: "ChevronRight", size: "xl" }))))));
 };
 exports.default = Swipeable;

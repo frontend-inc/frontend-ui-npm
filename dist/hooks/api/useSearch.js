@@ -74,9 +74,7 @@ var useSearch = function (props) {
             .forEach(function (filter) {
             var _a, _b;
             var name = filter.name, operator = filter.operator, value = filter.value;
-            filters = __spreadArray(__spreadArray([], filters, true), [
-                (_a = {}, _a[name] = (_b = {}, _b[operator] = value, _b), _a)
-            ], false);
+            filters = __spreadArray(__spreadArray([], filters, true), [(_a = {}, _a[name] = (_b = {}, _b[operator] = value, _b), _a)], false);
         });
         return filters;
     };

@@ -16,7 +16,7 @@ function Modal(_a) {
         react_1.default.createElement(frontend_shadcn_1.DialogContent, { className: mode },
             react_1.default.createElement(frontend_shadcn_1.DialogHeader, { className: "mt-4" },
                 react_1.default.createElement(frontend_shadcn_1.DialogTitle, null,
-                    react_1.default.createElement("span", { className: 'text-foreground' }, title)),
+                    react_1.default.createElement("span", { className: "text-foreground" }, title)),
                 description && react_1.default.createElement(frontend_shadcn_1.DialogDescription, null, description)),
             react_1.default.createElement(frontend_shadcn_2.ScrollArea, { className: "max-h-[440px]" },
                 react_1.default.createElement("div", { className: "space-y-4 p-4" }, loading ? (react_1.default.createElement(components_1.Loader, { loading: loading })) : (react_1.default.createElement("div", { className: "w-full" }, children)))),

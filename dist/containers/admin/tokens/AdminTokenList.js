@@ -18,8 +18,8 @@ var AdminTokenList = function () {
                 options: [
                     { label: 'Admin Key', value: true },
                     { label: 'Public Key', value: false },
-                ]
+                ],
             },
-        ], edit: AdminTokenForm_1.default, create: AdminTokenForm_1.default, component: containers_1.AdminTokenItem, emptyIcon: "Key", emptyTitle: "No API Keys", emptyDescription: "No API keys yet." }));
+        ], edit: AdminTokenForm_1.default, create: AdminTokenForm_1.default, component: containers_1.AdminTokenListItem, emptyIcon: "Key", emptyTitle: "No API Keys", emptyDescription: "No API keys yet." }));
 };
 exports.default = AdminTokenList;

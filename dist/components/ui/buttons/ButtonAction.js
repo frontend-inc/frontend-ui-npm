@@ -34,9 +34,9 @@ var ButtonAction = function (props) {
     var children = props.children, icon = props.icon, url = props.url, path = props.path, _a = props.variant, variant = _a === void 0 ? 'secondary' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, rest = __rest(props, ["children", "icon", "url", "path", "variant", "size"]);
     var onClick = (0, hooks_1.useNavigate)({
         url: url,
-        path: path
+        path: path,
     });
-    return (react_1.default.createElement(core_1.Button, __assign({ fullWidth: true, size: size, startIcon: icon && (react_1.default.createElement(__1.Icon, { name: icon, color: variant == 'default'
+    return (react_1.default.createElement(core_1.Button, __assign({ fullWidth: true, size: size, startIcon: icon && (react_1.default.createElement(__1.Icon, { name: icon, className: variant == 'default'
                 ? 'text-primary-foreground'
                 : 'text-secondary-foreground' })), 
         /* @ts-ignore */

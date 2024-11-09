@@ -48,5 +48,5 @@ var UISwipeableTestimonials_2 = __importDefault(require("./UISwipeableTestimonia
 var UIText_2 = __importDefault(require("./UIText"));
 exports.UI = {
     Text: UIText_2.default,
-    SwipeableTestimonials: UISwipeableTestimonials_2.default
+    SwipeableTestimonials: UISwipeableTestimonials_2.default,
 };

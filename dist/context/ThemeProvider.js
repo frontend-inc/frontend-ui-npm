@@ -31,9 +31,10 @@ var react_1 = __importStar(require("react"));
 var ThemeContext_1 = __importDefault(require("./ThemeContext"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var ThemeProvider = function (props) {
-    var _a = props || {}, mode = _a.mode, primaryColor = _a.primaryColor, headerFont = _a.headerFont, bodyFont = _a.bodyFont, borderRadius = _a.borderRadius, children = _a.children;
+    var _a = props || {}, _b = _a.mode, mode = _b === void 0 ? 'light' : _b, _c = _a.theme, theme = _c === void 0 ? 'light' : _c, primaryColor = _a.primaryColor, headerFont = _a.headerFont, bodyFont = _a.bodyFont, borderRadius = _a.borderRadius, children = _a.children;
     var value = {
         mode: mode,
+        theme: theme,
         primaryColor: primaryColor,
         headerFont: headerFont,
         bodyFont: bodyFont,
@@ -51,6 +52,6 @@ var ThemeProvider = function (props) {
         }
     }, [headerFont, bodyFont, borderRadius]);
     return (react_1.default.createElement(ThemeContext_1.default.Provider, { value: value },
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(mode, 'w-full') }, children)));
+        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(mode, theme, 'w-full') }, children)));
 };
 exports.default = ThemeProvider;

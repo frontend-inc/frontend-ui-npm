@@ -30,7 +30,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var AdminFormResponseItem_1 = __importDefault(require("./AdminFormResponseItem"));
+var AdminFormResponseListItem_1 = __importDefault(require("./AdminFormResponseListItem"));
 var AdminFormResponseToolbar_1 = __importDefault(require("./AdminFormResponseToolbar"));
 var AdminFormResponseShow_1 = __importDefault(require("./AdminFormResponseShow"));
 var AdminFormResponseEdit_1 = __importDefault(require("./AdminFormResponseEdit"));
@@ -59,7 +59,7 @@ var AdminFormResponsesList = function (props) {
     }, [form]);
     if (!headers.length)
         return null;
-    return (react_1.default.createElement(components_1.ResourceTable, { selectable: true, url: url, headers: headers, name: 'form_response', enableSearch: true, enableShow: true, enableEdit: true, enableDelete: true, toolbar: AdminFormResponseToolbar_1.default, component: AdminFormResponseItem_1.default, show: AdminFormResponseShow_1.default, edit: AdminFormResponseEdit_1.default, sortOptions: [
+    return (react_1.default.createElement(components_1.ResourceTable, { selectable: true, url: url, headers: headers, name: 'form_response', enableSearch: true, enableShow: true, enableEdit: true, enableDelete: true, toolbar: AdminFormResponseToolbar_1.default, component: AdminFormResponseListItem_1.default, show: AdminFormResponseShow_1.default, edit: AdminFormResponseEdit_1.default, sortOptions: [
             { name: 'name', label: 'Name' },
             { name: 'email', label: 'Email' },
         ], emptyIcon: "ListCheck", emptyTitle: "No responses", emptyDescription: "No forms have been submitted yet.", slots: {

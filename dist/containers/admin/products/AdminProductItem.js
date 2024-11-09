@@ -35,8 +35,8 @@ var AdminProductItem = function (props) {
                 {
                     label: 'Price',
                     name: 'display_price',
-                    variant: 'string'
-                }
+                    variant: 'string',
+                },
             ] }), secondaryAction: react_1.default.createElement(components_1.PublishLabel, { published: product === null || product === void 0 ? void 0 : product.published }), handleEdit: handleEdit, handleDelete: handleDelete, handleClick: handleClick, handleSelect: handleSelect }, rest)));
 };
 exports.default = AdminProductItem;

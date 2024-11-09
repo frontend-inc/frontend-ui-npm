@@ -57,6 +57,6 @@ var AddToCartButton = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(core_1.Button, { fullWidth: fullWidth, loading: loading, onClick: handleClick, disabled: !availableForSale, size: size, className: "w-full min-w-[160px]" }, buttonText));
+    return (react_1.default.createElement(core_1.Button, { fullWidth: fullWidth, loading: loading, onClick: handleClick, disabled: !availableForSale, size: size, className: 'w-full min-w-[160px]' }, buttonText));
 };
 exports.default = AddToCartButton;

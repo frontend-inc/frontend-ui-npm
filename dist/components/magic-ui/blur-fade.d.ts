@@ -1,6 +1,6 @@
-import React from "react";
-import { UseInViewOptions } from "framer-motion";
-type MarginType = UseInViewOptions["margin"];
+import React from 'react';
+import { UseInViewOptions } from 'framer-motion';
+type MarginType = UseInViewOptions['margin'];
 interface BlurFadeProps {
     children: React.ReactNode;
     className?: string;
