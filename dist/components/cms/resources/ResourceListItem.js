@@ -11,11 +11,11 @@ var frontend_shadcn_3 = require("frontend-shadcn");
 var components_1 = require("../../../components");
 var frontend_shadcn_4 = require("frontend-shadcn");
 var lucide_react_1 = require("lucide-react");
-var core_1 = require("../../core");
 var components_2 = require("../../../components");
+var components_3 = require("../../../components");
 function ResourceListItem(props) {
     var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryAction = props.secondaryAction, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.disableImage, disableImage = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? true : _b;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('bg-background border border-border hover:bg-muted/50 p-1 rounded-lg overflow-hidden ', enableBorder &&
+    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('bg-muted/20 hover:bg-muted/50 p-1 py-2 overflow-hidden rounded-xl', enableBorder &&
             'border-border hover:shadow-md mb-1 transition-shadow duration-200', selected && 'border-primary') },
         react_1.default.createElement("div", { className: "flex items-center p-1 rounded space-x-4" },
             sortable && (react_1.default.createElement(lucide_react_1.GripVertical, { className: "w-5 h-5 text-muted-foreground cursor-grab active:cursor-grabbing" })),
@@ -24,14 +24,14 @@ function ResourceListItem(props) {
                 react_1.default.createElement("button", { className: "w-full h-full focus:outline-none focus:ring-2", onClick: handleClick }, avatar))),
             !disableImage && (react_1.default.createElement("div", { className: "mr-2 w-[72px] h-[72px]" },
                 react_1.default.createElement("button", { className: "w-full h-full focus:outline-none focus:ring-2", onClick: handleClick },
-                    react_1.default.createElement(components_2.Image, { src: image || null, aspectRatio: 1.0, alt: image })))),
+                    react_1.default.createElement(components_3.Image, { src: image || null, aspectRatio: 1.0, alt: image })))),
             icon && (react_1.default.createElement("button", { className: "focus:outline-none focus:ring-2", onClick: handleClick },
                 react_1.default.createElement(frontend_shadcn_2.Avatar, { className: "mr-2 rounded" },
                     react_1.default.createElement(frontend_shadcn_2.AvatarFallback, { className: color },
-                        react_1.default.createElement(components_2.Icon, { name: icon }))))),
+                        react_1.default.createElement(components_3.RemixIcon, { name: icon }))))),
             react_1.default.createElement("div", { className: "flex-grow cursor-pointer", onClick: handleClick },
-                react_1.default.createElement(core_1.Typography, { variant: "body1" }, primary),
-                secondary && (react_1.default.createElement(core_1.Typography, { variant: "body2", className: "text-muted-foreground" }, secondary))),
+                react_1.default.createElement(components_2.Typography, { variant: "body1" }, primary),
+                secondary && (react_1.default.createElement(components_2.Typography, { variant: "body2", className: "text-muted-foreground" }, secondary))),
             react_1.default.createElement("div", { className: "flex items-center space-x-1" },
                 secondaryAction,
                 (menuActions || handleEdit || handleDelete) && (react_1.default.createElement(frontend_shadcn_4.DropdownMenu, null,

@@ -13,8 +13,6 @@ var CommentForm = function (props) {
         react_1.default.createElement("div", { className: "pl-0" },
             react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full items-start" },
                 react_1.default.createElement(components_2.TextInput, { errors: errors, name: "body", value: comment === null || comment === void 0 ? void 0 : comment.body, handleChange: handleChange, placeholder: "Leave a comment...", className: "w-full" }),
-                react_1.default.createElement(components_1.Button, { variant: "default", onClick: handleSubmit, disabled: loading, className: "flex items-center" },
-                    loading && react_1.default.createElement(components_2.IconLoading, { className: "mr-2 h-4 w-4 animate-spin" }),
-                    "Submit")))));
+                react_1.default.createElement(components_1.Button, { variant: "default", onClick: handleSubmit, disabled: loading, className: "flex items-center", loading: loading }, "Submit")))));
 };
 exports.default = CommentForm;

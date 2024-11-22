@@ -1,13 +1,11 @@
 import React from 'react';
-export type CoverProps = {
-    label?: string;
-    title: string;
-    subtitle?: string;
+import { HeadingProps } from '../../../types';
+export type CoverProps = HeadingProps & {
     buttonText?: string;
     image: string;
     height?: number;
     width?: number;
-    alignItems?: 'flex-start' | 'center' | 'flex-end';
+    alignItems?: 'items-start' | 'items-center' | 'items-end';
     alt?: string;
     handleClick?: () => void;
     enableGradient?: boolean;

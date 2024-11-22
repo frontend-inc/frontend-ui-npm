@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthUserListItem = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.StripeCustomerPortalButton = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthCookie = exports.AuthScreen = exports.AuthModal = exports.AuthMenu = exports.AuthLayout = exports.AuthButton = exports.AuthWall = exports.AuthGuard = void 0;
+exports.AuthUserListItem = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.StripeCustomerPortalButton = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthCookie = exports.AuthScreen = exports.AuthModal = exports.AuthUserMenu = exports.AuthMenu = exports.AuthLayout = exports.AuthButton = exports.AuthWall = exports.AuthGuard = void 0;
 __exportStar(require("./my-account"), exports);
 var AuthGuard_1 = require("./AuthGuard");
 Object.defineProperty(exports, "AuthGuard", { enumerable: true, get: function () { return __importDefault(AuthGuard_1).default; } });
@@ -29,6 +29,8 @@ var AuthLayout_1 = require("./layouts/AuthLayout");
 Object.defineProperty(exports, "AuthLayout", { enumerable: true, get: function () { return __importDefault(AuthLayout_1).default; } });
 var AuthMenu_1 = require("./buttons/AuthMenu");
 Object.defineProperty(exports, "AuthMenu", { enumerable: true, get: function () { return __importDefault(AuthMenu_1).default; } });
+var AuthUserMenu_1 = require("./buttons/AuthUserMenu");
+Object.defineProperty(exports, "AuthUserMenu", { enumerable: true, get: function () { return __importDefault(AuthUserMenu_1).default; } });
 var AuthModal_1 = require("./modals/AuthModal");
 Object.defineProperty(exports, "AuthModal", { enumerable: true, get: function () { return __importDefault(AuthModal_1).default; } });
 var AuthScreen_1 = require("./layouts/AuthScreen");

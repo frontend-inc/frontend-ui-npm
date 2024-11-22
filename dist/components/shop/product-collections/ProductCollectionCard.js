@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var __1 = require("../..");
 var ProductCollectionCard = react_1.default.forwardRef(function (props, ref) {
     var label = props.label, primary = props.primary, handleClick = props.handleClick, image = props.image, disableBorder = props.disableBorder, _a = props.slots, slots = _a === void 0 ? {
@@ -28,7 +28,7 @@ var ProductCollectionCard = react_1.default.forwardRef(function (props, ref) {
         react_1.default.createElement("div", { className: "min-h-[240px] w-full relative overflow-hidden" },
             react_1.default.createElement(__1.Image, __assign({ src: image, height: 240, alt: primary, label: label, aspectRatio: 4 / 3, handleClick: handleClick, disableBorderRadius: !disableBorder }, slots.image))),
         react_1.default.createElement("div", { className: "px-4 pt-2 pb-4 w-full" },
-            react_1.default.createElement(core_1.Typography, { variant: "subtitle1" }, primary))));
+            react_1.default.createElement(components_1.Typography, { variant: "subtitle1" }, primary))));
 });
 ProductCollectionCard.displayName = 'ProductCollectionCard';
 exports.default = ProductCollectionCard;

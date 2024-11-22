@@ -1,7 +1,7 @@
 import React from 'react';
 export type ProductCollectionCoverProps = {
     height?: number;
-    alignItems?: 'flex-start' | 'center' | 'flex-end';
+    alignItems?: 'items-center' | 'items-start' | 'items-end';
     alt?: string;
     handleClick?: () => void;
     enableGradient?: boolean;

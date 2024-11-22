@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FieldVideo = exports.FieldPrice = exports.FieldText = exports.FieldReference = exports.FieldRating = exports.FieldURL = exports.FieldString = exports.FieldLocation = exports.FieldJSON = exports.FieldImageThumbnail = exports.FieldImage = exports.FieldWrapper = exports.FieldFile = exports.FieldDate = exports.FieldBoolean = exports.FieldArray = exports.Field = void 0;
+exports.FieldVideo = exports.FieldPrice = exports.FieldText = exports.FieldReference = exports.FieldRating = exports.FieldURL = exports.FieldString = exports.FieldLocation = exports.FieldJSON = exports.FieldImageThumbnail = exports.FieldImage = exports.FieldWrapper = exports.FieldFile = exports.FieldHTML = exports.FieldDate = exports.FieldBoolean = exports.FieldArray = exports.Field = void 0;
 __exportStar(require("./addons"), exports);
 var Field_1 = require("./Field");
 Object.defineProperty(exports, "Field", { enumerable: true, get: function () { return __importDefault(Field_1).default; } });
@@ -27,6 +27,8 @@ var FieldBoolean_1 = require("./FieldBoolean");
 Object.defineProperty(exports, "FieldBoolean", { enumerable: true, get: function () { return __importDefault(FieldBoolean_1).default; } });
 var FieldDate_1 = require("./FieldDate");
 Object.defineProperty(exports, "FieldDate", { enumerable: true, get: function () { return __importDefault(FieldDate_1).default; } });
+var FieldHTML_1 = require("./FieldHTML");
+Object.defineProperty(exports, "FieldHTML", { enumerable: true, get: function () { return __importDefault(FieldHTML_1).default; } });
 var FieldFile_1 = require("./FieldFile");
 Object.defineProperty(exports, "FieldFile", { enumerable: true, get: function () { return __importDefault(FieldFile_1).default; } });
 var FieldWrapper_1 = require("./FieldWrapper");

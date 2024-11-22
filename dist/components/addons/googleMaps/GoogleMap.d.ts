@@ -10,4 +10,4 @@ export type GoogleMapProps = {
     zoom?: number;
     enableBorder?: boolean;
 };
-export default function GoogleMap({ darkTheme, height, width, lat, lng, label, image, zoom, enableBorder, }: GoogleMapProps): React.JSX.Element;
+export default function GoogleMap(props: GoogleMapProps): React.JSX.Element;

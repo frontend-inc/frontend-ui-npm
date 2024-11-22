@@ -25,9 +25,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
-var react_google_maps_1 = require("@vis.gl/react-google-maps");
 var components_1 = require("../../../components");
+var react_google_maps_1 = require("@vis.gl/react-google-maps");
+var components_2 = require("../../../components");
 var NYC_LAT = 40.7128;
 var NYC_LNG = -74.006;
 // https://visgl.github.io/react-google-maps/docs/api-reference/components/map
@@ -52,7 +52,7 @@ var GoogleMarker = function (props) {
         infoWindowShown && (react_1.default.createElement(react_google_maps_1.InfoWindow, { anchor: setMarkerRef, onClose: handleClose },
             react_1.default.createElement("div", { className: "flex flex-col space-y-2 min-w-[160px]" },
                 image && (react_1.default.createElement("div", { className: "w-[64px] h-[64px]" },
-                    react_1.default.createElement(components_1.Image, { alt: label, aspectRatio: 1.0, src: image }))),
-                react_1.default.createElement(core_1.Typography, { variant: "subtitle2", className: "text-gray-900" }, label))))));
+                    react_1.default.createElement(components_2.Image, { alt: label, aspectRatio: 1.0, src: image }))),
+                react_1.default.createElement(components_1.Typography, { variant: "subtitle2", className: "text-gray-900" }, label))))));
 };
 exports.default = GoogleMarker;

@@ -9,5 +9,5 @@ type LayoutContainerProps = {
     requireAuth?: boolean;
     requirePaid?: boolean;
 };
-export default function LayoutContainer({ children, notifications, requireAuth, }: LayoutContainerProps): React.JSX.Element;
+export default function LayoutContainer(props: LayoutContainerProps): React.JSX.Element;
 export {};

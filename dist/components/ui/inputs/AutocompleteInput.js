@@ -28,9 +28,9 @@ var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var use_click_outside_1 = require("@raddix/use-click-outside");
-function AutocompleteInput(_a) {
-    var _b = _a.name, name = _b === void 0 ? 'title' : _b, _c = _a.value, value = _c === void 0 ? '' : _c, label = _a.label, _d = _a.placeholder, placeholder = _d === void 0 ? 'Search' : _d, handleChange = _a.handleChange, handleInputChange = _a.handleInputChange, _e = _a.options, options = _e === void 0 ? [] : _e, _f = _a.direction, direction = _f === void 0 ? 'column' : _f, info = _a.info;
-    var _g = (0, react_1.useState)(false), open = _g[0], setOpen = _g[1];
+function AutocompleteInput(props) {
+    var _a = props.name, name = _a === void 0 ? 'title' : _a, _b = props.value, value = _b === void 0 ? '' : _b, label = props.label, _c = props.placeholder, placeholder = _c === void 0 ? 'Search' : _c, handleChange = props.handleChange, handleInputChange = props.handleInputChange, _d = props.options, options = _d === void 0 ? [] : _d, _e = props.direction, direction = _e === void 0 ? 'column' : _e, info = props.info;
+    var _f = (0, react_1.useState)(false), open = _f[0], setOpen = _f[1];
     var wrapperRef = (0, react_1.useRef)(null);
     var handleClick = function (option) {
         setOpen(false);
@@ -58,7 +58,7 @@ function AutocompleteInput(_a) {
                 (option === null || option === void 0 ? void 0 : option.image) && (react_1.default.createElement(frontend_shadcn_1.Avatar, { className: "h-8 w-8" },
                     react_1.default.createElement(frontend_shadcn_1.AvatarImage, { src: option.image, alt: option.label }),
                     react_1.default.createElement(frontend_shadcn_1.AvatarFallback, null, option.label[0]))),
-                (option === null || option === void 0 ? void 0 : option.icon) && (react_1.default.createElement(__1.Icon, { name: option.icon, className: "h-5 w-5" }))),
+                (option === null || option === void 0 ? void 0 : option.icon) && (react_1.default.createElement(__1.RemixIcon, { name: option.icon, className: "h-5 w-5" }))),
             react_1.default.createElement("span", { className: "flex-grow text-sm" }, option.label))); })))));
 }
 exports.default = AutocompleteInput;

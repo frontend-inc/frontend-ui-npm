@@ -67,6 +67,6 @@ var ShopifySearchModal = function (props) {
         react_1.default.createElement("div", { className: "w-full flex flex-row justify-center" },
             react_1.default.createElement(components_1.SearchInput, { name: "keywords", value: keywords, handleChange: handleChange, handleSearch: handleSearch, placeholder: 'Search...' })),
         react_1.default.createElement(shopify_1.ShopifyProducts, { loading: loading, products: products }),
-        (keywords === null || keywords === void 0 ? void 0 : keywords.length) > 0 && !loading && (products === null || products === void 0 ? void 0 : products.length) == 0 && (react_1.default.createElement(components_1.Placeholder, { icon: 'search', title: "No search results", description: "Try another search term" }))));
+        (keywords === null || keywords === void 0 ? void 0 : keywords.length) > 0 && !loading && (products === null || products === void 0 ? void 0 : products.length) == 0 && (react_1.default.createElement(components_1.Empty, { icon: "ri-search-line", title: "No search results", description: "Try another search term" }))));
 };
 exports.default = ShopifySearchModal;

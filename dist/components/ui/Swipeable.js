@@ -29,10 +29,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var react_swipeable_views_1 = __importDefault(require("react-swipeable-views"));
-var __1 = require("..");
 var react_swipeable_views_utils_1 = require("react-swipeable-views-utils");
 var core_1 = require("../core");
 var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@remixicon/react");
 var AutoPlaySwipeableViews = (0, react_swipeable_views_utils_1.autoPlay)(react_swipeable_views_1.default);
 var Swipeable = function (props) {
     var _a = props.children, children = _a === void 0 ? [] : _a, _b = props.interval, interval = _b === void 0 ? 5000 : _b, _c = props.enableArrows, enableArrows = _c === void 0 ? false : _c, _d = props.enableAutoPlay, enableAutoPlay = _d === void 0 ? false : _d, className = props.className;
@@ -63,8 +63,8 @@ var Swipeable = function (props) {
         react_1.default.createElement(SwipeableComponent, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true, interval: interval }, children),
         enableArrows && (react_1.default.createElement("div", { className: "absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full z-10" },
             react_1.default.createElement(core_1.IconButton, { color: "ghost", onClick: handlePrev, className: "ml-2" },
-                react_1.default.createElement(__1.Icon, { name: "ChevronLeft", size: "xl" })),
+                react_1.default.createElement(react_2.RiArrowLeftSLine, { size: 32 })),
             react_1.default.createElement(core_1.IconButton, { color: "ghost", onClick: handleNext, className: "mr-2" },
-                react_1.default.createElement(__1.Icon, { name: "ChevronRight", size: "xl" }))))));
+                react_1.default.createElement(react_2.RiArrowRightSLine, { size: 32 }))))));
 };
 exports.default = Swipeable;

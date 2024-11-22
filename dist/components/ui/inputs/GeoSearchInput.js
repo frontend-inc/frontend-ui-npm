@@ -26,7 +26,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var use_debounce_1 = require("use-debounce");
-var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var components_1 = require("../../../components");
@@ -98,6 +97,6 @@ function GeoSearchInput(_a) {
                 }
             } }),
         react_1.default.createElement(components_1.Button, { onClick: function () { return handleSearch(text, locationText); }, type: "button", variant: "ghost", size: "icon", className: "mr-1" },
-            react_1.default.createElement(__1.Icon, { name: "Search", className: "h-4 w-4 text-muted-foreground" }))));
+            react_1.default.createElement(components_1.RemixIcon, { name: "ri-search-line", className: "text-muted-foreground" }))));
 }
 exports.default = GeoSearchInput;

@@ -49,7 +49,7 @@ var StripeCreditCardElement = function (props) {
     var _a = props || {}, handleSubmit = _a.handleSubmit, handleCancel = _a.handleCancel;
     var stripe = (0, react_stripe_js_1.useStripe)();
     var elements = (0, react_stripe_js_1.useElements)();
-    var showAlertError = (0, hooks_1.useAlerts)().showAlertError;
+    var showAlertError = (0, hooks_1.useToast)().showAlertError;
     var handleClick = function (e) { return __awaiter(void 0, void 0, void 0, function () {
         var cardElement, res, stripeToken, last4;
         return __generator(this, function (_a) {

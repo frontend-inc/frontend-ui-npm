@@ -10,6 +10,6 @@ var ErrorText = function (props) {
     var error = props.error;
     if (!error)
         return null;
-    return (react_1.default.createElement(core_1.Typography, { variant: "overline", className: "text-destructive" }, error));
+    return react_1.default.createElement(core_1.Typography, { variant: "destructive" }, error);
 };
 exports.default = ErrorText;

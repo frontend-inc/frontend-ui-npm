@@ -76,7 +76,7 @@ var UserForm = function (props) {
         }
     };
     var _a = props.buttonText, buttonText = _a === void 0 ? 'Update Profile' : _a, fields = props.fields, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c;
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
+    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var _d = (0, frontend_js_1.useAuth)(), delayedLoading = _d.delayedLoading, errors = _d.errors, user = _d.user, setUser = _d.setUser, fetchMe = _d.fetchMe, currentUser = _d.currentUser, updateMe = _d.updateMe, handleChange = _d.handleChange, deleteAvatar = _d.deleteAvatar;
     var handleRemove = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {

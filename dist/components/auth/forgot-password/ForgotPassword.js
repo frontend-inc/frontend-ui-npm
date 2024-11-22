@@ -47,7 +47,7 @@ var frontend_js_1 = require("frontend-js");
 var navigation_1 = require("next/navigation");
 var ForgotPassword = function (props) {
     var _a = props || {}, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl;
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
+    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var _b = (0, frontend_js_1.useAuth)(), loading = _b.loading, errors = _b.errors, user = _b.user, handleChange = _b.handleChange, forgotPassword = _b.forgotPassword;
     var router = (0, navigation_1.useRouter)();
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {

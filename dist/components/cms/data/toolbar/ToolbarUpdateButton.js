@@ -85,7 +85,7 @@ var ToolbarUpdateButton = function (props) {
     }); };
     var handleRemove = function () { return null; };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(core_1.Button, { color: "secondary", onClick: function () { return setOpen(true); }, startIcon: icon && react_1.default.createElement(__1.Icon, { name: icon }) }, buttonText),
+        react_1.default.createElement(core_1.Button, { color: "secondary", onClick: function () { return setOpen(true); }, startIcon: icon && react_1.default.createElement(__1.RemixIcon, { name: icon }) }, buttonText),
         react_1.default.createElement(__1.Modal, { open: open, handleClose: handleClose, title: "Update selected (".concat(selectedIds.length, ")"), loading: loading },
             react_1.default.createElement("div", { className: "p-2" },
                 react_1.default.createElement(__1.Form, { errors: errors, fields: fields, resource: resource, handleChange: handleChange, buttonText: "Update All", handleRemove: handleRemove, handleSubmit: handleSubmit })))));

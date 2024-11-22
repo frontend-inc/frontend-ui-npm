@@ -4,5 +4,5 @@ type FavoriteButtonProps = {
     size?: 'small' | 'large';
     variant?: 'rounded' | 'circular';
 };
-export default function FavoriteButton({ resource, size, variant, }: FavoriteButtonProps): React.JSX.Element;
+export default function FavoriteButton(props: FavoriteButtonProps): React.JSX.Element;
 export {};

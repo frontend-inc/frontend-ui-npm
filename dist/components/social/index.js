@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SocialFields = exports.SocialField = exports.SocialButtons = exports.ShareButton = exports.ProductFavoriteButton = exports.ProductLikeButton = exports.LikeButton = exports.FavoriteButton = void 0;
+exports.SocialFields = exports.SocialField = exports.SocialButtons = exports.ShareModal = exports.ShareButton = exports.ProductFavoriteButton = exports.ProductLikeButton = exports.LikeButton = exports.FavoriteButton = void 0;
 var FavoriteButton_1 = require("./favorites/FavoriteButton");
 Object.defineProperty(exports, "FavoriteButton", { enumerable: true, get: function () { return __importDefault(FavoriteButton_1).default; } });
 var LikeButton_1 = require("./likes/LikeButton");
@@ -28,6 +28,8 @@ var ProductFavoriteButton_1 = require("./product-favorites/ProductFavoriteButton
 Object.defineProperty(exports, "ProductFavoriteButton", { enumerable: true, get: function () { return __importDefault(ProductFavoriteButton_1).default; } });
 var ShareButton_1 = require("./share/ShareButton");
 Object.defineProperty(exports, "ShareButton", { enumerable: true, get: function () { return __importDefault(ShareButton_1).default; } });
+var ShareModal_1 = require("./share/ShareModal");
+Object.defineProperty(exports, "ShareModal", { enumerable: true, get: function () { return __importDefault(ShareModal_1).default; } });
 var SocialButtons_1 = require("./buttons/SocialButtons");
 Object.defineProperty(exports, "SocialButtons", { enumerable: true, get: function () { return __importDefault(SocialButtons_1).default; } });
 var SocialField_1 = require("./fields/SocialField");

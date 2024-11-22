@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var AIChatForm_1 = __importDefault(require("./AIChatForm"));
 var AIChatMessages_1 = __importDefault(require("./AIChatMessages"));
 var react_2 = require("ai/react");
@@ -46,6 +46,6 @@ var AIChat = function (props) {
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
         react_1.default.createElement(AIChatMessages_1.default, { avatar: avatar, messages: messages }),
         react_1.default.createElement(AIChatForm_1.default, { label: label, prompt: prompt, setMessages: setMessages, input: input, handleInputChange: handleInputChange }),
-        react_1.default.createElement(core_1.Button, { fullWidth: true, onClick: handleChatSubmit, loading: loading }, buttonText)));
+        react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleChatSubmit, loading: loading }, buttonText)));
 };
 exports.default = AIChat;

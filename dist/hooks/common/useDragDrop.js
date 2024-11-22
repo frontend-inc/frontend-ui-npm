@@ -36,7 +36,7 @@ var useDragDrop = function (props) {
         // moving to same list
         if (source.droppableId === destination.droppableId) {
             var sorted_1 = reorder(current.children, source.index, destination.index);
-            var updatedColumns = columns.map(function (col) {
+            var updatedColumns = columns === null || columns === void 0 ? void 0 : columns.map(function (col) {
                 if (String(col.id) == source.droppableId) {
                     return __assign(__assign({}, col), { children: sorted_1 });
                 }
@@ -52,7 +52,7 @@ var useDragDrop = function (props) {
             current.children.splice(source.index, 1);
             // insert into next
             next.children.splice(destination.index, 0, target);
-            var updatedColumns = columns.map(function (col) {
+            var updatedColumns = columns === null || columns === void 0 ? void 0 : columns.map(function (col) {
                 if (String(col.id) == source.droppableId) {
                     return current;
                 }

@@ -59,7 +59,7 @@ var CollectionList = function (props) {
         destroy: defaultSlots.destroy,
         header: defaultSlots.header,
         toolbar: __assign({}, defaultSlots.toolbar),
-        empty: defaultSlots.empty,
+        empty: __assign(__assign({}, defaultSlots.empty), { icon: 'ri-search-line', title: 'No items found', description: 'Try to adjust your filters or search query' }),
         item: __assign(__assign({}, defaultSlots.item), { circular: circular, disableImage: disableImage, style: style, buttons: buttons, listFields: listFields, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments, enableGradient: enableGradient, enableOverlay: enableOverlay }),
     };
     var layout = {

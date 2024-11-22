@@ -42,7 +42,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var hooks_1 = require("../../../hooks");
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var StripeCustomerPortalButton = function () {
     var _a = (0, hooks_1.useStripeCustomerPortal)(), loading = _a.loading, stripeCustomerPortal = _a.stripeCustomerPortal;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -62,6 +62,6 @@ var StripeCustomerPortalButton = function () {
             }
         });
     }); };
-    return (react_1.default.createElement(core_1.Button, { onClick: handleClick }, loading ? 'Connecting...' : 'Manage Payments with Stripe'));
+    return (react_1.default.createElement(components_1.Button, { onClick: handleClick }, loading ? 'Connecting...' : 'Manage Payments with Stripe'));
 };
 exports.default = StripeCustomerPortalButton;

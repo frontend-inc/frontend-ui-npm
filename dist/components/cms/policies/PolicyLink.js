@@ -58,14 +58,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var link_1 = __importDefault(require("next/link"));
 var PolicyLink = function (props) {
     var _a = props || {}, label = _a.label, handle = _a.handle;
     var _b = (0, hooks_1.usePolicies)(), loading = _b.loading, policy = _b.policy, findPolicy = _b.findPolicy;
@@ -83,7 +79,7 @@ var PolicyLink = function (props) {
         });
     }); };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(link_1.default, { href: "#", className: "p-2 text-sm text-muted-foreground hover:underline", onClick: handleClick }, label),
+        react_1.default.createElement(components_1.Button, { variant: "link", className: "p-2 text-sm text-muted-foreground hover:underline", onClick: handleClick }, label),
         react_1.default.createElement(components_1.Drawer, { loading: loading, title: policy === null || policy === void 0 ? void 0 : policy.title, open: open, handleClose: function () { return setOpen(false); }, maxWidth: "sm" },
             react_1.default.createElement("div", { className: "p-6 text-foreground text-medium whitespace-pre-line" }, policy === null || policy === void 0 ? void 0 : policy.body))));
 };

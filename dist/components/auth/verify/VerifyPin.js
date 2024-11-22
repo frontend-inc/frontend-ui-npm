@@ -72,7 +72,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var navigation_1 = require("next/navigation");
@@ -129,6 +129,6 @@ var VerifyPin = function (props) {
         react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement("div", { className: "flex flex-col space-y-3" },
                 !showVerifyPin ? (react_1.default.createElement(__1.VerifySendPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLogin })) : (react_1.default.createElement(__1.VerifyPinForm, { errors: errors, user: user, handleChange: handleChange, handleSubmit: handleVerifyPin, handleResendPin: handleResendPin })),
-                loginUrl && (react_1.default.createElement(core_1.Button, { fullWidth: true, onClick: handleLogin }, "Back to login"))))));
+                loginUrl && (react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleLogin }, "Back to login"))))));
 };
 exports.default = VerifyPin;

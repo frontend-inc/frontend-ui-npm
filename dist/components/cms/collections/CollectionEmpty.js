@@ -13,6 +13,6 @@ var CollectionEmpty = function (props) {
     if ((resources === null || resources === void 0 ? void 0 : resources.length) > 0)
         return null;
     return (react_1.default.createElement("div", { className: "p-2 w-full flex justify-center items-center" },
-        react_1.default.createElement(__1.Placeholder, { icon: icon, title: title, description: description })));
+        react_1.default.createElement(__1.Empty, { icon: icon, title: title, description: description })));
 };
 exports.default = CollectionEmpty;

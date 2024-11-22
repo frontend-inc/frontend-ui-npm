@@ -46,6 +46,6 @@ var ShopifyCart = function (props) {
             react_1.default.createElement(__2.ShopifyCartLines, null),
             react_1.default.createElement(__2.ShopifyCartDiscounts, null)),
         react_1.default.createElement(__2.ShopifyCartTotals, null))) : (react_1.default.createElement("div", { className: "h-1/2 flex flex-col justify-center items-center" },
-        react_1.default.createElement(__1.Placeholder, { icon: 'ShoppingCart', title: "Your cart is empty", description: "Continue shopping to add items to your cart" })))));
+        react_1.default.createElement(__1.Empty, { icon: "ri-shopping-cart-2-fill", title: "Your cart is empty", description: "Continue shopping to add items to your cart" })))));
 };
 exports.default = ShopifyCart;

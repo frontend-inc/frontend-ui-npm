@@ -31,7 +31,7 @@ var components_1 = require("../../components");
 var shopify_1 = require("../../components/shopify");
 var ShopifyCollectionCover = function (props) {
     var bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["bgColor", "mode", "py", "px", "maxWidth", "requireAuth"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, mode: "dark", py: 0, px: 0, maxWidth: maxWidth },
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, mode: "dark", py: "none", px: "none", maxWidth: maxWidth },
         react_1.default.createElement(shopify_1.ShopifyCollectionCover, __assign({}, rest))));
 };
 exports.default = ShopifyCollectionCover;

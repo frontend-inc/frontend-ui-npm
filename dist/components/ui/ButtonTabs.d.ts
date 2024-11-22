@@ -10,5 +10,5 @@ type ButtonTabsProps = {
     fullWidth?: boolean;
     value: string | number;
 };
-export default function ButtonTabs({ handleChange, options, value, className, fullWidth, }: ButtonTabsProps): React.JSX.Element;
+export default function ButtonTabs(props: ButtonTabsProps): React.JSX.Element;
 export {};

@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var KlaviyoButton = function (props) {
     var _a = props || {}, formId = _a.formId, _b = _a.variant, variant = _b === void 0 ? 'default' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Subscribe' : _c;
     var handleClick = function () {
@@ -17,6 +17,6 @@ var KlaviyoButton = function (props) {
     if (!formId)
         return null;
     return (react_1.default.createElement("div", { className: "flex flex-row justify-center" },
-        react_1.default.createElement(core_1.Button, { variant: variant, onClick: handleClick }, buttonText)));
+        react_1.default.createElement(components_1.Button, { variant: variant, onClick: handleClick }, buttonText)));
 };
 exports.default = KlaviyoButton;

@@ -4,5 +4,5 @@ type IconLoadingProps = {
     size?: number;
     className?: string;
 };
-export default function IconLoading({ size, color, className, }: IconLoadingProps): React.JSX.Element;
+export default function IconLoading(props: IconLoadingProps): React.JSX.Element;
 export {};

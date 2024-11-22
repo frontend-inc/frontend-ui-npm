@@ -17,7 +17,7 @@ var SquareButton = function (props) {
                 height: 48,
             } },
             react_1.default.createElement(frontend_shadcn_1.AvatarFallback, { className: color },
-                react_1.default.createElement(components_1.Icon, { name: icon, className: "text-white" }))),
+                react_1.default.createElement(components_1.RemixIcon, { name: icon, className: "text-white" }))),
         react_1.default.createElement("div", { className: "text-sm text-left font-medium text-foreground" }, label)));
 };
 exports.default = SquareButton;

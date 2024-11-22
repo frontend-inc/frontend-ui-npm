@@ -30,7 +30,7 @@ var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var ProductCollectionCover = function (props) {
     var _a;
-    var handleClick = props.handleClick, _b = props.height, height = _b === void 0 ? 400 : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? true : _e, _f = props.alignItems, alignItems = _f === void 0 ? 'center' : _f, productCollectionId = props.productCollectionId;
+    var handleClick = props.handleClick, _b = props.height, height = _b === void 0 ? 400 : _b, _c = props.alt, alt = _c === void 0 ? 'image' : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? true : _e, _f = props.alignItems, alignItems = _f === void 0 ? 'items-center' : _f, productCollectionId = props.productCollectionId;
     var _g = (0, hooks_1.useProductCollections)(), productCollection = _g.productCollection, findProductCollection = _g.findProductCollection;
     (0, react_1.useEffect)(function () {
         if (productCollectionId) {

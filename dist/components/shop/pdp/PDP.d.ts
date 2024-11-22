@@ -5,17 +5,16 @@ export type PDPProps = {
     image?: string;
     price?: string;
     compareAtPrice?: string;
-    description?: string;
-    primary?: string;
-    secondary?: React.ReactNode;
+    rating?: number;
+    description: string;
+    title?: string;
     actions?: React.ReactNode;
     addToCart?: React.ReactNode;
     secondaryAction?: React.ReactNode;
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
+    enableRatings?: boolean;
     children?: React.ReactNode;
-    slots?: {
-        image?: any;
-        content?: any;
-    };
 };
 declare const PDP: React.FC<PDPProps>;
 export default PDP;

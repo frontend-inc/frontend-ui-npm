@@ -61,13 +61,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var __1 = require("../..");
+var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 // Call To Action
 var ContactForm = function (props) {
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _a = props || {}, label = _a.label, title = _a.title, subtitle = _a.subtitle, _b = _a.metafields, metafields = _b === void 0 ? [] : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
+    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
+    var _a = props || {}, _b = _a.metafields, metafields = _b === void 0 ? [] : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
     var _d = (0, frontend_js_1.useResource)({
         name: 'contact',
         url: "/api/v1/contacts",
@@ -88,34 +88,32 @@ var ContactForm = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement("div", { className: "w-full" },
-        react_1.default.createElement("div", { className: "container mx-auto max-w-screen-md" },
-            react_1.default.createElement(__1.Heading, { label: label, title: title, subtitle: subtitle, size: "lg", textAlign: "center" }),
-            react_1.default.createElement(__1.Form, { loading: delayedLoading, fields: __spreadArray(__spreadArray([
-                    {
-                        label: 'Name',
-                        name: 'name',
-                        placeholder: 'Full name',
-                        variant: 'string',
-                    },
-                    {
-                        label: 'Email',
-                        name: 'email',
-                        placeholder: 'Email',
-                        variant: 'string',
-                    }
-                ], metafields, true), [
-                    {
-                        label: 'Message',
-                        name: 'message',
-                        placeholder: 'Leave a message',
-                        variant: 'text',
-                    },
-                    {
-                        label: 'Join our newsletter',
-                        name: 'accepts_marketing',
-                        variant: 'boolean',
-                    },
-                ], false), resource: contact, handleChange: handleChange, errors: errors, handleSubmit: handleSubmit, buttonText: buttonText }))));
+    return (react_1.default.createElement(components_1.Container, { maxWidth: "md" },
+        react_1.default.createElement(components_1.Form, { loading: delayedLoading, fields: __spreadArray(__spreadArray([
+                {
+                    label: 'Name',
+                    name: 'name',
+                    placeholder: 'Full name',
+                    variant: 'string',
+                },
+                {
+                    label: 'Email',
+                    name: 'email',
+                    placeholder: 'Email',
+                    variant: 'string',
+                }
+            ], metafields, true), [
+                {
+                    label: 'Message',
+                    name: 'message',
+                    placeholder: 'Leave a message',
+                    variant: 'text',
+                },
+                {
+                    label: 'Join our newsletter',
+                    name: 'accepts_marketing',
+                    variant: 'boolean',
+                },
+            ], false), resource: contact, handleChange: handleChange, errors: errors, handleSubmit: handleSubmit, buttonText: buttonText })));
 };
 exports.default = ContactForm;

@@ -4,6 +4,7 @@ type DesktopHeaderProps = {
     logo: string;
     links: MenuLinkType[];
     buttons: ButtonType[];
+    bgColor?: string;
     enableAuth?: boolean;
     enableShopify?: boolean;
     enableStripe?: boolean;

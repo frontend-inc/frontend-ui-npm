@@ -1,5 +1,3 @@
-export { default as AdminContext } from './AdminContext';
-export { default as AdminProvider } from './AdminProvider';
 export { default as AppContext } from './AppContext';
 export { default as AppProvider } from './AppProvider';
 export { default as ThemeContext } from './ThemeContext';
@@ -10,7 +8,3 @@ export { default as ShopContext } from './ShopContext';
 export { default as ShopProvider } from './ShopProvider';
 export { default as StripeContext } from './StripeContext';
 export { default as StripeProvider } from './StripeProvider';
-export { default as BrandfetchContext } from './BrandfetchContext';
-export { default as BrandfetchProvider } from './BrandfetchProvider';
-export { default as UnsplashContext } from './UnsplashContext';
-export { default as UnsplashProvider } from './UnsplashProvider';

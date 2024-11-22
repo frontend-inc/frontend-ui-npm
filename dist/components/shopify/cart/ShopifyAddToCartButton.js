@@ -64,11 +64,11 @@ var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var addons_1 = require("../../../hooks/addons");
 var hooks_1 = require("../../../hooks");
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var __1 = require("..");
 var frontend_shopify_2 = require("frontend-shopify");
 var ShopifyAddToCartButton = function (props) {
-    var showAlertError = (0, hooks_1.useAlerts)().showAlertError;
+    var showAlertError = (0, hooks_1.useToast)().showAlertError;
     var trackAddToCart = (0, addons_1.useSegment)().trackAddToCart;
     var toggleCart = (0, react_1.useContext)(frontend_shopify_2.ShopifyContext).toggleCart;
     var _a = (0, frontend_shopify_1.useCart)(), loading = _a.loading, cartLineAdd = _a.cartLineAdd;
@@ -125,7 +125,7 @@ var ShopifyAddToCartButton = function (props) {
         enableSubscription && (react_1.default.createElement(__1.ShopifySubscriptionSelector, { product: product, activeSellingPlanId: activeSellingPlanId, handleChange: handleSellingPlanChange })),
         react_1.default.createElement("div", { className: "flex flex-row space-x-2 justify-content items-center" },
             enableQuantity == true && (react_1.default.createElement(__1.ShopifyQuantitySelector, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity })),
-            react_1.default.createElement(core_1.Button, { fullWidth: true, onClick: handleAddToCart, variant: buttonVariant, loading: loading, size: size }, label),
+            react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleAddToCart, variant: buttonVariant, loading: loading, size: size }, label),
             enableFavorites && react_1.default.createElement(__1.ShopifyProductFavoriteButton, { product: product }))));
 };
 exports.default = ShopifyAddToCartButton;

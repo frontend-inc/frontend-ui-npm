@@ -22,6 +22,6 @@ var ShopifyAuthButton = function () {
     };
     if (!customer)
         return null;
-    return (react_1.default.createElement(__1.UserMenu, { handleLogoutClick: handleLogoutClick, handleClick: handleClick }));
+    return (react_1.default.createElement(__1.AuthUserMenu, { handleLogoutClick: handleLogoutClick, handleClick: handleClick }));
 };
 exports.default = ShopifyAuthButton;

@@ -48,7 +48,7 @@ var hooks_1 = require("../../../hooks");
 var navigation_1 = require("next/navigation");
 var ShopifyChangePassword = function (props) {
     var _a = props || {}, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl;
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
+    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var _b = (0, frontend_shopify_1.useAuth)(), loading = _b.loading, errors = _b.errors, customer = _b.customer, setCustomer = _b.setCustomer, handleChange = _b.handleChange, forgotPassword = _b.forgotPassword;
     var router = (0, navigation_1.useRouter)();
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {

@@ -9,5 +9,5 @@ type LocationInputProps = TextInputPropsType & {
     zoom?: number;
     darkTheme?: boolean;
 };
-export default function LocationInput({ name, value, label, placeholder, handleChange, direction, height, width, zoom, darkTheme, enablePosition, lat, lng, }: LocationInputProps): React.JSX.Element;
+export default function LocationInput(props: LocationInputProps): React.JSX.Element;
 export {};

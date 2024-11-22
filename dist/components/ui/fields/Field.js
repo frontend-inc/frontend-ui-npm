@@ -52,6 +52,7 @@ var Field = function (props) {
         datetime: components_1.FieldDate,
         file: components_1.FieldFile,
         float: components_1.FieldString,
+        html: components_1.FieldHTML,
         image: components_1.FieldImage,
         video: components_1.FieldVideo,
         json: components_1.FieldJSON,

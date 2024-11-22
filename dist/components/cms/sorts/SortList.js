@@ -13,8 +13,8 @@ var SORT_DIRECTIONS = [
     { value: 'asc', label: 'Ascending' },
     { value: 'desc', label: 'Descending' },
 ];
-function SortList(_a) {
-    var sortOptions = _a.sortOptions, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSortBy = _a.handleSortBy, handleSortDirection = _a.handleSortDirection;
+function SortList(props) {
+    var sortOptions = props.sortOptions, sortBy = props.sortBy, sortDirection = props.sortDirection, handleSortBy = props.handleSortBy, handleSortDirection = props.handleSortDirection;
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-3 w-full p-4" },
         react_1.default.createElement(components_1.Typography, { variant: "body1", className: "text-primary font-medium" }, "Sort by"),
         react_1.default.createElement("ul", { className: "space-y-1" }, sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.map(function (sortOption) { return (react_1.default.createElement(components_1.Button, { key: sortOption.name, variant: "ghost", className: (0, frontend_shadcn_1.cn)('w-full justify-between', sortBy === sortOption.name && 'bg-muted'), onClick: function () { return handleSortBy(sortOption); }, endIcon: sortBy === sortOption.name && react_1.default.createElement(lucide_react_1.Check, { className: "w-4 h-4" }) }, sortOption.label)); })),

@@ -3,15 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CmsFavorites = exports.CmsComments = exports.CmsSimilarList = exports.CmsShow = exports.CmsList = exports.CmsPlacesList = exports.CmsFormWizard = exports.CmsForm = exports.CmsDetails = exports.CmsCarousel = void 0;
+exports.CmsFavorites = exports.CmsComments = exports.CmsSimilarList = exports.CmsShow = exports.CmsList = exports.CmsPlacesList = exports.CmsForm = exports.CmsCarousel = void 0;
 var CmsCarousel_1 = require("./CmsCarousel");
 Object.defineProperty(exports, "CmsCarousel", { enumerable: true, get: function () { return __importDefault(CmsCarousel_1).default; } });
-var CmsDetails_1 = require("./CmsDetails");
-Object.defineProperty(exports, "CmsDetails", { enumerable: true, get: function () { return __importDefault(CmsDetails_1).default; } });
 var CmsForm_1 = require("./CmsForm");
 Object.defineProperty(exports, "CmsForm", { enumerable: true, get: function () { return __importDefault(CmsForm_1).default; } });
-var CmsFormWizard_1 = require("./CmsFormWizard");
-Object.defineProperty(exports, "CmsFormWizard", { enumerable: true, get: function () { return __importDefault(CmsFormWizard_1).default; } });
 var CmsPlacesList_1 = require("./CmsPlacesList");
 Object.defineProperty(exports, "CmsPlacesList", { enumerable: true, get: function () { return __importDefault(CmsPlacesList_1).default; } });
 var CmsList_1 = require("./CmsList");

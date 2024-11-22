@@ -13,6 +13,6 @@ var ShopifyProductFavoritesCarousel = function (props) {
     var favorites = (0, frontend_shopify_1.useFavorites)().favorites;
     return (react_1.default.createElement("div", { className: "w-full" },
         react_1.default.createElement(__2.ShopifyProductCarousel, { products: favorites, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableAutoPlay: enableAutoPlay }),
-        (favorites === null || favorites === void 0 ? void 0 : favorites.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'Heart', title: 'No favorites', description: 'You have no favorites yet' }))));
+        (favorites === null || favorites === void 0 ? void 0 : favorites.length) === 0 && (react_1.default.createElement(__1.Empty, { icon: "ri-heart-2-fill", title: "No favorites", description: "You have no favorites yet" }))));
 };
 exports.default = ShopifyProductFavoritesCarousel;

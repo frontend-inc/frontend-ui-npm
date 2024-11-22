@@ -29,10 +29,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Backdrop = void 0;
 var react_1 = __importDefault(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
-var Backdrop = function (_a) {
-    var children = _a.children, open = _a.open, onClick = _a.onClick, className = _a.className, props = __rest(_a, ["children", "open", "onClick", "className"]);
-    if (!open)
-        return null;
-    return (react_1.default.createElement("div", __assign({ onClick: onClick ? onClick : undefined, className: (0, frontend_shadcn_1.cn)('bg-black fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 ease-in-out', open ? 'opacity-60' : 'opacity-0 pointer-events-none', className) }, props), children));
-};
+var framer_motion_1 = require("framer-motion");
+function Backdrop(props) {
+    var children = props.children, open = props.open, onClick = props.onClick, className = props.className, rest = __rest(props, ["children", "open", "onClick", "className"]);
+    return (react_1.default.createElement(framer_motion_1.AnimatePresence, null, open && (
+    //@ts-ignore
+    react_1.default.createElement(framer_motion_1.motion.div, __assign({ initial: { opacity: 0, backdropFilter: 'blur(0px)' }, animate: {
+            opacity: 1,
+            backdropFilter: 'blur(5px)',
+            transition: { duration: 0.3 },
+        }, exit: {
+            opacity: 0,
+            backdropFilter: 'blur(0px)',
+            transition: { duration: 0.3, delay: 0.1 },
+        }, onClick: onClick, className: (0, frontend_shadcn_1.cn)('fixed inset-0 z-40 flex items-center justify-center bg-black/60', className) }, props),
+        react_1.default.createElement(framer_motion_1.motion.div, { initial: { scale: 0.9, opacity: 0 }, animate: {
+                scale: 1,
+                opacity: 1,
+                transition: { delay: 0.1, duration: 0.2 },
+            }, exit: {
+                scale: 0.9,
+                opacity: 0,
+                transition: { duration: 0.2 },
+            } }, children)))));
+}
 exports.Backdrop = Backdrop;

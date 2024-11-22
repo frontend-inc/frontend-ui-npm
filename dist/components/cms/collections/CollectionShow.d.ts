@@ -1,17 +1,15 @@
 import React from 'react';
-import { ButtonType, FormFieldType, MetafieldType } from '../../../types';
-export type ShowModalProps = {
-    handle?: string;
-    enableBorder?: boolean;
-    enableOverlay?: boolean;
+import { ButtonType, MetafieldType } from '../../../types';
+export type CollectionShowProps = {
     buttons: ButtonType[];
     metafields: MetafieldType[];
-    fields?: FormFieldType[];
-    fieldName?: string;
     enableFavorites?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;
     enableComments?: boolean;
+    disableImage?: boolean;
+    enableBorder?: boolean;
+    enableOverlay?: boolean;
 };
-declare const ShowModal: React.FC<ShowModalProps>;
-export default ShowModal;
+declare const CollectionShow: React.FC<CollectionShowProps>;
+export default CollectionShow;

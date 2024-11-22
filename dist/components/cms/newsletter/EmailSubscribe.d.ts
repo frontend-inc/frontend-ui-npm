@@ -1,8 +1,5 @@
 import React from 'react';
 export type EmailSubscribeProps = {
-    label?: string;
-    title: string;
-    subtitle: string;
     buttonText?: string;
     href?: string;
     handleClick?: () => void;

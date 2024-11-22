@@ -18,6 +18,6 @@ var NoImage = function (props) {
         icon && (react_1.default.createElement("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" },
             react_1.default.createElement(frontend_shadcn_2.Avatar, null,
                 react_1.default.createElement(frontend_shadcn_2.AvatarFallback, { className: "bg-transparent border border-white" },
-                    react_1.default.createElement(components_1.Icon, { name: icon, className: "text-white" })))))));
+                    react_1.default.createElement(components_1.RemixIcon, { name: icon, className: "text-white" })))))));
 };
 exports.default = NoImage;

@@ -25,8 +25,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
 var components_1 = require("../../../components");
+var components_2 = require("../../../components");
 var CellArray = function (props) {
     var value = props.value;
     var values = (value === null || value === void 0 ? void 0 : value.length) > 0 ? value : null;
@@ -51,8 +51,8 @@ var CellArray = function (props) {
         }
     }, [values]);
     return (react_1.default.createElement("div", { className: "flex flex-row gap-2" }, visibleTags === null || visibleTags === void 0 ? void 0 :
-        visibleTags.map(function (value, index) { return (react_1.default.createElement(components_1.Label, { key: index, label: value })); }),
-        !open && visibleTags && (visibleTags === null || visibleTags === void 0 ? void 0 : visibleTags.length) > MAX_TAGS && (react_1.default.createElement(core_1.Button, { onClick: handleToggleSeeAll },
-            react_1.default.createElement(components_1.Label, { label: "..." })))));
+        visibleTags.map(function (value, index) { return (react_1.default.createElement(components_2.Label, { key: index, label: value })); }),
+        !open && visibleTags && (visibleTags === null || visibleTags === void 0 ? void 0 : visibleTags.length) > MAX_TAGS && (react_1.default.createElement(components_1.Button, { onClick: handleToggleSeeAll },
+            react_1.default.createElement(components_2.Label, { label: "..." })))));
 };
 exports.default = CellArray;

@@ -4,5 +4,5 @@ type ShareButtonProps = {
     size?: 'small' | 'large';
     variant?: 'rounded' | 'circular';
 };
-export default function ShareButton({ url, variant, size, }: ShareButtonProps): React.JSX.Element;
+export default function ShareButton(props: ShareButtonProps): React.JSX.Element;
 export {};

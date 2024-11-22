@@ -34,9 +34,9 @@ var GoogleMarker_1 = __importDefault(require("./GoogleMarker"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var NYC_LAT = 40.7128;
 var NYC_LNG = -73.935242;
-function GoogleMap(_a) {
-    var _b = _a.darkTheme, darkTheme = _b === void 0 ? false : _b, _c = _a.height, height = _c === void 0 ? 300 : _c, width = _a.width, _d = _a.lat, lat = _d === void 0 ? NYC_LAT : _d, _e = _a.lng, lng = _e === void 0 ? NYC_LNG : _e, label = _a.label, image = _a.image, _f = _a.zoom, zoom = _f === void 0 ? 16 : _f, _g = _a.enableBorder, enableBorder = _g === void 0 ? false : _g;
-    var _h = (0, react_1.useState)(mapConfigs_1.MAP_CONFIGS[0]), mapConfig = _h[0], setMapConfig = _h[1];
+function GoogleMap(props) {
+    var darkTheme = props.darkTheme, _a = props.height, height = _a === void 0 ? 300 : _a, width = props.width, _b = props.lat, lat = _b === void 0 ? NYC_LAT : _b, _c = props.lng, lng = _c === void 0 ? NYC_LNG : _c, label = props.label, image = props.image, _d = props.zoom, zoom = _d === void 0 ? 16 : _d, _e = props.enableBorder, enableBorder = _e === void 0 ? false : _e;
+    var _f = (0, react_1.useState)(mapConfigs_1.MAP_CONFIGS[0]), mapConfig = _f[0], setMapConfig = _f[1];
     (0, react_1.useEffect)(function () {
         setMapConfig(darkTheme ? mapConfigs_1.MAP_CONFIGS[1] : mapConfigs_1.MAP_CONFIGS[0]);
     }, [darkTheme]);

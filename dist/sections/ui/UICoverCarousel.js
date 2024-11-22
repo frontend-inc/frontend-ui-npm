@@ -31,7 +31,7 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UICoverCarousel = function (props) {
     var bgColor = props.bgColor, mode = props.mode, px = props.px, py = props.py, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["bgColor", "mode", "px", "py", "maxWidth", "requireAuth"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, mode: 'dark', py: 0, px: 0, maxWidth: maxWidth },
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, mode: 'dark', py: "none", px: "none", maxWidth: maxWidth },
         react_1.default.createElement(components_2.CoverCarousel, __assign({}, rest))));
 };
 exports.default = UICoverCarousel;

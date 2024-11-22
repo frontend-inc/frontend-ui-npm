@@ -14,7 +14,7 @@ var FieldWrapper = function (props) {
         label && (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('min-w-[100px] pr-1', direction == 'row' && 'w-[100px] pr-1') },
             react_1.default.createElement("label", { className: "text-xs text-muted-foreground font-medium uppercase tracking-wider" }, label))),
         react_1.default.createElement("div", { className: "w-full flex flex-row space-x-1" },
-            icon && react_1.default.createElement(components_1.Icon, { name: icon }),
+            icon && react_1.default.createElement(components_1.RemixIcon, { name: icon }),
             children)));
 };
 exports.default = FieldWrapper;

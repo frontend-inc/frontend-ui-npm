@@ -30,10 +30,12 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UICards = function (props) {
-    var label = props.label, title = props.title, subtitle = props.subtitle, textAlign = props.textAlign, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["label", "title", "subtitle", "textAlign", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
-            react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: 'center' }),
-            react_1.default.createElement(components_2.Cards, __assign({}, rest)))));
+    var direction = props.direction, label = props.label, title = props.title, subtitle = props.subtitle, _a = props.textAlign, textAlign = _a === void 0 ? 'center' : _a, fill = props.fill, border = props.border, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, _b = props.fontSize, fontSize = _b === void 0 ? 'lg' : _b, maxWidth = props.maxWidth, requireAuth = props.requireAuth, editable = props.editable, handleChange = props.handleChange, rest = __rest(props, ["direction", "label", "title", "subtitle", "textAlign", "fill", "border", "bgColor", "mode", "py", "px", "fontSize", "maxWidth", "requireAuth", "editable", "handleChange"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth, fill: fill, border: border },
+        react_1.default.createElement(components_1.Stack, { direction: direction, spacing: 10 },
+            react_1.default.createElement(components_1.Stack, { direction: direction, size: "1/3" },
+                react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: direction == 'row' ? 'left' : 'center', size: fontSize, editable: editable, handleChange: handleChange })),
+            react_1.default.createElement(components_1.Stack, { direction: direction, size: "2/3" },
+                react_1.default.createElement(components_2.Cards, __assign({}, rest))))));
 };
 exports.default = UICards;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { MetafieldType } from '../../../types';
 type CollectionHeroProps = {
+    disableImage?: boolean;
     resource: any;
     actions?: React.ReactNode;
     metafields?: MetafieldType[];

@@ -40,7 +40,7 @@ var frontend_shadcn_1 = require("frontend-shadcn");
 var sizeClasses = {
     sm: 'w-4 h-4',
     md: 'w-5 h-5',
-    lg: 'w-6 h-6',
+    lg: 'w-8 h-8',
 };
 function Rating(_a) {
     var name = _a.name, value = _a.value, onChange = _a.onChange, _b = _a.max, max = _b === void 0 ? 5 : _b, _c = _a.precision, precision = _c === void 0 ? 1 : _c, _d = _a.size, size = _d === void 0 ? 'md' : _d, _e = _a.readOnly, readOnly = _e === void 0 ? false : _e, _f = _a.disabled, disabled = _f === void 0 ? false : _f, className = _a.className;

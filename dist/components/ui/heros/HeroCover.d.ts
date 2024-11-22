@@ -1,4 +1,4 @@
 import React from 'react';
-import { HeroCardProps } from './HeroCard';
-declare const HeroCover: React.FC<HeroCardProps>;
+import { HeroProps } from './Hero';
+declare const HeroCover: React.FC<HeroProps>;
 export default HeroCover;

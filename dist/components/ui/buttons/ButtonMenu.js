@@ -26,7 +26,7 @@ var ButtonMenu = function (props) {
     };
     return (react_1.default.createElement(frontend_shadcn_1.DropdownMenuItem, { onClick: handleClick, className: "cursor-pointer" },
         icon && (react_1.default.createElement("span", { className: "mr-2" },
-            react_1.default.createElement(components_1.Icon, { name: icon }))),
+            react_1.default.createElement(components_1.RemixIcon, { name: icon }))),
         label));
 };
 exports.default = ButtonMenu;

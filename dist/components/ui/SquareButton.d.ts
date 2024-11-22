@@ -1,7 +1,7 @@
 import React from 'react';
 type SquareButtonProps = {
     label: string;
-    color: string;
+    color?: string;
     icon: string;
     selected: boolean;
     handleClick?: () => void;

@@ -27,13 +27,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var core_1 = require("../../core");
 var components_1 = require("../../../components");
-var helpers_1 = require("../../../helpers");
+var components_2 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var FieldString = function (props) {
     var value = props.value, label = props.label, placeholder = props.placeholder, alignItems = props.alignItems, className = props.className, rest = __rest(props, ["value", "label", "placeholder", "alignItems", "className"]);
-    return (react_1.default.createElement(components_1.FieldWrapper, __assign({ alignItems: alignItems, label: label }, rest),
-        react_1.default.createElement(core_1.Typography, { variant: "body1", className: (0, frontend_shadcn_1.cn)(className) }, (0, helpers_1.truncate)(value || placeholder, 50))));
+    return (react_1.default.createElement(components_2.FieldWrapper, __assign({ alignItems: alignItems, label: label }, rest),
+        react_1.default.createElement(components_1.Typography, { variant: "body1", className: (0, frontend_shadcn_1.cn)(className) }, value)));
 };
 exports.default = FieldString;

@@ -10,6 +10,7 @@ type ModalProps = {
     children?: React.ReactNode;
     maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     secondaryActions?: React.ReactNode;
+    className?: string;
 };
-export default function Modal({ open, loading, handleClose, title, buttons, children, description, }: ModalProps): React.JSX.Element;
+export default function Modal(props: ModalProps): React.JSX.Element;
 export {};

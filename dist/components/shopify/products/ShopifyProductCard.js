@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var helpers_1 = require("../../../helpers");
 var frontend_shopify_1 = require("frontend-shopify");
 var frontend_shopify_2 = require("frontend-shopify");
@@ -57,8 +57,8 @@ function ShopifyProductCard(props) {
         react_1.default.createElement(frontend_shadcn_1.CardContent, { className: "p-3" },
             react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
                 react_1.default.createElement("div", { className: "flex flex-col space-y-0 min-h-[80px]" },
-                    react_1.default.createElement(core_1.Typography, { variant: "subtitle2" }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.title)),
-                    react_1.default.createElement(core_1.Typography, { variant: "body2" }, (0, frontend_shopify_2.formatCurrency)((_b = (_a = product === null || product === void 0 ? void 0 : product.priceRange) === null || _a === void 0 ? void 0 : _a.minVariantPrice) === null || _b === void 0 ? void 0 : _b.amount))),
+                    react_1.default.createElement(components_1.Typography, { variant: "subtitle2" }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.title)),
+                    react_1.default.createElement(components_1.Typography, { variant: "body2" }, (0, frontend_shopify_2.formatCurrency)((_b = (_a = product === null || product === void 0 ? void 0 : product.priceRange) === null || _a === void 0 ? void 0 : _a.minVariantPrice) === null || _b === void 0 ? void 0 : _b.amount))),
                 enableAddToCart && (react_1.default.createElement(__1.ShopifyAddToCartButton, { product: product, 
                     /* @ts-ignore */
                     variant: (_d = (_c = product === null || product === void 0 ? void 0 : product.variants) === null || _c === void 0 ? void 0 : _c.edges[0]) === null || _d === void 0 ? void 0 : _d.node, enableQuantity: enableQuantity, size: "default" })))),

@@ -1,19 +1,28 @@
 import React from 'react';
 import { ButtonType } from './buttons';
 import { MetafieldType, FormFieldType } from './forms';
+import { SyntheticEventType } from 'frontend-js';
 export type HeadingProps = {
     label?: string;
     title?: string;
     subtitle?: string;
     textAlign?: 'left' | 'center';
+    fontSize?: 'sm' | 'md' | 'lg' | 'xl';
+    editable?: boolean;
+    handleChange?: (ev: SyntheticEventType) => void;
+};
+export type StackProps = {
+    direction?: 'row' | 'column';
 };
 export type SectionProps = {
     children?: React.ReactNode;
     bgColor?: string;
     mode?: 'dark' | 'light';
     maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | false;
-    py?: number;
-    px?: number;
+    fill?: boolean;
+    border?: boolean;
+    py?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
+    px?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
     requireAuth?: boolean;
 };
 export type FormProps = {
@@ -46,6 +55,7 @@ export type PriceType = {
     id?: number;
     label: string;
     title: string;
+    subtitle?: string;
     description?: string;
     price: number;
     features: string[];
@@ -57,9 +67,8 @@ export type PriceType = {
     path?: string;
 };
 export type TestimonialType = {
-    rating: number;
     title: string;
-    description: string;
+    subtitle: string;
     image: string;
     size?: 'small' | 'large';
 };

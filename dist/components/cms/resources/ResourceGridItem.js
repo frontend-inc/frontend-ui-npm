@@ -20,7 +20,7 @@ var frontend_shadcn_1 = require("frontend-shadcn");
 var frontend_shadcn_2 = require("frontend-shadcn");
 var frontend_shadcn_3 = require("frontend-shadcn");
 var components_1 = require("../../../components");
-var core_1 = require("../../core");
+var components_2 = require("../../../components");
 var frontend_shadcn_4 = require("frontend-shadcn");
 var lucide_react_1 = require("lucide-react");
 var image_1 = __importDefault(require("next/image"));
@@ -44,7 +44,7 @@ function ResourceGridItem(_a) {
                         handleDelete && (react_1.default.createElement(frontend_shadcn_4.DropdownMenuItem, { onClick: function () { return handleDelete({}); } }, "Delete"))))))),
         react_1.default.createElement("div", { className: "overflow-hidden h-40 flex items-center justify-center cursor-pointer", onClick: handleClick }, image && (react_1.default.createElement(image_1.default, __assign({ src: image, alt: label || 'Resource image', width: 320, height: 160, className: "object-cover w-full h-full" }, slots.image)))),
         (primary || secondary) && (react_1.default.createElement(frontend_shadcn_2.CardContent, { className: "p-4" },
-            react_1.default.createElement(core_1.Typography, { variant: "body1" }, primary),
-            secondary && react_1.default.createElement(core_1.Typography, { variant: "body2" }, secondary)))));
+            react_1.default.createElement(components_2.Typography, { variant: "body1" }, primary),
+            secondary && react_1.default.createElement(components_2.Typography, { variant: "body2" }, secondary)))));
 }
 exports.default = ResourceGridItem;

@@ -1,9 +1,9 @@
 import React from 'react';
-export type ProfileProps = {
+import { HeadingProps } from '../../../types';
+export type ProfileProps = HeadingProps & {
+    direction?: 'row' | 'column';
     image: string;
-    label?: string;
-    title: string;
-    description?: string;
+    description: string;
     socialLinks?: {
         provider: string;
         url: string;

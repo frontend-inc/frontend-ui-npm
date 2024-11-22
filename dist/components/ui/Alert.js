@@ -1,45 +1,26 @@
 'use client';
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
-var context_1 = require("../../context");
-var sonner_1 = require("sonner");
+var react_1 = __importDefault(require("react"));
+var __1 = require("..");
+var frontend_shadcn_1 = require("frontend-shadcn");
+var frontend_shadcn_2 = require("frontend-shadcn");
 var Alert = function (props) {
-    var _a = (0, react_1.useContext)(context_1.AppContext), alert = _a.alert, setAlert = _a.setAlert;
-    (0, react_1.useEffect)(function () {
-        if (alert && (alert === null || alert === void 0 ? void 0 : alert.message)) {
-            (0, sonner_1.toast)(alert === null || alert === void 0 ? void 0 : alert.status, {
-                description: alert === null || alert === void 0 ? void 0 : alert.message,
-                action: {
-                    label: 'Close',
-                    onClick: function () { return setAlert(null); },
-                },
-            });
-        }
-    }, [alert]);
-    return react_1.default.createElement(sonner_1.Toaster, null);
+    var icon = props.icon, title = props.title, description = props.description, variant = props.variant, className = props.className;
+    var textClasses = {
+        accent: 'text-accent',
+        default: 'text-foreground',
+        primary: 'text-primary',
+        secondary: 'text-secondary',
+        destructive: 'text-destructive',
+    };
+    return (react_1.default.createElement(frontend_shadcn_1.Alert, { className: (0, frontend_shadcn_2.cn)('flex space-x-3', variant == 'destructive' && 'bg-destructive/10 border-destructive', variant == 'accent' && 'bg-accent/10 border-accent', className) },
+        icon && (react_1.default.createElement(__1.RemixIcon, { name: icon, size: "lg", className: (0, frontend_shadcn_2.cn)(variant && textClasses[variant]) })),
+        react_1.default.createElement("div", { className: "flex flex-col" },
+            react_1.default.createElement(frontend_shadcn_1.AlertTitle, { className: (0, frontend_shadcn_2.cn)('text-md text-bold', variant && textClasses[variant]) }, title),
+            react_1.default.createElement(frontend_shadcn_1.AlertDescription, { className: (0, frontend_shadcn_2.cn)('text-sm font-normal', variant && textClasses[variant]) }, description))));
 };
 exports.default = Alert;

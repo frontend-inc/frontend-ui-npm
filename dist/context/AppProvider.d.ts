@@ -5,6 +5,7 @@ type AppProviderProps = {
     children: React.ReactNode;
     logo?: any;
     name: string;
+    editable?: boolean;
     enableShopify?: boolean;
     enableStripe?: boolean;
 };

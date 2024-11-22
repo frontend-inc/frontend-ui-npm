@@ -3,14 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GOOGLE_FONTS = void 0;
 exports.GOOGLE_FONTS = [
     {
-        name: 'Anton',
-        url: 'https://fonts.googleapis.com/css2?family=Anton&display=swap',
-    },
-    {
-        name: 'Cormorant',
-        url: 'https://fonts.googleapis.com/css2?family=Cormorant&display=swap',
-    },
-    {
         name: 'DM Sans',
         url: 'https://fonts.googleapis.com/css2?family=DM+Sans&display=swap',
     },
@@ -39,24 +31,12 @@ exports.GOOGLE_FONTS = [
         url: 'https://fonts.googleapis.com/css2?family=Lato&display=swap',
     },
     {
-        name: 'Libre Franklin',
-        url: 'https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap',
-    },
-    {
         name: 'Manrope',
         url: 'https://fonts.googleapis.com/css2?family=Manrope&display=swap',
     },
     {
-        name: 'Outfit',
-        url: 'https://fonts.googleapis.com/css2?family=Outfit&display=swap',
-    },
-    {
         name: 'Open Sans',
         url: 'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap',
-    },
-    {
-        name: 'Pacifico',
-        url: 'https://fonts.googleapis.com/css2?family=Pacifico&display=swap',
     },
     {
         name: 'Playfair Display',

@@ -62,7 +62,6 @@ var CollectionListItems = function (props) {
         item: {},
     } : _l;
     var handleShowClick = function (resource) {
-        console.log('handleShowClick', resource);
         if (handleClick) {
             handleClick(resource);
         }

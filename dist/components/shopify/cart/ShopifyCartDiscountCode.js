@@ -42,11 +42,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var core_1 = require("../../core");
 var components_2 = require("../../../components");
 var frontend_shopify_1 = require("frontend-shopify");
 var hooks_1 = require("../../../hooks");
 var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@remixicon/react");
 function ShopifyCartDiscountCode(_a) {
     var _this = this;
     var discountCode = _a.discountCode;
@@ -63,10 +63,10 @@ function ShopifyCartDiscountCode(_a) {
         });
     }); };
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-row justify-between w-full', loading && 'opacity-50') },
-        react_1.default.createElement(core_1.Typography, { variant: "body1" }, "Discounts"),
+        react_1.default.createElement(components_1.Typography, { variant: "body1" }, "Discounts"),
         react_1.default.createElement("div", { className: "flex flex-row items-center space-x-2" },
             react_1.default.createElement(components_2.Label, { label: discountCode.code }),
-            react_1.default.createElement(core_1.IconButton, { onClick: handleDelete },
-                react_1.default.createElement(components_1.Icon, { name: "Trash", size: "sm" })))));
+            react_1.default.createElement(components_1.IconButton, { onClick: handleDelete },
+                react_1.default.createElement(react_2.RiDeleteBin7Fill, null)))));
 }
 exports.default = ShopifyCartDiscountCode;

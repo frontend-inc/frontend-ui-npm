@@ -1,8 +1,7 @@
 import React from 'react';
 type TestimonialProps = {
-    author: string;
     text: string;
-    rating?: number;
+    author: string;
     image?: string;
     size?: 'small' | 'large';
 };

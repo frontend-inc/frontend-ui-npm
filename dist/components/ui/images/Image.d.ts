@@ -14,4 +14,4 @@ export interface ResponsiveImageProps {
     handleClick?: () => void;
     label?: string;
 }
-export default function ResponsiveImage({ src, alt, width, height, objectFit, aspectRatio, enableOverlay, enableGradient, disableBorderRadius, disableZoom, handleClick, className, label, }: ResponsiveImageProps): React.JSX.Element;
+export default function ResponsiveImage(props: ResponsiveImageProps): React.JSX.Element;

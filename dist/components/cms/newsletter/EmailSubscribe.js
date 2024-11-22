@@ -52,18 +52,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 // Call To Action
 var EmailSubscribe = function (props) {
-    var showAlertSuccess = (0, hooks_1.useAlerts)().showAlertSuccess;
-    var _a = props || {}, label = _a.label, title = _a.title, subtitle = _a.subtitle, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
-    var _c = (0, frontend_js_1.useResource)({
+    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
+    var _a = (props || {}).buttonText, buttonText = _a === void 0 ? 'Subscribe' : _a;
+    var _b = (0, frontend_js_1.useResource)({
         name: 'contact',
         url: "/api/v1/contacts",
-    }), errors = _c.errors, delayedLoading = _c.delayedLoading, contact = _c.resource, setContact = _c.setResource, handleChange = _c.handleChange, create = _c.create;
+    }), errors = _b.errors, delayedLoading = _b.delayedLoading, contact = _b.resource, setContact = _b.setResource, handleChange = _b.handleChange, create = _b.create;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -79,14 +79,11 @@ var EmailSubscribe = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement("div", { className: "container mx-auto max-w-screen-md" },
-        react_1.default.createElement("div", { className: "flex flex-col space-y-1" },
-            react_1.default.createElement(__1.Heading, { label: label, title: title, subtitle: subtitle, size: "lg", textAlign: "center" }),
-            react_1.default.createElement("div", { className: "flex flex-row justify-center items-center" },
-                react_1.default.createElement("div", { className: "max-w-[360px] w-full p-1 flex flex-row justify-center items-center" },
-                    react_1.default.createElement(__1.InputBase, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, 
-                        //@ts-ignore
-                        handleChange: handleChange, placeholder: "Enter your email", type: "email", className: "rounded-l-md rounded-r-none border-r-0" }),
-                    react_1.default.createElement(core_1.Button, { onClick: handleSubmit, className: "rounded-l-none rounded-r-md", loading: delayedLoading }, buttonText))))));
+    return (react_1.default.createElement("div", { className: "flex flex-row justify-center items-center" },
+        react_1.default.createElement("div", { className: "max-w-[360px] w-full p-1 flex flex-row justify-center items-center" },
+            react_1.default.createElement(__1.InputBase, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, 
+                //@ts-ignore
+                handleChange: handleChange, placeholder: "Enter your email", type: "email", className: "rounded-l-md text-base h-[48px] min-w-[280px] rounded-r-none border-r-0" }),
+            react_1.default.createElement(components_1.Button, { size: "lg", onClick: handleSubmit, className: "rounded-l-none rounded-r-md text-base", loading: delayedLoading }, buttonText))));
 };
 exports.default = EmailSubscribe;

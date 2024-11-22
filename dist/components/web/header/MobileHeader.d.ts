@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonType, MenuLinkType } from '../../..';
 type MobileHeaderProps = {
+    bgColor?: string;
     logo: string;
     logoWidth?: number;
     logoHeight?: number;

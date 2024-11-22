@@ -28,19 +28,19 @@ var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
 var components_1 = require("../../../components");
-var core_1 = require("../../core");
+var components_2 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
-function ShopifyCartButton(_a) {
-    var _b = _a.icon, icon = _b === void 0 ? 'ShoppingCart' : _b;
-    var _c = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext), cart = _c.cart, toggleCart = _c.toggleCart;
+function ShopifyCartButton(props) {
+    var _a = (props || {}).icon, icon = _a === void 0 ? 'ri-shopping-cart-2-line' : _a;
+    var _b = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext), cart = _b.cart, toggleCart = _b.toggleCart;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
     var handleCartClick = function () {
         setMenuOpen(false);
         toggleCart();
     };
     return (react_1.default.createElement("div", { className: "relative" },
-        react_1.default.createElement(core_1.IconButton, { onClick: handleCartClick },
-            react_1.default.createElement(components_1.Icon, { name: icon })),
+        react_1.default.createElement(components_2.IconButton, { onClick: handleCartClick },
+            react_1.default.createElement(components_1.RemixIcon, { name: icon, size: "lg" })),
         react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, cart === null || cart === void 0 ? void 0 : cart.totalQuantity)));
 }
 exports.default = ShopifyCartButton;

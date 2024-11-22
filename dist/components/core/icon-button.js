@@ -56,7 +56,7 @@ var IconButton = (0, react_1.forwardRef)(function (_a, ref) {
         rounded: 'rounded-md',
         circular: 'rounded-full',
     };
-    return (react_1.default.createElement(frontend_shadcn_1.Button, __assign({ ref: ref, size: "icon", variant: "ghost", className: (0, frontend_shadcn_2.cn)('min-w-[36px] min-h-[36px] text-foreground bg-transparent hover:bg-foreground/10', 'flex items-center justify-center', variantClasses[variant], className) }, props), children));
+    return (react_1.default.createElement(frontend_shadcn_1.Button, __assign({ ref: ref, size: "icon", variant: "ghost", className: (0, frontend_shadcn_2.cn)('w-[36px] h-[36px] text-foreground bg-transparent hover:bg-foreground/10', 'flex items-center justify-center', variantClasses[variant], className) }, props), children));
 });
 exports.IconButton = IconButton;
 IconButton.displayName = 'IconButton';

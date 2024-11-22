@@ -1,13 +1,14 @@
 import React from 'react';
 import { MetafieldType } from '../../../types';
 type ResourceDetailsProps = {
-    hero?: React.ReactNode;
+    disableImage?: boolean;
     actions?: React.ReactNode;
     resource: any;
-    primary?: string;
-    secondary?: string;
+    title?: string;
+    subtitle?: string;
     label?: string;
-    image: string;
+    image?: string;
+    height?: number;
     fields: MetafieldType[];
     direction?: 'row' | 'column';
 };

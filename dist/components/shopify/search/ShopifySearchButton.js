@@ -25,10 +25,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
-var __1 = require("../..");
+var react_2 = require("@remixicon/react");
 var ShopifySearchButton = function () {
     var toggleSearch = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext).toggleSearch;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
@@ -36,7 +36,7 @@ var ShopifySearchButton = function () {
         setMenuOpen(false);
         toggleSearch();
     };
-    return (react_1.default.createElement(core_1.IconButton, { onClick: handleToggleSearch },
-        react_1.default.createElement(__1.Icon, { name: "Search" })));
+    return (react_1.default.createElement(components_1.IconButton, { onClick: handleToggleSearch },
+        react_1.default.createElement(react_2.RiSearch2Fill, null)));
 };
 exports.default = ShopifySearchButton;

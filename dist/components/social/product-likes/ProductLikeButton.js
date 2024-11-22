@@ -64,16 +64,15 @@ var react_1 = __importStar(require("react"));
 var helpers_1 = require("../../../helpers");
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
-var lucide_react_1 = require("lucide-react");
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
-function ProductLikeButton(_a) {
+function ProductLikeButton(props) {
     var _this = this;
-    var product = _a.product, _b = _a.size, size = _b === void 0 ? 'small' : _b;
+    var product = props.product, _a = props.size, size = _a === void 0 ? 'small' : _a;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
-    var _c = (0, react_1.useState)(false), liked = _c[0], setLiked = _c[1];
-    var _d = (0, hooks_1.useSocial)(), likeProduct = _d.likeProduct, unlikeProduct = _d.unlikeProduct;
+    var _b = (0, react_1.useState)(false), liked = _b[0], setLiked = _b[1];
+    var _c = (0, hooks_1.useSocial)(), likeProduct = _c.likeProduct, unlikeProduct = _c.unlikeProduct;
     var handleClick = function () { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -103,7 +102,8 @@ function ProductLikeButton(_a) {
         }
     }, [currentUser, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' && 'border border-divider', 'transition-transform duration-200', liked && 'text-primary hover:text-primary-dark') },
-            react_1.default.createElement(lucide_react_1.Heart, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', liked ? 'fill-primary stroke-primary' : 'fill-none stroke-current') }))));
+        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' && 'border border-divider', 'transition-transform duration-200', liked && 'text-primary hover:text-primary-dark') },
+            liked && react_1.default.createElement(components_1.RemixIcon, { name: "ri-heart-fill", className: "fill-primary" }),
+            !liked && react_1.default.createElement(components_1.RemixIcon, { name: "ri-heart-line" }))));
 }
 exports.default = ProductLikeButton;

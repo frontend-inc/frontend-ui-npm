@@ -1,4 +1,4 @@
 import React from 'react';
-import { HeroCardProps } from './HeroCard';
-declare const HeroAvatar: React.FC<HeroCardProps>;
+import { HeroProps } from './HeroList';
+declare const HeroAvatar: React.FC<HeroProps>;
 export default HeroAvatar;

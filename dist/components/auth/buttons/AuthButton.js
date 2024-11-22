@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
@@ -44,10 +44,9 @@ var AuthButton = function (props) {
             fetchMe();
         }
     }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
-    return (react_1.default.createElement(react_1.default.Fragment, null, !showLabel ? (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(core_1.IconButton, { onClick: handleMyAccount },
-        react_1.default.createElement(__1.UserAvatar, { size: 28, user: currentUser }))) : (react_1.default.createElement(core_1.IconButton, { onClick: handleLogin },
-        react_1.default.createElement(__1.Icon, { name: "User", size: 'md' }))))) : (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(core_1.Button, { onClick: handleMyAccount, startIcon: showIcon && react_1.default.createElement(__1.UserAvatar, { user: currentUser }), endIcon: react_1.default.createElement("div", null,
-            react_1.default.createElement(__1.Icon, { name: "MoreVertical" })) },
-        react_1.default.createElement(core_1.Typography, { variant: "body1" }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.username))) : (react_1.default.createElement(core_1.Button, { onClick: handleLogin, startIcon: showIcon && react_1.default.createElement(__1.Icon, { name: "User" }) }, "Sign In"))))));
+    return (react_1.default.createElement(react_1.default.Fragment, null, !showLabel ? (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(components_1.IconButton, { onClick: handleMyAccount },
+        react_1.default.createElement(__1.UserAvatar, { size: 28, user: currentUser }))) : (react_1.default.createElement(components_1.IconButton, { onClick: handleLogin },
+        react_1.default.createElement(__1.RemixIcon, { name: "ri-user-6-line", size: "lg" }))))) : (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(components_1.Button, { onClick: handleMyAccount, startIcon: showIcon && react_1.default.createElement(__1.UserAvatar, { user: currentUser }), endIcon: react_1.default.createElement(__1.RemixIcon, { name: "ri-arrow-down-s-line" }) },
+        react_1.default.createElement(components_1.Typography, { variant: "body1" }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.username))) : (react_1.default.createElement(components_1.Button, { onClick: handleLogin, startIcon: showIcon && react_1.default.createElement(__1.RemixIcon, { name: "ri-user-6-fill" }) }, "Sign In"))))));
 };
 exports.default = AuthButton;

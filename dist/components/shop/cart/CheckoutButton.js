@@ -41,12 +41,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var hooks_2 = require("../../../hooks");
 var CheckoutButton = function () {
     var _a = (0, hooks_1.useCart)(), loading = _a.loading, cart = _a.cart, checkout = _a.checkout;
-    var showAlertError = (0, hooks_2.useAlerts)().showAlertError;
+    var showAlertError = (0, hooks_2.useToast)().showAlertError;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         var currentUrl, stripe, url;
         var _a;
@@ -77,7 +77,7 @@ var CheckoutButton = function () {
         });
     }); };
     var cartDisabled = (cart === null || cart === void 0 ? void 0 : cart.total_items) === 0 ? true : false;
-    return (react_1.default.createElement(core_1.Button, { fullWidth: true, loading: loading, onClick: handleClick, size: "lg" },
+    return (react_1.default.createElement(components_1.Button, { fullWidth: true, loading: loading, onClick: handleClick, size: "lg" },
         "Checkout ",
         !cartDisabled && (cart === null || cart === void 0 ? void 0 : cart.display_subtotal)));
 };

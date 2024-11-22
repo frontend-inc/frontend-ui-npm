@@ -27,19 +27,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var ButtonAction = function (props) {
-    var children = props.children, icon = props.icon, url = props.url, path = props.path, _a = props.variant, variant = _a === void 0 ? 'secondary' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, rest = __rest(props, ["children", "icon", "url", "path", "variant", "size"]);
-    var onClick = (0, hooks_1.useNavigate)({
+    var icon = props.icon, action = props.action, url = props.url, path = props.path, src = props.src, _a = props.variant, variant = _a === void 0 ? 'secondary' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, children = props.children, rest = __rest(props, ["icon", "action", "url", "path", "src", "variant", "size", "children"]);
+    var _c = (0, hooks_1.useButton)({
+        action: action,
         url: url,
         path: path,
-    });
-    return (react_1.default.createElement(core_1.Button, __assign({ fullWidth: true, size: size, startIcon: icon && (react_1.default.createElement(__1.Icon, { name: icon, className: variant == 'default'
-                ? 'text-primary-foreground'
-                : 'text-secondary-foreground' })), 
-        /* @ts-ignore */
-        onClick: onClick, variant: variant }, rest), children));
+        src: src,
+    }), openShare = _c.openShare, setOpenShare = _c.setOpenShare, openVideo = _c.openVideo, setOpenVideo = _c.setOpenVideo, openImage = _c.openImage, setOpenImage = _c.setOpenImage, handleClick = _c.handleClick;
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(components_1.Button, __assign({ fullWidth: true, size: size, startIcon: icon && (react_1.default.createElement(__1.RemixIcon, { name: icon, className: variant == 'default'
+                    ? 'text-primary-foreground'
+                    : 'text-secondary-foreground' })), 
+            /* @ts-ignore */
+            onClick: handleClick, variant: variant }, rest), children),
+        src && (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement(__1.VideoModal, { open: openVideo, handleClose: function () { return setOpenVideo(false); }, src: src }),
+            react_1.default.createElement(__1.ImageModal, { open: openImage, handleClose: function () { return setOpenImage(false); }, src: src }),
+            react_1.default.createElement(__1.ShareModal, { open: openShare, handleClose: function () { return setOpenShare(false); }, 
+                //@ts-ignore
+                url: url })))));
 };
 exports.default = ButtonAction;

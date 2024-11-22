@@ -69,9 +69,7 @@ var ProductReviewForm = function () {
             }
         });
     }); };
-    return (react_1.default.createElement(__1.Drawer, { title: "Leave a review", open: openEdit, handleClose: function () { return setOpenEdit(false); }, buttons: react_1.default.createElement(components_1.Button, { className: "w-full", variant: "default", onClick: handleSubmit, disabled: loading },
-            loading && react_1.default.createElement(__1.IconLoading, { className: "mr-2 h-4 w-4" }),
-            "Submit") },
+    return (react_1.default.createElement(__1.Drawer, { title: "Leave a review", open: openEdit, handleClose: function () { return setOpenEdit(false); }, buttons: react_1.default.createElement(components_1.Button, { className: "w-full", variant: "default", onClick: handleSubmit, disabled: loading, loading: loading }, "Submit") },
         react_1.default.createElement("div", { className: "p-4" },
             react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full items-start" },
                 react_1.default.createElement(__1.RatingInput, { errors: errors, name: "rating", value: resource === null || resource === void 0 ? void 0 : resource.rating, 

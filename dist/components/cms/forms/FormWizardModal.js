@@ -20,7 +20,7 @@ var FormWizard_1 = __importDefault(require("./FormWizard"));
 var __1 = require("../..");
 var FormWizardModal = function (props) {
     var _a = props || {}, open = _a.open, handleClose = _a.handleClose;
-    return (react_1.default.createElement(__1.Modal, { open: open, handleClose: handleClose },
+    return (react_1.default.createElement(__1.Drawer, { open: open, handleClose: handleClose, maxWidth: "xl" },
         react_1.default.createElement(FormWizard_1.default, __assign({}, props))));
 };
 exports.default = FormWizardModal;

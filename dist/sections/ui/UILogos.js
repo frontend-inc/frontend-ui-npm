@@ -30,10 +30,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UILogos = function (props) {
-    var label = props.label, title = props.title, subtitle = props.subtitle, textAlign = props.textAlign, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["label", "title", "subtitle", "textAlign", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth"]);
+    var bgColor = props.bgColor, mode = props.mode, _a = props.py, py = _a === void 0 ? 'sm' : _a, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["bgColor", "mode", "py", "px", "maxWidth", "requireAuth"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
-            react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: 'center' }),
-            react_1.default.createElement(components_2.Logos, __assign({}, rest)))));
+        react_1.default.createElement(components_2.Logos, __assign({}, rest))));
 };
 exports.default = UILogos;

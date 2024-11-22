@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var lucide_react_1 = require("lucide-react");
 function SortableListItem(_a) {
@@ -14,7 +14,7 @@ function SortableListItem(_a) {
         react_1.default.createElement("div", { className: "mr-4 cursor-grab active:cursor-grabbing" },
             react_1.default.createElement(lucide_react_1.GripVertical, { className: "h-5 w-5 text-muted-foreground" })),
         react_1.default.createElement("div", { className: "flex-grow" },
-            react_1.default.createElement(core_1.Typography, { variant: "body1" }, primary),
-            secondary && react_1.default.createElement(core_1.Typography, { variant: "body2" }, secondary))));
+            react_1.default.createElement(components_1.Typography, { variant: "body1" }, primary),
+            secondary && react_1.default.createElement(components_1.Typography, { variant: "body2" }, secondary))));
 }
 exports.default = SortableListItem;

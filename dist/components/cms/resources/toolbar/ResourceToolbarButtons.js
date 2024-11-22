@@ -12,7 +12,7 @@ var ResourceToolbarButtons = function (props) {
     return (react_1.default.createElement("div", { className: "flex flex-row space-x-2" }, buttons === null || buttons === void 0 ? void 0 : buttons.map(function (button, index) { return (react_1.default.createElement(components_1.Button, { key: index, onClick: selected && (button === null || button === void 0 ? void 0 : button.onClick)
             ? function () { return button === null || button === void 0 ? void 0 : button.onClick(selected); }
             : undefined },
-        (button === null || button === void 0 ? void 0 : button.icon) && (react_1.default.createElement(components_2.Icon, { name: button === null || button === void 0 ? void 0 : button.icon, className: "mr-2 h-4 w-4" })), button === null || button === void 0 ? void 0 :
+        (button === null || button === void 0 ? void 0 : button.icon) && react_1.default.createElement(components_2.RemixIcon, { name: button === null || button === void 0 ? void 0 : button.icon, className: "mr-2" }), button === null || button === void 0 ? void 0 :
         button.label)); })));
 };
 exports.default = ResourceToolbarButtons;

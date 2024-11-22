@@ -4,6 +4,7 @@ type TextAreaProps = Omit<TextInputPropsType, 'type'> & {
     debounceDelay?: number;
     disableDebounce?: boolean;
     rows?: number;
+    className?: string;
 };
-export default function TextArea({ label, name, value, handleChange, placeholder, disabled, errors, direction, info, debounceDelay, disableDebounce, rows, }: TextAreaProps): React.JSX.Element;
+export default function TextArea(props: TextAreaProps): React.JSX.Element;
 export {};

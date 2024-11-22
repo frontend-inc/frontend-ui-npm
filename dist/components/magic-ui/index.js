@@ -21,7 +21,7 @@ var blur_in_1 = require("./blur-in");
 Object.defineProperty(exports, "BlurIn", { enumerable: true, get: function () { return __importDefault(blur_in_1).default; } });
 var border_beam_1 = require("./border-beam");
 Object.defineProperty(exports, "BorderBeam", { enumerable: true, get: function () { return border_beam_1.BorderBeam; } });
-var iphone_15_pro_1 = require("../ui/iphone-15-pro");
+var iphone_15_pro_1 = require("./iphone-15-pro");
 Object.defineProperty(exports, "Iphone15Pro", { enumerable: true, get: function () { return __importDefault(iphone_15_pro_1).default; } });
 var marquee_1 = require("./marquee");
 Object.defineProperty(exports, "Marquee", { enumerable: true, get: function () { return __importDefault(marquee_1).default; } });

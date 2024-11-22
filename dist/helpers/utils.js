@@ -101,9 +101,13 @@ var cloudinaryConvertToJpeg = function (url) {
 };
 exports.cloudinaryConvertToJpeg = cloudinaryConvertToJpeg;
 var cloudinaryImageFromVideoUrl = function (url) {
-    if (!url)
+    if (!url || url.length <= 3)
         return null;
-    return url === null || url === void 0 ? void 0 : url.replace(/mp4|mpeg|ogg|mkv|mov/i, 'jpg');
+    var videoExtensions = /\.(mp4|mpeg|ogg|mkv|mov)$/i;
+    if (!videoExtensions.test(url)) {
+        return url;
+    }
+    return url.replace(videoExtensions, '.jpg');
 };
 exports.cloudinaryImageFromVideoUrl = cloudinaryImageFromVideoUrl;
 var scrollTo = function (domId) {

@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var __1 = require("../..");
 var context_1 = require("../../../context");
 var MobileDrawerLink_1 = __importDefault(require("./MobileDrawerLink"));
@@ -41,6 +41,6 @@ var MobileDrawer = function (props) {
     };
     return (react_1.default.createElement(__1.Sheet, { open: menuOpen, handleClose: function () { return setMenuOpen(false); }, side: "left" },
         react_1.default.createElement("div", null,
-            react_1.default.createElement(core_1.List, { className: 'space-y-2' }, links === null || links === void 0 ? void 0 : links.map(function (menuItem, index) { return (react_1.default.createElement(MobileDrawerLink_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); })))));
+            react_1.default.createElement(components_1.List, { className: 'space-y-2' }, links === null || links === void 0 ? void 0 : links.map(function (menuItem, index) { return (react_1.default.createElement(MobileDrawerLink_1.default, { key: index, menuItem: menuItem, handleClick: handleMenuClick })); })))));
 };
 exports.default = MobileDrawer;

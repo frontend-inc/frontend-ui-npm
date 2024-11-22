@@ -62,7 +62,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var ShopifyCartDiscountCodeInput = function () {
     var _a = (0, react_1.useState)(null), _b = _a[0], discountCode = _b === void 0 ? '' : _b, setDiscountCode = _a[1];
     var _c = (0, frontend_shopify_1.useCart)(), loading = _c.loading, cartApplyDiscountCode = _c.cartApplyDiscountCode;
@@ -82,7 +82,7 @@ var ShopifyCartDiscountCodeInput = function () {
     }); };
     var handleChange = function (e) { return setDiscountCode(e.target.value); };
     return (react_1.default.createElement("div", { className: "px-1 flex flex-row justify-center items center space-x-1" },
-        react_1.default.createElement(core_1.TextField, { fullWidth: true, name: "discountCode", value: discountCode, handleChange: handleChange, placeholder: "Enter discount code", className: "rounded-l-md rounded-r-none border-r-0" }),
-        react_1.default.createElement(core_1.Button, { onClick: handleSubmit, color: "secondary", className: "rounded-l-none rounded-r-md", loading: loading }, "Apply")));
+        react_1.default.createElement(components_1.TextField, { fullWidth: true, name: "discountCode", value: discountCode, handleChange: handleChange, placeholder: "Enter discount code", className: "rounded-l-md rounded-r-none border-r-0" }),
+        react_1.default.createElement(components_1.Button, { onClick: handleSubmit, color: "secondary", className: "rounded-l-none rounded-r-md", loading: loading }, "Apply")));
 };
 exports.default = ShopifyCartDiscountCodeInput;

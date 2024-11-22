@@ -85,7 +85,7 @@ var ShopifyProductSearch = function (_a) {
             enableSorting && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
                 react_1.default.createElement(__2.ShopifyProductSortButton, { sortKey: sortKey, reverse: reverse, handleClick: handleSortClick })))),
         (products === null || products === void 0 ? void 0 : products.length) > 0 && (react_1.default.createElement(__2.ShopifyProducts, { loading: loading, products: products, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity })),
-        !loading && (!products || (products === null || products === void 0 ? void 0 : products.length) == 0) && (react_1.default.createElement(__1.Placeholder, { icon: "Search", title: "No search results", description: "Try another search term" })),
+        !loading && (!products || (products === null || products === void 0 ? void 0 : products.length) == 0) && (react_1.default.createElement(__1.Empty, { icon: "ri-search-line", title: "No search results", description: "Try another search term" })),
         react_1.default.createElement(LoadMore_1.default, { loading: loading, hasNextPage: hasNextPage, handleSearch: function () { return handleLoadMore(cursor); } })));
 };
 exports.default = ShopifyProductSearch;

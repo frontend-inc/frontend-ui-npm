@@ -39,6 +39,7 @@ var ShowField = function (props) {
         date: __1.FieldDate,
         datetime: __1.FieldDate,
         file: __1.FieldFile,
+        html: __1.FieldHTML,
         location: __1.FieldString,
         image: __1.FieldImage,
         video: __1.FieldVideo,
@@ -62,7 +63,7 @@ var ShowField = function (props) {
             className: '',
         },
         email: {
-            className: 'italic text-sm',
+            className: 'text-sm',
         },
         string: {
             className: 'text-sm',
@@ -70,8 +71,12 @@ var ShowField = function (props) {
         text: {
             className: 'text-md',
         },
+        html: {
+            className: 'prose prose-sm',
+        },
         image: {
             label: label,
+            height: 450,
         },
         video: {
             height: 450,

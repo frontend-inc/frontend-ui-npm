@@ -28,22 +28,10 @@ var useSearch = function (props) {
     var _a;
     var _b = props.query, defaultQuery = _b === void 0 ? {} : _b;
     var _c = (0, frontend_js_1.useResourceContext)(), loading = _c.loading, delayedLoading = _c.delayedLoading, resources = _c.resources, query = _c.query, setQuery = _c.setQuery, findMany = _c.findMany, reloadMany = _c.reloadMany, page = _c.page, numPages = _c.numPages, loadMore = _c.loadMore;
-    var _d = (0, react_1.useState)(), filter = _d[0], setFilter = _d[1];
-    var _e = (0, react_1.useState)([]), queryFilters = _e[0], setQueryFilters = _e[1];
-    var _f = (0, react_1.useState)([]), activeFilters = _f[0], setActiveFilters = _f[1];
-    var _g = (0, react_1.useState)(''), keywords = _g[0], setKeywords = _g[1];
-    var _h = (0, react_1.useState)(''), location = _h[0], setLocation = _h[1];
-    var findFilter = function (fieldName, filters) {
-        var foundFilter = filters.find(function (f) { return f.name == fieldName; });
-        setFilter(foundFilter);
-        return foundFilter;
-    };
-    var compareValues = function (a, b) {
-        if (Array.isArray(a) && Array.isArray(b)) {
-            return a.sort().join(',') === b.sort().join(',');
-        }
-        return a === b;
-    };
+    var _d = (0, react_1.useState)([]), queryFilters = _d[0], setQueryFilters = _d[1];
+    var _e = (0, react_1.useState)([]), activeFilters = _e[0], setActiveFilters = _e[1];
+    var _f = (0, react_1.useState)(''), keywords = _f[0], setKeywords = _f[1];
+    var _g = (0, react_1.useState)(''), location = _g[0], setLocation = _g[1];
     // Compare only the name and operator and override
     var findDuplicateFilterIndex = function (filters, filter) {
         return filters.findIndex(function (f) { return f.name === filter.name && f.operator === filter.operator; });

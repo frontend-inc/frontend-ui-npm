@@ -1,6 +1,6 @@
 import React from 'react';
-import { ShowProps } from '../../components/cms/show/Show';
+import { ShowContainerProps } from '../../components/cms/show/ShowContainer';
 import { SectionProps } from '../../types';
-type CmsShowProps = SectionProps & ShowProps;
+type CmsShowProps = SectionProps & ShowContainerProps;
 declare const CmsShow: React.FC<CmsShowProps>;
 export default CmsShow;

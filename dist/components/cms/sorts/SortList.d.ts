@@ -7,5 +7,5 @@ type SortListProps = {
     handleSortBy: (field: SortOptionType) => void;
     handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
 };
-export default function SortList({ sortOptions, sortBy, sortDirection, handleSortBy, handleSortDirection, }: SortListProps): React.JSX.Element;
+export default function SortList(props: SortListProps): React.JSX.Element;
 export {};

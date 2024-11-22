@@ -90,7 +90,7 @@ var ShopifyProductInput = function (props) {
         });
     }, []);
     if (!enabled) {
-        return (react_1.default.createElement(components_2.Placeholder, { title: "Shopify setup required", description: "Shopify provider is not setup" }));
+        return (react_1.default.createElement(components_2.Empty, { icon: "ri-shopping-cart-2-fill", title: "Shopify setup required", description: "Shopify provider is not setup" }));
     }
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col space-y-4', className) },
         react_1.default.createElement(core_1.Collapse, { in: !!(product === null || product === void 0 ? void 0 : product.id) },

@@ -61,7 +61,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var google_1 = require("@react-oauth/google");
 var frontend_js_1 = require("frontend-js");
 var GoogleLoginButton = function (props) {
@@ -93,7 +93,7 @@ var GoogleLoginButton = function (props) {
     }, [OAuthCredentials]);
     return (
     //@ts-ignore
-    react_1.default.createElement(core_1.Button, { color: "secondary", 
+    react_1.default.createElement(components_1.Button, { color: "secondary", 
         //@ts-ignore
         onClick: handleLogin, loading: loading, size: "lg" },
         react_1.default.createElement("div", { className: "mr-2" },

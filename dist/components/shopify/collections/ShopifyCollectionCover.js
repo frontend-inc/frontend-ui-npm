@@ -30,7 +30,7 @@ var frontend_shopify_1 = require("frontend-shopify");
 var components_1 = require("../../../components");
 var ShopifyCollectionCover = function (props) {
     var _a;
-    var shopifyCollection = props.shopifyCollection, _b = props.alt, alt = _b === void 0 ? 'image' : _b, handleClick = props.handleClick, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d, _e = props.alignItems, alignItems = _e === void 0 ? 'center' : _e, buttonText = props.buttonText, enableQuantity = props.enableQuantity, enableAddToCart = props.enableAddToCart;
+    var shopifyCollection = props.shopifyCollection, _b = props.alt, alt = _b === void 0 ? 'image' : _b, handleClick = props.handleClick, _c = props.enableGradient, enableGradient = _c === void 0 ? false : _c, _d = props.enableOverlay, enableOverlay = _d === void 0 ? false : _d, _e = props.alignItems, alignItems = _e === void 0 ? 'items-center' : _e, buttonText = props.buttonText, enableQuantity = props.enableQuantity, enableAddToCart = props.enableAddToCart;
     var _f = (0, react_1.useState)(false), open = _f[0], setOpen = _f[1];
     var _g = (0, frontend_shopify_1.useCollections)(), collection = _g.collection, findCollection = _g.findCollection;
     var handleShowClick = function () {

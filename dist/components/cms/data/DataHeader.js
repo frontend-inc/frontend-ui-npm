@@ -16,9 +16,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
+var react_2 = require("@remixicon/react");
 var DataHeader = function (props) {
     var url = props.url, _a = props.query, defaultQuery = _a === void 0 ? {} : _a, _b = props.filterOptions, filterOptions = _b === void 0 ? [] : _b, _c = props.sortOptions, sortOptions = _c === void 0 ? [] : _c, _d = props.enableCreate, enableCreate = _d === void 0 ? false : _d, _e = props.enableSearch, enableSearch = _e === void 0 ? false : _e, _f = props.enableFilters, enableFilters = _f === void 0 ? false : _f, _g = props.enableSorting, enableSorting = _g === void 0 ? false : _g, _h = props.buttonText, buttonText = _h === void 0 ? 'Add' : _h, secondaryAction = props.secondaryAction, _j = props.component, SearchComponent = _j === void 0 ? __1.SearchInput : _j, _k = props.slots, slots = _k === void 0 ? {
         search: {},
@@ -40,9 +41,7 @@ var DataHeader = function (props) {
                 enableSorting && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
                     react_1.default.createElement(__1.SortButton, { sortOptions: sortOptions, sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'id', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'desc', handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
             (enableCreate || secondaryAction) && (react_1.default.createElement("div", { className: "flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1" },
-                react_1.default.createElement(core_1.Button, { className: "sm:w-auto", onClick: handleAdd },
-                    react_1.default.createElement(__1.Icon, { name: "Plus", className: "mr-2 text-primary-foreground" }),
-                    buttonText),
+                react_1.default.createElement(components_1.Button, { className: "sm:w-auto", startIcon: react_1.default.createElement(react_2.RiAddFill, { className: "text-primary-foreground" }), onClick: handleAdd }, buttonText),
                 secondaryAction)))));
 };
 exports.default = DataHeader;

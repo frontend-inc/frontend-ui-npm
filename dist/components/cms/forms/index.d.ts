@@ -6,6 +6,7 @@ export { default as FormWizard } from './FormWizard';
 export { default as FormWizardModal } from './FormWizardModal';
 export { default as FormInput } from './FormInput';
 export { default as FormField } from './FormField';
-export { default as DataFormWizard } from './DataFormWizardModal';
+export { default as FormData } from './FormData';
+export { default as FormDataWizard } from './FormDataWizard';
 export { default as DocumentForm } from './DocumentForm';
 export { default as DocumentFormWizardModal } from './DocumentFormWizardModal';

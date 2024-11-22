@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var frontend_js_1 = require("frontend-js");
 var context_1 = require("../../../context");
 var SignInButton = function (props) {
@@ -37,6 +37,6 @@ var SignInButton = function (props) {
     };
     if (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id)
         return null;
-    return (react_1.default.createElement(core_1.Button, { fullWidth: true, onClick: handleLogin }, buttonText));
+    return (react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleLogin }, buttonText));
 };
 exports.default = SignInButton;

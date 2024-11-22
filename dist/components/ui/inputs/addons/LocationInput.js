@@ -30,12 +30,13 @@ var __1 = require("../../..");
 var use_debounce_1 = require("use-debounce");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var use_click_outside_1 = require("@raddix/use-click-outside");
-function LocationInput(_a) {
-    var _b = _a.name, name = _b === void 0 ? 'location' : _b, _c = _a.value, value = _c === void 0 ? '' : _c, label = _a.label, _d = _a.placeholder, placeholder = _d === void 0 ? 'Search location' : _d, handleChange = _a.handleChange, _e = _a.direction, direction = _e === void 0 ? 'column' : _e, _f = _a.height, height = _f === void 0 ? 240 : _f, _g = _a.width, width = _g === void 0 ? 320 : _g, _h = _a.zoom, zoom = _h === void 0 ? 15 : _h, _j = _a.darkTheme, darkTheme = _j === void 0 ? false : _j, _k = _a.enablePosition, enablePosition = _k === void 0 ? false : _k, lat = _a.lat, lng = _a.lng;
-    var _l = (0, hooks_1.useGooglePlaces)(), placeOptions = _l.placeOptions, fetchPlaces = _l.fetchPlaces;
-    var _m = (0, react_1.useState)(value), keywords = _m[0], setKeywords = _m[1];
+var react_2 = require("@remixicon/react");
+function LocationInput(props) {
+    var _a = props.name, name = _a === void 0 ? 'location' : _a, _b = props.value, value = _b === void 0 ? '' : _b, label = props.label, _c = props.placeholder, placeholder = _c === void 0 ? 'Search location' : _c, handleChange = props.handleChange, _d = props.direction, direction = _d === void 0 ? 'column' : _d, _e = props.height, height = _e === void 0 ? 240 : _e, _f = props.width, width = _f === void 0 ? 320 : _f, _g = props.zoom, zoom = _g === void 0 ? 15 : _g, _h = props.darkTheme, darkTheme = _h === void 0 ? false : _h, _j = props.enablePosition, enablePosition = _j === void 0 ? false : _j, lat = props.lat, lng = props.lng;
+    var _k = (0, hooks_1.useGooglePlaces)(), placeOptions = _k.placeOptions, fetchPlaces = _k.fetchPlaces;
+    var _l = (0, react_1.useState)(value), keywords = _l[0], setKeywords = _l[1];
     var debouncedText = (0, use_debounce_1.useDebounce)(keywords, 150)[0];
-    var _o = (0, react_1.useState)(false), open = _o[0], setOpen = _o[1];
+    var _m = (0, react_1.useState)(false), open = _m[0], setOpen = _m[1];
     var wrapperRef = (0, react_1.useRef)(null);
     var handleKeywordChange = function (ev) {
         var value = ev.target.value;
@@ -68,7 +69,7 @@ function LocationInput(_a) {
         react_1.default.createElement("div", { className: "flex-grow relative", ref: wrapperRef },
             react_1.default.createElement(__1.TextInput, { name: name, label: label, value: keywords, handleChange: handleKeywordChange, direction: direction, placeholder: placeholder }),
             open && (react_1.default.createElement("div", { className: "absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg" }, placeOptions.length > 0 ? (react_1.default.createElement("ul", { className: "max-h-[300px] overflow-auto" }, placeOptions.map(function (option, index) { return (react_1.default.createElement("li", { key: index, className: "px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center", onClick: function () { return handleClick(option); } },
-                react_1.default.createElement(__1.Icon, { name: "map-pin", className: "mr-2 h-4 w-4" }),
+                react_1.default.createElement(react_2.RiMapPin2Fill, { className: "mr-2 h-4 w-4" }),
                 react_1.default.createElement("span", null, option.value))); }))) : (react_1.default.createElement("p", { className: "p-4 text-sm text-gray-500" }, "No results found")))))));
 }
 exports.default = LocationInput;

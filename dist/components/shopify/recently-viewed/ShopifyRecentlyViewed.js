@@ -14,6 +14,6 @@ var ShopifyRecentlyViewed = function (props) {
     return (react_1.default.createElement("div", { className: "w-full" },
         layout == 'grid' && (react_1.default.createElement(__2.ShopifyProducts, { products: products, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity })),
         layout == 'carousel' && (react_1.default.createElement(__2.ShopifyProductCarousel, { products: products, enableBorder: enableBorder })),
-        (products === null || products === void 0 ? void 0 : products.length) === 0 && (react_1.default.createElement(__1.Placeholder, { icon: 'ShoppingCart', title: 'No recently viewed', description: 'You have no recently viewed products.' }))));
+        (products === null || products === void 0 ? void 0 : products.length) === 0 && (react_1.default.createElement(__1.Empty, { icon: "ri-shopping-cart-2-fill", title: 'No recently viewed', description: 'You have no recently viewed products.' }))));
 };
 exports.default = ShopifyRecentlyViewed;

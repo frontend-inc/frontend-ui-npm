@@ -1,6 +1,7 @@
 import React from 'react';
 type ProductRatingProps = {
-    resource: any;
+    rating: number;
+    numReviews?: number;
     enableTotal?: boolean;
     size?: 'small' | 'medium' | 'large';
     justifyContent?: 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly';

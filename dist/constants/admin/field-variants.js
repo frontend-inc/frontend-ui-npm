@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FIELD_VARIANTS = exports.SOUNDCLOUND_AUDIO_FIELD_VARIANT = exports.VIMEO_VIDEO_FIELD_VARIANT = exports.YOUTUBE_VIDEO_FIELD_VARIANT = exports.SHOPIFY_PRODUCT_FIELD_VARIANT = exports.FILE_FIELD_VARIANT = exports.VIDEO_FIELD_VARIANT = exports.TEXT_FIELD_VARIANT = exports.STRING_FIELD_VARIANT = exports.RATING_FIELD_VARIANT = exports.NUMBER_FIELD_VARIANT = exports.LOCATION_FIELD_VARIANT = exports.PRICE_FIELD_VARIANT = exports.IMAGE_FIELD_VARIANT = exports.JSON_FIELD_VARIANT = exports.FLOAT_FIELD_VARIANT = exports.SELECT_FIELD_VARIANT = exports.DATETIME_FIELD_VARIANT = exports.DATE_FIELD_VARIANT = exports.BOOLEAN_FIELD_VARIANT = exports.TAG_ARRAY_FIELD_VARIANT = exports.URL_FIELD_VARIANT = exports.PHONE_FIELD_VARIANT = exports.EMAIL_FIELD_VARIANT = exports.AUDIO_FIELD_VARIANT = void 0;
 exports.AUDIO_FIELD_VARIANT = {
-    icon: 'Headphones',
+    icon: 'ri-headphone-fill',
     category: 'Media',
     variant: 'audio',
     db_type: 'string',
@@ -12,7 +12,7 @@ exports.AUDIO_FIELD_VARIANT = {
     color: 'bg-pink-500',
 };
 exports.EMAIL_FIELD_VARIANT = {
-    icon: 'Mail',
+    icon: 'ri-mail-fill',
     category: 'Text',
     variant: 'email',
     db_type: 'string',
@@ -22,7 +22,7 @@ exports.EMAIL_FIELD_VARIANT = {
     color: 'bg-green-500',
 };
 exports.PHONE_FIELD_VARIANT = {
-    icon: 'Phone',
+    icon: 'ri-phone-fill',
     category: 'Text',
     variant: 'phone',
     db_type: 'string',
@@ -32,7 +32,7 @@ exports.PHONE_FIELD_VARIANT = {
     color: 'bg-green-500',
 };
 exports.URL_FIELD_VARIANT = {
-    icon: 'Link',
+    icon: 'ri-link-m',
     category: 'Text',
     variant: 'url',
     db_type: 'string',
@@ -42,7 +42,7 @@ exports.URL_FIELD_VARIANT = {
     color: 'bg-green-500',
 };
 exports.TAG_ARRAY_FIELD_VARIANT = {
-    icon: 'List',
+    icon: 'ri-list-unordered',
     category: 'Text',
     variant: 'array',
     label: 'Tags',
@@ -52,7 +52,7 @@ exports.TAG_ARRAY_FIELD_VARIANT = {
     color: 'bg-purple-500',
 };
 exports.BOOLEAN_FIELD_VARIANT = {
-    icon: 'ToggleLeft',
+    icon: 'ri-toggle-fill',
     category: 'Boolean',
     variant: 'boolean',
     db_type: 'boolean',
@@ -62,7 +62,7 @@ exports.BOOLEAN_FIELD_VARIANT = {
     color: 'bg-sky-500',
 };
 exports.DATE_FIELD_VARIANT = {
-    icon: 'Calendar',
+    icon: 'ri-calendar-fill',
     category: 'Date',
     variant: 'date',
     db_type: 'datetime',
@@ -72,7 +72,7 @@ exports.DATE_FIELD_VARIANT = {
     color: 'bg-amber-500',
 };
 exports.DATETIME_FIELD_VARIANT = {
-    icon: 'Clock',
+    icon: 'ri-time-fill',
     category: 'Date',
     variant: 'datetime',
     db_type: 'datetime',
@@ -82,7 +82,7 @@ exports.DATETIME_FIELD_VARIANT = {
     color: 'bg-amber-500',
 };
 exports.SELECT_FIELD_VARIANT = {
-    icon: 'ChevronDownSquare',
+    icon: 'ri-arrow-down-s-fill',
     category: 'Text',
     variant: 'select',
     label: 'Select',
@@ -92,7 +92,7 @@ exports.SELECT_FIELD_VARIANT = {
     color: 'bg-purple-500',
 };
 exports.FLOAT_FIELD_VARIANT = {
-    icon: 'Hash',
+    icon: 'ri-hashtag',
     category: 'Numbers',
     variant: 'float',
     db_type: 'float',
@@ -102,7 +102,7 @@ exports.FLOAT_FIELD_VARIANT = {
     color: 'bg-purple-500',
 };
 exports.JSON_FIELD_VARIANT = {
-    icon: 'FileJson',
+    icon: 'ri-code-s-slash-fill',
     category: 'Data',
     variant: 'json',
     db_type: 'jsonb',
@@ -112,7 +112,7 @@ exports.JSON_FIELD_VARIANT = {
     color: 'bg-blue-500',
 };
 exports.IMAGE_FIELD_VARIANT = {
-    icon: 'Image',
+    icon: 'ri-image-fill',
     category: 'Media',
     variant: 'image',
     db_type: 'string',
@@ -122,7 +122,7 @@ exports.IMAGE_FIELD_VARIANT = {
     color: 'bg-pink-500',
 };
 exports.PRICE_FIELD_VARIANT = {
-    icon: 'DollarSign',
+    icon: 'ri-money-dollar-box-fill',
     category: 'Numbers',
     variant: 'price',
     db_type: 'float',
@@ -132,7 +132,7 @@ exports.PRICE_FIELD_VARIANT = {
     color: 'bg-purple-500',
 };
 exports.LOCATION_FIELD_VARIANT = {
-    icon: 'MapPin',
+    icon: 'ri-map-pin-fill',
     category: 'Geographic',
     variant: 'location',
     db_type: 'string',
@@ -142,7 +142,7 @@ exports.LOCATION_FIELD_VARIANT = {
     color: 'bg-teal-500',
 };
 exports.NUMBER_FIELD_VARIANT = {
-    icon: 'Hash',
+    icon: 'ri-hashtag',
     category: 'Numbers',
     variant: 'number',
     db_type: 'integer',
@@ -152,7 +152,7 @@ exports.NUMBER_FIELD_VARIANT = {
     color: 'bg-purple-500',
 };
 exports.RATING_FIELD_VARIANT = {
-    icon: 'Star',
+    icon: 'ri-star-fill',
     category: 'Numbers',
     variant: 'rating',
     db_type: 'integer',
@@ -162,7 +162,7 @@ exports.RATING_FIELD_VARIANT = {
     color: 'bg-purple-500',
 };
 exports.STRING_FIELD_VARIANT = {
-    icon: 'Type',
+    icon: 'ri-text',
     category: 'Text',
     variant: 'string',
     db_type: 'string',
@@ -172,7 +172,7 @@ exports.STRING_FIELD_VARIANT = {
     color: 'bg-purple-500',
 };
 exports.TEXT_FIELD_VARIANT = {
-    icon: 'FileText',
+    icon: 'ri-file-text-fill',
     category: 'Text',
     variant: 'text',
     db_type: 'text',
@@ -182,7 +182,7 @@ exports.TEXT_FIELD_VARIANT = {
     color: 'bg-purple-500',
 };
 exports.VIDEO_FIELD_VARIANT = {
-    icon: 'Video',
+    icon: 'ri-video-fill',
     category: 'Media',
     variant: 'video',
     label: 'Video',
@@ -192,7 +192,7 @@ exports.VIDEO_FIELD_VARIANT = {
     color: 'bg-pink-500',
 };
 exports.FILE_FIELD_VARIANT = {
-    icon: 'File',
+    icon: 'ri-file-fill',
     category: 'Media',
     variant: 'file',
     label: 'File',
@@ -202,7 +202,7 @@ exports.FILE_FIELD_VARIANT = {
     color: 'bg-pink-500',
 };
 exports.SHOPIFY_PRODUCT_FIELD_VARIANT = {
-    icon: 'Shirt',
+    icon: 'ri-t-shirt-fill',
     category: 'Shopify',
     variant: 'shopify_product',
     label: 'Shopify Product',
@@ -212,7 +212,7 @@ exports.SHOPIFY_PRODUCT_FIELD_VARIANT = {
     color: 'bg-lime-500',
 };
 exports.YOUTUBE_VIDEO_FIELD_VARIANT = {
-    icon: 'Youtube',
+    icon: 'ri-youtube-fill',
     category: 'Addon',
     variant: 'youtube_video',
     label: 'YouTube Video',
@@ -222,7 +222,7 @@ exports.YOUTUBE_VIDEO_FIELD_VARIANT = {
     color: 'bg-pink-500',
 };
 exports.VIMEO_VIDEO_FIELD_VARIANT = {
-    icon: 'PlayCircle',
+    icon: 'ri-play-circle-fill',
     category: 'Addon',
     variant: 'vimeo_video',
     label: 'Vimeo Video',
@@ -232,7 +232,7 @@ exports.VIMEO_VIDEO_FIELD_VARIANT = {
     color: 'bg-pink-500',
 };
 exports.SOUNDCLOUND_AUDIO_FIELD_VARIANT = {
-    icon: 'AudioLines',
+    icon: 'ri-sound-module-fill',
     category: 'Addon',
     variant: 'soundcloud_audio',
     label: 'Soundcloud Audio',

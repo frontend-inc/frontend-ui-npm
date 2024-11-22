@@ -14,7 +14,7 @@ export type CoverCarouselProps = {
     enableBorder?: boolean;
     enableArrows?: boolean;
     opacity?: number;
-    alignItems?: 'flex-start' | 'center' | 'flex-end';
+    alignItems?: 'items-center' | 'items-start' | 'items-end';
 };
 declare const CoverCarousel: React.FC<CoverCarouselProps>;
 export default CoverCarousel;

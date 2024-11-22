@@ -67,17 +67,17 @@ var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../hooks");
 var components_1 = require("../../../components");
 var image_1 = __importDefault(require("next/image"));
-var core_1 = require("../../core");
 var components_2 = require("../../../components");
+var components_3 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var lucide_react_1 = require("lucide-react");
 var CartQuantityInput = function (props) {
     var _a = props.buttonClasses, buttonClasses = _a === void 0 ? 'w-[32px] p-0' : _a, quantity = props.quantity, handleAddQuantity = props.handleAddQuantity, handleRemoveQuantity = props.handleRemoveQuantity;
     return (react_1.default.createElement("div", { className: "inline-flex rounded-md", role: "group" },
-        react_1.default.createElement(components_2.Button, { size: "sm", variant: "secondary", className: (0, frontend_shadcn_1.cn)(buttonClasses, 'rounded-r-none border-none'), onClick: handleRemoveQuantity },
+        react_1.default.createElement(components_3.Button, { size: "sm", variant: "secondary", className: (0, frontend_shadcn_1.cn)(buttonClasses, 'rounded-r-none border-none'), onClick: handleRemoveQuantity },
             react_1.default.createElement(lucide_react_1.Minus, { size: 20 })),
-        react_1.default.createElement(components_2.Button, { size: "sm", variant: "secondary", className: (0, frontend_shadcn_1.cn)(buttonClasses, 'rounded-none border-none') }, quantity),
-        react_1.default.createElement(components_2.Button, { size: "sm", variant: "secondary", className: (0, frontend_shadcn_1.cn)(buttonClasses, 'rounded-l-none border-none'), onClick: handleAddQuantity },
+        react_1.default.createElement(components_3.Button, { size: "sm", variant: "secondary", className: (0, frontend_shadcn_1.cn)(buttonClasses, 'rounded-none border-none') }, quantity),
+        react_1.default.createElement(components_3.Button, { size: "sm", variant: "secondary", className: (0, frontend_shadcn_1.cn)(buttonClasses, 'rounded-l-none border-none'), onClick: handleAddQuantity },
             react_1.default.createElement(lucide_react_1.Plus, { size: 20 }))));
 };
 var CartLineItem = function (props) {
@@ -134,11 +134,11 @@ var CartLineItem = function (props) {
                                     objectFit: 'cover',
                                 }, className: "w-full cursor-pointer object-cover" })))),
                 react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
-                    react_1.default.createElement(core_1.Typography, { variant: "body1" }, product === null || product === void 0 ? void 0 : product.title),
-                    react_1.default.createElement(core_1.Typography, { className: "text-muted-foreground", variant: "body2" }, product === null || product === void 0 ? void 0 : product.display_price),
+                    react_1.default.createElement(components_2.Typography, { variant: "body1" }, product === null || product === void 0 ? void 0 : product.title),
+                    react_1.default.createElement(components_2.Typography, { className: "text-muted-foreground", variant: "body2" }, product === null || product === void 0 ? void 0 : product.display_price),
                     react_1.default.createElement(CartQuantityInput, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity }))),
             react_1.default.createElement("button", { onClick: handleRemoveFromCart, className: "focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm p-1 mr-1" },
                 react_1.default.createElement(components_1.Icon, { name: "X", className: "h-4 w-4 text-muted-foreground hover:text-foreground" }))),
-        react_1.default.createElement(components_2.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, productId: product === null || product === void 0 ? void 0 : product.handle })));
+        react_1.default.createElement(components_3.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, productId: product === null || product === void 0 ? void 0 : product.handle })));
 };
 exports.default = CartLineItem;

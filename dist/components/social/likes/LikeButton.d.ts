@@ -4,5 +4,5 @@ type LikeButtonProps = {
     size?: 'small' | 'large';
     variant?: 'rounded' | 'circular';
 };
-export default function LikeButton({ resource, size, variant, }: LikeButtonProps): React.JSX.Element;
+export default function LikeButton(props: LikeButtonProps): React.JSX.Element;
 export {};

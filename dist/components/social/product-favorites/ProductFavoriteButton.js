@@ -64,8 +64,7 @@ var react_1 = __importStar(require("react"));
 var helpers_1 = require("../../../helpers");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
-var lucide_react_1 = require("lucide-react");
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 function ProductFavoriteButton(_a) {
     var _this = this;
@@ -105,8 +104,9 @@ function ProductFavoriteButton(_a) {
         }
     }, [currentUser, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(core_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' &&
+        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' &&
                 'border border-divider bg-background text-secondary hover:bg-background hover:text-secondary', isFavorite && 'text-primary hover:text-primary-dark') },
-            react_1.default.createElement(lucide_react_1.Bookmark, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', isFavorite ? 'fill-primary' : 'fill-none ') }))));
+            isFavorite && (react_1.default.createElement(components_1.RemixIcon, { name: "ri-bookmark-fill", className: "fill-primary" })),
+            !isFavorite && react_1.default.createElement(components_1.RemixIcon, { name: "ri-bookmark-line" }))));
 }
 exports.default = ProductFavoriteButton;

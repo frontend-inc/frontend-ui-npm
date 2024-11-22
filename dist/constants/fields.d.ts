@@ -13,7 +13,17 @@ export declare const SUBTITLE: {
     name: string;
     variant: string;
 };
+export declare const SUBTITLE_TEXT: {
+    label: string;
+    name: string;
+    variant: string;
+};
 export declare const DESCRIPTION: {
+    label: string;
+    name: string;
+    variant: string;
+};
+export declare const HTML: {
     label: string;
     name: string;
     variant: string;

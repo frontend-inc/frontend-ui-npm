@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var TableCard = function (props) {
     var _a = props || {}, label = _a.label, primary = _a.primary, secondary = _a.secondary, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, _b = _a.height, height = _b === void 0 ? 240 : _b, _c = _a.slots, slots = _c === void 0 ? {
@@ -31,7 +31,7 @@ var TableCard = function (props) {
                     react_1.default.createElement("button", { className: "w-full h-full focus:outline-none", onClick: handleClick },
                         react_1.default.createElement(__1.Image, __assign({ src: image, height: height, alt: primary, className: "w-full h-full object-cover" }, slots.image))))),
             react_1.default.createElement("div", { className: "flex flex-row justify-start items-center max-w-[140px] min-w-[140px]" },
-                react_1.default.createElement(core_1.Typography, { variant: "body1" }, primary)),
+                react_1.default.createElement(components_1.Typography, { variant: "body1" }, primary)),
             secondary),
         react_1.default.createElement("div", { className: "flex flex-row justify-end" }, secondaryAction)));
 };

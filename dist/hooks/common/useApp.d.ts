@@ -4,6 +4,7 @@ declare const useApp: () => {
     app: any;
     setApp: any;
     logo: any;
+    editable: any;
     apiUrl: any;
     clientUrl: any;
     enableShopify: any;

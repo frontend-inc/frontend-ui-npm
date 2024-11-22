@@ -1,10 +1,12 @@
-export type ActionType = 'page' | 'url' | 'email' | 'sms' | 'phone' | 'copy' | 'download';
+export type ActionType = 'page' | 'url' | 'email' | 'sms' | 'phone' | 'whatsapp' | 'copy' | 'download' | 'share' | 'video' | 'image';
 export type ButtonType = {
     icon?: string;
     label: string;
+    action_type: ActionType;
     variant?: 'default' | 'secondary' | 'outline' | 'link' | 'ghost';
     url?: string;
     path?: string;
+    src?: string;
     onClick?: (ev: any) => void;
 };
 export type SocialFieldType = {

@@ -61,12 +61,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../core");
+var components_1 = require("../../../components");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var KlaviyoSubscribe = function (props) {
     var _a = props || {}, listId = _a.listId, apiKey = _a.apiKey, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
-    var _c = (0, hooks_1.useAlerts)(), showAlertError = _c.showAlertError, showAlertSuccess = _c.showAlertSuccess;
+    var _c = (0, hooks_1.useToast)(), showAlertError = _c.showAlertError, showAlertSuccess = _c.showAlertSuccess;
     var _d = (0, hooks_1.useKlaviyo)({
         apiKey: apiKey,
     }), loading = _d.loading, handleSubmit = _d.handleSubmit;
@@ -110,6 +110,6 @@ var KlaviyoSubscribe = function (props) {
     return (react_1.default.createElement("div", { className: "py-2 w-full flex flex-col items-center justify-center" },
         react_1.default.createElement("div", { className: "flex flex-row max-w-[400px]" },
             react_1.default.createElement(__1.TextInput, { direction: "row", placeholder: 'Enter email...', name: "email", value: email, handleChange: handleChange, className: "rounded-r-none" }),
-            react_1.default.createElement(core_1.Button, { color: "secondary", onClick: handleFormSubmit, className: "min-w-[120px] rounded-l-none", loading: loading }, buttonText))));
+            react_1.default.createElement(components_1.Button, { color: "secondary", onClick: handleFormSubmit, className: "min-w-[120px] rounded-l-none", loading: loading }, buttonText))));
 };
 exports.default = KlaviyoSubscribe;
