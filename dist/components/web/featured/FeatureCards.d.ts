@@ -12,8 +12,7 @@ export type FeatureCardsProps = {
     }[];
     enableGradient?: boolean;
     enableOverlay?: boolean;
-    border?: boolean;
-    fill?: boolean;
+    variant?: 'default' | 'fill' | 'outline';
     direction?: 'row' | 'column';
 };
 declare const FeatureCards: React.FC<FeatureCardsProps>;

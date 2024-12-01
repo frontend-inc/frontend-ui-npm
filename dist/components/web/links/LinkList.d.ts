@@ -13,8 +13,7 @@ type LinkListType = {
     src?: string;
 };
 export type LinkListProps = {
-    fill?: boolean;
-    border?: boolean;
+    variant?: 'fill' | 'outline' | 'default';
     items: LinkListType[];
 };
 declare const LinkList: React.FC<LinkListProps>;

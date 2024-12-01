@@ -30,12 +30,12 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UIFeatureIcons = function (props) {
-    var _a = props.direction, direction = _a === void 0 ? 'column' : _a, label = props.label, title = props.title, subtitle = props.subtitle, _b = props.textAlign, textAlign = _b === void 0 ? 'center' : _b, _c = props.fontSize, fontSize = _c === void 0 ? 'lg' : _c, fill = props.fill, border = props.border, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, _d = props.maxWidth, maxWidth = _d === void 0 ? 'lg' : _d, requireAuth = props.requireAuth, editable = props.editable, handleChange = props.handleChange, rest = __rest(props, ["direction", "label", "title", "subtitle", "textAlign", "fontSize", "fill", "border", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "editable", "handleChange"]);
+    var _a = props.direction, direction = _a === void 0 ? 'column' : _a, label = props.label, title = props.title, subtitle = props.subtitle, _b = props.textAlign, textAlign = _b === void 0 ? 'center' : _b, _c = props.fontSize, fontSize = _c === void 0 ? 'md' : _c, variant = props.variant, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, _d = props.maxWidth, maxWidth = _d === void 0 ? 'lg' : _d, requireAuth = props.requireAuth, editable = props.editable, handleChange = props.handleChange, rest = __rest(props, ["direction", "label", "title", "subtitle", "textAlign", "fontSize", "variant", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "editable", "handleChange"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_1.Stack, { direction: direction },
             react_1.default.createElement(components_1.Stack, { direction: direction, size: "1/3", spacing: 10 },
                 react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: direction == 'row' ? 'left' : 'center', size: fontSize, editable: editable, handleChange: handleChange })),
             react_1.default.createElement(components_1.Stack, { direction: direction, size: "2/3" },
-                react_1.default.createElement(components_2.FeatureIcons, __assign({}, rest, { direction: direction, fill: fill, border: border }))))));
+                react_1.default.createElement(components_2.FeatureIcons, __assign({}, rest, { direction: direction, variant: variant }))))));
 };
 exports.default = UIFeatureIcons;

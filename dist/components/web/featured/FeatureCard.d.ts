@@ -11,8 +11,7 @@ export type FeaturedCardProps = {
     objectFit?: 'cover' | 'contain';
     enableOverlay?: boolean;
     enableGradient?: boolean;
-    border?: boolean;
-    fill?: boolean;
+    variant?: 'default' | 'fill' | 'outline';
 };
 declare const FeaturedCard: React.FC<FeaturedCardProps>;
 export default FeaturedCard;

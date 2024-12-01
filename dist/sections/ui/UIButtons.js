@@ -29,10 +29,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
-var UIHero = function (props) {
-    var variant = props.variant, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, _a = props.maxWidth, maxWidth = _a === void 0 ? 'xl' : _a, requireAuth = props.requireAuth, style = props.style, rest = __rest(props, ["variant", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "style"]);
-    var fullWidth = style == 'spotlight' || style == 'cover' ? true : false;
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: fullWidth ? 'none' : py, px: fullWidth ? 'none' : px, maxWidth: maxWidth, variant: variant },
-        react_1.default.createElement(components_2.Hero, __assign({}, rest, { style: style }))));
+var UIButtons = function (props) {
+    var bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, _a = props.maxWidth, maxWidth = _a === void 0 ? 'lg' : _a, requireAuth = props.requireAuth, editable = props.editable, handleChange = props.handleChange, variant = props.variant, rest = __rest(props, ["bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "editable", "handleChange", "variant"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth, variant: variant },
+        react_1.default.createElement(components_2.ButtonActions, __assign({}, rest))));
 };
-exports.default = UIHero;
+exports.default = UIButtons;

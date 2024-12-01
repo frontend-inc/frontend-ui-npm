@@ -1,7 +1,6 @@
 import React from 'react';
 export type FeatureIconsProps = {
-    fill?: boolean;
-    border?: boolean;
+    variant?: 'fill' | 'outline' | 'default';
     items: {
         icon?: any;
         title?: string;

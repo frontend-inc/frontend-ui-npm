@@ -1,10 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DOCUMENT_SHOW_FIELDS = exports.DOCUMENT_FORM_FIELDS = exports.SOUNDCLOUD_AUDIO = exports.VIMEO_VIDEO = exports.YOUTUBE_VIDEO = exports.SHOPIFY_PRODUCT = exports.LOCATION = exports.PRICE = exports.END_DATE = exports.START_DATE = exports.PUBLISHED_AT = exports.FILE = exports.AUDIO = exports.VIDEO = exports.IMAGE = exports.TAGS = exports.CATEGORY = exports.LABEL = exports.ABOUT = exports.NAME = exports.HTML = exports.DESCRIPTION = exports.SUBTITLE_TEXT = exports.SUBTITLE = exports.TITLE = exports.HANDLE = void 0;
+exports.DOCUMENT_SHOW_FIELDS = exports.DOCUMENT_FORM_FIELDS = exports.SOUNDCLOUD_AUDIO = exports.VIMEO_VIDEO = exports.YOUTUBE_VIDEO = exports.SHOPIFY_PRODUCT = exports.LOCATION = exports.PRICE = exports.END_DATE = exports.START_DATE = exports.PUBLISHED_AT = exports.FILE = exports.AUDIO = exports.VIDEO = exports.IMAGE = exports.TAGS = exports.CATEGORY = exports.LABEL = exports.ABOUT = exports.NAME = exports.HTML = exports.DESCRIPTION = exports.SUBTITLE_TEXT = exports.HEADLINE = exports.SUBTITLE = exports.TITLE = exports.HANDLE = void 0;
 exports.HANDLE = { label: 'Handle', name: 'handle', variant: 'slug' };
 exports.TITLE = { label: 'Title', name: 'title', variant: 'string' };
 exports.SUBTITLE = {
     label: 'Subtitle',
+    name: 'subtitle',
+    variant: 'string',
+};
+exports.HEADLINE = {
+    label: 'Headline',
     name: 'subtitle',
     variant: 'string',
 };
@@ -23,8 +28,8 @@ exports.HTML = {
     name: 'html',
     variant: 'html',
 };
-exports.NAME = { label: 'Name', name: 'name', variant: 'string' };
-exports.ABOUT = { label: 'About', name: 'about', variant: 'text' };
+exports.NAME = { label: 'Name', name: 'title', variant: 'string' };
+exports.ABOUT = { label: 'About', name: 'description', variant: 'text' };
 exports.LABEL = { label: 'Label', name: 'label', variant: 'string' };
 exports.CATEGORY = {
     label: 'Category',
@@ -102,7 +107,7 @@ exports.DOCUMENT_FORM_FIELDS = {
         exports.LOCATION,
         exports.TAGS,
     ],
-    person: [exports.IMAGE, exports.NAME, exports.ABOUT, exports.SUBTITLE, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],
+    person: [exports.IMAGE, exports.NAME, exports.ABOUT, exports.HEADLINE, exports.TAGS],
     product: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.DESCRIPTION, exports.PRICE, exports.TAGS],
     image: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.TAGS],
     video: [exports.IMAGE, exports.VIDEO, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],
@@ -163,7 +168,7 @@ exports.DOCUMENT_SHOW_FIELDS = {
         exports.LOCATION,
         exports.TAGS,
     ],
-    person: [exports.IMAGE, exports.NAME, exports.SUBTITLE, exports.CATEGORY, exports.ABOUT, exports.TAGS],
+    person: [exports.IMAGE, exports.NAME, exports.HEADLINE, exports.CATEGORY, exports.ABOUT, exports.TAGS],
     event: [
         exports.IMAGE,
         exports.TITLE,

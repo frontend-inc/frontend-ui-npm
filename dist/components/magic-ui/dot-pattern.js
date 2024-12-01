@@ -1,4 +1,3 @@
-'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -46,17 +45,17 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IconButton = void 0;
+exports.DotPattern = void 0;
 var react_1 = __importStar(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
-var frontend_shadcn_2 = require("frontend-shadcn");
-var IconButton = (0, react_1.forwardRef)(function (_a, ref) {
-    var _b = _a.color, color = _b === void 0 ? 'ghost' : _b, _c = _a.variant, variant = _c === void 0 ? 'rounded' : _c, className = _a.className, children = _a.children, props = __rest(_a, ["color", "variant", "className", "children"]);
-    var variantClasses = {
-        rounded: 'rounded-md',
-        circular: 'rounded-full',
-    };
-    return (react_1.default.createElement(frontend_shadcn_1.Button, __assign({ ref: ref, size: "icon", variant: "ghost", className: (0, frontend_shadcn_2.cn)('w-[36px] h-[36px] min-w-[36px] min-h-[36px] text-foreground bg-transparent hover:bg-foreground/10', 'flex items-center justify-center', variantClasses[variant], className) }, props), children));
-});
-exports.IconButton = IconButton;
-IconButton.displayName = 'IconButton';
+function DotPattern(_a) {
+    var _b = _a.width, width = _b === void 0 ? 16 : _b, _c = _a.height, height = _c === void 0 ? 16 : _c, _d = _a.x, x = _d === void 0 ? 0 : _d, _e = _a.y, y = _e === void 0 ? 0 : _e, _f = _a.cx, cx = _f === void 0 ? 1 : _f, _g = _a.cy, cy = _g === void 0 ? 1 : _g, _h = _a.cr, cr = _h === void 0 ? 1 : _h, className = _a.className, props = __rest(_a, ["width", "height", "x", "y", "cx", "cy", "cr", "className"]);
+    var id = (0, react_1.useId)();
+    return (react_1.default.createElement("svg", __assign({ "aria-hidden": "true", className: (0, frontend_shadcn_1.cn)("pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/80", className) }, props),
+        react_1.default.createElement("defs", null,
+            react_1.default.createElement("pattern", { id: id, width: width, height: height, patternUnits: "userSpaceOnUse", patternContentUnits: "userSpaceOnUse", x: x, y: y },
+                react_1.default.createElement("circle", { id: "pattern-circle", cx: cx, cy: cy, r: cr }))),
+        react_1.default.createElement("rect", { width: "100%", height: "100%", strokeWidth: 0, fill: "url(#".concat(id, ")") })));
+}
+exports.DotPattern = DotPattern;
+exports.default = DotPattern;

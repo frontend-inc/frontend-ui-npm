@@ -6,22 +6,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
-var hooks_1 = require("../../../hooks");
+var next_themes_1 = require("next-themes");
 var lucide_react_1 = require("lucide-react");
 var lucide_react_2 = require("lucide-react");
 var frontend_shadcn_2 = require("frontend-shadcn");
-function CustomDrawer(_a) {
-    var open = _a.open, handleClose = _a.handleClose, loading = _a.loading, title = _a.title, description = _a.description, children = _a.children, buttons = _a.buttons, _b = _a.maxWidth, maxWidth = _b === void 0 ? 'md' : _b, className = _a.className;
+function CustomDrawer(props) {
+    var open = props.open, handleClose = props.handleClose, loading = props.loading, title = props.title, description = props.description, children = props.children, buttons = props.buttons, _a = props.maxWidth, maxWidth = _a === void 0 ? 'md' : _a, className = props.className;
     var maxWidthClasses = {
         sm: 'max-w-screen-sm',
         md: 'max-w-screen-md',
         lg: 'max-w-screen-lg',
         xl: 'max-w-screen-xl',
     };
-    var mode = (0, hooks_1.useTheme)().mode;
+    var theme = (0, next_themes_1.useTheme)().theme;
     return (react_1.default.createElement(frontend_shadcn_1.Drawer, { open: open, onOpenChange: handleClose },
         react_1.default.createElement(frontend_shadcn_1.DrawerPortal, null,
-            react_1.default.createElement(frontend_shadcn_1.DrawerContent, { className: (0, frontend_shadcn_2.cn)(mode, className) },
+            react_1.default.createElement(frontend_shadcn_1.DrawerContent, { className: (0, frontend_shadcn_2.cn)(theme, className) },
                 react_1.default.createElement(frontend_shadcn_1.DrawerHeader, null,
                     react_1.default.createElement("div", { className: "flex w-full justify-end" },
                         react_1.default.createElement(frontend_shadcn_1.DrawerClose, null,

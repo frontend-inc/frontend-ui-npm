@@ -36,7 +36,7 @@ var Heading = function (props) {
         react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full container max-w-screen-md flex flex-col justify-between', textAlign === 'center' && 'mx-auto') },
             react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col', spacingClass) },
                 label && (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(textAlign === 'center' && 'text-center', textAlign === 'right' && 'text-right') },
-                    react_1.default.createElement(components_1.Typography, { editable: editable, variant: "caption", className: (0, frontend_shadcn_1.cn)('text-primary uppercase', textAlign === 'center' && 'text-center', textAlign === 'right' && 'text-right'), name: "label", handleChange: handleChange }, label))),
+                    react_1.default.createElement(components_1.Typography, { editable: editable, variant: "caption", className: (0, frontend_shadcn_1.cn)('text-primary uppercase tracking-widest font-semibold opacity-90', textAlign === 'center' && 'text-center', textAlign === 'right' && 'text-right'), name: "label", handleChange: handleChange }, label))),
                 title && (react_1.default.createElement(components_1.Typography, { editable: editable, variant: titleVariant, textAlign: textAlign, name: "title", handleChange: handleChange }, title)),
                 subtitle && (react_1.default.createElement(components_1.Typography, { variant: subtitleVariant, className: "leading-8 text-foreground/70", textAlign: textAlign, editable: editable, name: "subtitle", handleChange: handleChange }, subtitle))),
             secondaryAction)));

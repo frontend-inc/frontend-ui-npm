@@ -18,7 +18,7 @@ var SignupForm = function (props) {
             react_1.default.createElement(__1.TextInput, { errors: errors, direction: "column", name: "email", label: "Email", value: user === null || user === void 0 ? void 0 : user.email, placeholder: "Email", handleChange: handleChange }),
             react_1.default.createElement(__1.TextInput, { errors: errors, direction: "column", name: "password", label: "Password", value: user === null || user === void 0 ? void 0 : user.password, type: "password", placeholder: "Password", handleChange: handleChange })),
         react_1.default.createElement("div", { className: "flex flex-col space-y-3 w-full" },
-            react_1.default.createElement(components_1.Button, { size: "lg", fullWidth: true, onClick: handleSubmit, loading: loading }, "Register"),
+            react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleSubmit, loading: loading }, "Register"),
             handleLogin && (react_1.default.createElement(components_1.Button, { fullWidth: true, color: "secondary", variant: "ghost", onClick: handleLogin }, "Already have an account? Sign in")))));
 };
 exports.default = SignupForm;

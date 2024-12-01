@@ -80,10 +80,10 @@ var EmailSubscribe = function (props) {
         });
     }); };
     return (react_1.default.createElement("div", { className: "flex flex-row justify-center items-center" },
-        react_1.default.createElement("div", { className: "max-w-[360px] w-full p-1 flex flex-row justify-center items-center" },
+        react_1.default.createElement("div", { className: "md:max-w-[360px] w-full p-1 flex flex-row justify-center items-center" },
             react_1.default.createElement(__1.InputBase, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, 
                 //@ts-ignore
-                handleChange: handleChange, placeholder: "Enter your email", type: "email", className: "rounded-l-md text-base h-[48px] min-w-[280px] rounded-r-none border-r-0" }),
+                handleChange: handleChange, placeholder: "Enter your email", type: "email", className: "rounded-l-md text-base h-[48px] md:min-w-[280px] rounded-r-none border-r-0" }),
             react_1.default.createElement(components_1.Button, { size: "lg", onClick: handleSubmit, className: "rounded-l-none rounded-r-md text-base", loading: delayedLoading }, buttonText))));
 };
 exports.default = EmailSubscribe;

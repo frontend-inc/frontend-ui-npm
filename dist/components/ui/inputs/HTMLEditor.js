@@ -37,7 +37,7 @@ var MenuBar = function (_a) {
     var editor = _a.editor;
     if (!editor)
         return null;
-    var headingLevels = [1, 2, 3];
+    var headingLevels = [1, 2, 3, 4, 5, 6];
     var textAlignOptions = [
         {
             label: 'Align Left',
@@ -124,7 +124,7 @@ var MenuBar = function (_a) {
             label: 'Redo',
         },
     ];
-    return (react_1.default.createElement("div", { className: "w-full md:min-w-[670px] p-2 bg-white rounded-xl shadow-lg flex flex-wrap space-x-2" },
+    return (react_1.default.createElement("div", { className: "w-full md:min-w-[720px] p-2 bg-white rounded-xl shadow-lg flex flex-wrap space-x-2" },
         formattingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900 text-white'), "aria-label": btn.label },
             react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-zinc-900', btn.isActive && 'text-white') }))); }),
         headingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900 text-white'), "aria-label": btn.label },
@@ -161,15 +161,13 @@ var HTMLEditor = function (props) {
         },
     });
     (0, react_1.useEffect)(function () {
-        if (handleChange) {
-            handleChange({
-                target: {
-                    name: name,
-                    value: debouncedText,
-                },
-            });
-        }
-    }, [handleChange, debouncedText]);
+        handleChange({
+            target: {
+                name: name,
+                value: debouncedText,
+            },
+        });
+    }, [debouncedText]);
     var isInitialMount = (0, react_1.useRef)(true);
     (0, react_1.useEffect)(function () {
         if (isInitialMount.current) {

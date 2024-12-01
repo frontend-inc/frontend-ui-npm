@@ -20,11 +20,11 @@ var __1 = require("../..");
 var __2 = require("../..");
 var LinkListItem_1 = __importDefault(require("./LinkListItem"));
 var LinkList = function (props) {
-    var _a = props || {}, fill = _a.fill, border = _a.border, items = _a.items;
+    var _a = props || {}, variant = _a.variant, items = _a.items;
     return (react_1.default.createElement("div", { className: "w-full justify-center flex flow-row py-1" },
         react_1.default.createElement("div", { className: "container mx-auto max-w-screen-2xl" },
             react_1.default.createElement("ul", { className: "list-none w-full flex flex-col space-y-2" }, items === null || items === void 0 ? void 0 : items.map(function (item, idx) { return (react_1.default.createElement(__2.BlurFade, { delay: 0.25 + idx * 0.05, key: idx },
-                react_1.default.createElement(LinkListItem_1.default, __assign({}, item, { fill: fill, border: border })))); })),
+                react_1.default.createElement(LinkListItem_1.default, __assign({}, item, { variant: variant })))); })),
             (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Empty, { icon: "ri-list-unordered-line", title: "No links yet.", description: "Your links will appear here." })))));
 };
 exports.default = LinkList;

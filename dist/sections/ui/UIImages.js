@@ -30,8 +30,8 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UIImages = function (props) {
-    var label = props.label, title = props.title, subtitle = props.subtitle, _a = props.textAlign, textAlign = _a === void 0 ? 'center' : _a, _b = props.fontSize, fontSize = _b === void 0 ? 'lg' : _b, fill = props.fill, border = props.border, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["label", "title", "subtitle", "textAlign", "fontSize", "fill", "border", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth, fill: fill, border: border },
+    var label = props.label, title = props.title, subtitle = props.subtitle, _a = props.textAlign, textAlign = _a === void 0 ? 'center' : _a, _b = props.fontSize, fontSize = _b === void 0 ? 'md' : _b, variant = props.variant, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["label", "title", "subtitle", "textAlign", "fontSize", "variant", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth, variant: variant },
         react_1.default.createElement("div", { className: "flex flex-col space-y-[40px] w-full" },
             react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: textAlign, size: fontSize }),
             react_1.default.createElement(components_2.Images, __assign({}, rest)))));

@@ -1,8 +1,7 @@
 import React from 'react';
 import { ActionType } from '../../../types';
 type PriceListType = {
-    fill?: boolean;
-    border?: boolean;
+    variant?: 'fill' | 'outline' | 'default';
     image: string;
     title: string;
     subtitle: string;
@@ -12,8 +11,7 @@ type PriceListType = {
     src?: string;
 };
 export type PriceListProps = {
-    fill?: boolean;
-    border?: boolean;
+    variant?: 'fill' | 'outline' | 'default';
     items: PriceListType[];
 };
 declare const PriceList: React.FC<PriceListProps>;

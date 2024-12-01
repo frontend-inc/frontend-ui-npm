@@ -1,8 +1,7 @@
 import React from 'react';
 import { ActionType } from '../../../types';
 export type PriceListItemProps = {
-    fill?: boolean;
-    border?: boolean;
+    variant?: 'fill' | 'outline' | 'default';
     image: string;
     title: string;
     subtitle: string;

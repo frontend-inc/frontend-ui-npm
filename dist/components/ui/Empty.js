@@ -17,7 +17,7 @@ var Empty = function (props) {
         secondary: 'text-secondary',
         destructive: 'text-destructive',
     };
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(fill && 'bg-muted/50', 'p-4 rounded-lg h-full w-full flex flex-col space-y-2 items-center justify-center', variant == 'destructive' &&
+    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(fill && 'bg-muted/50', 'rounded-lg py-10 w-full flex flex-col space-y-2 items-center justify-center', variant == 'destructive' &&
             'bg-destructive/10 border border-destructive', variant == 'accent' && 'bg-accent/10 border border-accent', className) },
         icon && (react_1.default.createElement(__1.RemixIcon, { name: icon, size: "xl", className: (0, frontend_shadcn_1.cn)(variant && textClasses[variant]) })),
         react_1.default.createElement("div", { className: "flex flex-col space-y-0 w-full items-center justify-center" },

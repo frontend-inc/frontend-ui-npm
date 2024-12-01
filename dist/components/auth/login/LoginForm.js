@@ -15,7 +15,7 @@ var LoginForm = function (props) {
             react_1.default.createElement(__1.TextInput, { errors: errors, label: "Email", name: "email", value: user === null || user === void 0 ? void 0 : user.email, placeholder: "Email", handleChange: handleChange }),
             react_1.default.createElement(__1.TextInput, { errors: errors, label: "Password", name: "password", value: user === null || user === void 0 ? void 0 : user.password, type: "password", placeholder: "Password", handleChange: handleChange })),
         react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
-            react_1.default.createElement(components_1.Button, { size: "lg", fullWidth: true, onClick: handleSubmit, loading: loading }, "Sign In"),
+            react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleSubmit, loading: loading }, "Sign In"),
             handleSignup && (react_1.default.createElement(components_1.Button, { fullWidth: true, variant: "ghost", onClick: handleSignup }, "No account? Sign up")),
             handleForgotPassword && (react_1.default.createElement(components_1.Button, { fullWidth: true, color: "secondary", variant: "ghost", onClick: handleForgotPassword }, "Forgot password?")),
             handleOneTimePassword && (react_1.default.createElement(components_1.Button, { fullWidth: true, color: "secondary", variant: "ghost", onClick: handleOneTimePassword }, "One-time password")))));

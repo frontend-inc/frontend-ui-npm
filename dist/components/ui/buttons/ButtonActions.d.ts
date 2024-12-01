@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonType } from '../../../types';
-type ButtonActionsProps = {
+export type ButtonActionsProps = {
     buttons: ButtonType[];
     size?: 'sm' | 'default' | 'lg';
     justifyContent?: 'justify-start' | 'justify-center' | 'justify-end';

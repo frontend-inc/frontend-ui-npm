@@ -8,7 +8,7 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var VideoCover = function (props) {
-    var src = props.src, label = props.label, title = props.title, subtitle = props.subtitle, buttonText = props.buttonText, handleClick = props.handleClick, path = props.path, _a = props.alignItems, alignItems = _a === void 0 ? 'items-center' : _a, actions = props.actions, _b = props.height, height = _b === void 0 ? 400 : _b, enableOverlay = props.enableOverlay, _c = props.fontSize, fontSize = _c === void 0 ? 'lg' : _c, editable = props.editable, handleChange = props.handleChange;
+    var src = props.src, label = props.label, title = props.title, subtitle = props.subtitle, buttonText = props.buttonText, handleClick = props.handleClick, path = props.path, _a = props.alignItems, alignItems = _a === void 0 ? 'items-center' : _a, actions = props.actions, _b = props.height, height = _b === void 0 ? 400 : _b, enableOverlay = props.enableOverlay, _c = props.fontSize, fontSize = _c === void 0 ? 'md' : _c, editable = props.editable, handleChange = props.handleChange;
     var onClick = (0, hooks_1.useNavigate)({
         path: path,
         handleClick: handleClick,

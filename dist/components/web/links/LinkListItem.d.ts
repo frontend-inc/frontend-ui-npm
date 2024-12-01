@@ -1,8 +1,7 @@
 import React from 'react';
 import { ActionType } from '../../../types';
 export type LinkListItemProps = {
-    fill?: boolean;
-    border?: boolean;
+    variant?: 'fill' | 'outline' | 'default';
     color: string;
     icon: string;
     title: string;
