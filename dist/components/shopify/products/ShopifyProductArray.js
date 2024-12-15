@@ -27,17 +27,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var __1 = require("..");
-var ProductArray = function (props) {
-    var handles = props.handles, _a = props.enableBorder, enableBorder = _a === void 0 ? false : _a, _b = props.enableAddToCart, enableAddToCart = _b === void 0 ? false : _b, _c = props.enableQuantity, enableQuantity = _c === void 0 ? false : _c;
-    return (react_1.default.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-full" }, handles === null || handles === void 0 ? void 0 : handles.map(function (handle) {
+var ShopifyProductArray = function (props) {
+    var _a = props || {}, handles = _a.handles, _b = _a.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = _a.enableAddToCart, enableAddToCart = _c === void 0 ? false : _c, _d = _a.enableQuantity, enableQuantity = _d === void 0 ? false : _d;
+    return (react_1.default.createElement("div", { className: "w-full gap-6 pb-1 grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))]" }, handles === null || handles === void 0 ? void 0 : handles.map(function (handle) {
         var _a = (0, frontend_shopify_1.useProducts)(), product = _a.product, findProduct = _a.findProduct;
         (0, react_1.useEffect)(function () {
-            findProduct(handle);
-        }, [handle, findProduct]);
+            if (handle) {
+                findProduct(handle);
+            }
+        }, [handle]);
         if (!product)
             return null;
         return (react_1.default.createElement("div", { key: product === null || product === void 0 ? void 0 : product.id, className: "p-1" },
             react_1.default.createElement(__1.ShopifyProductCard, { product: product, enableBorder: enableBorder, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity })));
     })));
 };
-exports.default = ProductArray;
+exports.default = ShopifyProductArray;

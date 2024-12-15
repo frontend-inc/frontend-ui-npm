@@ -13,6 +13,7 @@ export type CardsProps = {
     items: CardType[];
     enableGradient?: boolean;
     enableOverlay?: boolean;
+    layout?: 'grid' | 'carousel';
 };
 declare const Cards: React.FC<CardsProps>;
 export default Cards;

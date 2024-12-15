@@ -14,7 +14,7 @@ var CartLineItems = function () {
     if (!(cart === null || cart === void 0 ? void 0 : cart.uid))
         return null;
     if ((cart === null || cart === void 0 ? void 0 : cart.line_items.length) === 0) {
-        return (react_1.default.createElement(components_2.Empty, { icon: "ri-shopping-bag-2-fill", title: "Your cart is empty", description: "There are no products in the cart." }));
+        return (react_1.default.createElement(components_2.Empty, { icon: "ri-shopping-bag-2-line", title: "Your cart is empty", description: "There are no products in the cart." }));
     }
     return (react_1.default.createElement(components_1.List, null, cart === null || cart === void 0 ? void 0 : cart.line_items.map(function (lineItem) { return (react_1.default.createElement(CartLineItem_1.default, { key: lineItem.id, lineItem: lineItem })); })));
 };

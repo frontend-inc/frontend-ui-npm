@@ -15,6 +15,6 @@ var CartButton = function (props) {
     return (react_1.default.createElement("div", { className: "relative" },
         react_1.default.createElement(components_1.IconButton, { onClick: function () { return setCartOpen(!cartOpen); } },
             react_1.default.createElement(components_2.RemixIcon, { name: icon, size: "lg" })),
-        react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, cart === null || cart === void 0 ? void 0 : cart.total_items)));
+        (cart === null || cart === void 0 ? void 0 : cart.total_items) > 0 && (react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, cart === null || cart === void 0 ? void 0 : cart.total_items))));
 };
 exports.default = CartButton;

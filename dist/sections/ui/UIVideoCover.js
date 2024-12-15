@@ -30,7 +30,7 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UIVideoCover = function (props) {
-    var bgColor = props.bgColor, mode = props.mode, px = props.px, py = props.py, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["bgColor", "mode", "px", "py", "maxWidth", "requireAuth"]);
+    var bgColor = props.bgColor, bgImage = props.bgImage, bgOverlay = props.bgOverlay, mode = props.mode, px = props.px, py = props.py, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["bgColor", "bgImage", "bgOverlay", "mode", "px", "py", "maxWidth", "requireAuth"]);
     return (react_1.default.createElement(components_1.Section, { mode: "dark", py: "none", px: "none", maxWidth: maxWidth },
         react_1.default.createElement(components_2.VideoCover, __assign({}, rest))));
 };

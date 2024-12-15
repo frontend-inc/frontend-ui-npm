@@ -38,18 +38,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
+var hooks_1 = require("../../../hooks");
 var ShowContainer = function (props) {
     var _a = props || {}, documentId = _a.documentId, url = _a.url;
-    var _b = (0, frontend_js_1.useResource)({
-        url: url,
-        name: 'document',
-    }), loading = _b.loading, resource = _b.resource, findOne = _b.findOne;
+    var _b = (0, hooks_1.useDocuments)(), loading = _b.loading, document = _b.document, findDocument = _b.findDocument;
     (0, react_1.useEffect)(function () {
         if (documentId) {
-            findOne(documentId);
+            findDocument(documentId);
         }
     }, [documentId]);
-    return (react_1.default.createElement(frontend_js_1.ResourceProvider, { name: "document", url: url, resource: resource },
+    return (react_1.default.createElement(frontend_js_1.ResourceProvider, { name: "document", url: url, resource: document },
         react_1.default.createElement(__1.Show, __assign({}, props, { url: url }))));
 };
 exports.default = ShowContainer;

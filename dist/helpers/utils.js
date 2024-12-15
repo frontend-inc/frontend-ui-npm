@@ -115,11 +115,14 @@ var scrollTo = function (domId) {
     elem === null || elem === void 0 ? void 0 : elem.scrollIntoView({ behavior: 'smooth' });
 };
 exports.scrollTo = scrollTo;
-var formatCurrency = function (amount, currency) {
+var formatCurrency = function (amount, precision, currency) {
+    if (precision === void 0) { precision = 2; }
     if (currency === void 0) { currency = 'USD'; }
+    // Specify the decimal and thousands separator
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: currency,
+        minimumFractionDigits: precision,
     }).format(amount);
 };
 exports.formatCurrency = formatCurrency;

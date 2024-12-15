@@ -5,17 +5,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
 var image_1 = __importDefault(require("next/image"));
 var ImageModal = function (props) {
     var open = props.open, image = props.image, _a = props.title, title = _a === void 0 ? '' : _a, handleClose = props.handleClose;
-    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var handleCopyUrlClick = function () {
         (0, copy_to_clipboard_1.default)(image === null || image === void 0 ? void 0 : image.url);
-        showAlertSuccess('Asset URL copied to clipboard');
+        (0, sonner_1.toast)('Asset URL copied to clipboard');
     };
     var handleDownloadClick = function () {
         window.open(image === null || image === void 0 ? void 0 : image.url, '_blank');

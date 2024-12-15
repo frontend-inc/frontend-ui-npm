@@ -30,10 +30,10 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UIImage = function (props) {
-    var title = props.title, variant = props.variant, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, _a = props.maxWidth, maxWidth = _a === void 0 ? 'sm' : _a, _b = props.aspectRatio, aspectRatio = _b === void 0 ? 1.5 : _b, requireAuth = props.requireAuth, rest = __rest(props, ["title", "variant", "bgColor", "mode", "py", "px", "maxWidth", "aspectRatio", "requireAuth"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth, variant: variant },
+    var image = props.image, title = props.title, variant = props.variant, bgColor = props.bgColor, bgImage = props.bgImage, bgOverlay = props.bgOverlay, mode = props.mode, py = props.py, px = props.px, _a = props.maxWidth, maxWidth = _a === void 0 ? 'sm' : _a, _b = props.aspectRatio, aspectRatio = _b === void 0 ? 1.5 : _b, requireAuth = props.requireAuth, rest = __rest(props, ["image", "title", "variant", "bgColor", "bgImage", "bgOverlay", "mode", "py", "px", "maxWidth", "aspectRatio", "requireAuth"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, bgImage: bgImage, bgOverlay: bgOverlay, mode: mode, py: py, px: px, maxWidth: maxWidth, variant: variant },
         react_1.default.createElement("figure", { className: "w-full flex flex-col space-y-2" },
-            react_1.default.createElement(components_2.Image, __assign({}, rest, { aspectRatio: aspectRatio })),
+            react_1.default.createElement(components_2.Image, __assign({}, rest, { src: image, aspectRatio: aspectRatio })),
             title && (react_1.default.createElement("figcaption", { className: "text-sm text-muted-foreground text-center" }, title)))));
 };
 exports.default = UIImage;

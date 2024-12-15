@@ -1,6 +1,6 @@
-import React from "react";
-import { type HTMLMotionProps } from "framer-motion";
-interface ShinyButtonProps extends HTMLMotionProps<"button"> {
+import React from 'react';
+import { type HTMLMotionProps } from 'framer-motion';
+interface ShinyButtonProps extends HTMLMotionProps<'button'> {
     children: React.ReactNode;
     className?: string;
 }

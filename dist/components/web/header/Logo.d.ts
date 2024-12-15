@@ -5,5 +5,5 @@ type LogoProps = {
     height?: number;
     handleClick: (path: string) => void;
 };
-export default function Logo({ src, width, height, handleClick, }: LogoProps): React.JSX.Element;
+export default function Logo(props: LogoProps): React.JSX.Element;
 export {};

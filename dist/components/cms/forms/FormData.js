@@ -74,10 +74,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var FormData = function (props) {
     var _a = props || {}, buttonText = _a.buttonText, formId = _a.formId;
     var _b = (0, hooks_1.useForms)(), loading = _b.loading, form = _b.form, findForm = _b.findForm;
-    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var _c = (0, hooks_1.useContacts)({
         formId: formId,
     }), errors = _c.errors, responseLoading = _c.loading, contact = _c.contact, setContact = _c.setContact, handleChange = _c.handleChange, updateContact = _c.updateContact, removeAttachment = _c.removeAttachment, addAttachment = _c.addAttachment, submitForm = _c.submitForm;
@@ -98,7 +98,7 @@ var FormData = function (props) {
                 case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setContact({});
-                        showAlertSuccess('Form submitted successfully');
+                        (0, sonner_1.toast)('Form submitted successfully');
                     }
                     return [2 /*return*/];
             }

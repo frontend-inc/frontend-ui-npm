@@ -74,6 +74,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var FormDataWizard = function (props) {
     var _a;
     var _b = (0, react_1.useState)(false), open = _b[0], setOpen = _b[1];
@@ -83,7 +84,6 @@ var FormDataWizard = function (props) {
     var _f = (0, hooks_1.useContacts)({
         formId: formId,
     }), responseLoading = _f.loading, contact = _f.contact, setContact = _f.setContact, handleChange = _f.handleChange, updateContact = _f.updateContact, removeAttachment = _f.removeAttachment, addAttachment = _f.addAttachment, submitForm = _f.submitForm;
-    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -101,7 +101,7 @@ var FormDataWizard = function (props) {
                 case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setSubmitted(true);
-                        showAlertSuccess('Form submitted successfully');
+                        (0, sonner_1.toast)('Form submitted successfully');
                         handleResetForm();
                     }
                     return [2 /*return*/];

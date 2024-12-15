@@ -1,5 +1,4 @@
 export { default as useButton } from './useButton';
-export { default as useToast } from './useToast';
 export { default as useApp } from './useApp';
 export { default as useClickOrDrag } from './useClickOrDrag';
 export { default as useDragDrop } from './useDragDrop';

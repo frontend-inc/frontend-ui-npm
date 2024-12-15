@@ -63,12 +63,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
-var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var navigation_1 = require("next/navigation");
-var hooks_2 = require("../../../hooks");
+var hooks_1 = require("../../../hooks");
 var UserForm = function (props) {
     var router = (0, navigation_1.useRouter)();
-    var clientUrl = (0, hooks_2.useApp)().clientUrl;
+    var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var href = (props || {}).href;
     var onSuccess = function () {
         if (href) {
@@ -76,7 +76,6 @@ var UserForm = function (props) {
         }
     };
     var _a = props.buttonText, buttonText = _a === void 0 ? 'Update Profile' : _a, fields = props.fields, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c;
-    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var _d = (0, frontend_js_1.useAuth)(), delayedLoading = _d.delayedLoading, errors = _d.errors, user = _d.user, setUser = _d.setUser, fetchMe = _d.fetchMe, currentUser = _d.currentUser, updateMe = _d.updateMe, handleChange = _d.handleChange, deleteAvatar = _d.deleteAvatar;
     var handleRemove = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -100,7 +99,7 @@ var UserForm = function (props) {
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         fetchMe();
                         if (onSuccessMessage) {
-                            showAlertSuccess(onSuccessMessage);
+                            (0, sonner_1.toast)(onSuccessMessage);
                         }
                         if (handleSuccess) {
                             handleSuccess(resp);

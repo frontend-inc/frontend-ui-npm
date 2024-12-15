@@ -43,9 +43,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var SusbcribeButton = function (props) {
     var productId = props.productId, _a = props.buttonText, buttonText = _a === void 0 ? 'Subscribe' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, fullWidth = props.fullWidth, availableForSale = props.availableForSale, price = props.price;
-    var showAlertError = (0, hooks_1.useToast)().showAlertError;
     var _c = (0, hooks_1.useSubscribe)(), loading = _c.loading, subscribe = _c.subscribe;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         var currentUrl, stripe;
@@ -61,7 +61,7 @@ var SusbcribeButton = function (props) {
                 case 1:
                     stripe = (_d.sent());
                     if (stripe === null || stripe === void 0 ? void 0 : stripe.error) {
-                        showAlertError(stripe === null || stripe === void 0 ? void 0 : stripe.error);
+                        sonner_1.toast.error(stripe === null || stripe === void 0 ? void 0 : stripe.error);
                     }
                     else if ((_a = stripe === null || stripe === void 0 ? void 0 : stripe.data) === null || _a === void 0 ? void 0 : _a.url) {
                         if (window.parent === window) {

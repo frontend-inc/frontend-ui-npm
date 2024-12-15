@@ -26,10 +26,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
+var components_1 = require("../../../components");
+var lucide_react_1 = require("lucide-react");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var ShopifySubscriptionSelector = function (props) {
-    var product = props.product, _a = props.activeSellingPlanId, activeSellingPlanId = _a === void 0 ? '' : _a, handleChange = props.handleChange;
-    var _b = (0, react_1.useState)([]), sellingPlans = _b[0], setSellingPlans = _b[1];
+    var _a = props || {}, product = _a.product, _b = _a.activeSellingPlanId, activeSellingPlanId = _b === void 0 ? null : _b, handleChange = _a.handleChange;
+    var _c = (0, react_1.useState)([]), sellingPlans = _c[0], setSellingPlans = _c[1];
+    var _d = (0, react_1.useState)(false), isOpen = _d[0], setIsOpen = _d[1];
     (0, react_1.useEffect)(function () {
         var _a, _b, _c, _d, _e;
         if (product) {
@@ -42,18 +45,25 @@ var ShopifySubscriptionSelector = function (props) {
             setSellingPlans(subscriptions);
         }
     }, [product]);
+    var toggleOpen = function () { return setIsOpen(!isOpen); };
+    var handleSelectPlan = function (planId) {
+        handleChange(planId);
+        setIsOpen(false);
+    };
     if (!sellingPlans || sellingPlans.length === 0)
         return null;
-    return (react_1.default.createElement("div", { className: "w-full" },
-        react_1.default.createElement(frontend_shadcn_1.Select, { onValueChange: handleChange, value: activeSellingPlanId },
-            react_1.default.createElement(frontend_shadcn_1.SelectTrigger, { className: "w-full" },
-                react_1.default.createElement(frontend_shadcn_1.SelectValue, { placeholder: "Select a subscription" })),
-            react_1.default.createElement(frontend_shadcn_1.SelectContent, null,
-                react_1.default.createElement(frontend_shadcn_1.SelectItem, { value: "" },
-                    react_1.default.createElement("span", { className: "text-foreground italic" }, "No subscription")),
-                sellingPlans.map(function (sellingPlan) { return (react_1.default.createElement(frontend_shadcn_1.SelectItem, { key: sellingPlan.id, value: sellingPlan.id }, sellingPlan === null || sellingPlan === void 0 ? void 0 :
-                    sellingPlan.name,
-                    " - ",
-                    (0, frontend_shopify_1.getSellingPlanDescription)(sellingPlan))); })))));
+    var activePlan = sellingPlans.find(function (plan) { return plan.id === activeSellingPlanId; });
+    var buttonText = activePlan ? "".concat(activePlan.name, " - ").concat((0, frontend_shopify_1.getSellingPlanDescription)(activePlan)) : "Select subscription";
+    return (react_1.default.createElement("div", { className: "w-full relative" },
+        react_1.default.createElement(components_1.Button, { variant: "outline", onClick: toggleOpen, className: "w-full justify-between" },
+            react_1.default.createElement("span", { className: "truncate" }, buttonText),
+            react_1.default.createElement(lucide_react_1.ChevronRight, { className: (0, frontend_shadcn_1.cn)("ml-2 h-4 w-4 shrink-0 transition-transform duration-200", isOpen && "rotate-90") })),
+        isOpen && (react_1.default.createElement("div", { className: "absolute z-10 w-full mt-1 bg-background border rounded-md shadow-lg" },
+            react_1.default.createElement(components_1.Button, { variant: "ghost", onClick: function () { return handleSelectPlan(null); }, className: "w-full justify-start font-normal" },
+                react_1.default.createElement("span", { className: "text-muted-foreground italic" }, "No subscription")), sellingPlans === null || sellingPlans === void 0 ? void 0 :
+            sellingPlans.map(function (sellingPlan) { return (react_1.default.createElement(components_1.Button, { key: sellingPlan.id, variant: "ghost", onClick: function () { return handleSelectPlan(sellingPlan.id); }, className: "w-full justify-start font-normal" }, sellingPlan === null || sellingPlan === void 0 ? void 0 :
+                sellingPlan.name,
+                " - ",
+                (0, frontend_shopify_1.getSellingPlanDescription)(sellingPlan))); })))));
 };
 exports.default = ShopifySubscriptionSelector;

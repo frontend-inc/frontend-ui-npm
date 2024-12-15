@@ -63,7 +63,7 @@ var ListField = function (props) {
         string: {
             variant: 'body2',
             value: (0, helpers_1.truncate)(value),
-            className: 'text-sm text-muted-foreground',
+            className: 'text-sm text-foreground/80',
         },
         text: {
             expandable: true,

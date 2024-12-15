@@ -41,6 +41,6 @@ function ShopifyCartButton(props) {
     return (react_1.default.createElement("div", { className: "relative" },
         react_1.default.createElement(components_2.IconButton, { onClick: handleCartClick },
             react_1.default.createElement(components_1.RemixIcon, { name: icon, size: "lg" })),
-        react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, cart === null || cart === void 0 ? void 0 : cart.totalQuantity)));
+        (cart === null || cart === void 0 ? void 0 : cart.totalQuantity) > 0 && (react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, cart === null || cart === void 0 ? void 0 : cart.totalQuantity))));
 }
 exports.default = ShopifyCartButton;

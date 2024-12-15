@@ -4,6 +4,7 @@ type SwipeableTestimonialCardProps = {
     text: string;
     avatar: string;
     size?: 'small' | 'large';
+    direction?: 'row' | 'column';
 };
 declare const SwipeableTestimonialCard: React.FC<SwipeableTestimonialCardProps>;
 export default SwipeableTestimonialCard;

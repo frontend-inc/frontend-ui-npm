@@ -33,16 +33,16 @@ var navigation_1 = require("next/navigation");
 var __1 = require("../..");
 var __2 = require("..");
 var LoadMore_1 = __importDefault(require("../search/LoadMore"));
-var ShopifyProductSearch = function (_a) {
-    var options = _a.options, _b = _a.enableSearch, enableSearch = _b === void 0 ? false : _b, _c = _a.enableFilters, enableFilters = _c === void 0 ? false : _c, _d = _a.enableSorting, enableSorting = _d === void 0 ? false : _d, _e = _a.enableAddToCart, enableAddToCart = _e === void 0 ? false : _e, _f = _a.enableQuantity, enableQuantity = _f === void 0 ? false : _f;
+var ShopifyProductSearch = function (props) {
+    var _a = props || {}, options = _a.options, _b = _a.enableSearch, enableSearch = _b === void 0 ? false : _b, _c = _a.enableFilters, enableFilters = _c === void 0 ? false : _c, _d = _a.enableSorting, enableSorting = _d === void 0 ? false : _d, _e = _a.enableAddToCart, enableAddToCart = _e === void 0 ? false : _e, _f = _a.enableQuantity, enableQuantity = _f === void 0 ? false : _f;
     var handle = (0, navigation_1.useParams)().handle;
     if (handle == 'index' || handle == undefined)
         handle = '';
     var _g = (0, react_1.useState)(''), keywords = _g[0], setKeywords = _g[1];
-    var _h = (0, frontend_shopify_1.useProducts)(), loading = _h.loading, cursor = _h.cursor, hasNextPage = _h.hasNextPage, products = _h.products, findProducts = _h.findProducts, searchProducts = _h.searchProducts;
-    var _j = (0, react_1.useState)('RELEVANCE'), sortKey = _j[0], setSortKey = _j[1];
+    var _h = (0, frontend_shopify_1.useProducts)(), loading = _h.loading, cursor = _h.cursor, hasNextPage = _h.hasNextPage, products = _h.products, findProducts = _h.findProducts;
+    var _j = (0, react_1.useState)('BEST_SELLING'), sortKey = _j[0], setSortKey = _j[1];
     var _k = (0, react_1.useState)(false), reverse = _k[0], setReverse = _k[1];
-    var _l = (0, frontend_shopify_1.useSearchFilters)(), filters = _l.filters, handleFilter = _l.handleFilter, handleFilterArray = _l.handleFilterArray, formatQueryFilters = _l.formatQueryFilters;
+    var _l = (0, frontend_shopify_1.useSearchFilters)(), filters = _l.filters, handleFilter = _l.handleFilter, handleFilterArray = _l.handleFilterArray;
     var handleChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -53,12 +53,12 @@ var ShopifyProductSearch = function (_a) {
             reverse: reverse,
         });
     };
-    var handleLoadMore = function (after) {
-        searchProducts({
+    var handleLoadMore = function (cursor) {
+        findProducts({
             query: keywords,
             sortKey: sortKey,
             reverse: reverse,
-            after: after,
+            after: cursor
         });
     };
     var handleSortClick = function (sortKey, reverse) {

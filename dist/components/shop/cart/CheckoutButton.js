@@ -43,10 +43,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var hooks_2 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var CheckoutButton = function () {
     var _a = (0, hooks_1.useCart)(), loading = _a.loading, cart = _a.cart, checkout = _a.checkout;
-    var showAlertError = (0, hooks_2.useToast)().showAlertError;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         var currentUrl, stripe, url;
         var _a;
@@ -61,7 +60,7 @@ var CheckoutButton = function () {
                 case 1:
                     stripe = _b.sent();
                     if (stripe === null || stripe === void 0 ? void 0 : stripe.errors) {
-                        showAlertError(stripe.errors);
+                        sonner_1.toast.error(stripe.errors);
                     }
                     else {
                         url = (_a = stripe === null || stripe === void 0 ? void 0 : stripe.data) === null || _a === void 0 ? void 0 : _a.url;

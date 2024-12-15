@@ -1,6 +1,6 @@
 import React from 'react';
-import { CollectionListProps } from '../../components/cms/collections/CollectionList';
+import { DocumentListProps } from '../../components/cms/documents/DocumentList';
 import { SectionProps, HeadingProps } from '../../types';
-type CmsListProps = SectionProps & HeadingProps & CollectionListProps;
+type CmsListProps = SectionProps & HeadingProps & DocumentListProps;
 declare const CmsList: React.FC<CmsListProps>;
 export default CmsList;

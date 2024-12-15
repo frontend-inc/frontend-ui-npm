@@ -1,6 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DOCUMENT_SHOW_FIELDS = exports.DOCUMENT_FORM_FIELDS = exports.SOUNDCLOUD_AUDIO = exports.VIMEO_VIDEO = exports.YOUTUBE_VIDEO = exports.SHOPIFY_PRODUCT = exports.LOCATION = exports.PRICE = exports.END_DATE = exports.START_DATE = exports.PUBLISHED_AT = exports.FILE = exports.AUDIO = exports.VIDEO = exports.IMAGE = exports.TAGS = exports.CATEGORY = exports.LABEL = exports.ABOUT = exports.NAME = exports.HTML = exports.DESCRIPTION = exports.SUBTITLE_TEXT = exports.HEADLINE = exports.SUBTITLE = exports.TITLE = exports.HANDLE = void 0;
+exports.DOCUMENT_SHOW_FIELDS = exports.DOCUMENT_FORM_FIELDS = exports.SOUNDCLOUD_AUDIO = exports.VIMEO_VIDEO = exports.YOUTUBE_VIDEO = exports.SHOPIFY_PRODUCT = exports.LOCATION = exports.PRICE = exports.PUBLISHED_AT = exports.FILE = exports.AUDIO = exports.VIDEO = exports.IMAGE = exports.TAGS = exports.CATEGORY = exports.LABEL = exports.ABOUT = exports.NAME = exports.HTML = exports.DESCRIPTION = exports.SUBTITLE_TEXT = exports.HEADLINE = exports.SUBTITLE = exports.TITLE = exports.HANDLE = exports.CONTENT_TYPE = void 0;
+exports.CONTENT_TYPE = {
+    label: 'Content Type',
+    name: 'content_type',
+    variant: 'select',
+    options: [
+        { label: 'Post', value: 'post', icon: 'ri-file-text-fill' },
+        { label: 'Article', value: 'article', icon: 'ri-file-text-fill' },
+        { label: 'Place', value: 'place', icon: 'ri-map-pin-line' },
+        { label: 'Event', value: 'event', icon: 'ri-calendar-event-fill' },
+        { label: 'Person', value: 'person', icon: 'ri-user-fill' },
+        { label: 'Product', value: 'product', icon: 'ri-shopping-cart-fill' },
+        { label: 'Image', value: 'image', icon: 'ri-image-fill' },
+        { label: 'Video', value: 'video', icon: 'ri-video-fill' },
+        { label: 'Audio', value: 'audio', icon: 'ri-music-fill' },
+        { label: 'File', value: 'file', icon: 'ri-file-fill' },
+        { label: 'Youtube', value: 'youtube', icon: 'ri-youtube-fill' },
+        { label: 'Vimeo', value: 'vimeo', icon: 'ri-vimeo-fill' },
+        { label: 'Soundcloud', value: 'soundcloud', icon: 'ri-soundcloud-fill' },
+        { label: 'Shopify', value: 'shopify', icon: 'ri-shopping-cart-fill' },
+    ],
+};
 exports.HANDLE = { label: 'Handle', name: 'handle', variant: 'slug' };
 exports.TITLE = { label: 'Title', name: 'title', variant: 'string' };
 exports.SUBTITLE = {
@@ -46,16 +67,6 @@ exports.PUBLISHED_AT = {
     name: 'published_at',
     variant: 'string',
 };
-exports.START_DATE = {
-    label: 'Start Date',
-    name: 'start_date',
-    variant: 'datetime',
-};
-exports.END_DATE = {
-    label: 'End Date',
-    name: 'end_date',
-    variant: 'datetime',
-};
 exports.PRICE = { label: 'Price', name: 'price', variant: 'number' };
 exports.LOCATION = {
     label: 'Location',
@@ -83,8 +94,18 @@ exports.SOUNDCLOUD_AUDIO = {
     variant: 'soundcloud_audio',
 };
 exports.DOCUMENT_FORM_FIELDS = {
-    post: [exports.IMAGE, exports.TITLE, exports.LABEL, exports.CATEGORY, exports.SUBTITLE, exports.DESCRIPTION, exports.TAGS],
+    post: [
+        exports.CONTENT_TYPE,
+        exports.IMAGE,
+        exports.TITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.SUBTITLE,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
     article: [
+        exports.CONTENT_TYPE,
         exports.IMAGE,
         exports.TITLE,
         exports.SUBTITLE_TEXT,
@@ -94,26 +115,75 @@ exports.DOCUMENT_FORM_FIELDS = {
         exports.HTML,
         exports.TAGS,
     ],
-    place: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.DESCRIPTION, exports.LOCATION, exports.TAGS],
-    event: [
+    place: [
+        exports.CONTENT_TYPE,
         exports.IMAGE,
         exports.TITLE,
         exports.SUBTITLE,
         exports.LABEL,
         exports.CATEGORY,
         exports.DESCRIPTION,
-        exports.START_DATE,
-        exports.END_DATE,
         exports.LOCATION,
         exports.TAGS,
     ],
-    person: [exports.IMAGE, exports.NAME, exports.ABOUT, exports.HEADLINE, exports.TAGS],
-    product: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.DESCRIPTION, exports.PRICE, exports.TAGS],
-    image: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.TAGS],
-    video: [exports.IMAGE, exports.VIDEO, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],
-    audio: [exports.IMAGE, exports.AUDIO, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],
-    file: [exports.FILE, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],
+    event: [
+        exports.CONTENT_TYPE,
+        exports.IMAGE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.LOCATION,
+        exports.TAGS,
+    ],
+    person: [exports.CONTENT_TYPE, exports.IMAGE, exports.NAME, exports.ABOUT, exports.HEADLINE, exports.TAGS],
+    product: [
+        exports.CONTENT_TYPE,
+        exports.IMAGE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.PRICE,
+        exports.TAGS,
+    ],
+    image: [exports.CONTENT_TYPE, exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.TAGS],
+    video: [
+        exports.CONTENT_TYPE,
+        exports.IMAGE,
+        exports.VIDEO,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    audio: [
+        exports.CONTENT_TYPE,
+        exports.IMAGE,
+        exports.AUDIO,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
+    file: [
+        exports.CONTENT_TYPE,
+        exports.FILE,
+        exports.TITLE,
+        exports.SUBTITLE,
+        exports.LABEL,
+        exports.CATEGORY,
+        exports.DESCRIPTION,
+        exports.TAGS,
+    ],
     youtube: [
+        exports.CONTENT_TYPE,
         exports.IMAGE,
         exports.YOUTUBE_VIDEO,
         exports.TITLE,
@@ -124,6 +194,7 @@ exports.DOCUMENT_FORM_FIELDS = {
         exports.TAGS,
     ],
     vimeo: [
+        exports.CONTENT_TYPE,
         exports.IMAGE,
         exports.VIMEO_VIDEO,
         exports.TITLE,
@@ -134,6 +205,7 @@ exports.DOCUMENT_FORM_FIELDS = {
         exports.TAGS,
     ],
     soundcloud: [
+        exports.CONTENT_TYPE,
         exports.IMAGE,
         exports.SOUNDCLOUD_AUDIO,
         exports.TITLE,
@@ -144,6 +216,7 @@ exports.DOCUMENT_FORM_FIELDS = {
         exports.TAGS,
     ],
     shopify: [
+        exports.CONTENT_TYPE,
         exports.IMAGE,
         exports.SHOPIFY_PRODUCT,
         exports.TITLE,
@@ -176,8 +249,6 @@ exports.DOCUMENT_SHOW_FIELDS = {
         exports.LOCATION,
         exports.CATEGORY,
         exports.DESCRIPTION,
-        exports.START_DATE,
-        exports.END_DATE,
         exports.TAGS,
     ],
     product: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.PRICE, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],

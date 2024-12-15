@@ -30,9 +30,12 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var AddonKlaviyoSubscribe = function (props) {
-    var label = props.label, title = props.title, subtitle = props.subtitle, textAlign = props.textAlign, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["label", "title", "subtitle", "textAlign", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: textAlign }),
-        react_1.default.createElement(components_2.KlaviyoSubscribe, __assign({}, rest))));
+    var _a = props.direction, direction = _a === void 0 ? 'row' : _a, label = props.label, title = props.title, subtitle = props.subtitle, _b = props.textAlign, textAlign = _b === void 0 ? 'center' : _b, _c = props.fontSize, fontSize = _c === void 0 ? 'md' : _c, variant = props.variant, bgColor = props.bgColor, bgImage = props.bgImage, bgOverlay = props.bgOverlay, mode = props.mode, py = props.py, px = props.px, _d = props.maxWidth, maxWidth = _d === void 0 ? 'lg' : _d, requireAuth = props.requireAuth, editable = props.editable, handleChange = props.handleChange, rest = __rest(props, ["direction", "label", "title", "subtitle", "textAlign", "fontSize", "variant", "bgColor", "bgImage", "bgOverlay", "mode", "py", "px", "maxWidth", "requireAuth", "editable", "handleChange"]);
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, bgImage: bgImage, bgOverlay: bgOverlay, mode: mode, py: py, px: px, maxWidth: maxWidth },
+        react_1.default.createElement(components_1.Stack, { direction: direction, spacing: 10, className: "items-center" },
+            react_1.default.createElement(components_1.Stack, { direction: direction, size: "1/3" },
+                react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, size: fontSize, textAlign: direction == 'row' ? 'left' : 'center', editable: editable, handleChange: handleChange })),
+            react_1.default.createElement(components_1.Stack, { direction: direction, size: "2/3", className: "items-center h-full justify-center" },
+                react_1.default.createElement(components_2.KlaviyoSubscribe, __assign({}, rest))))));
 };
 exports.default = AddonKlaviyoSubscribe;

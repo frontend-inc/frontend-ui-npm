@@ -54,7 +54,8 @@ function GoogleMap(_a) {
     }, [darkTheme]);
     var _h = (0, react_1.useState)([]), googleMarkers = _h[0], setGoogleMarkers = _h[1];
     var handleSetMarkers = function (resources) {
-        var markers = resources === null || resources === void 0 ? void 0 : resources.map(function (res) {
+        var _a;
+        var markers = (_a = resources === null || resources === void 0 ? void 0 : resources.filter(function (res) { return (res === null || res === void 0 ? void 0 : res.lat) && (res === null || res === void 0 ? void 0 : res.lng); })) === null || _a === void 0 ? void 0 : _a.map(function (res) {
             var _a;
             return ({
                 lat: res === null || res === void 0 ? void 0 : res.lat,

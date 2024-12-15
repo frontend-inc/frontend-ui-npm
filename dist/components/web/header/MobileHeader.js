@@ -10,7 +10,6 @@ var shopify_1 = require("../../shopify");
 var hooks_1 = require("../../../hooks");
 var Logo_1 = __importDefault(require("./Logo"));
 var components_1 = require("../../../components");
-var react_2 = require("@remixicon/react");
 var MobileHeader = function (props) {
     var bgColor = props.bgColor, logo = props.logo, _a = props.logoWidth, logoWidth = _a === void 0 ? 120 : _a, _b = props.logoHeight, logoHeight = _b === void 0 ? 50 : _b, handleClick = props.handleClick, buttons = props.buttons, _c = props.enableAuth, enableAuth = _c === void 0 ? false : _c, _d = props.enableStripe, enableStripe = _d === void 0 ? false : _d, _e = props.enableShopify, enableShopify = _e === void 0 ? false : _e;
     var setMenuOpen = (0, hooks_1.useApp)().setMenuOpen;
@@ -20,7 +19,7 @@ var MobileHeader = function (props) {
         react_1.default.createElement("div", { className: "flex justify-between items-center h-full px-4" },
             react_1.default.createElement("div", { className: "flex items-center" },
                 react_1.default.createElement(components_1.Button, { variant: "ghost", size: "icon", className: "mr-2", onClick: function () { return setMenuOpen(true); } },
-                    react_1.default.createElement(react_2.RiMenuFill, { size: 24 })),
+                    react_1.default.createElement(components_1.RemixIcon, { name: "ri-menu-fill" })),
                 react_1.default.createElement(Logo_1.default, { handleClick: function () { return handleClick('/'); }, src: logo, width: logoWidth, height: logoHeight - 20 })),
             react_1.default.createElement("div", { className: "flex items-center" },
                 (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement("div", { className: "mr-2" },

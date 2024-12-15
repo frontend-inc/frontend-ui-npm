@@ -1,4 +1,4 @@
-"use client";
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -57,14 +57,14 @@ exports.AnimatedList = react_1.default.memo(function (_a) {
     return (react_1.default.createElement("div", { className: "flex flex-col items-center gap-4 ".concat(className) },
         react_1.default.createElement(framer_motion_1.AnimatePresence, null, itemsToShow.map(function (item) { return (react_1.default.createElement(AnimatedListItem, { key: item.key }, item)); }))));
 });
-exports.AnimatedList.displayName = "AnimatedList";
+exports.AnimatedList.displayName = 'AnimatedList';
 function AnimatedListItem(_a) {
     var children = _a.children;
     var animations = {
         initial: { scale: 0, opacity: 0 },
         animate: { scale: 1, opacity: 1, originY: 0 },
         exit: { scale: 0, opacity: 0 },
-        transition: { type: "spring", stiffness: 350, damping: 40 },
+        transition: { type: 'spring', stiffness: 350, damping: 40 },
     };
     return (react_1.default.createElement(framer_motion_1.motion.div, __assign({}, animations, { layout: true, className: "mx-auto w-full" }), children));
 }

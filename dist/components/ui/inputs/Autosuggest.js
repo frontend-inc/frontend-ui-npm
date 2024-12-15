@@ -66,7 +66,7 @@ var Autosuggest = function (props) {
                 react_1.default.createElement(components_2.Button, { variant: "outline", role: "combobox", "aria-expanded": open, className: (0, frontend_shadcn_1.cn)('min-w-[220px] w-full text-foreground justify-between font-normal') },
                     (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.label) || 'Select...',
                     react_1.default.createElement(lucide_react_1.ChevronsUpDown, { className: "ml-2 h-4 w-4 shrink-0 opacity-50" })))),
-        react_1.default.createElement(frontend_shadcn_3.PopoverContent, { className: "bg-background w-[240px] p-0" },
+        react_1.default.createElement(frontend_shadcn_3.PopoverContent, { className: "bg-input w-[240px] p-0" },
             react_1.default.createElement(frontend_shadcn_2.Command, null,
                 react_1.default.createElement(frontend_shadcn_2.CommandInput, { onValueChange: handleCommandChange, placeholder: placeholder }),
                 react_1.default.createElement(frontend_shadcn_2.CommandList, null,

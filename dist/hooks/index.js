@@ -18,4 +18,5 @@ __exportStar(require("./app"), exports);
 __exportStar(require("./api"), exports);
 __exportStar(require("./addons"), exports);
 __exportStar(require("./shop"), exports);
+__exportStar(require("./cms"), exports);
 __exportStar(require("./common"), exports);

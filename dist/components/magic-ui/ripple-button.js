@@ -1,4 +1,4 @@
-"use client";
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -58,7 +58,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var frontend_shadcn_1 = require("frontend-shadcn");
 var react_1 = __importStar(require("react"));
 var RippleButton = react_1.default.forwardRef(function (_a, ref) {
-    var className = _a.className, children = _a.children, _b = _a.rippleColor, rippleColor = _b === void 0 ? "#ffffff" : _b, _c = _a.duration, duration = _c === void 0 ? "600ms" : _c, onClick = _a.onClick, props = __rest(_a, ["className", "children", "rippleColor", "duration", "onClick"]);
+    var className = _a.className, children = _a.children, _b = _a.rippleColor, rippleColor = _b === void 0 ? '#ffffff' : _b, _c = _a.duration, duration = _c === void 0 ? '600ms' : _c, onClick = _a.onClick, props = __rest(_a, ["className", "children", "rippleColor", "duration", "onClick"]);
     var _d = (0, react_1.useState)([]), buttonRipples = _d[0], setButtonRipples = _d[1];
     var handleClick = function (event) {
         createRipple(event);
@@ -84,7 +84,7 @@ var RippleButton = react_1.default.forwardRef(function (_a, ref) {
             return function () { return clearTimeout(timeout_1); };
         }
     }, [buttonRipples, duration]);
-    return (react_1.default.createElement("button", __assign({ className: (0, frontend_shadcn_1.cn)("relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg border-2 bg-background px-4 py-2 text-center text-primary", className), onClick: handleClick, ref: ref }, props),
+    return (react_1.default.createElement("button", __assign({ className: (0, frontend_shadcn_1.cn)('relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg border-2 bg-background px-4 py-2 text-center text-primary', className), onClick: handleClick, ref: ref }, props),
         react_1.default.createElement("div", { className: "relative z-10" }, children),
         react_1.default.createElement("span", { className: "pointer-events-none absolute inset-0" }, buttonRipples.map(function (ripple) { return (react_1.default.createElement("span", { className: "absolute animate-rippling rounded-full bg-background opacity-30", key: ripple.key, style: {
                 width: "".concat(ripple.size, "px"),
@@ -95,5 +95,5 @@ var RippleButton = react_1.default.forwardRef(function (_a, ref) {
                 transform: "scale(0)",
             } })); }))));
 });
-RippleButton.displayName = "RippleButton";
+RippleButton.displayName = 'RippleButton';
 exports.default = RippleButton;

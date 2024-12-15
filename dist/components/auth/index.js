@@ -17,8 +17,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthUserListItem = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.StripeCustomerPortalButton = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthCookie = exports.AuthScreen = exports.AuthModal = exports.AuthUserMenu = exports.AuthMenu = exports.AuthLayout = exports.AuthButton = exports.AuthWall = exports.AuthGuard = void 0;
+exports.AuthUserListItem = exports.VerifySendPinForm = exports.VerifyPinForm = exports.VerifyPin = exports.StripeCustomerPortalButton = exports.SignupForm = exports.Signup = exports.SignUpButton = exports.SignInButton = exports.ResetPasswordForm = exports.ResetPassword = exports.OneTimePasswordVerifyMessage = exports.OneTimePasswordVerify = exports.OneTimePasswordForm = exports.OneTimePassword = exports.NewPasswordForm = exports.NewPassword = exports.LoginForm = exports.Login = exports.GoogleLoginButton = exports.ForgotPasswordForm = exports.ForgotPassword = exports.AuthCookie = exports.AuthScreen = exports.AuthModal = exports.AuthUserMenu = exports.AuthMenu = exports.AuthLayout = exports.AuthButton = exports.AuthWall = exports.AuthGuard = exports.AuthRedirect = void 0;
 __exportStar(require("./my-account"), exports);
+var AuthRedirect_1 = require("./AuthRedirect");
+Object.defineProperty(exports, "AuthRedirect", { enumerable: true, get: function () { return __importDefault(AuthRedirect_1).default; } });
 var AuthGuard_1 = require("./AuthGuard");
 Object.defineProperty(exports, "AuthGuard", { enumerable: true, get: function () { return __importDefault(AuthGuard_1).default; } });
 var AuthWall_1 = require("./AuthWall");

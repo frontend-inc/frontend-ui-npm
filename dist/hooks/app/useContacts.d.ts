@@ -2,7 +2,7 @@ import React from 'react';
 type UseContactParams = {
     formId?: number | string;
 };
-declare const useContacts: (params: UseContactParams) => {
+declare const useContacts: (params?: UseContactParams) => {
     paginate: (page: number) => Promise<any>;
     loading: boolean;
     loaded: any;

@@ -12,4 +12,4 @@ export declare const resizeCloudinaryImage: (src: any, { width, height, transfor
 export declare const cloudinaryConvertToJpeg: (url: any) => any;
 export declare const cloudinaryImageFromVideoUrl: (url: any) => any;
 export declare const scrollTo: (domId: any) => void;
-export declare const formatCurrency: (amount: any, currency?: string) => string;
+export declare const formatCurrency: (amount: any, precision?: number, currency?: string) => string;

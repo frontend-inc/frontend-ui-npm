@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VimeoEmbed = exports.YouTubeEmbed = exports.StripeBuyButton = exports.StripePricingTable = exports.OkendoStarRating = exports.OkendoReviews = exports.Typeform = exports.MailchimpSubscribe = exports.GorgiasChat = exports.GiftUp = exports.Calendly = exports.VisualWebsiteOptimizerScript = exports.SoundcloudEmbed = exports.RedditScript = exports.OkendoScript = exports.KlaviyoSubscribe = exports.KlaviyoScript = exports.KlaviyoEmbed = exports.KlaviyoButton = exports.HotJarScript = exports.GorgiasContactForm = exports.GoogleTagManagerScript = exports.GoogleAnalyticsScript = void 0;
+exports.Iframe = exports.VimeoEmbed = exports.YouTubeEmbed = exports.StripeBuyButton = exports.StripePricingTable = exports.OkendoStarRating = exports.OkendoReviews = exports.Typeform = exports.MailchimpSubscribe = exports.GorgiasChat = exports.GiftUp = exports.Calendly = exports.VisualWebsiteOptimizerScript = exports.SoundcloudEmbed = exports.RedditScript = exports.OkendoScript = exports.KlaviyoSubscribe = exports.KlaviyoScript = exports.KlaviyoEmbed = exports.KlaviyoButton = exports.HotJarScript = exports.GorgiasContactForm = exports.GoogleTagManagerScript = exports.GoogleAnalyticsScript = void 0;
 __exportStar(require("./googleMaps"), exports);
 //Scripts
 var GoogleAnalyticsScript_1 = require("./google/GoogleAnalyticsScript");
@@ -67,3 +67,5 @@ var YouTubeEmbed_1 = require("./youtube/YouTubeEmbed");
 Object.defineProperty(exports, "YouTubeEmbed", { enumerable: true, get: function () { return __importDefault(YouTubeEmbed_1).default; } });
 var VimeoEmbed_1 = require("./vimeo/VimeoEmbed");
 Object.defineProperty(exports, "VimeoEmbed", { enumerable: true, get: function () { return __importDefault(VimeoEmbed_1).default; } });
+var Iframe_1 = require("./iframe/Iframe");
+Object.defineProperty(exports, "Iframe", { enumerable: true, get: function () { return __importDefault(Iframe_1).default; } });

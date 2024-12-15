@@ -98,7 +98,7 @@ function ColorInput(_a) {
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(frontend_shadcn_3.Popover, null,
             react_1.default.createElement(frontend_shadcn_3.PopoverTrigger, { asChild: true },
-                react_1.default.createElement(components_2.Button, { variant: "outline", className: "text-foreground w-full justify-between" },
+                react_1.default.createElement(components_2.Button, { variant: "outline", className: "bg-input text-foreground w-full justify-between" },
                     placeholder,
                     react_1.default.createElement("div", { className: "flex items-center space-x-2" },
                         react_1.default.createElement("div", { className: "h-6 w-6 rounded border", style: { backgroundColor: value } }),

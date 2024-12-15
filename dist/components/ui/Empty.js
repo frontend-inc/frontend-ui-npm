@@ -21,7 +21,7 @@ var Empty = function (props) {
             'bg-destructive/10 border border-destructive', variant == 'accent' && 'bg-accent/10 border border-accent', className) },
         icon && (react_1.default.createElement(__1.RemixIcon, { name: icon, size: "xl", className: (0, frontend_shadcn_1.cn)(variant && textClasses[variant]) })),
         react_1.default.createElement("div", { className: "flex flex-col space-y-0 w-full items-center justify-center" },
-            react_1.default.createElement(__2.Typography, { variant: "subtitle2", className: (0, frontend_shadcn_1.cn)('text-md text-bold', variant && textClasses[variant]) }, title),
-            react_1.default.createElement(__2.Typography, { variant: "body1", className: (0, frontend_shadcn_1.cn)('text-sm text-muted-foreground font-normal', variant && textClasses[variant]) }, description))));
+            react_1.default.createElement(__2.Typography, { variant: "subtitle2", className: (0, frontend_shadcn_1.cn)('text-md text-bold text-foreground', variant && textClasses[variant]) }, title),
+            react_1.default.createElement(__2.Typography, { variant: "body1", className: (0, frontend_shadcn_1.cn)('text-sm text-foreground/70 font-normal', variant && textClasses[variant]) }, description))));
 };
 exports.default = Empty;

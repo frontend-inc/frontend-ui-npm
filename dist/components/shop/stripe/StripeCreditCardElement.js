@@ -43,13 +43,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var react_stripe_js_1 = require("@stripe/react-stripe-js");
-var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var __1 = require("../..");
 var StripeCreditCardElement = function (props) {
     var _a = props || {}, handleSubmit = _a.handleSubmit, handleCancel = _a.handleCancel;
     var stripe = (0, react_stripe_js_1.useStripe)();
     var elements = (0, react_stripe_js_1.useElements)();
-    var showAlertError = (0, hooks_1.useToast)().showAlertError;
     var handleClick = function (e) { return __awaiter(void 0, void 0, void 0, function () {
         var cardElement, res, stripeToken, last4;
         return __generator(this, function (_a) {
@@ -70,7 +69,7 @@ var StripeCreditCardElement = function (props) {
                         handleSubmit(stripeToken, last4);
                     }
                     else {
-                        showAlertError('Please check your payment details');
+                        sonner_1.toast.error('Please check your payment details');
                     }
                     _a.label = 2;
                 case 2: return [2 /*return*/];

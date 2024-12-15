@@ -16,7 +16,7 @@ var maxWidthClasses = {
 };
 var Section = function (props) {
     var theme = (0, hooks_1.useTheme)().theme;
-    var _a = props.requireAuth, requireAuth = _a === void 0 ? false : _a, children = props.children, bgColor = props.bgColor, mode = props.mode, maxWidth = props.maxWidth, variant = props.variant, _b = props.py, py = _b === void 0 ? 'md' : _b, _c = props.px, px = _c === void 0 ? 'sm' : _c;
+    var _a = props.requireAuth, requireAuth = _a === void 0 ? false : _a, children = props.children, bgColor = props.bgColor, bgImage = props.bgImage, bgOverlay = props.bgOverlay, mode = props.mode, maxWidth = props.maxWidth, variant = props.variant, _b = props.py, py = _b === void 0 ? 'md' : _b, _c = props.px, px = _c === void 0 ? 'sm' : _c;
     var pyClasses = {
         none: 'py-0',
         sm: 'py-[24px]',
@@ -31,8 +31,14 @@ var Section = function (props) {
         lg: 'px-24',
         xl: 'px-48',
     };
-    return (react_1.default.createElement("section", { className: (0, frontend_shadcn_1.cn)(mode, theme, 'w-full bg-background', pyClasses[py], pxClasses[px]), style: { backgroundColor: bgColor } },
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(variant == 'outline' && 'p-8 border-2 border-border rounded-xl', variant == 'fill' && 'p-8 rounded-xl bg-muted/60', maxWidth && maxWidthClasses[maxWidth], 'w-full mx-auto min-h-[60px] flex flex-row justify-center items-center') },
+    var backgroundStyle = bgImage ? {
+        backgroundImage: "url(".concat(bgImage, ")")
+    } : {
+        backgroundColor: bgColor,
+    };
+    return (react_1.default.createElement("section", { className: (0, frontend_shadcn_1.cn)(mode == 'dark' ? 'dark-theme' : 'light', theme, 'relative bg-cover bg-center bg-no-repeat', 'w-full bg-background', pyClasses[py], pxClasses[px], !bgImage && bgColor, bgImage && bgOverlay &&
+            "after:content-[''] after:absolute after:inset-0 after:bg-black/50"), style: backgroundStyle },
+        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('relative z-[1]', variant == 'outline' && 'p-8 border-2 border-border rounded-xl', variant == 'fill' && bgImage && 'p-8 rounded-xl bg-black/50', variant == 'fill' && !bgImage && 'p-8 rounded-xl bg-muted/50', maxWidth && maxWidthClasses[maxWidth], 'w-full mx-auto min-h-[60px] flex flex-row justify-center items-center') },
             react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full overflow-x-hidden', 'transition-all duration-300 ease-in-out') },
                 react_1.default.createElement(components_1.AuthGuard, { requireAuth: requireAuth }, children)))));
 };

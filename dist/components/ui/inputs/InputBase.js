@@ -59,7 +59,7 @@ function InputBase(_a) {
         setText(value);
     }, [value]);
     return (react_1.default.createElement("div", { className: "relative w-full" },
-        react_1.default.createElement(frontend_shadcn_1.Input, { className: (0, frontend_shadcn_2.cn)(className, 'w-full bg-background text-foreground', error && 'border border-destructive'), type: type, name: name, disabled: disabled, placeholder: placeholder, onChange: handleInputChange, value: text, autoComplete: "off" }),
+        react_1.default.createElement(frontend_shadcn_1.Input, { className: (0, frontend_shadcn_2.cn)(className, 'w-full bg-input text-foreground', error && 'border border-destructive'), type: type, name: name, disabled: disabled, placeholder: placeholder, onChange: handleInputChange, value: text, autoComplete: "off" }),
         react_1.default.createElement(components_1.ErrorText, { error: error })));
 }
 exports.default = InputBase;

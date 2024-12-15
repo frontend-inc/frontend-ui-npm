@@ -1,5 +1,5 @@
 import { ImageType, VideoType, UserType } from '../types';
-export type DocumentTypes = 'post' | 'article' | 'place' | 'event' | 'person' | 'product' | 'image' | 'video' | 'audio' | 'file' | 'youtube' | 'vimeo' | 'soundcloud' | 'shopify';
+export type ContentTypes = 'post' | 'article' | 'place' | 'event' | 'person' | 'product' | 'image' | 'video' | 'audio' | 'file' | 'youtube' | 'vimeo' | 'soundcloud' | 'shopify';
 export type ReferenceType = {
     id: number;
     target_id: number;
@@ -28,10 +28,22 @@ export type DocumentType = {
     tags?: string[];
     position?: number;
     published: boolean;
-    content_type?: string;
-    document_type: DocumentTypes;
+    content_type: ContentTypes;
     shopify_product?: string;
     references: ReferenceType[];
     created_at: string;
     updated_at: string;
+};
+export type CollectionType = {
+    id?: number;
+    label?: string;
+    handle?: string;
+    title?: string;
+    description?: string;
+    image?: {
+        url: string;
+    };
+    tags?: string[];
+    published?: boolean;
+    documents?: DocumentType[];
 };

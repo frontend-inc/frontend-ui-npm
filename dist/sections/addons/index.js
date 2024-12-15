@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AddonTypeform = exports.AddonStripePricingTable = exports.AddonStripeBuyButton = exports.AddonOkendoReviews = exports.AddonMailchimpSubscribe = exports.AddonKlaviyoSubscribe = exports.AddonKlaviyoButton = exports.AddonGorgiasContactForm = exports.AddonGiftUp = exports.AddonCalendly = void 0;
+exports.AddonTypeform = exports.AddonIframe = exports.AddonStripePricingTable = exports.AddonStripeBuyButton = exports.AddonOkendoReviews = exports.AddonMailchimpSubscribe = exports.AddonKlaviyoSubscribe = exports.AddonKlaviyoButton = exports.AddonGorgiasContactForm = exports.AddonGiftUp = exports.AddonCalendly = void 0;
 var AddonCalendly_1 = require("./AddonCalendly");
 Object.defineProperty(exports, "AddonCalendly", { enumerable: true, get: function () { return __importDefault(AddonCalendly_1).default; } });
 var AddonGiftUp_1 = require("./AddonGiftUp");
@@ -22,6 +22,7 @@ var AddonStripeBuyButton_1 = require("./AddonStripeBuyButton");
 Object.defineProperty(exports, "AddonStripeBuyButton", { enumerable: true, get: function () { return __importDefault(AddonStripeBuyButton_1).default; } });
 var AddonStripePricingTable_1 = require("./AddonStripePricingTable");
 Object.defineProperty(exports, "AddonStripePricingTable", { enumerable: true, get: function () { return __importDefault(AddonStripePricingTable_1).default; } });
-//export { default as AddonSwirlVideos } from './AddonSwirlVideos'
+var AddonIframe_1 = require("./AddonIframe");
+Object.defineProperty(exports, "AddonIframe", { enumerable: true, get: function () { return __importDefault(AddonIframe_1).default; } });
 var AddonTypeform_1 = require("./AddonTypeform");
 Object.defineProperty(exports, "AddonTypeform", { enumerable: true, get: function () { return __importDefault(AddonTypeform_1).default; } });

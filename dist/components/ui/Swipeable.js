@@ -23,48 +23,42 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var react_swipeable_views_1 = __importDefault(require("react-swipeable-views"));
-var react_swipeable_views_utils_1 = require("react-swipeable-views-utils");
-var core_1 = require("../core");
 var frontend_shadcn_1 = require("frontend-shadcn");
-var react_2 = require("@remixicon/react");
-var AutoPlaySwipeableViews = (0, react_swipeable_views_utils_1.autoPlay)(react_swipeable_views_1.default);
+var frontend_shadcn_2 = require("frontend-shadcn");
 var Swipeable = function (props) {
-    var _a = props.children, children = _a === void 0 ? [] : _a, _b = props.interval, interval = _b === void 0 ? 5000 : _b, _c = props.enableArrows, enableArrows = _c === void 0 ? false : _c, _d = props.enableAutoPlay, enableAutoPlay = _d === void 0 ? false : _d, className = props.className;
-    var _e = (0, react_1.useState)(0), activeStep = _e[0], setActiveStep = _e[1];
-    var handleStepChange = function (step) {
-        setActiveStep(step);
+    var _a = props.children, children = _a === void 0 ? [] : _a, _b = props.itemsPerSlide, itemsPerSlide = _b === void 0 ? 1 : _b, enableDots = props.enableDots, enableArrows = props.enableArrows, _c = props.arrowHeight, arrowHeight = _c === void 0 ? 50 : _c, // Default arrow height is 50% (middle)
+    className = props.className;
+    var _d = (0, react_1.useState)(), api = _d[0], setApi = _d[1];
+    var _e = (0, react_1.useState)(0), current = _e[0], setCurrent = _e[1];
+    var _f = (0, react_1.useState)(0), count = _f[0], setCount = _f[1];
+    var basisClasses = {
+        2: 'basis-1/2',
+        3: 'basis-1/3',
+        4: 'basis-1/4',
+        5: 'basis-1/5',
+        6: 'basis-1/6',
     };
-    var handlePrev = function () {
-        if (activeStep === 0) {
-            setActiveStep((children === null || children === void 0 ? void 0 : children.length) - 1);
-        }
-        else {
-            setActiveStep(function (prevActiveStep) { return prevActiveStep - 1; });
-        }
+    var handleSlide = function (index) {
+        api === null || api === void 0 ? void 0 : api.scrollTo(index);
     };
-    var handleNext = function () {
-        if (activeStep === (children === null || children === void 0 ? void 0 : children.length) - 1) {
-            setActiveStep(0);
-        }
-        else {
-            setActiveStep(function (prevActiveStep) { return prevActiveStep + 1; });
-        }
-    };
-    var SwipeableComponent = enableAutoPlay
-        ? AutoPlaySwipeableViews
-        : react_swipeable_views_1.default;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full relative', className) },
-        react_1.default.createElement(SwipeableComponent, { axis: 'x', index: activeStep, onChangeIndex: handleStepChange, enableMouseEvents: true, interval: interval }, children),
-        enableArrows && (react_1.default.createElement("div", { className: "absolute top-1/2 transform -translate-y-1/2 flex justify-between w-full z-10" },
-            react_1.default.createElement(core_1.IconButton, { color: "ghost", onClick: handlePrev, className: "ml-2" },
-                react_1.default.createElement(react_2.RiArrowLeftSLine, { size: 32 })),
-            react_1.default.createElement(core_1.IconButton, { color: "ghost", onClick: handleNext, className: "mr-2" },
-                react_1.default.createElement(react_2.RiArrowRightSLine, { size: 32 }))))));
+    (0, react_1.useEffect)(function () {
+        if (!api)
+            return;
+        setCount(api.scrollSnapList().length - itemsPerSlide);
+        setCurrent(api.selectedScrollSnap());
+        api.on('select', function () {
+            setCurrent(api.selectedScrollSnap() || 0);
+        });
+    }, [api]);
+    // Generate dynamic top style for arrows based on arrowHeight prop
+    var dynamicArrowHeight = "top-[".concat(arrowHeight, "%]");
+    return (react_1.default.createElement(frontend_shadcn_1.Carousel, { setApi: setApi, className: (0, frontend_shadcn_2.cn)('w-full', className) },
+        react_1.default.createElement(frontend_shadcn_1.CarouselContent, null, children === null || children === void 0 ? void 0 : children.map(function (child, index) { return (react_1.default.createElement(frontend_shadcn_1.CarouselItem, { key: index, className: (0, frontend_shadcn_2.cn)(itemsPerSlide > 1 && basisClasses[itemsPerSlide]) }, child)); })),
+        enableArrows && (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement(frontend_shadcn_1.CarouselPrevious, { className: (0, frontend_shadcn_2.cn)('absolute h-9 w-9 left-4 -translate-y-1/2 bg-background/20 text-foreground/70 hover:bg-background/70 hover:text-foreground border-0', dynamicArrowHeight) }),
+            react_1.default.createElement(frontend_shadcn_1.CarouselNext, { className: (0, frontend_shadcn_2.cn)('absolute h-9 w-9 right-4 -translate-y-1/2 bg-background/20 text-foreground/70 hover:bg-background/70 hover:text-foreground border-0', dynamicArrowHeight) }))),
+        enableDots && count > 1 && (react_1.default.createElement("div", { className: "absolute bottom-4 left-0 right-0 flex justify-center space-x-1 backdrop-blur-md bg-black/30 py-2 px-4 rounded-full mx-auto w-fit" }, children.map(function (_, index) { return (react_1.default.createElement(frontend_shadcn_1.Button, { key: index, variant: "ghost", size: "sm", className: (0, frontend_shadcn_2.cn)('w-2 h-2 rounded-full p-0 transition-all duration-300 ease-in-out hover:bg-white', index === current ? 'bg-white w-5' : 'bg-white/50'), onClick: function () { return handleSlide(index); } })); })))));
 };
 exports.default = Swipeable;

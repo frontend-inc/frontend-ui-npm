@@ -166,7 +166,7 @@ var AuthModal = function (props) {
     var handleResendPinClick = function () {
         setTab(4);
     };
-    return (react_1.default.createElement(__1.Modal, { title: tab == 0
+    return (react_1.default.createElement(__1.Modal, { maxWidth: 'sm', title: tab == 0
             ? 'Login'
             : tab == 1
                 ? 'Signup'

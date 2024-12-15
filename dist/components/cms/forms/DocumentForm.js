@@ -64,7 +64,7 @@ var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
-var hooks_2 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var navigation_1 = require("next/navigation");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var DocumentForm = function (props) {
@@ -77,7 +77,6 @@ var DocumentForm = function (props) {
         }
     };
     var _resource = props.resource, _a = props.buttonText, buttonText = _a === void 0 ? 'Submit' : _a, fields = props.fields, url = props.url, _b = props.onSuccessMessage, onSuccessMessage = _b === void 0 ? 'Submitted successfully!' : _b, _c = props.handleSuccess, handleSuccess = _c === void 0 ? onSuccess : _c, inputOptions = props.inputOptions, inputParams = props.inputParams;
-    var showAlertSuccess = (0, hooks_2.useToast)().showAlertSuccess;
     var _d = (0, frontend_js_1.useResource)({
         name: 'document',
         url: url,
@@ -114,7 +113,7 @@ var DocumentForm = function (props) {
                 case 4:
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         if (onSuccessMessage) {
-                            showAlertSuccess(onSuccessMessage);
+                            (0, sonner_1.toast)(onSuccessMessage);
                         }
                         if (handleSuccess) {
                             handleSuccess(resp);

@@ -9,8 +9,8 @@ var frontend_shadcn_1 = require("frontend-shadcn");
 var hooks_1 = require("../../../hooks");
 var next_themes_1 = require("next-themes");
 var frontend_shadcn_2 = require("frontend-shadcn");
-var Sheet = function (_a) {
-    var open = _a.open, title = _a.title, _b = _a.side, side = _b === void 0 ? 'right' : _b, handleClose = _a.handleClose, children = _a.children, buttons = _a.buttons, _c = _a.disablePadding, disablePadding = _c === void 0 ? false : _c, className = _a.className;
+var Sheet = function (props) {
+    var open = props.open, title = props.title, _a = props.side, side = _a === void 0 ? 'right' : _a, handleClose = props.handleClose, children = props.children, buttons = props.buttons, _b = props.disablePadding, disablePadding = _b === void 0 ? false : _b, className = props.className;
     var theme = (0, hooks_1.useTheme)().theme;
     var mode = (0, next_themes_1.useTheme)().theme;
     return (react_1.default.createElement(frontend_shadcn_2.Sheet, { open: open, onOpenChange: handleClose },

@@ -1,9 +1,9 @@
 import React from 'react';
-type ProductArrayProps = {
+export type ShopifyProductArrayProps = {
     handles: string[];
     enableBorder?: boolean;
     enableAddToCart?: boolean;
     enableQuantity?: boolean;
 };
-declare const ProductArray: React.FC<ProductArrayProps>;
-export default ProductArray;
+declare const ShopifyProductArray: React.FC<ShopifyProductArrayProps>;
+export default ShopifyProductArray;

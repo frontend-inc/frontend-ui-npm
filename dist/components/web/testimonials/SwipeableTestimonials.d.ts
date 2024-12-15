@@ -1,5 +1,6 @@
 import React from 'react';
 type SwipeableTestimonialsProps = {
+    variant?: 'default' | 'fill' | 'outline';
     items: Record<string, any>[];
     enableAutoPlay?: boolean;
 };

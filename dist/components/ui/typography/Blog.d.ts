@@ -1,10 +1,9 @@
 import React from 'react';
 import { TypographyVariantsType } from '../../../types';
-export type BlogProps = {
+import { HeadingProps } from '../../../types';
+export type BlogProps = HeadingProps & {
     image?: string;
-    label?: string;
-    title?: string;
-    subtitle?: string;
+    description?: string;
     publishedAt?: string;
     author?: string;
     avatar?: string;

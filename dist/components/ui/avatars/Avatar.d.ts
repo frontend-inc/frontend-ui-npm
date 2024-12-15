@@ -1,5 +1,6 @@
 import React from 'react';
 type AvatarProps = {
+    alt?: string;
     src?: string;
     variant?: 'circular' | 'rounded';
     label?: string;
@@ -9,5 +10,5 @@ type AvatarProps = {
     enableGradient?: boolean;
     enableOverlay?: boolean;
 };
-export default function Avatar({ src, label, variant, size, className, }: AvatarProps): React.JSX.Element;
+export default function Avatar(props: AvatarProps): React.JSX.Element;
 export {};

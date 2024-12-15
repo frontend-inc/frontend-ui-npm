@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var __1 = require("../..");
 var components_1 = require("../../../components");
 var SOCIAL_PROVIDERS = [
@@ -17,11 +17,10 @@ var SOCIAL_PROVIDERS = [
 ];
 function ShareButton(_a) {
     var open = _a.open, handleClose = _a.handleClose, url = _a.url;
-    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var handleShareClick = function (platform) {
         var shareUrl = getShareUrl(platform, url);
         if (platform === 'copy') {
-            showAlertSuccess('Share link copied to clipboard');
+            (0, sonner_1.toast)('Share link copied to clipboard');
         }
         else {
             window.open(shareUrl, '_blank');

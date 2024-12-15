@@ -19,6 +19,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserDetails = exports.Details = exports.SortButton = exports.KanBanBoard = exports.FilterButton = exports.LoadMore = exports.ContactForm = exports.EmailSubscribe = exports.PolicyLink = void 0;
 __exportStar(require("./collections"), exports);
+__exportStar(require("./collection-documents"), exports);
+__exportStar(require("./documents"), exports);
 __exportStar(require("./data"), exports);
 __exportStar(require("./forms"), exports);
 __exportStar(require("./show"), exports);
@@ -32,7 +34,7 @@ var EmailSubscribe_1 = require("./newsletter/EmailSubscribe");
 Object.defineProperty(exports, "EmailSubscribe", { enumerable: true, get: function () { return __importDefault(EmailSubscribe_1).default; } });
 var ContactForm_1 = require("./leads/ContactForm");
 Object.defineProperty(exports, "ContactForm", { enumerable: true, get: function () { return __importDefault(ContactForm_1).default; } });
-var LoadMore_1 = require("./collections/LoadMore");
+var LoadMore_1 = require("./documents/LoadMore");
 Object.defineProperty(exports, "LoadMore", { enumerable: true, get: function () { return __importDefault(LoadMore_1).default; } });
 var FilterButton_1 = require("./filters/FilterButton");
 Object.defineProperty(exports, "FilterButton", { enumerable: true, get: function () { return __importDefault(FilterButton_1).default; } });

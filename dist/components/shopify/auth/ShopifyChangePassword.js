@@ -44,11 +44,10 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var __2 = require("..");
 var frontend_shopify_1 = require("frontend-shopify");
-var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var navigation_1 = require("next/navigation");
 var ShopifyChangePassword = function (props) {
     var _a = props || {}, title = _a.title, subtitle = _a.subtitle, loginUrl = _a.loginUrl;
-    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var _b = (0, frontend_shopify_1.useAuth)(), loading = _b.loading, errors = _b.errors, customer = _b.customer, setCustomer = _b.setCustomer, handleChange = _b.handleChange, forgotPassword = _b.forgotPassword;
     var router = (0, navigation_1.useRouter)();
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -60,7 +59,7 @@ var ShopifyChangePassword = function (props) {
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setCustomer({ emal: '' });
-                        showAlertSuccess('Password reset instructions sent');
+                        (0, sonner_1.toast)('Password reset instructions sent');
                     }
                     return [2 /*return*/];
             }

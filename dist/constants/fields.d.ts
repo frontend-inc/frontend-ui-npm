@@ -1,3 +1,13 @@
+export declare const CONTENT_TYPE: {
+    label: string;
+    name: string;
+    variant: string;
+    options: {
+        label: string;
+        value: string;
+        icon: string;
+    }[];
+};
 export declare const HANDLE: {
     label: string;
     name: string;
@@ -79,16 +89,6 @@ export declare const FILE: {
     variant: string;
 };
 export declare const PUBLISHED_AT: {
-    label: string;
-    name: string;
-    variant: string;
-};
-export declare const START_DATE: {
-    label: string;
-    name: string;
-    variant: string;
-};
-export declare const END_DATE: {
     label: string;
     name: string;
     variant: string;

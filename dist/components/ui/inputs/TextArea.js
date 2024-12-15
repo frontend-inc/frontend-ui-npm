@@ -61,7 +61,7 @@ function TextArea(props) {
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)('flex flex-col space-y-2 w-full', direction === 'row' && 'sm:flex-row sm:items-start') },
         react_1.default.createElement(__1.InputLabel, { label: label, info: info }),
         react_1.default.createElement("div", { className: "relative w-full flex flex-col space-y-2" },
-            react_1.default.createElement(frontend_shadcn_1.Textarea, { className: (0, frontend_shadcn_2.cn)('bg-background focus:ring-2 focus:ring-offset-3', 'w-full resize-none min-w-[230px]', error && 'ring-2 ring-destructive ring-offset-3', className), name: name, disabled: disabled, placeholder: placeholder, onChange: handleTextAreaChange, value: text, rows: rows }),
+            react_1.default.createElement(frontend_shadcn_1.Textarea, { className: (0, frontend_shadcn_2.cn)('bg-input focus:ring-2 focus:ring-offset-3', 'w-full resize-none min-w-[230px]', error && 'ring-2 ring-destructive ring-offset-3', className), name: name, disabled: disabled, placeholder: placeholder, onChange: handleTextAreaChange, value: text, rows: rows }),
             react_1.default.createElement(__1.ErrorText, { error: error }))));
 }
 exports.default = TextArea;

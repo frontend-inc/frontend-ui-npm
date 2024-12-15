@@ -52,6 +52,6 @@ var ThemeProvider = function (props) {
         }
     }, [headerFont, bodyFont, borderRadius]);
     return (react_1.default.createElement(ThemeContext_1.default.Provider, { value: value },
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(mode, theme, 'w-full') }, children)));
+        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(mode == 'dark' ? 'dark-theme' : 'light', theme, 'w-full') }, children)));
 };
 exports.default = ThemeProvider;

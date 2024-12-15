@@ -124,8 +124,8 @@ var MenuBar = function (_a) {
             label: 'Redo',
         },
     ];
-    return (react_1.default.createElement("div", { className: "w-full md:min-w-[720px] p-2 bg-white rounded-xl shadow-lg flex flex-wrap space-x-2" },
-        formattingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900 text-white'), "aria-label": btn.label },
+    return (react_1.default.createElement("div", { className: "w-full md:min-w-[800px] p-2 bg-white rounded-xl shadow-lg flex flex-wrap space-x-2 z-30" },
+        formattingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900 text-white hover:bg-zinc-900'), "aria-label": btn.label },
             react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-zinc-900', btn.isActive && 'text-white') }))); }),
         headingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900 text-white'), "aria-label": btn.label },
             react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-zinc-900', btn.isActive && 'text-white') }))); }),

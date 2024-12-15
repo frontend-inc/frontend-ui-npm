@@ -7,6 +7,8 @@ export type ResourceHeaderProps = {
     enableFilters: boolean;
     enableSorting: boolean;
     enableCreate?: boolean;
+    enableExport?: boolean;
+    handleExport?: () => void;
     handleSearch: (keywords: string) => void;
     handleKeywordChange: (ev: SyntheticEventType) => void;
     handleFilter: (name: string, value: string | number | boolean) => void;

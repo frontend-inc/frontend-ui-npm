@@ -45,8 +45,8 @@ var __1 = require("..");
 var navigation_1 = require("next/navigation");
 var _1 = require(".");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
-var __2 = require("..");
 var react_responsive_1 = require("react-responsive");
+var sonner_1 = require("sonner");
 var useButtons = function (params) {
     var _a = params || {}, action = _a.action, src = _a.src, path = _a.path, url = _a.url;
     var isMobile = (0, react_responsive_1.useMediaQuery)({ maxWidth: 640 });
@@ -54,7 +54,6 @@ var useButtons = function (params) {
     var _c = (0, react_1.useState)(false), openVideo = _c[0], setOpenVideo = _c[1];
     var _d = (0, react_1.useState)(false), openImage = _d[0], setOpenImage = _d[1];
     var _e = (0, react_1.useState)(false), openShare = _e[0], setOpenShare = _e[1];
-    var showAlertSuccess = (0, __2.useToast)().showAlertSuccess;
     var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, __1.useApp)().clientUrl;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -72,7 +71,7 @@ var useButtons = function (params) {
                 case 'copy':
                     if (src) {
                         (0, copy_to_clipboard_1.default)(src);
-                        showAlertSuccess('Copied to clipboard');
+                        (0, sonner_1.toast)('Copied to clipboard');
                     }
                     break;
                 case 'email':

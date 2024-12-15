@@ -8,8 +8,8 @@ var react_1 = __importDefault(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var components_1 = require("../../../components");
 var frontend_shadcn_2 = require("frontend-shadcn");
-var AlertModal = function (_a) {
-    var _b = _a.loading, loading = _b === void 0 ? false : _b, _c = _a.title, title = _c === void 0 ? 'Please confirm or cancel this action.' : _c, _d = _a.description, description = _d === void 0 ? 'This action is not reversable.' : _d, open = _a.open, handleClose = _a.handleClose, handleConfirm = _a.handleConfirm;
+var AlertModal = function (props) {
+    var _a = props.loading, loading = _a === void 0 ? false : _a, _b = props.title, title = _b === void 0 ? 'Please confirm or cancel this action.' : _b, _c = props.description, description = _c === void 0 ? 'This action is not reversable.' : _c, open = props.open, handleClose = props.handleClose, handleConfirm = props.handleConfirm;
     return (react_1.default.createElement(frontend_shadcn_1.AlertDialog, { open: open, onOpenChange: handleClose },
         react_1.default.createElement(frontend_shadcn_1.AlertDialogContent, null,
             react_1.default.createElement(frontend_shadcn_1.AlertDialogHeader, null,

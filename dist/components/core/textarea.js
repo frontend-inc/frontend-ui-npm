@@ -31,12 +31,12 @@ var react_1 = __importDefault(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var frontend_shadcn_2 = require("frontend-shadcn");
 var frontend_shadcn_3 = require("frontend-shadcn");
-function TextArea(_a) {
-    var label = _a.label, helperText = _a.helperText, _b = _a.error, error = _b === void 0 ? false : _b, _c = _a.fullWidth, fullWidth = _c === void 0 ? false : _c, className = _a.className, id = _a.id, name = _a.name, value = _a.value, onChange = _a.onChange, props = __rest(_a, ["label", "helperText", "error", "fullWidth", "className", "id", "name", "value", "onChange"]);
+function TextArea(props) {
+    var _a = props || {}, label = _a.label, helperText = _a.helperText, _b = _a.error, error = _b === void 0 ? false : _b, _c = _a.fullWidth, fullWidth = _c === void 0 ? false : _c, className = _a.className, id = _a.id, name = _a.name, value = _a.value, onChange = _a.onChange, rest = __rest(_a, ["label", "helperText", "error", "fullWidth", "className", "id", "name", "value", "onChange"]);
     var textareaId = id || name || (label === null || label === void 0 ? void 0 : label.toLowerCase().replace(/\s+/g, '-'));
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_3.cn)('flex flex-col space-y-2', fullWidth && 'w-full') },
         label && (react_1.default.createElement(frontend_shadcn_2.Label, { htmlFor: textareaId, className: (0, frontend_shadcn_3.cn)('text-sm font-medium', error ? 'text-destructive' : 'text-foreground') }, label)),
-        react_1.default.createElement(frontend_shadcn_1.Textarea, __assign({ id: textareaId, name: name, value: value, onChange: onChange, className: (0, frontend_shadcn_3.cn)('transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2', error && 'border-destructive focus:ring-destructive', fullWidth && 'w-full', className) }, props)),
+        react_1.default.createElement(frontend_shadcn_1.Textarea, __assign({ id: textareaId, name: name, value: value, onChange: onChange, className: (0, frontend_shadcn_3.cn)('transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2', error && 'border-destructive focus:ring-destructive', fullWidth && 'w-full', className) }, rest)),
         helperText && (react_1.default.createElement("p", { className: (0, frontend_shadcn_3.cn)('text-sm', error ? 'text-destructive' : 'text-muted-foreground') }, helperText))));
 }
 exports.TextArea = TextArea;

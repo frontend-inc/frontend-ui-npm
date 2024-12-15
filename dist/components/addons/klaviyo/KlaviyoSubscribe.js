@@ -64,26 +64,26 @@ var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var KlaviyoSubscribe = function (props) {
     var _a = props || {}, listId = _a.listId, apiKey = _a.apiKey, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
-    var _c = (0, hooks_1.useToast)(), showAlertError = _c.showAlertError, showAlertSuccess = _c.showAlertSuccess;
-    var _d = (0, hooks_1.useKlaviyo)({
+    var _c = (0, hooks_1.useKlaviyo)({
         apiKey: apiKey,
-    }), loading = _d.loading, handleSubmit = _d.handleSubmit;
-    var _e = (0, react_1.useState)(''), email = _e[0], setEmail = _e[1];
+    }), loading = _c.loading, handleSubmit = _c.handleSubmit;
+    var _d = (0, react_1.useState)(''), email = _d[0], setEmail = _d[1];
     var handleFormSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var e_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     if (!email || !(email === null || email === void 0 ? void 0 : email.includes('@'))) {
-                        return [2 /*return*/, showAlertError('Please enter a valid email')];
+                        return [2 /*return*/, sonner_1.toast.error('Please enter a valid email')];
                     }
                     if (!listId) {
-                        return [2 /*return*/, showAlertError('Please enter a klaviyo list ID')];
+                        return [2 /*return*/, sonner_1.toast.error('Please enter a klaviyo list ID')];
                     }
                     if (!apiKey) {
-                        return [2 /*return*/, showAlertError('Please enter your public klaviyo API key')];
+                        return [2 /*return*/, sonner_1.toast.error('Please enter your public klaviyo API key')];
                     }
                     _a.label = 1;
                 case 1:
@@ -94,7 +94,7 @@ var KlaviyoSubscribe = function (props) {
                         })];
                 case 2:
                     _a.sent();
-                    showAlertSuccess('You have been subscribed to our newsletter!');
+                    (0, sonner_1.toast)('You have been subscribed to our newsletter!');
                     return [3 /*break*/, 4];
                 case 3:
                     e_1 = _a.sent();

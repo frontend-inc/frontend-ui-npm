@@ -129,6 +129,7 @@
         "frontend-shopify": "git+https://github.com/frontend-inc/frontend-shopify.git",
         "graphql": "^16.8.1",
         "history": "^4.10.1",
+        "html-react-parser": "^5.2.0",
         "immutable": "^3.8.2",
         "input-otp": "^1.2.4",
         "js-base64": "^2.5.2",

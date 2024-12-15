@@ -5,6 +5,7 @@ type DisplayFieldParams = {
     displayLocation?: boolean;
     displayTags?: boolean;
 };
+export declare const buildSearchQuery: (contentType: string, query?: {}) => any;
 export declare const buildListFields: (params: DisplayFieldParams) => any[];
 type SortFieldParams = {
     sortPosition?: boolean;

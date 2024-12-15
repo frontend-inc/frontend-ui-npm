@@ -63,20 +63,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var addons_1 = require("../../../hooks/addons");
-var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var components_1 = require("../../../components");
 var __1 = require("..");
 var frontend_shopify_2 = require("frontend-shopify");
 var ShopifyAddToCartButton = function (props) {
-    var showAlertError = (0, hooks_1.useToast)().showAlertError;
     var trackAddToCart = (0, addons_1.useSegment)().trackAddToCart;
     var toggleCart = (0, react_1.useContext)(frontend_shopify_2.ShopifyContext).toggleCart;
     var _a = (0, frontend_shopify_1.useCart)(), loading = _a.loading, cartLineAdd = _a.cartLineAdd;
     var _b = props.label, label = _b === void 0 ? 'Add to Cart' : _b, product = props.product, variant = props.variant, _c = props.buttonVariant, buttonVariant = _c === void 0 ? 'default' : _c, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d, _e = props.enableSubscription, enableSubscription = _e === void 0 ? false : _e, _f = props.enableFavorites, enableFavorites = _f === void 0 ? false : _f, _g = props.size, size = _g === void 0 ? 'default' : _g;
     var _h = (0, react_1.useState)(1), quantity = _h[0], setQuantity = _h[1];
     var _j = (0, react_1.useState)(null), activeSellingPlanId = _j[0], setActiveSellingPlanId = _j[1];
-    var handleSellingPlanChange = function (ev) {
-        var value = ev.target.value;
+    var handleSellingPlanChange = function (value) {
         setActiveSellingPlanId(value);
     };
     var handleAddQuantity = function () {
@@ -91,7 +89,7 @@ var ShopifyAddToCartButton = function (props) {
         var line;
         return __generator(this, function (_a) {
             if (!(product === null || product === void 0 ? void 0 : product.availableForSale)) {
-                showAlertError('Please select all options');
+                sonner_1.toast.error('Please select all options');
                 return [2 /*return*/];
             }
             if (variant === null || variant === void 0 ? void 0 : variant.id) {
@@ -110,11 +108,11 @@ var ShopifyAddToCartButton = function (props) {
                     setTimeout(function () { return toggleCart(); }, 500);
                 }
                 else {
-                    showAlertError('This product is not available for sale');
+                    sonner_1.toast.error('This product is not available for sale');
                 }
             }
             else {
-                showAlertError('Please select all options');
+                sonner_1.toast.error('Please select all options');
             }
             return [2 /*return*/];
         });

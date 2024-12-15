@@ -30,9 +30,9 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UIHero = function (props) {
-    var variant = props.variant, bgColor = props.bgColor, mode = props.mode, py = props.py, px = props.px, _a = props.maxWidth, maxWidth = _a === void 0 ? 'xl' : _a, requireAuth = props.requireAuth, style = props.style, rest = __rest(props, ["variant", "bgColor", "mode", "py", "px", "maxWidth", "requireAuth", "style"]);
+    var variant = props.variant, bgColor = props.bgColor, bgImage = props.bgImage, bgOverlay = props.bgOverlay, mode = props.mode, py = props.py, px = props.px, _a = props.maxWidth, maxWidth = _a === void 0 ? 'xl' : _a, requireAuth = props.requireAuth, style = props.style, rest = __rest(props, ["variant", "bgColor", "bgImage", "bgOverlay", "mode", "py", "px", "maxWidth", "requireAuth", "style"]);
     var fullWidth = style == 'spotlight' || style == 'cover' ? true : false;
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, mode: mode, py: fullWidth ? 'none' : py, px: fullWidth ? 'none' : px, maxWidth: maxWidth, variant: variant },
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, bgImage: bgImage, bgOverlay: bgOverlay, mode: mode, py: fullWidth ? 'none' : py, px: fullWidth ? 'none' : px, maxWidth: maxWidth, variant: variant },
         react_1.default.createElement(components_2.Hero, __assign({}, rest, { style: style }))));
 };
 exports.default = UIHero;

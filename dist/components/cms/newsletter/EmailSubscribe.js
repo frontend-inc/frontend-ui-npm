@@ -54,36 +54,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var __1 = require("../..");
-var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 // Call To Action
 var EmailSubscribe = function (props) {
-    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var _a = (props || {}).buttonText, buttonText = _a === void 0 ? 'Subscribe' : _a;
-    var _b = (0, frontend_js_1.useResource)({
-        name: 'contact',
-        url: "/api/v1/contacts",
-    }), errors = _b.errors, delayedLoading = _b.delayedLoading, contact = _b.resource, setContact = _b.setResource, handleChange = _b.handleChange, create = _b.create;
+    var _b = (0, hooks_1.useContacts)(), errors = _b.errors, delayedLoading = _b.delayedLoading, contact = _b.contact, createContact = _b.createContact, setContact = _b.setContact, handleChange = _b.handleChange;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, create(__assign(__assign({}, contact), { source: 'newsletter', accepts_marketing: true }))];
+                case 0: return [4 /*yield*/, createContact(__assign(__assign({}, contact), { source: 'newsletter', accepts_marketing: true }))];
                 case 1:
                     resp = _a.sent();
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setContact({});
-                        showAlertSuccess('Thank you for subscribing!');
+                        (0, sonner_1.toast)('Thank you for subscribing!');
                     }
                     return [2 /*return*/];
             }
         });
     }); };
-    return (react_1.default.createElement("div", { className: "flex flex-row justify-center items-center" },
-        react_1.default.createElement("div", { className: "md:max-w-[360px] w-full p-1 flex flex-row justify-center items-center" },
-            react_1.default.createElement(__1.InputBase, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, 
-                //@ts-ignore
-                handleChange: handleChange, placeholder: "Enter your email", type: "email", className: "rounded-l-md text-base h-[48px] md:min-w-[280px] rounded-r-none border-r-0" }),
-            react_1.default.createElement(components_1.Button, { size: "lg", onClick: handleSubmit, className: "rounded-l-none rounded-r-md text-base", loading: delayedLoading }, buttonText))));
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement("div", { className: "flex flex-row justify-center items-center" },
+            react_1.default.createElement("div", { className: "md:max-w-[360px] w-full p-1 flex flex-row justify-center items-center" },
+                react_1.default.createElement(__1.InputBase, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, 
+                    //@ts-ignore
+                    handleChange: handleChange, placeholder: "Enter your email", type: "email", className: "rounded-l-md text-base h-[48px] md:min-w-[280px] rounded-r-none border-r-0", disableDebounce: true }),
+                react_1.default.createElement(components_1.Button, { size: "lg", onClick: handleSubmit, className: "rounded-l-none rounded-r-md text-base", loading: delayedLoading }, buttonText)))));
 };
 exports.default = EmailSubscribe;

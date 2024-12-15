@@ -28,12 +28,14 @@ export type ResourceListProps = {
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
     displayFields?: MetafieldType[];
+    exportHeaders?: string[];
     enableSearch?: boolean;
     buttonText?: string;
     enableShow?: boolean;
     enableEdit?: boolean;
     enableCreate?: boolean;
     enableDelete?: boolean;
+    enableExport?: boolean;
     enableBorder?: boolean;
     direction?: 'row' | 'column';
     emptyIcon?: string;

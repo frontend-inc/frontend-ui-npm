@@ -14,6 +14,6 @@ var AuthWall = function () {
         setAuthOpen(true);
     };
     return (react_1.default.createElement("div", { className: "container mx-auto max-w-screen-md" },
-        react_1.default.createElement(components_1.Alert, { title: "Sign in to view content", description: "You are not logged in.", buttons: react_1.default.createElement(components_2.Button, { onClick: handleLoginClick }, " Sign in") })));
+        react_1.default.createElement(components_1.Empty, { title: "Sign in to view content", description: "You are not logged in.", buttons: react_1.default.createElement(components_2.Button, { onClick: handleLoginClick }, " Sign in") })));
 };
 exports.default = AuthWall;

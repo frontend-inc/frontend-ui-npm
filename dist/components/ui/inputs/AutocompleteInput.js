@@ -53,12 +53,12 @@ function AutocompleteInput(props) {
     (0, use_click_outside_1.useClickOutside)(wrapperRef, function () { return setOpen(false); });
     return (react_1.default.createElement("div", { className: "w-full relative", ref: wrapperRef },
         react_1.default.createElement(__1.TextInput, { name: name, label: label, value: value, options: options, handleChange: handleKeywordChange, direction: direction, placeholder: placeholder, info: info }),
-        open && options.length > 0 && (react_1.default.createElement("div", { className: "absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-auto" }, options.map(function (option, index) { return (react_1.default.createElement("div", { key: index, onClick: function () { return handleClick(option); }, className: "flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100" },
+        open && options.length > 0 && (react_1.default.createElement("div", { className: "absolute z-10 w-full mt-1 bg-background border border-border rounded-md shadow-lg max-h-60 overflow-auto" }, options.map(function (option, index) { return (react_1.default.createElement("div", { key: index, onClick: function () { return handleClick(option); }, className: "flex items-center px-4 py-2 cursor-pointer bg-background hover:bg-muted-background" },
             react_1.default.createElement("div", { className: "mr-2 flex-shrink-0" },
                 (option === null || option === void 0 ? void 0 : option.image) && (react_1.default.createElement(frontend_shadcn_1.Avatar, { className: "h-8 w-8" },
                     react_1.default.createElement(frontend_shadcn_1.AvatarImage, { src: option.image, alt: option.label }),
                     react_1.default.createElement(frontend_shadcn_1.AvatarFallback, null, option.label[0]))),
                 (option === null || option === void 0 ? void 0 : option.icon) && (react_1.default.createElement(__1.RemixIcon, { name: option.icon, className: "h-5 w-5" }))),
-            react_1.default.createElement("span", { className: "flex-grow text-sm" }, option.label))); })))));
+            react_1.default.createElement("span", { className: "flex-grow text-sm text-foreground" }, option.label))); })))));
 }
 exports.default = AutocompleteInput;

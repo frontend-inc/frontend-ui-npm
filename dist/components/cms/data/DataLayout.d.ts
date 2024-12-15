@@ -2,8 +2,8 @@ import React from 'react';
 type DataLayoutProps = {
     loading?: boolean;
     layout?: 'grid' | 'list' | 'slider';
-    size?: 'sm' | 'md' | 'lg';
+    size?: 'sm' | 'md' | 'lg' | 'xl';
     children: React.ReactNode;
 };
-export default function DataLayout({ loading, layout, size, children, }: DataLayoutProps): React.JSX.Element;
+export default function DataLayout(props: DataLayoutProps): React.JSX.Element;
 export {};

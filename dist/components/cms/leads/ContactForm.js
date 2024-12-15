@@ -62,27 +62,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 // Call To Action
 var ContactForm = function (props) {
-    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var _a = props || {}, _b = _a.metafields, metafields = _b === void 0 ? [] : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
-    var _d = (0, frontend_js_1.useResource)({
-        name: 'contact',
-        url: "/api/v1/contacts",
-    }), errors = _d.errors, delayedLoading = _d.delayedLoading, contact = _d.resource, setContact = _d.setResource, handleChange = _d.handleChange, create = _d.create;
+    var _d = (0, hooks_1.useContacts)(), errors = _d.errors, delayedLoading = _d.delayedLoading, contact = _d.contact, setContact = _d.setContact, handleChange = _d.handleChange, createContact = _d.createContact;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, create(__assign(__assign({}, contact), { source: 'contact' }))];
+                case 0:
+                    if (!(contact === null || contact === void 0 ? void 0 : contact.email) || !(contact === null || contact === void 0 ? void 0 : contact.name) || !(contact === null || contact === void 0 ? void 0 : contact.message)) {
+                        (0, sonner_1.toast)('Please fill out all required fields');
+                        return [2 /*return*/];
+                    }
+                    return [4 /*yield*/, createContact(__assign(__assign({}, contact), { source: 'contact' }))];
                 case 1:
                     resp = _a.sent();
-                    showAlertSuccess('Thank you for contacting us!');
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setContact({});
-                        showAlertSuccess('Thank you for contacting us!');
+                        (0, sonner_1.toast)('Thank you for contacting us!');
                     }
                     return [2 /*return*/];
             }

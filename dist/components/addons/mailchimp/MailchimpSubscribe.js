@@ -64,19 +64,18 @@ var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
 var __1 = require("../..");
 var use_mailchimp_form_1 = require("use-mailchimp-form");
-var hooks_1 = require("../../../hooks");
+var sonner_1 = require("sonner");
 var MailchimpSubscribe = function (props) {
     var _a = props || {}, formId = _a.formId, _b = _a.buttonText, buttonText = _b === void 0 ? 'Subscribe' : _b;
     var _c = (0, use_mailchimp_form_1.useMailChimpForm)(formId), loading = _c.loading, error = _c.error, success = _c.success, message = _c.message, handleSubmit = _c.handleSubmit;
-    var showAlertSuccess = (0, hooks_1.useToast)().showAlertSuccess;
     var _d = (0, react_1.useState)(''), email = _d[0], setEmail = _d[1];
     var handleFormSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             if (!email || !(email === null || email === void 0 ? void 0 : email.includes('@'))) {
-                return [2 /*return*/, showAlertSuccess('Please enter a valid email')];
+                return [2 /*return*/, (0, sonner_1.toast)('Please enter a valid email')];
             }
             if (!formId) {
-                return [2 /*return*/, showAlertSuccess('Please enter a mailchimp form ID')];
+                return [2 /*return*/, (0, sonner_1.toast)('Please enter a mailchimp form ID')];
             }
             handleSubmit({
                 EMAIL: email,
@@ -89,9 +88,9 @@ var MailchimpSubscribe = function (props) {
     };
     (0, react_1.useEffect)(function () {
         if (message) {
-            showAlertSuccess(message);
+            (0, sonner_1.toast)(message);
         }
-    }, [message, showAlertSuccess]);
+    }, [message]);
     return (react_1.default.createElement("div", { className: "py-2 w-full flex flex-col items-center justify-center" },
         react_1.default.createElement("div", { className: "flex flex-row max-w-[400px]" },
             react_1.default.createElement(__1.TextInput, { direction: "row", placeholder: "Enter email...", name: "EMAIL", value: email, handleChange: handleChange, className: "rounded-r-none" }),
