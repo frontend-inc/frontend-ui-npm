@@ -10,5 +10,5 @@ type ArrayInputProps = {
     direction?: 'row' | 'column';
     info?: string;
 };
-export default function ArrayInput({ errors, label, name, placeholder, handleChange, direction, info, value, }: ArrayInputProps): React.JSX.Element;
+export default function ArrayInput(props: ArrayInputProps): React.JSX.Element;
 export {};

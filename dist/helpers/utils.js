@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.formatCurrency = exports.scrollTo = exports.cloudinaryImageFromVideoUrl = exports.cloudinaryConvertToJpeg = exports.resizeCloudinaryImage = exports.groupResourcesByField = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
+exports.cloudinaryDownloadUrl = exports.downloadFile = exports.formatCurrency = exports.scrollTo = exports.cloudinaryImageFromVideoUrl = exports.cloudinaryConvertToJpeg = exports.resizeCloudinaryImage = exports.groupResourcesByField = exports.groupBy = exports.getInitials = exports.truncate = exports.buildOptions = exports.isEmptyObject = void 0;
 var isEmptyObject = function (object) {
     if (Object.values(object).every(function (x) { return x === null || x === ''; })) {
         return false;
@@ -126,3 +126,38 @@ var formatCurrency = function (amount, precision, currency) {
     }).format(amount);
 };
 exports.formatCurrency = formatCurrency;
+function downloadFile(remoteUrl) {
+    var link = document.createElement('a');
+    link.href = remoteUrl;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+exports.downloadFile = downloadFile;
+function cloudinaryDownloadUrl(url, filename) {
+    if (!url || !filename)
+        return url;
+    try {
+        var urlObj = new URL(url);
+        var pathSegments = urlObj.pathname.split('/');
+        var uploadIndex = pathSegments.findIndex(function (seg) { return seg === 'upload'; });
+        if (uploadIndex === -1)
+            return url;
+        var basename = filename.replace(/\.[^/.]+$/, '');
+        var newAttachmentSegment = "fl_attachment:".concat(basename);
+        var nextSegment = pathSegments[uploadIndex + 1] || '';
+        if (nextSegment.startsWith('fl_attachment:')) {
+            pathSegments[uploadIndex + 1] = newAttachmentSegment;
+        }
+        else {
+            pathSegments.splice(uploadIndex + 1, 0, newAttachmentSegment);
+        }
+        urlObj.pathname = pathSegments.join('/');
+        return urlObj.toString();
+    }
+    catch (e) {
+        console.error(e);
+        return url;
+    }
+}
+exports.cloudinaryDownloadUrl = cloudinaryDownloadUrl;

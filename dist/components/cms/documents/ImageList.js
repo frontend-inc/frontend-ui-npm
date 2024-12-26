@@ -18,6 +18,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var ImageList = function (props) {
-    return react_1.default.createElement(__1.DocumentList, __assign({}, props, { list: __1.ImageListItems, show: __1.ShowImageModal }));
+    return (react_1.default.createElement(__1.DocumentList, __assign({}, props, { style: "image", layout: "grid", show: __1.ShowImageModal })));
 };
 exports.default = ImageList;

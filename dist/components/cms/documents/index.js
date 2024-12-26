@@ -3,7 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShowVideoModal = exports.ShowImageModal = exports.DocumentHeader = exports.DocumentDelete = exports.DocumentShow = exports.DocumentListItems = exports.DocumentListItem = exports.DocumentList = exports.DocumentEmpty = exports.DocumentDetails = exports.DocumentCarouselListItems = exports.DocumentCarouselList = exports.VideoListItems = exports.VideoList = exports.SimilarList = exports.ImageListItems = exports.ImageList = exports.PlacesHeader = exports.PlacesList = exports.FavoritesList = exports.DataTableListItems = exports.DataTableList = void 0;
+exports.ShowVideoModal = exports.ShowImageModal = exports.DocumentHeader = exports.DocumentDelete = exports.DocumentShow = exports.DocumentListItems = exports.DocumentListItem = exports.DocumentList = exports.DocumentEmpty = exports.DocumentDetails = exports.DocumentCarouselListItems = exports.DocumentCarouselList = exports.VideoList = exports.SimilarList = exports.ImageList = exports.PlacesHeader = exports.PlacesList = exports.FavoritesList = exports.DataTableListItems = exports.DataTableList = exports.BlogListItems = exports.BlogList = void 0;
+var BlogList_1 = require("./BlogList");
+Object.defineProperty(exports, "BlogList", { enumerable: true, get: function () { return __importDefault(BlogList_1).default; } });
+var BlogListItems_1 = require("./BlogListItems");
+Object.defineProperty(exports, "BlogListItems", { enumerable: true, get: function () { return __importDefault(BlogListItems_1).default; } });
 var DataTableList_1 = require("./DataTableList");
 Object.defineProperty(exports, "DataTableList", { enumerable: true, get: function () { return __importDefault(DataTableList_1).default; } });
 var DataTableListItems_1 = require("./DataTableListItems");
@@ -16,14 +20,10 @@ var PlacesHeader_1 = require("./PlacesHeader");
 Object.defineProperty(exports, "PlacesHeader", { enumerable: true, get: function () { return __importDefault(PlacesHeader_1).default; } });
 var ImageList_1 = require("./ImageList");
 Object.defineProperty(exports, "ImageList", { enumerable: true, get: function () { return __importDefault(ImageList_1).default; } });
-var ImageListItems_1 = require("./ImageListItems");
-Object.defineProperty(exports, "ImageListItems", { enumerable: true, get: function () { return __importDefault(ImageListItems_1).default; } });
 var SimilarList_1 = require("./SimilarList");
 Object.defineProperty(exports, "SimilarList", { enumerable: true, get: function () { return __importDefault(SimilarList_1).default; } });
 var VideoList_1 = require("./VideoList");
 Object.defineProperty(exports, "VideoList", { enumerable: true, get: function () { return __importDefault(VideoList_1).default; } });
-var VideoListItems_1 = require("./VideoListItems");
-Object.defineProperty(exports, "VideoListItems", { enumerable: true, get: function () { return __importDefault(VideoListItems_1).default; } });
 // Documents
 var DocumentCarouselList_1 = require("./DocumentCarouselList");
 Object.defineProperty(exports, "DocumentCarouselList", { enumerable: true, get: function () { return __importDefault(DocumentCarouselList_1).default; } });
@@ -46,7 +46,7 @@ Object.defineProperty(exports, "DocumentDelete", { enumerable: true, get: functi
 var DocumentHeader_1 = require("./DocumentHeader");
 Object.defineProperty(exports, "DocumentHeader", { enumerable: true, get: function () { return __importDefault(DocumentHeader_1).default; } });
 // Media
-var ResourceImageModal_1 = require("../modals/ResourceImageModal");
-Object.defineProperty(exports, "ShowImageModal", { enumerable: true, get: function () { return __importDefault(ResourceImageModal_1).default; } });
-var ResourceVideoModal_1 = require("../modals/ResourceVideoModal");
-Object.defineProperty(exports, "ShowVideoModal", { enumerable: true, get: function () { return __importDefault(ResourceVideoModal_1).default; } });
+var ShowImageModal_1 = require("../modals/ShowImageModal");
+Object.defineProperty(exports, "ShowImageModal", { enumerable: true, get: function () { return __importDefault(ShowImageModal_1).default; } });
+var ShowVideoModal_1 = require("../modals/ShowVideoModal");
+Object.defineProperty(exports, "ShowVideoModal", { enumerable: true, get: function () { return __importDefault(ShowVideoModal_1).default; } });

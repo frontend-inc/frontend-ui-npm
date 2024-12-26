@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextInputPropsType } from '../../../types';
-export type AIChatProps = TextInputPropsType & {
+import { TextInputProps } from '../../../types';
+export type AIChatProps = TextInputProps & {
     avatar?: string;
     id?: string;
     label: string;

@@ -31,14 +31,14 @@ var Stack = function (props) {
         10: 'space-y-10',
     };
     // @ts-ignore
-    var sizeClasses = {
-        '1/2': 'md:w-1/2',
-        '1/3': 'md:w-1/3',
-        '1/4': 'md:w-1/4',
-        '2/3': 'md:w-2/3',
-        '3/4': 'md:w-3/4',
-        full: 'md:w-full',
+    var rowClasses = {
+        '1/2': 'md:flex-row md:w-1/2 md:space-y-0',
+        '1/3': 'md:flex-row md:w-1/3 md:space-y-0',
+        '1/4': 'md:flex-row md:w-1/4 md:space-y-0',
+        '2/3': 'md:flex-row md:w-2/3 md:space-y-0',
+        '3/4': 'md:flex-row md:w-3/4 md:space-y-0',
+        'full': 'md:flex-row md:w-full md:space-y-0',
     };
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col items-start w-full', isRow && "md:flex-row", isRow ? spaceXClasses[spacing] : spaceYClasses[spacing], isRow && sizeClasses[size], className) }, children));
+    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col items-start w-full', spaceYClasses[spacing], isRow && spaceXClasses[spacing], isRow && rowClasses[size], className) }, children));
 };
 exports.default = Stack;

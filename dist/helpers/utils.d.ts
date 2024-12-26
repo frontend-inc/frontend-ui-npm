@@ -13,3 +13,5 @@ export declare const cloudinaryConvertToJpeg: (url: any) => any;
 export declare const cloudinaryImageFromVideoUrl: (url: any) => any;
 export declare const scrollTo: (domId: any) => void;
 export declare const formatCurrency: (amount: any, precision?: number, currency?: string) => string;
+export declare function downloadFile(remoteUrl: any): void;
+export declare function cloudinaryDownloadUrl(url: any, filename: any): any;

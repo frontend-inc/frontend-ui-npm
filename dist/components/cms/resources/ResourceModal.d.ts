@@ -9,6 +9,7 @@ export type ResourceModalProps = {
     handleEdit?: () => void;
     handleDelete?: () => void;
     disablePadding?: boolean;
+    maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     children?: any;
 };
 declare const ResourceModal: React.FC<ResourceModalProps>;

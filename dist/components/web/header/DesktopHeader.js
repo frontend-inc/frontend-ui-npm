@@ -34,11 +34,14 @@ var Logo_1 = __importDefault(require("./Logo"));
 var __2 = require("../..");
 var shopify_1 = require("../../shopify");
 var hooks_1 = require("../../../hooks");
-var DesktopLink_1 = __importDefault(require("./DesktopLink"));
 var frontend_shadcn_1 = require("frontend-shadcn");
+var NavigationMenu_1 = require("./NavigationMenu");
 var MAX_LINKS = 5;
 var DesktopHeader = function (props) {
     var logo = props.logo, links = props.links, buttons = props.buttons, bgColor = props.bgColor, handleClick = props.handleClick, _a = props.enableAuth, enableAuth = _a === void 0 ? false : _a, _b = props.enableStripe, enableStripe = _b === void 0 ? false : _b, _c = props.enableShopify, enableShopify = _c === void 0 ? false : _c;
+    var handleLogoClick = function () {
+        handleClick('/');
+    };
     var _d = (0, react_1.useState)(false), isScrolled = _d[0], setIsScrolled = _d[1];
     (0, react_1.useEffect)(function () {
         var handleScroll = function () {
@@ -58,20 +61,19 @@ var DesktopHeader = function (props) {
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('hidden md:block w-full h-16 bg-background'), style: {
             backgroundColor: bgColor,
         } },
-        react_1.default.createElement("div", { className: "w-full" },
-            react_1.default.createElement("div", { className: "w-full flex flex-row" },
+        react_1.default.createElement("div", { className: "w-full flex flex-row justify-between" },
+            react_1.default.createElement("div", { className: "flex flex-row basis-1/3" },
                 (links === null || links === void 0 ? void 0 : links.length) > MAX_LINKS && (react_1.default.createElement("div", { className: "pl-1 flex items-center justify-center h-[60px]" },
                     react_1.default.createElement(components_1.IconButton, { color: "ghost", onClick: function () { return setMenuOpen(true); } },
                         react_1.default.createElement(__1.RemixIcon, { name: "ri-menu-fill" })))),
-                react_1.default.createElement("div", { className: "w-[180px] h-[62px] mx-4 flex flex-row items-center justify-start" },
-                    react_1.default.createElement(Logo_1.default, { src: logo, width: 180, height: 56, handleClick: function () { return handleClick('/'); } })),
-                react_1.default.createElement("div", { className: "flex flex-row items-center justify-center w-full h-[60px]" }, (links === null || links === void 0 ? void 0 : links.length) <= MAX_LINKS &&
-                    (links === null || links === void 0 ? void 0 : links.map(function (menuItem, index) { return (react_1.default.createElement(DesktopLink_1.default, { key: index, menuItem: menuItem, handleClick: handleClick })); }))),
-                react_1.default.createElement("div", { className: "w-[200px] flex flex-row items-center justify-end h-[60px] pr-1" },
-                    (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement("div", { className: "pr-1" },
-                        react_1.default.createElement(__1.ButtonActions, { size: "sm", buttons: buttons }))),
-                    enableAuth && react_1.default.createElement(__1.AuthButton, null),
-                    enableStripe && react_1.default.createElement(__2.CartButton, null),
-                    enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null))))));
+                react_1.default.createElement("div", { className: "h-[62px] mx-4 flex flex-row items-center justify-start" },
+                    react_1.default.createElement(Logo_1.default, { src: logo, width: 180, height: 56, handleClick: handleLogoClick }))),
+            react_1.default.createElement("div", { className: "basis-1/3 flex flex-row justify-center items-center" }, (links === null || links === void 0 ? void 0 : links.length) <= MAX_LINKS && (react_1.default.createElement(NavigationMenu_1.NavigationMenu, { links: links, handleClick: handleClick }))),
+            react_1.default.createElement("div", { className: "flex flex-row items-center justify-end h-[60px] pr-1 basis-1/3" },
+                (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement("div", { className: "pr-1" },
+                    react_1.default.createElement(__1.ButtonActions, { size: "sm", buttons: buttons }))),
+                enableAuth && react_1.default.createElement(__1.AuthButton, null),
+                enableStripe && react_1.default.createElement(__2.CartButton, null),
+                enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null)))));
 };
 exports.default = DesktopHeader;

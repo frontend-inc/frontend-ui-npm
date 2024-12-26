@@ -30,7 +30,7 @@ function ThemePicker(_a) {
                         } }),
                     value)) : (placeholder),
                 react_1.default.createElement(lucide_react_1.ChevronDown, { className: "h-4 w-4 opacity-50" }))),
-        react_1.default.createElement(frontend_shadcn_1.PopoverContent, { className: "bg-background w-[200px] p-0" },
+        react_1.default.createElement(frontend_shadcn_1.PopoverContent, { className: "bg-background z-50 w-[200px] p-0" },
             react_1.default.createElement("div", { className: "grid grid-cols-5 gap-1 p-2" }, constants_1.TAILWIND_COLORS.map(function (color) { return (react_1.default.createElement(frontend_shadcn_2.TooltipProvider, { key: color },
                 react_1.default.createElement(frontend_shadcn_2.Tooltip, null,
                     react_1.default.createElement(frontend_shadcn_2.TooltipTrigger, { asChild: true },

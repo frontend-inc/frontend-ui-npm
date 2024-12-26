@@ -14,5 +14,5 @@ type SelectInputPropsType = {
     handleChange: (e: SyntheticEventType) => void;
     info?: string;
 };
-export default function SelectInput({ label, direction, name, value, options, handleChange, info, }: SelectInputPropsType): React.JSX.Element;
+export default function SelectInput(props: SelectInputPropsType): React.JSX.Element;
 export {};

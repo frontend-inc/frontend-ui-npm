@@ -19,12 +19,20 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var FormInput = function (props) {
     var variant = props.variant, name = props.name, label = props.label, errors = props.errors, value = props.value, options = props.options, placeholder = props.placeholder, handleChange = props.handleChange, handleRemove = props.handleRemove, handleAddAttachment = props.handleAddAttachment, handleRemoveAttachment = props.handleRemoveAttachment, url = props.url, _a = props.query, query = _a === void 0 ? {} : _a, displayField = props.displayField, valueParam = props.valueParam, _b = props.inputOptions, defaultInputOptions = _b === void 0 ? {} : _b, _c = props.inputParams, defaultInputParams = _c === void 0 ? {} : _c;
-    var componentMapper = __assign({ autosuggest: components_1.RemoteAutosuggest, array: components_1.ArrayInput, country: components_1.CountryInput, string: components_1.TextInput, file: components_1.AttachmentInput, email: components_1.EmailInput, phone: components_1.PhoneInput, url: components_1.URLInput, text: components_1.TextArea, slug: components_1.SlugInput, location: components_1.LocationInput, number: components_1.TextInput, price: components_1.TextInput, date: components_1.DateInput, datetime: components_1.DateInput, boolean: components_1.SwitchInput, select: components_1.Autosuggest, state: components_1.StateInput, rating: components_1.RatingInput, image: components_1.ImageInput, divider: components_1.DividerInput, html: components_1.HTMLInput, shopify_product: components_1.ShopifyProductInput, shopify_products: components_1.ShopifyProductsInput, single_choice: components_1.Autosuggest, multiple_choice: components_1.ArrayInput }, defaultInputOptions);
+    var componentMapper = __assign({ autosuggest: components_1.RemoteAutosuggest, array: components_1.ArrayInput, country: components_1.CountryInput, string: components_1.TextInput, file: components_1.AttachmentInput, email: components_1.EmailInput, phone: components_1.PhoneInput, url: components_1.URLInput, text: components_1.TextArea, slug: components_1.SlugInput, location: components_1.LocationInput, number: components_1.TextInput, price: components_1.TextInput, date: components_1.DateInput, datetime: components_1.DateInput, boolean: components_1.SwitchInput, select: components_1.SelectInput, state: components_1.StateInput, rating: components_1.RatingInput, image: components_1.ImageInput, divider: components_1.DividerInput, html: components_1.HTMLInput, shopify_product: components_1.ShopifyProductInput, shopify_products: components_1.ShopifyProductsInput, single_choice: components_1.Autosuggest, multiple_choice: components_1.ArrayInput }, defaultInputOptions);
     var inputProps = __assign({ autosuggest: {
             url: url,
             displayField: displayField,
             valueParam: valueParam,
             defaultQuery: query,
+        }, file: {
+            name: 'file'
+        }, image: {
+            name: 'image'
+        }, audio: {
+            name: 'audio'
+        }, video: {
+            name: 'video'
         }, string: {
             disableDebounce: true,
         }, text: {

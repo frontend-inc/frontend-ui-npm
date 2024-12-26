@@ -20,6 +20,7 @@ __exportStar(require("./export"), exports);
 __exportStar(require("./lists"), exports);
 __exportStar(require("./utils"), exports);
 __exportStar(require("./dragdrop"), exports);
+__exportStar(require("./forms"), exports);
 __exportStar(require("./filters"), exports);
 __exportStar(require("./fields"), exports);
 __exportStar(require("./payments"), exports);

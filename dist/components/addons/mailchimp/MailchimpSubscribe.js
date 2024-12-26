@@ -62,7 +62,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
-var __1 = require("../..");
 var use_mailchimp_form_1 = require("use-mailchimp-form");
 var sonner_1 = require("sonner");
 var MailchimpSubscribe = function (props) {
@@ -91,9 +90,6 @@ var MailchimpSubscribe = function (props) {
             (0, sonner_1.toast)(message);
         }
     }, [message]);
-    return (react_1.default.createElement("div", { className: "py-2 w-full flex flex-col items-center justify-center" },
-        react_1.default.createElement("div", { className: "flex flex-row max-w-[400px]" },
-            react_1.default.createElement(__1.TextInput, { direction: "row", placeholder: "Enter email...", name: "EMAIL", value: email, handleChange: handleChange, className: "rounded-r-none" }),
-            react_1.default.createElement(components_1.Button, { color: "secondary", onClick: handleFormSubmit, loading: loading, className: "min-w-[120px] rounded-l-none" }, buttonText))));
+    return (react_1.default.createElement(components_1.EmailSubscribeInput, { name: "EMAIL", value: email, placeholder: 'Enter your email', handleChange: handleChange, buttonText: buttonText, handleSubmit: handleFormSubmit, loading: loading }));
 };
 exports.default = MailchimpSubscribe;

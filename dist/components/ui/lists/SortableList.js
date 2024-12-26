@@ -38,8 +38,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var dnd_1 = require("@hello-pangea/dnd");
 var frontend_shadcn_1 = require("frontend-shadcn");
-function SortableList(_a) {
-    var items = _a.items, _b = _a.droppableId, droppableId = _b === void 0 ? 'sortable-list' : _b, renderItem = _a.renderItem, handleDrop = _a.handleDrop;
+function SortableList(props) {
+    var _a = props || {}, items = _a.items, _b = _a.droppableId, droppableId = _b === void 0 ? 'sortable-list' : _b, renderItem = _a.renderItem, handleDrop = _a.handleDrop;
     var _c = (0, react_1.useState)(items), sorted = _c[0], setSorted = _c[1];
     var reorder = function (items, startIndex, endIndex) {
         var removed = items.splice(startIndex, 1)[0];

@@ -1,6 +1,6 @@
 import React from 'react';
 type LabelProps = {
-    label?: string;
+    children?: string;
     textAlign?: 'left' | 'center' | 'right';
     className?: string;
 };

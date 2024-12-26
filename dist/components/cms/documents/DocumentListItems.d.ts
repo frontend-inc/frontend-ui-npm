@@ -1,10 +1,11 @@
 import React from 'react';
 import { ButtonType, MetafieldType } from '../../../types';
+import { DocumentStyleTypes } from './DocumentList';
 export type DocumentListItemsProps = {
     layout?: 'list' | 'grid' | 'slider';
     selectable?: boolean;
     href?: string;
-    style?: 'list' | 'card' | 'avatar' | 'cover' | 'text';
+    style?: DocumentStyleTypes;
     buttons: ButtonType[];
     metafields: MetafieldType[];
     handleClick?: (resource: any) => void;

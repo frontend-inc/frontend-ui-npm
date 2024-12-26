@@ -35,7 +35,8 @@ var UIHeader = function (props) {
     var router = (0, navigation_1.useRouter)();
     var _a = props || {}, mode = _a.mode, rest = __rest(_a, ["mode"]);
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var handleClick = function (path) {
+    var handleClick = function (link) {
+        var path = (link === null || link === void 0 ? void 0 : link.path) || '/';
         window.scrollTo({
             top: 0,
             behavior: 'smooth',

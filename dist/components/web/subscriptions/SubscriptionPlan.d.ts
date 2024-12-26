@@ -1,5 +1,6 @@
 import React from 'react';
 type SubscriptionPlanProps = {
+    id?: string | number;
     label?: string;
     title: string;
     subtitle?: string;

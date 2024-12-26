@@ -25,7 +25,6 @@ __exportStar(require("./divider"), exports);
 __exportStar(require("./fade"), exports);
 __exportStar(require("./hidden"), exports);
 __exportStar(require("./icon-button"), exports);
-__exportStar(require("./list"), exports);
 __exportStar(require("./menu"), exports);
 __exportStar(require("./rating"), exports);
 __exportStar(require("./slider"), exports);

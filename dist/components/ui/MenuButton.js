@@ -10,14 +10,14 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var MenuButton = function (props) {
     var children = props.children, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
-    return (react_1.default.createElement(frontend_shadcn_1.DropdownMenu, null,
-        react_1.default.createElement(frontend_shadcn_1.DropdownMenuTrigger, { asChild: true },
+    return (react_1.default.createElement(frontend_shadcn_1.Popover, null,
+        react_1.default.createElement(frontend_shadcn_1.PopoverTrigger, { asChild: true },
             react_1.default.createElement(components_1.Button, { variant: "ghost", className: "h-8 w-8 p-0" },
                 react_1.default.createElement("span", { className: "sr-only" }, "Open menu"),
                 react_1.default.createElement(components_2.RemixIcon, { name: "ri-more-2-line", className: "text-foreground" }))),
-        react_1.default.createElement(frontend_shadcn_1.DropdownMenuContent, { align: "end", className: "bg-background w-[100px]" },
+        react_1.default.createElement(frontend_shadcn_1.PopoverContent, { className: "p-0 bg-background w-[100px]" },
             children,
-            handleEdit && (react_1.default.createElement(frontend_shadcn_1.DropdownMenuItem, { className: "text-foreground", onClick: handleEdit }, "Edit")),
-            handleDelete && (react_1.default.createElement(frontend_shadcn_1.DropdownMenuItem, { className: "text-foreground", onClick: handleDelete }, "Delete")))));
+            handleEdit && (react_1.default.createElement("button", { className: "flex w-full items-center px-2 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground focus:outline-none", onClick: handleEdit }, "Edit")),
+            handleDelete && (react_1.default.createElement("button", { className: "flex w-full items-center px-2 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground focus:outline-none", onClick: handleDelete }, "Delete")))));
 };
 exports.default = MenuButton;

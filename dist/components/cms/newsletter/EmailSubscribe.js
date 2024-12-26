@@ -53,13 +53,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var sonner_1 = require("sonner");
 // Call To Action
 var EmailSubscribe = function (props) {
-    var _a = (props || {}).buttonText, buttonText = _a === void 0 ? 'Subscribe' : _a;
-    var _b = (0, hooks_1.useContacts)(), errors = _b.errors, delayedLoading = _b.delayedLoading, contact = _b.contact, createContact = _b.createContact, setContact = _b.setContact, handleChange = _b.handleChange;
+    var _a = props || {}, _b = _a.size, size = _b === void 0 ? 'lg' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Subscribe' : _c;
+    var _d = (0, hooks_1.useContacts)(), errors = _d.errors, delayedLoading = _d.delayedLoading, contact = _d.contact, createContact = _d.createContact, setContact = _d.setContact, handleChange = _d.handleChange;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {
@@ -75,12 +74,6 @@ var EmailSubscribe = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: "flex flex-row justify-center items-center" },
-            react_1.default.createElement("div", { className: "md:max-w-[360px] w-full p-1 flex flex-row justify-center items-center" },
-                react_1.default.createElement(__1.InputBase, { errors: errors, name: "email", value: contact === null || contact === void 0 ? void 0 : contact.email, 
-                    //@ts-ignore
-                    handleChange: handleChange, placeholder: "Enter your email", type: "email", className: "rounded-l-md text-base h-[48px] md:min-w-[280px] rounded-r-none border-r-0", disableDebounce: true }),
-                react_1.default.createElement(components_1.Button, { size: "lg", onClick: handleSubmit, className: "rounded-l-none rounded-r-md text-base", loading: delayedLoading }, buttonText)))));
+    return (react_1.default.createElement(components_1.EmailSubscribeInput, { size: size, loading: delayedLoading, errors: errors, name: 'email', value: contact.email, handleChange: handleChange, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = EmailSubscribe;

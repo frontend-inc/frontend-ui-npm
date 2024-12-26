@@ -28,8 +28,8 @@ var AuthMenu = function (props) {
     };
     return (react_1.default.createElement(frontend_shadcn_1.DropdownMenu, null,
         react_1.default.createElement(frontend_shadcn_1.DropdownMenuTrigger, { asChild: true },
-            react_1.default.createElement(components_2.Button, { variant: "ghost", className: "h-8 w-8 rounded-full" },
-                react_1.default.createElement(components_1.UserAvatar, { size: 32, user: currentUser }))),
+            react_1.default.createElement(components_2.Button, { variant: "ghost", className: "rounded-full h-8 w-8" },
+                react_1.default.createElement(components_1.UserAvatar, { size: 34, user: currentUser }))),
         react_1.default.createElement(frontend_shadcn_1.DropdownMenuContent, { className: "w-56", align: "end", forceMount: true }, currentUser ? (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(frontend_shadcn_1.DropdownMenuGroup, null,
                 react_1.default.createElement(frontend_shadcn_1.DropdownMenuItem, { className: "font-normal", onClick: handleMyAccount },

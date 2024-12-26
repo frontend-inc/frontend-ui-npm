@@ -5,5 +5,5 @@ type SortableListProps = {
     renderItem: (item: any, index: number, props: any) => React.ReactNode;
     handleDrop: (items: any[]) => void;
 };
-export default function SortableList({ items, droppableId, renderItem, handleDrop, }: SortableListProps): React.JSX.Element;
+export default function SortableList(props: SortableListProps): React.JSX.Element;
 export {};

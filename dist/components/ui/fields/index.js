@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FieldVideo = exports.FieldPrice = exports.FieldText = exports.FieldReference = exports.FieldRating = exports.FieldURL = exports.FieldString = exports.FieldLocation = exports.FieldJSON = exports.FieldImageThumbnail = exports.FieldImage = exports.FieldWrapper = exports.FieldFile = exports.FieldHTML = exports.FieldDate = exports.FieldBoolean = exports.FieldArray = exports.Field = void 0;
+exports.FieldVideo = exports.FieldPrice = exports.FieldText = exports.FieldReference = exports.FieldRating = exports.FieldURL = exports.FieldString = exports.FieldLocation = exports.FieldJSON = exports.FieldMarkdown = exports.FieldImageThumbnail = exports.FieldImage = exports.FieldWrapper = exports.FieldFile = exports.FieldHTML = exports.FieldDate = exports.FieldBoolean = exports.FieldArray = exports.Field = void 0;
 __exportStar(require("./addons"), exports);
 var Field_1 = require("./Field");
 Object.defineProperty(exports, "Field", { enumerable: true, get: function () { return __importDefault(Field_1).default; } });
@@ -37,6 +37,8 @@ var FieldImage_1 = require("./FieldImage");
 Object.defineProperty(exports, "FieldImage", { enumerable: true, get: function () { return __importDefault(FieldImage_1).default; } });
 var FieldAvatar_1 = require("./FieldAvatar");
 Object.defineProperty(exports, "FieldImageThumbnail", { enumerable: true, get: function () { return __importDefault(FieldAvatar_1).default; } });
+var FieldMarkdown_1 = require("./FieldMarkdown");
+Object.defineProperty(exports, "FieldMarkdown", { enumerable: true, get: function () { return __importDefault(FieldMarkdown_1).default; } });
 var FieldJSON_1 = require("./FieldJSON");
 Object.defineProperty(exports, "FieldJSON", { enumerable: true, get: function () { return __importDefault(FieldJSON_1).default; } });
 var FieldLocation_1 = require("./FieldLocation");

@@ -1,4 +1,4 @@
 import React from 'react';
-import { TextInputPropsType } from '../../../types';
-declare const HTMLEditor: React.FC<TextInputPropsType>;
+import { TextInputProps } from '../../../types';
+declare const HTMLEditor: React.FC<TextInputProps>;
 export default HTMLEditor;

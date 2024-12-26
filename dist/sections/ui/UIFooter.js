@@ -30,10 +30,9 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../hooks");
-var frontend_shadcn_1 = require("frontend-shadcn");
 var UIFooter = function (props) {
     var router = (0, navigation_1.useRouter)();
-    var _a = props || {}, bgColor = _a.bgColor, mode = _a.mode, _b = _a.links, links = _b === void 0 ? [] : _b, rest = __rest(_a, ["bgColor", "mode", "links"]);
+    var _a = props || {}, bgColor = _a.bgColor, mode = _a.mode, _b = _a.maxWidth, maxWidth = _b === void 0 ? 'lg' : _b, _c = _a.links, links = _c === void 0 ? [] : _c, rest = __rest(_a, ["bgColor", "mode", "maxWidth", "links"]);
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var handleClick = function (path) {
         window.scrollTo({
@@ -42,9 +41,7 @@ var UIFooter = function (props) {
         });
         router.push("".concat(clientUrl).concat(path));
     };
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(mode, 'w-full'), style: {
-            backgroundColor: bgColor,
-        } },
+    return (react_1.default.createElement(components_1.Section, { bgColor: bgColor, mode: mode, maxWidth: maxWidth },
         react_1.default.createElement(components_1.Footer, __assign({}, rest, { links: links, handleClick: handleClick }))));
 };
 exports.default = UIFooter;

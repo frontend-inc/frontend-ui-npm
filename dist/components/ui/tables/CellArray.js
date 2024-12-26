@@ -51,8 +51,8 @@ var CellArray = function (props) {
         }
     }, [values]);
     return (react_1.default.createElement("div", { className: "flex flex-row gap-2" }, visibleTags === null || visibleTags === void 0 ? void 0 :
-        visibleTags.map(function (value, index) { return (react_1.default.createElement(components_2.Label, { key: index, label: value })); }),
+        visibleTags.map(function (value, index) { return (react_1.default.createElement(components_2.Label, { key: index }, value)); }),
         !open && visibleTags && (visibleTags === null || visibleTags === void 0 ? void 0 : visibleTags.length) > MAX_TAGS && (react_1.default.createElement(components_1.Button, { onClick: handleToggleSeeAll },
-            react_1.default.createElement(components_2.Label, { label: "..." })))));
+            react_1.default.createElement(components_2.Label, null, "...")))));
 };
 exports.default = CellArray;

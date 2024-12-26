@@ -21,7 +21,7 @@ declare const useSearch: (props: any) => {
     handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
     activeFilters: any[];
     setActiveFilters: React.Dispatch<React.SetStateAction<any[]>>;
-    handleAddFilter: (filter: any) => any[];
+    handleToggleFilter: (filter: any) => void;
     handleClearFilters: () => void;
 };
 export default useSearch;

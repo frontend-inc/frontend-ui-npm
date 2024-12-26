@@ -6,15 +6,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
+var frontend_shadcn_2 = require("frontend-shadcn");
 var Label = function (props) {
-    var label = props.label, textAlign = props.textAlign, className = props.className;
+    var children = props.children, textAlign = props.textAlign, className = props.className;
     var textAlignClasses = {
         left: 'text-left',
         center: 'text-center',
         right: 'text-right',
     };
-    if (!label)
+    if (!children)
         return null;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('text-xs text-foreground font-semibold uppercase tracking-wider', textAlign && textAlignClasses[textAlign], className) }, label));
+    return (react_1.default.createElement(frontend_shadcn_1.Badge, { variant: 'outline', className: (0, frontend_shadcn_2.cn)('px-3 py-1 text-xs tracking-wider', textAlign && textAlignClasses[textAlign], className) }, children));
 };
 exports.default = Label;

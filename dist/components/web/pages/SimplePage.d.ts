@@ -2,7 +2,7 @@ import React from 'react';
 type SimplePageProps = {
     title: string;
     body: string;
-    publishedAt?: string;
+    subtitle?: string;
     html?: boolean;
     disablePadding?: boolean;
 };

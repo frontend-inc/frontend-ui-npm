@@ -45,7 +45,7 @@ var DocumentCarouselListItems = function (props) {
     };
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full', loading && 'opacity-50') },
         react_1.default.createElement(frontend_shadcn_2.Carousel, null,
-            react_1.default.createElement(frontend_shadcn_2.CarouselContent, null, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(frontend_shadcn_2.CarouselItem, { className: "sm:basis-1/2 lg:basis-1/3", key: index },
+            react_1.default.createElement(frontend_shadcn_2.CarouselContent, null, resources === null || resources === void 0 ? void 0 : resources.map(function (resource, index) { return (react_1.default.createElement(frontend_shadcn_2.CarouselItem, { className: "sm:basis-1/2 md:basis-1/3 lg:basis-1/4", key: index },
                 react_1.default.createElement("div", { className: "p-1" },
                     react_1.default.createElement(DocumentListItem_1.default, __assign({ buttons: buttons, style: "card", resource: resource, metafields: metafields, handleClick: function () { return handleClick(resource); }, enableGradient: enableGradient, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableLikes: enableLikes }, slots.item))))); })),
             react_1.default.createElement(frontend_shadcn_2.CarouselPrevious, { className: "hidden sm:flex absolute left-4 top-1/3 -translate-y-1/3 bg-foreground/70 text-background/70 hover:text-foreground border-0" }),

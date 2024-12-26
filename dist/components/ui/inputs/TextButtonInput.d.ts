@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextInputPropsType } from '../../../types';
-type TextButtonInputProps = TextInputPropsType & {
+import { TextInputProps } from '../../../types';
+type TextButtonInputProps = TextInputProps & {
     loading?: boolean;
     onClick: () => void;
     color?: 'primary' | 'secondary';

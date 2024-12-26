@@ -48,6 +48,7 @@ var DisplayField = function (props) {
         url: __1.FieldURL,
         rating: __1.FieldRating,
         text: __1.FieldText,
+        markdown: __1.FieldMarkdown,
         number: __1.FieldText,
         array: __1.FieldArray,
         string: __1.FieldString,
@@ -65,6 +66,9 @@ var DisplayField = function (props) {
         },
         email: {
             className: 'w-full text-center text-sm italic',
+        },
+        file: {
+            className: 'w-full justify-center'
         },
         string: {
             className: 'w-full text-center text-md font-normal tracking-wide',

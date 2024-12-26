@@ -4,19 +4,20 @@ export type MenuType = {
     internal?: boolean;
     links: MenuLinkType[];
 };
+export type SocialLinkType = {
+    url: string;
+    provider: string;
+};
 export type MenuLinkType = {
+    id: string;
+    parent_id: string | null;
     label: string;
+    description?: string;
+    position: number;
+    link_type: string;
     path: string;
     url?: string;
-    icon?: string;
-    position: number;
     children: MenuLinkType[] | [];
-};
-export type PolicyLinkType = {
-    label: string;
-    title: string;
-    handle: string;
-    position?: number;
 };
 export type NotificationTypes = 'text' | 'page' | 'document' | 'shopify_collection' | 'shopify_product' | 'url';
 export type NotificationType = {

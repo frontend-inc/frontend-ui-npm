@@ -18,6 +18,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var VideoList = function (props) {
-    return react_1.default.createElement(__1.DocumentList, __assign({}, props, { list: __1.VideoListItems, show: __1.ShowVideoModal }));
+    return (react_1.default.createElement(__1.DocumentList, __assign({}, props, { style: "video", layout: "grid", show: __1.ShowVideoModal })));
 };
 exports.default = VideoList;

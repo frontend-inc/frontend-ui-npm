@@ -6,13 +6,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var link_1 = __importDefault(require("next/link"));
-var react_2 = require("@remixicon/react");
+var components_2 = require("../../../components");
+var helpers_1 = require("../../../helpers");
+var frontend_shadcn_1 = require("frontend-shadcn");
 var FieldFile = function (props) {
-    var value = props.value, label = props.label;
+    var value = props.value, label = props.label, className = props.className;
+    var handleClick = function () {
+        if (value === null || value === void 0 ? void 0 : value.url) {
+            var downloadUrl = (0, helpers_1.cloudinaryDownloadUrl)(value.url, value.filename);
+            (0, helpers_1.downloadFile)(downloadUrl);
+        }
+    };
     return (react_1.default.createElement(components_1.FieldWrapper, { label: label },
-        react_1.default.createElement("div", { className: "flex flex-row space-x-2" },
-            react_1.default.createElement(react_2.RiFile2Fill, null),
-            (value === null || value === void 0 ? void 0 : value.content_type) && (react_1.default.createElement(link_1.default, { href: (value === null || value === void 0 ? void 0 : value.url) || '#' }, value === null || value === void 0 ? void 0 : value.content_type)))));
+        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full flex justify-center', className) },
+            react_1.default.createElement(components_2.Button, { size: "lg", variant: "outline", className: 'max-w-[240px]', onClick: handleClick, startIcon: react_1.default.createElement(components_2.RemixIcon, { name: "ri-download-2-fill" }) }, value === null || value === void 0 ? void 0 : value.filename))));
 };
 exports.default = FieldFile;

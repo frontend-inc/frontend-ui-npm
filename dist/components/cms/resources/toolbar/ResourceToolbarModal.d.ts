@@ -4,5 +4,5 @@ interface ResourceToolbarModalProps {
     handleClose: () => void;
     children: React.ReactNode;
 }
-export default function ResourceToolbarModal({ open, handleClose, children, }: ResourceToolbarModalProps): React.JSX.Element;
+export default function ResourceToolbarModal(props: ResourceToolbarModalProps): React.JSX.Element;
 export {};

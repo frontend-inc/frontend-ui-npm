@@ -40,10 +40,10 @@ var AppProvider = function (props) {
     var _h = (0, react_1.useState)(), app = _h[0], setApp = _h[1];
     var value = {
         name: name,
+        apiUrl: apiUrl,
         app: app,
         setApp: setApp,
         logo: logo,
-        apiUrl: apiUrl,
         clientUrl: clientUrl,
         alert: alert,
         setAlert: setAlert,

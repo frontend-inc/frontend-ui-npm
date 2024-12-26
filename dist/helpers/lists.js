@@ -81,7 +81,7 @@ exports.buildListFields = buildListFields;
 var buildSortFields = function (params) {
     var _a = params || {}, sortPosition = _a.sortPosition, sortTitle = _a.sortTitle, sortName = _a.sortName, sortDate = _a.sortDate, sortPublished = _a.sortPublished, sortPrice = _a.sortPrice;
     var positionField = {
-        label: 'Default',
+        label: 'Sorted',
         name: 'position',
         position: 1,
     };

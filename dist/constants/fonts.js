@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GOOGLE_FONTS = void 0;
 exports.GOOGLE_FONTS = [
     {
+        name: 'Barlow',
+        url: 'https://fonts.googleapis.com/css2?family=Barlow&display=swap',
+    },
+    {
         name: 'DM Sans',
         url: 'https://fonts.googleapis.com/css2?family=DM+Sans&display=swap',
     },

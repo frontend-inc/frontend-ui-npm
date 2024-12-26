@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextInputPropsType } from '../../../../types';
-type LocationInputProps = TextInputPropsType & {
+import { TextInputProps } from '../../../../types';
+type LocationInputProps = TextInputProps & {
     enablePosition?: boolean;
     lat?: number;
     lng?: number;

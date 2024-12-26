@@ -45,9 +45,9 @@ var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var navigation_1 = require("next/navigation");
 var NewPassword = function (props) {
-    var _a = props || {}, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'New Password' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Create a new password' : _c, loginUrl = _a.loginUrl;
+    var _a = props || {}, redirectUrl = _a.redirectUrl, _b = _a.title, title = _b === void 0 ? 'New Password' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Create a new password' : _c, _d = _a.loginUrl, loginUrl = _d === void 0 ? '/login' : _d;
     var router = (0, navigation_1.useRouter)();
-    var _d = (0, frontend_js_1.useAuth)(), errors = _d.errors, loading = _d.loading, user = _d.user, handleChange = _d.handleChange, updateMe = _d.updateMe;
+    var _e = (0, frontend_js_1.useAuth)(), errors = _e.errors, loading = _e.loading, user = _e.user, handleChange = _e.handleChange, updateMe = _e.updateMe;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {

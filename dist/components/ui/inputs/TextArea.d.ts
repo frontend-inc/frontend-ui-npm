@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextInputPropsType } from '../../../types';
-type TextAreaProps = Omit<TextInputPropsType, 'type'> & {
+import { TextInputProps } from '../../../types';
+type TextAreaProps = Omit<TextInputProps, 'type'> & {
     debounceDelay?: number;
     disableDebounce?: boolean;
     rows?: number;

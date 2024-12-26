@@ -31,7 +31,7 @@ var components_1 = require("../../components");
 var components_2 = require("../../components");
 var UISpotlight = function (props) {
     var bgColor = props.bgColor, bgImage = props.bgImage, bgOverlay = props.bgOverlay, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["bgColor", "bgImage", "bgOverlay", "mode", "py", "px", "maxWidth", "requireAuth"]);
-    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, bgImage: bgImage, bgOverlay: bgOverlay, mode: mode, py: py, px: "none", maxWidth: maxWidth },
+    return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, bgImage: bgImage, bgOverlay: bgOverlay, mode: mode, py: py, maxWidth: maxWidth },
         react_1.default.createElement(components_2.Spotlight, __assign({}, rest))));
 };
 exports.default = UISpotlight;

@@ -63,10 +63,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
-var navigation_1 = require("next/navigation");
 var MyAccount = function (props) {
-    var router = (0, navigation_1.useRouter)();
-    var redirectUrl = (props || {}).redirectUrl;
     var _a = (0, frontend_js_1.useAuth)(), loading = _a.loading, user = _a.user, fetchMe = _a.fetchMe, currentUser = _a.currentUser, updateMe = _a.updateMe, handleChange = _a.handleChange, logout = _a.logout, deleteAvatar = _a.deleteAvatar;
     var handleDeleteAvatar = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {

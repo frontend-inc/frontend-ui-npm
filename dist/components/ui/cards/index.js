@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ListCard = exports.TableCard = exports.VideoCard = exports.KanBanCard = exports.ImageCard = exports.TextCard = exports.ChipCard = exports.CoverCard = exports.Card = exports.AvatarCard = void 0;
+exports.FileCard = exports.ListCard = exports.TableCard = exports.VideoCard = exports.KanBanCard = exports.ImageCard = exports.TextCard = exports.ChipCard = exports.CoverCard = exports.Card = exports.AvatarCard = void 0;
 var AvatarCard_1 = require("./AvatarCard");
 Object.defineProperty(exports, "AvatarCard", { enumerable: true, get: function () { return __importDefault(AvatarCard_1).default; } });
 var Card_1 = require("./Card");
@@ -24,3 +24,5 @@ var TableCard_1 = require("./TableCard");
 Object.defineProperty(exports, "TableCard", { enumerable: true, get: function () { return __importDefault(TableCard_1).default; } });
 var ListCard_1 = require("./ListCard");
 Object.defineProperty(exports, "ListCard", { enumerable: true, get: function () { return __importDefault(ListCard_1).default; } });
+var FileCard_1 = require("./FileCard");
+Object.defineProperty(exports, "FileCard", { enumerable: true, get: function () { return __importDefault(FileCard_1).default; } });

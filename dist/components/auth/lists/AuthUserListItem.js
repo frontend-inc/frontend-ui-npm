@@ -49,7 +49,7 @@ var AuthUserListItem = function (_a) {
                 react_1.default.createElement("div", { className: "flex-grow" },
                     react_1.default.createElement("div", { className: "flex items-center space-x-2" },
                         react_1.default.createElement("span", { className: "text-sm font-medium" }, user.name),
-                        (user === null || user === void 0 ? void 0 : user.role) && react_1.default.createElement(__1.Label, { label: user === null || user === void 0 ? void 0 : user.role })),
+                        (user === null || user === void 0 ? void 0 : user.role) && react_1.default.createElement(__1.Label, null, user === null || user === void 0 ? void 0 : user.role)),
                     react_1.default.createElement("span", { className: "text-xs text-muted-foreground" }, user.email)),
                 (canEdit || canDelete) && (react_1.default.createElement(__1.MenuButton, { handleEdit: canEdit ? function () { return handleEdit(user); } : undefined, handleDelete: canDelete ? function () { return handleDelete(user); } : undefined }))))));
 };

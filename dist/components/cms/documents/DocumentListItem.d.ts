@@ -1,17 +1,19 @@
 import React from 'react';
 import { ButtonType, MetafieldType } from '../../../types';
-type CardStyleTypes = 'list' | 'avatar' | 'card' | 'cover' | 'text';
+import { DocumentStyleTypes } from './DocumentList';
 type DocumentListItemProps = {
     buttons: ButtonType[];
-    style: CardStyleTypes;
+    style: DocumentStyleTypes;
     listFields: MetafieldType[];
     resource: any;
     buttonText?: string;
     href?: string;
     handleClick: () => void;
+    disableTitle?: boolean;
     enableBorder?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
+    enableDownload?: boolean;
     enableComments?: boolean;
     enableFavorites?: boolean;
     enableLikes?: boolean;

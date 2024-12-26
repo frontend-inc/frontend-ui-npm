@@ -9,7 +9,6 @@ export * from './divider';
 export * from './fade';
 export * from './hidden';
 export * from './icon-button';
-export * from './list';
 export * from './menu';
 export * from './rating';
 export * from './slider';

@@ -29,9 +29,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var ThemeContext_1 = __importDefault(require("./ThemeContext"));
+var react_google_font_loader_1 = __importDefault(require("react-google-font-loader"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var ThemeProvider = function (props) {
-    var _a = props || {}, _b = _a.mode, mode = _b === void 0 ? 'light' : _b, _c = _a.theme, theme = _c === void 0 ? 'light' : _c, primaryColor = _a.primaryColor, headerFont = _a.headerFont, bodyFont = _a.bodyFont, borderRadius = _a.borderRadius, children = _a.children;
+    var _a = (0, react_1.useState)(), googleFonts = _a[0], setGoogleFonts = _a[1];
+    var _b = props || {}, _c = _b.mode, mode = _c === void 0 ? 'light' : _c, _d = _b.theme, theme = _d === void 0 ? 'light' : _d, primaryColor = _b.primaryColor, _e = _b.headerFont, headerFont = _e === void 0 ? 'Inter' : _e, _f = _b.bodyFont, bodyFont = _f === void 0 ? 'Inter' : _f, borderRadius = _b.borderRadius, children = _b.children;
     var value = {
         mode: mode,
         theme: theme,
@@ -51,7 +53,26 @@ var ThemeProvider = function (props) {
             document.documentElement.style.setProperty('--radius', "".concat(borderRadius, "px"));
         }
     }, [headerFont, bodyFont, borderRadius]);
+    (0, react_1.useEffect)(function () {
+        if (headerFont || bodyFont) {
+            var fonts = [];
+            if (headerFont) {
+                fonts.push({
+                    font: headerFont,
+                    weights: [400, 600, 700, 800, 900],
+                });
+            }
+            if (bodyFont) {
+                fonts.push({
+                    font: bodyFont,
+                    weights: [400, 600, 700, 800, 900],
+                });
+            }
+            setGoogleFonts(fonts);
+        }
+    }, [headerFont, bodyFont]);
     return (react_1.default.createElement(ThemeContext_1.default.Provider, { value: value },
+        (googleFonts === null || googleFonts === void 0 ? void 0 : googleFonts.length) > 0 && (react_1.default.createElement(react_google_font_loader_1.default, { fonts: googleFonts })),
         react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(mode == 'dark' ? 'dark-theme' : 'light', theme, 'w-full') }, children)));
 };
 exports.default = ThemeProvider;

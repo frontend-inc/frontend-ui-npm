@@ -63,7 +63,7 @@ var Autosuggest = function (props) {
         react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
             react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
             react_1.default.createElement(frontend_shadcn_3.PopoverTrigger, { asChild: true },
-                react_1.default.createElement(components_2.Button, { variant: "outline", role: "combobox", "aria-expanded": open, className: (0, frontend_shadcn_1.cn)('min-w-[220px] w-full text-foreground justify-between font-normal') },
+                react_1.default.createElement(components_2.Button, { variant: "secondary", role: "combobox", "aria-expanded": open, className: (0, frontend_shadcn_1.cn)('min-w-[220px] bg-input hover:bg-input/50 hover:shadow-sm w-full text-foreground justify-between font-normal') },
                     (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.label) || 'Select...',
                     react_1.default.createElement(lucide_react_1.ChevronsUpDown, { className: "ml-2 h-4 w-4 shrink-0 opacity-50" })))),
         react_1.default.createElement(frontend_shadcn_3.PopoverContent, { className: "bg-input w-[240px] p-0" },

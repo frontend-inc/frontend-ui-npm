@@ -1,18 +1,21 @@
 import React from 'react';
 import { ButtonType, MetafieldType, ContentTypes } from '../../../types';
+export type DocumentStyleTypes = 'card' | 'cover' | 'avatar' | 'list' | 'text' | 'video' | 'file' | 'image';
 export type DocumentListProps = {
     layout?: 'list' | 'grid' | 'slider';
     contentType?: ContentTypes;
-    style: string;
+    style: DocumentStyleTypes;
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
     filterChoices?: string[];
+    enableDownload?: boolean;
     enableLikes?: boolean;
     enableFavorites?: boolean;
     enableComments?: boolean;
     enableGradient?: boolean;
     enableOverlay?: boolean;
+    displayTitle?: boolean;
     displaySubtitle?: boolean;
     displayCategory?: boolean;
     displayLocation?: boolean;

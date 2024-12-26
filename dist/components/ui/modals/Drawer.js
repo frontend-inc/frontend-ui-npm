@@ -30,7 +30,7 @@ function CustomDrawer(props) {
                             react_1.default.createElement(lucide_react_2.X, { className: "h-5 w-5" }),
                             react_1.default.createElement("span", { className: "sr-only" }, "Close"))),
                     title && (react_1.default.createElement(frontend_shadcn_1.DrawerTitle, null,
-                        react_1.default.createElement("span", { className: "flex font-semibold justify-center w-full text-2xl text-foreground" }, title))),
+                        react_1.default.createElement("span", { className: "flex font-semibold justify-center w-full text-3xl text-foreground" }, title))),
                     description && (react_1.default.createElement(frontend_shadcn_1.DrawerDescription, null,
                         react_1.default.createElement("div", { className: "flex flex-row justify-center w-full" },
                             react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)(maxWidthClasses[maxWidth], 'w-full') },

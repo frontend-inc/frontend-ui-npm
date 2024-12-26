@@ -36,7 +36,6 @@ export type ResourceListProps = {
     enableCreate?: boolean;
     enableDelete?: boolean;
     enableExport?: boolean;
-    enableBorder?: boolean;
     direction?: 'row' | 'column';
     emptyIcon?: string;
     emptyTitle?: string;

@@ -70,15 +70,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_js_1 = require("frontend-js");
@@ -86,7 +77,7 @@ var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var lodash_1 = require("lodash");
 var RemoteAutosuggest = function (props) {
-    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, displayField = props.displayField, imageField = props.imageField, handleChange = props.handleChange, _a = props.valueParam, valueParam = _a === void 0 ? 'id' : _a, _b = props.placeholder, placeholder = _b === void 0 ? 'Search' : _b, _c = props.defaultQuery, defaultQuery = _c === void 0 ? {} : _c, _d = props.defaultOptions, defaultOptions = _d === void 0 ? [] : _d, _e = props.enableRemoteSearch, enableRemoteSearch = _e === void 0 ? false : _e, _f = props.enableClear, enableClear = _f === void 0 ? false : _f, _g = props.perPage, perPage = _g === void 0 ? 100 : _g;
+    var errors = props.errors, value = props.value, label = props.label, name = props.name, url = props.url, displayField = props.displayField, handleChange = props.handleChange, _a = props.valueParam, valueParam = _a === void 0 ? 'id' : _a, _b = props.placeholder, placeholder = _b === void 0 ? 'Search' : _b, _c = props.defaultQuery, defaultQuery = _c === void 0 ? {} : _c, _d = props.defaultOptions, defaultOptions = _d === void 0 ? [] : _d, _e = props.enableRemoteSearch, enableRemoteSearch = _e === void 0 ? false : _e, _f = props.enableClear, enableClear = _f === void 0 ? false : _f, _g = props.perPage, perPage = _g === void 0 ? 100 : _g;
     var _h = (0, hooks_1.useError)({
         errors: errors,
         name: name,
@@ -95,7 +86,6 @@ var RemoteAutosuggest = function (props) {
         url: url,
         name: name,
     }), loading = _j.loading, resources = _j.resources, findOne = _j.findOne, findMany = _j.findMany;
-    var _k = (0, react_1.useState)([]), options = _k[0], setOptions = _k[1];
     var handleInputChange = function (newValue) {
         if (error)
             clearError();
@@ -110,11 +100,9 @@ var RemoteAutosuggest = function (props) {
         return resources.map(function (resource) { return ({
             label: (0, lodash_1.get)(resource, displayField),
             value: (0, lodash_1.get)(resource, valueParam),
-            image: imageField ? (0, lodash_1.get)(resource, imageField) : null,
         }); });
     };
     var findOption = function (value) { return __awaiter(void 0, void 0, void 0, function () {
-        var resource;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -122,15 +110,7 @@ var RemoteAutosuggest = function (props) {
                         return [2 /*return*/, null];
                     return [4 /*yield*/, findOne(value)];
                 case 1:
-                    resource = _a.sent();
-                    if (resource === null || resource === void 0 ? void 0 : resource.id) {
-                        setOptions(__spreadArray(__spreadArray([], options, true), [
-                            {
-                                label: (0, lodash_1.get)(resource, displayField),
-                                value: (0, lodash_1.get)(resource, valueParam),
-                            },
-                        ], false));
-                    }
+                    _a.sent();
                     return [2 /*return*/];
             }
         });
@@ -141,18 +121,14 @@ var RemoteAutosuggest = function (props) {
         }
     }, [value, url]);
     (0, react_1.useEffect)(function () {
-        if (resources) {
-            setOptions(__spreadArray(__spreadArray([], formatResources(resources), true), defaultOptions, true));
-        }
-    }, [resources]);
-    (0, react_1.useEffect)(function () {
         if (url) {
             //@ts-ignore
             findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
         }
     }, [url]);
+    var options = formatResources(resources);
     if (!displayField)
         return null;
-    return (react_1.default.createElement(__1.Autosuggest, { label: label, name: name, value: value, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, enableClear: enableClear }));
+    return (react_1.default.createElement(__1.Autosuggest, { label: label, name: name, value: value, options: (0, lodash_1.uniq)(options, 'value'), placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, enableClear: enableClear }));
 };
 exports.default = RemoteAutosuggest;

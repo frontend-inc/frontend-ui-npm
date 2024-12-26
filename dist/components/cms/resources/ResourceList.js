@@ -105,17 +105,17 @@ var ResourceList = function (props) {
         toolbar: {},
         pagination: {},
     };
-    var _a = props.grid, grid = _a === void 0 ? false : _a, _b = props.sortable, sortable = _b === void 0 ? false : _b, _c = props.selectable, selectable = _c === void 0 ? false : _c, _d = props.header, Header = _d === void 0 ? ResourceHeader_1.default : _d, _e = props.toolbar, Toolbar = _e === void 0 ? ResourceToolbar_1.default : _e, _f = props.list, List = _f === void 0 ? ResourceListItems_1.default : _f, _g = props.component, Component = _g === void 0 ? ResourceItem_1.default : _g, _h = props.edit, EditForm = _h === void 0 ? ResourceForm_1.default : _h, _j = props.create, CreateForm = _j === void 0 ? ResourceForm_1.default : _j, _k = props.show, ShowModal = _k === void 0 ? ResourceShow_1.default : _k, _l = props.disableInfiniteLoad, disableInfiniteLoad = _l === void 0 ? false : _l, url = props.url, name = props.name, _m = props.headers, headers = _m === void 0 ? [] : _m, _o = props.exportHeaders, exportHeaders = _o === void 0 ? ['id'] : _o, _p = props.fields, fields = _p === void 0 ? [] : _p, _q = props.filterOptions, filterOptions = _q === void 0 ? [] : _q, _r = props.sortOptions, sortOptions = _r === void 0 ? [] : _r, _s = props.displayFields, displayFields = _s === void 0 ? [] : _s, _t = props.buttons, buttons = _t === void 0 ? [] : _t, _u = props.query, defaultQuery = _u === void 0 ? {} : _u, _v = props.perPage, perPage = _v === void 0 ? 20 : _v, _w = props.enableSearch, enableSearch = _w === void 0 ? false : _w, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableShow = props.enableShow, enableExport = props.enableExport, handleClick = props.handleClick, _x = props.slots, slots = _x === void 0 ? SLOT_PROPS : _x, _y = props.enableBorder, enableBorder = _y === void 0 ? false : _y, _z = props.direction, direction = _z === void 0 ? 'row' : _z, _0 = props.emptyIcon, emptyIcon = _0 === void 0 ? 'Search' : _0, _1 = props.emptyTitle, emptyTitle = _1 === void 0 ? 'No results found' : _1, _2 = props.emptyDescription, emptyDescription = _2 === void 0 ? 'Try adjusting your search or filters' : _2, _3 = props.defaultValue, defaultValue = _3 === void 0 ? {} : _3;
-    var _4 = (0, react_1.useState)(false), openShow = _4[0], setOpenShow = _4[1];
-    var _5 = (0, react_1.useState)(false), openCreate = _5[0], setOpenCreate = _5[1];
-    var _6 = (0, react_1.useState)(false), openEdit = _6[0], setOpenEdit = _6[1];
-    var _7 = (0, react_1.useState)(false), openDelete = _7[0], setOpenDelete = _7[1];
-    var _8 = (0, react_1.useState)(false), openExport = _8[0], setOpenExport = _8[1];
-    var _9 = (0, frontend_js_1.useResource)({
+    var _a = props.grid, grid = _a === void 0 ? false : _a, _b = props.sortable, sortable = _b === void 0 ? false : _b, _c = props.selectable, selectable = _c === void 0 ? false : _c, _d = props.header, Header = _d === void 0 ? ResourceHeader_1.default : _d, _e = props.toolbar, Toolbar = _e === void 0 ? ResourceToolbar_1.default : _e, _f = props.list, List = _f === void 0 ? ResourceListItems_1.default : _f, _g = props.component, Component = _g === void 0 ? ResourceItem_1.default : _g, _h = props.edit, EditForm = _h === void 0 ? ResourceForm_1.default : _h, _j = props.create, CreateForm = _j === void 0 ? ResourceForm_1.default : _j, _k = props.show, ShowModal = _k === void 0 ? ResourceShow_1.default : _k, _l = props.disableInfiniteLoad, disableInfiniteLoad = _l === void 0 ? false : _l, url = props.url, name = props.name, _m = props.headers, headers = _m === void 0 ? [] : _m, _o = props.exportHeaders, exportHeaders = _o === void 0 ? ['id'] : _o, _p = props.fields, fields = _p === void 0 ? [] : _p, _q = props.filterOptions, filterOptions = _q === void 0 ? [] : _q, _r = props.sortOptions, sortOptions = _r === void 0 ? [] : _r, _s = props.displayFields, displayFields = _s === void 0 ? [] : _s, _t = props.buttons, buttons = _t === void 0 ? [] : _t, _u = props.query, defaultQuery = _u === void 0 ? {} : _u, _v = props.perPage, perPage = _v === void 0 ? 20 : _v, _w = props.enableSearch, enableSearch = _w === void 0 ? false : _w, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, enableShow = props.enableShow, enableExport = props.enableExport, handleClick = props.handleClick, _x = props.slots, slots = _x === void 0 ? SLOT_PROPS : _x, _y = props.direction, direction = _y === void 0 ? 'row' : _y, _z = props.emptyIcon, emptyIcon = _z === void 0 ? 'Search' : _z, _0 = props.emptyTitle, emptyTitle = _0 === void 0 ? 'No results found' : _0, _1 = props.emptyDescription, emptyDescription = _1 === void 0 ? 'Try adjusting your search or filters' : _1, _2 = props.defaultValue, defaultValue = _2 === void 0 ? {} : _2;
+    var _3 = (0, react_1.useState)(false), openShow = _3[0], setOpenShow = _3[1];
+    var _4 = (0, react_1.useState)(false), openCreate = _4[0], setOpenCreate = _4[1];
+    var _5 = (0, react_1.useState)(false), openEdit = _5[0], setOpenEdit = _5[1];
+    var _6 = (0, react_1.useState)(false), openDelete = _6[0], setOpenDelete = _6[1];
+    var _7 = (0, react_1.useState)(false), openExport = _7[0], setOpenExport = _7[1];
+    var _8 = (0, frontend_js_1.useResource)({
         name: name,
         url: url,
-    }), loading = _9.delayedLoading, errors = _9.errors, resource = _9.resource, resources = _9.resources, setResource = _9.setResource, update = _9.update, create = _9.create, destroy = _9.destroy, updatePositions = _9.updatePositions, handleChange = _9.handleChange, query = _9.query, findMany = _9.findMany, reloadMany = _9.reloadMany, addAttachment = _9.addAttachment, removeAttachment = _9.removeAttachment, page = _9.page, numPages = _9.numPages, totalCount = _9.totalCount, loadMore = _9.loadMore, paginate = _9.paginate, getMany = _9.getMany, getOne = _9.getOne, reloadOne = _9.reloadOne, selected = _9.selected, selectedIds = _9.selectedIds, handleSelect = _9.handleSelect, handleClear = _9.handleClear;
-    var _10 = (0, react_1.useState)(''), keywords = _10[0], setKeywords = _10[1];
+    }), loading = _8.delayedLoading, errors = _8.errors, resource = _8.resource, resources = _8.resources, setResource = _8.setResource, update = _8.update, create = _8.create, destroy = _8.destroy, updatePositions = _8.updatePositions, handleChange = _8.handleChange, query = _8.query, findOne = _8.findOne, findMany = _8.findMany, reloadMany = _8.reloadMany, addAttachment = _8.addAttachment, removeAttachment = _8.removeAttachment, page = _8.page, numPages = _8.numPages, totalCount = _8.totalCount, loadMore = _8.loadMore, paginate = _8.paginate, selected = _8.selected, selectedIds = _8.selectedIds, handleSelect = _8.handleSelect, handleClear = _8.handleClear;
+    var _9 = (0, react_1.useState)(''), keywords = _9[0], setKeywords = _9[1];
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
     };
@@ -150,23 +150,31 @@ var ResourceList = function (props) {
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));
     };
-    var _11 = (0, react_1.useState)([]), activeFilters = _11[0], setActiveFilters = _11[1];
-    var _12 = (0, react_1.useState)([]), queryFilters = _12[0], setQueryFilters = _12[1];
+    var _10 = (0, react_1.useState)([]), activeFilters = _10[0], setActiveFilters = _10[1];
     var handleFilter = function (name, value) {
+        var currentFilters = [];
         if (activeFilters === null || activeFilters === void 0 ? void 0 : activeFilters.find(function (f) { return f.name === name && f.value === value; })) {
-            setActiveFilters([]);
+            currentFilters = [];
         }
         else {
-            setActiveFilters([{ name: name, operator: 'eq', value: value }]);
+            currentFilters = [{ name: name, operator: 'eq', value: value }];
         }
+        setActiveFilters(currentFilters);
+        findMany(__assign(__assign(__assign({}, query), defaultQuery), { filters: buildQueryFilters(currentFilters) }));
+    };
+    var buildQueryFilters = function (filters) {
+        return filters.map(function (f) {
+            var _a, _b;
+            return (_a = {},
+                _a[f.name] = (_b = {}, _b[f.operator] = f.value, _b),
+                _a);
+        });
     };
     // Filter methods
     var handleClearFilters = function () {
         setActiveFilters([]);
         findMany({
             filters: __spreadArray([], defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, true),
-            sort_by: 'id',
-            sort_direction: 'desc',
             keywords: '',
             page: 1,
             per_page: perPage,
@@ -182,7 +190,7 @@ var ResourceList = function (props) {
         var resp;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, reloadOne(resource === null || resource === void 0 ? void 0 : resource.id)];
+                case 0: return [4 /*yield*/, findOne(resource === null || resource === void 0 ? void 0 : resource.id)];
                 case 1:
                     resp = _a.sent();
                     setResource(resp);
@@ -236,7 +244,7 @@ var ResourceList = function (props) {
                     return [3 /*break*/, 3];
                 case 1:
                     if (!enableShow) return [3 /*break*/, 3];
-                    return [4 /*yield*/, reloadOne(resource === null || resource === void 0 ? void 0 : resource.id)];
+                    return [4 /*yield*/, findOne(resource === null || resource === void 0 ? void 0 : resource.id)];
                 case 2:
                     resp = _a.sent();
                     setResource(resp);
@@ -323,13 +331,16 @@ var ResourceList = function (props) {
         });
     }); };
     var handleExport = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var data;
+        var resources;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, getMany(query)];
+                case 0: return [4 /*yield*/, findMany(query)
+                    //@ts-ignore 
+                ];
                 case 1:
-                    data = _a.sent();
-                    (0, helpers_1.exportJsonToCSV)(exportHeaders, data);
+                    resources = _a.sent();
+                    //@ts-ignore 
+                    (0, helpers_1.exportJsonToCSV)(exportHeaders, resources);
                     return [2 /*return*/];
             }
         });
@@ -340,26 +351,13 @@ var ResourceList = function (props) {
             return [2 /*return*/];
         });
     }); };
+    var mounted = (0, react_1.useRef)(false);
     (0, react_1.useEffect)(function () {
-        if (queryFilters) {
-            findMany(__assign(__assign({}, query), { filters: __spreadArray(__spreadArray([], (queryFilters || []), true), ((defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters) || []), true) }));
+        if (url && name && !mounted.current) {
+            mounted.current = true;
+            findMany(__assign({}, defaultQuery));
         }
-    }, [queryFilters]);
-    (0, react_1.useEffect)(function () {
-        if (activeFilters) {
-            setQueryFilters(activeFilters.map(function (f) {
-                var _a, _b;
-                return (_a = {},
-                    _a[f.name] = (_b = {}, _b[f.operator] = f.value, _b),
-                    _a);
-            }));
-        }
-    }, [activeFilters]);
-    (0, react_1.useEffect)(function () {
-        if (url && name && perPage) {
-            findMany(__assign(__assign({}, defaultQuery), { per_page: perPage }));
-        }
-    }, [url, name, perPage]);
+    }, [url, name]);
     var enableFilters = (filterOptions === null || filterOptions === void 0 ? void 0 : filterOptions.length) > 0;
     var enableSorting = (sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.length) > 0;
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -367,16 +365,18 @@ var ResourceList = function (props) {
         react_1.default.createElement("div", { className: "flex flex-col space-y-3" },
             react_1.default.createElement(Header, __assign({ selected: selected, direction: direction, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, enableCreate: enableCreate, enableExport: enableExport, handleExport: handleExportClick, handleSearch: handleSearch, handleKeywordChange: handleKeywordChange, handleFilter: handleFilter, handleClearFilters: handleClearFilters, handleSort: handleSort, handleSortDirection: handleSortDirection, handleAdd: handleAdd, keywords: keywords, handleReload: reloadMany, activeFilters: activeFilters, filterOptions: filterOptions, sortOptions: sortOptions, query: query }, slots.header)),
             react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(loading && 'opacity-50') },
-                !sortable ? (react_1.default.createElement(List, __assign({ grid: grid, query: query, headers: headers, page: page, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate, handleSort: handleSort, enableEdit: enableEdit, enableDelete: enableDelete, enableShow: enableShow, handleEdit: handleEdit, handleShow: handleShowClick, handleDelete: handleDeleteClick, resources: resources, renderItem: function (resource, props) { return (react_1.default.createElement(Component, __assign({ key: resource === null || resource === void 0 ? void 0 : resource.id, selectable: selectable, resource: resource, selected: 
+                !sortable ? (react_1.default.createElement(List, __assign({ grid: grid, query: query, headers: headers, page: page, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate, handleSort: handleSort, enableEdit: enableEdit, enableDelete: enableDelete, enableShow: enableShow, handleEdit: handleEdit, handleShow: handleShowClick, handleDelete: handleDeleteClick, handleSelect: handleSelect, resources: resources, renderItem: function (resource, props) { return (react_1.default.createElement(Component, __assign({ key: resource === null || resource === void 0 ? void 0 : resource.id, selectable: selectable, resource: resource, selected: 
                         //@ts-ignore
-                        selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource === null || resource === void 0 ? void 0 : resource.id), enableSelect: selectable, enableBorder: enableBorder, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleSelect: function () { return handleSelect(resource); }, handleReload: reloadMany }, slots.item))); } }, slots.list))) : (react_1.default.createElement(__1.SortableListItems, __assign({ droppableId: "sortable", resources: resources, handleDrop: handleDrop, page: page, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate, handleReload: reloadMany, renderItem: function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, sortable: true, selectable: selectable, selected: 
+                        selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource === null || resource === void 0 ? void 0 : resource.id), handleClick: handleClick
+                            ? function () { return handleClick(resource); }
+                            : function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleSelect: function () { return handleSelect(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleReload: reloadMany }, slots.item))); } }, slots.list))) : (react_1.default.createElement(__1.SortableListItems, __assign({ droppableId: "sortable", resources: resources, handleDrop: handleDrop, page: page, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate, handleReload: reloadMany, renderItem: function (resource, index) { return (react_1.default.createElement(Component, __assign({ key: index, sortable: true, selectable: selectable, selected: 
                         // @ts-ignore
-                        selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource === null || resource === void 0 ? void 0 : resource.id), resource: resource, enableBorder: enableBorder, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: handleClick
+                        selectedIds === null || selectedIds === void 0 ? void 0 : selectedIds.includes(resource === null || resource === void 0 ? void 0 : resource.id), resource: resource, enableEdit: enableEdit, enableDelete: enableDelete, handleClick: handleClick
                             ? function () { return handleClick(resource); }
                             : function () { return handleShowClick(resource); }, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleSelect: function () { return handleSelect(resource); }, handleReload: reloadMany }, slots.item))); } }, slots.list))),
                 !loading && (resources === null || resources === void 0 ? void 0 : resources.length) == 0 && (react_1.default.createElement(__1.Empty, { icon: emptyIcon, title: emptyTitle, description: emptyDescription }))),
             react_1.default.createElement(CreateForm, __assign({ open: openCreate, handleClose: function () { return setOpenCreate(false); }, loading: loading, errors: errors, resource: resource, setResource: setResource, handleChange: handleChange, handleRemove: handleRemove, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, handleSubmit: handleSubmit, handleReload: reloadMany, fields: fields }, slots.create)),
-            react_1.default.createElement(EditForm, __assign({ open: openEdit, handleClose: function () { return setOpenEdit(false); }, loading: loading, errors: errors, resource: resource, setResource: setResource, handleChange: handleChange, handleRemove: handleRemove, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, handleSubmit: handleSubmit, handleReload: reloadMany, handleReloadOne: reloadOne, fields: fields }, slots.edit)),
+            react_1.default.createElement(EditForm, __assign({ open: openEdit, handleClose: function () { return setOpenEdit(false); }, loading: loading, errors: errors, resource: resource, setResource: setResource, handleChange: handleChange, handleRemove: handleRemove, handleAddAttachment: handleAddAttachment, handleRemoveAttachment: handleRemoveAttachment, handleSubmit: handleSubmit, handleReload: reloadMany, handleReloadOne: findOne, fields: fields }, slots.edit)),
             react_1.default.createElement(ShowModal, __assign({ loading: loading, open: openShow, handleClose: function () { return setOpenShow(false); }, fields: displayFields, resource: resource, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(resource); }, handleDelete: function () { return handleDeleteClick(resource); }, handleReload: reloadMany }, slots.show)),
             react_1.default.createElement(__1.AlertModal, { open: openDelete, handleClose: function () { return setOpenDelete(false); }, title: "Are you sure you want to delete this item?", description: "This action cannot be reversed.", handleConfirm: handleDelete }),
             react_1.default.createElement(__1.AlertModal, { open: openExport, handleClose: function () { return setOpenExport(false); }, title: "Are you sure you want to export?", description: "There is currently a limit of 10k rows of data.", handleConfirm: handleExport }))));

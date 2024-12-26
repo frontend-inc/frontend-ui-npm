@@ -25,29 +25,38 @@ var react_1 = require("react");
 var frontend_js_1 = require("frontend-js");
 var helpers_1 = require("../../helpers");
 var useSearch = function (props) {
-    var _a;
-    var _b = props.query, defaultQuery = _b === void 0 ? {} : _b;
-    var _c = (0, frontend_js_1.useResourceContext)(), loading = _c.loading, delayedLoading = _c.delayedLoading, resources = _c.resources, query = _c.query, setQuery = _c.setQuery, findMany = _c.findMany, reloadMany = _c.reloadMany, page = _c.page, numPages = _c.numPages, loadMore = _c.loadMore;
-    var _d = (0, react_1.useState)([]), queryFilters = _d[0], setQueryFilters = _d[1];
-    var _e = (0, react_1.useState)([]), activeFilters = _e[0], setActiveFilters = _e[1];
-    var _f = (0, react_1.useState)(''), keywords = _f[0], setKeywords = _f[1];
-    var _g = (0, react_1.useState)(''), location = _g[0], setLocation = _g[1];
-    // Compare only the name and operator and override
-    var findDuplicateFilterIndex = function (filters, filter) {
-        return filters.findIndex(function (f) { return f.name === filter.name && f.operator === filter.operator; });
+    var _a = props.query, defaultQuery = _a === void 0 ? { filters: [] } : _a;
+    var _b = (0, frontend_js_1.useResourceContext)(), loading = _b.loading, delayedLoading = _b.delayedLoading, resources = _b.resources, query = _b.query, setQuery = _b.setQuery, findMany = _b.findMany, reloadMany = _b.reloadMany, page = _b.page, numPages = _b.numPages, loadMore = _b.loadMore;
+    var _c = (0, react_1.useState)([]), activeFilters = _c[0], setActiveFilters = _c[1];
+    var _d = (0, react_1.useState)(''), keywords = _d[0], setKeywords = _d[1];
+    var _e = (0, react_1.useState)(''), location = _e[0], setLocation = _e[1];
+    // Finds the index of a filter that has the exact same name, operator, and value.
+    var findExactFilterIndex = function (filters, filter) {
+        var _a = filter || {}, name = _a.name, operator = _a.operator, value = _a.value;
+        return filters.findIndex(function (f) { return f.name == name && f.operator == operator && f.value == value; });
     };
-    var handleAddFilter = function (filter) {
-        var updatedFilters = __spreadArray([], activeFilters, true);
-        var duplicateIndex = findDuplicateFilterIndex(activeFilters, filter);
-        if (duplicateIndex > -1) {
-            updatedFilters = updatedFilters === null || updatedFilters === void 0 ? void 0 : updatedFilters.filter(function (f, index) { return index !== duplicateIndex; });
+    // Removes all filters that share the same name and operator (regardless of value)
+    var removeDuplicateNameOperatorFilters = function (filters, filter) {
+        return filters.filter(function (f) { return f.name !== filter.name || f.operator !== filter.operator; });
+    };
+    var handleToggleFilter = function (filter) {
+        var currentFilters = buildQueryFilters(activeFilters || []);
+        var exactIndex = findExactFilterIndex(activeFilters, filter);
+        var updatedFilters;
+        if (exactIndex > -1) {
+            // The exact filter is present, so we remove it (toggling off)
+            updatedFilters = currentFilters.filter(function (f, index) { return index !== exactIndex; });
         }
         else {
-            //@ts-ignore
+            // No exact match. We need to ensure only one filter with the same name/operator.
+            // Remove any existing filters with the same name & operator.
+            updatedFilters = removeDuplicateNameOperatorFilters(currentFilters, filter);
+            // Add the new filter
             updatedFilters = __spreadArray(__spreadArray([], updatedFilters, true), [filter], false);
         }
-        setActiveFilters(updatedFilters);
-        return updatedFilters;
+        // Convert back to the desired query format (assuming buildQueryFilters works both ways)
+        var queryFilters = buildQueryFilters(updatedFilters);
+        findMany(__assign(__assign({}, defaultQuery), { filters: __spreadArray(__spreadArray([], defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters, true), queryFilters, true), keywords: '', page: 1 }));
     };
     var isBlank = function (value) {
         return (value === '' ||
@@ -55,16 +64,14 @@ var useSearch = function (props) {
             value == null ||
             (Array.isArray(value) && value.length === 0));
     };
-    var buildQueryFilters = function (activeFilters) {
-        var filters = [];
-        activeFilters
+    var buildQueryFilters = function (filters) {
+        return filters
             .filter(function (filter) { return !isBlank(filter === null || filter === void 0 ? void 0 : filter.value); })
-            .forEach(function (filter) {
+            .map(function (filter) {
             var _a, _b;
             var name = filter.name, operator = filter.operator, value = filter.value;
-            filters = __spreadArray(__spreadArray([], filters, true), [(_a = {}, _a[name] = (_b = {}, _b[operator] = value, _b), _a)], false);
+            return _a = {}, _a[name] = (_b = {}, _b[operator] = value, _b), _a;
         });
-        return filters;
     };
     var handleKeywordChange = function (ev) {
         setKeywords(ev.target.value);
@@ -75,7 +82,7 @@ var useSearch = function (props) {
     var handleSearch = function (keywords, location) {
         if (keywords === void 0) { keywords = ''; }
         if (location === void 0) { location = ''; }
-        var searchQuery = __assign(__assign(__assign({}, query), defaultQuery), { keywords: keywords, page: 1 });
+        var searchQuery = __assign(__assign(__assign({}, query), defaultQuery), { filters: __spreadArray(__spreadArray([], (query.filters || []), true), (defaultQuery.filters || []), true), keywords: keywords, page: 1 });
         if ((location === null || location === void 0 ? void 0 : location.length) > 0) {
             searchQuery = __assign(__assign({}, searchQuery), { location: location });
         }
@@ -95,18 +102,8 @@ var useSearch = function (props) {
         setActiveFilters([]);
     };
     (0, react_1.useEffect)(function () {
-        findMany(__assign(__assign({}, defaultQuery), { filters: __spreadArray(__spreadArray([], queryFilters, true), ((defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters) || []), true), sort_by: 'id', sort_direction: 'desc', keywords: '', page: 1 }));
-    }, [queryFilters]);
-    (0, react_1.useEffect)(function () {
-        setQueryFilters(buildQueryFilters(activeFilters));
-    }, [activeFilters]);
-    (0, react_1.useEffect)(function () {
-        var _a;
-        if (((_a = defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters) === null || _a === void 0 ? void 0 : _a.length) >= 0) {
-            var filterArray = (0, helpers_1.formatFilterArray)(defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters);
-            setActiveFilters(filterArray);
-        }
-    }, [(_a = defaultQuery === null || defaultQuery === void 0 ? void 0 : defaultQuery.filters) === null || _a === void 0 ? void 0 : _a.length]);
+        setActiveFilters((0, helpers_1.formatFilterArray)(query === null || query === void 0 ? void 0 : query.filters));
+    }, [query === null || query === void 0 ? void 0 : query.filters]);
     return {
         loading: loading,
         delayedLoading: delayedLoading,
@@ -128,7 +125,7 @@ var useSearch = function (props) {
         handleSortDirection: handleSortDirection,
         activeFilters: activeFilters,
         setActiveFilters: setActiveFilters,
-        handleAddFilter: handleAddFilter,
+        handleToggleFilter: handleToggleFilter,
         handleClearFilters: handleClearFilters,
     };
 };

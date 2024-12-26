@@ -17,10 +17,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VideoCover = exports.TabItem = exports.Tabs = exports.Spotlight = exports.SubscriptionPlans = exports.SubscriptionPlan = exports.SimplePage = exports.PriceList = exports.PageHeader = exports.Videos = exports.InstagramPosts = exports.Images = exports.Logos = exports.Header = exports.Footer = exports.FeatureItem = exports.FeatureCard = exports.FeatureCards = exports.FeatureIcons = exports.CoverCarousel = exports.Cover = exports.CallToAction = exports.Cards = exports.Accordion = void 0;
+exports.NestedSidebarMenu = exports.VideoCover = exports.Spotlight = exports.Statistics = exports.SubscriptionPlans = exports.SubscriptionPlan = exports.SimplePage = exports.PriceList = exports.PageHeader = exports.Videos = exports.InstagramPosts = exports.Images = exports.Logos = exports.Header = exports.Footer = exports.FeatureTabs = exports.FeatureItem = exports.FeatureCard = exports.FeatureCards = exports.FeatureIcons = exports.CoverCarousel = exports.Cover = exports.CallToAction = exports.Cards = exports.Accordion = void 0;
 __exportStar(require("./links"), exports);
 __exportStar(require("./testimonials"), exports);
-// Web
+// Web Components
 var Accordion_1 = require("./accordions/Accordion");
 Object.defineProperty(exports, "Accordion", { enumerable: true, get: function () { return __importDefault(Accordion_1).default; } });
 var Cards_1 = require("./cards/Cards");
@@ -39,6 +39,8 @@ var FeatureCard_1 = require("./feature-cards/FeatureCard");
 Object.defineProperty(exports, "FeatureCard", { enumerable: true, get: function () { return __importDefault(FeatureCard_1).default; } });
 var FeatureItem_1 = require("./feature-item/FeatureItem");
 Object.defineProperty(exports, "FeatureItem", { enumerable: true, get: function () { return __importDefault(FeatureItem_1).default; } });
+var FeatureTabs_1 = require("./feature-tabs/FeatureTabs");
+Object.defineProperty(exports, "FeatureTabs", { enumerable: true, get: function () { return __importDefault(FeatureTabs_1).default; } });
 var Footer_1 = require("./footer/Footer");
 Object.defineProperty(exports, "Footer", { enumerable: true, get: function () { return __importDefault(Footer_1).default; } });
 var Header_1 = require("./header/Header");
@@ -61,11 +63,11 @@ var SubscriptionPlan_1 = require("./subscriptions/SubscriptionPlan");
 Object.defineProperty(exports, "SubscriptionPlan", { enumerable: true, get: function () { return __importDefault(SubscriptionPlan_1).default; } });
 var SubscriptionPlans_1 = require("./subscriptions/SubscriptionPlans");
 Object.defineProperty(exports, "SubscriptionPlans", { enumerable: true, get: function () { return __importDefault(SubscriptionPlans_1).default; } });
+var Statistics_1 = require("./statistics/Statistics");
+Object.defineProperty(exports, "Statistics", { enumerable: true, get: function () { return __importDefault(Statistics_1).default; } });
 var Spotlight_1 = require("./spotlight/Spotlight");
 Object.defineProperty(exports, "Spotlight", { enumerable: true, get: function () { return __importDefault(Spotlight_1).default; } });
-var Tabs_1 = require("./tabs/Tabs");
-Object.defineProperty(exports, "Tabs", { enumerable: true, get: function () { return __importDefault(Tabs_1).default; } });
-var TabContent_1 = require("./tabs/TabContent");
-Object.defineProperty(exports, "TabItem", { enumerable: true, get: function () { return __importDefault(TabContent_1).default; } });
 var VideoCover_1 = require("./covers/VideoCover");
 Object.defineProperty(exports, "VideoCover", { enumerable: true, get: function () { return __importDefault(VideoCover_1).default; } });
+var NestedSidebarMenu_1 = require("./header/NestedSidebarMenu");
+Object.defineProperty(exports, "NestedSidebarMenu", { enumerable: true, get: function () { return __importDefault(NestedSidebarMenu_1).default; } });

@@ -11,22 +11,21 @@ var components_2 = require("../../../components");
 var Heading = function (props) {
     var _a = props || {}, editable = _a.editable, label = _a.label, title = _a.title, subtitle = _a.subtitle, _b = _a.textAlign, textAlign = _b === void 0 ? 'left' : _b, secondaryAction = _a.secondaryAction, _c = _a.size, size = _c === void 0 ? 'md' : _c, className = _a.className, handleChange = _a.handleChange;
     var titleVariant = {
-        sm: 'h5',
-        md: 'h4',
-        lg: 'h3',
-        xl: 'h2',
-        '2xl': 'h1',
+        sm: 'h4',
+        md: 'h3',
+        lg: 'h2',
+        xl: 'h1'
     }[size];
     var subtitleVariant = {
         sm: 'body1',
-        md: 'body1',
+        md: 'subtitle2',
         lg: 'subtitle2',
         xl: 'subtitle1',
         '2xl': 'subtitle1',
     }[size];
     var spacingClass = {
         sm: 'space-y-2',
-        md: 'space-y-4',
+        md: 'space-y-3',
         lg: 'space-y-4',
         xl: 'space-y-5',
         '2xl': 'space-y-6',

@@ -47,8 +47,8 @@ var navigation_1 = require("next/navigation");
 var ResetPassword = function (props) {
     var router = (0, navigation_1.useRouter)();
     var resetPasswordToken = (0, navigation_1.useParams)().token;
-    var _a = props || {}, _b = _a.title, title = _b === void 0 ? 'Reset Password' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Enter your new password' : _c, _d = _a.redirectUrl, redirectUrl = _d === void 0 ? '/login' : _d, loginUrl = _a.loginUrl;
-    var _e = (0, frontend_js_1.useAuth)(), loading = _e.loading, errors = _e.errors, user = _e.user, handleChange = _e.handleChange, resetPassword = _e.resetPassword;
+    var _a = props || {}, _b = _a.title, title = _b === void 0 ? 'Create a password' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Enter a new password for your account' : _c, _d = _a.redirectUrl, redirectUrl = _d === void 0 ? '/login' : _d, _e = _a.loginUrl, loginUrl = _e === void 0 ? '/login' : _e;
+    var _f = (0, frontend_js_1.useAuth)(), loading = _f.loading, errors = _f.errors, user = _f.user, handleChange = _f.handleChange, resetPassword = _f.resetPassword;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {

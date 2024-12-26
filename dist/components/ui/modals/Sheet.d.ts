@@ -11,6 +11,7 @@ type SheetProps = {
     mode?: string;
     className?: string;
     fullWidth?: boolean;
+    maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 };
 declare const Sheet: React.FC<SheetProps>;
 export default Sheet;

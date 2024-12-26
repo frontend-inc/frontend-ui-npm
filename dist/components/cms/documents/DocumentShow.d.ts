@@ -4,9 +4,11 @@ export type DocumentShowProps = {
     buttons: ButtonType[];
     metafields: MetafieldType[];
     enableFavorites?: boolean;
+    enableDownload?: boolean;
     enableLikes?: boolean;
     enableSharing?: boolean;
     enableComments?: boolean;
+    disableTitle?: boolean;
     disableImage?: boolean;
     enableBorder?: boolean;
     enableOverlay?: boolean;

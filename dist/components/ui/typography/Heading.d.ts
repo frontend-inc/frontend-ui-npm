@@ -5,7 +5,7 @@ type HeadingProps = {
     title?: string;
     subtitle?: string;
     textAlign?: 'left' | 'center' | 'right';
-    size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+    size?: 'sm' | 'md' | 'lg' | 'xl';
     className?: string;
     secondaryAction?: React.ReactNode;
     editable?: boolean;

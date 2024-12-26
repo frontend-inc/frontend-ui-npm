@@ -1,8 +1,3 @@
 import React from 'react';
-import { TextInputPropsType } from '../../../types';
-type TextInputProps = TextInputPropsType & {
-    debounceDelay?: number;
-    disableDebounce?: boolean;
-};
+import { TextInputProps } from '../../../types';
 export default function TextInput(props: TextInputProps): React.JSX.Element;
-export {};

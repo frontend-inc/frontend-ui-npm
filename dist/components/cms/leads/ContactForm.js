@@ -64,10 +64,17 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var sonner_1 = require("sonner");
+var helpers_1 = require("../../../helpers");
 // Call To Action
 var ContactForm = function (props) {
-    var _a = props || {}, _b = _a.metafields, metafields = _b === void 0 ? [] : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
+    var _a = props || {}, enablePhone = _a.enablePhone, enableCompany = _a.enableCompany, enableReason = _a.enableReason, _b = _a.reasonOptions, reasonOptions = _b === void 0 ? [] : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Send Message' : _c;
     var _d = (0, hooks_1.useContacts)(), errors = _d.errors, delayedLoading = _d.delayedLoading, contact = _d.contact, setContact = _d.setContact, handleChange = _d.handleChange, createContact = _d.createContact;
+    var metafields = (0, helpers_1.buildFormMetafields)({
+        enablePhone: enablePhone,
+        enableCompany: enableCompany,
+        enableReason: enableReason,
+        reasonOptions: reasonOptions,
+    });
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {

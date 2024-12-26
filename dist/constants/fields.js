@@ -45,7 +45,7 @@ exports.DESCRIPTION = {
     variant: 'text',
 };
 exports.HTML = {
-    label: 'HTML content',
+    label: 'HTML',
     name: 'html',
     variant: 'html',
 };
@@ -63,7 +63,7 @@ exports.VIDEO = { label: 'Video', name: 'video', variant: 'video' };
 exports.AUDIO = { label: 'Audio', name: 'audio', variant: 'audio' };
 exports.FILE = { label: 'File', name: 'file', variant: 'file' };
 exports.PUBLISHED_AT = {
-    label: 'Published At',
+    label: 'Published on',
     name: 'published_at',
     variant: 'string',
 };
@@ -105,14 +105,12 @@ exports.DOCUMENT_FORM_FIELDS = {
         exports.TAGS,
     ],
     article: [
-        exports.CONTENT_TYPE,
         exports.IMAGE,
         exports.TITLE,
-        exports.SUBTITLE_TEXT,
+        exports.HTML,
         exports.PUBLISHED_AT,
         exports.LABEL,
         exports.CATEGORY,
-        exports.HTML,
         exports.TAGS,
     ],
     place: [
@@ -149,7 +147,7 @@ exports.DOCUMENT_FORM_FIELDS = {
         exports.PRICE,
         exports.TAGS,
     ],
-    image: [exports.CONTENT_TYPE, exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.LABEL, exports.CATEGORY, exports.TAGS],
+    image: [exports.CONTENT_TYPE, exports.IMAGE, exports.TITLE, exports.LABEL, exports.CATEGORY, exports.TAGS],
     video: [
         exports.CONTENT_TYPE,
         exports.IMAGE,
@@ -177,7 +175,6 @@ exports.DOCUMENT_FORM_FIELDS = {
         exports.FILE,
         exports.TITLE,
         exports.SUBTITLE,
-        exports.LABEL,
         exports.CATEGORY,
         exports.DESCRIPTION,
         exports.TAGS,
@@ -230,7 +227,7 @@ exports.DOCUMENT_FORM_FIELDS = {
 };
 exports.DOCUMENT_SHOW_FIELDS = {
     post: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],
-    article: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.PUBLISHED_AT, exports.CATEGORY, exports.HTML, exports.TAGS],
+    article: [exports.IMAGE, exports.TITLE, exports.PUBLISHED_AT, exports.CATEGORY, exports.HTML, exports.TAGS],
     place: [
         exports.IMAGE,
         exports.TITLE,
@@ -252,7 +249,7 @@ exports.DOCUMENT_SHOW_FIELDS = {
         exports.TAGS,
     ],
     product: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.PRICE, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],
-    image: [exports.IMAGE, exports.TITLE, exports.SUBTITLE, exports.DESCRIPTION, exports.TAGS],
+    image: [exports.IMAGE, exports.TITLE, exports.TAGS],
     video: [exports.VIDEO, exports.TITLE, exports.SUBTITLE, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],
     audio: [exports.AUDIO, exports.TITLE, exports.SUBTITLE, exports.CATEGORY, exports.DESCRIPTION, exports.TAGS],
     file: [exports.FILE, exports.TITLE, exports.SUBTITLE, exports.CATEGORY, exports.DESCRIPTION],

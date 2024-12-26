@@ -62,7 +62,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
-var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var sonner_1 = require("sonner");
 var KlaviyoSubscribe = function (props) {
@@ -107,9 +106,6 @@ var KlaviyoSubscribe = function (props) {
     var handleChange = function (ev) {
         setEmail(ev.target.value);
     };
-    return (react_1.default.createElement("div", { className: "py-2 w-full flex flex-col items-center justify-center" },
-        react_1.default.createElement("div", { className: "flex flex-row max-w-[400px]" },
-            react_1.default.createElement(__1.TextInput, { direction: "row", placeholder: 'Enter email...', name: "email", value: email, handleChange: handleChange, className: "rounded-r-none" }),
-            react_1.default.createElement(components_1.Button, { color: "secondary", onClick: handleFormSubmit, className: "min-w-[120px] rounded-l-none", loading: loading }, buttonText))));
+    return (react_1.default.createElement(components_1.EmailSubscribeInput, { loading: loading, errors: [], name: 'email', value: email, placeholder: 'Enter your email', handleChange: handleChange, handleSubmit: handleFormSubmit, buttonText: buttonText }));
 };
 exports.default = KlaviyoSubscribe;

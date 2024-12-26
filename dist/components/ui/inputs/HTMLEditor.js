@@ -126,15 +126,15 @@ var MenuBar = function (_a) {
     ];
     return (react_1.default.createElement("div", { className: "w-full md:min-w-[800px] p-2 bg-white rounded-xl shadow-lg flex flex-wrap space-x-2 z-30" },
         formattingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900 text-white hover:bg-zinc-900'), "aria-label": btn.label },
-            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-zinc-900', btn.isActive && 'text-white') }))); }),
+            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); }),
         headingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900 text-white'), "aria-label": btn.label },
-            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-zinc-900', btn.isActive && 'text-white') }))); }),
+            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); }),
         listOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900'), "aria-label": btn.label },
-            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-zinc-900', btn.isActive && 'text-white') }))); }),
+            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); }),
         textAlignOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900'), "aria-label": btn.label },
-            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-zinc-900', btn.isActive && 'text-white') }))); }),
+            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); }),
         redoButtons.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)('hover:bg-zinc-200', btn.isActive && 'bg-zinc-900'), "aria-label": btn.label },
-            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-zinc-900', btn.isActive && 'bg-zinc-900 text-white') }))); })));
+            react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); })));
 };
 var HTMLEditor = function (props) {
     var _a = props || {}, label = _a.label, name = _a.name, value = _a.value, handleChange = _a.handleChange;

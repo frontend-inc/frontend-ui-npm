@@ -1,16 +1,12 @@
 import React from 'react';
-import { MenuLinkType, PolicyLinkType } from '../../../types';
+import { SocialLinkType, MenuLinkType } from '../../../types';
 export type FooterProps = {
     logo?: string;
-    links?: MenuLinkType[];
-    policies?: PolicyLinkType[];
-    socialLinks?: {
-        label: string;
-        provider: string;
-        url: string;
-        position: number;
-    }[];
+    iOSUrl?: string;
+    androidUrl?: string;
+    enableNewsletter?: boolean;
+    links: MenuLinkType[];
+    socialLinks?: SocialLinkType[];
     handleClick: (path: string) => void;
 };
-declare const Footer: React.FC<FooterProps>;
-export default Footer;
+export default function Footer(props: FooterProps): React.JSX.Element;

@@ -9,6 +9,6 @@ var components_1 = require("../../../components");
 var FieldBoolean = function (props) {
     var value = props.value, label = props.label;
     return (react_1.default.createElement(components_1.FieldWrapper, { label: label },
-        react_1.default.createElement(components_1.Label, { label: value ? 'true' : 'false' })));
+        react_1.default.createElement(components_1.Label, null, value ? 'true' : 'false')));
 };
 exports.default = FieldBoolean;

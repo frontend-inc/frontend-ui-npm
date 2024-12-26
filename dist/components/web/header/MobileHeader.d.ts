@@ -11,6 +11,7 @@ type MobileHeaderProps = {
     enableShopify?: boolean;
     enableStripe?: boolean;
     enableNotifications?: boolean;
+    disableMenu?: boolean;
     handleClick: (path: string) => void;
 };
 declare const MobileHeader: React.FC<MobileHeaderProps>;

@@ -14,21 +14,20 @@ var lucide_react_1 = require("lucide-react");
 var components_2 = require("../../../components");
 var components_3 = require("../../../components");
 function ResourceListItem(props) {
-    var icon = props.icon, avatar = props.avatar, color = props.color, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryAction = props.secondaryAction, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _a = props.disableImage, disableImage = _a === void 0 ? false : _a, _b = props.enableBorder, enableBorder = _b === void 0 ? true : _b;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('bg-muted/50 hover:bg-muted p-1 py-2 overflow-hidden rounded-xl', enableBorder &&
-            'border-border hover:shadow-md mb-1 transition-shadow duration-200', selected && 'border-primary') },
+    var icon = props.icon, avatar = props.avatar, _a = props.color, color = _a === void 0 ? 'bg-accent' : _a, primary = props.primary, secondary = props.secondary, image = props.image, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleSelect = props.handleSelect, secondaryAction = props.secondaryAction, menuActions = props.menuActions, sortable = props.sortable, selectable = props.selectable, selected = props.selected, _b = props.disableImage, disableImage = _b === void 0 ? false : _b;
+    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('group', 'hover:bg-muted transition-all duration-200 p-1 py-2 overflow-hidden rounded-xl', selected && 'border-primary') },
         react_1.default.createElement("div", { className: "flex items-center p-1 rounded space-x-4" },
-            sortable && (react_1.default.createElement(lucide_react_1.GripVertical, { className: "w-5 h-5 text-muted-foreground cursor-grab active:cursor-grabbing" })),
+            sortable && (react_1.default.createElement(lucide_react_1.GripVertical, { className: "w-4 h-4 opacity-0 group-hover:opacity-100 text-foreground cursor-grab active:cursor-grabbing" })),
             selectable && (react_1.default.createElement(frontend_shadcn_3.Checkbox, { className: "text-foreground", checked: selected, onCheckedChange: handleSelect })),
             avatar && (react_1.default.createElement("div", { className: "mr-2" },
-                react_1.default.createElement("button", { className: "w-full h-full focus:outline-none focus:ring-2", onClick: handleClick }, avatar))),
-            !disableImage && (react_1.default.createElement("div", { className: "mr-2 min-w-[72px] min-h-[72px]" },
-                react_1.default.createElement("button", { className: "w-full h-full focus:outline-none focus:ring-2", onClick: handleClick },
+                react_1.default.createElement("button", { className: "w-full h-full focus:outline-none focus:ring-2 items-center justify-center", onClick: handleClick }, avatar))),
+            !disableImage && (react_1.default.createElement("div", { className: "mr-2 min-w-[64px] min-h-[64px]" },
+                react_1.default.createElement("button", { className: "w-full h-full focus:outline-none focus:ring-2 items-center justify-center", onClick: handleClick },
                     react_1.default.createElement(components_3.Image, { src: image || null, aspectRatio: 1.0, alt: image })))),
-            icon && (react_1.default.createElement("button", { className: "focus:outline-none focus:ring-2", onClick: handleClick },
+            icon && (react_1.default.createElement("button", { className: "focus:outline-none focus:ring-2 items-center justify-center", onClick: handleClick },
                 react_1.default.createElement(frontend_shadcn_2.Avatar, { className: "mr-2 rounded" },
                     react_1.default.createElement(frontend_shadcn_2.AvatarFallback, { className: color },
-                        react_1.default.createElement(components_3.RemixIcon, { name: icon }))))),
+                        react_1.default.createElement(components_3.RemixIcon, { name: icon, className: 'text-white' }))))),
             react_1.default.createElement("div", { className: "flex-grow cursor-pointer", onClick: handleClick },
                 react_1.default.createElement(components_2.Typography, { variant: "body1" }, primary),
                 secondary && (react_1.default.createElement(components_2.Typography, { variant: "body2", className: "text-muted-foreground" }, secondary))),

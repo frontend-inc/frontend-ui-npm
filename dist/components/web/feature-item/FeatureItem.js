@@ -13,11 +13,11 @@ var FeatureItem = function (props) {
             react_1.default.createElement(__1.Image, { src: image, objectFit: "cover", enableOverlay: enableOverlay, enableGradient: enableGradient })),
         react_1.default.createElement(__1.Stack, { direction: "row", size: "1/2", className: "h-full" },
             react_1.default.createElement("div", { className: "flex flex-col space-y-4 h-full justify-center w-full" },
-                react_1.default.createElement(__1.Heading, { label: label, title: title, subtitle: subtitle, editable: editable, handleChange: handleChange }),
+                react_1.default.createElement(__1.Heading, { label: label, title: title, subtitle: subtitle, editable: editable, handleChange: handleChange, size: "lg" }),
                 react_1.default.createElement("ul", { className: "flex flex-col space-y-2 w-full p-0" }, items === null || items === void 0 ? void 0 : items.map(function (item, idx) { return (react_1.default.createElement("li", { key: idx, className: "flex flex-row w-full items-center space-x-2 h-[60px]" },
                     (item === null || item === void 0 ? void 0 : item.icon) && (react_1.default.createElement(__1.RemixIcon, { name: item.icon, className: 'text-primary', size: "xl" })),
                     react_1.default.createElement("div", { className: "flex flex-col justify-center space-y-0" },
-                        react_1.default.createElement(__1.Typography, { variant: "body1" }, item.title),
-                        react_1.default.createElement(__1.Typography, { variant: "body2", className: "text-muted-foreground" }, item.subtitle)))); }))))));
+                        react_1.default.createElement(__1.Typography, { variant: "subtitle2" }, item.title),
+                        react_1.default.createElement(__1.Typography, { variant: "body1", className: "text-muted-foreground" }, item.subtitle)))); }))))));
 };
 exports.default = FeatureItem;

@@ -15,6 +15,7 @@ export type ResourceFormProps = {
     handleReload: () => void;
     inputOptions?: any;
     inputParams?: any;
+    maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 };
 export type FormProps = ResourceFormProps & {
     fields: any[];

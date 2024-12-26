@@ -1,12 +1,8 @@
 import React from 'react';
 type ScriptProviderProps = {
     disableAnalytics?: boolean;
-    disableChat?: boolean;
-    okendoSubscriberId?: string;
     googleTagManagerId?: string;
     googleAnalyticsId?: string;
-    gorgiasChatId?: string;
-    gorgiasContactFormSrc?: string;
     gtmId?: string;
     hotJarId?: string;
     redditPixelId?: string;

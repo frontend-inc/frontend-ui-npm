@@ -3,6 +3,7 @@ type SocialButtonsProps = {
     resource: any;
     product?: any;
     direction?: 'row' | 'column';
+    enableDownload?: boolean;
     enableComments?: boolean;
     enableLikes?: boolean;
     enableFavorites?: boolean;

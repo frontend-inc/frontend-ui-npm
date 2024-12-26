@@ -14,7 +14,7 @@ var Header = function (props) {
     var logo = props.logo, bgColor = props.bgColor, _a = props.links, links = _a === void 0 ? [] : _a, _b = props.buttons, buttons = _b === void 0 ? [] : _b, handleClick = props.handleClick, _c = props.enableStripe, enableStripe = _c === void 0 ? false : _c, _d = props.enableShopify, enableShopify = _d === void 0 ? false : _d, _e = props.enableAuth, enableAuth = _e === void 0 ? false : _e;
     return (react_1.default.createElement("header", { className: "h-[64px] w-full" },
         react_1.default.createElement(DesktopHeader_1.default, { bgColor: bgColor, logo: logo || appLogo, enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, links: links, buttons: buttons, handleClick: handleClick }),
-        react_1.default.createElement(MobileHeader_1.default, { bgColor: bgColor, logo: logo || appLogo, enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, enableNotifications: true, links: links, buttons: buttons, handleClick: handleClick }),
+        react_1.default.createElement(MobileHeader_1.default, { bgColor: bgColor, logo: logo || appLogo, enableAuth: enableAuth, enableStripe: enableStripe, enableShopify: enableShopify, enableNotifications: true, links: links, buttons: buttons, handleClick: handleClick, disableMenu: links.length === 0 }),
         react_1.default.createElement(MobileDrawer_1.default, { links: links, handleClick: handleClick })));
 };
 exports.default = Header;

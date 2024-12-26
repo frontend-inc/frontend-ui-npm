@@ -72,21 +72,21 @@ var components_2 = require("../../../components");
 var frontend_shadcn_2 = require("frontend-shadcn");
 var components_3 = require("../../../components");
 var IMAGE_WIDTH = 140;
-function RenderAttachment(_a) {
-    var src = _a.src, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.size, size = _c === void 0 ? IMAGE_WIDTH : _c, onDelete = _a.onDelete, _d = _a.variant, variant = _d === void 0 ? 'file' : _d, _e = _a.alt, alt = _e === void 0 ? '' : _e;
+function RenderAttachment(props) {
+    var _a = props || {}, src = _a.src, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.size, size = _c === void 0 ? IMAGE_WIDTH : _c, onDelete = _a.onDelete, _d = _a.variant, variant = _d === void 0 ? 'file' : _d, _e = _a.alt, alt = _e === void 0 ? '' : _e;
     return (react_1.default.createElement("div", { className: "relative" },
         variant === 'image' && (react_1.default.createElement("div", { className: "relative overflow-hidden rounded", style: { height: size, width: size } },
             react_1.default.createElement(image_1.default, { alt: alt, height: size, width: size, src: src, style: { objectFit: objectFit } }))),
-        variant === 'file' && (react_1.default.createElement(frontend_shadcn_2.Avatar, { className: "h-16 w-16 bg-primary" },
-            react_1.default.createElement(frontend_shadcn_2.AvatarFallback, null,
-                react_1.default.createElement(lucide_react_1.File, { className: "h-6 w-6" })))),
+        variant === 'file' && (react_1.default.createElement(frontend_shadcn_2.Avatar, { className: "rounded-lg h-16 w-16" },
+            react_1.default.createElement(frontend_shadcn_2.AvatarFallback, { className: "rounded-lg" },
+                react_1.default.createElement(components_3.RemixIcon, { name: 'ri-file-2-line', size: 'lg' })))),
         react_1.default.createElement(components_2.Button, { variant: "outline", size: "icon", className: (0, frontend_shadcn_1.cn)('text-foreground absolute -top-3 left-2 h-6 w-6 rounded-full', variant === 'file' && 'left-12 -top-1'), onClick: onDelete },
             react_1.default.createElement(lucide_react_1.Trash2, { className: "h-4 w-4" }))));
 }
-function AttachmentInput(_a) {
+function AttachmentInput(props) {
     var _this = this;
-    var name = _a.name, label = _a.label, handleChange = _a.handleChange, attachment = _a.value, handleRemove = _a.handleRemove, _b = _a.variant, variant = _b === void 0 ? 'file' : _b, _c = _a.size, size = _c === void 0 ? IMAGE_WIDTH : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.placeholder, placeholder = _e === void 0 ? 'Upload file' : _e, info = _a.info;
-    var _f = (0, react_1.useState)(null), src = _f[0], setSrc = _f[1];
+    var _a = props || {}, name = _a.name, label = _a.label, handleChange = _a.handleChange, attachment = _a.value, handleRemove = _a.handleRemove, _b = _a.variant, variant = _b === void 0 ? 'file' : _b, _c = _a.size, size = _c === void 0 ? IMAGE_WIDTH : _c, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, info = _a.info;
+    var _e = (0, react_1.useState)(null), src = _e[0], setSrc = _e[1];
     var onDrop = function (file, preview) { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             setSrc(preview.src);

@@ -17,9 +17,8 @@ export type ResourceGridItemProps = {
     menuActions?: React.ReactNode;
     sortable?: boolean;
     isDragging?: boolean;
-    enableBorder?: boolean;
     slots?: {
         image?: any;
     };
 };
-export default function ResourceGridItem({ selectable, selected, primary, secondary, avatar, label, image, handleClick, handleEdit, handleDelete, handleSelect, secondaryAction, menuActions, enableBorder, slots, }: ResourceGridItemProps): React.JSX.Element;
+export default function ResourceGridItem(props: ResourceGridItemProps): React.JSX.Element;

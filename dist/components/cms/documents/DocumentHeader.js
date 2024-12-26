@@ -15,9 +15,9 @@ var DocumentHeader = function (props) {
     var _k = (0, hooks_1.useSearch)({
         url: url,
         query: defaultQuery,
-    }), query = _k.query, keywords = _k.keywords, handleKeywordChange = _k.handleKeywordChange, location = _k.location, handleLocationChange = _k.handleLocationChange, handleSearch = _k.handleSearch, handleSortBy = _k.handleSortBy, handleSortDirection = _k.handleSortDirection, activeFilters = _k.activeFilters, handleAddFilter = _k.handleAddFilter;
+    }), query = _k.query, keywords = _k.keywords, handleKeywordChange = _k.handleKeywordChange, location = _k.location, handleLocationChange = _k.handleLocationChange, handleSearch = _k.handleSearch, handleSortBy = _k.handleSortBy, handleSortDirection = _k.handleSortDirection, activeFilters = _k.activeFilters, handleToggleFilter = _k.handleToggleFilter;
     var handleFilterClick = function (name, value) {
-        handleAddFilter({
+        handleToggleFilter({
             name: name,
             value: value,
             operator: 'eq',

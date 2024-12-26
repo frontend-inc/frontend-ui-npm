@@ -57,12 +57,12 @@ var MultipleChoiceAnswerInput = function (props) {
         react_1.default.createElement(core_1.Typography, { variant: "caption" }, label),
         layout === 'list' && (react_1.default.createElement("ul", null, answers === null || answers === void 0 ? void 0 : answers.map(function (answer, i) {
             var _a;
-            return (react_1.default.createElement(__1.ResourceListItem, { key: i, enableBorder: true, selected: selected === null || selected === void 0 ? void 0 : selected.includes(answer.value), image: (_a = answer === null || answer === void 0 ? void 0 : answer.image) === null || _a === void 0 ? void 0 : _a.url, primary: answer.title, secondary: answer.description, handleClick: function () { return handleSelect(answer.value); } }));
+            return (react_1.default.createElement(__1.ResourceListItem, { key: i, selected: selected === null || selected === void 0 ? void 0 : selected.includes(answer.value), image: (_a = answer === null || answer === void 0 ? void 0 : answer.image) === null || _a === void 0 ? void 0 : _a.url, primary: answer.title, secondary: answer.description, handleClick: function () { return handleSelect(answer.value); } }));
         }))),
         layout == 'grid' && (react_1.default.createElement("div", { className: "grid grid-col-1 sm:grid-col-2 md:grid-col-3 w-full gap-2" }, answers === null || answers === void 0 ? void 0 : answers.map(function (answer, idx) {
             var _a;
             return (react_1.default.createElement("div", { key: idx },
-                react_1.default.createElement(__1.ResourceGridItem, { enableBorder: true, selected: selected === null || selected === void 0 ? void 0 : selected.includes(answer.value), image: (_a = answer === null || answer === void 0 ? void 0 : answer.image) === null || _a === void 0 ? void 0 : _a.url, primary: answer.title, secondary: answer.description, handleClick: function () { return handleSelect(answer.value); } })));
+                react_1.default.createElement(__1.ResourceGridItem, { selected: selected === null || selected === void 0 ? void 0 : selected.includes(answer.value), image: (_a = answer === null || answer === void 0 ? void 0 : answer.image) === null || _a === void 0 ? void 0 : _a.url, primary: answer.title, secondary: answer.description, handleClick: function () { return handleSelect(answer.value); } })));
         })))));
 };
 exports.default = MultipleChoiceAnswerInput;

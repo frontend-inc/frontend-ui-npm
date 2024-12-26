@@ -8,8 +8,8 @@ var react_1 = __importDefault(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var components_1 = require("../../../components");
 var frontend_shadcn_2 = require("frontend-shadcn");
-function SelectInput(_a) {
-    var label = _a.label, _b = _a.direction, direction = _b === void 0 ? 'column' : _b, name = _a.name, value = _a.value, options = _a.options, handleChange = _a.handleChange, info = _a.info;
+function SelectInput(props) {
+    var label = props.label, _a = props.direction, direction = _a === void 0 ? 'column' : _a, name = props.name, value = props.value, options = props.options, handleChange = props.handleChange, info = props.info;
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)('w-full', direction === 'row'
             ? 'flex items-center space-x-4'
             : 'flex flex-col space-y-2') },

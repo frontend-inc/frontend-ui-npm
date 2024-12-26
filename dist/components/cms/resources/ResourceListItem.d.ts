@@ -18,6 +18,5 @@ export type ResourceListItemProps = {
     sortable?: boolean;
     isDragging?: boolean;
     disableImage?: boolean;
-    enableBorder?: boolean;
 };
 export default function ResourceListItem(props: ResourceListItemProps): React.JSX.Element;

@@ -65,7 +65,7 @@ function ShopifyCartDiscountCode(_a) {
     return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-row justify-between w-full', loading && 'opacity-50') },
         react_1.default.createElement(components_1.Typography, { variant: "body1" }, "Discounts"),
         react_1.default.createElement("div", { className: "flex flex-row items-center space-x-2" },
-            react_1.default.createElement(components_2.Label, { label: discountCode.code }),
+            react_1.default.createElement(components_2.Label, null, discountCode.code),
             react_1.default.createElement(components_1.IconButton, { onClick: handleDelete },
                 react_1.default.createElement(react_2.RiDeleteBin7Fill, null)))));
 }

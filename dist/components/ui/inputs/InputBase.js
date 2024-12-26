@@ -30,8 +30,8 @@ var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var use_debounce_1 = require("use-debounce");
 var frontend_shadcn_2 = require("frontend-shadcn");
-function InputBase(_a) {
-    var type = _a.type, name = _a.name, _b = _a.value, value = _b === void 0 ? '' : _b, handleChange = _a.handleChange, placeholder = _a.placeholder, disabled = _a.disabled, errors = _a.errors, className = _a.className, _c = _a.debounceDelay, debounceDelay = _c === void 0 ? 350 : _c, _d = _a.disableDebounce, disableDebounce = _d === void 0 ? false : _d;
+function InputBase(props) {
+    var _a = props || {}, type = _a.type, name = _a.name, _b = _a.value, value = _b === void 0 ? '' : _b, handleChange = _a.handleChange, placeholder = _a.placeholder, disabled = _a.disabled, errors = _a.errors, className = _a.className, _c = _a.debounceDelay, debounceDelay = _c === void 0 ? 350 : _c, _d = _a.disableDebounce, disableDebounce = _d === void 0 ? false : _d;
     var _e = (0, react_1.useState)(value), text = _e[0], setText = _e[1];
     var debouncedText = (0, use_debounce_1.useDebounce)(text, debounceDelay)[0];
     var _f = (0, hooks_1.useError)({
