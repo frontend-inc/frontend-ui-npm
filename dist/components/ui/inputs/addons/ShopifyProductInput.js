@@ -32,8 +32,8 @@ var components_1 = require("../../../../components");
 var components_2 = require("../../../../components");
 var frontend_shopify_1 = require("frontend-shopify");
 var frontend_shopify_2 = require("frontend-shopify");
-var components_3 = require("../../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
+var react_3 = require("@nextui-org/react");
 var core_1 = require("../../../core");
 var lucide_react_1 = require("lucide-react");
 var image_1 = __importDefault(require("next/image"));
@@ -92,13 +92,13 @@ var ShopifyProductInput = function (props) {
     if (!enabled) {
         return (react_1.default.createElement(components_2.Empty, { icon: "ri-shopping-cart-2-fill", title: "Shopify setup required", description: "Shopify provider is not setup" }));
     }
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col space-y-4', className) },
+    return (react_1.default.createElement("div", { className: (0, react_3.cn)('flex flex-col space-y-4', className) },
         react_1.default.createElement(core_1.Collapse, { in: !!(product === null || product === void 0 ? void 0 : product.id) },
             react_1.default.createElement("div", { className: "relative rounded-lg overflow-hidden" },
                 react_1.default.createElement(image_1.default, { height: 180, width: 180, src: (_d = (_c = (_b = (_a = product === null || product === void 0 ? void 0 : product.images) === null || _a === void 0 ? void 0 : _a.edges) === null || _b === void 0 ? void 0 : _b[0]) === null || _c === void 0 ? void 0 : _c.node) === null || _d === void 0 ? void 0 : _d.url, alt: product === null || product === void 0 ? void 0 : product.title, className: "object-cover rounded-lg" }),
                 react_1.default.createElement("div", { className: "absolute inset-0 bg-black bg-opacity-40" }),
                 react_1.default.createElement("div", { className: "absolute top-4 right-4" },
-                    react_1.default.createElement(components_3.IconButton, { onClick: handleClear },
+                    react_1.default.createElement(react_2.Button, { isIconOnly: true, radius: "full", onPress: handleClear },
                         react_1.default.createElement(lucide_react_1.X, { className: "h-4 w-4" }))))),
         react_1.default.createElement(components_1.AutocompleteInput, { name: name, label: label, value: value, options: options, handleChange: handleAutocompleteChange, handleInputChange: handleInputChange, direction: direction, placeholder: placeholder })));
 };

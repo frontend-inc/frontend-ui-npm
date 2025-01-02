@@ -28,9 +28,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Toolbar = void 0;
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var Toolbar = function (_a) {
     var children = _a.children, _b = _a.disableGutters, disableGutters = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? 'regular' : _c, className = _a.className, props = __rest(_a, ["children", "disableGutters", "variant", "className"]);
-    return (react_1.default.createElement("div", __assign({ className: (0, frontend_shadcn_1.cn)('flex items-center', variant === 'regular' ? 'min-h-[64px]' : 'min-h-[48px]', !disableGutters && 'px-4', className) }, props), children));
+    return (react_1.default.createElement("div", __assign({ className: (0, react_2.cn)('flex items-center', variant === 'regular' ? 'min-h-[64px]' : 'min-h-[48px]', !disableGutters && 'px-4', className) }, props), children));
 };
 exports.Toolbar = Toolbar;

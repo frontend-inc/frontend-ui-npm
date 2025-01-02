@@ -29,9 +29,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var ButtonAction = function (props) {
-    var icon = props.icon, action = props.action, url = props.url, path = props.path, src = props.src, _a = props.variant, variant = _a === void 0 ? 'secondary' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, children = props.children, rest = __rest(props, ["icon", "action", "url", "path", "src", "variant", "size", "children"]);
+    var icon = props.icon, action = props.action, url = props.url, path = props.path, src = props.src, color = props.color, _a = props.variant, variant = _a === void 0 ? 'solid' : _a, _b = props.size, size = _b === void 0 ? 'md' : _b, children = props.children, rest = __rest(props, ["icon", "action", "url", "path", "src", "color", "variant", "size", "children"]);
     var _c = (0, hooks_1.useButton)({
         action: action,
         url: url,
@@ -39,11 +39,11 @@ var ButtonAction = function (props) {
         src: src,
     }), openShare = _c.openShare, setOpenShare = _c.setOpenShare, openVideo = _c.openVideo, setOpenVideo = _c.setOpenVideo, openImage = _c.openImage, setOpenImage = _c.setOpenImage, handleClick = _c.handleClick;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(components_1.Button, __assign({ fullWidth: true }, rest, { size: size, startIcon: icon && (react_1.default.createElement(__1.RemixIcon, { name: icon, className: variant == 'default'
+        react_1.default.createElement(react_2.Button, __assign({ fullWidth: true }, rest, { size: size, variant: variant, color: "primary", startContent: icon && (react_1.default.createElement(__1.RemixIcon, { name: icon, className: color == 'primary'
                     ? 'text-primary-foreground'
                     : 'text-secondary-foreground' })), 
             /* @ts-ignore */
-            onClick: handleClick, variant: variant }), children),
+            onPress: handleClick }), children),
         src && (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(__1.VideoModal, { open: openVideo, handleClose: function () { return setOpenVideo(false); }, src: src }),
             react_1.default.createElement(__1.ImageModal, { open: openImage, handleClose: function () { return setOpenImage(false); }, src: src }),

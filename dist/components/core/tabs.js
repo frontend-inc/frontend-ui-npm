@@ -27,7 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tabs = exports.Tab = void 0;
 var react_1 = __importStar(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var Tab = function (_a) {
     var label = _a.label, value = _a.value, children = _a.children, disabled = _a.disabled;
     return (react_1.default.createElement(react_1.default.Fragment, null,
@@ -44,7 +44,7 @@ var Tabs = function (_a) {
             onChange(value);
         }
     };
-    return (react_1.default.createElement(frontend_shadcn_1.Tabs, { value: activeTab, onValueChange: handleTabChange, className: (0, frontend_shadcn_2.cn)('w-full', className) },
+    return (react_1.default.createElement(frontend_shadcn_1.Tabs, { value: activeTab, onValueChange: handleTabChange, className: (0, react_2.cn)('w-full', className) },
         react_1.default.createElement(frontend_shadcn_1.TabsList, { className: "grid w-full grid-cols-2 lg:grid-cols-4" }, react_1.default.Children.map(children, function (child) {
             return react_1.default.cloneElement(child, { key: child.props.value });
         })),

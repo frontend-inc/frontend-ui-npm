@@ -34,6 +34,6 @@ var UIImage = function (props) {
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, bgImage: bgImage, bgOverlay: bgOverlay, mode: mode, py: py, px: px, maxWidth: maxWidth, variant: variant },
         react_1.default.createElement("figure", { className: "w-full flex flex-col space-y-2" },
             react_1.default.createElement(components_2.Image, __assign({}, rest, { src: image, aspectRatio: aspectRatio })),
-            title && (react_1.default.createElement("figcaption", { className: "text-sm text-muted-foreground text-center" }, title)))));
+            title && (react_1.default.createElement("figcaption", { className: "text-sm text-foreground/70 text-center" }, title)))));
 };
 exports.default = UIImage;

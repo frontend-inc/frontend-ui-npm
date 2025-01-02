@@ -1,17 +1,21 @@
 import React from 'react';
-export interface ResponsiveImageProps {
-    src?: string | null;
+export type ImageCardProps = {
+    src: string;
     alt?: string;
-    width?: number;
-    height?: number;
-    objectFit?: 'cover' | 'contain';
-    aspectRatio?: number;
-    enableOverlay?: boolean;
-    enableGradient?: boolean;
-    disableBorderRadius?: boolean;
-    disableZoom?: boolean;
-    className?: string;
-    handleClick?: () => void;
     label?: string;
-}
-export default function ResponsiveImage(props: ResponsiveImageProps): React.JSX.Element;
+    aspectRatio?: number;
+    handleClick?: () => void;
+    height?: number;
+    isBlurred?: boolean;
+    disableZoom?: boolean;
+    disableBorderRadius?: boolean;
+    enableGradient?: boolean;
+    enableOverlay?: boolean;
+    className?: string;
+};
+export type ImageProps = Omit<ImageCardProps, 'src'> & {
+    src?: string;
+    aspectRatio?: number;
+};
+declare const NextImage: React.FC<ImageProps>;
+export default NextImage;

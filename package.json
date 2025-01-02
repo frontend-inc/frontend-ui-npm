@@ -1,6 +1,6 @@
 {
     "name": "frontend-ui",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "license": "MIT",
     "description": "A Tailwind and Shadcn UI library designed for Frontend.co",
     "homepage": "https://github.com/frontend-inc/frontend-ui-npm",
@@ -75,6 +75,7 @@
         "@elgorditosalsero/react-gtm-hook": "^2.7.2",
         "@hello-pangea/dnd": "^16.6.0",
         "@nanostores/react": "ai/react",
+        "@nextui-org/react": "^2.6.10",
         "@raddix/use-click-outside": "^0.1.2",
         "@radix-ui/react-accordion": "^1.2.1",
         "@radix-ui/react-alert-dialog": "^1.1.2",

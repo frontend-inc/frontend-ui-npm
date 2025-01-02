@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var BooleanInput = function (props) {
-    var name = props.name, value = props.value, handleChange = props.handleChange, label = props.label, info = props.info;
+    var name = props.name, value = props.value, handleChange = props.handleChange, label = props.label;
     var handleTabChange = function (ev) {
         var newValue = ev.target.value == 'true' ? true : false;
         handleChange({
@@ -17,7 +17,7 @@ var BooleanInput = function (props) {
             },
         });
     };
-    return (react_1.default.createElement(__1.TabsInput, { name: name, label: label, info: info, options: [
+    return (react_1.default.createElement(__1.TabsInput, { name: name, label: label, options: [
             { label: 'No', value: 'false' },
             { label: 'Yes', value: 'true' },
         ], value: value == true ? 'true' : 'false', handleChange: handleTabChange }));

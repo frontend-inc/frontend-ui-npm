@@ -25,18 +25,16 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var lucide_react_1 = require("lucide-react");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_3 = require("@nextui-org/react");
 function CellHeader(_a) {
     var field = _a.field, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSort = _a.handleSort;
     var _b = (0, react_1.useState)(false), active = _b[0], setActive = _b[1];
     (0, react_1.useEffect)(function () {
         setActive(sortBy === (field === null || field === void 0 ? void 0 : field.name));
     }, [field, sortBy]);
-    return (react_1.default.createElement(components_1.Button, { variant: "ghost", className: (0, frontend_shadcn_1.cn)('w-full h-11 rounded-none flex justify-between items-center px-2', 'hover:bg-muted hover:text-foreground'), onClick: function () { return handleSort(field); } },
-        react_1.default.createElement("span", { className: "font-medium" }, field === null || field === void 0 ? void 0 : field.label),
-        active && (react_1.default.createElement("span", { className: (0, frontend_shadcn_1.cn)('transition-transform duration-200', sortDirection === 'desc' && 'rotate-180') },
-            react_1.default.createElement(lucide_react_1.ChevronUp, { className: "h-5 w-5 text-muted-foreground" })))));
+    return (react_1.default.createElement(react_2.Button, { variant: "ghost", onPress: function () { return handleSort(field); }, endContent: active && (react_1.default.createElement("span", { className: (0, react_3.cn)('transition-transform duration-200', sortDirection === 'desc' && 'rotate-180') },
+            react_1.default.createElement(lucide_react_1.ChevronUp, { className: "h-5 w-5 text-foreground/70" }))) }, field === null || field === void 0 ? void 0 : field.label));
 }
 exports.default = CellHeader;

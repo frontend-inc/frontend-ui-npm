@@ -34,16 +34,17 @@ var DataListItem = function (props) {
         react_1.default.createElement("div", { className: "w-full flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-1" },
             react_1.default.createElement("div", { className: "flex flex-row items-start" },
                 selectable && (react_1.default.createElement(frontend_shadcn_1.Checkbox, { checked: selected, onCheckedChange: handleChange, className: "mr-2" })),
-                sortable && react_1.default.createElement(lucide_react_1.GripVertical, { className: "text-muted-foreground" }),
+                sortable && react_1.default.createElement(lucide_react_1.GripVertical, { className: "text-foreground/70" }),
                 react_1.default.createElement("div", { className: "pr-0 sm:pr-2 mr-0 sm:mr-2 w-full sm:w-[220px] sm:min-w-[220px] h-full" },
-                    react_1.default.createElement(__1.TouchableOpacity, { handleClick: handleClick },
-                        react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: height, alt: primary }, slots.image))))),
+                    react_1.default.createElement(__1.Image, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick }, slots.image)))),
             react_1.default.createElement("div", { className: "flex flex-row space-x-1 w-full" },
                 react_1.default.createElement("div", { className: "flex flex-col justify-between items-start h-full w-full py-0 sm:py-1" },
                     react_1.default.createElement("div", { className: "flex flex-col space-y-0.5" },
                         react_1.default.createElement(components_1.Typography, { variant: "subtitle2" }, primary),
-                        react_1.default.createElement(components_1.Typography, { className: "text-muted-foreground", variant: "body2" }, secondary)),
-                    react_1.default.createElement("div", { className: "flex flex-row justify-end" }, actions)),
-                react_1.default.createElement("div", { className: "flex flex-row justify-end" }, (handleEdit || handleDelete) && (react_1.default.createElement(__1.MenuButton, { handleEdit: handleEdit, handleDelete: handleDelete }, secondaryAction)))))));
+                        react_1.default.createElement(components_1.Typography, { className: "text-foreground/70", variant: "body2" }, secondary)),
+                    react_1.default.createElement("div", { className: "flex flex-row justify-end" },
+                        actions,
+                        secondaryAction)),
+                react_1.default.createElement("div", { className: "flex flex-row justify-end" }, (handleEdit || handleDelete) && (react_1.default.createElement(__1.MenuButton, { handleEdit: handleEdit, handleDelete: handleDelete })))))));
 };
 exports.default = DataListItem;

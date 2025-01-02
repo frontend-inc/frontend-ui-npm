@@ -28,19 +28,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
+var react_2 = require("@nextui-org/react");
 var components_1 = require("../../../components");
-var __1 = require("../..");
-var frontend_shadcn_1 = require("frontend-shadcn");
 var EmailSubscribeInput = function (props) {
-    var _a = props || {}, loading = _a.loading, name = _a.name, _b = _a.placeholder, placeholder = _b === void 0 ? 'Enter your email' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Subscribe' : _c, handleSubmit = _a.handleSubmit, _d = _a.size, size = _d === void 0 ? 'default' : _d, rest = __rest(_a, ["loading", "name", "placeholder", "buttonText", "handleSubmit", "size"]);
-    var sizeClasses = {
-        sm: 'h-[38px] md:min-w-[160px]',
-        default: 'h-[38px] md:min-w-[220px]',
-        lg: 'h-[48px] md:min-w-[280px]',
+    var _a = props || {}, loading = _a.loading, label = _a.label, name = _a.name, value = _a.value, handleChange = _a.handleChange, _b = _a.placeholder, placeholder = _b === void 0 ? 'Enter your email' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Subscribe' : _c, handleSubmit = _a.handleSubmit, _d = _a.size, size = _d === void 0 ? 'md' : _d, rest = __rest(_a, ["loading", "label", "name", "value", "handleChange", "placeholder", "buttonText", "handleSubmit", "size"]);
+    var handleValueChange = function (text) {
+        handleChange({
+            target: {
+                name: name,
+                value: text
+            }
+        });
     };
-    return (react_1.default.createElement("div", { className: "flex flex-row items-center" },
-        react_1.default.createElement("div", { className: "md:max-w-[360px] w-full p-1 flex flex-row justify-center items-center" },
-            react_1.default.createElement(__1.InputBase, __assign({ name: name, placeholder: placeholder, type: "email", className: (0, frontend_shadcn_1.cn)("rounded-l-md text-base rounded-r-none border-r-0", sizeClasses[size]) }, rest)),
-            react_1.default.createElement(components_1.Button, { size: size, onClick: handleSubmit, className: "rounded-l-none rounded-r-md text-base", loading: loading }, buttonText))));
+    return (react_1.default.createElement("div", { className: "flex flex-row space-x-2 items-center w-full max-w-[280px]" },
+        react_1.default.createElement(react_2.Input, __assign({ label: label, name: name, placeholder: placeholder, type: "email", size: size, value: value, onValueChange: handleValueChange, startContent: react_1.default.createElement(components_1.RemixIcon, { name: "ri-mail-fill" }), classNames: {
+                base: "rounded-r-none text-base",
+            } }, rest)),
+        react_1.default.createElement(react_2.Button, { size: size, variant: "solid", color: "primary", onPress: handleSubmit, isLoading: loading }, buttonText)));
 };
 exports.default = EmailSubscribeInput;

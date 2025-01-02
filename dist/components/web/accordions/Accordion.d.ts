@@ -1,6 +1,6 @@
 import React from 'react';
 export type AccordionProps = {
-    variant?: 'default' | 'fill' | 'outline';
+    variant?: 'light' | 'shadow' | 'bordered' | 'splitted';
     items?: {
         title: string;
         subtitle: string;

@@ -1,11 +1,4 @@
 import React from 'react';
-import { ButtonProps as ShadcnButtonProps } from 'frontend-shadcn';
-type IconButtonColor = 'primary' | 'secondary' | 'ghost';
-type IconButtonVariant = 'rounded' | 'circular';
-interface IconButtonProps extends Omit<ShadcnButtonProps, 'size' | 'variant'> {
-    color?: IconButtonColor;
-    variant?: IconButtonVariant;
-    children: React.ReactNode;
-}
-declare const IconButton: React.ForwardRefExoticComponent<IconButtonProps & React.RefAttributes<HTMLButtonElement>>;
+import { ButtonProps } from '@nextui-org/react';
+declare const IconButton: React.ForwardRefExoticComponent<Omit<ButtonProps, "ref"> & React.RefAttributes<HTMLButtonElement>>;
 export { IconButton };

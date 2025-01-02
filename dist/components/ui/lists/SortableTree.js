@@ -44,8 +44,8 @@ function SortableItem(props) {
         }
     };
     return (react_1.default.createElement("li", null,
-        react_1.default.createElement("div", { className: "flex flex-row w-full items-center justify-between" },
-            react_1.default.createElement("div", __assign({ ref: setNodeRef, style: style }, attributes, listeners, { onClick: handleItemClick, className: "\n            bg-background rounded-lg shadow-sm\n            w-full p-2 cursor-move\n            transition-colors duration-200 ease-in-out hover:bg-muted\n            flex items-center space-x-2\n          " }),
+        react_1.default.createElement("div", { className: "flex flex-row shadow-md w-full items-center justify-between" },
+            react_1.default.createElement("div", __assign({ ref: setNodeRef, style: style }, attributes, listeners, { onClick: handleItemClick, className: "\n            bg-content1 hover:bg-content2 rounded-lg shadow-sm\n            w-full p-2 cursor-move\n            transition-colors duration-200 ease-in-out\n            flex items-center space-x-2\n          " }),
                 item.type === 'file' ? react_1.default.createElement(lucide_react_1.File, { size: 16 }) : react_1.default.createElement(lucide_react_1.Folder, { size: 16 }),
                 react_1.default.createElement("span", null, item.name)),
             react_1.default.createElement(components_1.MenuButton, { handleEdit: function () { return handleEdit(item); }, handleDelete: function () { return handleDelete(item); } })),

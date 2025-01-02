@@ -48,15 +48,10 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
 var react_1 = __importStar(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
-var frontend_shadcn_2 = require("frontend-shadcn");
-var lucide_react_1 = require("lucide-react");
+var react_2 = require("@nextui-org/react");
 var Button = (0, react_1.forwardRef)(function (_a, ref) {
-    var _b = _a.size, size = _b === void 0 ? 'default' : _b, _c = _a.variant, variant = _c === void 0 ? 'default' : _c, fullWidth = _a.fullWidth, className = _a.className, children = _a.children, startIcon = _a.startIcon, endIcon = _a.endIcon, _d = _a.loading, loading = _d === void 0 ? false : _d, disabled = _a.disabled, displayAlertWarning = _a.displayAlertWarning, props = __rest(_a, ["size", "variant", "fullWidth", "className", "children", "startIcon", "endIcon", "loading", "disabled", "displayAlertWarning"]);
-    return (react_1.default.createElement(frontend_shadcn_1.Button, __assign({ ref: ref, size: size, variant: variant, className: (0, frontend_shadcn_2.cn)(fullWidth && 'w-full', className), disabled: disabled || loading }, props),
-        loading ? (react_1.default.createElement(lucide_react_1.Loader2, { className: "h-4 w-4 mr-2 animate-spin" })) : (startIcon && react_1.default.createElement("span", { className: "mr-2" }, startIcon)),
-        children,
-        !loading && endIcon && react_1.default.createElement("span", { className: "ml-2" }, endIcon)));
+    var _b = _a.size, size = _b === void 0 ? 'md' : _b, _c = _a.variant, variant = _c === void 0 ? 'ghost' : _c, fullWidth = _a.fullWidth, className = _a.className, children = _a.children, startIcon = _a.startIcon, endIcon = _a.endIcon, _d = _a.loading, loading = _d === void 0 ? false : _d, disabled = _a.disabled, displayAlertWarning = _a.displayAlertWarning, props = __rest(_a, ["size", "variant", "fullWidth", "className", "children", "startIcon", "endIcon", "loading", "disabled", "displayAlertWarning"]);
+    return (react_1.default.createElement(react_2.Button, __assign({ ref: ref, size: size, variant: variant, fullWidth: fullWidth, className: className, disabled: disabled || loading, isLoading: loading, startContent: startIcon, endContent: endIcon }, props), children));
 });
 exports.Button = Button;
 Button.displayName = 'Button';

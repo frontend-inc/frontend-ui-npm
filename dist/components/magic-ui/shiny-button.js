@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var framer_motion_1 = require("framer-motion");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var animationProps = {
     initial: { '--x': '100%', scale: 0.8 },
     animate: { '--x': '-100%', scale: 1 },
@@ -51,7 +51,7 @@ var animationProps = {
 };
 var ShinyButton = react_1.default.forwardRef(function (_a, ref) {
     var children = _a.children, className = _a.className, props = __rest(_a, ["children", "className"]);
-    return (react_1.default.createElement(framer_motion_1.motion.button, __assign({ ref: ref }, animationProps, props, { className: (0, frontend_shadcn_1.cn)('relative rounded-lg px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/10%)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_hsl(var(--primary)/10%)]', className) }),
+    return (react_1.default.createElement(framer_motion_1.motion.button, __assign({ ref: ref }, animationProps, props, { className: (0, react_2.cn)('relative rounded-lg px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow dark:bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/10%)_0%,transparent_60%)] dark:hover:shadow-[0_0_20px_hsl(var(--primary)/10%)]', className) }),
         react_1.default.createElement("span", { className: "relative block size-full text-sm uppercase tracking-wide text-[rgb(0,0,0,65%)] dark:font-light dark:text-[rgb(255,255,255,90%)]", style: {
                 maskImage: 'linear-gradient(-75deg,hsl(var(--primary)) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),hsl(var(--primary)) calc(var(--x) + 100%))',
             } }, children),

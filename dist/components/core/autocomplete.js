@@ -27,28 +27,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Autocomplete = void 0;
 var React = __importStar(require("react"));
 var lucide_react_1 = require("lucide-react");
+var react_1 = require("@nextui-org/react");
+var react_2 = require("@nextui-org/react");
 var frontend_shadcn_1 = require("frontend-shadcn");
-var components_1 = require("../../components");
 var frontend_shadcn_2 = require("frontend-shadcn");
-var frontend_shadcn_3 = require("frontend-shadcn");
 function Autocomplete(_a) {
     var name = _a.name, value = _a.value, onChange = _a.onChange, options = _a.options, _b = _a.placeholder, placeholder = _b === void 0 ? 'Select an option...' : _b, _c = _a.emptyMessage, emptyMessage = _c === void 0 ? 'No results found.' : _c;
     var _d = React.useState(false), open = _d[0], setOpen = _d[1];
     var selectedOption = options.find(function (option) { return option.value === value; });
-    return (React.createElement(frontend_shadcn_3.Popover, { open: open, onOpenChange: setOpen },
-        React.createElement(frontend_shadcn_3.PopoverTrigger, { asChild: true },
-            React.createElement(components_1.Button, { variant: "outline", role: "combobox", "aria-expanded": open, className: "w-full justify-between" },
-                selectedOption ? selectedOption.label : placeholder,
-                React.createElement(lucide_react_1.ChevronsUpDown, { className: "ml-2 h-4 w-4 shrink-0 opacity-50" }))),
-        React.createElement(frontend_shadcn_3.PopoverContent, { className: "w-full p-0" },
-            React.createElement(frontend_shadcn_2.Command, null,
-                React.createElement(frontend_shadcn_2.CommandInput, { placeholder: placeholder }),
-                React.createElement(frontend_shadcn_2.CommandEmpty, null, emptyMessage),
-                React.createElement(frontend_shadcn_2.CommandGroup, null, options.map(function (option) { return (React.createElement(frontend_shadcn_2.CommandItem, { key: option.value, onSelect: function () {
+    return (React.createElement(frontend_shadcn_2.Popover, { open: open, onOpenChange: setOpen },
+        React.createElement(frontend_shadcn_2.PopoverTrigger, { asChild: true },
+            React.createElement(react_2.Button, { variant: "ghost", role: "combobox", "aria-expanded": open, className: "w-full justify-between", endContent: React.createElement(lucide_react_1.ChevronsUpDown, { className: "h-4 w-4 shrink-0 opacity-50" }) }, selectedOption ? selectedOption.label : placeholder)),
+        React.createElement(frontend_shadcn_2.PopoverContent, { className: "w-full p-0" },
+            React.createElement(frontend_shadcn_1.Command, null,
+                React.createElement(frontend_shadcn_1.CommandInput, { placeholder: placeholder }),
+                React.createElement(frontend_shadcn_1.CommandEmpty, null, emptyMessage),
+                React.createElement(frontend_shadcn_1.CommandGroup, null, options.map(function (option) { return (React.createElement(frontend_shadcn_1.CommandItem, { key: option.value, onSelect: function () {
                         onChange(option.value);
                         setOpen(false);
                     } },
-                    React.createElement(lucide_react_1.Check, { className: (0, frontend_shadcn_1.cn)('mr-2 h-4 w-4', value === option.value ? 'opacity-100' : 'opacity-0') }),
+                    React.createElement(lucide_react_1.Check, { className: (0, react_1.cn)('mr-2 h-4 w-4', value === option.value ? 'opacity-100' : 'opacity-0') }),
                     option.label)); }))))));
 }
 exports.Autocomplete = Autocomplete;

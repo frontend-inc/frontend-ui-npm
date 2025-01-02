@@ -41,7 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var hooks_1 = require("../../../hooks");
 var sonner_1 = require("sonner");
 var CheckoutButton = function () {
@@ -76,7 +76,7 @@ var CheckoutButton = function () {
         });
     }); };
     var cartDisabled = (cart === null || cart === void 0 ? void 0 : cart.total_items) === 0 ? true : false;
-    return (react_1.default.createElement(components_1.Button, { fullWidth: true, loading: loading, onClick: handleClick, size: "lg" },
+    return (react_1.default.createElement(react_2.Button, { variant: "solid", color: "primary", fullWidth: true, isLoading: loading, onPress: handleClick, size: "lg" },
         "Checkout ",
         !cartDisabled && (cart === null || cart === void 0 ? void 0 : cart.display_subtotal)));
 };

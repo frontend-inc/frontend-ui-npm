@@ -23,9 +23,7 @@ var DocumentListItem = function (props) {
     var buttons = props.buttons, resource = props.resource, _b = props.listFields, listFields = _b === void 0 ? [] : _b, handleClick = props.handleClick, _c = props.disableTitle, disableTitle = _c === void 0 ? false : _c, _d = props.enableGradient, enableGradient = _d === void 0 ? false : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.enableDownload, enableDownload = _f === void 0 ? false : _f, _g = props.enableComments, enableComments = _g === void 0 ? false : _g, _h = props.enableFavorites, enableFavorites = _h === void 0 ? false : _h, _j = props.enableLikes, enableLikes = _j === void 0 ? false : _j, _k = props.style, style = _k === void 0 ? 'card' : _k, rest = __rest(props, ["buttons", "resource", "listFields", "handleClick", "disableTitle", "enableGradient", "enableOverlay", "enableDownload", "enableComments", "enableFavorites", "enableLikes", "style"]);
     var COMPONENTS = {
         card: __1.Card,
-        avatar: __1.AvatarCard,
         cover: __1.CoverCard,
-        chip: __1.ChipCard,
         text: __1.TextCard,
         list: __1.ListCard,
         image: __1.ImageCard,
@@ -35,7 +33,6 @@ var DocumentListItem = function (props) {
     var Component = COMPONENTS[style] || __1.Card;
     var typographyVariants = {
         card: 'subtitle1',
-        avatar: 'subtitle1',
         cover: 'subtitle1',
         chip: 'subtitle1',
         text: 'h5',

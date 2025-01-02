@@ -16,7 +16,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var components_1 = require("../../../components");
 var __1 = require("../..");
 var ProductCollectionCard = react_1.default.forwardRef(function (props, ref) {
@@ -24,7 +24,7 @@ var ProductCollectionCard = react_1.default.forwardRef(function (props, ref) {
         item: {},
         image: {},
     } : _a;
-    return (react_1.default.createElement("div", { ref: ref, className: (0, frontend_shadcn_1.cn)(!disableBorder && 'border border-border hover:shadow-md', 'w-full overflow-hidden rounded-lg transition-shadow duration-300 bg-background') },
+    return (react_1.default.createElement("div", { ref: ref, className: (0, react_2.cn)(!disableBorder && 'border border-divider hover:shadow-md', 'w-full overflow-hidden rounded-lg transition-shadow duration-300 bg-background') },
         react_1.default.createElement("div", { className: "min-h-[240px] w-full relative overflow-hidden" },
             react_1.default.createElement(__1.Image, __assign({ src: image, height: 240, alt: primary, label: label, aspectRatio: 4 / 3, handleClick: handleClick, disableBorderRadius: !disableBorder }, slots.image))),
         react_1.default.createElement("div", { className: "px-4 pt-2 pb-4 w-full" },

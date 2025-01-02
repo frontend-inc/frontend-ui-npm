@@ -42,7 +42,7 @@ var react_1 = __importStar(require("react"));
 var react_google_maps_1 = require("@vis.gl/react-google-maps");
 var mapConfigs_1 = require("./styles/mapConfigs");
 var GoogleMarker_1 = __importDefault(require("./GoogleMarker"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function GoogleMap(_a) {
     var _b = _a.darkTheme, darkTheme = _b === void 0 ? false : _b, _c = _a.height, height = _c === void 0 ? 300 : _c, width = _a.width, resources = _a.resources, _d = _a.zoom, zoom = _d === void 0 ? 16 : _d, _e = _a.enableBorder, enableBorder = _e === void 0 ? false : _e;
     var _f = (0, react_1.useState)(mapConfigs_1.MAP_CONFIGS[0]), mapConfig = _f[0], setMapConfig = _f[1];
@@ -88,7 +88,7 @@ function GoogleMap(_a) {
     }, [resources]);
     if ((googleMarkers === null || googleMarkers === void 0 ? void 0 : googleMarkers.length) <= 0)
         return null;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('sticky rounded overflow-hidden transition-shadow duration-300 hover:shadow-md', enableBorder && 'border border-divider'), style: {
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)('sticky rounded overflow-hidden transition-shadow duration-300 hover:shadow-md', enableBorder && 'border border-divider'), style: {
             height: height,
             width: width || '100%',
         } },

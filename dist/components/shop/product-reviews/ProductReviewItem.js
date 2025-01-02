@@ -11,7 +11,7 @@ var moment_1 = __importDefault(require("moment"));
 function ProductReviewItem(_a) {
     var _b;
     var resource = _a.resource;
-    return (react_1.default.createElement("div", { className: "w-full flex items-start py-4 border-b border-divider hover:bg-muted/50" },
+    return (react_1.default.createElement("div", { className: "w-full flex items-start py-4 border-b border-divider hover:bg-content2/50" },
         react_1.default.createElement("div", { className: "mr-4 mt-1" },
             react_1.default.createElement(__1.UserAvatar, { user: resource === null || resource === void 0 ? void 0 : resource.user })),
         react_1.default.createElement("div", { className: "flex-grow" },
@@ -19,7 +19,7 @@ function ProductReviewItem(_a) {
             react_1.default.createElement("div", { className: "space-y-3" },
                 react_1.default.createElement(components_1.Typography, { variant: "body1" }, resource === null || resource === void 0 ? void 0 : resource.title),
                 react_1.default.createElement(components_1.Typography, { variant: "body1" }, resource.body),
-                react_1.default.createElement(components_1.Typography, { variant: "body2", className: "text-muted-foreground text-sm" }, "@".concat((_b = resource === null || resource === void 0 ? void 0 : resource.user) === null || _b === void 0 ? void 0 : _b.username),
+                react_1.default.createElement(components_1.Typography, { variant: "body2", className: "text-foreground/70 text-sm" }, "@".concat((_b = resource === null || resource === void 0 ? void 0 : resource.user) === null || _b === void 0 ? void 0 : _b.username),
                     " reviewed",
                     ' ',
                     (0, moment_1.default)(resource === null || resource === void 0 ? void 0 : resource.created_at).fromNow())))));

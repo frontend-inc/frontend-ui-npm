@@ -8,5 +8,5 @@ type FormWizardButtonsProps = {
     handlePrevStep: () => void;
     handleSubmit: () => void;
 };
-export default function FormWizardButtons({ loading, buttonText, currentStep, totalSteps, handleNextStep, handlePrevStep, handleSubmit, }: FormWizardButtonsProps): React.JSX.Element;
+export default function FormWizardButtons(props: FormWizardButtonsProps): React.JSX.Element;
 export {};

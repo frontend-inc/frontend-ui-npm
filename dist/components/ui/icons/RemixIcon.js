@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var RemixIcon = (0, react_1.forwardRef)(function (props, ref) {
     var name = props.name, className = props.className, _a = props.size, size = _a === void 0 ? 'md' : _a;
     var sizeClasses = {
@@ -34,7 +34,7 @@ var RemixIcon = (0, react_1.forwardRef)(function (props, ref) {
         lg: 'text-lg',
         xl: 'text-xl',
     };
-    return (react_1.default.createElement("i", { ref: ref, className: (0, frontend_shadcn_1.cn)(name, 'text-foreground', sizeClasses[size], className) }));
+    return (react_1.default.createElement("i", { ref: ref, className: (0, react_2.cn)(name, 'text-foreground', sizeClasses[size], className) }));
 });
 RemixIcon.displayName = 'RemixIcon';
 exports.default = RemixIcon;

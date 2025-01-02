@@ -4,6 +4,8 @@ export type ResourceFormProps = {
     open: boolean;
     handleClose: () => void;
     loading: boolean;
+    isPublishLoading?: boolean;
+    enablePublish?: boolean;
     errors: any;
     resource: any;
     setResource: (resource: any) => void;
@@ -13,6 +15,7 @@ export type ResourceFormProps = {
     handleRemoveAttachment?: (name: string) => void;
     handleSubmit: () => void;
     handleReload: () => void;
+    handlePublish: () => void;
     inputOptions?: any;
     inputParams?: any;
     maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';

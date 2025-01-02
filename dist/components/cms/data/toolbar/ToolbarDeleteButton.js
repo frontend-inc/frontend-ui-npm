@@ -65,8 +65,8 @@ var __1 = require("../../..");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../../hooks");
 var frontend_js_2 = require("frontend-js");
-var core_1 = require("../../../core");
-var react_2 = require("@remixicon/react");
+var react_2 = require("@nextui-org/react");
+var react_3 = require("@remixicon/react");
 var ToolbarDeleteButton = function () {
     var currentUser = (0, frontend_js_2.useAuth)().currentUser;
     var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
@@ -94,7 +94,7 @@ var ToolbarDeleteButton = function () {
         });
     }); };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(core_1.Button, { onClick: handleDeleteClick, color: "secondary", startIcon: react_1.default.createElement(react_2.RiDeleteBin7Fill, null) }, "Delete"),
+        react_1.default.createElement(react_2.Button, { onPress: handleDeleteClick, color: "danger", startContent: react_1.default.createElement(react_3.RiDeleteBin7Fill, null) }, "Delete"),
         react_1.default.createElement(__1.AlertModal, { loading: loading, open: open, handleClose: function () { return setOpen(false); }, handleConfirm: handleDelete })));
 };
 exports.default = ToolbarDeleteButton;

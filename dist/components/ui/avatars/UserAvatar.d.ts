@@ -2,7 +2,7 @@ import React from 'react';
 type UserAvatarProps = {
     user: any;
     variant?: 'circular' | 'rounded';
-    size?: number;
+    size?: 'sm' | 'md' | 'lg';
     enableGradient?: boolean;
     className?: string;
 };

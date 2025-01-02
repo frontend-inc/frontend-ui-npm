@@ -48,11 +48,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InputBase = void 0;
 var react_1 = __importStar(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var InputBase = (0, react_1.forwardRef)(function (_a, ref) {
     var className = _a.className, _b = _a.type, type = _b === void 0 ? 'text' : _b, startAdornment = _a.startAdornment, endAdornment = _a.endAdornment, _c = _a.fullWidth, fullWidth = _c === void 0 ? false : _c, props = __rest(_a, ["className", "type", "startAdornment", "endAdornment", "fullWidth"]);
-    var inputClasses = (0, frontend_shadcn_1.cn)('bg-background text-foreground', 'border border-input', 'focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring', 'disabled:cursor-not-allowed disabled:opacity-50', 'rounded-md', 'px-3 py-2', 'text-sm', fullWidth ? 'w-full' : 'w-auto', startAdornment && 'pl-10', endAdornment && 'pr-10', className);
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('relative inline-flex items-center', fullWidth && 'w-full') },
+    var inputClasses = (0, react_2.cn)('bg-background text-foreground', 'border border-input', 'focus:outline-none focus:ring-2 focus:ring-ring focus:border-ring', 'disabled:cursor-not-allowed disabled:opacity-50', 'rounded-md', 'px-3 py-2', 'text-sm', fullWidth ? 'w-full' : 'w-auto', startAdornment && 'pl-10', endAdornment && 'pr-10', className);
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)('relative inline-flex items-center', fullWidth && 'w-full') },
         startAdornment && (react_1.default.createElement("div", { className: "absolute left-3 top-1/2 transform -translate-y-1/2" }, startAdornment)),
         react_1.default.createElement("input", __assign({ type: type, className: inputClasses, ref: ref }, props)),
         endAdornment && (react_1.default.createElement("div", { className: "absolute right-3 top-1/2 transform -translate-y-1/2" }, endAdornment))));

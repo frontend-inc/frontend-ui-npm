@@ -27,7 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("..");
 var frontend_shopify_1 = require("frontend-shopify");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var ShopifyProductDetails = function (props) {
     var shopifyProduct = props.shopifyProduct, buttonText = props.buttonText, _a = props.enableQuantity, enableQuantity = _a === void 0 ? true : _a, _b = props.enableSubscription, enableSubscription = _b === void 0 ? true : _b, enableFavorites = props.enableFavorites, _c = props.disableZoom, disableZoom = _c === void 0 ? false : _c;
     var _d = (0, frontend_shopify_1.useProducts)(), product = _d.product, findProduct = _d.findProduct;
@@ -40,9 +40,9 @@ var ShopifyProductDetails = function (props) {
         }
     }, [shopifyProduct]);
     return (react_1.default.createElement("div", { className: 'flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 w-full pb-[60px]' },
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full sm:w-1/2', 'p-0 sm:p-1') },
+        react_1.default.createElement("div", { className: (0, react_2.cn)('w-full sm:w-1/2', 'p-0 sm:p-1') },
             react_1.default.createElement(__1.ShopifyProductImages, { product: product, image: image, images: images, handleClick: handleImageClick, disableZoom: disableZoom })),
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full sm:w-1/2', 'p-0 sm:p-1') },
+        react_1.default.createElement("div", { className: (0, react_2.cn)('w-full sm:w-1/2', 'p-0 sm:p-1') },
             react_1.default.createElement("div", { className: "flex flex-col space-y-8" },
                 react_1.default.createElement("div", { className: "flex flex-col space-y-4" },
                     react_1.default.createElement(__1.ShopifyProductInfo, { product: product, price: price, compareAtPrice: compareAtPrice }),

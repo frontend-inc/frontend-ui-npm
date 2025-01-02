@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NestedSidebarMenu = exports.VideoCover = exports.Spotlight = exports.Statistics = exports.SubscriptionPlans = exports.SubscriptionPlan = exports.SimplePage = exports.PriceList = exports.PageHeader = exports.Videos = exports.InstagramPosts = exports.Images = exports.Logos = exports.Header = exports.Footer = exports.FeatureTabs = exports.FeatureItem = exports.FeatureCard = exports.FeatureCards = exports.FeatureIcons = exports.CoverCarousel = exports.Cover = exports.CallToAction = exports.Cards = exports.Accordion = void 0;
+exports.NestedSidebarMenu = exports.VideoCover = exports.Spotlight = exports.Statistics = exports.SubscriptionPlans = exports.SubscriptionPlan = exports.SimplePage = exports.PriceList = exports.PageHeader = exports.Videos = exports.InstagramPosts = exports.Images = exports.Logos = exports.NavLogo = exports.Header = exports.Footer = exports.FeatureTabs = exports.FeatureItem = exports.FeatureCard = exports.FeatureCards = exports.FeatureIcons = exports.CoverCarousel = exports.Cover = exports.CallToAction = exports.Cards = exports.Accordion = void 0;
 __exportStar(require("./links"), exports);
 __exportStar(require("./testimonials"), exports);
 // Web Components
@@ -45,6 +45,8 @@ var Footer_1 = require("./footer/Footer");
 Object.defineProperty(exports, "Footer", { enumerable: true, get: function () { return __importDefault(Footer_1).default; } });
 var Header_1 = require("./header/Header");
 Object.defineProperty(exports, "Header", { enumerable: true, get: function () { return __importDefault(Header_1).default; } });
+var NavLogo_1 = require("./header/NavLogo");
+Object.defineProperty(exports, "NavLogo", { enumerable: true, get: function () { return __importDefault(NavLogo_1).default; } });
 var Logos_1 = require("./logos/Logos");
 Object.defineProperty(exports, "Logos", { enumerable: true, get: function () { return __importDefault(Logos_1).default; } });
 var Images_1 = require("./images/Images");

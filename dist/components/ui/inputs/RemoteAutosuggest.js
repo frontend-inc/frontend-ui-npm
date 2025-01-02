@@ -127,8 +127,8 @@ var RemoteAutosuggest = function (props) {
         }
     }, [url]);
     var options = formatResources(resources);
-    if (!displayField)
+    if (!options || (options === null || options === void 0 ? void 0 : options.length) == 0)
         return null;
-    return (react_1.default.createElement(__1.Autosuggest, { label: label, name: name, value: value, options: (0, lodash_1.uniq)(options, 'value'), placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, enableClear: enableClear }));
+    return (react_1.default.createElement(__1.Autosuggest, { label: label, name: name, value: value, options: options, placeholder: placeholder, handleChange: handleChange, handleInputChange: handleInputChange, enableClear: enableClear }));
 };
 exports.default = RemoteAutosuggest;

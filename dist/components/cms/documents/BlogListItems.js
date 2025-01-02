@@ -87,12 +87,11 @@ var BlogListItems = function (props) {
         cover: 'cover',
         list: 'card'
     };
-    return (react_1.default.createElement(__2.Container, { maxWidth: "lg" },
-        react_1.default.createElement("div", { className: "flex flex-col w-full space-y-2" },
-            firstPost && (react_1.default.createElement(__3.BlurFade, { delay: 0.25, inView: true, key: firstPost.id },
-                react_1.default.createElement(__2.DocumentListItem, __assign({}, slots.item, { style: firstPostStyle[style], selectable: selectable, resource: firstPost, metafields: metafields, handleClick: function () { return handleShowClick(firstPost); }, buttons: buttons, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
-            react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { layout: layout, loading: loading }), remainingPosts === null || remainingPosts === void 0 ? void 0 : remainingPosts.map(function (resource, idx) { return (react_1.default.createElement(__3.BlurFade, { delay: 0.25 + idx * 0.05, inView: true, key: resource === null || resource === void 0 ? void 0 : resource.id },
-                react_1.default.createElement(__2.DocumentListItem, __assign({ style: style, selectable: selectable, resource: resource, metafields: metafields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item)))); })),
-            react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate }))));
+    return (react_1.default.createElement("div", { className: "flex flex-col w-full space-y-2" },
+        firstPost && (react_1.default.createElement(__3.BlurFade, { delay: 0.25, inView: true, key: firstPost.id },
+            react_1.default.createElement(__2.DocumentListItem, __assign({}, slots.item, { style: firstPostStyle[style], selectable: selectable, resource: firstPost, metafields: metafields, handleClick: function () { return handleShowClick(firstPost); }, buttons: buttons, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
+        react_1.default.createElement(__2.DataLayout, __assign({}, slots.list, { layout: layout, loading: loading }), remainingPosts === null || remainingPosts === void 0 ? void 0 : remainingPosts.map(function (resource, idx) { return (react_1.default.createElement(__3.BlurFade, { delay: 0.25 + idx * 0.05, inView: true, key: resource === null || resource === void 0 ? void 0 : resource.id },
+            react_1.default.createElement(__2.DocumentListItem, __assign({ style: style, selectable: selectable, resource: resource, metafields: metafields, handleClick: function () { return handleShowClick(resource); }, buttons: buttons, enableComments: enableComments, enableFavorites: enableFavorites, enableLikes: enableLikes, enableGradient: enableGradient, enableOverlay: enableOverlay }, slots.item)))); })),
+        react_1.default.createElement(__1.LoadMore, { page: page, numPages: numPages, handlePaginate: handlePaginate })));
 };
 exports.default = BlogListItems;

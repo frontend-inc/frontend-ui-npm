@@ -79,7 +79,8 @@ var ShopifyProductSearch = function (props) {
     }, []);
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full" },
         react_1.default.createElement("div", { className: "flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3 w-full items-center" },
-            enableSearch && (react_1.default.createElement(__1.SearchInput, { value: keywords, handleChange: handleChange, handleSearch: handleSearch, placeholder: 'Search' })),
+            enableSearch && (react_1.default.createElement("div", { className: "w-full sm:max-w-screen-sm" },
+                react_1.default.createElement(__1.SearchInput, { label: "Search", value: keywords, handleChange: handleChange, handleSearch: handleSearch, placeholder: 'Enter keywords...' }))),
             enableFilters && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
                 react_1.default.createElement(__2.ShopifyProductSearchFilters, { filters: filters, options: options, handleFilter: handleFilter, handleFilterArray: handleFilterArray }))),
             enableSorting && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },

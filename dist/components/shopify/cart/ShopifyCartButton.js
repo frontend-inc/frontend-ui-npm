@@ -28,8 +28,8 @@ var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
 var components_1 = require("../../../components");
-var components_2 = require("../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
+var react_3 = require("@nextui-org/react");
 function ShopifyCartButton(props) {
     var _a = (props || {}).icon, icon = _a === void 0 ? 'ri-shopping-cart-2-line' : _a;
     var _b = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext), cart = _b.cart, toggleCart = _b.toggleCart;
@@ -38,9 +38,8 @@ function ShopifyCartButton(props) {
         setMenuOpen(false);
         toggleCart();
     };
-    return (react_1.default.createElement("div", { className: "relative" },
-        react_1.default.createElement(components_2.IconButton, { onClick: handleCartClick },
-            react_1.default.createElement(components_1.RemixIcon, { name: icon, size: "lg" })),
-        (cart === null || cart === void 0 ? void 0 : cart.totalQuantity) > 0 && (react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, cart === null || cart === void 0 ? void 0 : cart.totalQuantity))));
+    return (react_1.default.createElement(react_3.Badge, { content: cart === null || cart === void 0 ? void 0 : cart.totalQuantity },
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, onPress: handleCartClick },
+            react_1.default.createElement(components_1.RemixIcon, { name: icon, size: "lg" }))));
 }
 exports.default = ShopifyCartButton;

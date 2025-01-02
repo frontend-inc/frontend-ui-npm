@@ -50,6 +50,8 @@ var Input = function (props) {
         priceRange: index_1.PriceRangeInput,
         radio: index_1.RadioInput,
         search: index_1.SearchInput,
+        string: index_1.TextInput,
+        otp: index_1.OtpInput,
         select: index_1.SelectInput,
         shopify_products: index_1.ShopifyProductsInput,
         switch: index_1.SwitchInput,

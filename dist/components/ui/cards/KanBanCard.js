@@ -16,12 +16,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var frontend_shadcn_1 = require("frontend-shadcn");
-var components_2 = require("../../../components");
+var components_1 = require("../../../components");
 var sortable_1 = require("@dnd-kit/sortable");
 var utilities_1 = require("@dnd-kit/utilities");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_3 = require("@nextui-org/react");
 var KanBanCard = function (props) {
     var id = props.id, loading = props.loading, label = props.label, primary = props.primary, secondary = props.secondary, secondaryAction = props.secondaryAction, handleClick = props.handleClick, image = props.image, enableDragging = props.enableDragging, _a = props.height, height = _a === void 0 ? 240 : _a, _b = props.slots, slots = _b === void 0 ? {
         item: {},
@@ -34,14 +34,14 @@ var KanBanCard = function (props) {
         transform: utilities_1.CSS.Transform.toString(transform),
         transition: transition,
     };
-    return (react_1.default.createElement(frontend_shadcn_1.Card, __assign({ ref: setNodeRef, style: style }, attributes, listeners, { className: (0, frontend_shadcn_2.cn)('w-[260px] my-1 cursor-pointer overflow-hidden transition-shadow duration-300 hover:shadow-md', loading && 'opacity-50', enableDragging && 'shadow-md rotate-3') }, slots.item),
+    return (react_1.default.createElement(frontend_shadcn_1.Card, __assign({ ref: setNodeRef, style: style }, attributes, listeners, { className: (0, react_3.cn)('w-[260px] my-1 cursor-pointer overflow-hidden transition-shadow duration-300 hover:shadow-md', loading && 'opacity-50', enableDragging && 'shadow-md rotate-3') }, slots.item),
         image && (react_1.default.createElement("div", { className: "overflow-hidden rounded-t-lg" },
-            react_1.default.createElement(components_2.Image, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick, className: "w-full object-cover" }, slots.image)))),
+            react_1.default.createElement(components_1.Image, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick, className: "w-full object-cover" }, slots.image)))),
         react_1.default.createElement(frontend_shadcn_1.CardContent, { className: "p-4" },
             react_1.default.createElement("h3", { className: "text-lg font-semibold text-primary mb-1" }, primary),
-            secondary && (react_1.default.createElement("p", { className: "text-sm text-muted-foreground" }, secondary))),
+            secondary && (react_1.default.createElement("p", { className: "text-sm text-foreground/70" }, secondary))),
         react_1.default.createElement(frontend_shadcn_1.CardFooter, { className: "flex justify-between p-4" },
-            react_1.default.createElement(components_1.Button, { onClick: handleClick, size: "sm", variant: "secondary", className: "uppercase" }, "Details"),
+            react_1.default.createElement(react_2.Button, { onPress: handleClick, size: "sm", variant: "ghost" }, "Details"),
             secondaryAction && (react_1.default.createElement("div", { className: "flex items-end" }, secondaryAction)))));
 };
 exports.default = KanBanCard;

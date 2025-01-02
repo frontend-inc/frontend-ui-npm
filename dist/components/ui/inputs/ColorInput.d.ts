@@ -14,5 +14,5 @@ type ColorInputProps = {
     disableTone?: boolean;
     info?: string;
 };
-export default function ColorInput({ label, name, value, placeholder, disableTone, handleChange, info, }: ColorInputProps): React.JSX.Element;
+export default function ColorInput(props: ColorInputProps): React.JSX.Element;
 export {};

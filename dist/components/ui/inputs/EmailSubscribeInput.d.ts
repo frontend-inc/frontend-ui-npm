@@ -4,7 +4,7 @@ export type EmailSubscribeInputProps = TextInputProps & {
     loading?: boolean;
     buttonText?: string;
     handleSubmit?: () => void;
-    size?: 'sm' | 'default' | 'lg';
+    size?: 'sm' | 'md' | 'lg';
 };
 declare const EmailSubscribeInput: React.FC<EmailSubscribeInputProps>;
 export default EmailSubscribeInput;

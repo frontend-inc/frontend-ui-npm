@@ -1,46 +1,51 @@
-'use client';
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(require("react"));
-var image_1 = __importDefault(require("next/image"));
+var react_1 = __importDefault(require("react"));
+var react_2 = require("@nextui-org/react");
+var react_3 = require("@nextui-org/react");
 var frontend_shadcn_1 = require("frontend-shadcn");
-var frontend_shadcn_2 = require("frontend-shadcn");
-var frontend_shadcn_3 = require("frontend-shadcn");
-var helpers_1 = require("../../../helpers");
-function ResponsiveImage(props) {
-    var src = props.src, alt = props.alt, _a = props.width, width = _a === void 0 ? 1600 : _a, _b = props.height, height = _b === void 0 ? 1600 : _b, _c = props.objectFit, objectFit = _c === void 0 ? 'cover' : _c, _d = props.aspectRatio, aspectRatio = _d === void 0 ? 1.0 : _d, _e = props.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = props.enableGradient, enableGradient = _f === void 0 ? false : _f, _g = props.disableBorderRadius, disableBorderRadius = _g === void 0 ? false : _g, _h = props.disableZoom, disableZoom = _h === void 0 ? false : _h, handleClick = props.handleClick, className = props.className, label = props.label;
-    var _j = (0, react_1.useState)(false), isHovered = _j[0], setIsHovered = _j[1];
-    return (react_1.default.createElement(frontend_shadcn_1.AspectRatio, { ratio: aspectRatio },
-        react_1.default.createElement("figure", { className: (0, frontend_shadcn_3.cn)('w-full h-full', 'relative overflow-hidden', !disableBorderRadius && 'rounded-lg', className), onMouseEnter: function () { return setIsHovered(true); }, onMouseLeave: function () { return setIsHovered(false); }, onClick: handleClick ? handleClick : undefined },
-            src ? (react_1.default.createElement(image_1.default, { src: src, alt: alt ? alt : 'image', width: width, height: height, className: (0, frontend_shadcn_3.cn)(objectFit == 'cover' ? 'object-cover' : 'object-contain', 'w-full h-full transition-transform duration-300 ease-in-out', !disableZoom && isHovered && 'hover:scale-105') })) : (react_1.default.createElement("div", { className: (0, frontend_shadcn_3.cn)(!disableBorderRadius && 'rounded-lg', 'h-full w-full bg-gradient-to-br from-black to-gray-600') })),
-            enableOverlay && (react_1.default.createElement("div", { onMouseEnter: function () { return setIsHovered(true); }, onMouseLeave: function () { return setIsHovered(false); }, className: "absolute inset-0 bg-black bg-opacity-60" })),
-            enableGradient && (react_1.default.createElement("div", { onMouseEnter: function () { return setIsHovered(true); }, onMouseLeave: function () { return setIsHovered(false); }, className: "absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60" })),
-            label && (react_1.default.createElement(frontend_shadcn_2.Badge, { variant: "secondary", className: "absolute font-medium px-2 py-1 uppercase text-xs tracking-wider top-3 left-3 bg-opacity-20 backdrop-blur-md text-foreground border-none" }, (0, helpers_1.truncate)(label, 14))))));
-}
-exports.default = ResponsiveImage;
+var NoImage_1 = __importDefault(require("./NoImage"));
+var ImageCard = function (props) {
+    var _a = props || {}, src = _a.src, alt = _a.alt, label = _a.label, handleClick = _a.handleClick, isBlurred = _a.isBlurred, _b = _a.disableZoom, disableZoom = _b === void 0 ? false : _b, _c = _a.disableBorderRadius, disableBorderRadius = _c === void 0 ? false : _c, height = _a.height, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, className = _a.className;
+    return (react_1.default.createElement(react_2.Card, { isFooterBlurred: true, isPressable: handleClick ? true : false, onPress: handleClick, className: (0, react_3.cn)(disableBorderRadius ? 'rounded-none' : 'rounded-large', 'relative w-full h-full') },
+        react_1.default.createElement(react_2.Image, { removeWrapper: true, height: height, radius: 'none', isBlurred: isBlurred, isZoomed: !disableZoom, src: src, alt: alt || label, className: (0, react_3.cn)("w-full h-full object-cover", className) }),
+        enableGradient && react_1.default.createElement("div", { className: "z-20 absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent bg-opacity-50" }),
+        enableOverlay && react_1.default.createElement("div", { className: "z-20 absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" }),
+        label && (react_1.default.createElement(react_2.CardFooter, { className: "z-20 w-full overflow-hidden py-1 absolute left-0 bottom-0 text-white text-sm" },
+            react_1.default.createElement("div", { className: "truncate p-4" }, label)))));
+};
+var NextImage = function (props) {
+    var _a = props || {}, src = _a.src, height = _a.height, aspectRatio = _a.aspectRatio, handleClick = _a.handleClick, disableBorderRadius = _a.disableBorderRadius, rest = __rest(_a, ["src", "height", "aspectRatio", "handleClick", "disableBorderRadius"]);
+    if (!src)
+        return (react_1.default.createElement(NoImage_1.default, { disableBorderRadius: disableBorderRadius, aspectRatio: aspectRatio, height: height, onClick: handleClick }));
+    return (aspectRatio ?
+        react_1.default.createElement(frontend_shadcn_1.AspectRatio, { ratio: aspectRatio },
+            react_1.default.createElement(ImageCard, __assign({ src: src, handleClick: handleClick, disableBorderRadius: disableBorderRadius }, rest))) :
+        react_1.default.createElement(ImageCard, __assign({ src: src, height: height, handleClick: handleClick, disableBorderRadius: disableBorderRadius }, rest)));
+};
+exports.default = NextImage;

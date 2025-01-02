@@ -6,7 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CircularProgress = void 0;
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var lucide_react_1 = require("lucide-react");
 var sizeClasses = {
     sm: 'w-4 h-4',
@@ -27,12 +27,12 @@ var CircularProgress = function (_a) {
     var sizeClass = sizeClasses[size];
     var colorClass = colorClasses[color];
     if (variant === 'indeterminate') {
-        return (react_1.default.createElement(lucide_react_1.Loader2, { className: (0, frontend_shadcn_1.cn)('animate-spin', sizeClass, colorClass, className) }));
+        return (react_1.default.createElement(lucide_react_1.Loader2, { className: (0, react_2.cn)('animate-spin', sizeClass, colorClass, className) }));
     }
     var circumference = 2 * Math.PI * 16; // Assuming a default SVG size of 32x32 with a radius of 16
     var strokeDasharray = circumference;
     var strokeDashoffset = circumference - (value / 100) * circumference;
-    return (react_1.default.createElement("svg", { className: (0, frontend_shadcn_1.cn)(sizeClass, colorClass, className), viewBox: "0 0 32 32" },
+    return (react_1.default.createElement("svg", { className: (0, react_2.cn)(sizeClass, colorClass, className), viewBox: "0 0 32 32" },
         react_1.default.createElement("circle", { className: "opacity-25", cx: "16", cy: "16", r: "14", fill: "none", stroke: "currentColor", strokeWidth: thickness }),
         react_1.default.createElement("circle", { className: "opacity-75", cx: "16", cy: "16", r: "14", fill: "none", stroke: "currentColor", strokeWidth: thickness, strokeDasharray: strokeDasharray, strokeDashoffset: strokeDashoffset, transform: "rotate(-90 16 16)" })));
 };

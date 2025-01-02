@@ -5,19 +5,29 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
+var react_3 = require("@nextui-org/react");
 var components_1 = require("../../components");
-var components_2 = require("../../components");
 var MenuButton = function (props) {
-    var children = props.children, handleEdit = props.handleEdit, handleDelete = props.handleDelete;
-    return (react_1.default.createElement(frontend_shadcn_1.Popover, null,
-        react_1.default.createElement(frontend_shadcn_1.PopoverTrigger, { asChild: true },
-            react_1.default.createElement(components_1.Button, { variant: "ghost", className: "h-8 w-8 p-0" },
-                react_1.default.createElement("span", { className: "sr-only" }, "Open menu"),
-                react_1.default.createElement(components_2.RemixIcon, { name: "ri-more-2-line", className: "text-foreground" }))),
-        react_1.default.createElement(frontend_shadcn_1.PopoverContent, { className: "p-0 bg-background w-[100px]" },
-            children,
-            handleEdit && (react_1.default.createElement("button", { className: "flex w-full items-center px-2 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground focus:outline-none", onClick: handleEdit }, "Edit")),
-            handleDelete && (react_1.default.createElement("button", { className: "flex w-full items-center px-2 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground focus:outline-none", onClick: handleDelete }, "Delete")))));
+    var handleEdit = props.handleEdit, handleDelete = props.handleDelete;
+    var handleAction = function (action) {
+        switch (action) {
+            case 'edit':
+                //@ts-ignore
+                handleEdit();
+                break;
+            case 'delete':
+                //@ts-ignore
+                handleDelete();
+                break;
+        }
+    };
+    return (react_1.default.createElement(react_2.Dropdown, null,
+        react_1.default.createElement(react_2.DropdownTrigger, null,
+            react_1.default.createElement(react_3.Button, { isIconOnly: true, "aria-label": 'More options', variant: "light", className: "min-w-8 w-8 h-8" },
+                react_1.default.createElement(components_1.RemixIcon, { name: "ri-more-2-line" }))),
+        react_1.default.createElement(react_2.DropdownMenu, { onAction: handleAction },
+            handleEdit ? (react_1.default.createElement(react_2.DropdownItem, { key: 'edit' }, "Edit")) : (null),
+            handleDelete ? (react_1.default.createElement(react_2.DropdownItem, { key: 'delete' }, "Delete")) : (null))));
 };
 exports.default = MenuButton;

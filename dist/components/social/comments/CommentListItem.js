@@ -65,8 +65,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var components_2 = require("../../../components");
-var components_3 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var moment_1 = __importDefault(require("moment"));
 var CommentForm_1 = __importDefault(require("./CommentForm"));
@@ -109,19 +109,19 @@ var CommentListItem = function (props) {
     return (react_1.default.createElement("div", { className: "py-2" },
         react_1.default.createElement("div", { className: "flex items-start space-x-4" },
             react_1.default.createElement("div", { className: "mt-1" },
-                react_1.default.createElement(components_3.UserAvatar, { user: parentComment === null || parentComment === void 0 ? void 0 : parentComment.user })),
+                react_1.default.createElement(components_2.UserAvatar, { user: parentComment === null || parentComment === void 0 ? void 0 : parentComment.user })),
             react_1.default.createElement("div", { className: "flex-grow" },
                 react_1.default.createElement("div", { className: "space-y-1" },
-                    react_1.default.createElement(components_1.Typography, { variant: "body2", className: "text-muted-foreground" }, "@".concat((_a = parentComment === null || parentComment === void 0 ? void 0 : parentComment.user) === null || _a === void 0 ? void 0 : _a.username),
+                    react_1.default.createElement(components_1.Typography, { variant: "body2", className: "text-foreground/70" }, "@".concat((_a = parentComment === null || parentComment === void 0 ? void 0 : parentComment.user) === null || _a === void 0 ? void 0 : _a.username),
                         " -",
                         ' ',
                         (0, moment_1.default)(parentComment === null || parentComment === void 0 ? void 0 : parentComment.created_at).fromNow()),
                     react_1.default.createElement(components_1.Typography, { variant: "body1", className: "mb-2 whitespace-pre-wrap" }, parentComment === null || parentComment === void 0 ? void 0 : parentComment.body)),
-                react_1.default.createElement(components_2.Button, { variant: "link", onClick: handleReply, className: "text-muted-foreground hover:text-foreground" }, "reply"))),
+                react_1.default.createElement(react_2.Button, { variant: "light", onPress: handleReply }, "reply"))),
         react_1.default.createElement(components_1.Collapse, { in: openComment },
             react_1.default.createElement(CommentForm_1.default, { loading: delayedLoading, errors: errors, comment: comment, handleChange: handleChange, handleSubmit: handleSubmit })),
         ((_b = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _b === void 0 ? void 0 : _b.length) > 0 && (react_1.default.createElement(react_1.default.Fragment, null, !showReplies && (react_1.default.createElement("div", null,
-            react_1.default.createElement(components_2.Button, { variant: "link", className: "text-muted-foreground hover:text-foreground", onClick: handleShowReplies },
+            react_1.default.createElement(react_2.Button, { variant: "light", onPress: handleShowReplies },
                 "show ", (_c = parentComment === null || parentComment === void 0 ? void 0 : parentComment.replies) === null || _c === void 0 ? void 0 :
                 _c.length,
                 ' ',

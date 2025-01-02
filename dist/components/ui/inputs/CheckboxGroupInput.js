@@ -16,7 +16,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var components_1 = require("../../../components");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function CheckboxGroupInput(_a) {
     var errors = _a.errors, label = _a.label, name = _a.name, _b = _a.value, values = _b === void 0 ? [] : _b, options = _a.options, handleChange = _a.handleChange, info = _a.info;
     var handleCheckboxChange = function (checked, value) {
@@ -36,7 +36,7 @@ function CheckboxGroupInput(_a) {
             react_1.default.createElement(frontend_shadcn_1.Checkbox, { id: "".concat(name, "-").concat(option.value), checked: values.includes(String(option.value)), onCheckedChange: function (checked) {
                     return handleCheckboxChange(checked, String(option.value));
                 } }),
-            react_1.default.createElement("label", { htmlFor: "".concat(name, "-").concat(option.value), className: (0, frontend_shadcn_2.cn)('text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', errors && errors[name] ? 'text-red-500' : 'text-gray-500') }, option.label))); })),
+            react_1.default.createElement("label", { htmlFor: "".concat(name, "-").concat(option.value), className: (0, react_2.cn)('text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', errors && errors[name] ? 'text-red-500' : 'text-gray-500') }, option.label))); })),
         errors && errors[name] && (react_1.default.createElement("p", { className: "mt-2 text-sm text-red-500" }, errors[name]))));
 }
 exports.default = CheckboxGroupInput;

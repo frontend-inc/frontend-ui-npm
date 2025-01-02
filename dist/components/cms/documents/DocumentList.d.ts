@@ -53,13 +53,15 @@ export type DocumentListProps = {
         empty?: any;
         item?: any;
     };
-    circular?: boolean;
     disableImage?: boolean;
     url: string;
     query?: any;
     resource: any;
     filterSimilar?: boolean;
     filterGeo?: boolean;
+    emptyIcon?: string;
+    emptyTitle?: string;
+    emptyDescription?: string;
 };
 declare const DocumentList: React.FC<DocumentListProps>;
 export default DocumentList;

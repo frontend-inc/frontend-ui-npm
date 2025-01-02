@@ -8,10 +8,10 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var TableList = function (props) {
     var title = props.title, toolbar = props.toolbar, loading = props.loading, headers = props.headers, resources = props.resources, disableBorderRadius = props.disableBorderRadius, _a = props.enableSelect, enableSelect = _a === void 0 ? false : _a, _b = props.enableEdit, enableEdit = _b === void 0 ? false : _b, _c = props.enableDelete, enableDelete = _c === void 0 ? false : _c, _d = props.enableShow, enableShow = _d === void 0 ? false : _d, handleClick = props.handleClick, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleShow = props.handleShow, query = props.query, selected = props.selected, selectedIds = props.selectedIds, handleSelect = props.handleSelect, handleSelectAll = props.handleSelectAll, handleSort = props.handleSort, handlePaginate = props.handlePaginate, page = props.page, perPage = props.perPage, numPages = props.numPages, totalCount = props.totalCount, _e = props.emptyIcon, emptyIcon = _e === void 0 ? 'Search' : _e, _f = props.emptyTitle, emptyTitle = _f === void 0 ? 'No results found' : _f, _g = props.emptyDescription, emptyDescription = _g === void 0 ? 'Try adjusting your search or filters' : _g;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)('w-full', !disableBorderRadius && 'rounded-lg overflow-hidden') },
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)('w-full', !disableBorderRadius && 'rounded-lg overflow-hidden') },
         (title || toolbar) && (react_1.default.createElement("div", { className: "p-2 min-h-[40px] w-full" },
             title && react_1.default.createElement(components_1.Typography, { variant: "subtitle1" }, title),
             toolbar && toolbar)),

@@ -26,7 +26,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function ShareButton(props) {
     var url = props.url, _a = props.variant, variant = _a === void 0 ? 'rounded' : _a, _b = props.size, size = _b === void 0 ? 'small' : _b;
     var _c = (0, react_1.useState)(false), open = _c[0], setOpen = _c[1];
@@ -34,7 +34,7 @@ function ShareButton(props) {
         setOpen(true);
     };
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', 'text-foreground', size === 'large' && 'border border-divider') },
+        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, react_2.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', 'text-foreground', size === 'large' && 'border border-divider') },
             react_1.default.createElement(components_1.RemixIcon, { name: "ri-share-2-fill" })),
         react_1.default.createElement(components_1.ShareModal, { open: open, handleClose: function () { return setOpen(false); }, url: url })));
 }

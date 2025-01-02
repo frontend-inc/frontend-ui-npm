@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ShowVideoModal = exports.ShowImageModal = exports.DocumentHeader = exports.DocumentDelete = exports.DocumentShow = exports.DocumentListItems = exports.DocumentListItem = exports.DocumentList = exports.DocumentEmpty = exports.DocumentDetails = exports.DocumentCarouselListItems = exports.DocumentCarouselList = exports.VideoList = exports.SimilarList = exports.ImageList = exports.PlacesHeader = exports.PlacesList = exports.FavoritesList = exports.DataTableListItems = exports.DataTableList = exports.BlogListItems = exports.BlogList = void 0;
+exports.ShowVideoModal = exports.ShowImageModal = exports.DocumentHeader = exports.DocumentDelete = exports.DocumentShow = exports.DocumentListItems = exports.DocumentListItem = exports.DocumentList = exports.DocumentEmpty = exports.DocumentDetails = exports.DocumentCarouselListItems = exports.DocumentCarouselList = exports.VideoList = exports.SimilarList = exports.ImageList = exports.PlacesList = exports.FavoritesList = exports.DataTableListItems = exports.DataTableList = exports.BlogListItems = exports.BlogList = void 0;
 var BlogList_1 = require("./BlogList");
 Object.defineProperty(exports, "BlogList", { enumerable: true, get: function () { return __importDefault(BlogList_1).default; } });
 var BlogListItems_1 = require("./BlogListItems");
@@ -16,8 +16,6 @@ var FavoritesList_1 = require("./FavoritesList");
 Object.defineProperty(exports, "FavoritesList", { enumerable: true, get: function () { return __importDefault(FavoritesList_1).default; } });
 var PlacesList_1 = require("./PlacesList");
 Object.defineProperty(exports, "PlacesList", { enumerable: true, get: function () { return __importDefault(PlacesList_1).default; } });
-var PlacesHeader_1 = require("./PlacesHeader");
-Object.defineProperty(exports, "PlacesHeader", { enumerable: true, get: function () { return __importDefault(PlacesHeader_1).default; } });
 var ImageList_1 = require("./ImageList");
 Object.defineProperty(exports, "ImageList", { enumerable: true, get: function () { return __importDefault(ImageList_1).default; } });
 var SimilarList_1 = require("./SimilarList");

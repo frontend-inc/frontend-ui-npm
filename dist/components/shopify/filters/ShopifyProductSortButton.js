@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var __1 = require("../..");
+var react_2 = require("@nextui-org/react");
 var components_1 = require("../../../components");
 var ShopifySortList_1 = __importDefault(require("./ShopifySortList"));
 var frontend_shopify_1 = require("frontend-shopify");
@@ -44,11 +44,8 @@ var ShopifyProductSortButton = function (props) {
     };
     var currentSortLabel = (_a = frontend_shopify_1.PRODUCT_SORT_OPTIONS.find(function (option) { return option.value === sortKey; })) === null || _a === void 0 ? void 0 : _a.label;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(__1.Button, { variant: "secondary", className: "w-full", onClick: handleOpen },
-            currentSortLabel,
-            react_1.default.createElement(lucide_react_1.ArrowUpDown, { className: "ml-2 h-4 w-4" })),
+        react_1.default.createElement(react_2.Button, { variant: "ghost", fullWidth: true, onPress: handleOpen, endContent: react_1.default.createElement(lucide_react_1.ArrowUpDown, { className: "h-4 w-4" }) }, currentSortLabel),
         react_1.default.createElement(components_1.Sheet, { title: "Sort by", open: open, handleClose: function () { return setOpen(false); } },
-            react_1.default.createElement("div", { className: "w-full py-2" },
-                react_1.default.createElement(ShopifySortList_1.default, { enableIcons: true, value: sortKey, reverse: reverse, options: frontend_shopify_1.PRODUCT_SORT_OPTIONS, handleClick: handleSortClick })))));
+            react_1.default.createElement(ShopifySortList_1.default, { enableIcons: true, value: sortKey, reverse: reverse, options: frontend_shopify_1.PRODUCT_SORT_OPTIONS, handleClick: handleSortClick }))));
 };
 exports.default = ShopifyProductSortButton;

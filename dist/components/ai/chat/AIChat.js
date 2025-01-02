@@ -28,14 +28,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var AIChatForm_1 = __importDefault(require("./AIChatForm"));
 var AIChatMessages_1 = __importDefault(require("./AIChatMessages"));
-var react_2 = require("ai/react");
+var react_3 = require("ai/react");
 var AIChat = function (props) {
     var avatar = props.avatar, _a = props.id, id = _a === void 0 ? 'openai-chat' : _a, _b = props.label, label = _b === void 0 ? 'Start a conversation' : _b, _c = props.prompt, prompt = _c === void 0 ? '' : _c, _d = props.buttonText, buttonText = _d === void 0 ? 'Send Message' : _d;
     var _e = (0, react_1.useState)(false), loading = _e[0], setLoading = _e[1];
-    var _f = (0, react_2.useChat)({
+    var _f = (0, react_3.useChat)({
         id: id,
         onFinish: function (resp) { return setLoading(false); },
     }), messages = _f.messages, setMessages = _f.setMessages, handleSubmit = _f.handleSubmit, input = _f.input, handleInputChange = _f.handleInputChange;
@@ -46,6 +46,6 @@ var AIChat = function (props) {
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
         react_1.default.createElement(AIChatMessages_1.default, { avatar: avatar, messages: messages }),
         react_1.default.createElement(AIChatForm_1.default, { label: label, prompt: prompt, setMessages: setMessages, input: input, handleInputChange: handleInputChange }),
-        react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleChatSubmit, loading: loading }, buttonText)));
+        react_1.default.createElement(react_2.Button, { fullWidth: true, color: "primary", variant: "solid", onPress: handleChatSubmit, isLoading: loading }, buttonText)));
 };
 exports.default = AIChat;

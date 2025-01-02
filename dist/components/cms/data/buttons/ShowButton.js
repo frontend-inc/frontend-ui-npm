@@ -26,7 +26,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var __1 = require("../../..");
+var react_2 = require("@nextui-org/react");
 var frontend_js_1 = require("frontend-js");
 var ShowButton = function (props) {
     var _a = (props || {}).children, children = _a === void 0 ? 'View' : _a;
@@ -41,6 +41,6 @@ var ShowButton = function (props) {
         setOpenDelete(false);
         setOpenCreate(false);
     };
-    return (react_1.default.createElement(__1.Button, __assign({ onClick: handleClick }, rest), children));
+    return (react_1.default.createElement(react_2.Button, __assign({ onPress: handleClick }, rest), children));
 };
 exports.default = ShowButton;

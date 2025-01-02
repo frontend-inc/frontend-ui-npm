@@ -5,8 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var components_1 = require("../../components");
+var react_2 = require("@nextui-org/react");
 var Label = function (props) {
     var children = props.children, textAlign = props.textAlign, className = props.className;
     var textAlignClasses = {
@@ -16,6 +16,6 @@ var Label = function (props) {
     };
     if (!children)
         return null;
-    return (react_1.default.createElement(frontend_shadcn_1.Badge, { variant: 'outline', className: (0, frontend_shadcn_2.cn)('px-3 py-1 text-xs tracking-wider', textAlign && textAlignClasses[textAlign], className) }, children));
+    return (react_1.default.createElement(components_1.Typography, { variant: 'caption', className: (0, react_2.cn)('px-3 py-1 text-xs tracking-wider text-foreground', textAlign && textAlignClasses[textAlign], className) }, children));
 };
 exports.default = Label;

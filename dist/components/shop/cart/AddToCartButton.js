@@ -41,10 +41,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var hooks_1 = require("../../../hooks");
 var AddToCartButton = function (props) {
-    var productId = props.productId, _a = props.buttonText, buttonText = _a === void 0 ? 'Add to Cart' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, fullWidth = props.fullWidth, availableForSale = props.availableForSale, price = props.price;
+    var productId = props.productId, _a = props.buttonText, buttonText = _a === void 0 ? 'Add to Cart' : _a, _b = props.size, size = _b === void 0 ? 'md' : _b, fullWidth = props.fullWidth, availableForSale = props.availableForSale;
     var _c = (0, hooks_1.useCart)(), loading = _c.loading, setCartOpen = _c.setCartOpen, addToCart = _c.addToCart;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -57,6 +57,6 @@ var AddToCartButton = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(components_1.Button, { fullWidth: fullWidth, loading: loading, onClick: handleClick, disabled: !availableForSale, size: size, className: 'w-full min-w-[160px]' }, buttonText));
+    return (react_1.default.createElement(react_2.Button, { variant: "solid", color: "primary", fullWidth: fullWidth, isLoading: loading, onPress: handleClick, disabled: !availableForSale, size: size, className: 'w-full min-w-[160px]' }, buttonText));
 };
 exports.default = AddToCartButton;

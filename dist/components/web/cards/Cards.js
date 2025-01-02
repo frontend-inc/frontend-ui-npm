@@ -6,11 +6,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
+var react_2 = require("@nextui-org/react");
 var hooks_1 = require("../../../hooks");
 var components_1 = require("../../../components");
 var CardItems = function (props) {
     var _a = props || {}, item = _a.item, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, handleClick = _a.handleClick;
-    return (react_1.default.createElement(__1.Card, { label: item === null || item === void 0 ? void 0 : item.label, image: item === null || item === void 0 ? void 0 : item.image, title: item === null || item === void 0 ? void 0 : item.title, subtitle: item === null || item === void 0 ? void 0 : item.subtitle, actions: (item === null || item === void 0 ? void 0 : item.buttonText) && (react_1.default.createElement(__1.Button, { fullWidth: true, onClick: function () { return handleClick(item === null || item === void 0 ? void 0 : item.path); } }, item === null || item === void 0 ? void 0 : item.buttonText)), handleClick: function () { return handleClick(item === null || item === void 0 ? void 0 : item.path); }, enableGradient: enableGradient, enableOverlay: enableOverlay }));
+    return (react_1.default.createElement(__1.Card, { height: 240, label: item === null || item === void 0 ? void 0 : item.label, image: item === null || item === void 0 ? void 0 : item.image, title: item === null || item === void 0 ? void 0 : item.title, subtitle: item === null || item === void 0 ? void 0 : item.subtitle, actions: (item === null || item === void 0 ? void 0 : item.buttonText) && (react_1.default.createElement(react_2.Button, { fullWidth: true, onPress: function () { return handleClick(item === null || item === void 0 ? void 0 : item.path); } }, item === null || item === void 0 ? void 0 : item.buttonText)), handleClick: function () { return handleClick(item === null || item === void 0 ? void 0 : item.path); }, enableGradient: enableGradient, enableOverlay: enableOverlay }));
 };
 var Cards = function (props) {
     var _a = props || {}, items = _a.items, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, _b = _a.layout, layout = _b === void 0 ? 'grid' : _b;

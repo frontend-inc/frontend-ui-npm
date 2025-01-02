@@ -5,5 +5,6 @@ declare const useTheme: () => {
     headerFont: any;
     bodyFont: any;
     borderRadius: any;
+    themeClass: string;
 };
 export default useTheme;

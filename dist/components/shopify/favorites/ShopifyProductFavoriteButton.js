@@ -62,11 +62,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var lucide_react_1 = require("lucide-react");
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 var helpers_1 = require("../../../helpers");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_3 = require("@nextui-org/react");
 var ShopifyProductFavoriteButton = function (_a) {
     var product = _a.product, _b = _a.variant, variant = _b === void 0 ? 'rounded' : _b, size = _a.size;
     var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
@@ -91,7 +91,7 @@ var ShopifyProductFavoriteButton = function (_a) {
     (0, react_1.useEffect)(function () {
         setIsFavorite((0, helpers_1.isShopifyFavorite)(currentUser, product.handle));
     }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id, product === null || product === void 0 ? void 0 : product.handle]);
-    return (react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)('min-w-[40px]', variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider', 'transition-transform duration-200', isFavorite && 'transform scale-110') },
-        react_1.default.createElement(lucide_react_1.Heart, { className: (0, frontend_shadcn_1.cn)('w-5 h-5 text-foreground', isFavorite ? 'fill-primary' : 'stroke-current') })));
+    return (react_1.default.createElement(react_2.Button, { isIconOnly: true, onPress: handleClick, size: size },
+        react_1.default.createElement(lucide_react_1.Heart, { className: (0, react_3.cn)('w-5 h-5 text-foreground', isFavorite ? 'fill-primary' : 'stroke-current') })));
 };
 exports.default = ShopifyProductFavoriteButton;

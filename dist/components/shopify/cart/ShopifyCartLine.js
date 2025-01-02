@@ -59,27 +59,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
-var frontend_shopify_2 = require("frontend-shopify");
 var addons_1 = require("../../../hooks/addons");
 var components_1 = require("../../../components");
-var image_1 = __importDefault(require("next/image"));
+var react_2 = require("@nextui-org/react");
 var components_2 = require("../../../components");
-var frontend_shopify_3 = require("frontend-shopify");
+var frontend_shopify_2 = require("frontend-shopify");
 var navigation_1 = require("next/navigation");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_3 = require("@nextui-org/react");
 var ShopifyCartQuantityInput = function (props) {
     var quantity = props.quantity, handleAddQuantity = props.handleAddQuantity, handleRemoveQuantity = props.handleRemoveQuantity;
-    return (react_1.default.createElement("div", { className: "inline-flex rounded-md shadow-sm", role: "group" },
-        react_1.default.createElement(components_1.Button, { variant: "secondary", size: "sm", className: "px-2 rounded-r-none", onClick: handleRemoveQuantity },
+    return (react_1.default.createElement(react_2.ButtonGroup, { variant: "light", className: "border-1 border-divider rounded-xl", size: 'sm' },
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, className: "px-2 rounded-r-none", onPress: handleRemoveQuantity },
             react_1.default.createElement(components_1.RemixIcon, { name: "ri-subtract-line" })),
-        react_1.default.createElement(components_1.Button, { variant: "secondary", size: "sm", className: "px-2 rounded-none" }, quantity),
-        react_1.default.createElement(components_1.Button, { variant: "secondary", size: "sm", className: "px-2 rounded-l-none", onClick: handleAddQuantity },
+        react_1.default.createElement(react_2.Button, { isIconOnly: true }, quantity),
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, onPress: handleAddQuantity },
             react_1.default.createElement(components_1.RemixIcon, { name: "ri-add-line" }))));
 };
 var ShopifyCartLine = function (_a) {
@@ -87,14 +83,13 @@ var ShopifyCartLine = function (_a) {
     var line = _a.line;
     var router = (0, navigation_1.useRouter)();
     var trackRemoveFromCart = (0, addons_1.useSegment)().trackRemoveFromCart;
-    var _k = (0, frontend_shopify_2.useCart)(), loading = _k.loading, cartLineRemove = _k.cartLineRemove, cartLineUpdate = _k.cartLineUpdate;
-    var _l = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext), shopUrl = _l.shopUrl, setCartOpen = _l.setCartOpen;
-    var _m = line || {}, id = _m.id, quantity = _m.quantity, merchandise = _m.merchandise, sellingPlanAllocation = _m.sellingPlanAllocation;
-    var _o = (0, react_1.useState)(null), price = _o[0], setPrice = _o[1];
-    var _p = (0, react_1.useState)(null), compareAtPrice = _p[0], setCompareAtPrice = _p[1];
-    var _q = merchandise || {}, product = _q.product, amount = _q.price.amount, 
+    var _k = (0, frontend_shopify_1.useCart)(), loading = _k.loading, cartLineRemove = _k.cartLineRemove, cartLineUpdate = _k.cartLineUpdate;
+    var _l = line || {}, id = _l.id, quantity = _l.quantity, merchandise = _l.merchandise, sellingPlanAllocation = _l.sellingPlanAllocation;
+    var _m = (0, react_1.useState)(null), price = _m[0], setPrice = _m[1];
+    var _o = (0, react_1.useState)(null), compareAtPrice = _o[0], setCompareAtPrice = _o[1];
+    var _p = merchandise || {}, product = _p.product, amount = _p.price.amount, 
     // @ts-ignore
-    compareAtAmount = _q.compareAtPrice, url = _q.image.url;
+    compareAtAmount = _p.compareAtPrice, url = _p.image.url;
     var handleUpdateQuantity = function (newQuantity) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -108,20 +103,18 @@ var ShopifyCartLine = function (_a) {
     var handleAddQuantity = function () {
         handleUpdateQuantity(quantity + 1);
     };
-    var handleRemoveQuantity = function (ev) {
+    var handleRemoveQuantity = function () {
         if (quantity === 1) {
-            handleRemoveLineItem(ev);
+            handleRemoveLineItem();
         }
         else {
             handleUpdateQuantity(quantity - 1);
         }
     };
-    var handleRemoveLineItem = function (event) { return __awaiter(void 0, void 0, void 0, function () {
+    var handleRemoveLineItem = function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0:
-                    event.stopPropagation();
-                    return [4 /*yield*/, cartLineRemove(id)];
+                case 0: return [4 /*yield*/, cartLineRemove(id)];
                 case 1:
                     _a.sent();
                     trackRemoveFromCart({
@@ -133,10 +126,6 @@ var ShopifyCartLine = function (_a) {
             }
         });
     }); };
-    var handleClick = function () {
-        router.push("".concat(shopUrl, "/products/").concat(product === null || product === void 0 ? void 0 : product.handle));
-        setCartOpen(false);
-    };
     (0, react_1.useEffect)(function () {
         var _a;
         // @ts-ignore
@@ -152,17 +141,17 @@ var ShopifyCartLine = function (_a) {
             setCompareAtPrice(compareAtAmount === null || compareAtAmount === void 0 ? void 0 : compareAtAmount.amount);
         }
     }, [price, sellingPlanAllocation]);
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex items-start space-x-4 py-4', loading && 'opacity-30') },
+    return (react_1.default.createElement("div", { className: (0, react_3.cn)('flex items-start space-x-4 py-4', loading && 'opacity-30') },
         react_1.default.createElement("div", { className: "relative" },
-            react_1.default.createElement(image_1.default, { alt: ((_c = (_b = line === null || line === void 0 ? void 0 : line.merchandise) === null || _b === void 0 ? void 0 : _b.product) === null || _c === void 0 ? void 0 : _c.title) || '', src: url, height: 96, width: 96, className: "rounded-md min-h-[96px] min-w-[96px]", onClick: handleClick })),
+            react_1.default.createElement(react_2.Image, { alt: ((_c = (_b = line === null || line === void 0 ? void 0 : line.merchandise) === null || _b === void 0 ? void 0 : _b.product) === null || _c === void 0 ? void 0 : _c.title) || '', src: url, height: 96, width: 96, className: "min-h-[96px] min-w-[96px]" })),
         react_1.default.createElement("div", { className: "flex-grow" },
             react_1.default.createElement(components_2.Typography, { variant: "body1" }, (_e = (_d = line === null || line === void 0 ? void 0 : line.merchandise) === null || _d === void 0 ? void 0 : _d.product) === null || _e === void 0 ? void 0 : _e.title),
-            react_1.default.createElement(components_2.Typography, { variant: "body1", className: "text-muted-foreground" }, (_h = (_g = (_f = line === null || line === void 0 ? void 0 : line.merchandise) === null || _f === void 0 ? void 0 : _f.selectedOptions) === null || _g === void 0 ? void 0 : _g.filter(function (option) { return option.name !== 'Title'; })) === null || _h === void 0 ? void 0 : _h.map(function (option) { return option.value; }).join(' / ')),
-            (sellingPlanAllocation === null || sellingPlanAllocation === void 0 ? void 0 : sellingPlanAllocation.sellingPlan) && (react_1.default.createElement("p", { className: "text-sm italic text-muted-foreground" }, (_j = sellingPlanAllocation === null || sellingPlanAllocation === void 0 ? void 0 : sellingPlanAllocation.sellingPlan) === null || _j === void 0 ? void 0 : _j.name)),
-            react_1.default.createElement("p", { className: "text-sm font-medium mt-1" }, price === 0 ? 'Free' : (0, frontend_shopify_3.formatCurrency)(price)),
+            react_1.default.createElement(components_2.Typography, { variant: "body1", className: "text-foreground/70" }, (_h = (_g = (_f = line === null || line === void 0 ? void 0 : line.merchandise) === null || _f === void 0 ? void 0 : _f.selectedOptions) === null || _g === void 0 ? void 0 : _g.filter(function (option) { return option.name !== 'Title'; })) === null || _h === void 0 ? void 0 : _h.map(function (option) { return option.value; }).join(' / ')),
+            (sellingPlanAllocation === null || sellingPlanAllocation === void 0 ? void 0 : sellingPlanAllocation.sellingPlan) && (react_1.default.createElement("p", { className: "text-sm italic text-foreground/70" }, (_j = sellingPlanAllocation === null || sellingPlanAllocation === void 0 ? void 0 : sellingPlanAllocation.sellingPlan) === null || _j === void 0 ? void 0 : _j.name)),
+            react_1.default.createElement("p", { className: "text-sm font-medium mt-1" }, price === 0 ? 'Free' : (0, frontend_shopify_2.formatCurrency)(price)),
             react_1.default.createElement("div", { className: "mt-2" },
                 react_1.default.createElement(ShopifyCartQuantityInput, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity }))),
-        react_1.default.createElement(components_1.IconButton, { className: "text-muted-foreground", onClick: handleRemoveLineItem },
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, variant: "light", radius: "full", className: "text-foreground/70", onPress: handleRemoveLineItem },
             react_1.default.createElement(components_1.RemixIcon, { name: 'ri-close-fill' }))));
 };
 exports.default = ShopifyCartLine;

@@ -5,7 +5,6 @@ type BooleanInputProps = {
     name: string;
     handleChange: (ev: SyntheticEventType) => void;
     label?: string;
-    info?: string;
 };
 declare const BooleanInput: React.FC<BooleanInputProps>;
 export default BooleanInput;

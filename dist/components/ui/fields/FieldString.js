@@ -29,10 +29,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var FieldString = function (props) {
     var value = props.value, label = props.label, placeholder = props.placeholder, alignItems = props.alignItems, className = props.className, rest = __rest(props, ["value", "label", "placeholder", "alignItems", "className"]);
     return (react_1.default.createElement(components_2.FieldWrapper, __assign({ alignItems: alignItems, label: label }, rest),
-        react_1.default.createElement(components_1.Typography, { variant: "body1", className: (0, frontend_shadcn_1.cn)(className) }, value)));
+        react_1.default.createElement(components_1.Typography, { variant: "body1", className: (0, react_2.cn)(className) }, value)));
 };
 exports.default = FieldString;

@@ -14,7 +14,7 @@ var ShopifyProductImageCarousel = function () {
     return (react_1.default.createElement("div", null, images === null || images === void 0 ? void 0 : images.map(function (image) {
         var _a;
         return (react_1.default.createElement("div", { className: "w-full h-full pb-1", key: image.id },
-            react_1.default.createElement(__1.TouchableOpacity, { handleClick: function () { return handleImageClick(image); } },
+            react_1.default.createElement(__1.ClickOrDragButton, { handleClick: function () { return handleImageClick(image); } },
                 react_1.default.createElement(frontend_shadcn_1.AspectRatio, { ratio: 4 / 3 },
                     react_1.default.createElement(image_1.default, { src: (_a = image === null || image === void 0 ? void 0 : image.url) === null || _a === void 0 ? void 0 : _a.url, height: 1200, width: 1200, alt: image === null || image === void 0 ? void 0 : image.altText })))));
     })));

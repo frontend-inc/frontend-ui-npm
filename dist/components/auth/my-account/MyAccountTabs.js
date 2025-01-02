@@ -17,7 +17,7 @@ var react_1 = __importDefault(require("react"));
 var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var lucide_react_1 = require("lucide-react");
 var MyAccountTabs = function (_a) {
     var handleClick = _a.handleClick;
@@ -52,9 +52,9 @@ var MyAccountTabs = function (_a) {
     tabs = __spreadArray(__spreadArray([], tabs, true), LOGOUT_TAB, true);
     return (react_1.default.createElement("div", { className: "w-full" },
         react_1.default.createElement("div", { className: "flex justify-center items-center p-4" },
-            react_1.default.createElement(__1.UserAvatar, { variant: "circular", user: currentUser, size: 64 })),
+            react_1.default.createElement(__1.UserAvatar, { variant: "circular", user: currentUser })),
         react_1.default.createElement("ul", { className: "divide-y divide-border" }, tabs === null || tabs === void 0 ? void 0 : tabs.map(function (tab, index) { return (react_1.default.createElement("li", { key: index },
-            react_1.default.createElement(components_1.Button, { variant: "ghost", className: "w-full justify-between py-3 px-4 text-left", onClick: function () { return handleClick(tab); } },
+            react_1.default.createElement(react_2.Button, { isIconOnly: true, variant: "ghost", className: "w-full justify-between py-3 px-4 text-left", onPress: function () { return handleClick(tab); } },
                 react_1.default.createElement("span", { className: "text-sm font-medium" }, tab === null || tab === void 0 ? void 0 : tab.label),
                 react_1.default.createElement(lucide_react_1.ChevronRight, { className: "h-4 w-4" })))); }))));
 };

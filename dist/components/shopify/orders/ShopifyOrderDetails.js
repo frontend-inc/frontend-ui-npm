@@ -25,13 +25,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var shopify_1 = require("../../../components/shopify");
 var frontend_shopify_1 = require("frontend-shopify");
 var lucide_react_1 = require("lucide-react");
 var navigation_1 = require("next/navigation");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_3 = require("@nextui-org/react");
 var ShopifyOrderDetails = function (props) {
     var _a, _b;
     var router = (0, navigation_1.useRouter)();
@@ -53,7 +53,7 @@ var ShopifyOrderDetails = function (props) {
         }
     }, [order]);
     var shippingAddress = (order || {}).shippingAddress;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)('flex flex-col space-y-4', className) },
+    return (react_1.default.createElement("div", { className: (0, react_3.cn)('flex flex-col space-y-4', className) },
         react_1.default.createElement("h3", { className: "text-lg font-semibold" }, "Order details"),
         react_1.default.createElement(frontend_shadcn_1.ScrollArea, { className: "h-[200px] w-full rounded-md border p-4" }, lineItems === null || lineItems === void 0 ? void 0 : lineItems.map(function (lineItem, i) { return (react_1.default.createElement(shopify_1.ShopifyOrderLineItem, { key: i, lineItem: lineItem })); })),
         react_1.default.createElement("div", { className: "flex justify-between items-center" },
@@ -67,9 +67,7 @@ var ShopifyOrderDetails = function (props) {
             react_1.default.createElement(shopify_1.ShopifyAddressItem, { disableActions: true, 
                 // @ts-ignore
                 address: shippingAddress }))),
-        react_1.default.createElement(components_1.Button, { className: "w-full", variant: "default", onClick: handleOrderStatusClick },
-            "Order status",
-            react_1.default.createElement(lucide_react_1.ExternalLink, { className: "ml-2 h-4 w-4" })),
-        supportUrl && (react_1.default.createElement(components_1.Button, { className: "w-full", variant: "outline", onClick: handleSupportClick }, "Customer support"))));
+        react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "solid", color: "primary", onPress: handleOrderStatusClick, endContent: react_1.default.createElement(lucide_react_1.ExternalLink, { className: "h-4 w-4" }) }, "Order status"),
+        supportUrl && (react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "ghost", onPress: handleSupportClick }, "Customer support"))));
 };
 exports.default = ShopifyOrderDetails;

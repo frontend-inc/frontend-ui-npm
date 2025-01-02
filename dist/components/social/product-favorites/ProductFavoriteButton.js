@@ -65,7 +65,7 @@ var helpers_1 = require("../../../helpers");
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 var components_1 = require("../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function ProductFavoriteButton(_a) {
     var _this = this;
     var product = _a.product, _b = _a.size, size = _b === void 0 ? 'small' : _b;
@@ -104,7 +104,7 @@ function ProductFavoriteButton(_a) {
         }
     }, [currentUser, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' &&
+        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, react_2.cn)(size === 'large' &&
                 'border border-divider bg-background text-secondary hover:bg-background hover:text-secondary', isFavorite && 'text-primary hover:text-primary-dark') },
             isFavorite && (react_1.default.createElement(components_1.RemixIcon, { name: "ri-bookmark-fill", className: "fill-primary" })),
             !isFavorite && react_1.default.createElement(components_1.RemixIcon, { name: "ri-bookmark-line" }))));

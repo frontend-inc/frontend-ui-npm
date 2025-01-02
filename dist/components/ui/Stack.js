@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var Stack = function (props) {
     var _a = props.size, size = _a === void 0 ? 'full' : _a, _b = props.direction, direction = _b === void 0 ? 'column' : _b, _c = props.spacing, spacing = _c === void 0 ? 6 : _c, className = props.className, children = props.children;
     var isRow = direction === 'row';
@@ -39,6 +39,6 @@ var Stack = function (props) {
         '3/4': 'md:flex-row md:w-3/4 md:space-y-0',
         'full': 'md:flex-row md:w-full md:space-y-0',
     };
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col items-start w-full', spaceYClasses[spacing], isRow && spaceXClasses[spacing], isRow && rowClasses[size], className) }, children));
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)('flex flex-col items-start w-full', spaceYClasses[spacing], isRow && spaceXClasses[spacing], isRow && rowClasses[size], className) }, children));
 };
 exports.default = Stack;

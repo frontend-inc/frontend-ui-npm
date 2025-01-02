@@ -26,7 +26,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var framer_motion_1 = require("framer-motion");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function NumberTicker(_a) {
     var value = _a.value, _b = _a.direction, direction = _b === void 0 ? 'up' : _b, _c = _a.delay, delay = _c === void 0 ? 0 : _c, className = _a.className, _d = _a.decimalPlaces, decimalPlaces = _d === void 0 ? 0 : _d;
     var ref = (0, react_1.useRef)(null);
@@ -52,6 +52,6 @@ function NumberTicker(_a) {
             }
         });
     }, [springValue, decimalPlaces]);
-    return (react_1.default.createElement("span", { className: (0, frontend_shadcn_1.cn)('inline-block tabular-nums text-black dark:text-white tracking-wider', className), ref: ref }));
+    return (react_1.default.createElement("span", { className: (0, react_2.cn)('inline-block tabular-nums text-black dark:text-white tracking-wider', className), ref: ref }));
 }
 exports.default = NumberTicker;

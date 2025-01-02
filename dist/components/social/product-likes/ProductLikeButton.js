@@ -65,7 +65,7 @@ var helpers_1 = require("../../../helpers");
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var components_1 = require("../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function ProductLikeButton(props) {
     var _this = this;
     var product = props.product, _a = props.size, size = _a === void 0 ? 'small' : _a;
@@ -102,7 +102,7 @@ function ProductLikeButton(props) {
         }
     }, [currentUser, product === null || product === void 0 ? void 0 : product.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(size === 'large' && 'border border-divider', 'transition-transform duration-200', liked && 'text-primary hover:text-primary-dark') },
+        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, react_2.cn)(size === 'large' && 'border border-divider', 'transition-transform duration-200', liked && 'text-primary hover:text-primary-dark') },
             liked && react_1.default.createElement(components_1.RemixIcon, { name: "ri-heart-fill", className: "fill-primary" }),
             !liked && react_1.default.createElement(components_1.RemixIcon, { name: "ri-heart-line" }))));
 }

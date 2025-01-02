@@ -36,7 +36,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Rating = void 0;
 var react_1 = __importStar(require("react"));
 var lucide_react_1 = require("lucide-react");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var sizeClasses = {
     sm: 'w-4 h-4',
     md: 'w-5 h-5',
@@ -66,13 +66,13 @@ function Rating(_a) {
             return;
         onChange(hoverValue || index + 1);
     };
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('inline-flex', disabled && 'opacity-50 cursor-not-allowed', className) }, __spreadArray([], Array(max), true).map(function (_, index) {
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)('inline-flex', disabled && 'opacity-50 cursor-not-allowed', className) }, __spreadArray([], Array(max), true).map(function (_, index) {
         var filled = (hoverValue !== null ? hoverValue : value) > index;
         var halfFilled = precision === 0.5 &&
             (hoverValue !== null ? hoverValue : value) === index + 0.5;
-        return (react_1.default.createElement("div", { key: index, className: (0, frontend_shadcn_1.cn)('relative cursor-pointer', sizeClasses[size], readOnly && 'cursor-default', disabled && 'cursor-not-allowed'), onMouseMove: function (e) { return handleMouseMove(e, index); }, onMouseLeave: handleMouseLeave, onClick: function () { return handleClick(index); } },
+        return (react_1.default.createElement("div", { key: index, className: (0, react_2.cn)('relative cursor-pointer', sizeClasses[size], readOnly && 'cursor-default', disabled && 'cursor-not-allowed'), onMouseMove: function (e) { return handleMouseMove(e, index); }, onMouseLeave: handleMouseLeave, onClick: function () { return handleClick(index); } },
             react_1.default.createElement("input", { type: "radio", name: name, value: index + 1, className: "sr-only", disabled: disabled || readOnly, checked: value === index + 1, onChange: function () { } }),
-            halfFilled ? (react_1.default.createElement(lucide_react_1.StarHalf, { className: (0, frontend_shadcn_1.cn)('text-primary', sizeClasses[size]) })) : (react_1.default.createElement(lucide_react_1.Star, { className: (0, frontend_shadcn_1.cn)(filled ? 'text-primary' : 'text-muted-foreground', sizeClasses[size]), fill: filled ? 'currentColor' : 'none' }))));
+            halfFilled ? (react_1.default.createElement(lucide_react_1.StarHalf, { className: (0, react_2.cn)('text-primary', sizeClasses[size]) })) : (react_1.default.createElement(lucide_react_1.Star, { className: (0, react_2.cn)(filled ? 'text-primary' : 'text-foreground/70', sizeClasses[size]), fill: filled ? 'currentColor' : 'none' }))));
     })));
 }
 exports.Rating = Rating;

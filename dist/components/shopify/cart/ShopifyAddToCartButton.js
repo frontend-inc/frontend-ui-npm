@@ -63,15 +63,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var addons_1 = require("../../../hooks/addons");
-var sonner_1 = require("sonner");
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var __1 = require("..");
 var frontend_shopify_2 = require("frontend-shopify");
 var ShopifyAddToCartButton = function (props) {
+    var _a = (0, react_1.useState)(''), alert = _a[0], setAlert = _a[1];
     var trackAddToCart = (0, addons_1.useSegment)().trackAddToCart;
     var toggleCart = (0, react_1.useContext)(frontend_shopify_2.ShopifyContext).toggleCart;
-    var _a = (0, frontend_shopify_1.useCart)(), loading = _a.loading, cartLineAdd = _a.cartLineAdd;
-    var _b = props.label, label = _b === void 0 ? 'Add to Cart' : _b, product = props.product, variant = props.variant, _c = props.buttonVariant, buttonVariant = _c === void 0 ? 'default' : _c, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d, _e = props.enableSubscription, enableSubscription = _e === void 0 ? false : _e, _f = props.enableFavorites, enableFavorites = _f === void 0 ? false : _f, _g = props.size, size = _g === void 0 ? 'default' : _g;
+    var _b = (0, frontend_shopify_1.useCart)(), loading = _b.loading, cartLineAdd = _b.cartLineAdd;
+    var _c = props.label, label = _c === void 0 ? 'Add to Cart' : _c, product = props.product, variant = props.variant, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d, _e = props.enableSubscription, enableSubscription = _e === void 0 ? false : _e, _f = props.enableFavorites, enableFavorites = _f === void 0 ? false : _f, _g = props.size, size = _g === void 0 ? 'md' : _g;
     var _h = (0, react_1.useState)(1), quantity = _h[0], setQuantity = _h[1];
     var _j = (0, react_1.useState)(null), activeSellingPlanId = _j[0], setActiveSellingPlanId = _j[1];
     var handleSellingPlanChange = function (value) {
@@ -86,44 +86,60 @@ var ShopifyAddToCartButton = function (props) {
         setQuantity(quantity - 1);
     };
     var handleAddToCart = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var line;
+        var line, resp;
         return __generator(this, function (_a) {
-            if (!(product === null || product === void 0 ? void 0 : product.availableForSale)) {
-                sonner_1.toast.error('Please select all options');
-                return [2 /*return*/];
-            }
-            if (variant === null || variant === void 0 ? void 0 : variant.id) {
-                if (variant === null || variant === void 0 ? void 0 : variant.availableForSale) {
+            switch (_a.label) {
+                case 0:
+                    if (!(product === null || product === void 0 ? void 0 : product.availableForSale)) {
+                        setAlert('This product is not available for sale');
+                        return [2 /*return*/];
+                    }
+                    if (!(variant === null || variant === void 0 ? void 0 : variant.id)) return [3 /*break*/, 4];
+                    if (!(variant === null || variant === void 0 ? void 0 : variant.availableForSale)) return [3 /*break*/, 2];
                     line = {
                         merchandiseId: variant === null || variant === void 0 ? void 0 : variant.id,
                         quantity: quantity,
                         sellingPlanId: activeSellingPlanId,
                     };
-                    cartLineAdd(line);
+                    return [4 /*yield*/, cartLineAdd(line)];
+                case 1:
+                    resp = _a.sent();
                     trackAddToCart({
                         quantity: quantity,
                         variant: variant,
                         product: product,
                     });
-                    setTimeout(function () { return toggleCart(); }, 500);
-                }
-                else {
-                    sonner_1.toast.error('This product is not available for sale');
-                }
+                    if (resp === null || resp === void 0 ? void 0 : resp.id) {
+                        setActiveSellingPlanId(null);
+                        toggleCart();
+                        setAlert('');
+                    }
+                    else {
+                        setAlert('Oops! There was an error adding to cart');
+                    }
+                    return [3 /*break*/, 3];
+                case 2:
+                    setAlert('This product is not available for sale');
+                    _a.label = 3;
+                case 3: return [3 /*break*/, 5];
+                case 4:
+                    setAlert('Please select all options');
+                    _a.label = 5;
+                case 5: return [2 /*return*/];
             }
-            else {
-                sonner_1.toast.error('Please select all options');
-            }
-            return [2 /*return*/];
         });
     }); };
+    var handleClose = function () {
+        setAlert('');
+    };
     if (!product)
         return null;
-    return (react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
+    return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
         enableSubscription && (react_1.default.createElement(__1.ShopifySubscriptionSelector, { product: product, activeSellingPlanId: activeSellingPlanId, handleChange: handleSellingPlanChange })),
-        react_1.default.createElement("div", { className: "flex flex-row space-x-2 justify-content items-center" },
-            enableQuantity == true && (react_1.default.createElement(__1.ShopifyQuantitySelector, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity })),
-            react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleAddToCart, variant: buttonVariant, loading: loading, size: size }, label),
-            enableFavorites && react_1.default.createElement(__1.ShopifyProductFavoriteButton, { product: product }))));
+        react_1.default.createElement("div", { className: "flex w-full flex-row space-x-2 justify-content items-center" },
+            enableQuantity == true && (react_1.default.createElement(__1.ShopifyQuantitySelector, { size: size, quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity })),
+            react_1.default.createElement(react_2.Button, { fullWidth: true, onPress: handleAddToCart, variant: 'solid', color: "primary", isLoading: loading, size: size }, label),
+            enableFavorites && react_1.default.createElement(__1.ShopifyProductFavoriteButton, { product: product })),
+        (alert === null || alert === void 0 ? void 0 : alert.length) > 0 && (react_1.default.createElement(react_2.Alert, { variant: "flat", color: 'danger', title: alert, description: 'Warning', className: 'items-center', isClosable: true, onClose: handleClose }))));
 };
 exports.default = ShopifyAddToCartButton;

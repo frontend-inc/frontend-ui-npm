@@ -1,6 +1,6 @@
 import React from 'react';
 type LogoProps = {
-    src: string;
+    src?: string;
     width?: number;
     height?: number;
     handleClick: (path: string) => void;

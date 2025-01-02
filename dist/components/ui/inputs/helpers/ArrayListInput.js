@@ -38,6 +38,7 @@ var core_1 = require("../../../core");
 var lucide_react_1 = require("lucide-react");
 var __1 = require("../../..");
 var react_2 = require("@remixicon/react");
+var react_3 = require("@nextui-org/react");
 var ArrayItemInput = function (props) {
     var index = props.index, _a = props.value, value = _a === void 0 ? '' : _a, handleChange = props.handleChange, handleRemove = props.handleRemove;
     var _b = (0, react_1.useState)(''), _value = _b[0], setValue = _b[1];
@@ -51,7 +52,7 @@ var ArrayItemInput = function (props) {
             //@ts-ignore
             handleChange: handleInputChange }),
         react_1.default.createElement("div", null,
-            react_1.default.createElement(core_1.IconButton, { onClick: function () { return handleRemove(index); } },
+            react_1.default.createElement(react_3.Button, { isIconOnly: true, variant: "light", className: "min-w-8", onPress: function () { return handleRemove(index); } },
                 react_1.default.createElement(lucide_react_1.X, null)))));
 };
 var ArrayListInput = function (props) {
@@ -86,10 +87,10 @@ var ArrayListInput = function (props) {
         });
     };
     return (react_1.default.createElement("div", { className: "flex flex-col gap-2" },
-        label && (react_1.default.createElement(core_1.Typography, { variant: "caption", className: "text-muted-foreground" }, label)),
+        label && (react_1.default.createElement(core_1.Typography, { variant: "caption", className: "text-foreground/70" }, label)),
         Array.isArray(values) &&
             (values === null || values === void 0 ? void 0 : values.map(function (value, index) { return (react_1.default.createElement(ArrayItemInput, { key: index, index: index, value: value, handleChange: handleInputChange, handleRemove: handleRemove })); })),
         react_1.default.createElement("div", null,
-            react_1.default.createElement(core_1.Button, { color: "secondary", onClick: handleAddClick, startIcon: react_1.default.createElement(react_2.RiAddFill, { className: "text-foreground" }) }, "Add"))));
+            react_1.default.createElement(react_3.Button, { onPress: handleAddClick, startContent: react_1.default.createElement(react_2.RiAddFill, { className: "text-foreground" }) }, "Add"))));
 };
 exports.default = ArrayListInput;

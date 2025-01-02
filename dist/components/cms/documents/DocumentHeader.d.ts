@@ -6,7 +6,6 @@ export type DocumentHeaderProps = {
     enableSearch?: boolean;
     enableFilters?: boolean;
     enableSorting?: boolean;
-    enableGeoSearch?: boolean;
     filterOptions?: SearchFilterOptionType[];
     sortOptions?: SortOptionType[];
     enableCreate?: boolean;

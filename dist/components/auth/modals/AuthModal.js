@@ -166,7 +166,7 @@ var AuthModal = function (props) {
     var handleResendPinClick = function () {
         setTab(4);
     };
-    return (react_1.default.createElement(__1.Modal, { maxWidth: 'sm', title: tab == 0
+    return (react_1.default.createElement(__1.Modal, { maxWidth: 'md', title: tab == 0
             ? 'Login'
             : tab == 1
                 ? 'Signup'
@@ -177,7 +177,7 @@ var AuthModal = function (props) {
                         : tab == 4
                             ? 'Resend Pin'
                             : 'Reset Password', description: "Register or login", open: authOpen, handleClose: function () { return setAuthOpen(false); } },
-        react_1.default.createElement("div", { className: "flex flex-col space-y-3" },
+        react_1.default.createElement("div", { className: "flex flex-col space-y-3 pb-2" },
             tab === 0 && (react_1.default.createElement(__1.LoginForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleLogin, handleSignup: handleSignupClick, handleForgotPassword: handleForgotPasswordClick, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })),
             tab === 1 && (react_1.default.createElement(__1.SignupForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSignup, handleLogin: handleLoginClick, enableGoogle: enableGoogle, handleGoogleSuccess: handleGoogleSuccess })),
             tab === 2 && (react_1.default.createElement(__1.ForgotPasswordForm, { errors: errors, loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSendPin, handleLogin: handleLoginClick })),

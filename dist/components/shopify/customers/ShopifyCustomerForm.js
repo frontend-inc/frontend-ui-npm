@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var __1 = require("../..");
 var ShopifyCustomerForm = function (props) {
     var loading = props.loading, customer = props.customer, handleChange = props.handleChange, handleSubmit = props.handleSubmit;
@@ -15,6 +15,6 @@ var ShopifyCustomerForm = function (props) {
         react_1.default.createElement(__1.TextInput, { placeholder: "Email", name: "email", value: (customer === null || customer === void 0 ? void 0 : customer.email) || '', handleChange: handleChange }),
         react_1.default.createElement(__1.TextInput, { placeholder: "Phone number", name: "phone", value: (customer === null || customer === void 0 ? void 0 : customer.phone) || '', handleChange: handleChange }),
         react_1.default.createElement(__1.TextInput, { type: "password", placeholder: "Change Password", name: "password", value: (customer === null || customer === void 0 ? void 0 : customer.password) || '', handleChange: handleChange }),
-        react_1.default.createElement(components_1.Button, { color: "secondary", loading: loading, onClick: handleSubmit }, "Update Account")));
+        react_1.default.createElement(react_2.Button, { color: "secondary", isLoading: loading, onPress: handleSubmit }, "Update Account")));
 };
 exports.default = ShopifyCustomerForm;

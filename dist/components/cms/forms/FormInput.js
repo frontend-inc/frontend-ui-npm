@@ -53,9 +53,6 @@ var FormInput = function (props) {
             }); }),
         }, number: {
             type: 'number',
-        }, boolean: {
-            label: null,
-            placeholder: label,
         }, price: {
             type: 'number',
         }, media: {

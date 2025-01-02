@@ -30,10 +30,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var ThemeContext_1 = __importDefault(require("./ThemeContext"));
 var react_google_font_loader_1 = __importDefault(require("react-google-font-loader"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var ThemeProvider = function (props) {
     var _a = (0, react_1.useState)(), googleFonts = _a[0], setGoogleFonts = _a[1];
-    var _b = props || {}, _c = _b.mode, mode = _c === void 0 ? 'light' : _c, _d = _b.theme, theme = _d === void 0 ? 'light' : _d, primaryColor = _b.primaryColor, _e = _b.headerFont, headerFont = _e === void 0 ? 'Inter' : _e, _f = _b.bodyFont, bodyFont = _f === void 0 ? 'Inter' : _f, borderRadius = _b.borderRadius, children = _b.children;
+    var _b = props || {}, _c = _b.mode, mode = _c === void 0 ? 'dark' : _c, _d = _b.theme, theme = _d === void 0 ? 'dark' : _d, primaryColor = _b.primaryColor, _e = _b.headerFont, headerFont = _e === void 0 ? 'Inter' : _e, _f = _b.bodyFont, bodyFont = _f === void 0 ? 'Inter' : _f, borderRadius = _b.borderRadius, children = _b.children;
     var value = {
         mode: mode,
         theme: theme,
@@ -71,8 +71,15 @@ var ThemeProvider = function (props) {
             setGoogleFonts(fonts);
         }
     }, [headerFont, bodyFont]);
+    var themeClass = "".concat(theme, "-").concat(mode);
+    if (theme == 'light') {
+        themeClass = "light";
+    }
+    if (theme == 'dark') {
+        themeClass = "dark";
+    }
     return (react_1.default.createElement(ThemeContext_1.default.Provider, { value: value },
         (googleFonts === null || googleFonts === void 0 ? void 0 : googleFonts.length) > 0 && (react_1.default.createElement(react_google_font_loader_1.default, { fonts: googleFonts })),
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(mode == 'dark' ? 'dark-theme' : 'light', theme, 'w-full') }, children)));
+        react_1.default.createElement(react_2.NextUIProvider, { className: themeClass }, children)));
 };
 exports.default = ThemeProvider;

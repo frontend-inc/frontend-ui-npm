@@ -25,24 +25,28 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var hooks_1 = require("../../../hooks");
 var use_debounce_1 = require("use-debounce");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_3 = require("@nextui-org/react");
 function TextInput(props) {
-    var label = props.label, type = props.type, name = props.name, _a = props.value, value = _a === void 0 ? '' : _a, handleChange = props.handleChange, placeholder = props.placeholder, disabled = props.disabled, errors = props.errors, _b = props.direction, direction = _b === void 0 ? 'column' : _b, info = props.info, className = props.className, _c = props.debounceDelay, debounceDelay = _c === void 0 ? 350 : _c, _d = props.disableDebounce, disableDebounce = _d === void 0 ? false : _d;
+    var label = props.label, type = props.type, name = props.name, _a = props.value, value = _a === void 0 ? '' : _a, handleChange = props.handleChange, placeholder = props.placeholder, disabled = props.disabled, errors = props.errors, _b = props.direction, direction = _b === void 0 ? 'column' : _b, className = props.className, _c = props.debounceDelay, debounceDelay = _c === void 0 ? 350 : _c, _d = props.disableDebounce, disableDebounce = _d === void 0 ? false : _d;
     var _e = (0, react_1.useState)(value), text = _e[0], setText = _e[1];
     var debouncedText = (0, use_debounce_1.useDebounce)(text, debounceDelay)[0];
     var _f = (0, hooks_1.useError)({
         errors: errors,
         name: name,
     }), error = _f.error, clearError = _f.clearError;
-    var handleInputChange = function (e) {
+    var handleInputChange = function (value) {
         clearError();
-        setText(e.target.value);
+        setText(value);
         if (disableDebounce) {
-            handleChange(e);
+            handleChange({
+                target: {
+                    name: name,
+                    value: value
+                }
+            });
         }
     };
     (0, react_1.useEffect)(function () {
@@ -58,10 +62,6 @@ function TextInput(props) {
     (0, react_1.useEffect)(function () {
         setText(value);
     }, [value]);
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_2.cn)('flex flex-col w-full space-y-2', direction === 'row' && 'sm:flex-row sm:items-center') },
-        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
-        react_1.default.createElement("div", { className: "relative w-full flex flex-col space-y-2" },
-            react_1.default.createElement(frontend_shadcn_1.Input, { className: (0, frontend_shadcn_2.cn)('bg-input focus:ring-2 focus:ring-offset-3', error && 'ring-2 ring-destructive ring-offset-3', className), type: type, name: name, disabled: disabled, placeholder: placeholder, onChange: handleInputChange, value: text, autoComplete: "off" }),
-            react_1.default.createElement(components_1.ErrorText, { error: error }))));
+    return (react_1.default.createElement(react_2.Input, { label: label, className: (0, react_3.cn)(className), type: type, name: name, disabled: disabled, placeholder: placeholder || "Enter ".concat(label), onValueChange: handleInputChange, value: text, autoComplete: "off", errorMessage: error }));
 }
 exports.default = TextInput;

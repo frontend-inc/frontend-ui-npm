@@ -6,7 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var hooks_1 = require("../../hooks");
 var maxWidthClasses = {
     sm: 'container mx-auto max-w-screen-sm',
@@ -36,10 +36,10 @@ var Section = function (props) {
     } : {
         backgroundColor: bgColor,
     };
-    return (react_1.default.createElement("section", { className: (0, frontend_shadcn_1.cn)('z-0', mode == 'dark' ? 'dark-theme' : 'light', theme, 'relative bg-cover bg-center bg-no-repeat', 'w-full bg-background', pyClasses[py], pxClasses[px], !bgImage && bgColor, bgImage && bgOverlay &&
+    return (react_1.default.createElement("section", { className: (0, react_2.cn)('z-0', 'relative bg-cover bg-center bg-no-repeat', 'w-full bg-background', theme && mode && "".concat(theme, "-").concat(mode), pyClasses[py], pxClasses[px], !bgImage && bgColor, bgImage && bgOverlay &&
             "after:content-[''] after:absolute after:inset-0 after:bg-black/50"), style: backgroundStyle },
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('relative z-[1]', variant == 'outline' && 'p-8 border-2 border-border rounded-xl', variant == 'fill' && bgImage && 'p-8 rounded-xl bg-black/50', variant == 'fill' && !bgImage && 'p-8 rounded-xl bg-muted/50', maxWidth && maxWidthClasses[maxWidth], 'w-full mx-auto min-h-[60px] flex flex-row justify-center items-center') },
-            react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('w-full', 'transition-all duration-300 ease-in-out') },
+        react_1.default.createElement("div", { className: (0, react_2.cn)('relative z-[1]', variant == 'outline' && 'p-8 border-2 border-divider rounded-xl', variant == 'fill' && bgImage && 'p-8 rounded-xl bg-black/50', variant == 'fill' && !bgImage && 'p-8 rounded-xl bg-content1/50', maxWidth && maxWidthClasses[maxWidth], 'w-full mx-auto min-h-[60px] flex flex-row justify-center items-center') },
+            react_1.default.createElement("div", { className: (0, react_2.cn)('w-full', 'transition-all duration-300 ease-in-out') },
                 react_1.default.createElement(components_1.AuthGuard, { requireAuth: requireAuth }, children)))));
 };
 exports.default = Section;

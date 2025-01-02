@@ -8,10 +8,10 @@ var react_1 = __importDefault(require("react"));
 // @ts-ignore
 var react_medium_image_zoom_1 = __importDefault(require("react-medium-image-zoom"));
 var image_1 = __importDefault(require("next/image"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var Thumbnail = function (props) {
     var image = props.image, active = props.active, handleClick = props.handleClick;
-    return (react_1.default.createElement("button", { className: (0, frontend_shadcn_1.cn)('p-0 w-[96px] h-[96px] overflow-hidden rounded hover:bg-muted/20', active ? 'ring-2 ring-offset-2 ring-primary' : 'ring-2 ring-transparent'), onClick: function () { return handleClick(image); } },
+    return (react_1.default.createElement("button", { className: (0, react_2.cn)('p-0 w-[96px] h-[96px] overflow-hidden rounded hover:bg-content2/20', active ? 'ring-2 ring-offset-2 ring-primary' : 'ring-2 ring-transparent'), onClick: function () { return handleClick(image); } },
         react_1.default.createElement(image_1.default, { src: image.url, width: 96, height: 96, alt: (image === null || image === void 0 ? void 0 : image.altText) || '', className: "object-cover" })));
 };
 var ShopifyProductImageSlider = function (props) {

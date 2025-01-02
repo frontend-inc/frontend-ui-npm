@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var __1 = require("../..");
 var SignupForm = function (props) {
     var _a = props || {}, loading = _a.loading, errors = _a.errors, user = _a.user, handleChange = _a.handleChange, enableGoogle = _a.enableGoogle, handleSubmit = _a.handleSubmit, handleLogin = _a.handleLogin, handleGoogleSuccess = _a.handleGoogleSuccess;
@@ -18,7 +18,7 @@ var SignupForm = function (props) {
             react_1.default.createElement(__1.TextInput, { errors: errors, direction: "column", name: "email", label: "Email", value: user === null || user === void 0 ? void 0 : user.email, placeholder: "Email", handleChange: handleChange }),
             react_1.default.createElement(__1.TextInput, { errors: errors, direction: "column", name: "password", label: "Password", value: user === null || user === void 0 ? void 0 : user.password, type: "password", placeholder: "Password", handleChange: handleChange })),
         react_1.default.createElement("div", { className: "flex flex-col space-y-3 w-full" },
-            react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleSubmit, loading: loading }, "Register"),
-            handleLogin && (react_1.default.createElement(components_1.Button, { fullWidth: true, color: "secondary", variant: "ghost", onClick: handleLogin }, "Already have an account? Sign in")))));
+            react_1.default.createElement(react_2.Button, { variant: "solid", fullWidth: true, onPress: handleSubmit, isLoading: loading }, "Register"),
+            handleLogin && (react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "ghost", onPress: handleLogin }, "Already have an account? Sign in")))));
 };
 exports.default = SignupForm;

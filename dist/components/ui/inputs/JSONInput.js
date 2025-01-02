@@ -38,7 +38,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var components_1 = require("../../../components");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function JSONInput(_a) {
     var _b;
     var errors = _a.errors, value = _a.value, name = _a.name, label = _a.label, info = _a.info, placeholder = _a.placeholder, handleChange = _a.handleChange;
@@ -77,7 +77,7 @@ function JSONInput(_a) {
     var hasError = Object.keys(allErrors).length > 0;
     return (react_1.default.createElement("div", { className: "w-full" },
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
-        react_1.default.createElement(frontend_shadcn_1.Textarea, { className: (0, frontend_shadcn_2.cn)('font-mono', hasError && 'border-red-500 focus-visible:ring-red-500'), value: jsonValue, placeholder: placeholder, onChange: handleJSONChange, name: name, rows: 6 }),
+        react_1.default.createElement(frontend_shadcn_1.Textarea, { className: (0, react_2.cn)('font-mono', hasError && 'border-red-500 focus-visible:ring-red-500'), value: jsonValue, placeholder: placeholder, onChange: handleJSONChange, name: name, rows: 6 }),
         hasError && react_1.default.createElement(components_1.ErrorText, { error: allErrors[name] })));
 }
 exports.default = JSONInput;

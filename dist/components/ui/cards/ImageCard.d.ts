@@ -9,4 +9,4 @@ export type CardProps = {
         image?: any;
     };
 };
-export default function ImageCard({ primary, secondaryAction, handleClick, image, height, slots, }: CardProps): React.JSX.Element;
+export default function ImageCard(props: CardProps): React.JSX.Element;

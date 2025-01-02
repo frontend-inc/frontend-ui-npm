@@ -1,5 +1,5 @@
 import React from 'react';
-type AuthMenuProps = {
+type AuthProps = {
     handleLogin: () => void;
     handleSignup: () => void;
     handleMyAccount: () => void;
@@ -10,5 +10,5 @@ type AuthMenuProps = {
         onClick?: () => void;
     }[];
 };
-declare const AuthMenu: React.FC<AuthMenuProps>;
-export default AuthMenu;
+declare const Auth: React.FC<AuthProps>;
+export default Auth;

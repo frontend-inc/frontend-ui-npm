@@ -1,6 +1,6 @@
 import React from 'react';
 type SusbcribeButtonProps = {
-    size?: 'sm' | 'default' | 'lg';
+    size?: 'sm' | 'md' | 'lg';
     productId: string | number;
     fullWidth?: boolean;
     buttonText?: string;

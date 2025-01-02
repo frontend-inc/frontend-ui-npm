@@ -14,7 +14,6 @@ export type ResourceGridItemProps = {
     handleDelete?: (resource: any) => void;
     handleSelect?: () => void;
     secondaryAction?: React.ReactNode;
-    menuActions?: React.ReactNode;
     sortable?: boolean;
     isDragging?: boolean;
     slots?: {

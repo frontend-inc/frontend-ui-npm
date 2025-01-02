@@ -51,9 +51,10 @@ var react_1 = __importStar(require("react"));
 var core_1 = require("@dnd-kit/core");
 var sortable_1 = require("@dnd-kit/sortable");
 var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var Droppable_1 = __importDefault(require("./Droppable"));
 var __1 = require("../..");
-var react_2 = require("@remixicon/react");
+var react_3 = require("@remixicon/react");
 var KanBanBoard = function (props) {
     var loading = props.loading, _a = props.headers, headers = _a === void 0 ? [] : _a, handleDrop = props.handleDrop, _b = props.columns, initialColumns = _b === void 0 ? {} : _b, handleClick = props.handleClick, enableEdit = props.enableEdit, enableDelete = props.enableDelete, enableCreate = props.enableCreate, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handleAdd = props.handleAdd, _c = props.component, Component = _c === void 0 ? __1.KanBanCard : _c, _d = props.slots, slots = _d === void 0 ? {
         list: {},
@@ -82,7 +83,7 @@ var KanBanBoard = function (props) {
                         react_1.default.createElement("ul", { className: "w-[260px] max-h-screen overflow-y-scroll overflow-x-hidden scrollbar-hide" },
                             columns[header.value].length > 0 ? ((_b = columns[header.value]) === null || _b === void 0 ? void 0 : _b.map(function (res) { return (react_1.default.createElement(Component, __assign({}, slots.item, { loading: loading, key: res === null || res === void 0 ? void 0 : res.id, id: res === null || res === void 0 ? void 0 : res.id, resource: res, handleClick: function () { return handleClick(res); }, enableEdit: enableEdit, enableDelete: enableDelete, handleEdit: function () { return handleEdit(res); }, handleDelete: function () { return handleDelete(res); }, component: Component }))); })) : (react_1.default.createElement(Droppable_1.default, { id: header.value })),
                             react_1.default.createElement(Droppable_1.default, { id: header.value })))),
-                enableCreate && (react_1.default.createElement(components_1.Button, { fullWidth: true, color: "secondary", onClick: function () { return handleAdd(header.value); }, startIcon: react_1.default.createElement(react_2.RiAddFill, { className: "text-secondary-foreground" }) }, "Add"))));
+                enableCreate && (react_1.default.createElement(react_2.Button, { fullWidth: true, color: "secondary", onPress: function () { return handleAdd(header.value); }, startContent: react_1.default.createElement(react_3.RiAddFill, { className: "text-secondary-foreground" }) }, "Add"))));
         })),
         react_1.default.createElement(core_1.DragOverlay, null, draggedResource ? (react_1.default.createElement(Component, __assign({ enableDragging: true, id: draggedResource === null || draggedResource === void 0 ? void 0 : draggedResource.id, resource: draggedResource }, slots.item))) : null)));
     function handleDragStart(event) {

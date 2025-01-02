@@ -13,6 +13,6 @@ var InputLabel = function (props) {
         label && (react_1.default.createElement("label", { className: "text-sm text-bold text-foreground" }, label)),
         info && (react_1.default.createElement(core_1.Tooltip, { title: info },
             react_1.default.createElement(core_1.IconButton, null,
-                react_1.default.createElement(react_2.RiInformation2Line, { name: "Info", size: "sm", className: "text-muted-foreground" }))))));
+                react_1.default.createElement(react_2.RiInformation2Line, { name: "Info", size: "sm", className: "text-foreground/70" }))))));
 };
 exports.default = InputLabel;

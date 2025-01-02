@@ -28,7 +28,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Backdrop = void 0;
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var framer_motion_1 = require("framer-motion");
 function Backdrop(props) {
     var children = props.children, open = props.open, onClick = props.onClick, className = props.className, rest = __rest(props, ["children", "open", "onClick", "className"]);
@@ -42,7 +42,7 @@ function Backdrop(props) {
             opacity: 0,
             backdropFilter: 'blur(0px)',
             transition: { duration: 0.3, delay: 0.1 },
-        }, onClick: onClick, className: (0, frontend_shadcn_1.cn)('fixed inset-0 z-50 flex items-center justify-center bg-black/60', className) }, props),
+        }, onClick: onClick, className: (0, react_2.cn)('fixed inset-0 z-50 flex items-center justify-center bg-black/60', className) }, props),
         react_1.default.createElement(framer_motion_1.motion.div, { initial: { scale: 0.9, opacity: 0 }, animate: {
                 scale: 1,
                 opacity: 1,

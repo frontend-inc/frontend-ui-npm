@@ -8,8 +8,7 @@ var react_1 = __importDefault(require("react"));
 var index_1 = require("../../../../constants/index");
 var lucide_react_1 = require("lucide-react");
 var components_1 = require("../../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
-var core_1 = require("../../../core");
+var react_2 = require("@nextui-org/react");
 var FilternameWrapper = function (_a) {
     var _b;
     var index = _a.index, filter = _a.filter, fieldOptions = _a.fieldOptions, handleChange = _a.handleChange, handleRemove = _a.handleRemove;
@@ -21,7 +20,7 @@ var FilternameWrapper = function (_a) {
         operatorOptions = index_1.FILTER_OPERATORS[(name === null || name === void 0 ? void 0 : name.db_type) || 'integer'];
     }
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(frontend_shadcn_1.Separator, null),
+        react_1.default.createElement(react_2.Divider, null),
         react_1.default.createElement("div", { className: "flex flex-row justify-start items-start" },
             react_1.default.createElement("div", null,
                 react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
@@ -37,7 +36,7 @@ var FilternameWrapper = function (_a) {
                             value: opt,
                         }); }), value: (filter === null || filter === void 0 ? void 0 : filter.value) || '', handleChange: function (ev) { return handleChange(ev, index); } })))),
             react_1.default.createElement("div", { className: "mt-1 pr-2" },
-                react_1.default.createElement(core_1.IconButton, { onClick: function () { return handleRemove(index); } },
+                react_1.default.createElement(react_2.Button, { isIconOnly: true, onPress: function () { return handleRemove(index); } },
                     react_1.default.createElement(lucide_react_1.X, { className: "w-5 h-5 text-foreground" }))))));
 };
 exports.default = FilternameWrapper;

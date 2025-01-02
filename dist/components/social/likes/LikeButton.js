@@ -65,7 +65,7 @@ var helpers_1 = require("../../../helpers");
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
 var components_1 = require("../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function LikeButton(props) {
     var _this = this;
     var resource = props.resource, _a = props.size, size = _a === void 0 ? 'small' : _a, _b = props.variant, variant = _b === void 0 ? 'rounded' : _b;
@@ -102,7 +102,7 @@ function LikeButton(props) {
         }
     }, [currentUser, resource === null || resource === void 0 ? void 0 : resource.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, frontend_shadcn_1.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider') },
+        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, react_2.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider') },
             liked && react_1.default.createElement(components_1.RemixIcon, { name: "ri-heart-fill", className: "fill-primary" }),
             !liked && react_1.default.createElement(components_1.RemixIcon, { name: "ri-heart-line" }))));
 }

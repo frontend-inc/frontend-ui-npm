@@ -18,6 +18,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var BlogList = function (props) {
-    return (react_1.default.createElement(__1.DocumentList, __assign({}, props, { list: __1.BlogListItems, contentType: "article" })));
+    return (react_1.default.createElement(__1.DocumentList, __assign({}, props, { list: __1.BlogListItems, contentType: "article", emptyIcon: "ri-quill-pen-fill", emptyTitle: "No blog posts", emptyDescription: "Create your first blog post to get started." })));
 };
 exports.default = BlogList;

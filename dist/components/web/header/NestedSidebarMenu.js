@@ -38,7 +38,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.organizeLinks = void 0;
 var react_1 = __importStar(require("react"));
 var lucide_react_1 = require("lucide-react");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function organizeLinks(links) {
     var linkMap = new Map();
     var rootLinks = [];
@@ -85,11 +85,11 @@ function RenderLink(_a) {
         }
     };
     return (react_1.default.createElement("li", { key: link.id, className: "list-none" },
-        react_1.default.createElement("button", { onClick: onClickHandler, className: "flex w-full items-center justify-between \n          rounded-md p-2 text-left text-md font-medium text-foreground\n          transition-colors hover:bg-muted focus:outline-none", "aria-expanded": hasChildren ? isOpen : undefined },
+        react_1.default.createElement("button", { onClick: onClickHandler, className: "flex w-full items-center justify-between \n          rounded-md p-2 text-left text-md font-medium text-foreground\n          transition-colors hover:bg-content2 focus:outline-none", "aria-expanded": hasChildren ? isOpen : undefined },
             react_1.default.createElement("div", { className: "flex flex-col text-left" },
                 react_1.default.createElement("span", null, link.label),
-                link.description && (react_1.default.createElement("span", { className: "text-xs text-muted-foreground" }, link.description))),
-            hasChildren && (react_1.default.createElement(lucide_react_1.ChevronDown, { className: (0, frontend_shadcn_1.cn)('h-4 w-4 transition-transform', isOpen && 'rotate-180') }))),
+                link.description && (react_1.default.createElement("span", { className: "text-xs text-foreground/70" }, link.description))),
+            hasChildren && (react_1.default.createElement(lucide_react_1.ChevronDown, { className: (0, react_2.cn)('h-4 w-4 transition-transform', isOpen && 'rotate-180') }))),
         hasChildren && isOpen && (react_1.default.createElement("ul", { className: "ml-4 mt-1 space-y-1 w-full pl-2" }, link.children.map(function (child) { return (react_1.default.createElement(RenderLink, { key: child.id, link: child, handleClick: handleClick })); })))));
 }
 function NestedSidebarMenu(_a) {

@@ -91,8 +91,8 @@ var useSearch = function (props) {
         }
         findMany(searchQuery);
     };
-    var handleSortBy = function (field) {
-        findMany(__assign(__assign({}, query), { sort_by: field === null || field === void 0 ? void 0 : field.name }));
+    var handleSortBy = function (sortBy) {
+        findMany(__assign(__assign({}, query), { sort_by: sortBy }));
     };
     var handleSortDirection = function (sortDirection) {
         findMany(__assign(__assign({}, query), { sort_direction: sortDirection }));

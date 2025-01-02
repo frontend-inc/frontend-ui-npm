@@ -67,20 +67,20 @@ var react_1 = __importStar(require("react"));
 var image_1 = __importDefault(require("next/image"));
 var lucide_react_1 = require("lucide-react");
 var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
+var react_3 = require("@nextui-org/react");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var components_2 = require("../../../components");
-var frontend_shadcn_2 = require("frontend-shadcn");
-var components_3 = require("../../../components");
 var IMAGE_WIDTH = 140;
 function RenderAttachment(props) {
     var _a = props || {}, src = _a.src, _b = _a.objectFit, objectFit = _b === void 0 ? 'cover' : _b, _c = _a.size, size = _c === void 0 ? IMAGE_WIDTH : _c, onDelete = _a.onDelete, _d = _a.variant, variant = _d === void 0 ? 'file' : _d, _e = _a.alt, alt = _e === void 0 ? '' : _e;
     return (react_1.default.createElement("div", { className: "relative" },
         variant === 'image' && (react_1.default.createElement("div", { className: "relative overflow-hidden rounded", style: { height: size, width: size } },
             react_1.default.createElement(image_1.default, { alt: alt, height: size, width: size, src: src, style: { objectFit: objectFit } }))),
-        variant === 'file' && (react_1.default.createElement(frontend_shadcn_2.Avatar, { className: "rounded-lg h-16 w-16" },
-            react_1.default.createElement(frontend_shadcn_2.AvatarFallback, { className: "rounded-lg" },
-                react_1.default.createElement(components_3.RemixIcon, { name: 'ri-file-2-line', size: 'lg' })))),
-        react_1.default.createElement(components_2.Button, { variant: "outline", size: "icon", className: (0, frontend_shadcn_1.cn)('text-foreground absolute -top-3 left-2 h-6 w-6 rounded-full', variant === 'file' && 'left-12 -top-1'), onClick: onDelete },
+        variant === 'file' && (react_1.default.createElement(frontend_shadcn_1.Avatar, { className: "rounded-lg h-16 w-16" },
+            react_1.default.createElement(frontend_shadcn_1.AvatarFallback, { className: "rounded-lg" },
+                react_1.default.createElement(components_2.RemixIcon, { name: 'ri-file-2-line', size: 'lg' })))),
+        react_1.default.createElement(react_3.Button, { isIconOnly: true, size: "sm", className: (0, react_2.cn)('text-foreground absolute -top-3 left-2', variant === 'file' && 'left-12 -top-1'), onPress: onDelete },
             react_1.default.createElement(lucide_react_1.Trash2, { className: "h-4 w-4" }))));
 }
 function AttachmentInput(props) {
@@ -124,6 +124,6 @@ function AttachmentInput(props) {
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         (attachment === null || attachment === void 0 ? void 0 : attachment.url) && (react_1.default.createElement(RenderAttachment, { variant: variant, src: attachment.url, size: size, objectFit: objectFit, onDelete: function () { return handleDelete(name); } })),
         !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && src && (react_1.default.createElement(RenderAttachment, { src: src, size: size, variant: variant, objectFit: objectFit, onDelete: onRemove })),
-        !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && !src && react_1.default.createElement(components_3.DropZone, { onDrop: onDrop })));
+        !(attachment === null || attachment === void 0 ? void 0 : attachment.url) && !src && react_1.default.createElement(components_2.DropZone, { onDrop: onDrop })));
 }
 exports.default = AttachmentInput;

@@ -17,7 +17,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.InputLabel = exports.DropZone = exports.URLInput = exports.TabsInput = exports.SearchInput = exports.SwitchInput = exports.StateInput = exports.SelectInput = exports.SlugInput = exports.RemoteAutosuggest = exports.RatingInput = exports.RadioInput = exports.ThemeInput = exports.TextArea = exports.TextButtonInput = exports.TextInput = exports.HTMLInput = exports.HTMLEditor = exports.PriceRangeInput = exports.PhoneInput = exports.NumberRangeInput = exports.NumberSliderInput = exports.JsonArrayInput = exports.InputBase = exports.Input = exports.ImageInput = exports.HelperText = exports.FileUploader = exports.EmailSubscribeInput = exports.EmailInput = exports.ErrorInput = exports.ErrorText = exports.DividerInput = exports.DateInput = exports.CountryInput = exports.ColorInput = exports.CheckboxInput = exports.CheckboxGroupInput = exports.BooleanInput = exports.AttachmentInput = exports.ArrayListInput = exports.ArrayInput = exports.AutocompleteInput = exports.Autosuggest = void 0;
+exports.InputLabel = exports.DropZone = exports.URLInput = exports.TabsInput = exports.SearchInput = exports.SwitchInput = exports.StateInput = exports.SelectInput = exports.SlugInput = exports.RemoteAutosuggest = exports.RatingInput = exports.RadioInput = exports.ThemeInput = exports.TextArea = exports.TextInput = exports.OtpInput = exports.HTMLInput = exports.HTMLEditor = exports.PriceRangeInput = exports.PhoneInput = exports.NumberRangeInput = exports.NumberSliderInput = exports.JsonArrayInput = exports.InputBase = exports.Input = exports.ImageInput = exports.HelperText = exports.FileUploader = exports.EmailSubscribeInput = exports.EmailInput = exports.ErrorInput = exports.ErrorText = exports.DividerInput = exports.DateInput = exports.CountryInput = exports.ColorInput = exports.CheckboxInput = exports.CheckboxGroupInput = exports.BooleanInput = exports.AttachmentInput = exports.ArrayListInput = exports.ArrayInput = exports.AutocompleteInput = exports.Autosuggest = void 0;
 // Inputs
 var Autosuggest_1 = require("./Autosuggest");
 Object.defineProperty(exports, "Autosuggest", { enumerable: true, get: function () { return __importDefault(Autosuggest_1).default; } });
@@ -75,10 +75,10 @@ var HTMLEditor_1 = require("./HTMLEditor");
 Object.defineProperty(exports, "HTMLEditor", { enumerable: true, get: function () { return __importDefault(HTMLEditor_1).default; } });
 var HTMLInput_1 = require("./HTMLInput");
 Object.defineProperty(exports, "HTMLInput", { enumerable: true, get: function () { return __importDefault(HTMLInput_1).default; } });
+var OtpInput_1 = require("./OtpInput");
+Object.defineProperty(exports, "OtpInput", { enumerable: true, get: function () { return __importDefault(OtpInput_1).default; } });
 var TextInput_1 = require("./TextInput");
 Object.defineProperty(exports, "TextInput", { enumerable: true, get: function () { return __importDefault(TextInput_1).default; } });
-var TextButtonInput_1 = require("./TextButtonInput");
-Object.defineProperty(exports, "TextButtonInput", { enumerable: true, get: function () { return __importDefault(TextButtonInput_1).default; } });
 var TextArea_1 = require("./TextArea");
 Object.defineProperty(exports, "TextArea", { enumerable: true, get: function () { return __importDefault(TextArea_1).default; } });
 var ThemeInput_1 = require("./ThemeInput");

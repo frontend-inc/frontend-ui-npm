@@ -37,7 +37,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var dnd_1 = require("@hello-pangea/dnd");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function SortableList(props) {
     var _a = props || {}, items = _a.items, _b = _a.droppableId, droppableId = _b === void 0 ? 'sortable-list' : _b, renderItem = _a.renderItem, handleDrop = _a.handleDrop;
     var _c = (0, react_1.useState)(items), sorted = _c[0], setSorted = _c[1];
@@ -59,7 +59,7 @@ function SortableList(props) {
     }, [items]);
     return (react_1.default.createElement(dnd_1.DragDropContext, { onDragEnd: onDragEnd },
         react_1.default.createElement(dnd_1.Droppable, { droppableId: String(droppableId) }, function (provided) { return (react_1.default.createElement("div", __assign({ className: "w-full" }, provided.droppableProps, { ref: provided.innerRef }),
-            react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full overflow-y-scroll scrollbar-hide" }, sorted === null || sorted === void 0 ? void 0 : sorted.map(function (item, index) { return (react_1.default.createElement(dnd_1.Draggable, { key: (item === null || item === void 0 ? void 0 : item.id) || index, draggableId: String((item === null || item === void 0 ? void 0 : item.id) || index), index: index }, function (provided, snapshot) { return (react_1.default.createElement("div", __assign({ ref: provided.innerRef }, provided.draggableProps, provided.dragHandleProps, { className: (0, frontend_shadcn_1.cn)('transition-colors duration-200') }), renderItem(__assign(__assign({}, item), { isDragging: snapshot.isDragging }), index, { items: items, droppableId: droppableId, renderItem: renderItem, handleDrop: handleDrop }))); })); })),
+            react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full overflow-y-scroll scrollbar-hide" }, sorted === null || sorted === void 0 ? void 0 : sorted.map(function (item, index) { return (react_1.default.createElement(dnd_1.Draggable, { key: (item === null || item === void 0 ? void 0 : item.id) || index, draggableId: String((item === null || item === void 0 ? void 0 : item.id) || index), index: index }, function (provided, snapshot) { return (react_1.default.createElement("div", __assign({ ref: provided.innerRef }, provided.draggableProps, provided.dragHandleProps, { className: (0, react_2.cn)('transition-colors duration-200') }), renderItem(__assign(__assign({}, item), { isDragging: snapshot.isDragging }), index, { items: items, droppableId: droppableId, renderItem: renderItem, handleDrop: handleDrop }))); })); })),
             provided.placeholder)); })));
 }
 exports.default = SortableList;

@@ -6,7 +6,9 @@ interface MarqueeProps {
     children?: React.ReactNode;
     vertical?: boolean;
     repeat?: number;
+    speed?: number;
     [key: string]: any;
 }
-export default function Marquee({ className, reverse, pauseOnHover, children, vertical, repeat, ...props }: MarqueeProps): React.JSX.Element;
+export default function Marquee({ className, reverse, children, vertical, repeat, speed, // Default speed in seconds
+...props }: MarqueeProps): React.JSX.Element;
 export {};

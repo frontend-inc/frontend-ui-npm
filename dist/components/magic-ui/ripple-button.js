@@ -55,11 +55,11 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var frontend_shadcn_1 = require("frontend-shadcn");
-var react_1 = __importStar(require("react"));
-var RippleButton = react_1.default.forwardRef(function (_a, ref) {
+var react_1 = require("@nextui-org/react");
+var react_2 = __importStar(require("react"));
+var RippleButton = react_2.default.forwardRef(function (_a, ref) {
     var className = _a.className, children = _a.children, _b = _a.rippleColor, rippleColor = _b === void 0 ? '#ffffff' : _b, _c = _a.duration, duration = _c === void 0 ? '600ms' : _c, onClick = _a.onClick, props = __rest(_a, ["className", "children", "rippleColor", "duration", "onClick"]);
-    var _d = (0, react_1.useState)([]), buttonRipples = _d[0], setButtonRipples = _d[1];
+    var _d = (0, react_2.useState)([]), buttonRipples = _d[0], setButtonRipples = _d[1];
     var handleClick = function (event) {
         createRipple(event);
         onClick === null || onClick === void 0 ? void 0 : onClick(event);
@@ -73,7 +73,7 @@ var RippleButton = react_1.default.forwardRef(function (_a, ref) {
         var newRipple = { x: x, y: y, size: size, key: Date.now() };
         setButtonRipples(function (prevRipples) { return __spreadArray(__spreadArray([], prevRipples, true), [newRipple], false); });
     };
-    (0, react_1.useEffect)(function () {
+    (0, react_2.useEffect)(function () {
         if (buttonRipples.length > 0) {
             var lastRipple_1 = buttonRipples[buttonRipples.length - 1];
             var timeout_1 = setTimeout(function () {
@@ -84,9 +84,9 @@ var RippleButton = react_1.default.forwardRef(function (_a, ref) {
             return function () { return clearTimeout(timeout_1); };
         }
     }, [buttonRipples, duration]);
-    return (react_1.default.createElement("button", __assign({ className: (0, frontend_shadcn_1.cn)('relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg border-2 bg-background px-4 py-2 text-center text-primary', className), onClick: handleClick, ref: ref }, props),
-        react_1.default.createElement("div", { className: "relative z-10" }, children),
-        react_1.default.createElement("span", { className: "pointer-events-none absolute inset-0" }, buttonRipples.map(function (ripple) { return (react_1.default.createElement("span", { className: "absolute animate-rippling rounded-full bg-background opacity-30", key: ripple.key, style: {
+    return (react_2.default.createElement("button", __assign({ className: (0, react_1.cn)('relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg border-2 bg-background px-4 py-2 text-center text-primary', className), onClick: handleClick, ref: ref }, props),
+        react_2.default.createElement("div", { className: "relative z-10" }, children),
+        react_2.default.createElement("span", { className: "pointer-events-none absolute inset-0" }, buttonRipples.map(function (ripple) { return (react_2.default.createElement("span", { className: "absolute animate-rippling rounded-full bg-background opacity-30", key: ripple.key, style: {
                 width: "".concat(ripple.size, "px"),
                 height: "".concat(ripple.size, "px"),
                 top: "".concat(ripple.y, "px"),

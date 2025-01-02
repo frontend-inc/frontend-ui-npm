@@ -29,7 +29,7 @@ var frontend_shadcn_1 = require("frontend-shadcn");
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var use_debounce_1 = require("use-debounce");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function InputBase(props) {
     var _a = props || {}, type = _a.type, name = _a.name, _b = _a.value, value = _b === void 0 ? '' : _b, handleChange = _a.handleChange, placeholder = _a.placeholder, disabled = _a.disabled, errors = _a.errors, className = _a.className, _c = _a.debounceDelay, debounceDelay = _c === void 0 ? 350 : _c, _d = _a.disableDebounce, disableDebounce = _d === void 0 ? false : _d;
     var _e = (0, react_1.useState)(value), text = _e[0], setText = _e[1];
@@ -59,7 +59,7 @@ function InputBase(props) {
         setText(value);
     }, [value]);
     return (react_1.default.createElement("div", { className: "relative w-full" },
-        react_1.default.createElement(frontend_shadcn_1.Input, { className: (0, frontend_shadcn_2.cn)(className, 'w-full bg-input text-foreground', error && 'border border-destructive'), type: type, name: name, disabled: disabled, placeholder: placeholder, onChange: handleInputChange, value: text, autoComplete: "off" }),
+        react_1.default.createElement(frontend_shadcn_1.Input, { className: (0, react_2.cn)(className, 'w-full bg-input text-foreground', error && 'border border-destructive'), type: type, name: name, disabled: disabled, placeholder: placeholder, onChange: handleInputChange, value: text, autoComplete: "off" }),
         react_1.default.createElement(components_1.ErrorText, { error: error })));
 }
 exports.default = InputBase;

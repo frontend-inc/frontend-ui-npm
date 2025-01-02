@@ -3,9 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SparklesText = exports.ShineBorder = exports.ShimmerButton = exports.Safari = exports.RippleButton = exports.ShinyButton = exports.RainbowButton = exports.NumberTicker = exports.Marquee = exports.Iphone15Pro = exports.DotPattern = exports.BorderBeam = exports.BlurIn = exports.BlurFade = exports.BentoGrid = exports.BentoCard = exports.AnimatedSubscribeButton = exports.AnimatedList = exports.AnimatedShinyText = exports.AnimatedGradientText = exports.AnimatedCircularProgressBar = void 0;
-var animated_circular_progress_bar_1 = require("./animated-circular-progress-bar");
-Object.defineProperty(exports, "AnimatedCircularProgressBar", { enumerable: true, get: function () { return __importDefault(animated_circular_progress_bar_1).default; } });
+exports.SparklesText = exports.ShineBorder = exports.ShimmerButton = exports.Safari = exports.RippleButton = exports.ShinyButton = exports.RainbowButton = exports.NumberTicker = exports.Marquee = exports.Iphone15Pro = exports.DotPattern = exports.BorderBeam = exports.BlurIn = exports.BlurFade = exports.BentoGrid = exports.BentoCard = exports.AnimatedSubscribeButton = exports.AnimatedList = exports.AnimatedShinyText = exports.AnimatedGradientText = void 0;
 var animated_gradient_text_1 = require("./animated-gradient-text");
 Object.defineProperty(exports, "AnimatedGradientText", { enumerable: true, get: function () { return __importDefault(animated_gradient_text_1).default; } });
 var animated_shiny_text_1 = require("./animated-shiny-text");

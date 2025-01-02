@@ -1,16 +1,5 @@
 'use client';
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -28,10 +17,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
-var ResourceToolbarButtons_1 = __importDefault(require("./toolbar/ResourceToolbarButtons"));
+var react_2 = require("@nextui-org/react");
 var ResourceToolbar = function (props) {
-    var _a = props || {}, open = _a.open, selected = _a.selected, selectedIds = _a.selectedIds, handleClose = _a.handleClose, buttons = _a.buttons, _b = _a.component, Component = _b === void 0 ? ResourceToolbarButtons_1.default : _b, rest = __rest(_a, ["open", "selected", "selectedIds", "handleClose", "buttons", "component"]);
+    var _a = props || {}, open = _a.open, selected = _a.selected, selectedIds = _a.selectedIds, enableDelete = _a.enableDelete, enablePublish = _a.enablePublish, handleDelete = _a.handleDelete, handlePublish = _a.handlePublish, handleUnpublish = _a.handleUnpublish, handleClose = _a.handleClose, rest = __rest(_a, ["open", "selected", "selectedIds", "enableDelete", "enablePublish", "handleDelete", "handlePublish", "handleUnpublish", "handleClose"]);
     return (react_1.default.createElement(__1.ResourceToolbarModal, { open: open, handleClose: handleClose },
-        react_1.default.createElement(Component, __assign({ selected: selected, selectedIds: selectedIds, buttons: buttons }, rest))));
+        react_1.default.createElement("div", { className: "flex flex-row justify-center items-center space-x-2" },
+            enablePublish && (react_1.default.createElement(react_1.default.Fragment, null,
+                react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "solid", onPress: handlePublish }, "Publish"),
+                react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "solid", onPress: handleUnpublish }, "Unpublish"))),
+            enableDelete && (react_1.default.createElement(react_2.Button, { fullWidth: true, color: "danger", onPress: handleDelete }, "Delete")))));
 };
 exports.default = ResourceToolbar;

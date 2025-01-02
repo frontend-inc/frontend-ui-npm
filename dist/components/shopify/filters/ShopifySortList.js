@@ -12,7 +12,7 @@ var ShopifySortList = function (props) {
     return (react_1.default.createElement(frontend_shadcn_1.RadioGroup, { value: "".concat(value, "-").concat(reverse), onValueChange: function (newValue) {
             var _a = newValue.split('-'), value = _a[0], reverse = _a[1];
             handleClick(value, reverse === 'true');
-        }, className: "space-y-0" }, options === null || options === void 0 ? void 0 : options.map(function (option, index) { return (react_1.default.createElement("div", { key: index, className: "flex items-center cursor-pointer p-2 space-x-2 hover:bg-muted/50 rounded-lg" },
+        }, className: "space-y-0" }, options === null || options === void 0 ? void 0 : options.map(function (option, index) { return (react_1.default.createElement("div", { key: index, className: "flex items-center cursor-pointer p-2 space-x-2 hover:bg-content2/50 rounded-lg" },
         react_1.default.createElement(frontend_shadcn_1.RadioGroupItem, { value: "".concat(option.value, "-").concat(option.reverse), id: "option-".concat(index) }),
         react_1.default.createElement(frontend_shadcn_2.Label, { htmlFor: "option-".concat(index), className: "text-base font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" }, option.label))); })));
 };

@@ -28,10 +28,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormLabel = void 0;
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var FormLabel = react_1.default.forwardRef(function (_a, ref) {
     var className = _a.className, children = _a.children, required = _a.required, error = _a.error, disabled = _a.disabled, props = __rest(_a, ["className", "children", "required", "error", "disabled"]);
-    return (react_1.default.createElement("label", __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)('text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', error && 'text-destructive', disabled && 'opacity-50 cursor-not-allowed', className) }, props),
+    return (react_1.default.createElement("label", __assign({ ref: ref, className: (0, react_2.cn)('text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', error && 'text-destructive', disabled && 'opacity-50 cursor-not-allowed', className) }, props),
         children,
         required && react_1.default.createElement("span", { className: "text-destructive ml-1" }, "*")));
 });

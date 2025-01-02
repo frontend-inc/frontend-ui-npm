@@ -27,7 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var AuthUserListItem = function (_a) {
     var user = _a.user, _b = _a.selected, selected = _b === void 0 ? false : _b, _c = _a.isAdmin, isAdmin = _c === void 0 ? false : _c, handleClick = _a.handleClick, handleEdit = _a.handleEdit, handleDelete = _a.handleDelete;
     var _d = (0, react_1.useState)(false), canEdit = _d[0], setCanEdit = _d[1];
@@ -42,7 +42,7 @@ var AuthUserListItem = function (_a) {
         }
     }, [user, isAdmin, currentUser]);
     return (react_1.default.createElement("li", { className: "p-0 rounded-md ".concat(selected ? 'border-3 border-primary' : '') },
-        react_1.default.createElement(components_1.Button, { variant: "ghost", className: "w-full justify-start px-2 py-3", onClick: handleClick },
+        react_1.default.createElement(react_2.Button, { variant: "ghost", className: "w-full justify-start px-2 py-3", onPress: handleClick },
             react_1.default.createElement("div", { className: "flex items-center w-full" },
                 react_1.default.createElement("div", { className: "mr-4" },
                     react_1.default.createElement(__1.UserAvatar, { user: user })),
@@ -50,7 +50,7 @@ var AuthUserListItem = function (_a) {
                     react_1.default.createElement("div", { className: "flex items-center space-x-2" },
                         react_1.default.createElement("span", { className: "text-sm font-medium" }, user.name),
                         (user === null || user === void 0 ? void 0 : user.role) && react_1.default.createElement(__1.Label, null, user === null || user === void 0 ? void 0 : user.role)),
-                    react_1.default.createElement("span", { className: "text-xs text-muted-foreground" }, user.email)),
+                    react_1.default.createElement("span", { className: "text-xs text-foreground/70" }, user.email)),
                 (canEdit || canDelete) && (react_1.default.createElement(__1.MenuButton, { handleEdit: canEdit ? function () { return handleEdit(user); } : undefined, handleDelete: canDelete ? function () { return handleDelete(user); } : undefined }))))));
 };
 exports.default = AuthUserListItem;

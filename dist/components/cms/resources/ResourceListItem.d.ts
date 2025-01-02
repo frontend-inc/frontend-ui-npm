@@ -14,7 +14,6 @@ export type ResourceListItemProps = {
     handleSelect?: () => void;
     handleReload?: () => void;
     secondaryAction?: React.ReactNode;
-    menuActions?: React.ReactNode;
     sortable?: boolean;
     isDragging?: boolean;
     disableImage?: boolean;

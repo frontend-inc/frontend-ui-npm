@@ -7,25 +7,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var __2 = require("../..");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var lucide_react_1 = require("lucide-react");
 var UserMenu = function (props) {
-    var _a = props || {}, handleLogoutClick = _a.handleLogoutClick, handleClick = _a.handleClick, children = _a.children;
+    var _a = props || {}, handleLogoutClick = _a.handleLogoutClick, handleClick = _a.handleClick;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
-    return (react_1.default.createElement("div", { className: "flex w-full justify-center" },
-        react_1.default.createElement(frontend_shadcn_1.DropdownMenu, null,
-            react_1.default.createElement(frontend_shadcn_1.DropdownMenuTrigger, { asChild: true },
-                react_1.default.createElement(__2.Button, { variant: "ghost", className: "h-8 w-8 rounded-full" },
-                    react_1.default.createElement(__1.UserAvatar, { size: 36, user: currentUser }))),
-            react_1.default.createElement(frontend_shadcn_1.DropdownMenuContent, { className: "bg-background w-56", align: "end", forceMount: true },
-                react_1.default.createElement(frontend_shadcn_1.DropdownMenuItem, { onClick: handleClick },
-                    react_1.default.createElement("div", { className: "flex items-center" },
-                        react_1.default.createElement("span", { className: "text-sm font-medium" }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.name))),
-                react_1.default.createElement(frontend_shadcn_1.DropdownMenuSeparator, null),
-                react_1.default.createElement(frontend_shadcn_1.DropdownMenuItem, { onClick: handleLogoutClick },
-                    react_1.default.createElement(lucide_react_1.LogOut, { className: "mr-2 h-4 w-4" }),
-                    react_1.default.createElement("span", null, "Sign Out")),
-                children))));
+    var handleAction = function (key) {
+        switch (key) {
+            case 'logout':
+                handleLogoutClick();
+                break;
+            case 'user':
+                handleClick();
+                break;
+        }
+    };
+    if (!(currentUser === null || currentUser === void 0 ? void 0 : currentUser.id))
+        return null;
+    return (react_1.default.createElement(react_2.Dropdown, null,
+        react_1.default.createElement(react_2.DropdownTrigger, null,
+            react_1.default.createElement(react_2.Button, { isIconOnly: true },
+                react_1.default.createElement(__1.UserAvatar, { user: currentUser }))),
+        react_1.default.createElement(react_2.DropdownMenu, { onAction: handleAction },
+            react_1.default.createElement(react_2.DropdownItem, { key: 'user' }, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.name) || "User"),
+            react_1.default.createElement(react_2.DropdownItem, { key: 'logout', endContent: react_1.default.createElement(lucide_react_1.LogOut, { className: "h-4 w-4" }) }, "Sign Out"))));
 };
 exports.default = UserMenu;

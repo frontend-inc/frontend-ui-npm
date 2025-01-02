@@ -15,6 +15,6 @@ var FooterLinks = function (_a) {
             react_1.default.createElement(link_1.default, { href: link.path || '#', onClick: function (e) {
                     e.preventDefault();
                     handleClick(link.path);
-                }, className: "text-sm text-muted-foreground hover:text-foreground transition-colors duration-200" }, link.label))); }))));
+                }, className: "text-sm text-foreground/70 hover:text-foreground transition-colors duration-200" }, link.label))); }))));
 };
 exports.default = FooterLinks;

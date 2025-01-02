@@ -1,8 +1,7 @@
 import React from 'react';
 type SwipeableTestimonialsProps = {
-    variant?: 'default' | 'fill' | 'outline';
     items: Record<string, any>[];
-    enableAutoPlay?: boolean;
+    variant?: 'outline' | 'fill' | 'default';
 };
 declare const SwipeableTestimonials: React.FC<SwipeableTestimonialsProps>;
 export default SwipeableTestimonials;

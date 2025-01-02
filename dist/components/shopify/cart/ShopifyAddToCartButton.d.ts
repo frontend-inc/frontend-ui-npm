@@ -8,7 +8,7 @@ type ShopifyAddToCartButtonProps = {
     enableQuantity?: boolean;
     enableSubscription?: boolean;
     enableFavorites?: boolean;
-    size?: 'sm' | 'default' | 'lg';
+    size?: 'sm' | 'md' | 'lg';
 };
 declare const ShopifyAddToCartButton: React.FC<ShopifyAddToCartButtonProps>;
 export default ShopifyAddToCartButton;

@@ -48,15 +48,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IconButton = void 0;
 var react_1 = __importStar(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
+var react_3 = require("@nextui-org/react");
 var IconButton = (0, react_1.forwardRef)(function (_a, ref) {
-    var _b = _a.color, color = _b === void 0 ? 'ghost' : _b, _c = _a.variant, variant = _c === void 0 ? 'rounded' : _c, className = _a.className, children = _a.children, props = __rest(_a, ["color", "variant", "className", "children"]);
-    var variantClasses = {
-        rounded: 'rounded-md',
-        circular: 'rounded-full',
-    };
-    return (react_1.default.createElement(frontend_shadcn_1.Button, __assign({ ref: ref, size: "icon", variant: "ghost", className: (0, frontend_shadcn_2.cn)('w-[36px] h-[36px] min-w-[36px] min-h-[36px] text-foreground bg-transparent hover:bg-foreground/10', 'flex items-center justify-center', variantClasses[variant], className) }, props), children));
+    var className = _a.className, _b = _a.variant, variant = _b === void 0 ? 'light' : _b, children = _a.children, props = __rest(_a, ["className", "variant", "children"]);
+    return (react_1.default.createElement(react_3.Button, __assign({ ref: ref, isIconOnly: true, variant: variant, className: (0, react_2.cn)('min-w-8 w-8 h-8', className) }, props), children));
 });
 exports.IconButton = IconButton;
 IconButton.displayName = 'IconButton';

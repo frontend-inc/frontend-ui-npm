@@ -76,6 +76,6 @@ var ListItem = React.forwardRef(function (_a, ref) {
                 React.createElement("div", { className: "flex flex-row space-x-2" },
                     React.createElement("div", { className: "flex flex-col space-y-1" },
                         title && (React.createElement("div", { className: "text-sm text-foreground font-medium leading-none" }, title)),
-                        children && (React.createElement("p", { className: "line-clamp-2 text-sm leading-snug text-muted-foreground" }, children))))))));
+                        children && (React.createElement("p", { className: "line-clamp-2 text-sm leading-snug text-foreground/70" }, children))))))));
 });
 ListItem.displayName = "ListItem";

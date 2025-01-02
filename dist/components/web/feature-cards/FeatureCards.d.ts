@@ -1,6 +1,5 @@
 import React from 'react';
 export type FeatureCardsProps = {
-    layout?: 'grid' | 'carousel';
     items: {
         icon?: string;
         label?: string;

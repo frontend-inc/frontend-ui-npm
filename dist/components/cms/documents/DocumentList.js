@@ -27,9 +27,8 @@ var DocumentList = function (props) {
         sort_direction: 'asc',
         per_page: 12,
     };
-    var _a = props || {}, _b = _a.contentType, contentType = _b === void 0 ? '' : _b, _c = _a.query, query = _c === void 0 ? DEFAULT_QUERY : _c, _d = _a.displayTitle, displayTitle = _d === void 0 ? true : _d, _e = _a.displaySubtitle, displaySubtitle = _e === void 0 ? true : _e, _f = _a.displayTags, displayTags = _f === void 0 ? false : _f, _g = _a.displayLocation, displayLocation = _g === void 0 ? false : _g, _h = _a.displayCategory, displayCategory = _h === void 0 ? false : _h, displayDescription = _a.displayDescription, enableDownload = _a.enableDownload, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableComments = _a.enableComments, sortTitle = _a.sortTitle, sortPosition = _a.sortPosition, sortDate = _a.sortDate, sortPublished = _a.sortPublished, sortPrice = _a.sortPrice, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, _j = _a.style, style = _j === void 0 ? 'card' : _j, _k = _a.buttons, buttons = _k === void 0 ? [] : _k, circular = _a.circular, disableImage = _a.disableImage, enableShow = _a.enableShow, enableSearch = _a.enableSearch, enableFilters = _a.enableFilters, enableSorting = _a.enableSorting, _l = _a.displayFields, displayFields = _l === void 0 ? [] : _l, _m = _a.filterChoices, filterChoices = _m === void 0 ? [] : _m, _o = _a.headers, headers = _o === void 0 ? [] : _o, // Used by KanBan
-    _p = _a.header, // Used by KanBan
-    Header = _p === void 0 ? __2.DocumentHeader : _p, _q = _a.list, List = _q === void 0 ? __2.DocumentListItems : _q, _r = _a.component, Component = _r === void 0 ? __2.DocumentListItem : _r, _s = _a.show, Show = _s === void 0 ? __2.DocumentShow : _s, _t = _a.empty, Empty = _t === void 0 ? __2.DocumentEmpty : _t, _u = _a.slots, defaultSlots = _u === void 0 ? {
+    var _a = props || {}, _b = _a.contentType, contentType = _b === void 0 ? '' : _b, _c = _a.query, query = _c === void 0 ? DEFAULT_QUERY : _c, _d = _a.displayTitle, displayTitle = _d === void 0 ? true : _d, _e = _a.displaySubtitle, displaySubtitle = _e === void 0 ? true : _e, _f = _a.displayTags, displayTags = _f === void 0 ? false : _f, _g = _a.displayLocation, displayLocation = _g === void 0 ? false : _g, _h = _a.displayCategory, displayCategory = _h === void 0 ? false : _h, displayDescription = _a.displayDescription, enableDownload = _a.enableDownload, enableLikes = _a.enableLikes, enableFavorites = _a.enableFavorites, enableComments = _a.enableComments, sortTitle = _a.sortTitle, sortPosition = _a.sortPosition, sortDate = _a.sortDate, sortPublished = _a.sortPublished, sortPrice = _a.sortPrice, enableGradient = _a.enableGradient, enableOverlay = _a.enableOverlay, _j = _a.style, style = _j === void 0 ? 'card' : _j, _k = _a.buttons, buttons = _k === void 0 ? [] : _k, disableImage = _a.disableImage, enableShow = _a.enableShow, enableSearch = _a.enableSearch, enableFilters = _a.enableFilters, enableSorting = _a.enableSorting, _l = _a.displayFields, displayFields = _l === void 0 ? [] : _l, _m = _a.filterChoices, filterChoices = _m === void 0 ? [] : _m, _o = _a.headers, headers = _o === void 0 ? [] : _o, // Used by KanBan
+    emptyIcon = _a.emptyIcon, emptyTitle = _a.emptyTitle, emptyDescription = _a.emptyDescription, _p = _a.header, Header = _p === void 0 ? __2.DocumentHeader : _p, _q = _a.list, List = _q === void 0 ? __2.DocumentListItems : _q, _r = _a.component, Component = _r === void 0 ? __2.DocumentListItem : _r, _s = _a.show, Show = _s === void 0 ? __2.DocumentShow : _s, _t = _a.empty, Empty = _t === void 0 ? __2.DocumentEmpty : _t, _u = _a.slots, defaultSlots = _u === void 0 ? {
         header: {},
         toolbar: {},
         list: {},
@@ -67,7 +66,7 @@ var DocumentList = function (props) {
         header: defaultSlots.header,
         toolbar: __assign({}, defaultSlots.toolbar),
         empty: __assign(__assign({}, defaultSlots.empty), { icon: 'ri-search-line', title: 'No items found', description: 'Try to adjust your filters or search query' }),
-        item: __assign(__assign({}, defaultSlots.item), { circular: circular, disableTitle: !displayTitle, disableImage: disableImage, style: style, buttons: buttons, listFields: listFields, enableLikes: enableLikes, enableDownload: enableDownload, enableFavorites: enableFavorites, enableComments: enableComments, enableGradient: enableGradient, enableOverlay: enableOverlay }),
+        item: __assign(__assign({}, defaultSlots.item), { disableTitle: !displayTitle, disableImage: disableImage, style: style, buttons: buttons, listFields: listFields, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments, enableGradient: enableGradient, enableOverlay: enableOverlay }),
     };
     var layout = {
         avatar: 'list',
@@ -85,6 +84,6 @@ var DocumentList = function (props) {
         //@ts-ignore
         layout: layout, url: url, name: "document", query: searchQuery, enableShow: enableShow, enableSearch: enableSearch, enableFilters: enableFilters, enableSorting: enableSorting, 
         //@ts-ignore
-        filterOptions: filterOptions, sortOptions: sortOptions, header: Header, list: List, component: Component, show: Show, empty: Empty, slots: slots }));
+        filterOptions: filterOptions, sortOptions: sortOptions, header: Header, list: List, component: Component, show: Show, empty: Empty, slots: slots, emptyIcon: emptyIcon, emptyTitle: emptyTitle, emptyDescription: emptyDescription }));
 };
 exports.default = DocumentList;

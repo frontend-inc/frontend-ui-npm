@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonType } from '../../../types';
 export type ButtonActionsProps = {
     buttons: ButtonType[];
-    size?: 'sm' | 'default' | 'lg';
+    size?: 'sm' | 'md' | 'lg';
     justifyContent?: 'justify-start' | 'justify-center' | 'justify-end';
     className?: string;
 };

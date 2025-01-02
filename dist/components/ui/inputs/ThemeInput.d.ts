@@ -5,5 +5,5 @@ type ThemePickerProps = {
     handleChange: (ev: any) => void;
     placeholder?: string;
 };
-export default function ThemePicker({ name, value, handleChange, placeholder, }: ThemePickerProps): React.JSX.Element;
+export default function ThemePicker(props: ThemePickerProps): React.JSX.Element;
 export {};

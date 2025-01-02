@@ -4,5 +4,5 @@ type LoadMoreProps = {
     hasNextPage?: boolean;
     handleSearch?: () => void;
 };
-export default function LoadMore({ loading, hasNextPage, handleSearch, }: LoadMoreProps): React.JSX.Element;
+export default function LoadMore(props: LoadMoreProps): React.JSX.Element;
 export {};

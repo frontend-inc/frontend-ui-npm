@@ -26,43 +26,28 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var use_debounce_1 = require("use-debounce");
-var lucide_react_1 = require("lucide-react");
-var frontend_shadcn_1 = require("frontend-shadcn");
-var frontend_shadcn_2 = require("frontend-shadcn");
 var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var SearchInput = function (props) {
-    var _a = props.name, name = _a === void 0 ? 'keywords' : _a, _b = props.fullWidth, fullWidth = _b === void 0 ? false : _b, value = props.value, _c = props.placeholder, placeholder = _c === void 0 ? 'Search...' : _c, handleChange = props.handleChange, handleSearch = props.handleSearch;
-    var _d = (0, react_1.useState)(value), text = _d[0], setText = _d[1];
-    var debouncedValue = (0, use_debounce_1.useDebounce)(text, 500)[0];
+    var _a = props.label, label = _a === void 0 ? 'Search' : _a, _b = props.name, name = _b === void 0 ? 'keywords' : _b, _c = props.fullWidth, fullWidth = _c === void 0 ? false : _c, value = props.value, _d = props.placeholder, placeholder = _d === void 0 ? 'Search...' : _d, handleChange = props.handleChange, handleSearch = props.handleSearch;
+    var _e = (0, react_1.useState)(value), text = _e[0], setText = _e[1];
+    var debouncedValue = (0, use_debounce_1.useDebounce)(text, 350)[0];
     var handleInputChange = function (e) {
         setText(e.target.value);
     };
     (0, react_1.useEffect)(function () {
-        if (debouncedValue !== value) {
-            handleChange({
-                target: {
-                    name: name,
-                    value: debouncedValue,
-                },
-            });
-        }
-    }, [debouncedValue, handleChange, name, value]);
-    (0, react_1.useEffect)(function () {
-        if (value !== text) {
-            setText(value);
-        }
-    }, [value]);
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(fullWidth ? 'w-full' : 'max-w-[400px] w-full') },
-        react_1.default.createElement("form", { onSubmit: function (e) {
-                e.preventDefault();
-                handleSearch(text);
-            }, className: (0, frontend_shadcn_1.cn)('bg-background flex items-center w-full border border-input rounded-md transition-shadow hover:shadow-md', fullWidth
-                ? 'w-full min-w-full'
-                : 'max-w-[400px] min-w-[280px] sm:min-w-full') },
-            react_1.default.createElement(frontend_shadcn_2.Input, { type: "text", placeholder: placeholder, value: text, onChange: handleInputChange, className: "text-foreground flex-grow border-none focus-visible:ring-0 focus-visible:ring-offset-0" }),
-            react_1.default.createElement("div", { className: "h-6 border-l border-input" }),
-            react_1.default.createElement(components_1.IconButton, { className: "rounded-none", onClick: function () { return handleSearch(text); } },
-                react_1.default.createElement(lucide_react_1.Search, { className: "h-4 w-4 text-foreground" }),
-                react_1.default.createElement("span", { className: "sr-only" }, "Search")))));
+        handleChange({
+            target: {
+                name: name,
+                value: debouncedValue,
+            },
+        });
+    }, [debouncedValue]);
+    return (react_1.default.createElement("form", { className: 'w-full', onSubmit: function (e) {
+            e.preventDefault();
+            handleSearch(text);
+        } },
+        react_1.default.createElement(react_2.Input, { fullWidth: true, label: label, className: fullWidth ? 'w-full' : 'max-w-screen-sm', placeholder: placeholder, value: text, onChange: handleInputChange, endContent: react_1.default.createElement(react_2.Button, { variant: "light", isIconOnly: true, onPress: function () { return handleSearch(text); }, className: 'text-foreground' },
+                react_1.default.createElement(components_1.RemixIcon, { name: 'ri-search-line', className: 'text-foreground' })) })));
 };
 exports.default = SearchInput;

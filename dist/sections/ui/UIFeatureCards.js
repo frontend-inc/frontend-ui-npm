@@ -32,10 +32,8 @@ var components_2 = require("../../components");
 var UIFeatureCards = function (props) {
     var _a = props.direction, direction = _a === void 0 ? 'column' : _a, label = props.label, title = props.title, subtitle = props.subtitle, _b = props.textAlign, textAlign = _b === void 0 ? 'center' : _b, _c = props.fontSize, fontSize = _c === void 0 ? 'md' : _c, bgColor = props.bgColor, bgImage = props.bgImage, bgOverlay = props.bgOverlay, mode = props.mode, py = props.py, px = props.px, _d = props.maxWidth, maxWidth = _d === void 0 ? 'lg' : _d, requireAuth = props.requireAuth, editable = props.editable, handleChange = props.handleChange, rest = __rest(props, ["direction", "label", "title", "subtitle", "textAlign", "fontSize", "bgColor", "bgImage", "bgOverlay", "mode", "py", "px", "maxWidth", "requireAuth", "editable", "handleChange"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, bgImage: bgImage, bgOverlay: bgOverlay, mode: mode, py: py, px: px, maxWidth: maxWidth },
-        react_1.default.createElement(components_1.Stack, { direction: direction, spacing: 10 },
-            react_1.default.createElement(components_1.Stack, { direction: direction, size: "1/3" },
-                react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: direction == 'row' ? 'left' : 'center', size: fontSize, editable: editable, handleChange: handleChange })),
-            react_1.default.createElement(components_1.Stack, { direction: direction, size: "2/3" },
-                react_1.default.createElement(components_2.FeatureCards, __assign({}, rest))))));
+        react_1.default.createElement(components_1.Stack, { spacing: 4 },
+            react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: 'center', size: fontSize, editable: editable, handleChange: handleChange }),
+            react_1.default.createElement(components_2.FeatureCards, __assign({}, rest)))));
 };
 exports.default = UIFeatureCards;

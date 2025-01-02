@@ -9,12 +9,12 @@ var __1 = require("../..");
 var __2 = require("../..");
 var __3 = require("../..");
 var __4 = require("../..");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var Statistic = function (props) {
     var _a = props || {}, variant = _a.variant, icon = _a.icon, title = _a.title, subtitle = _a.subtitle, _b = _a.direction, direction = _b === void 0 ? 'column' : _b;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex justify-start py-6 w-full items-start h-full', 'flex-row items-center space-x-3 min-h-[90px]', variant == 'outline' && 'border-2 border-border rounded-lg p-6', variant == 'fill' && 'bg-muted rounded-lg p-6') },
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)('flex justify-start py-6 w-full items-start h-full', 'flex-row items-center space-x-3 min-h-[90px]', variant == 'outline' && 'border-2 border-divider rounded-lg p-6', variant == 'fill' && 'bg-content1 rounded-lg p-6') },
         icon && (react_1.default.createElement(__3.RemixIcon, { name: icon, size: "lg", className: "text-primary" })),
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex flex-col space-y-2', direction === 'row' && 'text-left') },
+        react_1.default.createElement("div", { className: (0, react_2.cn)('flex flex-col space-y-2', direction === 'row' && 'text-left') },
             react_1.default.createElement(__4.Typography, { className: 'text-foreground/70', variant: "caption" }, subtitle),
             react_1.default.createElement(__4.Typography, { variant: "h3" }, title))));
 };

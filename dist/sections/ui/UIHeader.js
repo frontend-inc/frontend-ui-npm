@@ -30,10 +30,10 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../components");
 var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../hooks");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var UIHeader = function (props) {
     var router = (0, navigation_1.useRouter)();
-    var _a = props || {}, mode = _a.mode, rest = __rest(_a, ["mode"]);
+    var _a = props || {}, _b = _a.mode, mode = _b === void 0 ? 'light' : _b, rest = __rest(_a, ["mode"]);
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var handleClick = function (link) {
         var path = (link === null || link === void 0 ? void 0 : link.path) || '/';
@@ -43,7 +43,9 @@ var UIHeader = function (props) {
         });
         router.push("".concat(clientUrl).concat(path));
     };
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(mode, 'w-full') },
+    var theme = (0, hooks_1.useTheme)().theme;
+    var themeClass = "".concat(theme, "-").concat(mode);
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)(themeClass, 'bg-background w-full') },
         react_1.default.createElement(components_1.Header, __assign({}, rest, { handleClick: handleClick }))));
 };
 exports.default = UIHeader;

@@ -25,10 +25,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var frontend_shopify_1 = require("frontend-shopify");
 var context_1 = require("../../../context");
-var react_2 = require("@remixicon/react");
+var react_3 = require("@remixicon/react");
 var ShopifySearchButton = function () {
     var toggleSearch = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext).toggleSearch;
     var setMenuOpen = (0, react_1.useContext)(context_1.AppContext).setMenuOpen;
@@ -36,7 +36,7 @@ var ShopifySearchButton = function () {
         setMenuOpen(false);
         toggleSearch();
     };
-    return (react_1.default.createElement(components_1.IconButton, { onClick: handleToggleSearch },
-        react_1.default.createElement(react_2.RiSearch2Fill, null)));
+    return (react_1.default.createElement(react_2.Button, { isIconOnly: true, onPress: handleToggleSearch },
+        react_1.default.createElement(react_3.RiSearch2Fill, null)));
 };
 exports.default = ShopifySearchButton;

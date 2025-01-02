@@ -21,8 +21,8 @@ var TableRow = function (props) {
         (enableEdit || enableDelete) && (react_1.default.createElement(components_1.TableCell, { small: true },
             react_1.default.createElement("div", { className: "flex flex-row space-x-1" },
                 enableShow && (react_1.default.createElement(components_2.Button, { size: "sm", color: "secondary", onClick: handleShow ? function () { return handleShow(row); } : undefined }, "View")),
-                enableEdit && (react_1.default.createElement(components_2.Button, { size: "sm", variant: "secondary", onClick: handleEdit ? function () { return handleEdit(row); } : undefined }, "Edit")),
-                enableDelete && (react_1.default.createElement(components_2.Button, { size: "sm", variant: "secondary", onClick: handleDelete ? function () { return handleDelete(row); } : undefined }, "Delete"))))), fields === null || fields === void 0 ? void 0 :
+                enableEdit && (react_1.default.createElement(components_2.Button, { size: "sm", variant: "ghost", onClick: handleEdit ? function () { return handleEdit(row); } : undefined }, "Edit")),
+                enableDelete && (react_1.default.createElement(components_2.Button, { size: "sm", variant: "ghost", onClick: handleDelete ? function () { return handleDelete(row); } : undefined }, "Delete"))))), fields === null || fields === void 0 ? void 0 :
         fields.map(function (field, index) {
             var value = (0, lodash_1.get)(row, field.name);
             return (react_1.default.createElement(components_1.TableCell, { key: index },

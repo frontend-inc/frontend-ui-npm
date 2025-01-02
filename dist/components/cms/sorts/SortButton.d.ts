@@ -5,8 +5,8 @@ type SortButtonProps = {
     sortOptions: SortOptionType[];
     sortBy: string;
     sortDirection: 'asc' | 'desc';
-    handleSortBy: (field: SortOptionType) => void;
+    handleSortBy: (sortBy: string) => void;
     handleSortDirection: (sortDirection: 'asc' | 'desc') => void;
 };
-export default function SortButton({ sortOptions, sortBy, sortDirection, handleSortBy, handleSortDirection, }: SortButtonProps): React.JSX.Element;
+export default function SortButton(props: SortButtonProps): React.JSX.Element;
 export {};

@@ -1,7 +1,7 @@
 import React from 'react';
 import { InputPropsType } from '../../../types';
 type SwitchInputProps = InputPropsType & {
-    disableBorder?: boolean;
+    value: boolean | undefined;
 };
-export default function SwitchInput({ name, value, disableBorder, label, placeholder, handleChange, info, }: SwitchInputProps): React.JSX.Element;
+export default function SwitchInput(props: SwitchInputProps): React.JSX.Element;
 export {};

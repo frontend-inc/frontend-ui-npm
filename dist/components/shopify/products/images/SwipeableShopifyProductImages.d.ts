@@ -9,5 +9,5 @@ type SwipeableShopifyProductImagesProps = {
     responsiveHeight?: boolean;
     disableBorderRadius?: boolean;
 };
-export default function SwipeableShopifyProductImages({ product, height, handleClick, disableBorderRadius, }: SwipeableShopifyProductImagesProps): React.JSX.Element;
+export default function SwipeableShopifyProductImages(props: SwipeableShopifyProductImagesProps): React.JSX.Element;
 export {};

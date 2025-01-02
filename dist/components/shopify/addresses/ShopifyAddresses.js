@@ -62,13 +62,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
-var components_2 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var frontend_shopify_1 = require("frontend-shopify");
 var shopify_1 = require("../../../components/shopify");
 var hooks_1 = require("../../../hooks");
 var navigation_1 = require("next/navigation");
 var frontend_shopify_2 = require("frontend-shopify");
-var react_2 = require("@remixicon/react");
+var react_3 = require("@remixicon/react");
 var Addresses = function (props) {
     var router = (0, navigation_1.useRouter)();
     var _a = (0, react_1.useState)(null), activeAddress = _a[0], setActiveAddress = _a[1];
@@ -116,7 +116,7 @@ var Addresses = function (props) {
         react_1.default.createElement(components_1.Loader, { loading: loading }),
         react_1.default.createElement(components_1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement(shopify_1.ShopifyAddressList, { addresses: addresses, handleClick: handleClick, handleEdit: handleEdit, handleDelete: handleDeleteClick }),
-            react_1.default.createElement(components_2.Button, { fullWidth: true, variant: "ghost", onClick: handleAddAddress, startIcon: react_1.default.createElement(react_2.RiAddFill, null) }, "Add Address"),
+            react_1.default.createElement(react_2.Button, { fullWidth: true, onPress: handleAddAddress, startContent: react_1.default.createElement(react_3.RiAddFill, null) }, "Add Address"),
             react_1.default.createElement(components_1.AlertModal, { open: showDeleteModal, handleClose: function () { return setShowDeleteModal(false); }, handleConfirm: handleDelete }))));
 };
 exports.default = Addresses;

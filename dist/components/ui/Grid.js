@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var Grid = function (props) {
     var _a = props.sm, sm = _a === void 0 ? 2 : _a, _b = props.md, md = _b === void 0 ? 3 : _b, _c = props.lg, lg = _c === void 0 ? 3 : _c, _d = props.xl, xl = _d === void 0 ? 3 : _d, _e = props.spacing, spacing = _e === void 0 ? 2 : _e, className = props.className, children = props.children;
     var gridClasses = {
@@ -28,6 +28,6 @@ var Grid = function (props) {
     var mdGridClasses = "md:".concat(gridClasses[md]);
     var lgGridClasses = "lg:".concat(gridClasses[lg]);
     var xlGridClasses = "xl:".concat(gridClasses[xl]);
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('grid w-full grid-cols-1', smGridClasses, mdGridClasses, lgGridClasses, xlGridClasses, spacingClasses[spacing], className) }, children));
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)('grid w-full grid-cols-1', smGridClasses, mdGridClasses, lgGridClasses, xlGridClasses, spacingClasses[spacing], className) }, children));
 };
 exports.default = Grid;

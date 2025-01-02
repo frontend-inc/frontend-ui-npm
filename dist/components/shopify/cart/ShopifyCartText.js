@@ -9,7 +9,7 @@ var components_1 = require("../../../components");
 function ShopifyCartText(_a) {
     var label = _a.label, value = _a.value;
     return (react_1.default.createElement("div", { className: "flex flex-row justify-between w-full" },
-        react_1.default.createElement(components_1.Typography, { variant: "body1", className: "text-muted-foreground" }, label),
+        react_1.default.createElement(components_1.Typography, { variant: "body1", className: "text-foreground/70" }, label),
         react_1.default.createElement(components_1.Typography, { variant: "body1" }, value)));
 }
 exports.default = ShopifyCartText;

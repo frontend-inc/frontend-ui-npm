@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
+var react_2 = require("@nextui-org/react");
 //@ts-ignore
 var react_social_icons_1 = require("react-social-icons");
 var SocialLink = function (props) {
@@ -56,7 +57,7 @@ var SocialLink = function (props) {
             window.open(formatUrl(url), '_blank');
         }
     };
-    return (react_1.default.createElement("button", { className: "p-1 rounded-full hover:bg-muted", onClick: handleClick },
+    return (react_1.default.createElement(react_2.Button, { isIconOnly: true, className: "min-w-10", radius: "full", onPress: handleClick },
         react_1.default.createElement(react_social_icons_1.SocialIcon, { network: provider, style: {
                 height: size,
                 width: size,

@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var __1 = require("../..");
 var frontend_shopify_1 = require("frontend-shopify");
 var navigation_1 = require("next/navigation");
@@ -14,9 +14,9 @@ var hooks_1 = require("../../../hooks");
 var MenuItem = function (props) {
     var _a = props || {}, item = _a.item, handleClick = _a.handleClick;
     return (react_1.default.createElement("li", null,
-        react_1.default.createElement(components_1.Button, { variant: "ghost", className: "w-full justify-start", onClick: function () { return handleClick(item === null || item === void 0 ? void 0 : item.path); } },
-            item.icon && react_1.default.createElement("span", { className: "mr-2" }, item.icon),
-            item.label)));
+        react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "ghost", className: "justify-start", onPress: function () { return handleClick(item === null || item === void 0 ? void 0 : item.path); }, startContent: 
+            //@ts-ignore
+            item.icon && react_1.default.createElement(__1.RemixIcon, { name: item.icon }) }, item.label)));
 };
 var MENU_ITEMS = [
     {
@@ -52,6 +52,6 @@ var ShopifyCustomerAccount = function (props) {
     var handleClick = function (path) {
         router.push("".concat(clientUrl).concat(path));
     };
-    return (react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle }, customer ? (react_1.default.createElement("ul", { className: "space-y-1" }, MENU_ITEMS.map(function (item, i) { return (react_1.default.createElement(MenuItem, { key: i, item: item, handleClick: handleClick })); }))) : (react_1.default.createElement(__1.Empty, { title: "Please sign in.", description: "You must be signed in to manage your account.", buttons: react_1.default.createElement(components_1.Button, { onClick: handleLogin }, "Sign In") }))));
+    return (react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle }, customer ? (react_1.default.createElement("ul", { className: "space-y-1" }, MENU_ITEMS.map(function (item, i) { return (react_1.default.createElement(MenuItem, { key: i, item: item, handleClick: handleClick })); }))) : (react_1.default.createElement(__1.Empty, { title: "Please sign in.", description: "You must be signed in to manage your account.", buttons: react_1.default.createElement(react_2.Button, { onClick: handleLogin }, "Sign In") }))));
 };
 exports.default = ShopifyCustomerAccount;

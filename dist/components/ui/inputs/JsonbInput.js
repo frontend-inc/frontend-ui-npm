@@ -45,11 +45,11 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var lucide_react_1 = require("lucide-react");
 var __1 = require("../..");
 var __2 = require("../..");
-var react_2 = require("@remixicon/react");
+var react_3 = require("@remixicon/react");
 var JsonbField = function (props) {
     var item = props.item, handleChange = props.handleChange, field = props.field, _a = props.direction, direction = _a === void 0 ? 'column' : _a;
     var Component = {
@@ -78,7 +78,7 @@ function JsonbItem(_a) {
                     react_1.default.createElement(__2.RemixIcon, { name: item.icon }))),
                 react_1.default.createElement("span", { className: "text-gray-900" }, item[titleField])),
             react_1.default.createElement("button", { className: "p-2 text-gray-400 hover:text-gray-600 focus:outline-none", onClick: function () { return handleRemove(index); } },
-                react_1.default.createElement(react_2.RiCloseLine, null)))));
+                react_1.default.createElement(react_3.RiCloseLine, null)))));
 }
 var JsonbInput = function (props) {
     var title = props.title, name = props.name, label = props.label, _a = props.fields, fields = _a === void 0 ? [] : _a, _b = props.value, items = _b === void 0 ? [] : _b, handleChange = props.handleChange, info = props.info;
@@ -155,8 +155,8 @@ var JsonbInput = function (props) {
         react_1.default.createElement(__1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(__1.SortableList, { droppableId: "json-array-".concat(name), handleDrop: handleDrop, items: items, renderItem: function (item, index) { return (react_1.default.createElement(JsonbItem, { key: index, index: index, item: item, titleField: titleField, handleClick: handleEditClick, handleRemove: handleRemove })); } }),
         react_1.default.createElement("div", null,
-            react_1.default.createElement(components_1.Button, { color: "secondary", onClick: handleAddClick, startIcon: react_1.default.createElement(react_2.RiAddFill, { size: 24 }) }, "Add")),
-        react_1.default.createElement(__1.Sheet, { title: title, open: open, handleClose: closeMenu, buttons: react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleSubmit }, "Save") },
+            react_1.default.createElement(react_2.Button, { onPress: handleAddClick, startContent: react_1.default.createElement(react_3.RiAddFill, null) }, "Add")),
+        react_1.default.createElement(__1.Sheet, { title: title, open: open, handleClose: closeMenu, buttons: react_1.default.createElement(react_2.Button, { fullWidth: true, onPress: handleSubmit }, "Save") },
             react_1.default.createElement("div", { className: "flex flex-col space-y-2" }, fields.map(function (field, i) { return (react_1.default.createElement(JsonbField, { key: i, index: i, item: activeItem, field: field, handleChange: handleInputChange, direction: "column" })); })))));
 };
 exports.default = JsonbInput;

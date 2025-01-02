@@ -18,13 +18,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var components_1 = require("../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var TableCard = function (props) {
     var _a = props || {}, label = _a.label, primary = _a.primary, secondary = _a.secondary, secondaryAction = _a.secondaryAction, handleClick = _a.handleClick, image = _a.image, _b = _a.height, height = _b === void 0 ? 240 : _b, _c = _a.slots, slots = _c === void 0 ? {
         item: {},
         image: {},
     } : _c;
-    return (react_1.default.createElement("div", __assign({ className: (0, frontend_shadcn_1.cn)('w-full flex flex-row flex-nowrap pt-1 pb-2 overflow-hidden border-b border-border justify-between') }, slots.item),
+    return (react_1.default.createElement("div", __assign({ className: (0, react_2.cn)('w-full flex flex-row flex-nowrap pt-1 pb-2 overflow-hidden border-b border-divider justify-between') }, slots.item),
         react_1.default.createElement("div", { className: "w-full sm:grid sm:grid-cols-[repeat(auto-fill,140px)] gap-3 flex flex-col" },
             react_1.default.createElement("div", { className: "flex flex-row justify-center items-center w-full h-full" },
                 react_1.default.createElement("div", { className: "w-[100px] max-w-[100px] h-full" },

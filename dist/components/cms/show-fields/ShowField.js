@@ -34,6 +34,9 @@ var ShowField = function (props) {
     var field = props.field, resource = props.resource, rest = __rest(props, ["field", "resource"]);
     var name = field.name, label = field.label, fieldVariant = field.variant, icon = field.icon;
     var value = (0, lodash_1.get)(resource, name);
+    if (value === null || value === undefined) {
+        value = '-';
+    }
     var components = {
         boolean: __1.FieldBoolean,
         date: __1.FieldDate,
@@ -101,9 +104,7 @@ var ShowField = function (props) {
     };
     var Component = components[fieldVariant] || __1.FieldString;
     var componentProps = (variantProps === null || variantProps === void 0 ? void 0 : variantProps[fieldVariant]) || {};
-    if (!value || value == '')
-        return null;
-    return (react_1.default.createElement("div", { className: "w-full p-3 rounded-lg bg-muted/40 hover:bg-muted/60" },
+    return (react_1.default.createElement("div", { className: "w-full p-3 rounded-lg bg-content1/40 hover:bg-content2/60" },
         react_1.default.createElement(Component, __assign({ icon: icon, variant: "caption", value: value, label: label }, componentProps))));
 };
 exports.default = ShowField;

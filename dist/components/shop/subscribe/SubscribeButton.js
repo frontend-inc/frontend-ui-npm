@@ -41,11 +41,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var hooks_1 = require("../../../hooks");
 var sonner_1 = require("sonner");
 var SusbcribeButton = function (props) {
-    var productId = props.productId, _a = props.buttonText, buttonText = _a === void 0 ? 'Subscribe' : _a, _b = props.size, size = _b === void 0 ? 'default' : _b, fullWidth = props.fullWidth, availableForSale = props.availableForSale, price = props.price;
+    var productId = props.productId, _a = props.buttonText, buttonText = _a === void 0 ? 'Subscribe' : _a, _b = props.size, size = _b === void 0 ? 'md' : _b, fullWidth = props.fullWidth, availableForSale = props.availableForSale;
     var _c = (0, hooks_1.useSubscribe)(), loading = _c.loading, subscribe = _c.subscribe;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         var currentUrl, stripe;
@@ -75,6 +75,6 @@ var SusbcribeButton = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(components_1.Button, { fullWidth: fullWidth, loading: loading, onClick: handleClick, disabled: !availableForSale, size: size, className: 'w-full min-w-[160px]' }, buttonText));
+    return (react_1.default.createElement(react_2.Button, { fullWidth: fullWidth, isLoading: loading, onPress: handleClick, disabled: !availableForSale, size: size, className: 'min-w-[160px]' }, buttonText));
 };
 exports.default = SusbcribeButton;

@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var components_1 = require("../../../components");
 var navigation_1 = require("next/navigation");
 var SocialButtons = function (props) {
@@ -18,7 +18,7 @@ var SocialButtons = function (props) {
         !enableProductFavorites &&
         !enableProductLikes)
         return null;
-    return (react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex', size == 'small' ? 'space-x-1' : 'space-x-2', direction == 'row' && 'flex-row', justifyContent == 'flex-start' && 'justify-start', justifyContent == 'center' && 'justify-center') },
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)('flex', size == 'small' ? 'space-x-1' : 'space-x-2', direction == 'row' && 'flex-row', justifyContent == 'flex-start' && 'justify-start', justifyContent == 'center' && 'justify-center') },
         enableDownload == true && react_1.default.createElement(components_1.DownloadButton, { size: size, resource: resource }),
         enableLikes == true && react_1.default.createElement(components_1.LikeButton, { size: size, resource: resource }),
         enableFavorites == true && (react_1.default.createElement(components_1.FavoriteButton, { size: size, resource: resource })),

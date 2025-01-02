@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 /**
  * @name Shine Border
  * @description It is an animated background border effect component with easy to use and configurable props.
@@ -20,7 +20,7 @@ function ShineBorder(_a) {
     var _b = _a.borderRadius, borderRadius = _b === void 0 ? 8 : _b, _c = _a.borderWidth, borderWidth = _c === void 0 ? 1 : _c, _d = _a.duration, duration = _d === void 0 ? 14 : _d, _e = _a.color, color = _e === void 0 ? '#000000' : _e, className = _a.className, children = _a.children;
     return (react_1.default.createElement("div", { style: {
             '--border-radius': "".concat(borderRadius, "px"),
-        }, className: (0, frontend_shadcn_1.cn)('relative grid min-h-[60px] w-fit min-w-[300px] place-items-center rounded-[--border-radius] bg-white p-3 text-black dark:bg-black dark:text-white', className) },
+        }, className: (0, react_2.cn)('relative grid min-h-[60px] w-fit min-w-[300px] place-items-center rounded-[--border-radius] bg-white p-3 text-black dark:bg-black dark:text-white', className) },
         react_1.default.createElement("div", { style: {
                 '--border-width': "".concat(borderWidth, "px"),
                 '--border-radius': "".concat(borderRadius, "px"),

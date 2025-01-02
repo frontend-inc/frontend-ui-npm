@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var components_1 = require("../../components");
+var react_2 = require("@nextui-org/react");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var lucide_react_1 = require("lucide-react");
 var Pagination = function (props) {
@@ -45,7 +45,7 @@ var Pagination = function (props) {
         }
     }, [page, numPages, totalCount, perPage]);
     return (react_1.default.createElement("div", { className: "p-2 flex flex-row justify-between items-center border-t border-divider w-full" },
-        react_1.default.createElement("div", { className: "hidden sm:block mx-2" }, loading ? (react_1.default.createElement(lucide_react_1.Loader2, { className: "h-6 w-6 animate-spin text-primary" })) : (react_1.default.createElement("p", { className: "text-sm text-muted-foreground" },
+        react_1.default.createElement("div", { className: "hidden sm:block mx-2" }, loading ? (react_1.default.createElement(lucide_react_1.Loader2, { className: "h-6 w-6 animate-spin text-primary" })) : (react_1.default.createElement("p", { className: "text-sm text-foreground/70" },
             "Results ",
             startIndex,
             " - ",
@@ -56,11 +56,11 @@ var Pagination = function (props) {
             react_1.default.createElement(frontend_shadcn_1.Pagination, null,
                 react_1.default.createElement(frontend_shadcn_1.PaginationContent, null,
                     react_1.default.createElement(frontend_shadcn_1.PaginationItem, null,
-                        react_1.default.createElement(components_1.Button, { variant: "outline", onClick: function () { return handleChangePage(Math.max(1, pageNumber - 1)); }, disabled: pageNumber === 1, className: "text-foreground" }, "Previous")),
+                        react_1.default.createElement(react_2.Button, { variant: "ghost", onPress: function () { return handleChangePage(Math.max(1, pageNumber - 1)); }, disabled: pageNumber === 1, className: "text-foreground" }, "Previous")),
                     Array.from({ length: numPages }, function (_, i) { return i + 1; }).map(function (num) { return (react_1.default.createElement(frontend_shadcn_1.PaginationItem, { key: num },
-                        react_1.default.createElement(components_1.Button, { variant: num === pageNumber ? 'default' : 'outline', size: "sm", onClick: function () { return handleChangePage(num); } }, num))); }),
+                        react_1.default.createElement(react_2.Button, { variant: num === pageNumber ? 'solid' : 'ghost', size: "sm", onPress: function () { return handleChangePage(num); } }, num))); }),
                     react_1.default.createElement(frontend_shadcn_1.PaginationItem, null,
-                        react_1.default.createElement(components_1.Button, { variant: "outline", onClick: function () {
+                        react_1.default.createElement(react_2.Button, { variant: "ghost", onPress: function () {
                                 return handleChangePage(Math.min(numPages, pageNumber + 1));
                             }, disabled: pageNumber === numPages, className: "text-foreground" }, "Next")))))));
 };

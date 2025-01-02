@@ -28,8 +28,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var __1 = require("../..");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
+var react_3 = require("@nextui-org/react");
 var ShopifySortList_1 = __importDefault(require("./ShopifySortList"));
 var frontend_shopify_1 = require("frontend-shopify");
 var lucide_react_1 = require("lucide-react");
@@ -43,12 +43,12 @@ var ShopifyCollectionSortButton = function (props) {
         setOpen(false);
     };
     var currentSortLabel = (_a = frontend_shopify_1.COLLECTION_SORT_OPTIONS.find(function (option) { return option.value === sortKey; })) === null || _a === void 0 ? void 0 : _a.label;
-    return (react_1.default.createElement(frontend_shadcn_1.Sheet, { open: open, onOpenChange: setOpen },
-        react_1.default.createElement(frontend_shadcn_1.SheetTrigger, { asChild: true },
-            react_1.default.createElement(__1.Button, { variant: "secondary", className: "w-full", onClick: handleOpen },
-                currentSortLabel,
-                react_1.default.createElement(lucide_react_1.ArrowUpDown, { className: "ml-2 h-4 w-4" }))),
-        react_1.default.createElement(frontend_shadcn_1.SheetContent, { side: "right" },
-            react_1.default.createElement(ShopifySortList_1.default, { enableIcons: true, value: sortKey, reverse: reverse, options: frontend_shopify_1.COLLECTION_SORT_OPTIONS, handleClick: handleSortClick }))));
+    return (react_1.default.createElement(react_3.Popover, { isOpen: open, onOpenChange: setOpen },
+        react_1.default.createElement(react_3.PopoverTrigger, { asChild: true },
+            react_1.default.createElement(react_2.Button, { variant: "ghost", fullWidth: true, onPress: handleOpen, endContent: react_1.default.createElement(lucide_react_1.ArrowUpDown, { className: "h-4 w-4" }) }, currentSortLabel)),
+        react_1.default.createElement(react_3.PopoverContent, null,
+            react_1.default.createElement(ShopifySortList_1.default, { enableIcons: true, value: sortKey, reverse: reverse, options: frontend_shopify_1.COLLECTION_SORT_OPTIONS, 
+                //@ts-ignore
+                handleClick: handleSortClick }))));
 };
 exports.default = ShopifyCollectionSortButton;

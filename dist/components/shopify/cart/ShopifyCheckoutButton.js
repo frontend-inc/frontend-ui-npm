@@ -27,7 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var addons_1 = require("../../../hooks/addons");
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var ShopifyCheckoutButton = function (props) {
     var _a = (0, react_1.useState)(false), loading = _a[0], setLoading = _a[1];
     var cart = (0, frontend_shopify_1.useCart)().cart;
@@ -46,6 +46,6 @@ var ShopifyCheckoutButton = function (props) {
         }
         setLoading(false);
     };
-    return (react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleCheckoutClick, size: "lg", loading: loading }, "Checkout"));
+    return (react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "solid", color: "primary", onPress: handleCheckoutClick, size: "lg", isLoading: loading }, "Checkout"));
 };
 exports.default = ShopifyCheckoutButton;

@@ -26,9 +26,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var react_calendly_1 = require("react-calendly");
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var frontend_js_1 = require("frontend-js");
-var components_2 = require("../../../components");
+var components_1 = require("../../../components");
 var Calendly = function (props) {
     var calendlyUrl = props.calendlyUrl, _a = props.buttonText, buttonText = _a === void 0 ? 'Schedule time with me' : _a;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
@@ -47,8 +47,8 @@ var Calendly = function (props) {
     if (!calendlyUrl)
         return null;
     return (react_1.default.createElement("div", { className: "flex flex-col items-center justify-center" },
-        react_1.default.createElement(components_1.Button, { size: "lg", variant: "default", onClick: function () { return setOpen(true); } }, buttonText),
-        react_1.default.createElement(components_2.MediaModal, { open: open, handleClose: function () { return setOpen(false); } },
+        react_1.default.createElement(react_2.Button, { size: "lg", variant: "solid", color: "primary", onPress: function () { return setOpen(true); } }, buttonText),
+        react_1.default.createElement(components_1.MediaModal, { open: open, handleClose: function () { return setOpen(false); } },
             react_1.default.createElement("div", { className: "w-full sm:w-[620px] md:w-[960px] h-full" },
                 react_1.default.createElement(react_calendly_1.InlineWidget, { styles: {
                         width: '100%',

@@ -31,6 +31,7 @@ export type ResourceListProps = {
     exportHeaders?: string[];
     enableSearch?: boolean;
     buttonText?: string;
+    enablePublish?: boolean;
     enableShow?: boolean;
     enableEdit?: boolean;
     enableCreate?: boolean;

@@ -57,7 +57,7 @@ var hooks_1 = require("../../../hooks");
 var sonner_1 = require("sonner");
 // Call To Action
 var EmailSubscribe = function (props) {
-    var _a = props || {}, _b = _a.size, size = _b === void 0 ? 'lg' : _b, _c = _a.buttonText, buttonText = _c === void 0 ? 'Subscribe' : _c;
+    var _a = props || {}, _b = _a.size, size = _b === void 0 ? 'lg' : _b, label = _a.label, _c = _a.buttonText, buttonText = _c === void 0 ? 'Subscribe' : _c;
     var _d = (0, hooks_1.useContacts)(), errors = _d.errors, delayedLoading = _d.delayedLoading, contact = _d.contact, createContact = _d.createContact, setContact = _d.setContact, handleChange = _d.handleChange;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
@@ -74,6 +74,6 @@ var EmailSubscribe = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(components_1.EmailSubscribeInput, { size: size, loading: delayedLoading, errors: errors, name: 'email', value: contact.email, handleChange: handleChange, handleSubmit: handleSubmit, buttonText: buttonText }));
+    return (react_1.default.createElement(components_1.EmailSubscribeInput, { size: size, loading: delayedLoading, errors: errors, label: label, name: 'email', value: contact.email, handleChange: handleChange, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = EmailSubscribe;

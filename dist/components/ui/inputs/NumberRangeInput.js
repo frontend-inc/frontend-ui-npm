@@ -18,7 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var frontend_shadcn_1 = require("frontend-shadcn");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function NumberRangeInput(_a) {
     var _b = _a.value, value = _b === void 0 ? {
         min: 0,
@@ -48,10 +48,10 @@ function NumberRangeInput(_a) {
             react_1.default.createElement("div", { className: "relative flex-1" },
                 startAdornment && (react_1.default.createElement("div", { className: "absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none" },
                     react_1.default.createElement("span", { className: "text-sm text-gray-500" }, currency))),
-                react_1.default.createElement(frontend_shadcn_1.Input, { type: "number", onChange: handleMinChange, value: value === null || value === void 0 ? void 0 : value.min, className: (0, frontend_shadcn_2.cn)('pr-2', startAdornment && 'pl-8') })),
+                react_1.default.createElement(frontend_shadcn_1.Input, { type: "number", onChange: handleMinChange, value: value === null || value === void 0 ? void 0 : value.min, className: (0, react_2.cn)('pr-2', startAdornment && 'pl-8') })),
             react_1.default.createElement("div", { className: "mx-2 text-sm text-gray-500" }, "to"),
             react_1.default.createElement("div", { className: "relative flex-1" },
                 startAdornment && (react_1.default.createElement("div", { className: "absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none" }, startAdornment)),
-                react_1.default.createElement(frontend_shadcn_1.Input, { type: "number", value: value === null || value === void 0 ? void 0 : value.max, onChange: handleMaxChange, className: (0, frontend_shadcn_2.cn)('pr-2', startAdornment && 'pl-8') })))));
+                react_1.default.createElement(frontend_shadcn_1.Input, { type: "number", value: value === null || value === void 0 ? void 0 : value.max, onChange: handleMaxChange, className: (0, react_2.cn)('pr-2', startAdornment && 'pl-8') })))));
 }
 exports.default = NumberRangeInput;

@@ -65,13 +65,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var react_2 = require("ai/react");
 var components_1 = require("../../../components");
+var react_3 = require("@nextui-org/react");
 var components_2 = require("../../../components");
 var components_3 = require("../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_4 = require("@nextui-org/react");
 var components_4 = require("../../../components");
-var lucide_react_1 = require("lucide-react");
 var navigation_1 = require("next/navigation");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var frontend_shadcn_1 = require("frontend-shadcn");
 //@ts-ignore
 var react_markdown_1 = __importDefault(require("react-markdown"));
 var AiShopifyAssistant = function (props) {
@@ -121,24 +121,24 @@ var AiShopifyAssistant = function (props) {
         });
     };
     return (react_1.default.createElement(components_4.Container, { maxWidth: 'md' },
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('p-4 relative flex flex-col justify-between w-full', loading && 'opacity-50') },
+        react_1.default.createElement("div", { className: (0, react_4.cn)('p-4 relative flex flex-col justify-between w-full', loading && 'opacity-50') },
             react_1.default.createElement("div", { className: "w-full overflow-y-scroll" },
                 react_1.default.createElement("ul", { className: "list-none py-2 space-y-2" },
                     react_1.default.createElement("li", null,
-                        react_1.default.createElement(frontend_shadcn_2.Card, { className: "w-full" },
-                            react_1.default.createElement(frontend_shadcn_2.CardContent, { className: "w-full flex items-center space-x-4" },
+                        react_1.default.createElement(frontend_shadcn_1.Card, { className: "w-full" },
+                            react_1.default.createElement(frontend_shadcn_1.CardContent, { className: "w-full flex items-center space-x-4" },
                                 react_1.default.createElement(components_3.Avatar, { src: avatar, alt: "avatar" }),
-                                react_1.default.createElement(components_1.Typography, { variant: "body1", className: "text-muted-foreground" }, "Hi! I'm your shopping assistant. Ask me anything about our products.")))), messages === null || messages === void 0 ? void 0 :
+                                react_1.default.createElement(components_1.Typography, { variant: "body1", className: "text-foreground/70" }, "Hi! I'm your shopping assistant. Ask me anything about our products.")))), messages === null || messages === void 0 ? void 0 :
                     messages.map(function (message, index) {
                         var _a;
                         return (react_1.default.createElement("li", { id: index === messages.length - 1
                                 ? 'latest-message'
-                                : "message-".concat(index), key: 'message-' + index, className: (0, frontend_shadcn_1.cn)('flex flex-col space-y-2 w-full') },
-                            react_1.default.createElement(frontend_shadcn_2.Card, { className: 'w-full' },
-                                react_1.default.createElement(frontend_shadcn_2.CardContent, { className: "flex flex-col space-y-2" },
+                                : "message-".concat(index), key: 'message-' + index, className: (0, react_4.cn)('flex flex-col space-y-2 w-full') },
+                            react_1.default.createElement(frontend_shadcn_1.Card, { className: 'w-full' },
+                                react_1.default.createElement(frontend_shadcn_1.CardContent, { className: "flex flex-col space-y-2" },
                                     react_1.default.createElement("div", { className: "flex flex-row space-x-4" },
-                                        react_1.default.createElement("div", { className: "flex flex-row justify-center" }, (message === null || message === void 0 ? void 0 : message.role) === 'assistant' ? (react_1.default.createElement(components_3.Avatar, { src: avatar, alt: "avatar" })) : (react_1.default.createElement(frontend_shadcn_2.Avatar, { className: "rounded-lg" },
-                                            react_1.default.createElement(frontend_shadcn_2.AvatarFallback, { className: "rounded-lg" },
+                                        react_1.default.createElement("div", { className: "flex flex-row justify-center" }, (message === null || message === void 0 ? void 0 : message.role) === 'assistant' ? (react_1.default.createElement(components_3.Avatar, { src: avatar, alt: "avatar" })) : (react_1.default.createElement(frontend_shadcn_1.Avatar, { className: "rounded-lg" },
+                                            react_1.default.createElement(frontend_shadcn_1.AvatarFallback, { className: "rounded-lg" },
                                                 react_1.default.createElement(components_1.RemixIcon, { name: "ri-user-6-line", className: "text-primary" }))))),
                                         (message === null || message === void 0 ? void 0 : message.role) === 'assistant' ? (react_1.default.createElement("div", { className: "prose prose-sm text-left text-primary flex flex-col" },
                                             react_1.default.createElement(components_1.Typography, { variant: "body1", className: "font-bold" }, "Assistant:"),
@@ -167,21 +167,23 @@ var AiShopifyAssistant = function (props) {
                                             !('result' in toolInvocation) && (react_1.default.createElement("div", { className: "w-full flex flex-row space-x-2 justify-between items-center" },
                                                 react_1.default.createElement(components_1.Typography, { variant: "body2", className: "text-primary" }, toolMessage),
                                                 !loading && (react_1.default.createElement("div", { className: "flex flex-row space-x-2" },
-                                                    react_1.default.createElement(components_1.Button, { onClick: function () {
+                                                    react_1.default.createElement(react_3.Button, { onPress: function () {
                                                             return dispatchTool(toolInvocation, 'Yes');
                                                         } }, "Sure!"),
-                                                    react_1.default.createElement(components_1.Button, { onClick: function () {
+                                                    react_1.default.createElement(react_3.Button, { onPress: function () {
                                                             return dispatchTool(toolInvocation, 'No');
                                                         } }, "No thanks")))))));
                                     })))));
                     }))),
             react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
-                react_1.default.createElement(components_2.TextArea, { name: "prompt", placeholder: "Ask a question about our products...", value: input, handleChange: handleInputChange, disableDebounce: true }),
+                react_1.default.createElement(components_2.TextArea, { name: "prompt", placeholder: "Ask a question about our products...", value: input, 
+                    //@ts-ignore
+                    handleChange: handleInputChange, disableDebounce: true }),
                 react_1.default.createElement("div", { className: "flex flex-row space-x-2" },
-                    react_1.default.createElement(components_1.Button, { fullWidth: true, onClick: handleChatSubmit, loading: isLoading, disabled: isLoading, className: "w-full bg-primary text-primary-foreground", startIcon: react_1.default.createElement(components_1.RemixIcon, { name: "ri-gemini-fill", className: "text-white" }) }, isLoading ? 'thinking...' : 'Submit'),
-                    react_1.default.createElement(components_1.IconButton, { onClick: stop, className: "bg-primary hover:bg-primary/80" },
+                    react_1.default.createElement(react_3.Button, { fullWidth: true, onPress: handleChatSubmit, isLoading: isLoading, disabled: isLoading, className: "w-full bg-primary text-primary-foreground", startContent: react_1.default.createElement(components_1.RemixIcon, { name: "ri-gemini-fill", className: "text-white" }) }, isLoading ? 'thinking...' : 'Submit'),
+                    react_1.default.createElement(components_1.IconButton, { isIconOnly: true, onPress: stop, className: "bg-primary hover:bg-primary/80 min-w-8" },
                         react_1.default.createElement(components_1.RemixIcon, { name: "ri-stop-fill", className: "text-primary-foreground" })))),
             loading && (react_1.default.createElement("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" },
-                react_1.default.createElement(lucide_react_1.Loader2, { size: 64, className: "text-white animate-spin" }))))));
+                react_1.default.createElement(react_3.Spinner, null))))));
 };
 exports.default = AiShopifyAssistant;

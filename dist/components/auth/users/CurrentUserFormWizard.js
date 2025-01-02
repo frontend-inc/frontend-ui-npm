@@ -65,7 +65,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../hooks");
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var FormWizardProgress_1 = __importDefault(require("../../cms/forms/wizard/FormWizardProgress"));
 var FormWizardField_1 = __importDefault(require("../../cms/forms/wizard/FormWizardField"));
 var FormWizardButtons_1 = __importDefault(require("../../cms/forms/wizard/FormWizardButtons"));
@@ -184,7 +184,7 @@ var CurrentUserFormWizard = function (props) {
         }
     }, [currentUser]);
     return (react_1.default.createElement("div", { className: "w-full flex flex-col justify-between items-center" },
-        react_1.default.createElement(components_1.Button, { onClick: handleStartClick, size: "lg", className: "mb-4" }, buttonText),
+        react_1.default.createElement(react_2.Button, { variant: "solid", color: "primary", onPress: handleStartClick, size: "lg", className: "mb-4" }, buttonText),
         react_1.default.createElement(__1.Modal, { open: open, handleClose: function () { return setOpen(false); } },
             react_1.default.createElement(FormWizardProgress_1.default, { currentStep: currentStep, totalSteps: totalSteps }),
             react_1.default.createElement("div", { className: "flex flex-col justify-center items-center w-full h-[calc(100vh-200px)]" },

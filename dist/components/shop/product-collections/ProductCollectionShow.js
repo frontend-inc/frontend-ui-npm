@@ -16,7 +16,7 @@ var ProductCollectionShow = function (props) {
         react_1.default.createElement("div", { className: "w-full flex flex-row justify-center pb-10" },
             react_1.default.createElement("div", { className: "w-full md:max-w-screen-sm flex flex-col space-y-[40px]" },
                 react_1.default.createElement("div", { className: "w-full flex flex-col space-y-3" },
-                    react_1.default.createElement(__1.Typography, { variant: "body1", className: "text-muted-foreground" }, resource === null || resource === void 0 ? void 0 : resource.description)),
+                    react_1.default.createElement(__1.Typography, { variant: "body1", className: "text-foreground/70" }, resource === null || resource === void 0 ? void 0 : resource.description)),
                 react_1.default.createElement(__1.CollectionProducts, { enableGradient: enableGradient, enableOverlay: enableOverlay, enableLikes: enableLikes, enableFavorites: enableFavorites, productCollectionId: resource.id })))));
 };
 exports.default = ProductCollectionShow;

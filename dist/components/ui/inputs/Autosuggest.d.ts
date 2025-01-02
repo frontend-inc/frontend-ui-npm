@@ -3,7 +3,6 @@ import { OptionType, SyntheticEventType } from 'frontend-js';
 type AutosuggestProps = {
     errors?: any;
     label?: string;
-    info?: string;
     name: string;
     value: string | number;
     placeholder?: string;

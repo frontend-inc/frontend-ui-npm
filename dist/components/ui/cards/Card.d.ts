@@ -11,7 +11,7 @@ export type CardProps = {
     secondaryAction?: React.ReactNode;
     handleClick?: () => void;
     handleSelect?: () => void;
-    size?: number;
+    height?: number;
     enableOverlay?: boolean;
     enableGradient?: boolean;
     classNames?: string;

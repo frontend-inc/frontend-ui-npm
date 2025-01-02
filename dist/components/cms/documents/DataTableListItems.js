@@ -56,7 +56,7 @@ var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
 var navigation_1 = require("next/navigation");
 var __1 = require("../..");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var DataTableList = function (props) {
     var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
@@ -94,7 +94,7 @@ var DataTableList = function (props) {
         });
     }); };
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)(loading && 'opacity-50') },
+        react_1.default.createElement("div", { className: (0, react_2.cn)(loading && 'opacity-50') },
             react_1.default.createElement(__1.TableList, { handleClick: handleCellClick, enableShow: enableShow, handleShow: handleClick, loading: resources && loading, headers: headers, resources: resources, query: query, handleSort: handleSort, page: page, perPage: perPage, numPages: numPages, totalCount: totalCount, handlePaginate: handlePaginate, handleSelectAll: selectAll }))));
 };
 exports.default = DataTableList;

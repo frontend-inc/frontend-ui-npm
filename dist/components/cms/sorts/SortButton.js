@@ -23,27 +23,36 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
-var components_1 = require("../../../components");
-var frontend_shadcn_2 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var lucide_react_1 = require("lucide-react");
-var SortList_1 = __importDefault(require("./SortList"));
-function SortButton(_a) {
-    var sortOptions = _a.sortOptions, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSortBy = _a.handleSortBy, handleSortDirection = _a.handleSortDirection;
+var react_3 = require("@nextui-org/react");
+var SORT_DIRECTIONS = [
+    { value: 'asc', label: 'Ascending' },
+    { value: 'desc', label: 'Descending' },
+];
+function SortButton(props) {
+    var _a = props || {}, sortOptions = _a.sortOptions, sortBy = _a.sortBy, sortDirection = _a.sortDirection, handleSortBy = _a.handleSortBy, handleSortDirection = _a.handleSortDirection;
     var _b = (0, react_1.useState)(false), isOpen = _b[0], setIsOpen = _b[1];
     var toggleOpen = function () { return setIsOpen(!isOpen); };
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(frontend_shadcn_2.Popover, { open: isOpen, onOpenChange: setIsOpen },
-            react_1.default.createElement(frontend_shadcn_2.PopoverTrigger, { asChild: true },
-                react_1.default.createElement(components_1.Button, { variant: "secondary", className: (0, frontend_shadcn_1.cn)('w-full sm:w-auto border-r-0', 'hover:border-r-0'), onClick: toggleOpen },
-                    "Sort",
-                    sortDirection === 'asc' ? (react_1.default.createElement(lucide_react_1.ArrowUp, { className: "ml-2 h-4 w-4" })) : (react_1.default.createElement(lucide_react_1.ArrowDown, { className: "ml-2 h-4 w-4" })))),
-            react_1.default.createElement(frontend_shadcn_2.PopoverContent, { className: "bg-background w-80 p-0" },
-                react_1.default.createElement(SortList_1.default, { sortOptions: sortOptions, sortBy: sortBy, sortDirection: sortDirection, handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))));
+    var handleSortByKeys = function (key) {
+        handleSortBy(key === null || key === void 0 ? void 0 : key.currentKey);
+    };
+    var handleSortDirectionKeys = function (key) {
+        handleSortDirection(key === null || key === void 0 ? void 0 : key.currentKey);
+    };
+    return (react_1.default.createElement(react_2.Popover, { isOpen: isOpen, onOpenChange: setIsOpen },
+        react_1.default.createElement(react_2.PopoverTrigger, null,
+            react_1.default.createElement(react_2.Button, { variant: "ghost", onPress: toggleOpen, className: "text-foreground w-full md:w-auto", endContent: sortDirection === 'asc' ? (react_1.default.createElement(lucide_react_1.ArrowUp, { className: "h-4 w-4 text-foreground" })) : (react_1.default.createElement(lucide_react_1.ArrowDown, { className: "h-4 w-4 text-foreground" })) }, "Sort")),
+        react_1.default.createElement(react_2.PopoverContent, { className: "w-full md:min-w-[220px]" },
+            react_1.default.createElement(react_3.Listbox, { disallowEmptySelection: true, selectedKeys: [sortBy], selectionMode: "single", 
+                //@ts-ignore 
+                onSelectionChange: handleSortByKeys },
+                react_1.default.createElement(react_3.ListboxSection, { title: "Sort by" }, sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.map(function (sortOption) { return (react_1.default.createElement(react_3.ListboxItem, { key: sortOption.name }, sortOption.label)); }))),
+            react_1.default.createElement(react_3.Listbox, { disallowEmptySelection: true, selectedKeys: [sortDirection], selectionMode: "single", 
+                //@ts-ignore
+                onSelectionChange: handleSortDirectionKeys },
+                react_1.default.createElement(react_3.ListboxSection, { title: "Sort direction" }, SORT_DIRECTIONS.map(function (direction) { return (react_1.default.createElement(react_3.ListboxItem, { key: direction.value }, direction.label)); }))))));
 }
 exports.default = SortButton;

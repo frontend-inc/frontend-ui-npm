@@ -8,7 +8,7 @@ var DataFetcher = function (props) {
     var _a = (0, frontend_js_1.useResourceContext)(), url = _a.url, query = _a.query, findMany = _a.findMany;
     var mounted = (0, react_1.useRef)(false);
     (0, react_1.useEffect)(function () {
-        if (defaultQuery && url) {
+        if (defaultQuery && url && mounted.current == false) {
             mounted.current = true;
             findMany(defaultQuery || {});
         }

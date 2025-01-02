@@ -26,7 +26,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Typography = void 0;
 var react_1 = __importStar(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var use_debounce_1 = require("use-debounce");
 var Typography = function (props) {
     var variant = props.variant, _a = props.textAlign, textAlign = _a === void 0 ? 'left' : _a, className = props.className, children = props.children, _b = props.name, name = _b === void 0 ? 'text' : _b, editable = props.editable, handleChange = props.handleChange;
@@ -45,7 +45,7 @@ var Typography = function (props) {
         body1: 'text-sm font-normal leading-normal',
         body2: 'text-sm font-normal leading-normal',
         caption: 'text-xs text-foreground font-semibold uppercase tracking-wider',
-        overline: 'text-xs uppercase tracking-widest',
+        overline: 'text-xs',
         destructive: 'text-destructive text-sm italic',
     };
     var fontFamily = {
@@ -82,6 +82,6 @@ var Typography = function (props) {
     }, [debouncedText]);
     return (react_1.default.createElement("div", { contentEditable: editable, 
         // @ts-ignore
-        onInput: handleInputChange, suppressContentEditableWarning: true, className: (0, frontend_shadcn_1.cn)('text-foreground outline-none focus:outline-none focus:ring-0', editable && 'cursor-text', fontFamily[variant], variantClasses[variant], alignmentClasses[textAlign], className) }, children));
+        onInput: handleInputChange, suppressContentEditableWarning: true, className: (0, react_2.cn)('text-foreground outline-none focus:outline-none focus:ring-0', editable && 'cursor-text', fontFamily[variant], variantClasses[variant], alignmentClasses[textAlign], className) }, children));
 };
 exports.Typography = Typography;

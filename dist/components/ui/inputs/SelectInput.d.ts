@@ -3,7 +3,6 @@ import { SyntheticEventType } from 'frontend-js';
 type SelectInputPropsType = {
     errors?: any;
     label?: string;
-    direction?: 'column' | 'row';
     name: string;
     value: string;
     placeholder?: string;

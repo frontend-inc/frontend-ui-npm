@@ -1,11 +1,10 @@
 import React from 'react';
 type AddToCartButtonProps = {
-    size?: 'sm' | 'default' | 'lg';
+    size?: 'sm' | 'md' | 'lg';
     productId: string | number;
     fullWidth?: boolean;
     buttonText?: string;
     availableForSale?: boolean;
-    price?: string;
     className?: string;
 };
 declare const AddToCartButton: (props: AddToCartButtonProps) => React.JSX.Element;

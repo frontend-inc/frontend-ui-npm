@@ -90,7 +90,7 @@ var MyAccount = function (props) {
             fetchMe();
         }
     }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
-    return (react_1.default.createElement(react_1.default.Fragment, null, currentUser && (react_1.default.createElement(__1.AuthScreen, { title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
+    return (react_1.default.createElement("div", { className: "max-w-screen-md" }, currentUser && (react_1.default.createElement(__1.AuthScreen, { title: "".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.first_name, " ").concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.last_name), subtitle: (currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
             ? "@".concat(currentUser === null || currentUser === void 0 ? void 0 : currentUser.username)
             : 'Update account' },
         react_1.default.createElement(__1.MyAccountForm, { loading: loading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar })))));

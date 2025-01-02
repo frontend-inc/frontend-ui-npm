@@ -41,7 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var components_1 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
 var ProductReviewForm = function () {
@@ -69,7 +69,7 @@ var ProductReviewForm = function () {
             }
         });
     }); };
-    return (react_1.default.createElement(__1.Drawer, { title: "Leave a review", open: openEdit, handleClose: function () { return setOpenEdit(false); }, buttons: react_1.default.createElement(components_1.Button, { className: "w-full", variant: "default", onClick: handleSubmit, disabled: loading, loading: loading }, "Submit") },
+    return (react_1.default.createElement(__1.Drawer, { title: "Leave a review", open: openEdit, handleClose: function () { return setOpenEdit(false); }, buttons: react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "solid", color: "primary", onPress: handleSubmit, disabled: loading, isLoading: loading }, "Submit") },
         react_1.default.createElement("div", { className: "p-4" },
             react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full items-start" },
                 react_1.default.createElement(__1.RatingInput, { errors: errors, name: "rating", value: resource === null || resource === void 0 ? void 0 : resource.rating, 

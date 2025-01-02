@@ -62,24 +62,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
-var components_1 = require("../../../components");
-var components_2 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var frontend_shopify_2 = require("frontend-shopify");
-var components_3 = require("../../../components");
+var components_1 = require("../../../components");
 var navigation_1 = require("next/navigation");
 var DesktopAuthButton = function (props) {
     var handleClick = props.handleClick, icon = props.icon;
-    return (react_1.default.createElement(components_1.Button, { variant: "ghost", size: "icon", onClick: handleClick, className: "p-0" },
-        react_1.default.createElement(components_3.RemixIcon, { name: icon })));
+    return (react_1.default.createElement(react_2.Button, { isIconOnly: true, variant: "ghost", onPress: handleClick, className: "max-w-8" },
+        react_1.default.createElement(components_1.RemixIcon, { name: icon })));
 };
 var MobileShopifyAuthButton = function (props) {
     var handleClick = props.handleClick, icon = props.icon;
-    return (react_1.default.createElement(components_1.Button, { variant: "ghost", onClick: handleClick, className: "w-full justify-start px-1 py-2" },
-        react_1.default.createElement("div", { className: "flex items-center" },
-            react_1.default.createElement("div", { className: "mr-4" },
-                react_1.default.createElement(components_3.RemixIcon, { name: icon })),
-            react_1.default.createElement("div", null,
-                react_1.default.createElement(components_2.Typography, { variant: "button" }, "Orders")))));
+    return (react_1.default.createElement(react_2.Button, { variant: "ghost", onPress: handleClick, startContent: react_1.default.createElement(components_1.RemixIcon, { name: icon }) }, "Orders"));
 };
 var ShopifyAuth = function (props) {
     var router = (0, navigation_1.useRouter)();

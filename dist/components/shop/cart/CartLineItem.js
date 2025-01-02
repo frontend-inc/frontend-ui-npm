@@ -59,25 +59,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var hooks_1 = require("../../../hooks");
 var components_1 = require("../../../components");
-var image_1 = __importDefault(require("next/image"));
+var react_2 = require("@nextui-org/react");
 var components_2 = require("../../../components");
 var components_3 = require("../../../components");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_3 = require("@nextui-org/react");
+var react_4 = require("@nextui-org/react");
 var lucide_react_1 = require("lucide-react");
 var CartQuantityInput = function (props) {
-    var _a = props.buttonClasses, buttonClasses = _a === void 0 ? 'w-[32px] p-0' : _a, quantity = props.quantity, handleAddQuantity = props.handleAddQuantity, handleRemoveQuantity = props.handleRemoveQuantity;
-    return (react_1.default.createElement("div", { className: "inline-flex rounded-md", role: "group" },
-        react_1.default.createElement(components_3.Button, { size: "sm", variant: "secondary", className: (0, frontend_shadcn_1.cn)(buttonClasses, 'rounded-r-none border-none'), onClick: handleRemoveQuantity },
+    var quantity = props.quantity, handleAddQuantity = props.handleAddQuantity, handleRemoveQuantity = props.handleRemoveQuantity;
+    return (react_1.default.createElement(react_3.ButtonGroup, { variant: "light", className: "border-2 border-divider rounded-lg", size: 'sm' },
+        react_1.default.createElement(react_3.Button, { isIconOnly: true, size: 'sm', onPress: handleRemoveQuantity },
             react_1.default.createElement(lucide_react_1.Minus, { size: 20 })),
-        react_1.default.createElement(components_3.Button, { size: "sm", variant: "secondary", className: (0, frontend_shadcn_1.cn)(buttonClasses, 'rounded-none border-none') }, quantity),
-        react_1.default.createElement(components_3.Button, { size: "sm", variant: "secondary", className: (0, frontend_shadcn_1.cn)(buttonClasses, 'rounded-l-none border-none'), onClick: handleAddQuantity },
+        react_1.default.createElement(react_3.Button, { size: 'sm', isIconOnly: true }, quantity),
+        react_1.default.createElement(react_3.Button, { size: 'sm', isIconOnly: true, onPress: handleAddQuantity },
             react_1.default.createElement(lucide_react_1.Plus, { size: 20 }))));
 };
 var CartLineItem = function (props) {
@@ -122,23 +120,19 @@ var CartLineItem = function (props) {
         //setCartOpen(false)
     };
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement("div", { className: (0, frontend_shadcn_1.cn)('flex items-center justify-between py-2', loading && 'opacity-30') },
-            react_1.default.createElement("div", { className: "flex items-center pt-1" },
-                react_1.default.createElement("div", { className: "relative mr-4 w-24 h-24" },
-                    react_1.default.createElement("span", { className: "absolute bg-primary text-primary-foreground top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none z-50 transform translate-x-1/2 -translate-y-1/2 rounded-full" }, quantity),
-                    react_1.default.createElement("div", { className: "rounded-lg flex items-center justify-center min-w-[96px] h-[96px] overflow-hidden" },
-                        react_1.default.createElement("button", { className: "p-0", onClick: handleClick },
-                            react_1.default.createElement(image_1.default, { alt: (product === null || product === void 0 ? void 0 : product.title) || '', 
-                                // @ts-ignore
-                                src: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, height: 72, width: 72, style: {
-                                    objectFit: 'cover',
-                                }, className: "w-full cursor-pointer object-cover" })))),
-                react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
+        react_1.default.createElement("div", { className: (0, react_4.cn)('flex items-center justify-between py-2', loading && 'opacity-30') },
+            react_1.default.createElement("div", { className: "flex space-x-4 items-center pt-1" },
+                react_1.default.createElement(react_2.Badge, { content: quantity },
+                    react_1.default.createElement("button", { className: "p-0", onClick: handleClick },
+                        react_1.default.createElement(react_2.Image, { alt: (product === null || product === void 0 ? void 0 : product.title) || '', 
+                            // @ts-ignore
+                            src: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, height: 72, width: 72, className: "w-full cursor-pointer object-cover" }))),
+                react_1.default.createElement("div", { className: "flex flex-col space-y-1" },
                     react_1.default.createElement(components_2.Typography, { variant: "body1" }, product === null || product === void 0 ? void 0 : product.title),
-                    react_1.default.createElement(components_2.Typography, { className: "text-muted-foreground", variant: "body2" }, product === null || product === void 0 ? void 0 : product.display_price),
+                    react_1.default.createElement(components_2.Typography, { className: "text-foreground/70", variant: "body2" }, product === null || product === void 0 ? void 0 : product.display_price),
                     react_1.default.createElement(CartQuantityInput, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity }))),
-            react_1.default.createElement("button", { onClick: handleRemoveFromCart, className: "focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm p-1 mr-1" },
-                react_1.default.createElement(components_1.Icon, { name: "X", className: "h-4 w-4 text-muted-foreground hover:text-foreground" }))),
+            react_1.default.createElement(react_3.Button, { isIconOnly: true, size: "sm", variant: "light", radius: "full", onPress: handleRemoveFromCart },
+                react_1.default.createElement(components_1.Icon, { name: "X", className: "h-4 w-4 text-foreground/70 hover:text-foreground" }))),
         react_1.default.createElement(components_3.ProductModal, { open: open, handleClose: function () { return setOpen(false); }, productId: product === null || product === void 0 ? void 0 : product.handle })));
 };
 exports.default = CartLineItem;

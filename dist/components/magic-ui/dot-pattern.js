@@ -47,11 +47,11 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DotPattern = void 0;
 var react_1 = __importStar(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 function DotPattern(_a) {
     var _b = _a.width, width = _b === void 0 ? 16 : _b, _c = _a.height, height = _c === void 0 ? 16 : _c, _d = _a.x, x = _d === void 0 ? 0 : _d, _e = _a.y, y = _e === void 0 ? 0 : _e, _f = _a.cx, cx = _f === void 0 ? 1 : _f, _g = _a.cy, cy = _g === void 0 ? 1 : _g, _h = _a.cr, cr = _h === void 0 ? 1 : _h, className = _a.className, props = __rest(_a, ["width", "height", "x", "y", "cx", "cy", "cr", "className"]);
     var id = (0, react_1.useId)();
-    return (react_1.default.createElement("svg", __assign({ "aria-hidden": "true", className: (0, frontend_shadcn_1.cn)('pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/80', className) }, props),
+    return (react_1.default.createElement("svg", __assign({ "aria-hidden": "true", className: (0, react_2.cn)('pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/80', className) }, props),
         react_1.default.createElement("defs", null,
             react_1.default.createElement("pattern", { id: id, width: width, height: height, patternUnits: "userSpaceOnUse", patternContentUnits: "userSpaceOnUse", x: x, y: y },
                 react_1.default.createElement("circle", { id: "pattern-circle", cx: cx, cy: cy, r: cr }))),

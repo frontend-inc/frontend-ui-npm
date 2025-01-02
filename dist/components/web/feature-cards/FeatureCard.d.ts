@@ -7,6 +7,7 @@ export type FeaturedCardProps = {
     image?: string;
     buttonText?: string;
     href?: string;
+    height?: number;
     handleClick?: () => void;
     objectFit?: 'cover' | 'contain';
     enableOverlay?: boolean;

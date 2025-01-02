@@ -26,9 +26,8 @@ var MyAccountForm = function (props) {
             variant: 'boolean',
         },
     ], false);
-    return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
-        react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, 
-            //@ts-ignore
-            fields: formFields, resource: user, handleChange: handleChange, handleRemove: handleDeleteAvatar, handleSubmit: handleSubmit, buttonText: "Save" })));
+    return (react_1.default.createElement(components_1.Form, { loading: loading, errors: errors, 
+        //@ts-ignore
+        fields: formFields, resource: user, handleChange: handleChange, handleRemove: handleDeleteAvatar, handleSubmit: handleSubmit, buttonText: "Save" }));
 };
 exports.default = MyAccountForm;

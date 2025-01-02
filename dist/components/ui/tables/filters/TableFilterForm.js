@@ -47,10 +47,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var lucide_react_1 = require("lucide-react");
 var index_1 = require("../../../../constants/index");
+var react_2 = require("@nextui-org/react");
 var components_1 = require("../../../../components");
 var components_2 = require("../../../../components");
 var components_3 = require("../../../../components");
-var components_4 = require("../../../../components");
 function TableFilterForm(_a) {
     var loading = _a.loading, query = _a.query, fields = _a.fields, handleChange = _a.handleChange, handleSearch = _a.handleSearch, handleClearFilters = _a.handleClearFilters;
     var _b = (0, react_1.useState)([]), filterOptions = _b[0], setFilterOptions = _b[1];
@@ -138,17 +138,14 @@ function TableFilterForm(_a) {
         }
     }, [query]);
     return (react_1.default.createElement("div", { className: "space-y-2" },
-        react_1.default.createElement(components_3.TableFilterKeywordsInput, { label: "keywords", value: query === null || query === void 0 ? void 0 : query.keywords, handleChange: handleChange, handleSearch: handleFilterSearch }),
-        react_1.default.createElement(components_4.TableFilterSortInput, { label: "sort by", fieldOptions: sortOptions, handleChange: handleChange, sortBy: query === null || query === void 0 ? void 0 : query.sort_by, sortDirection: query === null || query === void 0 ? void 0 : query.sort_direction }),
-        react_1.default.createElement(components_2.TableFilterInputs, { filters: activeFilters, fieldOptions: filterOptions, handleChange: handleFilterChange, handleRemove: handleRemoveFilter }),
-        react_1.default.createElement(components_1.Button, { variant: "secondary", className: "text-foreground", onClick: handleAddFilter },
-            react_1.default.createElement(lucide_react_1.Plus, { className: "w-4 h-4 text-foreground" }),
-            react_1.default.createElement("span", null, "Filter")),
+        react_1.default.createElement(components_2.TableFilterKeywordsInput, { label: "keywords", value: query === null || query === void 0 ? void 0 : query.keywords, handleChange: handleChange, handleSearch: handleFilterSearch }),
+        react_1.default.createElement(components_3.TableFilterSortInput, { label: "sort by", fieldOptions: sortOptions, handleChange: handleChange, sortBy: query === null || query === void 0 ? void 0 : query.sort_by, sortDirection: query === null || query === void 0 ? void 0 : query.sort_direction }),
+        react_1.default.createElement(components_1.TableFilterInputs, { filters: activeFilters, fieldOptions: filterOptions, handleChange: handleFilterChange, handleRemove: handleRemoveFilter }),
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, variant: "ghost", onPress: handleAddFilter },
+            react_1.default.createElement(lucide_react_1.Plus, { className: "w-4 h-4 text-foreground" })),
         react_1.default.createElement("button", { className: "w-full px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2", onClick: handleFilterSearch },
             loading ? (react_1.default.createElement(lucide_react_1.Loader, { className: "w-4 h-4 animate-spin" })) : (react_1.default.createElement(lucide_react_1.Search, { className: "w-4 h-4" })),
             react_1.default.createElement("span", null, "Search")),
-        react_1.default.createElement("button", { className: "w-full px-4 py-2 bg-secondary text-secondary-foreground rounded-md hover:bg-secondary/90 transition-colors duration-200 flex items-center justify-center space-x-2", onClick: handleClearFilters },
-            react_1.default.createElement(lucide_react_1.FilterIcon, { className: "w-4 h-4" }),
-            react_1.default.createElement("span", null, "Reset filters"))));
+        react_1.default.createElement(react_2.Button, { onPress: handleClearFilters, startContent: react_1.default.createElement(lucide_react_1.FilterIcon, { className: "w-4 h-4" }) }, "Reset filters")));
 }
 exports.default = TableFilterForm;

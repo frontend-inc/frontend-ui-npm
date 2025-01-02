@@ -27,7 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Collapse = void 0;
 var react_1 = __importStar(require("react"));
 var framer_motion_1 = require("framer-motion");
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var Collapse = function (_a) {
     var inProp = _a.in, children = _a.children, className = _a.className, _b = _a.timeout, timeout = _b === void 0 ? 300 : _b;
     var contentRef = (0, react_1.useRef)(null);
@@ -40,7 +40,7 @@ var Collapse = function (_a) {
             setHeight(0);
         }
     }, [inProp]);
-    return (react_1.default.createElement(framer_motion_1.AnimatePresence, { initial: false }, (inProp || height !== 0) && (react_1.default.createElement(framer_motion_1.motion.div, { className: (0, frontend_shadcn_1.cn)('overflow-hidden', className), initial: { height: 0 }, animate: { height: inProp ? height : 0 }, exit: { height: 0 }, transition: { duration: timeout / 1000, ease: 'easeInOut' } },
+    return (react_1.default.createElement(framer_motion_1.AnimatePresence, { initial: false }, (inProp || height !== 0) && (react_1.default.createElement(framer_motion_1.motion.div, { className: (0, react_2.cn)('overflow-hidden', className), initial: { height: 0 }, animate: { height: inProp ? height : 0 }, exit: { height: 0 }, transition: { duration: timeout / 1000, ease: 'easeInOut' } },
         react_1.default.createElement("div", { ref: contentRef }, children)))));
 };
 exports.Collapse = Collapse;

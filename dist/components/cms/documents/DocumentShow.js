@@ -23,11 +23,10 @@ var DocumentShow = function (props) {
         default:
             disableImage = false;
     }
-    var maxWidth = (resource === null || resource === void 0 ? void 0 : resource.content_type) == 'image' ? 'lg' : 'md';
     if (!resource)
         return null;
-    return (react_1.default.createElement(__1.Drawer, { open: openShow, handleClose: function () { return setOpenShow(false); }, title: !disableTitle ? resource === null || resource === void 0 ? void 0 : resource.title : '', maxWidth: maxWidth },
-        react_1.default.createElement("div", { className: "flex flex-col space-y-6 pb-[40px] w-full" },
+    return (react_1.default.createElement(__1.Drawer, { open: openShow, handleClose: function () { return setOpenShow(false); } },
+        react_1.default.createElement("div", { className: "flex flex-col space-y-6 p-6 w-full" },
             react_1.default.createElement(__2.BlurFade, { delay: 0.25, inView: true, className: "w-full" },
                 react_1.default.createElement("div", { className: "w-full" },
                     react_1.default.createElement(__1.DocumentDetails, { disableImage: disableImage, resource: resource, metafields: metafields, actions: react_1.default.createElement(__1.SocialButtons, { size: "large", justifyContent: 'center', resource: resource, enableDownload: enableDownload, enableLikes: enableLikes, enableFavorites: enableFavorites, enableSharing: enableSharing }) }),

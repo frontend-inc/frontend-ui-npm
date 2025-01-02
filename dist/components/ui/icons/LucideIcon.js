@@ -29,7 +29,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var icons = __importStar(require("lucide-react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var LucideIcon = function (props) {
     var name = props.name, className = props.className, _a = props.size, size = _a === void 0 ? 'sm' : _a;
     var Icon = icons[name];
@@ -41,6 +41,6 @@ var LucideIcon = function (props) {
         lg: 'w-6 h-6',
         xl: 'w-8 h-8',
     };
-    return (react_1.default.createElement(Icon, { className: (0, frontend_shadcn_1.cn)('text-foreground', sizeClasses[size], className) }));
+    return (react_1.default.createElement(Icon, { className: (0, react_2.cn)('text-foreground', sizeClasses[size], className) }));
 };
 exports.default = LucideIcon;

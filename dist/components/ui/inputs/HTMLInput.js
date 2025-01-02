@@ -42,7 +42,7 @@ var __1 = require("../..");
 var starter_kit_1 = __importDefault(require("@tiptap/starter-kit"));
 var extension_text_align_1 = __importDefault(require("@tiptap/extension-text-align"));
 var extension_bubble_menu_1 = __importDefault(require("@tiptap/extension-bubble-menu"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_3 = require("@nextui-org/react");
 var use_debounce_1 = require("use-debounce");
 var MenuBar = function (props) {
     var editor = (props || {}).editor;
@@ -129,15 +129,15 @@ var MenuBar = function (props) {
             label: 'Redo',
         },
     ], false);
-    return (react_1.default.createElement("div", { className: "flex flex-wrap gap-2 mb-4" }, buttons.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, frontend_shadcn_1.cn)(btn.isActive && 'bg-primary text-primary-foreground'), "aria-label": btn.label },
-        react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, frontend_shadcn_1.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); })));
+    return (react_1.default.createElement("div", { className: "flex flex-wrap gap-2 mb-4" }, buttons.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, react_3.cn)(btn.isActive && 'bg-primary text-primary-foreground'), "aria-label": btn.label },
+        react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, react_3.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); })));
 };
 var HTMLInput = function (props) {
     var _a = props || {}, label = _a.label, name = _a.name, value = _a.value, handleChange = _a.handleChange;
     var _b = (0, react_1.useState)(value || ''), text = _b[0], setText = _b[1];
     var debouncedText = (0, use_debounce_1.useDebounce)(text, 500)[0];
     // You can manually add css classes to the extensions
-    // heading: { HTMLAttributes: { class: `pt-8 pb-4 text-2xl font-semibold text-muted-foreground` } },
+    // heading: { HTMLAttributes: { class: `pt-8 pb-4 text-2xl font-semibold text-foreground/70` } },
     var extensions = [
         starter_kit_1.default,
         extension_text_align_1.default.configure({
@@ -159,7 +159,7 @@ var HTMLInput = function (props) {
         },
         editorProps: {
             attributes: {
-                class: 'w-full prose prose-sm focus:outline-none p-2 border border-border rounded-lg border-1 border-border focus:ring-2 focus:ring-ring focus:ring-offset-3',
+                class: 'w-full prose prose-sm focus:outline-none p-2 border border-divider rounded-lg border-1 border-divider focus:ring-2 focus:ring-ring focus:ring-offset-3',
             },
         },
     });

@@ -87,10 +87,10 @@ var react_1 = __importStar(require("react"));
 var react_dropzone_1 = require("react-dropzone");
 var image_1 = __importDefault(require("next/image"));
 var lucide_react_1 = require("lucide-react");
+var react_2 = require("@nextui-org/react"); // Adjust the import path as needed
 var __1 = require("../.."); // Adjust the import path as needed
-var __2 = require("../.."); // Adjust the import path as needed
 var sonner_1 = require("sonner");
-var frontend_shadcn_1 = require("frontend-shadcn"); // Adjust the import path as needed
+var react_3 = require("@nextui-org/react"); // Adjust the import path as needed
 // PreviewFile Component
 var PreviewFile = function (_a) {
     var index = _a.index, file = _a.file, handleDelete = _a.handleDelete;
@@ -105,14 +105,14 @@ var PreviewFile = function (_a) {
         }
     }, [file, isImage]);
     return (react_1.default.createElement("div", { className: "flex items-center space-x-4 p-2 border rounded-md" },
-        isImage ? (react_1.default.createElement("div", { className: "relative w-16 h-16" }, preview && (react_1.default.createElement(image_1.default, { src: preview, alt: file.name, fill: true, style: { objectFit: 'cover' }, className: "rounded-md" })))) : (react_1.default.createElement("div", { className: "h-16 w-16 bg-muted rounded-md flex items-center justify-center" },
+        isImage ? (react_1.default.createElement("div", { className: "relative w-16 h-16" }, preview && (react_1.default.createElement(image_1.default, { src: preview, alt: file.name, fill: true, style: { objectFit: 'cover' }, className: "rounded-md" })))) : (react_1.default.createElement("div", { className: "h-16 w-16 bg-content1 rounded-md flex items-center justify-center" },
             react_1.default.createElement(lucide_react_1.File, { className: "h-6 w-6" }))),
         react_1.default.createElement("div", { className: "flex-1" },
             react_1.default.createElement("p", { className: "text-sm font-medium text-foreground" }, file.name),
-            react_1.default.createElement("p", { className: "text-xs text-muted-foreground" },
+            react_1.default.createElement("p", { className: "text-xs text-foreground/70" },
                 (file.size / (1024 * 1024)).toFixed(2),
                 " MB")),
-        react_1.default.createElement(__1.Button, { variant: "ghost", size: "icon", className: "text-red-500", onClick: function () { return handleDelete(index); }, "aria-label": "Remove ".concat(file.name) },
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, size: "sm", color: "danger", onPress: function () { return handleDelete(index); }, "aria-label": "Remove ".concat(file.name) },
             react_1.default.createElement(lucide_react_1.Trash2, { className: "h-4 w-4" }))));
 };
 // FileUploader Component
@@ -182,13 +182,13 @@ var FileUploader = function (_a) {
         });
     }); };
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-4 w-full" },
-        react_1.default.createElement(__2.InputLabel, { label: label }),
+        react_1.default.createElement(__1.InputLabel, { label: label }),
         files.length > 0 && (react_1.default.createElement("div", { className: "space-y-2" }, files.map(function (file, index) { return (react_1.default.createElement(PreviewFile, { key: index, index: index, file: file, handleDelete: onRemove })); }))),
-        react_1.default.createElement("div", __assign({}, getRootProps(), { className: (0, frontend_shadcn_1.cn)('h-[120px] w-full bg-background m-px p-4 flex flex-col justify-center items-center rounded border-2 border-border text-center hover:border-2 hover:border-primary hover:cursor-pointer transition-all duration-300', isDragActive ? 'border-primary bg-opacity-50' : '') }),
+        react_1.default.createElement("div", __assign({}, getRootProps(), { className: (0, react_3.cn)('h-[120px] w-full bg-content1 hover:bg-content2 m-px p-4 flex flex-col justify-center items-center rounded-xl border-2 border-divider text-center hover:border-2 hover:border-primary hover:cursor-pointer transition-all duration-300', isDragActive ? 'border-primary bg-opacity-50' : '') }),
             react_1.default.createElement("input", __assign({}, getInputProps())),
-            isDropzoneLoading ? (react_1.default.createElement(lucide_react_1.Loader2, { className: "text-foreground w-8 h-8 animate-spin" })) : (react_1.default.createElement(react_1.default.Fragment, null,
+            isDropzoneLoading ? (react_1.default.createElement(react_2.Spinner, { className: "text-foreground w-8 h-8" })) : (react_1.default.createElement(react_1.default.Fragment, null,
                 isDragActive ? (react_1.default.createElement(lucide_react_1.DownloadCloud, { className: "text-foreground w-5 h-5" })) : (react_1.default.createElement(lucide_react_1.UploadCloud, { className: "text-foreground w-5 h-5" })),
                 react_1.default.createElement("p", { className: "mt-2 text-sm text-foreground" }, isDragActive ? 'Drop files here...' : 'Drag & drop files here, or click to select files')))),
-        files.length > 0 && (react_1.default.createElement(__1.Button, { onClick: onUpload, disabled: isDropzoneLoading }, isDropzoneLoading ? 'Uploading...' : 'Upload Files'))));
+        files.length > 0 && (react_1.default.createElement(react_2.Button, { onPress: onUpload, disabled: isDropzoneLoading, isLoading: isDropzoneLoading }, isDropzoneLoading ? 'Uploading...' : 'Upload Files'))));
 };
 exports.default = FileUploader;

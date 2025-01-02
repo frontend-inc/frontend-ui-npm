@@ -1,4 +1,5 @@
 import React from 'react';
+import { DateValue } from "@internationalized/date";
 import { SyntheticEventType } from '../../../types';
 type DateInputProps = {
     errors?: any;
@@ -6,10 +7,9 @@ type DateInputProps = {
     required?: boolean;
     label?: string;
     name: string;
-    value?: string | Date;
+    value?: DateValue;
     placeholder?: string;
-    info?: string;
     handleChange: (ev: SyntheticEventType) => void;
 };
-export default function DateInput({ errors, direction, required, label, info, name, value, handleChange, placeholder, }: DateInputProps): React.JSX.Element;
+export default function DateInput(props: DateInputProps): React.JSX.Element;
 export {};

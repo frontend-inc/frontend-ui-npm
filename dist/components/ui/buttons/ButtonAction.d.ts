@@ -3,8 +3,9 @@ import { ActionType } from '../../../types';
 type ButtonActionProps = {
     icon?: string;
     action: ActionType;
-    variant?: 'default' | 'secondary' | 'outline' | 'ghost' | 'link';
-    size?: 'sm' | 'default' | 'lg';
+    color?: 'default' | 'primary' | 'secondary' | 'danger' | 'success';
+    variant?: 'solid' | 'ghost' | 'light';
+    size?: 'sm' | 'md' | 'lg';
     url?: string;
     path?: string;
     src?: string;

@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
+var react_2 = require("@nextui-org/react");
 var react_responsive_1 = require("react-responsive");
 var Iframe = function (props) {
     var src = props.src, _a = props.height, height = _a === void 0 ? 400 : _a, _b = props.mobileHeight, mobileHeight = _b === void 0 ? 400 : _b, className = props.className;
@@ -45,6 +45,6 @@ var Iframe = function (props) {
             width: '100%',
             border: 'none',
             overflow: 'hidden',
-        }, className: (0, frontend_shadcn_1.cn)('w-full border-0 overflow-hidden', className) }));
+        }, className: (0, react_2.cn)('w-full border-0 overflow-hidden', className) }));
 };
 exports.default = Iframe;
