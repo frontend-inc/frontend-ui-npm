@@ -1,5 +1,5 @@
 import React from 'react';
-import { DateValue } from "@internationalized/date";
+import { DateValue } from '@internationalized/date';
 import { SyntheticEventType } from '../../../types';
 type DateInputProps = {
     errors?: any;

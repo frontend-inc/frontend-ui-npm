@@ -13,7 +13,7 @@ var Autosuggest = function (props) {
             target: {
                 name: name,
                 value: value,
-            }
+            },
         });
     };
     return (react_1.default.createElement(react_2.Autocomplete, { "aria-label": label, label: label, 

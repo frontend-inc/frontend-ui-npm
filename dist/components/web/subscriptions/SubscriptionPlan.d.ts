@@ -13,7 +13,7 @@ type SubscriptionPlanProps = {
     interval?: string;
     popular?: boolean;
     precision?: number;
-    variant?: 'outline' | 'fill' | 'default';
+    variant?: 'default' | 'outline' | 'fill' | 'shadow';
     handleClick?: () => void;
 };
 declare const SubscriptionPlan: React.FC<SubscriptionPlanProps>;

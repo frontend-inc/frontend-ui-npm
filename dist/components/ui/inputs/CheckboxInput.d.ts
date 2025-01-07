@@ -9,5 +9,5 @@ type CheckboxInputProps = {
     disableBorder?: boolean;
     info?: string;
 };
-export default function CheckboxInput({ name, value, placeholder, label, handleChange, disableBorder, info, }: CheckboxInputProps): React.JSX.Element;
+export default function CheckboxInput(props: CheckboxInputProps): React.JSX.Element;
 export {};

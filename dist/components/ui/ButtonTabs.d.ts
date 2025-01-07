@@ -9,6 +9,8 @@ type ButtonTabsProps = {
     className?: string;
     fullWidth?: boolean;
     value: string | number;
+    variant?: 'solid' | 'underlined' | 'bordered' | 'light';
+    isVertical?: boolean;
 };
 export default function ButtonTabs(props: ButtonTabsProps): React.JSX.Element;
 export {};

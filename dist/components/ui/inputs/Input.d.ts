@@ -1,6 +1,6 @@
 import React from 'react';
 import { OptionType } from 'frontend-js';
-type InputVariantType = 'array' | 'attachment' | 'autocomplete' | 'boolean' | 'checkboxGroup' | 'checkbox' | 'color' | 'date' | 'email' | 'error' | 'file' | 'image' | 'jsonArray' | 'noSpace' | 'numberRange' | 'numberSlider' | 'phone' | 'priceRange' | 'radio' | 'search' | 'select' | 'shopify_products' | 'switch' | 'tabs' | 'text' | 'url';
+type InputVariantType = 'array' | 'attachment' | 'autocomplete' | 'boolean' | 'checkboxGroup' | 'checkbox' | 'color' | 'date' | 'email' | 'error' | 'file' | 'image' | 'jsonArray' | 'noSpace' | 'numberRange' | 'phone' | 'priceRange' | 'radio' | 'search' | 'select' | 'shopify_products' | 'switch' | 'tabs' | 'text' | 'url';
 export type InputProps = any & {
     variant: InputVariantType;
     errors?: any;

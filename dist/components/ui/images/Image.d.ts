@@ -3,9 +3,10 @@ export type ImageCardProps = {
     src: string;
     alt?: string;
     label?: string;
-    aspectRatio?: number;
     handleClick?: () => void;
     height?: number;
+    width?: number;
+    fullWidth?: boolean;
     isBlurred?: boolean;
     disableZoom?: boolean;
     disableBorderRadius?: boolean;

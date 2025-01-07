@@ -14,6 +14,6 @@ var Hero = function (props) {
         list: components_1.HeroList,
         avatar: components_1.HeroAvatar,
     }[style] || components_1.HeroList;
-    return (react_1.default.createElement(Component, { label: label, title: title, subtitle: subtitle, description: description, image: image, secondaryAction: buttons && react_1.default.createElement(components_1.ButtonActions, { buttons: buttons }), enableGradient: enableGradient, enableOverlay: enableOverlay, objectFit: objectFit }));
+    return (react_1.default.createElement(Component, { label: label, title: title, subtitle: subtitle, description: description, image: image, secondaryAction: buttons && (react_1.default.createElement(components_1.ButtonActions, { size: 'lg', buttons: buttons, justifyContent: style == 'card' ? 'justify-start' : 'justify-center' })), enableGradient: enableGradient, enableOverlay: enableOverlay, objectFit: objectFit }));
 };
 exports.default = Hero;

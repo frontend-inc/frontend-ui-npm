@@ -43,25 +43,25 @@ var Header = function (props) {
     var _e = (0, react_1.useState)(false), isMenuOpen = _e[0], setIsMenuOpen = _e[1];
     return (react_1.default.createElement(react_2.Navbar, { isMenuOpen: isMenuOpen, onMenuOpenChange: setIsMenuOpen },
         (links === null || links === void 0 ? void 0 : links.length) > MAX_LINKS ? (react_1.default.createElement(react_2.NavbarContent, { justify: "start" },
-            react_1.default.createElement(react_2.NavbarMenuToggle, { className: 'text-foreground' }))) : (react_1.default.createElement(react_2.NavbarContent, { className: "sm:hidden", justify: "start" },
-            react_1.default.createElement(react_2.NavbarMenuToggle, { className: 'text-foreground' }))),
+            react_1.default.createElement(react_2.NavbarMenuToggle, { className: "text-foreground" }))) : (react_1.default.createElement(react_2.NavbarContent, { className: "sm:hidden", justify: "start" },
+            react_1.default.createElement(react_2.NavbarMenuToggle, { className: "text-foreground" }))),
         react_1.default.createElement(react_2.NavbarContent, { justify: "start" },
             react_1.default.createElement(react_2.NavbarBrand, null,
                 react_1.default.createElement(NavLogo_1.default, { src: logo, handleClick: function () { return handlePress('/'); } }))),
         (links === null || links === void 0 ? void 0 : links.length) <= MAX_LINKS && (react_1.default.createElement(react_2.NavbarContent, { className: "hidden sm:flex gap-4", justify: "center" }, links === null || links === void 0 ? void 0 : links.map(function (link, index) {
             var _a, _b;
-            return (((_a = link === null || link === void 0 ? void 0 : link.children) === null || _a === void 0 ? void 0 : _a.length) == 0 ? (react_1.default.createElement(react_2.NavbarItem, { key: index },
-                react_1.default.createElement(react_2.Button, { className: 'text-foreground', variant: "light", onPress: function () { return handlePress(link === null || link === void 0 ? void 0 : link.path); } }, link === null || link === void 0 ? void 0 : link.label))) : (react_1.default.createElement(react_2.Dropdown, { key: index },
+            return ((_a = link === null || link === void 0 ? void 0 : link.children) === null || _a === void 0 ? void 0 : _a.length) == 0 ? (react_1.default.createElement(react_2.NavbarItem, { key: link.id },
+                react_1.default.createElement(react_2.Button, { className: "text-foreground", variant: "light", onPress: function () { return handlePress(link === null || link === void 0 ? void 0 : link.path); } }, link === null || link === void 0 ? void 0 : link.label))) : (react_1.default.createElement(react_2.Dropdown, { key: link.id },
                 react_1.default.createElement(react_2.DropdownTrigger, null,
-                    react_1.default.createElement(react_2.Button, { variant: "light", className: 'text-foreground', endContent: react_1.default.createElement(__1.RemixIcon, { size: 'lg', name: "ri-arrow-down-s-line", className: 'text-foreground' }) }, link === null || link === void 0 ? void 0 : link.label)),
+                    react_1.default.createElement(react_2.Button, { variant: "light", className: "text-foreground", endContent: react_1.default.createElement(__1.RemixIcon, { size: "lg", name: "ri-arrow-down-s-line", className: "text-foreground" }) }, link === null || link === void 0 ? void 0 : link.label)),
                 react_1.default.createElement(react_2.DropdownMenu
                 //@ts-ignore
                 , { 
                     //@ts-ignore
-                    onAction: handlePress }, (_b = link === null || link === void 0 ? void 0 : link.children) === null || _b === void 0 ? void 0 : _b.map(function (child) { return (react_1.default.createElement(react_2.DropdownItem, { key: child === null || child === void 0 ? void 0 : child.path }, child === null || child === void 0 ? void 0 : child.label)); })))));
+                    onAction: handlePress }, (_b = link === null || link === void 0 ? void 0 : link.children) === null || _b === void 0 ? void 0 : _b.map(function (child) { return (react_1.default.createElement(react_2.DropdownItem, { key: (child === null || child === void 0 ? void 0 : child.path) || (child === null || child === void 0 ? void 0 : child.url) }, child === null || child === void 0 ? void 0 : child.label)); }))));
         }))),
         react_1.default.createElement(react_2.NavbarContent, { justify: "end" },
-            (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && (react_1.default.createElement(__1.ButtonActions, { size: "sm", buttons: buttons })),
+            (buttons === null || buttons === void 0 ? void 0 : buttons.length) > 0 && react_1.default.createElement(__1.ButtonActions, { size: "sm", buttons: buttons }),
             enableAuth && react_1.default.createElement(__1.AuthButton, null),
             enableStripe && react_1.default.createElement(__2.CartButton, null),
             enableShopify && react_1.default.createElement(shopify_1.ShopifyCartButton, null)),
@@ -69,8 +69,8 @@ var Header = function (props) {
             var _a, _b;
             return (react_1.default.createElement(react_2.NavbarMenuItem, { key: link === null || link === void 0 ? void 0 : link.id }, ((_a = link === null || link === void 0 ? void 0 : link.children) === null || _a === void 0 ? void 0 : _a.length) == 0 ? (react_1.default.createElement(react_2.Button, { variant: "light", className: "w-full", onPress: function () { return handlePress(link === null || link === void 0 ? void 0 : link.path); }, size: "lg" }, link === null || link === void 0 ? void 0 : link.label)) : (react_1.default.createElement(react_2.Dropdown, { key: index },
                 react_1.default.createElement(react_2.DropdownTrigger, null,
-                    react_1.default.createElement(react_2.Button, { size: 'lg', variant: "light", className: "w-full", endContent: react_1.default.createElement(__1.RemixIcon, { name: "ri-arrow-down-s-line", className: "text-foreground" }) }, link === null || link === void 0 ? void 0 : link.label)),
-                react_1.default.createElement(react_2.DropdownMenu, { onAction: handlePress }, (_b = link === null || link === void 0 ? void 0 : link.children) === null || _b === void 0 ? void 0 : _b.map(function (child) { return (react_1.default.createElement(react_2.DropdownItem, { key: child === null || child === void 0 ? void 0 : child.path }, child === null || child === void 0 ? void 0 : child.label)); }))))));
+                    react_1.default.createElement(react_2.Button, { size: "lg", variant: "light", className: "w-full", endContent: react_1.default.createElement(__1.RemixIcon, { name: "ri-arrow-down-s-line", className: "text-foreground" }) }, link === null || link === void 0 ? void 0 : link.label)),
+                react_1.default.createElement(react_2.DropdownMenu, { onAction: handlePress }, (_b = link === null || link === void 0 ? void 0 : link.children) === null || _b === void 0 ? void 0 : _b.map(function (child) { return (react_1.default.createElement(react_2.DropdownItem, { key: (child === null || child === void 0 ? void 0 : child.path) || (child === null || child === void 0 ? void 0 : child.url) }, child === null || child === void 0 ? void 0 : child.label)); }))))));
         }))));
 };
 exports.default = Header;

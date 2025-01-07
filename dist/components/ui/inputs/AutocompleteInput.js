@@ -17,10 +17,10 @@ function AutocompleteInput(props) {
         handleChange({
             target: {
                 name: name,
-                value: value
+                value: value,
             },
         });
     };
-    return (react_1.default.createElement(react_2.Autocomplete, { name: name, label: label, placeholder: placeholder, onInputChange: handleKeywordsChange, items: options, onSelectionChange: handleSelectionChange }, (function (option) { return (react_1.default.createElement(react_2.AutocompleteItem, { key: option.value, startContent: react_1.default.createElement(react_2.Avatar, { alt: "Argentina", src: option === null || option === void 0 ? void 0 : option.image, radius: "sm" }) }, option.label)); })));
+    return (react_1.default.createElement(react_2.Autocomplete, { name: name, label: label, placeholder: placeholder, onInputChange: handleKeywordsChange, items: options, onSelectionChange: handleSelectionChange }, function (option) { return (react_1.default.createElement(react_2.AutocompleteItem, { key: option.value, startContent: react_1.default.createElement(react_2.Avatar, { alt: "Argentina", src: option === null || option === void 0 ? void 0 : option.image, radius: "sm" }) }, option.label)); }));
 }
 exports.default = AutocompleteInput;

@@ -31,4 +31,3 @@ export { default as VerifyPin } from './verify/VerifyPin';
 export { default as VerifyPinForm } from './verify/VerifyPinForm';
 export { default as VerifySendPinForm } from './verify/VerifySendPinForm';
 export * from './users';
-export { default as AuthUserListItem } from './lists/AuthUserListItem';

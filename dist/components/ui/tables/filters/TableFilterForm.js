@@ -143,9 +143,7 @@ function TableFilterForm(_a) {
         react_1.default.createElement(components_1.TableFilterInputs, { filters: activeFilters, fieldOptions: filterOptions, handleChange: handleFilterChange, handleRemove: handleRemoveFilter }),
         react_1.default.createElement(react_2.Button, { isIconOnly: true, variant: "ghost", onPress: handleAddFilter },
             react_1.default.createElement(lucide_react_1.Plus, { className: "w-4 h-4 text-foreground" })),
-        react_1.default.createElement("button", { className: "w-full px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-200 flex items-center justify-center space-x-2", onClick: handleFilterSearch },
-            loading ? (react_1.default.createElement(lucide_react_1.Loader, { className: "w-4 h-4 animate-spin" })) : (react_1.default.createElement(lucide_react_1.Search, { className: "w-4 h-4" })),
-            react_1.default.createElement("span", null, "Search")),
+        react_1.default.createElement(react_2.Button, { isLoading: loading, onPress: handleFilterSearch, startContent: react_1.default.createElement(lucide_react_1.Search, { className: "w-4 h-4" }) }, "Search"),
         react_1.default.createElement(react_2.Button, { onPress: handleClearFilters, startContent: react_1.default.createElement(lucide_react_1.FilterIcon, { className: "w-4 h-4" }) }, "Reset filters")));
 }
 exports.default = TableFilterForm;

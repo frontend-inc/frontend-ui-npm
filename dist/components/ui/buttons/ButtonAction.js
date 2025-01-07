@@ -31,17 +31,15 @@ var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
 var react_2 = require("@nextui-org/react");
 var ButtonAction = function (props) {
-    var icon = props.icon, action = props.action, url = props.url, path = props.path, src = props.src, color = props.color, _a = props.variant, variant = _a === void 0 ? 'solid' : _a, _b = props.size, size = _b === void 0 ? 'md' : _b, children = props.children, rest = __rest(props, ["icon", "action", "url", "path", "src", "color", "variant", "size", "children"]);
-    var _c = (0, hooks_1.useButton)({
+    var icon = props.icon, action = props.action, url = props.url, path = props.path, src = props.src, _a = props.color, color = _a === void 0 ? 'default' : _a, _b = props.variant, variant = _b === void 0 ? 'solid' : _b, _c = props.size, size = _c === void 0 ? 'md' : _c, children = props.children, rest = __rest(props, ["icon", "action", "url", "path", "src", "color", "variant", "size", "children"]);
+    var _d = (0, hooks_1.useButton)({
         action: action,
         url: url,
         path: path,
         src: src,
-    }), openShare = _c.openShare, setOpenShare = _c.setOpenShare, openVideo = _c.openVideo, setOpenVideo = _c.setOpenVideo, openImage = _c.openImage, setOpenImage = _c.setOpenImage, handleClick = _c.handleClick;
+    }), openShare = _d.openShare, setOpenShare = _d.setOpenShare, openVideo = _d.openVideo, setOpenVideo = _d.setOpenVideo, openImage = _d.openImage, setOpenImage = _d.setOpenImage, handleClick = _d.handleClick;
     return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(react_2.Button, __assign({ fullWidth: true }, rest, { size: size, variant: variant, color: "primary", startContent: icon && (react_1.default.createElement(__1.RemixIcon, { name: icon, className: color == 'primary'
-                    ? 'text-primary-foreground'
-                    : 'text-secondary-foreground' })), 
+        react_1.default.createElement(react_2.Button, __assign({ fullWidth: true }, rest, { size: size, variant: variant, color: color, startContent: icon && (react_1.default.createElement(__1.RemixIcon, { name: icon })), 
             /* @ts-ignore */
             onPress: handleClick }), children),
         src && (react_1.default.createElement(react_1.default.Fragment, null,

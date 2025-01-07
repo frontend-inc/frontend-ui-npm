@@ -76,7 +76,7 @@ var DocumentList = function (props) {
         cover: 'grid',
         video: 'grid',
         image: 'grid',
-        file: 'list'
+        file: 'list',
     }[style] || 'list';
     return (react_1.default.createElement(__1.DataList
     //@ts-ignore

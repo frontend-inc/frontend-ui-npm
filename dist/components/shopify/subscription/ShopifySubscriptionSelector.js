@@ -52,11 +52,11 @@ var ShopifySubscriptionSelector = function (props) {
     if (!sellingPlans || sellingPlans.length === 0)
         return null;
     var activePlan = sellingPlans.find(function (plan) { return plan.id === activeSellingPlanId; });
-    var buttonText = activePlan ?
-        "".concat(activePlan.name, " - ").concat((0, frontend_shopify_1.getSellingPlanDescription)(activePlan)) :
-        "Select subscription";
+    var buttonText = activePlan
+        ? "".concat(activePlan.name, " - ").concat((0, frontend_shopify_1.getSellingPlanDescription)(activePlan))
+        : 'Select subscription';
     return (react_1.default.createElement("div", { className: "w-full relative" },
-        react_1.default.createElement(react_2.Button, { variant: "bordered", onPress: toggleOpen, className: "w-full justify-between", endContent: react_1.default.createElement(lucide_react_1.ChevronRight, { className: (0, react_2.cn)("h-4 w-4 shrink-0 transition-transform duration-200", isOpen && "rotate-90") }) },
+        react_1.default.createElement(react_2.Button, { variant: "bordered", onPress: toggleOpen, className: "w-full justify-between", endContent: react_1.default.createElement(lucide_react_1.ChevronRight, { className: (0, react_2.cn)('h-4 w-4 shrink-0 transition-transform duration-200', isOpen && 'rotate-90') }) },
             react_1.default.createElement("span", { className: "truncate" }, buttonText)),
         isOpen && (react_1.default.createElement("div", { className: "absolute z-10 w-full mt-1 bg-content1 border-2 border-divider rounded-xl shadow-lg overflow-hidden" },
             react_1.default.createElement(react_2.Button, { variant: "light", onPress: function () { return handleSelectPlan(null); }, className: "w-full justify-start font-normal rounded-none" }, "No subscription"), sellingPlans === null || sellingPlans === void 0 ? void 0 :

@@ -58,7 +58,7 @@ var ShopifyProductSearch = function (props) {
             query: keywords,
             sortKey: sortKey,
             reverse: reverse,
-            after: cursor
+            after: cursor,
         });
     };
     var handleSortClick = function (sortKey, reverse) {

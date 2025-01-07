@@ -85,7 +85,7 @@ var BlogListItems = function (props) {
     var firstPostStyle = {
         card: 'card',
         cover: 'cover',
-        list: 'card'
+        list: 'card',
     };
     return (react_1.default.createElement("div", { className: "flex flex-col w-full space-y-2" },
         firstPost && (react_1.default.createElement(__3.BlurFade, { delay: 0.25, inView: true, key: firstPost.id },

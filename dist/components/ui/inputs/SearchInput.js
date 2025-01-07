@@ -47,7 +47,7 @@ var SearchInput = function (props) {
             e.preventDefault();
             handleSearch(text);
         } },
-        react_1.default.createElement(react_2.Input, { fullWidth: true, label: label, className: fullWidth ? 'w-full' : 'max-w-screen-sm', placeholder: placeholder, value: text, onChange: handleInputChange, endContent: react_1.default.createElement(react_2.Button, { variant: "light", isIconOnly: true, onPress: function () { return handleSearch(text); }, className: 'text-foreground' },
-                react_1.default.createElement(components_1.RemixIcon, { name: 'ri-search-line', className: 'text-foreground' })) })));
+        react_1.default.createElement(react_2.Input, { fullWidth: true, label: label, className: fullWidth ? 'w-full' : 'max-w-screen-sm', placeholder: placeholder, value: text, onChange: handleInputChange, endContent: react_1.default.createElement(react_2.Button, { variant: "light", isIconOnly: true, onPress: function () { return handleSearch(text); }, className: "text-foreground" },
+                react_1.default.createElement(components_1.RemixIcon, { name: "ri-search-line", className: "text-foreground" })) })));
 };
 exports.default = SearchInput;

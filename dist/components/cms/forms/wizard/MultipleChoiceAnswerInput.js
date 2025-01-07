@@ -25,7 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../../core");
+var components_1 = require("../../../../components");
 var __1 = require("../../..");
 var MultipleChoiceAnswerInput = function (props) {
     var label = props.label, _a = props.layout, layout = _a === void 0 ? 'list' : _a, _b = props.multiSelect, multiSelect = _b === void 0 ? true : _b, name = props.name, value = props.value, handleChange = props.handleChange, _c = props.answers, answers = _c === void 0 ? [] : _c;
@@ -54,7 +54,7 @@ var MultipleChoiceAnswerInput = function (props) {
         }
     }, [selected]);
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-2" },
-        react_1.default.createElement(core_1.Typography, { variant: "caption" }, label),
+        react_1.default.createElement(components_1.Typography, { variant: "caption" }, label),
         layout === 'list' && (react_1.default.createElement("ul", null, answers === null || answers === void 0 ? void 0 : answers.map(function (answer, i) {
             var _a;
             return (react_1.default.createElement(__1.ResourceListItem, { key: i, selected: selected === null || selected === void 0 ? void 0 : selected.includes(answer.value), image: (_a = answer === null || answer === void 0 ? void 0 : answer.image) === null || _a === void 0 ? void 0 : _a.url, primary: answer.title, secondary: answer.description, handleClick: function () { return handleSelect(answer.value); } }));

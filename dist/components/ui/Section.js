@@ -31,12 +31,15 @@ var Section = function (props) {
         lg: 'px-24',
         xl: 'px-48',
     };
-    var backgroundStyle = bgImage ? {
-        backgroundImage: "url(".concat(bgImage, ")")
-    } : {
-        backgroundColor: bgColor,
-    };
-    return (react_1.default.createElement("section", { className: (0, react_2.cn)('z-0', 'relative bg-cover bg-center bg-no-repeat', 'w-full bg-background', theme && mode && "".concat(theme, "-").concat(mode), pyClasses[py], pxClasses[px], !bgImage && bgColor, bgImage && bgOverlay &&
+    var backgroundStyle = bgImage
+        ? {
+            backgroundImage: "url(".concat(bgImage, ")"),
+        }
+        : {
+            backgroundColor: bgColor,
+        };
+    return (react_1.default.createElement("section", { className: (0, react_2.cn)('z-0', 'relative bg-cover bg-center bg-no-repeat', 'w-full bg-background', theme && mode && "".concat(theme, "-").concat(mode), pyClasses[py], pxClasses[px], !bgImage && bgColor, bgImage &&
+            bgOverlay &&
             "after:content-[''] after:absolute after:inset-0 after:bg-black/50"), style: backgroundStyle },
         react_1.default.createElement("div", { className: (0, react_2.cn)('relative z-[1]', variant == 'outline' && 'p-8 border-2 border-divider rounded-xl', variant == 'fill' && bgImage && 'p-8 rounded-xl bg-black/50', variant == 'fill' && !bgImage && 'p-8 rounded-xl bg-content1/50', maxWidth && maxWidthClasses[maxWidth], 'w-full mx-auto min-h-[60px] flex flex-row justify-center items-center') },
             react_1.default.createElement("div", { className: (0, react_2.cn)('w-full', 'transition-all duration-300 ease-in-out') },

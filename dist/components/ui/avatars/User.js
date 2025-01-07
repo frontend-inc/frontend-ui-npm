@@ -17,7 +17,7 @@ var User = function (props) {
             radius: radius,
             isBordered: isBordered,
             className: isBordered ? 'mr-1' : '',
-            size: size
+            size: size,
         }, name: user === null || user === void 0 ? void 0 : user.name, description: user === null || user === void 0 ? void 0 : user.email, className: className }));
 };
 exports.default = User;

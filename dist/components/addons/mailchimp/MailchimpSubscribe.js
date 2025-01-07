@@ -90,6 +90,6 @@ var MailchimpSubscribe = function (props) {
             (0, sonner_1.toast)(message);
         }
     }, [message]);
-    return (react_1.default.createElement(components_1.EmailSubscribeInput, { name: "EMAIL", value: email, placeholder: 'Enter your email', handleChange: handleChange, buttonText: buttonText, handleSubmit: handleFormSubmit, loading: loading }));
+    return (react_1.default.createElement(components_1.EmailSubscribeInput, { name: "EMAIL", value: email, placeholder: "Enter your email", handleChange: handleChange, buttonText: buttonText, handleSubmit: handleFormSubmit, loading: loading }));
 };
 exports.default = MailchimpSubscribe;

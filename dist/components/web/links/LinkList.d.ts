@@ -1,7 +1,6 @@
 import React from 'react';
 type LinkListType = {
-    fill?: boolean;
-    border?: boolean;
+    variant?: 'fill' | 'outline' | 'default';
     color: string;
     icon: string;
     title: string;

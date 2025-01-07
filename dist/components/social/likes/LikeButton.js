@@ -102,7 +102,7 @@ function LikeButton(props) {
         }
     }, [currentUser, resource === null || resource === void 0 ? void 0 : resource.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, react_2.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider') },
+        react_1.default.createElement(components_1.IconButton, { onPress: handleClick, className: (0, react_2.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider') },
             liked && react_1.default.createElement(components_1.RemixIcon, { name: "ri-heart-fill", className: "fill-primary" }),
             !liked && react_1.default.createElement(components_1.RemixIcon, { name: "ri-heart-line" }))));
 }

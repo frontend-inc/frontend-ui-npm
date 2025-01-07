@@ -71,11 +71,11 @@ var react_4 = require("@nextui-org/react");
 var lucide_react_1 = require("lucide-react");
 var CartQuantityInput = function (props) {
     var quantity = props.quantity, handleAddQuantity = props.handleAddQuantity, handleRemoveQuantity = props.handleRemoveQuantity;
-    return (react_1.default.createElement(react_3.ButtonGroup, { variant: "light", className: "border-2 border-divider rounded-lg", size: 'sm' },
-        react_1.default.createElement(react_3.Button, { isIconOnly: true, size: 'sm', onPress: handleRemoveQuantity },
+    return (react_1.default.createElement(react_3.ButtonGroup, { variant: "light", className: "border-2 border-divider rounded-xl w-[100px]", size: "sm" },
+        react_1.default.createElement(react_3.Button, { isIconOnly: true, size: "sm", className: "min-w-8", onPress: handleRemoveQuantity },
             react_1.default.createElement(lucide_react_1.Minus, { size: 20 })),
-        react_1.default.createElement(react_3.Button, { size: 'sm', isIconOnly: true }, quantity),
-        react_1.default.createElement(react_3.Button, { size: 'sm', isIconOnly: true, onPress: handleAddQuantity },
+        react_1.default.createElement(react_3.Button, { isIconOnly: true, size: "sm", className: "min-w-8 w-full" }, quantity),
+        react_1.default.createElement(react_3.Button, { isIconOnly: true, size: "sm", className: "min-w-8", onPress: handleAddQuantity },
             react_1.default.createElement(lucide_react_1.Plus, { size: 20 }))));
 };
 var CartLineItem = function (props) {
@@ -122,11 +122,9 @@ var CartLineItem = function (props) {
     return (react_1.default.createElement(react_1.default.Fragment, null,
         react_1.default.createElement("div", { className: (0, react_4.cn)('flex items-center justify-between py-2', loading && 'opacity-30') },
             react_1.default.createElement("div", { className: "flex space-x-4 items-center pt-1" },
-                react_1.default.createElement(react_2.Badge, { content: quantity },
-                    react_1.default.createElement("button", { className: "p-0", onClick: handleClick },
-                        react_1.default.createElement(react_2.Image, { alt: (product === null || product === void 0 ? void 0 : product.title) || '', 
-                            // @ts-ignore
-                            src: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, height: 72, width: 72, className: "w-full cursor-pointer object-cover" }))),
+                react_1.default.createElement(react_2.Badge, { color: "primary", content: quantity },
+                    react_1.default.createElement(react_2.Card, { isPressable: true, onPress: function () { return handleClick(); }, className: "w-[72px] h-[72px] rounded-lg" },
+                        react_1.default.createElement(react_2.Image, { removeWrapper: true, alt: (product === null || product === void 0 ? void 0 : product.title) || '', src: (_a = product === null || product === void 0 ? void 0 : product.image) === null || _a === void 0 ? void 0 : _a.url, height: 72, width: 72, className: "w-full object-cover" }))),
                 react_1.default.createElement("div", { className: "flex flex-col space-y-1" },
                     react_1.default.createElement(components_2.Typography, { variant: "body1" }, product === null || product === void 0 ? void 0 : product.title),
                     react_1.default.createElement(components_2.Typography, { className: "text-foreground/70", variant: "body2" }, product === null || product === void 0 ? void 0 : product.display_price),

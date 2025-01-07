@@ -41,7 +41,7 @@ function ShopifyCollectionCard(props) {
             react_1.default.createElement(components_3.Image, { handleClick: handleShowClick, disableBorderRadius: true, 
                 // @ts-ignore
                 src: image === null || image === void 0 ? void 0 : image.url, alt: title || 'Collection image', aspectRatio: 1.0, enableGradient: enableGradient, enableOverlay: enableOverlay }),
-            react_1.default.createElement(react_2.CardFooter, { className: 'dark absolute bottom-0 left-0 w-full p-4 z-20' },
+            react_1.default.createElement(react_2.CardFooter, { className: "dark absolute bottom-0 left-0 w-full p-4 z-20" },
                 react_1.default.createElement(components_1.Typography, { variant: "body1", className: "text-white text-ellipsis" }, title))),
         react_1.default.createElement(components_2.ShopifyProductCollectionModal, { open: open, handleClose: function () { return setOpen(false); }, collection: collection, enableAddToCart: enableAddToCart, enableQuantity: enableQuantity, enableSort: enableSorting })));
 }

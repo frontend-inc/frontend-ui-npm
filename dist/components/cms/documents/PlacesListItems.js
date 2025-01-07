@@ -55,8 +55,7 @@ function PlacesListItems(_a) {
     return (react_1.default.createElement("div", { className: "flex flex-col md:flex-row -mx-2" },
         react_1.default.createElement("div", { className: "w-full md:w-7/12 px-2 mb-4 md:mb-0" },
             react_1.default.createElement(__1.DocumentListItems, __assign({}, rest, { metafields: metafields, style: "list" }))),
-        react_1.default.createElement("div", { className: "w-full md:w-5/12 px-2" },
-            react_1.default.createElement("div", { className: "hidden md:block" },
-                react_1.default.createElement(__1.GoogleMaps, { enableBorder: true, zoom: 15, height: 380, resources: resources })))));
+        react_1.default.createElement("div", { className: "w-full md:w-5/12 px-2 hidden md:block" },
+            react_1.default.createElement(__1.GoogleMaps, { darkTheme: true, enableBorder: true, zoom: 15, height: 380, resources: resources }))));
 }
 exports.default = PlacesListItems;

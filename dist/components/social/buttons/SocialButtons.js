@@ -19,7 +19,7 @@ var SocialButtons = function (props) {
         !enableProductLikes)
         return null;
     return (react_1.default.createElement("div", { className: (0, react_2.cn)('flex', size == 'small' ? 'space-x-1' : 'space-x-2', direction == 'row' && 'flex-row', justifyContent == 'flex-start' && 'justify-start', justifyContent == 'center' && 'justify-center') },
-        enableDownload == true && react_1.default.createElement(components_1.DownloadButton, { size: size, resource: resource }),
+        enableDownload == true && (react_1.default.createElement(components_1.DownloadButton, { size: size, resource: resource })),
         enableLikes == true && react_1.default.createElement(components_1.LikeButton, { size: size, resource: resource }),
         enableFavorites == true && (react_1.default.createElement(components_1.FavoriteButton, { size: size, resource: resource })),
         enableProductLikes == true && (react_1.default.createElement(components_1.ProductLikeButton, { size: size, product: product })),

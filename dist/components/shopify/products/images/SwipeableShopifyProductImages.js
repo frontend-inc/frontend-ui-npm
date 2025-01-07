@@ -19,6 +19,6 @@ function SwipeableShopifyProductImages(props) {
     }), onMouseDown = _f.onMouseDown, onMouseUp = _f.onMouseUp;
     return (react_1.default.createElement(components_1.Swipeable, { enableDots: true }, images.map(function (image, index) { return (react_1.default.createElement("div", { className: "relative", key: index, onMouseDown: onMouseDown, onMouseUp: onMouseUp },
         react_1.default.createElement(frontend_shadcn_1.AspectRatio, { ratio: 1.0 },
-            react_1.default.createElement(react_2.Image, { radius: 'none', removeWrapper: true, key: index, src: image === null || image === void 0 ? void 0 : image.url, alt: product === null || product === void 0 ? void 0 : product.title, className: 'object-cover' })))); })));
+            react_1.default.createElement(react_2.Image, { radius: "none", removeWrapper: true, key: index, src: image === null || image === void 0 ? void 0 : image.url, alt: product === null || product === void 0 ? void 0 : product.title, className: "object-cover" })))); })));
 }
 exports.default = SwipeableShopifyProductImages;

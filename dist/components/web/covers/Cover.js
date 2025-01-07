@@ -14,9 +14,11 @@ var Cover = function (props) {
     var onClick = (0, hooks_1.useNavigate)({
         handleClick: handleClick,
     });
-    return (react_1.default.createElement("div", { className: 'relative w-full' },
-        react_1.default.createElement(__1.Image, { disableZoom: true, disableBorderRadius: true, src: image, alt: alt, height: height, enableGradient: enableGradient, enableOverlay: enableOverlay }),
-        react_1.default.createElement("div", { className: (0, react_2.cn)('flex flex-col items-center justify-center z-20', height && "h-[".concat(height, "px]"), "absolute top-0 left-0 w-full h-full px-3 sm:px-0") },
+    return (react_1.default.createElement("div", { className: "relative w-full h-[400px]" },
+        react_1.default.createElement(__1.Image, { fullWidth: true, disableZoom: true, disableBorderRadius: true, src: image, alt: alt, height: height, enableGradient: enableGradient, enableOverlay: enableOverlay }),
+        react_1.default.createElement("div", { style: {
+                height: "".concat(height, "px")
+            }, className: (0, react_2.cn)('flex flex-col items-center justify-center z-20', "absolute top-0 left-0 w-full h-full px-3 sm:px-0") },
             react_1.default.createElement("div", { className: (0, react_2.cn)('flex flex-col space-y-4 px-4', alignItems) },
                 react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: alignItems === 'items-center' ? 'center' : 'left', size: "lg", editable: editable, handleChange: handleChange }),
                 actions,

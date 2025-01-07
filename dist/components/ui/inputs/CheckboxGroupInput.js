@@ -14,11 +14,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var frontend_shadcn_1 = require("frontend-shadcn");
-var components_1 = require("../../../components");
 var react_2 = require("@nextui-org/react");
-function CheckboxGroupInput(_a) {
-    var errors = _a.errors, label = _a.label, name = _a.name, _b = _a.value, values = _b === void 0 ? [] : _b, options = _a.options, handleChange = _a.handleChange, info = _a.info;
+var components_1 = require("../../../components");
+var react_3 = require("@nextui-org/react");
+function CheckboxGroupInput(props) {
+    var _a = props || {}, errors = _a.errors, label = _a.label, name = _a.name, _b = _a.value, values = _b === void 0 ? [] : _b, options = _a.options, handleChange = _a.handleChange, info = _a.info;
     var handleCheckboxChange = function (checked, value) {
         var newValues = checked
             ? __spreadArray(__spreadArray([], values, true), [value], false) : values.filter(function (v) { return v !== value; });
@@ -33,10 +33,10 @@ function CheckboxGroupInput(_a) {
     return (react_1.default.createElement("div", { className: "w-full" },
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement("div", { className: "space-y-2" }, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement("div", { key: idx, className: "flex items-center space-x-2" },
-            react_1.default.createElement(frontend_shadcn_1.Checkbox, { id: "".concat(name, "-").concat(option.value), checked: values.includes(String(option.value)), onCheckedChange: function (checked) {
+            react_1.default.createElement(react_2.Checkbox, { id: "".concat(name, "-").concat(option.value), isSelected: values.includes(String(option.value)), onValueChange: function (checked) {
                     return handleCheckboxChange(checked, String(option.value));
                 } }),
-            react_1.default.createElement("label", { htmlFor: "".concat(name, "-").concat(option.value), className: (0, react_2.cn)('text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', errors && errors[name] ? 'text-red-500' : 'text-gray-500') }, option.label))); })),
+            react_1.default.createElement("label", { htmlFor: "".concat(name, "-").concat(option.value), className: (0, react_3.cn)('text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70', errors && errors[name] ? 'text-red-500' : 'text-gray-500') }, option.label))); })),
         errors && errors[name] && (react_1.default.createElement("p", { className: "mt-2 text-sm text-red-500" }, errors[name]))));
 }
 exports.default = CheckboxGroupInput;

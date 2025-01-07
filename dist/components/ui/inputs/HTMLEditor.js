@@ -125,15 +125,15 @@ var MenuBar = function (_a) {
         },
     ];
     return (react_1.default.createElement("div", { className: "w-full md:min-w-[800px] p-2 bg-white rounded-2xl shadow-lg flex flex-wrap gap-2 z-50" },
-        formattingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, variant: "solid", color: btn.isActive ? 'primary' : 'secondary', onClick: btn.action, disabled: !editor.can().chain().focus().run(), "aria-label": btn.label },
+        formattingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, variant: btn.isActive ? 'solid' : 'light', className: (0, react_3.cn)(btn.isActive && 'bg-black'), onPress: btn.action, disabled: !editor.can().chain().focus().run(), "aria-label": btn.label },
             react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, react_3.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); }),
-        headingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, variant: "solid", color: btn.isActive ? 'primary' : 'secondary', disabled: !editor.can().chain().focus().run(), "aria-label": btn.label },
+        headingOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onPress: btn.action, variant: btn.isActive ? 'solid' : 'light', className: (0, react_3.cn)(btn.isActive && 'bg-black'), color: btn.isActive ? 'primary' : 'secondary', disabled: !editor.can().chain().focus().run(), "aria-label": btn.label },
             react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, react_3.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); }),
-        listOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), variant: "solid", color: btn.isActive ? 'primary' : 'secondary', "aria-label": btn.label },
+        listOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onPress: btn.action, disabled: !editor.can().chain().focus().run(), variant: btn.isActive ? 'solid' : 'light', className: (0, react_3.cn)(btn.isActive && 'bg-black'), "aria-label": btn.label },
             react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, react_3.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); }),
-        textAlignOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), variant: "solid", color: btn.isActive ? 'primary' : 'secondary', "aria-label": btn.label },
+        textAlignOptions.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onPress: btn.action, disabled: !editor.can().chain().focus().run(), variant: btn.isActive ? 'solid' : 'light', className: (0, react_3.cn)(btn.isActive && 'bg-black'), "aria-label": btn.label },
             react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, react_3.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); }),
-        redoButtons.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), variant: "solid", color: btn.isActive ? 'primary' : 'secondary', "aria-label": btn.label },
+        redoButtons.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onPress: btn.action, disabled: !editor.can().chain().focus().run(), variant: btn.isActive ? 'solid' : 'light', className: (0, react_3.cn)(btn.isActive && 'bg-black'), "aria-label": btn.label },
             react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, react_3.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); })));
 };
 var HTMLEditor = function (props) {

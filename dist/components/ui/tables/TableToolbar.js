@@ -65,7 +65,7 @@ var TableToolbar = function (props) {
                 react_1.default.createElement(components_2.Hidden, { mdUp: true },
                     react_1.default.createElement("div", { className: "flex flex-row justify-start items-center" },
                         react_1.default.createElement("div", { className: "relative" },
-                            react_1.default.createElement(components_2.IconButton, { onClick: handleFilter },
+                            react_1.default.createElement(components_2.IconButton, { onPress: handleFilter },
                                 react_1.default.createElement(lucide_react_1.Filter, { className: "w-5 h-5 text-foreground" })),
                             react_1.default.createElement(frontend_shadcn_1.Badge, { className: "py-0 px-1 rounded-full absolute top-0 right-0 transform translate-x-[3px] -translate-y-[3px]" }, badgeCount)),
                         (selected === null || selected === void 0 ? void 0 : selected.length) > 0 && (react_1.default.createElement(react_1.default.Fragment, null,

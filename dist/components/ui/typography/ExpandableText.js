@@ -23,19 +23,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var components_1 = require("../../../components");
-var link_1 = __importDefault(require("next/link"));
+var react_2 = require("@nextui-org/react");
 var MAX_CHARS = 200;
 var ExpandableText = function (props) {
     var _a = props || {}, text = _a.text, className = _a.className, _b = _a.variant, variant = _b === void 0 ? 'body1' : _b, _c = _a.maxChars, maxChars = _c === void 0 ? MAX_CHARS : _c;
     var _d = (0, react_1.useState)(false), open = _d[0], setOpen = _d[1];
     return (react_1.default.createElement("div", { className: "flex flex-col" },
-        open ? (react_1.default.createElement(components_1.Typography, { variant: variant, className: className }, text)) : (react_1.default.createElement(components_1.Typography, { variant: variant, className: className }, text === null || text === void 0 ? void 0 : text.slice(0, maxChars))),
-        (text === null || text === void 0 ? void 0 : text.length) > maxChars && (react_1.default.createElement(link_1.default, { href: "#", onClick: function () { return setOpen(!open); } }, open ? 'See less' : '... See all'))));
+        open ? (react_1.default.createElement(components_1.Typography, { variant: variant, className: className }, text)) : (react_1.default.createElement(react_2.ScrollShadow, null,
+            react_1.default.createElement(components_1.Typography, { variant: variant, className: className }, text))),
+        (text === null || text === void 0 ? void 0 : text.length) > maxChars && (react_1.default.createElement(react_2.Button, { variant: "light", onPress: function () { return setOpen(!open); } }, open ? 'See less' : '... See all'))));
 };
 exports.default = ExpandableText;

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -54,19 +54,19 @@ var Tabs = TabsPrimitive.Root;
 exports.Tabs = Tabs;
 var TabsList = React.forwardRef(function (_a, ref) {
     var className = _a.className, props = __rest(_a, ["className"]);
-    return (React.createElement(TabsPrimitive.List, __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)("flex justify-center w-full border-b border-divider", "inline-flex h-10 items-center justify-center p-1 text-foreground/70", className) }, props)));
+    return (React.createElement(TabsPrimitive.List, __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)('flex justify-center w-full border-b border-divider', 'inline-flex h-10 items-center justify-center p-1 text-foreground/70', className) }, props)));
 });
 exports.TabsList = TabsList;
 TabsList.displayName = TabsPrimitive.List.displayName;
 var TabsTrigger = React.forwardRef(function (_a, ref) {
     var className = _a.className, props = __rest(_a, ["className"]);
-    return (React.createElement(TabsPrimitive.Trigger, __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)("px-4 py-2 font-medium text-sm text-foreground/70 hover:text-foreground focus:outline-none focus:text-foreground data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary", "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground", className) }, props)));
+    return (React.createElement(TabsPrimitive.Trigger, __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)('px-4 py-2 font-medium text-sm text-foreground/70 hover:text-foreground focus:outline-none focus:text-foreground data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary', 'inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:text-foreground', className) }, props)));
 });
 exports.TabsTrigger = TabsTrigger;
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 var TabsContent = React.forwardRef(function (_a, ref) {
     var className = _a.className, props = __rest(_a, ["className"]);
-    return (React.createElement(TabsPrimitive.Content, __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)("mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2", className) }, props)));
+    return (React.createElement(TabsPrimitive.Content, __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)('mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2', className) }, props)));
 });
 exports.TabsContent = TabsContent;
 TabsContent.displayName = TabsPrimitive.Content.displayName;

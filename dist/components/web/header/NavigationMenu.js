@@ -1,4 +1,4 @@
-"use client";
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -71,11 +71,11 @@ var ListItem = React.forwardRef(function (_a, ref) {
     var className = _a.className, title = _a.title, children = _a.children, props = __rest(_a, ["className", "title", "children"]);
     return (React.createElement("li", null,
         React.createElement(frontend_shadcn_2.NavigationMenuLink, { asChild: true },
-            React.createElement("a", __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)("block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors " +
-                    "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground", className) }, props),
+            React.createElement("a", __assign({ ref: ref, className: (0, frontend_shadcn_1.cn)('block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors ' +
+                    'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground', className) }, props),
                 React.createElement("div", { className: "flex flex-row space-x-2" },
                     React.createElement("div", { className: "flex flex-col space-y-1" },
                         title && (React.createElement("div", { className: "text-sm text-foreground font-medium leading-none" }, title)),
                         children && (React.createElement("p", { className: "line-clamp-2 text-sm leading-snug text-foreground/70" }, children))))))));
 });
-ListItem.displayName = "ListItem";
+ListItem.displayName = 'ListItem';

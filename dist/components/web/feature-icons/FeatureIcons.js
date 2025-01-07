@@ -13,7 +13,7 @@ var react_2 = require("@nextui-org/react");
 var FeatureIcon = function (props) {
     var _a = props || {}, variant = _a.variant, icon = _a.icon, title = _a.title, subtitle = _a.subtitle, _b = _a.direction, direction = _b === void 0 ? 'column' : _b;
     return (react_1.default.createElement("div", { className: (0, react_2.cn)('flex justify-start py-6 w-full items-start h-full', 'flex-row items-start space-x-3 min-h-[90px]', variant == 'outline' && 'border-2 border-divider rounded-lg p-6', variant == 'fill' && 'bg-content1 rounded-lg p-6') },
-        icon && (react_1.default.createElement(__3.RemixIcon, { name: icon, size: "lg", className: "text-primary" })),
+        icon && react_1.default.createElement(__3.RemixIcon, { name: icon, size: "lg", className: "text-primary" }),
         react_1.default.createElement("div", { className: (0, react_2.cn)('flex flex-col space-y-2', direction === 'row' && 'text-left') },
             react_1.default.createElement(components_1.Typography, { variant: "h6" }, title),
             react_1.default.createElement(components_1.Typography, { className: (0, react_2.cn)('text-foreground/70'), variant: "body1" }, subtitle))));

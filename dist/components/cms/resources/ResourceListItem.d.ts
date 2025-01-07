@@ -8,7 +8,7 @@ export type ResourceListItemProps = {
     icon?: string;
     color?: string;
     image?: string;
-    handleClick?: (resource: any) => void;
+    handleClick?: () => void;
     handleEdit?: (resource: any) => void;
     handleDelete?: (resource: any) => void;
     handleSelect?: () => void;

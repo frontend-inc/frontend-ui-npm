@@ -33,6 +33,6 @@ var ShopifyProducts = function (props) {
     var label = props.label, title = props.title, subtitle = props.subtitle, textAlign = props.textAlign, bgColor = props.bgColor, bgImage = props.bgImage, bgOverlay = props.bgOverlay, mode = props.mode, py = props.py, px = props.px, maxWidth = props.maxWidth, requireAuth = props.requireAuth, rest = __rest(props, ["label", "title", "subtitle", "textAlign", "bgColor", "bgImage", "bgOverlay", "mode", "py", "px", "maxWidth", "requireAuth"]);
     return (react_1.default.createElement(components_1.Section, { requireAuth: requireAuth, bgColor: bgColor, bgImage: bgImage, bgOverlay: bgOverlay, mode: mode, py: py, px: px, maxWidth: maxWidth },
         react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, textAlign: textAlign }),
-        react_1.default.createElement(shopify_1.ShopifyProductCollection, __assign({}, rest))));
+        react_1.default.createElement(shopify_1.ShopifyProductSearch, __assign({}, rest))));
 };
 exports.default = ShopifyProducts;

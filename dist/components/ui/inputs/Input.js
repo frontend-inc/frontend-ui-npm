@@ -45,7 +45,6 @@ var Input = function (props) {
         jsonArray: index_1.JsonArrayInput,
         noSpace: index_1.SlugInput,
         numberRange: index_1.NumberRangeInput,
-        numberSlider: index_1.NumberSliderInput,
         phone: index_1.PhoneInput,
         priceRange: index_1.PriceRangeInput,
         radio: index_1.RadioInput,

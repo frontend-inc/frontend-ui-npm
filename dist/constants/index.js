@@ -23,6 +23,7 @@ __exportStar(require("./fonts"), exports);
 __exportStar(require("./filters"), exports);
 __exportStar(require("./layout"), exports);
 __exportStar(require("./links"), exports);
+__exportStar(require("./media"), exports);
 __exportStar(require("./notifications"), exports);
 __exportStar(require("./shopify"), exports);
 __exportStar(require("./states"), exports);

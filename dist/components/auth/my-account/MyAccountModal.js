@@ -116,7 +116,7 @@ var MyAccountModal = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(components_1.Modal, { maxWidth: 'sm', open: myAccountOpen, handleClose: currentTab != 0 ? function () { return setCurrentTab(0); } : function () { return setMyAccountOpen(false); } },
+    return (react_1.default.createElement(components_1.Modal, { maxWidth: "sm", open: myAccountOpen, handleClose: currentTab != 0 ? function () { return setCurrentTab(0); } : function () { return setMyAccountOpen(false); } },
         currentTab == 0 && (react_1.default.createElement(MyAccountTabs_1.default, { tab: currentTab, enableStripe: enableStripe, handleClick: handleClick })),
         currentTab == 1 && (react_1.default.createElement(components_1.MyAccountForm, { loading: delayedLoading, user: user, handleChange: handleChange, handleSubmit: handleSubmit, handleDeleteAvatar: handleDeleteAvatar })),
         currentTab == 2 && react_1.default.createElement(components_2.StripeCustomerPortal, null),

@@ -18,9 +18,9 @@ function TabsInput(props) {
         });
     };
     return (react_1.default.createElement("div", { className: "flex flex-row space-x-6 items-center justify-between w-full" },
-        label && (react_1.default.createElement(components_1.InputLabel, { label: label })),
-        react_1.default.createElement(react_2.Tabs, { fullWidth: true, selectedKey: value.toString(), onSelectionChange: handleInputChange }, options.map(function (option) { return (react_1.default.createElement(react_2.Tab, { key: option.value, value: option.value.toString(), title: react_1.default.createElement("div", { className: 'flex flex-row items-center' },
-                option.icon && (react_1.default.createElement(components_1.RemixIcon, { size: 'lg', name: option.icon, className: "mr-2" })),
+        label && react_1.default.createElement(components_1.InputLabel, { label: label }),
+        react_1.default.createElement(react_2.Tabs, { fullWidth: true, selectedKey: value, onSelectionChange: handleInputChange }, options.map(function (option) { return (react_1.default.createElement(react_2.Tab, { key: option === null || option === void 0 ? void 0 : option.value, value: option === null || option === void 0 ? void 0 : option.value, title: react_1.default.createElement("div", { className: "flex flex-row items-center" },
+                option.icon && (react_1.default.createElement(components_1.RemixIcon, { size: "lg", name: option.icon, className: "mr-2" })),
                 option.label) })); }))));
 }
 exports.default = TabsInput;

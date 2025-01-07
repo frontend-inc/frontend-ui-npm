@@ -12,7 +12,7 @@ var PriceListItem = function (props) {
     var _a = props || {}, variant = _a.variant, image = _a.image, price = _a.price, _b = _a.precision, precision = _b === void 0 ? 0 : _b, title = _a.title, subtitle = _a.subtitle, path = _a.path, url = _a.url, handleImageClick = _a.handleImageClick;
     var onClick = (0, hooks_1.useNavigate)({
         path: path,
-        url: url
+        url: url,
     });
     return (react_1.default.createElement("li", { className: 'w-full' },
         react_1.default.createElement("button", { 

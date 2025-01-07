@@ -45,8 +45,8 @@ var AuthButton = function (props) {
             fetchMe();
         }
     }, [currentUser === null || currentUser === void 0 ? void 0 : currentUser.id]);
-    return (react_1.default.createElement(react_1.default.Fragment, null, !showLabel ? (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(react_2.Button, { isIconOnly: true, className: 'max-w-8', onPress: handleMyAccount },
-        react_1.default.createElement(__1.UserAvatar, { user: currentUser }))) : (react_1.default.createElement(react_2.Button, { isIconOnly: true, className: 'max-w-8', onPress: handleLogin },
+    return (react_1.default.createElement(react_1.default.Fragment, null, !showLabel ? (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(react_2.Button, { isIconOnly: true, className: "max-w-8", onPress: handleMyAccount },
+        react_1.default.createElement(__1.UserAvatar, { user: currentUser }))) : (react_1.default.createElement(react_2.Button, { isIconOnly: true, className: "max-w-8", onPress: handleLogin },
         react_1.default.createElement(__1.RemixIcon, { name: "ri-user-6-line", size: "lg" }))))) : (react_1.default.createElement(react_1.default.Fragment, null, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.id) ? (react_1.default.createElement(react_2.Button, { onPress: handleMyAccount, startContent: showIcon && react_1.default.createElement(__1.UserAvatar, { user: currentUser }), endContent: react_1.default.createElement(__1.RemixIcon, { name: "ri-arrow-down-s-line" }) },
         react_1.default.createElement(components_1.Typography, { variant: "body1" }, currentUser === null || currentUser === void 0 ? void 0 : currentUser.username))) : (react_1.default.createElement(react_2.Button, { onPress: handleLogin, startContent: showIcon && react_1.default.createElement(__1.RemixIcon, { name: "ri-user-6-fill" }) }, "Sign In"))))));
 };

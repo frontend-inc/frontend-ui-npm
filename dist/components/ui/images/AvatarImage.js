@@ -11,9 +11,9 @@ var AvatarImage = function (props) {
     if (!src)
         return (react_1.default.createElement("div", { className: "rounded-full bg-gradient-to-br from-black to-gray-600", style: {
                 width: "".concat(size, "px"),
-                height: "".concat(size, "px")
+                height: "".concat(size, "px"),
             } }));
-    return (react_1.default.createElement("div", { className: 'relative rounded-full overflow-hidden' },
+    return (react_1.default.createElement("div", { className: "relative rounded-full overflow-hidden" },
         react_1.default.createElement(react_2.Image, { src: src, alt: alt, height: size, width: size, radius: "full", className: "object-cover" }),
         enableGradient && (react_1.default.createElement("div", { className: "absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-full" })),
         enableOverlay && (react_1.default.createElement("div", { className: "absolute inset-0 bg-black/50 rounded-full" }))));

@@ -23,7 +23,7 @@ var DocumentDetails = function (props) {
     var filteredFields = fields.filter(function (field) { return !['image', 'label', 'title'].includes(field.name); });
     return (react_1.default.createElement("div", { className: "w-full flex flex-col space-y-6" },
         !disableImage && (react_1.default.createElement("div", { className: "w-full flex flex-row justify-center" },
-            react_1.default.createElement(__1.Image, { alt: resource === null || resource === void 0 ? void 0 : resource.label, src: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, label: resource === null || resource === void 0 ? void 0 : resource.label, aspectRatio: 1.5 }))),
+            react_1.default.createElement(__1.Image, { fullWidth: true, alt: resource === null || resource === void 0 ? void 0 : resource.label, src: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, label: resource === null || resource === void 0 ? void 0 : resource.label, height: 512 }))),
         actions && (react_1.default.createElement("div", { className: "flex flex-row items-center justify-center w-full" }, actions)),
         react_1.default.createElement(__1.DisplayFields, { fields: __spreadArray(__spreadArray([], filteredFields, true), metafields, true), resource: resource })));
 };

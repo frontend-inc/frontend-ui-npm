@@ -38,8 +38,8 @@ var Images = function (props) {
     return (react_1.default.createElement("div", { className: "w-full justify-center flex flow-row p-2" },
         react_1.default.createElement("div", { className: "container mx-auto max-w-screen-2xl" },
             react_1.default.createElement("div", { className: 'w-full justify-center grid grid-cols-1 sm:grid-cols-3 gap-6' }, items === null || items === void 0 ? void 0 : items.map(function (item, idx) { return (react_1.default.createElement(__2.BlurFade, { delay: 0.25 + idx * 0.05, key: idx },
-                react_1.default.createElement(__1.Image, { label: item === null || item === void 0 ? void 0 : item.label, src: item === null || item === void 0 ? void 0 : item.image, handleClick: function () { return handleClick(item); }, enableGradient: enableGradient, enableOverlay: enableOverlay }))); })),
-            (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Empty, { icon: "ri-collage-fill", title: "No images yet.", description: "Images will appear here." }))),
+                react_1.default.createElement(__1.Image, { label: item === null || item === void 0 ? void 0 : item.label, src: item === null || item === void 0 ? void 0 : item.image, height: 240, handleClick: function () { return handleClick(item); }, enableGradient: enableGradient, enableOverlay: enableOverlay }))); })),
+            (items === null || items === void 0 ? void 0 : items.length) == 0 && (react_1.default.createElement(__1.Empty, { icon: "ri-multi-image-fill", title: "No images yet.", description: "Images will appear here." }))),
         react_1.default.createElement(__1.ImageModal, { open: open, handleClose: function () { return setOpen(false); }, 
             //@ts-ignore
             src: activeImage === null || activeImage === void 0 ? void 0 : activeImage.image, title: activeImage === null || activeImage === void 0 ? void 0 : activeImage.title })));

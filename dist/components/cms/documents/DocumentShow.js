@@ -25,7 +25,7 @@ var DocumentShow = function (props) {
     }
     if (!resource)
         return null;
-    return (react_1.default.createElement(__1.Drawer, { open: openShow, handleClose: function () { return setOpenShow(false); } },
+    return (react_1.default.createElement(__1.Drawer, { title: !disableTitle && (resource === null || resource === void 0 ? void 0 : resource.title), open: openShow, handleClose: function () { return setOpenShow(false); } },
         react_1.default.createElement("div", { className: "flex flex-col space-y-6 p-6 w-full" },
             react_1.default.createElement(__2.BlurFade, { delay: 0.25, inView: true, className: "w-full" },
                 react_1.default.createElement("div", { className: "w-full" },

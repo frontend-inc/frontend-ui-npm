@@ -16,7 +16,7 @@ function CommentButton(_a) {
         setOpenShow(!openShow);
     };
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, react_2.cn)(size === 'large' && 'border border-divider') },
+        react_1.default.createElement(components_1.IconButton, { onPress: handleClick, className: (0, react_2.cn)(size === 'large' && 'border border-divider') },
             react_1.default.createElement(components_1.RemixIcon, { name: "ri-message-2-fill", className: "text-foreground" }))));
 }
 exports.default = CommentButton;

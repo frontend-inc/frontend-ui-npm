@@ -118,8 +118,8 @@ var Address = function (props) {
         react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle },
             react_1.default.createElement("div", { className: "flex flex-col space-y-3" },
                 react_1.default.createElement(__2.ShopifyAddressForm, { address: address, handleChange: handleChange }),
-                react_1.default.createElement(react_2.Button, { fullWidth: true, onClick: handleSubmit }, "Save Address"),
-                react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "ghost", onClick: handleDeleteClick }, "Delete Address")),
+                react_1.default.createElement(react_2.Button, { fullWidth: true, onPress: handleSubmit }, "Save Address"),
+                react_1.default.createElement(react_2.Button, { fullWidth: true, variant: "ghost", onPress: handleDeleteClick }, "Delete Address")),
             react_1.default.createElement(__1.AlertModal, { open: showDeleteModal, handleClose: function () { return setShowDeleteModal(false); }, handleConfirm: handleDeleteAddress }))));
 };
 exports.default = Address;

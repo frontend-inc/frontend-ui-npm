@@ -18,7 +18,6 @@ __exportStar(require("./addons"), exports);
 __exportStar(require("./auth"), exports);
 __exportStar(require("./ai"), exports);
 __exportStar(require("./cms"), exports);
-__exportStar(require("./core"), exports);
 __exportStar(require("./web"), exports);
 __exportStar(require("./ui"), exports);
 __exportStar(require("./users"), exports);

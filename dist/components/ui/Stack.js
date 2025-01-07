@@ -37,7 +37,7 @@ var Stack = function (props) {
         '1/4': 'md:flex-row md:w-1/4 md:space-y-0',
         '2/3': 'md:flex-row md:w-2/3 md:space-y-0',
         '3/4': 'md:flex-row md:w-3/4 md:space-y-0',
-        'full': 'md:flex-row md:w-full md:space-y-0',
+        full: 'md:flex-row md:w-full md:space-y-0',
     };
     return (react_1.default.createElement("div", { className: (0, react_2.cn)('flex flex-col items-start w-full', spaceYClasses[spacing], isRow && spaceXClasses[spacing], isRow && rowClasses[size], className) }, children));
 };

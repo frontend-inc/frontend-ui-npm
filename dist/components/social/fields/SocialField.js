@@ -11,6 +11,6 @@ var SocialField = function (props) {
     var _a = props || {}, field = _a.field, resource = _a.resource;
     var _b = field || {}, provider = _b.provider, name = _b.name;
     var url = (0, lodash_1.get)(resource, name);
-    return react_1.default.createElement(__1.SocialLink, { provider: provider, url: url });
+    return react_1.default.createElement(__1.SocialButton, { provider: provider, url: url });
 };
 exports.default = SocialField;

@@ -13,11 +13,8 @@ function Modal(props) {
     return (react_1.default.createElement(react_2.Modal, { size: maxWidth, isOpen: open, onOpenChange: handleClose, className: themeClass },
         react_1.default.createElement(react_2.ModalContent, null, function (onClose) { return (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(react_2.ModalHeader, { className: "mt-4 text-foreground" }, title),
-            react_1.default.createElement(react_2.ModalBody, null,
-                react_1.default.createElement("div", { style: {
-                        maxHeight: maxWidth == 'full' ? 'calc(100vh - 100px)' : 'calc(100vh - 400px)'
-                    }, className: "w-full overflow-y-scroll" }, loading ? (react_1.default.createElement("div", { className: "w-full flex items-center justify-center h-[160px]" },
-                    react_1.default.createElement(react_2.Spinner, null))) : (react_1.default.createElement("div", { className: "w-full" }, children)))),
-            !loading && buttons && (react_1.default.createElement(react_2.ModalFooter, null, buttons)))); })));
+            react_1.default.createElement(react_2.ModalBody, { className: "px-4 w-full overflow-y-scroll" }, loading ? (react_1.default.createElement("div", { className: "w-full flex items-center justify-center h-[160px]" },
+                react_1.default.createElement(react_2.Spinner, null))) : (children)),
+            !loading && buttons && react_1.default.createElement(react_2.ModalFooter, null, buttons))); })));
 }
 exports.default = Modal;

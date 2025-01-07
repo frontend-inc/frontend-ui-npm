@@ -20,6 +20,6 @@ var FieldFile = function (props) {
     };
     return (react_1.default.createElement(components_1.FieldWrapper, { label: label },
         react_1.default.createElement("div", { className: (0, react_3.cn)('w-full flex justify-center', className) },
-            react_1.default.createElement(react_2.Button, { size: "lg", variant: "ghost", className: 'max-w-[240px]', onPress: handleClick, startContent: react_1.default.createElement(components_2.RemixIcon, { name: "ri-download-2-fill" }) }, value === null || value === void 0 ? void 0 : value.filename))));
+            react_1.default.createElement(react_2.Button, { size: "lg", variant: "ghost", className: "max-w-[240px]", onPress: handleClick, startContent: react_1.default.createElement(components_2.RemixIcon, { name: "ri-download-2-fill" }) }, value === null || value === void 0 ? void 0 : value.filename))));
 };
 exports.default = FieldFile;

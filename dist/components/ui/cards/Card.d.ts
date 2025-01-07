@@ -9,9 +9,11 @@ export type CardProps = {
     description?: string;
     actions?: React.ReactNode;
     secondaryAction?: React.ReactNode;
+    fullWidth?: boolean;
     handleClick?: () => void;
     handleSelect?: () => void;
-    height?: number;
+    imageHeight?: number;
+    imageWidth?: number;
     enableOverlay?: boolean;
     enableGradient?: boolean;
     classNames?: string;

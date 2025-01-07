@@ -15,14 +15,6 @@ var Auth = function (props) {
     var _b = props || {}, handleLogin = _b.handleLogin, handleSignup = _b.handleSignup, handleMyAccount = _b.handleMyAccount, _c = _b.menuItems, menuItems = _c === void 0 ? [] : _c;
     var _d = (0, frontend_js_1.useAuth)(), currentUser = _d.currentUser, logout = _d.logout;
     var router = (0, navigation_1.useRouter)();
-    var handleClick = function (menuItem) {
-        if (menuItem.onClick) {
-            menuItem.onClick();
-        }
-        else {
-            router.push(menuItem === null || menuItem === void 0 ? void 0 : menuItem.path);
-        }
-    };
     var handleLogout = function () {
         logout();
         router.push('/');
@@ -49,7 +41,7 @@ var Auth = function (props) {
                 react_1.default.createElement(components_1.UserAvatar, { user: currentUser }))),
         react_1.default.createElement(react_2.DropdownMenu, { onAction: handleAction }, currentUser ? (react_1.default.createElement(react_1.default.Fragment, null,
             react_1.default.createElement(react_2.DropdownSection, { showDivider: true },
-                react_1.default.createElement(react_2.DropdownItem, { className: "font-normal", key: 'my-account' },
+                react_1.default.createElement(react_2.DropdownItem, { className: "font-normal", key: "my-account" },
                     react_1.default.createElement(react_2.User, { avatarProps: {
                             src: (_a = currentUser === null || currentUser === void 0 ? void 0 : currentUser.avatar) === null || _a === void 0 ? void 0 : _a.url,
                             name: (0, helpers_1.getInitials)(currentUser === null || currentUser === void 0 ? void 0 : currentUser.name),
@@ -58,10 +50,10 @@ var Auth = function (props) {
             react_1.default.createElement(react_2.DropdownSection, { showDivider: true }, menuItems === null || menuItems === void 0 ? void 0 : menuItems.map(function (menuItem, idx) { return (react_1.default.createElement(react_2.DropdownItem, { key: menuItem === null || menuItem === void 0 ? void 0 : menuItem.path },
                 (menuItem === null || menuItem === void 0 ? void 0 : menuItem.icon) && (react_1.default.createElement(components_1.RemixIcon, { name: menuItem === null || menuItem === void 0 ? void 0 : menuItem.icon, className: "mr-2" })), menuItem === null || menuItem === void 0 ? void 0 :
                 menuItem.label)); })),
-            react_1.default.createElement(react_2.DropdownItem, { key: 'logout' },
+            react_1.default.createElement(react_2.DropdownItem, { key: "logout" },
                 react_1.default.createElement(components_1.RemixIcon, { name: "ri-logout-circle-line", className: "mr-2" }),
                 "Log out"))) : (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(react_2.DropdownItem, { key: 'login' }, "Sign In"),
-            react_1.default.createElement(react_2.DropdownItem, { key: 'signup' }, "Sign Up"))))));
+            react_1.default.createElement(react_2.DropdownItem, { key: "login" }, "Sign In"),
+            react_1.default.createElement(react_2.DropdownItem, { key: "signup" }, "Sign Up"))))));
 };
 exports.default = Auth;

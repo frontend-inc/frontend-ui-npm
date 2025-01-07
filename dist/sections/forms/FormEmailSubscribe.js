@@ -36,6 +36,6 @@ var FormEmailSubscribe = function (props) {
             react_1.default.createElement(components_1.Stack, { direction: direction, size: "1/3" },
                 react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, size: fontSize, textAlign: direction == 'row' ? 'left' : 'center', editable: editable, handleChange: handleChange })),
             react_1.default.createElement(components_1.Stack, { direction: direction, size: "2/3", className: "items-center h-full justify-center" },
-                react_1.default.createElement(components_2.EmailSubscribe, __assign({ size: 'lg' }, rest))))));
+                react_1.default.createElement(components_2.EmailSubscribe, __assign({ size: "lg" }, rest))))));
 };
 exports.default = FormEmailSubscribe;

@@ -34,7 +34,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
-var core_1 = require("../../../core");
+var components_1 = require("../../../../components");
 var lucide_react_1 = require("lucide-react");
 var __1 = require("../../..");
 var react_2 = require("@remixicon/react");
@@ -87,7 +87,7 @@ var ArrayListInput = function (props) {
         });
     };
     return (react_1.default.createElement("div", { className: "flex flex-col gap-2" },
-        label && (react_1.default.createElement(core_1.Typography, { variant: "caption", className: "text-foreground/70" }, label)),
+        label && (react_1.default.createElement(components_1.Typography, { variant: "caption", className: "text-foreground/70" }, label)),
         Array.isArray(values) &&
             (values === null || values === void 0 ? void 0 : values.map(function (value, index) { return (react_1.default.createElement(ArrayItemInput, { key: index, index: index, value: value, handleChange: handleInputChange, handleRemove: handleRemove })); })),
         react_1.default.createElement("div", null,

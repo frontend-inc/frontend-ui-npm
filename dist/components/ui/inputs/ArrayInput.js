@@ -77,11 +77,11 @@ function ArrayInput(props) {
     };
     return (react_1.default.createElement("div", { className: (0, react_2.cn)('flex w-full space-y-2', direction === 'row' ? 'flex-row items-center' : 'flex-col') },
         react_1.default.createElement("div", { className: "relative w-full" },
-            react_1.default.createElement("div", { className: (0, react_2.cn)('bg-content1 px-3 py-2 flex flex-col space-y-0 rounded-xl', error && 'border-destructive') },
+            react_1.default.createElement("div", { className: (0, react_2.cn)('bg-content2 hover:bg-content3/50 px-3 py-2 flex flex-col space-y-0 rounded-xl', error && 'border-destructive') },
                 react_1.default.createElement(components_1.Typography, { variant: "overline" }, label),
                 react_1.default.createElement("div", { className: " flex flex-wrap gap-2" },
                     Array.isArray(value) &&
-                        (value === null || value === void 0 ? void 0 : value.map(function (tag) { return (react_1.default.createElement(react_3.Chip, { key: tag, size: "lg", onClose: function () { return removeTag(tag); } }, tag)); })),
+                        (value === null || value === void 0 ? void 0 : value.map(function (tag) { return (react_1.default.createElement(react_3.Chip, { key: tag, onClose: function () { return removeTag(tag); } }, tag)); })),
                     react_1.default.createElement(frontend_shadcn_1.Input, { type: "text", placeholder: placeholder || "Add ".concat(label === null || label === void 0 ? void 0 : label.toLowerCase()), value: inputValue, onChange: function (e) { return setInputValue(e.target.value); }, onKeyDown: handleKeyDown, onBlur: function () { return addTag(inputValue); }, className: "text-foreground flex-1 px-0 py-0 text-sm border-0 focus-visible:ring-0 focus-visible:ring-offset-0" }))),
             react_1.default.createElement(components_1.ErrorText, { error: error }))));
 }

@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 export declare function NavigationMenu({ links, handleClick }: {
     links: any;
     handleClick: any;

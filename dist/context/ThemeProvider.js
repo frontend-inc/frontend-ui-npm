@@ -79,7 +79,7 @@ var ThemeProvider = function (props) {
         themeClass = "dark";
     }
     return (react_1.default.createElement(ThemeContext_1.default.Provider, { value: value },
-        (googleFonts === null || googleFonts === void 0 ? void 0 : googleFonts.length) > 0 && (react_1.default.createElement(react_google_font_loader_1.default, { fonts: googleFonts })),
+        (googleFonts === null || googleFonts === void 0 ? void 0 : googleFonts.length) > 0 && react_1.default.createElement(react_google_font_loader_1.default, { fonts: googleFonts }),
         react_1.default.createElement(react_2.NextUIProvider, { className: themeClass }, children)));
 };
 exports.default = ThemeProvider;

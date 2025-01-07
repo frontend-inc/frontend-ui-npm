@@ -12,7 +12,7 @@ var ProfileInfo = function (props) {
         react_1.default.createElement("div", { className: "flex flex-col" },
             react_1.default.createElement(components_1.FieldString, { value: label, variant: "caption", className: "text-foreground/70" }),
             react_1.default.createElement(components_1.FieldString, { value: title }),
-            (socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.length) > 0 && (react_1.default.createElement("div", { className: "flex flex-row space-x-1" }, socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.map(function (link, index) { return (react_1.default.createElement(components_1.SocialLink, { key: index, provider: link.value, url: link.url })); }))),
+            (socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.length) > 0 && (react_1.default.createElement("div", { className: "flex flex-row space-x-1" }, socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.map(function (link, index) { return (react_1.default.createElement(components_1.SocialButton, { key: index, provider: link.value, url: link.url })); }))),
             react_1.default.createElement(components_1.FieldText, { value: description, variant: "body2", className: "text-foreground/70" }))));
 };
 exports.default = ProfileInfo;

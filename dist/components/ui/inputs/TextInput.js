@@ -44,8 +44,8 @@ function TextInput(props) {
             handleChange({
                 target: {
                     name: name,
-                    value: value
-                }
+                    value: value,
+                },
             });
         }
     };

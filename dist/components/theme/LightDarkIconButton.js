@@ -11,6 +11,6 @@ var LightDarkIconButton = function () {
     var handleClick = function () {
         setTheme(theme === 'light' ? 'dark' : 'light');
     };
-    return (react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: "flex items-center justify-center" }, theme === 'light' ? (react_1.default.createElement(components_1.RemixIcon, { name: "ri-sun-fill", className: "text-md text-foreground transition duration-200 hover:scale-110" })) : (react_1.default.createElement(components_1.RemixIcon, { name: "ri-moon-fill", className: "text-md text-foreground transition duration-200 hover:scale-110" }))));
+    return (react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: "flex items-center justify-center" }, theme === 'dark' ? (react_1.default.createElement(components_1.RemixIcon, { name: "ri-sun-fill", className: "text-md text-foreground transition duration-200 hover:scale-110" })) : (react_1.default.createElement(components_1.RemixIcon, { name: "ri-moon-fill", className: "text-md text-foreground transition duration-200 hover:scale-110" }))));
 };
 exports.default = LightDarkIconButton;

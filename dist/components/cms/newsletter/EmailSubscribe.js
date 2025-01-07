@@ -74,6 +74,6 @@ var EmailSubscribe = function (props) {
             }
         });
     }); };
-    return (react_1.default.createElement(components_1.EmailSubscribeInput, { size: size, loading: delayedLoading, errors: errors, label: label, name: 'email', value: contact.email, handleChange: handleChange, handleSubmit: handleSubmit, buttonText: buttonText }));
+    return (react_1.default.createElement(components_1.EmailSubscribeInput, { size: size, loading: delayedLoading, errors: errors, label: label, name: "email", value: contact.email, handleChange: handleChange, handleSubmit: handleSubmit, buttonText: buttonText }));
 };
 exports.default = EmailSubscribe;

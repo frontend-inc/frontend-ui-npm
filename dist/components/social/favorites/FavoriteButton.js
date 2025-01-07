@@ -73,7 +73,7 @@ function FavoriteButton(props) {
     var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;
     var _d = (0, react_1.useState)(false), isFavorite = _d[0], setIsFavorite = _d[1];
     var _e = (0, hooks_1.useSocial)(), favorite = _e.favorite, unfavorite = _e.unfavorite;
-    var handleClick = function (ev) { return __awaiter(_this, void 0, void 0, function () {
+    var handleClick = function () { return __awaiter(_this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -104,8 +104,8 @@ function FavoriteButton(props) {
         }
     }, [currentUser, resource === null || resource === void 0 ? void 0 : resource.handle]);
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, react_2.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider', 'transition-transform duration-200') },
-            isFavorite && (react_1.default.createElement(components_1.RemixIcon, { name: "ri-bookmark-fill", className: "fill-primary" })),
-            !isFavorite && react_1.default.createElement(components_1.RemixIcon, { name: "ri-bookmark-line" }))));
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, onPress: handleClick, className: (0, react_2.cn)('min-w-8', variant == 'circular' ? 'rounded-full' : 'rounded-lg', size === 'large' && 'border border-divider', 'transition-transform duration-200') }, isFavorite ?
+            react_1.default.createElement(components_1.RemixIcon, { name: "ri-bookmark-fill", className: "fill-primary" }) :
+            react_1.default.createElement(components_1.RemixIcon, { name: "ri-bookmark-line" }))));
 }
 exports.default = FavoriteButton;

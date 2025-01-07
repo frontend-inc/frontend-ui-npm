@@ -77,7 +77,7 @@ var LeadForm = function (props) {
     var _d = (0, hooks_1.useContacts)(), errors = _d.errors, delayedLoading = _d.delayedLoading, contact = _d.contact, setContact = _d.setContact, handleChange = _d.handleChange, createContact = _d.createContact;
     var onClick = (0, hooks_1.useNavigate)({
         url: url,
-        path: path
+        path: path,
     });
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;

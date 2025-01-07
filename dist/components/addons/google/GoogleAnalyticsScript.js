@@ -16,8 +16,8 @@ var GoogleAnalytics = function (props) {
             mounted.current = true;
             react_ga4_1.default.initialize([
                 {
-                    trackingId: id
-                }
+                    trackingId: id,
+                },
             ]);
         }
     }, [id]);
@@ -25,7 +25,7 @@ var GoogleAnalytics = function (props) {
         if (id) {
             react_ga4_1.default.send({
                 hitType: 'pageview',
-                page: pathname
+                page: pathname,
             });
         }
     }, [pathname]);

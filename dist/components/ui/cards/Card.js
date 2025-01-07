@@ -7,12 +7,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var react_2 = require("@nextui-org/react");
 var components_1 = require("../../../components");
-var __1 = require("../..");
+var components_2 = require("../../../components");
 // @ts-ignore
 var Card = react_1.default.forwardRef(function (props, ref) {
-    var label = props.label, title = props.title, subtitle = props.subtitle, description = props.description, actions = props.actions, secondaryAction = props.secondaryAction, handleClick = props.handleClick, image = props.image, height = props.height, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, classNames = props.classNames;
+    var label = props.label, title = props.title, subtitle = props.subtitle, description = props.description, actions = props.actions, secondaryAction = props.secondaryAction, handleClick = props.handleClick, image = props.image, imageHeight = props.imageHeight, imageWidth = props.imageWidth, fullWidth = props.fullWidth, enableGradient = props.enableGradient, enableOverlay = props.enableOverlay, classNames = props.classNames;
     return (react_1.default.createElement("div", { ref: ref, className: (0, react_2.cn)('w-full overflow-hidden', classNames) },
-        react_1.default.createElement(__1.Image, { src: image, height: height, aspectRatio: 1.0, alt: title, label: label, handleClick: handleClick, enableGradient: enableGradient, enableOverlay: enableOverlay }),
+        react_1.default.createElement(components_2.Image, { src: image, height: imageHeight, width: imageWidth, fullWidth: fullWidth, alt: title, label: label, handleClick: handleClick, enableGradient: enableGradient, enableOverlay: enableOverlay }),
         react_1.default.createElement("div", { className: "mx-2 pt-3 flex flex-col space-y-2 overflow-hidden" },
             react_1.default.createElement(components_1.Typography, { variant: "subtitle2" }, title),
             subtitle && (react_1.default.createElement(components_1.Typography, { variant: "body2", className: "text-foreground/70" }, subtitle)),

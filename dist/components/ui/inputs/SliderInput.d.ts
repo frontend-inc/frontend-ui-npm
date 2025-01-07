@@ -1,9 +1,10 @@
 import React from 'react';
+type SliderValue = number | number[];
 type SliderInputProps = {
     label?: string;
     name: string;
-    value?: number[];
-    handleChange: (value: number[]) => void;
+    value: SliderValue;
+    handleChange: (value: SliderValue) => void;
     min: number;
     max: number;
     stepSize?: number;

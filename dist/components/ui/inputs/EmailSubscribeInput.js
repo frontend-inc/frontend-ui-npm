@@ -36,13 +36,13 @@ var EmailSubscribeInput = function (props) {
         handleChange({
             target: {
                 name: name,
-                value: text
-            }
+                value: text,
+            },
         });
     };
     return (react_1.default.createElement("div", { className: "flex flex-row space-x-2 items-center w-full max-w-[280px]" },
         react_1.default.createElement(react_2.Input, __assign({ label: label, name: name, placeholder: placeholder, type: "email", size: size, value: value, onValueChange: handleValueChange, startContent: react_1.default.createElement(components_1.RemixIcon, { name: "ri-mail-fill" }), classNames: {
-                base: "rounded-r-none text-base",
+                base: 'rounded-r-none text-base',
             } }, rest)),
         react_1.default.createElement(react_2.Button, { size: size, variant: "solid", color: "primary", onPress: handleSubmit, isLoading: loading }, buttonText)));
 };

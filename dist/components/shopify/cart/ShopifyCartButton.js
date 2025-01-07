@@ -38,8 +38,8 @@ function ShopifyCartButton(props) {
         setMenuOpen(false);
         toggleCart();
     };
-    return (react_1.default.createElement(react_3.Badge, { content: cart === null || cart === void 0 ? void 0 : cart.totalQuantity },
-        react_1.default.createElement(react_2.Button, { isIconOnly: true, onPress: handleCartClick },
+    return (react_1.default.createElement(react_3.Badge, { color: "primary", content: cart === null || cart === void 0 ? void 0 : cart.totalQuantity },
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, variant: "light", onPress: handleCartClick },
             react_1.default.createElement(components_1.RemixIcon, { name: icon, size: "lg" }))));
 }
 exports.default = ShopifyCartButton;

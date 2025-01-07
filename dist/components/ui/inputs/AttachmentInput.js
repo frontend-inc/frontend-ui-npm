@@ -79,7 +79,7 @@ function RenderAttachment(props) {
             react_1.default.createElement(image_1.default, { alt: alt, height: size, width: size, src: src, style: { objectFit: objectFit } }))),
         variant === 'file' && (react_1.default.createElement(frontend_shadcn_1.Avatar, { className: "rounded-lg h-16 w-16" },
             react_1.default.createElement(frontend_shadcn_1.AvatarFallback, { className: "rounded-lg" },
-                react_1.default.createElement(components_2.RemixIcon, { name: 'ri-file-2-line', size: 'lg' })))),
+                react_1.default.createElement(components_2.RemixIcon, { name: "ri-file-2-line", size: "lg" })))),
         react_1.default.createElement(react_3.Button, { isIconOnly: true, size: "sm", className: (0, react_2.cn)('text-foreground absolute -top-3 left-2', variant === 'file' && 'left-12 -top-1'), onPress: onDelete },
             react_1.default.createElement(lucide_react_1.Trash2, { className: "h-4 w-4" }))));
 }

@@ -20,15 +20,17 @@ var react_2 = require("@nextui-org/react");
 var __1 = require("../..");
 var __2 = require("../..");
 var CollectionCard = react_1.default.forwardRef(function (props, ref) {
-    var label = props.label, primary = props.primary, handleClick = props.handleClick, image = props.image, disableBorder = props.disableBorder, _a = props.slots, slots = _a === void 0 ? {
+    var label = props.label, primary = props.primary, handleClick = props.handleClick, image = props.image, _a = props.slots, slots = _a === void 0 ? {
         item: {},
         image: {},
     } : _a;
-    return (react_1.default.createElement("div", { ref: ref, className: (0, react_2.cn)(!disableBorder && 'border border-divider hover:shadow-md', 'w-full overflow-hidden rounded-lg transition-shadow duration-300 bg-background') },
-        react_1.default.createElement("div", { className: "min-h-[240px] w-full relative overflow-hidden" },
-            react_1.default.createElement(__2.Image, __assign({ src: image, height: 240, alt: primary, label: label, aspectRatio: 4 / 3, handleClick: handleClick, disableBorderRadius: !disableBorder }, slots.image))),
-        react_1.default.createElement("div", { className: "px-4 pt-2 pb-4 w-full" },
-            react_1.default.createElement(__1.Typography, { variant: "subtitle1" }, primary))));
+    return (react_1.default.createElement(react_2.Card, { ref: ref, isFooterBlurred: true },
+        react_1.default.createElement(__2.Image, __assign({ handleClick: handleClick, disableBorderRadius: true, 
+            // @ts-ignore
+            src: image, alt: primary, aspectRatio: 1.0 }, slots.image)),
+        react_1.default.createElement(react_2.CardFooter, { className: "dark absolute bottom-0 left-0 w-full flex flex-col space-y-2 p-4 z-20" },
+            react_1.default.createElement(__1.Typography, { variant: "caption", className: "text-white text-ellipsis" }, label),
+            react_1.default.createElement(__1.Typography, { variant: "body1", className: "text-white text-ellipsis" }, primary))));
 });
 CollectionCard.displayName = 'CollectionCard';
 exports.default = CollectionCard;

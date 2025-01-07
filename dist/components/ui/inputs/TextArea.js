@@ -44,8 +44,8 @@ function TextArea(props) {
             handleChange({
                 target: {
                     name: name,
-                    value: text
-                }
+                    value: text,
+                },
             });
         }
     };

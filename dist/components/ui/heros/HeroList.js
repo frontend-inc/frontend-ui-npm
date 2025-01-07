@@ -21,7 +21,7 @@ var HeroList = function (props) {
                 location && (react_1.default.createElement(components_1.Typography, { variant: "subtitle2", className: "text-foreground/70", textAlign: textAlign }, location)),
                 secondaryAction && secondaryAction),
             !disableImage && (react_1.default.createElement("div", { className: "w-full flex items-center justify-center rounded-lg" }, variant !== 'circular' ? (react_1.default.createElement("div", { className: "w-full py-10" },
-                react_1.default.createElement(components_1.Image, { aspectRatio: 2.0, src: image, alt: title, label: label, enableGradient: enableGradient, enableOverlay: enableOverlay }))) : (react_1.default.createElement(components_1.AvatarImage, { src: image, alt: title, size: 160, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
+                react_1.default.createElement(components_1.Image, { fullWidth: true, height: 512, src: image, alt: title, label: label, enableGradient: enableGradient, enableOverlay: enableOverlay }))) : (react_1.default.createElement(components_1.AvatarImage, { src: image, alt: title, size: 160, enableGradient: enableGradient, enableOverlay: enableOverlay })))),
             youtubeSrc && react_1.default.createElement(components_1.YouTubeEmbed, { src: youtubeSrc }),
             soundcloudSrc && react_1.default.createElement(components_1.SoundcloudEmbed, { src: soundcloudSrc }),
             vimeoSrc && react_1.default.createElement(components_1.VimeoEmbed, { src: vimeoSrc }),

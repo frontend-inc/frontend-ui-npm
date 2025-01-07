@@ -129,7 +129,7 @@ var MenuBar = function (props) {
             label: 'Redo',
         },
     ], false);
-    return (react_1.default.createElement("div", { className: "flex flex-wrap gap-2 mb-4" }, buttons.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onClick: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, react_3.cn)(btn.isActive && 'bg-primary text-primary-foreground'), "aria-label": btn.label },
+    return (react_1.default.createElement("div", { className: "flex flex-wrap gap-2 mb-4" }, buttons.map(function (btn, index) { return (react_1.default.createElement(__1.IconButton, { key: index, onPress: btn.action, disabled: !editor.can().chain().focus().run(), className: (0, react_3.cn)(btn.isActive && 'bg-primary text-primary-foreground'), "aria-label": btn.label },
         react_1.default.createElement(__1.RemixIcon, { name: btn.icon, className: (0, react_3.cn)('text-foreground', btn.isActive && 'text-primary-foreground') }))); })));
 };
 var HTMLInput = function (props) {

@@ -188,7 +188,9 @@ var FileUploader = function (_a) {
             react_1.default.createElement("input", __assign({}, getInputProps())),
             isDropzoneLoading ? (react_1.default.createElement(react_2.Spinner, { className: "text-foreground w-8 h-8" })) : (react_1.default.createElement(react_1.default.Fragment, null,
                 isDragActive ? (react_1.default.createElement(lucide_react_1.DownloadCloud, { className: "text-foreground w-5 h-5" })) : (react_1.default.createElement(lucide_react_1.UploadCloud, { className: "text-foreground w-5 h-5" })),
-                react_1.default.createElement("p", { className: "mt-2 text-sm text-foreground" }, isDragActive ? 'Drop files here...' : 'Drag & drop files here, or click to select files')))),
+                react_1.default.createElement("p", { className: "mt-2 text-sm text-foreground" }, isDragActive
+                    ? 'Drop files here...'
+                    : 'Drag & drop files here, or click to select files')))),
         files.length > 0 && (react_1.default.createElement(react_2.Button, { onPress: onUpload, disabled: isDropzoneLoading, isLoading: isDropzoneLoading }, isDropzoneLoading ? 'Uploading...' : 'Upload Files'))));
 };
 exports.default = FileUploader;

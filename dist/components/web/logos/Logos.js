@@ -17,9 +17,9 @@ var Logos = function (props) {
                         objectFit: 'contain',
                         height: height,
                         width: width,
-                    }, layout: "responsive", alt: logo === null || logo === void 0 ? void 0 : logo.title }))); })),
-            react_1.default.createElement("div", { className: "pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background" }),
-            react_1.default.createElement("div", { className: "pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background" })),
+                    }, alt: logo === null || logo === void 0 ? void 0 : logo.title }))); })),
+            react_1.default.createElement("div", { className: "pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-backround dark:from-background" }),
+            react_1.default.createElement("div", { className: "pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-background dark:from-background" })),
         (logos === null || logos === void 0 ? void 0 : logos.length) === 0 && (react_1.default.createElement(components_1.Empty, { title: "No logos", description: "Logos will appear here" }))));
 };
 exports.default = Logos;

@@ -39,7 +39,7 @@ var KanBanCard = function (props) {
             react_1.default.createElement(components_1.Image, __assign({ label: label, src: image, height: height, alt: primary, handleClick: handleClick, className: "w-full object-cover" }, slots.image)))),
         react_1.default.createElement(frontend_shadcn_1.CardContent, { className: "p-4" },
             react_1.default.createElement("h3", { className: "text-lg font-semibold text-primary mb-1" }, primary),
-            secondary && (react_1.default.createElement("p", { className: "text-sm text-foreground/70" }, secondary))),
+            secondary && react_1.default.createElement("p", { className: "text-sm text-foreground/70" }, secondary)),
         react_1.default.createElement(frontend_shadcn_1.CardFooter, { className: "flex justify-between p-4" },
             react_1.default.createElement(react_2.Button, { onPress: handleClick, size: "sm", variant: "ghost" }, "Details"),
             secondaryAction && (react_1.default.createElement("div", { className: "flex items-end" }, secondaryAction)))));

@@ -2,7 +2,8 @@ export type ActionType = 'page' | 'url' | 'email' | 'sms' | 'phone' | 'whatsapp'
 export type ButtonType = {
     icon?: string;
     label: string;
-    action_type: ActionType;
+    action: ActionType;
+    color?: 'default' | 'primary' | 'secondary' | 'danger' | 'success' | 'warning';
     variant?: 'solid' | 'ghost' | 'light';
     url?: string;
     path?: string;

@@ -9,5 +9,5 @@ type CheckboxGroupInputProps = {
     info?: string;
     handleChange: (e: SyntheticEventType) => void;
 };
-export default function CheckboxGroupInput({ errors, label, name, value: values, options, handleChange, info, }: CheckboxGroupInputProps): React.JSX.Element;
+export default function CheckboxGroupInput(props: CheckboxGroupInputProps): React.JSX.Element;
 export {};

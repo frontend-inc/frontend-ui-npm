@@ -5,5 +5,5 @@ interface NestedSidebarMenuProps {
     links: MenuLinkType[];
     handleClick: (path: string) => void;
 }
-export default function NestedSidebarMenu({ links, handleClick }: NestedSidebarMenuProps): React.JSX.Element;
+export default function NestedSidebarMenu({ links, handleClick, }: NestedSidebarMenuProps): React.JSX.Element;
 export {};

@@ -26,8 +26,7 @@ function ThemePicker(props) {
                         backgroundColor: constants_1.TAILWIND_COLOR_MAP[value],
                     } })), endContent: react_1.default.createElement(lucide_react_1.ChevronDown, { className: "h-4 w-4" }) }, value || placeholder)),
         react_1.default.createElement(react_3.PopoverContent, { className: "bg-background z-50 w-[200px] p-0" },
-            react_1.default.createElement("div", { className: "grid grid-cols-5 gap-1 p-2" }, constants_1.TAILWIND_COLORS.map(function (color) { return (react_1.default.createElement(react_2.Button, { isIconOnly: true, key: color, className: (0, react_4.cn)('h-8 w-8 min-w-8 rounded-lg', value === color &&
-                    'ring-2 ring-offset-2 ring-primary'), style: {
+            react_1.default.createElement("div", { className: "grid grid-cols-5 gap-1 p-2" }, constants_1.TAILWIND_COLORS.map(function (color) { return (react_1.default.createElement(react_2.Button, { isIconOnly: true, key: color, className: (0, react_4.cn)('h-8 w-8 min-w-8 rounded-lg', value === color && 'ring-2 ring-offset-2 ring-primary'), style: {
                     backgroundColor: constants_1.TAILWIND_COLOR_MAP[color],
                 }, onPress: function () { return handleColorChange(color); } })); })))));
 }

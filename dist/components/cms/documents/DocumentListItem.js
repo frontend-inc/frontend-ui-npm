@@ -28,7 +28,7 @@ var DocumentListItem = function (props) {
         list: __1.ListCard,
         image: __1.ImageCard,
         file: __1.FileCard,
-        video: __1.VideoCard
+        video: __1.VideoCard,
     };
     var Component = COMPONENTS[style] || __1.Card;
     var typographyVariants = {
@@ -38,11 +38,11 @@ var DocumentListItem = function (props) {
         text: 'h5',
         list: 'h6',
     };
-    return (react_1.default.createElement(Component, { label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, 
+    return (react_1.default.createElement(Component, { label: resource === null || resource === void 0 ? void 0 : resource.label, image: (_a = resource === null || resource === void 0 ? void 0 : resource.image) === null || _a === void 0 ? void 0 : _a.url, fullWidth: true, imageHeight: 260, imageWidth: 260, 
         // @ts-ignore
-        title: !disableTitle &&
-            //@ts-ignore
-            react_1.default.createElement(__1.Typography, { variant: typographyVariants[style] }, resource === null || resource === void 0 ? void 0 : resource.title), handleClick: handleClick, 
+        title: !disableTitle && (
+        //@ts-ignore
+        react_1.default.createElement(__1.Typography, { variant: typographyVariants[style] }, resource === null || resource === void 0 ? void 0 : resource.title)), handleClick: handleClick, 
         // @ts-ignore
         subtitle: react_1.default.createElement(__2.ListFields, { fields: listFields, resource: resource }), actions: react_1.default.createElement(__2.SocialButtons, { size: "small", justifyContent: "flex-start", resource: resource, enableDownload: enableDownload, enableLikes: enableLikes, enableFavorites: enableFavorites, enableComments: enableComments }), enableGradient: enableGradient, enableOverlay: enableOverlay }));
 };

@@ -68,7 +68,7 @@ var DisplayField = function (props) {
             className: 'w-full text-center text-sm italic',
         },
         file: {
-            className: 'w-full justify-center'
+            className: 'w-full justify-center',
         },
         string: {
             className: 'w-full text-center text-md font-normal tracking-wide',

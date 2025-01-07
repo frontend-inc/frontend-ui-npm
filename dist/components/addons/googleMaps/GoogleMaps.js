@@ -88,7 +88,7 @@ function GoogleMap(_a) {
     }, [resources]);
     if ((googleMarkers === null || googleMarkers === void 0 ? void 0 : googleMarkers.length) <= 0)
         return null;
-    return (react_1.default.createElement("div", { className: (0, react_2.cn)('sticky rounded overflow-hidden transition-shadow duration-300 hover:shadow-md', enableBorder && 'border border-divider'), style: {
+    return (react_1.default.createElement("div", { className: (0, react_2.cn)('sticky rounded-xl overflow-hidden transition-shadow duration-300 hover:shadow-md', enableBorder && 'border-2 border-divider'), style: {
             height: height,
             width: width || '100%',
         } },

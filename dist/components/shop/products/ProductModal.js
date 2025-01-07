@@ -36,8 +36,8 @@ var Product = function (props) {
             findProduct(productId);
         }
     }, [productId]);
-    return (react_1.default.createElement(__1.Drawer, { open: open, handleClose: handleClose },
-        react_1.default.createElement("div", { className: "w-full flex flex-row justify-center pb-10" },
+    return (react_1.default.createElement(__1.Modal, { open: open, handleClose: handleClose, maxWidth: "full" },
+        react_1.default.createElement("div", { className: "w-full flex flex-row justify-center p-10" },
             react_1.default.createElement("div", { className: "md:max-w-screen-sm flex flex-col space-y-[20px]" },
                 react_1.default.createElement(__1.ProductDetails, { direction: "column", product: product, enableGradient: enableGradient, enableOverlay: enableOverlay, enableFavorites: enableFavorites, enableLikes: enableLikes, enableRatings: enableRatings }),
                 enableRatings && react_1.default.createElement(__1.ProductReviews, { productId: productId })))));

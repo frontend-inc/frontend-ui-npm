@@ -47,7 +47,7 @@ function SortButton(props) {
             react_1.default.createElement(react_2.Button, { variant: "ghost", onPress: toggleOpen, className: "text-foreground w-full md:w-auto", endContent: sortDirection === 'asc' ? (react_1.default.createElement(lucide_react_1.ArrowUp, { className: "h-4 w-4 text-foreground" })) : (react_1.default.createElement(lucide_react_1.ArrowDown, { className: "h-4 w-4 text-foreground" })) }, "Sort")),
         react_1.default.createElement(react_2.PopoverContent, { className: "w-full md:min-w-[220px]" },
             react_1.default.createElement(react_3.Listbox, { disallowEmptySelection: true, selectedKeys: [sortBy], selectionMode: "single", 
-                //@ts-ignore 
+                //@ts-ignore
                 onSelectionChange: handleSortByKeys },
                 react_1.default.createElement(react_3.ListboxSection, { title: "Sort by" }, sortOptions === null || sortOptions === void 0 ? void 0 : sortOptions.map(function (sortOption) { return (react_1.default.createElement(react_3.ListboxItem, { key: sortOption.name }, sortOption.label)); }))),
             react_1.default.createElement(react_3.Listbox, { disallowEmptySelection: true, selectedKeys: [sortDirection], selectionMode: "single", 

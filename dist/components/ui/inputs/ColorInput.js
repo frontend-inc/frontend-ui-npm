@@ -103,8 +103,7 @@ function ColorInput(props) {
             react_1.default.createElement(react_3.PopoverContent, { className: "bg-content1 p-2 w-64" },
                 react_1.default.createElement("div", { className: "grid grid-cols-6 gap-1 mb-2" },
                     react_1.default.createElement(react_3.Tooltip, { content: "Remove color" },
-                        react_1.default.createElement(react_2.Button, { isIconOnly: true, radius: "md", className: (0, react_4.cn)('relative bg-white h-8 w-8 min-w-8 overflow-hidden', value === '' &&
-                                'ring-2 ring-offset-2 ring-offset-background'), onPress: handleRemoveColor },
+                        react_1.default.createElement(react_2.Button, { isIconOnly: true, radius: "md", className: (0, react_4.cn)('relative bg-white h-8 w-8 min-w-8 overflow-hidden', value === '' && 'ring-2 ring-offset-2 ring-offset-background'), onPress: handleRemoveColor },
                             react_1.default.createElement("span", { className: "sr-only" }, "Remove color"),
                             react_1.default.createElement("div", { className: "absolute inset-0 flex items-center justify-center" },
                                 react_1.default.createElement("div", { className: "w-[1px] h-[140%] bg-gray-300 rotate-45 transform origin-center" })))),
@@ -121,6 +120,6 @@ function ColorInput(props) {
                             }, onPress: function () { return handleColorChange(color); } }))); })),
                 react_1.default.createElement("div", { className: "w-full space-y-4" },
                     !disableTone && (react_1.default.createElement(react_3.Slider, { minValue: 100, maxValue: 900, step: 100, value: tone, onChange: handleToneChange })),
-                    react_1.default.createElement(react_3.Input, { fullWidth: true, label: 'Color', placeholder: "#RRGGBB", value: (value === null || value === void 0 ? void 0 : value.startsWith('#')) ? value : '', onChange: handleHexColorChange }))))));
+                    react_1.default.createElement(react_3.Input, { fullWidth: true, label: "Color", placeholder: "#RRGGBB", value: (value === null || value === void 0 ? void 0 : value.startsWith('#')) ? value : '', onChange: handleHexColorChange }))))));
 }
 exports.default = ColorInput;

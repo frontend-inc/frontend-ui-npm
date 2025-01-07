@@ -26,13 +26,13 @@ var FormInput = function (props) {
             valueParam: valueParam,
             defaultQuery: query,
         }, file: {
-            name: 'file'
+            name: 'file',
         }, image: {
-            name: 'image'
+            name: 'image',
         }, audio: {
-            name: 'audio'
+            name: 'audio',
         }, video: {
-            name: 'video'
+            name: 'video',
         }, string: {
             disableDebounce: true,
         }, text: {

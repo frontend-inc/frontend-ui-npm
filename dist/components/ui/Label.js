@@ -16,6 +16,6 @@ var Label = function (props) {
     };
     if (!children)
         return null;
-    return (react_1.default.createElement(components_1.Typography, { variant: 'caption', className: (0, react_2.cn)('px-3 py-1 text-xs tracking-wider text-foreground', textAlign && textAlignClasses[textAlign], className) }, children));
+    return (react_1.default.createElement(components_1.Typography, { variant: "caption", className: (0, react_2.cn)('px-3 py-1 text-xs tracking-wider text-foreground', textAlign && textAlignClasses[textAlign], className) }, children));
 };
 exports.default = Label;

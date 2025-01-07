@@ -52,6 +52,6 @@ var ShopifyCustomerAccount = function (props) {
     var handleClick = function (path) {
         router.push("".concat(clientUrl).concat(path));
     };
-    return (react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle }, customer ? (react_1.default.createElement("ul", { className: "space-y-1" }, MENU_ITEMS.map(function (item, i) { return (react_1.default.createElement(MenuItem, { key: i, item: item, handleClick: handleClick })); }))) : (react_1.default.createElement(__1.Empty, { title: "Please sign in.", description: "You must be signed in to manage your account.", buttons: react_1.default.createElement(react_2.Button, { onClick: handleLogin }, "Sign In") }))));
+    return (react_1.default.createElement(__1.AuthScreen, { title: title, subtitle: subtitle }, customer ? (react_1.default.createElement("ul", { className: "space-y-1" }, MENU_ITEMS.map(function (item, i) { return (react_1.default.createElement(MenuItem, { key: i, item: item, handleClick: handleClick })); }))) : (react_1.default.createElement(__1.Empty, { title: "Please sign in.", description: "You must be signed in to manage your account.", buttons: react_1.default.createElement(react_2.Button, { onPress: handleLogin }, "Sign In") }))));
 };
 exports.default = ShopifyCustomerAccount;

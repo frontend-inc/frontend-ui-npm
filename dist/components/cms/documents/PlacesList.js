@@ -31,6 +31,6 @@ var __1 = require("../..");
 var PlacesListItems_1 = __importDefault(require("./PlacesListItems"));
 var PlacesList = function (props) {
     var rest = __rest(props, []);
-    return react_1.default.createElement(__1.DocumentList, __assign({}, rest, { list: PlacesListItems_1.default }));
+    return (react_1.default.createElement(__1.DocumentList, __assign({}, rest, { list: PlacesListItems_1.default, contentType: "place" })));
 };
 exports.default = PlacesList;

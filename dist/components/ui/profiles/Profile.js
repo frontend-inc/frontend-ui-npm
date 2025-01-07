@@ -21,7 +21,7 @@ var Profile = function (props) {
                                 //@ts-ignore
                                 alt: title, src: image, size: 160 })),
                         react_1.default.createElement("div", { className: "w-full flex flex-row items-center justify-center " }, socialLinks === null || socialLinks === void 0 ? void 0 : socialLinks.map(function (link, index) { return (react_1.default.createElement("div", { className: "p-[2px]", key: index },
-                            react_1.default.createElement(__1.SocialLink, { url: link.url, size: 28, provider: link.provider }))); }))))),
+                            react_1.default.createElement(__1.SocialButton, { url: link.url, size: 28, provider: link.provider }))); }))))),
             react_1.default.createElement(__1.Stack, { direction: direction, size: "3/4" },
                 react_1.default.createElement(__1.Stack, { spacing: 0 },
                     react_1.default.createElement(components_1.Heading, { label: label, title: title, subtitle: subtitle, size: fontSize, textAlign: direction == 'row' ? 'left' : 'center', editable: editable, handleChange: handleChange }),

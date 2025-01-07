@@ -18,6 +18,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var FileList = function (props) {
-    return (react_1.default.createElement(__1.DocumentList, __assign({}, props, { style: "file", layout: "list" })));
+    return react_1.default.createElement(__1.DocumentList, __assign({}, props, { style: "file", layout: "list" }));
 };
 exports.default = FileList;

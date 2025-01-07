@@ -6,7 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
-var components_2 = require("../../../components");
+var react_2 = require("@nextui-org/react");
 var lodash_1 = require("lodash");
 var frontend_shadcn_1 = require("frontend-shadcn");
 var TableRow = function (props) {
@@ -15,14 +15,14 @@ var TableRow = function (props) {
     return (react_1.default.createElement(frontend_shadcn_1.TableRow, null,
         enableSelect && (react_1.default.createElement(components_1.TableCell, { small: true, sticky: true },
             react_1.default.createElement("div", { className: "mx-2" },
-                react_1.default.createElement(components_2.Checkbox, { name: "select-".concat(row.id), value: selected, 
+                react_1.default.createElement(react_2.Checkbox, { name: "select-".concat(row.id), 
                     //@ts-ignore
-                    handleChange: handleSelect ? function () { return handleSelect(row); } : undefined })))),
+                    isSelected: selected, onValueChange: handleSelect ? function () { return handleSelect(row); } : undefined })))),
         (enableEdit || enableDelete) && (react_1.default.createElement(components_1.TableCell, { small: true },
             react_1.default.createElement("div", { className: "flex flex-row space-x-1" },
-                enableShow && (react_1.default.createElement(components_2.Button, { size: "sm", color: "secondary", onClick: handleShow ? function () { return handleShow(row); } : undefined }, "View")),
-                enableEdit && (react_1.default.createElement(components_2.Button, { size: "sm", variant: "ghost", onClick: handleEdit ? function () { return handleEdit(row); } : undefined }, "Edit")),
-                enableDelete && (react_1.default.createElement(components_2.Button, { size: "sm", variant: "ghost", onClick: handleDelete ? function () { return handleDelete(row); } : undefined }, "Delete"))))), fields === null || fields === void 0 ? void 0 :
+                enableShow && (react_1.default.createElement(react_2.Button, { size: "sm", onPress: handleShow ? function () { return handleShow(row); } : undefined }, "View")),
+                enableEdit && (react_1.default.createElement(react_2.Button, { size: "sm", variant: "ghost", onPress: handleEdit ? function () { return handleEdit(row); } : undefined }, "Edit")),
+                enableDelete && (react_1.default.createElement(react_2.Button, { size: "sm", variant: "ghost", onPress: handleDelete ? function () { return handleDelete(row); } : undefined }, "Delete"))))), fields === null || fields === void 0 ? void 0 :
         fields.map(function (field, index) {
             var value = (0, lodash_1.get)(row, field.name);
             return (react_1.default.createElement(components_1.TableCell, { key: index },

@@ -106,6 +106,6 @@ var KlaviyoSubscribe = function (props) {
     var handleChange = function (ev) {
         setEmail(ev.target.value);
     };
-    return (react_1.default.createElement(components_1.EmailSubscribeInput, { loading: loading, errors: [], name: 'email', value: email, placeholder: 'Enter your email', handleChange: handleChange, handleSubmit: handleFormSubmit, buttonText: buttonText }));
+    return (react_1.default.createElement(components_1.EmailSubscribeInput, { loading: loading, errors: [], name: "email", value: email, placeholder: "Enter your email", handleChange: handleChange, handleSubmit: handleFormSubmit, buttonText: buttonText }));
 };
 exports.default = KlaviyoSubscribe;

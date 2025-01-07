@@ -27,9 +27,9 @@ function ResourceGridItem(props) {
                 selectable && (react_1.default.createElement(react_3.Checkbox, { isSelected: selected, onValueChange: handleSelect })),
                 secondaryAction),
             (handleEdit || handleDelete) && (react_1.default.createElement(components_1.MenuButton, { handleEdit: handleEdit, handleDelete: handleDelete }))),
-        react_1.default.createElement("div", { className: 'w-full h-full' },
+        react_1.default.createElement("div", { className: "w-full h-full" },
             avatar && avatar,
-            image && (react_1.default.createElement(react_3.Image, __assign({ isZoomed: true, radius: 'none', src: image, alt: label || 'Resource image', width: 320, height: 160, className: "object-cover w-full h-full" }, slots.image)))),
+            image && (react_1.default.createElement(react_3.Image, __assign({ isZoomed: true, radius: "none", src: image, alt: label || 'Resource image', width: 320, height: 160, className: "object-cover w-full h-full" }, slots.image)))),
         (primary || secondary) && (react_1.default.createElement(react_3.CardFooter, { className: "flex flex-col p-4" },
             react_1.default.createElement(components_1.Typography, { variant: "body1" }, primary),
             secondary && react_1.default.createElement(components_1.Typography, { variant: "body2" }, secondary)))));

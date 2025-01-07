@@ -27,6 +27,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shadcn_1 = require("frontend-shadcn");
 var react_2 = require("@nextui-org/react");
+var react_3 = require("@nextui-org/react");
 var Swipeable = function (props) {
     var _a = props.children, children = _a === void 0 ? [] : _a, _b = props.itemsPerSlide, itemsPerSlide = _b === void 0 ? 1 : _b, enableDots = props.enableDots, enableArrows = props.enableArrows, _c = props.arrowHeight, arrowHeight = _c === void 0 ? 50 : _c, // Default arrow height is 50% (middle)
     className = props.className;
@@ -53,11 +54,12 @@ var Swipeable = function (props) {
     }, [api]);
     // Generate dynamic top style for arrows based on arrowHeight prop
     var dynamicArrowHeight = "top-[".concat(arrowHeight, "%]");
-    return (react_1.default.createElement(frontend_shadcn_1.Carousel, { setApi: setApi, className: (0, react_2.cn)('w-full', className) },
-        react_1.default.createElement(frontend_shadcn_1.CarouselContent, null, children === null || children === void 0 ? void 0 : children.map(function (child, index) { return (react_1.default.createElement(frontend_shadcn_1.CarouselItem, { key: index, className: (0, react_2.cn)('basis-1/1 w-full h-full', itemsPerSlide > 1 && basisClasses[itemsPerSlide]) }, child)); })),
+    return (react_1.default.createElement(frontend_shadcn_1.Carousel, { setApi: setApi, className: (0, react_3.cn)('w-full', className) },
+        react_1.default.createElement(frontend_shadcn_1.CarouselContent, null, children === null || children === void 0 ? void 0 : children.map(function (child, index) { return (react_1.default.createElement(frontend_shadcn_1.CarouselItem, { key: index, className: (0, react_3.cn)('basis-1/1 w-full h-full', itemsPerSlide > 1 && basisClasses[itemsPerSlide]) }, child)); })),
         enableArrows && (react_1.default.createElement(react_1.default.Fragment, null,
-            react_1.default.createElement(frontend_shadcn_1.CarouselPrevious, { className: (0, react_2.cn)('absolute h-9 w-9 left-4 -translate-y-1/2 bg-background/20 text-foreground/70 hover:bg-background/70 hover:text-foreground border-0', dynamicArrowHeight) }),
-            react_1.default.createElement(frontend_shadcn_1.CarouselNext, { className: (0, react_2.cn)('absolute h-9 w-9 right-4 -translate-y-1/2 bg-background/20 text-foreground/70 hover:bg-background/70 hover:text-foreground border-0', dynamicArrowHeight) }))),
-        enableDots && count > 1 && (react_1.default.createElement("div", { className: "absolute bottom-4 left-0 right-0 flex justify-center space-x-1 backdrop-blur-md bg-black/30 py-2 px-4 rounded-full mx-auto w-fit" }, children.map(function (_, index) { return (react_1.default.createElement(frontend_shadcn_1.Button, { key: index, variant: "ghost", size: "sm", className: (0, react_2.cn)('w-2 h-2 rounded-full p-0 transition-all duration-300 ease-in-out hover:bg-white', index === current ? 'bg-white w-5' : 'bg-white/50'), onClick: function () { return handleSlide(index); } })); })))));
+            react_1.default.createElement(frontend_shadcn_1.CarouselPrevious, { className: (0, react_3.cn)('absolute h-9 w-9 left-4 -translate-y-1/2 bg-background/20 text-foreground/70 hover:bg-background/70 hover:text-foreground border-0', dynamicArrowHeight) }),
+            react_1.default.createElement(frontend_shadcn_1.CarouselNext, { className: (0, react_3.cn)('absolute h-9 w-9 right-4 -translate-y-1/2 bg-background/20 text-foreground/70 hover:bg-background/70 hover:text-foreground border-0', dynamicArrowHeight) }))),
+        enableDots && count > 1 && (react_1.default.createElement("div", { className: "absolute bottom-4 left-0 right-0 flex justify-center space-x-1 backdrop-blur-md bg-black/30 py-2 px-4 rounded-full mx-auto w-fit" }, children.map(function (_, index) { return (react_1.default.createElement("div", { key: index },
+            react_1.default.createElement(react_2.Button, { variant: "light", size: "sm", className: (0, react_3.cn)('w-2 h-2 min-w-2 rounded-full p-0 transition-all duration-300 ease-in-out hover:bg-white', index === current ? 'bg-white w-5' : 'bg-white/50'), onPress: function () { return handleSlide(index); } }))); })))));
 };
 exports.default = Swipeable;

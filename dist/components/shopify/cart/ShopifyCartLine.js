@@ -71,11 +71,11 @@ var navigation_1 = require("next/navigation");
 var react_3 = require("@nextui-org/react");
 var ShopifyCartQuantityInput = function (props) {
     var quantity = props.quantity, handleAddQuantity = props.handleAddQuantity, handleRemoveQuantity = props.handleRemoveQuantity;
-    return (react_1.default.createElement(react_2.ButtonGroup, { variant: "light", className: "border-1 border-divider rounded-xl", size: 'sm' },
-        react_1.default.createElement(react_2.Button, { isIconOnly: true, className: "px-2 rounded-r-none", onPress: handleRemoveQuantity },
+    return (react_1.default.createElement(react_2.ButtonGroup, { variant: "light", className: "border-1 border-divider rounded-xl w-[100px]", size: "sm" },
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, className: "min-w-8", onPress: handleRemoveQuantity },
             react_1.default.createElement(components_1.RemixIcon, { name: "ri-subtract-line" })),
-        react_1.default.createElement(react_2.Button, { isIconOnly: true }, quantity),
-        react_1.default.createElement(react_2.Button, { isIconOnly: true, onPress: handleAddQuantity },
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, fullWidth: true }, quantity),
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, onPress: handleAddQuantity, className: "min-w-8" },
             react_1.default.createElement(components_1.RemixIcon, { name: "ri-add-line" }))));
 };
 var ShopifyCartLine = function (_a) {
@@ -143,7 +143,8 @@ var ShopifyCartLine = function (_a) {
     }, [price, sellingPlanAllocation]);
     return (react_1.default.createElement("div", { className: (0, react_3.cn)('flex items-start space-x-4 py-4', loading && 'opacity-30') },
         react_1.default.createElement("div", { className: "relative" },
-            react_1.default.createElement(react_2.Image, { alt: ((_c = (_b = line === null || line === void 0 ? void 0 : line.merchandise) === null || _b === void 0 ? void 0 : _b.product) === null || _c === void 0 ? void 0 : _c.title) || '', src: url, height: 96, width: 96, className: "min-h-[96px] min-w-[96px]" })),
+            react_1.default.createElement(react_2.Badge, { color: "primary", content: quantity },
+                react_1.default.createElement(react_2.Image, { alt: ((_c = (_b = line === null || line === void 0 ? void 0 : line.merchandise) === null || _b === void 0 ? void 0 : _b.product) === null || _c === void 0 ? void 0 : _c.title) || '', src: url, height: 96, width: 96, className: "min-h-[96px] min-w-[96px]" }))),
         react_1.default.createElement("div", { className: "flex-grow" },
             react_1.default.createElement(components_2.Typography, { variant: "body1" }, (_e = (_d = line === null || line === void 0 ? void 0 : line.merchandise) === null || _d === void 0 ? void 0 : _d.product) === null || _e === void 0 ? void 0 : _e.title),
             react_1.default.createElement(components_2.Typography, { variant: "body1", className: "text-foreground/70" }, (_h = (_g = (_f = line === null || line === void 0 ? void 0 : line.merchandise) === null || _f === void 0 ? void 0 : _f.selectedOptions) === null || _g === void 0 ? void 0 : _g.filter(function (option) { return option.name !== 'Title'; })) === null || _h === void 0 ? void 0 : _h.map(function (option) { return option.value; }).join(' / ')),
@@ -151,7 +152,7 @@ var ShopifyCartLine = function (_a) {
             react_1.default.createElement("p", { className: "text-sm font-medium mt-1" }, price === 0 ? 'Free' : (0, frontend_shopify_2.formatCurrency)(price)),
             react_1.default.createElement("div", { className: "mt-2" },
                 react_1.default.createElement(ShopifyCartQuantityInput, { quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity }))),
-        react_1.default.createElement(react_2.Button, { isIconOnly: true, variant: "light", radius: "full", className: "text-foreground/70", onPress: handleRemoveLineItem },
-            react_1.default.createElement(components_1.RemixIcon, { name: 'ri-close-fill' }))));
+        react_1.default.createElement(react_2.Button, { isIconOnly: true, variant: "light", radius: "full", className: "min-w-8", onPress: handleRemoveLineItem },
+            react_1.default.createElement(components_1.RemixIcon, { name: "ri-close-fill" }))));
 };
 exports.default = ShopifyCartLine;

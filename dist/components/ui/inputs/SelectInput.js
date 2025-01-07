@@ -13,8 +13,8 @@ function SelectInput(props) {
         handleChange({
             target: {
                 name: name,
-                value: value
-            }
+                value: value,
+            },
         });
     };
     return (react_1.default.createElement(select_1.Select, { label: label, placeholder: placeholder || 'Select an option', items: options, selectionMode: "single", selectedKeys: [value], onSelectionChange: handleSelect }, function (option) { return (react_1.default.createElement(select_1.SelectItem

@@ -19,6 +19,6 @@ var ShopifyCustomerPortal = function () {
             sonner_1.toast.error('Shopify Customer Portal not enabled.');
         }
     };
-    return (react_1.default.createElement(components_1.Empty, { icon: "ri-shopping-cart-2-fill", title: "Shopify Customer Portal", description: "Manage your order history and returns.", buttons: react_1.default.createElement(react_2.Button, { onPress: handleClick, endContent: react_1.default.createElement(components_1.RemixIcon, { name: 'ri-external-link-line' }) }, "Open Customer Portal") }));
+    return (react_1.default.createElement(components_1.Empty, { icon: "ri-shopping-cart-2-fill", title: "Shopify Customer Portal", description: "Manage your order history and returns.", buttons: react_1.default.createElement(react_2.Button, { onPress: handleClick, endContent: react_1.default.createElement(components_1.RemixIcon, { name: "ri-external-link-line" }) }, "Open Customer Portal") }));
 };
 exports.default = ShopifyCustomerPortal;

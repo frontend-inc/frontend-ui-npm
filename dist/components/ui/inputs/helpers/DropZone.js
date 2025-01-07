@@ -74,6 +74,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var react_dropzone_1 = require("react-dropzone");
 var lucide_react_1 = require("lucide-react");
+var react_2 = require("@nextui-org/react");
 var DropZone = function (props) {
     var _a = props || {}, onDrop = _a.onDrop, _b = _a.label, label = _b === void 0 ? 'Upload file' : _b, _c = _a.dropLabel, dropLabel = _c === void 0 ? 'Drop file here' : _c;
     var _d = (0, react_1.useState)(false), loading = _d[0], setLoading = _d[1];
@@ -118,7 +119,7 @@ var DropZone = function (props) {
     }), getRootProps = _e.getRootProps, getInputProps = _e.getInputProps, isDragActive = _e.isDragActive;
     return (react_1.default.createElement("div", __assign({}, getRootProps(), { className: "h-[120px] w-full bg-content2 m-px p-4 flex flex-col justify-center items-center rounded-2xl text-center hover:bg-content3 hover:cursor-pointer transition-all duration-300" }),
         react_1.default.createElement("input", __assign({}, getInputProps())),
-        loading ? (react_1.default.createElement(lucide_react_1.Loader2, { className: "text-foreground w-5 h-5 animate-spin" })) : (react_1.default.createElement(react_1.default.Fragment, null,
+        loading ? (react_1.default.createElement(react_2.Spinner, null)) : (react_1.default.createElement(react_1.default.Fragment, null,
             isDragActive ? (react_1.default.createElement(lucide_react_1.DownloadCloud, { className: "text-foreground w-5 h-5" })) : (react_1.default.createElement(lucide_react_1.UploadCloud, { className: "text-foreground w-5 h-5" })),
             react_1.default.createElement("p", { className: "mt-2 text-sm text-foreground" }, isDragActive ? dropLabel : label)))));
 };

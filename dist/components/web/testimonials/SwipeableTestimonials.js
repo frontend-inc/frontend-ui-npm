@@ -14,7 +14,7 @@ var SwipeableTestimonialCard = function (props) {
     return (react_1.default.createElement(components_2.Container, { maxWidth: "lg" },
         react_1.default.createElement(react_2.Card, { shadow: variant == 'default' ? 'none' : 'sm', className: variant == 'fill' ? 'bg-content1' : '' },
             react_1.default.createElement(react_2.CardBody, { className: "p-10" },
-                react_1.default.createElement(react_2.ScrollShadow, { className: "h-[160px] w-full" }, text && (react_1.default.createElement(components_2.Typography, { variant: "body1", textAlign: 'center', className: "italic text-xl font-medium leading-loose text-foreground/80" }, text)))),
+                react_1.default.createElement(react_2.ScrollShadow, { className: "h-[160px] w-full" }, text && (react_1.default.createElement(components_2.Typography, { variant: "body1", textAlign: "center", className: "italic text-xl font-medium leading-loose text-foreground/80" }, text)))),
             react_1.default.createElement(react_2.CardFooter, { className: "flex p-6 items-center justify-center" },
                 react_1.default.createElement(react_2.User, { avatarProps: {
                         src: avatar,

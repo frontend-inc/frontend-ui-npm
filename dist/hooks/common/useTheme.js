@@ -19,7 +19,7 @@ var useTheme = function () {
         headerFont: headerFont,
         bodyFont: bodyFont,
         borderRadius: borderRadius,
-        themeClass: themeClass
+        themeClass: themeClass,
     };
 };
 exports.default = useTheme;

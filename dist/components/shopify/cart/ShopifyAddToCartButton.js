@@ -62,18 +62,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
+var sonner_1 = require("sonner");
 var addons_1 = require("../../../hooks/addons");
 var react_2 = require("@nextui-org/react");
 var __1 = require("..");
 var frontend_shopify_2 = require("frontend-shopify");
 var ShopifyAddToCartButton = function (props) {
-    var _a = (0, react_1.useState)(''), alert = _a[0], setAlert = _a[1];
     var trackAddToCart = (0, addons_1.useSegment)().trackAddToCart;
     var toggleCart = (0, react_1.useContext)(frontend_shopify_2.ShopifyContext).toggleCart;
-    var _b = (0, frontend_shopify_1.useCart)(), loading = _b.loading, cartLineAdd = _b.cartLineAdd;
-    var _c = props.label, label = _c === void 0 ? 'Add to Cart' : _c, product = props.product, variant = props.variant, _d = props.enableQuantity, enableQuantity = _d === void 0 ? false : _d, _e = props.enableSubscription, enableSubscription = _e === void 0 ? false : _e, _f = props.enableFavorites, enableFavorites = _f === void 0 ? false : _f, _g = props.size, size = _g === void 0 ? 'md' : _g;
-    var _h = (0, react_1.useState)(1), quantity = _h[0], setQuantity = _h[1];
-    var _j = (0, react_1.useState)(null), activeSellingPlanId = _j[0], setActiveSellingPlanId = _j[1];
+    var _a = (0, frontend_shopify_1.useCart)(), loading = _a.loading, cartLineAdd = _a.cartLineAdd;
+    var _b = props.label, label = _b === void 0 ? 'Add to Cart' : _b, product = props.product, variant = props.variant, _c = props.enableQuantity, enableQuantity = _c === void 0 ? false : _c, _d = props.enableSubscription, enableSubscription = _d === void 0 ? false : _d, _e = props.enableFavorites, enableFavorites = _e === void 0 ? false : _e, _f = props.size, size = _f === void 0 ? 'md' : _f;
+    var _g = (0, react_1.useState)(1), quantity = _g[0], setQuantity = _g[1];
+    var _h = (0, react_1.useState)(null), activeSellingPlanId = _h[0], setActiveSellingPlanId = _h[1];
     var handleSellingPlanChange = function (value) {
         setActiveSellingPlanId(value);
     };
@@ -91,7 +91,7 @@ var ShopifyAddToCartButton = function (props) {
             switch (_a.label) {
                 case 0:
                     if (!(product === null || product === void 0 ? void 0 : product.availableForSale)) {
-                        setAlert('This product is not available for sale');
+                        sonner_1.toast.error('This product is not available for sale');
                         return [2 /*return*/];
                     }
                     if (!(variant === null || variant === void 0 ? void 0 : variant.id)) return [3 /*break*/, 4];
@@ -112,25 +112,24 @@ var ShopifyAddToCartButton = function (props) {
                     if (resp === null || resp === void 0 ? void 0 : resp.id) {
                         setActiveSellingPlanId(null);
                         toggleCart();
-                        setAlert('');
                     }
                     else {
-                        setAlert('Oops! There was an error adding to cart');
+                        sonner_1.toast.error('Oops! There was an error adding to cart');
                     }
                     return [3 /*break*/, 3];
                 case 2:
-                    setAlert('This product is not available for sale');
+                    sonner_1.toast.error('This product is not available for sale');
                     _a.label = 3;
                 case 3: return [3 /*break*/, 5];
                 case 4:
-                    setAlert('Please select all options');
+                    sonner_1.toast.error('Please select all options');
                     _a.label = 5;
                 case 5: return [2 /*return*/];
             }
         });
     }); };
     var handleClose = function () {
-        setAlert('');
+        sonner_1.toast.error('');
     };
     if (!product)
         return null;
@@ -138,8 +137,7 @@ var ShopifyAddToCartButton = function (props) {
         enableSubscription && (react_1.default.createElement(__1.ShopifySubscriptionSelector, { product: product, activeSellingPlanId: activeSellingPlanId, handleChange: handleSellingPlanChange })),
         react_1.default.createElement("div", { className: "flex w-full flex-row space-x-2 justify-content items-center" },
             enableQuantity == true && (react_1.default.createElement(__1.ShopifyQuantitySelector, { size: size, quantity: quantity, handleAddQuantity: handleAddQuantity, handleRemoveQuantity: handleRemoveQuantity })),
-            react_1.default.createElement(react_2.Button, { fullWidth: true, onPress: handleAddToCart, variant: 'solid', color: "primary", isLoading: loading, size: size }, label),
-            enableFavorites && react_1.default.createElement(__1.ShopifyProductFavoriteButton, { product: product })),
-        (alert === null || alert === void 0 ? void 0 : alert.length) > 0 && (react_1.default.createElement(react_2.Alert, { variant: "flat", color: 'danger', title: alert, description: 'Warning', className: 'items-center', isClosable: true, onClose: handleClose }))));
+            react_1.default.createElement(react_2.Button, { fullWidth: true, onPress: handleAddToCart, variant: "solid", color: "primary", isLoading: loading, size: size }, label),
+            enableFavorites && react_1.default.createElement(__1.ShopifyProductFavoriteButton, { product: product }))));
 };
 exports.default = ShopifyAddToCartButton;

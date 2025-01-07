@@ -29,7 +29,7 @@ var UserMenu = function (props) {
             react_1.default.createElement(react_2.Button, { isIconOnly: true },
                 react_1.default.createElement(__1.UserAvatar, { user: currentUser }))),
         react_1.default.createElement(react_2.DropdownMenu, { onAction: handleAction },
-            react_1.default.createElement(react_2.DropdownItem, { key: 'user' }, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.name) || "User"),
-            react_1.default.createElement(react_2.DropdownItem, { key: 'logout', endContent: react_1.default.createElement(lucide_react_1.LogOut, { className: "h-4 w-4" }) }, "Sign Out"))));
+            react_1.default.createElement(react_2.DropdownItem, { key: "user" }, (currentUser === null || currentUser === void 0 ? void 0 : currentUser.name) || 'User'),
+            react_1.default.createElement(react_2.DropdownItem, { key: "logout", endContent: react_1.default.createElement(lucide_react_1.LogOut, { className: "h-4 w-4" }) }, "Sign Out"))));
 };
 exports.default = UserMenu;

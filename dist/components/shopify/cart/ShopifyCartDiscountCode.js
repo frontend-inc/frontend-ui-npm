@@ -61,8 +61,8 @@ function ShopifyCartDiscountCode(_a) {
         });
     }); };
     return (react_1.default.createElement("div", { className: (0, react_2.cn)('flex flex-row justify-between w-full', loading && 'opacity-50') },
-        react_1.default.createElement(components_1.Typography, { variant: "body1", className: 'text-foreground/70' }, "Discounts"),
+        react_1.default.createElement(components_1.Typography, { variant: "body1", className: "text-foreground/70" }, "Discounts"),
         react_1.default.createElement("div", { className: "flex flex-row items-center space-x-2" },
-            react_1.default.createElement(react_2.Chip, { variant: 'bordered', onClose: handleDelete }, discountCode.code))));
+            react_1.default.createElement(react_2.Chip, { variant: "bordered", onClose: handleDelete }, discountCode.code))));
 }
 exports.default = ShopifyCartDiscountCode;

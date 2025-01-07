@@ -13,7 +13,7 @@ var ShowModal = function (props) {
     var _b = props || {}, enableRatings = _b.enableRatings, enableLikes = _b.enableLikes, enableFavorites = _b.enableFavorites, enableGradient = _b.enableGradient, enableOverlay = _b.enableOverlay;
     if (!resource)
         return null;
-    return (react_1.default.createElement(__1.Drawer, { open: openShow, handleClose: function () { return setOpenShow(false); }, maxWidth: "lg" },
+    return (react_1.default.createElement(__1.Modal, { open: openShow, handleClose: function () { return setOpenShow(false); }, maxWidth: "5xl" },
         react_1.default.createElement("div", { className: "w-full flex flex-row justify-center pb-10" },
             react_1.default.createElement(components_1.BlurFade, { delay: 0.25, inView: true, className: "w-full" },
                 react_1.default.createElement("div", { className: "w-full flex flex-col space-y-[20px]" },

@@ -39,7 +39,7 @@ var ShopifyProductDetails = function (props) {
             findProduct(shopifyProduct);
         }
     }, [shopifyProduct]);
-    return (react_1.default.createElement("div", { className: 'flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 w-full pb-[60px]' },
+    return (react_1.default.createElement("div", { className: "flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 w-full pb-[60px]" },
         react_1.default.createElement("div", { className: (0, react_2.cn)('w-full sm:w-1/2', 'p-0 sm:p-1') },
             react_1.default.createElement(__1.ShopifyProductImages, { product: product, image: image, images: images, handleClick: handleImageClick, disableZoom: disableZoom })),
         react_1.default.createElement("div", { className: (0, react_2.cn)('w-full sm:w-1/2', 'p-0 sm:p-1') },

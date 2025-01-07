@@ -101,11 +101,9 @@ var AiShopifyAssistant = function (props) {
         api: '/api/v1/ai/shopify_assistant',
         onToolCall: function (_a) {
             var toolCall = _a.toolCall;
-            return __awaiter(this, void 0, void 0, function () {
-                return __generator(this, function (_b) {
-                    return [2 /*return*/];
-                });
-            });
+            return __awaiter(this, void 0, void 0, function () { return __generator(this, function (_b) {
+                return [2 /*return*/];
+            }); });
         },
         onError: function (error) {
             setLoading(false);
@@ -120,7 +118,7 @@ var AiShopifyAssistant = function (props) {
             },
         });
     };
-    return (react_1.default.createElement(components_4.Container, { maxWidth: 'md' },
+    return (react_1.default.createElement(components_4.Container, { maxWidth: "md" },
         react_1.default.createElement("div", { className: (0, react_4.cn)('p-4 relative flex flex-col justify-between w-full', loading && 'opacity-50') },
             react_1.default.createElement("div", { className: "w-full overflow-y-scroll" },
                 react_1.default.createElement("ul", { className: "list-none py-2 space-y-2" },
@@ -134,7 +132,7 @@ var AiShopifyAssistant = function (props) {
                         return (react_1.default.createElement("li", { id: index === messages.length - 1
                                 ? 'latest-message'
                                 : "message-".concat(index), key: 'message-' + index, className: (0, react_4.cn)('flex flex-col space-y-2 w-full') },
-                            react_1.default.createElement(frontend_shadcn_1.Card, { className: 'w-full' },
+                            react_1.default.createElement(frontend_shadcn_1.Card, { className: "w-full" },
                                 react_1.default.createElement(frontend_shadcn_1.CardContent, { className: "flex flex-col space-y-2" },
                                     react_1.default.createElement("div", { className: "flex flex-row space-x-4" },
                                         react_1.default.createElement("div", { className: "flex flex-row justify-center" }, (message === null || message === void 0 ? void 0 : message.role) === 'assistant' ? (react_1.default.createElement(components_3.Avatar, { src: avatar, alt: "avatar" })) : (react_1.default.createElement(frontend_shadcn_1.Avatar, { className: "rounded-lg" },
@@ -158,11 +156,12 @@ var AiShopifyAssistant = function (props) {
                                         }
                                         return (react_1.default.createElement("div", { className: "flex flex-col space-y-2 text-foreground", key: toolInvocation.toolCallId },
                                             react_1.default.createElement(react_markdown_1.default, null, args === null || args === void 0 ? void 0 : args.reason),
-                                            (toolName == 'shopifyProducts' &&
+                                            toolName == 'shopifyProducts' &&
                                                 Array.isArray(args === null || args === void 0 ? void 0 : args.shopifyHandles) &&
-                                                ((_a = args === null || args === void 0 ? void 0 : args.shopifyHandles) === null || _a === void 0 ? void 0 : _a.length) > 0) && (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
+                                                ((_a = args === null || args === void 0 ? void 0 : args.shopifyHandles) === null || _a === void 0 ? void 0 : _a.length) > 0 && (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
                                                 react_1.default.createElement(components_3.ShopifyProductArray, { enableAddToCart: true, handles: args.shopifyHandles }))),
-                                            (toolName == 'shopifyCollection' && (args === null || args === void 0 ? void 0 : args.collectionHandle)) && (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
+                                            toolName == 'shopifyCollection' &&
+                                                (args === null || args === void 0 ? void 0 : args.collectionHandle) && (react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
                                                 react_1.default.createElement(components_3.ShopifyProductCollection, { shopifyCollection: args.collectionHandle, enableAddToCart: true }))),
                                             !('result' in toolInvocation) && (react_1.default.createElement("div", { className: "w-full flex flex-row space-x-2 justify-between items-center" },
                                                 react_1.default.createElement(components_1.Typography, { variant: "body2", className: "text-primary" }, toolMessage),

@@ -34,7 +34,7 @@ function ShareButton(props) {
         setOpen(true);
     };
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(components_1.IconButton, { onClick: handleClick, className: (0, react_2.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', 'text-foreground', size === 'large' && 'border border-divider') },
+        react_1.default.createElement(components_1.IconButton, { onPress: handleClick, className: (0, react_2.cn)(variant == 'circular' ? 'rounded-full' : 'rounded-lg', 'text-foreground', size === 'large' && 'border border-divider') },
             react_1.default.createElement(components_1.RemixIcon, { name: "ri-share-2-fill" })),
         react_1.default.createElement(components_1.ShareModal, { open: open, handleClose: function () { return setOpen(false); }, url: url })));
 }

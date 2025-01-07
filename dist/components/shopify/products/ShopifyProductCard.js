@@ -55,7 +55,7 @@ function ShopifyProductCard(props) {
         react_1.default.createElement(react_2.Card, { shadow: "sm", className: (0, react_2.cn)('bg-background', className) },
             react_1.default.createElement(frontend_shadcn_1.CardContent, { className: "p-0" },
                 react_1.default.createElement(SwipeableShopifyProductImages_1.default, { product: product, handleClick: handleItemClick, disableBorderRadius: enableBorder })),
-            react_1.default.createElement(react_2.CardFooter, { className: 'bg-content1 w-full' },
+            react_1.default.createElement(react_2.CardFooter, { className: "bg-content1 w-full" },
                 react_1.default.createElement("div", { className: "flex flex-col space-y-2 w-full" },
                     react_1.default.createElement("div", { className: "flex flex-col space-y-0 min-h-[50px]" },
                         react_1.default.createElement(components_1.Typography, { variant: "subtitle2" }, (0, helpers_1.truncate)(product === null || product === void 0 ? void 0 : product.title)),

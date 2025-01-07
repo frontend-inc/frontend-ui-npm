@@ -16,7 +16,7 @@ var PDP = function (props) {
             react_1.default.createElement("div", { className: (0, react_2.cn)('flex flex-col space-y-3 w-full', direction == 'row' && 'sm:flex-row sm:space-x-10 sm:space-y-0') },
                 react_1.default.createElement("div", { className: (0, react_2.cn)('w-full flex flex-col space-y-5 justify-center items-center', direction == 'row' && 'md:w-1/2') },
                     react_1.default.createElement("div", { className: "rounded-lg w-full" },
-                        react_1.default.createElement(__1.Image, { src: image, alt: title, height: 400, aspectRatio: 4 / 3, label: label, enableGradient: enableGradient, enableOverlay: enableOverlay })),
+                        react_1.default.createElement(__1.Image, { fullWidth: true, src: image, alt: title, height: 400, label: label, enableGradient: enableGradient, enableOverlay: enableOverlay })),
                     actions),
                 react_1.default.createElement("div", { className: (0, react_2.cn)('w-full flex flex-col space-y-3', direction == 'row' && 'md:w-1/2') },
                     react_1.default.createElement(components_1.Typography, { variant: "h3" }, title),

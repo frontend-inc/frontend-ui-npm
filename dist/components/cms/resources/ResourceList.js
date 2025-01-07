@@ -439,11 +439,11 @@ var ResourceList = function (props) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, findMany(query)
-                    //@ts-ignore 
+                    //@ts-ignore
                 ];
                 case 1:
                     resources = _a.sent();
-                    //@ts-ignore 
+                    //@ts-ignore
                     (0, helpers_1.exportJsonToCSV)(exportHeaders, resources);
                     return [2 /*return*/];
             }

@@ -35,14 +35,14 @@ var DataHeader = function (props) {
     return (react_1.default.createElement("div", { className: "flex flex-col space-y-1 mb-1" },
         react_1.default.createElement("div", { className: "flex flex-col sm:flex-row justify-between space-y-1 sm:space-y-0 sm:space-x-1" },
             react_1.default.createElement("div", { className: "flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1" },
-                enableSearch && (react_1.default.createElement("div", { className: 'w-full max-w-[320px]' },
+                enableSearch && (react_1.default.createElement("div", { className: "w-full max-w-[320px]" },
                     react_1.default.createElement(SearchComponent, __assign({ value: keywords, handleChange: handleKeywordChange, handleSearch: handleSearch }, slots.search)))),
                 enableFilters && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
                     react_1.default.createElement(__1.FilterButton, { filterOptions: filterOptions, filters: activeFilters, handleFilter: handleToggleFilter }))),
                 enableSorting && (react_1.default.createElement("div", { className: "w-full sm:w-auto" },
                     react_1.default.createElement(__1.SortButton, { sortOptions: sortOptions, sortBy: (query === null || query === void 0 ? void 0 : query.sort_by) || 'position', sortDirection: (query === null || query === void 0 ? void 0 : query.sort_direction) || 'asc', handleSortBy: handleSortBy, handleSortDirection: handleSortDirection })))),
             (enableCreate || secondaryAction) && (react_1.default.createElement("div", { className: "flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-1" },
-                react_1.default.createElement(react_2.Button, { variant: 'solid', color: 'primary', className: "sm:w-auto", startContent: react_1.default.createElement(react_3.RiAddFill, { className: "text-primary-foreground" }), onPress: handleAdd }, buttonText),
+                react_1.default.createElement(react_2.Button, { variant: "solid", color: "primary", className: "sm:w-auto", startContent: react_1.default.createElement(react_3.RiAddFill, { className: "text-primary-foreground" }), onPress: handleAdd }, buttonText),
                 secondaryAction)))));
 };
 exports.default = DataHeader;

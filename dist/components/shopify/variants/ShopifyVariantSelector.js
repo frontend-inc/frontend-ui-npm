@@ -13,7 +13,14 @@ var ShopifyProductVariantSelector = function (props) {
         var _a;
         return (_a = product === null || product === void 0 ? void 0 : product.options) === null || _a === void 0 ? void 0 : _a.find(function (option) { return (option === null || option === void 0 ? void 0 : option.name) == optionName; });
     };
-    var SORTED_OPTIONS = ['Title', 'Color', 'Size', 'Style', 'Material', 'Denominations'];
+    var SORTED_OPTIONS = [
+        'Title',
+        'Color',
+        'Size',
+        'Style',
+        'Material',
+        'Denominations',
+    ];
     return (react_1.default.createElement(react_1.default.Fragment, null, SORTED_OPTIONS.map(function (optionName) {
         var option = productOption(optionName);
         if (!option)
